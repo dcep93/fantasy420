@@ -3,6 +3,9 @@ import { FirebaseWrapper } from "../../firebase";
 
 import draft_json from "./draft.json";
 
+const PICK_NUMBER = 5;
+const NUM_TEAMS = 10;
+
 type DraftType = string[];
 type PlayersType = { [name: string]: number };
 type FirebaseType = { name: string; rank: number }[];
@@ -11,7 +14,7 @@ type RPType = {
   name: string;
   nname: string;
   fname: string;
-  diffs: number[];
+  picks: number[];
   value: number;
 } & PType;
 type ResultsType = {
@@ -179,8 +182,13 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
                   >
                     {v.fname}, {v.team}
                   </td>
-                  {v.diffs.map((w, j) => (
-                    <td key={j}>{w}</td>
+                  {v.picks.map((w, j) => (
+                    <td
+                      key={j}
+                      style={{ backgroundColor: isMyPick(w) ? "khaki" : "" }}
+                    >
+                      {w + 1}
+                    </td>
                   ))}
                 </tr>
               ))}
@@ -188,6 +196,13 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
         </table>
       </div>
     </pre>
+  );
+}
+
+function isMyPick(pick: number): boolean {
+  const oddRound = (pick / NUM_TEAMS) % 2 < 1;
+  return (
+    pick % NUM_TEAMS === (oddRound ? PICK_NUMBER : NUM_TEAMS - 1 - PICK_NUMBER)
   );
 }
 
@@ -225,8 +240,8 @@ function results(draft_json: DraftJsonType): ResultsType {
     .map((o, i) => ({ ...o, nname: normalize(o.name), i }))
     .map((o) => ({
       ...o,
-      diffs: ds.map(
-        (d) => o.i - (d.picks[o.name] === undefined ? d.size : d.picks[o.name])
+      picks: ds.map((d) =>
+        d.picks[o.name] === undefined ? d.size : d.picks[o.name]
       ),
       extra: Object.fromEntries(
         extra.map((s) => [
@@ -238,7 +253,7 @@ function results(draft_json: DraftJsonType): ResultsType {
     }))
     .map((o) => ({
       ...o,
-      d_adp: 1 + o.i - o.diffs.reduce((a, b) => a + b, 0) / o.diffs.length,
+      d_adp: 1 + o.picks.reduce((a, b) => a + b, 0) / o.picks.length,
     }))
     .map((o) => ({
       ...o,
