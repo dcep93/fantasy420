@@ -3,7 +3,7 @@ import { FirebaseWrapper } from "../../firebase";
 
 import draft_json from "./draft.json";
 
-const PICK_NUMBER = 5;
+const PICK_NUMBER = 9;
 const NUM_TEAMS = 10;
 
 type DraftType = string[];
