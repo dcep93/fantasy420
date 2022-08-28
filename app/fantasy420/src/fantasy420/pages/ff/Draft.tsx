@@ -172,8 +172,9 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
                   }}
                 >
                   <td>
-                    {v.value.toFixed(1)} {v.pos_rank + 1}/{v.i + 1}
+                    {v.pos_rank + 1}/{v.i + 1}
                   </td>
+                  <td>{v.value.toFixed(1)}</td>
                   <td
                     style={{
                       backgroundColor: {
