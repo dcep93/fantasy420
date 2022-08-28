@@ -474,12 +474,16 @@ export function getEspnLiveDraft(max_index: number) {
           )[0] as HTMLElement,
           adpE: tr.getElementsByClassName("adp")[0] as HTMLElement,
           avcE: tr.getElementsByClassName("avc")[0] as HTMLElement,
+          injury: tr.getElementsByClassName(
+            "playerinfo__injurystatus"
+          )[0] as HTMLElement,
         }))
         .filter(({ nameE, adpE, avcE }) => nameE && adpE && avcE)
-        .map(({ nameE, adpE, avcE }) => ({
+        .map(({ nameE, adpE, avcE, injury }) => ({
           name: (nameE.children[0] as HTMLElement).innerText,
           adp: parseFloat(adpE.innerText),
           avc: -parseFloat(avcE.innerText),
+          injury: injury?.innerText,
         }))
         .forEach(({ name, adp, avc }) => {
           players.adp.push([name, adp]);
