@@ -447,7 +447,7 @@ export function getFromBeersheets(): PlayersType {
   );
 }
 
-export function getEspnLiveDraft(max_index: number) {
+export function getEspnLiveDraft(max_index: number, injured_only: boolean) {
   // https://fantasy.espn.com/football/livedraftresults?leagueId=203836968
   const players = {
     adp: [] as [string, number][],
@@ -485,6 +485,7 @@ export function getEspnLiveDraft(max_index: number) {
           avc: -parseFloat(avcE.innerText),
           injury: injury?.innerText,
         }))
+        .filter(({ injury }) => !injured_only || ["O", "IR"].includes(injury))
         .forEach(({ name, adp, avc }) => {
           players.adp.push([name, adp]);
           players.avc.push([name, avc]);
@@ -498,7 +499,7 @@ export function getEspnLiveDraft(max_index: number) {
       .find((i) => i.innerText === index.toString())!;
     if (clickable) {
       clickable.click();
-      setTimeout(subHelper, 3000);
+      setTimeout(subHelper, 1000);
     } else {
       subHelper();
     }
