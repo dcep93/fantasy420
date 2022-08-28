@@ -150,6 +150,7 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
       </div>
       <div
         style={{
+          height: "100%",
           overflowY: "scroll",
         }}
       >
