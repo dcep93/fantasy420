@@ -73,8 +73,16 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
     seen: espn[p.nname] !== undefined,
   }));
   return (
-    <pre style={{ display: "flex", height: "90vh" }}>
-      <div style={{ margin: "20px" }}>
+    <pre
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "space-around",
+        height: "90vh",
+        fontSize: "1.5em",
+      }}
+    >
+      <div>
         <div>
           <ul>
             {sources.map((s) => (
@@ -82,7 +90,6 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
                 key={s}
                 onClick={() => update(s)}
                 style={{
-                  fontSize: "2em",
                   cursor: "pointer",
                   color: "blue",
                   textDecoration: "underline",
@@ -93,9 +100,9 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
             ))}
           </ul>
         </div>
-        <h1>
+        <div>
           {source} ({drafted.length})
-        </h1>
+        </div>
         <pre>
           {JSON.stringify(
             drafted
@@ -143,7 +150,6 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
       </div>
       <div
         style={{
-          margin: "20px",
           overflowY: "scroll",
         }}
       >
@@ -165,8 +171,7 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
                   }}
                 >
                   <td>
-                    {v.value % 1 === 0 ? v.value : v.value.toFixed(1)} (
-                    {v.pos_rank + 1}/{v.i + 1})
+                    {v.value.toFixed(1)} {v.pos_rank + 1}/{v.i + 1}
                   </td>
                   <td
                     style={{
@@ -177,7 +182,6 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
                         QUARTERBACKS: "purple",
                         DEFENSES: "lightsalmon",
                       }[v.position],
-                      fontSize: "2em",
                     }}
                   >
                     {v.fname}, {v.team}
@@ -266,14 +270,14 @@ function results(draft_json: DraftJsonType): ResultsType {
       ),
     }))
     .map((o) => ({
-      fname: `(${[
+      fname: `${[
         o.d_adp.toFixed(1),
         "",
         o.adp,
         `$${-o.avc}`,
         "",
         ...extra.map((s) => (o.extra[s] < 0 ? `$${-o.extra[s]}` : o.extra[s])),
-      ].join("/")}) ${o.name.substring(0, 20)}`,
+      ].join("/")} ${o.name.substring(0, 20)}`,
       ...(o.name.includes("D/ST") ? { position: "DEFENSES" } : {}),
       ...o,
     }))
