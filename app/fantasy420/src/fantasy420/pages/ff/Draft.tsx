@@ -285,30 +285,54 @@ function results(draft_json: DraftJsonType): ResultsType {
     }))
     .map((o) => ({ ...o, ...draft_json.players[o.nname] }));
 
-  const basic = [
+  const values = [
     { source: "d_adp", players: raw.map((p) => ({ ...p, value: p.d_adp })) },
-    { source: "adp", players: raw.map((p) => ({ ...p, value: p.adp })) },
-    { source: "avc", players: raw.map((p) => ({ ...p, value: p.avc })) },
+    // { source: "adp", players: raw.map((p) => ({ ...p, value: p.adp })) },
+    // { source: "avc", players: raw.map((p) => ({ ...p, value: p.avc })) },
+  ].concat(
+    extra.map((source) => ({
+      source,
+      players: raw.map((p) => ({ ...p, value: p.extra[source] })),
+    }))
+  );
+
+  const scores = [
     {
       source: "d_adp_score",
       players: raw.map((p) => ({ ...p, value: p.d_adp_score })),
     },
-  ];
+  ].concat(
+    extra.map((source) => ({
+      source: `${source}_score`,
+      players: raw.map((p) => ({ ...p, value: p.scores[source] })),
+    }))
+  );
 
-  const extraR = extra.map((source) => ({
-    source,
-    players: raw.map((p) => ({ ...p, value: p.extra[source] })),
-  }));
+  const composite = {
+    source: "composite",
+    players: raw
+      .map((p) => ({
+        ...p,
+        extra: Object.values(draft_json.extra)
+          .map(
+            (d) =>
+              Object.keys(d)
+                .map((name, i) => ({ name, i }))
+                .find(({ name }) => name === p.nname)?.i
+          )
+          .filter((rank) => rank !== undefined),
+      }))
+      .map(({ extra, ...p }) => ({
+        ...p,
+        value:
+          (extra as number[]).reduce((a, b) => a + b, extra.length) /
+          extra.length,
+      })),
+  };
 
-  const extraS = extra.map((source) => ({
-    source: `${source}_score`,
-    players: raw.map((p) => ({ ...p, value: p.scores[source] })),
-  }));
-
-  return ([] as ResultsType)
-    .concat(basic)
-    .concat(extraR)
-    .concat(extraS)
+  return [composite]
+    .concat(values)
+    .concat(scores)
     .map(({ players, ...o }) => ({
       ...o,
       players: players.sort((a, b) => a.value - b.value),
