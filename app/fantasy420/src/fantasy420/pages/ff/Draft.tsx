@@ -322,12 +322,16 @@ function results(draft_json: DraftJsonType): ResultsType {
           )
           .filter((rank) => rank !== undefined),
       }))
+      .map((obj) => {
+        return obj;
+      })
       .map(({ extra, ...p }) => ({
         ...p,
         value:
           (extra as number[]).reduce((a, b) => a + b, extra.length) /
           extra.length,
-      })),
+      }))
+      .filter((p) => p.value > 0),
   };
 
   return [composite]
