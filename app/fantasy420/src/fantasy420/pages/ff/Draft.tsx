@@ -178,7 +178,10 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
                   <td>
                     {v.pos_rank + 1}/{v.i + 1}
                   </td>
-                  <td>{v.value.toFixed(1)}</td>
+                  <td>
+                    {v.value < 0 && "$"}
+                    {(v.value > 0 ? v.value : -v.value).toFixed(1)}
+                  </td>
                   <td
                     style={{
                       backgroundColor: {
@@ -328,11 +331,11 @@ function results(draft_json: DraftJsonType): ResultsType {
           )
           .filter((rank) => rank !== undefined),
       }))
+      .filter(({ extra }) => extra.length > 0)
       .map(({ extra, ...p }) => ({
         ...p,
         value: extra.reduce((a, b) => a + b, extra.length) / extra.length,
-      }))
-      .filter((p) => p.value > 0),
+      })),
   };
 
   return [composite]
