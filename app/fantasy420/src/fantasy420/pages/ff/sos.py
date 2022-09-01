@@ -20,7 +20,6 @@ def get_results():
     with concurrent.futures.ThreadPoolExecutor(NUM_EXECUTORS) as executor:
         _predictions = executor.map(get_prediction, team_names)
         predictions = list(_predictions)
-    predictions = predictions  # type: ignore
     return {
         team_name: predictions[i]
         for i, team_name in enumerate(team_names)
@@ -42,18 +41,23 @@ def get_prediction(team_name: str) -> typing.List[typing.Any]:
     url = f"https://www.espn.com/nfl/team/schedule/_/name/{team_name}"
     resp = requests.get(url)
     soup = BeautifulSoup(resp.content, 'html.parser')
-    rows = [list(r.children) for r in soup.find_all('tr')][2:][:NUM_WEEKS]
-    cells = [r[3] if len(r) >= 3 else None for r in rows]
-    game_links = [c.find('a')['href'] if c else None for c in cells]
+    rows = [list(r.children) for r in soup.find_all('tr')]
+    cells = [r[3] for r in rows if len(r) >= 3]
+
+    def get_game_links(cells):
+        for i in range(len(cells)):
+            if cells[i].text == 'TIME':
+                limited_cells = cells[i + 1:][:NUM_WEEKS]
+                return [c.find('a')['href'] for c in limited_cells]
+
+    game_links = get_game_links(cells)
 
     def get_span_text(soup: BeautifulSoup, class_name: str) -> str:
         found = soup.find("span", {"class": class_name})
         assert found is not None
         return found.text
 
-    def helper(link: typing.Optional[str]):
-        if link is None:
-            return None
+    def helper(link: str):
         soup = get_game_soup(link)
 
         raw_home_prob = get_span_text(soup, "value-home")
@@ -62,11 +66,13 @@ def get_prediction(team_name: str) -> typing.List[typing.Any]:
         raw_away_prob = get_span_text(soup, "value-away")
         away_prob = float(raw_away_prob[:-1])
 
-        # these are flipped in the page
-        home_prob, away_prob = away_prob, home_prob
-
         home_team = get_span_text(soup, "home-team")
         away_team = get_span_text(soup, "away-team")
+
+        # these are flipped in the page
+        # home_prob, away_prob = away_prob, home_prob
+        home_team, away_team = away_team, home_team
+
         if team_name == home_team.lower():
             probability = home_prob / (home_prob + away_prob)
             opponent = f"vs {away_team}"
