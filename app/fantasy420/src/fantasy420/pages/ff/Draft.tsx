@@ -3,7 +3,7 @@ import { FirebaseWrapper } from "../../firebase";
 
 import draft_json from "./draft.json";
 
-const PICK_NUMBER = 9;
+const PICK_NUMBER = 5;
 const NUM_TEAMS = 10;
 
 type DraftType = string[];
@@ -191,7 +191,9 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
                   {v.picks.map((w, j) => (
                     <td
                       key={j}
-                      style={{ backgroundColor: isMyPick(w) ? "khaki" : "" }}
+                      style={{
+                        backgroundColor: isMyPick(w) ? "khaki" : "",
+                      }}
                     >
                       {w + 1}
                     </td>
@@ -208,7 +210,7 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
 function isMyPick(pick: number): boolean {
   const oddRound = (pick / NUM_TEAMS) % 2 < 1;
   return (
-    pick % NUM_TEAMS === (oddRound ? PICK_NUMBER : NUM_TEAMS - 1 - PICK_NUMBER)
+    pick % NUM_TEAMS === (oddRound ? PICK_NUMBER - 1 : NUM_TEAMS - PICK_NUMBER)
   );
 }
 
@@ -323,6 +325,15 @@ function results(draft_json: DraftJsonType): ResultsType {
           .filter((rank) => rank !== undefined),
       }))
       .map((obj) => {
+        if (obj.name === "Kenneth Walker III")
+          console.log(
+            Object.values(draft_json.extra).map(
+              (d) =>
+                Object.keys(d)
+                  .map((name, i) => ({ name, i }))
+                  .find(({ name }) => name === obj.nname)?.i
+            )
+          );
         return obj;
       })
       .map(({ extra, ...p }) => ({
