@@ -131,6 +131,10 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
           <input readOnly value={printF(getFromBeersheets.toString())} />
         </div>
         <div>
+          <div>jayzheng</div>
+          <input readOnly value={printF(jayzheng.toString())} />
+        </div>
+        <div>
           <div>espn</div>
           <input readOnly value={printF(getEspnLiveDraft.toString())} />
         </div>
@@ -320,27 +324,13 @@ function results(draft_json: DraftJsonType): ResultsType {
             (d) =>
               Object.keys(d)
                 .map((name, i) => ({ name, i }))
-                .find(({ name }) => name === p.nname)?.i
+                .find(({ name }) => name === p.nname)?.i!
           )
           .filter((rank) => rank !== undefined),
       }))
-      .map((obj) => {
-        if (obj.name === "Kenneth Walker III")
-          console.log(
-            Object.values(draft_json.extra).map(
-              (d) =>
-                Object.keys(d)
-                  .map((name, i) => ({ name, i }))
-                  .find(({ name }) => name === obj.nname)?.i
-            )
-          );
-        return obj;
-      })
       .map(({ extra, ...p }) => ({
         ...p,
-        value:
-          (extra as number[]).reduce((a, b) => a + b, extra.length) /
-          extra.length,
+        value: extra.reduce((a, b) => a + b, extra.length) / extra.length,
       }))
       .filter((p) => p.value > 0),
   };
@@ -397,18 +387,6 @@ export function getDraft() {
   return s.concat(recent);
 }
 
-export function idk() {
-  Array.from(
-    document
-      .getElementsByClassName("pick-history-tables")[0]
-      .getElementsByClassName("fixedDataTableCellGroupLayout_cellGroup")
-  )
-    .map((i) => Array.from(i.children).reverse()[0] as HTMLElement)
-    .map((i) => i?.innerText)
-    .map((i) => parseInt(i))
-    .filter(Boolean);
-}
-
 export function getPlayersFromBeersheets() {
   return Object.fromEntries(
     Array.from(
@@ -447,7 +425,7 @@ export function getPlayersFromBeersheets() {
   );
 }
 
-export function getFromBeersheets(): PlayersType {
+function getFromBeersheets(): PlayersType {
   // https://footballabsurdity.com/2022/06/27/2022-fantasy-football-salary-cap-values/
   return Object.fromEntries(
     Array.from(
@@ -492,7 +470,7 @@ export function getFromBeersheets(): PlayersType {
   );
 }
 
-export function getEspnLiveDraft(max_index: number, injured_only: boolean) {
+function getEspnLiveDraft(max_index: number, injured_only: boolean) {
   // https://fantasy.espn.com/football/livedraftresults?leagueId=203836968
   const players = {
     adp: [] as [string, number][],
@@ -552,7 +530,7 @@ export function getEspnLiveDraft(max_index: number, injured_only: boolean) {
   helper(1);
 }
 
-export function updateDraftRanking(ordered: { [name: string]: number }) {
+function updateDraftRanking(ordered: { [name: string]: number }) {
   fetch(
     "https://fantasy.espn.com/apis/v3/games/ffl/seasons/2022/segments/0/leagues/203836968?view=kona_player_info_edit_draft_strategy",
     {
@@ -617,6 +595,18 @@ export function updateDraftRanking(ordered: { [name: string]: number }) {
       )
     )
     .then((resp) => alert(resp.ok));
+}
+
+function jayzheng() {
+  Object.fromEntries(
+    Array.from(
+      document
+        .getElementsByClassName("overall-rankings")[0]
+        .getElementsByTagName("tr")
+    )
+      .map((tr) => tr.children[3] as HTMLElement)
+      .map((tr, i) => [tr.innerText, i + 1])
+  );
 }
 
 export default Draft;
