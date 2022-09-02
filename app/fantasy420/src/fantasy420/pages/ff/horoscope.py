@@ -43,15 +43,22 @@ def get_compatibilities(
     resp = requests.get(url)
     soup = BeautifulSoup(resp.content, 'html.parser')
     rows = [list(r.children) for r in soup.find_all('tr')]
-    for i, row in enumerate(rows):
-        if row[0].text == "Starter":
-            rows = rows[i + 1:][:5]
-            break
-    qbtd = rows.pop(0)[0]
-    qbname, qbsign = get_name_sign(qbtd)
+
+    def helper():
+        for i, row in enumerate(rows):
+            if row[0].text == "Starter":
+                return rows[i + 1:][:5]
+        raise Exception("no starter")
+
+    rows = helper()
+
+    qba = rows.pop(0)[0]
+    qbname, qbsign = get_name_sign(qba)
     rval = [[], []]
     for row in rows:
         for td in row[:2]:
+            if td.text == '- ':
+                continue
             name, sign = get_name_sign(td)
             direct_compatibility = get_direct_compatibility(qbsign, sign)
             s = f"{name} ({sign}) ({qbsign} {direct_compatibility})"
