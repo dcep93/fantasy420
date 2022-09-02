@@ -42,7 +42,11 @@ def get_compatibilities(
     url = f"https://www.espn.com/nfl/team/depth/_/name/{team_name}"
     resp = requests.get(url)
     soup = BeautifulSoup(resp.content, 'html.parser')
-    rows = [list(r.children) for r in soup.find_all('tr')][13:19]
+    rows = [list(r.children) for r in soup.find_all('tr')]
+    for i, row in enumerate(rows):
+        if row[0].text == "Starter":
+            rows = rows[i + 1:][:5]
+            break
     qbtd = rows.pop(0)[0]
     qbname, qbsign = get_name_sign(qbtd)
     rval = [[], []]
