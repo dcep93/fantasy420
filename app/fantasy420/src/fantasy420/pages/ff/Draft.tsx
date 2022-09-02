@@ -86,16 +86,17 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
         <div>
           <ul>
             {sources.map((s) => (
-              <li
-                key={s}
-                onClick={() => update(s)}
-                style={{
-                  cursor: "pointer",
-                  color: "blue",
-                  textDecoration: "underline",
-                }}
-              >
-                {s}
+              <li key={s}>
+                <span
+                  style={{
+                    cursor: "pointer",
+                    color: "blue",
+                    textDecoration: "underline",
+                  }}
+                  onClick={() => update(s)}
+                >
+                  {s}
+                </span>
               </li>
             ))}
           </ul>
