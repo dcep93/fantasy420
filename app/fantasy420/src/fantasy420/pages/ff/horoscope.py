@@ -1,5 +1,6 @@
 import concurrent.futures
 import json
+import os
 import requests
 import typing
 
@@ -17,8 +18,15 @@ def main():
 
 def get_results():
     team_names = get_team_names()
+    dirname = os.path.dirname(os.path.realpath(__file__))
+    path = os.path.join(dirname, "draft.json")
+    with open(path) as fh:
+        draft_json = json.load(fh)
+    targeted_players = draft_json["drafts"][0][:80]
     with concurrent.futures.ThreadPoolExecutor(NUM_EXECUTORS) as executor:
-        _compatibilities = executor.map(get_compatibilities, team_names)
+        _compatibilities = executor.map(
+            lambda team_name: get_compatibilities(team_name, targeted_players),
+            team_names)
         compatibilities = list(_compatibilities)
     return {["good", "bad"][i]: [k for j in compatibilities for k in j[i]]
             for i in range(2)}
@@ -37,7 +45,8 @@ def get_team_names() -> typing.List[str]:
 
 
 def get_compatibilities(
-        team_name: str) -> typing.Tuple[typing.List[str], typing.List[str]]:
+    team_name: str, targeted_players: typing.List[str]
+) -> typing.Tuple[typing.List[str], typing.List[str]]:
     print(team_name)
     url = f"https://www.espn.com/nfl/team/depth/_/name/{team_name}"
     resp = requests.get(url)
@@ -59,9 +68,12 @@ def get_compatibilities(
         for td in row[:2]:
             if td.text == '- ':
                 continue
+            name = td.find('a').text
+            if name not in targeted_players:
+                continue
             name, sign = get_name_sign(td)
             direct_compatibility = get_direct_compatibility(qbsign, sign)
-            s = f"{name} ({sign}) ({qbsign} {direct_compatibility})"
+            s = f"{name} ({sign}) ({qbname} {qbsign}) : {direct_compatibility}"
             if direct_compatibility > 0:
                 rval[0].append(s)
             elif direct_compatibility < 0:
