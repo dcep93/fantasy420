@@ -16,7 +16,7 @@ def main():
 
 
 def get_results():
-    team_names = get_team_names()[:1]
+    team_names = get_team_names()
     with concurrent.futures.ThreadPoolExecutor(NUM_EXECUTORS) as executor:
         _compatibilities = executor.map(get_compatibilities, team_names)
         compatibilities = list(_compatibilities)
@@ -101,9 +101,153 @@ def get_sign(bd: str) -> str:
     return astro_sign
 
 
+# https://revivezone.com/zodiac709/zodiac-signs-compatibility-chart/
 def get_direct_compatibility(qbsign: str, sign: str) -> float:
-    return 1
-    return 0
+    return {
+        "aries": {
+            "aquarius": 1,
+            "gemini": 1,
+            "aries": 1,
+            "virgo": 0.5,
+            "scorpio": 0.5,
+            "taurus": 0.5,
+            "cancer": -1,
+            "scorpio": -1,
+            "libra": -1
+        },
+        "taurus": {
+            "cancer": 1,
+            "pisces": 1,
+            "taurus": 1,
+            "libra": 0.5,
+            "sagittarius": 0.5,
+            "gemini": 0.5,
+            "aquarius": -1,
+            "leo": -1,
+            "scorpio": -1
+        },
+        "gemini": {
+            "aries": 1,
+            "leo": 1,
+            "gemini": 1,
+            "taurus": 0.5,
+            "capricorn": 0.5,
+            "scorpio": 0.5,
+            "virgo": -1,
+            "pisces": -1,
+            "sagittarius": -1
+        },
+        "cancer": {
+            "virgo": 1,
+            "taurus": 1,
+            "cancer": 1,
+            "aquarius": 0.5,
+            "sagittarius": 0.5,
+            "leo": 0.5,
+            "aries": -1,
+            "libra": -1,
+            "capricorn": -1
+        },
+        "leo": {
+            "gemini": 1,
+            "libra": 1,
+            "leo": 1,
+            "capricon": 0.5,
+            "virgo": 0.5,
+            "pisces": 0.5,
+            "scorpio": -1,
+            "aquarius": -1,
+            "taurus": -1,
+        },
+        "virgo": {
+            "scorpio": 1,
+            "cancer": 1,
+            "virgo": 1,
+            "leo": 0.5,
+            "aquarius": 0.5,
+            "aries": 0.5,
+            "gemini": -1,
+            "sagittarius": -1,
+            "pisces": -1
+        },
+        "libra": {
+            "leo": 1,
+            "sagittarius": 1,
+            "libra": 1,
+            "pisces": 0.5,
+            "taurus": 0.5,
+            "scorpio": 0.5,
+            "capricorn": -1,
+            "cancer": -1,
+            "aries": -1
+        },
+        "scorpio": {
+            "capricorn": 1,
+            "virgo": 1,
+            "scorpio": 1,
+            "aries": 0.5,
+            "sagittarius": 0.5,
+            "leo": 0.5,
+            "gemini": -1,
+            "aquarius": -1,
+            "taurus": -1
+        },
+        "libra": {
+            "leo": 1,
+            "sagittarius": 1,
+            "libra": 1,
+            "pisces": 0.5,
+            "taurus": 0.5,
+            "scorpio": 0.5,
+            "capricorn": -1,
+            "cancer": -1,
+            "aries": -1
+        },
+        "sagittarius": {
+            "aquarius": 1,
+            "libra": 1,
+            "sagittarius": 1,
+            "capricorn": 0.5,
+            "cancer": 0.5,
+            "taurus": 0.5,
+            "virgo": -1,
+            "pisces": -1,
+            "gemini": -1
+        },
+        "capricorn": {
+            "pisces": 1,
+            "scorpio": 1,
+            "capricorn": 1,
+            "aquarius": 0.5,
+            "leo": 0.5,
+            "gemini": 0.5,
+            "libra": -1,
+            "aries": -1,
+            "cancer": -1,
+        },
+        "aquarius": {
+            "sagittarius": 1,
+            "aries": 1,
+            "aquarius": 1,
+            "virgo": 0.5,
+            "cancer": 0.5,
+            "pisces": 0.5,
+            "scorpio": -1,
+            "taurus": -1,
+            "pisces": 0.5,
+        },
+        "pisces": {
+            "capricorn": 1,
+            "taurus": 1,
+            "pisces": 1,
+            "aries": 0.5,
+            "gemini": 0.5,
+            "libra": 0.5,
+            "sagittarius": -1,
+            "leo": -1,
+            "virgo": -1
+        },
+    }.get(qbsign).get(sign, 0)
 
 
 if __name__ == "__main__":
