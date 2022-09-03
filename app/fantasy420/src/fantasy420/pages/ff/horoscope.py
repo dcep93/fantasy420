@@ -22,14 +22,16 @@ def get_results():
     path = os.path.join(dirname, "draft.json")
     with open(path) as fh:
         draft_json = json.load(fh)
-    targeted_players = draft_json["drafts"][0][:80]
+    targeted_players = {
+        str(j): i
+        for i, j in enumerate(draft_json["drafts"][0][:80])
+    }
     with concurrent.futures.ThreadPoolExecutor(NUM_EXECUTORS) as executor:
         _compatibilities = executor.map(
             lambda team_name: get_compatibilities(team_name, targeted_players),
             team_names)
         compatibilities = list(_compatibilities)
-    return {["good", "bad"][i]: [k for j in compatibilities for k in j[i]]
-            for i in range(2)}
+    return [i for j in compatibilities for i in j]
 
 
 def get_team_names() -> typing.List[str]:
@@ -45,8 +47,8 @@ def get_team_names() -> typing.List[str]:
 
 
 def get_compatibilities(
-    team_name: str, targeted_players: typing.List[str]
-) -> typing.Tuple[typing.List[str], typing.List[str]]:
+        team_name: str,
+        targeted_players: typing.Dict[str, int]) -> typing.List[typing.Any]:
     print(team_name)
     url = f"https://www.espn.com/nfl/team/depth/_/name/{team_name}"
     resp = requests.get(url)
@@ -63,7 +65,7 @@ def get_compatibilities(
 
     qba = rows.pop(0)[0]
     qbname, qbsign = get_name_sign(qba)
-    rval = [[], []]
+    rval = []
     for row in rows:
         for td in row[:2]:
             if td.text == '- ':
@@ -73,11 +75,11 @@ def get_compatibilities(
                 continue
             name, sign = get_name_sign(td)
             direct_compatibility = get_direct_compatibility(qbsign, sign)
-            s = f"{name} ({sign}) ({qbname} {qbsign}) : {direct_compatibility}"
-            if direct_compatibility > 0:
-                rval[0].append(s)
-            elif direct_compatibility < 0:
-                rval[1].append(s)
+            if direct_compatibility != 0:
+                rval.append([
+                    name, sign, qbname, qbsign, direct_compatibility,
+                    targeted_players[name]
+                ])
     return rval
 
 
