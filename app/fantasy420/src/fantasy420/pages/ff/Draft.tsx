@@ -107,13 +107,14 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
         <pre>
           {JSON.stringify(
             drafted
-              .map(
-                (name) =>
-                  (
-                    draft_json.players as {
-                      [name: string]: { position: string };
-                    }
-                  )[normalize(name)]?.position
+              .map((name) =>
+                name.endsWith("D/ST")
+                  ? "D/ST"
+                  : (
+                      draft_json.players as {
+                        [name: string]: { position: string };
+                      }
+                    )[normalize(name)]?.position
               )
               .reduce((prev, current) => {
                 prev[current] = (prev[current] || 0) + 1;
