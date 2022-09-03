@@ -36,7 +36,7 @@ function get_results(horoscope: any[][]) {
       direct_compatibility,
       adp,
     }))
-    .sort((a, b) => a.adp - b.adp);
+    .sort((a, b) => a.name.localeCompare(b.name));
   return {
     good: h.filter((o) => o.direct_compatibility > 0),
     bad: h.filter((o) => o.direct_compatibility < 0),
