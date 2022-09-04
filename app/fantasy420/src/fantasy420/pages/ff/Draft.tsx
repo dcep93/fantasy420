@@ -80,6 +80,7 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
         justifyContent: "space-around",
         height: "90vh",
         fontSize: "1.5em",
+        backgroundColor: isMyPick(4) ? "#ccc" : "",
       }}
     >
       <div>
