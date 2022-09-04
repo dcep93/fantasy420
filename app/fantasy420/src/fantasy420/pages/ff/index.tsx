@@ -9,7 +9,7 @@ import { BrowserRouter } from "react-router-dom";
 const pages =
   !process.env.NODE_ENV || process.env.NODE_ENV === "development"
     ? { sos, draft, wrapped, Horoscope }
-    : ({ Horoscope } as { [k: string]: () => JSX.Element });
+    : ({ Horoscope, wrapped } as { [k: string]: () => JSX.Element });
 
 function index() {
   return (
