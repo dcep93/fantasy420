@@ -6,7 +6,10 @@ import sos from "./Sos";
 
 import { BrowserRouter } from "react-router-dom";
 
-const pages = { sos, draft, wrapped, Horoscope };
+const pages =
+  !process.env.NODE_ENV || process.env.NODE_ENV === "development"
+    ? { sos, draft, wrapped, Horoscope }
+    : ({ Horoscope } as { [k: string]: () => JSX.Element });
 
 function index() {
   return (
