@@ -16,16 +16,24 @@ const MANAGERS = [
 ];
 
 function Value() {
-  const [num_players, update] = useState(8);
+  const [num_rounds, update] = useState(8);
   const final = draft_json.drafts[0];
   const extra_entries = Object.entries(draft_json.extra).reverse();
-  const results = get_results(final, extra_entries, num_players);
+  const results = get_results(final, extra_entries, num_rounds);
   return (
     <div>
       <div>
-        num_players:{" "}
+        <ul>
+          <li>
+            according to the different aggregations, after X rounds, who had the
+            "strongest" draft?
+          </li>
+        </ul>
+      </div>
+      <div>
+        num_rounds:{" "}
         <input
-          value={num_players}
+          value={num_rounds}
           type="number"
           onChange={(e) => update(parseInt(e.currentTarget.value))}
         />
@@ -61,7 +69,15 @@ function Value() {
                     }))
                     .map(({ key, score, rank }) => (
                       <td key={key}>
-                        <div>{key}</div>
+                        <div>
+                          {{
+                            beer: "[ BeerSheets auction ]",
+                            beerd: "[ BeerSheets draft ]",
+                            peak: "[ PeakedInHighSkool draft ]",
+                            peaka: "[ PeakedInHighSkool auction ]",
+                            "jayzheng.com": "[ jayzheng.com/ff/ ]",
+                          }[key] || key}
+                        </div>
                         <div>#{rank + 1}</div>
                         <div>{score < 0 ? `$${-score}` : score}</div>
                       </td>
@@ -72,7 +88,7 @@ function Value() {
                     key={j}
                     style={{
                       borderTop:
-                        j === 0 || j === num_players ? "2px solid black" : "",
+                        j === 0 || j === num_rounds ? "2px solid black" : "",
                     }}
                   >
                     <td>{player.name}</td>
@@ -93,7 +109,7 @@ function Value() {
 function get_results(
   final: string[],
   extra_entries: [string, { [name: string]: number }][],
-  num_players: number
+  num_rounds: number
 ): {
   name: string;
   scores: number[];
@@ -121,9 +137,8 @@ function get_results(
       players,
       scores: extra_entries.map((_, i) =>
         players
-          .filter((_, j) => j < num_players)
+          .filter((_, j) => j < num_rounds)
           .map((player) => player.scores[i])
-          .map((score) => (score === undefined ? 0 : score))
           .reduce((a, b) => a + b, 0)
       ),
     }));
@@ -133,7 +148,9 @@ function get_results(
         team_index,
         score: scores[i],
       }))
-      .sort((a, b) => a.score - b.score)
+      .sort((a, b) =>
+        isNaN(a.score) ? 1 : isNaN(b.score) ? -1 : a.score - b.score
+      )
       .map(({ team_index }, rank) => ({ team_index, rank }))
       .sort((a, b) => a.team_index - b.team_index)
       .map(({ rank }) => rank)
