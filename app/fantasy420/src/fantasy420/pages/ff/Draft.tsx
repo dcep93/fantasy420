@@ -3,8 +3,8 @@ import { FirebaseWrapper } from "../../firebase";
 
 import draft_json from "./draft.json";
 
-const PICK_NUMBER = 5;
-const NUM_TEAMS = 10;
+const PICK_NUMBER = 8;
+export const NUM_TEAMS = 10;
 
 type DraftType = string[];
 type PlayersType = { [name: string]: number };
@@ -225,7 +225,7 @@ function isMyPick(pick: number): boolean {
   );
 }
 
-function normalize(s: string) {
+export function normalize(s: string) {
   return s
     .replaceAll(/[^A-Za-z ]/g, "")
     .replaceAll(/ I+$/g, "")
