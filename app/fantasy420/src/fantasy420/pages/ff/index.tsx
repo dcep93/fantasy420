@@ -7,10 +7,7 @@ import Value from "./Value";
 
 import { BrowserRouter } from "react-router-dom";
 
-const pages =
-  !process.env.NODE_ENV || process.env.NODE_ENV === "development"
-    ? { sos, draft, wrapped, Horoscope, Value }
-    : ({ Horoscope, wrapped, Value } as { [k: string]: () => JSX.Element });
+const pages = { sos, draft, wrapped, Horoscope, Value };
 
 function index() {
   return (
