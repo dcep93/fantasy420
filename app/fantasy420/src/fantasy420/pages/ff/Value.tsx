@@ -31,7 +31,7 @@ function Value() {
         />
       </div>
       <div style={{ display: "flex", flexWrap: "wrap" }}>
-        {results.map(({ players, scores, ranks }, i) => (
+        {results.map(({ name, players, scores, ranks }, i) => (
           <div
             key={i}
             style={{
@@ -50,7 +50,8 @@ function Value() {
                       textAlign: "left",
                     }}
                   >
-                    {MANAGERS[i]}
+                    <div>#{i + 1}</div>
+                    <div>{name}</div>
                   </td>
                   {extra_entries
                     .map(([key, _], j) => ({
@@ -94,6 +95,7 @@ function get_results(
   extra_entries: [string, { [name: string]: number }][],
   num_players: number
 ): {
+  name: string;
   scores: number[];
   ranks: number[];
   players: { name: string; scores: number[] }[];
@@ -114,6 +116,7 @@ function get_results(
         }))
     )
     .map((players, team_index) => ({
+      name: MANAGERS[team_index],
       team_index,
       players,
       scores: extra_entries.map((_, i) =>
@@ -135,10 +138,16 @@ function get_results(
       .sort((a, b) => a.team_index - b.team_index)
       .map(({ rank }) => rank)
   );
-  return scored.map(({ team_index, ...o }) => ({
-    ranks: ranks.map((r) => r[team_index]),
-    ...o,
-  }));
+  return scored
+    .map(({ team_index, ...o }) => ({
+      ranks: ranks.map((r) => r[team_index]),
+      ...o,
+    }))
+    .map(({ ...o }) => ({
+      total_rank: o.ranks.reduce((a, b) => a + b, 0),
+      ...o,
+    }))
+    .sort((a, b) => a.total_rank - b.total_rank);
 }
 
 function isMyPick(pick_index: number, team_index: number): boolean {
