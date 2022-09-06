@@ -48,6 +48,7 @@ function Value() {
               margin: "10px",
               padding: "10px",
               textAlign: "right",
+              whiteSpace: "nowrap",
             }}
           >
             <table style={{ borderCollapse: "collapse" }}>
