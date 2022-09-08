@@ -16,6 +16,10 @@ async function execute() {
       p: /https:\/\/fantasy\.espn\.com\/football.*/,
       jss: ["reddit/shared.js", "reddit/inject.js"],
     },
+    {
+      p: /https:\/\/(www\.)?reddit\.com\/r\/fantasyfootball\/.*/,
+      jss: ["reddit/shared.js", "reddit/scrape.js"],
+    },
   ];
 
   const jss = paths

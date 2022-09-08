@@ -29,7 +29,7 @@
   ],
   "externally_connectable": {
     "matches": [
-      "*://fantasy.espn.com/*"
+      "*://fantasy.espn.com/football/*"
     ]
   },
   "background": {
