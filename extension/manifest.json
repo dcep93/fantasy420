@@ -18,7 +18,7 @@
   ],
   "permissions": ["storage"],
   "externally_connectable": {
-    "matches": ["*://fantasy.espn.com/*"]
+    "matches": ["*://fantasy.espn.com/football/*"]
   },
   "background": {
     "service_worker": "background.js"
