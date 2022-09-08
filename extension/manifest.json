@@ -1,0 +1,27 @@
+{
+  "name": "Fantasy420",
+  "description": "Tools for fantasy football",
+  "version": "0.0.1",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["typescriptServices.js", "content_script.js"],
+      "all_frames": true
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": ["extensions/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "permissions": ["storage"],
+  "externally_connectable": {
+    "matches": ["*://fantasy.espn.com/*"]
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "manifest_version": 3
+}
