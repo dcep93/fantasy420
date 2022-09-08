@@ -73,7 +73,11 @@ function transform() {
     .then((promises) => Promise.all(promises))
     .then(saveData)
     .then((arrs) => arrs.flatMap((i) => i))
-    .then((es) => es.length && log(es));
+    .then((es) => es.length && console.log(es));
+}
+
+function saveData(passThrough) {
+  return save_to_storage(data).then(() => passThrough);
 }
 
 function transformPost(e, table) {
@@ -255,7 +259,7 @@ function loadPlayers() {
     )
     .then(Object.fromEntries)
     .then((playerBank) => (data.fetched = { playerBank, timestamp }))
-    .then(save_to_storage);
+    .then(saveData);
 }
 
 // chrome.storage.local.clear(run);
