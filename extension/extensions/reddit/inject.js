@@ -1,16 +1,23 @@
-const INTERVAL_MS = 100;
+const INTERVAL_MS = 1000;
+
+var data = undefined;
+var written = undefined;
 
 function main() {
-  return Promise.resolve()
-    .then(() => (chrome.runtime && run()) || console.log("no chrome runtime"))
+  return new Promise((resolve, reject) =>
+    chrome.runtime
+      ? get_from_storage()
+          .then((_data) => (data = _data))
+          .then(resolve)
+      : data !== undefined
+      ? resolve(data)
+      : reject("chrome.runtime not defined")
+  )
+    .then(inject)
     .then(() => setTimeout(main, INTERVAL_MS));
 }
 
-function run() {
-  return get_from_storage().then(inject);
-}
-
-function inject(data) {
+function inject() {
   const playerCard = document.getElementsByClassName("player-card-center")[0];
   if (!playerCard) return;
   var div = playerCard.getElementsByClassName("extension_div")[0];
@@ -42,9 +49,10 @@ function inject(data) {
             }">${title}</a></div></div>`
         )
         .join("\n");
-      if (div.innerHTML !== innerHTML) {
+      if (written !== innerHTML) {
         console.log(data);
         div.innerHTML = innerHTML;
+        written = innerHTML;
       }
     });
 }

@@ -1,33 +1,37 @@
-console.log("reddit", "content_script", location.href);
-const start = new Date().getTime();
+const INTERVAL_MS = 1000;
 
-function log(arg) {
-  console.log(arg);
-  return arg;
-}
+var data = undefined;
 
 function main() {
-  const f = location.href.startsWith("https://www.reddit.com")
-    ? transform
-    : inject;
-
-  chrome.storage.local.get(["data"], (result) => {
-    if (!data) console.log(`loaded ${JSON.stringify(result).length} bytes`);
-    data = result.data
-      ? result.data
-      : { posts: {}, players: {}, fetched: { timestamp: -1 } };
-    loadPlayers()
-      .then(f)
-      .then(() => setTimeout(main, 100));
-  });
+  return new Promise((resolve, reject) =>
+    chrome.runtime
+      ? get_from_storage()
+          .then(
+            (_data) =>
+              (data = _data || {
+                posts: {},
+                players: {},
+                fetched: { timestamp: -1 },
+              })
+          )
+          .then(resolve)
+      : data !== undefined
+      ? resolve(data)
+      : reject("chrome.runtime not defined")
+  )
+    .then(transform)
+    .then(() => setTimeout(main, INTERVAL_MS));
 }
 
-var data;
-
-function saveData(passThrough) {
-  return new Promise((resolve, reject) =>
-    chrome.storage.local.set({ data }, () => resolve(passThrough))
-  );
+function clean(str) {
+  return str
+    .toLowerCase()
+    .replaceAll(/\./g, "")
+    .replaceAll(/ jr\b/g, "")
+    .replaceAll(/ sr\b/g, "")
+    .replaceAll(/ i+\b/g, "")
+    .replaceAll(/\bgabe davis\b/g, "gabriel davis")
+    .replaceAll(/\bcmc\b/g, "christian mccaffrey");
 }
 
 function transform() {
@@ -194,17 +198,6 @@ function read(title, redditId, playersDiv, timestamp) {
     });
 }
 
-function clean(str) {
-  return str
-    .toLowerCase()
-    .replaceAll(/\./g, "")
-    .replaceAll(/ jr\b/g, "")
-    .replaceAll(/ sr\b/g, "")
-    .replaceAll(/ i+\b/g, "")
-    .replaceAll(/\bgabe davis\b/g, "gabriel davis")
-    .replaceAll(/\bcmc\b/g, "christian mccaffrey");
-}
-
 function updateHidden(e, redditId) {
   if (!location.href.includes("/comments/"))
     e.style.display = data.posts[redditId].hidden ? "none" : "";
@@ -237,37 +230,32 @@ function updatePlayers(playersDiv, redditId) {
 
 function loadPlayers() {
   const timestamp = new Date().getTime();
-  return new Promise((resolve, reject) => {
-    // 6 hours
-    if (data.fetched.timestamp > timestamp - 6 * 60 * 60 * 1000) {
-      resolve();
-      return;
+  // 6 hours
+  if (data.fetched.timestamp > timestamp - 6 * 60 * 60 * 1000)
+    return Promise.resolve();
+  console.log("fetching", data.fetched.timestamp);
+  return fetch(
+    "https://fantasy.espn.com/apis/v3/games/ffl/seasons/2022/players?scoringPeriodId=0&view=players_wl",
+    {
+      headers: {
+        "x-fantasy-filter": '{"filterActive":{"value":true}}',
+      },
     }
-    console.log("fetching", data.fetched.timestamp);
-    fetch(
-      "https://fantasy.espn.com/apis/v3/games/ffl/seasons/2022/players?scoringPeriodId=0&view=players_wl",
-      {
-        headers: {
-          "x-fantasy-filter": '{"filterActive":{"value":true}}',
-        },
-      }
-    )
-      .then((resp) => resp.json())
-      .then((resp) =>
-        resp.map(({ fullName, id, ownership }) => [
+  )
+    .then((resp) => resp.json())
+    .then((resp) =>
+      resp.map(({ fullName, id, ownership }) => [
+        id,
+        {
+          n: fullName,
           id,
-          {
-            n: fullName,
-            id,
-            o: ownership?.percentOwned,
-          },
-        ])
-      )
-      .then(Object.fromEntries)
-      .then((playerBank) => (data.fetched = { playerBank, timestamp }))
-      .then(saveData)
-      .then(resolve);
-  });
+          o: ownership?.percentOwned,
+        },
+      ])
+    )
+    .then(Object.fromEntries)
+    .then((playerBank) => (data.fetched = { playerBank, timestamp }))
+    .then(save_to_storage);
 }
 
 // chrome.storage.local.clear(run);
