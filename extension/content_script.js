@@ -17,7 +17,7 @@ async function execute() {
       jss: ["reddit/shared.js", "reddit/inject.js"],
     },
     {
-      p: /https:\/\/(www\.)?reddit\.com\/r\/fantasyfootball\/.*/,
+      p: /https:\/\/www\.reddit\.com\/r\/fantasyfootball\/.*/,
       jss: ["reddit/shared.js", "reddit/scrape.js"],
     },
   ];

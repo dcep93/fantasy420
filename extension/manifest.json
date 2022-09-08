@@ -18,7 +18,10 @@
   ],
   "permissions": ["storage"],
   "externally_connectable": {
-    "matches": ["*://fantasy.espn.com/football/*"]
+    "matches": [
+      "*://fantasy.espn.com/football/*",
+      "*://www.reddit.com/r/fantasyfootball/*"
+    ]
   },
   "background": {
     "service_worker": "background.js"
