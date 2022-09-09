@@ -15,4 +15,9 @@ chrome.runtime.onMessageExternal.addListener(function (
       chrome.storage.local.set(request.storage.save, () => sendResponse(true));
     }
   }
+  if (request.fetch) {
+    fetch(request.fetch.url)
+      .then((resp) => (request.fetch.json ? resp.json() : resp.text()))
+      .then(sendResponse);
+  }
 });

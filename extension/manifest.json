@@ -26,5 +26,6 @@
   "background": {
     "service_worker": "background.js"
   },
+  "host_permissions": ["https://sportsbook-us-ny.draftkings.com/*"],
   "manifest_version": 3
 }
