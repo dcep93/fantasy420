@@ -1,5 +1,7 @@
 console.log("background");
 
+const fetch_cache = {};
+
 chrome.runtime.onMessageExternal.addListener(function (
   request,
   _,
@@ -16,8 +18,16 @@ chrome.runtime.onMessageExternal.addListener(function (
     }
   }
   if (request.fetch) {
+    const cached = fetch_cache[request.fetch.url];
+    const now = Date.now();
+    if (now - cached?.timestamp < request.fetch.maxAgeMs)
+      return Promise.resolve(cached.response);
     fetch(request.fetch.url)
       .then((resp) => (request.fetch.json ? resp.json() : resp.text()))
+      .then((resp) => {
+        fetch_cache[request.fetch.url] = { timestamp: now, resp };
+        return resp;
+      })
       .then(sendResponse);
   }
 });
