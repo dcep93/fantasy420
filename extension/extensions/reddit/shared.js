@@ -10,8 +10,7 @@ function do_send_message(payload) {
 
 function get_from_storage() {
   return _do_storage({ action: "get", keys: ["reddit"] }).then((response) => {
-    if (response?.reddit) return response.reddit;
-    throw new Error(response);
+    return response?.reddit || {};
   });
 }
 
