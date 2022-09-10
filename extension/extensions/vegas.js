@@ -100,7 +100,7 @@
     return new Promise((resolve) =>
       chrome.runtime.sendMessage(
         extension_id,
-        { fetch: { url, json: true } },
+        { fetch: { url, maxAgeMs, json: true } },
         function (response) {
           resolve(response);
         }
