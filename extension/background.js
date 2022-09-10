@@ -21,8 +21,8 @@ chrome.runtime.onMessageExternal.addListener(function (
     const cached = fetch_cache[request.fetch.url];
     const now = Date.now();
     if (now - cached?.timestamp < request.fetch.maxAgeMs)
-      return Promise.resolve(cached.response);
-    fetch(request.fetch.url)
+      return sendResponse(cached.resp);
+    return fetch(request.fetch.url)
       .then((resp) => (request.fetch.json ? resp.json() : resp.text()))
       .then((resp) => {
         fetch_cache[request.fetch.url] = { timestamp: now, resp };

@@ -8,6 +8,11 @@
 
   var data = undefined;
 
+  function log(val) {
+    console.log(val);
+    return val;
+  }
+
   function main() {
     return new Promise((resolve, reject) =>
       chrome.runtime
@@ -44,7 +49,7 @@
       )
       .then((promises) => Promise.all(promises))
       .then((events) =>
-        events.map(({ event, eventCategories }) =>
+        events.flatMap(({ event, eventCategories }) =>
           eventCategories.flatMap(({ name, componentizedOffers }) =>
             componentizedOffers.flatMap(({ offers }) =>
               offers
@@ -69,7 +74,6 @@
   }
 
   function inject(events) {
-    console.log(events);
     return Promise.resolve()
       .then(() => document.getElementsByClassName("player-column__bio"))
       .then(Array.from)
@@ -80,17 +84,21 @@
           .map((a) => ({ a, name: a.innerText }))
       )
       .then((arr) =>
-        arr.map(({ a, name }) =>
-          getOdds(name, events).then((json) => ({ a, name, json }))
-        )
+        arr.map(({ name, ...o }) => ({
+          name,
+          raw: getRaw(name, events),
+          ...o,
+        }))
       )
-      .then((arr) =>
-        arr.map(({ a, json }) => (a.title = JSON.stringify(json, null, 2)))
-      );
+      .then((arr) => arr.map(({ a, raw }) => (a.title = getTitle(raw))));
   }
 
-  function getOdds(name, events) {
+  function getRaw(name, events) {
     return events.filter(({ participant }) => name === participant);
+  }
+
+  function getTitle(raw) {
+    return JSON.stringify(raw, null, 2);
   }
 
   function fetchC(url, maxAgeMs) {
