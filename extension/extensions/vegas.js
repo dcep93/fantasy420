@@ -94,14 +94,24 @@
   }
 
   function getRaw(player_name, events) {
-    return events
-      .filter(({ sublabel }) => sublabel === "Over")
-      .filter(({ name }) => name !== "Popular")
-      .filter((event) => JSON.stringify(event).includes(player_name))
-      .map(({ label, line }) => `${label}: ${line}`);
+    return (
+      events
+        // .filter(({ sublabel }) => sublabel === "Over")
+        .filter(({ name }) => name !== "Popular")
+        .filter((event) => JSON.stringify(event).includes(player_name))
+        .map(({ eventName, ...event }) => JSON.stringify(event))
+        .filter(
+          (str) =>
+            !str.includes("Touchdown") &&
+            !str.includes("TD") &&
+            !str.includes(" v ")
+        )
+      // .map(({ label, line }) => `${label}: ${line}`)
+    );
   }
 
   function getTitle(raw) {
+    return raw.join("\n");
     return JSON.stringify(raw, null, 2);
   }
 
