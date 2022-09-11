@@ -95,12 +95,9 @@
 
   function getRaw(player_name, events) {
     return events
-      .filter(
-        ({ participant, sublabel, name }) =>
-          name !== "Popular" &&
-          sublabel === "Over" &&
-          player_name === participant
-      )
+      .filter(({ sublabel }) => sublabel === "Over")
+      .filter(({ name }) => name !== "Popular")
+      .filter((event) => JSON.stringify(event).includes(player_name))
       .map(({ label, line }) => `${label}: ${line}`);
   }
 
