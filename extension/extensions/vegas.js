@@ -30,7 +30,7 @@
   function vegas() {
     return fetchC(
       "https://sportsbook-us-ny.draftkings.com//sites/US-NY-SB/api/v5/eventgroups/88808?format=json",
-      12 * 60 * 60 * 1000
+      12 * 60 * 60 * 1000 // 12 hours
     )
       .then(({ eventGroup }) => eventGroup)
       .then(({ events }) =>
@@ -43,7 +43,7 @@
         events.map(({ eventId }) =>
           fetchC(
             `https://sportsbook-us-ny.draftkings.com//sites/US-NY-SB/api/v3/event/${eventId}?format=json`,
-            15 * 60 * 1000
+            15 * 60 * 1000 // 15 minutes
           )
         )
       )
@@ -93,8 +93,15 @@
       .then((arr) => arr.map(({ a, raw }) => (a.title = getTitle(raw))));
   }
 
-  function getRaw(name, events) {
-    return events.filter(({ participant }) => name === participant);
+  function getRaw(player_name, events) {
+    return events
+      .filter(
+        ({ participant, sublabel, name }) =>
+          name !== "Popular" &&
+          sublabel === "Over" &&
+          player_name === participant
+      )
+      .map(({ label, line }) => `${label}: ${line}`);
   }
 
   function getTitle(raw) {
