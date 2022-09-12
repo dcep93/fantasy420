@@ -8,11 +8,6 @@
 
   var data = undefined;
 
-  function log(val) {
-    console.log(val);
-    return val;
-  }
-
   function main() {
     return new Promise((resolve, reject) =>
       chrome.runtime
@@ -109,6 +104,8 @@
     // .map(({ label, line }) => `${label}: ${line}`)
   }
 
+  // -numpy.log2((1 - x)) / numpy.log2(numpy.e)
+
   function getTitle(raw) {
     return raw.join("\n");
     return JSON.stringify(raw, null, 2);
@@ -122,9 +119,7 @@
       chrome.runtime.sendMessage(
         extension_id,
         { fetch: { url, maxAgeMs, json: true } },
-        function (response) {
-          resolve(response);
-        }
+        resolve
       )
     ).then((json) => {
       cache[url] = { timestamp: now, json };
