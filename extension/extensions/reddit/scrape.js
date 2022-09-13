@@ -3,17 +3,25 @@
 
   var data = undefined;
 
+  function log(t) {
+    console.log("log", t);
+    return t;
+  }
+
   function main() {
     return new Promise((resolve, reject) =>
       chrome.runtime
         ? get_from_storage()
             .then(
               (_data) =>
-                (data = _data || {
-                  posts: {},
-                  players: {},
-                  fetched: { timestamp: -1 },
-                })
+                (data =
+                  _data && _data.players
+                    ? _data
+                    : {
+                        posts: {},
+                        players: {},
+                        fetched: { timestamp: -1 },
+                      })
             )
             .then(resolve)
         : data !== undefined
@@ -40,7 +48,7 @@
       .then(() => document.getElementsByClassName("sitetable"))
       .then(Array.from)
       .then((tables) =>
-        tables.map((table) =>
+        tables.flatMap((table) =>
           Promise.resolve(table)
             .then((table) => table.children)
             .then(Array.from)
@@ -68,13 +76,11 @@
                 })
                 .map((e) => transformPost(e, table))
             )
-            .then((promises) => Promise.all(promises))
         )
       )
       .then((promises) => Promise.all(promises))
       .then(saveData)
-      .then((arrs) => arrs.flatMap((i) => i))
-      .then((es) => es.length && console.log(es));
+      .then((es) => es.length && console.log("es", es));
   }
 
   function saveData(passThrough) {
