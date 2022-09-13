@@ -77,15 +77,20 @@
           .map((bio) => bio.getElementsByTagName("a")[0])
           .filter(Boolean)
           .map((a) => ({ a, name: a.innerText }))
-      )
-      .then((arr) =>
-        arr.map(({ name, ...o }) => ({
-          name,
-          raw: getRaw(name, events),
-          ...o,
-        }))
-      )
-      .then((arr) => arr.map(({ a, raw }) => (a.title = getTitle(raw))));
+          .map(({ name, ...o }) => ({
+            name,
+            raw: getRaw(name, events),
+            ...o,
+          }))
+          .map(({ raw, ...o }) => ({
+            title: getTitle(raw),
+            ...o,
+          }))
+          .filter(({ title, a }) => a.title !== title)
+          .forEach(({ title, a }) => {
+            a.title = title;
+          })
+      );
   }
 
   function getRaw(player_name, events) {
@@ -93,7 +98,7 @@
       .filter(({ sublabel }) => sublabel !== "Under")
       .filter(({ name }) => name !== "Popular")
       .filter((event) => JSON.stringify(event).includes(player_name))
-      .map(({ eventName, ...event }) => JSON.stringify(Object.values(event)))
+      .map(({ ...event }) => JSON.stringify(Object.values(event)))
       .filter(
         (str) =>
           //
@@ -119,7 +124,7 @@
       chrome.runtime.sendMessage(
         extension_id,
         { fetch: { url, maxAgeMs, json: true } },
-        resolve
+        (response) => resolve(response)
       )
     ).then((json) => {
       cache[url] = { timestamp: now, json };
