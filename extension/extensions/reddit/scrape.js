@@ -3,11 +3,6 @@
 
   var data = undefined;
 
-  function log(t) {
-    console.log("log", t);
-    return t;
-  }
-
   function main() {
     return new Promise((resolve, reject) =>
       chrome.runtime
@@ -28,6 +23,7 @@
         ? resolve(data)
         : reject("chrome.runtime not defined")
     )
+      .then(loadPlayers)
       .then(transform)
       .then(() => setTimeout(main, INTERVAL_MS));
   }
@@ -48,7 +44,7 @@
       .then(() => document.getElementsByClassName("sitetable"))
       .then(Array.from)
       .then((tables) =>
-        tables.flatMap((table) =>
+        tables.map((table) =>
           Promise.resolve(table)
             .then((table) => table.children)
             .then(Array.from)
@@ -76,11 +72,11 @@
                 })
                 .map((e) => transformPost(e, table))
             )
+            .then((promises) => Promise.all(promises))
         )
       )
       .then((promises) => Promise.all(promises))
-      .then(saveData)
-      .then((es) => es.length && console.log("es", es));
+      .then(saveData);
   }
 
   function saveData(passThrough) {
@@ -102,6 +98,7 @@
       e.getElementsByClassName("comments")[0]?.innerText
     } - ${redditId}`;
     controls.onclick = () => {
+      if (!data.posts[redditId]) data.posts[redditId] = {};
       console.log(`toggling ${redditId} ${data.posts[redditId].hidden}`);
       data.posts[redditId].hidden = !data.posts[redditId].hidden;
       updateHidden(e, redditId);
@@ -109,7 +106,6 @@
     };
     wrapper.appendChild(controls);
 
-    console.log(e);
     const timestamp = e.getElementsByTagName("time")[0].title;
 
     const postTitle = e.querySelector("a.title").innerText;
@@ -152,6 +148,8 @@
                 console.log(`adding ${p.id} to ${redditId}`);
                 boxplayers.replaceChildren();
                 box.value = "";
+                if (!data.posts[redditId].players)
+                  data.posts[redditId].players = {};
                 data.posts[redditId].players[p.id] = new Date().getTime();
                 data.players[p.id] = Object.assign(data.players[p.id] || {}, {
                   [redditId]: {
@@ -189,26 +187,25 @@
       .then(Object.fromEntries)
       .then((players) => {
         data.posts[redditId] = { players };
-        Promise.resolve(players)
-          .then(Object.keys)
-          .then((p) =>
-            p.map(
-              (playerId) =>
-                (data.players[playerId] = Object.assign(
-                  data.players[playerId] || {},
-                  {
-                    [redditId]: {
-                      redditId,
-                      title,
-                      timestamp,
-                    },
-                  }
-                ))
-            )
-          )
-          .then((ps) => Promise.all(ps))
-          .then(() => updatePlayers(playersDiv, redditId));
-      });
+        return players;
+      })
+      .then(Object.keys)
+      .then((p) =>
+        p.map(
+          (playerId) =>
+            (data.players[playerId] = Object.assign(
+              data.players[playerId] || {},
+              {
+                [redditId]: {
+                  redditId,
+                  title,
+                  timestamp,
+                },
+              }
+            ))
+        )
+      )
+      .then(() => updatePlayers(playersDiv, redditId));
   }
 
   function updateHidden(e, redditId) {
