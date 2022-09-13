@@ -100,7 +100,9 @@
   }
 
   function getRaw(player_name, events) {
-    if (player_name.endsWith("D/ST")) return [];
+    if (player_name.endsWith("D/ST")) {
+      return [];
+    }
     return events
       .filter(({ sublabel }) => sublabel !== "Under")
       .filter(({ name }) => name !== "Popular")
@@ -115,6 +117,9 @@
     var scores = {
       passing: raw.find(
         ({ label, participant }) => label === `${participant} Passing Yards`
+      )?.line,
+      interceptions: raw.find(
+        ({ label, participant }) => label === `${participant} Interceptions`
       )?.line,
       passingTd: raw.find(
         ({ label, participant }) =>
@@ -139,6 +144,7 @@
     );
     scores.score = (
       (6 * scores.touchdowns || 0) +
+      (-2 * scores.interceptions || 0) +
       (4 * scores.passingTd || 0) +
       (0.04 * scores.passing || 0) +
       (0.1 * scores.rushing || 0) +
