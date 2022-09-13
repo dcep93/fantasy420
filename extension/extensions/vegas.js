@@ -82,38 +82,84 @@
             raw: getRaw(name, events),
             ...o,
           }))
+          .filter(({ raw }) => raw.length > 0)
           .map(({ raw, ...o }) => ({
-            title: getTitle(raw),
+            scores: getScores(raw),
+            ...o,
+          }))
+          .map(({ scores, ...o }) => ({
+            title: getTitle(scores),
             ...o,
           }))
           .filter(({ title, a }) => a.title !== title)
           .forEach(({ title, a }) => {
+            a.style.backgroundColor = "lightgreen";
             a.title = title;
           })
       );
   }
 
   function getRaw(player_name, events) {
+    if (player_name.endsWith("D/ST")) return [];
     return events
       .filter(({ sublabel }) => sublabel !== "Under")
       .filter(({ name }) => name !== "Popular")
-      .filter((event) => JSON.stringify(event).includes(player_name))
-      .map(({ ...event }) => JSON.stringify(Object.values(event)))
-      .filter(
-        (str) =>
-          //
-          // !str.includes("Touchdown") &&
-          // !str.includes("TD") &&
-          !str.includes(" v ")
+      .filter(({ participant, sublabel }) =>
+        [participant, sublabel].includes(player_name)
       );
-    // .map(({ label, line }) => `${label}: ${line}`)
   }
 
-  // -numpy.log2((1 - x)) / numpy.log2(numpy.e)
+  function getScores(raw) {
+    const firstEvent = raw[0].eventName;
+    raw = raw.filter(({ eventName }) => eventName === firstEvent);
+    var scores = {
+      passing: raw.find(
+        ({ label, participant }) => label === `${participant} Passing Yards`
+      )?.line,
+      passingTd: raw.find(
+        ({ label, participant }) =>
+          label === `${participant} Passing Touchdowns`
+      )?.line,
+      rushing: raw.find(
+        ({ label, participant }) => label === `${participant} Rushing Yards`
+      )?.line,
+      receiving: raw.find(
+        ({ label, participant }) => label === `${participant} Receiving Yards`
+      )?.line,
+      receptions: raw.find(
+        ({ label, participant }) => label === `${participant} Receptions`
+      )?.line,
+      touchdowns: getTouchdowns(
+        raw.find(({ label }) => label === "Anytime Touchdown Scorer")
+          ?.oddsFractional
+      ),
+    };
+    scores = Object.fromEntries(
+      Object.entries(scores).filter(([_, val]) => val)
+    );
+    scores.score = (
+      (6 * scores.touchdowns || 0) +
+      (4 * scores.passingTd || 0) +
+      (0.04 * scores.passing || 0) +
+      (0.1 * scores.rushing || 0) +
+      (0.1 * scores.receiving || 0) +
+      (scores.receptions || 0)
+    ).toFixed(2);
+    return scores;
+  }
+
+  function getTouchdowns(oddsFractional) {
+    if (!oddsFractional) return 0;
+    const [a, b] = oddsFractional.split("/").map((i) => parseInt(i));
+    const prob = b / (a + b);
+    const touchdowns = -Math.log(1 - prob);
+    return parseFloat(touchdowns.toFixed(2));
+  }
 
   function getTitle(raw) {
-    return raw.join("\n");
-    return JSON.stringify(raw, null, 2);
+    return Object.entries(raw)
+      .map(([key, val]) => `${key}: ${val}`)
+      .join("\n");
   }
 
   function fetchC(url, maxAgeMs) {
