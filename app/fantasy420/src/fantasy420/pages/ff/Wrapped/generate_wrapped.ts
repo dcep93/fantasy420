@@ -7,7 +7,7 @@ import {
   WrappedType,
 } from ".";
 
-function generateWrapped() {
+export default function generate_wrapped() {
   const year = 2021;
   const leagueIds = ["67201591", "203836968"];
   const numWeeks = 17;
@@ -229,5 +229,3 @@ function generateWrapped() {
     .then(Object.fromEntries)
     .then((allWrapped) => console.log(JSON.stringify(allWrapped)));
 }
-
-export default generateWrapped;
