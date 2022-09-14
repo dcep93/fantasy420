@@ -51,13 +51,13 @@
                 .flatMap((offers) => offers)
                 .flatMap(({ label, outcomes }) =>
                   outcomes.flatMap(
-                    ({ participant, line, oddsFractional, ...outcome }) => ({
+                    ({ participant, line, oddsDecimal, ...outcome }) => ({
                       eventName: event.name,
                       name,
                       label,
                       participant,
                       line,
-                      oddsFractional,
+                      oddsDecimal,
                       sublabel: outcome.label,
                     })
                   )
@@ -65,7 +65,8 @@
             )
           )
         )
-      );
+      )
+      .then((events) => (data === undefined && console.log(events)) || events);
   }
 
   function inject(events) {
@@ -136,8 +137,11 @@
       )?.line,
       touchdowns: getTouchdowns(
         raw.find(({ label }) => label === "Anytime Touchdown Scorer")
-          ?.oddsFractional
+          ?.oddsDecimal
       ),
+      fieldGoals: raw.find(
+        ({ label, participant }) => label === `${participant} Field Goal Made`
+      )?.line,
     };
     scores = Object.fromEntries(
       Object.entries(scores).filter(([_, val]) => val)
@@ -149,15 +153,14 @@
       (0.04 * scores.passing || 0) +
       (0.1 * scores.rushing || 0) +
       (0.1 * scores.receiving || 0) +
-      (scores.receptions || 0)
+      (scores.receptions || 0) +
+      (3 * scores.fieldGoals || 0)
     ).toFixed(2);
     return scores;
   }
 
-  function getTouchdowns(oddsFractional) {
-    if (!oddsFractional) return 0;
-    const [a, b] = oddsFractional.split("/").map((i) => parseInt(i));
-    const prob = b / (a + b);
+  function getTouchdowns(oddsDecimal) {
+    const prob = (oddsDecimal / (1 + oddsDecimal)) * 1.1;
     const touchdowns = -Math.log(1 - prob);
     return parseFloat(touchdowns.toFixed(2));
   }
