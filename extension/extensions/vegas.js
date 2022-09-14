@@ -89,11 +89,13 @@
             ...o,
           }))
           .map(({ scores, ...o }) => ({
+            scores,
             title: getTitle(scores),
             ...o,
           }))
           .filter(({ title, a }) => a.title !== title)
-          .forEach(({ title, a }) => {
+          .forEach(({ scores, title, a }) => {
+            a.innerText = `(${scores.score}) ${a.innerText}`;
             a.style.backgroundColor = "lightgreen";
             a.title = title;
           })
