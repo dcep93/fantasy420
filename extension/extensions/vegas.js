@@ -162,7 +162,7 @@
   }
 
   function getTouchdowns(oddsDecimal) {
-    const prob = (oddsDecimal / (1 + oddsDecimal)) * 1.1;
+    const prob = (1 / oddsDecimal) * 1.1;
     const touchdowns = -Math.log(1 - prob);
     return parseFloat(touchdowns.toFixed(2));
   }
