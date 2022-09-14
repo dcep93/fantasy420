@@ -1,13 +1,14 @@
-import Catalog from "../../Catalog";
-import wrapped from "../wrapped";
-import draft from "./Draft";
-import Horoscope from "./Horoscope";
-import sos from "./Sos";
-import Value from "./Value";
-
 import { BrowserRouter } from "react-router-dom";
 
-const pages = { sos, draft, wrapped, Horoscope, Value };
+import Catalog from "../../Catalog";
+import Draft from "./Draft";
+import Horoscope from "./Horoscope";
+import Peaked from "./Peaked";
+import Sos from "./Sos";
+import Value from "./Value";
+import Wrapped from "./Wrapped";
+
+const pages = { Sos, Draft, Wrapped, Horoscope, Value, Peaked };
 
 function index() {
   return (

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import generateWrapped from "./generate_wrapped";
+import generate_wrapped from "./generate_wrapped";
 import css from "./index.module.css";
 import all_data from "./wrapped.json";
 
@@ -16,7 +16,7 @@ enum Position {
 
 function Wrapped() {
   document.title = "Fantasy Wrapped";
-  console.log(`(${generateWrapped.toString().replaceAll("\n", "")})()`);
+  console.log(`(${generate_wrapped.toString().replaceAll("\n", "")})()`);
   const [toRenderKey, update] = useState("");
   const [searchParams] = useSearchParams();
   const leagueId = searchParams.get("league_id") || 203836968;
