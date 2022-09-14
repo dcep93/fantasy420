@@ -15,13 +15,16 @@ function parse(data: string): ValuesType {
 
 class SubPeaked extends React.Component<{}, { values: ValuesType }> {
   componentDidMount(): void {
-    fetch("https://proxy420.appspot.com/", {
-      method: "POST",
-      body: JSON.stringify({ url, maxAgeMs: 10 * 60 * 1000 }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+    (window.location.href.startsWith("http://localhost:")
+      ? fetch(url)
+      : fetch("https://proxy420.appspot.com/", {
+          method: "POST",
+          body: JSON.stringify({ url, maxAgeMs: 10 * 60 * 1000 }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+    )
       .then((resp) => resp.text())
       .then(parse)
       .then((values) => this.setState({ values }));
