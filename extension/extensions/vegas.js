@@ -136,6 +136,9 @@
   function getScores(raw) {
     const firstEvent = raw[0].eventName;
     raw = raw.filter(({ eventName }) => eventName === firstEvent);
+    const touchdownOdds = raw.find(
+      ({ label }) => label === "Anytime Touchdown Scorer"
+    )?.oddsDecimal;
     var scores = {
       passing: raw.find(
         ({ label, participant }) => label === `${participant} Passing Yards`
@@ -156,10 +159,8 @@
       receptions: raw.find(
         ({ label, participant }) => label === `${participant} Receptions`
       )?.line,
-      touchdowns: getTouchdowns(
-        raw.find(({ label }) => label === "Anytime Touchdown Scorer")
-          ?.oddsDecimal
-      ),
+      touchdowns: getTouchdowns(touchdownOdds),
+      touchdownOdds: touchdownOdds && ((1 / touchdownOdds) * 1.1).toFixed(2),
       fieldGoals: raw.find(
         ({ label, participant }) => label === `${participant} Field Goal Made`
       )?.line,
