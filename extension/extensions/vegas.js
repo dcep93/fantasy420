@@ -77,13 +77,21 @@
         arr
           .map((bio) => bio.getElementsByTagName("a")[0])
           .filter(Boolean)
-          .map((a) => ({ a, name: a.innerText }))
+          .map((a) => ({ a, name: getName(a) }))
           .map(({ name, ...o }) => ({
             name,
             raw: getRaw(name, events),
             ...o,
           }))
-          .filter(({ raw }) => raw.length > 0)
+          .filter(({ a, name, raw }) => {
+            if (raw.length > 0) return true;
+            if (a.innerText !== name) {
+              a.innerText = name;
+              a.style.backgroundColor = "";
+              a.title = name;
+            }
+            return false;
+          })
           .map(({ raw, ...o }) => ({
             scores: getScores(raw),
             ...o,
@@ -94,12 +102,22 @@
             ...o,
           }))
           .filter(({ title, a }) => a.title !== title)
-          .forEach(({ scores, title, a }) => {
-            a.innerText = `(${scores.score}) ${a.innerText}`;
+          .forEach(({ name, scores, title, a }) => {
+            a.setAttribute("fantasy420_name", name);
+            a.innerText = `(${scores.score}) ${name}`;
             a.style.backgroundColor = "lightgreen";
             a.title = title;
           })
       );
+  }
+
+  function getName(a) {
+    const grandparent = a.parentElement.parentElement;
+    if (grandparent.classList.contains("player-column__athlete"))
+      return grandparent.title;
+    const name = a.getAttribute("fantasy420_name");
+    if (name) return name;
+    return a.innerText;
   }
 
   function getRaw(player_name, events) {
@@ -109,6 +127,7 @@
     return events
       .filter(({ sublabel }) => sublabel !== "Under")
       .filter(({ name }) => name !== "Popular")
+      .filter(({ name }) => name !== "H2H Player Matchups")
       .filter(({ participant, sublabel }) =>
         [participant, sublabel].includes(player_name)
       );
