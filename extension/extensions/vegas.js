@@ -236,7 +236,11 @@
       .then((vegas) => {
         toPersist.forEach(({ name, startDate, scores }) => {
           if (!vegas[name]) vegas[name] = {};
-          vegas[name][startDate] = scores;
+          vegas[name][startDate] = {
+            date: new Date().toLocaleString(),
+            ...scores,
+          };
+          console.log(name, vegas[name]);
         });
         return vegas;
       })
