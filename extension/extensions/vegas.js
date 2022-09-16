@@ -8,6 +8,8 @@
 
   var data = undefined;
 
+  var saved = undefined;
+
   function main() {
     return new Promise((resolve, reject) =>
       chrome.runtime
@@ -52,6 +54,7 @@
                 .flatMap(({ label, outcomes }) =>
                   outcomes.flatMap(
                     ({ participant, line, oddsDecimal, ...outcome }) => ({
+                      startDate: event.startDate,
                       eventName: event.name,
                       name,
                       label,
@@ -93,6 +96,7 @@
             return false;
           })
           .map(({ raw, ...o }) => ({
+            raw,
             scores: getScores(raw),
             ...o,
           }))
@@ -102,13 +106,15 @@
             ...o,
           }))
           .filter(({ title, a }) => a.title !== title)
-          .forEach(({ name, scores, title, a }) => {
+          .map(({ name, scores, title, raw, a }) => {
             a.setAttribute("fantasy420_name", name);
             a.innerText = `(${scores.score}) ${name}`;
             a.style.backgroundColor = "lightgreen";
             a.title = title;
+            return { startDate: raw[0].startDate, name, scores };
           })
-      );
+      )
+      .then(persist);
   }
 
   function getName(a) {
@@ -207,6 +213,45 @@
       cache[url] = { timestamp: now, json };
       return json;
     });
+  }
+
+  function persist(toPersist) {
+    if (!chrome.runtime) return;
+    const toSave = JSON.stringify(toPersist);
+    if (toSave === saved) return;
+    saved = toSave;
+
+    const extension_id = "codiminongikfnidmdkpmeigapidedgn";
+
+    return new Promise((resolve) =>
+      chrome.runtime.sendMessage(
+        extension_id,
+        { storage: { action: "get", keys: ["vegas"] } },
+        function (response) {
+          resolve(response);
+        }
+      )
+    )
+      .then((response) => response.vegas || {})
+      .then((vegas) => {
+        toPersist.forEach(({ name, startDate, scores }) => {
+          if (!vegas[name]) vegas[name] = {};
+          vegas[name][startDate] = scores;
+        });
+        return vegas;
+      })
+      .then(
+        (vegas) =>
+          new Promise((resolve) =>
+            chrome.runtime.sendMessage(
+              extension_id,
+              { storage: { action: "save", save: { vegas } } },
+              function (response) {
+                resolve(response);
+              }
+            )
+          )
+      );
   }
 
   main();
