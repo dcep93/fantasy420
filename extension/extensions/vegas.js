@@ -135,7 +135,9 @@
       .filter(({ name }) => name !== "Popular")
       .filter(({ name }) => name !== "H2H Player Matchups")
       .filter(({ participant, sublabel }) =>
-        [participant, sublabel].includes(player_name)
+        [participant, sublabel]
+          .map((name) => name?.replace("Gabriel Davis", "Gabe Davis"))
+          .includes(player_name)
       );
   }
 
@@ -223,6 +225,8 @@
 
     const extension_id = "codiminongikfnidmdkpmeigapidedgn";
 
+    const now = new Date();
+
     return new Promise((resolve) =>
       chrome.runtime.sendMessage(
         extension_id,
@@ -234,14 +238,16 @@
     )
       .then((response) => response.vegas || {})
       .then((vegas) => {
-        toPersist.forEach(({ name, startDate, scores }) => {
-          if (!vegas[name]) vegas[name] = {};
-          vegas[name][startDate] = {
-            date: new Date().toLocaleString(),
-            ...scores,
-          };
-          console.log(name, vegas[name]);
-        });
+        toPersist
+          .filter(({ startDate }) => now < new Date(startDate))
+          .forEach(({ name, startDate, scores }) => {
+            if (!vegas[name]) vegas[name] = {};
+            vegas[name][startDate] = {
+              date: new Date().toLocaleString(),
+              ...scores,
+            };
+            console.log(name, vegas[name]);
+          });
         return vegas;
       })
       .then(
