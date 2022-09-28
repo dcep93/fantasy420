@@ -18,6 +18,8 @@ RUN apt install -y tesseract-ocr
 
 RUN apt-get install ffmpeg libsm6 libxext6  -y
 
+RUN pip3 install pydantic
+
 COPY . ./
 
 ENTRYPOINT python3 generate.py

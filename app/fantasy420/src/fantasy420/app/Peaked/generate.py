@@ -1,22 +1,58 @@
 #! python3
 
-# docker build -q . | xargs docker run --rm > generated.txt
+# docker build -q . | xargs docker run --rm | tee generated.json
 
+import json
+
+from pydantic import BaseModel
+import typing
 import requests
 
 import cv2
 import numpy
 import pytesseract
 
-url = "https://i0.wp.com/peakedinhighskool.com/wp-content/uploads/2022/09/1QB1.0PPR4pt_20220927.png?w=1790&ssl=1"
+year = 2022
+league_id = 203836968
+peaked_url = '''
+https://i0.wp.com/peakedinhighskool.com/wp-content/uploads/2022/09/1QB1.0PPR4pt_20220927.png?w=1790&ssl=1
+'''
+teams_url = f"https://fantasy.espn.com/apis/v3/games/ffl/seasons/{year}/segments/0/leagues/{league_id}?view=mRoster&view=mTeam"
+
+
+class Team(BaseModel):
+    name: str
+    players: typing.List[str]
 
 
 def main():
-    raw = requests.get(url).content
+    peaked = get_peaked()
+    teams = get_teams()
+    dumped = json.dumps({"peaked": peaked, "teams": teams})
+    print(dumped)
+
+
+def get_peaked() -> str:
+    raw = requests.get(peaked_url).content
     data = numpy.frombuffer(raw, dtype='uint8')
     image = cv2.imdecode(data, cv2.IMREAD_GRAYSCALE)
     text = pytesseract.image_to_string(image, config='--psm 6')
-    print(text)
+    return text
+
+
+def get_teams() -> typing.List[Team]:
+    raw = requests.get(teams_url).json()
+    return [get_team(i) for i in raw["teams"]]
+
+
+def get_team(t: typing.Dict[str, typing.Any]) -> Team:
+    return Team(
+        name=f'{t["location"]} {t["nickname"]}',
+        players=[
+            i["playerPoolEntry"]["player"]["fullName"]
+            for i in t["roster"]["entries"]
+        ],
+    )
 
 
 if __name__ == "__main__":
