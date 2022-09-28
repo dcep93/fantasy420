@@ -28,7 +28,7 @@ class Team(BaseModel):
 def main():
     peaked = get_peaked()
     teams = get_teams()
-    dumped = json.dumps({"peaked": peaked, "teams": teams})
+    dumped = json.dumps({"peaked": peaked, "teams": teams}, indent=2)
     print(dumped)
 
 
