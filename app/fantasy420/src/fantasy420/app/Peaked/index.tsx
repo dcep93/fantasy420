@@ -9,18 +9,23 @@ export default function Peaked() {
   const teams = generated.teams
     .map((team) => ({
       ...team,
-      players: team.players.map((player) => ({
-        name: player,
-        ...parsed[player],
-      })),
+      players: team.players
+        .map((player) => ({
+          name: player,
+          ...parsed[player],
+        }))
+        .sort((a, b) => b.value - a.value),
     }))
     .map((team) => ({
       ...team,
-      score: team.players.map(({ value }) => value).reduce((a, b) => a + b, 0),
+      score: team.players
+        .map(({ value }) => value || 0)
+        .reduce((a, b) => a + b, 0),
     }))
     .sort((a, b) => b.score - a.score);
   return (
     <div>
+      <h1>{generated.peaked.lines[0]}</h1>
       <div style={{ width: "100vw", display: "flex" }}>
         {teams.map((team, i) => (
           <div key={i}>
@@ -46,11 +51,24 @@ export default function Peaked() {
                   {team.name} ({team.score})
                 </div>
               </div>
-              {team.players.map((player, j) => (
-                <div key={j}>
-                  {player.name} {player.value} {player.tier}
-                </div>
-              ))}
+              <table style={{ whiteSpace: "nowrap" }}>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Value</th>
+                    <th>Tier</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {team.players.map((player, j) => (
+                    <tr key={j}>
+                      <td>{player.name}</td>
+                      <td>{player.value}</td>
+                      <td>{player.tier}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         ))}
@@ -67,8 +85,21 @@ export default function Peaked() {
   );
 }
 
-function parse(lines: string[]): {
-  [name: string]: { value: number; tier: number };
-} {
-  return {};
+type ParsedType = { [name: string]: { value: number; tier: number } };
+function parse(lines: string[]): ParsedType {
+  const parsed: ParsedType = {};
+  var tier = undefined;
+  for (let i = 0; i < lines.length; i++) {
+    let [v, words] = lines[i].split(" ");
+    if (v === "Tier") {
+      tier = parseInt(words[0]);
+    } else if (tier !== undefined) {
+      const value = parseFloat(v);
+      if (!isNaN(value)) {
+        const name_parts = ["Austin Ekeler"];
+        parsed[name_parts.join(" ")] = { value, tier };
+      }
+    }
+  }
+  return parsed;
 }
