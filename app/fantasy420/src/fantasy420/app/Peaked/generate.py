@@ -16,7 +16,7 @@ year = 2022
 league_id = 203836968
 peaked_url = '''
 https://i0.wp.com/peakedinhighskool.com/wp-content/uploads/2022/09/1QB1.0PPR4pt_20220927.png?w=1790&ssl=1
-'''
+'''.strip()
 teams_url = f"https://fantasy.espn.com/apis/v3/games/ffl/seasons/{year}/segments/0/leagues/{league_id}?view=mRoster&view=mTeam"
 
 
@@ -37,7 +37,8 @@ def get_peaked() -> str:
     data = numpy.frombuffer(raw, dtype='uint8')
     image = cv2.imdecode(data, cv2.IMREAD_GRAYSCALE)
     text = pytesseract.image_to_string(image, config='--psm 6')
-    return {"url": peaked_url, "text": text}
+    lines = text.split("\n")
+    return {"url": peaked_url, "lines": lines}
 
 
 def get_teams() -> typing.List[Team]:
