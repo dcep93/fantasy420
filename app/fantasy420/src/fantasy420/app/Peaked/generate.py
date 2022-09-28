@@ -3,9 +3,9 @@
 # docker build -q . | xargs docker run --rm | tee generated.json
 
 import json
+import typing
 
 from pydantic import BaseModel
-import typing
 import requests
 
 import cv2
