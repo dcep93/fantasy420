@@ -105,7 +105,7 @@ function parse(lines: string[], all_players: string[]): ParsedType {
         const name_parts: string[] = [];
         for (let j = 0; j < words.length + 1; j++) {
           let word = words[j];
-          let matched = (word || "").match(/^[A-Z\\.]+$/i);
+          let matched = (word || "").match(/^[A-Z.'-]+$/i);
           if (matched) {
             name_parts.push(word);
           }
