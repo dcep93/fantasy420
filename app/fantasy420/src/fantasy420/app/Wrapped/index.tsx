@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import generate_wrapped from "./generate_wrapped";
 import css from "./index.module.css";
+import generate_wrapped from "./old_generate_wrapped";
 import all_data from "./wrapped.json";
 
 enum Position {

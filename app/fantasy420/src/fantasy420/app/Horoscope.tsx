@@ -1,4 +1,4 @@
-import FlexColumns from "../../FlexColumns";
+import FlexColumns from "../FlexColumns";
 
 import horoscope from "./horoscope.json";
 

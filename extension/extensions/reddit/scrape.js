@@ -106,7 +106,8 @@
     };
     wrapper.appendChild(controls);
 
-    const timestamp = e.getElementsByTagName("time")[0].title;
+    const timestamp = e.getElementsByTagName("time")[0]?.title;
+    if (!timestamp) return;
 
     const postTitle = e.querySelector("a.title").innerText;
     boxdiv = getBoxDiv(playersDiv, redditId, postTitle, timestamp);
