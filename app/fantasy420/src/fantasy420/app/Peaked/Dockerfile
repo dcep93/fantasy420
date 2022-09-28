@@ -8,7 +8,13 @@ RUN apt install -y python3-pip
 
 RUN pip3 install  --upgrade pip
 
+RUN pip3 install requests
+RUN pip3 install numpy
+
+RUN pip3 install opencv-python
 RUN pip3 install pytesseract
+
+RUN apt-get install ffmpeg libsm6 libxext6  -y
 
 COPY . ./
 
