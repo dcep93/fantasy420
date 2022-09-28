@@ -42,17 +42,15 @@ def get_peaked() -> str:
 
 def get_teams() -> typing.List[Team]:
     raw = requests.get(teams_url).json()
-    return [get_team(i) for i in raw["teams"]]
-
-
-def get_team(t: typing.Dict[str, typing.Any]) -> Team:
-    return Team(
-        name=f'{t["location"]} {t["nickname"]}',
-        players=[
-            i["playerPoolEntry"]["player"]["fullName"]
-            for i in t["roster"]["entries"]
-        ],
-    )
+    return [
+        Team(
+            name=f'{t["location"]} {t["nickname"]}',
+            players=[
+                i["playerPoolEntry"]["player"]["fullName"]
+                for i in t["roster"]["entries"]
+            ],
+        ).dict() for t in raw["teams"]
+    ]
 
 
 if __name__ == "__main__":
