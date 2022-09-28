@@ -5,7 +5,10 @@ export default function Peaked() {
     peaked: { url: string; lines: string[] };
     teams: { name: string; players: string[] }[];
   } = raw_generated;
-  const parsed = parse(generated.peaked.lines);
+  const parsed = parse(
+    generated.peaked.lines,
+    generated.teams.flatMap(({ players }) => players)
+  );
   const teams = generated.teams
     .map((team) => ({
       ...team,
@@ -73,6 +76,9 @@ export default function Peaked() {
           </div>
         ))}
       </div>
+      <pre hidden style={{ overflow: "scroll" }}>
+        {JSON.stringify(parsed, null, 2)}
+      </pre>
       <img
         style={{ width: "95%" }}
         src={generated.peaked.url}
@@ -86,7 +92,7 @@ export default function Peaked() {
 }
 
 type ParsedType = { [name: string]: { value: number; tier: number } };
-function parse(lines: string[]): ParsedType {
+function parse(lines: string[], all_players: string[]): ParsedType {
   const parsed: ParsedType = {};
   var tier = undefined;
   for (let i = 0; i < lines.length; i++) {
@@ -99,10 +105,14 @@ function parse(lines: string[]): ParsedType {
         const name_parts: string[] = [];
         for (let j = 0; j < words.length + 1; j++) {
           let word = words[j];
-          if ((word || "").match(/[\w+]+/)) {
+          let matched = (word || "").match(/[A-Z]+/);
+          if (matched) {
             name_parts.push(word);
-          } else {
-            parsed[name_parts.splice(0).join(" ")] = { value, tier };
+          }
+          let name = name_parts.join(" ");
+          if (all_players.includes(name)) {
+            parsed[name] = { value, tier };
+            name_parts.splice(0);
           }
         }
       }
