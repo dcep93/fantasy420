@@ -14,7 +14,7 @@ export default function Peaked() {
           name: player,
           ...parsed[player],
         }))
-        .sort((a, b) => b.value - a.value),
+        .sort((a, b) => (b.value || 0) - (a.value || 0)),
     }))
     .map((team) => ({
       ...team,
@@ -90,14 +90,21 @@ function parse(lines: string[]): ParsedType {
   const parsed: ParsedType = {};
   var tier = undefined;
   for (let i = 0; i < lines.length; i++) {
-    let [v, words] = lines[i].split(" ");
+    let [v, ...words] = lines[i].split(" ");
     if (v === "Tier") {
       tier = parseInt(words[0]);
     } else if (tier !== undefined) {
       const value = parseFloat(v);
       if (!isNaN(value)) {
-        const name_parts = ["Austin Ekeler"];
-        parsed[name_parts.join(" ")] = { value, tier };
+        const name_parts: string[] = [];
+        for (let j = 0; j < words.length + 1; j++) {
+          let word = words[j];
+          if ((word || "").match(/[\w+]+/)) {
+            name_parts.push(word);
+          } else {
+            parsed[name_parts.splice(0).join(" ")] = { value, tier };
+          }
+        }
       }
     }
   }
