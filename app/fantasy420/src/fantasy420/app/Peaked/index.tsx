@@ -105,13 +105,19 @@ function parse(lines: string[], all_players: string[]): ParsedType {
         const name_parts: string[] = [];
         for (let j = 0; j < words.length + 1; j++) {
           let word = words[j];
-          let matched = (word || "").match(/[A-Z]+/);
+          let matched = (word || "").match(/^[A-Z\\.]+$/i);
           if (matched) {
             name_parts.push(word);
           }
-          let name = name_parts.join(" ");
+          let name = name_parts
+            .join(" ")
+            .replace("AJ. Brown", "A.J. Brown")
+            .replace("Ken Walker III", "Kenneth Walker III");
           if (all_players.includes(name)) {
             parsed[name] = { value, tier };
+            name_parts.splice(0);
+          }
+          if (!matched) {
             name_parts.splice(0);
           }
         }
