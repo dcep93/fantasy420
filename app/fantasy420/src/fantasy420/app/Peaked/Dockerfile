@@ -14,6 +14,8 @@ RUN pip3 install numpy
 RUN pip3 install opencv-python
 RUN pip3 install pytesseract
 
+RUN apt install -y tesseract-ocr
+
 RUN apt-get install ffmpeg libsm6 libxext6  -y
 
 COPY . ./

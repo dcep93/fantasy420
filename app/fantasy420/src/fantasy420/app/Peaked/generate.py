@@ -11,6 +11,8 @@ def main():
     raw = requests.get(url).content
     data = numpy.frombuffer(raw, dtype='uint8')
     image = cv2.imdecode(data, cv2.IMREAD_GRAYSCALE)
+    text = pytesseract.image_to_string(image)
+    print(text)
 
 
 if __name__ == "__main__":
