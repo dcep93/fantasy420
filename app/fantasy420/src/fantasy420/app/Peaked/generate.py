@@ -37,20 +37,19 @@ def get_peaked() -> str:
     data = numpy.frombuffer(raw, dtype='uint8')
     image = cv2.imdecode(data, cv2.IMREAD_GRAYSCALE)
     text = pytesseract.image_to_string(image, config='--psm 6')
-    return text
+    return {"url": peaked_url, "text": text}
 
 
 def get_teams() -> typing.List[Team]:
     raw = requests.get(teams_url).json()
-    return [
-        Team(
-            name=f'{t["location"]} {t["nickname"]}',
-            players=[
-                i["playerPoolEntry"]["player"]["fullName"]
-                for i in t["roster"]["entries"]
-            ],
-        ).dict() for t in raw["teams"]
-    ]
+    return [{
+        "name":
+        f'{t["location"]} {t["nickname"]}',
+        "players": [
+            i["playerPoolEntry"]["player"]["fullName"]
+            for i in t["roster"]["entries"]
+        ],
+    } for t in raw["teams"]]
 
 
 if __name__ == "__main__":
