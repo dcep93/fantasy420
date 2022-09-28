@@ -1,4 +1,4 @@
-import Fantasy420 from "./pages/ff";
+import Fantasy420 from "./app";
 
 function index() {
   return <Fantasy420 />;

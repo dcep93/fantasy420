@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 
-import Catalog from "../../Catalog";
+import Catalog from "../Catalog";
 import Draft from "./Draft";
 import Horoscope from "./Horoscope";
 import Peaked from "./Peaked";

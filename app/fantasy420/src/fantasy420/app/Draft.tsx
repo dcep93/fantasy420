@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FirebaseWrapper } from "../../firebase";
+import { FirebaseWrapper } from "../firebase";
 
 import draft_json from "./draft.json";
 
