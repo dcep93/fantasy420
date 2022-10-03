@@ -136,7 +136,9 @@
       .filter(({ name }) => name !== "H2H Player Matchups")
       .filter(({ participant, sublabel }) =>
         [participant, sublabel]
-          .map((name) => name?.replace("Gabriel Davis", "Gabe Davis"))
+          .map((name) =>
+            name?.replace("Gabriel Davis", "Gabe Davis").replace(" (BAL)", "")
+          )
           .includes(player_name)
       );
   }
