@@ -5,7 +5,7 @@ import typing
 
 from bs4 import BeautifulSoup
 
-NUM_WEEKS = 6
+NUM_WEEKS = 3
 
 NUM_EXECUTORS = 8
 
