@@ -7,7 +7,7 @@ export default function Peaked() {
   } = raw_generated;
   const parsed = parse(
     generated.peaked.lines,
-    generated.teams.flatMap(({ players }) => players)
+    generated.teams.flatMap(({ players }) => players).map(normalize)
   );
   const teams = generated.teams
     .map((team) => ({
@@ -111,7 +111,10 @@ function parse(lines: string[], all_players: string[]): ParsedType {
             name_parts.push(word);
           }
           let name = normalize(
-            name_parts.join(" ").replace("Ken Walker III", "Kenneth Walker III")
+            name_parts
+              .join(" ")
+              .replace(/Ken Walker \w+/, "Kenneth Walker III")
+              .replace("AJ. Brown", "A.J. Brown")
           );
           if (all_players.includes(name)) {
             parsed[name] = { value, tier };
@@ -128,8 +131,8 @@ function parse(lines: string[], all_players: string[]): ParsedType {
 }
 
 function normalize(name: string): string {
-  return name
-    .replaceAll(/[^A-Za-z ]/g, "")
-    .replaceAll(/ I+$/g, "")
-    .replaceAll(/ jr$/gi, "");
+  return name;
+  // .replaceAll(/[^A-Za-z ]/g, "")
+  // .replaceAll(/ I+$/g, "")
+  // .replaceAll(/ jr$/gi, "");
 }
