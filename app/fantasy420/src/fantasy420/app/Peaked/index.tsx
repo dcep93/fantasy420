@@ -15,7 +15,7 @@ export default function Peaked() {
       players: team.players
         .map((player) => ({
           name: player,
-          ...parsed[player],
+          ...parsed[normalize(player)],
         }))
         .sort((a, b) => (b.value || 0) - (a.value || 0)),
     }))
@@ -100,8 +100,9 @@ function parse(lines: string[], all_players: string[]): ParsedType {
     if (v === "Tier") {
       tier = parseInt(words[0]);
     } else if (tier !== undefined) {
-      const value = parseFloat(v);
+      var value = parseFloat(v);
       if (!isNaN(value)) {
+        if (!v.includes(".")) value /= 10;
         const name_parts: string[] = [];
         for (let j = 0; j < words.length + 1; j++) {
           let word = words[j];
@@ -109,10 +110,9 @@ function parse(lines: string[], all_players: string[]): ParsedType {
           if (matched) {
             name_parts.push(word);
           }
-          let name = name_parts
-            .join(" ")
-            .replace("AJ. Brown", "A.J. Brown")
-            .replace("Ken Walker III", "Kenneth Walker III");
+          let name = normalize(
+            name_parts.join(" ").replace("Ken Walker III", "Kenneth Walker III")
+          );
           if (all_players.includes(name)) {
             parsed[name] = { value, tier };
             name_parts.splice(0);
@@ -125,4 +125,11 @@ function parse(lines: string[], all_players: string[]): ParsedType {
     }
   }
   return parsed;
+}
+
+function normalize(name: string): string {
+  return name
+    .replaceAll(/[^A-Za-z ]/g, "")
+    .replaceAll(/ I+$/g, "")
+    .replaceAll(/ jr$/gi, "");
 }
