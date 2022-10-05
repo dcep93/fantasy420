@@ -108,7 +108,7 @@
           .filter(({ title, a }) => a.title !== title)
           .map(({ name, scores, title, raw, a }) => {
             a.setAttribute("fantasy420_name", name);
-            a.innerText = `(${scores.score}) ${name}`;
+            a.innerText = `(${getText(scores)}) ${name}`;
             a.style.backgroundColor = "lightgreen";
             a.title = title;
             return { startDate: raw[0].startDate, name, scores };
@@ -201,6 +201,28 @@
     return Object.entries(raw)
       .map(([key, val]) => `${key}: ${val}`)
       .join("\n");
+  }
+
+  function getText(scores) {
+    return [
+      scores.score,
+      Object.keys(scores)
+        .filter((key) => !["touchdownOdds", "score"].includes(key))
+        .map(
+          (key) =>
+            ({
+              passing: "P",
+              interceptions: "I",
+              passingTd: "4",
+              rushing: "B",
+              receiving: "W",
+              receptions: "R",
+              touchdowns: "T",
+              fieldGoals: "F",
+            }[key] || "X")
+        )
+        .join(""),
+    ].join(" ");
   }
 
   function fetchC(url, maxAgeMs) {
