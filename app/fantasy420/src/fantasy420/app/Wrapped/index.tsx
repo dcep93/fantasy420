@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import css from "./index.module.css";
-import generate_wrapped from "./old_generate_wrapped";
 import all_data from "./wrapped.json";
 
 enum Position {
@@ -16,7 +15,7 @@ enum Position {
 
 function Wrapped() {
   document.title = "Fantasy Wrapped";
-  console.log(`(${generate_wrapped.toString().replaceAll("\n", "")})()`);
+  // console.log(`(${generate_wrapped.toString().replaceAll("\n", "")})()`);
   const [toRenderKey, update] = useState("");
   const [searchParams] = useSearchParams();
   const leagueId = searchParams.get("league_id") || 203836968;
@@ -377,7 +376,7 @@ function GooseEggs(data: WrappedType) {
                       .flatMap((team) => Object.entries(team.roster))
                       .filter(
                         ([id, score]) =>
-                          score === 0 &&
+                          score <= 0 &&
                           ![Position.K, Position.DST].includes(
                             data.players[id].position
                           )

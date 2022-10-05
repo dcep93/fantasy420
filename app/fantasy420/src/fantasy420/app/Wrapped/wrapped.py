@@ -2,14 +2,13 @@ import concurrent.futures
 
 import json
 import requests
+import sys
 
 from bs4 import BeautifulSoup
 
-year = 2021
-league_ids = [67201591, 203836968]
-num_weeks = 17
+year = 2022
+league_ids = [203836968]
 
-wrapped_path = "wrapped.json"
 num_threads = 32
 
 fetch_cache = {}
@@ -22,19 +21,20 @@ except:
     espn_s2 = None
 
 
+class Vars:
+    max_week_finished = 17
+
+
 def main():
     wrapped = {}
     for league_id in league_ids:
         wrapped[league_id] = get_wrapped(league_id)
-    with open(wrapped_path, "w") as fh:
-        json.dump(wrapped, fh)
-    print(f"wrote {len(json.dumps(wrapped)) / 1000} kb")
+    print(json.dumps(wrapped, indent=2))
 
 
 def get_wrapped(league_id):
-    weeks_range = range(1, num_weeks + 1)
     team_names = get_team_names(league_id)
-    weeks = get_weeks(league_id, weeks_range)
+    weeks = get_weeks(league_id, len(team_names))
     populate_boxscores(weeks)
     populate_fieldgoals(weeks)
     players = get_players(weeks)
@@ -44,7 +44,7 @@ def get_wrapped(league_id):
 def fetch(url, decode_json=True):
     if url in fetch_cache:
         return fetch_cache[url]
-    print(url)
+    sys.stderr.write(url)
     raw_data = requests.get(url, cookies={'espn_s2': espn_s2})
     data = raw_data.json() if decode_json else raw_data.text
     fetch_cache[url] = data
@@ -62,16 +62,20 @@ def get_team_names(league_id):
         ), )
 
 
-def get_weeks(league_id, weeks_range):
+def get_weeks(league_id, num_teams):
     with concurrent.futures.ThreadPoolExecutor(num_threads) as executor:
-        return list(
+        weeks = list(
             executor.map(
-                lambda week_num: get_matches(league_id, week_num),
-                weeks_range,
+                lambda key: get_matches(league_id, key + 1, num_teams),
+                list(range(Vars.max_week_finished)),
             ))
+    weeks = [week for week in weeks if week]
+    return weeks
 
 
-def get_matches(league_id, week_num):
+def get_matches(league_id, week_num, num_teams):
+    if week_num > Vars.max_week_finished:
+        return None
     url = f"https://fantasy.espn.com/apis/v3/games/ffl/seasons/{year}/segments/0/leagues/{league_id}?view=mScoreboard&scoringPeriodId={week_num}"
     data = fetch(url)
     raw_matches = filter(
@@ -88,6 +92,10 @@ def get_matches(league_id, week_num):
             teams,
             key=lambda team: team["score"],
         ))
+    if len(matches) != num_teams / 2 or matches[0][0]["score"] == 0:
+        if Vars.max_week_finished > week_num:
+            Vars.max_week_finished = week_num
+        return None
     return {"number": week_num, "matches": matches}
 
 
@@ -150,6 +158,8 @@ def get_team(raw_team):
             "position": player["defaultPositionId"],
             "team": pro_team_names[player["proTeamId"]].upper(),
         }
+        if player_obj["name"] == "Rodrigo Blankenship":
+            player_obj["team"] = "IND"
         roster.append(player_obj)
     score = get_points(
         sum([player["score"] for player in roster if player["id"] in lineup]))
