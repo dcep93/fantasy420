@@ -36,7 +36,7 @@ def main():
 def get_peaked() -> str:
     raw = requests.get(peaked_url).content
     data = numpy.frombuffer(raw, dtype='uint8')
-    image = cv2.imdecode(data, cv2.IMREAD_GRAYSCALE)
+    image = cv2.imdecode(data, cv2.IMREAD_COLOR)
     text = pytesseract.image_to_string(image, config='--psm 6')
     lines = text.split("\n")
     return {"url": peaked_url, "lines": lines}
