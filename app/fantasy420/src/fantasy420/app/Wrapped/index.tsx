@@ -590,6 +590,11 @@ function BoomBust(data: WrappedType) {
               Math.ceil(scores.length * 0.25 - 1)
             ],
         },
+        {
+          valueName: "min non-zero",
+          getValue: (scores: number[]) =>
+            Math.min(...scores.filter((s) => s !== 0)),
+        },
       ].map(({ valueName, getValue, ...extra }, i) => (
         <div key={i} className={css.bubble}>
           <table>
