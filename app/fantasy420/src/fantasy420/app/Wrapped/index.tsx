@@ -581,6 +581,13 @@ function BoomBust(data: WrappedType) {
               Math.ceil(scores.length * 0.5 - 1)
             ],
         },
+        {
+          valueName: "p25",
+          getValue: (scores: number[]) =>
+            scores.slice().sort((a, b) => a - b)[
+              Math.ceil(scores.length * 0.25 - 1)
+            ],
+        },
       ].map(({ valueName, getValue }, i) => (
         <div key={i} className={css.bubble}>
           <table>
