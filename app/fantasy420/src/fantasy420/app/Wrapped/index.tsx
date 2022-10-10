@@ -632,7 +632,7 @@ function BoomBust(data: WrappedType) {
                   ({ playerId }) =>
                     data.players[playerId].position !== Position.K
                 )
-                .filter(({ value }) => !isNaN(value))
+                .filter(({ value }) => isFinite(value))
                 .filter(({ scores }) => !extra.filter || extra.filter(scores))
                 .sort((a, b) => b.value - a.value)
                 .slice(0, 20)
