@@ -28,6 +28,7 @@ function Wrapped() {
     DeterminedByDiscreteScoring: GamesDeterminedByDiscreteScoring(data),
     ChosenWrong: TimesChosenWrong(data),
     GooseEggs: GooseEggs(data),
+    BoomBust: BoomBust(data),
     "raw_data.json": JSON.stringify(data),
   };
   const defaultToRenderKey = Object.keys(toRender)[0]!;
@@ -488,11 +489,11 @@ function WeekWinnersAndLosers(data: WrappedType) {
     bottoms: [] as number[],
   }));
   const vals = data.weeks.map((week, i) => {
-    const sortedTeams = sortByKey(
+    const sortedTeams: TeamType[] = sortByKey(
       week.matches.flatMap((match) => match.flatMap((team) => team)),
       (team) => team.score
     );
-    const winnerAndLoser = {
+    const winnerAndLoser: any = {
       loser: sortedTeams[0],
       winner: sortedTeams[sortedTeams.length - 1],
       number: week.number,
@@ -533,6 +534,89 @@ function WeekWinnersAndLosers(data: WrappedType) {
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+function BoomBust(data: WrappedType) {
+  function getStdDev(scores: number[]): number {
+    const mean = scores.reduce((a, b) => a + b, 0) / scores.length;
+    return Math.pow(
+      scores
+        .map((s) => mean - s)
+        .map((s) => Math.pow(s, 2))
+        .reduce((a, b) => a + b, 0) / scores.length,
+      0.5
+    );
+  }
+  return (
+    <div>
+      <div>
+        <div className={css.bubble}>only includes rostered weeks</div>
+      </div>
+      {[
+        { valueName: "stddev", getValue: getStdDev },
+        {
+          valueName: "max",
+          getValue: (scores: number[]) => Math.max(...scores),
+        },
+        {
+          valueName: "p75",
+          getValue: (scores: number[]) =>
+            scores.slice().sort((a, b) => a - b)[
+              Math.ceil(scores.length * 0.75 - 1)
+            ],
+        },
+        {
+          valueName: "p50",
+          getValue: (scores: number[]) =>
+            scores.slice().sort((a, b) => a - b)[
+              Math.ceil(scores.length * 0.5 - 1)
+            ],
+        },
+      ].map(({ valueName, getValue }, i) => (
+        <div key={i} className={css.bubble}>
+          <table>
+            <thead>
+              <tr>
+                <th>{valueName}</th>
+                <th></th>
+                <th>scores</th>
+              </tr>
+            </thead>
+            <tbody>
+              {Object.entries(
+                data.weeks
+                  .flatMap((week) => week.matches)
+                  .flatMap((match) => match)
+                  .flatMap((team) => Object.entries(team.roster))
+                  .map(([playerId, score]) => ({ playerId, score }))
+                  .reduce((prev, obj) => {
+                    if (!prev[obj.playerId]) prev[obj.playerId] = [];
+                    prev[obj.playerId].push(obj.score);
+                    return prev;
+                  }, {} as { [playerId: string]: number[] })
+              )
+                .map(([playerId, scores]) => ({
+                  playerId,
+                  scores,
+                  value: getValue(scores),
+                }))
+                .sort((a, b) => b.value - a.value)
+                .slice(0, 20)
+                .map((obj, j) => (
+                  <tr key={j}>
+                    <td>{obj.value.toFixed(2)}</td>
+                    <td>{data.players[obj.playerId].name}</td>
+                    {obj.scores.map((s, k) => (
+                      <td key={k}>{s}</td>
+                    ))}
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+        </div>
+      ))}
     </div>
   );
 }
