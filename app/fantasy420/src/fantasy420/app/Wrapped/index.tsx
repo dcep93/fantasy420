@@ -560,6 +560,10 @@ function BoomBust(data: WrappedType) {
       {[
         { valueName: "stddev", getValue: getStdDev },
         {
+          valueName: "-stddev",
+          getValue: (scores: number[]) => -getStdDev(scores),
+        },
+        {
           valueName: "max",
           getValue: (scores: number[]) => Math.max(...scores),
         },
