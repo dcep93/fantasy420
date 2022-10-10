@@ -1,7 +1,32 @@
-import { useState } from "react";
-import { FirebaseWrapper } from "../firebase";
-
+import React, { useState } from "react";
+// import { FirebaseWrapper } from "../firebase";
 import draft_json from "./draft.json";
+
+class FirebaseWrapper<T, U = {}> extends React.Component<U, { state: T }> {
+  static firebaseWrapperComponent: FirebaseWrapper<any>;
+  componentDidMount() {
+    const oldComponent = FirebaseWrapper.firebaseWrapperComponent;
+    FirebaseWrapper.firebaseWrapperComponent = this;
+    if (oldComponent) {
+      this.setState(oldComponent.state);
+    } else {
+      const title = this.getTitle();
+      if (title !== null) document.title = title;
+    }
+  }
+
+  getTitle(): string | null {
+    return null;
+  }
+
+  getFirebasePath(): string {
+    return `/`;
+  }
+
+  render() {
+    return <pre>{JSON.stringify(this.state, null, 2)}</pre>;
+  }
+}
 
 const PICK_NUMBER = 8;
 export const NUM_TEAMS = 10;
