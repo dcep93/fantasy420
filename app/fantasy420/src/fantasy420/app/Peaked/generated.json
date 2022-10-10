@@ -83,7 +83,7 @@
       "15.0 Melvin Gordon III Gabe Davis",
       "14.5 Travis Etienne Jr. Zach Ertz",
       "14.0 Kyle Pitts Aes)",
-      "135 Tony Pollard Chris Godwin 40",
+      "13.5 Tony Pollard Chris Godwin 40",
       "Tier 8",
       "13.0 Khalil Herbert Jerry Jeudy",
       "12.5 Damien Harris DeVonta Smith",
@@ -91,7 +91,7 @@
       "12.0 Chase Edmonds",
       "11.5 DeAndre Hopkins Justin Herbert 0.0",
       "11.0 Cordarrelle Patterson JuJu Smith-Schuster",
-      "10.5 T.J. Hockenson 0 | Kyler Murray",
+      "10.5 T.J. Hockenson 0 Kyler Murray",
       "10.0 Allen Lazard = Joe Burrow",
       "10.0 Tyler Lockett",
       "Tier 9",
@@ -109,7 +109,7 @@
       "55 Brian Robinson Jr. 30",
       "5.0 Aaron Rodgers",
       "5.0 Matthew Stafford",
-      "45 Alexander Mattison Tyler Higbee 20",
+      "4.5 Alexander Mattison Tyler Higbee 20",
       "4.0 Kirk Cousins Ea",
       "Tier 11",
       "3.5 Darnell Mooney 7",
@@ -125,7 +125,7 @@
   },
   "teams": [
     {
-      "name": "KingGazzardAnd TheWazardLazard",
+      "name": "Its Moore-bin Time",
       "players": [
         "Austin Ekeler",
         "Stefon Diggs",
@@ -134,15 +134,16 @@
         "Courtland Sutton",
         "Rashod Bateman",
         "Allen Lazard",
-        "Treylon Burks",
         "Tyler Boyd",
         "Justin Tucker",
         "Raheem Mostert",
         "Tyler Allgeier",
         "Josh Allen",
         "DJ Moore",
-        "Dawson Knox",
-        "Vikings D/ST"
+        "Vikings D/ST",
+        "Commanders D/ST",
+        "Evan Engram",
+        "Cam Akers"
       ]
     },
     {
@@ -185,7 +186,8 @@
         "Eagles D/ST",
         "Greg Joseph",
         "Brandon Aiyuk",
-        "Gerald Everett"
+        "Gerald Everett",
+        "Eno Benjamin"
       ]
     },
     {
@@ -193,7 +195,6 @@
       "players": [
         "Jonathan Taylor",
         "Keenan Allen",
-        "Cam Akers",
         "Kyle Pitts",
         "Jerry Jeudy",
         "Jalen Hurts",
@@ -207,7 +208,8 @@
         "Zay Jones",
         "Nelson Agholor",
         "Graham Gano",
-        "Jaguars D/ST"
+        "Jaguars D/ST",
+        "Robert Tonyan"
       ]
     },
     {
@@ -226,10 +228,10 @@
         "Brian Robinson",
         "Cowboys D/ST",
         "David Njoku",
-        "Mark Ingram II",
         "George Pickens",
         "Josh Reynolds",
-        "Younghoe Koo"
+        "Younghoe Koo",
+        "Devin Duvernay"
       ]
     },
     {
@@ -247,11 +249,11 @@
         "Melvin Gordon III",
         "49ers D/ST",
         "Jameson Williams",
-        "Mack Hollins",
         "Corey Davis",
         "Isaiah McKenzie",
-        "Jakobi Meyers",
-        "Caleb Huntley"
+        "Caleb Huntley",
+        "Robert Woods",
+        "Matthew Wright"
       ]
     },
     {
@@ -268,11 +270,11 @@
         "Darrell Henderson Jr.",
         "Evan McPherson",
         "Rondale Moore",
-        "Kenneth Walker III",
         "Romeo Doubs",
-        "Colts D/ST",
         "Aaron Jones",
-        "Jared Goff"
+        "Jared Goff",
+        "Dolphins D/ST",
+        "Rachaad White"
       ]
     },
     {
@@ -333,11 +335,11 @@
         "Alexander Mattison",
         "Brandon McManus",
         "Jeff Wilson Jr.",
-        "Chargers D/ST",
         "Kyler Murray",
         "DeAndre Hopkins",
         "George Kittle",
-        "Tyler Conklin"
+        "Tyler Conklin",
+        "Titans D/ST"
       ]
     }
   ]
