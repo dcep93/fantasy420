@@ -8,7 +8,10 @@ import Sos from "./Sos";
 import Value from "./Value";
 import Wrapped from "./Wrapped";
 
-const pages = { Sos, Draft, Wrapped, Horoscope, Value, Peaked };
+const pages = { Sos, Wrapped, Horoscope, Value, Peaked };
+if (process.env.NODE_ENV === "development") {
+  Object.assign(pages, { Draft });
+}
 
 function index() {
   return (
