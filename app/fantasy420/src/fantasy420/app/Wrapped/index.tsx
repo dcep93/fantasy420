@@ -543,24 +543,29 @@ function WeekWinnersAndLosers(data: WrappedType) {
 
 function BoomBust(data: WrappedType) {
   function getStdDev(scores: number[]): number {
+    scores = scores.filter((s) => s !== 0);
+    if (scores.length <= 1) return NaN;
     const mean = scores.reduce((a, b) => a + b, 0) / scores.length;
-    return Math.pow(
-      scores
-        .map((s) => mean - s)
-        .map((s) => Math.pow(s, 2))
-        .reduce((a, b) => a + b, 0) / scores.length,
-      0.5
+    return (
+      Math.pow(
+        scores
+          .map((s) => mean - s)
+          .map((s) => Math.pow(s, 2))
+          .reduce((a, b) => a + b, 0) / scores.length,
+        0.5
+      ) / mean
     );
   }
   return (
     <div>
       <div>
         <div className={css.bubble}>only includes rostered weeks</div>
+        <div className={css.bubble}>ignores kickers</div>
       </div>
       {[
-        { valueName: "stddev", getValue: getStdDev },
+        { valueName: "stddev / mean", getValue: getStdDev },
         {
-          valueName: "-stddev",
+          valueName: "-stddev / mean",
           getValue: (scores: number[]) => -getStdDev(scores),
           filter: (scores: number[]) =>
             scores.length > 1 && scores.filter((s) => s !== 0).length > 0,
@@ -623,6 +628,11 @@ function BoomBust(data: WrappedType) {
                   scores,
                   value: getValue(scores),
                 }))
+                .filter(
+                  ({ playerId }) =>
+                    data.players[playerId].position !== Position.K
+                )
+                .filter(({ value }) => !isNaN(value))
                 .filter(({ scores }) => !extra.filter || extra.filter(scores))
                 .sort((a, b) => b.value - a.value)
                 .slice(0, 20)
