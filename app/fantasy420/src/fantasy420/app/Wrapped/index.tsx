@@ -16,7 +16,7 @@ enum Position {
 function Wrapped() {
   document.title = "Fantasy Wrapped";
   // console.log(`(${generate_wrapped.toString().replaceAll("\n", "")})()`);
-  const [toRenderKey, update] = useState("");
+  const [toRenderKey, update] = useState(window.location.hash.substring(1));
   const [searchParams] = useSearchParams();
   const leagueId = searchParams.get("league_id") || 203836968;
   const data: WrappedType | undefined = (all_data as any)[leagueId];
