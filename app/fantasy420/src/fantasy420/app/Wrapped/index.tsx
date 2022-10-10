@@ -35,7 +35,10 @@ function Wrapped() {
   if (toRenderKey === "") update(defaultToRenderKey);
   return (
     <div className={css.wrapped}>
-      <div className={[css.flex, css.grey].join(" ")}>
+      <div
+        className={[css.flex, css.grey].join(" ")}
+        style={{ overflow: "scroll" }}
+      >
         {Object.keys(toRender).map((key, i) => (
           <div key={i} className={css.bubble} onClick={() => update(key)}>
             {key}
