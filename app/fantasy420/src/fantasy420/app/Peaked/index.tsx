@@ -26,6 +26,9 @@ export default function Peaked() {
         .reduce((a, b) => a + b, 0),
     }))
     .sort((a, b) => b.score - a.score);
+  const owned = generated.teams.flatMap((team) => team.players);
+  console.log(owned);
+  console.log(Object.keys(parsed));
   return (
     <div>
       <h1>{generated.peaked.lines[0]}</h1>
@@ -75,6 +78,55 @@ export default function Peaked() {
             </div>
           </div>
         ))}
+        <div>
+          <div>
+            <div
+              style={{
+                border: "2px solid black",
+                borderRadius: "5px",
+                margin: "10px",
+                padding: "10px",
+              }}
+            >
+              <div
+                style={{
+                  display: "inline-block",
+                  border: "2px solid black",
+                  borderRadius: "5px",
+                  margin: "10px",
+                  padding: "10px",
+                }}
+              >
+                <div>UNOWNED</div>
+              </div>
+              <table style={{ whiteSpace: "nowrap" }}>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Value</th>
+                    <th>Tier</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {Object.entries(parsed)
+                    .map(([name, obj]) => ({
+                      name,
+                      ...obj,
+                    }))
+                    .filter(({ name }) => !owned.includes(name))
+                    .sort((a, b) => b.value - a.value)
+                    .map((player, i) => (
+                      <tr key={i}>
+                        <td>{player.name}</td>
+                        <td>{player.value}</td>
+                        <td>{player.tier}</td>
+                      </tr>
+                    ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
       <pre hidden style={{ overflow: "scroll" }}>
         {JSON.stringify(parsed, null, 2)}
@@ -116,11 +168,8 @@ function parse(lines: string[], all_players: string[]): ParsedType {
               .replace(/Ken Walker \w+/, "Kenneth Walker III")
               .replace("AJ. Brown", "A.J. Brown")
           );
-          if (all_players.includes(name)) {
+          if (all_players.includes(name) || (!matched && name)) {
             parsed[name] = { value, tier };
-            name_parts.splice(0);
-          }
-          if (!matched) {
             name_parts.splice(0);
           }
         }

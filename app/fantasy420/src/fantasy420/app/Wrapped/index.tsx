@@ -562,6 +562,8 @@ function BoomBust(data: WrappedType) {
         {
           valueName: "-stddev",
           getValue: (scores: number[]) => -getStdDev(scores),
+          filter: (scores: number[]) =>
+            scores.length > 1 && scores.filter((s) => s !== 0).length > 0,
         },
         {
           valueName: "max",
@@ -588,7 +590,7 @@ function BoomBust(data: WrappedType) {
               Math.ceil(scores.length * 0.25 - 1)
             ],
         },
-      ].map(({ valueName, getValue }, i) => (
+      ].map(({ valueName, getValue, ...extra }, i) => (
         <div key={i} className={css.bubble}>
           <table>
             <thead>
@@ -616,6 +618,7 @@ function BoomBust(data: WrappedType) {
                   scores,
                   value: getValue(scores),
                 }))
+                .filter(({ scores }) => !extra.filter || extra.filter(scores))
                 .sort((a, b) => b.value - a.value)
                 .slice(0, 20)
                 .map((obj, j) => (
