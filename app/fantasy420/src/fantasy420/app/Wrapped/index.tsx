@@ -235,7 +235,7 @@ function TimesChosenWrong(data: WrappedType) {
               [Position.RB]: 2,
               [Position.WR]: 2,
               [Position.TE]: 1,
-              [Position.FLEX]: 1,
+              [Position.FLEX]: 2,
             },
           ]
             .map((choices) => {
@@ -257,7 +257,7 @@ function TimesChosenWrong(data: WrappedType) {
                     const bestId = subFilteredRoster.find(
                       (playerId) => !bestIds.includes(playerId)
                     )!;
-                    bestIds.push(bestId);
+                    if (bestId) bestIds.push(bestId);
                   });
                 });
               Array.from(new Array(choices[Position.FLEX] || 0)).forEach(() => {
