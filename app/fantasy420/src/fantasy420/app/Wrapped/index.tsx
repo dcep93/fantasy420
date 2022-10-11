@@ -377,14 +377,12 @@ function GooseEggs(data: WrappedType) {
                     week.matches
                       .flatMap((teams) => teams)
                       .filter((team) => team.teamIndex === teamIndex)
-                      .flatMap((team) => Object.entries(team.roster))
-                      .filter(
-                        ([id, score]) =>
-                          score <= 0 &&
-                          ![Position.K, Position.DST].includes(
-                            data.players[id].position
-                          )
+                      .flatMap((team) =>
+                        Object.entries(team.roster).filter(([id, _]) =>
+                          team.lineup.includes(id)
+                        )
                       )
+                      .filter(([id, score]) => score <= 0)
                       .map(([id, score]) => id)
                       .map((id) => ({ id, weekNum }))
                   )
