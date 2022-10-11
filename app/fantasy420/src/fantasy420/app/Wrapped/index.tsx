@@ -605,8 +605,7 @@ function BoomBust(data: WrappedType) {
           <table>
             <thead>
               <tr>
-                <th>{valueName}</th>
-                <th></th>
+                <th colSpan={2}>{valueName}</th>
                 <th>scores</th>
               </tr>
             </thead>
@@ -641,7 +640,9 @@ function BoomBust(data: WrappedType) {
                     <td>{obj.value.toFixed(2)}</td>
                     <td>{data.players[obj.playerId].name}</td>
                     {obj.scores.map((s, k) => (
-                      <td key={k}>{s}</td>
+                      <td key={k} style={{ paddingLeft: "20px" }}>
+                        {s}
+                      </td>
                     ))}
                   </tr>
                 ))}
