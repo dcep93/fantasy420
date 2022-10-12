@@ -26,9 +26,7 @@ export default function Peaked() {
         .reduce((a, b) => a + b, 0),
     }))
     .sort((a, b) => b.score - a.score);
-  const owned = generated.teams.flatMap((team) => team.players);
-  console.log(owned);
-  console.log(Object.keys(parsed));
+  const owned = generated.teams.flatMap((team) => team.players).map(normalize);
   return (
     <div>
       <h1>{generated.peaked.lines[0]}</h1>
@@ -154,21 +152,20 @@ function parse(lines: string[], all_players: string[]): ParsedType {
     } else if (tier !== undefined) {
       var value = parseFloat(v);
       if (!isNaN(value)) {
-        if (!v.includes(".")) value /= 10;
         const name_parts: string[] = [];
         for (let j = 0; j < words.length + 1; j++) {
           let word = words[j];
           let matched = (word || "").match(/^[A-Z.'-]+$/i);
           if (matched) {
-            name_parts.push(word);
+            if (name_parts.length > 0 || !(word || "").match(/^((I+)|(Jr))$/)) {
+              name_parts.push(word);
+            }
           }
-          let name = normalize(
-            name_parts
-              .join(" ")
-              .replace(/Ken Walker \w+/, "Kenneth Walker III")
-              .replace("AJ. Brown", "A.J. Brown")
-          );
+          let name = normalize(name_parts.join(" "));
           if (all_players.includes(name) || (!matched && name)) {
+            if (!name.includes(" ")) {
+              console.log("line", lines[i]);
+            }
             parsed[name] = { value, tier };
             name_parts.splice(0);
           }
@@ -180,8 +177,11 @@ function parse(lines: string[], all_players: string[]): ParsedType {
 }
 
 function normalize(name: string): string {
-  return name;
-  // .replaceAll(/[^A-Za-z ]/g, "")
-  // .replaceAll(/ I+$/g, "")
-  // .replaceAll(/ jr$/gi, "");
+  return name
+    .replaceAll("'", "")
+    .replaceAll(".", "")
+    .replaceAll("-", "")
+    .replace("AmonRa Brown", "AmonRa St Brown")
+    .replace(/Travis Etienne$/, "Travis Etienne Jr")
+    .replace(/Ken Walker III$/, "Kenneth Walker III");
 }
