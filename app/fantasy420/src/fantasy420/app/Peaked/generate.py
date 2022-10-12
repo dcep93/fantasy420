@@ -15,8 +15,9 @@ import pytesseract
 year = 2022
 league_id = 203836968
 # https://i0.wp.com/peakedinhighskool.com/wp-content/uploads/2022/09/1QB1.0PPR4pt_20220927.png?w=1790&ssl=1
+# https://pbs.twimg.com/media/FeTjnmBXEAI5EM6?format=jpg&name=4096x4096
 peaked_url = '''
-https://pbs.twimg.com/media/FeTjnmBXEAI5EM6?format=jpg&name=4096x4096
+https://pbs.twimg.com/media/Fe3mDJPXkAIn2Sj?format=jpg&name=4096x4096
 '''.strip()
 teams_url = f"https://fantasy.espn.com/apis/v3/games/ffl/seasons/{year}/segments/0/leagues/{league_id}?view=mRoster&view=mTeam"
 
@@ -29,7 +30,7 @@ class Team(BaseModel):
 def main():
     peaked = get_peaked()
     teams = get_teams()
-    dumped = json.dumps({"peaked": peaked, "teams": teams}, indent=2)
+    dumped = json.dumps({"peaked": peaked, "teams": teams})
     print(dumped)
 
 
