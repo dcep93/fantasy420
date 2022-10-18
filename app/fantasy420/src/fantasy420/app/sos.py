@@ -41,8 +41,8 @@ def get_points_against() -> typing.Dict[str, float]:
     url = "https://fantasy.espn.com/apis/v3/games/ffl/seasons/2022/segments/0/leagues/203836968?view=mPositionalRatingsStats"
     resp = requests.get(url)
     j = json.loads(resp.content)
-    ratingsByOpponent = j["positionAgainstOpponent"]["positionalRatings"]["1"][
-        "ratingsByOpponent"]
+    ratingsByOpponent = j["positionAgainstOpponent"]["positionalRatings"][
+        "16"]["ratingsByOpponent"]
     proTeamsById = [
         "atl",
         "buf",
