@@ -15,20 +15,15 @@ function Sos() {
   );
 }
 
-function getScore(p: number | undefined): number {
-  if (p === undefined) return 0;
-  return p * 30 - 10;
-}
-
 function results(sos_json: {
   [k: string]: ({ p: number; o: string } | null)[];
 }) {
   const sorted = Object.entries(sos_json).sort();
   const scored = sorted.map(([k, v]) => ({
-    k: k,
+    k,
     v: v.map((e) => ({
       e,
-      score: getScore(e?.p),
+      score: !e ? 0 : e.p,
     })),
   }));
   const combos = scored
@@ -48,9 +43,7 @@ function results(sos_json: {
       p: o.p.map((o) =>
         o.e === null
           ? "BYE"
-          : `${o.k.toUpperCase()} ${o.e.o} ${(100 * o.e.p).toFixed(
-              1
-            )}% -> ${o.score.toFixed(2)}`
+          : `${o.k.toUpperCase()} ${o.e.o} -> ${o.score.toFixed(2)}`
       ),
     }))
     .sort((a, b) => b.score - a.score)
@@ -60,9 +53,7 @@ function results(sos_json: {
       t: o.k,
       score: o.v.map((p) => p.score).reduce((a, b) => a + b, 0),
       p: o.v.map((p) =>
-        p.e === null
-          ? "BYE"
-          : `${p.e.o} ${(100 * p.e.p).toFixed(1)}% -> ${p.score.toFixed(2)}`
+        p.e === null ? "BYE" : `${p.e.o} -> ${p.score.toFixed(2)}`
       ),
     }))
     .sort((a, b) => b.score - a.score)
