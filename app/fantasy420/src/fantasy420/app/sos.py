@@ -95,16 +95,18 @@ def get_prediction(
     resp = requests.get(url)
     soup = BeautifulSoup(resp.content, 'html.parser')
     rows = [list(r.children) for r in soup.find_all('tr')]
-    weeks = [
-        opponent.find('a', href=True)["href"].split("/")[5]
+    weeks = {
+        week: opponent.find('a', href=True)["href"].split("/")[5]
         for week, opponent in [(int(week), opponent)
                                for week, opponent in [(r[0].text, r[2])
                                                       for r in rows
                                                       if len(r) > 2]
                                if week not in ['WK', 'HOF']]
-        if week in [14, 15, 16, 17]
-    ]
-    return [{"p": points_against[o], "o": o} for o in weeks]
+    }
+    return [{
+        "p": points_against[o],
+        "o": o
+    } if o else None for o in [weeks.get(w) for w in [14, 15, 16, 17]]]
 
 
 if __name__ == "__main__":
