@@ -5,8 +5,6 @@ import typing
 
 from bs4 import BeautifulSoup
 
-NUM_WEEKS = 5
-
 NUM_EXECUTORS = 8
 
 
@@ -17,8 +15,11 @@ def main():
 
 def get_results():
     team_names = get_team_names()
+    points_against = get_points_against()
     with concurrent.futures.ThreadPoolExecutor(NUM_EXECUTORS) as executor:
-        _predictions = executor.map(get_prediction, team_names)
+        _predictions = executor.map(
+            lambda team_name: get_prediction(team_name, points_against),
+            team_names)
         predictions = list(_predictions)
     return {
         team_name: predictions[i]
@@ -36,72 +37,74 @@ def get_team_names() -> typing.List[str]:
     ])
 
 
-def get_prediction(team_name: str) -> typing.List[typing.Any]:
+def get_points_against() -> typing.Dict[str, float]:
+    url = "https://fantasy.espn.com/apis/v3/games/ffl/seasons/2022/segments/0/leagues/203836968?view=mPositionalRatingsStats"
+    resp = requests.get(url)
+    j = json.loads(resp.content)
+    ratingsByOpponent = j["positionAgainstOpponent"]["positionalRatings"]["1"][
+        "ratingsByOpponent"]
+    proTeamsById = [
+        "atl",
+        "buf",
+        "chi",
+        "cin",
+        "cle",
+        "dal",
+        "den",
+        "det",
+        "gb",
+        "ten",
+        "ind",
+        "kc",
+        "lv",
+        "lar",
+        "mia",
+        "min",
+        "ne",
+        "no",
+        "nyg",
+        "nyj",
+        "phi",
+        "ari",
+        "pit",
+        "lac",
+        "sf",
+        "sea",
+        "tb",
+        "wsh",
+        "car",
+        "jax",
+        None,
+        None,
+        "bal",
+        "hou",
+    ]
+
+    return {
+        proTeamsById[int(k) - 1]: v["average"]
+        for k, v in ratingsByOpponent.items()
+    }
+
+
+def get_prediction(
+    team_name: str,
+    points_against: typing.Dict[str, float],
+) -> typing.List[typing.Any]:
     print(team_name)
     url = f"https://www.espn.com/nfl/team/schedule/_/name/{team_name}"
     resp = requests.get(url)
     soup = BeautifulSoup(resp.content, 'html.parser')
     rows = [list(r.children) for r in soup.find_all('tr')]
-    cells = [r[3] for r in rows if len(r) >= 3]
-
-    def get_game_links(cells):
-        for i in range(len(cells)):
-            if cells[i].text == 'TIME':
-                limited_cells = cells[i + 1:][:NUM_WEEKS]
-                return [c.find('a')['href'] for c in limited_cells]
-
-    game_links = get_game_links(cells)
-
-    def get_span_text(soup: BeautifulSoup, class_name: str) -> str:
-        found = soup.find("span", {"class": class_name})
-        assert found is not None
-        return found.text
-
-    def helper(link: str):
-        soup = get_game_soup(link)
-
-        raw_home_prob = get_span_text(soup, "value-home")
-        home_prob = float(raw_home_prob[:-1])
-
-        raw_away_prob = get_span_text(soup, "value-away")
-        away_prob = float(raw_away_prob[:-1])
-
-        home_team = get_span_text(soup, "home-team")
-        away_team = get_span_text(soup, "away-team")
-
-        # these are flipped in the page
-        # home_prob, away_prob = away_prob, home_prob
-        home_team, away_team = away_team, home_team
-
-        if team_name == home_team.lower():
-            probability = home_prob / (home_prob + away_prob)
-            opponent = f"vs {away_team}"
-        else:
-            probability = away_prob / (home_prob + away_prob)
-            opponent = f"@ {home_team}"
-        return {"p": probability, "o": opponent}
-
-    return [helper(i) for i in game_links]
-
-
-def memoize(f):
-    d = {}
-
-    def g(*args):
-        if args in d:
-            return d[args]
-        v = f(*args)
-        d[args] = v
-        return v
-
-    return g
-
-
-@memoize
-def get_game_soup(link: str) -> BeautifulSoup:
-    resp = requests.get(link)
-    soup = BeautifulSoup(resp.content, 'html.parser')
-    return soup
+    weeks = [
+        opponent.find('a', href=True)["href"].split("/")[5]
+        for week, opponent in [(int(week), opponent)
+                               for week, opponent in [(r[0].text, r[2])
+                                                      for r in rows
+                                                      if len(r) > 2]
+                               if week not in ['WK', 'HOF']]
+        if week in [14, 15, 16, 17]
+    ]
+    return [{"p": points_against[o], "o": o} for o in weeks]
 
 
 if __name__ == "__main__":
