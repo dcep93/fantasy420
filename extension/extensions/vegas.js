@@ -46,7 +46,7 @@
       )
       .then((promises) => Promise.all(promises))
       .then((events) =>
-        events.flatMap(({ event, eventCategories }) =>
+        events.filter(Boolean).flatMap(({ event, eventCategories }) =>
           eventCategories.flatMap(({ name, componentizedOffers }) =>
             componentizedOffers.flatMap(({ offers }) =>
               offers
@@ -263,7 +263,11 @@
       .then((response) => response.vegas || {})
       .then((vegas) => {
         toPersist
-          .filter(({ startDate }) => now < new Date(startDate))
+          .filter(({ name, startDate }) => {
+            if (now < new Date(startDate)) return true;
+            console.log(name, vegas[name]);
+            return false;
+          })
           .forEach(({ name, startDate, scores }) => {
             if (!vegas[name]) vegas[name] = {};
             vegas[name][startDate] = {
