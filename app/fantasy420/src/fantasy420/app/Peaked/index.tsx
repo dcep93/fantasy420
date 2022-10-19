@@ -30,7 +30,7 @@ export default function Peaked() {
   return (
     <div>
       <h1>{generated.peaked.lines[0]}</h1>
-      <div style={{ width: "100vw", display: "flex" }}>
+      <div style={{ width: "100vw", display: "flex", overflow: "scroll" }}>
         {teams.map((team, i) => (
           <div key={i}>
             <div
