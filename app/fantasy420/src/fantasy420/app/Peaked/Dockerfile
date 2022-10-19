@@ -24,4 +24,3 @@ COPY . ./
 
 ENTRYPOINT python3 generate.py
 
-# docker run --rm -it $(docker build -q .) | tee /dev/tty | pbcopy
