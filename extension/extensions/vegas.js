@@ -11,6 +11,7 @@
   var saved = undefined;
 
   function main() {
+    if (location.pathname === "/football/fantasycast") return;
     return new Promise((resolve, reject) =>
       chrome.runtime
         ? vegas()
