@@ -182,6 +182,5 @@ function normalize(name: string): string {
     .replaceAll(".", "")
     .replaceAll("-", "")
     .replace("AmonRa Brown", "AmonRa St Brown")
-    .replace(/Travis Etienne$/, "Travis Etienne Jr")
     .replace(/Ken Walker III$/, "Kenneth Walker III");
 }
