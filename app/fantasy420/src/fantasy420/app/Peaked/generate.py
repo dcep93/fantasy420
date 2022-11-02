@@ -18,8 +18,9 @@ league_id = 203836968
 # https://pbs.twimg.com/media/FeTjnmBXEAI5EM6?format=jpg&name=4096x4096
 # https://pbs.twimg.com/media/Fe3mDJPXkAIn2Sj?format=jpg&name=4096x4096
 # https://pbs.twimg.com/media/FfbqE5qX0AA-fyV?format=jpg&name=4096x4096
+# https://pbs.twimg.com/media/Ff_tdS8XoAAaJom?format=jpg&name=4096x4096
 peaked_url = '''
-https://pbs.twimg.com/media/Ff_tdS8XoAAaJom?format=jpg&name=4096x4096
+https://pbs.twimg.com/media/FgjwqEJWAAEG3gD?format=jpg&name=4096x4096
 '''.strip()
 teams_url = f"https://fantasy.espn.com/apis/v3/games/ffl/seasons/{year}/segments/0/leagues/{league_id}?view=mRoster&view=mTeam"
 
