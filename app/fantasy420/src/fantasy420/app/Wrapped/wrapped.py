@@ -29,7 +29,7 @@ def main():
     wrapped = {}
     for league_id in league_ids:
         wrapped[league_id] = get_wrapped(league_id)
-    print(json.dumps(wrapped, indent=2))
+    print(json.dumps(wrapped))
 
 
 def get_wrapped(league_id):
