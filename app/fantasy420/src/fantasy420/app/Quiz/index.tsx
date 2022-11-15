@@ -1,12 +1,15 @@
+import { useState } from "react";
 import raw_generated from "./generated.json";
 
 export default function Quiz() {
-  return helper(raw_generated);
+  return Helper(raw_generated);
 }
+
+const num = 10;
 
 const positions = ["ALL", "QB", "RB", "WR", "TE"];
 
-const keys = [
+const valueKeys = [
   "fantasy_points",
   "throws",
   "completions",
@@ -24,7 +27,7 @@ const keys = [
   "targets_minus_receptions",
 ];
 
-function helper(
+function Helper(
   generated: {
     full_name: string;
     position: string;
@@ -42,14 +45,24 @@ function helper(
     receiving_touchdowns?: number;
   }[]
 ) {
+  const [valueKey, updateKey] = useState(valueKeys[0]);
+  const [filter, updateFilter] = useState(positions[0]);
   return (
     <div>
       {JSON.stringify(
-        generated.map((p) => ({
-          yards_per_carry: (p.rushing_yards || 0) / (p.rushes || 0),
-          targets_minus_receptions: (p.targets || 0) - (p.receptions || 0),
-          ...p,
-        }))
+        generated
+          .map((p) => ({
+            yards_per_carry: (p.rushing_yards || 0) / (p.rushes || 0),
+            targets_minus_receptions: (p.targets || 0) - (p.receptions || 0),
+            ...p,
+          }))
+          .filter((p) => filter === "ALL" || p.position === filter)
+          .map((p) => ({
+            full_name: p.full_name,
+            value: (p as unknown as { [k: string]: number })[valueKey] || 0,
+          }))
+          .sort((a, b) => b.value - a.value)
+          .slice(0, num)
       )}
     </div>
   );
