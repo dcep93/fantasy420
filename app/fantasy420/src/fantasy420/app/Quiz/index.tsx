@@ -45,7 +45,9 @@ function Helper(
     receiving_touchdowns?: number;
   }[]
 ) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [valueKey, updateKey] = useState(valueKeys[0]);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [filter, updateFilter] = useState(positions[0]);
   return (
     <div>
