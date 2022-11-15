@@ -4,11 +4,12 @@ import Catalog from "../Catalog";
 import Draft from "./Draft";
 import Horoscope from "./Horoscope";
 import Peaked from "./Peaked";
+import Quiz from "./Quiz";
 import Sos from "./Sos";
 import Value from "./Value";
 import Wrapped from "./Wrapped";
 
-const pages = { Sos, Wrapped, Horoscope, Value, Peaked };
+const pages = { Sos, Wrapped, Horoscope, Value, Peaked, Quiz };
 if (process.env.NODE_ENV === "development") {
   Object.assign(pages, { Draft });
 }
