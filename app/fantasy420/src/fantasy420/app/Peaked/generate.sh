@@ -1,4 +1,7 @@
 #!/bin/bash
 
-docker run --rm -it $(docker build -q .) | tee /dev/tty | pbcopy
+
+cd -- "$( dirname -- "${BASH_SOURCE[0]}" )"
+docker build .
+docker run --rm -it $(docker build -q .) | tee generated.json
 
