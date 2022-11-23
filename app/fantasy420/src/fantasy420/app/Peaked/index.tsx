@@ -112,6 +112,7 @@ export default function Peaked() {
                       ...obj,
                     }))
                     .filter(({ name }) => !owned.includes(name))
+                    .filter(({ name }) => name.includes(" "))
                     .sort((a, b) => b.value - a.value)
                     .map((player, i) => (
                       <tr key={i}>
