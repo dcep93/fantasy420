@@ -4,7 +4,7 @@ export default function Standings() {
       {process([
         { dan: 8, bu: 3 },
         { george: 8, jon: 7 },
-        { ruifan: 8, heify: 8 },
+        { ruifan: 7, heify: 8 },
         { dylan: 8, neil: 7 },
       ]).map((results, i) => (
         <div
