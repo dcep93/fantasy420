@@ -6,10 +6,20 @@ import Horoscope from "./Horoscope";
 import Peaked from "./Peaked";
 import Quiz from "./Quiz";
 import Sos from "./Sos";
+import Standings from "./Standings";
 import Value from "./Value";
 import Wrapped from "./Wrapped";
 
-const pages = { Sos, Wrapped, Horoscope, Value, Peaked, Quiz, Draft };
+const pages = {
+  Sos,
+  Wrapped,
+  Horoscope,
+  Value,
+  Peaked,
+  Quiz,
+  Draft,
+  Standings,
+};
 if (process.env.NODE_ENV === "development") {
 }
 
