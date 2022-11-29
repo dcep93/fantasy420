@@ -45,7 +45,7 @@ function process(
       matchups.slice(1),
       results.flatMap((result) =>
         Object.keys(matchup)
-          .filter((winner) => !["dan"].includes(winner))
+          .filter((winner) => !["george"].includes(winner))
           .map((winner) =>
             Object.assign(
               Object.fromEntries(
