@@ -409,33 +409,36 @@ function GooseEggs(data: WrappedType) {
 function BestByStreamingPosition(data: WrappedType) {
   return (
     <div>
-      {[Position.QB, Position.DST, Position.K].map((position, i) => (
-        <div key={i} className={css.bubble}>
-          <h3>{Position[position]}</h3>
-          {sortByKey(
-            data.teamNames.map((teamName, index) => ({
-              teamName,
-              score: data.weeks
-                .flatMap((week) => week.matches)
-                .flatMap((teams) => teams)
-                .filter((team) => team.teamIndex === index)
-                .flatMap((team) =>
-                  team.lineup
-                    .filter(
-                      (playerId) => data.players[playerId].position === position
-                    )
-                    .map((playerId) => team.roster[playerId])
-                )
-                .reduce((a, b) => a + b, 0),
-            })),
-            (obj) => -obj.score
-          ).map((obj, i) => (
-            <div key={i}>
-              ({i + 1}) {obj.score.toFixed(2)} <b>{obj.teamName}</b>
-            </div>
-          ))}
-        </div>
-      ))}
+      {[Position.QB, Position.DST, Position.K, Position.TE].map(
+        (position, i) => (
+          <div key={i} className={css.bubble}>
+            <h3>{Position[position]}</h3>
+            {sortByKey(
+              data.teamNames.map((teamName, index) => ({
+                teamName,
+                score: data.weeks
+                  .flatMap((week) => week.matches)
+                  .flatMap((teams) => teams)
+                  .filter((team) => team.teamIndex === index)
+                  .flatMap((team) =>
+                    team.lineup
+                      .filter(
+                        (playerId) =>
+                          data.players[playerId].position === position
+                      )
+                      .map((playerId) => team.roster[playerId])
+                  )
+                  .reduce((a, b) => a + b, 0),
+              })),
+              (obj) => -obj.score
+            ).map((obj, i) => (
+              <div key={i}>
+                ({i + 1}) {obj.score.toFixed(2)} <b>{obj.teamName}</b>
+              </div>
+            ))}
+          </div>
+        )
+      )}
     </div>
   );
 }
