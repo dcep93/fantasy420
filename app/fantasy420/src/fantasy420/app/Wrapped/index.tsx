@@ -22,6 +22,7 @@ function Wrapped() {
   const data: WrappedType | undefined = (all_data as any)[leagueId];
   if (!data) return <>no data found for league {leagueId}</>;
   const toRender: { [key: string]: any } = {
+    StudsStarted: StudsStarted(data),
     WeekTopsAndBottoms: WeekWinnersAndLosers(data),
     SqueezesAndStomps: SqueezesAndStomps(data),
     BestByPosition: BestByStreamingPosition(data),
@@ -51,6 +52,49 @@ function Wrapped() {
         </h1>
         <div>{toRender[toRenderKey]}</div>
       </div>
+    </div>
+  );
+}
+
+function StudsStarted(data: WrappedType) {
+  const rawTeams = data.weeks
+    .flatMap((week) => week.matches)
+    .flatMap((match) => match);
+  const teams = data.teamNames
+    .map((teamName, i) => ({ teamName, i }))
+    .map((obj) => ({
+      ...obj,
+      players: Object.entries(
+        Object.fromEntries(
+          rawTeams
+            .filter((t) => t.teamIndex === obj.i)
+            .flatMap((team) => team.lineup)
+            .map((playerId) => [playerId, true])
+        )
+      ).map(([playerId]) => data.players[playerId]),
+    }));
+  return (
+    <div>
+      {teams.map((obj) => (
+        <div className={css.bubble}>
+          <div>{obj.teamName}</div>
+          {Object.values(Position)
+            .filter((p) => Number.isInteger(p))
+            .filter((p) => p !== Position.FLEX)
+            .map((p) => p as Position)
+            .map((p) => ({
+              p,
+              players: obj.players
+                .filter((player) => player.position === p)
+                .map((player) => player.name),
+            }))
+            .map(({ p, players }) => (
+              <div>
+                {Position[p]} ({players.length}): {players.join(" , ")}
+              </div>
+            ))}
+        </div>
+      ))}
     </div>
   );
 }
