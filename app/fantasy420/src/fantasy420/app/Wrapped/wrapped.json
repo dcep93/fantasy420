@@ -373,88 +373,64 @@
         ],
         "boxscores": [
           {
-            "team": "DET",
-            "oppTeam": "PHI",
-            "passing": 205.0,
-            "rushing": 181.0,
-            "score": 38
+            "team": "PHI",
+            "yardsAllowed": 386.0,
+            "pointsAllowed": 35.0
           },
           {
-            "team": "LAR",
-            "oppTeam": "BUF",
-            "passing": 191.0,
-            "rushing": 52.0,
-            "score": 31
+            "team": "BUF",
+            "yardsAllowed": 243.0,
+            "pointsAllowed": 10.0
           },
           {
-            "team": "HOU",
-            "oppTeam": "IND",
-            "passing": 222.0,
-            "rushing": 77.0,
-            "score": 20
+            "team": "IND",
+            "yardsAllowed": 299.0,
+            "pointsAllowed": 20.0
           },
           {
-            "team": "DAL",
-            "oppTeam": "TB",
-            "passing": 173.0,
-            "rushing": 71.0,
-            "score": 19
+            "team": "TB",
+            "yardsAllowed": 244.0,
+            "pointsAllowed": 3.0
           },
           {
-            "team": "PIT",
-            "oppTeam": "CIN",
-            "passing": 192.0,
-            "rushing": 75.0,
-            "score": 20
+            "team": "CIN",
+            "yardsAllowed": 267.0,
+            "pointsAllowed": 17.0
           },
           {
-            "team": "MIN",
-            "oppTeam": "GB",
-            "passing": 269.0,
-            "rushing": 126.0,
-            "score": 7
+            "team": "GB",
+            "yardsAllowed": 395.0,
+            "pointsAllowed": 23.0
           },
           {
-            "team": "ATL",
-            "oppTeam": "NO",
-            "passing": 215.0,
-            "rushing": 201.0,
-            "score": 27
+            "team": "NO",
+            "yardsAllowed": 416.0,
+            "pointsAllowed": 26.0
           },
           {
-            "team": "SEA",
-            "oppTeam": "DEN",
-            "passing": 177.0,
-            "rushing": 76.0,
-            "score": 16
+            "team": "DEN",
+            "yardsAllowed": 253.0,
+            "pointsAllowed": 17.0
           },
           {
-            "team": "LV",
-            "oppTeam": "LAC",
-            "passing": 256.0,
-            "rushing": 64.0,
-            "score": 24
+            "team": "LAC",
+            "yardsAllowed": 320.0,
+            "pointsAllowed": 19.0
           },
           {
-            "team": "MIA",
-            "oppTeam": "NE",
-            "passing": 242.0,
-            "rushing": 65.0,
-            "score": 7
+            "team": "NE",
+            "yardsAllowed": 307.0,
+            "pointsAllowed": 14.0
           },
           {
-            "team": "NYJ",
-            "oppTeam": "BAL",
-            "passing": 297.0,
-            "rushing": 83.0,
-            "score": 24
+            "team": "BAL",
+            "yardsAllowed": 380.0,
+            "pointsAllowed": 9.0
           },
           {
-            "team": "CHI",
-            "oppTeam": "SF",
-            "passing": 105.0,
-            "rushing": 99.0,
-            "score": 10
+            "team": "SF",
+            "yardsAllowed": 204.0,
+            "pointsAllowed": 19.0
           }
         ],
         "fieldgoals": [
@@ -901,81 +877,59 @@
         ],
         "boxscores": [
           {
-            "team": "CHI",
-            "oppTeam": "GB",
-            "passing": 48.0,
-            "rushing": 180.0,
-            "score": 27
-          },
-          {
-            "team": "TB",
-            "oppTeam": "NO",
-            "passing": 188.0,
-            "rushing": 72.0,
-            "score": 10
+            "team": "GB",
+            "yardsAllowed": 228.0,
+            "pointsAllowed": 10.0
           },
           {
             "team": "NO",
-            "oppTeam": "TB",
-            "passing": 208.0,
-            "rushing": 100.0,
-            "score": 20
+            "yardsAllowed": 260.0,
+            "pointsAllowed": 14.0
           },
           {
-            "team": "MIN",
-            "oppTeam": "PHI",
-            "passing": 202.0,
-            "rushing": 62.0,
-            "score": 24
+            "team": "TB",
+            "yardsAllowed": 308.0,
+            "pointsAllowed": 10.0
           },
           {
-            "team": "DAL",
-            "oppTeam": "CIN",
-            "passing": 230.0,
-            "rushing": 107.0,
-            "score": 17
+            "team": "PHI",
+            "yardsAllowed": 264.0,
+            "pointsAllowed": 7.0
           },
           {
-            "team": "MIA",
-            "oppTeam": "BAL",
-            "passing": 461.0,
-            "rushing": 86.0,
-            "score": 38
+            "team": "CIN",
+            "yardsAllowed": 337.0,
+            "pointsAllowed": 20.0
           },
           {
-            "team": "TEN",
-            "oppTeam": "BUF",
-            "passing": 107.0,
-            "rushing": 80.0,
-            "score": 41
+            "team": "BAL",
+            "yardsAllowed": 547.0,
+            "pointsAllowed": 42.0
           },
           {
-            "team": "NYJ",
-            "oppTeam": "CLE",
-            "passing": 309.0,
-            "rushing": 93.0,
-            "score": 30
+            "team": "BUF",
+            "yardsAllowed": 187.0,
+            "pointsAllowed": 7.0
           },
           {
-            "team": "ATL",
-            "oppTeam": "LAR",
-            "passing": 171.0,
-            "rushing": 90.0,
-            "score": 31
+            "team": "CLE",
+            "yardsAllowed": 402.0,
+            "pointsAllowed": 31.0
           },
           {
-            "team": "HOU",
-            "oppTeam": "DEN",
-            "passing": 154.0,
-            "rushing": 80.0,
-            "score": 16
+            "team": "LAR",
+            "yardsAllowed": 261.0,
+            "pointsAllowed": 25.0
           },
           {
-            "team": "SEA",
-            "oppTeam": "SF",
-            "passing": 180.0,
-            "rushing": 36.0,
-            "score": 27
+            "team": "DEN",
+            "yardsAllowed": 234.0,
+            "pointsAllowed": 9.0
+          },
+          {
+            "team": "SF",
+            "yardsAllowed": 216.0,
+            "pointsAllowed": 7.0
           }
         ],
         "fieldgoals": [
@@ -1421,81 +1375,59 @@
         ],
         "boxscores": [
           {
-            "team": "CHI",
-            "oppTeam": "HOU",
-            "passing": 82.0,
-            "rushing": 281.0,
-            "score": 20
+            "team": "HOU",
+            "yardsAllowed": 363.0,
+            "pointsAllowed": 23.0
           },
           {
-            "team": "NYJ",
-            "oppTeam": "CIN",
-            "passing": 252.0,
-            "rushing": 76.0,
-            "score": 27
-          },
-          {
-            "team": "GB",
-            "oppTeam": "TB",
-            "passing": 248.0,
-            "rushing": 67.0,
-            "score": 12
-          },
-          {
-            "team": "ARI",
-            "oppTeam": "LAR",
-            "passing": 295.0,
-            "rushing": 70.0,
-            "score": 20
-          },
-          {
-            "team": "DEN",
-            "oppTeam": "SF",
-            "passing": 160.0,
-            "rushing": 101.0,
-            "score": 10
+            "team": "CIN",
+            "yardsAllowed": 328.0,
+            "pointsAllowed": 12.0
           },
           {
             "team": "TB",
-            "oppTeam": "GB",
-            "passing": 251.0,
-            "rushing": 34.0,
-            "score": 14
+            "yardsAllowed": 315.0,
+            "pointsAllowed": 14.0
           },
           {
-            "team": "CAR",
-            "oppTeam": "NO",
-            "passing": 148.0,
-            "rushing": 145.0,
-            "score": 14
+            "team": "LAR",
+            "yardsAllowed": 365.0,
+            "pointsAllowed": 12.0
           },
           {
-            "team": "NYG",
-            "oppTeam": "DAL",
-            "passing": 169.0,
-            "rushing": 167.0,
-            "score": 23
+            "team": "SF",
+            "yardsAllowed": 261.0,
+            "pointsAllowed": 9.0
           },
           {
-            "team": "WSH",
-            "oppTeam": "PHI",
-            "passing": 153.0,
-            "rushing": 87.0,
-            "score": 24
+            "team": "GB",
+            "yardsAllowed": 285.0,
+            "pointsAllowed": 12.0
           },
           {
-            "team": "JAX",
-            "oppTeam": "LAC",
-            "passing": 262.0,
-            "rushing": 151.0,
-            "score": 10
+            "team": "NO",
+            "yardsAllowed": 293.0,
+            "pointsAllowed": 16.0
           },
           {
-            "team": "MIA",
-            "oppTeam": "BUF",
-            "passing": 171.0,
-            "rushing": 41.0,
-            "score": 19
+            "team": "DAL",
+            "yardsAllowed": 336.0,
+            "pointsAllowed": 16.0
+          },
+          {
+            "team": "PHI",
+            "yardsAllowed": 240.0,
+            "pointsAllowed": 6.0
+          },
+          {
+            "team": "LAC",
+            "yardsAllowed": 413.0,
+            "pointsAllowed": 38.0
+          },
+          {
+            "team": "BUF",
+            "yardsAllowed": 212.0,
+            "pointsAllowed": 21.0
           }
         ],
         "fieldgoals": [
@@ -1945,88 +1877,64 @@
         ],
         "boxscores": [
           {
-            "team": "LAR",
-            "oppTeam": "SF",
-            "passing": 200.0,
-            "rushing": 57.0,
-            "score": 24
+            "team": "SF",
+            "yardsAllowed": 257.0,
+            "pointsAllowed": 9.0
           },
           {
-            "team": "CHI",
-            "oppTeam": "NYG",
-            "passing": 155.0,
-            "rushing": 149.0,
-            "score": 20
+            "team": "NYG",
+            "yardsAllowed": 304.0,
+            "pointsAllowed": 12.0
           },
           {
-            "team": "TEN",
-            "oppTeam": "IND",
-            "passing": 116.0,
-            "rushing": 127.0,
-            "score": 17
+            "team": "IND",
+            "yardsAllowed": 243.0,
+            "pointsAllowed": 24.0
           },
           {
-            "team": "WSH",
-            "oppTeam": "DAL",
-            "passing": 155.0,
-            "rushing": 142.0,
-            "score": 25
-          },
-          {
-            "team": "NO",
-            "oppTeam": "MIN",
-            "passing": 227.0,
-            "rushing": 111.0,
-            "score": 28
-          },
-          {
-            "team": "NYJ",
-            "oppTeam": "PIT",
-            "passing": 250.0,
-            "rushing": 98.0,
-            "score": 20
-          },
-          {
-            "team": "HOU",
-            "oppTeam": "LAC",
-            "passing": 215.0,
-            "rushing": 131.0,
-            "score": 34
-          },
-          {
-            "team": "KC",
-            "oppTeam": "TB",
-            "passing": 228.0,
-            "rushing": 189.0,
-            "score": 31
-          },
-          {
-            "team": "JAX",
-            "oppTeam": "PHI",
-            "passing": 148.0,
-            "rushing": 71.0,
-            "score": 29
-          },
-          {
-            "team": "NE",
-            "oppTeam": "GB",
-            "passing": 104.0,
-            "rushing": 167.0,
-            "score": 27
+            "team": "DAL",
+            "yardsAllowed": 297.0,
+            "pointsAllowed": 10.0
           },
           {
             "team": "MIN",
-            "oppTeam": "NO",
-            "passing": 263.0,
-            "rushing": 81.0,
-            "score": 25
+            "yardsAllowed": 338.0,
+            "pointsAllowed": 25.0
           },
           {
-            "team": "BAL",
-            "oppTeam": "BUF",
-            "passing": 134.0,
-            "rushing": 162.0,
-            "score": 23
+            "team": "PIT",
+            "yardsAllowed": 348.0,
+            "pointsAllowed": 24.0
+          },
+          {
+            "team": "LAC",
+            "yardsAllowed": 346.0,
+            "pointsAllowed": 24.0
+          },
+          {
+            "team": "TB",
+            "yardsAllowed": 417.0,
+            "pointsAllowed": 41.0
+          },
+          {
+            "team": "PHI",
+            "yardsAllowed": 219.0,
+            "pointsAllowed": 15.0
+          },
+          {
+            "team": "GB",
+            "yardsAllowed": 271.0,
+            "pointsAllowed": 18.0
+          },
+          {
+            "team": "NO",
+            "yardsAllowed": 344.0,
+            "pointsAllowed": 28.0
+          },
+          {
+            "team": "BUF",
+            "yardsAllowed": 296.0,
+            "pointsAllowed": 20.0
           }
         ],
         "fieldgoals": [
@@ -2492,88 +2400,64 @@
         ],
         "boxscores": [
           {
-            "team": "LAR",
-            "oppTeam": "DAL",
-            "passing": 285.0,
-            "rushing": 38.0,
-            "score": 22
-          },
-          {
-            "team": "WSH",
-            "oppTeam": "TEN",
-            "passing": 342.0,
-            "rushing": 43.0,
-            "score": 21
-          },
-          {
-            "team": "ARI",
-            "oppTeam": "PHI",
-            "passing": 239.0,
-            "rushing": 124.0,
-            "score": 20
-          },
-          {
-            "team": "NYJ",
-            "oppTeam": "MIA",
-            "passing": 187.0,
-            "rushing": 135.0,
-            "score": 17
-          },
-          {
-            "team": "PIT",
-            "oppTeam": "BUF",
-            "passing": 310.0,
-            "rushing": 54.0,
-            "score": 38
-          },
-          {
-            "team": "CAR",
-            "oppTeam": "SF",
-            "passing": 244.0,
-            "rushing": 64.0,
-            "score": 37
-          },
-          {
-            "team": "ATL",
-            "oppTeam": "TB",
-            "passing": 110.0,
-            "rushing": 151.0,
-            "score": 21
-          },
-          {
-            "team": "CHI",
-            "oppTeam": "MIN",
-            "passing": 193.0,
-            "rushing": 78.0,
-            "score": 29
+            "team": "DAL",
+            "yardsAllowed": 323.0,
+            "pointsAllowed": 10.0
           },
           {
             "team": "TEN",
-            "oppTeam": "WSH",
-            "passing": 136.0,
-            "rushing": 105.0,
-            "score": 17
+            "yardsAllowed": 385.0,
+            "pointsAllowed": 17.0
           },
           {
-            "team": "HOU",
-            "oppTeam": "JAX",
-            "passing": 132.0,
-            "rushing": 116.0,
-            "score": 6
+            "team": "PHI",
+            "yardsAllowed": 363.0,
+            "pointsAllowed": 17.0
           },
           {
-            "team": "NYG",
-            "oppTeam": "GB",
-            "passing": 213.0,
-            "rushing": 125.0,
-            "score": 22
+            "team": "MIA",
+            "yardsAllowed": 322.0,
+            "pointsAllowed": 38.0
           },
           {
-            "team": "SEA",
-            "oppTeam": "NO",
-            "passing": 245.0,
-            "rushing": 151.0,
-            "score": 39
+            "team": "BUF",
+            "yardsAllowed": 364.0,
+            "pointsAllowed": 3.0
+          },
+          {
+            "team": "SF",
+            "yardsAllowed": 308.0,
+            "pointsAllowed": 15.0
+          },
+          {
+            "team": "TB",
+            "yardsAllowed": 261.0,
+            "pointsAllowed": 15.0
+          },
+          {
+            "team": "MIN",
+            "yardsAllowed": 271.0,
+            "pointsAllowed": 22.0
+          },
+          {
+            "team": "WSH",
+            "yardsAllowed": 241.0,
+            "pointsAllowed": 21.0
+          },
+          {
+            "team": "JAX",
+            "yardsAllowed": 248.0,
+            "pointsAllowed": 13.0
+          },
+          {
+            "team": "GB",
+            "yardsAllowed": 338.0,
+            "pointsAllowed": 27.0
+          },
+          {
+            "team": "NO",
+            "yardsAllowed": 396.0,
+            "pointsAllowed": 32.0
           }
         ],
         "fieldgoals": [
@@ -3024,81 +2908,59 @@
         ],
         "boxscores": [
           {
-            "team": "KC",
-            "oppTeam": "BUF",
-            "passing": 319.0,
-            "rushing": 68.0,
-            "score": 24
+            "team": "BUF",
+            "yardsAllowed": 387.0,
+            "pointsAllowed": 20.0
           },
           {
-            "team": "PIT",
-            "oppTeam": "TB",
-            "passing": 193.0,
-            "rushing": 77.0,
-            "score": 18
+            "team": "TB",
+            "yardsAllowed": 270.0,
+            "pointsAllowed": 20.0
           },
           {
-            "team": "NYJ",
-            "oppTeam": "GB",
-            "passing": 99.0,
-            "rushing": 179.0,
-            "score": 10
+            "team": "GB",
+            "yardsAllowed": 278.0,
+            "pointsAllowed": 27.0
           },
           {
-            "team": "LAC",
-            "oppTeam": "DEN",
-            "passing": 224.0,
-            "rushing": 73.0,
-            "score": 16
-          },
-          {
-            "team": "CAR",
-            "oppTeam": "LAR",
-            "passing": 110.0,
-            "rushing": 93.0,
-            "score": 24
-          },
-          {
-            "team": "IND",
-            "oppTeam": "JAX",
-            "passing": 389.0,
-            "rushing": 45.0,
-            "score": 27
-          },
-          {
-            "team": "CLE",
-            "oppTeam": "NE",
-            "passing": 258.0,
-            "rushing": 70.0,
-            "score": 38
-          },
-          {
-            "team": "PHI",
-            "oppTeam": "DAL",
-            "passing": 132.0,
-            "rushing": 136.0,
-            "score": 17
-          },
-          {
-            "team": "ATL",
-            "oppTeam": "SF",
-            "passing": 121.0,
-            "rushing": 168.0,
-            "score": 14
-          },
-          {
-            "team": "DAL",
-            "oppTeam": "PHI",
-            "passing": 181.0,
-            "rushing": 134.0,
-            "score": 26
+            "team": "DEN",
+            "yardsAllowed": 297.0,
+            "pointsAllowed": 19.0
           },
           {
             "team": "LAR",
-            "oppTeam": "CAR",
-            "passing": 249.0,
-            "rushing": 111.0,
-            "score": 10
+            "yardsAllowed": 203.0,
+            "pointsAllowed": 4.0
+          },
+          {
+            "team": "JAX",
+            "yardsAllowed": 434.0,
+            "pointsAllowed": 34.0
+          },
+          {
+            "team": "NE",
+            "yardsAllowed": 328.0,
+            "pointsAllowed": 15.0
+          },
+          {
+            "team": "DAL",
+            "yardsAllowed": 268.0,
+            "pointsAllowed": 26.0
+          },
+          {
+            "team": "SF",
+            "yardsAllowed": 289.0,
+            "pointsAllowed": 22.0
+          },
+          {
+            "team": "PHI",
+            "yardsAllowed": 315.0,
+            "pointsAllowed": 17.0
+          },
+          {
+            "team": "CAR",
+            "yardsAllowed": 360.0,
+            "pointsAllowed": 24.0
           }
         ],
         "fieldgoals": [
@@ -3551,81 +3413,59 @@
         ],
         "boxscores": [
           {
-            "team": "HOU",
-            "oppTeam": "LV",
-            "passing": 296.0,
-            "rushing": 108.0,
-            "score": 38
+            "team": "LV",
+            "yardsAllowed": 404.0,
+            "pointsAllowed": 20.0
           },
           {
-            "team": "ATL",
-            "oppTeam": "CIN",
-            "passing": 107.0,
-            "rushing": 107.0,
-            "score": 35
-          },
-          {
-            "team": "NYJ",
-            "oppTeam": "DEN",
-            "passing": 105.0,
-            "rushing": 155.0,
-            "score": 9
-          },
-          {
-            "team": "CHI",
-            "oppTeam": "NE",
-            "passing": 147.0,
-            "rushing": 243.0,
-            "score": 14
-          },
-          {
-            "team": "KC",
-            "oppTeam": "SF",
-            "passing": 417.0,
-            "rushing": 112.0,
-            "score": 23
-          },
-          {
-            "team": "DET",
-            "oppTeam": "DAL",
-            "passing": 195.0,
-            "rushing": 117.0,
-            "score": 24
-          },
-          {
-            "team": "WSH",
-            "oppTeam": "GB",
-            "passing": 198.0,
-            "rushing": 166.0,
-            "score": 21
-          },
-          {
-            "team": "TEN",
-            "oppTeam": "IND",
-            "passing": 116.0,
-            "rushing": 138.0,
-            "score": 10
+            "team": "CIN",
+            "yardsAllowed": 214.0,
+            "pointsAllowed": 17.0
           },
           {
             "team": "DEN",
-            "oppTeam": "NYJ",
-            "passing": 219.0,
-            "rushing": 105.0,
-            "score": 16
+            "yardsAllowed": 260.0,
+            "pointsAllowed": 16.0
           },
           {
-            "team": "CAR",
-            "oppTeam": "TB",
-            "passing": 170.0,
-            "rushing": 173.0,
-            "score": 3
+            "team": "NE",
+            "yardsAllowed": 390.0,
+            "pointsAllowed": 33.0
           },
           {
-            "team": "CLE",
-            "oppTeam": "BAL",
-            "passing": 223.0,
-            "rushing": 113.0,
-            "score": 23
+            "team": "SF",
+            "yardsAllowed": 529.0,
+            "pointsAllowed": 42.0
+          },
+          {
+            "team": "DAL",
+            "yardsAllowed": 312.0,
+            "pointsAllowed": 6.0
+          },
+          {
+            "team": "GB",
+            "yardsAllowed": 364.0,
+            "pointsAllowed": 23.0
+          },
+          {
+            "team": "IND",
+            "yardsAllowed": 254.0,
+            "pointsAllowed": 13.0
+          },
+          {
+            "team": "NYJ",
+            "yardsAllowed": 324.0,
+            "pointsAllowed": 9.0
+          },
+          {
+            "team": "TB",
+            "yardsAllowed": 343.0,
+            "pointsAllowed": 21.0
+          },
+          {
+            "team": "BAL",
+            "yardsAllowed": 336.0,
+            "pointsAllowed": 20.0
           }
         ],
         "fieldgoals": [
@@ -4086,88 +3926,64 @@
         ],
         "boxscores": [
           {
-            "team": "GB",
-            "oppTeam": "BUF",
-            "passing": 190.0,
-            "rushing": 208.0,
-            "score": 27
-          },
-          {
-            "team": "NYJ",
-            "oppTeam": "NE",
-            "passing": 336.0,
-            "rushing": 51.0,
-            "score": 22
-          },
-          {
-            "team": "JAX",
-            "oppTeam": "DEN",
-            "passing": 114.0,
-            "rushing": 191.0,
-            "score": 21
-          },
-          {
-            "team": "CHI",
-            "oppTeam": "DAL",
-            "passing": 131.0,
-            "rushing": 240.0,
-            "score": 49
-          },
-          {
-            "team": "LAR",
-            "oppTeam": "SF",
-            "passing": 167.0,
-            "rushing": 56.0,
-            "score": 31
-          },
-          {
-            "team": "PIT",
-            "oppTeam": "PHI",
-            "passing": 158.0,
-            "rushing": 144.0,
-            "score": 35
-          },
-          {
-            "team": "WSH",
-            "oppTeam": "IND",
-            "passing": 266.0,
-            "rushing": 96.0,
-            "score": 16
-          },
-          {
-            "team": "DET",
-            "oppTeam": "MIA",
-            "passing": 311.0,
-            "rushing": 82.0,
-            "score": 31
-          },
-          {
-            "team": "BAL",
-            "oppTeam": "TB",
-            "passing": 222.0,
-            "rushing": 231.0,
-            "score": 22
+            "team": "BUF",
+            "yardsAllowed": 398.0,
+            "pointsAllowed": 17.0
           },
           {
             "team": "NE",
-            "oppTeam": "NYJ",
-            "passing": 161.0,
-            "rushing": 127.0,
-            "score": 17
+            "yardsAllowed": 387.0,
+            "pointsAllowed": 17.0
           },
           {
-            "team": "NO",
-            "oppTeam": "LV",
-            "passing": 231.0,
-            "rushing": 136.0,
-            "score": 0
+            "team": "DEN",
+            "yardsAllowed": 305.0,
+            "pointsAllowed": 17.0
           },
           {
-            "team": "HOU",
-            "oppTeam": "TEN",
-            "passing": 118.0,
-            "rushing": 43.0,
-            "score": 17
+            "team": "DAL",
+            "yardsAllowed": 371.0,
+            "pointsAllowed": 29.0
+          },
+          {
+            "team": "SF",
+            "yardsAllowed": 223.0,
+            "pointsAllowed": 14.0
+          },
+          {
+            "team": "PHI",
+            "yardsAllowed": 302.0,
+            "pointsAllowed": 13.0
+          },
+          {
+            "team": "IND",
+            "yardsAllowed": 362.0,
+            "pointsAllowed": 17.0
+          },
+          {
+            "team": "MIA",
+            "yardsAllowed": 393.0,
+            "pointsAllowed": 27.0
+          },
+          {
+            "team": "TB",
+            "yardsAllowed": 453.0,
+            "pointsAllowed": 27.0
+          },
+          {
+            "team": "NYJ",
+            "yardsAllowed": 288.0,
+            "pointsAllowed": 22.0
+          },
+          {
+            "team": "LV",
+            "yardsAllowed": 367.0,
+            "pointsAllowed": 24.0
+          },
+          {
+            "team": "TEN",
+            "yardsAllowed": 161.0,
+            "pointsAllowed": 10.0
           }
         ],
         "fieldgoals": [
@@ -4628,81 +4444,59 @@
         ],
         "boxscores": [
           {
-            "team": "WSH",
-            "oppTeam": "MIN",
-            "passing": 126.0,
-            "rushing": 137.0,
-            "score": 20
+            "team": "MIN",
+            "yardsAllowed": 263.0,
+            "pointsAllowed": 17.0
           },
           {
-            "team": "NYJ",
-            "oppTeam": "BUF",
-            "passing": 136.0,
-            "rushing": 174.0,
-            "score": 17
-          },
-          {
-            "team": "IND",
-            "oppTeam": "NE",
-            "passing": 43.0,
-            "rushing": 78.0,
-            "score": 26
-          },
-          {
-            "team": "HOU",
-            "oppTeam": "PHI",
-            "passing": 135.0,
-            "rushing": 168.0,
-            "score": 29
-          },
-          {
-            "team": "CAR",
-            "oppTeam": "CIN",
-            "passing": 164.0,
-            "rushing": 64.0,
-            "score": 42
-          },
-          {
-            "team": "ARI",
-            "oppTeam": "SEA",
-            "passing": 140.0,
-            "rushing": 122.0,
-            "score": 31
-          },
-          {
-            "team": "TEN",
-            "oppTeam": "KC",
-            "passing": 57.0,
-            "rushing": 172.0,
-            "score": 20
-          },
-          {
-            "team": "DET",
-            "oppTeam": "GB",
-            "passing": 137.0,
-            "rushing": 117.0,
-            "score": 9
-          },
-          {
-            "team": "LAR",
-            "oppTeam": "TB",
-            "passing": 138.0,
-            "rushing": 68.0,
-            "score": 16
+            "team": "BUF",
+            "yardsAllowed": 310.0,
+            "pointsAllowed": 20.0
           },
           {
             "team": "NE",
-            "oppTeam": "IND",
-            "passing": 133.0,
-            "rushing": 70.0,
-            "score": 3
+            "yardsAllowed": 121.0,
+            "pointsAllowed": 3.0
           },
           {
-            "team": "CHI",
-            "oppTeam": "MIA",
-            "passing": 116.0,
-            "rushing": 252.0,
-            "score": 35
+            "team": "PHI",
+            "yardsAllowed": 303.0,
+            "pointsAllowed": 17.0
+          },
+          {
+            "team": "CIN",
+            "yardsAllowed": 228.0,
+            "pointsAllowed": 21.0
+          },
+          {
+            "team": "SEA",
+            "yardsAllowed": 262.0,
+            "pointsAllowed": 15.0
+          },
+          {
+            "team": "KC",
+            "yardsAllowed": 229.0,
+            "pointsAllowed": 17.0
+          },
+          {
+            "team": "GB",
+            "yardsAllowed": 254.0,
+            "pointsAllowed": 15.0
+          },
+          {
+            "team": "TB",
+            "yardsAllowed": 206.0,
+            "pointsAllowed": 13.0
+          },
+          {
+            "team": "IND",
+            "yardsAllowed": 203.0,
+            "pointsAllowed": 20.0
+          },
+          {
+            "team": "MIA",
+            "yardsAllowed": 368.0,
+            "pointsAllowed": 32.0
           }
         ],
         "fieldgoals": [
@@ -5164,88 +4958,64 @@
         ],
         "boxscores": [
           {
-            "team": "TEN",
-            "oppTeam": "DEN",
-            "passing": 244.0,
-            "rushing": 63.0,
-            "score": 10
-          },
-          {
-            "team": "TB",
-            "oppTeam": "SEA",
-            "passing": 258.0,
-            "rushing": 161.0,
-            "score": 16
-          },
-          {
-            "team": "WSH",
-            "oppTeam": "PHI",
-            "passing": 178.0,
-            "rushing": 152.0,
-            "score": 21
-          },
-          {
-            "team": "GB",
-            "oppTeam": "DAL",
-            "passing": 208.0,
-            "rushing": 207.0,
-            "score": 28
+            "team": "DEN",
+            "yardsAllowed": 307.0,
+            "pointsAllowed": 17.0
           },
           {
             "team": "SEA",
-            "oppTeam": "TB",
-            "passing": 244.0,
-            "rushing": 39.0,
-            "score": 21
+            "yardsAllowed": 419.0,
+            "pointsAllowed": 21.0
           },
           {
-            "team": "LAC",
-            "oppTeam": "SF",
-            "passing": 187.0,
-            "rushing": 51.0,
-            "score": 22
+            "team": "PHI",
+            "yardsAllowed": 330.0,
+            "pointsAllowed": 26.0
           },
           {
-            "team": "LAR",
-            "oppTeam": "ARI",
-            "passing": 190.0,
-            "rushing": 66.0,
-            "score": 27
+            "team": "DAL",
+            "yardsAllowed": 415.0,
+            "pointsAllowed": 31.0
           },
           {
-            "team": "MIN",
-            "oppTeam": "BUF",
-            "passing": 334.0,
-            "rushing": 147.0,
-            "score": 30
+            "team": "TB",
+            "yardsAllowed": 283.0,
+            "pointsAllowed": 16.0
           },
           {
-            "team": "HOU",
-            "oppTeam": "NYG",
-            "passing": 286.0,
-            "rushing": 101.0,
-            "score": 24
+            "team": "SF",
+            "yardsAllowed": 238.0,
+            "pointsAllowed": 16.0
           },
           {
-            "team": "JAX",
-            "oppTeam": "KC",
-            "passing": 240.0,
-            "rushing": 75.0,
-            "score": 27
+            "team": "ARI",
+            "yardsAllowed": 256.0,
+            "pointsAllowed": 17.0
           },
           {
-            "team": "PIT",
-            "oppTeam": "NO",
-            "passing": 162.0,
-            "rushing": 217.0,
-            "score": 10
+            "team": "BUF",
+            "yardsAllowed": 481.0,
+            "pointsAllowed": 27.0
           },
           {
-            "team": "DEN",
-            "oppTeam": "TEN",
-            "passing": 248.0,
-            "rushing": 65.0,
-            "score": 17
+            "team": "NYG",
+            "yardsAllowed": 387.0,
+            "pointsAllowed": 16.0
+          },
+          {
+            "team": "KC",
+            "yardsAllowed": 315.0,
+            "pointsAllowed": 17.0
+          },
+          {
+            "team": "NO",
+            "yardsAllowed": 379.0,
+            "pointsAllowed": 20.0
+          },
+          {
+            "team": "TEN",
+            "yardsAllowed": 313.0,
+            "pointsAllowed": 10.0
           }
         ],
         "fieldgoals": [
@@ -5702,95 +5472,69 @@
         ],
         "boxscores": [
           {
-            "team": "ARI",
-            "oppTeam": "SF",
-            "passing": 247.0,
-            "rushing": 67.0,
-            "score": 38
-          },
-          {
             "team": "SF",
-            "oppTeam": "ARI",
-            "passing": 228.0,
-            "rushing": 159.0,
-            "score": 10
+            "yardsAllowed": 314.0,
+            "pointsAllowed": 10.0
           },
           {
-            "team": "NYJ",
-            "oppTeam": "NE",
-            "passing": 44.0,
-            "rushing": 59.0,
-            "score": 10
-          },
-          {
-            "team": "IND",
-            "oppTeam": "PHI",
-            "passing": 185.0,
-            "rushing": 99.0,
-            "score": 17
-          },
-          {
-            "team": "TEN",
-            "oppTeam": "GB",
-            "passing": 320.0,
-            "rushing": 88.0,
-            "score": 17
-          },
-          {
-            "team": "KC",
-            "oppTeam": "LAC",
-            "passing": 322.0,
-            "rushing": 163.0,
-            "score": 27
-          },
-          {
-            "team": "HOU",
-            "oppTeam": "WSH",
-            "passing": 127.0,
-            "rushing": 21.0,
-            "score": 23
-          },
-          {
-            "team": "LV",
-            "oppTeam": "DEN",
-            "passing": 298.0,
-            "rushing": 109.0,
-            "score": 16
-          },
-          {
-            "team": "LAR",
-            "oppTeam": "NO",
-            "passing": 188.0,
-            "rushing": 148.0,
-            "score": 27
+            "team": "ARI",
+            "yardsAllowed": 387.0,
+            "pointsAllowed": 38.0
           },
           {
             "team": "NE",
-            "oppTeam": "NYJ",
-            "passing": 198.0,
-            "rushing": 99.0,
-            "score": 3
+            "yardsAllowed": 103.0,
+            "pointsAllowed": 3.0
           },
           {
-            "team": "MIN",
-            "oppTeam": "DAL",
-            "passing": 110.0,
-            "rushing": 73.0,
-            "score": 40
+            "team": "PHI",
+            "yardsAllowed": 284.0,
+            "pointsAllowed": 16.0
           },
           {
-            "team": "CLE",
-            "oppTeam": "BUF",
-            "passing": 316.0,
-            "rushing": 80.0,
-            "score": 31
+            "team": "GB",
+            "yardsAllowed": 408.0,
+            "pointsAllowed": 27.0
           },
           {
-            "team": "CAR",
-            "oppTeam": "BAL",
-            "passing": 169.0,
-            "rushing": 36.0,
-            "score": 13
+            "team": "LAC",
+            "yardsAllowed": 485.0,
+            "pointsAllowed": 30.0
+          },
+          {
+            "team": "WSH",
+            "yardsAllowed": 148.0,
+            "pointsAllowed": 10.0
+          },
+          {
+            "team": "DEN",
+            "yardsAllowed": 407.0,
+            "pointsAllowed": 22.0
+          },
+          {
+            "team": "NO",
+            "yardsAllowed": 336.0,
+            "pointsAllowed": 20.0
+          },
+          {
+            "team": "NYJ",
+            "yardsAllowed": 297.0,
+            "pointsAllowed": 10.0
+          },
+          {
+            "team": "DAL",
+            "yardsAllowed": 183.0,
+            "pointsAllowed": 3.0
+          },
+          {
+            "team": "BUF",
+            "yardsAllowed": 396.0,
+            "pointsAllowed": 23.0
+          },
+          {
+            "team": "BAL",
+            "yardsAllowed": 205.0,
+            "pointsAllowed": 3.0
           }
         ],
         "fieldgoals": [
@@ -6248,116 +5992,84 @@
         ],
         "boxscores": [
           {
-            "team": "HOU",
-            "oppTeam": "MIA",
-            "passing": 174.0,
-            "rushing": 36.0,
-            "score": 30
-          },
-          {
-            "team": "NE",
-            "oppTeam": "MIN",
-            "passing": 364.0,
-            "rushing": 45.0,
-            "score": 33
-          },
-          {
-            "team": "PHI",
-            "oppTeam": "GB",
-            "passing": 137.0,
-            "rushing": 363.0,
-            "score": 33
-          },
-          {
-            "team": "ARI",
-            "oppTeam": "LAC",
-            "passing": 185.0,
-            "rushing": 181.0,
-            "score": 25
-          },
-          {
-            "team": "LAR",
-            "oppTeam": "KC",
-            "passing": 82.0,
-            "rushing": 116.0,
-            "score": 26
-          },
-          {
-            "team": "CHI",
-            "oppTeam": "NYJ",
-            "passing": 165.0,
-            "rushing": 127.0,
-            "score": 31
-          },
-          {
-            "team": "CIN",
-            "oppTeam": "TEN",
-            "passing": 266.0,
-            "rushing": 108.0,
-            "score": 16
-          },
-          {
-            "team": "CLE",
-            "oppTeam": "TB",
-            "passing": 178.0,
-            "rushing": 189.0,
-            "score": 17
+            "team": "MIA",
+            "yardsAllowed": 210.0,
+            "pointsAllowed": 15.0
           },
           {
             "team": "MIN",
-            "oppTeam": "NE",
-            "passing": 301.0,
-            "rushing": 57.0,
-            "score": 26
-          },
-          {
-            "team": "JAX",
-            "oppTeam": "BAL",
-            "passing": 294.0,
-            "rushing": 38.0,
-            "score": 27
-          },
-          {
-            "team": "NO",
-            "oppTeam": "SF",
-            "passing": 197.0,
-            "rushing": 63.0,
-            "score": 13
-          },
-          {
-            "team": "NYG",
-            "oppTeam": "DAL",
-            "passing": 210.0,
-            "rushing": 90.0,
-            "score": 28
+            "yardsAllowed": 409.0,
+            "pointsAllowed": 26.0
           },
           {
             "team": "GB",
-            "oppTeam": "PHI",
-            "passing": 236.0,
-            "rushing": 106.0,
-            "score": 40
+            "yardsAllowed": 500.0,
+            "pointsAllowed": 40.0
           },
           {
-            "team": "CAR",
-            "oppTeam": "DEN",
-            "passing": 164.0,
-            "rushing": 185.0,
-            "score": 10
+            "team": "LAC",
+            "yardsAllowed": 366.0,
+            "pointsAllowed": 24.0
           },
           {
-            "team": "LV",
-            "oppTeam": "SEA",
-            "passing": 293.0,
-            "rushing": 283.0,
-            "score": 34
+            "team": "KC",
+            "yardsAllowed": 198.0,
+            "pointsAllowed": 10.0
           },
           {
-            "team": "DET",
-            "oppTeam": "BUF",
-            "passing": 230.0,
-            "rushing": 96.0,
-            "score": 28
+            "team": "NYJ",
+            "yardsAllowed": 292.0,
+            "pointsAllowed": 10.0
+          },
+          {
+            "team": "TEN",
+            "yardsAllowed": 374.0,
+            "pointsAllowed": 20.0
+          },
+          {
+            "team": "TB",
+            "yardsAllowed": 367.0,
+            "pointsAllowed": 23.0
+          },
+          {
+            "team": "NE",
+            "yardsAllowed": 358.0,
+            "pointsAllowed": 33.0
+          },
+          {
+            "team": "BAL",
+            "yardsAllowed": 332.0,
+            "pointsAllowed": 28.0
+          },
+          {
+            "team": "SF",
+            "yardsAllowed": 260.0,
+            "pointsAllowed": 0.0
+          },
+          {
+            "team": "DAL",
+            "yardsAllowed": 300.0,
+            "pointsAllowed": 20.0
+          },
+          {
+            "team": "PHI",
+            "yardsAllowed": 342.0,
+            "pointsAllowed": 33.0
+          },
+          {
+            "team": "DEN",
+            "yardsAllowed": 349.0,
+            "pointsAllowed": 23.0
+          },
+          {
+            "team": "SEA",
+            "yardsAllowed": 576.0,
+            "pointsAllowed": 40.0
+          },
+          {
+            "team": "BUF",
+            "yardsAllowed": 326.0,
+            "pointsAllowed": 25.0
           }
         ],
         "fieldgoals": [
@@ -6813,116 +6525,84 @@
         ],
         "boxscores": [
           {
-            "team": "MIN",
-            "oppTeam": "NYJ",
-            "passing": 159.0,
-            "rushing": 128.0,
-            "score": 22
-          },
-          {
-            "team": "PHI",
-            "oppTeam": "TEN",
-            "passing": 386.0,
-            "rushing": 67.0,
-            "score": 10
-          },
-          {
-            "team": "HOU",
-            "oppTeam": "CLE",
-            "passing": 201.0,
-            "rushing": 82.0,
-            "score": 27
-          },
-          {
-            "team": "DEN",
-            "oppTeam": "BAL",
-            "passing": 184.0,
-            "rushing": 88.0,
-            "score": 10
-          },
-          {
-            "team": "CHI",
-            "oppTeam": "GB",
-            "passing": 254.0,
-            "rushing": 155.0,
-            "score": 28
-          },
-          {
-            "team": "LV",
-            "oppTeam": "LAC",
-            "passing": 250.0,
-            "rushing": 154.0,
-            "score": 20
-          },
-          {
-            "team": "CIN",
-            "oppTeam": "KC",
-            "passing": 279.0,
-            "rushing": 152.0,
-            "score": 24
-          },
-          {
-            "team": "IND",
-            "oppTeam": "DAL",
-            "passing": 203.0,
-            "rushing": 106.0,
-            "score": 54
-          },
-          {
-            "team": "NYG",
-            "oppTeam": "WSH",
-            "passing": 182.0,
-            "rushing": 134.0,
-            "score": 20
-          },
-          {
-            "team": "NE",
-            "oppTeam": "BUF",
-            "passing": 182.0,
-            "rushing": 60.0,
-            "score": 24
+            "team": "NYJ",
+            "yardsAllowed": 287.0,
+            "pointsAllowed": 27.0
           },
           {
             "team": "TEN",
-            "oppTeam": "PHI",
-            "passing": 122.0,
-            "rushing": 87.0,
-            "score": 35
+            "yardsAllowed": 453.0,
+            "pointsAllowed": 35.0
           },
           {
-            "team": "NO",
-            "oppTeam": "TB",
-            "passing": 232.0,
-            "rushing": 66.0,
-            "score": 17
-          },
-          {
-            "team": "BUF",
-            "oppTeam": "NE",
-            "passing": 223.0,
-            "rushing": 132.0,
-            "score": 10
+            "team": "CLE",
+            "yardsAllowed": 283.0,
+            "pointsAllowed": 12.0
           },
           {
             "team": "BAL",
-            "oppTeam": "DEN",
-            "passing": 182.0,
-            "rushing": 103.0,
-            "score": 9
+            "yardsAllowed": 272.0,
+            "pointsAllowed": 9.0
           },
           {
-            "team": "LAR",
-            "oppTeam": "SEA",
-            "passing": 148.0,
-            "rushing": 171.0,
-            "score": 27
+            "team": "GB",
+            "yardsAllowed": 409.0,
+            "pointsAllowed": 19.0
           },
           {
-            "team": "MIA",
-            "oppTeam": "SF",
-            "passing": 275.0,
-            "rushing": 33.0,
-            "score": 33
+            "team": "LAC",
+            "yardsAllowed": 404.0,
+            "pointsAllowed": 27.0
+          },
+          {
+            "team": "KC",
+            "yardsAllowed": 431.0,
+            "pointsAllowed": 27.0
+          },
+          {
+            "team": "DAL",
+            "yardsAllowed": 309.0,
+            "pointsAllowed": 19.0
+          },
+          {
+            "team": "WSH",
+            "yardsAllowed": 316.0,
+            "pointsAllowed": 20.0
+          },
+          {
+            "team": "BUF",
+            "yardsAllowed": 242.0,
+            "pointsAllowed": 10.0
+          },
+          {
+            "team": "PHI",
+            "yardsAllowed": 209.0,
+            "pointsAllowed": 10.0
+          },
+          {
+            "team": "TB",
+            "yardsAllowed": 298.0,
+            "pointsAllowed": 16.0
+          },
+          {
+            "team": "NE",
+            "yardsAllowed": 355.0,
+            "pointsAllowed": 24.0
+          },
+          {
+            "team": "DEN",
+            "yardsAllowed": 285.0,
+            "pointsAllowed": 10.0
+          },
+          {
+            "team": "SEA",
+            "yardsAllowed": 319.0,
+            "pointsAllowed": 23.0
+          },
+          {
+            "team": "SF",
+            "yardsAllowed": 308.0,
+            "pointsAllowed": 17.0
           }
         ],
         "fieldgoals": [
@@ -7394,102 +7074,74 @@
         ],
         "boxscores": [
           {
-            "team": "SF",
-            "oppTeam": "TB",
-            "passing": 195.0,
-            "rushing": 209.0,
-            "score": 7
+            "team": "TB",
+            "yardsAllowed": 404.0,
+            "pointsAllowed": 35.0
           },
           {
-            "team": "ARI",
-            "oppTeam": "NE",
-            "passing": 210.0,
-            "rushing": 113.0,
-            "score": 27
-          },
-          {
-            "team": "NYJ",
-            "oppTeam": "BUF",
-            "passing": 233.0,
-            "rushing": 76.0,
-            "score": 20
-          },
-          {
-            "team": "PIT",
-            "oppTeam": "BAL",
-            "passing": 264.0,
-            "rushing": 65.0,
-            "score": 16
-          },
-          {
-            "team": "SEA",
-            "oppTeam": "CAR",
-            "passing": 241.0,
-            "rushing": 46.0,
-            "score": 30
-          },
-          {
-            "team": "MIA",
-            "oppTeam": "LAC",
-            "passing": 127.0,
-            "rushing": 92.0,
-            "score": 23
-          },
-          {
-            "team": "DEN",
-            "oppTeam": "KC",
-            "passing": 214.0,
-            "rushing": 106.0,
-            "score": 34
+            "team": "NE",
+            "yardsAllowed": 323.0,
+            "pointsAllowed": 13.0
           },
           {
             "team": "BUF",
-            "oppTeam": "NYJ",
-            "passing": 130.0,
-            "rushing": 102.0,
-            "score": 12
-          },
-          {
-            "team": "JAX",
-            "oppTeam": "TEN",
-            "passing": 368.0,
-            "rushing": 60.0,
-            "score": 22
-          },
-          {
-            "team": "NYG",
-            "oppTeam": "PHI",
-            "passing": 181.0,
-            "rushing": 123.0,
-            "score": 48
+            "yardsAllowed": 309.0,
+            "pointsAllowed": 10.0
           },
           {
             "team": "BAL",
-            "oppTeam": "PIT",
-            "passing": 94.0,
-            "rushing": 215.0,
-            "score": 14
+            "yardsAllowed": 329.0,
+            "pointsAllowed": 14.0
           },
           {
             "team": "CAR",
-            "oppTeam": "SEA",
-            "passing": 105.0,
-            "rushing": 223.0,
-            "score": 24
+            "yardsAllowed": 287.0,
+            "pointsAllowed": 24.0
           },
           {
-            "team": "HOU",
-            "oppTeam": "DAL",
-            "passing": 213.0,
-            "rushing": 114.0,
-            "score": 27
+            "team": "LAC",
+            "yardsAllowed": 219.0,
+            "pointsAllowed": 17.0
           },
           {
-            "team": "TB",
-            "oppTeam": "SF",
-            "passing": 253.0,
-            "rushing": 69.0,
-            "score": 35
+            "team": "KC",
+            "yardsAllowed": 320.0,
+            "pointsAllowed": 28.0
+          },
+          {
+            "team": "NYJ",
+            "yardsAllowed": 232.0,
+            "pointsAllowed": 20.0
+          },
+          {
+            "team": "TEN",
+            "yardsAllowed": 428.0,
+            "pointsAllowed": 36.0
+          },
+          {
+            "team": "PHI",
+            "yardsAllowed": 304.0,
+            "pointsAllowed": 22.0
+          },
+          {
+            "team": "PIT",
+            "yardsAllowed": 309.0,
+            "pointsAllowed": 16.0
+          },
+          {
+            "team": "SEA",
+            "yardsAllowed": 328.0,
+            "pointsAllowed": 30.0
+          },
+          {
+            "team": "DAL",
+            "yardsAllowed": 327.0,
+            "pointsAllowed": 23.0
+          },
+          {
+            "team": "SF",
+            "yardsAllowed": 322.0,
+            "pointsAllowed": 7.0
           }
         ],
         "fieldgoals": [
@@ -7937,130 +7589,94 @@
         ],
         "boxscores": [
           {
-            "team": "MIA",
-            "oppTeam": "BUF",
-            "passing": 217.0,
-            "rushing": 188.0,
-            "score": 32
+            "team": "BUF",
+            "yardsAllowed": 405.0,
+            "pointsAllowed": 29.0
           },
           {
-            "team": "CIN",
-            "oppTeam": "TB",
-            "passing": 184.0,
-            "rushing": 53.0,
-            "score": 23
-          },
-          {
-            "team": "LV",
-            "oppTeam": "NE",
-            "passing": 211.0,
-            "rushing": 97.0,
-            "score": 24
-          },
-          {
-            "team": "ARI",
-            "oppTeam": "DEN",
-            "passing": 167.0,
-            "rushing": 73.0,
-            "score": 24
-          },
-          {
-            "team": "CLE",
-            "oppTeam": "BAL",
-            "passing": 140.0,
-            "rushing": 143.0,
-            "score": 3
-          },
-          {
-            "team": "PIT",
-            "oppTeam": "CAR",
-            "passing": 169.0,
-            "rushing": 156.0,
-            "score": 16
-          },
-          {
-            "team": "TEN",
-            "oppTeam": "LAC",
-            "passing": 157.0,
-            "rushing": 127.0,
-            "score": 17
-          },
-          {
-            "team": "HOU",
-            "oppTeam": "KC",
-            "passing": 125.0,
-            "rushing": 94.0,
-            "score": 30
-          },
-          {
-            "team": "DET",
-            "oppTeam": "NYJ",
-            "passing": 252.0,
-            "rushing": 107.0,
-            "score": 17
-          },
-          {
-            "team": "ATL",
-            "oppTeam": "NO",
-            "passing": 89.0,
-            "rushing": 231.0,
-            "score": 21
-          },
-          {
-            "team": "CHI",
-            "oppTeam": "PHI",
-            "passing": 91.0,
-            "rushing": 157.0,
-            "score": 25
-          },
-          {
-            "team": "LAR",
-            "oppTeam": "GB",
-            "passing": 84.0,
-            "rushing": 72.0,
-            "score": 24
-          },
-          {
-            "team": "GB",
-            "oppTeam": "LAR",
-            "passing": 207.0,
-            "rushing": 138.0,
-            "score": 12
-          },
-          {
-            "team": "LAC",
-            "oppTeam": "TEN",
-            "passing": 291.0,
-            "rushing": 74.0,
-            "score": 14
-          },
-          {
-            "team": "SF",
-            "oppTeam": "SEA",
-            "passing": 211.0,
-            "rushing": 170.0,
-            "score": 13
+            "team": "TB",
+            "yardsAllowed": 237.0,
+            "pointsAllowed": 34.0
           },
           {
             "team": "NE",
-            "oppTeam": "LV",
-            "passing": 112.0,
-            "rushing": 206.0,
-            "score": 30
+            "yardsAllowed": 308.0,
+            "pointsAllowed": 24.0
           },
           {
-            "team": "JAX",
-            "oppTeam": "DAL",
-            "passing": 311.0,
-            "rushing": 192.0,
-            "score": 34
+            "team": "DEN",
+            "yardsAllowed": 240.0,
+            "pointsAllowed": 15.0
+          },
+          {
+            "team": "BAL",
+            "yardsAllowed": 283.0,
+            "pointsAllowed": 13.0
+          },
+          {
+            "team": "CAR",
+            "yardsAllowed": 325.0,
+            "pointsAllowed": 24.0
+          },
+          {
+            "team": "LAC",
+            "yardsAllowed": 284.0,
+            "pointsAllowed": 14.0
+          },
+          {
+            "team": "KC",
+            "yardsAllowed": 219.0,
+            "pointsAllowed": 24.0
+          },
+          {
+            "team": "NYJ",
+            "yardsAllowed": 359.0,
+            "pointsAllowed": 20.0
+          },
+          {
+            "team": "NO",
+            "yardsAllowed": 320.0,
+            "pointsAllowed": 18.0
+          },
+          {
+            "team": "PHI",
+            "yardsAllowed": 248.0,
+            "pointsAllowed": 20.0
+          },
+          {
+            "team": "GB",
+            "yardsAllowed": 156.0,
+            "pointsAllowed": 12.0
+          },
+          {
+            "team": "LAR",
+            "yardsAllowed": 345.0,
+            "pointsAllowed": 24.0
+          },
+          {
+            "team": "TEN",
+            "yardsAllowed": 365.0,
+            "pointsAllowed": 17.0
           },
           {
             "team": "SEA",
-            "oppTeam": "SF",
-            "passing": 207.0,
-            "rushing": 70.0,
-            "score": 21
+            "yardsAllowed": 381.0,
+            "pointsAllowed": 21.0
+          },
+          {
+            "team": "LV",
+            "yardsAllowed": 318.0,
+            "pointsAllowed": 18.0
+          },
+          {
+            "team": "DAL",
+            "yardsAllowed": 503.0,
+            "pointsAllowed": 34.0
+          },
+          {
+            "team": "SF",
+            "yardsAllowed": 277.0,
+            "pointsAllowed": 13.0
           }
         ],
         "fieldgoals": [
@@ -8512,123 +8128,89 @@
         ],
         "boxscores": [
           {
-            "team": "ARI",
-            "oppTeam": "TB",
-            "passing": 204.0,
-            "rushing": 121.0,
-            "score": 19
+            "team": "TB",
+            "yardsAllowed": 325.0,
+            "pointsAllowed": 16.0
           },
           {
-            "team": "CIN",
-            "oppTeam": "NE",
-            "passing": 369.0,
-            "rushing": 73.0,
-            "score": 18
-          },
-          {
-            "team": "LAR",
-            "oppTeam": "DEN",
-            "passing": 230.0,
-            "rushing": 158.0,
-            "score": 14
-          },
-          {
-            "team": "IND",
-            "oppTeam": "LAC",
-            "passing": 104.0,
-            "rushing": 69.0,
-            "score": 20
-          },
-          {
-            "team": "CHI",
-            "oppTeam": "BUF",
-            "passing": 129.0,
-            "rushing": 80.0,
-            "score": 35
-          },
-          {
-            "team": "ATL",
-            "oppTeam": "BAL",
-            "passing": 212.0,
-            "rushing": 115.0,
-            "score": 17
-          },
-          {
-            "team": "DET",
-            "oppTeam": "CAR",
-            "passing": 336.0,
-            "rushing": 45.0,
-            "score": 37
-          },
-          {
-            "team": "WSH",
-            "oppTeam": "SF",
-            "passing": 270.0,
-            "rushing": 79.0,
-            "score": 37
-          },
-          {
-            "team": "DAL",
-            "oppTeam": "PHI",
-            "passing": 304.0,
-            "rushing": 115.0,
-            "score": 34
-          },
-          {
-            "team": "KC",
-            "oppTeam": "SEA",
-            "passing": 220.0,
-            "rushing": 77.0,
-            "score": 10
-          },
-          {
-            "team": "PIT",
-            "oppTeam": "LV",
-            "passing": 244.0,
-            "rushing": 106.0,
-            "score": 10
-          },
-          {
-            "team": "JAX",
-            "oppTeam": "NYJ",
-            "passing": 218.0,
-            "rushing": 147.0,
-            "score": 3
-          },
-          {
-            "team": "CLE",
-            "oppTeam": "NO",
-            "passing": 125.0,
-            "rushing": 124.0,
-            "score": 17
+            "team": "NE",
+            "yardsAllowed": 442.0,
+            "pointsAllowed": 22.0
           },
           {
             "team": "DEN",
-            "oppTeam": "LAR",
-            "passing": 219.0,
-            "rushing": 104.0,
-            "score": 51
+            "yardsAllowed": 388.0,
+            "pointsAllowed": 45.0
           },
           {
-            "team": "HOU",
-            "oppTeam": "TEN",
-            "passing": 215.0,
-            "rushing": 70.0,
-            "score": 14
+            "team": "LAC",
+            "yardsAllowed": 173.0,
+            "pointsAllowed": 3.0
           },
           {
-            "team": "NYJ",
-            "oppTeam": "JAX",
-            "passing": 161.0,
-            "rushing": 66.0,
-            "score": 19
+            "team": "BUF",
+            "yardsAllowed": 209.0,
+            "pointsAllowed": 13.0
+          },
+          {
+            "team": "BAL",
+            "yardsAllowed": 327.0,
+            "pointsAllowed": 9.0
+          },
+          {
+            "team": "CAR",
+            "yardsAllowed": 381.0,
+            "pointsAllowed": 23.0
+          },
+          {
+            "team": "SF",
+            "yardsAllowed": 349.0,
+            "pointsAllowed": 20.0
           },
           {
             "team": "PHI",
-            "oppTeam": "DAL",
-            "passing": 355.0,
-            "rushing": 87.0,
-            "score": 40
+            "yardsAllowed": 419.0,
+            "pointsAllowed": 40.0
+          },
+          {
+            "team": "SEA",
+            "yardsAllowed": 297.0,
+            "pointsAllowed": 24.0
+          },
+          {
+            "team": "LV",
+            "yardsAllowed": 350.0,
+            "pointsAllowed": 13.0
+          },
+          {
+            "team": "NYJ",
+            "yardsAllowed": 365.0,
+            "pointsAllowed": 19.0
+          },
+          {
+            "team": "NO",
+            "yardsAllowed": 249.0,
+            "pointsAllowed": 10.0
+          },
+          {
+            "team": "LAR",
+            "yardsAllowed": 323.0,
+            "pointsAllowed": 14.0
+          },
+          {
+            "team": "TEN",
+            "yardsAllowed": 285.0,
+            "pointsAllowed": 19.0
+          },
+          {
+            "team": "JAX",
+            "yardsAllowed": 227.0,
+            "pointsAllowed": 3.0
+          },
+          {
+            "team": "DAL",
+            "yardsAllowed": 442.0,
+            "pointsAllowed": 28.0
           }
         ],
         "fieldgoals": [

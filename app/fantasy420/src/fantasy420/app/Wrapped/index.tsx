@@ -112,9 +112,9 @@ function GamesDeterminedByDiscreteScoring(data: WrappedType) {
         )!
       ];
     const offense = boxscores.find(
-      (boxscore) => boxscore.oppTeam === started.team
+      (boxscore) => boxscore.team === started.team
     )!;
-    const yards = offense.passing + offense.rushing;
+    const yards = offense.yardsAllowed;
     var superscore = 0;
     if (yards >= 550) {
       superscore += -6 - 1 * ((yards - 500) / 50);
@@ -144,26 +144,26 @@ function GamesDeterminedByDiscreteScoring(data: WrappedType) {
       superscore += 5 - 2 * (yards / 100);
       superscore -= 5;
     }
-    if (offense.score >= 46) {
-      superscore += -3 - 2 * ((offense.score - 35) / 11);
+    if (offense.pointsAllowed >= 46) {
+      superscore += -3 - 2 * ((offense.pointsAllowed - 35) / 11);
       superscore -= -5;
-    } else if (offense.score >= 35) {
-      superscore += -3 - 2 * ((offense.score - 35) / 11);
+    } else if (offense.pointsAllowed >= 35) {
+      superscore += -3 - 2 * ((offense.pointsAllowed - 35) / 11);
       superscore -= -3;
-    } else if (offense.score >= 28) {
-      superscore += -1 - 2 * ((offense.score - 28) / 7);
+    } else if (offense.pointsAllowed >= 28) {
+      superscore += -1 - 2 * ((offense.pointsAllowed - 28) / 7);
       superscore -= -1;
-    } else if (offense.score >= 14) {
-      superscore += 1 - 2 * ((offense.score - 14) / 14);
+    } else if (offense.pointsAllowed >= 14) {
+      superscore += 1 - 2 * ((offense.pointsAllowed - 14) / 14);
       superscore -= 1;
-    } else if (offense.score >= 7) {
-      superscore += 3 - 2 * ((offense.score - 7) / 7);
+    } else if (offense.pointsAllowed >= 7) {
+      superscore += 3 - 2 * ((offense.pointsAllowed - 7) / 7);
       superscore -= 3;
-    } else if (offense.score >= 1) {
-      superscore += 4 - 1 * ((offense.score - 1) / 6);
+    } else if (offense.pointsAllowed >= 1) {
+      superscore += 4 - 1 * ((offense.pointsAllowed - 1) / 6);
       superscore -= 4;
     } else {
-      superscore += 5 - (1 * (offense.score - 0)) / 1;
+      superscore += 5 - (1 * (offense.pointsAllowed - 0)) / 1;
       superscore -= 5;
     }
     differences.push(`${started.name} ${superscore.toFixed(2)}`);
@@ -730,11 +730,9 @@ export type WeekType = {
 };
 
 export type BoxscoreType = {
-  // team: string;
-  oppTeam: string;
-  passing: number;
-  rushing: number;
-  score: number;
+  team: string;
+  pointsAllowed: number;
+  yardsAllowed: number;
 };
 
 export type FieldGoalType = { team: string; fieldgoals: string[] };
