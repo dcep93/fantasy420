@@ -22,13 +22,13 @@ function Wrapped() {
   const data: WrappedType | undefined = (all_data as any)[leagueId];
   if (!data) return <>no data found for league {leagueId}</>;
   const toRender: { [key: string]: any } = {
-    StudsStarted: StudsStarted(data),
     WeekTopsAndBottoms: WeekWinnersAndLosers(data),
     SqueezesAndStomps: SqueezesAndStomps(data),
     BestByPosition: BestByStreamingPosition(data),
     DeterminedByDiscreteScoring: GamesDeterminedByDiscreteScoring(data),
     ChosenWrong: TimesChosenWrong(data),
     GooseEggs: GooseEggs(data),
+    StudsStarted: StudsStarted(data),
     BoomBust: BoomBust(data),
     "raw_data.json": JSON.stringify(data),
   };
