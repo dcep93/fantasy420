@@ -22,13 +22,15 @@ except:
 
 
 class Vars:
-    max_week_finished = 17
+    max_week_finished = 16
 
 
 def main():
     wrapped = {}
     for league_id in league_ids:
         wrapped[league_id] = get_wrapped(league_id)
+    with open("wrapped.json", "w") as fh:
+        json.dump(wrapped, fh)
     print(json.dumps(wrapped))
 
 
@@ -44,7 +46,7 @@ def get_wrapped(league_id):
 def fetch(url, decode_json=True):
     if url in fetch_cache:
         return fetch_cache[url]
-    sys.stderr.write(url)
+    sys.stderr.write(url + "\n")
     raw_data = requests.get(url, cookies={'espn_s2': espn_s2})
     data = raw_data.json() if decode_json else raw_data.text
     fetch_cache[url] = data
