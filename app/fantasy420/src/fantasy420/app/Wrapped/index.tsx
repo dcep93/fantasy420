@@ -75,8 +75,8 @@ function StudsStarted(data: WrappedType) {
     }));
   return (
     <div>
-      {teams.map((obj) => (
-        <div className={css.bubble}>
+      {teams.map((obj, i) => (
+        <div className={css.bubble} key={i}>
           <div>{obj.teamName}</div>
           {Object.values(Position)
             .filter((p) => Number.isInteger(p))
@@ -88,8 +88,8 @@ function StudsStarted(data: WrappedType) {
                 .filter((player) => player.position === p)
                 .map((player) => player.name),
             }))
-            .map(({ p, players }) => (
-              <div>
+            .map(({ p, players }, j) => (
+              <div key={j}>
                 {Position[p]} ({players.length}): {players.join(" , ")}
               </div>
             ))}
