@@ -1,0 +1,1750 @@
+{
+  "autoUpdate": { "mode": "fastcast" },
+  "baseURL": "https://www.espn.com",
+  "compUID": "s:20~l:28~e:401437648~c:401437648",
+  "gmStrp": {
+    "uid": "s:20~l:28~e:401437648",
+    "gid": "401437648",
+    "dt": "2022-09-11T17:00Z",
+    "nm": "football",
+    "seriesNte": false,
+    "possAvail": false,
+    "seasonType": 2,
+    "status": { "desc": "Final", "det": "Final", "id": "3", "state": "post" },
+    "statusState": "post",
+    "tbd": false,
+    "tms": [
+      {
+        "id": "8",
+        "abbrev": "DET",
+        "displayName": "Detroit Lions",
+        "shortDisplayName": "Lions",
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/det.png",
+        "teamColor": "035C98",
+        "altColor": "b0b7bc",
+        "uid": "s:20~l:28~t:8",
+        "recordSummary": "",
+        "standingSummary": "",
+        "nickname": "Lions",
+        "location": "Detroit",
+        "links": "/nfl/team/_/name/det/detroit-lions",
+        "records": [
+          { "type": "total", "summary": "0-1", "displayValue": "0-1" },
+          { "type": "home", "summary": "0-1", "displayValue": "0-1" }
+        ],
+        "isHome": true,
+        "linescores": [
+          { "displayValue": "7" },
+          { "displayValue": "7" },
+          { "displayValue": "7" },
+          { "displayValue": "14" }
+        ],
+        "score": "35"
+      },
+      {
+        "id": "21",
+        "abbrev": "PHI",
+        "displayName": "Philadelphia Eagles",
+        "shortDisplayName": "Eagles",
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
+        "teamColor": "06424D",
+        "altColor": "a5acaf",
+        "uid": "s:20~l:28~t:21",
+        "recordSummary": "",
+        "standingSummary": "",
+        "nickname": "Eagles",
+        "location": "Philadelphia",
+        "links": "/nfl/team/_/name/phi/philadelphia-eagles",
+        "records": [
+          { "type": "total", "summary": "1-0", "displayValue": "1-0" },
+          { "type": "road", "summary": "1-0", "displayValue": "1-0" }
+        ],
+        "isHome": false,
+        "linescores": [
+          { "displayValue": "0" },
+          { "displayValue": "24" },
+          { "displayValue": "14" },
+          { "displayValue": "0" }
+        ],
+        "score": "38",
+        "winner": true
+      }
+    ],
+    "isConferenceGame": false,
+    "bxscrSrc": "full"
+  },
+  "gpLinks": {
+    "links": [
+      {
+        "l": {
+          "h": "/nfl/game/_/gameId/401437648",
+          "e": false,
+          "p": false,
+          "m": {
+            "h": "/nfl/game/_/gameId/401437648",
+            "e": false,
+            "p": false,
+            "t": "Gamecast"
+          },
+          "t": "Gamecast",
+          "w": {
+            "h": "/nfl/game/_/gameId/401437648",
+            "e": false,
+            "p": false,
+            "t": "Gamecast"
+          }
+        },
+        "d": {
+          "data-track-linkid": "gp-subnav",
+          "data-track-navmethod": "gp-subnav",
+          "className": "Nav__Secondary__Menu__Link clr-gray-01 flex items-center ph3"
+        }
+      },
+      {
+        "l": {
+          "h": "/nfl/recap/_/gameId/401437648",
+          "e": false,
+          "p": false,
+          "m": {
+            "h": "/nfl/recap/_/gameId/401437648",
+            "e": false,
+            "p": false,
+            "t": "Recap"
+          },
+          "t": "Recap",
+          "w": {
+            "h": "/nfl/recap/_/gameId/401437648",
+            "e": false,
+            "p": false,
+            "t": "Recap"
+          }
+        },
+        "d": {
+          "data-track-linkid": "gp-subnav",
+          "data-track-navmethod": "gp-subnav",
+          "className": "Nav__Secondary__Menu__Link clr-gray-01 flex items-center ph3"
+        }
+      },
+      {
+        "l": {
+          "h": "/nfl/boxscore/_/gameId/401437648",
+          "e": false,
+          "p": false,
+          "m": {
+            "h": "/nfl/boxscore/_/gameId/401437648",
+            "e": false,
+            "p": false,
+            "t": "Box Score"
+          },
+          "t": "Box Score",
+          "w": {
+            "h": "/nfl/boxscore/_/gameId/401437648",
+            "e": false,
+            "p": false,
+            "t": "Box Score"
+          }
+        },
+        "d": {
+          "data-track-linkid": "gp-subnav",
+          "data-track-navmethod": "gp-subnav",
+          "className": "Nav__Secondary__Menu__Link clr-gray-01 flex items-center ph3"
+        }
+      },
+      {
+        "l": {
+          "h": "/nfl/playbyplay/_/gameId/401437648",
+          "e": false,
+          "p": false,
+          "m": {
+            "h": "/nfl/playbyplay/_/gameId/401437648",
+            "e": false,
+            "p": false,
+            "t": "Play-by-Play"
+          },
+          "t": "Play-by-Play",
+          "w": {
+            "h": "/nfl/playbyplay/_/gameId/401437648",
+            "e": false,
+            "p": false,
+            "t": "Play-by-Play"
+          }
+        },
+        "d": {
+          "data-track-linkid": "gp-subnav",
+          "data-track-navmethod": "gp-subnav",
+          "className": "Nav__Secondary__Menu__Link clr-gray-01 flex items-center ph3"
+        }
+      },
+      {
+        "l": {
+          "h": "/nfl/matchup/_/gameId/401437648",
+          "e": false,
+          "p": false,
+          "m": {
+            "h": "/nfl/matchup/_/gameId/401437648",
+            "e": false,
+            "p": false,
+            "t": "Team Stats"
+          },
+          "t": "Team Stats",
+          "w": {
+            "h": "/nfl/matchup/_/gameId/401437648",
+            "e": false,
+            "p": false,
+            "t": "Team Stats"
+          }
+        },
+        "d": {
+          "data-track-linkid": "gp-subnav",
+          "data-track-navmethod": "gp-subnav",
+          "className": "Nav__Secondary__Menu__Link clr-gray-01 flex items-center ph3"
+        }
+      }
+    ],
+    "activePage": {
+      "device": "desktop",
+      "league": "nfl",
+      "pageType": null,
+      "subPageType": "boxscore"
+    }
+  },
+  "maxPeriods": 4,
+  "medialst": {
+    "vids": [],
+    "cmpttn": { "awy": "PHI", "hme": "DET", "ntrlSte": false }
+  },
+  "news": {
+    "header": "NFL News",
+    "link": "/nfl/",
+    "text": "All NFL News",
+    "articles": [
+      {
+        "headline": "Cameron Jordan becomes Saints' sack leader, thanks Matt Ryan",
+        "byLine": "Katherine Terrell",
+        "description": "The Saints defensive end became the franchise leader in sacks after picking up three against the Eagles. He took the time to acknowledge former Falcons quarterback Matt Ryan, who accounts for 20% of his career total.",
+        "link": "/nfl/story/_/id/35362154/new-orleans-saints-sack-leader-cam-jordan-trolls-matt-ryan",
+        "image": "https://a.espncdn.com/combiner/i?img=/photo/2023/0102/r1112758_608x342_16-9.jpg&h=120",
+        "premium": false,
+        "published": "2023-01-02T02:47:53Z",
+        "logoSrc": "https://a.espncdn.com/redesign/assets/img/logos/espnplus/espnplus-2x.png",
+        "images": [
+          {
+            "src": "https://a.espncdn.com/combiner/i?img=/photo/2023/0102/r1112758_608x342_16-9.jpg&h=120",
+            "alt": "Cameron Jordan becomes Saints' sack leader, thanks Matt Ryan"
+          }
+        ]
+      },
+      {
+        "headline": "Matt Eberflus: We kept Justin Fields in for 'experience'",
+        "byLine": "",
+        "description": "Bears coach Matt Eberblus explains the decision to keep playing Justin Fields in the Bears' loss to the Lions.",
+        "link": "/video/clip/_/id/35362042",
+        "image": "https://a.espncdn.com/combiner/i?img=/media/motion/2023/0101/dm_230101_dm_230101_NFL_Eberflus_on_Fields_pub2tag/dm_230101_dm_230101_NFL_Eberflus_on_Fields_pub2tag.jpg&h=120",
+        "premium": false,
+        "published": "2023-01-02T01:25:50Z",
+        "logoSrc": "https://a.espncdn.com/redesign/assets/img/logos/espnplus/espnplus-2x.png",
+        "images": [
+          {
+            "src": "https://a.espncdn.com/combiner/i?img=/media/motion/2023/0101/dm_230101_dm_230101_NFL_Eberflus_on_Fields_pub2tag/dm_230101_dm_230101_NFL_Eberflus_on_Fields_pub2tag.jpg&h=120",
+            "alt": "Matt Eberflus: We kept Justin Fields in for 'experience'"
+          }
+        ]
+      },
+      {
+        "headline": "2022 NFL Week 17 playoff picture: Clinching scenarios, standings",
+        "byLine": "ESPN staff",
+        "description": "ESPN takes a look at the NFL playoff scenarios for Week 17 and what teams in the AFC and NFC need to do to make it all the way.",
+        "link": "/nfl/story/_/id/35329549/2022-nfl-week-17-playoff-picture-clinching-scenarios-standings-division-races-postseason-outlook",
+        "image": "https://a.espncdn.com/combiner/i?img=/photo/2023/0101/r1112645_608x342_16-9.jpg&h=120",
+        "premium": false,
+        "published": "2023-01-02T01:35:54Z",
+        "logoSrc": "https://a.espncdn.com/redesign/assets/img/logos/espnplus/espnplus-2x.png",
+        "images": [
+          {
+            "src": "https://a.espncdn.com/combiner/i?img=/photo/2023/0101/r1112645_608x342_16-9.jpg&h=120",
+            "alt": "2022 NFL Week 17 playoff picture: Clinching scenarios, standings"
+          }
+        ]
+      }
+    ]
+  },
+  "shop": null,
+  "ssnSrs": [],
+  "stndngs": [
+    {
+      "dspNm": "2022 NFC East Standings",
+      "lnk": "http://www.espn.com/nfl/standings",
+      "lnkTxt": "Full Standings",
+      "feed": [
+        {
+          "entries": [
+            {
+              "team": {
+                "id": "21",
+                "displayName": "Philadelphia",
+                "shortDisplayName": "Philadelphia",
+                "uid": "s:20~l:28~t:21",
+                "recordSummary": "",
+                "standingSummary": "",
+                "links": "/nfl/team/_/name/phi/philadelphia-eagles"
+              },
+              "stats": ["3", "328", "455", "0", ".813", "13", "13-3"]
+            },
+            {
+              "team": {
+                "id": "6",
+                "displayName": "Dallas",
+                "shortDisplayName": "Dallas",
+                "uid": "s:20~l:28~t:6",
+                "recordSummary": "",
+                "standingSummary": "",
+                "links": "/nfl/team/_/name/dal/dallas-cowboys"
+              },
+              "stats": ["4", "316", "461", "0", ".750", "12", "12-4"]
+            },
+            {
+              "team": {
+                "id": "19",
+                "displayName": "New York",
+                "shortDisplayName": "New York",
+                "uid": "s:20~l:28~t:19",
+                "recordSummary": "",
+                "standingSummary": "",
+                "links": "/nfl/team/_/name/nyg/new-york-giants"
+              },
+              "stats": ["6", "349", "349", "1", ".594", "9", "9-6-1"]
+            },
+            {
+              "team": {
+                "id": "28",
+                "displayName": "Washington",
+                "shortDisplayName": "Washington",
+                "uid": "s:20~l:28~t:28",
+                "recordSummary": "",
+                "standingSummary": "",
+                "links": "/nfl/team/_/name/wsh/washington-commanders"
+              },
+              "stats": ["8", "337", "295", "1", ".469", "7", "7-8-1"]
+            }
+          ],
+          "statMap": {
+            "losses": { "t": "losses", "d": "Losses", "a": "L", "i": 0 },
+            "pointsagainst": {
+              "t": "pointsagainst",
+              "d": "Total Points Against",
+              "a": "PA",
+              "i": 1
+            },
+            "pointsfor": {
+              "t": "pointsfor",
+              "d": "Total Points For",
+              "a": "PF",
+              "i": 2
+            },
+            "ties": { "t": "ties", "d": "Ties", "a": "T", "i": 3 },
+            "winpercent": {
+              "t": "winpercent",
+              "d": "Winning Percentage",
+              "a": "PCT",
+              "i": 4
+            },
+            "wins": { "t": "wins", "d": "Wins", "a": "W", "i": 5 },
+            "total": { "t": "total", "a": "Any", "i": 6 }
+          }
+        }
+      ],
+      "tmFeat": ["8", "21"]
+    },
+    {
+      "dspNm": "2022 NFC North Standings",
+      "lnk": "http://www.espn.com/nfl/standings",
+      "lnkTxt": "Full Standings",
+      "feed": [
+        {
+          "entries": [
+            {
+              "team": {
+                "id": "16",
+                "displayName": "Minnesota",
+                "shortDisplayName": "Minnesota",
+                "uid": "s:20~l:28~t:16",
+                "recordSummary": "",
+                "standingSummary": "",
+                "links": "/nfl/team/_/name/min/minnesota-vikings"
+              },
+              "stats": ["4", "414", "395", "0", ".750", "12", "12-4"]
+            },
+            {
+              "team": {
+                "id": "8",
+                "displayName": "Detroit",
+                "shortDisplayName": "Detroit",
+                "uid": "s:20~l:28~t:8",
+                "recordSummary": "",
+                "standingSummary": "",
+                "links": "/nfl/team/_/name/det/detroit-lions"
+              },
+              "stats": ["8", "411", "433", "0", ".500", "8", "8-8"]
+            },
+            {
+              "team": {
+                "id": "9",
+                "displayName": "Green Bay",
+                "shortDisplayName": "Green Bay",
+                "uid": "s:20~l:28~t:9",
+                "recordSummary": "",
+                "standingSummary": "",
+                "links": "/nfl/team/_/name/gb/green-bay-packers"
+              },
+              "stats": ["8", "351", "354", "0", ".500", "8", "8-8"]
+            },
+            {
+              "team": {
+                "id": "3",
+                "displayName": "Chicago",
+                "shortDisplayName": "Chicago",
+                "uid": "s:20~l:28~t:3",
+                "recordSummary": "",
+                "standingSummary": "",
+                "links": "/nfl/team/_/name/chi/chicago-bears"
+              },
+              "stats": ["13", "434", "313", "0", ".188", "3", "3-13"]
+            }
+          ],
+          "statMap": {
+            "losses": { "t": "losses", "d": "Losses", "a": "L", "i": 0 },
+            "pointsagainst": {
+              "t": "pointsagainst",
+              "d": "Total Points Against",
+              "a": "PA",
+              "i": 1
+            },
+            "pointsfor": {
+              "t": "pointsfor",
+              "d": "Total Points For",
+              "a": "PF",
+              "i": 2
+            },
+            "ties": { "t": "ties", "d": "Ties", "a": "T", "i": 3 },
+            "winpercent": {
+              "t": "winpercent",
+              "d": "Winning Percentage",
+              "a": "PCT",
+              "i": 4
+            },
+            "wins": { "t": "wins", "d": "Wins", "a": "W", "i": 5 },
+            "total": { "t": "total", "a": "Any", "i": 6 }
+          }
+        }
+      ],
+      "tmFeat": ["8", "21"]
+    }
+  ],
+  "gmInfo": {
+    "attnd": 64537,
+    "cvrg": "FOX",
+    "lne": "PHI -6.0",
+    "ovUnd": 48.5,
+    "oddsAttr": "https://a.espncdn.com/redesign/assets/img/logos/odds-attribution-caesars-dark.svg",
+    "darkOddsAttr": "https://a.espncdn.com/redesign/assets/img/logos/odds-attribution-caesars-light.svg",
+    "gameState": "post",
+    "dtTmVld": true,
+    "dtTm": "2022-09-11T17:00Z",
+    "refs": [
+      { "dspNm": "Rick Patterson", "pos": "Field Judge" },
+      { "dspNm": "Greg Yette", "pos": "Back Judge" },
+      { "dspNm": "Boris Cheek", "pos": "Side Judge" },
+      { "dspNm": "Sarah Thomas", "pos": "Head Linesman" },
+      { "dspNm": "Brad Allen", "pos": "Referee" },
+      { "dspNm": "Daniel Gallagher", "pos": "Line Judge" },
+      { "dspNm": "Duane Heydt", "pos": "Umpire" }
+    ],
+    "cpcty": 64500,
+    "loc": "Ford Field",
+    "locImg": "https://a.espncdn.com/i/venues/nfl/day/interior/3727.jpg",
+    "locAddr": { "city": "Detroit", "state": "MI" },
+    "weatherLink": "https://www.accuweather.com/?partner=espn_gc"
+  },
+  "bxscr": [
+    {
+      "tm": {
+        "abbrev": "PHI",
+        "dspNm": "Philadelphia Eagles",
+        "id": "21",
+        "nm": "Eagles",
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
+        "hm": false
+      },
+      "stats": [
+        {
+          "athlts": [
+            {
+              "stats": ["18/32", "243", "7.6", "0", "0", "1-4", "55.4", "80.6"],
+              "athlt": {
+                "id": "4040715",
+                "guid": "caceb80c6350a1079fcf7c7bd1b4edd8",
+                "uid": "s:20~l:28~a:4040715",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4040715/jalen-hurts",
+                "dspNm": "Jalen Hurts"
+              }
+            }
+          ],
+          "keys": [
+            "completions/passingAttempts",
+            "passingYards",
+            "yardsPerPassAttempt",
+            "passingTouchdowns",
+            "interceptions",
+            "sacks-sackYardsLost",
+            "adjQBR",
+            "QBRating"
+          ],
+          "lbls": ["C/ATT", "YDS", "AVG", "TD", "INT", "SACKS", "QBR", "RTG"],
+          "type": "passing",
+          "text": "Philadelphia Passing",
+          "ttls": ["18/32", "239", "7.6", "0", "0", "1-4", "--", "80.6"]
+        },
+        {
+          "athlts": [
+            {
+              "stats": ["13", "96", "7.4", "1", "24"],
+              "athlt": {
+                "id": "4045163",
+                "guid": "c9d42ca5012049e17889de762f2a665f",
+                "uid": "s:20~l:28~a:4045163",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4045163/miles-sanders",
+                "dspNm": "Miles Sanders"
+              }
+            },
+            {
+              "stats": ["17", "90", "5.3", "1", "16"],
+              "athlt": {
+                "id": "4040715",
+                "guid": "caceb80c6350a1079fcf7c7bd1b4edd8",
+                "uid": "s:20~l:28~a:4040715",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4040715/jalen-hurts",
+                "dspNm": "Jalen Hurts"
+              }
+            },
+            {
+              "stats": ["5", "20", "4.0", "1", "7"],
+              "athlt": {
+                "id": "4371733",
+                "guid": "1e1ae097bace9b304fb3bed254619570",
+                "uid": "s:20~l:28~a:4371733",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4371733/kenneth-gainwell",
+                "dspNm": "Kenneth Gainwell"
+              }
+            },
+            {
+              "stats": ["4", "10", "2.5", "1", "8"],
+              "athlt": {
+                "id": "3051439",
+                "guid": "8fe1670786225286cd11157eb9faf024",
+                "uid": "s:20~l:28~a:3051439",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3051439/boston-scott",
+                "dspNm": "Boston Scott"
+              }
+            }
+          ],
+          "keys": [
+            "rushingAttempts",
+            "rushingYards",
+            "yardsPerRushAttempt",
+            "rushingTouchdowns",
+            "longRushing"
+          ],
+          "lbls": ["CAR", "YDS", "AVG", "TD", "LONG"],
+          "type": "rushing",
+          "text": "Philadelphia Rushing",
+          "ttls": ["39", "216", "5.5", "4", "24"]
+        },
+        {
+          "athlts": [
+            {
+              "stats": ["10", "155", "15.5", "0", "54", "13"],
+              "athlt": {
+                "id": "4047646",
+                "guid": "53cf1afe22f9ea1f7d9ba992d25c8ac5",
+                "uid": "s:20~l:28~a:4047646",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4047646/aj-brown",
+                "dspNm": "A.J. Brown"
+              }
+            },
+            {
+              "stats": ["3", "60", "20.0", "0", "27", "4"],
+              "athlt": {
+                "id": "3121023",
+                "guid": "de06715d521676eef063dabb342c4225",
+                "uid": "s:20~l:28~a:3121023",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3121023/dallas-goedert",
+                "dspNm": "Dallas Goedert"
+              }
+            },
+            {
+              "stats": ["2", "12", "6.0", "0", "8", "4"],
+              "athlt": {
+                "id": "4371733",
+                "guid": "1e1ae097bace9b304fb3bed254619570",
+                "uid": "s:20~l:28~a:4371733",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4371733/kenneth-gainwell",
+                "dspNm": "Kenneth Gainwell"
+              }
+            },
+            {
+              "stats": ["2", "9", "4.5", "0", "11", "2"],
+              "athlt": {
+                "id": "4045163",
+                "guid": "c9d42ca5012049e17889de762f2a665f",
+                "uid": "s:20~l:28~a:4045163",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4045163/miles-sanders",
+                "dspNm": "Miles Sanders"
+              }
+            },
+            {
+              "stats": ["1", "7", "7.0", "0", "7", "1"],
+              "athlt": {
+                "id": "2978109",
+                "guid": "16d8ff949af63eb324cc829c9b2023b0",
+                "uid": "s:20~l:28~a:2978109",
+                "lnk": "http://www.espn.com/nfl/player/_/id/2978109/zach-pascal",
+                "dspNm": "Zach Pascal"
+              }
+            },
+            {
+              "stats": ["0", "0", "0.0", "0", "0", "1"],
+              "athlt": {
+                "id": "3930298",
+                "guid": "5682b8f6835cad9d5fddd474b8398980",
+                "uid": "s:20~l:28~a:3930298",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3930298/noah-togiai",
+                "dspNm": "Noah Togiai"
+              }
+            },
+            {
+              "stats": ["0", "0", "0.0", "0", "0", "4"],
+              "athlt": {
+                "id": "4241478",
+                "guid": "79fe15c55f05f939c4f5c55466521a50",
+                "uid": "s:20~l:28~a:4241478",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4241478/devonta-smith",
+                "dspNm": "DeVonta Smith"
+              }
+            }
+          ],
+          "keys": [
+            "receptions",
+            "receivingYards",
+            "yardsPerReception",
+            "receivingTouchdowns",
+            "longReception",
+            "receivingTargets"
+          ],
+          "lbls": ["REC", "YDS", "AVG", "TD", "LONG", "TGTS"],
+          "type": "receiving",
+          "text": "Philadelphia Receiving",
+          "ttls": ["18", "243", "13.5", "0", "54", "29"]
+        },
+        {
+          "athlts": [],
+          "keys": ["fumbles", "fumblesLost", "fumblesRecovered"],
+          "lbls": ["FUM", "LOST", "REC"],
+          "type": "fumbles",
+          "text": "Philadelphia Fumbles",
+          "ttls": []
+        },
+        {
+          "athlts": [
+            {
+              "stats": ["10", "8", "0", "1", "0", "0", "0"],
+              "athlt": {
+                "id": "3139368",
+                "guid": "dccf32927aef7c308077269d52ff6ccb",
+                "uid": "s:20~l:28~a:3139368",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3139368/marcus-epps",
+                "dspNm": "Marcus Epps"
+              }
+            },
+            {
+              "stats": ["7", "5", "0", "0", "1", "0", "0"],
+              "athlt": {
+                "id": "3121544",
+                "guid": "5f41d27a93c22c3ac905ea03d402e603",
+                "uid": "s:20~l:28~a:3121544",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3121544/tj-edwards",
+                "dspNm": "T.J. Edwards"
+              }
+            },
+            {
+              "stats": ["6", "4", "0", "0", "0", "0", "0"],
+              "athlt": {
+                "id": "15863",
+                "guid": "c140911d2389b320d8ee845096659546",
+                "uid": "s:20~l:28~a:15863",
+                "lnk": "http://www.espn.com/nfl/player/_/id/15863/darius-slay",
+                "dspNm": "Darius Slay"
+              }
+            },
+            {
+              "stats": ["5", "5", "0", "0", "1", "0", "0"],
+              "athlt": {
+                "id": "4034953",
+                "guid": "5121417ebd136a1a913e16b6c440a956",
+                "uid": "s:20~l:28~a:4034953",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4034953/cj-gardner-johnson",
+                "dspNm": "C.J. Gardner-Johnson"
+              }
+            },
+            {
+              "stats": ["5", "4", "0", "1", "1", "0", "0"],
+              "athlt": {
+                "id": "4039254",
+                "guid": "e09c0e821906b4d344590a73c3f4bdff",
+                "uid": "s:20~l:28~a:4039254",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4039254/kyzir-white",
+                "dspNm": "Kyzir White"
+              }
+            },
+            {
+              "stats": ["3", "2", "0", "0", "0", "2", "0"],
+              "athlt": {
+                "id": "3693166",
+                "guid": "46b307c58de45c720afd297fdbe85737",
+                "uid": "s:20~l:28~a:3693166",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3693166/josh-sweat",
+                "dspNm": "Josh Sweat"
+              }
+            },
+            {
+              "stats": ["3", "1", "0", "0", "0", "0", "0"],
+              "athlt": {
+                "id": "3123938",
+                "guid": "c5fd8166b8940c2d88c8c82680c4f29b",
+                "uid": "s:20~l:28~a:3123938",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3123938/avonte-maddox",
+                "dspNm": "Avonte Maddox"
+              }
+            },
+            {
+              "stats": ["2", "2", "0", "0", "0", "0", "0"],
+              "athlt": {
+                "id": "2983055",
+                "guid": "b3b4a21e8a128875aab43c5080dbc5d4",
+                "uid": "s:20~l:28~a:2983055",
+                "lnk": "http://www.espn.com/nfl/player/_/id/2983055/javon-hargrave",
+                "dspNm": "Javon Hargrave"
+              }
+            },
+            {
+              "stats": ["2", "2", "0", "0", "0", "0", "0"],
+              "athlt": {
+                "id": "4045161",
+                "guid": "340a873455425b64c45b35a5eb4ff36e",
+                "uid": "s:20~l:28~a:4045161",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4045161/zech-mcphearson",
+                "dspNm": "Zech McPhearson"
+              }
+            },
+            {
+              "stats": ["2", "2", "0", "0", "0", "0", "0"],
+              "athlt": {
+                "id": "4239699",
+                "guid": "b723c7a293cd295cea06cbf0b55d61e0",
+                "uid": "s:20~l:28~a:4239699",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4239699/milton-williams",
+                "dspNm": "Milton Williams"
+              }
+            },
+            {
+              "stats": ["2", "1", "0.5", "0", "0", "2", "0"],
+              "athlt": {
+                "id": "14941",
+                "guid": "22a756f23df95d753457138c15b28a75",
+                "uid": "s:20~l:28~a:14941",
+                "lnk": "http://www.espn.com/nfl/player/_/id/14941/fletcher-cox",
+                "dspNm": "Fletcher Cox"
+              }
+            },
+            {
+              "stats": ["2", "1", "0", "0", "1", "0", "1"],
+              "athlt": {
+                "id": "2572841",
+                "guid": "30b89f8c2d43e695d030b778b8b9c2fa",
+                "uid": "s:20~l:28~a:2572841",
+                "lnk": "http://www.espn.com/nfl/player/_/id/2572841/james-bradberry",
+                "dspNm": "James Bradberry"
+              }
+            },
+            {
+              "stats": ["2", "1", "0", "1", "0", "0", "0"],
+              "athlt": {
+                "id": "2980504",
+                "guid": "8b6e917b39b0e82e13e8c8b0640b2fa0",
+                "uid": "s:20~l:28~a:2980504",
+                "lnk": "http://www.espn.com/nfl/player/_/id/2980504/haason-reddick",
+                "dspNm": "Haason Reddick"
+              }
+            },
+            {
+              "stats": ["2", "1", "0", "0", "0", "0", "0"],
+              "athlt": {
+                "id": "4381558",
+                "guid": "9e57196e5f3c3d8d8b96172b63a716f6",
+                "uid": "s:20~l:28~a:4381558",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4381558/jordan-davis",
+                "dspNm": "Jordan Davis"
+              }
+            },
+            {
+              "stats": ["1", "0", "0.5", "0", "0", "1", "0"],
+              "athlt": {
+                "id": "13239",
+                "guid": "5a7b8433246767bbe590bb6bf4415958",
+                "uid": "s:20~l:28~a:13239",
+                "lnk": "http://www.espn.com/nfl/player/_/id/13239/brandon-graham",
+                "dspNm": "Brandon Graham"
+              }
+            },
+            {
+              "stats": ["1", "0", "0", "0", "0", "0", "0"],
+              "athlt": {
+                "id": "4241302",
+                "guid": "8de5421ddf484e32a682e4b5c163374f",
+                "uid": "s:20~l:28~a:4241302",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4241302/kyron-johnson",
+                "dspNm": "Kyron Johnson"
+              }
+            },
+            {
+              "stats": ["1", "0", "0", "0", "0", "1", "0"],
+              "athlt": {
+                "id": "4243218",
+                "guid": "24f59af887d1473a8101b46df15cec63",
+                "uid": "s:20~l:28~a:4243218",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4243218/marlon-tuipulotu",
+                "dspNm": "Marlon Tuipulotu"
+              }
+            },
+            {
+              "stats": ["1", "0", "0", "0", "0", "0", "0"],
+              "athlt": {
+                "id": "4243916",
+                "guid": "eabc5e47e9c7f4e99caec16b1a24b966",
+                "uid": "s:20~l:28~a:4243916",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4243916/patrick-johnson",
+                "dspNm": "Patrick Johnson"
+              }
+            }
+          ],
+          "keys": [
+            "totalTackles",
+            "soloTackles",
+            "sacks",
+            "tacklesForLoss",
+            "passesDefended",
+            "QBHits",
+            "defensiveTouchdowns"
+          ],
+          "lbls": ["TOT", "SOLO", "SACKS", "TFL", "PD", "QB HTS", "TD"],
+          "type": "defensive",
+          "text": "Philadelphia Defensive",
+          "ttls": ["57", "39", "1", "3", "4", "6", "1"]
+        },
+        {
+          "athlts": [
+            {
+              "stats": ["1", "27", "1"],
+              "athlt": {
+                "id": "2572841",
+                "guid": "30b89f8c2d43e695d030b778b8b9c2fa",
+                "uid": "s:20~l:28~a:2572841",
+                "lnk": "http://www.espn.com/nfl/player/_/id/2572841/james-bradberry",
+                "dspNm": "James Bradberry"
+              }
+            }
+          ],
+          "keys": [
+            "interceptions",
+            "interceptionYards",
+            "interceptionTouchdowns"
+          ],
+          "lbls": ["INT", "YDS", "TD"],
+          "type": "interceptions",
+          "text": "Philadelphia Interceptions",
+          "ttls": ["1", "27", "1"]
+        },
+        {
+          "athlts": [
+            {
+              "stats": ["3", "38", "12.7", "17", "0"],
+              "athlt": {
+                "id": "4050373",
+                "guid": "0ce27b93e2778a5252f9317d1305bdae",
+                "uid": "s:20~l:28~a:4050373",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4050373/quez-watkins",
+                "dspNm": "Quez Watkins"
+              }
+            }
+          ],
+          "keys": [
+            "kickReturns",
+            "kickReturnYards",
+            "yardsPerKickReturn",
+            "longKickReturn",
+            "kickReturnTouchdowns"
+          ],
+          "lbls": ["NO", "YDS", "AVG", "LONG", "TD"],
+          "type": "kickReturns",
+          "text": "Philadelphia Kick Returns",
+          "ttls": ["3", "38", "12.7", "17", "0"]
+        },
+        {
+          "athlts": [
+            {
+              "stats": ["2", "13", "6.5", "11", "0"],
+              "athlt": {
+                "id": "3926231",
+                "guid": "c43f876eced2166d626d2bfad7bbf5b4",
+                "uid": "s:20~l:28~a:3926231",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3926231/britain-covey",
+                "dspNm": "Britain Covey"
+              }
+            }
+          ],
+          "keys": [
+            "puntReturns",
+            "puntReturnYards",
+            "yardsPerPuntReturn",
+            "longPuntReturn",
+            "puntReturnTouchdowns"
+          ],
+          "lbls": ["NO", "YDS", "AVG", "LONG", "TD"],
+          "type": "puntReturns",
+          "text": "Philadelphia Punt Returns",
+          "ttls": ["2", "13", "6.5", "11", "0"]
+        },
+        {
+          "athlts": [
+            {
+              "stats": ["1/1", "100.0", "23", "5/5", "8"],
+              "athlt": {
+                "id": "3050478",
+                "guid": "e145b2deb4b2da20eb5b396acec549bb",
+                "uid": "s:20~l:28~a:3050478",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3050478/jake-elliott",
+                "dspNm": "Jake Elliott"
+              }
+            }
+          ],
+          "keys": [
+            "fieldGoalsMade/fieldGoalAttempts",
+            "fieldGoalPct",
+            "longFieldGoalMade",
+            "extraPointsMade/extraPointAttempts",
+            "totalKickingPoints"
+          ],
+          "lbls": ["FG", "PCT", "LONG", "XP", "PTS"],
+          "type": "kicking",
+          "text": "Philadelphia Kicking",
+          "ttls": ["1/1", "100.0", "23", "5/5", "8"]
+        },
+        {
+          "athlts": [
+            {
+              "stats": ["3", "137", "45.7", "0", "0", "48"],
+              "athlt": {
+                "id": "4371989",
+                "guid": "19c7079bd60822545bf8d9803934680c",
+                "uid": "s:20~l:28~a:4371989",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4371989/arryn-siposs",
+                "dspNm": "Arryn Siposs"
+              }
+            }
+          ],
+          "keys": [
+            "punts",
+            "puntYards",
+            "grossAvgPuntYards",
+            "touchbacks",
+            "puntsInside20",
+            "longPunt"
+          ],
+          "lbls": ["NO", "YDS", "AVG", "TB", "In 20", "LONG"],
+          "type": "punting",
+          "text": "Philadelphia Punting",
+          "ttls": ["3", "137", "45.7", "0", "0", "48"]
+        }
+      ]
+    },
+    {
+      "tm": {
+        "abbrev": "DET",
+        "dspNm": "Detroit Lions",
+        "id": "8",
+        "nm": "Lions",
+        "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/det.png",
+        "hm": true
+      },
+      "stats": [
+        {
+          "athlts": [
+            {
+              "stats": [
+                "21/37",
+                "215",
+                "5.8",
+                "2",
+                "1",
+                "1-10",
+                "62.9",
+                "80.4"
+              ],
+              "athlt": {
+                "id": "3046779",
+                "guid": "987f4f39ed6f591557ebec7dc356171c",
+                "uid": "s:20~l:28~a:3046779",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3046779/jared-goff",
+                "dspNm": "Jared Goff"
+              }
+            }
+          ],
+          "keys": [
+            "completions/passingAttempts",
+            "passingYards",
+            "yardsPerPassAttempt",
+            "passingTouchdowns",
+            "interceptions",
+            "sacks-sackYardsLost",
+            "adjQBR",
+            "QBRating"
+          ],
+          "lbls": ["C/ATT", "YDS", "AVG", "TD", "INT", "SACKS", "QBR", "RTG"],
+          "type": "passing",
+          "text": "Detroit Passing",
+          "ttls": ["21/37", "205", "5.8", "2", "1", "1-10", "--", "80.4"]
+        },
+        {
+          "athlts": [
+            {
+              "stats": ["15", "144", "9.6", "1", "50"],
+              "athlt": {
+                "id": "4259545",
+                "guid": "53a49a954f5bfb949672ef5787f431ee",
+                "uid": "s:20~l:28~a:4259545",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4259545/dandre-swift",
+                "dspNm": "D'Andre Swift"
+              }
+            },
+            {
+              "stats": ["11", "28", "2.5", "2", "7"],
+              "athlt": {
+                "id": "2980453",
+                "guid": "8b3a8527a88de3e53edb0275e5ab8030",
+                "uid": "s:20~l:28~a:2980453",
+                "lnk": "http://www.espn.com/nfl/player/_/id/2980453/jamaal-williams",
+                "dspNm": "Jamaal Williams"
+              }
+            },
+            {
+              "stats": ["2", "9", "4.5", "0", "10"],
+              "athlt": {
+                "id": "3046779",
+                "guid": "987f4f39ed6f591557ebec7dc356171c",
+                "uid": "s:20~l:28~a:3046779",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3046779/jared-goff",
+                "dspNm": "Jared Goff"
+              }
+            }
+          ],
+          "keys": [
+            "rushingAttempts",
+            "rushingYards",
+            "yardsPerRushAttempt",
+            "rushingTouchdowns",
+            "longRushing"
+          ],
+          "lbls": ["CAR", "YDS", "AVG", "TD", "LONG"],
+          "type": "rushing",
+          "text": "Detroit Rushing",
+          "ttls": ["28", "181", "6.5", "3", "50"]
+        },
+        {
+          "athlts": [
+            {
+              "stats": ["8", "64", "8.0", "1", "29", "12"],
+              "athlt": {
+                "id": "4374302",
+                "guid": "c0d739e74606743d4ebb3895ac5ecc20",
+                "uid": "s:20~l:28~a:4374302",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4374302/amon-ra-st-brown",
+                "dspNm": "Amon-Ra St. Brown"
+              }
+            },
+            {
+              "stats": ["4", "52", "13.0", "1", "22", "8"],
+              "athlt": {
+                "id": "3115394",
+                "guid": "00fd63afe36ab2085e2e437ac9819d5d",
+                "uid": "s:20~l:28~a:3115394",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3115394/dj-chark",
+                "dspNm": "DJ Chark"
+              }
+            },
+            {
+              "stats": ["4", "38", "9.5", "0", "16", "7"],
+              "athlt": {
+                "id": "4036133",
+                "guid": "632b52a0c5f6fadd3e6fa358218982f9",
+                "uid": "s:20~l:28~a:4036133",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4036133/tj-hockenson",
+                "dspNm": "T.J. Hockenson"
+              }
+            },
+            {
+              "stats": ["3", "31", "10.3", "0", "25", "3"],
+              "athlt": {
+                "id": "4259545",
+                "guid": "53a49a954f5bfb949672ef5787f431ee",
+                "uid": "s:20~l:28~a:4259545",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4259545/dandre-swift",
+                "dspNm": "D'Andre Swift"
+              }
+            },
+            {
+              "stats": ["1", "28", "28.0", "0", "28", "3"],
+              "athlt": {
+                "id": "3115306",
+                "guid": "52299397c3407b43bc6b29382f32ae9f",
+                "uid": "s:20~l:28~a:3115306",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3115306/josh-reynolds",
+                "dspNm": "Josh Reynolds"
+              }
+            },
+            {
+              "stats": ["1", "2", "2.0", "0", "2", "2"],
+              "athlt": {
+                "id": "2980453",
+                "guid": "8b3a8527a88de3e53edb0275e5ab8030",
+                "uid": "s:20~l:28~a:2980453",
+                "lnk": "http://www.espn.com/nfl/player/_/id/2980453/jamaal-williams",
+                "dspNm": "Jamaal Williams"
+              }
+            },
+            {
+              "stats": ["0", "0", "0.0", "0", "0", "2"],
+              "athlt": {
+                "id": "2973405",
+                "guid": "a8205d5f8f7a452311e314a9f72b85d5",
+                "uid": "s:20~l:28~a:2973405",
+                "lnk": "http://www.espn.com/nfl/player/_/id/2973405/kalif-raymond",
+                "dspNm": "Kalif Raymond"
+              }
+            }
+          ],
+          "keys": [
+            "receptions",
+            "receivingYards",
+            "yardsPerReception",
+            "receivingTouchdowns",
+            "longReception",
+            "receivingTargets"
+          ],
+          "lbls": ["REC", "YDS", "AVG", "TD", "LONG", "TGTS"],
+          "type": "receiving",
+          "text": "Detroit Receiving",
+          "ttls": ["21", "215", "10.2", "2", "29", "37"]
+        },
+        {
+          "athlts": [
+            {
+              "stats": ["1", "0", "1"],
+              "athlt": {
+                "id": "3046779",
+                "guid": "987f4f39ed6f591557ebec7dc356171c",
+                "uid": "s:20~l:28~a:3046779",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3046779/jared-goff",
+                "dspNm": "Jared Goff"
+              }
+            }
+          ],
+          "keys": ["fumbles", "fumblesLost", "fumblesRecovered"],
+          "lbls": ["FUM", "LOST", "REC"],
+          "type": "fumbles",
+          "text": "Detroit Fumbles",
+          "ttls": ["1", "0", "1"]
+        },
+        {
+          "athlts": [
+            {
+              "stats": ["13", "9", "1", "1", "1", "1", "0"],
+              "athlt": {
+                "id": "3042499",
+                "guid": "f14c41e6189ea3d8883781bb9b5dc9ec",
+                "uid": "s:20~l:28~a:3042499",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3042499/tracy-walker-iii",
+                "dspNm": "Tracy Walker III"
+              }
+            },
+            {
+              "stats": ["10", "7", "0", "0", "1", "0", "0"],
+              "athlt": {
+                "id": "4241984",
+                "guid": "3487e3057ff410c87be49af670ab9f26",
+                "uid": "s:20~l:28~a:4241984",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4241984/jeff-okudah",
+                "dspNm": "Jeff Okudah"
+              }
+            },
+            {
+              "stats": ["9", "7", "0", "1", "0", "0", "0"],
+              "athlt": {
+                "id": "3043107",
+                "guid": "edc6276505cac0c6bf90a207b4cc5614",
+                "uid": "s:20~l:28~a:3043107",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3043107/alex-anzalone",
+                "dspNm": "Alex Anzalone"
+              }
+            },
+            {
+              "stats": ["7", "5", "0", "1", "0", "0", "0"],
+              "athlt": {
+                "id": "3051852",
+                "guid": "089e45e925ea545fce371522bd8c9526",
+                "uid": "s:20~l:28~a:3051852",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3051852/charles-harris",
+                "dspNm": "Charles Harris"
+              }
+            },
+            {
+              "stats": ["6", "6", "0", "0", "0", "0", "0"],
+              "athlt": {
+                "id": "3929846",
+                "guid": "61000bf977e4ce4a0964fd79175445bb",
+                "uid": "s:20~l:28~a:3929846",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3929846/deshon-elliott",
+                "dspNm": "DeShon Elliott"
+              }
+            },
+            {
+              "stats": ["6", "4", "0", "1", "0", "0", "0"],
+              "athlt": {
+                "id": "4241411",
+                "guid": "bc27760a55ceb0497ab8104e5db2e4ba",
+                "uid": "s:20~l:28~a:4241411",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4241411/malcolm-rodriguez",
+                "dspNm": "Malcolm Rodriguez"
+              }
+            },
+            {
+              "stats": ["4", "4", "0", "0", "1", "0", "0"],
+              "athlt": {
+                "id": "3116175",
+                "guid": "b5534914b3fe7e134b3fb9cb7947dfe1",
+                "uid": "s:20~l:28~a:3116175",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3116175/amani-oruwariye",
+                "dspNm": "Amani Oruwariye"
+              }
+            },
+            {
+              "stats": ["3", "2", "0", "0", "1", "0", "0"],
+              "athlt": {
+                "id": "4241451",
+                "guid": "f7c9d4b6fbb5db49faea8fc73de9213b",
+                "uid": "s:20~l:28~a:4241451",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4241451/isaiah-buggs",
+                "dspNm": "Isaiah Buggs"
+              }
+            },
+            {
+              "stats": ["3", "2", "0", "0", "0", "0", "0"],
+              "athlt": {
+                "id": "4260409",
+                "guid": "edcadfddb14e520aba2ecf04f207db08",
+                "uid": "s:20~l:28~a:4260409",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4260409/derrick-barnes",
+                "dspNm": "Derrick Barnes"
+              }
+            },
+            {
+              "stats": ["3", "1", "0", "0", "0", "2", "0"],
+              "athlt": {
+                "id": "3895841",
+                "guid": "6c95f3e1a92f62c034e6c4f4f01257fb",
+                "uid": "s:20~l:28~a:3895841",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3895841/mike-hughes",
+                "dspNm": "Mike Hughes"
+              }
+            },
+            {
+              "stats": ["2", "2", "0", "0", "0", "0", "0"],
+              "athlt": {
+                "id": "3915297",
+                "guid": "93474c74bbe8c24f8ccea86a16009d77",
+                "uid": "s:20~l:28~a:3915297",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3915297/will-harris",
+                "dspNm": "Will Harris"
+              }
+            },
+            {
+              "stats": ["1", "1", "0", "0", "0", "1", "0"],
+              "athlt": {
+                "id": "3060403",
+                "guid": "de5867bf7e5366b000359d047b483099",
+                "uid": "s:20~l:28~a:3060403",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3060403/chris-board",
+                "dspNm": "Chris Board"
+              }
+            },
+            {
+              "stats": ["1", "1", "0", "0", "1", "0", "0"],
+              "athlt": {
+                "id": "3728253",
+                "guid": "667b1884757681ecb865c0988e278f66",
+                "uid": "s:20~l:28~a:3728253",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3728253/austin-bryant",
+                "dspNm": "Austin Bryant"
+              }
+            },
+            {
+              "stats": ["1", "1", "0", "0", "0", "0", "0"],
+              "athlt": {
+                "id": "4040901",
+                "guid": "5b7a02442b2f35dc7f34867e080c0ba1",
+                "uid": "s:20~l:28~a:4040901",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4040901/juju-hughes",
+                "dspNm": "JuJu Hughes"
+              }
+            },
+            {
+              "stats": ["1", "0", "0", "0", "0", "0", "0"],
+              "athlt": {
+                "id": "3128303",
+                "guid": "3021014e0d226fd9f63c61f37d12eb20",
+                "uid": "s:20~l:28~a:3128303",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3128303/josh-woods",
+                "dspNm": "Josh Woods"
+              }
+            },
+            {
+              "stats": ["1", "0", "0", "0", "0", "0", "0"],
+              "athlt": {
+                "id": "4360383",
+                "guid": "09e7979b6e3fbc9b18489a6e49000923",
+                "uid": "s:20~l:28~a:4360383",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4360383/kerby-joseph",
+                "dspNm": "Kerby Joseph"
+              }
+            },
+            {
+              "stats": ["1", "0", "0", "0", "0", "0", "0"],
+              "athlt": {
+                "id": "4361662",
+                "guid": "0f21e2f4356f603fe8bd4ee9c36da099",
+                "uid": "s:20~l:28~a:4361662",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4361662/alim-mcneill",
+                "dspNm": "Alim McNeill"
+              }
+            },
+            {
+              "stats": ["1", "0", "0", "0", "0", "0", "0"],
+              "athlt": {
+                "id": "4372099",
+                "guid": "ea011a116683b29950e2f601bdd7172a",
+                "uid": "s:20~l:28~a:4372099",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4372099/aidan-hutchinson",
+                "dspNm": "Aidan Hutchinson"
+              }
+            },
+            {
+              "stats": ["1", "0", "0", "0", "0", "1", "0"],
+              "athlt": {
+                "id": "4411771",
+                "guid": "baaad40239034e75dec0e8b825d7d13d",
+                "uid": "s:20~l:28~a:4411771",
+                "lnk": "http://www.espn.com/nfl/player/_/id/4411771/john-cominsky",
+                "dspNm": "John Cominsky"
+              }
+            }
+          ],
+          "keys": [
+            "totalTackles",
+            "soloTackles",
+            "sacks",
+            "tacklesForLoss",
+            "passesDefended",
+            "QBHits",
+            "defensiveTouchdowns"
+          ],
+          "lbls": ["TOT", "SOLO", "SACKS", "TFL", "PD", "QB HTS", "TD"],
+          "type": "defensive",
+          "text": "Detroit Defensive",
+          "ttls": ["74", "52", "1", "4", "5", "5", "0"]
+        },
+        {
+          "athlts": [],
+          "keys": [
+            "interceptions",
+            "interceptionYards",
+            "interceptionTouchdowns"
+          ],
+          "lbls": ["INT", "YDS", "TD"],
+          "type": "interceptions",
+          "text": "Detroit Interceptions",
+          "ttls": []
+        },
+        {
+          "athlts": [],
+          "keys": [
+            "kickReturns",
+            "kickReturnYards",
+            "yardsPerKickReturn",
+            "longKickReturn",
+            "kickReturnTouchdowns"
+          ],
+          "lbls": ["NO", "YDS", "AVG", "LONG", "TD"],
+          "type": "kickReturns",
+          "text": "Detroit Kick Returns",
+          "ttls": []
+        },
+        {
+          "athlts": [
+            {
+              "stats": ["3", "15", "5.0", "12", "0"],
+              "athlt": {
+                "id": "2973405",
+                "guid": "a8205d5f8f7a452311e314a9f72b85d5",
+                "uid": "s:20~l:28~a:2973405",
+                "lnk": "http://www.espn.com/nfl/player/_/id/2973405/kalif-raymond",
+                "dspNm": "Kalif Raymond"
+              }
+            }
+          ],
+          "keys": [
+            "puntReturns",
+            "puntReturnYards",
+            "yardsPerPuntReturn",
+            "longPuntReturn",
+            "puntReturnTouchdowns"
+          ],
+          "lbls": ["NO", "YDS", "AVG", "LONG", "TD"],
+          "type": "puntReturns",
+          "text": "Detroit Punt Returns",
+          "ttls": ["3", "15", "5.0", "12", "0"]
+        },
+        {
+          "athlts": [
+            {
+              "stats": ["0/0", "0.0", "0", "5/5", "5"],
+              "athlt": {
+                "id": "3821683",
+                "guid": "ff1e314f68e5f3c4ea36aa455dcd75f5",
+                "uid": "s:20~l:28~a:3821683",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3821683/austin-seibert",
+                "dspNm": "Austin Seibert"
+              }
+            }
+          ],
+          "keys": [
+            "fieldGoalsMade/fieldGoalAttempts",
+            "fieldGoalPct",
+            "longFieldGoalMade",
+            "extraPointsMade/extraPointAttempts",
+            "totalKickingPoints"
+          ],
+          "lbls": ["FG", "PCT", "LONG", "XP", "PTS"],
+          "type": "kicking",
+          "text": "Detroit Kicking",
+          "ttls": ["0/0", "0.0", "0", "5/5", "5"]
+        },
+        {
+          "athlts": [
+            {
+              "stats": ["4", "185", "46.3", "0", "2", "54"],
+              "athlt": {
+                "id": "3916370",
+                "guid": "461d044615898af3e5ab095d5f251dc4",
+                "uid": "s:20~l:28~a:3916370",
+                "lnk": "http://www.espn.com/nfl/player/_/id/3916370/jack-fox",
+                "dspNm": "Jack Fox"
+              }
+            }
+          ],
+          "keys": [
+            "punts",
+            "puntYards",
+            "grossAvgPuntYards",
+            "touchbacks",
+            "puntsInside20",
+            "longPunt"
+          ],
+          "lbls": ["NO", "YDS", "AVG", "TB", "In 20", "LONG"],
+          "type": "punting",
+          "text": "Detroit Punting",
+          "ttls": ["4", "185", "46.3", "0", "2", "54"]
+        }
+      ]
+    }
+  ],
+  "sbpg": "boxscore",
+  "meta": {
+    "stndngs": {
+      "headers": [
+        [
+          { "type": "team" },
+          { "type": "wins" },
+          { "type": "losses" },
+          { "type": "ties" },
+          { "type": "winpercent" },
+          { "type": "pointsfor" },
+          { "type": "pointsagainst" }
+        ]
+      ],
+      "config": { "isHeaderStatic": true }
+    },
+    "gmHilghts": { "lnk": "/nfl/video/_/gameId/401437648" },
+    "gmLdrs": {
+      "athleteRowDirection": { "0": "inline", "1": "reverse" },
+      "hideAthleteDescription": true,
+      "lnk": "/nfl/boxscore/_/gameId/401437648"
+    },
+    "bxscr": {
+      "grps": [
+        {
+          "type": "passing",
+          "primaryKeys": [
+            "completions/passingAttempts",
+            "passingYards",
+            "yardsPerPassAttempt",
+            "passingTouchdowns",
+            "interceptions",
+            "sacks-sackYardsLost",
+            "adjQBR",
+            "QBRating"
+          ],
+          "overviewKeys": [
+            "completions/passingAttempts",
+            "passingYards",
+            "passingTouchdowns",
+            "interceptions",
+            "sacks-sackYardsLost"
+          ]
+        },
+        {
+          "type": "rushing",
+          "primaryKeys": [
+            "rushingAttempts",
+            "rushingYards",
+            "yardsPerRushAttempt",
+            "rushingTouchdowns",
+            "longRushing"
+          ],
+          "overviewKeys": [
+            "rushingAttempts",
+            "rushingYards",
+            "rushingTouchdowns",
+            "longRushing"
+          ]
+        },
+        {
+          "type": "receiving",
+          "primaryKeys": [
+            "receptions",
+            "receivingYards",
+            "yardsPerReception",
+            "receivingTouchdowns",
+            "longReception",
+            "receivingTargets"
+          ],
+          "overviewKeys": [
+            "receptions",
+            "receivingYards",
+            "receivingTouchdowns",
+            "longReception",
+            "receivingTargets"
+          ]
+        },
+        {
+          "type": "fumbles",
+          "primaryKeys": ["fumbles", "fumblesLost", "fumblesRecovered"],
+          "overviewKeys": ["fumbles", "fumblesLost", "fumblesRecovered"]
+        },
+        {
+          "colGrps": [1, 4, 3],
+          "hdrs": ["", "TACKLES", "MISC"],
+          "type": "defensive",
+          "primaryKeys": [
+            "totalTackles",
+            "soloTackles",
+            "sacks",
+            "tacklesForLoss",
+            "passesDefended",
+            "QBHits",
+            "defensiveTouchdowns"
+          ],
+          "overviewKeys": [
+            "totalTackles",
+            "soloTackles",
+            "sacks",
+            "tacklesForLoss"
+          ]
+        },
+        {
+          "type": "interceptions",
+          "primaryKeys": [
+            "interceptions",
+            "interceptionYards",
+            "interceptionTouchdowns"
+          ],
+          "overviewKeys": [
+            "interceptions",
+            "interceptionYards",
+            "interceptionTouchdowns"
+          ]
+        },
+        {
+          "type": "kickReturns",
+          "primaryKeys": [
+            "kickReturns",
+            "kickReturnYards",
+            "yardsPerKickReturn",
+            "longKickReturn",
+            "kickReturnTouchdowns"
+          ],
+          "overviewKeys": [
+            "kickReturns",
+            "kickReturnYards",
+            "longKickReturn",
+            "kickReturnTouchdowns"
+          ]
+        },
+        {
+          "type": "puntReturns",
+          "primaryKeys": [
+            "puntReturns",
+            "puntReturnYards",
+            "yardsPerPuntReturn",
+            "longPuntReturn",
+            "puntReturnTouchdowns"
+          ],
+          "overviewKeys": [
+            "puntReturns",
+            "puntReturnYards",
+            "longPuntReturn",
+            "puntReturnTouchdowns"
+          ]
+        },
+        {
+          "type": "kicking",
+          "primaryKeys": [
+            "fieldGoalsMade/fieldGoalAttempts",
+            "fieldGoalPct",
+            "longFieldGoalMade",
+            "extraPointsMade/extraPointAttempts",
+            "totalKickingPoints"
+          ],
+          "overviewKeys": [
+            "fieldGoalsMade/fieldGoalAttempts",
+            "fieldGoalPct",
+            "longFieldGoalMade",
+            "extraPointsMade/extraPointAttempts",
+            "totalKickingPoints"
+          ]
+        },
+        {
+          "type": "punting",
+          "primaryKeys": [
+            "punts",
+            "puntYards",
+            "grossAvgPuntYards",
+            "touchbacks",
+            "puntsInside20",
+            "longPunt"
+          ],
+          "overviewKeys": [
+            "punts",
+            "puntYards",
+            "touchbacks",
+            "puntsInside20",
+            "longPunt"
+          ]
+        }
+      ]
+    },
+    "gmStry": { "lnk": "/nfl/recap/_/gameId/401437648" },
+    "injrs": { "lnk": "/nfl/injuries" },
+    "medialst": { "lnk": "/nfl/video/_/gameId/401437648" },
+    "scrSumm": { "lnk": "/nfl/playbyplay/_/gameId/401437648" },
+    "tmStats": {
+      "grphHdrs": [
+        { "key": "totalYards", "labelOverride": "Total Yards" },
+        { "key": "turnovers", "labelOverride": "Turnovers" },
+        {
+          "key": "possessionTime",
+          "labelOverride": "Possession",
+          "isDonutGraph": true
+        },
+        { "key": "firstDowns", "labelOverride": "1st Downs" }
+      ],
+      "mtchupTblHdrs": {
+        "firstDowns": "highlight",
+        "firstDownsPassing": "indent",
+        "firstDownsRushing": "indent",
+        "firstDownsPenalty": "indent",
+        "thirdDownEff": "indent",
+        "fourthDownEff": "indent",
+        "totalOffensivePlays": "highlight",
+        "totalYards": "highlight",
+        "totalDrives": "highlight",
+        "yardsPerPlay": "highlight",
+        "netPassingYards": "highlight",
+        "completionAttempts": "indent",
+        "yardsPerPass": "indent",
+        "interceptions": "indent",
+        "sacksYardsLost": "indent",
+        "rushingYards": "highlight",
+        "rushingAttempts": "indent",
+        "yardsPerRushAttempt": "indent",
+        "redZoneAttempts": "highlight",
+        "totalPenaltiesYards": "highlight",
+        "turnovers": "highlight",
+        "fumblesLost": "indent",
+        "interceptions__": "indent",
+        "defensiveTouchdowns": "highlight",
+        "possessionTime": "highlight"
+      },
+      "tblHdrs": {
+        "totalPointsPerGame": "",
+        "totalPointsPerGameAllowed": "",
+        "yardsPerGame": "highlight",
+        "passingYardsPerGame": "indent",
+        "rushingYardsPerGame": "indent",
+        "yardsPerGameAllowed": "highlight",
+        "passingYardsPerGameAllowed": "indent",
+        "rushingYardsPerGameAllowed": "indent"
+      },
+      "lnk": "/nfl/matchup/_/gameId/401437648"
+    },
+    "pbp": {},
+    "pkCntr": {
+      "pkHdrs": [
+        {
+          "label": "TeamRankings",
+          "key": "avgScr",
+          "prov": "teamrankings",
+          "link": "https://www.teamrankings.com/?trk=rs_espn_pc_preview",
+          "liteImg": "https://a.espncdn.com/redesign/assets/img/logos/teamrankings@2x.png",
+          "darkImg": "https://a.espncdn.com/redesign/assets/img/logos/teamrankings-dark.png"
+        },
+        {
+          "label": "Spread Consensus Pick",
+          "key": "perc",
+          "prov": "consensus"
+        },
+        { "label": "Spread", "key": "sprd" },
+        { "label": "Money Line", "key": "mnyLn" },
+        { "label": "Over/Under", "key": "ovrUndr" }
+      ],
+      "lnk": "https://insider.espn.com/insider/pickcenter/nfl/game?gameid=401437648"
+    }
+  }
+}
