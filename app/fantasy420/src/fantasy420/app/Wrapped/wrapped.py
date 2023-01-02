@@ -2,7 +2,6 @@ import concurrent.futures
 
 import json
 import requests
-import sys
 
 from bs4 import BeautifulSoup
 
@@ -44,17 +43,17 @@ def get_wrapped(league_id):
     return {"teamNames": team_names, "weeks": weeks, "players": players}
 
 
-def fetch(url, decode_json=True):
+def fetch(url, decode_json=True, headers=None):
+    if url in fetch_cache:
+        return fetch_cache[url]
     k = f'Wrapped/cache/{url.replace("/", "_")}'
     try:
         with open(k) as fh:
             return json.load(fh)
     except:
         pass
-    if url in fetch_cache:
-        return fetch_cache[url]
-    sys.stderr.write(url + "\n")
-    raw_data = requests.get(url, cookies={'espn_s2': espn_s2})
+    print(url)
+    raw_data = requests.get(url, headers=headers, cookies={'espn_s2': espn_s2})
     data = raw_data.json() if decode_json else raw_data.text
     fetch_cache[url] = data
     with open(k, "w") as fh:
@@ -204,11 +203,13 @@ def populate(weeks, week_key, f, position):
                 for player in team["fullRoster"]:
                     if player["position"] == position:
                         if player["team"] != "FA":
-                            key = (player["team"], week["number"])
+                            key = (player["team"], week["number"],
+                                   player["id"])
                             to_fetch.append(key)
 
     with concurrent.futures.ThreadPoolExecutor(num_threads) as executor:
         fetched_arr = list(executor.map(lambda g: f(*g), to_fetch))
+    # fetched_arr = [f(*g) for g in to_fetch]
     for week in weeks:
         week[week_key] = [
             i for i in [
@@ -222,46 +223,56 @@ def populate_boxscores(weeks):
     populate(weeks, "boxscores", get_boxscore, 16)  # DST = 16
 
 
-def get_boxscore(pro_team_name, week):
-    game_id = get_game_id(pro_team_name, week)
-    if game_id is None: return None
-    url = f'https://www.espn.com/nfl/boxscore/_/gameId/{game_id}'
-    box_score_html = fetch(url, decode_json=False)
-    __espnfitt__ = box_score_html.split("window['__espnfitt__']=")[-1].split(
-        ";</script>\n")[0]
-    parsed = json.loads(__espnfitt__)
-    gamepackage = parsed["page"]["content"]["gamepackage"]
-
-    bxscr = gamepackage["bxscr"]
-    teamabbrevs = [i["tm"]["abbrev"] for i in bxscr]
-    key = 1 - teamabbrevs.index(pro_team_name)
-
-    stats = bxscr[key]["stats"]
-    passing = float(
-        next((s["ttls"][1] for s in stats if "passingYards" in s["keys"]),
-             None))
-    rushing = float(
-        next((s["ttls"][1] for s in stats if "rushingYards" in s["keys"]),
-             None))
-
-    score = int(gamepackage["gmStrp"]["tms"][key]["score"])
-
-    boxscore = {
-        "team": teamabbrevs[key],
-        "oppTeam": teamabbrevs[1 - key],
-        "passing": passing,
-        "rushing": rushing,
-        "score": score
+def get_boxscore(pro_team_name, week, player_id):
+    url = f'https://fantasy.espn.com/apis/v3/games/ffl/seasons/{year}/segments/0/leagues/{league_ids[0]}?scoringPeriodId={Vars.max_week_finished}&view=kona_playercard&pro_team_name={pro_team_name}'
+    results = fetch(
+        url,
+        decode_json=True,
+        headers={
+            "x-fantasy-filter":
+            json.dumps({
+                "players": {
+                    "filterIds": {
+                        "value": [player_id]
+                    },
+                    "filterRanksForSlotIds": {
+                        "value": [0, 2, 4, 6, 17, 16]
+                    },
+                    "filterStatsForTopScoringPeriodIds": {
+                        "value":
+                        Vars.max_week_finished,
+                        "additionalValue":
+                        ["002022", "102022", "002021", "11202217", "022022"]
+                    }
+                }
+            })
+        })
+    stats = next(
+        (p["player"]["stats"]
+         for p in results["players"] if p["id"] == player_id),
+        None,
+    )
+    sstats = next(
+        (s["stats"] for s in stats
+         if s["proTeamId"] != 0 and s["scoringPeriodId"] == week),
+        None,
+    )
+    if sstats is None:
+        return None
+    yardsAllowed = sstats["127"]
+    pointsAllowed = sstats["187"]
+    return {
+        "team": pro_team_name,
+        "yardsAllowed": sstats["127"],
+        "pointsAllowed": sstats["187"],
     }
-
-    return boxscore
 
 
 def populate_fieldgoals(weeks):
     populate(weeks, "fieldgoals", get_fieldgoals, 5)  # K = 5
 
 
-def get_fieldgoals(pro_team_name, week):
+def get_fieldgoals(pro_team_name, week, player_id):
     game_id = get_game_id(pro_team_name, week)
     if game_id is None: return None
     url = f'https://www.espn.com/nfl/playbyplay/_/gameId/{game_id}'
