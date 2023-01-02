@@ -453,8 +453,10 @@ function GooseEggs(data: WrappedType) {
 function BestByStreamingPosition(data: WrappedType) {
   return (
     <div>
-      {[Position.QB, Position.DST, Position.K, Position.TE].map(
-        (position, i) => (
+      {Object.values(Position)
+        .filter((p) => p >= 0)
+        .map((p) => p as unknown as Position)
+        .map((position, i) => (
           <div key={i} className={css.bubble}>
             <h3>{Position[position]}</h3>
             {sortByKey(
@@ -481,8 +483,7 @@ function BestByStreamingPosition(data: WrappedType) {
               </div>
             ))}
           </div>
-        )
-      )}
+        ))}
     </div>
   );
 }
