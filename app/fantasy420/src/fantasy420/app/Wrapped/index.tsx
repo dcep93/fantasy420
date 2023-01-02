@@ -730,6 +730,7 @@ export type WeekType = {
 };
 
 export type BoxscoreType = {
+  // team: string;
   oppTeam: string;
   passing: number;
   rushing: number;

@@ -238,7 +238,7 @@ def get_boxscore(pro_team_name, week):
     score = int(gamepackage["gmStrp"]["tms"][key]["score"])
 
     boxscore = {
-        "team": pro_team_name,
+        "team": teamabbrevs[key],
         "oppTeam": teamabbrevs[1 - key],
         "passing": passing,
         "rushing": rushing,
