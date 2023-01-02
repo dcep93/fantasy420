@@ -220,11 +220,10 @@ function GamesDeterminedByDiscreteScoring(data: WrappedType) {
           if (match.match[1].score - match.match[0].score > 10) return null;
           const mapped = match.match.map((team) => {
             const differences: string[] = [];
-            const superscore = (
+            const superscore =
               team.score +
               calculateDSTDifference(team, match.week.boxscores, differences) +
-              calculateKDifference(team, match.week.fieldgoals, differences)
-            ).toFixed(2);
+              calculateKDifference(team, match.week.fieldgoals, differences);
             return {
               name: data.teamNames[team.teamIndex],
               score: team.score,
@@ -246,12 +245,12 @@ function GamesDeterminedByDiscreteScoring(data: WrappedType) {
                   <div>week {match.week.number}:</div>
                   <div>
                     <b>{match.loser.name}</b> {match.loser.score} (ss{" "}
-                    {match.loser.superscore})
+                    {match.loser.superscore.toFixed(2)})
                   </div>
                   <div>would have beaten</div>
                   <div>
                     <b>{match.winner.name}</b> {match.winner.score} (ss{" "}
-                    {match.winner.superscore})
+                    {match.winner.superscore.toFixed(2)})
                   </div>
                   <div>if K and DST used continuous scoring:</div>
                   <div className={css.bubble}>
