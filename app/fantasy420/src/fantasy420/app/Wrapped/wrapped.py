@@ -26,6 +26,7 @@ class Vars:
 
 
 def main():
+    print("wrapped")
     wrapped = {}
     for league_id in league_ids:
         wrapped[league_id] = get_wrapped(league_id)
@@ -265,9 +266,13 @@ def get_fieldgoals(pro_team_name, week):
     if game_id is None: return None
     url = f'https://www.espn.com/nfl/playbyplay/_/gameId/{game_id}'
     play_by_play_html = fetch(url, decode_json=False)
-    soup = BeautifulSoup(play_by_play_html, features="html.parser")
-    headline_divs = soup.findAll("div", class_="headline")
-    headlines = [h.text for h in headline_divs if "Field Goal" in h.text]
+    __espnfitt__ = play_by_play_html.split(
+        "window['__espnfitt__']=")[-1].split(";</script>\n")[0]
+    parsed = json.loads(__espnfitt__)
+    gamepackage = parsed["page"]["content"]["gamepackage"]
+    headlines = [[i for i in p["plays"] if "headline" in i][-1]["description"]
+                 for p in gamepackage["allPlys"]
+                 if p.get("headline") == "Field Goal"]
     return {"team": pro_team_name, "fieldgoals": headlines}
 
 
