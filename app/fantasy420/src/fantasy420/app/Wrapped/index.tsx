@@ -104,30 +104,6 @@ function StudsStarted(data: WrappedType) {
         ))}
     </div>
   );
-  return (
-    <div>
-      {teams.map((obj, i) => (
-        <div className={css.bubble} key={i}>
-          <div>{obj.teamName}</div>
-          {Object.values(Position)
-            .filter((p) => Number.isInteger(p))
-            .filter((p) => p !== Position.FLEX)
-            .map((p) => p as Position)
-            .map((p) => ({
-              p,
-              players: obj.players
-                .filter((player) => player.position === p)
-                .map((player) => player.name),
-            }))
-            .map(({ p, players }, j) => (
-              <div key={j}>
-                {Position[p]} ({players.length}): {players.join(" , ")}
-              </div>
-            ))}
-        </div>
-      ))}
-    </div>
-  );
 }
 
 function GamesDeterminedByDiscreteScoring(data: WrappedType) {
