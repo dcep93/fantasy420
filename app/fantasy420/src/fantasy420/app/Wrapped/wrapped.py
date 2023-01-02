@@ -29,8 +29,8 @@ def main():
     wrapped = {}
     for league_id in league_ids:
         wrapped[league_id] = get_wrapped(league_id)
-    with open("wrapped.json", "w") as fh:
-        json.dump(wrapped, fh)
+    with open("Wrapped/wrapped.json", "w") as fh:
+        json.dump(wrapped, fh, indent=2)
     print(json.dumps(wrapped))
 
 
@@ -238,8 +238,8 @@ def get_boxscore(pro_team_name, week):
     score = int(gamepackage["gmStrp"]["tms"][key]["score"])
 
     boxscore = {
-        "team": teamabbrevs[1 - key],
-        "oppTeam": pro_team_name,
+        "team": pro_team_name,
+        "oppTeam": teamabbrevs[1 - key],
         "passing": passing,
         "rushing": rushing,
         "score": score
