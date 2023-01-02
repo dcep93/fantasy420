@@ -75,6 +75,37 @@ function StudsStarted(data: WrappedType) {
     }));
   return (
     <div>
+      {Object.values(Position)
+        .filter((p) => Number.isInteger(p))
+        .filter((p) => p !== Position.FLEX)
+        .map((p) => p as Position)
+        .map((p) => (
+          <div key={p}>
+            <div className={css.bubble}>
+              {Position[p]}
+              <div>
+                {teams
+                  .map(({ players, ...t }) => ({
+                    ...t,
+                    players: players.filter((pl) => pl.position === p),
+                  }))
+                  .sort((a, b) => a.players.length - b.players.length)
+                  .map((t, i) => (
+                    <div key={i}>
+                      <b>
+                        {t.teamName}: ({t.players.length})
+                      </b>{" "}
+                      - {t.players.map((p) => p.name).join(" , ")}
+                    </div>
+                  ))}
+              </div>
+            </div>
+          </div>
+        ))}
+    </div>
+  );
+  return (
+    <div>
       {teams.map((obj, i) => (
         <div className={css.bubble} key={i}>
           <div>{obj.teamName}</div>
@@ -489,7 +520,7 @@ function BestByStreamingPosition(data: WrappedType) {
 }
 
 function SqueezesAndStomps(data: WrappedType) {
-  const num = 5;
+  const num = 10;
   const rawPoints = sortByKey(
     data.weeks.flatMap((week) =>
       week.matches.map((teams) => ({
