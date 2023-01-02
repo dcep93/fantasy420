@@ -555,9 +555,11 @@ function WeekWinnersAndLosers(data: WrappedType) {
       <div className={css.flexx}>
         <table className={css.bubble}>
           <thead>
-            <td></td>
-            <td>tops</td>
-            <td>bottoms</td>
+            <tr>
+              <td></td>
+              <td>tops</td>
+              <td>bottoms</td>
+            </tr>
           </thead>
           <tbody>
             {counts.map((count, i) => (
