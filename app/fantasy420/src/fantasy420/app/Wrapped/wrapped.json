@@ -1,15 +1,15 @@
 {
   "203836968": {
     "teamNames": [
-      "Impeach Neil Drain the Swamp",
+      "IfYouAintFirst YoureLast",
       "Team Silver Finger",
       "Bass Pro Shops",
       "STL Cookies",
       "Monday Night Fucking",
-      "THE STORMIN FOREMAN",
+      "Jahan The Man",
       "Forswearious Toney",
-      "Team Pei",
-      "Let's go Brandin",
+      "Team Morgan",
+      "\ud83c\uddfa\ud83c\uddf2\ud83c\uddfa\ud83c\uddf2\ud83c\uddfa\ud83c\uddf2 MCMCGAGA",
       "SHOW ME YO TDs"
     ],
     "weeks": [
@@ -373,163 +373,130 @@
         ],
         "boxscores": [
           {
-            "team": "PHI",
+            "team": "DET",
             "oppTeam": "PHI",
-            "passing": 205,
-            "rushing": 181,
-            "score": 35
+            "passing": 205.0,
+            "rushing": 181.0,
+            "score": 38
           },
           {
-            "team": "BUF",
+            "team": "LAR",
             "oppTeam": "BUF",
-            "passing": 191,
-            "rushing": 52,
-            "score": 10
+            "passing": 191.0,
+            "rushing": 52.0,
+            "score": 31
           },
           {
-            "team": "IND",
+            "team": "HOU",
             "oppTeam": "IND",
-            "passing": 222,
-            "rushing": 77,
+            "passing": 222.0,
+            "rushing": 77.0,
             "score": 20
           },
           {
-            "team": "TB",
+            "team": "DAL",
             "oppTeam": "TB",
-            "passing": 173,
-            "rushing": 71,
-            "score": 3
-          },
-          {
-            "team": "CIN",
-            "oppTeam": "CIN",
-            "passing": 192,
-            "rushing": 75,
-            "score": 23
-          },
-          {
-            "team": "GB",
-            "oppTeam": "GB",
-            "passing": 269,
-            "rushing": 126,
-            "score": 23
-          },
-          {
-            "team": "NO",
-            "oppTeam": "NO",
-            "passing": 215,
-            "rushing": 201,
-            "score": 26
-          },
-          {
-            "team": "DEN",
-            "oppTeam": "DEN",
-            "passing": 177,
-            "rushing": 76,
-            "score": 17
-          },
-          {
-            "team": "LAC",
-            "oppTeam": "LAC",
-            "passing": 256,
-            "rushing": 64,
+            "passing": 173.0,
+            "rushing": 71.0,
             "score": 19
           },
           {
-            "team": "NE",
-            "oppTeam": "NE",
-            "passing": 242,
-            "rushing": 65,
+            "team": "PIT",
+            "oppTeam": "CIN",
+            "passing": 192.0,
+            "rushing": 75.0,
             "score": 20
           },
           {
-            "team": "BAL",
-            "oppTeam": "BAL",
-            "passing": 297,
-            "rushing": 83,
-            "score": 9
+            "team": "MIN",
+            "oppTeam": "GB",
+            "passing": 269.0,
+            "rushing": 126.0,
+            "score": 7
           },
           {
-            "team": "SF",
+            "team": "ATL",
+            "oppTeam": "NO",
+            "passing": 215.0,
+            "rushing": 201.0,
+            "score": 27
+          },
+          {
+            "team": "SEA",
+            "oppTeam": "DEN",
+            "passing": 177.0,
+            "rushing": 76.0,
+            "score": 16
+          },
+          {
+            "team": "LV",
+            "oppTeam": "LAC",
+            "passing": 256.0,
+            "rushing": 64.0,
+            "score": 24
+          },
+          {
+            "team": "MIA",
+            "oppTeam": "NE",
+            "passing": 242.0,
+            "rushing": 65.0,
+            "score": 7
+          },
+          {
+            "team": "NYJ",
+            "oppTeam": "BAL",
+            "passing": 297.0,
+            "rushing": 83.0,
+            "score": 24
+          },
+          {
+            "team": "CHI",
             "oppTeam": "SF",
-            "passing": 105,
-            "rushing": 99,
-            "score": 19
+            "passing": 105.0,
+            "rushing": 99.0,
+            "score": 10
           }
         ],
         "fieldgoals": [
           {
             "team": "MIN",
-            "fieldgoals": [
-              "Greg Joseph 28 Yd Field Goal",
-              "Greg Joseph 56 Yd Field Goal",
-              "Greg Joseph 29 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "BUF",
-            "fieldgoals": [
-              "Tyler Bass 41 Yd Field Goal",
-              "Matt Gay 57 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "LAR",
-            "fieldgoals": [
-              "Tyler Bass 41 Yd Field Goal",
-              "Matt Gay 57 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "NE",
-            "fieldgoals": [
-              "Jason Sanders 43 Yd Field Goal",
-              "Jason Sanders 49 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "LV",
-            "fieldgoals": [
-              "Dustin Hopkins 43 Yd Field Goal",
-              "Daniel Carlson 23 Yd Field Goal",
-              "Daniel Carlson 55 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "DEN",
-            "fieldgoals": [
-              "Brandon McManus 30 Yd Field Goal",
-              "Jason Myers 49 Yd Field Goal",
-              "Brandon McManus 40 Yd Field Goal",
-              "Brandon McManus 26 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "BAL",
-            "fieldgoals": [
-              "Justin Tucker 24 Yd Field Goal",
-              "Greg Zuerlein 45 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "CIN",
-            "fieldgoals": [
-              "Evan McPherson 59 Yd Field Goal",
-              "Chris Boswell 20 Yd Field Goal",
-              "Evan McPherson 26 Yd Field Goal",
-              "Chris Boswell 48 Yd Field Goal",
-              "Chris Boswell 53 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
-          { "team": "KC", "fieldgoals": ["Harrison Butker 54 Yd Field Goal"] },
+          {
+            "team": "KC",
+            "fieldgoals": []
+          },
           {
             "team": "IND",
-            "fieldgoals": [
-              "Rodrigo Blankenship 45 Yd Field Goal",
-              "Ka'imi Fairbairn 45 Yd Field Goal",
-              "Ka'imi Fairbairn 43 Yd Field Goal",
-              "Rodrigo Blankenship 27 Yd Field Goal"
-            ]
+            "fieldgoals": []
           }
         ]
       },
@@ -896,151 +863,123 @@
         ],
         "boxscores": [
           {
-            "team": "GB",
+            "team": "CHI",
             "oppTeam": "GB",
-            "passing": 48,
-            "rushing": 180,
+            "passing": 48.0,
+            "rushing": 180.0,
+            "score": 27
+          },
+          {
+            "team": "TB",
+            "oppTeam": "NO",
+            "passing": 188.0,
+            "rushing": 72.0,
             "score": 10
           },
           {
             "team": "NO",
-            "oppTeam": "NO",
-            "passing": 188,
-            "rushing": 72,
-            "score": 20
-          },
-          {
-            "team": "TB",
             "oppTeam": "TB",
-            "passing": 208,
-            "rushing": 100,
-            "score": 10
-          },
-          {
-            "team": "PHI",
-            "oppTeam": "PHI",
-            "passing": 202,
-            "rushing": 62,
-            "score": 7
-          },
-          {
-            "team": "CIN",
-            "oppTeam": "CIN",
-            "passing": 230,
-            "rushing": 107,
+            "passing": 208.0,
+            "rushing": 100.0,
             "score": 20
           },
           {
-            "team": "BAL",
+            "team": "MIN",
+            "oppTeam": "PHI",
+            "passing": 202.0,
+            "rushing": 62.0,
+            "score": 24
+          },
+          {
+            "team": "DAL",
+            "oppTeam": "CIN",
+            "passing": 230.0,
+            "rushing": 107.0,
+            "score": 17
+          },
+          {
+            "team": "MIA",
             "oppTeam": "BAL",
-            "passing": 461,
-            "rushing": 86,
-            "score": 42
+            "passing": 461.0,
+            "rushing": 86.0,
+            "score": 38
           },
           {
-            "team": "BUF",
+            "team": "TEN",
             "oppTeam": "BUF",
-            "passing": 107,
-            "rushing": 80,
-            "score": 7
+            "passing": 107.0,
+            "rushing": 80.0,
+            "score": 41
           },
           {
-            "team": "CLE",
+            "team": "NYJ",
             "oppTeam": "CLE",
-            "passing": 309,
-            "rushing": 93,
+            "passing": 309.0,
+            "rushing": 93.0,
+            "score": 30
+          },
+          {
+            "team": "ATL",
+            "oppTeam": "LAR",
+            "passing": 171.0,
+            "rushing": 90.0,
             "score": 31
           },
           {
-            "team": "LAR",
-            "oppTeam": "LAR",
-            "passing": 171,
-            "rushing": 90,
-            "score": 27
-          },
-          {
-            "team": "DEN",
+            "team": "HOU",
             "oppTeam": "DEN",
-            "passing": 154,
-            "rushing": 80,
-            "score": 9
+            "passing": 154.0,
+            "rushing": 80.0,
+            "score": 16
           },
           {
-            "team": "SF",
+            "team": "SEA",
             "oppTeam": "SF",
-            "passing": 180,
-            "rushing": 36,
-            "score": 7
+            "passing": 180.0,
+            "rushing": 36.0,
+            "score": 27
           }
         ],
         "fieldgoals": [
           {
             "team": "LV",
-            "fieldgoals": [
-              "Daniel Carlson 32 Yd Field Goal",
-              "Daniel Carlson 55 Yd Field Goal",
-              "Daniel Carlson 25 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "TB",
-            "fieldgoals": [
-              "Wil Lutz 31 Yd Field Goal",
-              "Ryan Succop 47 Yd Field Goal",
-              "Ryan Succop 47 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
-          { "team": "MIN", "fieldgoals": ["Jake Elliott 38 Yd Field Goal"] },
-          { "team": "BAL", "fieldgoals": ["Justin Tucker 51 Yd Field Goal"] },
+          {
+            "team": "MIN",
+            "fieldgoals": []
+          },
+          {
+            "team": "BAL",
+            "fieldgoals": []
+          },
           {
             "team": "PIT",
-            "fieldgoals": [
-              "Nick Folk 28 Yd Field Goal",
-              "Chris Boswell 36 Yd Field Goal",
-              "Chris Boswell 52 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "BUF",
-            "fieldgoals": [
-              "Tyler Bass 49 Yd Field Goal",
-              "Tyler Bass 37 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "LAR",
-            "fieldgoals": [
-              "Younghoe Koo 26 Yd Field Goal",
-              "Matt Gay 20 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "CIN",
-            "fieldgoals": [
-              "Evan McPherson 43 Yd Field Goal",
-              "Brett Maher 54 Yd Field Goal",
-              "Evan McPherson 50 Yd Field Goal",
-              "Evan McPherson 46 Yd Field Goal",
-              "Brett Maher 50 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "DEN",
-            "fieldgoals": [
-              "Brandon McManus 20 Yd Field Goal",
-              "Ka'imi Fairbairn 40 Yd Field Goal",
-              "Ka'imi Fairbairn 44 Yd Field Goal",
-              "Brandon McManus 24 Yd Field Goal",
-              "Ka'imi Fairbairn 24 Yd Field Goal",
-              "Brandon McManus 50 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "ATL",
-            "fieldgoals": [
-              "Younghoe Koo 26 Yd Field Goal",
-              "Matt Gay 20 Yd Field Goal"
-            ]
+            "fieldgoals": []
           }
         ]
       },
@@ -1406,154 +1345,124 @@
         ],
         "boxscores": [
           {
-            "team": "HOU",
+            "team": "CHI",
             "oppTeam": "HOU",
-            "passing": 82,
-            "rushing": 281,
-            "score": 23
+            "passing": 82.0,
+            "rushing": 281.0,
+            "score": 20
           },
           {
-            "team": "CIN",
+            "team": "NYJ",
             "oppTeam": "CIN",
-            "passing": 252,
-            "rushing": 76,
-            "score": 12
-          },
-          {
-            "team": "TB",
-            "oppTeam": "TB",
-            "passing": 248,
-            "rushing": 67,
-            "score": 14
-          },
-          {
-            "team": "LAR",
-            "oppTeam": "LAR",
-            "passing": 295,
-            "rushing": 70,
-            "score": 12
-          },
-          {
-            "team": "SF",
-            "oppTeam": "SF",
-            "passing": 160,
-            "rushing": 101,
-            "score": 11
+            "passing": 252.0,
+            "rushing": 76.0,
+            "score": 27
           },
           {
             "team": "GB",
-            "oppTeam": "GB",
-            "passing": 251,
-            "rushing": 34,
+            "oppTeam": "TB",
+            "passing": 248.0,
+            "rushing": 67.0,
             "score": 12
           },
           {
-            "team": "NO",
+            "team": "ARI",
+            "oppTeam": "LAR",
+            "passing": 295.0,
+            "rushing": 70.0,
+            "score": 20
+          },
+          {
+            "team": "DEN",
+            "oppTeam": "SF",
+            "passing": 160.0,
+            "rushing": 101.0,
+            "score": 10
+          },
+          {
+            "team": "TB",
+            "oppTeam": "GB",
+            "passing": 251.0,
+            "rushing": 34.0,
+            "score": 14
+          },
+          {
+            "team": "CAR",
             "oppTeam": "NO",
-            "passing": 148,
-            "rushing": 145,
-            "score": 22
+            "passing": 148.0,
+            "rushing": 145.0,
+            "score": 14
           },
           {
-            "team": "DAL",
+            "team": "NYG",
             "oppTeam": "DAL",
-            "passing": 169,
-            "rushing": 167,
-            "score": 16
+            "passing": 169.0,
+            "rushing": 167.0,
+            "score": 23
           },
           {
-            "team": "PHI",
+            "team": "WSH",
             "oppTeam": "PHI",
-            "passing": 153,
-            "rushing": 87,
-            "score": 8
+            "passing": 153.0,
+            "rushing": 87.0,
+            "score": 24
           },
           {
-            "team": "LAC",
+            "team": "JAX",
             "oppTeam": "LAC",
-            "passing": 262,
-            "rushing": 151,
-            "score": 38
+            "passing": 262.0,
+            "rushing": 151.0,
+            "score": 10
           },
           {
-            "team": "BUF",
+            "team": "MIA",
             "oppTeam": "BUF",
-            "passing": 171,
-            "rushing": 41,
-            "score": 21
+            "passing": 171.0,
+            "rushing": 41.0,
+            "score": 19
           }
         ],
         "fieldgoals": [
           {
             "team": "PIT",
-            "fieldgoals": [
-              "Cade York 34 Yd Field Goal",
-              "Chris Boswell 34 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "BAL",
-            "fieldgoals": [
-              "Nick Folk 35 Yd Field Goal",
-              "Nick Folk 50 Yd Field Goal",
-              "Justin Tucker 56 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "TB",
-            "fieldgoals": [
-              "Ryan Succop 45 Yd Field Goal",
-              "Ryan Succop 45 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "CIN",
-            "fieldgoals": [
-              "Greg Zuerlein 50 Yd Field Goal",
-              "Greg Zuerlein 40 Yd Field Goal",
-              "Evan McPherson 22 Yd Field Goal",
-              "Evan McPherson 43 Yd Field Goal",
-              "Greg Zuerlein 52 Yd Field Goal",
-              "Greg Zuerlein 43 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "NE",
-            "fieldgoals": [
-              "Nick Folk 35 Yd Field Goal",
-              "Nick Folk 50 Yd Field Goal",
-              "Justin Tucker 56 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "LV",
-            "fieldgoals": [
-              "Daniel Carlson 21 Yd Field Goal",
-              "Randy Bullock 48 Yd Field Goal",
-              "Daniel Carlson 32 Yd Field Goal",
-              "Daniel Carlson 35 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "LAR",
-            "fieldgoals": [
-              "Matt Gay 22 Yd Field Goal",
-              "Matt Gay 40 Yd Field Goal",
-              "Matt Prater 23 Yd Field Goal",
-              "Matt Prater 43 Yd Field Goal",
-              "Matt Prater 49 Yd Field Goal",
-              "Matt Prater 31 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
-          { "team": "MIN", "fieldgoals": ["Austin Seibert 40 Yd Field Goal"] },
+          {
+            "team": "MIN",
+            "fieldgoals": []
+          },
           {
             "team": "DEN",
-            "fieldgoals": [
-              "Brandon McManus 55 Yd Field Goal",
-              "Robbie Gould 51 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
-          { "team": "BUF", "fieldgoals": ["Tyler Bass 30 Yd Field Goal"] }
+          {
+            "team": "BUF",
+            "fieldgoals": []
+          }
         ]
       },
       {
@@ -1920,187 +1829,130 @@
         ],
         "boxscores": [
           {
-            "team": "SF",
+            "team": "LAR",
             "oppTeam": "SF",
-            "passing": 200,
-            "rushing": 57,
-            "score": 9
-          },
-          {
-            "team": "NYG",
-            "oppTeam": "NYG",
-            "passing": 155,
-            "rushing": 149,
-            "score": 12
-          },
-          {
-            "team": "IND",
-            "oppTeam": "IND",
-            "passing": 116,
-            "rushing": 127,
+            "passing": 200.0,
+            "rushing": 57.0,
             "score": 24
           },
           {
-            "team": "DAL",
-            "oppTeam": "DAL",
-            "passing": 155,
-            "rushing": 142,
-            "score": 10
+            "team": "CHI",
+            "oppTeam": "NYG",
+            "passing": 155.0,
+            "rushing": 149.0,
+            "score": 20
           },
           {
-            "team": "MIN",
-            "oppTeam": "MIN",
-            "passing": 227,
-            "rushing": 111,
+            "team": "TEN",
+            "oppTeam": "IND",
+            "passing": 116.0,
+            "rushing": 127.0,
+            "score": 17
+          },
+          {
+            "team": "WSH",
+            "oppTeam": "DAL",
+            "passing": 155.0,
+            "rushing": 142.0,
             "score": 25
           },
           {
-            "team": "PIT",
-            "oppTeam": "PIT",
-            "passing": 250,
-            "rushing": 98,
-            "score": 24
-          },
-          {
-            "team": "LAC",
-            "oppTeam": "LAC",
-            "passing": 215,
-            "rushing": 131,
-            "score": 24
-          },
-          {
-            "team": "TB",
-            "oppTeam": "TB",
-            "passing": 228,
-            "rushing": 189,
-            "score": 41
-          },
-          {
-            "team": "PHI",
-            "oppTeam": "PHI",
-            "passing": 148,
-            "rushing": 71,
-            "score": 21
-          },
-          {
-            "team": "GB",
-            "oppTeam": "GB",
-            "passing": 104,
-            "rushing": 167,
-            "score": 24
-          },
-          {
             "team": "NO",
-            "oppTeam": "NO",
-            "passing": 263,
-            "rushing": 81,
+            "oppTeam": "MIN",
+            "passing": 227.0,
+            "rushing": 111.0,
             "score": 28
           },
           {
-            "team": "BUF",
-            "oppTeam": "BUF",
-            "passing": 134,
-            "rushing": 162,
+            "team": "NYJ",
+            "oppTeam": "PIT",
+            "passing": 250.0,
+            "rushing": 98.0,
             "score": 20
+          },
+          {
+            "team": "HOU",
+            "oppTeam": "LAC",
+            "passing": 215.0,
+            "rushing": 131.0,
+            "score": 34
+          },
+          {
+            "team": "KC",
+            "oppTeam": "TB",
+            "passing": 228.0,
+            "rushing": 189.0,
+            "score": 31
+          },
+          {
+            "team": "JAX",
+            "oppTeam": "PHI",
+            "passing": 148.0,
+            "rushing": 71.0,
+            "score": 29
+          },
+          {
+            "team": "NE",
+            "oppTeam": "GB",
+            "passing": 104.0,
+            "rushing": 167.0,
+            "score": 27
+          },
+          {
+            "team": "MIN",
+            "oppTeam": "NO",
+            "passing": 263.0,
+            "rushing": 81.0,
+            "score": 25
+          },
+          {
+            "team": "BAL",
+            "oppTeam": "BUF",
+            "passing": 134.0,
+            "rushing": 162.0,
+            "score": 23
           }
         ],
         "fieldgoals": [
           {
             "team": "PIT",
-            "fieldgoals": [
-              "Greg Zuerlein 38 Yd Field Goal",
-              "Chris Boswell 51 Yd Field Goal",
-              "Chris Boswell 59 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "CIN",
-            "fieldgoals": [
-              "Jason Sanders 23 Yd Field Goal",
-              "Jason Sanders 48 Yd Field Goal",
-              "Jason Sanders 20 Yd Field Goal",
-              "Evan McPherson 19 Yd Field Goal",
-              "Evan McPherson 57 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "LAR",
-            "fieldgoals": [
-              "Matt Gay 39 Yd Field Goal",
-              "Matt Gay 29 Yd Field Goal",
-              "Matt Gay 26 Yd Field Goal",
-              "Robbie Gould 25 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "BAL",
-            "fieldgoals": [
-              "Tyler Bass 38 Yd Field Goal",
-              "Justin Tucker 42 Yd Field Goal",
-              "Justin Tucker 51 Yd Field Goal",
-              "Tyler Bass 39 Yd Field Goal",
-              "Tyler Bass 21 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "NYG",
-            "fieldgoals": [
-              "Michael Badgley 29 Yd Field Goal",
-              "Michael Badgley 22 Yd Field Goal",
-              "Michael Badgley 40 Yd Field Goal",
-              "Michael Badgley 35 Yd Field Goal",
-              "Graham Gano 44 Yd Field Goal",
-              "Graham Gano 43 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "DEN",
-            "fieldgoals": [
-              "Daniel Carlson 26 Yd Field Goal",
-              "Brandon McManus 28 Yd Field Goal",
-              "Daniel Carlson 39 Yd Field Goal",
-              "Daniel Carlson 22 Yd Field Goal",
-              "Daniel Carlson 30 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "TB",
-            "fieldgoals": [
-              "Ryan Succop 45 Yd Field Goal",
-              "Matthew Wright 44 Yd Field Goal",
-              "Matthew Wright 32 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "MIN",
-            "fieldgoals": [
-              "Greg Joseph 28 Yd Field Goal",
-              "Greg Joseph 36 Yd Field Goal",
-              "Greg Joseph 24 Yd Field Goal",
-              "Greg Joseph 46 Yd Field Goal",
-              "Wil Lutz 60 Yd Field Goal",
-              "Greg Joseph 47 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "LV",
-            "fieldgoals": [
-              "Daniel Carlson 26 Yd Field Goal",
-              "Brandon McManus 28 Yd Field Goal",
-              "Daniel Carlson 39 Yd Field Goal",
-              "Daniel Carlson 22 Yd Field Goal",
-              "Daniel Carlson 30 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "BUF",
-            "fieldgoals": [
-              "Tyler Bass 38 Yd Field Goal",
-              "Justin Tucker 42 Yd Field Goal",
-              "Justin Tucker 51 Yd Field Goal",
-              "Tyler Bass 39 Yd Field Goal",
-              "Tyler Bass 21 Yd Field Goal"
-            ]
+            "fieldgoals": []
           }
         ]
       },
@@ -2467,169 +2319,126 @@
         ],
         "boxscores": [
           {
-            "team": "DAL",
+            "team": "LAR",
             "oppTeam": "DAL",
-            "passing": 285,
-            "rushing": 38,
-            "score": 10
-          },
-          {
-            "team": "TEN",
-            "oppTeam": "TEN",
-            "passing": 342,
-            "rushing": 43,
-            "score": 17
-          },
-          {
-            "team": "PHI",
-            "oppTeam": "PHI",
-            "passing": 239,
-            "rushing": 124,
-            "score": 17
-          },
-          {
-            "team": "MIA",
-            "oppTeam": "MIA",
-            "passing": 187,
-            "rushing": 135,
-            "score": 40
-          },
-          {
-            "team": "BUF",
-            "oppTeam": "BUF",
-            "passing": 310,
-            "rushing": 54,
-            "score": 3
-          },
-          {
-            "team": "SF",
-            "oppTeam": "SF",
-            "passing": 244,
-            "rushing": 64,
-            "score": 15
-          },
-          {
-            "team": "TB",
-            "oppTeam": "TB",
-            "passing": 110,
-            "rushing": 151,
-            "score": 15
-          },
-          {
-            "team": "MIN",
-            "oppTeam": "MIN",
-            "passing": 193,
-            "rushing": 78,
+            "passing": 285.0,
+            "rushing": 38.0,
             "score": 22
           },
           {
             "team": "WSH",
-            "oppTeam": "WSH",
-            "passing": 136,
-            "rushing": 105,
+            "oppTeam": "TEN",
+            "passing": 342.0,
+            "rushing": 43.0,
             "score": 21
           },
           {
-            "team": "JAX",
+            "team": "ARI",
+            "oppTeam": "PHI",
+            "passing": 239.0,
+            "rushing": 124.0,
+            "score": 20
+          },
+          {
+            "team": "NYJ",
+            "oppTeam": "MIA",
+            "passing": 187.0,
+            "rushing": 135.0,
+            "score": 17
+          },
+          {
+            "team": "PIT",
+            "oppTeam": "BUF",
+            "passing": 310.0,
+            "rushing": 54.0,
+            "score": 38
+          },
+          {
+            "team": "CAR",
+            "oppTeam": "SF",
+            "passing": 244.0,
+            "rushing": 64.0,
+            "score": 37
+          },
+          {
+            "team": "ATL",
+            "oppTeam": "TB",
+            "passing": 110.0,
+            "rushing": 151.0,
+            "score": 21
+          },
+          {
+            "team": "CHI",
+            "oppTeam": "MIN",
+            "passing": 193.0,
+            "rushing": 78.0,
+            "score": 29
+          },
+          {
+            "team": "TEN",
+            "oppTeam": "WSH",
+            "passing": 136.0,
+            "rushing": 105.0,
+            "score": 17
+          },
+          {
+            "team": "HOU",
             "oppTeam": "JAX",
-            "passing": 132,
-            "rushing": 116,
-            "score": 13
+            "passing": 132.0,
+            "rushing": 116.0,
+            "score": 6
           },
           {
-            "team": "GB",
+            "team": "NYG",
             "oppTeam": "GB",
-            "passing": 213,
-            "rushing": 125,
-            "score": 27
+            "passing": 213.0,
+            "rushing": 125.0,
+            "score": 22
           },
           {
-            "team": "NO",
+            "team": "SEA",
             "oppTeam": "NO",
-            "passing": 245,
-            "rushing": 151,
-            "score": 32
+            "passing": 245.0,
+            "rushing": 151.0,
+            "score": 39
           }
         ],
         "fieldgoals": [
           {
             "team": "ATL",
-            "fieldgoals": [
-              "Ryan Succop 21 Yd Field Goal",
-              "Ryan Succop 44 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "DEN",
-            "fieldgoals": [
-              "Brandon McManus 33 Yd Field Goal",
-              "Brandon McManus 44 Yd Field Goal",
-              "Chase McLaughlin 52 Yd Field Goal",
-              "Chase McLaughlin 51 Yd Field Goal",
-              "Brandon McManus 45 Yd Field Goal",
-              "Chase McLaughlin 31 Yd Field Goal",
-              "Chase McLaughlin 48 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "MIN",
-            "fieldgoals": [
-              "Cairo Santos 50 Yd Field Goal",
-              "Cairo Santos 43 Yd Field Goal",
-              "Cairo Santos 51 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "CIN",
-            "fieldgoals": [
-              "Justin Tucker 37 Yd Field Goal",
-              "Evan McPherson 40 Yd Field Goal",
-              "Justin Tucker 58 Yd Field Goal",
-              "Justin Tucker 25 Yd Field Goal",
-              "Justin Tucker 43 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "BUF",
-            "fieldgoals": [
-              "Chris Boswell 29 Yd Field Goal",
-              "Tyler Bass 35 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "TB",
-            "fieldgoals": [
-              "Ryan Succop 21 Yd Field Goal",
-              "Ryan Succop 44 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "BAL",
-            "fieldgoals": [
-              "Justin Tucker 37 Yd Field Goal",
-              "Evan McPherson 40 Yd Field Goal",
-              "Justin Tucker 58 Yd Field Goal",
-              "Justin Tucker 25 Yd Field Goal",
-              "Justin Tucker 43 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "NYG",
-            "fieldgoals": [
-              "Mason Crosby 46 Yd Field Goal",
-              "Graham Gano 48 Yd Field Goal",
-              "Mason Crosby 48 Yd Field Goal",
-              "Graham Gano 37 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "LV",
-            "fieldgoals": [
-              "Daniel Carlson 53 Yd Field Goal",
-              "Daniel Carlson 50 Yd Field Goal",
-              "Matthew Wright 59 Yd Field Goal",
-              "Daniel Carlson 47 Yd Field Goal"
-            ]
+            "fieldgoals": []
           }
         ]
       },
@@ -2999,162 +2808,123 @@
         ],
         "boxscores": [
           {
-            "team": "BUF",
+            "team": "KC",
             "oppTeam": "BUF",
-            "passing": 319,
-            "rushing": 68,
-            "score": 20
+            "passing": 319.0,
+            "rushing": 68.0,
+            "score": 24
           },
           {
-            "team": "TB",
+            "team": "PIT",
             "oppTeam": "TB",
-            "passing": 193,
-            "rushing": 77,
-            "score": 20
+            "passing": 193.0,
+            "rushing": 77.0,
+            "score": 18
           },
           {
-            "team": "GB",
+            "team": "NYJ",
             "oppTeam": "GB",
-            "passing": 99,
-            "rushing": 179,
-            "score": 27
-          },
-          {
-            "team": "DEN",
-            "oppTeam": "DEN",
-            "passing": 224,
-            "rushing": 73,
-            "score": 19
-          },
-          {
-            "team": "LAR",
-            "oppTeam": "LAR",
-            "passing": 110,
-            "rushing": 93,
+            "passing": 99.0,
+            "rushing": 179.0,
             "score": 10
           },
           {
-            "team": "JAX",
-            "oppTeam": "JAX",
-            "passing": 389,
-            "rushing": 45,
-            "score": 34
-          },
-          {
-            "team": "NE",
-            "oppTeam": "NE",
-            "passing": 258,
-            "rushing": 70,
-            "score": 15
-          },
-          {
-            "team": "DAL",
-            "oppTeam": "DAL",
-            "passing": 132,
-            "rushing": 136,
-            "score": 26
-          },
-          {
-            "team": "SF",
-            "oppTeam": "SF",
-            "passing": 121,
-            "rushing": 168,
-            "score": 28
-          },
-          {
-            "team": "PHI",
-            "oppTeam": "PHI",
-            "passing": 181,
-            "rushing": 134,
-            "score": 17
+            "team": "LAC",
+            "oppTeam": "DEN",
+            "passing": 224.0,
+            "rushing": 73.0,
+            "score": 16
           },
           {
             "team": "CAR",
-            "oppTeam": "CAR",
-            "passing": 249,
-            "rushing": 111,
+            "oppTeam": "LAR",
+            "passing": 110.0,
+            "rushing": 93.0,
             "score": 24
+          },
+          {
+            "team": "IND",
+            "oppTeam": "JAX",
+            "passing": 389.0,
+            "rushing": 45.0,
+            "score": 27
+          },
+          {
+            "team": "CLE",
+            "oppTeam": "NE",
+            "passing": 258.0,
+            "rushing": 70.0,
+            "score": 38
+          },
+          {
+            "team": "PHI",
+            "oppTeam": "DAL",
+            "passing": 132.0,
+            "rushing": 136.0,
+            "score": 17
+          },
+          {
+            "team": "ATL",
+            "oppTeam": "SF",
+            "passing": 121.0,
+            "rushing": 168.0,
+            "score": 14
+          },
+          {
+            "team": "DAL",
+            "oppTeam": "PHI",
+            "passing": 181.0,
+            "rushing": 134.0,
+            "score": 26
+          },
+          {
+            "team": "LAR",
+            "oppTeam": "CAR",
+            "passing": 249.0,
+            "rushing": 111.0,
+            "score": 10
           }
         ],
         "fieldgoals": [
           {
             "team": "BUF",
-            "fieldgoals": [
-              "Tyler Bass 39 Yd Field Goal",
-              "Harrison Butker 62 Yd Field Goal",
-              "Harrison Butker 44 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "TB",
-            "fieldgoals": [
-              "Ryan Succop 30 Yd Field Goal",
-              "Ryan Succop 27 Yd Field Goal",
-              "Chris Boswell 55 Yd Field Goal",
-              "Ryan Succop 54 Yd Field Goal",
-              "Chris Boswell 25 Yd Field Goal",
-              "Ryan Succop 24 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "SEA",
-            "fieldgoals": [
-              "Matt Ammendola 23 Yd Field Goal",
-              "Jason Myers 39 Yd Field Goal",
-              "Jason Myers 27 Yd Field Goal",
-              "Jason Myers 34 Yd Field Goal",
-              "Jason Myers 32 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "BAL",
-            "fieldgoals": [
-              "Justin Tucker 34 Yd Field Goal",
-              "Justin Tucker 23 Yd Field Goal",
-              "Graham Gano 34 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "NYG",
-            "fieldgoals": [
-              "Justin Tucker 34 Yd Field Goal",
-              "Justin Tucker 23 Yd Field Goal",
-              "Graham Gano 34 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "CIN",
-            "fieldgoals": [
-              "Wil Lutz 35 Yd Field Goal",
-              "Wil Lutz 30 Yd Field Goal",
-              "Wil Lutz 37 Yd Field Goal",
-              "Wil Lutz 31 Yd Field Goal",
-              "Evan McPherson 52 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "DAL",
-            "fieldgoals": [
-              "Jake Elliott 51 Yd Field Goal",
-              "Jake Elliott 34 Yd Field Goal",
-              "Brett Maher 30 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
-          { "team": "SF", "fieldgoals": [] },
+          {
+            "team": "SF",
+            "fieldgoals": []
+          },
           {
             "team": "LAR",
-            "fieldgoals": [
-              "Eddy Pineiro 42 Yd Field Goal",
-              "Matt Gay 21 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "KC",
-            "fieldgoals": [
-              "Tyler Bass 39 Yd Field Goal",
-              "Harrison Butker 62 Yd Field Goal",
-              "Harrison Butker 44 Yd Field Goal"
-            ]
+            "fieldgoals": []
           }
         ]
       },
@@ -3523,163 +3293,127 @@
         ],
         "boxscores": [
           {
-            "team": "LV",
+            "team": "HOU",
             "oppTeam": "LV",
-            "passing": 296,
-            "rushing": 108,
-            "score": 20
+            "passing": 296.0,
+            "rushing": 108.0,
+            "score": 38
           },
           {
-            "team": "CIN",
+            "team": "ATL",
             "oppTeam": "CIN",
-            "passing": 107,
-            "rushing": 107,
-            "score": 17
-          },
-          {
-            "team": "DEN",
-            "oppTeam": "DEN",
-            "passing": 105,
-            "rushing": 155,
-            "score": 16
-          },
-          {
-            "team": "NE",
-            "oppTeam": "NE",
-            "passing": 147,
-            "rushing": 243,
-            "score": 33
-          },
-          {
-            "team": "SF",
-            "oppTeam": "SF",
-            "passing": 417,
-            "rushing": 112,
-            "score": 44
-          },
-          {
-            "team": "DAL",
-            "oppTeam": "DAL",
-            "passing": 195,
-            "rushing": 117,
-            "score": 6
-          },
-          {
-            "team": "GB",
-            "oppTeam": "GB",
-            "passing": 198,
-            "rushing": 166,
-            "score": 23
-          },
-          {
-            "team": "IND",
-            "oppTeam": "IND",
-            "passing": 116,
-            "rushing": 138,
-            "score": 19
+            "passing": 107.0,
+            "rushing": 107.0,
+            "score": 35
           },
           {
             "team": "NYJ",
-            "oppTeam": "NYJ",
-            "passing": 219,
-            "rushing": 105,
+            "oppTeam": "DEN",
+            "passing": 105.0,
+            "rushing": 155.0,
             "score": 9
           },
           {
-            "team": "TB",
-            "oppTeam": "TB",
-            "passing": 170,
-            "rushing": 173,
+            "team": "CHI",
+            "oppTeam": "NE",
+            "passing": 147.0,
+            "rushing": 243.0,
+            "score": 14
+          },
+          {
+            "team": "KC",
+            "oppTeam": "SF",
+            "passing": 417.0,
+            "rushing": 112.0,
+            "score": 23
+          },
+          {
+            "team": "DET",
+            "oppTeam": "DAL",
+            "passing": 195.0,
+            "rushing": 117.0,
+            "score": 24
+          },
+          {
+            "team": "WSH",
+            "oppTeam": "GB",
+            "passing": 198.0,
+            "rushing": 166.0,
             "score": 21
           },
           {
-            "team": "BAL",
+            "team": "TEN",
+            "oppTeam": "IND",
+            "passing": 116.0,
+            "rushing": 138.0,
+            "score": 10
+          },
+          {
+            "team": "DEN",
+            "oppTeam": "NYJ",
+            "passing": 219.0,
+            "rushing": 105.0,
+            "score": 16
+          },
+          {
+            "team": "CAR",
+            "oppTeam": "TB",
+            "passing": 170.0,
+            "rushing": 173.0,
+            "score": 3
+          },
+          {
+            "team": "CLE",
             "oppTeam": "BAL",
-            "passing": 223,
-            "rushing": 113,
-            "score": 20
+            "passing": 223.0,
+            "rushing": 113.0,
+            "score": 23
           }
         ],
         "fieldgoals": [
           {
             "team": "BAL",
-            "fieldgoals": [
-              "Justin Tucker 32 Yd Field Goal",
-              "Cade York 41 Yd Field Goal",
-              "Justin Tucker 34 Yd Field Goal",
-              "Cade York 37 Yd Field Goal",
-              "Justin Tucker 55 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "PIT",
-            "fieldgoals": [
-              "Jason Sanders 24 Yd Field Goal",
-              "Jason Sanders 42 Yd Field Goal",
-              "Chris Boswell 45 Yd Field Goal",
-              "Jason Sanders 47 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "LV",
-            "fieldgoals": [
-              "Daniel Carlson 50 Yd Field Goal",
-              "Ka'imi Fairbairn 55 Yd Field Goal",
-              "Ka'imi Fairbairn 35 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "SEA",
-            "fieldgoals": [
-              "Jason Myers 46 Yd Field Goal",
-              "Jason Myers 34 Yd Field Goal",
-              "Jason Myers 50 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "NE",
-            "fieldgoals": [
-              "Cairo Santos 42 Yd Field Goal",
-              "Cairo Santos 23 Yd Field Goal",
-              "Cairo Santos 38 Yd Field Goal",
-              "Cairo Santos 50 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "NYG",
-            "fieldgoals": [
-              "Riley Patterson 27 Yd Field Goal",
-              "Graham Gano 33 Yd Field Goal",
-              "Graham Gano 33 Yd Field Goal",
-              "Graham Gano 34 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "DAL",
-            "fieldgoals": [
-              "Michael Badgley 40 Yd Field Goal",
-              "Brett Maher 22 Yd Field Goal",
-              "Michael Badgley 53 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
-          { "team": "CIN", "fieldgoals": ["Younghoe Koo 43 Yd Field Goal"] },
+          {
+            "team": "CIN",
+            "fieldgoals": []
+          },
           {
             "team": "DEN",
-            "fieldgoals": [
-              "Brandon McManus 44 Yd Field Goal",
-              "Greg Zuerlein 45 Yd Field Goal",
-              "Greg Zuerlein 33 Yd Field Goal",
-              "Greg Zuerlein 40 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
-          { "team": "TB", "fieldgoals": ["Ryan Succop 27 Yd Field Goal"] },
+          {
+            "team": "TB",
+            "fieldgoals": []
+          },
           {
             "team": "KC",
-            "fieldgoals": [
-              "Robbie Gould 30 Yd Field Goal",
-              "Robbie Gould 50 Yd Field Goal",
-              "Robbie Gould 49 Yd Field Goal"
-            ]
+            "fieldgoals": []
           }
         ]
       },
@@ -4048,161 +3782,134 @@
         ],
         "boxscores": [
           {
-            "team": "BUF",
+            "team": "GB",
             "oppTeam": "BUF",
-            "passing": 190,
-            "rushing": 208,
-            "score": 17
-          },
-          {
-            "team": "NE",
-            "oppTeam": "NE",
-            "passing": 336,
-            "rushing": 51,
-            "score": 17
-          },
-          {
-            "team": "DEN",
-            "oppTeam": "DEN",
-            "passing": 114,
-            "rushing": 191,
-            "score": 17
-          },
-          {
-            "team": "DAL",
-            "oppTeam": "DAL",
-            "passing": 131,
-            "rushing": 240,
-            "score": 29
-          },
-          {
-            "team": "SF",
-            "oppTeam": "SF",
-            "passing": 167,
-            "rushing": 56,
-            "score": 14
-          },
-          {
-            "team": "PHI",
-            "oppTeam": "PHI",
-            "passing": 158,
-            "rushing": 144,
-            "score": 13
-          },
-          {
-            "team": "IND",
-            "oppTeam": "IND",
-            "passing": 266,
-            "rushing": 96,
-            "score": 17
-          },
-          {
-            "team": "MIA",
-            "oppTeam": "MIA",
-            "passing": 311,
-            "rushing": 82,
-            "score": 27
-          },
-          {
-            "team": "TB",
-            "oppTeam": "TB",
-            "passing": 222,
-            "rushing": 231,
+            "passing": 190.0,
+            "rushing": 208.0,
             "score": 27
           },
           {
             "team": "NYJ",
-            "oppTeam": "NYJ",
-            "passing": 161,
-            "rushing": 127,
+            "oppTeam": "NE",
+            "passing": 336.0,
+            "rushing": 51.0,
             "score": 22
           },
           {
-            "team": "LV",
-            "oppTeam": "LV",
-            "passing": 231,
-            "rushing": 136,
-            "score": 24
+            "team": "JAX",
+            "oppTeam": "DEN",
+            "passing": 114.0,
+            "rushing": 191.0,
+            "score": 21
           },
           {
-            "team": "TEN",
-            "oppTeam": "TEN",
-            "passing": 118,
-            "rushing": 43,
-            "score": 10
-          }
-        ],
-        "fieldgoals": [
-          { "team": "DEN", "fieldgoals": ["Riley Patterson 37 Yd Field Goal"] },
-          {
-            "team": "NE",
-            "fieldgoals": [
-              "Greg Zuerlein 28 Yd Field Goal",
-              "Nick Folk 31 Yd Field Goal",
-              "Nick Folk 42 Yd Field Goal",
-              "Nick Folk 49 Yd Field Goal",
-              "Nick Folk 45 Yd Field Goal",
-              "Nick Folk 52 Yd Field Goal"
-            ]
-          },
-          { "team": "LV", "fieldgoals": ["Wil Lutz 37 Yd Field Goal"] },
-          {
-            "team": "SEA",
-            "fieldgoals": [
-              "Jason Myers 35 Yd Field Goal",
-              "Graham Gano 31 Yd Field Goal",
-              "Jason Myers 51 Yd Field Goal",
-              "Graham Gano 45 Yd Field Goal"
-            ]
-          },
-          { "team": "DAL", "fieldgoals": ["Cairo Santos 36 Yd Field Goal"] },
-          {
-            "team": "NYG",
-            "fieldgoals": [
-              "Jason Myers 35 Yd Field Goal",
-              "Graham Gano 31 Yd Field Goal",
-              "Jason Myers 51 Yd Field Goal",
-              "Graham Gano 45 Yd Field Goal"
-            ]
+            "team": "CHI",
+            "oppTeam": "DAL",
+            "passing": 131.0,
+            "rushing": 240.0,
+            "score": 49
           },
           {
-            "team": "BUF",
-            "fieldgoals": [
-              "Tyler Bass 42 Yd Field Goal",
-              "Mason Crosby 38 Yd Field Goal",
-              "Tyler Bass 38 Yd Field Goal"
-            ]
+            "team": "LAR",
+            "oppTeam": "SF",
+            "passing": 167.0,
+            "rushing": 56.0,
+            "score": 31
           },
-          { "team": "CIN", "fieldgoals": ["Cade York 55 Yd Field Goal"] },
           {
-            "team": "TB",
-            "fieldgoals": [
-              "Justin Tucker 22 Yd Field Goal",
-              "Ryan Succop 31 Yd Field Goal",
-              "Ryan Succop 30 Yd Field Goal",
-              "Ryan Succop 26 Yd Field Goal",
-              "Justin Tucker 30 Yd Field Goal"
-            ]
+            "team": "PIT",
+            "oppTeam": "PHI",
+            "passing": 158.0,
+            "rushing": 144.0,
+            "score": 35
+          },
+          {
+            "team": "WSH",
+            "oppTeam": "IND",
+            "passing": 266.0,
+            "rushing": 96.0,
+            "score": 16
+          },
+          {
+            "team": "DET",
+            "oppTeam": "MIA",
+            "passing": 311.0,
+            "rushing": 82.0,
+            "score": 31
           },
           {
             "team": "BAL",
-            "fieldgoals": [
-              "Justin Tucker 22 Yd Field Goal",
-              "Ryan Succop 31 Yd Field Goal",
-              "Ryan Succop 30 Yd Field Goal",
-              "Ryan Succop 26 Yd Field Goal",
-              "Justin Tucker 30 Yd Field Goal"
-            ]
+            "oppTeam": "TB",
+            "passing": 222.0,
+            "rushing": 231.0,
+            "score": 22
+          },
+          {
+            "team": "NE",
+            "oppTeam": "NYJ",
+            "passing": 161.0,
+            "rushing": 127.0,
+            "score": 17
+          },
+          {
+            "team": "NO",
+            "oppTeam": "LV",
+            "passing": 231.0,
+            "rushing": 136.0,
+            "score": 0
+          },
+          {
+            "team": "HOU",
+            "oppTeam": "TEN",
+            "passing": 118.0,
+            "rushing": 43.0,
+            "score": 17
+          }
+        ],
+        "fieldgoals": [
+          {
+            "team": "DEN",
+            "fieldgoals": []
+          },
+          {
+            "team": "NE",
+            "fieldgoals": []
+          },
+          {
+            "team": "LV",
+            "fieldgoals": []
+          },
+          {
+            "team": "SEA",
+            "fieldgoals": []
+          },
+          {
+            "team": "DAL",
+            "fieldgoals": []
+          },
+          {
+            "team": "NYG",
+            "fieldgoals": []
+          },
+          {
+            "team": "BUF",
+            "fieldgoals": []
+          },
+          {
+            "team": "CIN",
+            "fieldgoals": []
+          },
+          {
+            "team": "TB",
+            "fieldgoals": []
+          },
+          {
+            "team": "BAL",
+            "fieldgoals": []
           },
           {
             "team": "ATL",
-            "fieldgoals": [
-              "Eddy Pineiro 37 Yd Field Goal",
-              "Eddy Pineiro 42 Yd Field Goal",
-              "Younghoe Koo 30 Yd Field Goal",
-              "Younghoe Koo 34 Yd Field Goal",
-              "Younghoe Koo 41 Yd Field Goal"
-            ]
+            "fieldgoals": []
           }
         ]
       },
@@ -4570,151 +4277,132 @@
         ],
         "boxscores": [
           {
-            "team": "MIN",
+            "team": "WSH",
             "oppTeam": "MIN",
-            "passing": 126,
-            "rushing": 137,
-            "score": 17
-          },
-          {
-            "team": "BUF",
-            "oppTeam": "BUF",
-            "passing": 136,
-            "rushing": 174,
+            "passing": 126.0,
+            "rushing": 137.0,
             "score": 20
           },
           {
-            "team": "NE",
-            "oppTeam": "NE",
-            "passing": 43,
-            "rushing": 78,
-            "score": 3
-          },
-          {
-            "team": "PHI",
-            "oppTeam": "PHI",
-            "passing": 135,
-            "rushing": 168,
+            "team": "NYJ",
+            "oppTeam": "BUF",
+            "passing": 136.0,
+            "rushing": 174.0,
             "score": 17
-          },
-          {
-            "team": "CIN",
-            "oppTeam": "CIN",
-            "passing": 164,
-            "rushing": 64,
-            "score": 21
-          },
-          {
-            "team": "SEA",
-            "oppTeam": "SEA",
-            "passing": 140,
-            "rushing": 122,
-            "score": 21
-          },
-          {
-            "team": "KC",
-            "oppTeam": "KC",
-            "passing": 57,
-            "rushing": 172,
-            "score": 17
-          },
-          {
-            "team": "GB",
-            "oppTeam": "GB",
-            "passing": 137,
-            "rushing": 117,
-            "score": 15
-          },
-          {
-            "team": "TB",
-            "oppTeam": "TB",
-            "passing": 138,
-            "rushing": 68,
-            "score": 13
           },
           {
             "team": "IND",
-            "oppTeam": "IND",
-            "passing": 133,
-            "rushing": 70,
+            "oppTeam": "NE",
+            "passing": 43.0,
+            "rushing": 78.0,
             "score": 26
           },
           {
-            "team": "MIA",
-            "oppTeam": "MIA",
-            "passing": 116,
-            "rushing": 252,
-            "score": 32
-          }
-        ],
-        "fieldgoals": [
-          { "team": "DET", "fieldgoals": ["Mason Crosby 25 Yd Field Goal"] },
+            "team": "HOU",
+            "oppTeam": "PHI",
+            "passing": 135.0,
+            "rushing": 168.0,
+            "score": 29
+          },
           {
-            "team": "KC",
-            "fieldgoals": [
-              "Harrison Butker 23 Yd Field Goal",
-              "Randy Bullock 44 Yd Field Goal",
-              "Harrison Butker 28 Yd Field Goal"
-            ]
+            "team": "CAR",
+            "oppTeam": "CIN",
+            "passing": 164.0,
+            "rushing": 64.0,
+            "score": 42
+          },
+          {
+            "team": "ARI",
+            "oppTeam": "SEA",
+            "passing": 140.0,
+            "rushing": 122.0,
+            "score": 31
+          },
+          {
+            "team": "TEN",
+            "oppTeam": "KC",
+            "passing": 57.0,
+            "rushing": 172.0,
+            "score": 20
+          },
+          {
+            "team": "DET",
+            "oppTeam": "GB",
+            "passing": 137.0,
+            "rushing": 117.0,
+            "score": 9
+          },
+          {
+            "team": "LAR",
+            "oppTeam": "TB",
+            "passing": 138.0,
+            "rushing": 68.0,
+            "score": 16
           },
           {
             "team": "NE",
-            "fieldgoals": [
-              "Nick Folk 49 Yd Field Goal",
-              "Nick Folk 43 Yd Field Goal",
-              "Chase McLaughlin 40 Yd Field Goal",
-              "Nick Folk 43 Yd Field Goal",
-              "Nick Folk 28 Yd Field Goal"
-            ]
+            "oppTeam": "IND",
+            "passing": 133.0,
+            "rushing": 70.0,
+            "score": 3
+          },
+          {
+            "team": "CHI",
+            "oppTeam": "MIA",
+            "passing": 116.0,
+            "rushing": 252.0,
+            "score": 35
+          }
+        ],
+        "fieldgoals": [
+          {
+            "team": "DET",
+            "fieldgoals": []
+          },
+          {
+            "team": "KC",
+            "fieldgoals": []
+          },
+          {
+            "team": "NE",
+            "fieldgoals": []
           },
           {
             "team": "BUF",
-            "fieldgoals": [
-              "Greg Zuerlein 53 Yd Field Goal",
-              "Tyler Bass 51 Yd Field Goal",
-              "Greg Zuerlein 28 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "ATL",
-            "fieldgoals": [
-              "Younghoe Koo 29 Yd Field Goal",
-              "Cameron Dicker 31 Yd Field Goal",
-              "Cameron Dicker 37 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "LV",
-            "fieldgoals": [
-              "Daniel Carlson 38 Yd Field Goal",
-              "Daniel Carlson 38 Yd Field Goal",
-              "Riley Patterson 44 Yd Field Goal",
-              "Riley Patterson 48 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
-          { "team": "SEA", "fieldgoals": ["Jason Myers 49 Yd Field Goal"] },
+          {
+            "team": "SEA",
+            "fieldgoals": []
+          },
           {
             "team": "BAL",
-            "fieldgoals": [
-              "Wil Lutz 33 Yd Field Goal",
-              "Justin Tucker 32 Yd Field Goal",
-              "Wil Lutz 37 Yd Field Goal",
-              "Justin Tucker 41 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
-          { "team": "MIA", "fieldgoals": ["Cairo Santos 32 Yd Field Goal"] },
+          {
+            "team": "MIA",
+            "fieldgoals": []
+          },
           {
             "team": "TB",
-            "fieldgoals": [
-              "Ryan Succop 20 Yd Field Goal",
-              "Ryan Succop 38 Yd Field Goal",
-              "Matt Gay 26 Yd Field Goal",
-              "Matt Gay 35 Yd Field Goal",
-              "Ryan Succop 50 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
-          { "team": "CHI", "fieldgoals": ["Cairo Santos 32 Yd Field Goal"] },
-          { "team": "CIN", "fieldgoals": [] }
+          {
+            "team": "CHI",
+            "fieldgoals": []
+          },
+          {
+            "team": "CIN",
+            "fieldgoals": []
+          }
         ]
       },
       {
@@ -5083,157 +4771,134 @@
         ],
         "boxscores": [
           {
-            "team": "DEN",
+            "team": "TEN",
             "oppTeam": "DEN",
-            "passing": 244,
-            "rushing": 63,
-            "score": 17
-          },
-          {
-            "team": "SEA",
-            "oppTeam": "SEA",
-            "passing": 258,
-            "rushing": 161,
-            "score": 21
-          },
-          {
-            "team": "PHI",
-            "oppTeam": "PHI",
-            "passing": 178,
-            "rushing": 152,
-            "score": 32
-          },
-          {
-            "team": "DAL",
-            "oppTeam": "DAL",
-            "passing": 208,
-            "rushing": 207,
-            "score": 31
+            "passing": 244.0,
+            "rushing": 63.0,
+            "score": 10
           },
           {
             "team": "TB",
+            "oppTeam": "SEA",
+            "passing": 258.0,
+            "rushing": 161.0,
+            "score": 16
+          },
+          {
+            "team": "WSH",
+            "oppTeam": "PHI",
+            "passing": 178.0,
+            "rushing": 152.0,
+            "score": 21
+          },
+          {
+            "team": "GB",
+            "oppTeam": "DAL",
+            "passing": 208.0,
+            "rushing": 207.0,
+            "score": 28
+          },
+          {
+            "team": "SEA",
             "oppTeam": "TB",
-            "passing": 244,
-            "rushing": 39,
-            "score": 16
+            "passing": 244.0,
+            "rushing": 39.0,
+            "score": 21
           },
           {
-            "team": "SF",
+            "team": "LAC",
             "oppTeam": "SF",
-            "passing": 187,
-            "rushing": 51,
-            "score": 16
+            "passing": 187.0,
+            "rushing": 51.0,
+            "score": 22
           },
           {
-            "team": "ARI",
+            "team": "LAR",
             "oppTeam": "ARI",
-            "passing": 190,
-            "rushing": 66,
-            "score": 17
+            "passing": 190.0,
+            "rushing": 66.0,
+            "score": 27
           },
           {
-            "team": "BUF",
+            "team": "MIN",
             "oppTeam": "BUF",
-            "passing": 334,
-            "rushing": 147,
-            "score": 33
+            "passing": 334.0,
+            "rushing": 147.0,
+            "score": 30
           },
           {
-            "team": "NYG",
+            "team": "HOU",
             "oppTeam": "NYG",
-            "passing": 286,
-            "rushing": 101,
-            "score": 16
+            "passing": 286.0,
+            "rushing": 101.0,
+            "score": 24
           },
           {
-            "team": "KC",
+            "team": "JAX",
             "oppTeam": "KC",
-            "passing": 240,
-            "rushing": 75,
-            "score": 17
+            "passing": 240.0,
+            "rushing": 75.0,
+            "score": 27
           },
           {
-            "team": "NO",
+            "team": "PIT",
             "oppTeam": "NO",
-            "passing": 162,
-            "rushing": 217,
-            "score": 20
+            "passing": 162.0,
+            "rushing": 217.0,
+            "score": 10
           },
           {
-            "team": "TEN",
+            "team": "DEN",
             "oppTeam": "TEN",
-            "passing": 248,
-            "rushing": 65,
-            "score": 10
+            "passing": 248.0,
+            "rushing": 65.0,
+            "score": 17
           }
         ],
         "fieldgoals": [
           {
             "team": "LV",
-            "fieldgoals": [
-              "Chase McLaughlin 48 Yd Field Goal",
-              "Chase McLaughlin 48 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
-          { "team": "SEA", "fieldgoals": ["Jason Myers 55 Yd Field Goal"] },
+          {
+            "team": "SEA",
+            "fieldgoals": []
+          },
           {
             "team": "BUF",
-            "fieldgoals": [
-              "Tyler Bass 34 Yd Field Goal",
-              "Greg Joseph 27 Yd Field Goal",
-              "Tyler Bass 45 Yd Field Goal",
-              "Tyler Bass 29 Yd Field Goal",
-              "Greg Joseph 33 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "NYG",
-            "fieldgoals": [
-              "Ka'imi Fairbairn 38 Yd Field Goal",
-              "Ka'imi Fairbairn 34 Yd Field Goal",
-              "Graham Gano 49 Yd Field Goal",
-              "Ka'imi Fairbairn 46 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
-          { "team": "TB", "fieldgoals": ["Jason Myers 55 Yd Field Goal"] },
+          {
+            "team": "TB",
+            "fieldgoals": []
+          },
           {
             "team": "CHI",
-            "fieldgoals": [
-              "Cairo Santos 33 Yd Field Goal",
-              "Michael Badgley 25 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
-          { "team": "KC", "fieldgoals": ["Riley Patterson 35 Yd Field Goal"] },
-          { "team": "DAL", "fieldgoals": ["Mason Crosby 28 Yd Field Goal"] },
+          {
+            "team": "KC",
+            "fieldgoals": []
+          },
+          {
+            "team": "DAL",
+            "fieldgoals": []
+          },
           {
             "team": "SF",
-            "fieldgoals": [
-              "Robbie Gould 20 Yd Field Goal",
-              "Cameron Dicker 47 Yd Field Goal",
-              "Cameron Dicker 25 Yd Field Goal",
-              "Cameron Dicker 40 Yd Field Goal",
-              "Robbie Gould 26 Yd Field Goal",
-              "Robbie Gould 20 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "ATL",
-            "fieldgoals": [
-              "Eddy Pineiro 46 Yd Field Goal",
-              "Eddy Pineiro 49 Yd Field Goal",
-              "Younghoe Koo 33 Yd Field Goal",
-              "Eddy Pineiro 40 Yd Field Goal",
-              "Eddy Pineiro 37 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "PHI",
-            "fieldgoals": [
-              "Joey Slye 44 Yd Field Goal",
-              "Joey Slye 58 Yd Field Goal",
-              "Joey Slye 32 Yd Field Goal",
-              "Joey Slye 55 Yd Field Goal"
-            ]
+            "fieldgoals": []
           }
         ]
       },
@@ -5601,183 +5266,137 @@
         ],
         "boxscores": [
           {
-            "team": "SF",
-            "oppTeam": "SF",
-            "passing": 247,
-            "rushing": 67,
-            "score": 10
-          },
-          {
             "team": "ARI",
-            "oppTeam": "ARI",
-            "passing": 228,
-            "rushing": 159,
+            "oppTeam": "SF",
+            "passing": 247.0,
+            "rushing": 67.0,
             "score": 38
           },
           {
-            "team": "NE",
-            "oppTeam": "NE",
-            "passing": 44,
-            "rushing": 59,
-            "score": 3
-          },
-          {
-            "team": "PHI",
-            "oppTeam": "PHI",
-            "passing": 185,
-            "rushing": 99,
-            "score": 16
-          },
-          {
-            "team": "GB",
-            "oppTeam": "GB",
-            "passing": 320,
-            "rushing": 88,
-            "score": 27
-          },
-          {
-            "team": "LAC",
-            "oppTeam": "LAC",
-            "passing": 322,
-            "rushing": 163,
-            "score": 30
-          },
-          {
-            "team": "WSH",
-            "oppTeam": "WSH",
-            "passing": 127,
-            "rushing": 21,
+            "team": "SF",
+            "oppTeam": "ARI",
+            "passing": 228.0,
+            "rushing": 159.0,
             "score": 10
-          },
-          {
-            "team": "DEN",
-            "oppTeam": "DEN",
-            "passing": 298,
-            "rushing": 109,
-            "score": 22
-          },
-          {
-            "team": "NO",
-            "oppTeam": "NO",
-            "passing": 188,
-            "rushing": 148,
-            "score": 20
           },
           {
             "team": "NYJ",
-            "oppTeam": "NYJ",
-            "passing": 198,
-            "rushing": 99,
+            "oppTeam": "NE",
+            "passing": 44.0,
+            "rushing": 59.0,
             "score": 10
           },
           {
-            "team": "DAL",
-            "oppTeam": "DAL",
-            "passing": 110,
-            "rushing": 73,
-            "score": 3
+            "team": "IND",
+            "oppTeam": "PHI",
+            "passing": 185.0,
+            "rushing": 99.0,
+            "score": 17
           },
           {
-            "team": "BUF",
-            "oppTeam": "BUF",
-            "passing": 316,
-            "rushing": 80,
+            "team": "TEN",
+            "oppTeam": "GB",
+            "passing": 320.0,
+            "rushing": 88.0,
+            "score": 17
+          },
+          {
+            "team": "KC",
+            "oppTeam": "LAC",
+            "passing": 322.0,
+            "rushing": 163.0,
+            "score": 27
+          },
+          {
+            "team": "HOU",
+            "oppTeam": "WSH",
+            "passing": 127.0,
+            "rushing": 21.0,
             "score": 23
           },
           {
-            "team": "BAL",
-            "oppTeam": "BAL",
-            "passing": 169,
-            "rushing": 36,
+            "team": "LV",
+            "oppTeam": "DEN",
+            "passing": 298.0,
+            "rushing": 109.0,
+            "score": 16
+          },
+          {
+            "team": "LAR",
+            "oppTeam": "NO",
+            "passing": 188.0,
+            "rushing": 148.0,
+            "score": 27
+          },
+          {
+            "team": "NE",
+            "oppTeam": "NYJ",
+            "passing": 198.0,
+            "rushing": 99.0,
             "score": 3
+          },
+          {
+            "team": "MIN",
+            "oppTeam": "DAL",
+            "passing": 110.0,
+            "rushing": 73.0,
+            "score": 40
+          },
+          {
+            "team": "CLE",
+            "oppTeam": "BUF",
+            "passing": 316.0,
+            "rushing": 80.0,
+            "score": 31
+          },
+          {
+            "team": "CAR",
+            "oppTeam": "BAL",
+            "passing": 169.0,
+            "rushing": 36.0,
+            "score": 13
           }
         ],
         "fieldgoals": [
           {
             "team": "CHI",
-            "fieldgoals": [
-              "Cairo Santos 41 Yd Field Goal",
-              "Younghoe Koo 40 Yd Field Goal",
-              "Younghoe Koo 53 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "NE",
-            "fieldgoals": [
-              "Nick Folk 24 Yd Field Goal",
-              "Greg Zuerlein 45 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "BUF",
-            "fieldgoals": [
-              "Tyler Bass 42 Yd Field Goal",
-              "Cade York 32 Yd Field Goal",
-              "Tyler Bass 36 Yd Field Goal",
-              "Tyler Bass 56 Yd Field Goal",
-              "Tyler Bass 49 Yd Field Goal",
-              "Tyler Bass 28 Yd Field Goal",
-              "Tyler Bass 39 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "BAL",
-            "fieldgoals": [
-              "Justin Tucker 32 Yd Field Goal",
-              "Eddy Pineiro 32 Yd Field Goal",
-              "Justin Tucker 37 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "LV",
-            "fieldgoals": [
-              "Brandon McManus 48 Yd Field Goal",
-              "Daniel Carlson 52 Yd Field Goal",
-              "Brandon McManus 52 Yd Field Goal",
-              "Daniel Carlson 57 Yd Field Goal",
-              "Brandon McManus 48 Yd Field Goal",
-              "Daniel Carlson 25 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "DAL",
-            "fieldgoals": [
-              "Brett Maher 27 Yd Field Goal",
-              "Greg Joseph 25 Yd Field Goal",
-              "Brett Maher 53 Yd Field Goal",
-              "Brett Maher 60 Yd Field Goal",
-              "Brett Maher 50 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "CIN",
-            "fieldgoals": [
-              "Evan McPherson 45 Yd Field Goal",
-              "Matthew Wright 42 Yd Field Goal",
-              "Matthew Wright 30 Yd Field Goal",
-              "Matthew Wright 34 Yd Field Goal",
-              "Evan McPherson 54 Yd Field Goal",
-              "Evan McPherson 44 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
-          { "team": "NYG", "fieldgoals": ["Michael Badgley 24 Yd Field Goal"] },
+          {
+            "team": "NYG",
+            "fieldgoals": []
+          },
           {
             "team": "KC",
-            "fieldgoals": [
-              "Harrison Butker 33 Yd Field Goal",
-              "Harrison Butker 52 Yd Field Goal",
-              "Cameron Dicker 46 Yd Field Goal",
-              "Cameron Dicker 21 Yd Field Goal",
-              "Harrison Butker 30 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "ATL",
-            "fieldgoals": [
-              "Cairo Santos 41 Yd Field Goal",
-              "Younghoe Koo 40 Yd Field Goal",
-              "Younghoe Koo 53 Yd Field Goal"
-            ]
+            "fieldgoals": []
           }
         ]
       },
@@ -6142,507 +5761,3664 @@
         ],
         "boxscores": [
           {
-            "team": "MIA",
+            "team": "HOU",
             "oppTeam": "MIA",
-            "passing": 174,
-            "rushing": 36,
-            "score": 15
-          },
-          {
-            "team": "MIN",
-            "oppTeam": "MIN",
-            "passing": 364,
-            "rushing": 45,
-            "score": 26
-          },
-          {
-            "team": "GB",
-            "oppTeam": "GB",
-            "passing": 137,
-            "rushing": 363,
-            "score": 40
-          },
-          {
-            "team": "LAC",
-            "oppTeam": "LAC",
-            "passing": 185,
-            "rushing": 181,
-            "score": 24
-          },
-          {
-            "team": "KC",
-            "oppTeam": "KC",
-            "passing": 82,
-            "rushing": 116,
-            "score": 10
-          },
-          {
-            "team": "NYJ",
-            "oppTeam": "NYJ",
-            "passing": 165,
-            "rushing": 127,
-            "score": 10
-          },
-          {
-            "team": "TEN",
-            "oppTeam": "TEN",
-            "passing": 266,
-            "rushing": 108,
-            "score": 20
-          },
-          {
-            "team": "TB",
-            "oppTeam": "TB",
-            "passing": 178,
-            "rushing": 189,
-            "score": 23
+            "passing": 174.0,
+            "rushing": 36.0,
+            "score": 30
           },
           {
             "team": "NE",
-            "oppTeam": "NE",
-            "passing": 301,
-            "rushing": 57,
+            "oppTeam": "MIN",
+            "passing": 364.0,
+            "rushing": 45.0,
             "score": 33
-          },
-          {
-            "team": "BAL",
-            "oppTeam": "BAL",
-            "passing": 294,
-            "rushing": 38,
-            "score": 28
-          },
-          {
-            "team": "SF",
-            "oppTeam": "SF",
-            "passing": 197,
-            "rushing": 63,
-            "score": 0
-          },
-          {
-            "team": "DAL",
-            "oppTeam": "DAL",
-            "passing": 210,
-            "rushing": 90,
-            "score": 20
           },
           {
             "team": "PHI",
-            "oppTeam": "PHI",
-            "passing": 236,
-            "rushing": 106,
+            "oppTeam": "GB",
+            "passing": 137.0,
+            "rushing": 363.0,
             "score": 33
           },
           {
-            "team": "DEN",
-            "oppTeam": "DEN",
-            "passing": 164,
-            "rushing": 185,
-            "score": 23
+            "team": "ARI",
+            "oppTeam": "LAC",
+            "passing": 185.0,
+            "rushing": 181.0,
+            "score": 25
           },
           {
-            "team": "SEA",
-            "oppTeam": "SEA",
-            "passing": 293,
-            "rushing": 283,
+            "team": "LAR",
+            "oppTeam": "KC",
+            "passing": 82.0,
+            "rushing": 116.0,
+            "score": 26
+          },
+          {
+            "team": "CHI",
+            "oppTeam": "NYJ",
+            "passing": 165.0,
+            "rushing": 127.0,
+            "score": 31
+          },
+          {
+            "team": "CIN",
+            "oppTeam": "TEN",
+            "passing": 266.0,
+            "rushing": 108.0,
+            "score": 16
+          },
+          {
+            "team": "CLE",
+            "oppTeam": "TB",
+            "passing": 178.0,
+            "rushing": 189.0,
+            "score": 17
+          },
+          {
+            "team": "MIN",
+            "oppTeam": "NE",
+            "passing": 301.0,
+            "rushing": 57.0,
+            "score": 26
+          },
+          {
+            "team": "JAX",
+            "oppTeam": "BAL",
+            "passing": 294.0,
+            "rushing": 38.0,
+            "score": 27
+          },
+          {
+            "team": "NO",
+            "oppTeam": "SF",
+            "passing": 197.0,
+            "rushing": 63.0,
+            "score": 13
+          },
+          {
+            "team": "NYG",
+            "oppTeam": "DAL",
+            "passing": 210.0,
+            "rushing": 90.0,
+            "score": 28
+          },
+          {
+            "team": "GB",
+            "oppTeam": "PHI",
+            "passing": 236.0,
+            "rushing": 106.0,
             "score": 40
           },
           {
-            "team": "BUF",
+            "team": "CAR",
+            "oppTeam": "DEN",
+            "passing": 164.0,
+            "rushing": 185.0,
+            "score": 10
+          },
+          {
+            "team": "LV",
+            "oppTeam": "SEA",
+            "passing": 293.0,
+            "rushing": 283.0,
+            "score": 34
+          },
+          {
+            "team": "DET",
             "oppTeam": "BUF",
-            "passing": 230,
-            "rushing": 96,
-            "score": 25
+            "passing": 230.0,
+            "rushing": 96.0,
+            "score": 28
           }
         ],
         "fieldgoals": [
           {
             "team": "MIA",
-            "fieldgoals": [
-              "Jason Sanders 45 Yd Field Goal",
-              "Jason Sanders 23 Yd Field Goal",
-              "Jason Sanders 35 Yd Field Goal",
-              "Ka'imi Fairbairn 28 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "BAL",
-            "fieldgoals": [
-              "Justin Tucker 27 Yd Field Goal",
-              "Justin Tucker 29 Yd Field Goal",
-              "Justin Tucker 55 Yd Field Goal",
-              "Riley Patterson 22 Yd Field Goal",
-              "Justin Tucker 24 Yd Field Goal",
-              "Riley Patterson 29 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "NYJ",
-            "fieldgoals": [
-              "Cairo Santos 22 Yd Field Goal",
-              "Greg Zuerlein 57 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "TB",
-            "fieldgoals": [
-              "Cade York 51 Yd Field Goal",
-              "Ryan Succop 42 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "ATL",
-            "fieldgoals": [
-              "Younghoe Koo 47 Yd Field Goal",
-              "Joey Slye 30 Yd Field Goal",
-              "Younghoe Koo 48 Yd Field Goal",
-              "Joey Slye 45 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "CHI",
-            "fieldgoals": [
-              "Cairo Santos 22 Yd Field Goal",
-              "Greg Zuerlein 57 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "BUF",
-            "fieldgoals": [
-              "Tyler Bass 47 Yd Field Goal",
-              "Michael Badgley 51 Yd Field Goal",
-              "Tyler Bass 45 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "LV",
-            "fieldgoals": [
-              "Jason Myers 24 Yd Field Goal",
-              "Jason Myers 34 Yd Field Goal",
-              "Daniel Carlson 36 Yd Field Goal",
-              "Daniel Carlson 25 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "SEA",
-            "fieldgoals": [
-              "Jason Myers 24 Yd Field Goal",
-              "Jason Myers 34 Yd Field Goal",
-              "Daniel Carlson 36 Yd Field Goal",
-              "Daniel Carlson 25 Yd Field Goal"
-            ]
+            "fieldgoals": []
           },
           {
             "team": "KC",
-            "fieldgoals": [
-              "Matt Gay 47 Yd Field Goal",
-              "Harrison Butker 27 Yd Field Goal",
-              "Harrison Butker 32 Yd Field Goal",
-              "Harrison Butker 22 Yd Field Goal",
-              "Harrison Butker 22 Yd Field Goal"
-            ]
+            "fieldgoals": []
+          }
+        ]
+      },
+      {
+        "number": 13,
+        "matches": [
+          [
+            {
+              "teamIndex": 6,
+              "score": 98.74,
+              "lineup": [
+                "4567156",
+                "2991662",
+                "-16005",
+                "15847",
+                "3916387",
+                "3930066",
+                "3042519",
+                "4361529",
+                "3054850",
+                "10621"
+              ],
+              "roster": {
+                "15847": 7.6,
+                "4239934": 20.9,
+                "3916387": 1.34,
+                "3059915": 9.4,
+                "4372485": 0.0,
+                "3042519": 10.0,
+                "4241985": 0.0,
+                "4240600": 0.0,
+                "-16020": 4.0,
+                "4361529": 16.2,
+                "2991662": 8.5,
+                "3930066": 5.9,
+                "-16010": -6.0,
+                "-16005": 31.0,
+                "10621": 3.0,
+                "3054850": 5.7,
+                "4567156": 9.5
+              }
+            },
+            {
+              "teamIndex": 9,
+              "score": 139.76,
+              "lineup": [
+                "-16033",
+                "16800",
+                "4360310",
+                "3049899",
+                "3929630",
+                "3040151",
+                "4239996",
+                "4360238",
+                "2976499",
+                "4242335"
+              ],
+              "roster": {
+                "16800": 37.7,
+                "3929630": 19.1,
+                "4360238": 12.5,
+                "2976499": 8.0,
+                "3917315": 0.0,
+                "15795": 0.0,
+                "3040151": 4.2,
+                "3916433": 5.2,
+                "3049899": 14.0,
+                "-16033": 7.0,
+                "4239996": 7.6,
+                "3051738": 9.1,
+                "4242335": 13.3,
+                "4360310": 16.36,
+                "4569987": 3.9,
+                "-16029": 0.0
+              }
+            }
+          ],
+          [
+            {
+              "teamIndex": 0,
+              "score": 111.62,
+              "lineup": [
+                "3918298",
+                "15683",
+                "3068267",
+                "3045144",
+                "3117256",
+                "4239993",
+                "2976212",
+                "3116389",
+                "-16012",
+                "3128720"
+              ],
+              "roster": {
+                "3068267": 13.2,
+                "2976212": 22.2,
+                "3128720": 8.0,
+                "4239993": 12.5,
+                "3128429": 0.0,
+                "3128390": 11.7,
+                "3045144": 10.0,
+                "15683": 4.0,
+                "2576414": 3.0,
+                "3918298": 16.92,
+                "3915416": 0.0,
+                "3117256": 5.3,
+                "-16009": 5.0,
+                "-16024": 9.0,
+                "-16012": -2.0,
+                "3116389": 21.5,
+                "4240021": 19.0
+              }
+            },
+            {
+              "teamIndex": 4,
+              "score": 136.44,
+              "lineup": [
+                "16737",
+                "4361411",
+                "4426354",
+                "4372016",
+                "-16006",
+                "4360234",
+                "4259545",
+                "3915511",
+                "15807",
+                "4047650"
+              ],
+              "roster": {
+                "4259545": 21.1,
+                "3045147": 0.0,
+                "4372016": 1.9,
+                "4047650": 26.7,
+                "3120348": 6.5,
+                "16460": 4.7,
+                "3915511": 30.04,
+                "-16006": 19.0,
+                "3123076": 0.0,
+                "4426354": 1.2,
+                "4361411": 10.6,
+                "15807": 6.0,
+                "4697815": 16.9,
+                "3916945": 15.0,
+                "16737": 9.9,
+                "4426388": 0.0,
+                "4360234": 10.0
+              }
+            }
+          ],
+          [
+            {
+              "teamIndex": 5,
+              "score": 108.96,
+              "lineup": [
+                "4243537",
+                "4430737",
+                "3116365",
+                "4362887",
+                "16486",
+                "3126486",
+                "-16028",
+                "3895856",
+                "4258173",
+                "4035538"
+              ],
+              "roster": {
+                "3116385": 0.0,
+                "3115364": 14.1,
+                "3116365": 9.4,
+                "4035538": 16.7,
+                "3045138": 0.0,
+                "4243537": 9.5,
+                "3895856": 16.4,
+                "3126486": 12.3,
+                "3125116": 0.0,
+                "3051926": 1.2,
+                "4430737": 0.9,
+                "4362887": 19.26,
+                "4258195": 13.4,
+                "16486": 6.0,
+                "-16028": 6.0,
+                "4258173": 12.5,
+                "4426475": 0.0
+              }
+            },
+            {
+              "teamIndex": 7,
+              "score": 129.12,
+              "lineup": [
+                "-16002",
+                "3121422",
+                "4241457",
+                "3055899",
+                "4045163",
+                "4362628",
+                "4569618",
+                "4036133",
+                "3139477",
+                "4035687"
+              ],
+              "roster": {
+                "4241457": 10.2,
+                "4362628": 16.7,
+                "4035687": 3.6,
+                "3139477": 19.82,
+                "3121422": 24.5,
+                "4040761": 11.1,
+                "4045163": 11.8,
+                "4036133": 7.3,
+                "4361370": 10.5,
+                "4569618": 24.2,
+                "-16002": 6.0,
+                "2573401": 3.4,
+                "4360294": 7.9,
+                "3055899": 5.0,
+                "16799": 0.0,
+                "4427728": 16.8,
+                "12460": 8.0
+              }
+            }
+          ],
+          [
+            {
+              "teamIndex": 2,
+              "score": 170.4,
+              "lineup": [
+                "4038941",
+                "3918639",
+                "-16021",
+                "2577327",
+                "4262921",
+                "3917232",
+                "4374302",
+                "4567048",
+                "4241389",
+                "3116593"
+              ],
+              "roster": {
+                "4262921": 18.6,
+                "4241389": 20.4,
+                "4038941": 18.1,
+                "4374302": 34.6,
+                "2577327": 27.8,
+                "4240657": 0.0,
+                "-16021": 11.0,
+                "4360438": 9.6,
+                "3918639": 13.0,
+                "4567048": 3.6,
+                "3917792": 17.1,
+                "3917232": 7.0,
+                "3122976": 0.3,
+                "4048244": 9.8,
+                "3116593": 16.3,
+                "2576925": 0.0,
+                "3843945": 4.2
+              }
+            },
+            {
+              "teamIndex": 8,
+              "score": 186.3,
+              "lineup": [
+                "4248528",
+                "4569173",
+                "4258595",
+                "4047646",
+                "4241479",
+                "4047365",
+                "3116406",
+                "-16027",
+                "12731",
+                "3117251"
+              ],
+              "roster": {
+                "3117251": 28.6,
+                "3116406": 29.6,
+                "4047646": 31.9,
+                "3116165": 14.3,
+                "4047365": 21.0,
+                "2577417": 16.8,
+                "-16027": 5.0,
+                "4241479": 13.8,
+                "4569173": 13.8,
+                "3925347": 0.0,
+                "-16017": 3.0,
+                "4248528": 24.4,
+                "4258595": 13.2,
+                "3139033": 3.6,
+                "12731": 5.0,
+                "4241410": 4.8,
+                "4367209": 14.5
+              }
+            }
+          ],
+          [
+            {
+              "teamIndex": 1,
+              "score": 110.48,
+              "lineup": [
+                "4242433",
+                "4241474",
+                "3932905",
+                "2473037",
+                "15864",
+                "3043078",
+                "-16026",
+                "3930086",
+                "3121410",
+                "3051392"
+              ],
+              "roster": {
+                "3043078": 5.8,
+                "3051392": 18.1,
+                "4241372": 0.0,
+                "4040655": 0.0,
+                "4052042": 1.0,
+                "3051909": 10.0,
+                "3932905": 11.0,
+                "15864": 22.98,
+                "2473037": 10.0,
+                "-16007": 13.0,
+                "4242433": 13.0,
+                "3121410": 8.5,
+                "-16026": 8.0,
+                "2979843": 6.6,
+                "4241474": 13.1,
+                "3930086": 0.0,
+                "14880": 11.82
+              }
+            },
+            {
+              "teamIndex": 3,
+              "score": 152.4,
+              "lineup": [
+                "15920",
+                "17427",
+                "3059722",
+                "3924365",
+                "4241478",
+                "4040715",
+                "-16025",
+                "2980453",
+                "15818",
+                "3916148"
+              ],
+              "roster": {
+                "15818": 20.8,
+                "4241463": 10.5,
+                "4040715": 34.4,
+                "4241478": 21.2,
+                "2980453": 9.5,
+                "3121427": 14.6,
+                "13982": 5.8,
+                "3059722": 3.6,
+                "-16025": 18.0,
+                "4242873": 0.0,
+                "17427": 7.0,
+                "3915486": 2.9,
+                "4362630": 0.0,
+                "15920": 10.1,
+                "3924365": 3.2,
+                "3916148": 24.6
+              }
+            }
+          ]
+        ],
+        "boxscores": [
+          {
+            "team": "MIN",
+            "oppTeam": "NYJ",
+            "passing": 159.0,
+            "rushing": 128.0,
+            "score": 22
+          },
+          {
+            "team": "PHI",
+            "oppTeam": "TEN",
+            "passing": 386.0,
+            "rushing": 67.0,
+            "score": 10
+          },
+          {
+            "team": "HOU",
+            "oppTeam": "CLE",
+            "passing": 201.0,
+            "rushing": 82.0,
+            "score": 27
+          },
+          {
+            "team": "DEN",
+            "oppTeam": "BAL",
+            "passing": 184.0,
+            "rushing": 88.0,
+            "score": 10
+          },
+          {
+            "team": "CHI",
+            "oppTeam": "GB",
+            "passing": 254.0,
+            "rushing": 155.0,
+            "score": 28
+          },
+          {
+            "team": "LV",
+            "oppTeam": "LAC",
+            "passing": 250.0,
+            "rushing": 154.0,
+            "score": 20
+          },
+          {
+            "team": "CIN",
+            "oppTeam": "KC",
+            "passing": 279.0,
+            "rushing": 152.0,
+            "score": 24
+          },
+          {
+            "team": "IND",
+            "oppTeam": "DAL",
+            "passing": 203.0,
+            "rushing": 106.0,
+            "score": 54
+          },
+          {
+            "team": "NYG",
+            "oppTeam": "WSH",
+            "passing": 182.0,
+            "rushing": 134.0,
+            "score": 20
+          },
+          {
+            "team": "NE",
+            "oppTeam": "BUF",
+            "passing": 182.0,
+            "rushing": 60.0,
+            "score": 24
+          },
+          {
+            "team": "TEN",
+            "oppTeam": "PHI",
+            "passing": 122.0,
+            "rushing": 87.0,
+            "score": 35
+          },
+          {
+            "team": "NO",
+            "oppTeam": "TB",
+            "passing": 232.0,
+            "rushing": 66.0,
+            "score": 17
+          },
+          {
+            "team": "BUF",
+            "oppTeam": "NE",
+            "passing": 223.0,
+            "rushing": 132.0,
+            "score": 10
+          },
+          {
+            "team": "BAL",
+            "oppTeam": "DEN",
+            "passing": 182.0,
+            "rushing": 103.0,
+            "score": 9
+          },
+          {
+            "team": "LAR",
+            "oppTeam": "SEA",
+            "passing": 148.0,
+            "rushing": 171.0,
+            "score": 27
+          },
+          {
+            "team": "MIA",
+            "oppTeam": "SF",
+            "passing": 275.0,
+            "rushing": 33.0,
+            "score": 33
+          }
+        ],
+        "fieldgoals": [
+          {
+            "team": "NE",
+            "fieldgoals": []
+          },
+          {
+            "team": "ATL",
+            "fieldgoals": []
+          },
+          {
+            "team": "BAL",
+            "fieldgoals": []
+          },
+          {
+            "team": "CIN",
+            "fieldgoals": []
+          },
+          {
+            "team": "DAL",
+            "fieldgoals": []
+          },
+          {
+            "team": "KC",
+            "fieldgoals": []
+          },
+          {
+            "team": "NYG",
+            "fieldgoals": []
+          },
+          {
+            "team": "BUF",
+            "fieldgoals": []
+          },
+          {
+            "team": "TB",
+            "fieldgoals": []
+          },
+          {
+            "team": "LV",
+            "fieldgoals": []
+          },
+          {
+            "team": "SEA",
+            "fieldgoals": []
+          },
+          {
+            "team": "CHI",
+            "fieldgoals": []
+          }
+        ]
+      },
+      {
+        "number": 14,
+        "matches": [
+          [
+            {
+              "teamIndex": 8,
+              "score": 142.0,
+              "lineup": [
+                "-16017",
+                "4569173",
+                "4047646",
+                "4241479",
+                "4047365",
+                "3116406",
+                "3116165",
+                "4367209",
+                "12731",
+                "3117251"
+              ],
+              "roster": {
+                "3117251": 29.3,
+                "3116406": 24.1,
+                "4047646": 17.0,
+                "3116165": 10.4,
+                "4047365": 19.4,
+                "2577417": 13.66,
+                "-16027": -4.0,
+                "4241479": 12.6,
+                "4569173": 3.0,
+                "3925347": 0.0,
+                "-16017": 19.0,
+                "4248528": 0.0,
+                "4258595": 0.0,
+                "3139033": 4.9,
+                "12731": 0.0,
+                "4367209": 7.2,
+                "4379399": 2.5
+              }
+            },
+            {
+              "teamIndex": 7,
+              "score": 158.28,
+              "lineup": [
+                "-16002",
+                "4241457",
+                "4427728",
+                "4040761",
+                "3055899",
+                "4045163",
+                "4362628",
+                "4569618",
+                "4036133",
+                "3139477"
+              ],
+              "roster": {
+                "4241457": 13.0,
+                "4362628": 28.5,
+                "4035687": 0.0,
+                "3139477": 19.78,
+                "3121422": 0.0,
+                "4040761": 5.3,
+                "4045163": 28.5,
+                "4036133": 11.7,
+                "4361370": 0.0,
+                "4569618": 13.8,
+                "-16002": 11.0,
+                "2573401": 3.1,
+                "4360294": 0.0,
+                "3055899": 11.0,
+                "16799": 0.0,
+                "4427728": 15.7,
+                "3042778": 2.5
+              }
+            }
+          ],
+          [
+            {
+              "teamIndex": 9,
+              "score": 73.46,
+              "lineup": [
+                "-16033",
+                "16800",
+                "3929630",
+                "4360238",
+                "16339",
+                "15795",
+                "3917315",
+                "3040151",
+                "4239996",
+                "2976499"
+              ],
+              "roster": {
+                "16800": 10.1,
+                "3929630": 6.8,
+                "4360238": 11.8,
+                "2976499": 6.2,
+                "3917315": 0.66,
+                "15795": 12.9,
+                "3040151": 6.8,
+                "3916433": 0.0,
+                "-16033": 11.0,
+                "4239996": 3.2,
+                "3051738": 3.0,
+                "4242335": 0.0,
+                "4360310": 33.42,
+                "4569987": 4.7,
+                "-16029": 9.0,
+                "16339": 4.0
+              }
+            },
+            {
+              "teamIndex": 0,
+              "score": 110.68,
+              "lineup": [
+                "3918298",
+                "3915416",
+                "15683",
+                "4240021",
+                "3068267",
+                "3117256",
+                "4239993",
+                "2976212",
+                "-16012",
+                "3128720"
+              ],
+              "roster": {
+                "3068267": 24.4,
+                "2976212": 6.7,
+                "3128720": 8.4,
+                "4239993": 0.0,
+                "3128390": 0.0,
+                "15683": 11.0,
+                "2576414": 5.4,
+                "3918298": 20.58,
+                "3915416": 0.6,
+                "3117256": 14.7,
+                "-16024": 5.0,
+                "-16012": 15.0,
+                "3116389": 9.4,
+                "4240021": 9.3,
+                "3128724": 5.8,
+                "4426502": 0.0
+              }
+            }
+          ],
+          [
+            {
+              "teamIndex": 6,
+              "score": 72.82,
+              "lineup": [
+                "4036348",
+                "4241985",
+                "2991662",
+                "3059915",
+                "15847",
+                "-16010",
+                "3930066",
+                "4035671",
+                "4361529",
+                "17372"
+              ],
+              "roster": {
+                "15847": 11.1,
+                "4239934": 0.0,
+                "3916387": 0.0,
+                "3059915": 3.2,
+                "4372485": 0.0,
+                "3042519": 0.0,
+                "4241985": 18.0,
+                "-16020": 9.0,
+                "4361529": 12.3,
+                "2991662": 8.2,
+                "3930066": 12.4,
+                "-16010": -6.0,
+                "3054850": 0.0,
+                "4567156": 0.0,
+                "4035671": 6.62,
+                "4036348": 6.0,
+                "17372": 1.0
+              }
+            },
+            {
+              "teamIndex": 2,
+              "score": 128.48,
+              "lineup": [
+                "4038941",
+                "3918639",
+                "-16021",
+                "2577327",
+                "4262921",
+                "3917232",
+                "4374302",
+                "4241389",
+                "3116593",
+                "3122976"
+              ],
+              "roster": {
+                "4262921": 33.3,
+                "4241389": 8.3,
+                "4038941": 19.48,
+                "4374302": 13.4,
+                "2577327": 17.0,
+                "4240657": 3.0,
+                "-16021": 9.0,
+                "4360438": 13.7,
+                "3918639": 7.8,
+                "4567048": 0.0,
+                "3917792": 19.36,
+                "3917232": 9.0,
+                "3122976": 2.6,
+                "4048244": -0.1,
+                "3116593": 8.6,
+                "2576925": 0.0,
+                "4036416": 0.0
+              }
+            }
+          ],
+          [
+            {
+              "teamIndex": 5,
+              "score": 117.8,
+              "lineup": [
+                "3116365",
+                "16486",
+                "3895856",
+                "4037457",
+                "3116385",
+                "3125116",
+                "3046779",
+                "-16023",
+                "3126486",
+                "3045138"
+              ],
+              "roster": {
+                "3116385": 12.6,
+                "3115364": 10.6,
+                "3116365": 3.7,
+                "4035538": 0.0,
+                "3045138": 23.6,
+                "4243537": 6.1,
+                "3895856": 9.5,
+                "3126486": 14.4,
+                "3125116": 8.5,
+                "4362887": 0.0,
+                "4258195": 19.4,
+                "16486": 11.0,
+                "4258173": 0.0,
+                "3046779": 26.1,
+                "-16023": 3.0,
+                "4037457": 5.4,
+                "-16009": 0.0
+              }
+            },
+            {
+              "teamIndex": 1,
+              "score": 135.26,
+              "lineup": [
+                "4242433",
+                "3932905",
+                "4039050",
+                "2473037",
+                "15864",
+                "3043078",
+                "-16026",
+                "3051876",
+                "4241372",
+                "3051392"
+              ],
+              "roster": {
+                "3043078": 20.5,
+                "3051392": 17.1,
+                "4241372": 7.4,
+                "4052042": 0.0,
+                "3051909": 12.0,
+                "3932905": 14.2,
+                "15864": 20.56,
+                "2473037": 6.0,
+                "4242433": 9.3,
+                "3121410": 0.0,
+                "-16026": 1.0,
+                "4241474": 0.0,
+                "3930086": 14.1,
+                "14880": 25.0,
+                "3051876": 39.2,
+                "4039050": 0.0
+              }
+            }
+          ],
+          [
+            {
+              "teamIndex": 4,
+              "score": 119.26,
+              "lineup": [
+                "16737",
+                "4361411",
+                "4372016",
+                "-16006",
+                "3045147",
+                "4360234",
+                "4259545",
+                "3915511",
+                "16460",
+                "4047650"
+              ],
+              "roster": {
+                "4259545": 6.9,
+                "3045147": 23.4,
+                "4372016": 5.1,
+                "4047650": 18.1,
+                "3120348": 22.4,
+                "16460": 19.5,
+                "3915511": 16.56,
+                "-16006": 4.0,
+                "3123076": 18.7,
+                "4426354": 10.8,
+                "4361411": 12.3,
+                "15807": 0.0,
+                "4697815": 10.7,
+                "3916945": 6.2,
+                "16737": 8.4,
+                "4360234": 5.0,
+                "3045144": 0.0
+              }
+            },
+            {
+              "teamIndex": 3,
+              "score": 148.28,
+              "lineup": [
+                "4241478",
+                "2980453",
+                "9354",
+                "15818",
+                "3916148",
+                "15920",
+                "4040715",
+                "4241463",
+                "-16025",
+                "4036131"
+              ],
+              "roster": {
+                "15818": 21.2,
+                "4241463": 33.3,
+                "4040715": 30.38,
+                "4241478": 17.4,
+                "2980453": 3.7,
+                "3121427": 0.0,
+                "13982": 8.8,
+                "3059722": 21.7,
+                "-16025": 9.0,
+                "17427": 0.0,
+                "3915486": 7.8,
+                "4362630": 2.8,
+                "15920": 6.1,
+                "3916148": 22.2,
+                "9354": 5.0,
+                "4036131": 0.0
+              }
+            }
+          ]
+        ],
+        "boxscores": [
+          {
+            "team": "SF",
+            "oppTeam": "TB",
+            "passing": 195.0,
+            "rushing": 209.0,
+            "score": 7
+          },
+          {
+            "team": "ARI",
+            "oppTeam": "NE",
+            "passing": 210.0,
+            "rushing": 113.0,
+            "score": 27
+          },
+          {
+            "team": "NYJ",
+            "oppTeam": "BUF",
+            "passing": 233.0,
+            "rushing": 76.0,
+            "score": 20
+          },
+          {
+            "team": "PIT",
+            "oppTeam": "BAL",
+            "passing": 264.0,
+            "rushing": 65.0,
+            "score": 16
+          },
+          {
+            "team": "SEA",
+            "oppTeam": "CAR",
+            "passing": 241.0,
+            "rushing": 46.0,
+            "score": 30
+          },
+          {
+            "team": "MIA",
+            "oppTeam": "LAC",
+            "passing": 127.0,
+            "rushing": 92.0,
+            "score": 23
+          },
+          {
+            "team": "DEN",
+            "oppTeam": "KC",
+            "passing": 214.0,
+            "rushing": 106.0,
+            "score": 34
+          },
+          {
+            "team": "BUF",
+            "oppTeam": "NYJ",
+            "passing": 130.0,
+            "rushing": 102.0,
+            "score": 12
+          },
+          {
+            "team": "JAX",
+            "oppTeam": "TEN",
+            "passing": 368.0,
+            "rushing": 60.0,
+            "score": 22
+          },
+          {
+            "team": "NYG",
+            "oppTeam": "PHI",
+            "passing": 181.0,
+            "rushing": 123.0,
+            "score": 48
+          },
+          {
+            "team": "BAL",
+            "oppTeam": "PIT",
+            "passing": 94.0,
+            "rushing": 215.0,
+            "score": 14
+          },
+          {
+            "team": "CAR",
+            "oppTeam": "SEA",
+            "passing": 105.0,
+            "rushing": 223.0,
+            "score": 24
+          },
+          {
+            "team": "HOU",
+            "oppTeam": "DAL",
+            "passing": 213.0,
+            "rushing": 114.0,
+            "score": 27
+          },
+          {
+            "team": "TB",
+            "oppTeam": "SF",
+            "passing": 253.0,
+            "rushing": 69.0,
+            "score": 35
+          }
+        ],
+        "fieldgoals": [
+          {
+            "team": "TB",
+            "fieldgoals": []
+          },
+          {
+            "team": "KC",
+            "fieldgoals": []
+          },
+          {
+            "team": "DEN",
+            "fieldgoals": []
+          },
+          {
+            "team": "BAL",
+            "fieldgoals": []
+          },
+          {
+            "team": "PIT",
+            "fieldgoals": []
+          },
+          {
+            "team": "BUF",
+            "fieldgoals": []
+          },
+          {
+            "team": "DAL",
+            "fieldgoals": []
+          },
+          {
+            "team": "LV",
+            "fieldgoals": []
+          },
+          {
+            "team": "SEA",
+            "fieldgoals": []
+          },
+          {
+            "team": "CIN",
+            "fieldgoals": []
+          },
+          {
+            "team": "SF",
+            "fieldgoals": []
+          }
+        ]
+      },
+      {
+        "number": 15,
+        "matches": [
+          [
+            {
+              "teamIndex": 7,
+              "score": 106.64,
+              "lineup": [
+                "3121422",
+                "-16002",
+                "4241457",
+                "4427728",
+                "3055899",
+                "4045163",
+                "4362628",
+                "4569618",
+                "4036133",
+                "3139477"
+              ],
+              "roster": {
+                "4241457": 14.6,
+                "4362628": 19.0,
+                "4035687": 19.0,
+                "3139477": 32.74,
+                "3121422": 13.0,
+                "4040761": 10.0,
+                "4045163": 1.9,
+                "4036133": 8.3,
+                "4361370": 8.3,
+                "4569618": 13.8,
+                "-16002": -2.0,
+                "2573401": 12.7,
+                "4360294": 4.7,
+                "3055899": 3.0,
+                "16799": 0.0,
+                "4427728": 2.3,
+                "3042778": 0.0
+              }
+            },
+            {
+              "teamIndex": 8,
+              "score": 157.04,
+              "lineup": [
+                "4248528",
+                "4047646",
+                "-16007",
+                "4047365",
+                "3116406",
+                "3116165",
+                "4367209",
+                "12731",
+                "3117251",
+                "2577417"
+              ],
+              "roster": {
+                "3117251": 25.8,
+                "3116406": 21.9,
+                "4047646": 27.1,
+                "3116165": 22.3,
+                "4047365": 13.0,
+                "2577417": 20.24,
+                "-16027": 5.0,
+                "4241479": 18.06,
+                "4569173": 24.8,
+                "3925347": 0.0,
+                "-16017": 11.0,
+                "4248528": 8.6,
+                "12731": 4.0,
+                "4367209": 2.1,
+                "4379399": 11.9,
+                "3121023": 0.0,
+                "-16007": 12.0
+              }
+            }
+          ],
+          [
+            {
+              "teamIndex": 9,
+              "score": 127.72,
+              "lineup": [
+                "16800",
+                "3929630",
+                "16339",
+                "15795",
+                "4360310",
+                "3040151",
+                "-16029",
+                "4239996",
+                "2976499",
+                "4242335"
+              ],
+              "roster": {
+                "16800": 6.8,
+                "3929630": 23.0,
+                "4360238": 0.0,
+                "2976499": 9.8,
+                "15795": 13.0,
+                "3040151": 25.3,
+                "3916433": 4.7,
+                "-16033": 8.0,
+                "4239996": 12.7,
+                "3051738": 11.6,
+                "4242335": 2.3,
+                "4360310": 26.82,
+                "-16029": 1.0,
+                "16339": 7.0,
+                "4240657": 4.1,
+                "4372414": 9.4
+              }
+            },
+            {
+              "teamIndex": 0,
+              "score": 127.86,
+              "lineup": [
+                "3918298",
+                "15683",
+                "4426502",
+                "3068267",
+                "3117256",
+                "2576414",
+                "4239993",
+                "2976212",
+                "-16012",
+                "3128720"
+              ],
+              "roster": {
+                "3068267": 15.0,
+                "2976212": 10.7,
+                "3128720": 9.9,
+                "4239993": 16.3,
+                "3128390": 1.7,
+                "15683": 3.0,
+                "2576414": 16.6,
+                "3918298": 35.86,
+                "3915416": 18.3,
+                "3117256": 3.5,
+                "-16024": 9.0,
+                "-16012": 5.0,
+                "3116389": 3.4,
+                "4240021": 13.0,
+                "3128724": 4.4,
+                "4426502": 12.0
+              }
+            }
+          ],
+          [
+            {
+              "teamIndex": 6,
+              "score": 106.48,
+              "lineup": [
+                "4036348",
+                "4241985",
+                "3049899",
+                "15847",
+                "3054850",
+                "3115394",
+                "4361741",
+                "-16018",
+                "3042519",
+                "4361529"
+              ],
+              "roster": {
+                "15847": 20.5,
+                "4239934": 22.1,
+                "3916387": 0.0,
+                "3059915": 3.7,
+                "3042519": 20.6,
+                "4241985": 13.8,
+                "-16020": -1.0,
+                "4361529": 8.7,
+                "3930066": 5.2,
+                "3054850": 12.4,
+                "4567156": 0.0,
+                "4036348": 1.2,
+                "3128429": 0.0,
+                "3115394": 2.8,
+                "-16018": 6.0,
+                "3049899": 4.0,
+                "4361741": 16.48
+              }
+            },
+            {
+              "teamIndex": 2,
+              "score": 148.92,
+              "lineup": [
+                "4038941",
+                "3918639",
+                "-16021",
+                "4262921",
+                "3917232",
+                "4374302",
+                "4036416",
+                "4567048",
+                "4241389",
+                "3116593"
+              ],
+              "roster": {
+                "4262921": 30.3,
+                "4241389": 19.7,
+                "4038941": 8.72,
+                "4374302": 15.2,
+                "2577327": 13.8,
+                "-16021": 10.0,
+                "4360438": 3.9,
+                "3918639": 8.2,
+                "4567048": 11.9,
+                "3917792": 9.9,
+                "3917232": 6.0,
+                "3122976": 0.0,
+                "4048244": 0.1,
+                "3116593": 27.0,
+                "2576925": 13.8,
+                "4036416": 11.9,
+                "16782": 34.2
+              }
+            }
+          ],
+          [
+            {
+              "teamIndex": 5,
+              "score": 136.38,
+              "lineup": [
+                "2576581",
+                "3116365",
+                "4362887",
+                "16486",
+                "-16009",
+                "3895856",
+                "3116385",
+                "4035538",
+                "4258195",
+                "3045138"
+              ],
+              "roster": {
+                "3116385": 10.4,
+                "3115364": 11.4,
+                "3116365": 6.1,
+                "4035538": 24.1,
+                "3045138": 10.7,
+                "4243537": 9.6,
+                "3895856": 15.2,
+                "3126486": 0.0,
+                "3125116": 0.9,
+                "4362887": 23.58,
+                "4258195": 13.1,
+                "16486": 12.0,
+                "-16009": 13.0,
+                "-16014": 7.0,
+                "2576581": 8.2,
+                "-16010": 7.0,
+                "4249836": 6.7
+              }
+            },
+            {
+              "teamIndex": 1,
+              "score": 137.42,
+              "lineup": [
+                "4242433",
+                "4241474",
+                "3932905",
+                "2473037",
+                "15864",
+                "3043078",
+                "3051876",
+                "-16013",
+                "4241372",
+                "3051392"
+              ],
+              "roster": {
+                "3043078": 26.3,
+                "3051392": 15.1,
+                "4241372": 5.9,
+                "4052042": 0.0,
+                "3932905": 20.0,
+                "15864": 15.32,
+                "2473037": 9.0,
+                "4242433": 9.9,
+                "3121410": 3.3,
+                "-16026": 0.0,
+                "4241474": 11.7,
+                "14880": 32.4,
+                "3051876": 14.2,
+                "4039050": 4.9,
+                "-16013": 10.0,
+                "4360797": 1.6
+              }
+            }
+          ],
+          [
+            {
+              "teamIndex": 4,
+              "score": 133.2,
+              "lineup": [
+                "16737",
+                "4372016",
+                "3120348",
+                "-16006",
+                "3045147",
+                "4360234",
+                "4259545",
+                "3123076",
+                "3915511",
+                "4047650"
+              ],
+              "roster": {
+                "4259545": 12.5,
+                "3045147": 18.1,
+                "4372016": 20.4,
+                "4047650": 12.5,
+                "3120348": 16.8,
+                "16460": 13.1,
+                "3915511": 24.8,
+                "-16006": 0.0,
+                "3123076": 5.8,
+                "4426354": 7.3,
+                "4361411": 0.0,
+                "4697815": 5.3,
+                "3916945": 7.3,
+                "16737": 13.3,
+                "4360234": 9.0,
+                "3045144": 14.5
+              }
+            },
+            {
+              "teamIndex": 3,
+              "score": 168.1,
+              "lineup": [
+                "3059722",
+                "3915486",
+                "4241478",
+                "15818",
+                "3916148",
+                "15920",
+                "17427",
+                "4040715",
+                "4241463",
+                "-16025"
+              ],
+              "roster": {
+                "15818": 16.6,
+                "4241463": 14.6,
+                "4040715": 34.7,
+                "4241478": 17.6,
+                "2980453": 3.3,
+                "3121427": 7.5,
+                "13982": 0.0,
+                "3059722": 34.9,
+                "-16025": 10.0,
+                "17427": 2.0,
+                "3915486": 1.9,
+                "4362630": 8.1,
+                "15920": 21.2,
+                "3916148": 14.6,
+                "9354": 2.0,
+                "4036131": 14.2
+              }
+            }
+          ]
+        ],
+        "boxscores": [
+          {
+            "team": "MIA",
+            "oppTeam": "BUF",
+            "passing": 217.0,
+            "rushing": 188.0,
+            "score": 32
+          },
+          {
+            "team": "CIN",
+            "oppTeam": "TB",
+            "passing": 184.0,
+            "rushing": 53.0,
+            "score": 23
+          },
+          {
+            "team": "LV",
+            "oppTeam": "NE",
+            "passing": 211.0,
+            "rushing": 97.0,
+            "score": 24
+          },
+          {
+            "team": "ARI",
+            "oppTeam": "DEN",
+            "passing": 167.0,
+            "rushing": 73.0,
+            "score": 24
+          },
+          {
+            "team": "CLE",
+            "oppTeam": "BAL",
+            "passing": 140.0,
+            "rushing": 143.0,
+            "score": 3
+          },
+          {
+            "team": "PIT",
+            "oppTeam": "CAR",
+            "passing": 169.0,
+            "rushing": 156.0,
+            "score": 16
+          },
+          {
+            "team": "TEN",
+            "oppTeam": "LAC",
+            "passing": 157.0,
+            "rushing": 127.0,
+            "score": 17
+          },
+          {
+            "team": "HOU",
+            "oppTeam": "KC",
+            "passing": 125.0,
+            "rushing": 94.0,
+            "score": 30
+          },
+          {
+            "team": "DET",
+            "oppTeam": "NYJ",
+            "passing": 252.0,
+            "rushing": 107.0,
+            "score": 17
+          },
+          {
+            "team": "ATL",
+            "oppTeam": "NO",
+            "passing": 89.0,
+            "rushing": 231.0,
+            "score": 21
+          },
+          {
+            "team": "CHI",
+            "oppTeam": "PHI",
+            "passing": 91.0,
+            "rushing": 157.0,
+            "score": 25
+          },
+          {
+            "team": "LAR",
+            "oppTeam": "GB",
+            "passing": 84.0,
+            "rushing": 72.0,
+            "score": 24
+          },
+          {
+            "team": "GB",
+            "oppTeam": "LAR",
+            "passing": 207.0,
+            "rushing": 138.0,
+            "score": 12
+          },
+          {
+            "team": "LAC",
+            "oppTeam": "TEN",
+            "passing": 291.0,
+            "rushing": 74.0,
+            "score": 14
+          },
+          {
+            "team": "SF",
+            "oppTeam": "SEA",
+            "passing": 211.0,
+            "rushing": 170.0,
+            "score": 13
+          },
+          {
+            "team": "NE",
+            "oppTeam": "LV",
+            "passing": 112.0,
+            "rushing": 206.0,
+            "score": 30
+          },
+          {
+            "team": "JAX",
+            "oppTeam": "DAL",
+            "passing": 311.0,
+            "rushing": 192.0,
+            "score": 34
+          },
+          {
+            "team": "SEA",
+            "oppTeam": "SF",
+            "passing": 207.0,
+            "rushing": 70.0,
+            "score": 21
+          }
+        ],
+        "fieldgoals": [
+          {
+            "team": "KC",
+            "fieldgoals": []
+          },
+          {
+            "team": "TB",
+            "fieldgoals": []
+          },
+          {
+            "team": "DEN",
+            "fieldgoals": []
+          },
+          {
+            "team": "BAL",
+            "fieldgoals": []
+          },
+          {
+            "team": "ATL",
+            "fieldgoals": []
+          },
+          {
+            "team": "BUF",
+            "fieldgoals": []
+          },
+          {
+            "team": "DAL",
+            "fieldgoals": []
+          },
+          {
+            "team": "SEA",
+            "fieldgoals": []
+          },
+          {
+            "team": "CIN",
+            "fieldgoals": []
+          },
+          {
+            "team": "CHI",
+            "fieldgoals": []
+          },
+          {
+            "team": "SF",
+            "fieldgoals": []
+          }
+        ]
+      },
+      {
+        "number": 16,
+        "matches": [
+          [
+            {
+              "teamIndex": 8,
+              "score": 89.1,
+              "lineup": [
+                "3121023",
+                "4569173",
+                "4047646",
+                "-16007",
+                "4241479",
+                "4047365",
+                "3116406",
+                "3116165",
+                "3051909",
+                "3117251"
+              ],
+              "roster": {
+                "3117251": 13.8,
+                "3116406": 14.3,
+                "4047646": 16.3,
+                "3116165": 14.3,
+                "4047365": 6.0,
+                "2577417": 27.98,
+                "-16027": 8.0,
+                "4241479": 10.4,
+                "4569173": 3.3,
+                "3925347": 0.0,
+                "-16017": 11.0,
+                "4248528": 10.9,
+                "4379399": 17.8,
+                "3121023": 9.7,
+                "-16007": -4.0,
+                "3051909": 5.0,
+                "4035676": 8.0
+              }
+            },
+            {
+              "teamIndex": 0,
+              "score": 149.78,
+              "lineup": [
+                "3918298",
+                "3915416",
+                "15683",
+                "3068267",
+                "-16024",
+                "3117256",
+                "2576414",
+                "4239993",
+                "2976212",
+                "3128720"
+              ],
+              "roster": {
+                "3068267": 23.9,
+                "2976212": 4.6,
+                "3128720": 11.2,
+                "4239993": 26.8,
+                "3128390": 11.1,
+                "15683": 8.0,
+                "2576414": 4.9,
+                "3918298": 22.98,
+                "3915416": 20.1,
+                "3117256": 7.3,
+                "-16024": 20.0,
+                "3116389": 5.2,
+                "4240021": 34.7,
+                "3128724": 0.6,
+                "4426502": 14.6,
+                "3059915": 5.2
+              }
+            }
+          ],
+          [
+            {
+              "teamIndex": 7,
+              "score": 143.76,
+              "lineup": [
+                "-16002",
+                "3121422",
+                "4241457",
+                "3055899",
+                "4045163",
+                "4362628",
+                "4569618",
+                "4036133",
+                "3139477",
+                "4035687"
+              ],
+              "roster": {
+                "4241457": 15.5,
+                "4362628": 13.9,
+                "4035687": 7.9,
+                "3139477": 23.76,
+                "3121422": 17.7,
+                "4040761": 20.5,
+                "4045163": 6.1,
+                "4036133": 35.9,
+                "4361370": 0.0,
+                "4569618": 5.0,
+                "-16002": 11.0,
+                "2573401": 30.4,
+                "4360294": 5.1,
+                "3055899": 7.0,
+                "16799": 0.0,
+                "4427728": 2.3,
+                "3042778": 3.4
+              }
+            },
+            {
+              "teamIndex": 9,
+              "score": 144.16,
+              "lineup": [
+                "-16033",
+                "16800",
+                "16339",
+                "15795",
+                "4360310",
+                "3929630",
+                "3040151",
+                "3916433",
+                "4239996",
+                "2976499"
+              ],
+              "roster": {
+                "16800": 3.5,
+                "3929630": 27.3,
+                "4360238": 0.0,
+                "2976499": 13.2,
+                "15795": 1.4,
+                "3040151": 30.0,
+                "3916433": 20.3,
+                "-16033": 7.0,
+                "4239996": 14.2,
+                "3051738": 0.0,
+                "4242335": 0.0,
+                "4360310": 18.26,
+                "-16029": 3.0,
+                "16339": 9.0,
+                "4240657": 10.0,
+                "4372414": 3.5
+              }
+            }
+          ],
+          [
+            {
+              "teamIndex": 3,
+              "score": 127.64,
+              "lineup": [
+                "15920",
+                "3059722",
+                "4241478",
+                "4241463",
+                "3150744",
+                "-16025",
+                "2330",
+                "15818",
+                "3930086",
+                "3916148"
+              ],
+              "roster": {
+                "15818": 21.4,
+                "4241463": 17.7,
+                "4040715": 0.0,
+                "4241478": 31.3,
+                "2980453": 3.4,
+                "13982": 1.5,
+                "3059722": 2.1,
+                "-16025": 6.0,
+                "17427": 7.0,
+                "3915486": 7.4,
+                "4362630": 7.5,
+                "15920": 7.0,
+                "3916148": 14.0,
+                "2330": 11.34,
+                "3930086": 12.8,
+                "3150744": 4.0
+              }
+            },
+            {
+              "teamIndex": 2,
+              "score": 131.4,
+              "lineup": [
+                "4038941",
+                "3918639",
+                "-16021",
+                "4262921",
+                "3917232",
+                "4374302",
+                "4567048",
+                "4241389",
+                "16782",
+                "3116593"
+              ],
+              "roster": {
+                "4262921": 31.3,
+                "4241389": 34.0,
+                "4038941": 5.5,
+                "4374302": 14.6,
+                "2577327": 0.0,
+                "-16021": 8.0,
+                "4360438": 13.1,
+                "3918639": 0.0,
+                "4567048": 12.5,
+                "3917792": 20.76,
+                "3917232": 2.0,
+                "3122976": 11.0,
+                "4048244": 1.7,
+                "3116593": 10.7,
+                "2576925": 9.8,
+                "4036416": 5.4,
+                "16782": 12.8
+              }
+            }
+          ],
+          [
+            {
+              "teamIndex": 1,
+              "score": 97.9,
+              "lineup": [
+                "4242433",
+                "3932905",
+                "2473037",
+                "15864",
+                "3043078",
+                "3051876",
+                "-16013",
+                "4241372",
+                "3121410",
+                "3051392"
+              ],
+              "roster": {
+                "3043078": 18.6,
+                "3051392": 13.1,
+                "4241372": 8.8,
+                "4052042": 0.0,
+                "3932905": 11.4,
+                "15864": 12.2,
+                "2473037": 4.0,
+                "4242433": 3.6,
+                "3121410": 3.9,
+                "-16026": 3.0,
+                "4241474": 5.8,
+                "14880": 24.16,
+                "3051876": 18.3,
+                "4039050": 0.0,
+                "-16013": 4.0,
+                "4360797": 3.4
+              }
+            },
+            {
+              "teamIndex": 6,
+              "score": 103.56,
+              "lineup": [
+                "4241985",
+                "3043116",
+                "3128429",
+                "-16020",
+                "3049899",
+                "15847",
+                "3042519",
+                "4361529",
+                "3054850",
+                "4361741"
+              ],
+              "roster": {
+                "15847": 17.3,
+                "4239934": 12.8,
+                "3916387": 0.0,
+                "3042519": 5.4,
+                "4241985": 5.9,
+                "-16020": 2.0,
+                "4361529": 10.0,
+                "3054850": 19.0,
+                "4567156": 1.5,
+                "3128429": 11.4,
+                "3115394": 14.8,
+                "-16018": 9.0,
+                "3049899": 9.0,
+                "4361741": 15.96,
+                "3043116": 7.6,
+                "3916566": 4.7,
+                "3123076": 3.4
+              }
+            }
+          ],
+          [
+            {
+              "teamIndex": 5,
+              "score": 122.46,
+              "lineup": [
+                "4243537",
+                "3116365",
+                "4362887",
+                "16486",
+                "-16010",
+                "3895856",
+                "3115364",
+                "3045138",
+                "3116385",
+                "4035538"
+              ],
+              "roster": {
+                "3116385": 17.8,
+                "3115364": 25.2,
+                "3116365": 7.5,
+                "4035538": 10.4,
+                "3045138": 11.6,
+                "4243537": 11.5,
+                "3895856": 5.6,
+                "3126486": 0.0,
+                "3125116": 22.5,
+                "4362887": 9.86,
+                "4258195": 1.2,
+                "16486": 18.0,
+                "-16014": 21.0,
+                "2576581": 4.5,
+                "-16010": 5.0,
+                "-16030": 13.0,
+                "15807": 4.1
+              }
+            },
+            {
+              "teamIndex": 4,
+              "score": 135.6,
+              "lineup": [
+                "16737",
+                "4361411",
+                "4372016",
+                "3120348",
+                "-16006",
+                "3045147",
+                "4259545",
+                "12460",
+                "3915511",
+                "4047650"
+              ],
+              "roster": {
+                "4259545": 3.5,
+                "3045147": 25.0,
+                "4372016": 25.3,
+                "4047650": 15.1,
+                "3120348": 5.7,
+                "16460": 1.6,
+                "3915511": 23.5,
+                "-16006": 4.0,
+                "4426354": 16.7,
+                "4361411": 13.6,
+                "4697815": 15.3,
+                "3916945": 11.9,
+                "16737": 5.9,
+                "3045144": 5.1,
+                "4035886": 2.3,
+                "4240455": 3.9,
+                "12460": 14.0
+              }
+            }
+          ]
+        ],
+        "boxscores": [
+          {
+            "team": "ARI",
+            "oppTeam": "TB",
+            "passing": 204.0,
+            "rushing": 121.0,
+            "score": 19
+          },
+          {
+            "team": "CIN",
+            "oppTeam": "NE",
+            "passing": 369.0,
+            "rushing": 73.0,
+            "score": 18
+          },
+          {
+            "team": "LAR",
+            "oppTeam": "DEN",
+            "passing": 230.0,
+            "rushing": 158.0,
+            "score": 14
+          },
+          {
+            "team": "IND",
+            "oppTeam": "LAC",
+            "passing": 104.0,
+            "rushing": 69.0,
+            "score": 20
+          },
+          {
+            "team": "CHI",
+            "oppTeam": "BUF",
+            "passing": 129.0,
+            "rushing": 80.0,
+            "score": 35
+          },
+          {
+            "team": "ATL",
+            "oppTeam": "BAL",
+            "passing": 212.0,
+            "rushing": 115.0,
+            "score": 17
+          },
+          {
+            "team": "DET",
+            "oppTeam": "CAR",
+            "passing": 336.0,
+            "rushing": 45.0,
+            "score": 37
+          },
+          {
+            "team": "WSH",
+            "oppTeam": "SF",
+            "passing": 270.0,
+            "rushing": 79.0,
+            "score": 37
+          },
+          {
+            "team": "DAL",
+            "oppTeam": "PHI",
+            "passing": 304.0,
+            "rushing": 115.0,
+            "score": 34
+          },
+          {
+            "team": "KC",
+            "oppTeam": "SEA",
+            "passing": 220.0,
+            "rushing": 77.0,
+            "score": 10
+          },
+          {
+            "team": "PIT",
+            "oppTeam": "LV",
+            "passing": 244.0,
+            "rushing": 106.0,
+            "score": 10
+          },
+          {
+            "team": "JAX",
+            "oppTeam": "NYJ",
+            "passing": 218.0,
+            "rushing": 147.0,
+            "score": 3
+          },
+          {
+            "team": "CLE",
+            "oppTeam": "NO",
+            "passing": 125.0,
+            "rushing": 124.0,
+            "score": 17
+          },
+          {
+            "team": "DEN",
+            "oppTeam": "LAR",
+            "passing": 219.0,
+            "rushing": 104.0,
+            "score": 51
+          },
+          {
+            "team": "HOU",
+            "oppTeam": "TEN",
+            "passing": 215.0,
+            "rushing": 70.0,
+            "score": 14
+          },
+          {
+            "team": "NYJ",
+            "oppTeam": "JAX",
+            "passing": 161.0,
+            "rushing": 66.0,
+            "score": 19
+          },
+          {
+            "team": "PHI",
+            "oppTeam": "DAL",
+            "passing": 355.0,
+            "rushing": 87.0,
+            "score": 40
+          }
+        ],
+        "fieldgoals": [
+          {
+            "team": "LV",
+            "fieldgoals": []
+          },
+          {
+            "team": "BAL",
+            "fieldgoals": []
+          },
+          {
+            "team": "KC",
+            "fieldgoals": []
+          },
+          {
+            "team": "DEN",
+            "fieldgoals": []
+          },
+          {
+            "team": "CHI",
+            "fieldgoals": []
+          },
+          {
+            "team": "IND",
+            "fieldgoals": []
+          },
+          {
+            "team": "BUF",
+            "fieldgoals": []
+          },
+          {
+            "team": "SEA",
+            "fieldgoals": []
+          },
+          {
+            "team": "ATL",
+            "fieldgoals": []
+          },
+          {
+            "team": "DAL",
+            "fieldgoals": []
+          },
+          {
+            "team": "NYG",
+            "fieldgoals": []
           }
         ]
       }
     ],
     "players": {
-      "4262921": { "name": "Justin Jefferson", "position": 3, "team": "MIN" },
-      "4241389": { "name": "CeeDee Lamb", "position": 3, "team": "DAL" },
-      "3126486": { "name": "Deebo Samuel", "position": 3, "team": "SF" },
-      "4239996": { "name": "Travis Etienne Jr.", "position": 2, "team": "JAX" },
-      "4038941": { "name": "Justin Herbert", "position": 1, "team": "LAC" },
-      "4374302": { "name": "Amon-Ra St. Brown", "position": 3, "team": "DET" },
-      "2576925": { "name": "Darren Waller", "position": 4, "team": "LV" },
-      "3119195": { "name": "Chase Edmonds", "position": 2, "team": "DEN" },
+      "4262921": {
+        "name": "Justin Jefferson",
+        "position": 3,
+        "team": "MIN"
+      },
+      "4241389": {
+        "name": "CeeDee Lamb",
+        "position": 3,
+        "team": "DAL"
+      },
+      "3126486": {
+        "name": "Deebo Samuel",
+        "position": 3,
+        "team": "SF"
+      },
+      "4239996": {
+        "name": "Travis Etienne Jr.",
+        "position": 2,
+        "team": "JAX"
+      },
+      "4038941": {
+        "name": "Justin Herbert",
+        "position": 1,
+        "team": "LAC"
+      },
+      "4374302": {
+        "name": "Amon-Ra St. Brown",
+        "position": 3,
+        "team": "DET"
+      },
+      "2576925": {
+        "name": "Darren Waller",
+        "position": 4,
+        "team": "LV"
+      },
+      "3119195": {
+        "name": "Chase Edmonds",
+        "position": 2,
+        "team": "DEN"
+      },
       "4242214": {
         "name": "Clyde Edwards-Helaire",
         "position": 2,
         "team": "KC"
       },
-      "2577327": { "name": "Tyler Lockett", "position": 3, "team": "SEA" },
-      "4383351": { "name": "Trey Lance", "position": 1, "team": "SF" },
-      "4240657": { "name": "Michael Carter", "position": 2, "team": "NYJ" },
-      "4361409": { "name": "Jahan Dotson", "position": 3, "team": "WSH" },
-      "-16021": { "name": "Eagles D/ST", "position": 16, "team": "PHI" },
-      "3916566": { "name": "K.J. Osborn", "position": 3, "team": "MIN" },
-      "3975763": { "name": "Greg Joseph", "position": 5, "team": "MIN" },
-      "4241457": { "name": "Najee Harris", "position": 2, "team": "PIT" },
-      "4362628": { "name": "Ja'Marr Chase", "position": 3, "team": "CIN" },
+      "2577327": {
+        "name": "Tyler Lockett",
+        "position": 3,
+        "team": "SEA"
+      },
+      "4383351": {
+        "name": "Trey Lance",
+        "position": 1,
+        "team": "SF"
+      },
+      "4240657": {
+        "name": "Michael Carter",
+        "position": 2,
+        "team": "NYJ"
+      },
+      "4361409": {
+        "name": "Jahan Dotson",
+        "position": 3,
+        "team": "WSH"
+      },
+      "-16021": {
+        "name": "Eagles D/ST",
+        "position": 16,
+        "team": "PHI"
+      },
+      "3916566": {
+        "name": "K.J. Osborn",
+        "position": 3,
+        "team": "MIN"
+      },
+      "3975763": {
+        "name": "Greg Joseph",
+        "position": 5,
+        "team": "MIN"
+      },
+      "4241457": {
+        "name": "Najee Harris",
+        "position": 2,
+        "team": "PIT"
+      },
+      "4362628": {
+        "name": "Ja'Marr Chase",
+        "position": 3,
+        "team": "CIN"
+      },
       "4035687": {
         "name": "Michael Pittman Jr.",
         "position": 3,
         "team": "IND"
       },
-      "3139477": { "name": "Patrick Mahomes", "position": 1, "team": "KC" },
-      "3121422": { "name": "Terry McLaurin", "position": 3, "team": "WSH" },
-      "4241555": { "name": "Elijah Mitchell", "position": 2, "team": "SF" },
-      "4040761": { "name": "Devin Singletary", "position": 2, "team": "BUF" },
-      "4045163": { "name": "Miles Sanders", "position": 2, "team": "PHI" },
-      "4036133": { "name": "T.J. Hockenson", "position": 4, "team": "MIN" },
-      "4361370": { "name": "Chris Olave", "position": 3, "team": "NO" },
-      "4046692": { "name": "Chase Claypool", "position": 3, "team": "CHI" },
-      "4569618": { "name": "Garrett Wilson", "position": 3, "team": "NYJ" },
-      "-16002": { "name": "Bills D/ST", "position": 16, "team": "BUF" },
-      "4361411": { "name": "Pat Freiermuth", "position": 4, "team": "PIT" },
+      "3139477": {
+        "name": "Patrick Mahomes",
+        "position": 1,
+        "team": "KC"
+      },
+      "3121422": {
+        "name": "Terry McLaurin",
+        "position": 3,
+        "team": "WSH"
+      },
+      "4241555": {
+        "name": "Elijah Mitchell",
+        "position": 2,
+        "team": "SF"
+      },
+      "4040761": {
+        "name": "Devin Singletary",
+        "position": 2,
+        "team": "BUF"
+      },
+      "4045163": {
+        "name": "Miles Sanders",
+        "position": 2,
+        "team": "PHI"
+      },
+      "4036133": {
+        "name": "T.J. Hockenson",
+        "position": 4,
+        "team": "MIN"
+      },
+      "4361370": {
+        "name": "Chris Olave",
+        "position": 3,
+        "team": "NO"
+      },
+      "4046692": {
+        "name": "Chase Claypool",
+        "position": 3,
+        "team": "CHI"
+      },
+      "4569618": {
+        "name": "Garrett Wilson",
+        "position": 3,
+        "team": "NYJ"
+      },
+      "-16002": {
+        "name": "Bills D/ST",
+        "position": 16,
+        "team": "BUF"
+      },
+      "4361411": {
+        "name": "Pat Freiermuth",
+        "position": 4,
+        "team": "PIT"
+      },
       "3051738": {
         "name": "Marquez Valdes-Scantling",
         "position": 3,
         "team": "KC"
       },
-      "3917232": { "name": "Tyler Bass", "position": 5, "team": "BUF" },
-      "3054850": { "name": "Alvin Kamara", "position": 2, "team": "NO" },
-      "4259545": { "name": "D'Andre Swift", "position": 2, "team": "DET" },
-      "3045147": { "name": "James Conner", "position": 2, "team": "ARI" },
-      "4372016": { "name": "Jaylen Waddle", "position": 3, "team": "MIA" },
-      "4047650": { "name": "DK Metcalf", "position": 3, "team": "SEA" },
-      "3120348": { "name": "JuJu Smith-Schuster", "position": 3, "team": "KC" },
-      "16460": { "name": "Adam Thielen", "position": 3, "team": "MIN" },
-      "3915511": { "name": "Joe Burrow", "position": 1, "team": "CIN" },
-      "4360294": { "name": "Antonio Gibson", "position": 2, "team": "WSH" },
-      "15880": { "name": "Robert Woods", "position": 3, "team": "TEN" },
-      "3916430": { "name": "Nyheim Hines", "position": 2, "team": "BUF" },
-      "4258595": { "name": "Cole Kmet", "position": 4, "team": "CHI" },
-      "4567048": { "name": "Kenneth Walker III", "position": 2, "team": "SEA" },
-      "-16011": { "name": "Colts D/ST", "position": 16, "team": "IND" },
-      "4249087": { "name": "Matt Gay", "position": 5, "team": "LAR" },
-      "14880": { "name": "Kirk Cousins", "position": 1, "team": "MIN" },
-      "3117251": { "name": "Christian McCaffrey", "position": 2, "team": "SF" },
-      "3116406": { "name": "Tyreek Hill", "position": 3, "team": "MIA" },
-      "4047646": { "name": "A.J. Brown", "position": 3, "team": "PHI" },
-      "16731": { "name": "Brandin Cooks", "position": 3, "team": "HOU" },
-      "3116165": { "name": "Chris Godwin", "position": 3, "team": "TB" },
-      "4047365": { "name": "Josh Jacobs", "position": 2, "team": "LV" },
-      "2976316": { "name": "Michael Thomas", "position": 3, "team": "NO" },
-      "3117256": { "name": "Dalton Schultz", "position": 4, "team": "DAL" },
-      "2577417": { "name": "Dak Prescott", "position": 1, "team": "DAL" },
-      "3139925": { "name": "Rashaad Penny", "position": 2, "team": "SEA" },
-      "15835": { "name": "Zach Ertz", "position": 4, "team": "ARI" },
-      "4379399": { "name": "James Cook", "position": 2, "team": "BUF" },
-      "4036348": { "name": "Michael Gallup", "position": 3, "team": "DAL" },
-      "-16027": { "name": "Buccaneers D/ST", "position": 16, "team": "TB" },
-      "4241479": { "name": "Tua Tagovailoa", "position": 1, "team": "MIA" },
-      "10621": { "name": "Nick Folk", "position": 5, "team": "NE" },
-      "-16004": { "name": "Bengals D/ST", "position": 16, "team": "CIN" },
-      "3043078": { "name": "Derrick Henry", "position": 2, "team": "TEN" },
-      "3042519": { "name": "Aaron Jones", "position": 2, "team": "GB" },
-      "4361579": { "name": "Javonte Williams", "position": 2, "team": "DEN" },
-      "3051392": { "name": "Ezekiel Elliott", "position": 2, "team": "DAL" },
-      "3135321": { "name": "Hunter Renfrow", "position": 3, "team": "LV" },
-      "4241372": { "name": "Marquise Brown", "position": 3, "team": "ARI" },
-      "4040655": { "name": "Darnell Mooney", "position": 3, "team": "CHI" },
+      "3917232": {
+        "name": "Tyler Bass",
+        "position": 5,
+        "team": "BUF"
+      },
+      "3054850": {
+        "name": "Alvin Kamara",
+        "position": 2,
+        "team": "NO"
+      },
+      "4259545": {
+        "name": "D'Andre Swift",
+        "position": 2,
+        "team": "DET"
+      },
+      "3045147": {
+        "name": "James Conner",
+        "position": 2,
+        "team": "ARI"
+      },
+      "4372016": {
+        "name": "Jaylen Waddle",
+        "position": 3,
+        "team": "MIA"
+      },
+      "4047650": {
+        "name": "DK Metcalf",
+        "position": 3,
+        "team": "SEA"
+      },
+      "3120348": {
+        "name": "JuJu Smith-Schuster",
+        "position": 3,
+        "team": "KC"
+      },
+      "16460": {
+        "name": "Adam Thielen",
+        "position": 3,
+        "team": "MIN"
+      },
+      "3915511": {
+        "name": "Joe Burrow",
+        "position": 1,
+        "team": "CIN"
+      },
+      "4360294": {
+        "name": "Antonio Gibson",
+        "position": 2,
+        "team": "WSH"
+      },
+      "15880": {
+        "name": "Robert Woods",
+        "position": 3,
+        "team": "TEN"
+      },
+      "3916430": {
+        "name": "Nyheim Hines",
+        "position": 2,
+        "team": "BUF"
+      },
+      "4258595": {
+        "name": "Cole Kmet",
+        "position": 4,
+        "team": "CHI"
+      },
+      "4567048": {
+        "name": "Kenneth Walker III",
+        "position": 2,
+        "team": "SEA"
+      },
+      "-16011": {
+        "name": "Colts D/ST",
+        "position": 16,
+        "team": "IND"
+      },
+      "4249087": {
+        "name": "Matt Gay",
+        "position": 5,
+        "team": "LAR"
+      },
+      "14880": {
+        "name": "Kirk Cousins",
+        "position": 1,
+        "team": "MIN"
+      },
+      "3117251": {
+        "name": "Christian McCaffrey",
+        "position": 2,
+        "team": "SF"
+      },
+      "3116406": {
+        "name": "Tyreek Hill",
+        "position": 3,
+        "team": "MIA"
+      },
+      "4047646": {
+        "name": "A.J. Brown",
+        "position": 3,
+        "team": "PHI"
+      },
+      "16731": {
+        "name": "Brandin Cooks",
+        "position": 3,
+        "team": "HOU"
+      },
+      "3116165": {
+        "name": "Chris Godwin",
+        "position": 3,
+        "team": "TB"
+      },
+      "4047365": {
+        "name": "Josh Jacobs",
+        "position": 2,
+        "team": "LV"
+      },
+      "2976316": {
+        "name": "Michael Thomas",
+        "position": 3,
+        "team": "NO"
+      },
+      "3117256": {
+        "name": "Dalton Schultz",
+        "position": 4,
+        "team": "DAL"
+      },
+      "2577417": {
+        "name": "Dak Prescott",
+        "position": 1,
+        "team": "DAL"
+      },
+      "3139925": {
+        "name": "Rashaad Penny",
+        "position": 2,
+        "team": "SEA"
+      },
+      "15835": {
+        "name": "Zach Ertz",
+        "position": 4,
+        "team": "ARI"
+      },
+      "4379399": {
+        "name": "James Cook",
+        "position": 2,
+        "team": "BUF"
+      },
+      "4036348": {
+        "name": "Michael Gallup",
+        "position": 3,
+        "team": "DAL"
+      },
+      "-16027": {
+        "name": "Buccaneers D/ST",
+        "position": 16,
+        "team": "TB"
+      },
+      "4241479": {
+        "name": "Tua Tagovailoa",
+        "position": 1,
+        "team": "MIA"
+      },
+      "10621": {
+        "name": "Nick Folk",
+        "position": 5,
+        "team": "NE"
+      },
+      "-16004": {
+        "name": "Bengals D/ST",
+        "position": 16,
+        "team": "CIN"
+      },
+      "3043078": {
+        "name": "Derrick Henry",
+        "position": 2,
+        "team": "TEN"
+      },
+      "3042519": {
+        "name": "Aaron Jones",
+        "position": 2,
+        "team": "GB"
+      },
+      "4361579": {
+        "name": "Javonte Williams",
+        "position": 2,
+        "team": "DEN"
+      },
+      "3051392": {
+        "name": "Ezekiel Elliott",
+        "position": 2,
+        "team": "DAL"
+      },
+      "3135321": {
+        "name": "Hunter Renfrow",
+        "position": 3,
+        "team": "LV"
+      },
+      "4241372": {
+        "name": "Marquise Brown",
+        "position": 3,
+        "team": "ARI"
+      },
+      "4040655": {
+        "name": "Darnell Mooney",
+        "position": 3,
+        "team": "CHI"
+      },
       "15807": {
         "name": "Cordarrelle Patterson",
         "position": 2,
         "team": "ATL"
       },
-      "8439": { "name": "Aaron Rodgers", "position": 1, "team": "GB" },
-      "3121023": { "name": "Dallas Goedert", "position": 4, "team": "PHI" },
-      "4052042": { "name": "James Robinson", "position": 2, "team": "NYJ" },
-      "15072": { "name": "Marvin Jones Jr.", "position": 3, "team": "JAX" },
-      "-16009": { "name": "Packers D/ST", "position": 16, "team": "GB" },
-      "-16018": { "name": "Saints D/ST", "position": 16, "team": "NO" },
-      "3051909": { "name": "Daniel Carlson", "position": 5, "team": "LV" },
-      "12483": { "name": "Matthew Stafford", "position": 1, "team": "LAR" },
-      "3116593": { "name": "Dalvin Cook", "position": 2, "team": "MIN" },
-      "16800": { "name": "Davante Adams", "position": 3, "team": "LV" },
-      "3929630": { "name": "Saquon Barkley", "position": 2, "team": "NYG" },
-      "3918298": { "name": "Josh Allen", "position": 1, "team": "BUF" },
-      "3915416": { "name": "DJ Moore", "position": 3, "team": "CAR" },
-      "16799": { "name": "Allen Robinson II", "position": 3, "team": "LAR" },
-      "4360238": { "name": "Dameon Pierce", "position": 2, "team": "HOU" },
-      "2976499": { "name": "Amari Cooper", "position": 3, "team": "CLE" },
-      "3916148": { "name": "Tony Pollard", "position": 2, "team": "DAL" },
-      "3925347": { "name": "Damien Harris", "position": 2, "team": "NE" },
-      "4048244": { "name": "Alexander Mattison", "position": 2, "team": "MIN" },
-      "4430191": { "name": "Skyy Moore", "position": 3, "team": "KC" },
-      "4361050": { "name": "Isaiah Likely", "position": 4, "team": "BAL" },
-      "4426354": { "name": "George Pickens", "position": 3, "team": "PIT" },
-      "-16007": { "name": "Broncos D/ST", "position": 16, "team": "DEN" },
-      "16339": { "name": "Brandon McManus", "position": 5, "team": "DEN" },
-      "3068267": { "name": "Austin Ekeler", "position": 2, "team": "LAC" },
-      "2976212": { "name": "Stefon Diggs", "position": 3, "team": "BUF" },
-      "3128720": { "name": "Nick Chubb", "position": 2, "team": "CLE" },
-      "4239993": { "name": "Tee Higgins", "position": 3, "team": "CIN" },
-      "3128429": { "name": "Courtland Sutton", "position": 3, "team": "DEN" },
-      "3040151": { "name": "George Kittle", "position": 4, "team": "SF" },
-      "4360939": { "name": "Rashod Bateman", "position": 3, "team": "BAL" },
-      "3917315": { "name": "Kyler Murray", "position": 1, "team": "ARI" },
-      "3128390": { "name": "Allen Lazard", "position": 3, "team": "GB" },
-      "15795": { "name": "DeAndre Hopkins", "position": 3, "team": "ARI" },
-      "4567156": { "name": "Treylon Burks", "position": 3, "team": "TEN" },
-      "3045144": { "name": "Tyler Boyd", "position": 3, "team": "CIN" },
-      "15683": { "name": "Justin Tucker", "position": 5, "team": "BAL" },
-      "-16024": { "name": "Chargers D/ST", "position": 16, "team": "LAC" },
-      "2576414": { "name": "Raheem Mostert", "position": 2, "team": "MIA" },
-      "3116164": { "name": "Mike Gesicki", "position": 4, "team": "MIA" },
-      "4035115": { "name": "Albert Okwuegbunam", "position": 4, "team": "DEN" },
-      "2977187": { "name": "Cooper Kupp", "position": 3, "team": "LAR" },
-      "15847": { "name": "Travis Kelce", "position": 4, "team": "KC" },
-      "16737": { "name": "Mike Evans", "position": 3, "team": "TB" },
-      "3932905": { "name": "Diontae Johnson", "position": 3, "team": "PIT" },
-      "4427366": { "name": "Breece Hall", "position": 2, "team": "NYJ" },
-      "4239934": { "name": "AJ Dillon", "position": 2, "team": "GB" },
-      "3916387": { "name": "Lamar Jackson", "position": 1, "team": "BAL" },
-      "4426502": { "name": "Drake London", "position": 3, "team": "ATL" },
-      "3059915": { "name": "Kareem Hunt", "position": 2, "team": "CLE" },
-      "4240600": { "name": "Kadarius Toney", "position": 3, "team": "KC" },
+      "8439": {
+        "name": "Aaron Rodgers",
+        "position": 1,
+        "team": "GB"
+      },
+      "3121023": {
+        "name": "Dallas Goedert",
+        "position": 4,
+        "team": "PHI"
+      },
+      "4052042": {
+        "name": "James Robinson",
+        "position": 2,
+        "team": "NYJ"
+      },
+      "15072": {
+        "name": "Marvin Jones Jr.",
+        "position": 3,
+        "team": "JAX"
+      },
+      "-16009": {
+        "name": "Packers D/ST",
+        "position": 16,
+        "team": "GB"
+      },
+      "-16018": {
+        "name": "Saints D/ST",
+        "position": 16,
+        "team": "NO"
+      },
+      "3051909": {
+        "name": "Daniel Carlson",
+        "position": 5,
+        "team": "LV"
+      },
+      "12483": {
+        "name": "Matthew Stafford",
+        "position": 1,
+        "team": "LAR"
+      },
+      "3116593": {
+        "name": "Dalvin Cook",
+        "position": 2,
+        "team": "MIN"
+      },
+      "16800": {
+        "name": "Davante Adams",
+        "position": 3,
+        "team": "LV"
+      },
+      "3929630": {
+        "name": "Saquon Barkley",
+        "position": 2,
+        "team": "NYG"
+      },
+      "3918298": {
+        "name": "Josh Allen",
+        "position": 1,
+        "team": "BUF"
+      },
+      "3915416": {
+        "name": "DJ Moore",
+        "position": 3,
+        "team": "CAR"
+      },
+      "16799": {
+        "name": "Allen Robinson II",
+        "position": 3,
+        "team": "LAR"
+      },
+      "4360238": {
+        "name": "Dameon Pierce",
+        "position": 2,
+        "team": "HOU"
+      },
+      "2976499": {
+        "name": "Amari Cooper",
+        "position": 3,
+        "team": "CLE"
+      },
+      "3916148": {
+        "name": "Tony Pollard",
+        "position": 2,
+        "team": "DAL"
+      },
+      "3925347": {
+        "name": "Damien Harris",
+        "position": 2,
+        "team": "NE"
+      },
+      "4048244": {
+        "name": "Alexander Mattison",
+        "position": 2,
+        "team": "MIN"
+      },
+      "4430191": {
+        "name": "Skyy Moore",
+        "position": 3,
+        "team": "KC"
+      },
+      "4361050": {
+        "name": "Isaiah Likely",
+        "position": 4,
+        "team": "BAL"
+      },
+      "4426354": {
+        "name": "George Pickens",
+        "position": 3,
+        "team": "PIT"
+      },
+      "-16007": {
+        "name": "Broncos D/ST",
+        "position": 16,
+        "team": "DEN"
+      },
+      "16339": {
+        "name": "Brandon McManus",
+        "position": 5,
+        "team": "DEN"
+      },
+      "3068267": {
+        "name": "Austin Ekeler",
+        "position": 2,
+        "team": "LAC"
+      },
+      "2976212": {
+        "name": "Stefon Diggs",
+        "position": 3,
+        "team": "BUF"
+      },
+      "3128720": {
+        "name": "Nick Chubb",
+        "position": 2,
+        "team": "CLE"
+      },
+      "4239993": {
+        "name": "Tee Higgins",
+        "position": 3,
+        "team": "CIN"
+      },
+      "3128429": {
+        "name": "Courtland Sutton",
+        "position": 3,
+        "team": "DEN"
+      },
+      "3040151": {
+        "name": "George Kittle",
+        "position": 4,
+        "team": "SF"
+      },
+      "4360939": {
+        "name": "Rashod Bateman",
+        "position": 3,
+        "team": "BAL"
+      },
+      "3917315": {
+        "name": "Kyler Murray",
+        "position": 1,
+        "team": "ARI"
+      },
+      "3128390": {
+        "name": "Allen Lazard",
+        "position": 3,
+        "team": "GB"
+      },
+      "15795": {
+        "name": "DeAndre Hopkins",
+        "position": 3,
+        "team": "ARI"
+      },
+      "4567156": {
+        "name": "Treylon Burks",
+        "position": 3,
+        "team": "TEN"
+      },
+      "3045144": {
+        "name": "Tyler Boyd",
+        "position": 3,
+        "team": "CIN"
+      },
+      "15683": {
+        "name": "Justin Tucker",
+        "position": 5,
+        "team": "BAL"
+      },
+      "-16024": {
+        "name": "Chargers D/ST",
+        "position": 16,
+        "team": "LAC"
+      },
+      "2576414": {
+        "name": "Raheem Mostert",
+        "position": 2,
+        "team": "MIA"
+      },
+      "3116164": {
+        "name": "Mike Gesicki",
+        "position": 4,
+        "team": "MIA"
+      },
+      "4035115": {
+        "name": "Albert Okwuegbunam",
+        "position": 4,
+        "team": "DEN"
+      },
+      "2977187": {
+        "name": "Cooper Kupp",
+        "position": 3,
+        "team": "LAR"
+      },
+      "15847": {
+        "name": "Travis Kelce",
+        "position": 4,
+        "team": "KC"
+      },
+      "16737": {
+        "name": "Mike Evans",
+        "position": 3,
+        "team": "TB"
+      },
+      "3932905": {
+        "name": "Diontae Johnson",
+        "position": 3,
+        "team": "PIT"
+      },
+      "4427366": {
+        "name": "Breece Hall",
+        "position": 2,
+        "team": "NYJ"
+      },
+      "4239934": {
+        "name": "AJ Dillon",
+        "position": 2,
+        "team": "GB"
+      },
+      "3916387": {
+        "name": "Lamar Jackson",
+        "position": 1,
+        "team": "BAL"
+      },
+      "4426502": {
+        "name": "Drake London",
+        "position": 3,
+        "team": "ATL"
+      },
+      "3059915": {
+        "name": "Kareem Hunt",
+        "position": 2,
+        "team": "CLE"
+      },
+      "4240600": {
+        "name": "Kadarius Toney",
+        "position": 3,
+        "team": "KC"
+      },
       "4039359": {
         "name": "Darrell Henderson Jr.",
         "position": 2,
+        "team": "FA"
+      },
+      "3115378": {
+        "name": "Russell Gage",
+        "position": 3,
+        "team": "TB"
+      },
+      "4361529": {
+        "name": "Isiah Pacheco",
+        "position": 2,
+        "team": "KC"
+      },
+      "-16017": {
+        "name": "Patriots D/ST",
+        "position": 16,
+        "team": "NE"
+      },
+      "4372485": {
+        "name": "Rondale Moore",
+        "position": 3,
+        "team": "ARI"
+      },
+      "4360234": {
+        "name": "Evan McPherson",
+        "position": 5,
+        "team": "CIN"
+      },
+      "3115394": {
+        "name": "DJ Chark",
+        "position": 3,
+        "team": "DET"
+      },
+      "4242335": {
+        "name": "Jonathan Taylor",
+        "position": 2,
+        "team": "IND"
+      },
+      "15818": {
+        "name": "Keenan Allen",
+        "position": 3,
+        "team": "LAC"
+      },
+      "4240021": {
+        "name": "Cam Akers",
+        "position": 2,
+        "team": "LAR"
+      },
+      "4360248": {
+        "name": "Kyle Pitts",
+        "position": 4,
+        "team": "ATL"
+      },
+      "4241463": {
+        "name": "Jerry Jeudy",
+        "position": 3,
+        "team": "DEN"
+      },
+      "4040715": {
+        "name": "Jalen Hurts",
+        "position": 1,
+        "team": "PHI"
+      },
+      "4241478": {
+        "name": "DeVonta Smith",
+        "position": 3,
+        "team": "PHI"
+      },
+      "4569173": {
+        "name": "Rhamondre Stevenson",
+        "position": 2,
+        "team": "NE"
+      },
+      "4372414": {
+        "name": "Elijah Moore",
+        "position": 3,
+        "team": "NYJ"
+      },
+      "4360438": {
+        "name": "Brandon Aiyuk",
+        "position": 3,
+        "team": "SF"
+      },
+      "2980453": {
+        "name": "Jamaal Williams",
+        "position": 2,
+        "team": "DET"
+      },
+      "3046439": {
+        "name": "Hunter Henry",
+        "position": 4,
+        "team": "NE"
+      },
+      "2572861": {
+        "name": "J.D. McKissic",
+        "position": 2,
+        "team": "WSH"
+      },
+      "14881": {
+        "name": "Russell Wilson",
+        "position": 1,
+        "team": "DEN"
+      },
+      "-16033": {
+        "name": "Ravens D/ST",
+        "position": 16,
+        "team": "BAL"
+      },
+      "3055899": {
+        "name": "Harrison Butker",
+        "position": 5,
+        "team": "KC"
+      },
+      "3116385": {
+        "name": "Joe Mixon",
+        "position": 2,
+        "team": "CIN"
+      },
+      "3115364": {
+        "name": "Leonard Fournette",
+        "position": 2,
+        "team": "TB"
+      },
+      "3116365": {
+        "name": "Mark Andrews",
+        "position": 4,
+        "team": "BAL"
+      },
+      "4035538": {
+        "name": "David Montgomery",
+        "position": 2,
+        "team": "CHI"
+      },
+      "3045138": {
+        "name": "Mike Williams",
+        "position": 3,
+        "team": "LAC"
+      },
+      "4243537": {
+        "name": "Gabe Davis",
+        "position": 3,
+        "team": "BUF"
+      },
+      "4241985": {
+        "name": "J.K. Dobbins",
+        "position": 2,
+        "team": "BAL"
+      },
+      "2330": {
+        "name": "Tom Brady",
+        "position": 1,
+        "team": "TB"
+      },
+      "3895856": {
+        "name": "Christian Kirk",
+        "position": 3,
         "team": "JAX"
       },
-      "3115378": { "name": "Russell Gage", "position": 3, "team": "TB" },
-      "4361529": { "name": "Isiah Pacheco", "position": 2, "team": "KC" },
-      "-16017": { "name": "Patriots D/ST", "position": 16, "team": "NE" },
-      "4372485": { "name": "Rondale Moore", "position": 3, "team": "ARI" },
-      "4360234": { "name": "Evan McPherson", "position": 5, "team": "CIN" },
-      "3115394": { "name": "DJ Chark", "position": 3, "team": "DET" },
-      "4242335": { "name": "Jonathan Taylor", "position": 2, "team": "IND" },
-      "15818": { "name": "Keenan Allen", "position": 3, "team": "LAC" },
-      "4240021": { "name": "Cam Akers", "position": 2, "team": "LAR" },
-      "4360248": { "name": "Kyle Pitts", "position": 4, "team": "ATL" },
-      "4241463": { "name": "Jerry Jeudy", "position": 3, "team": "DEN" },
-      "4040715": { "name": "Jalen Hurts", "position": 1, "team": "PHI" },
-      "4241478": { "name": "DeVonta Smith", "position": 3, "team": "PHI" },
-      "4569173": { "name": "Rhamondre Stevenson", "position": 2, "team": "NE" },
-      "4372414": { "name": "Elijah Moore", "position": 3, "team": "NYJ" },
-      "4360438": { "name": "Brandon Aiyuk", "position": 3, "team": "SF" },
-      "2980453": { "name": "Jamaal Williams", "position": 2, "team": "DET" },
-      "3046439": { "name": "Hunter Henry", "position": 4, "team": "NE" },
-      "2572861": { "name": "J.D. McKissic", "position": 2, "team": "WSH" },
-      "14881": { "name": "Russell Wilson", "position": 1, "team": "DEN" },
-      "-16033": { "name": "Ravens D/ST", "position": 16, "team": "BAL" },
-      "3055899": { "name": "Harrison Butker", "position": 5, "team": "KC" },
-      "3116385": { "name": "Joe Mixon", "position": 2, "team": "CIN" },
-      "3115364": { "name": "Leonard Fournette", "position": 2, "team": "TB" },
-      "3116365": { "name": "Mark Andrews", "position": 4, "team": "BAL" },
-      "4035538": { "name": "David Montgomery", "position": 2, "team": "CHI" },
-      "3045138": { "name": "Mike Williams", "position": 3, "team": "LAC" },
-      "4243537": { "name": "Gabe Davis", "position": 3, "team": "BUF" },
-      "4241985": { "name": "J.K. Dobbins", "position": 2, "team": "BAL" },
-      "2330": { "name": "Tom Brady", "position": 1, "team": "TB" },
-      "3895856": { "name": "Christian Kirk", "position": 3, "team": "JAX" },
-      "2576434": { "name": "Melvin Gordon III", "position": 2, "team": "FA" },
-      "3930086": { "name": "Dawson Knox", "position": 4, "team": "BUF" },
-      "3125116": { "name": "D'Onta Foreman", "position": 2, "team": "CAR" },
-      "-16025": { "name": "49ers D/ST", "position": 16, "team": "SF" },
+      "2576434": {
+        "name": "Melvin Gordon III",
+        "position": 2,
+        "team": "FA"
+      },
+      "3930086": {
+        "name": "Dawson Knox",
+        "position": 4,
+        "team": "BUF"
+      },
+      "3125116": {
+        "name": "D'Onta Foreman",
+        "position": 2,
+        "team": "CAR"
+      },
+      "-16025": {
+        "name": "49ers D/ST",
+        "position": 16,
+        "team": "SF"
+      },
       "3915165": {
         "name": "Rodrigo Blankenship",
         "position": 5,
         "team": "IND"
       },
-      "4426388": { "name": "Jameson Williams", "position": 3, "team": "DET" },
-      "3916433": { "name": "Jakobi Meyers", "position": 3, "team": "NE" },
-      "13983": { "name": "A.J. Green", "position": 3, "team": "ARI" },
-      "2573079": { "name": "Carson Wentz", "position": 1, "team": "WSH" },
-      "4035886": { "name": "Khalil Herbert", "position": 2, "team": "CHI" },
-      "12731": { "name": "Ryan Succop", "position": 5, "team": "TB" },
-      "4373626": { "name": "Tyler Allgeier", "position": 2, "team": "ATL" },
-      "3121427": { "name": "Curtis Samuel", "position": 3, "team": "WSH" },
-      "13982": { "name": "Julio Jones", "position": 3, "team": "TB" },
-      "15971": { "name": "Rex Burkhead", "position": 2, "team": "HOU" },
-      "17372": { "name": "Chris Boswell", "position": 5, "team": "PIT" },
-      "3059722": { "name": "Zay Jones", "position": 3, "team": "JAX" },
-      "2573401": { "name": "Tyler Higbee", "position": 4, "team": "LAR" },
-      "3918639": { "name": "Gerald Everett", "position": 4, "team": "LAC" },
-      "16813": { "name": "Logan Thomas", "position": 4, "team": "WSH" },
-      "-16005": { "name": "Browns D/ST", "position": 16, "team": "CLE" },
-      "-16014": { "name": "Rams D/ST", "position": 16, "team": "LAR" },
-      "3122976": { "name": "Jeff Wilson Jr.", "position": 2, "team": "MIA" },
-      "2468609": { "name": "Taysom Hill", "position": 4, "team": "NO" },
-      "2574808": { "name": "Robbie Anderson", "position": 3, "team": "ARI" },
-      "16790": { "name": "Jarvis Landry", "position": 3, "team": "NO" },
-      "3128724": { "name": "Isaiah McKenzie", "position": 3, "team": "BUF" },
-      "3049899": { "name": "Younghoe Koo", "position": 5, "team": "ATL" },
-      "2971618": { "name": "Nelson Agholor", "position": 3, "team": "NE" },
-      "-16034": { "name": "Texans D/ST", "position": 16, "team": "HOU" },
-      "3051876": { "name": "Evan Engram", "position": 4, "team": "JAX" },
-      "3115375": { "name": "Darrel Williams", "position": 2, "team": "ARI" },
-      "16757": { "name": "Derek Carr", "position": 1, "team": "LV" },
-      "4241474": { "name": "Brian Robinson Jr.", "position": 2, "team": "WSH" },
-      "2976592": { "name": "Sterling Shepard", "position": 3, "team": "NYG" },
-      "-16006": { "name": "Cowboys D/ST", "position": 16, "team": "DAL" },
-      "3046779": { "name": "Jared Goff", "position": 1, "team": "DET" },
-      "-16019": { "name": "Giants D/ST", "position": 16, "team": "NYG" },
-      "3122899": { "name": "Richie James", "position": 3, "team": "NYG" },
-      "2991662": { "name": "Mack Hollins", "position": 3, "team": "LV" },
-      "2576980": { "name": "Marcus Mariota", "position": 1, "team": "ATL" },
-      "4361432": { "name": "Romeo Doubs", "position": 3, "team": "GB" },
-      "4037235": { "name": "Greg Dortch", "position": 3, "team": "ARI" },
-      "3123076": { "name": "David Njoku", "position": 4, "team": "CLE" },
-      "4242433": { "name": "Joshua Palmer", "position": 3, "team": "LAC" },
-      "13981": { "name": "Mark Ingram II", "position": 2, "team": "NO" },
-      "-16016": { "name": "Vikings D/ST", "position": 16, "team": "MIN" },
-      "12460": { "name": "Graham Gano", "position": 5, "team": "NYG" },
-      "-16023": { "name": "Steelers D/ST", "position": 16, "team": "PIT" },
-      "3915486": { "name": "Tyler Conklin", "position": 4, "team": "NYJ" },
-      "4040980": { "name": "Irv Smith Jr.", "position": 4, "team": "MIN" },
-      "2576623": { "name": "DeVante Parker", "position": 3, "team": "NE" },
-      "3115306": { "name": "Josh Reynolds", "position": 3, "team": "DET" },
-      "4039050": { "name": "Devin Duvernay", "position": 3, "team": "BAL" },
-      "-16010": { "name": "Titans D/ST", "position": 16, "team": "TEN" },
-      "4242873": { "name": "Eno Benjamin", "position": 2, "team": "HOU" },
-      "-16015": { "name": "Dolphins D/ST", "position": 16, "team": "MIA" },
-      "4697815": { "name": "Rachaad White", "position": 2, "team": "TB" },
-      "3042778": { "name": "Corey Davis", "position": 3, "team": "NYJ" },
-      "4244732": { "name": "Caleb Huntley", "position": 2, "team": "ATL" },
-      "-16028": { "name": "Commanders D/ST", "position": 16, "team": "WSH" },
-      "-16030": { "name": "Jaguars D/ST", "position": 16, "team": "JAX" },
-      "2975674": { "name": "Robert Tonyan", "position": 4, "team": "GB" },
-      "4240455": { "name": "Deon Jackson", "position": 2, "team": "IND" },
-      "15864": { "name": "Geno Smith", "position": 1, "team": "SEA" },
-      "2473037": { "name": "Jason Myers", "position": 5, "team": "SEA" },
-      "3139033": { "name": "Mike Boone", "position": 2, "team": "DEN" },
-      "4569987": { "name": "Jaylen Warren", "position": 2, "team": "PIT" },
-      "4569587": { "name": "Wan'Dale Robinson", "position": 3, "team": "NYG" },
-      "16486": { "name": "Brett Maher", "position": 5, "team": "DAL" },
-      "14053": { "name": "Randall Cobb", "position": 3, "team": "GB" },
-      "9354": { "name": "Robbie Gould", "position": 5, "team": "SF" },
-      "4360078": { "name": "Alec Pierce", "position": 3, "team": "IND" },
-      "-16029": { "name": "Panthers D/ST", "position": 16, "team": "CAR" },
-      "-16013": { "name": "Raiders D/ST", "position": 16, "team": "LV" },
-      "3126246": { "name": "Dontrell Hilliard", "position": 2, "team": "TEN" },
-      "2979843": { "name": "Kenyan Drake", "position": 2, "team": "BAL" },
-      "4360310": { "name": "Trevor Lawrence", "position": 1, "team": "JAX" },
-      "3051926": { "name": "Gus Edwards", "position": 2, "team": "BAL" },
-      "-16020": { "name": "Jets D/ST", "position": 16, "team": "NYJ" },
-      "4241416": { "name": "Chuba Hubbard", "position": 2, "team": "CAR" },
-      "4367209": { "name": "Greg Dulcich", "position": 4, "team": "DEN" },
-      "3121410": { "name": "Parris Campbell", "position": 3, "team": "IND" },
-      "4035004": { "name": "Mecole Hardman", "position": 3, "team": "KC" },
-      "3917792": { "name": "Daniel Jones", "position": 1, "team": "NYG" },
-      "3116389": { "name": "Samaje Perine", "position": 2, "team": "CIN" },
-      "4430737": { "name": "Kyren Williams", "position": 2, "team": "LAR" },
-      "3924365": { "name": "Hayden Hurst", "position": 4, "team": "CIN" },
-      "15920": { "name": "Latavius Murray", "position": 2, "team": "DEN" },
-      "3123052": { "name": "Michael Badgley", "position": 5, "team": "DET" },
-      "16733": { "name": "Odell Beckham Jr.", "position": 3, "team": "FA" },
-      "-16026": { "name": "Seahawks D/ST", "position": 16, "team": "SEA" },
-      "-16012": { "name": "Chiefs D/ST", "position": 16, "team": "KC" },
-      "3124679": { "name": "Jason Sanders", "position": 5, "team": "MIA" },
-      "17427": { "name": "Cairo Santos", "position": 5, "team": "CHI" },
-      "4362887": { "name": "Justin Fields", "position": 1, "team": "CHI" },
-      "16760": { "name": "Jimmy Garoppolo", "position": 1, "team": "SF" },
-      "-16022": { "name": "Cardinals D/ST", "position": 16, "team": "ARI" },
-      "2565969": { "name": "Taylor Heinicke", "position": 1, "team": "WSH" },
+      "4426388": {
+        "name": "Jameson Williams",
+        "position": 3,
+        "team": "DET"
+      },
+      "3916433": {
+        "name": "Jakobi Meyers",
+        "position": 3,
+        "team": "NE"
+      },
+      "13983": {
+        "name": "A.J. Green",
+        "position": 3,
+        "team": "ARI"
+      },
+      "2573079": {
+        "name": "Carson Wentz",
+        "position": 1,
+        "team": "WSH"
+      },
+      "4035886": {
+        "name": "Khalil Herbert",
+        "position": 2,
+        "team": "CHI"
+      },
+      "12731": {
+        "name": "Ryan Succop",
+        "position": 5,
+        "team": "TB"
+      },
+      "4373626": {
+        "name": "Tyler Allgeier",
+        "position": 2,
+        "team": "ATL"
+      },
+      "3121427": {
+        "name": "Curtis Samuel",
+        "position": 3,
+        "team": "WSH"
+      },
+      "13982": {
+        "name": "Julio Jones",
+        "position": 3,
+        "team": "TB"
+      },
+      "15971": {
+        "name": "Rex Burkhead",
+        "position": 2,
+        "team": "HOU"
+      },
+      "17372": {
+        "name": "Chris Boswell",
+        "position": 5,
+        "team": "PIT"
+      },
+      "3059722": {
+        "name": "Zay Jones",
+        "position": 3,
+        "team": "JAX"
+      },
+      "2573401": {
+        "name": "Tyler Higbee",
+        "position": 4,
+        "team": "LAR"
+      },
+      "3918639": {
+        "name": "Gerald Everett",
+        "position": 4,
+        "team": "LAC"
+      },
+      "16813": {
+        "name": "Logan Thomas",
+        "position": 4,
+        "team": "WSH"
+      },
+      "-16005": {
+        "name": "Browns D/ST",
+        "position": 16,
+        "team": "CLE"
+      },
+      "-16014": {
+        "name": "Rams D/ST",
+        "position": 16,
+        "team": "LAR"
+      },
+      "3122976": {
+        "name": "Jeff Wilson Jr.",
+        "position": 2,
+        "team": "MIA"
+      },
+      "2468609": {
+        "name": "Taysom Hill",
+        "position": 4,
+        "team": "NO"
+      },
+      "2574808": {
+        "name": "Robbie Anderson",
+        "position": 3,
+        "team": "ARI"
+      },
+      "16790": {
+        "name": "Jarvis Landry",
+        "position": 3,
+        "team": "NO"
+      },
+      "3128724": {
+        "name": "Isaiah McKenzie",
+        "position": 3,
+        "team": "BUF"
+      },
+      "3049899": {
+        "name": "Younghoe Koo",
+        "position": 5,
+        "team": "ATL"
+      },
+      "2971618": {
+        "name": "Nelson Agholor",
+        "position": 3,
+        "team": "NE"
+      },
+      "-16034": {
+        "name": "Texans D/ST",
+        "position": 16,
+        "team": "HOU"
+      },
+      "3051876": {
+        "name": "Evan Engram",
+        "position": 4,
+        "team": "JAX"
+      },
+      "3115375": {
+        "name": "Darrel Williams",
+        "position": 2,
+        "team": "ARI"
+      },
+      "16757": {
+        "name": "Derek Carr",
+        "position": 1,
+        "team": "LV"
+      },
+      "4241474": {
+        "name": "Brian Robinson Jr.",
+        "position": 2,
+        "team": "WSH"
+      },
+      "2976592": {
+        "name": "Sterling Shepard",
+        "position": 3,
+        "team": "NYG"
+      },
+      "-16006": {
+        "name": "Cowboys D/ST",
+        "position": 16,
+        "team": "DAL"
+      },
+      "3046779": {
+        "name": "Jared Goff",
+        "position": 1,
+        "team": "DET"
+      },
+      "-16019": {
+        "name": "Giants D/ST",
+        "position": 16,
+        "team": "NYG"
+      },
+      "3122899": {
+        "name": "Richie James",
+        "position": 3,
+        "team": "NYG"
+      },
+      "2991662": {
+        "name": "Mack Hollins",
+        "position": 3,
+        "team": "LV"
+      },
+      "2576980": {
+        "name": "Marcus Mariota",
+        "position": 1,
+        "team": "ATL"
+      },
+      "4361432": {
+        "name": "Romeo Doubs",
+        "position": 3,
+        "team": "GB"
+      },
+      "4037235": {
+        "name": "Greg Dortch",
+        "position": 3,
+        "team": "ARI"
+      },
+      "3123076": {
+        "name": "David Njoku",
+        "position": 4,
+        "team": "CLE"
+      },
+      "4242433": {
+        "name": "Joshua Palmer",
+        "position": 3,
+        "team": "LAC"
+      },
+      "13981": {
+        "name": "Mark Ingram II",
+        "position": 2,
+        "team": "NO"
+      },
+      "-16016": {
+        "name": "Vikings D/ST",
+        "position": 16,
+        "team": "MIN"
+      },
+      "12460": {
+        "name": "Graham Gano",
+        "position": 5,
+        "team": "NYG"
+      },
+      "-16023": {
+        "name": "Steelers D/ST",
+        "position": 16,
+        "team": "PIT"
+      },
+      "3915486": {
+        "name": "Tyler Conklin",
+        "position": 4,
+        "team": "NYJ"
+      },
+      "4040980": {
+        "name": "Irv Smith Jr.",
+        "position": 4,
+        "team": "MIN"
+      },
+      "2576623": {
+        "name": "DeVante Parker",
+        "position": 3,
+        "team": "NE"
+      },
+      "3115306": {
+        "name": "Josh Reynolds",
+        "position": 3,
+        "team": "DET"
+      },
+      "4039050": {
+        "name": "Devin Duvernay",
+        "position": 3,
+        "team": "BAL"
+      },
+      "-16010": {
+        "name": "Titans D/ST",
+        "position": 16,
+        "team": "TEN"
+      },
+      "4242873": {
+        "name": "Eno Benjamin",
+        "position": 2,
+        "team": "NO"
+      },
+      "-16015": {
+        "name": "Dolphins D/ST",
+        "position": 16,
+        "team": "MIA"
+      },
+      "4697815": {
+        "name": "Rachaad White",
+        "position": 2,
+        "team": "TB"
+      },
+      "3042778": {
+        "name": "Corey Davis",
+        "position": 3,
+        "team": "NYJ"
+      },
+      "4244732": {
+        "name": "Caleb Huntley",
+        "position": 2,
+        "team": "ATL"
+      },
+      "-16028": {
+        "name": "Commanders D/ST",
+        "position": 16,
+        "team": "WSH"
+      },
+      "-16030": {
+        "name": "Jaguars D/ST",
+        "position": 16,
+        "team": "JAX"
+      },
+      "2975674": {
+        "name": "Robert Tonyan",
+        "position": 4,
+        "team": "GB"
+      },
+      "4240455": {
+        "name": "Deon Jackson",
+        "position": 2,
+        "team": "IND"
+      },
+      "15864": {
+        "name": "Geno Smith",
+        "position": 1,
+        "team": "SEA"
+      },
+      "2473037": {
+        "name": "Jason Myers",
+        "position": 5,
+        "team": "SEA"
+      },
+      "3139033": {
+        "name": "Mike Boone",
+        "position": 2,
+        "team": "DEN"
+      },
+      "4569987": {
+        "name": "Jaylen Warren",
+        "position": 2,
+        "team": "PIT"
+      },
+      "4569587": {
+        "name": "Wan'Dale Robinson",
+        "position": 3,
+        "team": "NYG"
+      },
+      "16486": {
+        "name": "Brett Maher",
+        "position": 5,
+        "team": "DAL"
+      },
+      "14053": {
+        "name": "Randall Cobb",
+        "position": 3,
+        "team": "GB"
+      },
+      "9354": {
+        "name": "Robbie Gould",
+        "position": 5,
+        "team": "SF"
+      },
+      "4360078": {
+        "name": "Alec Pierce",
+        "position": 3,
+        "team": "IND"
+      },
+      "-16029": {
+        "name": "Panthers D/ST",
+        "position": 16,
+        "team": "CAR"
+      },
+      "-16013": {
+        "name": "Raiders D/ST",
+        "position": 16,
+        "team": "LV"
+      },
+      "3126246": {
+        "name": "Dontrell Hilliard",
+        "position": 2,
+        "team": "TEN"
+      },
+      "2979843": {
+        "name": "Kenyan Drake",
+        "position": 2,
+        "team": "BAL"
+      },
+      "4360310": {
+        "name": "Trevor Lawrence",
+        "position": 1,
+        "team": "JAX"
+      },
+      "3051926": {
+        "name": "Gus Edwards",
+        "position": 2,
+        "team": "BAL"
+      },
+      "-16020": {
+        "name": "Jets D/ST",
+        "position": 16,
+        "team": "NYJ"
+      },
+      "4241416": {
+        "name": "Chuba Hubbard",
+        "position": 2,
+        "team": "CAR"
+      },
+      "4367209": {
+        "name": "Greg Dulcich",
+        "position": 4,
+        "team": "DEN"
+      },
+      "3121410": {
+        "name": "Parris Campbell",
+        "position": 3,
+        "team": "IND"
+      },
+      "4035004": {
+        "name": "Mecole Hardman",
+        "position": 3,
+        "team": "KC"
+      },
+      "3917792": {
+        "name": "Daniel Jones",
+        "position": 1,
+        "team": "NYG"
+      },
+      "3116389": {
+        "name": "Samaje Perine",
+        "position": 2,
+        "team": "CIN"
+      },
+      "4430737": {
+        "name": "Kyren Williams",
+        "position": 2,
+        "team": "LAR"
+      },
+      "3924365": {
+        "name": "Hayden Hurst",
+        "position": 4,
+        "team": "CIN"
+      },
+      "15920": {
+        "name": "Latavius Murray",
+        "position": 2,
+        "team": "DEN"
+      },
+      "3123052": {
+        "name": "Michael Badgley",
+        "position": 5,
+        "team": "DET"
+      },
+      "16733": {
+        "name": "Odell Beckham Jr.",
+        "position": 3,
+        "team": "FA"
+      },
+      "-16026": {
+        "name": "Seahawks D/ST",
+        "position": 16,
+        "team": "SEA"
+      },
+      "-16012": {
+        "name": "Chiefs D/ST",
+        "position": 16,
+        "team": "KC"
+      },
+      "3124679": {
+        "name": "Jason Sanders",
+        "position": 5,
+        "team": "MIA"
+      },
+      "17427": {
+        "name": "Cairo Santos",
+        "position": 5,
+        "team": "CHI"
+      },
+      "4362887": {
+        "name": "Justin Fields",
+        "position": 1,
+        "team": "CHI"
+      },
+      "16760": {
+        "name": "Jimmy Garoppolo",
+        "position": 1,
+        "team": "SF"
+      },
+      "-16022": {
+        "name": "Cardinals D/ST",
+        "position": 16,
+        "team": "ARI"
+      },
+      "2565969": {
+        "name": "Taylor Heinicke",
+        "position": 1,
+        "team": "WSH"
+      },
       "4258195": {
         "name": "Donovan Peoples-Jones",
         "position": 3,
         "team": "CLE"
       },
-      "3050478": { "name": "Jake Elliott", "position": 5, "team": "PHI" },
+      "3050478": {
+        "name": "Jake Elliott",
+        "position": 5,
+        "team": "PHI"
+      },
       "4362630": {
         "name": "Terrace Marshall Jr.",
         "position": 3,
         "team": "CAR"
       },
-      "4248528": { "name": "Christian Watson", "position": 3, "team": "GB" },
-      "4258173": { "name": "Nico Collins", "position": 3, "team": "HOU" },
-      "4035656": { "name": "Ben Skowronek", "position": 3, "team": "LAR" },
-      "3916945": { "name": "Darius Slayton", "position": 3, "team": "NYG" },
-      "3043116": { "name": "Demarcus Robinson", "position": 3, "team": "BAL" },
-      "14993": { "name": "Greg Zuerlein", "position": 5, "team": "NYJ" },
-      "3930066": { "name": "Van Jefferson", "position": 3, "team": "LAR" },
-      "3929645": { "name": "Juwan Johnson", "position": 4, "team": "NO" }
+      "4248528": {
+        "name": "Christian Watson",
+        "position": 3,
+        "team": "GB"
+      },
+      "4258173": {
+        "name": "Nico Collins",
+        "position": 3,
+        "team": "HOU"
+      },
+      "4035656": {
+        "name": "Ben Skowronek",
+        "position": 3,
+        "team": "LAR"
+      },
+      "3916945": {
+        "name": "Darius Slayton",
+        "position": 3,
+        "team": "NYG"
+      },
+      "3043116": {
+        "name": "Demarcus Robinson",
+        "position": 3,
+        "team": "BAL"
+      },
+      "14993": {
+        "name": "Greg Zuerlein",
+        "position": 5,
+        "team": "NYJ"
+      },
+      "3930066": {
+        "name": "Van Jefferson",
+        "position": 3,
+        "team": "LAR"
+      },
+      "3929645": {
+        "name": "Juwan Johnson",
+        "position": 4,
+        "team": "NO"
+      },
+      "4426475": {
+        "name": "Tyrion Davis-Price",
+        "position": 2,
+        "team": "SF"
+      },
+      "4427728": {
+        "name": "Zonovan Knight",
+        "position": 2,
+        "team": "NYJ"
+      },
+      "3843945": {
+        "name": "Foster Moreau",
+        "position": 4,
+        "team": "LV"
+      },
+      "4241410": {
+        "name": "Jelani Woods",
+        "position": 4,
+        "team": "IND"
+      },
+      "4035671": {
+        "name": "Tyler Huntley",
+        "position": 1,
+        "team": "BAL"
+      },
+      "4036416": {
+        "name": "Byron Pringle",
+        "position": 3,
+        "team": "CHI"
+      },
+      "4037457": {
+        "name": "Travis Homer",
+        "position": 2,
+        "team": "SEA"
+      },
+      "4036131": {
+        "name": "Noah Fant",
+        "position": 4,
+        "team": "SEA"
+      },
+      "4361741": {
+        "name": "Brock Purdy",
+        "position": 1,
+        "team": "SF"
+      },
+      "16782": {
+        "name": "Jerick McKinnon",
+        "position": 2,
+        "team": "KC"
+      },
+      "2576581": {
+        "name": "Chris Moore",
+        "position": 3,
+        "team": "HOU"
+      },
+      "4249836": {
+        "name": "Pierre Strong Jr.",
+        "position": 2,
+        "team": "NE"
+      },
+      "4360797": {
+        "name": "Tutu Atwell",
+        "position": 3,
+        "team": "LAR"
+      },
+      "4035676": {
+        "name": "Zack Moss",
+        "position": 2,
+        "team": "IND"
+      },
+      "3150744": {
+        "name": "Chase McLaughlin",
+        "position": 5,
+        "team": "IND"
+      }
     }
   }
 }

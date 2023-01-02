@@ -31,7 +31,7 @@ def main():
         wrapped[league_id] = get_wrapped(league_id)
     with open("Wrapped/wrapped.json", "w") as fh:
         json.dump(wrapped, fh, indent=2)
-    print(json.dumps(wrapped))
+    print("done")
 
 
 def get_wrapped(league_id):
@@ -44,12 +44,20 @@ def get_wrapped(league_id):
 
 
 def fetch(url, decode_json=True):
+    k = f'Wrapped/cache/{url.replace("/", "_")}'
+    try:
+        with open(k) as fh:
+            return json.load(fh)
+    except:
+        pass
     if url in fetch_cache:
         return fetch_cache[url]
     sys.stderr.write(url + "\n")
     raw_data = requests.get(url, cookies={'espn_s2': espn_s2})
     data = raw_data.json() if decode_json else raw_data.text
     fetch_cache[url] = data
+    with open(k, "w") as fh:
+        fh.write(json.dumps(data))
     return data
 
 
