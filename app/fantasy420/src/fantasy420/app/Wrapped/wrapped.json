@@ -460,43 +460,81 @@
         "fieldgoals": [
           {
             "team": "MIN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(3:54 - 2nd) G.Joseph 28 yard field goal is GOOD, Center-A.DePaola, Holder-R.Wright.",
+              "(9:46 - 3rd) G.Joseph 56 yard field goal is GOOD, Center-A.DePaola, Holder-R.Wright.",
+              "(6:48 - 4th) G.Joseph 29 yard field goal is GOOD, Center-A.DePaola, Holder-R.Wright."
+            ]
           },
           {
             "team": "BUF",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(8:48 - 2nd) T.Bass 41 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin.",
+              "(0:00 - 2nd) M.Gay 57 yard field goal is GOOD, Center-M.Orzech, Holder-R.Dixon."
+            ]
           },
           {
             "team": "LAR",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(8:48 - 2nd) T.Bass 41 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin.",
+              "(0:00 - 2nd) M.Gay 57 yard field goal is GOOD, Center-M.Orzech, Holder-R.Dixon."
+            ]
           },
           {
             "team": "NE",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(4:05 - 1st) Jason Sanders 43 Yd Field Goal ",
+              "(0:19 - 3rd) J.Sanders 49 yard field goal is GOOD, Center-B.Ferguson, Holder-T.Morstead."
+            ]
           },
           {
             "team": "LV",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(9:03 - 1st) D.Hopkins 43 yard field goal is GOOD, Center-J.Harris, Holder-J.Scott.",
+              "(2:29 - 1st) D.Carlson 23 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole.",
+              "(1:03 - 3rd) D.Carlson 55 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole."
+            ]
           },
           {
             "team": "DEN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(6:55 - 1st) B.McManus 30 yard field goal is GOOD, Center-J.Bobenmoyer, Holder-C.Waitman.",
+              "(7:20 - 2nd) J.Myers 49 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson.",
+              "(0:00 - 2nd) B.McManus 40 yard field goal is GOOD, Center-J.Bobenmoyer, Holder-C.Waitman.",
+              "(6:13 - 4th) B.McManus 26 yard field goal is GOOD, Center-J.Bobenmoyer, Holder-C.Waitman."
+            ]
           },
           {
             "team": "BAL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(3:16 - 1st) J.Tucker 24 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(0:24 - 2nd) G.Zuerlein 45 yard field goal is GOOD, Center-T.Hennessy, Holder-B.Mann."
+            ]
           },
           {
             "team": "CIN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(7:17 - 1st) E.McPherson 59 yard field goal is GOOD, Center-C.Harris, Holder-K.Huber.",
+              "(2:25 - 1st) C.Boswell 20 yard field goal is GOOD, Center-C.Kuntz, Holder-P.Harvin.",
+              "(0:14 - 2nd) E.McPherson 26 yard field goal is GOOD, Center-C.Harris, Holder-K.Huber.",
+              "(11:13 - 4th) C.Boswell 48 yard field goal is GOOD, Center-C.Kuntz, Holder-P.Harvin.",
+              "(0:00 - OT) C.Boswell 53 yard field goal is GOOD, Center-C.Kuntz, Holder-P.Harvin."
+            ]
           },
           {
             "team": "KC",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(0:02 - 2nd) H.Butker 54 yard field goal is GOOD, Center-J.Winchester, Holder-T.Townsend."
+            ]
           },
           {
             "team": "IND",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(5:13 - 1st) R.Blankenship 45 yard field goal is GOOD, Center-L.Rhodes, Holder-M.Haack.",
+              "(7:50 - 2nd) K.Fairbairn 45 yard field goal is GOOD, Center-J.Weeks, Holder-C.Johnston.",
+              "(12:17 - 3rd) K.Fairbairn 43 yard field goal is GOOD, Center-J.Weeks, Holder-C.Johnston.",
+              "(10:44 - 4th) R.Blankenship 27 yard field goal is GOOD, Center-L.Rhodes, Holder-M.Haack."
+            ]
           }
         ]
       },
@@ -943,43 +981,81 @@
         "fieldgoals": [
           {
             "team": "LV",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(11:40 - 2nd) D.Carlson 32 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole.",
+              "(0:00 - 2nd) D.Carlson 55 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole.",
+              "(1:38 - 3rd) D.Carlson 25 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole."
+            ]
           },
           {
             "team": "TB",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(9:02 - 1st) W.Lutz 31 yard field goal is GOOD, Center-Z.Wood, Holder-B.Gillikin.",
+              "(6:44 - 3rd) R.Succop 47 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda.",
+              "(5:50 - 4th) R.Succop 47 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda."
+            ]
           },
           {
             "team": "MIN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(0:00 - 2nd) J.Elliott 38 yard field goal is GOOD, Center-R.Lovato, Holder-A.Siposs."
+            ]
           },
           {
             "team": "BAL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(2:18 - 4th) J.Tucker 51 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout. Penalty on MIA-J.Bethel, Defensive Offside, declined."
+            ]
           },
           {
             "team": "PIT",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(6:42 - 1st) N.Folk 28 yard field goal is GOOD, Center-J.Cardona, Holder-J.Bailey.",
+              "(8:35 - 2nd) C.Boswell 36 yard field goal is GOOD, Center-C.Kuntz, Holder-P.Harvin.",
+              "(5:44 - 3rd) C.Boswell 52 yard field goal is GOOD, Center-C.Kuntz, Holder-P.Harvin."
+            ]
           },
           {
             "team": "BUF",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(7:20 - 2nd) T.Bass 49 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin.",
+              "(7:32 - 3rd) T.Bass 37 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin."
+            ]
           },
           {
             "team": "LAR",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(2:44 - 2nd) Y.Koo 26 yard field goal is GOOD, Center-L.McCullough, Holder-B.Pinion.",
+              "(12:13 - 4th) M.Gay 20 yard field goal is GOOD, Center-M.Orzech, Holder-R.Dixon."
+            ]
           },
           {
             "team": "CIN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(3:05 - 1st) E.McPherson 43 yard field goal is GOOD, Center-C.Adomitis, Holder-K.Huber.",
+              "(0:09 - 2nd) B.Maher 54 yard field goal is GOOD, Center-J.McQuaide, Holder-B.Anger.",
+              "(9:41 - 3rd) E.McPherson 50 yard field goal is GOOD, Center-C.Adomitis, Holder-K.Huber.",
+              "(4:05 - 3rd) E.McPherson 46 yard field goal is GOOD, Center-C.Adomitis, Holder-K.Huber.",
+              "(0:00 - 4th) B.Maher 50 yard field goal is GOOD, Center-J.McQuaide, Holder-B.Anger."
+            ]
           },
           {
             "team": "DEN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(5:30 - 1st) B.McManus 20 yard field goal is GOOD, Center-J.Bobenmoyer, Holder-C.Waitman.",
+              "(2:19 - 1st) K.Fairbairn 40 yard field goal is GOOD, Center-J.Weeks, Holder-C.Johnston.",
+              "(7:20 - 2nd) K.Fairbairn 44 yard field goal is GOOD, Center-J.Weeks, Holder-C.Johnston.",
+              "(0:20 - 2nd) B.McManus 24 yard field goal is GOOD, Center-J.Bobenmoyer, Holder-C.Waitman.",
+              "(8:33 - 3rd) K.Fairbairn 24 yard field goal is GOOD, Center-J.Weeks, Holder-C.Johnston.",
+              "(3:36 - 4th) B.McManus 50 yard field goal is GOOD, Center-J.Bobenmoyer, Holder-C.Waitman. Penalty on HST-T.Smith, Defensive Offside, declined."
+            ]
           },
           {
             "team": "ATL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(2:44 - 2nd) Y.Koo 26 yard field goal is GOOD, Center-L.McCullough, Holder-B.Pinion.",
+              "(12:13 - 4th) M.Gay 20 yard field goal is GOOD, Center-M.Orzech, Holder-R.Dixon."
+            ]
           }
         ]
       },
@@ -1425,43 +1501,83 @@
         "fieldgoals": [
           {
             "team": "PIT",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(2:31 - 3rd) C.York 34 yard field goal is GOOD, Center-C.Hughlett, Holder-C.Bojorquez.",
+              "(1:48 - 4th) C.Boswell 34 yard field goal is GOOD, Center-C.Kuntz, Holder-P.Harvin."
+            ]
           },
           {
             "team": "BAL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(14:57 - 2nd) N.Folk 35 yard field goal is GOOD, Center-J.Cardona, Holder-J.Bailey. NE 6-Folk 57th consecutive FG under 50 yds, new NFL record.",
+              "(0:00 - 2nd) N.Folk 50 yard field goal is GOOD, Center-J.Cardona, Holder-J.Bailey.",
+              "(2:33 - 3rd) J.Tucker 56 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout. BAL 9-Tucker 50th career 50+ yard FG."
+            ]
           },
           {
             "team": "TB",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(9:05 - 1st) R.Succop 45 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda.",
+              "(6:22 - 3rd) R.Succop 45 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda."
+            ]
           },
           {
             "team": "CIN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(5:04 - 1st) G.Zuerlein 50 yard field goal is GOOD, Center-T.Hennessy, Holder-B.Mann.",
+              "(1:49 - 1st) G.Zuerlein 40 yard field goal is GOOD, Center-T.Hennessy, Holder-B.Mann.",
+              "(7:48 - 2nd) E.McPherson 22 yard field goal is GOOD, Center-C.Adomitis, Holder-K.Huber.",
+              "(5:28 - 2nd) E.McPherson 43 yard field goal is GOOD, Center-C.Adomitis, Holder-K.Huber.",
+              "(0:00 - 2nd) Greg Zuerlein 52 Yd Field Goal ",
+              "(0:41 - 3rd) G.Zuerlein 43 yard field goal is GOOD, Center-T.Hennessy, Holder-B.Mann."
+            ]
           },
           {
             "team": "NE",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(14:57 - 2nd) N.Folk 35 yard field goal is GOOD, Center-J.Cardona, Holder-J.Bailey. NE 6-Folk 57th consecutive FG under 50 yds, new NFL record.",
+              "(0:00 - 2nd) N.Folk 50 yard field goal is GOOD, Center-J.Cardona, Holder-J.Bailey.",
+              "(2:33 - 3rd) J.Tucker 56 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout. BAL 9-Tucker 50th career 50+ yard FG."
+            ]
           },
           {
             "team": "LV",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(2:19 - 1st) D.Carlson 21 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole.",
+              "(0:00 - 2nd) R.Bullock 48 yard field goal is GOOD, Center-M.Cox, Holder-R.Stonehouse.",
+              "(6:57 - 3rd) D.Carlson 32 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole.",
+              "(3:29 - 4th) D.Carlson 35 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole."
+            ]
           },
           {
             "team": "LAR",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(9:45 - 1st) M.Gay 22 yard field goal is GOOD, Center-M.Orzech, Holder-R.Dixon.",
+              "(13:23 - 2nd) M.Gay 40 yard field goal is GOOD, Center-M.Orzech, Holder-R.Dixon.",
+              "(1:51 - 2nd) M.Prater 23 yard field goal is GOOD, Center-A.Brewer, Holder-A.Lee.",
+              "(0:02 - 2nd) M.Prater 43 yard field goal is GOOD, Center-A.Brewer, Holder-A.Lee.",
+              "(5:10 - 3rd) M.Prater 49 yard field goal is GOOD, Center-A.Brewer, Holder-A.Lee.",
+              "(1:07 - 4th) M.Prater 31 yard field goal is GOOD, Center-A.Brewer, Holder-A.Lee."
+            ]
           },
           {
             "team": "MIN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(8:36 - 3rd) A.Seibert 40 yard field goal is GOOD, Center-S.Daly, Holder-J.Fox."
+            ]
           },
           {
             "team": "DEN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(11:56 - 2nd) B.McManus 55 yard field goal is GOOD, Center-J.Bobenmoyer, Holder-C.Waitman.",
+              "(14:10 - 4th) R.Gould 51 yard field goal is GOOD, Center-T.Pepper, Holder-M.Wishnowsky."
+            ]
           },
           {
             "team": "BUF",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(3:40 - 3rd) T.Bass 30 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin."
+            ]
           }
         ]
       },
@@ -1916,43 +2032,100 @@
         "fieldgoals": [
           {
             "team": "PIT",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(4:03 - 1st) G.Zuerlein 38 yard field goal is GOOD, Center-T.Hennessy, Holder-B.Mann.",
+              "(8:30 - 2nd) C.Boswell 51 yard field goal is GOOD, Center-C.Kuntz, Holder-P.Harvin.",
+              "(0:00 - 2nd) C.Boswell 59 yard field goal is GOOD, Center-C.Kuntz, Holder-P.Harvin."
+            ]
           },
           {
             "team": "CIN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(6:05 - 1st) J.Sanders 23 yard field goal is GOOD, Center-B.Ferguson, Holder-T.Morstead.",
+              "(7:31 - 2nd) J.Sanders 48 yard field goal is GOOD, Center-B.Ferguson, Holder-T.Morstead.",
+              "(2:40 - 3rd) J.Sanders 20 yard field goal is GOOD, Center-B.Ferguson, Holder-T.Morstead.",
+              "(12:00 - 4th) E.McPherson 19 yard field goal is GOOD, Center-C.Adomitis, Holder-K.Huber.",
+              "(6:13 - 4th) E.McPherson 57 yard field goal is GOOD, Center-C.Adomitis, Holder-K.Huber."
+            ]
           },
           {
             "team": "LAR",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(6:48 - 1st) M.Gay 39 yard field goal is GOOD, Center-M.Orzech, Holder-R.Dixon.",
+              "(6:22 - 2nd) M.Gay 29 yard field goal is GOOD, Center-M.Orzech, Holder-R.Dixon.",
+              "(4:25 - 3rd) M.Gay 26 yard field goal is GOOD, Center-M.Orzech, Holder-R.Dixon.",
+              "(14:53 - 4th) R.Gould 25 yard field goal is GOOD, Center-T.Pepper, Holder-M.Wishnowsky."
+            ]
           },
           {
             "team": "BAL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(10:14 - 1st) T.Bass 38 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin.",
+              "(12:54 - 2nd) J.Tucker 42 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(3:39 - 2nd) J.Tucker 51 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(9:42 - 3rd) T.Bass 39 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin.",
+              "(0:00 - 4th) T.Bass 21 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin."
+            ]
           },
           {
             "team": "NYG",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(8:27 - 1st) M.Badgley 29 yard field goal is GOOD, Center-P.Scales, Holder-T.Gill.",
+              "(1:30 - 1st) M.Badgley 22 yard field goal is GOOD, Center-P.Scales, Holder-T.Gill.",
+              "(1:44 - 2nd) M.Badgley 40 yard field goal is GOOD, Center-P.Scales, Holder-T.Gill.",
+              "(11:02 - 3rd) M.Badgley 35 yard field goal is GOOD, Center-P.Scales, Holder-T.Gill.",
+              "(1:33 - 3rd) G.Gano 44 yard field goal is GOOD, Center-C.Kreiter, Holder-J.Gillan.",
+              "(5:31 - 4th) G.Gano 43 yard field goal is GOOD, Center-C.Kreiter, Holder-J.Gillan."
+            ]
           },
           {
             "team": "DEN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(9:52 - 1st) D.Carlson 26 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole.",
+              "(8:03 - 2nd) B.McManus 28 yard field goal is GOOD, Center-J.Bobenmoyer, Holder-C.Waitman.",
+              "(0:00 - 2nd) D.Carlson 39 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole.",
+              "(2:27 - 3rd) D.Carlson 22 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole.",
+              "(9:50 - 4th) D.Carlson 30 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole."
+            ]
           },
           {
             "team": "TB",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(10:12 - 1st) R.Succop 45 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda.",
+              "(11:26 - 3rd) M.Wright 44 yard field goal is GOOD, Center-J.Winchester, Holder-T.Townsend.",
+              "(10:47 - 4th) M.Wright 32 yard field goal is GOOD, Center-J.Winchester, Holder-T.Townsend."
+            ]
           },
           {
             "team": "MIN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(1:04 - 2nd) G.Joseph 28 yard field goal is GOOD, Center-A.DePaola, Holder-R.Wright.",
+              "(0:00 - 2nd) G.Joseph 36 yard field goal is GOOD, Center-A.DePaola, Holder-R.Wright.",
+              "(9:23 - 3rd) G.Joseph 24 yard field goal is GOOD, Center-A.DePaola, Holder-R.Wright.",
+              "(14:14 - 4th) G.Joseph 46 yard field goal is GOOD, Center-A.DePaola, Holder-R.Wright.",
+              "(1:51 - 4th) W.Lutz 60 yard field goal is GOOD, Center-Z.Wood, Holder-B.Gillikin.",
+              "(0:24 - 4th) G.Joseph 47 yard field goal is GOOD, Center-A.DePaola, Holder-R.Wright."
+            ]
           },
           {
             "team": "LV",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(9:52 - 1st) D.Carlson 26 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole.",
+              "(8:03 - 2nd) B.McManus 28 yard field goal is GOOD, Center-J.Bobenmoyer, Holder-C.Waitman.",
+              "(0:00 - 2nd) D.Carlson 39 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole.",
+              "(2:27 - 3rd) D.Carlson 22 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole.",
+              "(9:50 - 4th) D.Carlson 30 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole."
+            ]
           },
           {
             "team": "BUF",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(10:14 - 1st) T.Bass 38 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin.",
+              "(12:54 - 2nd) J.Tucker 42 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(3:39 - 2nd) J.Tucker 51 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(9:42 - 3rd) T.Bass 39 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin.",
+              "(0:00 - 4th) T.Bass 21 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin."
+            ]
           }
         ]
       },
@@ -2406,39 +2579,82 @@
         "fieldgoals": [
           {
             "team": "ATL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(1:18 - 2nd) R.Succop 21 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda.",
+              "(0:00 - 2nd) R.Succop 44 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda."
+            ]
           },
           {
             "team": "DEN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(9:28 - 1st) B.McManus 33 yard field goal is GOOD, Center-J.Bobenmoyer, Holder-C.Waitman.",
+              "(10:58 - 2nd) B.McManus 44 yard field goal is GOOD, Center-J.Bobenmoyer, Holder-C.Waitman.",
+              "(0:12 - 2nd) C.McLaughlin 52 yard field goal is GOOD, Center-L.Rhodes, Holder-M.Haack.",
+              "(8:51 - 3rd) C.McLaughlin 51 yard field goal is GOOD, Center-L.Rhodes, Holder-M.Haack.",
+              "(3:19 - 3rd) B.McManus 45 yard field goal is GOOD, Center-J.Bobenmoyer, Holder-C.Waitman.",
+              "(0:05 - 4th) C.McLaughlin 31 yard field goal is GOOD, Center-L.Rhodes, Holder-M.Haack.",
+              "(5:50 - OT) C.McLaughlin 48 yard field goal is GOOD, Center-L.Rhodes, Holder-M.Haack."
+            ]
           },
           {
             "team": "MIN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(6:06 - 1st) C.Santos 50 yard field goal is GOOD, Center-P.Scales, Holder-T.Gill.",
+              "(1:05 - 3rd) C.Santos 43 yard field goal is GOOD, Center-P.Scales, Holder-T.Gill.",
+              "(9:26 - 4th) C.Santos 51 yard field goal is GOOD, Center-P.Scales, Holder-T.Gill."
+            ]
           },
           {
             "team": "CIN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(8:03 - 1st) J.Tucker 37 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(0:04 - 2nd) E.McPherson 40 yard field goal is GOOD, Center-C.Adomitis, Holder-K.Huber.",
+              "(10:49 - 3rd) J.Tucker 58 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(9:42 - 4th) J.Tucker 25 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(0:00 - 4th) J.Tucker 43 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout."
+            ]
           },
           {
             "team": "BUF",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(5:38 - 1st) C.Boswell 29 yard field goal is GOOD, Center-C.Kuntz, Holder-P.Harvin.",
+              "(2:41 - 1st) T.Bass 35 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin."
+            ]
           },
           {
             "team": "TB",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(1:18 - 2nd) R.Succop 21 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda.",
+              "(0:00 - 2nd) R.Succop 44 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda."
+            ]
           },
           {
             "team": "BAL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(8:03 - 1st) J.Tucker 37 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(0:04 - 2nd) E.McPherson 40 yard field goal is GOOD, Center-C.Adomitis, Holder-K.Huber.",
+              "(10:49 - 3rd) J.Tucker 58 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(9:42 - 4th) J.Tucker 25 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(0:00 - 4th) J.Tucker 43 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout."
+            ]
           },
           {
             "team": "NYG",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(11:05 - 1st) M.Crosby 46 yard field goal is GOOD, Center-J.Coco, Holder-P.O'Donnell.",
+              "(0:09 - 1st) G.Gano 48 yard field goal is GOOD, Center-C.Kreiter, Holder-J.Gillan.",
+              "(0:00 - 2nd) Mason Crosby 48 Yd Field Goal ",
+              "(7:57 - 3rd) G.Gano 37 yard field goal is GOOD, Center-C.Kreiter, Holder-J.Gillan."
+            ]
           },
           {
             "team": "LV",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(9:22 - 2nd) D.Carlson 53 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole.",
+              "(0:17 - 2nd) D.Carlson 50 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole.",
+              "(0:00 - 2nd) M.Wright 59 yard field goal is GOOD, Center-J.Winchester, Holder-T.Townsend.",
+              "(14:05 - 4th) D.Carlson 47 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole."
+            ]
           }
         ]
       },
@@ -2888,31 +3104,66 @@
         "fieldgoals": [
           {
             "team": "BUF",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(13:32 - 2nd) T.Bass 39 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin.",
+              "(0:00 - 2nd) Harrison Butker 62 Yd Field Goal",
+              "(9:49 - 4th) H.Butker 44 yard field goal is GOOD, Center-J.Winchester, Holder-T.Townsend."
+            ]
           },
           {
             "team": "TB",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(2:50 - 1st) R.Succop 30 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda.",
+              "(11:01 - 2nd) R.Succop 27 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda.",
+              "(4:06 - 2nd) C.Boswell 55 yard field goal is GOOD, Center-C.Kuntz, Holder-P.Harvin.",
+              "(0:00 - 2nd) R.Succop 54 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda.",
+              "(13:55 - 3rd) C.Boswell 25 yard field goal is GOOD, Center-C.Kuntz, Holder-P.Harvin.",
+              "(7:24 - 3rd) R.Succop 24 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda."
+            ]
           },
           {
             "team": "SEA",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(10:20 - 1st) M.Ammendola 23 yard field goal is GOOD, Center-A.Brewer, Holder-A.Lee.",
+              "(6:41 - 1st) J.Myers 39 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson.",
+              "(6:05 - 2nd) J.Myers 27 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson.",
+              "(0:00 - 2nd) Jason Myers 34 Yd Field Goal ",
+              "(4:11 - 3rd) J.Myers 32 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson."
+            ]
           },
           {
             "team": "BAL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(1:45 - 2nd) J.Tucker 34 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(9:41 - 3rd) J.Tucker 23 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(2:00 - 3rd) G.Gano 34 yard field goal is GOOD, Center-C.Kreiter, Holder-J.Gillan."
+            ]
           },
           {
             "team": "NYG",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(1:45 - 2nd) J.Tucker 34 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(9:41 - 3rd) J.Tucker 23 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(2:00 - 3rd) G.Gano 34 yard field goal is GOOD, Center-C.Kreiter, Holder-J.Gillan."
+            ]
           },
           {
             "team": "CIN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(10:28 - 2nd) W.Lutz 35 yard field goal is GOOD, Center-Z.Wood, Holder-B.Gillikin.",
+              "(0:01 - 2nd) W.Lutz 30 yard field goal is GOOD, Center-Z.Wood, Holder-B.Gillikin.",
+              "(7:12 - 3rd) W.Lutz 37 yard field goal is GOOD, Center-Z.Wood, Holder-B.Gillikin.",
+              "(11:07 - 4th) W.Lutz 31 yard field goal is GOOD, Center-Z.Wood, Holder-B.Gillikin.",
+              "(3:42 - 4th) Evan McPherson 52 Yd Field Goal "
+            ]
           },
           {
             "team": "DAL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(7:53 - 2nd) J.Elliott 51 yard field goal is GOOD, Center-R.Lovato, Holder-A.Siposs.",
+              "(1:47 - 2nd) J.Elliott 34 yard field goal is GOOD, Center-R.Lovato, Holder-A.Siposs.",
+              "(0:29 - 2nd) B.Maher 30 yard field goal is GOOD, Center-M.Overton, Holder-B.Anger."
+            ]
           },
           {
             "team": "SF",
@@ -2920,11 +3171,18 @@
           },
           {
             "team": "LAR",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(8:38 - 1st) E.Pineiro 42 yard field goal is GOOD, Center-J.Jansen, Holder-J.Hekker.",
+              "(4:37 - 3rd) M.Gay 21 yard field goal is GOOD, Center-M.Orzech, Holder-R.Dixon."
+            ]
           },
           {
             "team": "KC",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(13:32 - 2nd) T.Bass 39 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin.",
+              "(0:00 - 2nd) Harrison Butker 62 Yd Field Goal",
+              "(9:49 - 4th) H.Butker 44 yard field goal is GOOD, Center-J.Winchester, Holder-T.Townsend."
+            ]
           }
         ]
       },
@@ -3373,47 +3631,93 @@
         "fieldgoals": [
           {
             "team": "BAL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(3:27 - 1st) J.Tucker 32 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(0:18 - 1st) C.York 41 yard field goal is GOOD, Center-C.Hughlett, Holder-C.Bojorquez.",
+              "(10:05 - 2nd) J.Tucker 34 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(2:40 - 3rd) C.York 37 yard field goal is GOOD, Center-C.Hughlett, Holder-C.Bojorquez.",
+              "(11:24 - 4th) J.Tucker 55 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout."
+            ]
           },
           {
             "team": "PIT",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(5:32 - 1st) J.Sanders 24 yard field goal is GOOD, Center-B.Ferguson, Holder-T.Morstead.",
+              "(2:27 - 1st) J.Sanders 42 yard field goal is GOOD, Center-B.Ferguson, Holder-T.Morstead.",
+              "(11:44 - 2nd) C.Boswell 45 yard field goal is GOOD, Center-C.Kuntz, Holder-P.Harvin.",
+              "(0:02 - 2nd) J.Sanders 47 yard field goal is GOOD, Center-B.Ferguson, Holder-T.Morstead."
+            ]
           },
           {
             "team": "LV",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(9:54 - 1st) D.Carlson 50 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole.",
+              "(4:57 - 2nd) K.Fairbairn 55 yard field goal is GOOD, Center-J.Weeks, Holder-C.Johnston.",
+              "(10:59 - 3rd) K.Fairbairn 35 yard field goal is GOOD, Center-J.Weeks, Holder-C.Johnston."
+            ]
           },
           {
             "team": "SEA",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(1:08 - 1st) J.Myers 46 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson.",
+              "(1:06 - 3rd) J.Myers 34 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson.",
+              "(9:09 - 4th) J.Myers 50 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson."
+            ]
           },
           {
             "team": "NE",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(9:02 - 1st) C.Santos 42 yard field goal is GOOD, Center-P.Scales, Holder-T.Gill.",
+              "(0:00 - 2nd) C.Santos 23 yard field goal is GOOD, Center-P.Scales, Holder-T.Gill.",
+              "(9:47 - 3rd) C.Santos 38 yard field goal is GOOD, Center-P.Scales, Holder-T.Gill.",
+              "(3:50 - 3rd) C.Santos 50 yard field goal is GOOD, Center-P.Scales, Holder-T.Gill."
+            ]
           },
           {
             "team": "NYG",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(13:23 - 2nd) R.Patterson 27 yard field goal is GOOD, Center-R.Matiscik, Holder-L.Cooke.",
+              "(7:27 - 2nd) G.Gano 33 yard field goal is GOOD, Center-C.Kreiter, Holder-J.Gillan.",
+              "(0:28 - 2nd) G.Gano 33 yard field goal is GOOD, Center-C.Kreiter, Holder-J.Gillan.",
+              "(1:04 - 4th) G.Gano 34 yard field goal is GOOD, Center-C.Kreiter, Holder-J.Gillan."
+            ]
           },
           {
             "team": "DAL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(3:58 - 1st) M.Badgley 40 yard field goal is GOOD, Center-S.Daly, Holder-J.Fox.",
+              "(12:24 - 2nd) B.Maher 22 yard field goal is GOOD, Center-M.Overton, Holder-B.Anger.",
+              "(7:59 - 2nd) M.Badgley 53 yard field goal is GOOD, Center-S.Daly, Holder-J.Fox."
+            ]
           },
           {
             "team": "CIN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(0:00 - 2nd) Y.Koo 43 yard field goal is GOOD, Center-L.McCullough, Holder-B.Pinion."
+            ]
           },
           {
             "team": "DEN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(3:37 - 2nd) B.McManus 44 yard field goal is GOOD, Center-M.Fraboni, Holder-C.Waitman.",
+              "(0:00 - 2nd) G.Zuerlein 45 yard field goal is GOOD, Center-T.Hennessy, Holder-B.Mann.",
+              "(12:49 - 4th) G.Zuerlein 33 yard field goal is GOOD, Center-T.Hennessy, Holder-B.Mann.",
+              "(4:35 - 4th) G.Zuerlein 40 yard field goal is GOOD, Center-T.Hennessy, Holder-B.Mann."
+            ]
           },
           {
             "team": "TB",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(13:38 - 4th) R.Succop 27 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda."
+            ]
           },
           {
             "team": "KC",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(10:22 - 1st) R.Gould 30 yard field goal is GOOD, Center-T.Pepper, Holder-M.Wishnowsky.",
+              "(12:11 - 2nd) R.Gould 50 yard field goal is GOOD, Center-T.Pepper, Holder-M.Wishnowsky.",
+              "(7:41 - 3rd) R.Gould 49 yard field goal is GOOD, Center-T.Pepper, Holder-M.Wishnowsky."
+            ]
           }
         ]
       },
@@ -3869,47 +4173,94 @@
         "fieldgoals": [
           {
             "team": "DEN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(8:43 - 2nd) R.Patterson 37 yard field goal is GOOD, Center-R.Matiscik, Holder-L.Cooke."
+            ]
           },
           {
             "team": "NE",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(8:14 - 1st) G.Zuerlein 28 yard field goal is GOOD, Center-T.Hennessy, Holder-B.Mann.",
+              "(0:00 - 1st) N.Folk 31 yard field goal is GOOD, Center-J.Cardona, Holder-J.Bailey.",
+              "(0:00 - 2nd) N.Folk 42 yard field goal is GOOD, Center-J.Cardona, Holder-J.Bailey.",
+              "(5:23 - 3rd) N.Folk 49 yard field goal is GOOD, Center-J.Cardona, Holder-J.Bailey.",
+              "(2:39 - 3rd) N.Folk 45 yard field goal is GOOD, Center-J.Cardona, Holder-J.Bailey.",
+              "(10:35 - 4th) N.Folk 52 yard field goal is GOOD, Center-J.Cardona, Holder-J.Bailey."
+            ]
           },
           {
             "team": "LV",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(12:43 - 2nd) W.Lutz 37 yard field goal is GOOD, Center-Z.Wood, Holder-B.Gillikin."
+            ]
           },
           {
             "team": "SEA",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(1:38 - 2nd) J.Myers 35 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson.",
+              "(6:04 - 3rd) G.Gano 31 yard field goal is GOOD, Center-C.Kreiter, Holder-J.Gillan.",
+              "(2:42 - 3rd) J.Myers 51 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson.",
+              "(11:17 - 4th) G.Gano 45 yard field goal is GOOD, Center-C.Kreiter, Holder-J.Gillan."
+            ]
           },
           {
             "team": "DAL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(0:00 - 2nd) C.Santos 36 yard field goal is GOOD, Center-P.Scales, Holder-T.Gill."
+            ]
           },
           {
             "team": "NYG",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(1:38 - 2nd) J.Myers 35 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson.",
+              "(6:04 - 3rd) G.Gano 31 yard field goal is GOOD, Center-C.Kreiter, Holder-J.Gillan.",
+              "(2:42 - 3rd) J.Myers 51 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson.",
+              "(11:17 - 4th) G.Gano 45 yard field goal is GOOD, Center-C.Kreiter, Holder-J.Gillan."
+            ]
           },
           {
             "team": "BUF",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(0:00 - 2nd) T.Bass 42 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin.",
+              "(10:20 - 3rd) M.Crosby 38 yard field goal is GOOD, Center-J.Coco, Holder-P.O'Donnell.",
+              "(5:59 - 3rd) T.Bass 38 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin."
+            ]
           },
           {
             "team": "CIN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(0:00 - 2nd) C.York 55 yard field goal is GOOD, Center-C.Hughlett, Holder-C.Bojorquez."
+            ]
           },
           {
             "team": "TB",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(11:03 - 1st) J.Tucker 22 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(0:26 - 1st) R.Succop 31 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda.",
+              "(12:26 - 4th) R.Succop 30 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda.",
+              "(4:54 - 4th) R.Succop 26 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda.",
+              "(2:12 - 4th) J.Tucker 30 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout."
+            ]
           },
           {
             "team": "BAL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(11:03 - 1st) J.Tucker 22 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(0:26 - 1st) R.Succop 31 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda.",
+              "(12:26 - 4th) R.Succop 30 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda.",
+              "(4:54 - 4th) R.Succop 26 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda.",
+              "(2:12 - 4th) J.Tucker 30 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout."
+            ]
           },
           {
             "team": "ATL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(6:50 - 1st) E.Pineiro 37 yard field goal is GOOD, Center-J.Jansen, Holder-J.Hekker.",
+              "(11:33 - 3rd) E.Pineiro 42 yard field goal is GOOD, Center-J.Jansen, Holder-J.Hekker.",
+              "(7:33 - 4th) Y.Koo 30 yard field goal is GOOD, Center-L.McCullough, Holder-B.Pinion.",
+              "(0:36 - 4th) Y.Koo 34 yard field goal is GOOD, Center-L.McCullough, Holder-B.Pinion.",
+              "(1:55 - OT) Y.Koo 41 yard field goal is GOOD, Center-L.McCullough, Holder-B.Pinion."
+            ]
           }
         ]
       },
@@ -4357,47 +4708,89 @@
         "fieldgoals": [
           {
             "team": "DET",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(6:36 - 4th) M.Crosby 25 yard field goal is GOOD, Center-J.Coco, Holder-P.O'Donnell."
+            ]
           },
           {
             "team": "KC",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(6:47 - 1st) H.Butker 23 yard field goal is GOOD, Center-J.Winchester, Holder-T.Townsend.",
+              "(9:58 - 3rd) R.Bullock 44 yard field goal is GOOD, Center-M.Cox, Holder-R.Stonehouse.",
+              "(4:04 - OT) H.Butker 28 yard field goal is GOOD, Center-J.Winchester, Holder-T.Townsend."
+            ]
           },
           {
             "team": "NE",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(13:30 - 2nd) N.Folk 49 yard field goal is GOOD, Center-J.Cardona, Holder-J.Bailey.",
+              "(8:50 - 2nd) N.Folk 43 yard field goal is GOOD, Center-J.Cardona, Holder-J.Bailey.",
+              "(8:00 - 3rd) C.McLaughlin 40 yard field goal is GOOD, Center-L.Rhodes, Holder-M.Haack.",
+              "(4:17 - 3rd) N.Folk 43 yard field goal is GOOD, Center-J.Cardona, Holder-J.Bailey.",
+              "(10:10 - 4th) N.Folk 28 yard field goal is GOOD, Center-J.Cardona, Holder-J.Bailey."
+            ]
           },
           {
             "team": "BUF",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(0:31 - 1st) G.Zuerlein 53 yard field goal is GOOD, Center-T.Hennessy, Holder-B.Mann.",
+              "(13:33 - 4th) T.Bass 51 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin.",
+              "(1:43 - 4th) G.Zuerlein 28 yard field goal is GOOD, Center-T.Hennessy, Holder-B.Mann."
+            ]
           },
           {
             "team": "ATL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(0:52 - 1st) Y.Koo 29 yard field goal is GOOD, Center-L.McCullough, Holder-B.Pinion.",
+              "(5:27 - 4th) C.Dicker 31 yard field goal is GOOD, Center-J.Harris, Holder-J.Scott.",
+              "(0:00 - 4th) C.Dicker 37 yard field goal is GOOD, Center-J.Harris, Holder-J.Scott."
+            ]
           },
           {
             "team": "LV",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(14:08 - 2nd) D.Carlson 38 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole.",
+              "(0:45 - 2nd) D.Carlson 38 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole.",
+              "(0:00 - 2nd) R.Patterson 44 yard field goal is GOOD, Center-R.Matiscik, Holder-L.Cooke.",
+              "(1:03 - 4th) R.Patterson 48 yard field goal is GOOD, Center-R.Matiscik, Holder-L.Cooke."
+            ]
           },
           {
             "team": "SEA",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(10:50 - 1st) J.Myers 49 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson."
+            ]
           },
           {
             "team": "BAL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(0:00 - 2nd) W.Lutz 33 yard field goal is GOOD, Center-Z.Wood, Holder-B.Gillikin.",
+              "(8:25 - 3rd) J.Tucker 32 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(1:25 - 3rd) W.Lutz 37 yard field goal is GOOD, Center-Z.Wood, Holder-B.Gillikin.",
+              "(8:31 - 4th) J.Tucker 41 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout."
+            ]
           },
           {
             "team": "MIA",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(11:03 - 1st) C.Santos 32 yard field goal is GOOD, Center-P.Scales, Holder-T.Gill."
+            ]
           },
           {
             "team": "TB",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(7:16 - 1st) R.Succop 20 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda.",
+              "(0:24 - 2nd) R.Succop 38 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda.",
+              "(9:14 - 3rd) M.Gay 26 yard field goal is GOOD, Center-M.Orzech, Holder-R.Dixon.",
+              "(0:09 - 3rd) M.Gay 35 yard field goal is GOOD, Center-M.Orzech, Holder-R.Dixon.",
+              "(8:07 - 4th) R.Succop 50 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda."
+            ]
           },
           {
             "team": "CHI",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(11:03 - 1st) C.Santos 32 yard field goal is GOOD, Center-P.Scales, Holder-T.Gill."
+            ]
           },
           {
             "team": "CIN",
@@ -4858,47 +5251,90 @@
         "fieldgoals": [
           {
             "team": "LV",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(12:38 - 2nd) C.McLaughlin 48 yard field goal is GOOD, Center-L.Rhodes, Holder-M.Haack.",
+              "(0:00 - 2nd) C.McLaughlin 48 yard field goal is GOOD, Center-L.Rhodes, Holder-M.Haack."
+            ]
           },
           {
             "team": "SEA",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(12:05 - 3rd) J.Myers 55 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson."
+            ]
           },
           {
             "team": "BUF",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(12:53 - 2nd) T.Bass 34 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin.",
+              "(7:12 - 2nd) G.Joseph 27 yard field goal is GOOD, Center-A.DePaola, Holder-R.Wright.",
+              "(1:51 - 3rd) T.Bass 45 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin.",
+              "(0:02 - 4th) T.Bass 29 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin.",
+              "(3:42 - OT) G.Joseph 33 yard field goal is GOOD, Center-A.DePaola, Holder-R.Wright."
+            ]
           },
           {
             "team": "NYG",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(11:27 - 2nd) K.Fairbairn 38 yard field goal is GOOD, Center-J.Weeks, Holder-C.Johnston.",
+              "(2:22 - 4th) K.Fairbairn 34 yard field goal is GOOD, Center-J.Weeks, Holder-C.Johnston.",
+              "(1:55 - 4th) G.Gano 49 yard field goal is GOOD, Center-C.Kreiter, Holder-J.Gillan.",
+              "(0:07 - 4th) K.Fairbairn 46 yard field goal is GOOD, Center-J.Weeks, Holder-C.Johnston."
+            ]
           },
           {
             "team": "TB",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(12:05 - 3rd) J.Myers 55 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson."
+            ]
           },
           {
             "team": "CHI",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(10:39 - 1st) C.Santos 33 yard field goal is GOOD, Center-P.Scales, Holder-T.Gill.",
+              "(3:21 - 1st) M.Badgley 25 yard field goal is GOOD, Center-S.Daly, Holder-J.Fox."
+            ]
           },
           {
             "team": "KC",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(5:46 - 3rd) R.Patterson 35 yard field goal is GOOD, Center-R.Matiscik, Holder-L.Cooke."
+            ]
           },
           {
             "team": "DAL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(3:06 - OT) M.Crosby 28 yard field goal is GOOD, Center-J.Coco, Holder-P.O'Donnell."
+            ]
           },
           {
             "team": "SF",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(4:10 - 1st) R.Gould 20 yard field goal is GOOD, Center-T.Pepper, Holder-M.Wishnowsky.",
+              "(14:52 - 2nd) C.Dicker 47 yard field goal is GOOD, Center-J.Harris, Holder-J.Scott.",
+              "(6:42 - 2nd) C.Dicker 25 yard field goal is GOOD, Center-J.Harris, Holder-J.Scott.",
+              "(0:00 - 2nd) C.Dicker 40 yard field goal is GOOD, Center-J.Harris, Holder-J.Scott.",
+              "(8:52 - 3rd) Robbie Gould 26 Yd Field Goal ",
+              "(0:58 - 4th) Robbie Gould 20 Yd Field Goal "
+            ]
           },
           {
             "team": "ATL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(6:59 - 1st) E.Pineiro 46 yard field goal is GOOD, Center-J.Jansen, Holder-J.Hekker.",
+              "(1:47 - 2nd) E.Pineiro 49 yard field goal is GOOD, Center-J.Jansen, Holder-J.Hekker.",
+              "(0:00 - 2nd) Y.Koo 33 yard field goal is GOOD, Center-L.McCullough, Holder-B.Pinion.",
+              "(9:22 - 4th) E.Pineiro 40 yard field goal is GOOD, Center-J.Jansen, Holder-J.Hekker.",
+              "(0:10 - 4th) E.Pineiro 37 yard field goal is GOOD, Center-J.Jansen, Holder-J.Hekker."
+            ]
           },
           {
             "team": "PHI",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(10:00 - 2nd) J.Slye 44 yard field goal is GOOD, Center-C.Cheeseman, Holder-T.Way.",
+              "(0:00 - 2nd) J.Slye 58 yard field goal is GOOD, Center-C.Cheeseman, Holder-T.Way.",
+              "(5:13 - 3rd) J.Slye 32 yard field goal is GOOD, Center-C.Cheeseman, Holder-T.Way.",
+              "(7:33 - 4th) J.Slye 55 yard field goal is GOOD, Center-C.Cheeseman, Holder-T.Way."
+            ]
           }
         ]
       },
@@ -5360,43 +5796,94 @@
         "fieldgoals": [
           {
             "team": "CHI",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(7:42 - 2nd) C.Santos 41 yard field goal is GOOD, Center-P.Scales, Holder-T.Gill.",
+              "(0:00 - 2nd) Y.Koo 40 yard field goal is GOOD, Center-L.McCullough, Holder-B.Pinion.",
+              "(1:47 - 4th) Y.Koo 53 yard field goal is GOOD, Center-L.McCullough, Holder-B.Pinion."
+            ]
           },
           {
             "team": "NE",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(14:57 - 2nd) N.Folk 24 yard field goal is GOOD, Center-J.Cardona, Holder-M.Palardy. NE 6-Folk 53rd consecutive FG under 40 yds (NFL record is 70, Tucker).",
+              "(9:38 - 2nd) G.Zuerlein 45 yard field goal is GOOD, Center-T.Hennessy, Holder-B.Mann."
+            ]
           },
           {
             "team": "BUF",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(3:32 - 1st) T.Bass 42 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin.",
+              "(14:05 - 2nd) C.York 32 yard field goal is GOOD, Center-C.Hughlett, Holder-C.Bojorquez.",
+              "(4:54 - 2nd) T.Bass 36 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin.",
+              "(9:42 - 3rd) T.Bass 56 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin.",
+              "(13:20 - 4th) T.Bass 49 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin.",
+              "(6:45 - 4th) T.Bass 28 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin.",
+              "(1:56 - 4th) T.Bass 39 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin."
+            ]
           },
           {
             "team": "BAL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(0:00 - 2nd) J.Tucker 32 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(8:07 - 3rd) E.Pineiro 32 yard field goal is GOOD, Center-J.Jansen, Holder-J.Hekker.",
+              "(8:27 - 4th) J.Tucker 37 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout."
+            ]
           },
           {
             "team": "LV",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(9:19 - 2nd) B.McManus 48 yard field goal is GOOD, Center-J.Bobenmoyer, Holder-C.Waitman.",
+              "(10:37 - 3rd) D.Carlson 52 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole.",
+              "(14:56 - 4th) B.McManus 52 yard field goal is GOOD, Center-J.Bobenmoyer, Holder-C.Waitman.",
+              "(7:06 - 4th) D.Carlson 57 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole.",
+              "(3:30 - 4th) B.McManus 48 yard field goal is GOOD, Center-J.Bobenmoyer, Holder-C.Waitman.",
+              "(0:16 - 4th) D.Carlson 25 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole."
+            ]
           },
           {
             "team": "DAL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(10:22 - 1st) B.Maher 27 yard field goal is GOOD, Center-M.Overton, Holder-B.Anger.",
+              "(6:39 - 1st) G.Joseph 25 yard field goal is GOOD, Center-A.DePaola, Holder-R.Wright.",
+              "(5:31 - 2nd) B.Maher 53 yard field goal is GOOD, Center-M.Overton, Holder-B.Anger.",
+              "(0:00 - 2nd) B.Maher 60 yard field goal is GOOD, Center-M.Overton, Holder-B.Anger.",
+              "(10:04 - 4th) B.Maher 50 yard field goal is GOOD, Center-M.Overton, Holder-B.Anger."
+            ]
           },
           {
             "team": "CIN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(8:54 - 1st) E.McPherson 45 yard field goal is GOOD, Center-C.Adomitis, Holder-D.Chrisman.",
+              "(4:37 - 1st) M.Wright 42 yard field goal is GOOD, Center-C.Kuntz, Holder-P.Harvin.",
+              "(0:00 - 2nd) M.Wright 30 yard field goal is GOOD, Center-C.Kuntz, Holder-P.Harvin.",
+              "(4:28 - 3rd) M.Wright 34 yard field goal is GOOD, Center-C.Kuntz, Holder-P.Harvin.",
+              "(0:31 - 3rd) E.McPherson 54 yard field goal is GOOD, Center-C.Adomitis, Holder-D.Chrisman.",
+              "(3:18 - 4th) E.McPherson 44 yard field goal is GOOD, Center-C.Adomitis, Holder-D.Chrisman."
+            ]
           },
           {
             "team": "NYG",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(7:52 - 1st) M.Badgley 24 yard field goal is GOOD, Center-S.Daly, Holder-J.Fox."
+            ]
           },
           {
             "team": "KC",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(10:54 - 1st) H.Butker 33 yard field goal is GOOD, Center-J.Winchester, Holder-T.Townsend.",
+              "(5:58 - 1st) H.Butker 52 yard field goal is GOOD, Center-J.Winchester, Holder-T.Townsend.",
+              "(2:35 - 1st) C.Dicker 46 yard field goal is GOOD, Center-J.Harris, Holder-J.Scott.",
+              "(0:14 - 2nd) C.Dicker 21 yard field goal is GOOD, Center-J.Harris, Holder-J.Scott.",
+              "(6:22 - 3rd) H.Butker 30 yard field goal is GOOD, Center-J.Winchester, Holder-T.Townsend."
+            ]
           },
           {
             "team": "ATL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(7:42 - 2nd) C.Santos 41 yard field goal is GOOD, Center-P.Scales, Holder-T.Gill.",
+              "(0:00 - 2nd) Y.Koo 40 yard field goal is GOOD, Center-L.McCullough, Holder-B.Pinion.",
+              "(1:47 - 4th) Y.Koo 53 yard field goal is GOOD, Center-L.McCullough, Holder-B.Pinion."
+            ]
           }
         ]
       },
@@ -5876,43 +6363,89 @@
         "fieldgoals": [
           {
             "team": "MIA",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(10:21 - 1st) J.Sanders 45 yard field goal is GOOD, Center-B.Ferguson, Holder-T.Morstead.",
+              "(6:22 - 2nd) J.Sanders 23 yard field goal is GOOD, Center-B.Ferguson, Holder-T.Morstead.",
+              "(0:00 - 2nd) J.Sanders 35 yard field goal is GOOD, Center-B.Ferguson, Holder-T.Morstead.",
+              "(9:00 - 4th) K.Fairbairn 28 yard field goal is GOOD, Center-J.Weeks, Holder-C.Johnston."
+            ]
           },
           {
             "team": "BAL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(9:23 - 1st) J.Tucker 27 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(2:03 - 1st) J.Tucker 29 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(4:51 - 2nd) J.Tucker 55 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(0:09 - 2nd) R.Patterson 22 yard field goal is GOOD, Center-R.Matiscik, Holder-L.Cooke.",
+              "(7:51 - 3rd) J.Tucker 24 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(4:19 - 4th) R.Patterson 29 yard field goal is GOOD, Center-R.Matiscik, Holder-L.Cooke."
+            ]
           },
           {
             "team": "NYJ",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(5:59 - 1st) C.Santos 22 yard field goal is GOOD, Center-P.Scales, Holder-T.Gill.",
+              "(0:12 - 2nd) G.Zuerlein 57 yard field goal is GOOD, Center-T.Hennessy, Holder-B.Mann."
+            ]
           },
           {
             "team": "TB",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(2:22 - 1st) C.York 51 yard field goal is GOOD, Center-C.Hughlett, Holder-C.Bojorquez.",
+              "(0:39 - 2nd) R.Succop 42 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda."
+            ]
           },
           {
             "team": "ATL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(8:07 - 1st) Y.Koo 47 yard field goal is GOOD, Center-L.McCullough, Holder-B.Pinion.",
+              "(1:50 - 2nd) J.Slye 30 yard field goal is GOOD, Center-C.Cheeseman, Holder-T.Way.",
+              "(1:17 - 3rd) Y.Koo 48 yard field goal is GOOD, Center-L.McCullough, Holder-B.Pinion.",
+              "(9:05 - 4th) J.Slye 45 yard field goal is GOOD, Center-C.Cheeseman, Holder-T.Way. Penalty on ATL-I.Oliver, Defensive Offside, declined."
+            ]
           },
           {
             "team": "CHI",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(5:59 - 1st) C.Santos 22 yard field goal is GOOD, Center-P.Scales, Holder-T.Gill.",
+              "(0:12 - 2nd) G.Zuerlein 57 yard field goal is GOOD, Center-T.Hennessy, Holder-B.Mann."
+            ]
           },
           {
             "team": "BUF",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(0:00 - 2nd) T.Bass 47 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin.",
+              "(0:23 - 4th) M.Badgley 51 yard field goal is GOOD, Center-S.Daly, Holder-J.Fox.",
+              "(0:02 - 4th) T.Bass 45 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin."
+            ]
           },
           {
             "team": "LV",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(4:23 - 1st) J.Myers 24 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson.",
+              "(13:34 - 2nd) J.Myers 34 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson.",
+              "(0:10 - 2nd) D.Carlson 36 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole.",
+              "(5:03 - 3rd) D.Carlson 25 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole."
+            ]
           },
           {
             "team": "SEA",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(4:23 - 1st) J.Myers 24 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson.",
+              "(13:34 - 2nd) J.Myers 34 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson.",
+              "(0:10 - 2nd) D.Carlson 36 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole.",
+              "(5:03 - 3rd) D.Carlson 25 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole."
+            ]
           },
           {
             "team": "KC",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(14:57 - 2nd) M.Gay 47 yard field goal is GOOD, Center-M.Orzech, Holder-R.Dixon.",
+              "(9:50 - 2nd) H.Butker 27 yard field goal is GOOD, Center-J.Winchester, Holder-T.Townsend.",
+              "(0:16 - 2nd) H.Butker 32 yard field goal is GOOD, Center-J.Winchester, Holder-T.Townsend.",
+              "(6:36 - 4th) H.Butker 22 yard field goal is GOOD, Center-J.Winchester, Holder-T.Townsend.",
+              "(1:44 - 4th) H.Butker 22 yard field goal is GOOD, Center-J.Winchester, Holder-T.Townsend."
+            ]
           }
         ]
       },
@@ -6395,51 +6928,107 @@
         "fieldgoals": [
           {
             "team": "NE",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(8:02 - 1st) T.Bass 48 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin.",
+              "(1:53 - 4th) N.Folk 39 yard field goal is GOOD, Center-J.Cardona, Holder-M.Palardy."
+            ]
           },
           {
             "team": "ATL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(7:33 - 1st) M.Wright 46 yard field goal is GOOD, Center-C.Kuntz, Holder-P.Harvin.",
+              "(13:34 - 2nd) M.Wright 46 yard field goal is GOOD, Center-C.Kuntz, Holder-P.Harvin.",
+              "(9:15 - 2nd) Y.Koo 50 yard field goal is GOOD, Center-L.McCullough, Holder-B.Pinion.",
+              "(5:05 - 2nd) Y.Koo 51 yard field goal is GOOD, Center-L.McCullough, Holder-B.Pinion.",
+              "(1:29 - 2nd) M.Wright 48 yard field goal is GOOD, Center-C.Kuntz, Holder-P.Harvin.",
+              "(4:46 - 3rd) M.Wright 33 yard field goal is GOOD, Center-C.Kuntz, Holder-P.Harvin.",
+              "(5:27 - 4th) Y.Koo 28 yard field goal is GOOD, Center-L.McCullough, Holder-B.Pinion."
+            ]
           },
           {
             "team": "BAL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(9:03 - 1st) B.McManus 52 yard field goal is GOOD, Center-J.Bobenmoyer, Holder-C.Waitman.",
+              "(5:55 - 2nd) J.Tucker 26 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(0:37 - 2nd) B.McManus 41 yard field goal is GOOD, Center-J.Bobenmoyer, Holder-C.Waitman.",
+              "(3:58 - 3rd) B.McManus 50 yard field goal is GOOD, Center-J.Bobenmoyer, Holder-C.Waitman."
+            ]
           },
           {
             "team": "CIN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(3:56 - 1st) H.Butker 26 yard field goal is GOOD, Center-J.Winchester, Holder-T.Townsend.",
+              "(7:16 - 3rd) E.McPherson 36 yard field goal is GOOD, Center-C.Adomitis, Holder-D.Chrisman.",
+              "(14:47 - 4th) E.McPherson 41 yard field goal is GOOD, Center-C.Adomitis, Holder-D.Chrisman."
+            ]
           },
           {
             "team": "DAL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(10:49 - 1st) C.McLaughlin 52 yard field goal is GOOD, Center-L.Rhodes, Holder-M.Haack.",
+              "(1:47 - 2nd) C.McLaughlin 34 yard field goal is GOOD, Center-L.Rhodes, Holder-M.Haack."
+            ]
           },
           {
             "team": "KC",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(3:56 - 1st) H.Butker 26 yard field goal is GOOD, Center-J.Winchester, Holder-T.Townsend.",
+              "(7:16 - 3rd) E.McPherson 36 yard field goal is GOOD, Center-C.Adomitis, Holder-D.Chrisman.",
+              "(14:47 - 4th) E.McPherson 41 yard field goal is GOOD, Center-C.Adomitis, Holder-D.Chrisman."
+            ]
           },
           {
             "team": "NYG",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(8:39 - 1st) J.Slye 21 yard field goal is GOOD, Center-C.Cheeseman, Holder-T.Way.",
+              "(13:38 - 2nd) G.Gano 48 yard field goal is GOOD, Center-C.Kreiter, Holder-J.Gillan.",
+              "(2:28 - 2nd) J.Slye 42 yard field goal is GOOD, Center-C.Cheeseman, Holder-T.Way.",
+              "(0:02 - 2nd) G.Gano 27 yard field goal is GOOD, Center-C.Kreiter, Holder-J.Gillan."
+            ]
           },
           {
             "team": "BUF",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(8:02 - 1st) T.Bass 48 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin.",
+              "(1:53 - 4th) N.Folk 39 yard field goal is GOOD, Center-J.Cardona, Holder-M.Palardy."
+            ]
           },
           {
             "team": "TB",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(6:25 - 1st) R.Succop 21 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda.",
+              "(0:20 - 2nd) W.Lutz 38 yard field goal is GOOD, Center-Z.Wood, Holder-B.Gillikin.",
+              "(2:46 - 3rd) W.Lutz 21 yard field goal is GOOD, Center-Z.Wood, Holder-B.Gillikin.",
+              "(8:02 - 4th) W.Lutz 29 yard field goal is GOOD, Center-Z.Wood, Holder-B.Gillikin."
+            ]
           },
           {
             "team": "LV",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(11:37 - 2nd) C.Dicker 37 yard field goal is GOOD, Center-J.Harris, Holder-J.Scott.",
+              "(2:17 - 2nd) D.Carlson 55 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole.",
+              "(0:27 - 2nd) C.Dicker 34 yard field goal is GOOD, Center-J.Harris, Holder-J.Scott.",
+              "(14:49 - 4th) D.Carlson 25 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole."
+            ]
           },
           {
             "team": "SEA",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(2:34 - 1st) M.Gay 40 yard field goal is GOOD, Center-M.Orzech, Holder-R.Dixon.",
+              "(0:55 - 2nd) M.Gay 54 yard field goal is GOOD, Center-M.Orzech, Holder-R.Dixon.",
+              "(7:33 - 3rd) J.Myers 41 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson.",
+              "(12:57 - 4th) M.Gay 32 yard field goal is GOOD, Center-M.Orzech, Holder-R.Dixon.",
+              "(6:46 - 4th) J.Myers 26 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson."
+            ]
           },
           {
             "team": "CHI",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(9:23 - 1st) C.Santos 40 yard field goal is GOOD, Center-P.Scales, Holder-T.Gill.",
+              "(10:22 - 2nd) M.Crosby 24 yard field goal is GOOD, Center-J.Coco, Holder-P.O'Donnell.",
+              "(1:50 - 3rd) C.Santos 28 yard field goal is GOOD, Center-P.Scales, Holder-T.Gill.",
+              "(4:49 - 4th) M.Crosby 32 yard field goal is GOOD, Center-J.Coco, Holder-P.O'Donnell."
+            ]
           }
         ]
       },
@@ -6910,39 +7499,76 @@
           },
           {
             "team": "KC",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(10:56 - 1st) H.Butker 35 yard field goal is GOOD, Center-J.Winchester, Holder-T.Townsend.",
+              "(2:53 - 1st) H.Butker 45 yard field goal is GOOD, Center-J.Winchester, Holder-T.Townsend."
+            ]
           },
           {
             "team": "DEN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(10:56 - 1st) H.Butker 35 yard field goal is GOOD, Center-J.Winchester, Holder-T.Townsend.",
+              "(2:53 - 1st) H.Butker 45 yard field goal is GOOD, Center-J.Winchester, Holder-T.Townsend."
+            ]
           },
           {
             "team": "BAL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(4:46 - 1st) J.Tucker 42 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(1:03 - 2nd) J.Tucker 35 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(3:19 - 4th) J.Tucker 30 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout."
+            ]
           },
           {
             "team": "PIT",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(4:46 - 1st) J.Tucker 42 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(1:03 - 2nd) J.Tucker 35 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(3:19 - 4th) J.Tucker 30 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout."
+            ]
           },
           {
             "team": "BUF",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(2:07 - 3rd) T.Bass 38 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin.",
+              "(12:23 - 4th) T.Bass 49 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin.",
+              "(1:18 - 4th) G.Zuerlein 26 yard field goal is GOOD, Center-T.Hennessy, Holder-B.Mann."
+            ]
           },
           {
             "team": "DAL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(0:18 - 1st) K.Fairbairn 43 yard field goal is GOOD, Center-J.Weeks, Holder-C.Johnston.",
+              "(0:40 - 2nd) B.Maher 33 yard field goal is GOOD, Center-M.Overton, Holder-B.Anger.",
+              "(0:00 - 2nd) K.Fairbairn 50 yard field goal is GOOD, Center-J.Weeks, Holder-C.Johnston.",
+              "(3:03 - 3rd) K.Fairbairn 54 yard field goal is GOOD, Center-J.Weeks, Holder-C.Johnston.",
+              "(14:50 - 4th) B.Maher 53 yard field goal is GOOD, Center-M.Overton, Holder-B.Anger."
+            ]
           },
           {
             "team": "LV",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(2:22 - 1st) D.Carlson 52 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole.",
+              "(0:06 - 1st) M.Gay 55 yard field goal is GOOD, Center-M.Orzech, Holder-R.Dixon.",
+              "(9:40 - 2nd) D.Carlson 31 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole.",
+              "(12:20 - 4th) D.Carlson 36 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole."
+            ]
           },
           {
             "team": "SEA",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(7:05 - 1st) E.Pineiro 47 yard field goal is GOOD, Center-J.Jansen, Holder-J.Hekker.",
+              "(2:09 - 2nd) E.Pineiro 32 yard field goal is GOOD, Center-J.Jansen, Holder-J.Hekker.",
+              "(10:00 - 3rd) J.Myers 27 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson.",
+              "(1:56 - 4th) E.Pineiro 39 yard field goal is GOOD, Center-J.Jansen, Holder-J.Hekker."
+            ]
           },
           {
             "team": "CIN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(2:59 - 2nd) C.York 26 yard field goal is GOOD, Center-C.Hughlett, Holder-C.Bojorquez.",
+              "(14:57 - 4th) E.McPherson 30 yard field goal is GOOD, Center-C.Adomitis, Holder-D.Chrisman."
+            ]
           },
           {
             "team": "SF",
@@ -7440,47 +8066,87 @@
         "fieldgoals": [
           {
             "team": "KC",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(9:05 - 3rd) H.Butker 27 yard field goal is GOOD, Center-J.Winchester, Holder-T.Townsend.",
+              "(5:11 - 4th) K.Fairbairn 29 yard field goal is GOOD, Center-J.Weeks, Holder-C.Johnston."
+            ]
           },
           {
             "team": "TB",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(6:06 - 1st) R.Succop 21 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda.",
+              "(0:00 - 2nd) E.McPherson 41 yard field goal is GOOD, Center-C.Adomitis, Holder-D.Chrisman.",
+              "(12:04 - 3rd) E.McPherson 21 yard field goal is GOOD, Center-C.Adomitis, Holder-D.Chrisman."
+            ]
           },
           {
             "team": "DEN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(10:27 - 1st) B.McManus 52 yard field goal is GOOD, Center-J.Bobenmoyer, Holder-C.Waitman.",
+              "(10:35 - 2nd) M.Prater 45 yard field goal is GOOD, Center-A.Brewer, Holder-A.Lee.",
+              "(0:00 - 2nd) M.Prater 50 yard field goal is GOOD, Center-A.Brewer, Holder-A.Lee.",
+              "(8:55 - 3rd) M.Prater 55 yard field goal is GOOD, Center-A.Brewer, Holder-A.Lee."
+            ]
           },
           {
             "team": "BAL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(14:10 - 2nd) C.York 47 yard field goal is GOOD, Center-C.Hughlett, Holder-C.Bojorquez.",
+              "(5:31 - 2nd) J.Tucker 53 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(1:52 - 2nd) C.York 23 yard field goal is GOOD, Center-C.Hughlett, Holder-C.Bojorquez."
+            ]
           },
           {
             "team": "ATL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(11:15 - 2nd) Y.Koo 28 yard field goal is GOOD, Center-L.McCullough, Holder-B.Pinion."
+            ]
           },
           {
             "team": "BUF",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(2:59 - 1st) J.Sanders 39 yard field goal is GOOD, Center-B.Ferguson, Holder-T.Morstead.",
+              "(14:47 - 2nd) J.Sanders 21 yard field goal is GOOD, Center-B.Ferguson, Holder-T.Morstead.",
+              "(11:56 - 4th) J.Sanders 47 yard field goal is GOOD, Center-B.Ferguson, Holder-T.Morstead.",
+              "(0:00 - 4th) T.Bass 25 yard field goal is GOOD, Center-R.Ferguson, Holder-S.Martin. Penalty on MIA-K.Crossen, Defensive Offside, declined."
+            ]
           },
           {
             "team": "DAL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(10:35 - 3rd) R.Patterson 33 yard field goal is GOOD, Center-R.Matiscik, Holder-L.Cooke.",
+              "(7:36 - 3rd) B.Maher 24 yard field goal is GOOD, Center-M.Overton, Holder-B.Anger.",
+              "(5:21 - 3rd) B.Maher 53 yard field goal is GOOD, Center-M.Overton, Holder-B.Anger.",
+              "(0:00 - 4th) R.Patterson 48 yard field goal is GOOD, Center-R.Matiscik, Holder-L.Cooke."
+            ]
           },
           {
             "team": "SEA",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(4:47 - 2nd) J.Myers 38 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson.",
+              "(8:08 - 3rd) J.Myers 51 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson."
+            ]
           },
           {
             "team": "CIN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(6:06 - 1st) R.Succop 21 yard field goal is GOOD, Center-Z.Triner, Holder-J.Camarda.",
+              "(0:00 - 2nd) E.McPherson 41 yard field goal is GOOD, Center-C.Adomitis, Holder-D.Chrisman.",
+              "(12:04 - 3rd) E.McPherson 21 yard field goal is GOOD, Center-C.Adomitis, Holder-D.Chrisman."
+            ]
           },
           {
             "team": "CHI",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(11:50 - 2nd) J.Elliott 32 yard field goal is GOOD, Center-R.Lovato, Holder-B.Kern."
+            ]
           },
           {
             "team": "SF",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(4:47 - 2nd) J.Myers 38 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson.",
+              "(8:08 - 3rd) J.Myers 51 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson."
+            ]
           }
         ]
       },
@@ -7968,47 +8634,100 @@
         "fieldgoals": [
           {
             "team": "LV",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(1:49 - 2nd) C.Boswell 44 yard field goal is GOOD, Center-C.Kuntz, Holder-P.Harvin.",
+              "(0:05 - 2nd) D.Carlson 40 yard field goal is GOOD, Center-T.Sieg, Holder-A.Cole.",
+              "(9:47 - 4th) C.Boswell 40 yard field goal is GOOD, Center-C.Kuntz, Holder-P.Harvin."
+            ]
           },
           {
             "team": "BAL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(8:02 - 1st) J.Tucker 21 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(12:42 - 2nd) J.Tucker 27 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(0:00 - 2nd) Y.Koo 32 yard field goal is GOOD, Center-L.McCullough, Holder-B.Pinion.",
+              "(7:01 - 3rd) Y.Koo 34 yard field goal is GOOD, Center-L.McCullough, Holder-B.Pinion.",
+              "(14:10 - 4th) J.Tucker 21 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(2:03 - 4th) Younghoe Koo 37 Yd Field Goal "
+            ]
           },
           {
             "team": "KC",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(2:40 - 2nd) H.Butker 47 yard field goal is GOOD, Center-J.Winchester, Holder-T.Townsend.",
+              "(0:00 - 2nd) J.Myers 22 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson."
+            ]
           },
           {
             "team": "DEN",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(8:26 - 1st) M.Gay 55 yard field goal is GOOD, Center-M.Orzech, Holder-R.Dixon.",
+              "(0:39 - 1st) B.McManus 54 yard field goal is GOOD, Center-J.Bobenmoyer, Holder-C.Waitman.",
+              "(0:00 - 2nd) B.McManus 49 yard field goal is GOOD, Center-J.Bobenmoyer, Holder-C.Waitman.",
+              "(3:49 - 3rd) M.Gay 30 yard field goal is GOOD, Center-M.Orzech, Holder-R.Dixon.",
+              "(6:16 - 4th) M.Gay 53 yard field goal is GOOD, Center-M.Orzech, Holder-R.Dixon."
+            ]
           },
           {
             "team": "CHI",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(3:21 - 2nd) C.Santos 37 yard field goal is GOOD, Center-P.Scales, Holder-T.Gill.",
+              "(10:19 - 4th) C.Santos 35 yard field goal is GOOD, Center-P.Scales, Holder-T.Gill."
+            ]
           },
           {
             "team": "IND",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(4:21 - 2nd) C.McLaughlin 46 yard field goal is GOOD, Center-L.Rhodes, Holder-M.Haack.",
+              "(0:00 - 2nd) C.Dicker 24 yard field goal is GOOD, Center-J.Harris, Holder-J.Scott.",
+              "(6:01 - 3rd) C.Dicker 21 yard field goal is GOOD, Center-J.Harris, Holder-J.Scott."
+            ]
           },
           {
             "team": "BUF",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(3:21 - 2nd) C.Santos 37 yard field goal is GOOD, Center-P.Scales, Holder-T.Gill.",
+              "(10:19 - 4th) C.Santos 35 yard field goal is GOOD, Center-P.Scales, Holder-T.Gill."
+            ]
           },
           {
             "team": "SEA",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(2:40 - 2nd) H.Butker 47 yard field goal is GOOD, Center-J.Winchester, Holder-T.Townsend.",
+              "(0:00 - 2nd) J.Myers 22 yard field goal is GOOD, Center-C.Tinker, Holder-M.Dickson."
+            ]
           },
           {
             "team": "ATL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(8:02 - 1st) J.Tucker 21 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(12:42 - 2nd) J.Tucker 27 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(0:00 - 2nd) Y.Koo 32 yard field goal is GOOD, Center-L.McCullough, Holder-B.Pinion.",
+              "(7:01 - 3rd) Y.Koo 34 yard field goal is GOOD, Center-L.McCullough, Holder-B.Pinion.",
+              "(14:10 - 4th) J.Tucker 21 yard field goal is GOOD, Center-N.Moore, Holder-J.Stout.",
+              "(2:03 - 4th) Younghoe Koo 37 Yd Field Goal "
+            ]
           },
           {
             "team": "DAL",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(11:16 - 1st) J.Elliott 25 yard field goal is GOOD, Center-R.Lovato, Holder-B.Kern.",
+              "(1:49 - 2nd) B.Maher 21 yard field goal is GOOD, Center-M.Overton, Holder-B.Anger.",
+              "(0:06 - 2nd) J.Elliott 47 yard field goal is GOOD, Center-R.Lovato, Holder-B.Kern. Penalty on DAL-C.Goodwin, Defensive Offside, declined.",
+              "(5:01 - 3rd) B.Maher 44 yard field goal is GOOD, Center-M.Overton, Holder-B.Anger.",
+              "(2:19 - 4th) B.Maher 48 yard field goal is GOOD, Center-M.Overton, Holder-B.Anger.",
+              "(1:41 - 4th) B.Maher 26 yard field goal is GOOD, Center-M.Overton, Holder-B.Anger."
+            ]
           },
           {
             "team": "NYG",
-            "fieldgoals": []
+            "fieldgoals": [
+              "(9:40 - 2nd) G.Joseph 40 yard field goal is GOOD, Center-A.DePaola, Holder-R.Wright.",
+              "(11:18 - 3rd) G.Gano 44 yard field goal is GOOD, Center-C.Kreiter, Holder-J.Gillan.",
+              "(4:31 - 3rd) G.Gano 44 yard field goal is GOOD, Center-C.Kreiter, Holder-J.Gillan.",
+              "(6:24 - 4th) G.Gano 55 yard field goal is GOOD, Center-C.Kreiter, Holder-J.Gillan.",
+              "(0:00 - 4th) G.Joseph 61 yard field goal is GOOD, Center-A.DePaola, Holder-R.Wright."
+            ]
           }
         ]
       }
