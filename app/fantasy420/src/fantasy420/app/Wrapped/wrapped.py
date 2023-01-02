@@ -216,28 +216,24 @@ def get_boxscore(pro_team_name, week):
     if game_id is None: return None
     url = f'https://www.espn.com/nfl/boxscore/_/gameId/{game_id}'
     box_score_html = fetch(url, decode_json=False)
-    soup = BeautifulSoup(box_score_html, features="html.parser")
+    __espnfitt__ = box_score_html.split("window['__espnfitt__']=")[-1].split(
+        ";</script>\n")[0]
+    parsed = json.loads(__espnfitt__)
+    gamepackage = parsed["page"]["content"]["gamepackage"]
 
-    teamabbrevs = list(
-        map(
-            lambda span: span.text,
-            soup.findAll("span", class_="abbrev"),
-        ))
+    bxscr = gamepackage["bxscr"]
+    teamabbrevs = [i["tm"]["abbrev"] for i in bxscr]
     key = 1 - teamabbrevs.index(pro_team_name)
 
-    all_passing = soup.find(id="gamepackage-passing")
-    table = all_passing.findAll("table")[key]
-    row = table.findAll("tr")[-1]
-    passing_cell = row.findAll("td")[2]
-    passing = int(passing_cell.text)
+    stats = bxscr[key]["stats"]
+    passing = float(
+        next((s["ttls"][1] for s in stats if "passingYards" in s["keys"]),
+             None))
+    rushing = float(
+        next((s["ttls"][1] for s in stats if "rushingYards" in s["keys"]),
+             None))
 
-    all_rushing = soup.find(id="gamepackage-rushing")
-    table = all_rushing.findAll("table")[key]
-    row = table.findAll("tr")[-1]
-    rushing_cell = row.findAll("td")[2]
-    rushing = int(rushing_cell.text)
-
-    score = int(soup.findAll(class_="score")[key].text)
+    score = int(gamepackage["gmStrp"]["tms"][key]["score"])
 
     boxscore = {
         "team": teamabbrevs[1 - key],
@@ -246,6 +242,7 @@ def get_boxscore(pro_team_name, week):
         "rushing": rushing,
         "score": score
     }
+
     return boxscore
 
 
