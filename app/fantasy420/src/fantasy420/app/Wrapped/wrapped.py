@@ -270,9 +270,10 @@ def get_fieldgoals(pro_team_name, week):
         "window['__espnfitt__']=")[-1].split(";</script>\n")[0]
     parsed = json.loads(__espnfitt__)
     gamepackage = parsed["page"]["content"]["gamepackage"]
-    headlines = [[i for i in p["plays"] if "headline" in i][-1]["description"]
-                 for p in gamepackage["allPlys"]
-                 if p.get("headline") == "Field Goal"]
+    headlines = [
+        k["text"].strip() for j in gamepackage["scrSumm"]["scrPlayGrps"]
+        for k in j if k["typeAbbreviation"] == "FG"
+    ]
     return {"team": pro_team_name, "fieldgoals": headlines}
 
 
