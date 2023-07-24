@@ -12,7 +12,7 @@ import cv2
 import numpy
 import pytesseract
 
-year = 2022
+year = 2023
 league_id = 203836968
 # https://i0.wp.com/peakedinhighskool.com/wp-content/uploads/2022/09/1QB1.0PPR4pt_20220927.png?w=1790&ssl=1
 # https://pbs.twimg.com/media/FeTjnmBXEAI5EM6?format=jpg&name=4096x4096

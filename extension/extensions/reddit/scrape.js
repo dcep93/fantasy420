@@ -246,7 +246,7 @@
       return Promise.resolve();
     console.log("fetching", data.fetched.timestamp);
     return fetch(
-      "https://fantasy.espn.com/apis/v3/games/ffl/seasons/2022/players?scoringPeriodId=0&view=players_wl",
+      "https://fantasy.espn.com/apis/v3/games/ffl/seasons/2023/players?scoringPeriodId=0&view=players_wl",
       {
         headers: {
           "x-fantasy-filter": '{"filterActive":{"value":true}}',
