@@ -1,25 +1,25 @@
 /// firebase functions
 
 function getDb(project) {
-    var config = {
-        databaseURL: `https://${project}-default-rtdb.firebaseio.com/`,
-    };
-    firebase.initializeApp(config);
-    return firebase.database();
+  var config = {
+    databaseURL: `https://${project}-default-rtdb.firebaseio.com/`,
+  };
+  firebase.initializeApp(config);
+  return firebase.database();
 }
 
 function listen(db, path, f) {
-    const listenerRef = db.ref(path);
-    listenerRef.on("value", function(snapshot) {
-        var val = snapshot.val();
-        f(val);
-    });
+  const listenerRef = db.ref(path);
+  listenerRef.on("value", function (snapshot) {
+    var val = snapshot.val();
+    f(val);
+  });
 }
 
 function post(db, path, val) {
-    Promise.resolve()
-        .then(() => db.ref(path).set(val))
-        .catch(alert);
+  Promise.resolve()
+    .then(() => db.ref(path).set(val))
+    .catch(alert);
 }
 
 //////
@@ -31,23 +31,23 @@ const READ_AND_POST_PERIOD_MS = 1000;
 var state = [];
 
 function main() {
-    console.log("ff_draft", location.href);
-    const db = getDb("react420");
-    listen(db, "/ff/draft", receiveUpdate);
-    post(db, "/ff", { draft: [] });
-    readAndPostLoop(db);
+  console.log("ff_draft", location.href);
+  const db = getDb("fantasy420");
+  listen(db, "/ff/draft", receiveUpdate);
+  post(db, "/ff", { draft: [] });
+  readAndPostLoop(db);
 }
 
 function receiveUpdate(val) {
-    console.log(val);
-    if (val) state = val;
+  console.log("receiveUpdate", val);
+  if (val) state = val;
 }
 
 function readAndPostLoop(db) {
-    console.log("readAndPostLoop");
-    const draft = getDraft();
-    if (draft.length !== (state || []).length) post(db, "/ff", { draft });
-    setTimeout(() => readAndPostLoop(db), READ_AND_POST_PERIOD_MS);
+  console.log("readAndPostLoop");
+  const draft = getDraft();
+  if (draft.length !== (state || []).length) post(db, "/ff", { draft });
+  setTimeout(() => readAndPostLoop(db), READ_AND_POST_PERIOD_MS);
 }
 
 main();
