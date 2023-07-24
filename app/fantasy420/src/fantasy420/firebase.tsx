@@ -1,4 +1,4 @@
-// https://console.firebase.google.com/u/0/project/react420/database/react420-default-rtdb/data
+// https://console.firebase.google.com/u/0/project/fantasy420/database/fantasy420-default-rtdb/data
 
 import { initializeApp } from "firebase/app"; // no compat for new SDK
 import {
@@ -13,7 +13,7 @@ import {
 } from "firebase/database";
 import React from "react";
 
-const project = "react420";
+const project = "fantasy420";
 
 const config = {
   databaseURL: `https://${project}-default-rtdb.firebaseio.com/`,
