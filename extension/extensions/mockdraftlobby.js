@@ -43,7 +43,7 @@ function loop() {
         //   ) {
         //     return true;
         //   }
-        //   obj.a.style.border = "";
+        //   obj.a.style.border = "2px solid red";
         //   return false;
         // })
         .map((obj) => obj.a)
