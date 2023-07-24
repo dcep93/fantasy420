@@ -192,12 +192,12 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
                         "RUNNING BACKS": "lightblue",
                         "WIDE RECEIVERS": "lightseagreen",
                         "TIGHT ENDS": "lightcoral",
-                        QUARTERBACKS: "purple",
+                        QUARTERBACKS: "plum",
                         DEFENSES: "lightsalmon",
                       }[v.position],
                     }}
                   >
-                    {v.fname}, {v.team}
+                    {v.fname}, {v.position} {v.team}
                   </td>
                   {v.picks.map((w, j) => (
                     <td
@@ -539,11 +539,11 @@ function getEspnLiveDraft(max_index: number, injured_only: boolean) {
 
 function updateDraftRanking(ordered: { [name: string]: number }) {
   fetch(
-    "https://fantasy.espn.com/apis/v3/games/ffl/seasons/2022/segments/0/leagues/203836968?view=kona_player_info_edit_draft_strategy",
+    "https://fantasy.espn.com/apis/v3/games/ffl/seasons/2023/segments/0/leagues/203836968?view=kona_player_info_edit_draft_strategy",
     {
       headers: {
         "x-fantasy-filter":
-          '{"players":{"filterStatsForSplitTypeIds":{"value":[0]},"filterStatsForSourceIds":{"value":[1]},"filterStatsForExternalIds":{"value":[2022]},"sortDraftRanks":{"sortPriority":2,"sortAsc":true,"value":"STANDARD"},"sortPercOwned":{"sortPriority":3,"sortAsc":false},"filterRanksForSlotIds":{"value":[0,2,4,6,17,16]},"filterStatsForTopScoringPeriodIds":{"value":2,"additionalValue":["002022","102022","002021","022022"]}}}',
+          '{"players":{"filterStatsForSplitTypeIds":{"value":[0]},"filterStatsForSourceIds":{"value":[1]},"filterStatsForExternalIds":{"value":[2023]},"sortDraftRanks":{"sortPriority":2,"sortAsc":true,"value":"STANDARD"},"sortPercOwned":{"sortPriority":3,"sortAsc":false},"filterRanksForSlotIds":{"value":[0,2,4,6,17,16]},"filterStatsForTopScoringPeriodIds":{"value":2,"additionalValue":["002023","102023","002022","022023"]}}}',
         "x-fantasy-platform":
           "kona-PROD-b8da8220a336fe39a7b677c0dc5fa27a6bbf87ae",
         "x-fantasy-source": "kona",
@@ -575,7 +575,7 @@ function updateDraftRanking(ordered: { [name: string]: number }) {
     )
     .then((body) =>
       fetch(
-        "https://lm-api-writes.fantasy.espn.com/apis/v3/games/ffl/seasons/2022/segments/0/leagues/203836968/teams/1",
+        "https://lm-api-writes.fantasy.espn.com/apis/v3/games/ffl/seasons/2023/segments/0/leagues/203836968/teams/1",
         {
           headers: {
             accept: "application/json",

@@ -5,7 +5,7 @@ import requests
 
 from bs4 import BeautifulSoup
 
-year = 2022
+year = 2023
 league_ids = [203836968]
 
 num_threads = 32
@@ -224,8 +224,6 @@ def populate_boxscores(weeks):
 
 
 def get_boxscore(pro_team_name, week, player_id):
-    if pro_team_name in ['BUF', 'CIN'] and week == 17:
-        return None
     url = f'https://fantasy.espn.com/apis/v3/games/ffl/seasons/{year}/segments/0/leagues/{league_ids[0]}?scoringPeriodId={Vars.max_week_finished}&view=kona_playercard&pro_team_name={pro_team_name}'
     results = fetch(
         url,

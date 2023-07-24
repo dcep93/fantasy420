@@ -26,7 +26,7 @@ function loop() {
         (a) =>
           new Promise((resolve) =>
             fetch(
-              `https://fantasy.espn.com/apis/v3/games/ffl/seasons/2022/segments/0/leagues/${
+              `https://fantasy.espn.com/apis/v3/games/ffl/seasons/2023/segments/0/leagues/${
                 a.href.split("=")[1]
               }?view=mSettings&view=mTeam&view=modular&view=mNav`
             )
