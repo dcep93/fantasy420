@@ -488,46 +488,45 @@ export function getFromBeersheets(): PlayersType {
 
 function getEspnLiveDraft(max_index: number, injured_only: boolean) {
   // https://fantasy.espn.com/football/livedraftresults?leagueId=203836968
-  const players = {
-    adp: [] as [string, number][],
-    avc: [] as [string, number][],
+  const data = {
+    players: {} as { [name: string]: { position: string; team: string } },
+    pick: {} as { [name: string]: number },
+    auction: {} as { [name: string]: number },
   };
   function helper(index: number) {
     if (index > max_index) {
-      console.log({
-        average_draft: Object.fromEntries(
-          players.adp.sort((a, b) => a[1] - b[1])
-        ),
-        average_auction: Object.fromEntries(
-          players.avc.sort((a, b) => a[1] - b[1])
-        ),
-      });
+      console.log(data);
       return;
     }
     function subHelper() {
       Array.from(document.getElementsByTagName("tr"))
         .map((tr) => tr)
         .map((tr) => ({
-          nameE: tr.getElementsByClassName(
+          name: tr.getElementsByClassName(
             "player-column__athlete"
           )[0] as HTMLElement,
-          adpE: tr.getElementsByClassName("adp")[0] as HTMLElement,
-          avcE: tr.getElementsByClassName("avc")[0] as HTMLElement,
+          position: tr.getElementsByClassName(
+            "player-column__position"
+          )[0] as HTMLElement,
+          pick: tr.getElementsByClassName("adp")[0] as HTMLElement,
+          auction: tr.getElementsByClassName("avc")[0] as HTMLElement,
           injury: tr.getElementsByClassName(
             "playerinfo__injurystatus"
           )[0] as HTMLElement,
         }))
-        .filter(({ nameE, adpE, avcE }) => nameE && adpE && avcE)
-        .map(({ nameE, adpE, avcE, injury }) => ({
-          name: (nameE.children[0] as HTMLElement).innerText,
-          adp: parseFloat(adpE.innerText),
-          avc: -parseFloat(avcE.innerText),
+        .filter(({ name, pick, auction }) => name && pick && auction)
+        .map(({ name, position, pick, auction, injury }) => ({
+          name: (name.children[0] as HTMLElement).innerText,
+          position: position.innerText.split("\n"),
+          pick: parseFloat(pick.innerText),
+          auction: parseFloat(auction.innerText),
           injury: injury?.innerText,
         }))
         .filter(({ injury }) => !injured_only || ["O", "IR"].includes(injury))
-        .forEach(({ name, adp, avc }) => {
-          players.adp.push([name, adp]);
-          players.avc.push([name, avc]);
+        .forEach(({ name, position, pick, auction }) => {
+          data.players[name] = { position: position[0], team: position[1] };
+          data.pick[name] = pick;
+          data.auction[name] = auction;
         });
       helper(index + 1);
     }
