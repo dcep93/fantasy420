@@ -130,30 +130,37 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
           <div>drafted</div>
           <input readOnly value={JSON.stringify(drafted)} />
         </div>
-        <div>
+        {/* <div>
           <div>beerSheets</div>
           <input readOnly value={printF(getFromBeersheets.toString())} />
-        </div>
+        </div> */}
         <div>
-          <div>jayzheng</div>
+          <div>
+            <a href="https://jayzheng.com/ff/">jayzheng</a>
+          </div>
           <input readOnly value={printF(jayzheng.toString())} />
         </div>
         <div>
-          <div>espn</div>
+          <div>
+            <a href="https://fantasy.espn.com/football/livedraftresults">
+              espn
+            </a>
+          </div>
           <input readOnly value={printF(getEspnLiveDraft.toString())} />
         </div>
         <div>
           <div>updateDraftRanking</div>
-          <input readOnly value={printF(updateDraftRanking.toString())} />
-        </div>
-        <div>
-          <div>players</div>
-          <input
-            readOnly
-            value={`updateDraftRanking(${JSON.stringify(
-              Object.fromEntries(players.map((p, i) => [p.name, i]))
-            )})`}
-          />
+          <div>
+            <input readOnly value={printF(updateDraftRanking.toString())} />
+          </div>
+          <div>
+            <input
+              readOnly
+              value={`${updateDraftRanking.name}(${JSON.stringify(
+                Object.fromEntries(players.map((p, i) => [p.name, i]))
+              )})`}
+            />
+          </div>
         </div>
       </div>
       <div
@@ -272,21 +279,21 @@ function results(draft_json: DraftJsonType): ResultsType {
     }))
     .map((o) => ({
       ...o,
-      d_adp: 1 + o.picks.reduce((a, b) => a + b, 0) / o.picks.length,
+      history: 1 + o.picks.reduce((a, b) => a + b, 0) / o.picks.length,
     }))
     .map((o) => ({
       ...o,
-      d_adp_score: getScore(o.adp, o.d_adp),
+      d_adp_score: getScore(o.adp, o.history),
       scores: Object.fromEntries(
         extra.map((s) => [
           s,
-          getScore(o.extra[s] > 0 ? o.d_adp : o.avc, o.extra[s]),
+          getScore(o.extra[s] > 0 ? o.history : o.avc, o.extra[s]),
         ])
       ),
     }))
     .map((o) => ({
       fname: `${[
-        o.d_adp.toFixed(1),
+        o.history.toFixed(1),
         "",
         o.adp,
         `$${-o.avc}`,
@@ -299,9 +306,12 @@ function results(draft_json: DraftJsonType): ResultsType {
     .map((o) => ({ ...o, ...draft_json.players[o.nname] }));
 
   const values = [
-    { source: "d_adp", players: raw.map((p) => ({ ...p, value: p.d_adp })) },
-    // { source: "adp", players: raw.map((p) => ({ ...p, value: p.adp })) },
-    // { source: "avc", players: raw.map((p) => ({ ...p, value: p.avc })) },
+    {
+      source: "history",
+      players: raw.map((p) => ({ ...p, value: p.history })),
+    },
+    { source: "pick", players: raw.map((p) => ({ ...p, value: p.adp })) },
+    { source: "salary", players: raw.map((p) => ({ ...p, value: p.avc })) },
   ].concat(
     extra.map((source) => ({
       source,
@@ -335,7 +345,6 @@ function results(draft_json: DraftJsonType): ResultsType {
           )
           .filter((rank) => rank !== undefined),
       }))
-      .filter(({ extra }) => extra.length > 0)
       .map(({ extra, ...p }) => ({
         ...p,
         value: extra.reduce((a, b) => a + b, extra.length) / extra.length,
@@ -432,7 +441,7 @@ export function getPlayersFromBeersheets() {
   );
 }
 
-function getFromBeersheets(): PlayersType {
+export function getFromBeersheets(): PlayersType {
   // https://footballabsurdity.com/2022/06/27/2022-fantasy-football-salary-cap-values/
   return Object.fromEntries(
     Array.from(

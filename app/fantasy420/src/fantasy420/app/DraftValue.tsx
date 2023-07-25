@@ -72,8 +72,6 @@ function Value() {
                       <td key={key}>
                         <div>
                           {{
-                            beer: "[ BeerSheets auction ]",
-                            beerd: "[ BeerSheets draft ]",
                             peak: "[ PeakedInHighSkool draft ]",
                             peaka: "[ PeakedInHighSkool auction ]",
                             "jayzheng.com": "[ jayzheng.com/ff/ ]",
