@@ -64,7 +64,7 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
       .sort((a, b) => a.rank - b.rank)
       .map(({ name, rank }) => [normalize(name), rank])
   );
-  const drafted = props.o.f.map(({ name }) => name);
+  const drafted = Object.keys(espn);
   const sources = props.o.r.map((d) => d.source);
   const [source, update] = useState(sources[0]);
   const players = (
@@ -130,10 +130,6 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
           <div>drafted</div>
           <input readOnly value={JSON.stringify(drafted)} />
         </div>
-        {/* <div>
-          <div>beerSheets</div>
-          <input readOnly value={printF(getFromBeersheets.toString())} />
-        </div> */}
         <div>
           <div>
             <a href="https://jayzheng.com/ff/">jayzheng</a>
@@ -423,55 +419,9 @@ export function getDraft() {
   return s.concat(recent);
 }
 
-// function getFromBeersheets(): PlayersType {
-//   // https://footballabsurdity.com/2022/06/27/2022-fantasy-football-salary-cap-values/
-//   return Object.fromEntries(
-//     Array.from(
-//       document.getElementById("sheets-viewport")!.getElementsByTagName("tr")
-//     )
-//       .flatMap((tr, i) =>
-//         Array.from(tr.children)
-//           .filter((_, i) => i > 0)
-//           .map((td) => td as HTMLElement)
-//           .map((td, j) => ({ td: td.innerText, i, j }))
-//       )
-//       .map(({ td }) => td)
-//       .reduce(
-//         (prev, current) => {
-//           if (parseInt(current)) return Object.assign({}, prev, { current });
-//           if (prev.current)
-//             return Object.assign({}, prev, {
-//               current: null,
-//               rank: parseInt(prev.current),
-//               name: current.split(",")[0],
-//             });
-//           if (prev.name && current.includes("$"))
-//             return {
-//               players: (prev.players || []).concat({
-//                 name: prev.name,
-//                 salary: parseInt(current.split("$")[1]),
-//               }),
-//             };
-//           return prev;
-//         },
-//         {} as {
-//           players?: {
-//             name: string;
-//             salary: number;
-//           }[];
-//           current?: string;
-//           name?: string;
-//         }
-//       )
-//       .players!.sort((a, b) => (a.salary > b.salary ? -1 : 1))
-//       .map((o) => [o.name, -o.salary])
-//   );
-// }
-
 function getEspnLiveDraft() {
   const max_index = 6;
   const injured_only = false;
-  // https://fantasy.espn.com/football/livedraftresults?leagueId=203836968
   const data = {
     players: {} as { [name: string]: { position: string; team: string } },
     pick: {} as { [name: string]: number },
