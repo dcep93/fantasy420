@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { normalize, NUM_TEAMS } from "./Draft";
+import { normalize } from "./Draft";
 import draft_json from "./draft.json";
 
 const MANAGERS = [
