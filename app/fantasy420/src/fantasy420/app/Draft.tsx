@@ -205,6 +205,7 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
                         WR: "lightseagreen",
                         TE: "lightcoral",
                         QB: "plum",
+                        K: "tan",
                         "D/ST": "lightsalmon",
                       }[v.position],
                     }}
@@ -237,7 +238,7 @@ function isMyPick(pick: number): boolean {
   );
 }
 
-function normalize(s: string) {
+export function normalize(s: string) {
   return s
     .replaceAll(/[^A-Za-z ]/g, "")
     .replaceAll(/ I+$/g, "")
@@ -497,7 +498,7 @@ function getEspnLiveDraft() {
         }))
         .filter(({ injury }) => !injured_only || ["O", "IR"].includes(injury))
         .forEach(({ name, position, pick, auction }) => {
-          data.players[name] = { position: position[0], team: position[1] };
+          data.players[name] = { position: position[1], team: position[0] };
           data.pick[name] = pick;
           data.auction[name] = auction;
         });
@@ -510,7 +511,7 @@ function getEspnLiveDraft() {
       .find((i) => i.innerText === index.toString())!;
     if (clickable) {
       clickable.click();
-      setTimeout(subHelper, 1000);
+      setTimeout(subHelper, 100);
     } else {
       subHelper();
     }
