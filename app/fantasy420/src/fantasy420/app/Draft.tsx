@@ -116,7 +116,7 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
                     draft_json.espn.players as {
                       [name: string]: { position: string };
                     }
-                  )[name]?.position
+                  )[normalize(name)]?.position
               )
               .reduce((prev, current) => {
                 prev[current] = (prev[current] || 0) + 1;
@@ -260,14 +260,14 @@ function results(draft_json: DraftJsonType): ResultsType {
   );
   const ds = draft_json.drafts.map((d) => ({
     size: d.length,
-    picks: Object.fromEntries(d.map((p, i) => [p, i])),
+    picks: Object.fromEntries(d.map((p, i) => [normalize(p), i])),
   }));
   const extra = Object.keys(draft_json.extra);
   const raw = Object.entries(draft_json.espn.pick)
     .map(([name, pick]) => ({
-      name,
+      name: normalize(name),
       pick,
-      auction: draft_json.espn.auction[name] || 1,
+      auction: -draft_json.espn.auction[name] || -1,
     }))
     .sort((a, b) => a.pick - b.pick)
     .map((o, i) => ({ ...o, i }))
@@ -303,14 +303,14 @@ function results(draft_json: DraftJsonType): ResultsType {
         o.history.toFixed(1),
         "",
         o.pick,
-        `$${o.auction}`,
+        `$${-o.auction}`,
         "",
         ...extra.map((s) => (o.extra[s] < 0 ? `$${-o.extra[s]}` : o.extra[s])),
       ].join("/")} ${o.name.substring(0, 20)}`,
       ...(o.name.includes("D/ST") ? { position: "DEFENSES" } : {}),
       ...o,
     }))
-    .map((o) => ({ ...o, ...draft_json.espn.players[o.name] }));
+    .map((o) => ({ ...o, ...draft_json.espn.players[normalize(o.name)] }));
 
   const values = [
     {
@@ -511,7 +511,7 @@ function getEspnLiveDraft() {
       .find((i) => i.innerText === index.toString())!;
     if (clickable) {
       clickable.click();
-      setTimeout(subHelper, 100);
+      setTimeout(subHelper, 1000);
     } else {
       subHelper();
     }
