@@ -4,7 +4,7 @@ import { FirebaseWrapper } from "../firebase";
 import draft_json from "./draft.json";
 
 const PICK_NUMBER = 8;
-export const NUM_TEAMS = 10;
+const NUM_TEAMS = 10;
 
 type DraftType = string[];
 type PlayersType = { [name: string]: number };
@@ -12,7 +12,6 @@ type FirebaseType = { name: string; rank: number }[];
 type PType = { position: string; team: string };
 type RPType = {
   name: string;
-  nname: string;
   fname: string;
   picks: number[];
   value: number;
@@ -72,7 +71,7 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
     props.o.r.find((d) => d.source === source)?.players || []
   ).map((p) => ({
     ...p,
-    seen: espn[p.nname] !== undefined,
+    seen: espn[p.name] !== undefined,
   }));
   return (
     <pre
@@ -202,11 +201,11 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
                   <td
                     style={{
                       backgroundColor: {
-                        "RUNNING BACKS": "lightblue",
-                        "WIDE RECEIVERS": "lightseagreen",
-                        "TIGHT ENDS": "lightcoral",
-                        QUARTERBACKS: "plum",
-                        DEFENSES: "lightsalmon",
+                        RB: "lightblue",
+                        WR: "lightseagreen",
+                        TE: "lightcoral",
+                        QB: "plum",
+                        "D/ST": "lightsalmon",
                       }[v.position],
                     }}
                   >
@@ -238,7 +237,7 @@ function isMyPick(pick: number): boolean {
   );
 }
 
-export function normalize(s: string) {
+function normalize(s: string) {
   return s
     .replaceAll(/[^A-Za-z ]/g, "")
     .replaceAll(/ I+$/g, "")
@@ -263,10 +262,14 @@ function results(draft_json: DraftJsonType): ResultsType {
     picks: Object.fromEntries(d.map((p, i) => [p, i])),
   }));
   const extra = Object.keys(draft_json.extra);
-  const raw = Object.entries(draft_json.adp)
-    .map(([name, adp]) => ({ name, adp, avc: draft_json.avc[name] || 1 }))
-    .sort((a, b) => a.adp - b.adp)
-    .map((o, i) => ({ ...o, nname: normalize(o.name), i }))
+  const raw = Object.entries(draft_json.espn.pick)
+    .map(([name, pick]) => ({
+      name,
+      pick,
+      auction: draft_json.espn.auction[name] || 1,
+    }))
+    .sort((a, b) => a.pick - b.pick)
+    .map((o, i) => ({ ...o, i }))
     .map((o) => ({
       ...o,
       picks: ds.map((d) =>
@@ -275,7 +278,7 @@ function results(draft_json: DraftJsonType): ResultsType {
       extra: Object.fromEntries(
         extra.map((s) => [
           s,
-          draft_json.extra[s][o.nname] ||
+          draft_json.extra[s][o.name] ||
             Object.entries(draft_json.extra[s]).length + 1,
         ])
       ),
@@ -286,11 +289,11 @@ function results(draft_json: DraftJsonType): ResultsType {
     }))
     .map((o) => ({
       ...o,
-      d_adp_score: getScore(o.adp, o.history),
+      history_score: getScore(o.pick, o.history),
       scores: Object.fromEntries(
         extra.map((s) => [
           s,
-          getScore(o.extra[s] > 0 ? o.history : o.avc, o.extra[s]),
+          getScore(o.extra[s] > 0 ? o.history : o.auction, o.extra[s]),
         ])
       ),
     }))
@@ -298,23 +301,26 @@ function results(draft_json: DraftJsonType): ResultsType {
       fname: `${[
         o.history.toFixed(1),
         "",
-        o.adp,
-        `$${-o.avc}`,
+        o.pick,
+        `$${o.auction}`,
         "",
         ...extra.map((s) => (o.extra[s] < 0 ? `$${-o.extra[s]}` : o.extra[s])),
       ].join("/")} ${o.name.substring(0, 20)}`,
       ...(o.name.includes("D/ST") ? { position: "DEFENSES" } : {}),
       ...o,
     }))
-    .map((o) => ({ ...o, ...draft_json.players[o.nname] }));
+    .map((o) => ({ ...o, ...draft_json.espn.players[o.name] }));
 
   const values = [
     {
       source: "history",
       players: raw.map((p) => ({ ...p, value: p.history })),
     },
-    { source: "pick", players: raw.map((p) => ({ ...p, value: p.adp })) },
-    { source: "salary", players: raw.map((p) => ({ ...p, value: p.avc })) },
+    { source: "pick", players: raw.map((p) => ({ ...p, value: p.pick })) },
+    {
+      source: "auction",
+      players: raw.map((p) => ({ ...p, value: p.auction })),
+    },
   ].concat(
     extra.map((source) => ({
       source,
@@ -324,8 +330,8 @@ function results(draft_json: DraftJsonType): ResultsType {
 
   const scores = [
     {
-      source: "d_adp_score",
-      players: raw.map((p) => ({ ...p, value: p.d_adp_score })),
+      source: "history_score",
+      players: raw.map((p) => ({ ...p, value: p.history_score })),
     },
   ].concat(
     extra.map((source) => ({
@@ -344,7 +350,7 @@ function results(draft_json: DraftJsonType): ResultsType {
             (d) =>
               Object.keys(d)
                 .map((name, i) => ({ name, i }))
-                .find(({ name }) => name === p.nname)?.i!
+                .find(({ name }) => name === p.name)?.i!
           )
           .filter((rank) => rank !== undefined),
       }))
@@ -363,7 +369,7 @@ function results(draft_json: DraftJsonType): ResultsType {
     }));
 }
 
-export function printF(s: string): string {
+function printF(s: string): string {
   return s
     .split("\n")
     .map((i) => i.split("// ")[0].trim())
@@ -406,50 +412,50 @@ export function getDraft() {
   return s.concat(recent);
 }
 
-export function getFromBeersheets(): PlayersType {
-  // https://footballabsurdity.com/2022/06/27/2022-fantasy-football-salary-cap-values/
-  return Object.fromEntries(
-    Array.from(
-      document.getElementById("sheets-viewport")!.getElementsByTagName("tr")
-    )
-      .flatMap((tr, i) =>
-        Array.from(tr.children)
-          .filter((_, i) => i > 0)
-          .map((td) => td as HTMLElement)
-          .map((td, j) => ({ td: td.innerText, i, j }))
-      )
-      .map(({ td }) => td)
-      .reduce(
-        (prev, current) => {
-          if (parseInt(current)) return Object.assign({}, prev, { current });
-          if (prev.current)
-            return Object.assign({}, prev, {
-              current: null,
-              rank: parseInt(prev.current),
-              name: current.split(",")[0],
-            });
-          if (prev.name && current.includes("$"))
-            return {
-              players: (prev.players || []).concat({
-                name: prev.name,
-                salary: parseInt(current.split("$")[1]),
-              }),
-            };
-          return prev;
-        },
-        {} as {
-          players?: {
-            name: string;
-            salary: number;
-          }[];
-          current?: string;
-          name?: string;
-        }
-      )
-      .players!.sort((a, b) => (a.salary > b.salary ? -1 : 1))
-      .map((o) => [o.name, -o.salary])
-  );
-}
+// function getFromBeersheets(): PlayersType {
+//   // https://footballabsurdity.com/2022/06/27/2022-fantasy-football-salary-cap-values/
+//   return Object.fromEntries(
+//     Array.from(
+//       document.getElementById("sheets-viewport")!.getElementsByTagName("tr")
+//     )
+//       .flatMap((tr, i) =>
+//         Array.from(tr.children)
+//           .filter((_, i) => i > 0)
+//           .map((td) => td as HTMLElement)
+//           .map((td, j) => ({ td: td.innerText, i, j }))
+//       )
+//       .map(({ td }) => td)
+//       .reduce(
+//         (prev, current) => {
+//           if (parseInt(current)) return Object.assign({}, prev, { current });
+//           if (prev.current)
+//             return Object.assign({}, prev, {
+//               current: null,
+//               rank: parseInt(prev.current),
+//               name: current.split(",")[0],
+//             });
+//           if (prev.name && current.includes("$"))
+//             return {
+//               players: (prev.players || []).concat({
+//                 name: prev.name,
+//                 salary: parseInt(current.split("$")[1]),
+//               }),
+//             };
+//           return prev;
+//         },
+//         {} as {
+//           players?: {
+//             name: string;
+//             salary: number;
+//           }[];
+//           current?: string;
+//           name?: string;
+//         }
+//       )
+//       .players!.sort((a, b) => (a.salary > b.salary ? -1 : 1))
+//       .map((o) => [o.name, -o.salary])
+//   );
+// }
 
 function getEspnLiveDraft() {
   const max_index = 6;
