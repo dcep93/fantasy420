@@ -114,9 +114,9 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
                 (name) =>
                   (
                     draft_json.espn.players as {
-                      [name: string]: { position: string };
+                      [n: string]: { position: string };
                     }
-                  )[normalize(name)]?.position
+                  )[name]?.position
               )
               .reduce((prev, current) => {
                 prev[current] = (prev[current] || 0) + 1;
@@ -250,6 +250,7 @@ function getScore(average: number, value: number): number {
 }
 
 function results(draft_json: DraftJsonType): ResultsType {
+  draft_json.drafts = draft_json.drafts.map((d) => d.map((n) => normalize(n)));
   draft_json.extra = Object.fromEntries(
     Object.entries(draft_json.extra).map(([s, ps]) => [
       s,
@@ -258,14 +259,24 @@ function results(draft_json: DraftJsonType): ResultsType {
       ),
     ])
   );
+  // @ts-ignore
+  draft_json.espn = Object.fromEntries(
+    Object.entries(draft_json.espn).map(([k, v]) => [
+      k,
+      Object.fromEntries(
+        Object.entries(v).map(([kk, vv]) => [normalize(kk), vv])
+      ),
+    ])
+  );
+  console.log(draft_json.espn);
   const ds = draft_json.drafts.map((d) => ({
     size: d.length,
-    picks: Object.fromEntries(d.map((p, i) => [normalize(p), i])),
+    picks: Object.fromEntries(d.map((p, i) => [p, i])),
   }));
   const extra = Object.keys(draft_json.extra);
   const raw = Object.entries(draft_json.espn.pick)
     .map(([name, pick]) => ({
-      name: normalize(name),
+      name,
       pick,
       auction: -draft_json.espn.auction[name] || -1,
     }))
@@ -307,10 +318,9 @@ function results(draft_json: DraftJsonType): ResultsType {
         "",
         ...extra.map((s) => (o.extra[s] < 0 ? `$${-o.extra[s]}` : o.extra[s])),
       ].join("/")} ${o.name.substring(0, 20)}`,
-      ...(o.name.includes("D/ST") ? { position: "DEFENSES" } : {}),
       ...o,
     }))
-    .map((o) => ({ ...o, ...draft_json.espn.players[normalize(o.name)] }));
+    .map((o) => ({ ...o, ...draft_json.espn.players[o.name] }));
 
   const values = [
     {
