@@ -23,10 +23,12 @@ type ResultsType = {
 }[];
 type DraftJsonType = {
   drafts: DraftType[];
-  players: { [name: string]: PType };
-  adp: PlayersType;
-  avc: PlayersType;
   extra: { [source: string]: PlayersType };
+  espn: {
+    players: { [name: string]: PType };
+    pick: PlayersType;
+    auction: PlayersType;
+  };
 };
 
 function Draft() {
@@ -109,14 +111,13 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
         <pre>
           {JSON.stringify(
             drafted
-              .map((name) =>
-                name.endsWith("D/ST")
-                  ? "D/ST"
-                  : (
-                      draft_json.players as {
-                        [name: string]: { position: string };
-                      }
-                    )[normalize(name)]?.position
+              .map(
+                (name) =>
+                  (
+                    draft_json.espn.players as {
+                      [name: string]: { position: string };
+                    }
+                  )[name]?.position
               )
               .reduce((prev, current) => {
                 prev[current] = (prev[current] || 0) + 1;
@@ -146,7 +147,12 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
               espn
             </a>
           </div>
-          <input readOnly value={printF(getEspnLiveDraft.toString())} />
+          <input
+            readOnly
+            value={`${printF(getEspnLiveDraft.toString())}; ${
+              getEspnLiveDraft.name
+            }()`}
+          />
         </div>
         <div>
           <div>updateDraftRanking</div>
@@ -251,9 +257,6 @@ function results(draft_json: DraftJsonType): ResultsType {
         Object.entries(ps).map(([name, value]) => [normalize(name), value])
       ),
     ])
-  );
-  draft_json.players = Object.fromEntries(
-    Object.entries(draft_json.players).map(([name, o]) => [normalize(name), o])
   );
   const ds = draft_json.drafts.map((d) => ({
     size: d.length,
@@ -403,44 +406,6 @@ export function getDraft() {
   return s.concat(recent);
 }
 
-export function getPlayersFromBeersheets() {
-  return Object.fromEntries(
-    Array.from(
-      document.getElementById("sheets-viewport")!.getElementsByTagName("tr")
-    )
-      .flatMap((tr, i) =>
-        Array.from(tr.children)
-          .map((td) => td as HTMLElement)
-          .map((td, j) => ({ td: td.innerText, i, j: j - 1 }))
-      )
-      .filter(({ td, j }) => [1, 5, 9].includes(j) && td && td !== "Player")
-      .map((o) => ({ ...o, index: 100 * o.j + o.i, split: o.td.split(", ") }))
-      .sort((a, b) => a.index - b.index)
-      .reduce(
-        (prev, { td, split }) => {
-          if (!td.includes(",")) return { ...prev, position: td };
-          return {
-            ...prev,
-            players: (prev.players || []).concat({
-              name: split[0],
-              team: split[1],
-              position: prev.position!,
-            }),
-          };
-        },
-        {} as {
-          players?: {
-            name: string;
-            team: string;
-            position: string;
-          }[];
-          position?: string;
-        }
-      )
-      .players!.map((o) => [o.name, { position: o.position, team: o.team }])
-  );
-}
-
 export function getFromBeersheets(): PlayersType {
   // https://footballabsurdity.com/2022/06/27/2022-fantasy-football-salary-cap-values/
   return Object.fromEntries(
@@ -486,7 +451,9 @@ export function getFromBeersheets(): PlayersType {
   );
 }
 
-function getEspnLiveDraft(max_index: number, injured_only: boolean) {
+function getEspnLiveDraft() {
+  const max_index = 6;
+  const injured_only = false;
   // https://fantasy.espn.com/football/livedraftresults?leagueId=203836968
   const data = {
     players: {} as { [name: string]: { position: string; team: string } },
@@ -543,6 +510,18 @@ function getEspnLiveDraft(max_index: number, injured_only: boolean) {
     }
   }
   helper(1);
+}
+
+function jayzheng() {
+  Object.fromEntries(
+    Array.from(
+      document
+        .getElementsByClassName("overall-rankings")[0]
+        .getElementsByTagName("tr")
+    )
+      .map((tr) => tr.children[3] as HTMLElement)
+      .map((tr, i) => [tr.innerText, i + 1])
+  );
 }
 
 function updateDraftRanking(ordered: { [name: string]: number }) {
@@ -610,18 +589,6 @@ function updateDraftRanking(ordered: { [name: string]: number }) {
       )
     )
     .then((resp) => alert(resp.ok));
-}
-
-function jayzheng() {
-  Object.fromEntries(
-    Array.from(
-      document
-        .getElementsByClassName("overall-rankings")[0]
-        .getElementsByTagName("tr")
-    )
-      .map((tr) => tr.children[3] as HTMLElement)
-      .map((tr, i) => [tr.innerText, i + 1])
-  );
 }
 
 export default Draft;
