@@ -120,7 +120,7 @@ function get_results(
       Object.entries(d).map(([name, score]) => [normalize(name), score])
     )
   );
-  const scored = Array.from(new Array(NUM_TEAMS))
+  const scored = Array.from(new Array(MANAGERS.length))
     .map((_, team_index) =>
       final
         .map((name, pick_index) => ({ name, pick_index }))
@@ -168,12 +168,12 @@ function get_results(
 
 function isMyPick(pick_index: number, team_index: number): boolean {
   if (pick_index >= 20) {
-    team_index = NUM_TEAMS - 1 - team_index;
+    team_index = MANAGERS.length - 1 - team_index;
   }
-  const oddRound = (pick_index / NUM_TEAMS) % 2 < 1;
+  const oddRound = (pick_index / MANAGERS.length) % 2 < 1;
   return (
-    pick_index % NUM_TEAMS ===
-    (oddRound ? team_index : NUM_TEAMS - 1 - team_index)
+    pick_index % MANAGERS.length ===
+    (oddRound ? team_index : MANAGERS.length - 1 - team_index)
   );
 }
 
