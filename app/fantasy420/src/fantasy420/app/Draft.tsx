@@ -419,9 +419,8 @@ export function getDraft() {
   return s.concat(recent);
 }
 
-function getEspnLiveDraft() {
+function getEspnLiveDraft(injured_only: boolean) {
   const max_index = 6;
-  const injured_only = false;
   const data = {
     players: {} as { [name: string]: { position: string; team: string } },
     pick: {} as { [name: string]: number },
