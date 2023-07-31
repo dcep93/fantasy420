@@ -312,7 +312,9 @@ function results(draft_json: DraftJsonType): ResultsType {
         o.pick,
         `$${-o.auction}`,
         "",
-        ...extra.map((s) => (o.extra[s] < 0 ? `$${-o.extra[s]}` : o.extra[s])),
+        ...extra
+          .map((s) => parseFloat(o.extra[s].toFixed(1)))
+          .map((e) => (e < 0 ? `$${-e}` : e)),
       ].join("/")} ${o.name.substring(0, 20)}`,
       ...o,
     }))
