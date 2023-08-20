@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { normalize } from "./Draft";
+import { MAX_PEAKED, getPeakedValue, normalize } from "./Draft";
 import draft_json from "./draft.json";
+
+import raw_generated_peaked from "./Peaked/generated.json";
 
 const MANAGERS = [
   "Ahmed",
@@ -18,6 +20,24 @@ const MANAGERS = [
 function Value() {
   const [num_rounds, update] = useState(8);
   const final = draft_json.drafts[0];
+
+  const generated_peaked: {
+    peaked: { url: string; lines: string[] };
+    teams: { name: string; players: string[] }[];
+  } = raw_generated_peaked;
+
+  const peaked = Object.fromEntries(
+    Object.keys(draft_json.espn.players)
+      .map((name) => [
+        name,
+        getPeakedValue(name, generated_peaked.peaked.lines),
+      ])
+      .filter(([name, value]) => (value as number) < MAX_PEAKED)
+  );
+
+  // @ts-ignore
+  draft_json.extra.peaked = peaked;
+
   const extra_entries = Object.entries(draft_json.extra).reverse();
   const results = get_results(final, extra_entries, num_rounds);
   return (
