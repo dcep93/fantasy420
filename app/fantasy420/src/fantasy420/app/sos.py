@@ -14,8 +14,8 @@ def main():
 
 
 def get_results():
-    team_names = get_team_names()
     points_against = get_points_against()
+    team_names = points_against.keys()
     with concurrent.futures.ThreadPoolExecutor(NUM_EXECUTORS) as executor:
         _predictions = executor.map(
             lambda team_name: get_prediction(team_name, points_against),
