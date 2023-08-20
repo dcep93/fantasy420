@@ -134,7 +134,7 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
           <div>
             <a href="https://jayzheng.com/ff/">jayzheng</a>
           </div>
-          <input readOnly value={printF(jayzheng.toString())} />
+          <input readOnly value={printF(jayzheng)} />
         </div>
         <div>
           <div>
@@ -142,17 +142,12 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
               espn
             </a>
           </div>
-          <input
-            readOnly
-            value={`${printF(getEspnLiveDraft.toString())}; ${
-              getEspnLiveDraft.name
-            }()`}
-          />
+          <input readOnly value={printF(getEspnLiveDraft)} />
         </div>
         <div>
           <div>updateDraftRanking</div>
           <div>
-            <input readOnly value={printF(updateDraftRanking.toString())} />
+            <input readOnly value={printF(updateDraftRanking)} />
           </div>
           <div>
             <input
@@ -325,9 +320,9 @@ function results(draft_json: DraftJsonType): ResultsType {
       source: "history",
       players: raw.map((p) => ({ ...p, value: p.history })),
     },
-    { source: "pick", players: raw.map((p) => ({ ...p, value: p.pick })) },
+    { source: "espnpick", players: raw.map((p) => ({ ...p, value: p.pick })) },
     {
-      source: "auction",
+      source: "espnauction",
       players: raw.map((p) => ({ ...p, value: p.auction })),
     },
   ].concat(
@@ -378,11 +373,12 @@ function results(draft_json: DraftJsonType): ResultsType {
     }));
 }
 
-function printF(s: string): string {
-  return s
+function printF(f: (...args: any[]) => any): string {
+  return `${f
+    .toString()
     .split("\n")
     .map((i) => i.split("// ")[0].trim())
-    .join(" ");
+    .join(" ")}; ${f.name}()`;
 }
 
 export function getDraft() {
@@ -481,7 +477,7 @@ function getEspnLiveDraft(injured_only: boolean) {
 }
 
 function jayzheng() {
-  Object.fromEntries(
+  return Object.fromEntries(
     Array.from(
       document
         .getElementsByClassName("overall-rankings")[0]
