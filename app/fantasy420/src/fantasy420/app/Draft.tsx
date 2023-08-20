@@ -2,9 +2,12 @@ import { useState } from "react";
 import { FirebaseWrapper } from "../firebase";
 
 import draft_json from "./draft.json";
+import raw_generated_peaked from "./Peaked/generated.json";
 
 const PICK_NUMBER = 8;
 const NUM_TEAMS = 10;
+
+export const MAX_PEAKED = 250;
 
 type DraftType = string[];
 type PlayersType = { [name: string]: number };
@@ -260,6 +263,20 @@ function results(draft_json: DraftJsonType): ResultsType {
     ])
   );
   console.log(draft_json.espn);
+
+  const generated_peaked: {
+    peaked: { url: string; lines: string[] };
+    teams: { name: string; players: string[] }[];
+  } = raw_generated_peaked;
+
+  draft_json.extra.peaked = Object.fromEntries(
+    Object.keys(draft_json.espn.players)
+      .map((name) => [
+        name,
+        getPeakedValue(name, generated_peaked.peaked.lines),
+      ])
+      .filter(([name, value]) => (value as number) < MAX_PEAKED)
+  );
   const ds = draft_json.drafts.map((d) => ({
     size: d.length,
     picks: Object.fromEntries(d.map((p, i) => [p, i])),
@@ -553,6 +570,15 @@ function updateDraftRanking(ordered: { [name: string]: number }) {
       )
     )
     .then((resp) => alert(resp.ok));
+}
+
+export function getPeakedValue(name: string, lines: string[]): number {
+  const found = lines.find((line) => normalize(line).includes(name));
+  if (!found) return MAX_PEAKED;
+  return found
+    .split(" ")
+    .map((part) => parseInt(part))
+    .find((part) => !isNaN(part))!;
 }
 
 export default Draft;
