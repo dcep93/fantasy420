@@ -38,7 +38,22 @@ function Value() {
   // @ts-ignore
   draft_json.extra.peaked = peaked;
 
-  const extra_entries = Object.entries(draft_json.extra).reverse();
+  const extra_entries = (
+    Object.entries(draft_json.extra) as [string, { [name: string]: number }][]
+  )
+    .reverse()
+    .concat([["espnpick", draft_json.espn.pick]])
+    .concat([
+      [
+        "espnauction",
+        Object.fromEntries(
+          Object.entries(draft_json.espn.auction).map(([name, value]) => [
+            name,
+            -value,
+          ])
+        ),
+      ],
+    ]);
   const results = get_results(final, extra_entries, num_rounds);
   return (
     <div>
@@ -88,15 +103,15 @@ function Value() {
                       score: scores[j],
                       rank: ranks[j],
                     }))
+                    .map(({ score, ...o }) => ({
+                      score: Number.isInteger(score)
+                        ? score
+                        : parseFloat(score.toFixed(2)),
+                      ...o,
+                    }))
                     .map(({ key, score, rank }) => (
                       <td key={key}>
-                        <div>
-                          {{
-                            peak: "[ PeakedInHighSkool draft ]",
-                            peaka: "[ PeakedInHighSkool auction ]",
-                            "jayzheng.com": "[ jayzheng.com/ff/ ]",
-                          }[key] || key}
-                        </div>
+                        <div>{key}</div>
                         <div>#{rank + 1}</div>
                         <div>{score < 0 ? `$${-score}` : score}</div>
                       </td>

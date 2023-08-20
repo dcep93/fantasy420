@@ -573,7 +573,7 @@ function updateDraftRanking(ordered: { [name: string]: number }) {
 }
 
 export function getPeakedValue(name: string, lines: string[]): number {
-  const found = lines.find((line) => normalize(line).includes(name));
+  const found = lines.find((line) => normalize(line).includes(normalize(name)));
   if (!found) return MAX_PEAKED;
   return found
     .split(" ")
