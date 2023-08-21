@@ -147,6 +147,14 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
         </div>
         <div>
           <div>
+            <a href="https://www.fantasypros.com/nfl/rankings/dynasty-superflex.php">
+              fantasypros
+            </a>
+          </div>
+          <input readOnly value={printF(fantasypros)} />
+        </div>
+        <div>
+          <div>
             <a href="https://fantasy.espn.com/football/livedraftresults">
               espn
             </a>
@@ -519,6 +527,19 @@ function draftsharks() {
       .map((tr) => tr.children[0].children[2] as HTMLElement)
       .filter((tr) => tr)
       .map((tr, i) => [tr.childNodes[0].nodeValue, i + 1])
+  );
+}
+
+function fantasypros() {
+  return Object.fromEntries(
+    Array.from(
+      document
+        .getElementsByClassName("player-table")[0]
+        .getElementsByClassName("player-row")
+    )
+      .map((tr) => tr.getElementsByTagName("a")[0] as HTMLElement)
+      .filter((tr) => tr)
+      .map((tr, i) => [tr.innerText, i + 1])
   );
 }
 
