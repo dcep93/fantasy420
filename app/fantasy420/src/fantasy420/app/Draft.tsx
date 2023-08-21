@@ -147,7 +147,7 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
         </div>
         <div>
           <div>
-            <a href="https://www.fantasypros.com/nfl/rankings/dynasty-superflex.php">
+            <a href="https://www.fantasypros.com/nfl/rankings/ppr-superflex-cheatsheets.php">
               fantasypros
             </a>
           </div>
