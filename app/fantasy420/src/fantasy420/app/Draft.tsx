@@ -385,13 +385,16 @@ function results(draft_json: DraftJsonType): ResultsType {
             (d) =>
               Object.keys(d)
                 .map((name, i) => ({ name, i }))
-                .find(({ name }) => name === p.name)?.i!
+                .find(({ name }) => normalize(name) === normalize(p.name))?.i!
           )
           .filter((rank) => rank !== undefined),
       }))
       .map(({ extra, ...p }) => ({
         ...p,
-        value: extra.reduce((a, b) => a + b, extra.length) / extra.length,
+        value:
+          extra.length === 0
+            ? raw.length
+            : extra.reduce((a, b) => a + b, extra.length) / extra.length,
       })),
   };
 
