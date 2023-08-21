@@ -141,6 +141,12 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
         </div>
         <div>
           <div>
+            <a href="https://www.draftsharks.com/adp/superflex">draftsharks</a>
+          </div>
+          <input readOnly value={printF(draftsharks)} />
+        </div>
+        <div>
+          <div>
             <a href="https://fantasy.espn.com/football/livedraftresults">
               espn
             </a>
@@ -502,6 +508,17 @@ function jayzheng() {
     )
       .map((tr) => tr.children[3] as HTMLElement)
       .map((tr, i) => [tr.innerText, i + 1])
+  );
+}
+
+function draftsharks() {
+  return Object.fromEntries(
+    Array.from(
+      document.getElementsByClassName("adp-table")[0].getElementsByTagName("tr")
+    )
+      .map((tr) => tr.children[0].children[2] as HTMLElement)
+      .filter((tr) => tr)
+      .map((tr, i) => [tr.childNodes[0].nodeValue, i + 1])
   );
 }
 
