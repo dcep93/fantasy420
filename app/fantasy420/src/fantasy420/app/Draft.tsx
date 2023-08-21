@@ -9,6 +9,8 @@ const NUM_TEAMS = 10;
 
 export const MAX_PEAKED = 250;
 
+const PASSWORD = "igotninthbitches";
+
 type DraftType = string[];
 type PlayersType = { [name: string]: number };
 type FirebaseType = { name: string; rank: number }[];
@@ -35,7 +37,20 @@ type DraftJsonType = {
 
 function Draft() {
   const r = results(draft_json);
-  return <SubDraft r={r} />;
+  return localStorage.getItem("password") !== PASSWORD ? (
+    <Password />
+  ) : (
+    <SubDraft r={r} />
+  );
+}
+
+function Password() {
+  const password = window.prompt("enter the password:");
+  if (password) {
+    localStorage.setItem("password", password);
+    window.location.reload();
+  }
+  return null;
 }
 
 class SubDraft extends FirebaseWrapper<FirebaseType, { r: ResultsType }> {
