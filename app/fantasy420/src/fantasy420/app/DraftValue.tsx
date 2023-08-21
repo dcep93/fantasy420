@@ -5,16 +5,16 @@ import draft_json from "./draft.json";
 import raw_generated_peaked from "./Peaked/generated.json";
 
 const MANAGERS = [
-  "Ahmed",
-  "Dunc",
-  "Neil",
-  "Sourav",
-  "Dan",
-  "Heify",
-  "Ruifan",
-  "Jon",
-  "George",
-  "Bu",
+  "neil",
+  "heify",
+  "dunc",
+  "sourav",
+  "ahmed",
+  "ruifan",
+  "bu",
+  "jon",
+  "dan",
+  "george",
 ];
 
 function Value() {
