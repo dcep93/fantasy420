@@ -112,6 +112,7 @@ function getData(year: string, source: string, sources: SourcesType): DataType {
               y: f(o),
               ...o,
             }))
+            .filter(({ x }) => x !== undefined)
             .map(({ ...o }) => ({
               ...o,
               y: parseFloat(o.y.toFixed(2)),
