@@ -38,7 +38,32 @@ export default function Accuracy() {
       -o.auction,
     ])
   );
-  const [source, updateSource] = useState("espn_adp");
+  const source_ranks = Object.fromEntries(
+    Object.entries(sources).map(([s, o]) => [
+      s,
+      Object.fromEntries(
+        Object.entries(o)
+          .map(([playerName, value]) => ({ playerName, value }))
+          .sort((a, b) => a.value - b.value)
+          .map(({ playerName }, i) => [playerName, i + 1])
+      ),
+    ])
+  );
+  sources.composite = Object.fromEntries(
+    Object.keys(accuracy_year.espn)
+      .map((playerName) => normalize(playerName))
+      .map((playerName) => ({
+        playerName,
+        ranks: Object.values(source_ranks).map((source) => source[playerName]),
+      }))
+      .map(({ playerName, ranks }) => [
+        playerName,
+        parseFloat(
+          (ranks.reduce((a, b) => a + b, 0) / ranks.length).toFixed(2)
+        ),
+      ])
+  );
+  const [source, updateSource] = useState("composite");
   // TODO by position
   const data = Object.fromEntries(
     Object.entries({
