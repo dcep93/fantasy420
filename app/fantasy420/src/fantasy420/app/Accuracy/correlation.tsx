@@ -86,14 +86,3 @@ export default function distanceCorrelation(data: number[][]) {
 
   return dCor;
 }
-
-// Example data
-const data = [
-  [1, 2, 3],
-  [2, 3, 4],
-  [3, 4, 5],
-  // ... add more data points here
-];
-
-const correlation = distanceCorrelation(data);
-console.log("Distance Correlation:", correlation);
