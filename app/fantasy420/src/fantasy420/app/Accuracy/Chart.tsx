@@ -1,25 +1,30 @@
 import { ChartDataType } from ".";
 
-// @ts-ignore
-import CanvasJSReact from "@canvasjs/react-charts";
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+import {
+  CartesianGrid,
+  Scatter,
+  ScatterChart,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 
-export default function Chart(props: { title: string; data: ChartDataType }) {
+export default function Chart(props: { data: ChartDataType }) {
   return (
-    <div>
-      <CanvasJSChart
-        options={{
-          title: {
-            text: props.title,
-          },
-          data: [
-            {
-              type: "scatter",
-              dataPoints: props.data,
-            },
-          ],
-        }}
+    <ScatterChart width={600} height={400}>
+      <CartesianGrid />
+      <XAxis type="number" dataKey="x" />
+      <YAxis type="number" dataKey="y" />
+      <Scatter data={props.data} />{" "}
+      <Tooltip
+        content={(data) =>
+          !data.active ? null : (
+            <div style={{ backgroundColor: "white" }}>
+              {data.payload![0].payload.label}
+            </div>
+          )
+        }
       />
-    </div>
+    </ScatterChart>
   );
 }
