@@ -189,12 +189,11 @@ export default function Accuracy() {
               {Object.entries(o).map(([category, oo]) => (
                 <div key={category} style={{ flexGrow: 1 }}>
                   <div style={{ padding: "0 20px" }}>
-                    <Chart
-                      title={`${category} r2 : ${parseFloat(
-                        getCorrelation(oo).toFixed(4)
-                      )}`}
-                      data={oo}
-                    />
+                    <h2>
+                      {category} r2 :{" "}
+                      {parseFloat(getCorrelation(oo).toFixed(4))}
+                    </h2>
+                    <Chart data={oo} />
                   </div>
                 </div>
               ))}
