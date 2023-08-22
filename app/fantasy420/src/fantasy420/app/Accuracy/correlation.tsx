@@ -64,13 +64,12 @@ function distanceCovariance(matrix1: Matrix, matrix2: Matrix) {
 
 export default function distanceCorrelation(data: number[][]) {
   const numRows = data.length;
-  const numCols = data[0].length;
 
   const distances = new Array(numRows);
 
   for (let i = 0; i < numRows; i++) {
     distances[i] = new Array(numRows);
-    for (let j = 0; j < numCols; j++) {
+    for (let j = 0; j < numRows; j++) {
       distances[i][j] = euclideanDistance(data[i], data[j]);
     }
   }
