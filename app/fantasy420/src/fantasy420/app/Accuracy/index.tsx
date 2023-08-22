@@ -190,7 +190,9 @@ export default function Accuracy() {
                 <div key={category} style={{ flexGrow: 1 }}>
                   <div style={{ padding: "0 20px" }}>
                     <Chart
-                      title={`${category} : ${getCorrelation(oo)}`}
+                      title={`${category} r2 : ${parseFloat(
+                        getCorrelation(oo).toFixed(4)
+                      )}`}
                       data={oo}
                     />
                   </div>
