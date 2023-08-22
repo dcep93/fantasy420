@@ -12,18 +12,27 @@ type EspnPlayerType = {
   average_points: number;
 };
 
+type SourcesType = {
+  [source: string]: { [normalizedPlayerName: string]: number };
+};
+
 type AccuracyJsonType = {
   [year: string]: {
     espn: {
       [playerName: string]: EspnPlayerType;
     };
-    sources: { [source: string]: { [normalizedPlayerName: string]: number } };
+    sources: SourcesType;
   };
 };
 
-export default function Accuracy() {
+type DataType = {
+  [position: string]: {
+    [category: string]: { x: number; y: number; label: string }[];
+  };
+};
+
+function getSources(year: string): SourcesType {
   const accuracy_json = raw_accuracy_json as AccuracyJsonType;
-  const [year, updateYear] = useState(default_year);
   const accuracy_year = accuracy_json[year];
   const sources = Object.assign({}, accuracy_year.sources);
   sources.espn_auction = Object.fromEntries(
@@ -71,7 +80,12 @@ export default function Accuracy() {
       })
       .map(({ playerName, value }) => [playerName, value])
   );
-  const [source, updateSource] = useState("composite");
+  return sources;
+}
+
+function getData(year: string, source: string, sources: SourcesType): DataType {
+  const accuracy_json = raw_accuracy_json as AccuracyJsonType;
+  const accuracy_year = accuracy_json[year];
   const by_position = {} as {
     [position: string]: { [playerName: string]: EspnPlayerType };
   };
@@ -110,6 +124,19 @@ export default function Accuracy() {
       ),
     ])
   );
+  return data;
+}
+
+function Chart(props: { data: DataType }) {
+  return <pre>{JSON.stringify(props.data, null, 2)}</pre>;
+}
+
+export default function Accuracy() {
+  const accuracy_json = raw_accuracy_json as AccuracyJsonType;
+  const [year, updateYear] = useState(default_year);
+  const [source, updateSource] = useState("composite");
+  const sources = getSources(year);
+  const data = getData(year, source, sources);
   return (
     <div>
       <select
@@ -138,7 +165,7 @@ export default function Accuracy() {
             </option>
           ))}
       </select>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      <Chart data={data} />
     </div>
   );
 }
