@@ -40,12 +40,12 @@ function getSources(year: string): SourcesType {
   const sources = Object.assign({}, accuracy_year.sources);
   sources.espn_auction = Object.fromEntries(
     Object.entries(accuracy_year.espn)
-      .filter(([playerName, o]) => o.auction !== null && o.auction < -0.1)
+      .filter(([playerName, o]) => o.auction !== null && o.auction <= -0.5)
       .map(([playerName, o]) => [normalize(playerName), o.auction])
   );
   sources.espn_adp = Object.fromEntries(
     Object.entries(accuracy_year.espn)
-      .filter(([playerName, o]) => o.adp !== null && o.adp < 169)
+      .filter(([playerName, o]) => o.adp !== null && o.adp < 168)
       .map(([playerName, o]) => [normalize(playerName), o.adp])
   );
   const source_ranks = Object.fromEntries(
