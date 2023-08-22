@@ -329,6 +329,216 @@
         "auction": 25,
         "season_points": 220.9,
         "average_points": 13.80625
+      },
+      "Derek Carr": {
+        "position": "QUARTERBACKS",
+        "adp": 119.8,
+        "auction": 1.7,
+        "season_points": 219.07999999999998,
+        "average_points": 14.605333333333332
+      },
+      "Miles Sanders": {
+        "position": "RUNNING BACKS",
+        "adp": 80,
+        "auction": 6.8,
+        "season_points": 216.70000000000002,
+        "average_points": 12.747058823529413
+      },
+      "Michael Pittman Jr.": {
+        "position": "WIDE RECEIVERS",
+        "adp": 39.1,
+        "auction": 20.6,
+        "season_points": 216.5,
+        "average_points": 13.53125
+      },
+      "Garrett Wilson": {
+        "position": "WIDE RECEIVERS",
+        "adp": 114.9,
+        "auction": 1.5,
+        "season_points": 215.70000000000002,
+        "average_points": 12.688235294117648
+      },
+      "T.J. Hockenson": {
+        "position": "TIGHT ENDS",
+        "adp": 77.8,
+        "auction": 3.6,
+        "season_points": 215.4,
+        "average_points": 12.670588235294119
+      },
+      "Alvin Kamara": {
+        "position": "RUNNING BACKS",
+        "adp": 17.7,
+        "auction": 36.2,
+        "season_points": 211.7,
+        "average_points": 14.113333333333333
+      },
+      "Travis Etienne Jr.": {
+        "position": "RUNNING BACKS",
+        "adp": 67.4,
+        "auction": 10.3,
+        "season_points": 205.1,
+        "average_points": 12.064705882352941
+      },
+      "Jerry Jeudy": {
+        "position": "WIDE RECEIVERS",
+        "adp": 58.6,
+        "auction": 10.9,
+        "season_points": 204.2,
+        "average_points": 13.613333333333333
+      },
+      "Kenneth Walker III": {
+        "position": "RUNNING BACKS",
+        "adp": 126,
+        "auction": 1.6,
+        "season_points": 202.5,
+        "average_points": 13.5
+      },
+      "Cooper Kupp": {
+        "position": "WIDE RECEIVERS",
+        "adp": 3.7,
+        "auction": 56.3,
+        "season_points": 201.4,
+        "average_points": 22.37777777777778
+      },
+      "Kyler Murray": {
+        "position": "QUARTERBACKS",
+        "adp": 69,
+        "auction": 5.2,
+        "season_points": 200.52,
+        "average_points": 18.22909090909091
+      },
+      "George Kittle": {
+        "position": "TIGHT ENDS",
+        "adp": 47.8,
+        "auction": 9.2,
+        "season_points": 200.5,
+        "average_points": 13.366666666666667
+      },
+      "James Conner": {
+        "position": "RUNNING BACKS",
+        "adp": 28.5,
+        "auction": 29.1,
+        "season_points": 200.2,
+        "average_points": 15.399999999999999
+      },
+      "DJ Moore": {
+        "position": "WIDE RECEIVERS",
+        "adp": 36.7,
+        "auction": 23.8,
+        "season_points": 199.10000000000002,
+        "average_points": 11.711764705882354
+      },
+      "Dak Prescott": {
+        "position": "QUARTERBACKS",
+        "adp": 77.6,
+        "auction": 4,
+        "season_points": 198.60000000000002,
+        "average_points": 16.55
+      },
+      "Chris Olave": {
+        "position": "WIDE RECEIVERS",
+        "adp": 123.6,
+        "auction": 1.3,
+        "season_points": 198.2,
+        "average_points": 13.213333333333333
+      },
+      "D'Andre Swift": {
+        "position": "RUNNING BACKS",
+        "adp": 17.7,
+        "auction": 37.7,
+        "season_points": 191.1,
+        "average_points": 13.65
+      },
+      "Mark Andrews": {
+        "position": "TIGHT ENDS",
+        "adp": 24.1,
+        "auction": 29.6,
+        "season_points": 190.5,
+        "average_points": 12.7
+      },
+      "Ezekiel Elliott": {
+        "position": "RUNNING BACKS",
+        "adp": 42.8,
+        "auction": 19.4,
+        "season_points": 185.8,
+        "average_points": 12.386666666666667
+      },
+      "JuJu Smith-Schuster": {
+        "position": "WIDE RECEIVERS",
+        "adp": 82.7,
+        "auction": 5.3,
+        "season_points": 185.3,
+        "average_points": 11.58125
+      },
+      "Diontae Johnson": {
+        "position": "WIDE RECEIVERS",
+        "adp": 54.9,
+        "auction": 15.1,
+        "season_points": 180.7,
+        "average_points": 10.629411764705882
+      },
+      "Jakobi Meyers": {
+        "position": "WIDE RECEIVERS",
+        "adp": 138.1,
+        "auction": 0.9,
+        "season_points": 180.3,
+        "average_points": 12.87857142857143
+      },
+      "Adam Thielen": {
+        "position": "WIDE RECEIVERS",
+        "adp": 83.8,
+        "auction": 5.5,
+        "season_points": 180.0,
+        "average_points": 10.588235294117647
+      },
+      "Drake London": {
+        "position": "WIDE RECEIVERS",
+        "adp": 98.8,
+        "auction": 3.4,
+        "season_points": 178.60000000000002,
+        "average_points": 10.505882352941178
+      },
+      "Devin Singletary": {
+        "position": "RUNNING BACKS",
+        "adp": 84,
+        "auction": 5.4,
+        "season_points": 177.9,
+        "average_points": 11.11875
+      },
+      "David Montgomery": {
+        "position": "RUNNING BACKS",
+        "adp": 46,
+        "auction": 19.7,
+        "season_points": 177.70000000000002,
+        "average_points": 11.106250000000001
+      },
+      "Mike Williams": {
+        "position": "WIDE RECEIVERS",
+        "adp": 53.6,
+        "auction": 14.4,
+        "season_points": 176.5,
+        "average_points": 13.576923076923077
+      },
+      "Allen Lazard": {
+        "position": "WIDE RECEIVERS",
+        "adp": 105.4,
+        "auction": 2.6,
+        "season_points": 174.8,
+        "average_points": 11.653333333333334
+      },
+      "Gabe Davis": {
+        "position": "WIDE RECEIVERS",
+        "adp": 81.9,
+        "auction": 6.5,
+        "season_points": 171.60000000000002,
+        "average_points": 11.440000000000001
+      },
+      "Deebo Samuel": {
+        "position": "WIDE RECEIVERS",
+        "adp": 12.8,
+        "auction": 41.7,
+        "season_points": 168.4,
+        "average_points": 12.953846153846154
       }
     },
     "sources": {

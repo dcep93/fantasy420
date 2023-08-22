@@ -1,13 +1,18 @@
 import json
+import sys
+
+# curl -s 'https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2023/segments/0/leagues/203836968?view=kona_player_info' \
+#   -H 'x-fantasy-filter: {"players":{"filterSlotIds":{"value":[0,7,2,23,4,6]},"sortAppliedStatTotal":{"sortAsc":false,"sortPriority":2,"value":"002022"},"sortAppliedStatTotalForScoringPeriodId":null,"sortStatId":null,"sortStatIdForScoringPeriodId":null,"sortPercOwned":{"sortPriority":3,"sortAsc":false},"limit":250,"filterRanksForSlotIds":{"value":[0,2,4,6,17,16]},"filterStatsForTopScoringPeriodIds":{"value":2,"additionalValue":["002023","102023","002022","022023"]}}}' \
+#   -H 'x-fantasy-source: kona' \
+#   --compressed | python3 accuracy.py
 
 
 def getPlayers():
-    # name = player["player"]["fullName"]
-    # stat = [
-    #     stat for stat in player["player"]["stats"]
-    #     if stat["id"] == "002022"
-    # ][0]
-    return []
+    raw = sys.stdin.read()
+    lm = json.loads(raw)
+    return [(player["player"]["fullName"], [
+        stat for stat in player["player"]["stats"] if stat["id"] == "002022"
+    ][0]) for player in lm["players"]]
 
 
 def main():
@@ -22,10 +27,16 @@ def main():
             "season_points": stat["appliedTotal"],
             "average_points": stat["appliedAverage"],
         }
-        for name, stat in getPlayers()
+        for name, stat in getPlayers() if name in accuracy_input["players"]
     }
 
-    print(json.dumps({"espn": espn, "sources": accuracy_input["extra"]}))
+    print(
+        json.dumps({
+            "2022": {
+                "espn": espn,
+                "sources": accuracy_input["extra"]
+            },
+        }))
 
 
 main()
