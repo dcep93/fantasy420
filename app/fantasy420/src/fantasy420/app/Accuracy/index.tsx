@@ -70,6 +70,7 @@ function getSources(year: string): SourcesType {
           .map((source) => source[playerName])
           .filter((rank) => rank !== undefined),
       }))
+      .filter(({ ranks }) => ranks.length > 0)
       .map(({ playerName, ranks }) => ({
         playerName,
         ranks,
@@ -132,8 +133,8 @@ function getData(year: string, source: string, sources: SourcesType): DataType {
 }
 
 function getCorrelation(data: ChartDataType): number {
-  return 0;
-  return distanceCorrelation(data.map((o) => [o.x, o.y]));
+  const c = distanceCorrelation(data.map((o) => [o.x, o.y]));
+  return c;
 }
 
 export default function Accuracy() {
@@ -189,7 +190,7 @@ export default function Accuracy() {
                 <div key={category} style={{ flexGrow: 1 }}>
                   <div style={{ padding: "0 20px" }}>
                     <Chart
-                      title={`${category} - ${getCorrelation(oo)}`}
+                      title={`${category} : ${getCorrelation(oo)}`}
                       data={oo}
                     />
                   </div>
