@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { normalize } from "./Draft";
+import { normalize } from "../Draft";
 import raw_accuracy_json from "./accuracy.json";
 
 const default_year = "2022";

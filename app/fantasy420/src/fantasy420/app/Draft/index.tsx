@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { FirebaseWrapper } from "../firebase";
+import { FirebaseWrapper } from "../../firebase";
 
+import raw_generated_peaked from "../Peaked/generated.json";
 import draft_json from "./draft.json";
-import raw_generated_peaked from "./Peaked/generated.json";
 
 const PICK_NUMBER = 8;
 const NUM_TEAMS = 10;

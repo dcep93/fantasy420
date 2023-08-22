@@ -1,4 +1,4 @@
-import FlexColumns from "../FlexColumns";
+import FlexColumns from "../../FlexColumns";
 
 import sos_json from "./sos.json";
 

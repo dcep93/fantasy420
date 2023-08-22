@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { MAX_PEAKED, getPeakedValue, normalize } from "./Draft";
-import draft_json from "./draft.json";
+import draft_json from "./Draft/draft.json";
 
 import raw_generated_peaked from "./Peaked/generated.json";
 
