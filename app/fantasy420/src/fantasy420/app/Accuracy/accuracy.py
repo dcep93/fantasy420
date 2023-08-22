@@ -12,7 +12,12 @@ def getPlayers():
     lm = json.loads(raw)
     return [(player["player"]["fullName"], [
         stat for stat in player["player"]["stats"] if stat["id"] == "002022"
-    ][0]) for player in lm["players"]]
+    ][0], {
+        1: "QB",
+        2: "RB",
+        3: "WR",
+        4: "TE"
+    }[player["player"]["defaultPositionId"]]) for player in lm["players"]]
 
 
 def main():
@@ -21,13 +26,13 @@ def main():
 
     espn = {
         name: {
-            "position": accuracy_input["players"][name]["position"],
+            "position": position,
             "adp": accuracy_input["adp"].get(name),
             "auction": accuracy_input["avc"].get(name),
             "season_points": stat["appliedTotal"],
             "average_points": stat["appliedAverage"],
         }
-        for name, stat in getPlayers() if name in accuracy_input["players"]
+        for name, stat, position in getPlayers()
     }
 
     print(

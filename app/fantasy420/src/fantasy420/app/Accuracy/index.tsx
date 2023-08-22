@@ -7,14 +7,14 @@ const default_year = "2022";
 
 type EspnPlayerType = {
   position: string;
-  adp: number;
-  auction: number;
+  adp: number | null;
+  auction: number | null;
   season_points: number;
   average_points: number;
 };
 
 type SourcesType = {
-  [source: string]: { [normalizedPlayerName: string]: number };
+  [source: string]: { [normalizedPlayerName: string]: number | null };
 };
 
 type AccuracyJsonType = {
@@ -41,7 +41,7 @@ function getSources(year: string): SourcesType {
   sources.espn_auction = Object.fromEntries(
     Object.entries(accuracy_year.espn).map(([playerName, o]) => [
       normalize(playerName),
-      -o.auction,
+      o.auction === null ? null : -o.auction,
     ])
   );
   sources.espn_adp = Object.fromEntries(
@@ -56,7 +56,8 @@ function getSources(year: string): SourcesType {
       Object.fromEntries(
         Object.entries(o)
           .map(([playerName, value]) => ({ playerName, value }))
-          .sort((a, b) => a.value - b.value)
+          .filter(({ value }) => value !== null)
+          .sort((a, b) => a.value! - b.value!)
           .map(({ playerName }, i) => [playerName, i + 1])
       ),
     ])
@@ -108,11 +109,11 @@ function getData(year: string, source: string, sources: SourcesType): DataType {
           Object.entries(players)
             .map(([playerName, o]) => ({
               playerName,
-              x: sources[source][normalize(playerName)],
+              x: sources[source][normalize(playerName)]!,
               y: f(o),
               ...o,
             }))
-            .filter(({ x }) => x !== undefined)
+            .filter(({ x }) => x !== null && x !== undefined)
             .map(({ ...o }) => ({
               ...o,
               y: parseFloat(o.y.toFixed(2)),
