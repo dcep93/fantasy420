@@ -26,9 +26,11 @@ type AccuracyJsonType = {
   };
 };
 
-export type DataType = {
+export type ChartDataType = { x: number; y: number; label: string }[];
+
+type DataType = {
   [position: string]: {
-    [category: string]: { x: number; y: number; label: string }[];
+    [category: string]: ChartDataType;
   };
 };
 
@@ -136,33 +138,49 @@ export default function Accuracy() {
   const data = getData(year, source, sources);
   return (
     <div>
-      <select
-        defaultValue={year}
-        onChange={(event) =>
-          updateYear((event.target as HTMLSelectElement).value)
-        }
-      >
-        {Object.keys(accuracy_json).map((select_year) => (
-          <option key={select_year} value={select_year}>
-            {select_year}
-          </option>
-        ))}
-      </select>
-      <select
-        defaultValue={source}
-        onChange={(event) =>
-          updateSource((event.target as HTMLSelectElement).value)
-        }
-      >
-        {Object.keys(sources)
-          .reverse()
-          .map((select_source) => (
-            <option key={select_source} value={select_source}>
-              {select_source}
+      <div>
+        <select
+          defaultValue={year}
+          onChange={(event) =>
+            updateYear((event.target as HTMLSelectElement).value)
+          }
+        >
+          {Object.keys(accuracy_json).map((select_year) => (
+            <option key={select_year} value={select_year}>
+              {select_year}
             </option>
           ))}
-      </select>
-      <Chart data={data} />
+        </select>
+        <select
+          defaultValue={source}
+          onChange={(event) =>
+            updateSource((event.target as HTMLSelectElement).value)
+          }
+        >
+          {Object.keys(sources)
+            .reverse()
+            .map((select_source) => (
+              <option key={select_source} value={select_source}>
+                {select_source}
+              </option>
+            ))}
+        </select>
+      </div>
+      <div>
+        {Object.entries(data).map(([position, o]) => (
+          <div key={position}>
+            <div>{position}</div>
+            <div style={{ display: "flex" }}>
+              {Object.entries(o).map(([category, oo]) => (
+                <div key={category}>
+                  <div>{category}</div>
+                  <Chart title={category} data={oo} />
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
