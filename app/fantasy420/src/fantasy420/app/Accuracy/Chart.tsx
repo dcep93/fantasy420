@@ -14,7 +14,7 @@ export default function Chart(props: { title: string; data: ChartDataType }) {
           },
           data: [
             {
-              type: "column",
+              type: "scatter",
               dataPoints: props.data,
             },
           ],

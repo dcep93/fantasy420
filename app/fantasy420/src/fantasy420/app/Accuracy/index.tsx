@@ -168,13 +168,22 @@ export default function Accuracy() {
       </div>
       <div>
         {Object.entries(data).map(([position, o]) => (
-          <div key={position}>
-            <div>{position}</div>
+          <div
+            key={position}
+            style={{
+              border: "2px solid black",
+              borderRadius: "20px",
+              margin: "20px",
+              padding: "20px",
+            }}
+          >
+            <h1>{position}</h1>
             <div style={{ display: "flex" }}>
               {Object.entries(o).map(([category, oo]) => (
-                <div key={category}>
-                  <div>{category}</div>
-                  <Chart title={category} data={oo} />
+                <div key={category} style={{ flexGrow: 1 }}>
+                  <div style={{ padding: "50px" }}>
+                    <Chart title={category} data={oo} />
+                  </div>
                 </div>
               ))}
             </div>
