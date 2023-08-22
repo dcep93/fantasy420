@@ -26,16 +26,16 @@ export default function Accuracy() {
   const [year, updateYear] = useState(default_year);
   const accuracy_year = accuracy_json[year];
   const sources = Object.assign({}, accuracy_year.sources);
-  sources.espn_adp = Object.fromEntries(
-    Object.entries(accuracy_year.espn).map(([playerName, o]) => [
-      normalize(playerName),
-      o.adp,
-    ])
-  );
   sources.espn_auction = Object.fromEntries(
     Object.entries(accuracy_year.espn).map(([playerName, o]) => [
       normalize(playerName),
       -o.auction,
+    ])
+  );
+  sources.espn_adp = Object.fromEntries(
+    Object.entries(accuracy_year.espn).map(([playerName, o]) => [
+      normalize(playerName),
+      o.adp,
     ])
   );
   const source_ranks = Object.fromEntries(
@@ -130,11 +130,13 @@ export default function Accuracy() {
           updateSource((event.target as HTMLSelectElement).value)
         }
       >
-        {Object.keys(sources).map((select_source) => (
-          <option key={select_source} value={select_source}>
-            {select_source}
-          </option>
-        ))}
+        {Object.keys(sources)
+          .reverse()
+          .map((select_source) => (
+            <option key={select_source} value={select_source}>
+              {select_source}
+            </option>
+          ))}
       </select>
       <pre>{JSON.stringify(data, null, 2)}</pre>
     </div>

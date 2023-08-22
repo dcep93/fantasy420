@@ -542,7 +542,7 @@
       }
     },
     "sources": {
-      "peaka": {
+      "peak_auction": {
         "Christian McCaffrey": -76,
         "Jonathan Taylor": -74.5,
         "Austin Ekeler": -73,
@@ -669,7 +669,7 @@
         "Garrett Wilson": -0.5,
         "JD McKissic": -0.5
       },
-      "peak": {
+      "peak_draft": {
         "Christian McCaffrey": 1,
         "Jonathan Taylor": 2,
         "Austin Ekeler": 3,
@@ -834,7 +834,7 @@
         "Corey Davis": 191,
         "Mecole Hardman": 173
       },
-      "beerd": {
+      "beer_draft": {
         "Jonathan Taylor": 1,
         "Christian McCaffrey": 2,
         "Derrick Henry": 3,
@@ -1155,7 +1155,7 @@
         "Zach Gentry": 528,
         "Marcedes Lewis": 538
       },
-      "beer": {
+      "beer_auction": {
         "Jonathan Taylor": -65,
         "Cooper Kupp": -60,
         "Austin Ekeler": -60,
