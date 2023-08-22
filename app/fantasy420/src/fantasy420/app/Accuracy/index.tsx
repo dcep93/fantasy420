@@ -119,10 +119,11 @@ function getData(year: string, source: string, sources: SourcesType): DataType {
               y: parseFloat(o.y.toFixed(2)),
               labelX: o.x < 0 ? `$${-o.x}` : o.x,
             }))
-            .map(({ x, y, ...o }) => ({
+            .sort((a, b) => a.x - b.x)
+            .map(({ x, y, ...o }, i) => ({
               x,
               y,
-              label: `${o.playerName}: ${o.labelX} -> ${y}`,
+              label: `#${i + 1} ${o.playerName}: ${o.labelX} -> ${y}`,
             }))
             .sort((a, b) => a.x - b.x),
         ])
