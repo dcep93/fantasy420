@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { normalize } from "../Draft";
+import Chart from "./Chart";
 import raw_accuracy_json from "./accuracy.json";
 
 const default_year = "2022";
@@ -25,7 +26,7 @@ type AccuracyJsonType = {
   };
 };
 
-type DataType = {
+export type DataType = {
   [position: string]: {
     [category: string]: { x: number; y: number; label: string }[];
   };
@@ -125,10 +126,6 @@ function getData(year: string, source: string, sources: SourcesType): DataType {
     ])
   );
   return data;
-}
-
-function Chart(props: { data: DataType }) {
-  return <pre>{JSON.stringify(props.data, null, 2)}</pre>;
 }
 
 export default function Accuracy() {
