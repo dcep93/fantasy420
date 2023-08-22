@@ -181,7 +181,7 @@ export default function Accuracy() {
             <div style={{ display: "flex" }}>
               {Object.entries(o).map(([category, oo]) => (
                 <div key={category} style={{ flexGrow: 1 }}>
-                  <div style={{ padding: "50px" }}>
+                  <div style={{ padding: "0 20px" }}>
                     <Chart title={category} data={oo} />
                   </div>
                 </div>
