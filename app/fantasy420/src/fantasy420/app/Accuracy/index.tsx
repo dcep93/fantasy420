@@ -54,7 +54,9 @@ export default function Accuracy() {
       .map((playerName) => normalize(playerName))
       .map((playerName) => ({
         playerName,
-        ranks: Object.values(source_ranks).map((source) => source[playerName]),
+        ranks: Object.values(source_ranks)
+          .map((source) => source[playerName])
+          .filter((rank) => rank !== undefined),
       }))
       .map(({ playerName, ranks }) => ({
         playerName,
