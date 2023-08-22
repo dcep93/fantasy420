@@ -56,12 +56,18 @@ export default function Accuracy() {
         playerName,
         ranks: Object.values(source_ranks).map((source) => source[playerName]),
       }))
-      .map(({ playerName, ranks }) => [
+      .map(({ playerName, ranks }) => ({
         playerName,
-        parseFloat(
+        ranks,
+        value: parseFloat(
           (ranks.reduce((a, b) => a + b, 0) / ranks.length).toFixed(2)
         ),
-      ])
+      }))
+      .map((o) => {
+        if (isNaN(o.value)) console.log(o.playerName, o.ranks);
+        return o;
+      })
+      .map(({ playerName, value }) => [playerName, value])
   );
   const [source, updateSource] = useState("composite");
   const by_position = {} as {
