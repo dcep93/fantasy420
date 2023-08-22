@@ -2,7 +2,7 @@ import { useState } from "react";
 import { normalize } from "./Draft";
 import raw_accuracy_json from "./accuracy.json";
 
-const default_year = 2022;
+const default_year = "2022";
 
 type EspnPlayerType = {
   position: string;
@@ -13,7 +13,7 @@ type EspnPlayerType = {
 };
 
 type AccuracyJsonType = {
-  [year: number]: {
+  [year: string]: {
     espn: {
       [playerName: string]: EspnPlayerType;
     };
@@ -53,7 +53,11 @@ export default function Accuracy() {
           y: f(o),
           ...o,
         }))
-        .map(({ ...o }) => ({ ...o, labelX: o.x < 0 ? `$${-o.x}` : o.x }))
+        .map(({ ...o }) => ({
+          ...o,
+          y: parseFloat(o.y.toFixed(2)),
+          labelX: o.x < 0 ? `$${-o.x}` : o.x,
+        }))
         .map(({ x, y, ...o }) => ({
           x,
           y,
@@ -61,5 +65,33 @@ export default function Accuracy() {
         })),
     ])
   );
-  return <pre>{JSON.stringify(data, null, 2)}</pre>;
+  return (
+    <div>
+      <select
+        defaultValue={year}
+        onChange={(event) =>
+          updateYear((event.target as HTMLSelectElement).value)
+        }
+      >
+        {Object.keys(accuracy_json).map((select_year) => (
+          <option key={select_year} value={select_year}>
+            {select_year}
+          </option>
+        ))}
+      </select>
+      <select
+        defaultValue={source}
+        onChange={(event) =>
+          updateSource((event.target as HTMLSelectElement).value)
+        }
+      >
+        {Object.keys(sources).map((select_source) => (
+          <option key={select_source} value={select_source}>
+            {select_source}
+          </option>
+        ))}
+      </select>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
+    </div>
+  );
 }
