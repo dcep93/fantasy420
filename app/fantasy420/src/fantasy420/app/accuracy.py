@@ -1,25 +1,34 @@
 import json
 
-with open("./accuracy_input.json") as fh:
-    accuracy_input = json.load(fh)
 
-espn = {}
-for player in accuracy_input["lm"]["players"]:
-    name = player["player"]["fullName"]
-    stats = [
-        stat for stat in player["player"]["stats"] if stat["id"] == "002022"
-    ]
-    stat = stats[0]
-    nname = name.replace("'", "").replace('.', '').replace('-', '')
-    if nname not in accuracy_input["players"]:
-        print(name)
-        continue
-    espn[name] = {
-        "position": accuracy_input["players"][nname]["position"],
-        "adp": accuracy_input["adp"][name],
-        "auction": -accuracy_input["avc"][name],
-        "season_points": stat["appliedTotal"],
-        "average_points": stat["appliedAverage"],
-    }
+def getPlayers():
+    return []
 
-# print(json.dumps({"espn": espn, "sources": a["extra"]}))
+
+def main():
+    with open("./accuracy_input.json") as fh:
+        accuracy_input = json.load(fh)
+
+    espn = {}
+    missing = []
+    for player in getPlayers():
+        name = player["player"]["fullName"]
+        stat = [
+            stat for stat in player["player"]["stats"]
+            if stat["id"] == "002022"
+        ][0]
+        espn[name] = {
+            "position": accuracy_input["players"][name]["position"],
+            "adp": accuracy_input["adp"][name],
+            "auction": -accuracy_input["avc"][name],
+            "season_points": stat["appliedTotal"],
+            "average_points": stat["appliedAverage"],
+        }
+
+    if missing:
+        print(missing)
+        return
+    print(json.dumps({"espn": espn, "sources": accuracy_input["extra"]}))
+
+
+main()
