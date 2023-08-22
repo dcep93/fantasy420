@@ -38,7 +38,17 @@ type DataType = {
 function getSources(year: string): SourcesType {
   const accuracy_json = raw_accuracy_json as AccuracyJsonType;
   const accuracy_year = accuracy_json[year];
-  const sources = Object.assign({}, accuracy_year.sources);
+  const sources = Object.fromEntries(
+    Object.entries(accuracy_year.sources).map(([source, data]) => [
+      source,
+      Object.fromEntries(
+        Object.entries(data).map(([playerName, value]) => [
+          normalize(playerName),
+          value,
+        ])
+      ),
+    ])
+  );
   sources.espn_auction = Object.fromEntries(
     Object.entries(accuracy_year.espn)
       .filter(([playerName, o]) => o.auction !== null && o.auction <= -0.5)
