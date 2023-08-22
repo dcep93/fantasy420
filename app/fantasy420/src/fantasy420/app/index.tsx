@@ -8,13 +8,12 @@ import Peaked from "./Peaked";
 import Wrapped from "./Wrapped";
 
 const pages = {
-  Accuracy,
   Wrapped,
   DraftValue,
   Peaked,
-  Draft,
 };
 if (process.env.NODE_ENV === "development") {
+  Object.assign(pages, { Accuracy, Draft });
 }
 
 function index() {
