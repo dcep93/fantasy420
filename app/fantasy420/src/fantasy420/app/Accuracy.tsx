@@ -64,30 +64,42 @@ export default function Accuracy() {
       ])
   );
   const [source, updateSource] = useState("composite");
-  // TODO by position
+  const by_position = {} as {
+    [position: string]: { [playerName: string]: EspnPlayerType };
+  };
+  Object.entries(accuracy_year.espn).forEach(([playerName, o]) => {
+    if (!by_position[o.position]) by_position[o.position] = {};
+    by_position[o.position][playerName] = o;
+  });
   const data = Object.fromEntries(
-    Object.entries({
-      season_points: (o: EspnPlayerType) => o.season_points,
-      average_points: (o: EspnPlayerType) => o.average_points,
-    }).map(([key, f]) => [
-      key,
-      Object.entries(accuracy_year.espn)
-        .map(([playerName, o]) => ({
-          playerName,
-          x: sources[source][normalize(playerName)],
-          y: f(o),
-          ...o,
-        }))
-        .map(({ ...o }) => ({
-          ...o,
-          y: parseFloat(o.y.toFixed(2)),
-          labelX: o.x < 0 ? `$${-o.x}` : o.x,
-        }))
-        .map(({ x, y, ...o }) => ({
-          x,
-          y,
-          label: `${o.playerName}: ${o.labelX} -> ${y}`,
-        })),
+    Object.entries(by_position).map(([position, players]) => [
+      position,
+      Object.fromEntries(
+        Object.entries({
+          season_points: (o: EspnPlayerType) => o.season_points,
+          average_points: (o: EspnPlayerType) => o.average_points,
+        }).map(([key, f]) => [
+          key,
+          Object.entries(players)
+            .map(([playerName, o]) => ({
+              playerName,
+              x: sources[source][normalize(playerName)],
+              y: f(o),
+              ...o,
+            }))
+            .map(({ ...o }) => ({
+              ...o,
+              y: parseFloat(o.y.toFixed(2)),
+              labelX: o.x < 0 ? `$${-o.x}` : o.x,
+            }))
+            .map(({ x, y, ...o }) => ({
+              x,
+              y,
+              label: `${o.playerName}: ${o.labelX} -> ${y}`,
+            }))
+            .sort((a, b) => a.x - b.x),
+        ])
+      ),
     ])
   );
   return (
