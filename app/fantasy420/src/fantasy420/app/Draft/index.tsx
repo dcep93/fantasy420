@@ -155,6 +155,14 @@ function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
         </div>
         <div>
           <div>
+            <a href="https://www.harrisfootball.com/top-160-ranks-draft">
+              harrisfootball
+            </a>
+          </div>
+          <input readOnly value={printF(harrisfootball)} />
+        </div>
+        <div>
+          <div>
             <a href="https://fantasy.espn.com/football/livedraftresults">
               espn
             </a>
@@ -543,6 +551,24 @@ function fantasypros() {
       .map((tr) => tr.getElementsByTagName("a")[0] as HTMLElement)
       .filter((tr) => tr)
       .map((tr, i) => [tr.innerText, i + 1])
+  );
+}
+
+function harrisfootball() {
+  return Object.fromEntries(
+    Array.from(
+      Array.from(document.getElementsByTagName("table"))
+        .find(
+          (table) =>
+            table.getElementsByTagName("tr")[0].innerText.trim() ===
+            "PPR Scoring"
+        )!
+        .getElementsByTagName("tr")
+    )
+      .slice(1)
+      .map((tr) => tr.children[1] as HTMLElement)
+      .filter((td) => td)
+      .map((td, i) => [td.innerText, i + 1])
   );
 }
 
