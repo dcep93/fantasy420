@@ -70,7 +70,7 @@ export default function distanceCorrelation(data: number[][]) {
 
   for (let i = 0; i < numRows; i++) {
     distances[i] = new Array(numRows);
-    for (let j = 0; j < numRows; j++) {
+    for (let j = 0; j < numCols; j++) {
       distances[i][j] = euclideanDistance(data[i], data[j]);
     }
   }
