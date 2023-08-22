@@ -138,6 +138,23 @@ function getCorrelation(data: ChartDataType): number {
   return c;
 }
 
+function getIR(position_data: { [category: string]: ChartDataType }): number {
+  const GAMES_PER_SEASON = 17;
+  const CUTOFF_RATIO = 0.8;
+  const points = Object.fromEntries(
+    Object.entries(position_data).map(([category, data]) => [
+      category,
+      data
+        .map(({ ...point }, i) => ({ i, ...point }))
+        .filter(({ i }) => i <= data.length * CUTOFF_RATIO)
+        .map((point) => point.y)
+        .reduce((a, b) => a + b, 0),
+    ])
+  );
+  const played = points["season_points"] / points["average_points"];
+  return parseFloat((GAMES_PER_SEASON - played).toFixed(2));
+}
+
 export default function Accuracy() {
   const accuracy_json = raw_accuracy_json as AccuracyJsonType;
   const [year, updateYear] = useState(default_year);
@@ -185,7 +202,9 @@ export default function Accuracy() {
               padding: "20px",
             }}
           >
-            <h1>{position}</h1>
+            <h1>
+              {position} avg missed : {getIR(o)}
+            </h1>
             <div style={{ display: "flex" }}>
               {Object.entries(o).map(([category, oo]) => (
                 <div key={category} style={{ flexGrow: 1 }}>
