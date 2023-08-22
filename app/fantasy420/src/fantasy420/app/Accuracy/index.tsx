@@ -2,6 +2,7 @@ import { useState } from "react";
 import { normalize } from "../Draft";
 import Chart from "./Chart";
 import raw_accuracy_json from "./accuracy.json";
+import distanceCorrelation from "./correlation";
 
 const default_year = "2022";
 
@@ -130,6 +131,11 @@ function getData(year: string, source: string, sources: SourcesType): DataType {
   return data;
 }
 
+function getCorrelation(data: ChartDataType): number {
+  return 0;
+  return distanceCorrelation(data.map((o) => [o.x, o.y]));
+}
+
 export default function Accuracy() {
   const accuracy_json = raw_accuracy_json as AccuracyJsonType;
   const [year, updateYear] = useState(default_year);
@@ -182,7 +188,10 @@ export default function Accuracy() {
               {Object.entries(o).map(([category, oo]) => (
                 <div key={category} style={{ flexGrow: 1 }}>
                   <div style={{ padding: "0 20px" }}>
-                    <Chart title={category} data={oo} />
+                    <Chart
+                      title={`${category} - ${getCorrelation(oo)}`}
+                      data={oo}
+                    />
                   </div>
                 </div>
               ))}
