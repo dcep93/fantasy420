@@ -2,11 +2,11 @@ async function execute() {
   const paths = [
     {
       p: /https:\/\/sleeper\.com\/draft\/nfl\/\d+.*/,
-      jss: ["sleeperdraft.js"],
+      jss: ["shared.js", "sleeperdraft.js"],
     },
     {
       p: /https:\/\/fantasy\.espn\.com\/football\/draft.*/,
-      jss: ["espndraft.js"],
+      jss: ["shared.js", "espndraft.js"],
     },
     {
       p: /https:\/\/fantasy\.espn\.com\/football\/mockdraftlobby/,
