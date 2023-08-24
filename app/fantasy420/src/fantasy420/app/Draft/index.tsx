@@ -9,7 +9,7 @@ const NUM_TEAMS = 10;
 
 export const MAX_PEAKED = 250;
 
-const FETCH_LIVE_DRAFT_PERIOD_MS = 5000;
+const FETCH_LIVE_DRAFT_PERIOD_MS = 500;
 
 type DraftType = string[];
 type PlayersType = { [name: string]: number };
@@ -49,6 +49,10 @@ function Draft() {
 
 function fetchLiveDraft(updateLiveDraft: (draft: string[]) => void) {
   fetchExtensionStorage("draft")
+    .catch((err) => {
+      console.error(err);
+      return [];
+    })
     .then((draft) => updateLiveDraft(draft))
     .then(() =>
       setTimeout(
