@@ -59,9 +59,20 @@ function fetchLiveDraft(updateLiveDraft: (draft: string[]) => void) {
     );
 }
 
+function getDstName(name: string) {
+  const dstName = `${name.split(" ").reverse()[0]} DST`;
+  return (draft_json as DraftJsonType).espn.players[dstName] ? dstName : null;
+}
+
 function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
   const espn = Object.fromEntries(
-    props.liveDraft.map((name, i) => [normalize(name), i])
+    props.liveDraft
+      .map((name) => {
+        const dstName = getDstName(name);
+        if (dstName) return dstName;
+        return name;
+      })
+      .map((name, i) => [normalize(name), i])
   );
   const drafted = Object.keys(espn);
   const sources = props.r.map((d) => d.source);
@@ -252,7 +263,7 @@ function isMyPick(pick: number): boolean {
 
 export function normalize(s: string) {
   return s
-    .replaceAll(/[^A-Za-z ]/g, "")
+    .replaceAll(/[^A-Za-z0-9 ]/g, "")
     .replaceAll(/ I+$/g, "")
     .replaceAll(/ jr$/gi, "");
 }
