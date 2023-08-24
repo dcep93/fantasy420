@@ -8,14 +8,14 @@ function do_send_message(payload) {
   );
 }
 
-function get_from_storage() {
-  return _do_storage({ action: "get", keys: ["reddit"] }).then((response) => {
-    return response?.reddit || {};
+function get_from_storage(key) {
+  return _do_storage({ action: "get", keys: [key] }).then((response) => {
+    return response ? response[key] : {};
   });
 }
 
-function save_to_storage(reddit) {
-  return _do_storage({ action: "save", save: { reddit } });
+function save_to_storage(save) {
+  return _do_storage({ action: "save", save });
 }
 
 function _do_storage(storage) {
