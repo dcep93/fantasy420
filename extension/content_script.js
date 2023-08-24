@@ -1,12 +1,12 @@
 async function execute() {
   const paths = [
     {
+      p: /https:\/\/sleeper\.com\/draft\/nfl\/\d+.*/,
+      jss: ["sleeperdraft.js"],
+    },
+    {
       p: /https:\/\/fantasy\.espn\.com\/football\/draft.*/,
-      jss: [
-        "firebase/firebase-app.js",
-        "firebase/firebase-database.js",
-        "draft.js",
-      ],
+      jss: ["espndraft.js"],
     },
     {
       p: /https:\/\/fantasy\.espn\.com\/football\/mockdraftlobby/,
@@ -14,11 +14,11 @@ async function execute() {
     },
     {
       p: /https:\/\/fantasy\.espn\.com\/football.*/,
-      jss: ["reddit/shared.js", "reddit/inject.js"],
+      jss: ["shared.js", "reddit/inject.js"],
     },
     {
       p: /https:\/\/www\.reddit\.com\/r\/fantasyfootball\/.*/,
-      jss: ["reddit/shared.js", "reddit/scrape.js"],
+      jss: ["shared.js", "reddit/scrape.js"],
     },
     {
       p: /https:\/\/fantasy\.espn\.com\/football.*/,

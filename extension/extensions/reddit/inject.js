@@ -7,7 +7,7 @@
   function main() {
     return new Promise((resolve, reject) =>
       chrome.runtime
-        ? get_from_storage()
+        ? get_from_storage("reddit")
             .then((_data) => (data = _data))
             .then(resolve)
         : data !== undefined

@@ -6,7 +6,7 @@
   function main() {
     return new Promise((resolve, reject) =>
       chrome.runtime
-        ? get_from_storage()
+        ? get_from_storage("reddit")
             .then(
               (_data) =>
                 (data =
@@ -80,7 +80,7 @@
   }
 
   function saveData(passThrough) {
-    return save_to_storage(data).then(() => passThrough);
+    return save_to_storage({ reddit: data }).then(() => passThrough);
   }
 
   function transformPost(e, table) {

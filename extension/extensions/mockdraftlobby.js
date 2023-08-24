@@ -1,4 +1,4 @@
-const PICK_NUMBER = 5;
+const PICK_NUMBER = 2;
 
 const LOOP_PERIOD_MS = 1000;
 
@@ -37,15 +37,15 @@ function loop() {
   )
     .then((objs) =>
       objs
-        // .filter((obj) => {
-        //   if (
-        //     obj.json.teams[PICK_NUMBER - 1].nickname === PICK_NUMBER.toString()
-        //   ) {
-        //     return true;
-        //   }
-        //   obj.a.style.border = "2px solid red";
-        //   return false;
-        // })
+        .filter((obj) => {
+          if (
+            obj.json.teams[PICK_NUMBER - 1].nickname === PICK_NUMBER.toString()
+          ) {
+            return true;
+          }
+          obj.a.style.border = "2px solid red";
+          return false;
+        })
         .map((obj) => obj.a)
         .forEach((a) => (a.style.border = "2px solid black"))
     )
