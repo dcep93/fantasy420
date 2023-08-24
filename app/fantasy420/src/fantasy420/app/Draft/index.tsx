@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { FirebaseWrapper } from "../../firebase";
 
 import raw_generated_peaked from "../Peaked/generated.json";
 import draft_json from "./draft.json";
@@ -9,9 +8,11 @@ const NUM_TEAMS = 10;
 
 export const MAX_PEAKED = 250;
 
+const FETCH_LIVE_DRAFT_PERIOD_MS = 1000;
+
 type DraftType = string[];
 type PlayersType = { [name: string]: number };
-type FirebaseType = { name: string; rank: number }[];
+type LiveDraftType = string[];
 type PType = { position: string; team: string };
 type RPType = {
   name: string;
@@ -35,47 +36,29 @@ type DraftJsonType = {
 
 function Draft() {
   const r = results(draft_json);
-  return <SubDraft r={r} />;
+  const [liveDraft, updateLiveDraft] = useState<string[]>([]);
+  setInterval(
+    () => fetchLiveDraft(updateLiveDraft),
+    FETCH_LIVE_DRAFT_PERIOD_MS
+  );
+  return <SubDraft r={r} liveDraft={liveDraft} />;
 }
 
-class SubDraft extends FirebaseWrapper<FirebaseType, { r: ResultsType }> {
-  getFirebasePath() {
-    return "/ff/draft";
-  }
+function fetchLiveDraft(updateLiveDraft: (draft: string[]) => void) {}
 
-  componentDidMount(): void {
-    super.componentDidMount();
-  }
-
-  render() {
-    console.log(this.state?.state);
-    return (
-      <SubSubDraft
-        o={{
-          ...this.props,
-          f: this.state?.state || [],
-        }}
-      />
-    );
-  }
-}
-
-function SubSubDraft(props: { o: { r: ResultsType; f: FirebaseType } }) {
+function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
   const espn = Object.fromEntries(
-    props.o.f
-      .slice()
-      .sort((a, b) => a.rank - b.rank)
-      .map(({ name, rank }) => [normalize(name), rank])
+    props.liveDraft.map((name, i) => [normalize(name), i])
   );
   const drafted = Object.keys(espn);
-  const sources = props.o.r.map((d) => d.source);
+  const sources = props.r.map((d) => d.source);
   const [source, update] = useState(sources[0]);
-  const players = (
-    props.o.r.find((d) => d.source === source)?.players || []
-  ).map((p) => ({
-    ...p,
-    seen: espn[p.name] !== undefined,
-  }));
+  const players = (props.r.find((d) => d.source === source)?.players || []).map(
+    (p) => ({
+      ...p,
+      seen: espn[p.name] !== undefined,
+    })
+  );
   return (
     <pre
       style={{
