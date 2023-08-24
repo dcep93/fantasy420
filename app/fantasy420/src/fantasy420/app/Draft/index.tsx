@@ -2,13 +2,14 @@ import { useState } from "react";
 
 import raw_generated_peaked from "../Peaked/generated.json";
 import draft_json from "./draft.json";
+import { fetchExtensionStorage } from "./Extension";
 
 const PICK_NUMBER = 8;
 const NUM_TEAMS = 10;
 
 export const MAX_PEAKED = 250;
 
-const FETCH_LIVE_DRAFT_PERIOD_MS = 1000;
+const FETCH_LIVE_DRAFT_PERIOD_MS = 5000;
 
 type DraftType = string[];
 type PlayersType = { [name: string]: number };
@@ -34,17 +35,28 @@ type DraftJsonType = {
   };
 };
 
+var initialized = false;
+
 function Draft() {
   const r = results(draft_json);
   const [liveDraft, updateLiveDraft] = useState<string[]>([]);
-  setInterval(
-    () => fetchLiveDraft(updateLiveDraft),
-    FETCH_LIVE_DRAFT_PERIOD_MS
-  );
+  if (!initialized) {
+    initialized = true;
+    fetchLiveDraft(updateLiveDraft);
+  }
   return <SubDraft r={r} liveDraft={liveDraft} />;
 }
 
-function fetchLiveDraft(updateLiveDraft: (draft: string[]) => void) {}
+function fetchLiveDraft(updateLiveDraft: (draft: string[]) => void) {
+  fetchExtensionStorage("draft")
+    .then((draft) => updateLiveDraft(draft))
+    .then(() =>
+      setTimeout(
+        () => fetchLiveDraft(updateLiveDraft),
+        FETCH_LIVE_DRAFT_PERIOD_MS
+      )
+    );
+}
 
 function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
   const espn = Object.fromEntries(
