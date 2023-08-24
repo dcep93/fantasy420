@@ -19,6 +19,9 @@
   "permissions": ["storage"],
   "externally_connectable": {
     "matches": [
+      "*://localhost/*",
+      "*://fantasy420.web.app/*",
+      "https://sleeper.com/draft/nfl/*",
       "*://fantasy.espn.com/football/*",
       "*://www.reddit.com/r/fantasyfootball/*"
     ]

@@ -17,7 +17,6 @@ function extensionHelper(payload: any): Promise<any> {
       payload,
       (response: any) => {
         if (response === undefined) return reject("empty response");
-        console.log({ response });
         resolve(response);
       }
     );
