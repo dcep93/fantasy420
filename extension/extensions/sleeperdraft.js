@@ -26,3 +26,5 @@ function sleeperdraft() {
       save_to_storage({ draft });
     });
 }
+
+sleeperdraft();
