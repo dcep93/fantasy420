@@ -1,4 +1,4 @@
-console.log("background");
+console.log("background 1.0.0");
 
 const fetch_cache = {};
 

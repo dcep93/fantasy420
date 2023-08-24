@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import raw_generated_peaked from "../Peaked/generated.json";
 import draft_json from "./draft.json";
@@ -35,15 +35,12 @@ type DraftJsonType = {
   };
 };
 
-var initialized = false;
-
 function Draft() {
   const r = results(draft_json);
   const [liveDraft, updateLiveDraft] = useState<string[]>([]);
-  if (!initialized) {
-    initialized = true;
+  useEffect(() => {
     fetchLiveDraft(updateLiveDraft);
-  }
+  }, []);
   return <SubDraft r={r} liveDraft={liveDraft} />;
 }
 
