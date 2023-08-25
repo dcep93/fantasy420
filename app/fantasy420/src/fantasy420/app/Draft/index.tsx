@@ -4,7 +4,7 @@ import raw_generated_peaked from "../Peaked/generated.json";
 import draft_json from "./draft.json";
 import { fetchExtensionStorage } from "./Extension";
 
-const PICK_NUMBER = 8;
+const PICK_NUMBER = 9;
 const NUM_TEAMS = 10;
 
 export const MAX_PEAKED = 250;
