@@ -8,6 +8,7 @@ declare global {
 
 function extensionHelper(payload: any): Promise<any> {
   if (!window.chrome?.runtime) {
+    alert(11);
     throw new Error("no chrome runtime");
   }
   return new Promise((resolve, reject) => {
