@@ -7,11 +7,11 @@ declare global {
 }
 
 function extensionHelper(payload: any): Promise<any> {
-  if (!window.chrome?.runtime) {
-    alert(11);
-    throw new Error("no chrome runtime");
-  }
   return new Promise((resolve, reject) => {
+    if (!window.chrome?.runtime) {
+      alert(12);
+      return reject("no chrome runtime");
+    }
     window.chrome.runtime.sendMessage(
       extension_id,
       payload,
