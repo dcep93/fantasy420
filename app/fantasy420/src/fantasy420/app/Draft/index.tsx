@@ -46,17 +46,17 @@ function Draft() {
 
 function fetchLiveDraft(updateLiveDraft: (draft: string[]) => void) {
   fetchExtensionStorage("draft")
-    .catch((err) => {
-      console.error(err);
-      return [];
-    })
     .then((draft) => updateLiveDraft(draft))
     .then(() =>
       setTimeout(
         () => fetchLiveDraft(updateLiveDraft),
         FETCH_LIVE_DRAFT_PERIOD_MS
       )
-    );
+    )
+    .catch((err) => {
+      console.error(err);
+      return [];
+    });
 }
 
 function getDstName(name: string) {
