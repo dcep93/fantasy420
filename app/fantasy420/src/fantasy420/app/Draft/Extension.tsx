@@ -1,4 +1,4 @@
-const extension_id = "codiminongikfnidmdkpmeigapidedgnx";
+const extension_id = "codiminongikfnidmdkpmeigapidedgn";
 
 declare global {
   interface Window {
