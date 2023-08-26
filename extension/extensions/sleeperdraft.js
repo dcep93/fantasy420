@@ -13,9 +13,11 @@ function sleeperdraft() {
   })
     .then((resp) => resp.json())
     .then((resp) =>
-      resp.data.draft_picks
-        .map((pick) => pick.metadata)
-        .map((metadata) => `${metadata.first_name} ${metadata.last_name}`)
+      resp.data === undefined
+        ? []
+        : resp.data.draft_picks
+            .map((pick) => pick.metadata)
+            .map((metadata) => `${metadata.first_name} ${metadata.last_name}`)
     )
     .then((draft) => {
       setTimeout(sleeperdraft, SLEEPERDRAFT_PERIOD_MS);

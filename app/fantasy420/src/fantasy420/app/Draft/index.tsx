@@ -255,7 +255,8 @@ function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
 }
 
 function isMyPick(pick: number): boolean {
-  const oddRound = (pick / NUM_TEAMS) % 2 < 1;
+  // eslint-disable-next-line no-mixed-operators
+  const oddRound = pick > 20 !== (pick / NUM_TEAMS) % 2 < 1;
   return (
     pick % NUM_TEAMS === (oddRound ? PICK_NUMBER - 1 : NUM_TEAMS - PICK_NUMBER)
   );
