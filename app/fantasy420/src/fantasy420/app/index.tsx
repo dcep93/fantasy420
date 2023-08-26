@@ -12,9 +12,10 @@ const pages = {
   DraftValue,
   Peaked,
   Accuracy,
+  Draft,
 };
 if (process.env.NODE_ENV === "development") {
-  Object.assign(pages, { Draft });
+  Object.assign(pages, {});
 }
 
 function index() {
