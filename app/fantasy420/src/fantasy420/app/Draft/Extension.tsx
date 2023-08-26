@@ -8,15 +8,19 @@ declare global {
 
 function extensionHelper(payload: any): Promise<any> {
   if (!window.chrome?.runtime) {
+    alert(11);
     console.log("componentDidMount", "no chrome runtime");
     return Promise.resolve([]);
   }
   return new Promise((resolve, reject) => {
+    alert(16);
     window.chrome.runtime.sendMessage(
       extension_id,
       payload,
       (response: any) => {
+        alert(21);
         if (response === undefined) return reject("empty response");
+        alert(23);
         resolve(response);
       }
     );
