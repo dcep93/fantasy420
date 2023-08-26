@@ -1,4 +1,4 @@
-const extension_id = "codiminongikfnidmdkpmeigapidedgn";
+const extension_id = "codiminongikfnidmdkpmeigapidedgnx";
 
 declare global {
   interface Window {
@@ -8,19 +8,14 @@ declare global {
 
 function extensionHelper(payload: any): Promise<any> {
   if (!window.chrome?.runtime) {
-    alert(11);
-    console.log("componentDidMount", "no chrome runtime");
-    return Promise.resolve([]);
+    throw new Error("no chrome runtime");
   }
   return new Promise((resolve, reject) => {
-    alert(16);
     window.chrome.runtime.sendMessage(
       extension_id,
       payload,
       (response: any) => {
-        alert(21);
         if (response === undefined) return reject("empty response");
-        alert(23);
         resolve(response);
       }
     );
@@ -35,7 +30,7 @@ function extensionHelper(payload: any): Promise<any> {
 export function fetchExtensionStorage(key: string): Promise<any> {
   return extensionHelper({ storage: { action: "get", keys: [key] } }).then(
     (response) => {
-      return response ? response[key] : {};
+      return response ? response[key] : null;
     }
   );
 }
