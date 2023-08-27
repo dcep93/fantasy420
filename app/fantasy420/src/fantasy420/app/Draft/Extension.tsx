@@ -9,22 +9,20 @@ declare global {
 function extensionHelper(payload: any): Promise<any> {
   return new Promise((resolve, reject) => {
     if (!window.chrome?.runtime) {
-      alert(12);
       return reject("no chrome runtime");
     }
     window.chrome.runtime.sendMessage(
       extension_id,
       payload,
       (response: any) => {
-        if (response === undefined) return reject("empty response");
+        if (response === undefined) {
+          // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+          window.chrome.runtime.lastError;
+          return reject("empty response");
+        }
         resolve(response);
       }
     );
-  }).catch((err: Error) => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    window.chrome.runtime.lastError;
-    console.log("fetchExtensionStorage", "extension not detected:", err);
-    throw err;
   });
 }
 
