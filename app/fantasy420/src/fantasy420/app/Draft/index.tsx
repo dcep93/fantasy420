@@ -54,7 +54,6 @@ function fetchLiveDraft(updateLiveDraft: (draft: string[]) => void) {
       )
     )
     .catch((err) => {
-      alert(57);
       console.error(err);
     });
 }
@@ -65,7 +64,6 @@ function getDstName(name: string) {
 }
 
 function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
-  alert(68);
   const espn = Object.fromEntries(
     props.liveDraft
       .map((name) => {
@@ -84,7 +82,6 @@ function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
       seen: espn[p.name] !== undefined,
     })
   );
-  alert(87);
   return (
     <pre
       style={{
