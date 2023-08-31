@@ -44,7 +44,17 @@ export default function Schedule() {
           >
             <div>{team.name}</div>
             <div>
-              total: $
+              owned: $
+              {team.players
+                .map(
+                  (player) =>
+                    (draftJson as DraftJsonType).espn.auction[player.name] || 0
+                )
+                .reduce((a, b) => a + b, 0)
+                .toFixed(1)}
+            </div>
+            <div>
+              byes: $
               {teamWeeks
                 .flatMap((week) =>
                   week.byes.map((player) => player.auctionValue)
