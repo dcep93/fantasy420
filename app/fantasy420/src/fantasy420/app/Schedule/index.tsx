@@ -11,32 +11,37 @@ export default function Schedule() {
       </div>
       {scheduleJson.teams.map((team, i) => {
         const teamWeeks = scheduleJson.weeks
-          .map((matches, j) => {
-            console.log(team.id, matches, j);
-            return {
-              number: j + 1,
-              opponent: scheduleJson.teams.find(
-                (opponent) =>
-                  matches.find(
-                    (match) =>
-                      match.includes(team.id) && match.includes(opponent.id)
-                  )!
-              )!,
-            };
-          })
+          .map((matches, j) => ({
+            number: j + 1,
+            opponent: scheduleJson.teams.find(
+              (opponent) =>
+                team.id !== opponent.id &&
+                matches.find(
+                  (match) =>
+                    match.includes(team.id) && match.includes(opponent.id)
+                )!
+            )!,
+          }))
           .map((o) => ({
             byes: o.opponent.players
               .filter((player) => player.bye === o.number)
               .map((player) => ({
                 ...player,
-                auctionValue: (draftJson as DraftJsonType).espn.auction[
-                  player.name
-                ],
+                auctionValue:
+                  (draftJson as DraftJsonType).espn.auction[player.name] || 0,
               })),
             ...o,
           }));
         return (
-          <div key={i}>
+          <div
+            key={i}
+            style={{
+              border: "2px solid black",
+              borderRadius: "20px",
+              margin: "20px",
+              padding: "20px",
+            }}
+          >
             <div>{team.name}</div>
             <div>
               total: $
@@ -47,18 +52,38 @@ export default function Schedule() {
                 .reduce((a, b) => a + b, 0)
                 .toFixed(1)}
             </div>
-            {teamWeeks.map((week, j) => (
-              <div key={j}>
-                <div>
-                  week {week.number} vs {week.opponent.name}
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                alignItems: "flex-start",
+              }}
+            >
+              {teamWeeks.map((week, j) => (
+                <div
+                  key={j}
+                  style={{
+                    border: "2px solid black",
+                    borderRadius: "20px",
+                    padding: "10px",
+                    margin: "10px",
+                  }}
+                >
+                  <h2>
+                    week {week.number} vs {week.opponent.name}: $
+                    {week.byes
+                      .map((player) => player.auctionValue)
+                      .reduce((a, b) => a + b, 0)
+                      .toFixed(1)}
+                  </h2>
+                  {week.byes.map((player, k) => (
+                    <div key={k}>
+                      {player.name} ${player.auctionValue}
+                    </div>
+                  ))}
                 </div>
-                {week.byes.map((player, k) => (
-                  <div key={k}>
-                    {player.name} ${player.auctionValue}
-                  </div>
-                ))}
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         );
       })}
