@@ -1,6 +1,29 @@
-import { DraftJsonType, printF } from "../Draft";
+import { DraftJsonType, normalize, printF } from "../Draft";
 import draftJson from "../Draft/draft.json";
 import rawScheduleJson from "./schedule.json";
+
+var lastValue = 1000;
+const auctionValues = Object.fromEntries(
+  Object.entries((draftJson as DraftJsonType).espn.auction)
+    .map(([name, value]) => ({
+      name,
+      value,
+      draftSharksSuperValue:
+        (draftJson as DraftJsonType).extra["draftsharks_super"][
+          normalize(name)
+        ] || Infinity,
+    }))
+    .sort((a, b) => b.draftSharksSuperValue - a.draftSharksSuperValue)
+    .map(({ name, value }) => {
+      if ((draftJson as DraftJsonType).espn.players[name]?.position === "QB") {
+        value = lastValue;
+      } else {
+        lastValue = value;
+      }
+      return { name, value };
+    })
+    .map(({ name, value }) => [name, value])
+);
 
 export default function Schedule() {
   const scheduleJson: ScheduleJson = rawScheduleJson;
@@ -12,7 +35,7 @@ export default function Schedule() {
       {scheduleJson.teams.map((team, i) => {
         const teamPlayers = team.players.map((player) => ({
           ...player,
-          auctionValue: getAuctionValue(player.name),
+          auctionValue: auctionValues[player.name] || 0,
         }));
         const teamWeeks = scheduleJson.weeks
           .map((matches, j) => ({
@@ -31,7 +54,7 @@ export default function Schedule() {
               .filter((player) => player.bye === o.number)
               .map((player) => ({
                 ...player,
-                auctionValue: getAuctionValue(player.name),
+                auctionValue: auctionValues[player.name] || 0,
               })),
             ...o,
           }));
@@ -106,17 +129,6 @@ export default function Schedule() {
       })}
     </div>
   );
-}
-
-function getAuctionValue(playerName: string): number {
-  const auctionValue =
-    (draftJson as DraftJsonType).espn.auction[playerName] || 0;
-  if (
-    (draftJson as DraftJsonType).espn.players[playerName]?.position === "QB"
-  ) {
-    return 100; // TODO return price of best non-qb drafted after
-  }
-  return auctionValue;
 }
 
 function printSchedule() {
