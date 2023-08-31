@@ -114,7 +114,7 @@ function getAuctionValue(playerName: string): number {
   if (
     (draftJson as DraftJsonType).espn.players[playerName]?.position === "QB"
   ) {
-    return 100; // TODO
+    return 100; // TODO return price of best non-qb drafted after
   }
   return auctionValue;
 }
