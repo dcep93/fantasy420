@@ -10,6 +10,10 @@ export default function Schedule() {
         <input readOnly value={printF(printSchedule)} />
       </div>
       {scheduleJson.teams.map((team, i) => {
+        const teamPlayers = team.players.map((player) => ({
+          ...player,
+          auctionValue: getAuctionValue(player.name),
+        }));
         const teamWeeks = scheduleJson.weeks
           .map((matches, j) => ({
             number: j + 1,
@@ -27,8 +31,7 @@ export default function Schedule() {
               .filter((player) => player.bye === o.number)
               .map((player) => ({
                 ...player,
-                auctionValue:
-                  (draftJson as DraftJsonType).espn.auction[player.name] || 0,
+                auctionValue: getAuctionValue(player.name),
               })),
             ...o,
           }));
@@ -44,22 +47,16 @@ export default function Schedule() {
           >
             <div>{team.name}</div>
             <div
-              title={team.players
+              title={teamPlayers
                 .map(
                   (player) =>
-                    `${player.name} $${
-                      (draftJson as DraftJsonType).espn.auction[player.name] ||
-                      0
-                    } / bye ${player.bye}`
+                    `${player.name} $${player.auctionValue} / bye ${player.bye}`
                 )
                 .join("\n")}
             >
               owned: $
-              {team.players
-                .map(
-                  (player) =>
-                    (draftJson as DraftJsonType).espn.auction[player.name] || 0
-                )
+              {teamPlayers
+                .map((player) => player.auctionValue)
                 .reduce((a, b) => a + b, 0)
                 .toFixed(1)}
             </div>
@@ -109,6 +106,17 @@ export default function Schedule() {
       })}
     </div>
   );
+}
+
+function getAuctionValue(playerName: string): number {
+  const auctionValue =
+    (draftJson as DraftJsonType).espn.auction[playerName] || 0;
+  if (
+    (draftJson as DraftJsonType).espn.players[playerName]?.position === "QB"
+  ) {
+    return 100; // TODO
+  }
+  return auctionValue;
 }
 
 function printSchedule() {
