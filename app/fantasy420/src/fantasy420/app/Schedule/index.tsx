@@ -43,7 +43,17 @@ export default function Schedule() {
             }}
           >
             <div>{team.name}</div>
-            <div>
+            <div
+              title={team.players
+                .map(
+                  (player) =>
+                    `${player.name} $${
+                      (draftJson as DraftJsonType).espn.auction[player.name] ||
+                      0
+                    } / bye ${player.bye}`
+                )
+                .join("\n")}
+            >
               owned: $
               {team.players
                 .map(
