@@ -1,0 +1,804 @@
+{
+  "weeks": [
+    [
+      [7, 10],
+      [13, 11],
+      [14, 6],
+      [12, 5],
+      [8, 4]
+    ],
+    [
+      [11, 6],
+      [5, 7],
+      [4, 10],
+      [12, 13],
+      [8, 14]
+    ],
+    [
+      [5, 4],
+      [11, 12],
+      [6, 8],
+      [7, 13],
+      [10, 14]
+    ],
+    [
+      [12, 8],
+      [13, 5],
+      [14, 4],
+      [7, 11],
+      [10, 6]
+    ],
+    [
+      [13, 14],
+      [12, 7],
+      [8, 10],
+      [5, 11],
+      [4, 6]
+    ],
+    [
+      [10, 11],
+      [6, 5],
+      [4, 12],
+      [8, 13],
+      [14, 7]
+    ],
+    [
+      [5, 10],
+      [12, 6],
+      [13, 4],
+      [7, 8],
+      [11, 14]
+    ],
+    [
+      [10, 12],
+      [6, 13],
+      [4, 7],
+      [8, 11],
+      [14, 5]
+    ],
+    [
+      [13, 10],
+      [7, 12],
+      [6, 14],
+      [11, 5],
+      [4, 8]
+    ],
+    [
+      [7, 6],
+      [11, 13],
+      [10, 4],
+      [5, 12],
+      [14, 8]
+    ],
+    [
+      [11, 4],
+      [7, 5],
+      [8, 6],
+      [13, 12],
+      [14, 10]
+    ],
+    [
+      [5, 8],
+      [12, 11],
+      [4, 14],
+      [13, 7],
+      [6, 10]
+    ],
+    [
+      [12, 14],
+      [5, 13],
+      [10, 8],
+      [11, 7],
+      [6, 4]
+    ],
+    [
+      [10, 7],
+      [6, 11],
+      [4, 5],
+      [8, 12],
+      [14, 13]
+    ]
+  ],
+  "teams": [
+    {
+      "id": 4,
+      "name": "Inner Sunset Snowbirds",
+      "players": [
+        {
+          "name": "Austin Ekeler",
+          "bye": 5
+        },
+        {
+          "name": "Amon-Ra St. Brown",
+          "bye": 9
+        },
+        {
+          "name": "Jonathan Taylor",
+          "bye": 11
+        },
+        {
+          "name": "Jaylen Waddle",
+          "bye": 10
+        },
+        {
+          "name": "Kenneth Walker III",
+          "bye": 5
+        },
+        {
+          "name": "Brandon Aiyuk",
+          "bye": 9
+        },
+        {
+          "name": "Trevor Lawrence",
+          "bye": 9
+        },
+        {
+          "name": "Pat Freiermuth",
+          "bye": 6
+        },
+        {
+          "name": "Skyy Moore",
+          "bye": 10
+        },
+        {
+          "name": "Jordan Addison",
+          "bye": 13
+        },
+        {
+          "name": "Zach Charbonnet",
+          "bye": 5
+        },
+        {
+          "name": "Jaxon Smith-Njigba",
+          "bye": 5
+        },
+        {
+          "name": "Jaylen Warren",
+          "bye": 6
+        },
+        {
+          "name": "Elijah Moore",
+          "bye": 5
+        },
+        {
+          "name": "Jason Myers",
+          "bye": 5
+        },
+        {
+          "name": "Packers D/ST",
+          "bye": 6
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "ask-chat-gpt",
+      "players": [
+        {
+          "name": "Travis Kelce",
+          "bye": 10
+        },
+        {
+          "name": "CeeDee Lamb",
+          "bye": 7
+        },
+        {
+          "name": "Aaron Jones",
+          "bye": 6
+        },
+        {
+          "name": "Josh Allen",
+          "bye": 13
+        },
+        {
+          "name": "Chris Godwin",
+          "bye": 5
+        },
+        {
+          "name": "Alexander Mattison",
+          "bye": 13
+        },
+        {
+          "name": "Terry McLaurin",
+          "bye": 14
+        },
+        {
+          "name": "David Montgomery",
+          "bye": 9
+        },
+        {
+          "name": "Christian Kirk",
+          "bye": 9
+        },
+        {
+          "name": "Michael Pittman Jr.",
+          "bye": 11
+        },
+        {
+          "name": "Antonio Gibson",
+          "bye": 14
+        },
+        {
+          "name": "Gabe Davis",
+          "bye": 13
+        },
+        {
+          "name": "Bengals D/ST",
+          "bye": 7
+        },
+        {
+          "name": "Nico Collins",
+          "bye": 7
+        },
+        {
+          "name": "Tyler Bass",
+          "bye": 13
+        },
+        {
+          "name": "Devin Singletary",
+          "bye": 7
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Everywhere Honrun",
+      "players": [
+        {
+          "name": "Deebo Samuel",
+          "bye": 9
+        },
+        {
+          "name": "Garrett Wilson",
+          "bye": 7
+        },
+        {
+          "name": "Rhamondre Stevenson",
+          "bye": 11
+        },
+        {
+          "name": "Mark Andrews",
+          "bye": 13
+        },
+        {
+          "name": "Lamar Jackson",
+          "bye": 13
+        },
+        {
+          "name": "James Conner",
+          "bye": 14
+        },
+        {
+          "name": "JuJu Smith-Schuster",
+          "bye": 11
+        },
+        {
+          "name": "49ers D/ST",
+          "bye": 9
+        },
+        {
+          "name": "Daniel Carlson",
+          "bye": 13
+        },
+        {
+          "name": "Jakobi Meyers",
+          "bye": 13
+        },
+        {
+          "name": "Kirk Cousins",
+          "bye": 13
+        },
+        {
+          "name": "Jamaal Williams",
+          "bye": 11
+        },
+        {
+          "name": "Tyler Higbee",
+          "bye": 10
+        },
+        {
+          "name": "Samaje Perine",
+          "bye": 9
+        },
+        {
+          "name": "Rashaad Penny",
+          "bye": 10
+        },
+        {
+          "name": "Jared Goff",
+          "bye": 9
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Patrick Price",
+      "players": [
+        {
+          "name": "Justin Jefferson",
+          "bye": 13
+        },
+        {
+          "name": "Patrick Mahomes",
+          "bye": 10
+        },
+        {
+          "name": "Bijan Robinson",
+          "bye": 11
+        },
+        {
+          "name": "DeAndre Hopkins",
+          "bye": 7
+        },
+        {
+          "name": "Diontae Johnson",
+          "bye": 6
+        },
+        {
+          "name": "Breece Hall",
+          "bye": 7
+        },
+        {
+          "name": "Mike Evans",
+          "bye": 5
+        },
+        {
+          "name": "Alvin Kamara",
+          "bye": 11
+        },
+        {
+          "name": "Drake London",
+          "bye": 11
+        },
+        {
+          "name": "Michael Thomas",
+          "bye": 11
+        },
+        {
+          "name": "David Njoku",
+          "bye": 5
+        },
+        {
+          "name": "Jets D/ST",
+          "bye": 7
+        },
+        {
+          "name": "Courtland Sutton",
+          "bye": 9
+        },
+        {
+          "name": "Justin Tucker",
+          "bye": 13
+        },
+        {
+          "name": "Elijah Mitchell",
+          "bye": 9
+        },
+        {
+          "name": "Ezekiel Elliott",
+          "bye": 11
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Get Chiggy with it",
+      "players": [
+        {
+          "name": "Cooper Kupp",
+          "bye": 10
+        },
+        {
+          "name": "Stefon Diggs",
+          "bye": 13
+        },
+        {
+          "name": "Chris Olave",
+          "bye": 11
+        },
+        {
+          "name": "Jahmyr Gibbs",
+          "bye": 9
+        },
+        {
+          "name": "Justin Herbert",
+          "bye": 5
+        },
+        {
+          "name": "Javonte Williams",
+          "bye": 9
+        },
+        {
+          "name": "George Pickens",
+          "bye": 6
+        },
+        {
+          "name": "Evan Engram",
+          "bye": 9
+        },
+        {
+          "name": "Isiah Pacheco",
+          "bye": 10
+        },
+        {
+          "name": "Jahan Dotson",
+          "bye": 14
+        },
+        {
+          "name": "Chigoziem Okonkwo",
+          "bye": 7
+        },
+        {
+          "name": "Saints D/ST",
+          "bye": 11
+        },
+        {
+          "name": "Chase Claypool",
+          "bye": 13
+        },
+        {
+          "name": "Michael Gallup",
+          "bye": 7
+        },
+        {
+          "name": "Tank Bigsby",
+          "bye": 9
+        },
+        {
+          "name": "Jake Elliott",
+          "bye": 10
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Team Underdogs",
+      "players": [
+        {
+          "name": "Davante Adams",
+          "bye": 13
+        },
+        {
+          "name": "Tony Pollard",
+          "bye": 7
+        },
+        {
+          "name": "Tee Higgins",
+          "bye": 7
+        },
+        {
+          "name": "DeVonta Smith",
+          "bye": 10
+        },
+        {
+          "name": "Dameon Pierce",
+          "bye": 7
+        },
+        {
+          "name": "T.J. Hockenson",
+          "bye": 13
+        },
+        {
+          "name": "Miles Sanders",
+          "bye": 7
+        },
+        {
+          "name": "Jerry Jeudy",
+          "bye": 9
+        },
+        {
+          "name": "Deshaun Watson",
+          "bye": 5
+        },
+        {
+          "name": "Dalvin Cook",
+          "bye": 7
+        },
+        {
+          "name": "Aaron Rodgers",
+          "bye": 7
+        },
+        {
+          "name": "Jerick McKinnon",
+          "bye": 10
+        },
+        {
+          "name": "Zach Ertz",
+          "bye": 14
+        },
+        {
+          "name": "Quentin Johnston",
+          "bye": 5
+        },
+        {
+          "name": "Commanders D/ST",
+          "bye": 14
+        },
+        {
+          "name": "Brett Maher",
+          "bye": 0
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Weekend Warrior",
+      "players": [
+        {
+          "name": "Saquon Barkley",
+          "bye": 13
+        },
+        {
+          "name": "DK Metcalf",
+          "bye": 5
+        },
+        {
+          "name": "Travis Etienne Jr.",
+          "bye": 9
+        },
+        {
+          "name": "Jalen Hurts",
+          "bye": 10
+        },
+        {
+          "name": "George Kittle",
+          "bye": 9
+        },
+        {
+          "name": "DJ Moore",
+          "bye": 13
+        },
+        {
+          "name": "Mike Williams",
+          "bye": 5
+        },
+        {
+          "name": "Damien Harris",
+          "bye": 13
+        },
+        {
+          "name": "Brandin Cooks",
+          "bye": 7
+        },
+        {
+          "name": "AJ Dillon",
+          "bye": 6
+        },
+        {
+          "name": "De'Von Achane",
+          "bye": 10
+        },
+        {
+          "name": "Steelers D/ST",
+          "bye": 6
+        },
+        {
+          "name": "Zay Flowers",
+          "bye": 13
+        },
+        {
+          "name": "Tua Tagovailoa",
+          "bye": 10
+        },
+        {
+          "name": "Graham Gano",
+          "bye": 13
+        },
+        {
+          "name": "DJ Chark Jr.",
+          "bye": 7
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Team Sleeper",
+      "players": [
+        {
+          "name": "Ja'Marr Chase",
+          "bye": 7
+        },
+        {
+          "name": "Derrick Henry",
+          "bye": 7
+        },
+        {
+          "name": "Joe Mixon",
+          "bye": 7
+        },
+        {
+          "name": "Calvin Ridley",
+          "bye": 9
+        },
+        {
+          "name": "Joe Burrow",
+          "bye": 7
+        },
+        {
+          "name": "Dallas Goedert",
+          "bye": 10
+        },
+        {
+          "name": "James Cook",
+          "bye": 13
+        },
+        {
+          "name": "Tyler Lockett",
+          "bye": 5
+        },
+        {
+          "name": "J.K. Dobbins",
+          "bye": 13
+        },
+        {
+          "name": "Patriots D/ST",
+          "bye": 11
+        },
+        {
+          "name": "Brian Robinson Jr.",
+          "bye": 14
+        },
+        {
+          "name": "Geno Smith",
+          "bye": 5
+        },
+        {
+          "name": "Harrison Butker",
+          "bye": 10
+        },
+        {
+          "name": "Darnell Mooney",
+          "bye": 13
+        },
+        {
+          "name": "Greg Dulcich",
+          "bye": 9
+        },
+        {
+          "name": "Eagles D/ST",
+          "bye": 10
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Team Yu",
+      "players": [
+        {
+          "name": "Christian McCaffrey",
+          "bye": 9
+        },
+        {
+          "name": "A.J. Brown",
+          "bye": 10
+        },
+        {
+          "name": "Nick Chubb",
+          "bye": 5
+        },
+        {
+          "name": "Amari Cooper",
+          "bye": 5
+        },
+        {
+          "name": "Christian Watson",
+          "bye": 6
+        },
+        {
+          "name": "Kyle Pitts",
+          "bye": 11
+        },
+        {
+          "name": "Rachaad White",
+          "bye": 5
+        },
+        {
+          "name": "Marquise Brown",
+          "bye": 14
+        },
+        {
+          "name": "Dak Prescott",
+          "bye": 7
+        },
+        {
+          "name": "D'Andre Swift",
+          "bye": 10
+        },
+        {
+          "name": "Cowboys D/ST",
+          "bye": 7
+        },
+        {
+          "name": "Treylon Burks",
+          "bye": 7
+        },
+        {
+          "name": "Cole Kmet",
+          "bye": 13
+        },
+        {
+          "name": "Jeff Wilson Jr.",
+          "bye": 10
+        },
+        {
+          "name": "Matt Gay",
+          "bye": 11
+        },
+        {
+          "name": "Anthony Richardson",
+          "bye": 11
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "MickGriddies",
+      "players": [
+        {
+          "name": "Tyreek Hill",
+          "bye": 10
+        },
+        {
+          "name": "Josh Jacobs",
+          "bye": 13
+        },
+        {
+          "name": "Najee Harris",
+          "bye": 6
+        },
+        {
+          "name": "Keenan Allen",
+          "bye": 5
+        },
+        {
+          "name": "Justin Fields",
+          "bye": 13
+        },
+        {
+          "name": "Darren Waller",
+          "bye": 13
+        },
+        {
+          "name": "Cam Akers",
+          "bye": 10
+        },
+        {
+          "name": "Evan McPherson",
+          "bye": 7
+        },
+        {
+          "name": "Dolphins D/ST",
+          "bye": 10
+        },
+        {
+          "name": "Khalil Herbert",
+          "bye": 13
+        },
+        {
+          "name": "Rondale Moore",
+          "bye": 14
+        },
+        {
+          "name": "Daniel Jones",
+          "bye": 13
+        },
+        {
+          "name": "Odell Beckham Jr.",
+          "bye": 13
+        },
+        {
+          "name": "Dalton Schultz",
+          "bye": 7
+        },
+        {
+          "name": "Bills D/ST",
+          "bye": 13
+        },
+        {
+          "name": "Younghoe Koo",
+          "bye": 11
+        }
+      ]
+    }
+  ]
+}

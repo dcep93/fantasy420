@@ -5,9 +5,11 @@ import Accuracy from "./Accuracy";
 import Draft from "./Draft";
 import DraftValue from "./DraftValue";
 import Peaked from "./Peaked";
+import Schedule from "./Schedule";
 import Wrapped from "./Wrapped";
 
 const pages = {
+  Schedule,
   Wrapped,
   DraftValue,
   Peaked,

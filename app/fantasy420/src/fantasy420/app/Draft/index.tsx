@@ -25,7 +25,7 @@ type ResultsType = {
   source: string;
   players: RPType[];
 }[];
-type DraftJsonType = {
+export type DraftJsonType = {
   drafts: DraftType[];
   extra: { [source: string]: PlayersType };
   espn: {
@@ -422,7 +422,7 @@ function results(draft_json: DraftJsonType): ResultsType {
     }));
 }
 
-function printF(f: (...args: any[]) => any): string {
+export function printF(f: (...args: any[]) => any): string {
   return `${f
     .toString()
     .split("\n")
