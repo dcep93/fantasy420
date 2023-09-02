@@ -120,6 +120,7 @@ export default function Peaked() {
                     }))
                     .filter(({ name }) => !owned.includes(name))
                     .filter(({ name }) => name.includes(" "))
+                    .filter(({ value }) => value < 150)
                     .sort((a, b) => b.value - a.value)
                     .map((player, i) => (
                       <tr key={i}>
@@ -148,31 +149,26 @@ export default function Peaked() {
 type ParsedType = { [name: string]: { value: number; tier: number } };
 function parse(lines: string[], all_players: string[]): ParsedType {
   const parsed: ParsedType = {};
-  var tier = undefined;
   for (let i = 0; i < lines.length; i++) {
     let [v, ...words] = lines[i].split(" ");
-    if (v === "Tier") {
-      tier = parseInt(words[0]);
-    } else if (tier !== undefined) {
-      var value = parseFloat(v);
-      if (!isNaN(value)) {
-        const name_parts: string[] = [];
-        for (let j = 0; j < words.length + 1; j++) {
-          let word = words[j];
-          let matched = (word || "").match(/^[A-Z.'-]+$/i);
-          if (matched) {
-            if (name_parts.length > 0 || !(word || "").match(/^((I+)|(Jr))$/)) {
-              name_parts.push(word);
-            }
+    var value = parseFloat(v);
+    if (!isNaN(value)) {
+      const name_parts: string[] = [];
+      for (let j = 0; j < words.length + 1; j++) {
+        let word = words[j];
+        let matched = (word || "").match(/^[A-Z.'-]+$/i);
+        if (matched) {
+          if (name_parts.length > 0 || !(word || "").match(/^((I+)|(Jr))$/)) {
+            name_parts.push(word);
           }
-          let name = normalize(name_parts.join(" "));
-          if (all_players.includes(name) || (!matched && name)) {
-            if (!name.includes(" ")) {
-              console.log("line", lines[i]);
-            }
-            parsed[name] = { value, tier };
-            name_parts.splice(0);
+        }
+        let name = normalize(name_parts.join(" "));
+        if (all_players.includes(name) || (!matched && name)) {
+          if (!name.includes(" ")) {
+            console.log("line", lines[i]);
           }
+          parsed[name] = { value, tier: NaN };
+          name_parts.splice(0);
         }
       }
     }
