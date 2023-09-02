@@ -26,7 +26,10 @@ export default function Peaked() {
     .map((team) => ({
       ...team,
       score: team.players
-        .map(({ value }) => value || 0)
+        .map(({ value }) => value || -Infinity)
+        .sort((a, b) => a - b)
+        .reverse()
+        .slice(0, 10)
         .reduce((a, b) => a + b, 0),
     }))
     .sort((a, b) => b.score - a.score);
@@ -120,7 +123,7 @@ export default function Peaked() {
                     }))
                     .filter(({ name }) => !owned.includes(name))
                     .filter(({ name }) => name.includes(" "))
-                    .filter(({ value }) => value < 150)
+                    .filter(({ value }) => value > -150)
                     .sort((a, b) => b.value - a.value)
                     .map((player, i) => (
                       <tr key={i}>
@@ -151,7 +154,7 @@ function parse(lines: string[], all_players: string[]): ParsedType {
   const parsed: ParsedType = {};
   for (let i = 0; i < lines.length; i++) {
     let [v, ...words] = lines[i].split(" ");
-    var value = parseFloat(v);
+    var value = -parseFloat(v);
     if (!isNaN(value)) {
       const name_parts: string[] = [];
       for (let j = 0; j < words.length + 1; j++) {
