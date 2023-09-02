@@ -1,6 +1,7 @@
-import { DraftJsonType, normalize, printF } from "../Draft";
+import { DraftJsonType, normalize } from "../Draft";
 import draftJson from "../Draft/draft.json";
-import rawScheduleJson from "./schedule.json";
+import { FetchedType } from "../Fetch";
+import rawFetched from "../Fetch/fetched.json";
 
 var lastValue = 1000;
 const auctionValues = Object.fromEntries(
@@ -26,21 +27,18 @@ const auctionValues = Object.fromEntries(
 );
 
 export default function Schedule() {
-  const scheduleJson: ScheduleJson = rawScheduleJson;
+  const fetched: FetchedType = rawFetched;
   return (
     <div>
-      <div>
-        <input readOnly value={printF(printSchedule)} />
-      </div>
-      {scheduleJson.teams.map((team, i) => {
+      {fetched.teams.map((team, i) => {
         const teamPlayers = team.players.map((player) => ({
           ...player,
           auctionValue: auctionValues[player.name] || 0,
         }));
-        const teamWeeks = scheduleJson.weeks
+        const teamWeeks = fetched.matchups
           .map((matches, j) => ({
             number: j + 1,
-            opponent: scheduleJson.teams.find(
+            opponent: fetched.teams.find(
               (opponent) =>
                 team.id !== opponent.id &&
                 matches.find(
@@ -130,64 +128,3 @@ export default function Schedule() {
     </div>
   );
 }
-
-function printSchedule() {
-  const year = 2023;
-  function getSchedule(): Promise<ScheduleJson> {
-    const leagueId =
-      new URL(window.document.location.href).searchParams.get("leagueId") ||
-      203836968;
-    return fetch(
-      `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}?view=proTeamSchedules_wl`
-    )
-      .then((resp) => resp.json())
-      .then((resp) =>
-        Object.fromEntries(
-          resp.settings.proTeams.map((p: any) => [p.id, p.byeWeek])
-        )
-      )
-      .then((byeWeeksByTeam) =>
-        fetch(
-          `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/${leagueId}?view=mMatchupScore&view=mStatus&view=mSettings&view=mTeam&view=modular&view=mNav&view=mRoster`,
-          {
-            credentials: "include",
-          }
-        )
-          .then((resp) => resp.json())
-          .then((resp) => ({
-            weeks: Array.from(
-              new Array(resp.settings.scheduleSettings.matchupPeriodCount)
-            )
-              .map((_, i) => i + 1)
-              .map((matchupPeriodId) =>
-                resp.schedule
-                  .filter((s: any) => s.matchupPeriodId === matchupPeriodId)
-                  .map((s: any) =>
-                    [s.home, s.away].map((t) => t.teamId as number)
-                  )
-              ),
-            teams: resp.teams.map((team: any) => ({
-              id: team.id,
-              name: team.name,
-              players: team.roster.entries
-                .map((entry: any) => entry.playerPoolEntry.player)
-                .map((player: any) => ({
-                  name: player.fullName,
-                  bye: byeWeeksByTeam[player.proTeamId],
-                })),
-            })),
-          }))
-      );
-  }
-
-  getSchedule().then(console.log);
-}
-
-type ScheduleJson = {
-  weeks: number[][][];
-  teams: {
-    id: number;
-    name: string;
-    players: { name: string; bye: number }[];
-  }[];
-};

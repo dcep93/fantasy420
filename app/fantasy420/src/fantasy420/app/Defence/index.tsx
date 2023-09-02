@@ -1,18 +1,15 @@
-import FlexColumns from "../../FlexColumns";
-
-import sos_json from "./sos.json";
-
 function Sos() {
-  const r = results(sos_json);
-  return (
-    <div style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
-      <FlexColumns
-        columns={r.map((v) => (
-          <pre>{JSON.stringify(v, null, 2)}</pre>
-        ))}
-      />
-    </div>
-  );
+  return <div></div>;
+  // const r = results(sos_json);
+  // return (
+  //   <div style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
+  //     <FlexColumns
+  //       columns={r.map((v) => (
+  //         <pre>{JSON.stringify(v, null, 2)}</pre>
+  //       ))}
+  //     />
+  //   </div>
+  // );
 }
 
 function results(sos_json: {

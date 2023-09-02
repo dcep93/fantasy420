@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { MAX_PEAKED, getPeakedValue, normalize } from "./Draft";
-import draft_json from "./Draft/draft.json";
+import { MAX_PEAKED, getPeakedValue, normalize } from ".";
+import draft_json from "./draft.json";
 
-import raw_generated_peaked from "./Peaked/generated.json";
+import raw_generated_peaked from "../Peaked/generated.json";
 
 const MANAGERS = [
   "neil",
