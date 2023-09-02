@@ -1,18 +1,22 @@
-import raw_generated from "./generated.json";
+import { FetchedType } from "../Fetch";
+import rawFetched from "../Fetch/fetched.json";
+import rawPeaked from "./peaked.json";
 
 export default function Peaked() {
-  const generated: {
-    peaked: { url: string; lines: string[] };
-    teams: { name: string; players: string[] }[];
-  } = raw_generated;
+  const peaked: { url: string; lines: string[] } = rawPeaked;
+  const fetched: FetchedType = rawFetched;
   const parsed = parse(
-    generated.peaked.lines,
-    generated.teams.flatMap(({ players }) => players).map(normalize)
+    peaked.lines,
+    rawFetched.teams
+      .flatMap(({ players }) => players)
+      .map((player) => player.name)
+      .map(normalize)
   );
-  const teams = generated.teams
+  const teams = fetched.teams
     .map((team) => ({
       ...team,
       players: team.players
+        .map((player) => player.name)
         .map((player) => ({
           name: player,
           ...parsed[normalize(player)],
@@ -26,10 +30,13 @@ export default function Peaked() {
         .reduce((a, b) => a + b, 0),
     }))
     .sort((a, b) => b.score - a.score);
-  const owned = generated.teams.flatMap((team) => team.players).map(normalize);
+  const owned = fetched.teams
+    .flatMap((team) => team.players)
+    .map((player) => player.name)
+    .map(normalize);
   return (
     <div>
-      <h1>{generated.peaked.lines[0]}</h1>
+      <h1>{peaked.lines[0]}</h1>
       <div style={{ width: "100vw", display: "flex", overflow: "scroll" }}>
         {teams.map((team, i) => (
           <div key={i}>
@@ -130,13 +137,9 @@ export default function Peaked() {
       <pre hidden style={{ overflow: "scroll" }}>
         {JSON.stringify(parsed, null, 2)}
       </pre>
-      <img
-        style={{ width: "95%" }}
-        src={generated.peaked.url}
-        alt={generated.peaked.url}
-      />
+      <img style={{ width: "95%" }} src={peaked.url} alt={peaked.url} />
       <pre style={{ overflow: "scroll" }}>
-        {JSON.stringify(generated, null, 2)}
+        {JSON.stringify(peaked, null, 2)}
       </pre>
     </div>
   );
