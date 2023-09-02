@@ -13,7 +13,7 @@ import numpy
 import pytesseract
 
 year = 2023
-league_id = 203836968
+league_id = 67201591  # 203836968
 # https://i0.wp.com/peakedinhighskool.com/wp-content/uploads/2022/09/1QB1.0PPR4pt_20220927.png?w=1790&ssl=1
 # https://pbs.twimg.com/media/FeTjnmBXEAI5EM6?format=jpg&name=4096x4096
 # https://pbs.twimg.com/media/Fe3mDJPXkAIn2Sj?format=jpg&name=4096x4096
@@ -24,8 +24,9 @@ league_id = 203836968
 # https://pbs.twimg.com/media/FhsEGsOX0AEmDG_?format=jpg&name=4096x4096
 # https://pbs.twimg.com/media/FiQHR-LXkAAulRr?format=jpg&name=4096x4096
 # https://pbs.twimg.com/media/Fi0KaTHXEAE0YmF?format=jpg&name=4096x4096
+# https://pbs.twimg.com/media/F3qfLwaXkAAtGoc?format=jpg&name=4096x4096
 peaked_url = '''
-https://pbs.twimg.com/media/F3qfLwaXkAAtGoc?format=jpg&name=4096x4096
+https://pbs.twimg.com/media/F4DwGSIW0AA2RKx?format=jpg&name=4096x4096
 '''.strip()
 teams_url = f"https://fantasy.espn.com/apis/v3/games/ffl/seasons/{year}/segments/0/leagues/{league_id}?view=mRoster&view=mTeam"
 

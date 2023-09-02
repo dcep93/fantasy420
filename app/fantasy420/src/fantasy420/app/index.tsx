@@ -3,7 +3,8 @@ import { BrowserRouter } from "react-router-dom";
 import Catalog from "../Catalog";
 import Accuracy from "./Accuracy";
 import Draft from "./Draft";
-import DraftValue from "./DraftValue";
+import DraftValue from "./Draft/Value";
+import Fetch from "./Fetch";
 import Peaked from "./Peaked";
 import Schedule from "./Schedule";
 import Wrapped from "./Wrapped";
@@ -15,6 +16,7 @@ const pages = {
   Peaked,
   Accuracy,
   Draft,
+  Fetch,
 };
 if (process.env.NODE_ENV === "development") {
   Object.assign(pages, {});

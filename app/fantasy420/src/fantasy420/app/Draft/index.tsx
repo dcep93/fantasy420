@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 
+import { printF } from "../Fetch";
 import raw_generated_peaked from "../Peaked/generated.json";
-import draft_json from "./draft.json";
 import { fetchExtensionStorage } from "./Extension";
+import draft_json from "./draft.json";
 
 const PICK_NUMBER = 9;
 const NUM_TEAMS = 10;
@@ -420,14 +421,6 @@ function results(draft_json: DraftJsonType): ResultsType {
       ...o,
       players: players.sort((a, b) => a.value - b.value),
     }));
-}
-
-export function printF(f: (...args: any[]) => any): string {
-  return `${f
-    .toString()
-    .split("\n")
-    .map((i) => i.split("// ")[0].trim())
-    .join(" ")}; ${f.name}()`;
 }
 
 export function getDraft() {
