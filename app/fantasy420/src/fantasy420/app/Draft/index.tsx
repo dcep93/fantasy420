@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { printF } from "../Fetch";
-import raw_generated_peaked from "../Peaked/generated.json";
+import raw_generated_peaked from "../Peaked/peaked.json";
 import { fetchExtensionStorage } from "./Extension";
 import draft_json from "./draft.json";
 
@@ -294,17 +294,12 @@ function results(draft_json: DraftJsonType): ResultsType {
   );
   console.log(draft_json.espn);
 
-  const generated_peaked: {
-    peaked: { url: string; lines: string[] };
-    teams: { name: string; players: string[] }[];
-  } = raw_generated_peaked;
+  const generated_peaked: { url: string; lines: string[] } =
+    raw_generated_peaked;
 
   draft_json.extra.peaked = Object.fromEntries(
     Object.keys(draft_json.espn.players)
-      .map((name) => [
-        name,
-        getPeakedValue(name, generated_peaked.peaked.lines),
-      ])
+      .map((name) => [name, getPeakedValue(name, generated_peaked.lines)])
       .filter(([name, value]) => (value as number) < MAX_PEAKED)
   );
   const ds = draft_json.drafts.map((d) => ({
