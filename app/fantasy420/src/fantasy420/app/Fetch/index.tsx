@@ -1,3 +1,16 @@
+import rawFetched from "./fetched.json";
+
+export const fetched: FetchedType = rawFetched;
+
+type FetchedType = {
+  matchups: number[][][];
+  teams: {
+    id: number;
+    name: string;
+    players: { name: string; bye: number }[];
+  }[];
+};
+
 export default function Fetch() {
   return (
     <div>
@@ -7,15 +20,6 @@ export default function Fetch() {
     </div>
   );
 }
-
-export type FetchedType = {
-  matchups: number[][][];
-  teams: {
-    id: number;
-    name: string;
-    players: { name: string; bye: number }[];
-  }[];
-};
 
 export function printF(f: (...args: any[]) => any): string {
   return `${f

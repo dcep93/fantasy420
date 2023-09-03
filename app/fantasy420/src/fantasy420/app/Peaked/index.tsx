@@ -1,13 +1,12 @@
-import { FetchedType } from "../Fetch";
-import rawFetched from "../Fetch/fetched.json";
+import { fetched } from "../Fetch";
 import rawPeaked from "./peaked.json";
 
+export const peaked: { url: string; lines: string[] } = rawPeaked;
+
 export default function Peaked() {
-  const peaked: { url: string; lines: string[] } = rawPeaked;
-  const fetched: FetchedType = rawFetched;
   const parsed = parse(
     peaked.lines,
-    rawFetched.teams
+    fetched.teams
       .flatMap(({ players }) => players)
       .map((player) => player.name)
       .map(normalize)
