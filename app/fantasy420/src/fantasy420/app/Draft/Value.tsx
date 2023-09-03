@@ -2,24 +2,13 @@ import { useState } from "react";
 import { MAX_PEAKED, getPeakedValue, normalize } from ".";
 import draft_json from "./draft.json";
 
+import { fetched } from "../Fetch";
 import raw_generated_peaked from "../Peaked/peaked.json";
 
-const MANAGERS = [
-  "neil",
-  "heify",
-  "dunc",
-  "sourav",
-  "ahmed",
-  "ruifan",
-  "bu",
-  "jon",
-  "dan",
-  "george",
-];
-
 function Value() {
-  const [num_rounds, update] = useState(8);
-  const final = draft_json.drafts[0];
+  const picks = Object.fromEntries(
+    draft_json.drafts[0].map((playerName, index) => [playerName, index])
+  );
 
   const generated_peaked: { url: string; lines: string[] } =
     raw_generated_peaked;
@@ -49,7 +38,8 @@ function Value() {
         ),
       ],
     ]);
-  const results = get_results(final, extra_entries, num_rounds);
+  const [num_rounds, update] = useState(8);
+  const results = get_results(picks, extra_entries, num_rounds);
   return (
     <div>
       <div>
@@ -136,7 +126,7 @@ function Value() {
 }
 
 function get_results(
-  final: string[],
+  picks: { [name: string]: number },
   extra_entries: [string, { [name: string]: number }][],
   num_rounds: number
 ): {
@@ -150,22 +140,23 @@ function get_results(
       Object.entries(d).map(([name, score]) => [normalize(name), score])
     )
   );
-  const scored = Array.from(new Array(MANAGERS.length))
-    .map((_, team_index) =>
-      final
-        .map((name, pick_index) => ({ name, pick_index }))
-        .filter(({ pick_index }) => isMyPick(pick_index, team_index))
-        .map(({ pick_index, name }) => ({
-          name: `${name} (${pick_index + 1})`,
-          scores: extra.map((d) => d[normalize(name)]),
-        }))
-    )
-    .map((players, team_index) => ({
-      name: MANAGERS[team_index],
-      team_index,
-      players,
+  const scored = fetched.teams
+    .map((team, teamIndex) => ({
+      ...team,
+      teamIndex,
+      players: team.players
+        .map((player) => ({ ...player, pick: picks[player.name] || Infinity }))
+        .sort((a, b) => a.pick - b.pick)
+        .map((player) => ({
+          ...player,
+          name: `${player.name} (${player.pick + 1})`,
+          scores: extra.map((d) => d[normalize(player.name)]),
+        })),
+    }))
+    .map((team) => ({
+      ...team,
       scores: extra_entries.map((_, i) =>
-        players
+        team.players
           .filter((_, j) => j < num_rounds)
           .map((player) => player.scores[i])
           .reduce((a, b) => a + b, 0)
@@ -173,20 +164,20 @@ function get_results(
     }));
   const ranks = extra.map((_, i) =>
     scored
-      .map(({ scores, team_index }) => ({
-        team_index,
+      .map(({ scores, ...team }) => ({
+        ...team,
         score: scores[i],
       }))
       .sort((a, b) =>
         isNaN(a.score) ? 1 : isNaN(b.score) ? -1 : a.score - b.score
       )
-      .map(({ team_index }, rank) => ({ team_index, rank }))
-      .sort((a, b) => a.team_index - b.team_index)
+      .map(({ teamIndex }, rank) => ({ teamIndex, rank }))
+      .sort((a, b) => a.teamIndex - b.teamIndex)
       .map(({ rank }) => rank)
   );
   return scored
-    .map(({ team_index, ...o }) => ({
-      ranks: ranks.map((r) => r[team_index]),
+    .map(({ teamIndex, ...o }) => ({
+      ranks: ranks.map((r) => r[teamIndex]),
       ...o,
     }))
     .map(({ ...o }) => ({
@@ -194,17 +185,6 @@ function get_results(
       ...o,
     }))
     .sort((a, b) => a.total_rank - b.total_rank);
-}
-
-function isMyPick(pick_index: number, team_index: number): boolean {
-  if (pick_index >= 20) {
-    team_index = MANAGERS.length - 1 - team_index;
-  }
-  const oddRound = (pick_index / MANAGERS.length) % 2 < 1;
-  return (
-    pick_index % MANAGERS.length ===
-    (oddRound ? team_index : MANAGERS.length - 1 - team_index)
-  );
 }
 
 export default Value;

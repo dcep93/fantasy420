@@ -1,7 +1,6 @@
 import { DraftJsonType, normalize } from "../Draft";
 import draftJson from "../Draft/draft.json";
-import { FetchedType } from "../Fetch";
-import rawFetched from "../Fetch/fetched.json";
+import { fetched } from "../Fetch";
 
 var lastValue = 1000;
 const auctionValues = Object.fromEntries(
@@ -27,7 +26,6 @@ const auctionValues = Object.fromEntries(
 );
 
 export default function Schedule() {
-  const fetched: FetchedType = rawFetched;
   return (
     <div>
       {fetched.teams.map((team, i) => {
