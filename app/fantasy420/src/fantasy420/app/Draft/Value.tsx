@@ -150,7 +150,7 @@ function get_results(
         .map((player) => ({
           ...player,
           name: `${player.name} (${player.pick + 1})`,
-          scores: extra.map((d) => d[normalize(player.name)]),
+          scores: extra.map((d) => d[normalize(player.name)] || Infinity),
         })),
     }))
     .map((team) => ({
