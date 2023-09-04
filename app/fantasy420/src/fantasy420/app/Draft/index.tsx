@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 import { printF } from "../Fetch";
 import raw_generated_peaked from "../Peaked/peaked.json";
 import { fetchExtensionStorage } from "./Extension";
-import draft_json from "./draft.json";
+import raw_draft_json from "./draft.json";
+
+export const draft_json: DraftJsonType = raw_draft_json;
 
 const PICK_NUMBER = 9;
 const NUM_TEAMS = 10;
@@ -35,6 +37,24 @@ export type DraftJsonType = {
     auction: PlayersType;
   };
 };
+
+var lastPlayerName = "";
+export const qbToNonQB = Object.fromEntries(
+  Object.entries((draft_json as DraftJsonType).espn.auction)
+    .map(([name, value]) => ({
+      name,
+      value,
+    }))
+    .sort((a, b) => b.value - a.value)
+    .map(({ name }) => {
+      if ((draft_json as DraftJsonType).espn.players[name]?.position !== "QB") {
+        lastPlayerName = name;
+      }
+      return { name, lastPlayerName };
+    })
+    .filter(({ name, lastPlayerName }) => name !== lastPlayerName)
+    .map(({ name, lastPlayerName }) => [name, lastPlayerName])
+);
 
 function Draft() {
   const r = results(draft_json);

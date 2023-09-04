@@ -460,7 +460,7 @@ function BestByStreamingPosition(data: WrappedType) {
   return (
     <div>
       {Object.values(Position)
-        .filter((p) => p >= 0)
+        .filter((p) => (p as Position) >= 0)
         .map((p) => p as unknown as Position)
         .map((position, i) => (
           <div key={i} className={css.bubble}>
