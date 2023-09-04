@@ -25,7 +25,6 @@ function Value() {
   const extra_entries = (
     Object.entries(draft_json.extra) as [string, { [name: string]: number }][]
   )
-    .reverse()
     .concat([["espnpick", draft_json.espn.pick]])
     .concat([
       [
