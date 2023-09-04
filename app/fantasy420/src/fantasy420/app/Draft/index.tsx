@@ -527,7 +527,7 @@ function getEspnLiveDraft(injured_only: boolean) {
       .find((i) => i.innerText === index.toString())!;
     if (clickable) {
       clickable.click();
-      setTimeout(subHelper, 5000);
+      setTimeout(subHelper, 1000);
     } else {
       subHelper();
     }
