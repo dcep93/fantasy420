@@ -1,37 +1,19 @@
-import { DraftJsonType, normalize } from "../Draft";
-import draftJson from "../Draft/draft.json";
+import { draft_json, qbToNonQB } from "../Draft";
 import { fetched } from "../Fetch";
 
-var lastValue = 1000;
-const auctionValues = Object.fromEntries(
-  Object.entries((draftJson as DraftJsonType).espn.auction)
-    .map(([name, value]) => ({
-      name,
-      value,
-      draftSharksSuperValue:
-        (draftJson as DraftJsonType).extra["draftsharks_super"][
-          normalize(name)
-        ] || Infinity,
-    }))
-    .sort((a, b) => b.draftSharksSuperValue - a.draftSharksSuperValue)
-    .map(({ name, value }) => {
-      if ((draftJson as DraftJsonType).espn.players[name]?.position === "QB") {
-        value = lastValue;
-      } else {
-        lastValue = value;
-      }
-      return { name, value };
-    })
-    .map(({ name, value }) => [name, value])
-);
-
 export default function Schedule() {
+  const auctionValues = Object.fromEntries(
+    Object.keys(draft_json.espn.auction).map((name) => [
+      name,
+      draft_json.espn.auction[qbToNonQB[name] || name],
+    ])
+  );
   return (
     <div>
       {fetched.teams.map((team, i) => {
         const teamPlayers = team.players.map((player) => ({
           ...player,
-          auctionValue: auctionValues[player.name] || 0,
+          auctionValue: auctionValues[player.name],
         }));
         const teamWeeks = fetched.matchups
           .map((matches, j) => ({
@@ -50,7 +32,7 @@ export default function Schedule() {
               .filter((player) => player.bye === o.number)
               .map((player) => ({
                 ...player,
-                auctionValue: auctionValues[player.name] || 0,
+                auctionValue: auctionValues[player.name],
               })),
             ...o,
           }));
