@@ -504,7 +504,9 @@ function getEspnLiveDraft(injured_only: boolean) {
         }))
         .filter(({ name, pick, auction }) => name && pick && auction)
         .map(({ name, position, pick, auction, injury }) => ({
-          name: (name.children[0] as HTMLElement).innerText,
+          name: (name.children[0] as HTMLElement).innerText
+            .split(") ")
+            .reverse()[0],
           position: position.innerText.split("\n"),
           pick: parseFloat(pick.innerText),
           auction: parseFloat(auction.innerText),
@@ -525,7 +527,7 @@ function getEspnLiveDraft(injured_only: boolean) {
       .find((i) => i.innerText === index.toString())!;
     if (clickable) {
       clickable.click();
-      setTimeout(subHelper, 1000);
+      setTimeout(subHelper, 5000);
     } else {
       subHelper();
     }
