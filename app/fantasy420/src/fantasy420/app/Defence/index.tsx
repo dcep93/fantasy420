@@ -32,7 +32,7 @@ export default function Defence() {
 function results(defence: DefenceType) {
   const scored = Object.entries(defence).map(([name, arr]) => ({
     name,
-    weeks: arr.map((a) => ({
+    weeks: arr.slice(0, 4).map((a) => ({
       opp: a?.opp || "BYE",
       score: !a ? BYE_SCORE : (a.lines.Total || AVERAGE_SCORE) - a.lines.Spread,
     })),
