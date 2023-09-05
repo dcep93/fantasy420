@@ -1,112 +1,82 @@
-import concurrent.futures
 import json
 import requests
 import typing
 
-from bs4 import BeautifulSoup
-
 NUM_EXECUTORS = 8
+
+YEAR = 2023
 
 
 def main():
-    results = get_results()
+    schedule = get_schedule()
+    vegas = get_vegas(schedule)
+    results = get_results(vegas)
     print(json.dumps(results))
+    print(json.dumps(vegas))
 
 
-def get_results():
-    points_against = get_points_against()
-    team_names = points_against.keys()
-    with concurrent.futures.ThreadPoolExecutor(NUM_EXECUTORS) as executor:
-        _predictions = executor.map(
-            lambda team_name: get_prediction(team_name, points_against),
-            team_names)
-        predictions = list(_predictions)
+def get_schedule() -> typing.Dict[str, typing.List[str]]:
+    resp = json.loads(
+        requests.get(
+            f"https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/{YEAR}?view=proTeamSchedules_wl"
+        ).text)
+    proTeams = resp["settings"]["proTeams"]
+    idToTeam = {team["id"]: team["name"] for team in proTeams}
     return {
-        team_name: predictions[i]
-        for i, team_name in enumerate(team_names)
+        team["name"]: [
+            idToTeam[opp] for opp in [[
+                c
+                for c in [game[0]["awayProTeamId"], game[0]["homeProTeamId"]]
+                if c != team["id"]
+            ][0] for game in team["proGamesByScoringPeriod"].values()]
+        ]
+        for team in proTeams
     }
 
 
-def get_team_names() -> typing.List[str]:
-    resp = requests.get("https://www.espn.com/nfl/teams")
-    soup = BeautifulSoup(resp.content, 'html.parser')
-    hrefs = [i['href'] for i in soup.find_all('a', text='Schedule', href=True)]
-    return sorted([
-        href.split("/")[-1] for href in hrefs
-        if href.startswith("/nfl/team/schedule")
-    ])
+def get_vegas(
+    schedule: typing.Dict[str, typing.List[str]]
+) -> typing.Dict[str, typing.List[float]]:
+    lines = json.loads(
+        requests.get(
+            "https://sportsbook-us-ny.draftkings.com/sites/US-NY-SB/api/v5/eventgroups/88808/categories/492/subcategories/4518?format=json"
+        ).text)
 
-
-def get_points_against() -> typing.Dict[str, float]:
-    url = "https://fantasy.espn.com/apis/v3/games/ffl/seasons/2023/segments/0/leagues/203836968?view=mPositionalRatingsStats"
-    resp = requests.get(url)
-    j = json.loads(resp.content)
-    ratingsByOpponent = j["positionAgainstOpponent"]["positionalRatings"][
-        "16"]["ratingsByOpponent"]
-    proTeamsById = [
-        "atl",
-        "buf",
-        "chi",
-        "cin",
-        "cle",
-        "dal",
-        "den",
-        "det",
-        "gb",
-        "ten",
-        "ind",
-        "kc",
-        "lv",
-        "lar",
-        "mia",
-        "min",
-        "ne",
-        "no",
-        "nyg",
-        "nyj",
-        "phi",
-        "ari",
-        "pit",
-        "lac",
-        "sf",
-        "sea",
-        "tb",
-        "wsh",
-        "car",
-        "jax",
-        None,
-        None,
-        "bal",
-        "hou",
-    ]
+    def helper(offer):
+        print(json.dumps(offer))
+        return offer
 
     return {
-        proTeamsById[int(k) - 1]: v["average"]
-        for k, v in ratingsByOpponent.items()
+        team: [{
+            "opp": event["opp"],
+            "lines": {
+                o2["label"]: [
+                    o3["line"] for o3 in o2["outcomes"]
+                    if team not in o3["label"] and "line" in o3
+                ][0]
+                for o2 in [
+                    offer for o in lines["eventGroup"]["offerCategories"][0]
+                    ["offerSubcategoryDescriptors"][0]["offerSubcategory"]
+                    ["offers"] for offer in o
+                    if offer["eventId"] == event["id"]
+                ] if "label" in o2 and o2["label"] != "Moneyline"
+            }
+        } for event in [{
+            "opp":
+            opp,
+            "id": [
+                event["eventId"] for event in lines["eventGroup"]["events"]
+                if team in event["name"] and opp in event["name"]
+            ][0]
+        } for opp in opps]]
+        for team, opps in schedule.items()
     }
 
 
-def get_prediction(
-    team_name: str,
-    points_against: typing.Dict[str, float],
-) -> typing.List[typing.Any]:
-    print(team_name)
-    url = f"https://www.espn.com/nfl/team/schedule/_/name/{team_name}"
-    resp = requests.get(url)
-    soup = BeautifulSoup(resp.content, 'html.parser')
-    rows = [list(r.children) for r in soup.find_all('tr')]
-    weeks = {
-        week: opponent.find('a', href=True)["href"].split("/")[5]
-        for week, opponent in [(int(week), opponent)
-                               for week, opponent in [(r[0].text, r[2])
-                                                      for r in rows
-                                                      if len(r) > 2]
-                               if week not in ['WK', 'HOF']]
-    }
-    return [{
-        "p": points_against[o],
-        "o": o
-    } if o else None for o in [weeks.get(w) for w in [14, 15, 16, 17]]]
+def get_results(
+    vegas: typing.Dict[str,
+                       typing.List[float]], ) -> typing.Dict[str, typing.Any]:
+    return {}
 
 
 if __name__ == "__main__":
