@@ -1,8 +1,12 @@
-import { draft_json } from "../Draft";
+import { draft_json, normalize } from "../Draft";
 import { fetched } from "../Fetch";
 import rawPeaked from "./peaked.json";
 
 export const peaked: { url: string; lines: string[] } = rawPeaked;
+
+const playerToDraftPick = Object.fromEntries(
+  draft_json.drafts[0].map((name, i) => [normalize(name), i + 1])
+);
 
 export default function Peaked() {
   const parsed = parse(
@@ -47,7 +51,8 @@ export default function Peaked() {
           name,
           ...parsed[normalize(qbToNonQB[name]?.name || name)],
         }))
-        .sort((a, b) => (b.value || 0) - (a.value || 0)),
+        .map(({ value, ...o }) => ({ ...o, value: value || -Infinity }))
+        .sort((a, b) => b.value - a.value),
     }))
     .map((team) => ({
       ...team,
@@ -103,7 +108,8 @@ export default function Peaked() {
                   {team.players.map((player, j) => (
                     <tr key={j}>
                       <td title={qbToNonQB[player.name]?.name}>
-                        {player.name}
+                        {player.name} (
+                        {playerToDraftPick[normalize(player.name)]})
                       </td>
                       <td>{qbToNonQB[player.name]?.value || player.value}</td>
                       {/* <td>{player.tier}</td> */}
@@ -205,13 +211,4 @@ function parse(lines: string[], all_players: string[]): ParsedType {
     }
   }
   return parsed;
-}
-
-function normalize(name: string): string {
-  return name
-    .replaceAll("'", "")
-    .replaceAll(".", "")
-    .replaceAll("-", "")
-    .replace("AmonRa Brown", "AmonRa St Brown")
-    .replace(/Ken Walker III$/, "Kenneth Walker III");
 }
