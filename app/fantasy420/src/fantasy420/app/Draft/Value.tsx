@@ -7,7 +7,10 @@ import raw_generated_peaked from "../Peaked/peaked.json";
 
 function Value() {
   const picks = Object.fromEntries(
-    draft_json.drafts[0].map((playerName, index) => [playerName, index])
+    draft_json.drafts[0].map((playerName, index) => [
+      normalize(playerName),
+      index,
+    ])
   );
 
   const generated_peaked: { url: string; lines: string[] } =
@@ -144,7 +147,7 @@ function get_results(
       ...team,
       teamIndex,
       players: team.players
-        .map((player) => ({ ...player, pick: picks[player.name] }))
+        .map((player) => ({ ...player, pick: picks[normalize(player.name)] }))
         .sort((a, b) => a.pick - b.pick)
         .map((player) => ({
           ...player,
@@ -157,7 +160,7 @@ function get_results(
       scores: extra_entries.map((_, i) =>
         team.players
           .filter((_, j) => j < num_rounds)
-          .map((player) => player.scores[i])
+          .map((player) => player.scores[i] || 0)
           .reduce((a, b) => a + b, 0)
       ),
     }));
