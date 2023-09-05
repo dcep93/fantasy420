@@ -62,6 +62,7 @@
         "Spread": -4
       }
     },
+    null,
     {
       "opp": "Buccaneers",
       "lines": {
@@ -96,12 +97,6 @@
       "opp": "Raiders",
       "lines": {
         "Spread": -2
-      }
-    },
-    {
-      "opp": "Texans",
-      "lines": {
-        "Spread": -1
       }
     }
   ],
@@ -161,6 +156,7 @@
         "Spread": 4.5
       }
     },
+    null,
     {
       "opp": "Eagles",
       "lines": {
@@ -201,12 +197,6 @@
       "opp": "Bengals",
       "lines": {
         "Spread": 3
-      }
-    },
-    {
-      "opp": "Chargers",
-      "lines": {
-        "Spread": 5.5
       }
     }
   ],
@@ -284,6 +274,7 @@
         "Spread": -5
       }
     },
+    null,
     {
       "opp": "Vikings",
       "lines": {
@@ -306,13 +297,6 @@
       "opp": "Colts",
       "lines": {
         "Spread": 2
-      }
-    },
-    {
-      "opp": "Broncos",
-      "lines": {
-        "Spread": -4,
-        "Total": 44
       }
     }
   ],
@@ -372,6 +356,7 @@
         "Spread": -2.5
       }
     },
+    null,
     {
       "opp": "Seahawks",
       "lines": {
@@ -413,12 +398,6 @@
       "opp": "Giants",
       "lines": {
         "Spread": -3
-      }
-    },
-    {
-      "opp": "49ers",
-      "lines": {
-        "Spread": -4.5
       }
     }
   ],
@@ -478,6 +457,7 @@
         "Spread": -4.5
       }
     },
+    null,
     {
       "opp": "Raiders",
       "lines": {
@@ -518,12 +498,6 @@
       "opp": "Ravens",
       "lines": {
         "Spread": -1.5
-      }
-    },
-    {
-      "opp": "Bills",
-      "lines": {
-        "Spread": -3.5
       }
     }
   ],
@@ -601,6 +575,7 @@
         "Spread": 1
       }
     },
+    null,
     {
       "opp": "Raiders",
       "lines": {
@@ -621,12 +596,6 @@
     },
     {
       "opp": "Packers",
-      "lines": {
-        "Spread": 1
-      }
-    },
-    {
-      "opp": "Lions",
       "lines": {
         "Spread": 1
       }
@@ -694,6 +663,7 @@
         "Spread": 4
       }
     },
+    null,
     {
       "opp": "Giants",
       "lines": {
@@ -728,12 +698,6 @@
       "opp": "Bills",
       "lines": {
         "Spread": -3.5
-      }
-    },
-    {
-      "opp": "Jets",
-      "lines": {
-        "Spread": -4.5
       }
     }
   ],
@@ -799,6 +763,7 @@
         "Spread": -2.5
       }
     },
+    null,
     {
       "opp": "Falcons",
       "lines": {
@@ -833,12 +798,6 @@
       "opp": "Buccaneers",
       "lines": {
         "Spread": 5.5
-      }
-    },
-    {
-      "opp": "Falcons",
-      "lines": {
-        "Spread": 1
       }
     }
   ],
@@ -917,6 +876,7 @@
         "Spread": 1.5
       }
     },
+    null,
     {
       "opp": "Packers",
       "lines": {
@@ -939,12 +899,6 @@
       "opp": "Rams",
       "lines": {
         "Spread": 3
-      }
-    },
-    {
-      "opp": "Eagles",
-      "lines": {
-        "Spread": -7
       }
     }
   ],
@@ -986,6 +940,7 @@
         "Spread": -1
       }
     },
+    null,
     {
       "opp": "Giants",
       "lines": {
@@ -1046,12 +1001,6 @@
       "lines": {
         "Spread": 1
       }
-    },
-    {
-      "opp": "Patriots",
-      "lines": {
-        "Spread": 4.5
-      }
     }
   ],
   "Eagles": [
@@ -1110,6 +1059,7 @@
         "Spread": 3
       }
     },
+    null,
     {
       "opp": "Chiefs",
       "lines": {
@@ -1150,12 +1100,6 @@
       "opp": "Cardinals",
       "lines": {
         "Spread": 11
-      }
-    },
-    {
-      "opp": "Giants",
-      "lines": {
-        "Spread": 7
       }
     }
   ],
@@ -1239,6 +1183,7 @@
         "Spread": -6.5
       }
     },
+    null,
     {
       "opp": "49ers",
       "lines": {
@@ -1255,12 +1200,6 @@
       "opp": "Eagles",
       "lines": {
         "Spread": -11
-      }
-    },
-    {
-      "opp": "Seahawks",
-      "lines": {
-        "Spread": -7.5
       }
     }
   ],
@@ -1296,6 +1235,7 @@
         "Spread": -1
       }
     },
+    null,
     {
       "opp": "Rams",
       "lines": {
@@ -1361,12 +1301,6 @@
       "lines": {
         "Spread": -2.5
       }
-    },
-    {
-      "opp": "Ravens",
-      "lines": {
-        "Spread": -1
-      }
     }
   ],
   "Chargers": [
@@ -1395,6 +1329,7 @@
         "Spread": 5.5
       }
     },
+    null,
     {
       "opp": "Cowboys",
       "lines": {
@@ -1466,12 +1401,6 @@
       "lines": {
         "Spread": 3
       }
-    },
-    {
-      "opp": "Chiefs",
-      "lines": {
-        "Spread": -5.5
-      }
     }
   ],
   "49ers": [
@@ -1524,6 +1453,7 @@
         "Spread": 1
       }
     },
+    null,
     {
       "opp": "Jaguars",
       "lines": {
@@ -1571,12 +1501,6 @@
       "lines": {
         "Spread": 3.5
       }
-    },
-    {
-      "opp": "Rams",
-      "lines": {
-        "Spread": 4.5
-      }
     }
   ],
   "Seahawks": [
@@ -1605,6 +1529,7 @@
         "Spread": -1
       }
     },
+    null,
     {
       "opp": "Bengals",
       "lines": {
@@ -1677,12 +1602,6 @@
       "lines": {
         "Spread": 2.5
       }
-    },
-    {
-      "opp": "Cardinals",
-      "lines": {
-        "Spread": 7.5
-      }
     }
   ],
   "Buccaneers": [
@@ -1711,6 +1630,7 @@
         "Spread": -5.5
       }
     },
+    null,
     {
       "opp": "Lions",
       "lines": {
@@ -1781,12 +1701,6 @@
       "opp": "Saints",
       "lines": {
         "Spread": -5.5
-      }
-    },
-    {
-      "opp": "Panthers",
-      "lines": {
-        "Spread": 1
       }
     }
   ],
@@ -1870,6 +1784,7 @@
         "Spread": -3.5
       }
     },
+    null,
     {
       "opp": "Rams",
       "lines": {
@@ -1886,12 +1801,6 @@
       "opp": "49ers",
       "lines": {
         "Spread": -3.5
-      }
-    },
-    {
-      "opp": "Cowboys",
-      "lines": {
-        "Spread": -6
       }
     }
   ],
@@ -1933,6 +1842,7 @@
         "Spread": -7
       }
     },
+    null,
     {
       "opp": "Texans",
       "lines": {
@@ -1993,12 +1903,6 @@
       "lines": {
         "Spread": -5
       }
-    },
-    {
-      "opp": "Buccaneers",
-      "lines": {
-        "Spread": -1
-      }
     }
   ],
   "Jaguars": [
@@ -2052,6 +1956,7 @@
         "Spread": -1
       }
     },
+    null,
     {
       "opp": "49ers",
       "lines": {
@@ -2096,12 +2001,6 @@
     },
     {
       "opp": "Panthers",
-      "lines": {
-        "Spread": 5
-      }
-    },
-    {
-      "opp": "Titans",
       "lines": {
         "Spread": 5
       }
@@ -2181,6 +2080,7 @@
         "Spread": -2
       }
     },
+    null,
     {
       "opp": "Rams",
       "lines": {
@@ -2203,12 +2103,6 @@
       "opp": "Dolphins",
       "lines": {
         "Spread": 1.5
-      }
-    },
-    {
-      "opp": "Steelers",
-      "lines": {
-        "Spread": 1
       }
     }
   ],
@@ -2250,6 +2144,7 @@
         "Spread": -3
       }
     },
+    null,
     {
       "opp": "Panthers",
       "lines": {
@@ -2309,15 +2204,8 @@
       "lines": {
         "Spread": -3
       }
-    },
-    {
-      "opp": "Colts",
-      "lines": {
-        "Spread": 1
-      }
     }
   ],
-  "FA": [],
   "Falcons": [
     {
       "opp": "Panthers",
@@ -2380,6 +2268,7 @@
         "Spread": 2.5
       }
     },
+    null,
     {
       "opp": "Saints",
       "lines": {
@@ -2415,12 +2304,6 @@
       "opp": "Bears",
       "lines": {
         "Spread": -2
-      }
-    },
-    {
-      "opp": "Saints",
-      "lines": {
-        "Spread": -1
       }
     }
   ],
@@ -2499,6 +2382,7 @@
         "Spread": -2.5
       }
     },
+    null,
     {
       "opp": "Chiefs",
       "lines": {
@@ -2519,12 +2403,6 @@
     },
     {
       "opp": "Patriots",
-      "lines": {
-        "Spread": 3.5
-      }
-    },
-    {
-      "opp": "Dolphins",
       "lines": {
         "Spread": 3.5
       }
@@ -2604,6 +2482,7 @@
         "Spread": -1
       }
     },
+    null,
     {
       "opp": "Lions",
       "lines": {
@@ -2626,13 +2505,6 @@
       "opp": "Falcons",
       "lines": {
         "Spread": 2
-      }
-    },
-    {
-      "opp": "Packers",
-      "lines": {
-        "Spread": 1,
-        "Total": 43
       }
     }
   ],
@@ -2674,6 +2546,7 @@
         "Spread": 4.5
       }
     },
+    null,
     {
       "opp": "49ers",
       "lines": {
@@ -2733,13 +2606,6 @@
       "lines": {
         "Spread": -3
       }
-    },
-    {
-      "opp": "Browns",
-      "lines": {
-        "Spread": 2.5,
-        "Total": 47.5
-      }
     }
   ],
   "Browns": [
@@ -2768,6 +2634,7 @@
         "Spread": 1
       }
     },
+    null,
     {
       "opp": "49ers",
       "lines": {
@@ -2839,13 +2706,6 @@
       "lines": {
         "Spread": -1
       }
-    },
-    {
-      "opp": "Bengals",
-      "lines": {
-        "Spread": -2.5,
-        "Total": 47.5
-      }
     }
   ],
   "Cowboys": [
@@ -2886,6 +2746,7 @@
         "Spread": -1
       }
     },
+    null,
     {
       "opp": "Rams",
       "lines": {
@@ -2945,12 +2806,6 @@
       "opp": "Lions",
       "lines": {
         "Spread": 3.5
-      }
-    },
-    {
-      "opp": "Commanders",
-      "lines": {
-        "Spread": 6
       }
     }
   ],
@@ -3004,6 +2859,7 @@
         "Spread": -7
       }
     },
+    null,
     {
       "opp": "Bills",
       "lines": {
@@ -3050,13 +2906,6 @@
       "opp": "Chargers",
       "lines": {
         "Spread": -3
-      }
-    },
-    {
-      "opp": "Raiders",
-      "lines": {
-        "Spread": 4,
-        "Total": 44
       }
     }
   ],
@@ -3110,6 +2959,7 @@
         "Spread": 4.5
       }
     },
+    null,
     {
       "opp": "Chargers",
       "lines": {
@@ -3157,12 +3007,6 @@
       "lines": {
         "Spread": -3.5
       }
-    },
-    {
-      "opp": "Vikings",
-      "lines": {
-        "Spread": -1
-      }
     }
   ],
   "Packers": [
@@ -3197,6 +3041,7 @@
         "Spread": -1.5
       }
     },
+    null,
     {
       "opp": "Broncos",
       "lines": {
@@ -3262,13 +3107,6 @@
       "lines": {
         "Spread": -1
       }
-    },
-    {
-      "opp": "Bears",
-      "lines": {
-        "Spread": -1,
-        "Total": 43
-      }
     }
   ],
   "Titans": [
@@ -3309,6 +3147,7 @@
         "Spread": -5.5
       }
     },
+    null,
     {
       "opp": "Falcons",
       "lines": {
@@ -3367,12 +3206,6 @@
       "opp": "Texans",
       "lines": {
         "Spread": 3
-      }
-    },
-    {
-      "opp": "Jaguars",
-      "lines": {
-        "Spread": -5
       }
     }
   ]
