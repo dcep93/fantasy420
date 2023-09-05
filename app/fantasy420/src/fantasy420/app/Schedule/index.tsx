@@ -28,6 +28,12 @@ export default function Schedule() {
             )!,
           }))
           .map((o) => ({
+            myByes: team.players
+              .filter((player) => player.bye === o.number)
+              .map((player) => ({
+                ...player,
+                auctionValue: auctionValues[player.name] || 0,
+              })),
             byes: o.opponent.players
               .filter((player) => player.bye === o.number)
               .map((player) => ({
@@ -46,7 +52,6 @@ export default function Schedule() {
               padding: "20px",
             }}
           >
-            <div>{team.name}</div>
             <div
               title={teamPlayers
                 .map(
@@ -55,20 +60,23 @@ export default function Schedule() {
                 )
                 .join("\n")}
             >
-              owned: $
-              {teamPlayers
-                .map((player) => player.auctionValue)
-                .reduce((a, b) => a + b, 0)
-                .toFixed(1)}
-            </div>
-            <div>
-              byes: $
-              {teamWeeks
-                .flatMap((week) =>
-                  week.byes.map((player) => player.auctionValue)
-                )
-                .reduce((a, b) => a + b, 0)
-                .toFixed(1)}
+              <div>team: {team.name}</div>
+              <div>
+                owned: $
+                {teamPlayers
+                  .map((player) => player.auctionValue)
+                  .reduce((a, b) => a + b, 0)
+                  .toFixed(1)}
+              </div>
+              <div>
+                byes: $
+                {teamWeeks
+                  .flatMap((week) =>
+                    week.byes.map((player) => player.auctionValue)
+                  )
+                  .reduce((a, b) => a + b, 0)
+                  .toFixed(1)}
+              </div>
             </div>
             <div
               style={{
@@ -86,11 +94,19 @@ export default function Schedule() {
                     padding: "10px",
                     margin: "10px",
                   }}
+                  title={week.myByes
+                    .map((player) => `${player.name} $${player.auctionValue}`)
+                    .join("\n")}
                 >
                   <h2>
                     week {week.number} vs {week.opponent.name}: $
                     {week.byes
                       .map((player) => player.auctionValue || 0)
+                      .reduce((a, b) => a + b, 0)
+                      .toFixed(1)}{" "}
+                    - $
+                    {week.myByes
+                      .map((player) => player.auctionValue)
                       .reduce((a, b) => a + b, 0)
                       .toFixed(1)}
                   </h2>

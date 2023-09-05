@@ -37,11 +37,17 @@ export default function Peaked() {
         .sort((a, b) => b.value - a.value);
     });
   const qbToNonQB = Object.fromEntries(
-    parsedPlayers["QB"].map((player, i) => [
-      player.name,
-      parsedPlayers["RB"][i],
-    ])
+    parsedPlayers["QB"]
+      .map((player, i) => ({ player, RB: parsedPlayers["RB"][i] }))
+      .map((obj) => [
+        obj.player.name,
+        {
+          ...obj.RB,
+          title: `${obj.player.value} -> ${obj.RB.value} ${obj.RB.name}`,
+        },
+      ])
   );
+  console.log(parsed);
   const teams = fetched.teams
     .map((team) => ({
       ...team,
@@ -107,7 +113,7 @@ export default function Peaked() {
                 <tbody>
                   {team.players.map((player, j) => (
                     <tr key={j}>
-                      <td title={qbToNonQB[player.name]?.name}>
+                      <td title={qbToNonQB[player.name]?.title}>
                         {player.name} (
                         {playerToDraftPick[normalize(player.name)]})
                       </td>
