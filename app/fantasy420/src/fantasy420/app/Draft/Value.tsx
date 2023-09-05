@@ -144,12 +144,12 @@ function get_results(
       ...team,
       teamIndex,
       players: team.players
-        .map((player) => ({ ...player, pick: picks[player.name] || Infinity }))
+        .map((player) => ({ ...player, pick: picks[player.name] }))
         .sort((a, b) => a.pick - b.pick)
         .map((player) => ({
           ...player,
           name: `${player.name} (${player.pick + 1})`,
-          scores: extra.map((d) => d[normalize(player.name)] || Infinity),
+          scores: extra.map((d) => d[normalize(player.name)]),
         })),
     }))
     .map((team) => ({
