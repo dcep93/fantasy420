@@ -1,6 +1,8 @@
-import rawFetched from "./draft_day.json";
+import rawFetchedDraftDay from "./draft_day.json";
+import rawFetched from "./fetched.json";
 
-export const fetched_draft_day: FetchedType = rawFetched;
+export const fetched_draft_day: FetchedType = rawFetchedDraftDay;
+export const fetched: FetchedType = rawFetched;
 
 type FetchedType = {
   matchups: number[][][];
