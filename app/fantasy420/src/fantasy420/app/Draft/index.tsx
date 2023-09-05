@@ -294,7 +294,9 @@ function getScore(average: number, value: number): number {
 }
 
 function results(draft_json: DraftJsonType): ResultsType {
-  draft_json.drafts = draft_json.drafts.map((d) => d.map((n) => normalize(n)));
+  draft_json.drafts = draft_json.drafts
+    .slice(0, 1)
+    .map((d) => d.map((n) => normalize(n)));
   draft_json.extra = Object.fromEntries(
     Object.entries(draft_json.extra).map(([s, ps]) => [
       s,
