@@ -40,10 +40,10 @@ export type DraftJsonType = {
 
 var lastPlayerName = "";
 export const qbToNonQB = Object.fromEntries(
-  Object.entries((draft_json as DraftJsonType).espn.auction)
-    .map(([name, value]) => ({
-      name,
-      value,
+  draft_json.drafts[0]
+    .map((playerName) => ({
+      name: playerName,
+      value: (draft_json as DraftJsonType).espn.auction[playerName],
     }))
     .sort((a, b) => b.value - a.value)
     .map(({ name }) => {
