@@ -1,7 +1,19 @@
-import sos_json from "./defence.json";
+import raw_defence from "./defence.json";
 
-function Sos() {
-  const r = results(sos_json);
+const defence: DefenceType = raw_defence;
+
+type DefenceType = {
+  [name: string]: ({
+    opp: string;
+    lines: { Spread: number; Total?: number };
+  } | null)[];
+};
+
+const AVERAGE_SCORE = 50;
+const BYE_SCORE = 100;
+
+export default function Defence() {
+  const r = results(defence);
   return (
     <div
       style={{
@@ -17,50 +29,39 @@ function Sos() {
   );
 }
 
-function results(sos_json: {
-  [k: string]: ({ p: number; o: string } | null)[];
-}) {
-  const sorted = Object.entries(sos_json).sort();
-  const scored = sorted.map(([k, v]) => ({
-    k,
-    v: v.map((e) => ({
-      e,
-      score: !e ? 0 : e.p,
+function results(defence: DefenceType) {
+  const scored = Object.entries(defence).map(([name, arr]) => ({
+    name,
+    weeks: arr.map((a) => ({
+      opp: a?.opp || "BYE",
+      score: !a ? BYE_SCORE : (a.lines.Total || AVERAGE_SCORE) - a.lines.Spread,
     })),
   }));
   const combos = scored
     .flatMap((a, i) =>
       scored.slice(i + 1).map((b) => ({
-        t: `+${a.k.toUpperCase()},+${b.k.toUpperCase()}`,
-        p: a.v.map((_, i) =>
-          a.v[i].score > b.v[i].score
-            ? { ...a.v[i], k: a.k }
-            : { ...b.v[i], k: b.k }
+        name: `+${a.name},+${b.name}`,
+        weeks: a.weeks.map((_, i) =>
+          a.weeks[i].score > b.weeks[i].score
+            ? { ...a, ...a.weeks[i] }
+            : { ...b, ...b.weeks[i] }
         ),
       }))
     )
     .map((o) => ({
       ...o,
-      score: o.p.map((p) => p.score).reduce((a, b) => a + b, 0),
-      p: o.p.map((o) =>
-        o.e === null
-          ? "BYE"
-          : `${o.k.toUpperCase()} ${o.e.o} -> ${o.score.toFixed(2)}`
-      ),
+      score: o.weeks.map((w) => w.score).reduce((a, b) => a + b, 0),
+      weeks: o.weeks.map((w) => `${w.name} vs ${w.opp} -> ${w.score}`),
     }))
-    .sort((a, b) => b.score - a.score)
-    .map((o) => [`${o.t} -> ${o.score.toFixed(2)}`, o.p]);
+    .sort((a, b) => a.score - b.score)
+    .map((o) => [`${o.name} -> ${o.score}`, o.weeks]);
   const solos = scored
     .map((o) => ({
-      t: o.k,
-      score: o.v.map((p) => p.score).reduce((a, b) => a + b, 0),
-      p: o.v.map((p) =>
-        p.e === null ? "BYE" : `${p.e.o} -> ${p.score.toFixed(2)}`
-      ),
+      ...o,
+      weeks: o.weeks.map((w) => `${w.opp} -> ${w.score}`),
+      score: o.weeks.map((w) => w.score).reduce((a, b) => a + b, 0),
     }))
-    .sort((a, b) => b.score - a.score)
-    .map((o) => [`-${o.t.toUpperCase()} -> ${o.score.toFixed(2)}`, o.p]);
+    .sort((a, b) => a.score - b.score)
+    .map((o) => [`-${o.name} -> ${o.score.toFixed(2)}`, o.weeks]);
   return [combos, solos];
 }
-
-export default Sos;
