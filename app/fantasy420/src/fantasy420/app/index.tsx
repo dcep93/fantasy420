@@ -2,6 +2,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import Catalog from "../Catalog";
 import Accuracy from "./Accuracy";
+import Defence from "./Defence";
 import Draft from "./Draft";
 import DraftValue from "./Draft/Value";
 import Peaked from "./Peaked";
@@ -15,6 +16,7 @@ const pages = {
   Peaked,
   Accuracy,
   Draft,
+  Defence,
 };
 if (process.env.NODE_ENV === "development") {
   Object.assign(pages, {});
