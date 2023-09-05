@@ -13,7 +13,7 @@ export default function Schedule() {
       {fetched.teams.map((team, i) => {
         const teamPlayers = team.players.map((player) => ({
           ...player,
-          auctionValue: auctionValues[player.name],
+          auctionValue: auctionValues[player.name] || 0,
         }));
         const teamWeeks = fetched.matchups
           .map((matches, j) => ({
@@ -32,7 +32,7 @@ export default function Schedule() {
               .filter((player) => player.bye === o.number)
               .map((player) => ({
                 ...player,
-                auctionValue: auctionValues[player.name],
+                auctionValue: auctionValues[player.name] || 0,
               })),
             ...o,
           }));
@@ -90,7 +90,7 @@ export default function Schedule() {
                   <h2>
                     week {week.number} vs {week.opponent.name}: $
                     {week.byes
-                      .map((player) => player.auctionValue)
+                      .map((player) => player.auctionValue || 0)
                       .reduce((a, b) => a + b, 0)
                       .toFixed(1)}
                   </h2>
