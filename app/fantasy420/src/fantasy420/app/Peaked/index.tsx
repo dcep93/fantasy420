@@ -66,7 +66,7 @@ export default function Peaked() {
         .map(({ value }) => value || -Infinity)
         .sort((a, b) => a - b)
         .reverse()
-        .slice(0, 10)
+        .slice(0, 13)
         .reduce((a, b) => a + b, 0),
     }))
     .sort((a, b) => b.score - a.score);
