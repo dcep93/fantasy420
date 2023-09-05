@@ -101,6 +101,7 @@
             scores: getScores(raw),
             ...o,
           }))
+          .filter(({ scores }) => scores !== null)
           .map(({ scores, ...o }) => ({
             scores,
             title: getTitle(scores),
@@ -109,7 +110,8 @@
           .filter(({ title, a }) => a.title !== title)
           .map(({ name, scores, title, raw, a }) => {
             a.setAttribute("fantasy420_name", name);
-            // a.innerText = `(${getText(scores)}) ${name}`;
+            if (location.href.match("https://fantasy.espn.com/football/team"))
+              a.innerText = `(${getText(scores)}) ${name}`;
             a.style.backgroundColor = "lightgreen";
             a.title = `${getText(scores)}\n${title}`;
             return { startDate: raw[0].startDate, name, scores };
@@ -179,6 +181,7 @@
     scores = Object.fromEntries(
       Object.entries(scores).filter(([_, val]) => val)
     );
+    if (Object.keys(scores).length === 0) return null;
     scores.score = (
       (6 * scores.touchdowns || 0) +
       (-2 * scores.interceptions || 0) +
