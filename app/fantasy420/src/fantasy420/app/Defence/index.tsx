@@ -42,7 +42,7 @@ function results(defence: DefenceType) {
       scored.slice(i + 1).map((b) => ({
         name: `+${a.name},+${b.name}`,
         weeks: a.weeks.map((_, i) =>
-          a.weeks[i].score > b.weeks[i].score
+          a.weeks[i].score < b.weeks[i].score
             ? { ...a, ...a.weeks[i] }
             : { ...b, ...b.weeks[i] }
         ),

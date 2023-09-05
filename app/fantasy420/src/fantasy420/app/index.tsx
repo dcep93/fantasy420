@@ -16,10 +16,11 @@ const pages = {
   Peaked,
   Accuracy,
   Draft,
-  Defence,
 };
 if (process.env.NODE_ENV === "development") {
-  Object.assign(pages, {});
+  Object.assign(pages, {
+    Defence,
+  });
 }
 
 function index() {
