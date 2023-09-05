@@ -2,7 +2,7 @@ import { useState } from "react";
 import { MAX_PEAKED, getPeakedValue, normalize } from ".";
 import draft_json from "./draft.json";
 
-import { fetched } from "../Fetch";
+import { fetched_draft_day } from "../Fetch";
 import raw_generated_peaked from "../Peaked/peaked.json";
 
 function Value() {
@@ -142,7 +142,7 @@ function get_results(
       Object.entries(d).map(([name, score]) => [normalize(name), score])
     )
   );
-  const scored = fetched.teams
+  const scored = fetched_draft_day.teams
     .map((team, teamIndex) => ({
       ...team,
       teamIndex,

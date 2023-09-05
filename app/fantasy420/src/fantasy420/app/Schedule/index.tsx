@@ -1,5 +1,5 @@
 import { draft_json, qbToNonQB } from "../Draft";
-import { fetched } from "../Fetch";
+import { fetched_draft_day } from "../Fetch";
 
 export default function Schedule() {
   const auctionValues = Object.fromEntries(
@@ -10,15 +10,15 @@ export default function Schedule() {
   );
   return (
     <div>
-      {fetched.teams.map((team, i) => {
+      {fetched_draft_day.teams.map((team, i) => {
         const teamPlayers = team.players.map((player) => ({
           ...player,
           auctionValue: auctionValues[player.name] || 0,
         }));
-        const teamWeeks = fetched.matchups
+        const teamWeeks = fetched_draft_day.matchups
           .map((matches, j) => ({
             number: j + 1,
-            opponent: fetched.teams.find(
+            opponent: fetched_draft_day.teams.find(
               (opponent) =>
                 team.id !== opponent.id &&
                 matches.find(
