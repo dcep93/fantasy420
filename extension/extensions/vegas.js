@@ -109,9 +109,9 @@
           .filter(({ title, a }) => a.title !== title)
           .map(({ name, scores, title, raw, a }) => {
             a.setAttribute("fantasy420_name", name);
-            a.innerText = `(${getText(scores)}) ${name}`;
+            // a.innerText = `(${getText(scores)}) ${name}`;
             a.style.backgroundColor = "lightgreen";
-            a.title = title;
+            a.title = `${getText(scores)}\n${title}`;
             return { startDate: raw[0].startDate, name, scores };
           })
       )
