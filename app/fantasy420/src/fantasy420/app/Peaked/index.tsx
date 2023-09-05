@@ -1,3 +1,4 @@
+import { draft_json } from "../Draft";
 import { fetched } from "../Fetch";
 import rawPeaked from "./peaked.json";
 
@@ -11,14 +12,40 @@ export default function Peaked() {
       .map((player) => player.name)
       .map(normalize)
   );
+  const allNormalizedPlayers = Object.fromEntries(
+    Object.entries(draft_json.espn.players).map(([playerName, o]) => [
+      playerName,
+      o.position,
+    ])
+  );
+  const parsedPlayers: {
+    [position: string]: { name: string; value: number }[];
+  } = {};
+  Object.entries(parsed)
+    .map(([name, p]) => ({
+      name,
+      ...p,
+      position: allNormalizedPlayers[name],
+    }))
+    .forEach(({ name, value, position }) => {
+      parsedPlayers[position] = (parsedPlayers[position] || [])
+        .concat({ name, value })
+        .sort((a, b) => b.value - a.value);
+    });
+  const qbToNonQB = Object.fromEntries(
+    parsedPlayers["QB"].map((player, i) => [
+      player.name,
+      parsedPlayers["RB"][i],
+    ])
+  );
   const teams = fetched.teams
     .map((team) => ({
       ...team,
       players: team.players
         .map((player) => player.name)
-        .map((player) => ({
-          name: player,
-          ...parsed[normalize(player)],
+        .map((name) => ({
+          name,
+          ...parsed[normalize(qbToNonQB[name]?.name || name)],
         }))
         .sort((a, b) => (b.value || 0) - (a.value || 0)),
     }))
@@ -69,15 +96,17 @@ export default function Peaked() {
                   <tr>
                     <th>Name</th>
                     <th>Value</th>
-                    <th>Tier</th>
+                    {/* <th>Tier</th> */}
                   </tr>
                 </thead>
                 <tbody>
                   {team.players.map((player, j) => (
                     <tr key={j}>
-                      <td>{player.name}</td>
-                      <td>{player.value}</td>
-                      <td>{player.tier}</td>
+                      <td title={qbToNonQB[player.name]?.name}>
+                        {player.name}
+                      </td>
+                      <td>{qbToNonQB[player.name]?.value || player.value}</td>
+                      {/* <td>{player.tier}</td> */}
                     </tr>
                   ))}
                 </tbody>
@@ -111,7 +140,7 @@ export default function Peaked() {
                   <tr>
                     <th>Name</th>
                     <th>Value</th>
-                    <th>Tier</th>
+                    {/* <th>Tier</th> */}
                   </tr>
                 </thead>
                 <tbody>
@@ -128,7 +157,7 @@ export default function Peaked() {
                       <tr key={i}>
                         <td>{player.name}</td>
                         <td>{player.value}</td>
-                        <td>{player.tier}</td>
+                        {/* <td>{player.tier}</td> */}
                       </tr>
                     ))}
                 </tbody>

@@ -95,7 +95,7 @@ export default function Schedule() {
                       .toFixed(1)}
                   </h2>
                   {week.byes.map((player, k) => (
-                    <div key={k}>
+                    <div key={k} title={qbToNonQB[player.name]}>
                       {player.name} ${player.auctionValue}
                     </div>
                   ))}
