@@ -104,7 +104,7 @@
     {
       "opp": "Lions",
       "lines": {
-        "Spread": 4.5,
+        "Spread": 5,
         "Total": 52
       }
     },
@@ -204,14 +204,14 @@
     {
       "opp": "Broncos",
       "lines": {
-        "Spread": -3.5
+        "Spread": -3.5,
+        "Total": 44
       }
     },
     {
       "opp": "Bills",
       "lines": {
-        "Spread": -9,
-        "Total": 49.5
+        "Spread": -9
       }
     },
     {
@@ -305,14 +305,13 @@
       "opp": "Seahawks",
       "lines": {
         "Spread": -5.5,
-        "Total": 46.5
+        "Total": 46
       }
     },
     {
       "opp": "49ers",
       "lines": {
-        "Spread": -6.5,
-        "Total": 44
+        "Spread": -6.5
       }
     },
     {
@@ -362,7 +361,7 @@
       "opp": "Seahawks",
       "lines": {
         "Spread": -5.5,
-        "Total": 46.5
+        "Total": 46
       }
     },
     {
@@ -407,7 +406,7 @@
       "opp": "Chargers",
       "lines": {
         "Spread": -3,
-        "Total": 51.5
+        "Total": 51
       }
     },
     {
@@ -1309,7 +1308,7 @@
       "opp": "Dolphins",
       "lines": {
         "Spread": 3,
-        "Total": 51.5
+        "Total": 51
       }
     },
     {
@@ -1415,8 +1414,7 @@
     {
       "opp": "Rams",
       "lines": {
-        "Spread": 6.5,
-        "Total": 44
+        "Spread": 6.5
       }
     },
     {
@@ -1510,7 +1508,7 @@
       "opp": "Rams",
       "lines": {
         "Spread": 5.5,
-        "Total": 46.5
+        "Total": 46
       }
     },
     {
@@ -1566,7 +1564,7 @@
       "opp": "Rams",
       "lines": {
         "Spread": 5.5,
-        "Total": 46.5
+        "Total": 46
       }
     },
     {
@@ -2320,8 +2318,7 @@
     {
       "opp": "Raiders",
       "lines": {
-        "Spread": 9,
-        "Total": 49.5
+        "Spread": 9
       }
     },
     {
@@ -2416,7 +2413,7 @@
       "opp": "Packers",
       "lines": {
         "Spread": 1,
-        "Total": 42.5
+        "Total": 42
       }
     },
     {
@@ -2816,7 +2813,8 @@
     {
       "opp": "Raiders",
       "lines": {
-        "Spread": 3.5
+        "Spread": 3.5,
+        "Total": 44
       }
     },
     {
@@ -2915,7 +2913,7 @@
     {
       "opp": "Chiefs",
       "lines": {
-        "Spread": -4.5,
+        "Spread": -5,
         "Total": 52
       }
     },
@@ -3016,7 +3014,7 @@
       "opp": "Bears",
       "lines": {
         "Spread": -1,
-        "Total": 42.5
+        "Total": 42
       }
     },
     {
