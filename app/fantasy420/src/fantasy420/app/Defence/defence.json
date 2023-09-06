@@ -4,7 +4,7 @@
       "opp": "Jaguars",
       "lines": {
         "Spread": -5,
-        "Total": 45
+        "Total": 45.5
       }
     },
     {
@@ -35,7 +35,7 @@
       "opp": "Jaguars",
       "lines": {
         "Spread": -5,
-        "Total": 45
+        "Total": 45.5
       }
     },
     {
@@ -104,8 +104,8 @@
     {
       "opp": "Lions",
       "lines": {
-        "Spread": 5,
-        "Total": 53
+        "Spread": 4.5,
+        "Total": 52
       }
     },
     {
@@ -204,14 +204,14 @@
     {
       "opp": "Broncos",
       "lines": {
-        "Spread": -4,
-        "Total": 44
+        "Spread": -3.5
       }
     },
     {
       "opp": "Bills",
       "lines": {
-        "Spread": -8
+        "Spread": -9,
+        "Total": 49.5
       }
     },
     {
@@ -311,7 +311,8 @@
     {
       "opp": "49ers",
       "lines": {
-        "Spread": -4.5
+        "Spread": -6.5,
+        "Total": 44
       }
     },
     {
@@ -406,7 +407,7 @@
       "opp": "Chargers",
       "lines": {
         "Spread": -3,
-        "Total": 51
+        "Total": 51.5
       }
     },
     {
@@ -805,7 +806,7 @@
     {
       "opp": "Cowboys",
       "lines": {
-        "Spread": -3.5,
+        "Spread": -3,
         "Total": 46.5
       }
     },
@@ -860,7 +861,7 @@
     {
       "opp": "Cowboys",
       "lines": {
-        "Spread": -3.5,
+        "Spread": -3,
         "Total": 46.5
       }
     },
@@ -1207,8 +1208,8 @@
     {
       "opp": "49ers",
       "lines": {
-        "Spread": -2.5,
-        "Total": 41
+        "Spread": -2,
+        "Total": 41.5
       }
     },
     {
@@ -1308,7 +1309,7 @@
       "opp": "Dolphins",
       "lines": {
         "Spread": 3,
-        "Total": 51
+        "Total": 51.5
       }
     },
     {
@@ -1407,14 +1408,15 @@
     {
       "opp": "Steelers",
       "lines": {
-        "Spread": 2.5,
-        "Total": 41
+        "Spread": 2,
+        "Total": 41.5
       }
     },
     {
       "opp": "Rams",
       "lines": {
-        "Spread": 4.5
+        "Spread": 6.5,
+        "Total": 44
       }
     },
     {
@@ -1910,7 +1912,7 @@
       "opp": "Colts",
       "lines": {
         "Spread": 5,
-        "Total": 45
+        "Total": 45.5
       }
     },
     {
@@ -1941,7 +1943,7 @@
       "opp": "Colts",
       "lines": {
         "Spread": 5,
-        "Total": 45
+        "Total": 45.5
       }
     },
     {
@@ -2318,7 +2320,8 @@
     {
       "opp": "Raiders",
       "lines": {
-        "Spread": 8
+        "Spread": 9,
+        "Total": 49.5
       }
     },
     {
@@ -2413,7 +2416,7 @@
       "opp": "Packers",
       "lines": {
         "Spread": 1,
-        "Total": 43
+        "Total": 42.5
       }
     },
     {
@@ -2712,7 +2715,7 @@
     {
       "opp": "Giants",
       "lines": {
-        "Spread": 3.5,
+        "Spread": 3,
         "Total": 46.5
       }
     },
@@ -2762,7 +2765,7 @@
     {
       "opp": "Giants",
       "lines": {
-        "Spread": 3.5,
+        "Spread": 3,
         "Total": 46.5
       }
     },
@@ -2813,8 +2816,7 @@
     {
       "opp": "Raiders",
       "lines": {
-        "Spread": 4,
-        "Total": 44
+        "Spread": 3.5
       }
     },
     {
@@ -2913,8 +2915,8 @@
     {
       "opp": "Chiefs",
       "lines": {
-        "Spread": -5,
-        "Total": 53
+        "Spread": -4.5,
+        "Total": 52
       }
     },
     {
@@ -3014,7 +3016,7 @@
       "opp": "Bears",
       "lines": {
         "Spread": -1,
-        "Total": 43
+        "Total": 42.5
       }
     },
     {

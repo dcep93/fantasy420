@@ -9,7 +9,7 @@ type DefenceType = {
   } | null)[];
 };
 
-const AVERAGE_SCORE = 50;
+const AVERAGE_SCORE = 45;
 const BYE_SCORE = 100;
 
 export default function Defence() {
@@ -22,8 +22,10 @@ export default function Defence() {
         width: "100%",
       }}
     >
-      {r.map((v) => (
-        <pre style={{ flexGrow: 1 }}>{JSON.stringify(v, null, 2)}</pre>
+      {r.map((v, i) => (
+        <pre key={i} style={{ flexGrow: 1 }}>
+          {JSON.stringify(v, null, 2)}
+        </pre>
       ))}
     </div>
   );
