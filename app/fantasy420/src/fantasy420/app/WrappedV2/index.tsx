@@ -110,13 +110,17 @@ function fetchWrappedV2() {
                 (stat: any) =>
                   [
                     stat.scoringPeriodId,
-                    parseInt(stat.appliedTotal.toFixed(2)),
+                    parseFloat(stat.appliedTotal.toFixed(2)),
                   ] as [number, number]
               )
             ),
           }))
           .map((player) => ({
-            total: Object.values(player.scores).reduce((a, b) => a + b, 0),
+            total: parseFloat(
+              Object.values(player.scores)
+                .reduce((a, b) => a + b, 0)
+                .toFixed(2)
+            ),
             ...player,
           }))
           .filter(({ total }) => total > 1)
