@@ -2,26 +2,40 @@ export type WrappedType = {
   players: {
     [id: string]: {
       name: string;
-      team: string;
+      proTeamId: string;
       position: string;
       scores: { [scoringPeriodId: string]: number | undefined };
       total: number;
     };
   };
-  byeWeeksByTeam: { [team: string]: number };
-  teams: {
-    [id: string]: {
+  proTeams: {
+    [proTeamId: string]: {
       name: string;
-      rosters: {
-        starting: string[];
-        bench: string[];
-        fieldGoals: number[];
-        pointsAllowed: number;
-        yardsAllowed: number;
-      }[];
+      byeWeek: number;
+      proGamesByScoringPeriod: {
+        [scoringPeriodId: string]:
+          | {
+              id: number;
+              fieldGoals: number[];
+              pointsAllowed: number;
+              yardsAllowed: number;
+            }
+          | undefined;
+      };
     };
   };
-  matchups: { [scoringPeriodId: string]: [number, number][] };
+  teams: {
+    [teamId: string]: {
+      name: string;
+      rosters: {
+        [scoringPeriodId: string]: {
+          starting: string[];
+          rostered: string[];
+        };
+      };
+    };
+  };
+  matchups: { [scoringPeriodId: string]: number[][] };
 };
 
 export default function FetchWrapped() {
@@ -59,6 +73,7 @@ export default function FetchWrapped() {
           players
             .map((player) => ({
               id: player.id.toString(),
+              proTeamId: player.proTeamId.toString(),
               name: player.fullName,
               position:
                 { 1: "QB", 2: "RB", 3: "WR", 4: "TE", 16: "DST" }[
@@ -107,16 +122,19 @@ export default function FetchWrapped() {
                       resp.teams.map((team: any) => ({
                         id: team.id.toString(),
                         name: team.name,
-                        schedule: resp.schedule
-                          .flatMap((matchup: any) => [
-                            matchup.home,
-                            matchup.away,
-                          ])
-                          .find(
-                            (s: any) =>
-                              s.rosterForCurrentScoringPeriod &&
-                              s.teamId === team.id
-                          ),
+                        schedule: {
+                          weekNum,
+                          ...resp.schedule
+                            .flatMap((matchup: any) => [
+                              matchup.home,
+                              matchup.away,
+                            ])
+                            .find(
+                              (s: any) =>
+                                s.rosterForCurrentScoringPeriod &&
+                                s.teamId === team.id
+                            ),
+                        },
                       }))
                     )
                     .then((week) =>
@@ -132,21 +150,25 @@ export default function FetchWrapped() {
           Object.values(weeks[0]).map((team: any) => ({
             id: team.id,
             name: team.name,
-            rosters: weeks
-              .map((week) => week[team.id].schedule)
-              .map((s) => ({
-                starting: s.rosterForMatchupPeriod.entries.map(
-                  (e: any) => e.playerId
-                ),
-                rostered: s.rosterForCurrentScoringPeriod.entries.map(
-                  (e: any) => e.playerId
-                ),
-                // todo
-                // fieldGoals: number[];
-                // pointsAllowed: number;
-                // yardsAllowed: number;
-              })),
+            rosters: Object.fromEntries(
+              weeks
+                .map((week) => week[team.id].schedule)
+                .map((s) => [
+                  s.weekNum,
+                  {
+                    starting: s.rosterForMatchupPeriod.entries.map((e: any) =>
+                      e.playerId.toString()
+                    ),
+                    rostered: s.rosterForCurrentScoringPeriod.entries.map(
+                      (e: any) => e.playerId.toString()
+                    ),
+                  },
+                ])
+            ),
           }))
+        )
+        .then((teams) =>
+          Object.fromEntries(teams.map((team: any) => [team.id, team]))
         ),
       // matchups
       fetch(
@@ -161,29 +183,51 @@ export default function FetchWrapped() {
             new Array(resp.settings.scheduleSettings.matchupPeriodCount)
           )
             .map((_, i) => i + 1)
-            .map((matchupPeriodId) =>
+            .map((matchupPeriodId) => [
+              matchupPeriodId.toString(),
               resp.schedule
                 .filter((s: any) => s.matchupPeriodId === matchupPeriodId)
                 .map((s: any) =>
                   [s.home, s.away].map((t) => t.teamId as number)
-                )
-            )
-        ),
-      // byeWeeksByTeam
+                ),
+            ])
+        )
+        .then((matchups) => Object.fromEntries(matchups)),
+      // proTeams
       fetch(
         `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}?view=proTeamSchedules_wl`
       )
         .then((resp) => resp.json())
         .then((resp) =>
           Object.fromEntries(
-            resp.settings.proTeams.map((p: any) => [p.id, p.byeWeek])
+            resp.settings.proTeams.map((p: any) => [
+              p.id.toString(),
+              {
+                name: p.name,
+                byeWeek: p.byeWeek,
+                proGamesByScoringPeriod: Object.fromEntries(
+                  Object.entries(p.proGamesByScoringPeriod).map(
+                    ([scoringPeriod, o]: any) => [
+                      scoringPeriod,
+                      {
+                        id: o[0].id,
+                        // todo
+                        fieldGoals: [],
+                        pointsAllowed: 0,
+                        yardsAllowed: 0,
+                      },
+                    ]
+                  )
+                ),
+              },
+            ])
           )
         ),
     ])
     .then((ps) => Promise.all(ps))
     .then(
-      ([players, teams, matchups, byeWeeksByTeam]) =>
-        ({ players, teams, matchups, byeWeeksByTeam } as WrappedType)
+      ([players, teams, matchups, proTeams]) =>
+        ({ players, teams, matchups, proTeams } as WrappedType)
     )
     .then(console.log);
 }

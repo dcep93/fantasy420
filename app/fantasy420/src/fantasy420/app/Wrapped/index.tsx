@@ -4,17 +4,13 @@ import rawWrapped from "./wrapped.json";
 
 const wrapped: WrappedType = rawWrapped;
 
-var initialized = false;
-
 export default function Wrapped() {
-  if (!initialized) {
-    initialized = true;
-    console.log(printF(FetchWrapped));
-    FetchWrapped();
-  }
+  console.log(printF(FetchWrapped));
   return (
     <div>
-      <pre>{JSON.stringify(wrapped, null, 2)}</pre>
+      <pre onClick={() => FetchWrapped()}>
+        {JSON.stringify(wrapped, null, 2)}
+      </pre>
     </div>
   );
 }
