@@ -9,7 +9,7 @@ export type WrappedType = {
     };
   };
   byeWeeksByTeam: { [team: string]: number };
-  managers: {
+  teams: {
     [id: string]: {
       name: string;
       rosters: {
@@ -89,10 +89,15 @@ export default function FetchWrapped() {
           )
         ),
       // managers
-      Promise.resolve({}),
-      // matchups
       fetch(
         `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/${leagueId}?view=mMatchupScore&view=mStatus&view=mSettings&view=mTeam&view=modular&view=mNav&view=mRoster`,
+        {
+          credentials: "include",
+        }
+      ).then((resp) => resp.json()),
+      // teams
+      fetch(
+        `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/${leagueId}?view=mMatchupScore&view=mSettings`,
         {
           credentials: "include",
         }
@@ -124,8 +129,8 @@ export default function FetchWrapped() {
     ])
     .then((ps) => Promise.all(ps))
     .then(
-      ([players, managers, matchups, byeWeeksByTeam]) =>
-        ({ players, managers, matchups, byeWeeksByTeam } as WrappedType)
+      ([players, teams, matchups, byeWeeksByTeam]) =>
+        ({ players, teams, matchups, byeWeeksByTeam } as WrappedType)
     )
     .then(console.log);
 }
