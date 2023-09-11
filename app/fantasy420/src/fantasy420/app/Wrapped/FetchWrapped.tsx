@@ -25,6 +25,7 @@ export type WrappedType = {
 };
 
 export default function FetchWrapped() {
+  const latestScoringPeriodId = 4;
   const year = 2022;
   const leagueId =
     new URL(window.document.location.href).searchParams.get("leagueId") ||
@@ -81,21 +82,73 @@ export default function FetchWrapped() {
               ),
               ...player,
             }))
-            .sort((a, b) => b.total - a.total)
         )
         .then((playersArr) =>
           Object.fromEntries(
             playersArr.map(({ id, ...player }) => [id, player])
           )
         ),
-      // managers
-      fetch(
-        `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/${leagueId}?view=mMatchupScore&view=mStatus&view=mSettings&view=mTeam&view=modular&view=mNav&view=mRoster`,
-        {
-          credentials: "include",
-        }
-      ).then((resp) => resp.json()),
       // teams
+      Promise.resolve()
+        .then(() =>
+          Array.from(new Array(latestScoringPeriodId))
+            .map((_, i) => i + 1)
+            .map((weekNum) =>
+              fetch(
+                `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/${leagueId}?view=mScoreboard&scoringPeriodId=${weekNum}`,
+                {
+                  credentials: "include",
+                }
+              )
+                .then((resp) => resp.json())
+                .then((resp: any) =>
+                  Promise.resolve()
+                    .then(() =>
+                      resp.teams.map((team: any) => ({
+                        id: team.id.toString(),
+                        name: team.name,
+                        schedule: resp.schedule
+                          .flatMap((matchup: any) => [
+                            matchup.home,
+                            matchup.away,
+                          ])
+                          .find(
+                            (s: any) =>
+                              s.rosterForCurrentScoringPeriod &&
+                              s.teamId === team.id
+                          ),
+                      }))
+                    )
+                    .then((week) =>
+                      Object.fromEntries(
+                        week.map((team: any) => [team.id, team])
+                      )
+                    )
+                )
+            )
+        )
+        .then((ps) => Promise.all(ps))
+        .then((weeks) =>
+          Object.values(weeks[0]).map((team: any) => ({
+            id: team.id,
+            name: team.name,
+            rosters: weeks
+              .map((week) => week[team.id].schedule)
+              .map((s) => ({
+                starting: s.rosterForMatchupPeriod.entries.map(
+                  (e: any) => e.playerId
+                ),
+                rostered: s.rosterForCurrentScoringPeriod.entries.map(
+                  (e: any) => e.playerId
+                ),
+                // todo
+                // fieldGoals: number[];
+                // pointsAllowed: number;
+                // yardsAllowed: number;
+              })),
+          }))
+        ),
+      // matchups
       fetch(
         `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/${leagueId}?view=mMatchupScore&view=mSettings`,
         {
