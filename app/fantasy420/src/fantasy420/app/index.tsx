@@ -8,16 +8,16 @@ import DraftValue from "./Draft/Value";
 import Peaked from "./Peaked";
 import Schedule from "./Schedule";
 import Wrapped from "./Wrapped";
-import WrappedV2 from "./WrappedV2";
+import WrappedOld from "./WrappedOld";
 
 const pages = {
   Schedule,
-  Wrapped,
+  WrappedOld,
   DraftValue,
   Peaked,
   Accuracy,
   Draft,
-  WrappedV2,
+  Wrapped,
 };
 if (process.env.NODE_ENV === "development") {
   Object.assign(pages, {
