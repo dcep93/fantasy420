@@ -7,7 +7,7 @@ type WrappedType = {
   players: {
     [id: string]: {
       name: string;
-      total: number;
+      team: string;
       position: string;
       scores: { [scoringPeriodId: string]: number | undefined };
     };
@@ -15,7 +15,13 @@ type WrappedType = {
   managers: {
     [id: string]: {
       name: string;
-      rosters: { starting: string[]; bench: string[] };
+      rosters: {
+        starting: string[];
+        bench: string[];
+        fieldGoals: number[];
+        pointsAllowed: number;
+        yardsAllowed: number;
+      }[];
     };
   };
   matchups: [number, number][][];
@@ -25,59 +31,13 @@ export default function Wrapped() {
   return (
     <div>
       <div>
-        <input readOnly value={printF(fetchWrappedV2)} />
-      </div>
-      <div>
-        <pre>
-          {JSON.stringify(
-            Object.values(wrapped.players).find(
-              (player) => player.name === "Justin Jefferson"
-            ),
-            null,
-            2
-          )}
-        </pre>
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
-          {Array.from(new Array(18))
-            .map((_, weekNum) => ({
-              weekNum,
-              players: Object.values(wrapped.players)
-                .map((player) => ({
-                  score: weekNum === 0 ? player.total : player.scores[weekNum],
-                  ...player,
-                }))
-                .map((player) => ({
-                  sortableScore: player.score || 0,
-                  ...player,
-                }))
-                .sort((a, b) => b.sortableScore - a.sortableScore)
-                .slice(0, 10),
-            }))
-            .map((week) => (
-              <div
-                key={week.weekNum}
-                style={{
-                  border: "2px solid black",
-                  borderRadius: "10px",
-                  padding: "10px",
-                  margin: "10px",
-                }}
-              >
-                <h3>{week.weekNum ? `week ${week.weekNum}` : "total"}</h3>
-                {week.players.map((player) => (
-                  <div key={player.name}>
-                    {player.name}: {player.score}
-                  </div>
-                ))}
-              </div>
-            ))}
-        </div>
+        <input readOnly value={printF(fetchWrapped)} />
       </div>
     </div>
   );
 }
 
-function fetchWrappedV2() {
+function fetchWrapped() {
   return fetch(
     "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2023/segments/0/leagues/203836968?view=kona_playercard",
     {
@@ -116,8 +76,9 @@ function fetchWrappedV2() {
           id: player.id,
           name: player.fullName,
           position:
-            ["", "QB", "RB", "WR", "TE"][player.defaultPositionId] ||
-            player.defaultPositionId,
+            { 1: "QB", 2: "RB", 3: "WR", 4: "TE", 16: "DST" }[
+              player.defaultPositionId as number
+            ] || player.defaultPositionId,
           scores: Object.fromEntries(
             player.stats.map(
               (stat: any) =>
