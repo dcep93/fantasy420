@@ -1,3 +1,9 @@
+const latestScoringPeriodId = 4;
+const year = 2022;
+const leagueId =
+  new URL(window.document.location.href).searchParams.get("leagueId") ||
+  203836968;
+
 export type WrappedType = {
   players: {
     [id: string]: {
@@ -39,11 +45,6 @@ export type WrappedType = {
 };
 
 export default function FetchWrapped() {
-  const latestScoringPeriodId = 4;
-  const year = 2022;
-  const leagueId =
-    new URL(window.document.location.href).searchParams.get("leagueId") ||
-    203836968;
   return Promise.resolve()
     .then(() => [
       // players
