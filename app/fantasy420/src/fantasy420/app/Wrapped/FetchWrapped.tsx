@@ -4,20 +4,20 @@ const leagueId =
   new URL(window.document.location.href).searchParams.get("leagueId") ||
   203836968;
 
-type PlayerType = {
+type NFLPlayerType = {
   id: string;
   name: string;
-  proTeamId: string;
+  nflTeamId: string;
   position: string;
   scores: { [scoringPeriodId: string]: number | undefined };
   total: number;
 };
 
-type ProTeamType = {
+type NFLTeamType = {
   id: string;
   name: string;
   byeWeek: number;
-  proGamesByScoringPeriod: {
+  nflGamesByScoringPeriod: {
     [scoringPeriodId: string]:
       | {
           id: number;
@@ -29,7 +29,7 @@ type ProTeamType = {
   };
 };
 
-type TeamType = {
+type FFTeamType = {
   id: string;
   name: string;
   rosters: {
@@ -43,16 +43,16 @@ type TeamType = {
 type MatchupType = string[][];
 
 export type WrappedType = {
-  players: {
-    [id: string]: PlayerType;
+  nflPlayers: {
+    [id: string]: NFLPlayerType;
   };
-  proTeams: {
-    [proTeamId: string]: ProTeamType;
+  nflTeams: {
+    [id: string]: NFLTeamType;
   };
-  teams: {
-    [teamId: string]: TeamType;
+  ffTeams: {
+    [id: string]: FFTeamType;
   };
-  matchups: { [scoringPeriodId: string]: MatchupType };
+  ffMatchups: { [scoringPeriodId: string]: MatchupType };
 };
 
 function fromEntries<T>(arr: { key: string; value: T }[]): {
@@ -64,7 +64,7 @@ function fromEntries<T>(arr: { key: string; value: T }[]): {
 export default function FetchWrapped() {
   return Promise.resolve()
     .then(() => [
-      // players
+      // nflPlayers
       Promise.resolve()
         .then(() =>
           fetch(
@@ -104,7 +104,7 @@ export default function FetchWrapped() {
                   .map((player) => player.player)
                   .map((player) => ({
                     id: player.id.toString(),
-                    proTeamId: player.proTeamId.toString(),
+                    nflTeamId: player.proTeamId.toString(),
                     name: player.fullName,
                     position:
                       { 1: "QB", 2: "RB", 3: "WR", 4: "TE", 16: "DST" }[
@@ -129,8 +129,8 @@ export default function FetchWrapped() {
             )
             .then((playersArr) => fromEntries(playersArr))
         )
-        .then((players: { [id: string]: PlayerType }) => players),
-      // teams
+        .then((players: { [id: string]: NFLPlayerType }) => players),
+      // ffTeams
       Promise.resolve()
         .then(() =>
           Promise.resolve()
@@ -225,8 +225,8 @@ export default function FetchWrapped() {
               fromEntries(teams.map((team) => ({ key: team.id, value: team })))
             )
         )
-        .then((teams: { [teamId: string]: TeamType }) => teams),
-      // matchups
+        .then((teams: { [teamId: string]: FFTeamType }) => teams),
+      // ffMatchups
       Promise.resolve()
         .then(() =>
           fetch(
@@ -261,9 +261,9 @@ export default function FetchWrapped() {
             .then((matchups) => fromEntries(matchups))
         )
         .then(
-          (matchups: { [scoringPeriodId: string]: MatchupType }) => matchups
+          (ffMatchups: { [scoringPeriodId: string]: MatchupType }) => ffMatchups
         ),
-      // proTeams
+      // nflTeams
       Promise.resolve()
         .then(() =>
           fetch(
@@ -297,10 +297,10 @@ export default function FetchWrapped() {
                   ),
                 }))
             )
-            .then((proTeams) =>
+            .then((nflTeams) =>
               Promise.resolve()
                 .then(() =>
-                  proTeams.flatMap((team) =>
+                  nflTeams.flatMap((team) =>
                     Object.values(team.proGamesByScoringPeriod)
                   )
                 )
@@ -328,31 +328,38 @@ export default function FetchWrapped() {
                 .then((ps) => Promise.all(ps))
                 .then((gamesByGameId) => fromEntries(gamesByGameId))
                 .then((gamesByGameId) =>
-                  proTeams
+                  nflTeams
                     .map(({ proGamesByScoringPeriod, ...team }) => ({
                       ...team,
-                      proGamesByScoringPeriod: fromEntries(
+                      nflGamesByScoringPeriod: fromEntries(
                         Object.entries(proGamesByScoringPeriod).map(
                           ([scoringPeriod, gameId]) => ({
                             key: scoringPeriod,
-                            value: gamesByGameId[gameId][team.name],
+                            value: gamesByGameId[gameId][team.name] || {
+                              fieldGoals: [1, 2],
+                              pointsAllowed: 123,
+                              yardsAllowed: 456,
+                            },
                           })
                         )
                       ),
                     }))
                     .map((team) => ({ key: team.id, value: team }))
                 )
-                .then((proTeams) => fromEntries(proTeams))
+                .then((nflTeams) => fromEntries(nflTeams))
             )
         )
-        .then((proTeams: { [proTeamId: string]: ProTeamType }) => proTeams),
+        .then((nflTeams: { [nflTeamId: string]: NFLTeamType }) => nflTeams),
     ])
     .then((ps) => Promise.all(ps))
-    .then(([players, teams, matchups, proTeams]) => ({
-      players,
-      teams,
-      matchups,
-      proTeams,
-    }))
+    .then(
+      ([nflPlayers, ffTeams, ffMatchups, nflTeams]) =>
+        ({
+          nflPlayers,
+          ffTeams,
+          ffMatchups,
+          nflTeams,
+        } as WrappedType)
+    )
     .then(console.log);
 }
