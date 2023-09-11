@@ -48,7 +48,7 @@
       .then((promises) => Promise.all(promises))
       .then((events) =>
         events.filter(Boolean).flatMap(({ event, eventCategories }) =>
-          eventCategories.flatMap(({ name, componentizedOffers }) =>
+          (eventCategories || []).flatMap(({ name, componentizedOffers }) =>
             componentizedOffers.flatMap(({ offers }) =>
               offers
                 .flatMap((offers) => offers)
@@ -140,7 +140,10 @@
       .filter(({ participant, sublabel }) =>
         [participant, sublabel]
           .map((name) =>
-            name?.replace("Gabriel Davis", "Gabe Davis").replace(" (BAL)", "")
+            name
+              ?.replace("Gabriel Davis", "Gabe Davis")
+              .replace("D.J. Moore", "DJ Moore")
+              .replace(/ \(.*\)$/, "")
           )
           .includes(player_name)
       );
@@ -150,7 +153,7 @@
     const firstEvent = raw[0].eventName;
     raw = raw.filter(({ eventName }) => eventName === firstEvent);
     const touchdownOdds = raw.find(
-      ({ label }) => label === "Anytime Touchdown Scorer"
+      ({ label }) => label === "Anytime TD Scorer"
     )?.oddsDecimal;
     var scores = {
       passing: raw.find(
@@ -218,9 +221,9 @@
               passing: "P",
               interceptions: "I",
               passingTd: "4",
-              rushing: "B",
+              rushing: "R",
               receiving: "W",
-              receptions: "R",
+              receptions: "C",
               touchdowns: "T",
               fieldGoals: "F",
             }[key] || "X")
