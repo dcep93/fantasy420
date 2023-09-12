@@ -97,6 +97,7 @@ export default function FetchWrapped() {
                     fullName: string;
                     defaultPositionId: number;
                     stats: {
+                      seasonId: number;
                       scoringPeriodId: number;
                       appliedTotal: number;
                       appliedAverage: number;
@@ -122,10 +123,12 @@ export default function FetchWrapped() {
                       (stat) => stat.scoringPeriodId === 0
                     )!.appliedAverage,
                     scores: fromEntries(
-                      player.stats.map((stat) => ({
-                        key: stat.scoringPeriodId.toString(),
-                        value: parseFloat(stat.appliedTotal.toFixed(2)),
-                      }))
+                      player.stats
+                        .filter((stat) => stat.seasonId === year)
+                        .map((stat) => ({
+                          key: stat.scoringPeriodId.toString(),
+                          value: parseFloat(stat.appliedTotal.toFixed(2)),
+                        }))
                     ),
                   }))
                   .map((player) => ({ key: player.id, value: player }))
