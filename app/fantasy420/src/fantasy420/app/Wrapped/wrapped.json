@@ -15445,7 +15445,13 @@
       "id": "2",
       "name": "Bills",
       "byeWeek": 13,
-      "nflGamesByScoringPeriod": {}
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "fieldGoals": [40, 34, 50],
+          "yardsAllowed": 289,
+          "pointsAllowed": 22
+        }
+      }
     },
     "3": {
       "id": "3",
@@ -15655,7 +15661,13 @@
       "id": "20",
       "name": "Jets",
       "byeWeek": 7,
-      "nflGamesByScoringPeriod": {}
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "fieldGoals": [26, 43, 30],
+          "yardsAllowed": 314,
+          "pointsAllowed": 16
+        }
+      }
     },
     "21": {
       "id": "21",
