@@ -1,9 +1,3 @@
-const latestScoringPeriodId = 4;
-const year = 2022;
-const leagueId =
-  new URL(window.document.location.href).searchParams.get("leagueId") ||
-  203836968;
-
 type NFLPlayerType = {
   id: string;
   name: string;
@@ -20,7 +14,6 @@ type NFLTeamType = {
   nflGamesByScoringPeriod: {
     [scoringPeriodId: string]:
       | {
-          id: number;
           fieldGoals: number[];
           pointsAllowed: number;
           yardsAllowed: number;
@@ -55,13 +48,21 @@ export type WrappedType = {
   ffMatchups: { [scoringPeriodId: string]: MatchupType };
 };
 
-function fromEntries<T>(arr: { key: string; value: T }[]): {
-  [key: string]: T;
-} {
-  return Object.fromEntries(arr.map((a) => [a.key, a.value]));
-}
+// todo scoringperiod vs week
 
 export default function FetchWrapped() {
+  const latestScoringPeriodId = 4;
+  const year = 2022;
+  const leagueId =
+    new URL(window.document.location.href).searchParams.get("leagueId") ||
+    203836968;
+  function fromEntries<T>(arr: ({ key: string; value: T } | undefined)[]): {
+    [key: string]: T;
+  } {
+    return Object.fromEntries(
+      arr.filter((a) => a !== undefined).map((a) => [a!.key, a!.value])
+    );
+  }
   return Promise.resolve()
     .then(() => [
       // nflPlayers
@@ -316,35 +317,146 @@ export default function FetchWrapped() {
                 )
                 .then((gameIds) =>
                   gameIds.map((gameId) =>
-                    (
-                      Promise.resolve({}) || // todo
-                      fetch(`${gameId}`).then((resp) => resp.json())
-                    ).then((resp: any) => ({
-                      key: gameId.toString(),
-                      value: resp,
-                    }))
+                    fetch(
+                      `https://www.espn.com/nfl/playbyplay/_/gameId/${gameId}`
+                    )
+                      .then((resp) => resp.text())
+                      .then(
+                        (resp) =>
+                          resp
+                            .split("window['__espnfitt__']=")
+                            .reverse()[0]
+                            .split(";</script>")[0]
+                      )
+                      .then((resp) => JSON.parse(resp))
+                      .then(
+                        (resp: {
+                          page: {
+                            content: {
+                              gamepackage: {
+                                scrSumm: {
+                                  scrPlayGrps: {
+                                    teamId: string;
+                                    typeAbbreviation: string;
+                                    text: string;
+                                  }[][];
+                                };
+                              };
+                            };
+                          };
+                        }) =>
+                          resp.page.content.gamepackage.scrSumm.scrPlayGrps
+                            .flatMap((periodPlays) => periodPlays)
+                            .filter((play) => play.typeAbbreviation === "FG")
+                            .map((play) => ({
+                              teamId: play.teamId,
+                              yards: parseInt(
+                                play.text
+                                  .split(" Yd Field Goal")[0]
+                                  .split(" ")
+                                  .reverse()[0]
+                              ),
+                            }))
+                      )
+                      .then((value) => ({
+                        key: gameId.toString(),
+                        value,
+                      }))
                   )
                 )
                 .then((ps) => Promise.all(ps))
                 .then((gamesByGameId) => fromEntries(gamesByGameId))
                 .then((gamesByGameId) =>
-                  nflTeams
-                    .map(({ proGamesByScoringPeriod, ...team }) => ({
-                      ...team,
-                      nflGamesByScoringPeriod: fromEntries(
-                        Object.entries(proGamesByScoringPeriod).map(
-                          ([scoringPeriod, gameId]) => ({
-                            key: scoringPeriod,
-                            value: gamesByGameId[gameId][team.name] || {
-                              fieldGoals: [1, 2],
-                              pointsAllowed: 123,
-                              yardsAllowed: 456,
+                  fetch(
+                    `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/${leagueId}?view=kona_playercard`,
+                    {
+                      headers: {
+                        accept: "application/json",
+                        "x-fantasy-filter": JSON.stringify({
+                          players: {
+                            filterSlotIds: {
+                              value: [16],
                             },
-                          })
-                        )
-                      ),
-                    }))
-                    .map((team) => ({ key: team.id, value: team }))
+                            filterStatsForTopScoringPeriodIds: {
+                              value: 17,
+                            },
+                          },
+                        }),
+                        "x-fantasy-platform":
+                          "kona-PROD-5b4759b3e340d25d9e1ae248daac086ea7c37db7",
+                        "x-fantasy-source": "kona",
+                      },
+                      credentials: "include",
+                    }
+                  )
+                    .then((resp) => resp.json())
+                    .then(
+                      (resp: {
+                        players: {
+                          onTeamId: number;
+                          player: {
+                            stats: {
+                              scoringPeriodId: number;
+                              stats: { [key: string]: number };
+                            }[];
+                          };
+                        }[];
+                      }) =>
+                        Array.from(new Array(latestScoringPeriodId + 1))
+                          .map((_, i) => i)
+                          .map((scoringPeriodId) => ({
+                            key: scoringPeriodId.toString(),
+                            value: fromEntries(
+                              resp.players
+                                .map((player) => ({
+                                  teamId: player.onTeamId,
+                                  stats: player.player.stats.find(
+                                    (s) => s.scoringPeriodId === scoringPeriodId
+                                  )?.stats,
+                                }))
+                                .map(({ teamId, stats }) =>
+                                  stats === undefined
+                                    ? undefined
+                                    : {
+                                        key: teamId.toString(),
+                                        value: {
+                                          yardsAllowed: stats["127"],
+                                          pointsAllowed: stats["187"],
+                                        },
+                                      }
+                                )
+                            ),
+                          }))
+                    )
+                    .then((defensesByScoringPeriod) =>
+                      fromEntries(defensesByScoringPeriod)
+                    )
+                    .then((defensesByScoringPeriod) =>
+                      nflTeams
+                        .map(({ proGamesByScoringPeriod, ...team }) => ({
+                          ...team,
+                          nflGamesByScoringPeriod: fromEntries(
+                            Object.entries(proGamesByScoringPeriod)
+                              .filter(
+                                ([scoringPeriod]) =>
+                                  defensesByScoringPeriod[scoringPeriod] !==
+                                  undefined
+                              )
+                              .map(([scoringPeriod, gameId]) => ({
+                                key: scoringPeriod,
+                                value: {
+                                  fieldGoals: gamesByGameId[gameId]
+                                    .filter((play) => play.teamId === team.id)
+                                    .map((play) => play.yards),
+                                  ...defensesByScoringPeriod[scoringPeriod][
+                                    team.id
+                                  ],
+                                },
+                              }))
+                          ),
+                        }))
+                        .map((team) => ({ key: team.id, value: team }))
+                    )
                 )
                 .then((nflTeams) => fromEntries(nflTeams))
             )
