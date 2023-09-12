@@ -67,6 +67,13 @@ function count(arr: string[]): { [key: string]: number } {
   return c;
 }
 
+function sortByKey<T>(arr: T[], f: (t: T) => number): T[] {
+  return arr
+    .map((obj) => ({ obj, v: f(obj) }))
+    .sort((a, b) => a.v - b.v)
+    .map((w) => w.obj);
+}
+
 const bubbleStyle = {
   backgroundColor: "white",
   display: "inline-block",
@@ -91,7 +98,87 @@ function SqueezesAndStomps() {
 }
 
 function WeekTopsAndBottoms() {
-  return <div></div>;
+  const counts = Object.fromEntries(
+    Object.values(wrapped.ffTeams).map((p) => [
+      p.id,
+      { ...p, tops: [] as string[], bottoms: [] as string[] },
+    ])
+  );
+  const vals = Object.entries(wrapped.ffMatchups)
+    .map(([periodId, matchups]) => {
+      const sortedTeams = sortByKey(
+        matchups
+          .flatMap((match) => match.map((teamId) => wrapped.ffTeams[teamId]))
+          .filter((team) => team.rosters[periodId]) // todo
+          .map((team) => ({
+            ...team,
+            score: team.rosters[periodId].starting
+              .map(
+                (playerId) => wrapped.nflPlayers[playerId].scores[periodId] || 0
+              )
+              .reduce((a, b) => a + b, 0),
+          })),
+        (team) => -team.score
+      );
+      if (sortedTeams.length === 0) return undefined;
+      if (sortedTeams[0].score === 0) return undefined;
+      const winnerAndLoser = {
+        loser: sortedTeams[sortedTeams.length - 1],
+        winner: sortedTeams[0],
+        periodId,
+      };
+      counts[winnerAndLoser.winner.id].tops.push(periodId);
+      counts[winnerAndLoser.loser.id].bottoms.push(periodId);
+      return winnerAndLoser;
+    })
+    .filter((v) => v !== undefined)
+    .map((v) => v!);
+  return (
+    <div>
+      <div>
+        <table style={bubbleStyle}>
+          <thead>
+            <tr>
+              <td></td>
+              <td>tops</td>
+              <td>bottoms</td>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.values(counts).map((p, i) => (
+              <tr key={i}>
+                <td>
+                  <b>{p.name}</b>
+                </td>
+                <td>{p.tops.join(",")}</td>
+                <td>{p.bottoms.join(",")}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <div>
+          <div style={bubbleStyle}>
+            {vals.map((o, i) => (
+              <div key={i}>
+                week {o.periodId}: top score {o.winner.score.toFixed(2)}:{" "}
+                <b>{o.winner.name}</b>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <div style={bubbleStyle}>
+            {vals.map((o, i) => (
+              <div key={i}>
+                week {o.periodId}: bottom score {o.loser.score.toFixed(2)}{" "}
+                <b>{o.loser.name}</b>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 function BestByPosition() {
