@@ -8,22 +8,36 @@ import distanceCorrelation from "./correlation";
 const accuracy_json = raw_accuracy_json as AccuracyJsonType;
 accuracy_json["2023"] = {
   espn: Object.fromEntries(
-    Object.entries(draft_json.espn.players).map(([playerName, p]) => [
-      playerName,
-      {
-        position: p.position,
-        adp: draft_json.espn.pick[playerName],
-        auction: draft_json.espn.auction[playerName],
-        season_points:
-          Object.values(wrapped.nflPlayers).find((pp) => pp.name === playerName)
-            ?.total || 50,
-        average_points:
-          Object.values(wrapped.nflPlayers).find((pp) => pp.name === playerName)
-            ?.average || 50,
-      },
+    Object.entries(draft_json.espn.players)
+      .filter(([playerName]) =>
+        Object.values(wrapped.nflPlayers).find((pp) => pp.name === playerName)
+      )
+      .filter(([playerName]) => draft_json.espn.pick[playerName] < 169.9)
+      .map(([playerName, p]) => [
+        playerName,
+        {
+          position: p.position,
+          adp: draft_json.espn.pick[playerName],
+          auction: draft_json.espn.auction[playerName],
+          season_points: Object.values(wrapped.nflPlayers).find(
+            (pp) => pp.name === playerName
+          )!.total,
+          average_points: Object.values(wrapped.nflPlayers).find(
+            (pp) => pp.name === playerName
+          )!.average,
+        },
+      ])
+  ),
+  sources: Object.fromEntries(
+    Object.entries(draft_json.extra).concat([
+      [
+        "biscuit_adp",
+        Object.fromEntries(
+          draft_json.drafts[0].map((playerName, i) => [playerName, i])
+        ),
+      ],
     ])
   ),
-  sources: draft_json.extra,
 };
 
 const default_year = "2023";
