@@ -1,4 +1,5 @@
 import { ReactNode, useState } from "react";
+import Accuracy from "../Accuracy";
 import { printF } from "../Fetch";
 import FetchWrapped, { WrappedType } from "./FetchWrapped";
 import rawWrapped from "./wrapped.json";
@@ -7,16 +8,19 @@ export const wrapped: WrappedType = rawWrapped;
 
 export default function Wrapped() {
   document.title = "Fantasy Wrapped";
-  const toRender: { [key: string]: () => ReactNode } = {
-    SqueezesAndStomps,
-    WeekTopsAndBottoms,
-    BestByPosition,
-    DeterminedByDiscreteScoring,
-    GooseEggs,
-    UniquesStarted,
-    BoomBust,
-    json,
-  };
+  const toRender: { [key: string]: ReactNode } = Object.fromEntries(
+    Object.entries({
+      SqueezesAndStomps,
+      WeekTopsAndBottoms,
+      BestByPosition,
+      DeterminedByDiscreteScoring,
+      GooseEggs,
+      UniquesStarted,
+      BoomBust,
+      Accuracy,
+      json,
+    }).map(([k, v]) => [k, v()])
+  );
   var hashKey = window.location.hash.substring(1);
   if (!toRender[hashKey]) {
     window.location.hash = "";
@@ -43,7 +47,7 @@ export default function Wrapped() {
       </div>
       <div>
         <h1 style={bubbleStyle}>{toRenderKey}</h1>
-        <div>{toRender[toRenderKey]!()}</div>
+        <div>{toRender[toRenderKey]}</div>
       </div>
     </div>
   );
