@@ -56,16 +56,16 @@ def get_vegas(
                     offer for o in lines["eventGroup"]["offerCategories"][0]
                     ["offerSubcategoryDescriptors"][0]["offerSubcategory"]
                     ["offers"] for offer in o
-                    if offer["eventId"] == event["id"]
+                    if offer["eventId"] == event["ids"][0]
                 ] if "label" in o2 and o2["label"] != "Moneyline"
             }
-        } if event else None for event in [{
+        } if event and event["ids"] else None for event in [{
             "opp":
             opp,
-            "id": [
+            "ids": [
                 event["eventId"] for event in lines["eventGroup"]["events"]
                 if team in event["name"] and opp in event["name"]
-            ][0]
+            ]
         } if opp else None for opp in opps]]
         for team, opps in schedule.items()
     }
