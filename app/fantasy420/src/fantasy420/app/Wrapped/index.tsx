@@ -59,7 +59,7 @@ enum Position {
   DST = 16,
 }
 
-function count(arr: string[]): { [key: string]: number } {
+function countStrings(arr: string[]): { [key: string]: number } {
   const c: { [key: string]: number } = {};
   arr.forEach((k) => {
     c[k] = (c[k] || 0) + 1;
@@ -94,7 +94,68 @@ function json() {
 }
 
 function SqueezesAndStomps() {
-  return <div></div>;
+  const num = 10;
+  const rawPoints = sortByKey(
+    Object.entries(wrapped.ffMatchups)
+      .map(([periodId, matchups]) => ({
+        periodId,
+        matchups: matchups.map((matchup) =>
+          sortByKey(
+            matchup
+              .map((teamId) => wrapped.ffTeams[teamId])
+              .filter((team) => team.rosters[periodId])
+              .map((team) => ({
+                ...team,
+                score: team.rosters[periodId].starting
+                  .map(
+                    (playerId) =>
+                      wrapped.nflPlayers[playerId].scores[periodId] || 0
+                  )
+                  .reduce((a, b) => a + b, 0),
+              })),
+            (p) => p.score
+          )
+        ),
+      }))
+      .flatMap(({ periodId, matchups }) =>
+        matchups
+          .filter((teams) => teams[0]?.score)
+          .map((teams) => ({
+            periodId,
+            diff: teams[1].score - teams[0].score,
+            winner: teams[1].name,
+            loser: teams[0].name,
+          }))
+      ),
+    (match) => match.diff
+  );
+  return (
+    <div>
+      <div>
+        <div style={bubbleStyle}>
+          {rawPoints.slice(0, num).map((point, i) => (
+            <div key={i}>
+              week {point.periodId}: {point.diff.toFixed(2)} point squeeze /{" "}
+              <b>{point.winner}</b> beat <b>{point.loser}</b>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div>
+        <div style={bubbleStyle}>
+          {rawPoints
+            .slice(-num)
+            .reverse()
+            .map((point, i) => (
+              <div key={i}>
+                week {point.periodId}: {point.diff.toFixed(2)} point stomp /{" "}
+                <b>{point.winner}</b> beat <b>{point.loser}</b>
+              </div>
+            ))}
+        </div>
+      </div>
+    </div>
+  );
 }
 
 function WeekTopsAndBottoms() {
@@ -182,7 +243,38 @@ function WeekTopsAndBottoms() {
 }
 
 function BestByPosition() {
-  return <div></div>;
+  return (
+    <div>
+      {Object.values(Position)
+        .filter((p) => Number.isInteger(p))
+        .map((p) => p as Position)
+        .map((position, i) => (
+          <div key={i} style={bubbleStyle}>
+            <h3>{Position[position]}</h3>
+            {sortByKey(
+              Object.values(wrapped.ffTeams).map((team) => ({
+                ...team,
+                score: Object.entries(team.rosters)
+                  .flatMap(([scoringPeriod, rosters]) =>
+                    rosters.starting.map((playerId) => ({
+                      scoringPeriod,
+                      ...wrapped.nflPlayers[playerId],
+                    }))
+                  )
+                  .filter((p) => p.position === Position[position])
+                  .map((p) => p.scores[p.scoringPeriod]!)
+                  .reduce((a, b) => a + b, 0),
+              })),
+              (obj) => -obj.score
+            ).map((obj, i) => (
+              <div key={i}>
+                ({i + 1}) {obj.score.toFixed(2)} <b>{obj.name}</b>
+              </div>
+            ))}
+          </div>
+        ))}
+    </div>
+  );
 }
 
 function DeterminedByDiscreteScoring() {
@@ -194,7 +286,40 @@ function ChosenWrong() {
 }
 
 function GooseEggs() {
-  return <div></div>;
+  return (
+    <div>
+      {Object.values(wrapped.ffTeams).map((team, teamIndex) => (
+        <div key={teamIndex}>
+          <div style={bubbleStyle}>
+            <h4>{team.name}</h4>
+            <div>
+              {Object.keys(
+                countStrings(
+                  Object.values(team.rosters).flatMap(
+                    (roster) => roster.starting
+                  )
+                )
+              )
+                .map((playerId) => wrapped.nflPlayers[playerId])
+                .map((p) => ({
+                  ...p,
+                  gooseEggs: Object.entries(p.scores)
+                    .filter(([_, score]) => score! <= 0)
+                    .map(([periodId]) => periodId)
+                    .filter((periodId) => periodId !== "0"),
+                }))
+                .filter((p) => p.gooseEggs.length > 0)
+                .sort((a, b) => b.gooseEggs.length - a.gooseEggs.length)
+                .map((p) => `${p.name} -> ${p.gooseEggs}`)
+                .map((str, i) => (
+                  <div key={i}>{str}</div>
+                ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 function UniquesStarted() {
@@ -212,7 +337,7 @@ function UniquesStarted() {
                   .map((ffTeam) => ({
                     teamName: ffTeam.name,
                     started: Object.entries(
-                      count(
+                      countStrings(
                         Object.values(ffTeam.rosters).flatMap(
                           (roster) => roster.starting
                         )
