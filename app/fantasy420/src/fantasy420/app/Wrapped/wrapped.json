@@ -21991,139 +21991,37 @@
       "nflGamesByScoringPeriod": {
         "1": {
           "fieldGoals": [
-            1,
-            2
+            54,
+            50,
+            40,
+            27
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 385,
+          "pointsAllowed": 27
         },
         "2": {
           "fieldGoals": [
-            1,
-            2
+            26
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 337,
+          "pointsAllowed": 31
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            41,
+            54
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 420,
+          "pointsAllowed": 23
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            30,
+            21,
+            45
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 403,
+          "pointsAllowed": 20
         }
       }
     },
@@ -22134,139 +22032,34 @@
       "nflGamesByScoringPeriod": {
         "1": {
           "fieldGoals": [
-            1,
-            2
+            41
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 243,
+          "pointsAllowed": 10
         },
         "2": {
           "fieldGoals": [
-            1,
-            2
+            49,
+            37
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 187,
+          "pointsAllowed": 7
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            30
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 212,
+          "pointsAllowed": 21
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            38,
+            39,
+            21
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 296,
+          "pointsAllowed": 20
         }
       }
     },
@@ -22276,140 +22069,35 @@
       "byeWeek": 14,
       "nflGamesByScoringPeriod": {
         "1": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "fieldGoals": [],
+          "yardsAllowed": 331,
+          "pointsAllowed": 10
         },
         "2": {
           "fieldGoals": [
-            1,
-            2
+            44
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 414,
+          "pointsAllowed": 27
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            47,
+            50,
+            30
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 329,
+          "pointsAllowed": 20
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            29,
+            22,
+            40,
+            35
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 333,
+          "pointsAllowed": 20
         }
       }
     },
@@ -22420,139 +22108,36 @@
       "nflGamesByScoringPeriod": {
         "1": {
           "fieldGoals": [
-            1,
-            2
+            59,
+            26
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 267,
+          "pointsAllowed": 17
         },
         "2": {
           "fieldGoals": [
-            1,
-            2
+            43,
+            50,
+            46
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 337,
+          "pointsAllowed": 20
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            22,
+            43
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 328,
+          "pointsAllowed": 12
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            19,
+            57
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 378,
+          "pointsAllowed": 15
         }
       }
     },
@@ -22563,139 +22148,35 @@
       "nflGamesByScoringPeriod": {
         "1": {
           "fieldGoals": [
-            1,
-            2
+            26,
+            34,
+            36,
+            58
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 261,
+          "pointsAllowed": 24
         },
         "2": {
           "fieldGoals": [
-            1,
-            2
+            22
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 402,
+          "pointsAllowed": 31
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            34
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 308,
+          "pointsAllowed": 17
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            29,
+            45
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 333,
+          "pointsAllowed": 23
         }
       }
     },
@@ -22706,139 +22187,37 @@
       "nflGamesByScoringPeriod": {
         "1": {
           "fieldGoals": [
-            1,
-            2
+            51
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 347,
+          "pointsAllowed": 19
         },
         "2": {
           "fieldGoals": [
-            1,
-            2
+            54,
+            50
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 254,
+          "pointsAllowed": 17
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            26,
+            28,
+            44
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 336,
+          "pointsAllowed": 16
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            53,
+            45,
+            28,
+            29
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 297,
+          "pointsAllowed": 10
         }
       }
     },
@@ -22849,139 +22228,35 @@
       "nflGamesByScoringPeriod": {
         "1": {
           "fieldGoals": [
-            1,
-            2
+            30,
+            40,
+            26
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 253,
+          "pointsAllowed": 17
         },
         "2": {
           "fieldGoals": [
-            1,
-            2
+            20,
+            24,
+            50
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 234,
+          "pointsAllowed": 9
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            55
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 267,
+          "pointsAllowed": 10
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            28
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 385,
+          "pointsAllowed": 26
         }
       }
     },
@@ -22991,140 +22266,31 @@
       "byeWeek": 6,
       "nflGamesByScoringPeriod": {
         "1": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "fieldGoals": [],
+          "yardsAllowed": 455,
+          "pointsAllowed": 32
         },
         "2": {
           "fieldGoals": [
-            1,
-            2
+            35,
+            48
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 396,
+          "pointsAllowed": 27
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            40
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 373,
+          "pointsAllowed": 28
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            49
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 555,
+          "pointsAllowed": 42
         }
       }
     },
@@ -23134,140 +22300,30 @@
       "byeWeek": 14,
       "nflGamesByScoringPeriod": {
         "1": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "fieldGoals": [],
+          "yardsAllowed": 395,
+          "pointsAllowed": 23
         },
         "2": {
           "fieldGoals": [
-            1,
-            2
+            40,
+            28
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 228,
+          "pointsAllowed": 10
         },
         "3": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "fieldGoals": [],
+          "yardsAllowed": 285,
+          "pointsAllowed": 12
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            38,
+            31
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 271,
+          "pointsAllowed": 18
         }
       }
     },
@@ -23278,139 +22334,30 @@
       "nflGamesByScoringPeriod": {
         "1": {
           "fieldGoals": [
-            1,
-            2
+            46,
+            23
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 394,
+          "pointsAllowed": 21
         },
         "2": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "fieldGoals": [],
+          "yardsAllowed": 414,
+          "pointsAllowed": 35
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            48
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 396,
+          "pointsAllowed": 22
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            44
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 365,
+          "pointsAllowed": 17
         }
       }
     },
@@ -23421,139 +22368,31 @@
       "nflGamesByScoringPeriod": {
         "1": {
           "fieldGoals": [
-            1,
-            2
+            45,
+            27
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 299,
+          "pointsAllowed": 20
         },
         "2": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "fieldGoals": [],
+          "yardsAllowed": 331,
+          "pointsAllowed": 24
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            43,
+            51
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 315,
+          "pointsAllowed": 17
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            27
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 243,
+          "pointsAllowed": 24
         }
       }
     },
@@ -23564,139 +22403,33 @@
       "nflGamesByScoringPeriod": {
         "1": {
           "fieldGoals": [
-            1,
-            2
+            54
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 282,
+          "pointsAllowed": 21
         },
         "2": {
           "fieldGoals": [
-            1,
-            2
+            19,
+            31
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 401,
+          "pointsAllowed": 24
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            26
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 259,
+          "pointsAllowed": 20
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            44,
+            32
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 376,
+          "pointsAllowed": 31
         }
       }
     },
@@ -23707,139 +22440,39 @@
       "nflGamesByScoringPeriod": {
         "1": {
           "fieldGoals": [
-            1,
-            2
+            23,
+            55
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 355,
+          "pointsAllowed": 24
         },
         "2": {
           "fieldGoals": [
-            1,
-            2
+            32,
+            55,
+            25
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 413,
+          "pointsAllowed": 23
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            21,
+            32,
+            35
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 361,
+          "pointsAllowed": 24
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            26,
+            39,
+            22,
+            30
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 299,
+          "pointsAllowed": 23
         }
       }
     },
@@ -23850,139 +22483,34 @@
       "nflGamesByScoringPeriod": {
         "1": {
           "fieldGoals": [
-            1,
-            2
+            57
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 413,
+          "pointsAllowed": 31
         },
         "2": {
           "fieldGoals": [
-            1,
-            2
+            20
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 261,
+          "pointsAllowed": 25
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            22,
+            40
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 365,
+          "pointsAllowed": 12
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            39,
+            29,
+            26
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 327,
+          "pointsAllowed": 18
         }
       }
     },
@@ -23993,139 +22521,30 @@
       "nflGamesByScoringPeriod": {
         "1": {
           "fieldGoals": [
-            1,
-            2
+            43,
+            49
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 271,
+          "pointsAllowed": 7
         },
         "2": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "fieldGoals": [],
+          "yardsAllowed": 473,
+          "pointsAllowed": 38
         },
         "3": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "fieldGoals": [],
+          "yardsAllowed": 497,
+          "pointsAllowed": 17
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            23,
+            48,
+            20
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 371,
+          "pointsAllowed": 27
         }
       }
     },
@@ -24136,139 +22555,33 @@
       "nflGamesByScoringPeriod": {
         "1": {
           "fieldGoals": [
-            1,
-            2
+            28,
+            56,
+            29
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 338,
+          "pointsAllowed": 7
         },
         "2": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "fieldGoals": [],
+          "yardsAllowed": 486,
+          "pointsAllowed": 24
         },
         "3": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "fieldGoals": [],
+          "yardsAllowed": 416,
+          "pointsAllowed": 24
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            28,
+            36,
+            24,
+            46,
+            47
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 338,
+          "pointsAllowed": 25
         }
       }
     },
@@ -24278,140 +22591,31 @@
       "byeWeek": 10,
       "nflGamesByScoringPeriod": {
         "1": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "fieldGoals": [],
+          "yardsAllowed": 307,
+          "pointsAllowed": 14
         },
         "2": {
           "fieldGoals": [
-            1,
-            2
+            28
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 243,
+          "pointsAllowed": 14
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            35,
+            50
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 394,
+          "pointsAllowed": 37
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            37
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 443,
+          "pointsAllowed": 27
         }
       }
     },
@@ -24422,139 +22626,30 @@
       "nflGamesByScoringPeriod": {
         "1": {
           "fieldGoals": [
-            1,
-            2
+            49,
+            51
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 416,
+          "pointsAllowed": 26
         },
         "2": {
           "fieldGoals": [
-            1,
-            2
+            31
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 260,
+          "pointsAllowed": 14
         },
         "3": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "fieldGoals": [],
+          "yardsAllowed": 293,
+          "pointsAllowed": 16
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            60
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 344,
+          "pointsAllowed": 28
         }
       }
     },
@@ -24564,140 +22659,36 @@
       "byeWeek": 9,
       "nflGamesByScoringPeriod": {
         "1": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "fieldGoals": [],
+          "yardsAllowed": 359,
+          "pointsAllowed": 20
         },
         "2": {
           "fieldGoals": [
-            1,
-            2
+            36,
+            33,
+            52,
+            56
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 275,
+          "pointsAllowed": 16
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            42,
+            51,
+            51
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 391,
+          "pointsAllowed": 23
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            44,
+            43
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 304,
+          "pointsAllowed": 12
         }
       }
     },
@@ -24708,139 +22699,34 @@
       "nflGamesByScoringPeriod": {
         "1": {
           "fieldGoals": [
-            1,
-            2
+            45
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 274,
+          "pointsAllowed": 24
         },
         "2": {
           "fieldGoals": [
-            1,
-            2
+            57
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 405,
+          "pointsAllowed": 30
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            50,
+            40,
+            52,
+            43
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 330,
+          "pointsAllowed": 27
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            38
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 297,
+          "pointsAllowed": 20
         }
       }
     },
@@ -24851,139 +22737,31 @@
       "nflGamesByScoringPeriod": {
         "1": {
           "fieldGoals": [
-            1,
-            2
+            23
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 386,
+          "pointsAllowed": 35
         },
         "2": {
           "fieldGoals": [
-            1,
-            2
+            38
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 264,
+          "pointsAllowed": 7
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            32
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 240,
+          "pointsAllowed": 6
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            28
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 219,
+          "pointsAllowed": 15
         }
       }
     },
@@ -24993,140 +22771,32 @@
       "byeWeek": 13,
       "nflGamesByScoringPeriod": {
         "1": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "fieldGoals": [],
+          "yardsAllowed": 488,
+          "pointsAllowed": 44
         },
         "2": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "fieldGoals": [],
+          "yardsAllowed": 324,
+          "pointsAllowed": 23
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            23,
+            43,
+            49,
+            31
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 339,
+          "pointsAllowed": 20
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            33,
+            39
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 220,
+          "pointsAllowed": 10
         }
       }
     },
@@ -25137,139 +22807,35 @@
       "nflGamesByScoringPeriod": {
         "1": {
           "fieldGoals": [
-            1,
-            2
+            20,
+            48,
+            53
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 432,
+          "pointsAllowed": 20
         },
         "2": {
           "fieldGoals": [
-            1,
-            2
+            36,
+            52
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 376,
+          "pointsAllowed": 17
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            34
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 376,
+          "pointsAllowed": 23
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            51,
+            59
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 348,
+          "pointsAllowed": 24
         }
       }
     },
@@ -25280,139 +22846,32 @@
       "nflGamesByScoringPeriod": {
         "1": {
           "fieldGoals": [
-            1,
-            2
+            43
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 320,
+          "pointsAllowed": 19
         },
         "2": {
           "fieldGoals": [
-            1,
-            2
+            31
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 319,
+          "pointsAllowed": 21
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            25
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 413,
+          "pointsAllowed": 38
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            23,
+            37
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 346,
+          "pointsAllowed": 24
         }
       }
     },
@@ -25423,139 +22882,32 @@
       "nflGamesByScoringPeriod": {
         "1": {
           "fieldGoals": [
-            1,
-            2
+            25
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 204,
+          "pointsAllowed": 19
         },
         "2": {
           "fieldGoals": [
-            1,
-            2
+            20,
+            33
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 216,
+          "pointsAllowed": 7
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            51
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 261,
+          "pointsAllowed": 9
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            25
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 257,
+          "pointsAllowed": 9
         }
       }
     },
@@ -25566,139 +22918,32 @@
       "nflGamesByScoringPeriod": {
         "1": {
           "fieldGoals": [
-            1,
-            2
+            49
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 433,
+          "pointsAllowed": 16
         },
         "2": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "fieldGoals": [],
+          "yardsAllowed": 373,
+          "pointsAllowed": 27
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            32,
+            31,
+            25
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 386,
+          "pointsAllowed": 27
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            56,
+            25
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 520,
+          "pointsAllowed": 45
         }
       }
     },
@@ -25709,139 +22954,36 @@
       "nflGamesByScoringPeriod": {
         "1": {
           "fieldGoals": [
-            1,
-            2
+            44,
+            38,
+            29,
+            47
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 244,
+          "pointsAllowed": 3
         },
         "2": {
           "fieldGoals": [
-            1,
-            2
+            47,
+            47
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 308,
+          "pointsAllowed": 10
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            45,
+            45
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 315,
+          "pointsAllowed": 14
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            45
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 417,
+          "pointsAllowed": 41
         }
       }
     },
@@ -25851,140 +22993,26 @@
       "byeWeek": 14,
       "nflGamesByScoringPeriod": {
         "1": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "fieldGoals": [],
+          "yardsAllowed": 383,
+          "pointsAllowed": 22
         },
         "2": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "fieldGoals": [],
+          "yardsAllowed": 425,
+          "pointsAllowed": 34
         },
         "3": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "fieldGoals": [],
+          "yardsAllowed": 400,
+          "pointsAllowed": 24
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            45
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 279,
+          "pointsAllowed": 25
         }
       }
     },
@@ -25995,139 +23023,35 @@
       "nflGamesByScoringPeriod": {
         "1": {
           "fieldGoals": [
-            1,
-            2
+            34
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 355,
+          "pointsAllowed": 26
         },
         "2": {
           "fieldGoals": [
-            1,
-            2
+            31,
+            32,
+            38
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 265,
+          "pointsAllowed": 19
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            45,
+            48,
+            34
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 426,
+          "pointsAllowed": 14
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            54
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 338,
+          "pointsAllowed": 26
         }
       }
     },
@@ -26138,139 +23062,33 @@
       "nflGamesByScoringPeriod": {
         "1": {
           "fieldGoals": [
-            1,
-            2
+            33,
+            43,
+            45
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 390,
+          "pointsAllowed": 28
         },
         "2": {
           "fieldGoals": [
-            1,
-            2
+            52
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 218,
+          "pointsAllowed": 0
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            22,
+            23,
+            23
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 312,
+          "pointsAllowed": 10
         },
         "4": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "fieldGoals": [],
+          "yardsAllowed": 401,
+          "pointsAllowed": 29
         }
       }
     },
@@ -26281,139 +23099,32 @@
       "nflGamesByScoringPeriod": {
         "1": {
           "fieldGoals": [
-            1,
-            2
+            24
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 380,
+          "pointsAllowed": 9
         },
         "2": {
           "fieldGoals": [
-            1,
-            2
+            51
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 547,
+          "pointsAllowed": 42
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            56
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 447,
+          "pointsAllowed": 26
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            42,
+            51
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "6": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 326,
+          "pointsAllowed": 23
         }
       }
     },
@@ -26424,139 +23135,35 @@
       "nflGamesByScoringPeriod": {
         "1": {
           "fieldGoals": [
-            1,
-            2
+            45,
+            43
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 517,
+          "pointsAllowed": 20
         },
         "2": {
           "fieldGoals": [
-            1,
-            2
+            40,
+            44,
+            24
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 350,
+          "pointsAllowed": 16
         },
         "3": {
           "fieldGoals": [
-            1,
-            2
+            39,
+            23
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 363,
+          "pointsAllowed": 23
         },
         "4": {
           "fieldGoals": [
-            1,
-            2
+            40
           ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "5": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "7": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "8": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "9": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "10": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "11": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "12": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "13": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "14": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "15": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "16": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "17": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
-        },
-        "18": {
-          "fieldGoals": [
-            1,
-            2
-          ],
-          "pointsAllowed": 123,
-          "yardsAllowed": 456
+          "yardsAllowed": 419,
+          "pointsAllowed": 34
         }
       }
     }

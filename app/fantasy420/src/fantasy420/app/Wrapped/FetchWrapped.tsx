@@ -393,8 +393,8 @@ export default function FetchWrapped() {
                     .then(
                       (resp: {
                         players: {
-                          onTeamId: number;
                           player: {
+                            proTeamId: number;
                             stats: {
                               scoringPeriodId: number;
                               stats: { [key: string]: number };
@@ -409,7 +409,7 @@ export default function FetchWrapped() {
                             value: fromEntries(
                               resp.players
                                 .map((player) => ({
-                                  teamId: player.onTeamId,
+                                  teamId: player.player.proTeamId,
                                   stats: player.player.stats.find(
                                     (s) => s.scoringPeriodId === scoringPeriodId
                                   )?.stats,
