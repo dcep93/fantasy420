@@ -24,6 +24,10 @@ async function execute() {
       p: /https:\/\/fantasy\.espn\.com\/football.*/,
       jss: ["vegas.js"],
     },
+    {
+      p: /https:\/\/www.espn\.com\/$/,
+      jss: ["wrapped.js"],
+    },
   ];
 
   const jss = paths
