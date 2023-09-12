@@ -76,6 +76,7 @@ export default function FetchWrapped() {
                   players: {
                     filterStatsForTopScoringPeriodIds: {
                       value: 17,
+                      additionalValue: [`00${year}`],
                     },
                   },
                 }),
@@ -95,7 +96,11 @@ export default function FetchWrapped() {
                     proTeamId: number;
                     fullName: string;
                     defaultPositionId: number;
-                    stats: { scoringPeriodId: number; appliedTotal: number }[];
+                    stats: {
+                      scoringPeriodId: number;
+                      appliedTotal: number;
+                      appliedAverage: number;
+                    }[];
                   };
                 }[];
               }) =>
@@ -110,20 +115,18 @@ export default function FetchWrapped() {
                       { 1: "QB", 2: "RB", 3: "WR", 4: "TE", 5: "K", 16: "DST" }[
                         player.defaultPositionId
                       ] || player.defaultPositionId.toString(),
+                    total: player.stats.find(
+                      (stat) => stat.scoringPeriodId === 0
+                    )!.appliedTotal,
+                    average: player.stats.find(
+                      (stat) => stat.scoringPeriodId === 0
+                    )!.appliedAverage,
                     scores: fromEntries(
                       player.stats.map((stat) => ({
                         key: stat.scoringPeriodId.toString(),
                         value: parseFloat(stat.appliedTotal.toFixed(2)),
                       }))
                     ),
-                  }))
-                  .map((player) => ({
-                    total: parseFloat(
-                      Object.values(player.scores)
-                        .reduce((a, b) => a + b, 0)
-                        .toFixed(2)
-                    ),
-                    ...player,
                   }))
                   .map((player) => ({ key: player.id, value: player }))
             )

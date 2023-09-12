@@ -1,4 +1,4 @@
-export default function correlation(points: number[][]) {
+export default function correlation(points: number[][]): number {
   // Calculate the mean of y values
   const sumY = points.reduce((sum, point) => sum + point[1], 0);
   const meanY = sumY / points.length;
