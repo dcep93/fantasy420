@@ -51,8 +51,7 @@ export type WrappedType = {
 // todo scoringperiod vs week
 
 export default function FetchWrapped() {
-  const latestScoringPeriodId = 4;
-  const year = 2022;
+  const year = 2023;
   const leagueId =
     new URL(window.document.location.href).searchParams.get("leagueId") ||
     203836968;
@@ -134,9 +133,16 @@ export default function FetchWrapped() {
       // ffTeams
       Promise.resolve()
         .then(() =>
-          Promise.resolve()
-            .then(() =>
-              Array.from(new Array(latestScoringPeriodId))
+          fetch(
+            `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/${leagueId}`
+          )
+            .then((resp) => resp.json())
+            .then(
+              (resp: { status: { latestScoringPeriod: number } }) =>
+                resp.status.latestScoringPeriod
+            )
+            .then((latestScoringPeriod) =>
+              Array.from(new Array(latestScoringPeriod))
                 .map((_, i) => i + 1)
                 .map((weekNum) =>
                   fetch(
@@ -209,6 +215,7 @@ export default function FetchWrapped() {
                 rosters: fromEntries(
                   weeks
                     .map((week) => week[team.id].schedule)
+                    .filter((s) => s.rosterForCurrentScoringPeriod)
                     .map((s) => ({
                       weekNum: s.weekNum.toString(),
                       starting: s.rosterForMatchupPeriod.entries.map((e) =>
@@ -405,31 +412,40 @@ export default function FetchWrapped() {
                           };
                         }[];
                       }) =>
-                        Array.from(new Array(latestScoringPeriodId + 1))
-                          .map((_, i) => i)
-                          .map((scoringPeriodId) => ({
-                            key: scoringPeriodId.toString(),
-                            value: fromEntries(
-                              resp.players
-                                .map((player) => ({
-                                  teamId: player.player.proTeamId,
-                                  stats: player.player.stats.find(
-                                    (s) => s.scoringPeriodId === scoringPeriodId
-                                  )?.stats,
-                                }))
-                                .map(({ teamId, stats }) =>
-                                  stats === undefined
-                                    ? undefined
-                                    : {
-                                        key: teamId.toString(),
-                                        value: {
-                                          yardsAllowed: stats["127"],
-                                          pointsAllowed: stats["187"],
-                                        },
-                                      }
-                                )
-                            ),
-                          }))
+                        Object.keys(
+                          fromEntries(
+                            resp.players
+                              .flatMap((player) => player.player.stats)
+                              .map((s) => ({
+                                key: s.scoringPeriodId.toString(),
+                                value: true,
+                              }))
+                          )
+                        ).map((scoringPeriodId) => ({
+                          key: scoringPeriodId.toString(),
+                          value: fromEntries(
+                            resp.players
+                              .map((player) => ({
+                                teamId: player.player.proTeamId,
+                                stats: player.player.stats.find(
+                                  (s) =>
+                                    s.scoringPeriodId.toString() ===
+                                    scoringPeriodId
+                                )?.stats,
+                              }))
+                              .map(({ teamId, stats }) =>
+                                stats === undefined
+                                  ? undefined
+                                  : {
+                                      key: teamId.toString(),
+                                      value: {
+                                        yardsAllowed: stats["127"],
+                                        pointsAllowed: stats["187"],
+                                      },
+                                    }
+                              )
+                          ),
+                        }))
                     )
                     .then((defensesByScoringPeriod) =>
                       fromEntries(defensesByScoringPeriod)
