@@ -4,7 +4,10 @@ import Chart from "./Chart";
 import raw_accuracy_json from "./accuracy.json";
 import distanceCorrelation from "./correlation";
 
-const default_year = "2022";
+const accuracy_json = raw_accuracy_json as AccuracyJsonType;
+accuracy_json["2023"] = { espn: {}, sources: {} };
+
+const default_year = "2023";
 
 type EspnPlayerType = {
   position: string;
@@ -36,7 +39,6 @@ type DataType = {
 };
 
 function getSources(year: string): SourcesType {
-  const accuracy_json = raw_accuracy_json as AccuracyJsonType;
   const accuracy_year = accuracy_json[year];
   const sources = Object.fromEntries(
     Object.entries(accuracy_year.sources).map(([source, data]) => [
@@ -98,7 +100,6 @@ function getSources(year: string): SourcesType {
 }
 
 function getData(year: string, source: string, sources: SourcesType): DataType {
-  const accuracy_json = raw_accuracy_json as AccuracyJsonType;
   const accuracy_year = accuracy_json[year];
   const by_position = {} as {
     [position: string]: { [playerName: string]: EspnPlayerType };
@@ -166,7 +167,6 @@ function getIR(position_data: { [category: string]: ChartDataType }): number {
 }
 
 export default function Accuracy() {
-  const accuracy_json = raw_accuracy_json as AccuracyJsonType;
   const [year, updateYear] = useState(default_year);
   const [source, updateSource] = useState("composite");
   const sources = getSources(year);
