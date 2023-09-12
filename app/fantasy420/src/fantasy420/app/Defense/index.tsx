@@ -1,8 +1,8 @@
-import raw_defence from "./defence.json";
+import raw_defense from "./defense.json";
 
-const defence: DefenceType = raw_defence;
+const defence: DefenseType = raw_defense;
 
-type DefenceType = {
+type DefenseType = {
   [name: string]: ({
     opp: string;
     lines: { Spread: number; Total?: number };
@@ -31,7 +31,7 @@ export default function Defence() {
   );
 }
 
-function results(defence: DefenceType) {
+function results(defence: DefenseType) {
   const scored = Object.entries(defence).map(([name, arr]) => ({
     name,
     weeks: arr.slice(0, 6).map((a) => ({
