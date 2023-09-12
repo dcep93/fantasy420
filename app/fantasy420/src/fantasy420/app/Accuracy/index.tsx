@@ -1,11 +1,30 @@
 import { useState } from "react";
-import { normalize } from "../Draft";
+import { draft_json, normalize } from "../Draft";
+import { wrapped } from "../Wrapped";
 import Chart from "./Chart";
 import raw_accuracy_json from "./accuracy.json";
 import distanceCorrelation from "./correlation";
 
 const accuracy_json = raw_accuracy_json as AccuracyJsonType;
-accuracy_json["2023"] = { espn: {}, sources: {} };
+accuracy_json["2023"] = {
+  espn: Object.fromEntries(
+    Object.entries(draft_json.espn.players).map(([playerName, p]) => [
+      playerName,
+      {
+        position: p.position,
+        adp: draft_json.espn.pick[playerName],
+        auction: draft_json.espn.auction[playerName],
+        season_points:
+          Object.values(wrapped.nflPlayers).find((pp) => pp.name === playerName)
+            ?.total || 50,
+        average_points:
+          Object.values(wrapped.nflPlayers).find((pp) => pp.name === playerName)
+            ?.average || 50,
+      },
+    ])
+  ),
+  sources: draft_json.extra,
+};
 
 const default_year = "2023";
 

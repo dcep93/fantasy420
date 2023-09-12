@@ -5,6 +5,7 @@ type NFLPlayerType = {
   position: string;
   scores: { [scoringPeriodId: string]: number | undefined };
   total: number;
+  average: number;
 };
 
 type NFLTeamType = {
