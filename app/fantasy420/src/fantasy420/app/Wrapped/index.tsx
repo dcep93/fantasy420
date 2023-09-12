@@ -53,7 +53,7 @@ export default function Wrapped() {
   );
 }
 
-enum Position {
+export enum Position {
   QB = 1,
   RB = 2,
   WR = 3,

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { draft_json, normalize } from "../Draft";
-import { wrapped } from "../Wrapped";
+import { Position, wrapped } from "../Wrapped";
 import Chart from "./Chart";
 import raw_accuracy_json from "./accuracy.json";
 import distanceCorrelation from "./correlation";
@@ -220,32 +220,39 @@ export default function Accuracy() {
         </select>
       </div>
       <div>
-        {Object.entries(data).map(([position, o]) => (
-          <div
-            key={position}
-            style={{
-              border: "2px solid black",
-              borderRadius: "20px",
-              margin: "20px",
-              padding: "20px",
-            }}
-          >
-            <h1>{position}</h1>
-            <div style={{ display: "flex" }}>
-              {Object.entries(o).map(([category, oo]) => (
-                <div key={category} style={{ flexGrow: 1 }}>
-                  <div style={{ padding: "0 20px" }}>
-                    <h2>
-                      {category} r2 :{" "}
-                      {parseFloat(getCorrelation(oo).toFixed(4))}
-                    </h2>
-                    <Chart data={oo} />
+        {Object.entries(data)
+          .map(([position, o]) => ({
+            position,
+            o,
+            sort: Position[position as any] as unknown as number,
+          }))
+          .sort((a, b) => a.sort - b.sort)
+          .map(({ position, o }) => (
+            <div
+              key={position}
+              style={{
+                border: "2px solid black",
+                borderRadius: "20px",
+                margin: "20px",
+                padding: "20px",
+              }}
+            >
+              <h1>{position}</h1>
+              <div style={{ display: "flex" }}>
+                {Object.entries(o).map(([category, oo]) => (
+                  <div key={category} style={{ flexGrow: 1 }}>
+                    <div style={{ padding: "0 20px" }}>
+                      <h2>
+                        {category} r2 :{" "}
+                        {parseFloat(getCorrelation(oo).toFixed(4))}
+                      </h2>
+                      <Chart data={oo} />
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
     </div>
   );
