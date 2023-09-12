@@ -74,7 +74,6 @@ export default function FetchWrapped() {
                 accept: "application/json",
                 "x-fantasy-filter": JSON.stringify({
                   players: {
-                    filterSlotIds: { value: [0, 7, 2, 23, 4, 6] },
                     filterStatsForTopScoringPeriodIds: {
                       value: 17,
                     },
@@ -102,12 +101,13 @@ export default function FetchWrapped() {
               }) =>
                 resp.players
                   .map((player) => player.player)
+                  .filter((player) => player.proTeamId !== 0)
                   .map((player) => ({
                     id: player.id.toString(),
                     nflTeamId: player.proTeamId.toString(),
                     name: player.fullName,
                     position:
-                      { 1: "QB", 2: "RB", 3: "WR", 4: "TE", 16: "DST" }[
+                      { 1: "QB", 2: "RB", 3: "WR", 4: "TE", 5: "K", 16: "DST" }[
                         player.defaultPositionId
                       ] || player.defaultPositionId.toString(),
                     scores: fromEntries(
