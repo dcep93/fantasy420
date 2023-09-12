@@ -12,7 +12,6 @@ export default function Wrapped() {
     WeekTopsAndBottoms,
     BestByPosition,
     DeterminedByDiscreteScoring,
-    ChosenWrong,
     GooseEggs,
     UniquesStarted,
     BoomBust,
@@ -446,10 +445,6 @@ function DeterminedByDiscreteScoring() {
         ))}
     </div>
   );
-}
-
-function ChosenWrong() {
-  return <div></div>;
 }
 
 function GooseEggs() {
