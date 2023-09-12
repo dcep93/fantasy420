@@ -279,7 +279,10 @@ export default function FetchWrapped() {
                     name: string;
                     byeWeek: number;
                     proGamesByScoringPeriod: {
-                      [scoringPeriodId: string]: { id: number }[];
+                      [scoringPeriodId: string]: {
+                        id: number;
+                        statsOfficial: boolean;
+                      }[];
                     };
                   }[];
                 };
@@ -289,12 +292,12 @@ export default function FetchWrapped() {
                   name: p.name,
                   byeWeek: p.byeWeek,
                   proGamesByScoringPeriod: fromEntries(
-                    Object.entries(p.proGamesByScoringPeriod).map(
-                      ([scoringPeriod, o]) => ({
+                    Object.entries(p.proGamesByScoringPeriod)
+                      .filter(([_, o]) => o[0].statsOfficial)
+                      .map(([scoringPeriod, o]) => ({
                         key: scoringPeriod,
                         value: o[0].id,
-                      })
-                    )
+                      }))
                   ),
                 }))
             )
