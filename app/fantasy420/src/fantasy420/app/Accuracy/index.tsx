@@ -19,12 +19,14 @@ accuracy_json["2023"] = {
           position: p.position,
           adp: draft_json.espn.pick[playerName],
           auction: draft_json.espn.auction[playerName],
-          season_points: Object.values(wrapped.nflPlayers).find(
-            (pp) => pp.name === playerName
-          )!.total,
-          average_points: Object.values(wrapped.nflPlayers).find(
-            (pp) => pp.name === playerName
-          )!.average,
+          season_points:
+            Object.values(wrapped.nflPlayers).find(
+              (pp) => pp.name === playerName
+            )!.scores["1"] || 0,
+          average_points:
+            Object.values(wrapped.nflPlayers).find(
+              (pp) => pp.name === playerName
+            )!.scores["1"] || 0,
         },
       ])
   ),
