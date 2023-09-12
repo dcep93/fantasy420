@@ -2,7 +2,7 @@ import { printF } from "../Fetch";
 import FetchWrapped, { WrappedType } from "./FetchWrapped";
 import rawWrapped from "./wrapped.json";
 
-const wrapped: WrappedType = rawWrapped;
+export const wrapped: WrappedType = rawWrapped;
 
 export default function Wrapped() {
   console.log(printF(FetchWrapped));
