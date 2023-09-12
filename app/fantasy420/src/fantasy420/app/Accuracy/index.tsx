@@ -8,23 +8,21 @@ import distanceCorrelation from "./correlation";
 const accuracy_json = raw_accuracy_json as AccuracyJsonType;
 accuracy_json["2023"] = {
   espn: Object.fromEntries(
-    Object.entries(draft_json.espn.players)
-      .filter(([playerName]) =>
-        Object.values(wrapped.nflPlayers).find((pp) => pp.name === playerName)
+    Object.values(wrapped.nflPlayers)
+      .filter((p) => p.nflTeamId !== "0")
+      .filter(
+        (p) =>
+          draft_json.espn.pick[p.name] < 169.9 ||
+          draft_json.drafts[0].includes(p.name)
       )
-      .filter(([playerName]) => draft_json.espn.pick[playerName] < 169.9)
-      .map(([playerName, p]) => [
-        playerName,
+      .map((p) => [
+        p.name,
         {
           position: p.position,
-          adp: draft_json.espn.pick[playerName],
-          auction: draft_json.espn.auction[playerName],
-          season_points: Object.values(wrapped.nflPlayers).find(
-            (pp) => pp.name === playerName
-          )!.total,
-          average_points: Object.values(wrapped.nflPlayers).find(
-            (pp) => pp.name === playerName
-          )!.average,
+          adp: draft_json.espn.pick[p.name],
+          auction: draft_json.espn.auction[p.name],
+          season_points: p.total,
+          average_points: p.average,
         },
       ])
   ),
@@ -182,23 +180,6 @@ function getCorrelation(data: ChartDataType): number {
   return c;
 }
 
-function getIR(position_data: { [category: string]: ChartDataType }): number {
-  const GAMES_PER_SEASON = 17;
-  const CUTOFF_RATIO = 0.8;
-  const points = Object.fromEntries(
-    Object.entries(position_data).map(([category, data]) => [
-      category,
-      data
-        .map(({ ...point }, i) => ({ i, ...point }))
-        .filter(({ i }) => i <= data.length * CUTOFF_RATIO)
-        .map((point) => point.y)
-        .reduce((a, b) => a + b, 0),
-    ])
-  );
-  const played = points["season_points"] / points["average_points"];
-  return parseFloat((GAMES_PER_SEASON - played).toFixed(2));
-}
-
 export default function Accuracy() {
   const [year, updateYear] = useState(default_year);
   const [source, updateSource] = useState("composite");
@@ -245,9 +226,7 @@ export default function Accuracy() {
               padding: "20px",
             }}
           >
-            <h1>
-              {position} avg missed : {getIR(o)}
-            </h1>
+            <h1>{position}</h1>
             <div style={{ display: "flex" }}>
               {Object.entries(o).map(([category, oo]) => (
                 <div key={category} style={{ flexGrow: 1 }}>
