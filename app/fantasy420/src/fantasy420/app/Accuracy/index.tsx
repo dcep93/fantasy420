@@ -6,37 +6,40 @@ import raw_accuracy_json from "./accuracy.json";
 import distanceCorrelation from "./correlation";
 
 const accuracy_json = raw_accuracy_json as AccuracyJsonType;
-accuracy_json["2023"] = {
-  espn: Object.fromEntries(
-    Object.values(wrapped.nflPlayers)
-      .filter((p) => p.nflTeamId !== "0")
-      .filter(
-        (p) =>
-          draft_json.espn.pick[p.name] < 169.9 ||
-          draft_json.drafts[0].includes(p.name)
-      )
-      .map((p) => [
-        p.name,
-        {
-          position: p.position,
-          adp: draft_json.espn.pick[p.name],
-          auction: draft_json.espn.auction[p.name],
-          season_points: p.total,
-          average_points: p.average,
-        },
+
+function populate2023() {
+  accuracy_json["2023"] = {
+    espn: Object.fromEntries(
+      Object.values(wrapped.nflPlayers)
+        .filter((p) => p.nflTeamId !== "0")
+        .filter(
+          (p) =>
+            draft_json.espn.pick[p.name] < 169.9 ||
+            draft_json.drafts[0].includes(p.name)
+        )
+        .map((p) => [
+          p.name,
+          {
+            position: p.position,
+            adp: draft_json.espn.pick[p.name],
+            auction: draft_json.espn.auction[p.name],
+            season_points: p.total,
+            average_points: p.average,
+          },
+        ])
+    ),
+    sources: Object.fromEntries(
+      Object.entries(draft_json.extra).concat([
+        [
+          "biscuit_adp",
+          Object.fromEntries(
+            draft_json.drafts[0].map((playerName, i) => [playerName, i])
+          ),
+        ],
       ])
-  ),
-  sources: Object.fromEntries(
-    Object.entries(draft_json.extra).concat([
-      [
-        "biscuit_adp",
-        Object.fromEntries(
-          draft_json.drafts[0].map((playerName, i) => [playerName, i])
-        ),
-      ],
-    ])
-  ),
-};
+    ),
+  };
+}
 
 const default_year = "2023";
 
@@ -181,6 +184,7 @@ function getCorrelation(data: ChartDataType): number {
 }
 
 export default function Accuracy() {
+  populate2023();
   const [year, updateYear] = useState(default_year);
   const [source, updateSource] = useState("composite");
   const sources = getSources(year);
