@@ -32,6 +32,7 @@
       "*://localhost/*",
       "*://fantasy420.web.app/*",
       "https://sleeper.com/draft/nfl/*",
+      "*://espn.com/",
       "*://fantasy.espn.com/football/*",
       "*://www.reddit.com/r/fantasyfootball/*"
     ]
