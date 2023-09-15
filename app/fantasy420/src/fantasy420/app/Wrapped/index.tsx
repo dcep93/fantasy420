@@ -696,13 +696,18 @@ function OwnedTeams() {
           .reverse()
           .map((t) => (
             <div key={t.id} style={bubbleStyle}>
-              <h1>{t.name}</h1>
+              <h1>
+                {t.name} {t.owned.length}
+              </h1>
               <div>
-                {t.owned.map((o, i) => (
-                  <div key={i}>
-                    {o.ffTeam.name}: {o.nflPlayer.name}
-                  </div>
-                ))}
+                {t.owned
+                  .sort((a, b) => b.nflPlayer.total - a.nflPlayer.total)
+                  .map((o, i) => (
+                    <div key={i}>
+                      {o.ffTeam.name}: {o.nflPlayer.name}{" "}
+                      {toFixed(o.nflPlayer.total)}
+                    </div>
+                  ))}
               </div>
             </div>
           ))}
