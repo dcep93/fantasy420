@@ -57,13 +57,13 @@ export default function Peaked() {
           name,
           ...parsed[normalize(qbToNonQB[name]?.name || name)],
         }))
-        .map(({ value, ...o }) => ({ ...o, value: value || -Infinity }))
+        .map(({ value, ...o }) => ({ ...o, value: value || 0 }))
         .sort((a, b) => b.value - a.value),
     }))
     .map((team) => ({
       ...team,
       score: team.players
-        .map(({ value }) => value || -Infinity)
+        .map(({ value }) => value)
         .sort((a, b) => a - b)
         .reverse()
         .slice(0, 13)
@@ -194,7 +194,7 @@ function parse(lines: string[], all_players: string[]): ParsedType {
   const parsed: ParsedType = {};
   for (let i = 0; i < lines.length; i++) {
     let [v, ...words] = lines[i].split(" ");
-    var value = -parseFloat(v);
+    var value = parseFloat(v);
     if (!isNaN(value)) {
       const name_parts: string[] = [];
       for (let j = 0; j < words.length + 1; j++) {
