@@ -1,5 +1,5 @@
 import { draft_json, normalize } from "../Draft";
-import { fetched_draft_day } from "../Fetch";
+import { wrapped } from "../Wrapped";
 import rawPeaked from "./peaked.json";
 
 export const peaked: { url: string; lines: string[] } = rawPeaked;
@@ -11,8 +11,7 @@ const playerToDraftPick = Object.fromEntries(
 export default function Peaked() {
   const parsed = parse(
     peaked.lines,
-    fetched_draft_day.teams
-      .flatMap(({ players }) => players)
+    Object.values(wrapped.nflPlayers)
       .map((player) => player.name)
       .map(normalize)
   );
@@ -48,11 +47,11 @@ export default function Peaked() {
       ])
   );
   console.log(parsed);
-  const teams = fetched_draft_day.teams
+  const teams = Object.values(wrapped.ffTeams)
     .map((team) => ({
       ...team,
-      players: team.players
-        .map((player) => player.name)
+      players: team.rosters["0"].rostered
+        .map((playerId) => wrapped.nflPlayers[playerId].name)
         .map((name) => ({
           name,
           ...parsed[normalize(qbToNonQB[name]?.name || name)],
@@ -70,9 +69,9 @@ export default function Peaked() {
         .reduce((a, b) => a + b, 0),
     }))
     .sort((a, b) => b.score - a.score);
-  const owned = fetched_draft_day.teams
-    .flatMap((team) => team.players)
-    .map((player) => player.name)
+  const owned = teams
+    .flatMap((t) => t.players)
+    .map((p) => p.name)
     .map(normalize);
   return (
     <div>
