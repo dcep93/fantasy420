@@ -674,7 +674,13 @@ function OwnedTeams() {
                 .map(([nflTeamId, c]) => ({ nflTeamId, c }))
                 .sort((a, b) => b.c - a.c)
                 .map((o) => (
-                  <div key={o.nflTeamId}>
+                  <div
+                    key={o.nflTeamId}
+                    title={ffTeam.owned
+                      .filter((oo) => oo.nflPlayer.nflTeamId === o.nflTeamId)
+                      .map((oo) => oo.nflPlayer.name)
+                      .join("\n")}
+                  >
                     {wrapped.nflTeams[o.nflTeamId].name}: {o.c}/
                     {byNFLTeam[o.nflTeamId].owned.length}
                   </div>
