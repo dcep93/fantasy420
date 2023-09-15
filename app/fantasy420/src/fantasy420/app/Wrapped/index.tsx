@@ -18,6 +18,7 @@ export default function Wrapped() {
       UniquesStarted,
       BoomBust,
       Accuracy,
+      OwnedTeams,
       json,
     }).map(([k, v]) => [k, v()])
   );
@@ -79,6 +80,12 @@ function sortByKey<T>(arr: T[], f: (t: T) => number): T[] {
     .map((obj) => ({ obj, v: f(obj) }))
     .sort((a, b) => a.v - b.v)
     .map((w) => w.obj);
+}
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function clog<T>(t: T): T {
+  console.log(t);
+  return t;
 }
 
 const bubbleStyle = {
@@ -627,6 +634,35 @@ function BoomBust() {
           </div>
         ))}
       </div>
+    </div>
+  );
+}
+
+function OwnedTeams() {
+  return (
+    <div>
+      {Object.values(wrapped.nflTeams)
+        .map((nflTeam) => ({
+          owned: Object.values(wrapped.ffTeams).flatMap((ffTeam) =>
+            ffTeam.rosters["0"].rostered
+              .map((playerId) => wrapped.nflPlayers[playerId])
+              .filter((p) => p.nflTeamId === nflTeam.id)
+              .map((p) => `${ffTeam.name}: ${p.name}`)
+          ),
+          ...nflTeam,
+        }))
+        .sort((a, b) => a.owned.length - b.owned.length)
+        .reverse()
+        .map((t) => (
+          <div key={t.id} style={bubbleStyle}>
+            <h1>{t.name}</h1>
+            <div>
+              {t.owned.map((o, i) => (
+                <div key={i}>{o}</div>
+              ))}
+            </div>
+          </div>
+        ))}
     </div>
   );
 }
