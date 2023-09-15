@@ -25,8 +25,9 @@ year = 2023
 # https://pbs.twimg.com/media/Fi0KaTHXEAE0YmF?format=jpg&name=4096x4096
 # https://pbs.twimg.com/media/F3qfLwaXkAAtGoc?format=jpg&name=4096x4096
 # https://pbs.twimg.com/media/F4DwGSIW0AA2RKx?format=jpg&name=4096x4096
+# https://pbs.twimg.com/media/F5Bz5DeW4AAU0TG?format=jpg&name=4096x4096
 peaked_url = '''
-https://pbs.twimg.com/media/F5Bz5DeW4AAU0TG?format=jpg&name=4096x4096
+https://pbs.twimg.com/media/F5572PEWcAApVJU?format=jpg&name=4096x4096
 '''.strip()
 
 
