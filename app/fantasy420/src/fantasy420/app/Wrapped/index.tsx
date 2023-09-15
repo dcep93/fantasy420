@@ -639,30 +639,68 @@ function BoomBust() {
 }
 
 function OwnedTeams() {
+  const byNFLTeam = Object.fromEntries(
+    Object.values(wrapped.nflTeams)
+      .map((nflTeam) => ({
+        owned: Object.values(wrapped.ffTeams).flatMap((ffTeam) =>
+          ffTeam.rosters["0"].rostered
+            .map((playerId) => wrapped.nflPlayers[playerId])
+            .filter((p) => p.nflTeamId === nflTeam.id)
+            .map((nflPlayer) => ({ ffTeam, nflPlayer }))
+        ),
+        ...nflTeam,
+      }))
+      .map((o) => [o.id, o])
+  );
+  const byFFTeam = Object.values(wrapped.ffTeams).map((ffTeam) => ({
+    owned: Object.values(wrapped.nflTeams).flatMap((nflTeam) =>
+      ffTeam.rosters["0"].rostered
+        .map((playerId) => wrapped.nflPlayers[playerId])
+        .filter((p) => p.nflTeamId === nflTeam.id)
+        .map((nflPlayer) => ({ ffTeam, nflPlayer }))
+    ),
+    ...ffTeam,
+  }));
   return (
     <div>
-      {Object.values(wrapped.nflTeams)
-        .map((nflTeam) => ({
-          owned: Object.values(wrapped.ffTeams).flatMap((ffTeam) =>
-            ffTeam.rosters["0"].rostered
-              .map((playerId) => wrapped.nflPlayers[playerId])
-              .filter((p) => p.nflTeamId === nflTeam.id)
-              .map((p) => `${ffTeam.name}: ${p.name}`)
-          ),
-          ...nflTeam,
-        }))
-        .sort((a, b) => a.owned.length - b.owned.length)
-        .reverse()
-        .map((t) => (
-          <div key={t.id} style={bubbleStyle}>
-            <h1>{t.name}</h1>
-            <div>
-              {t.owned.map((o, i) => (
-                <div key={i}>{o}</div>
-              ))}
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
+        {byFFTeam.map((ffTeam) => (
+          <div key={ffTeam.id}>
+            <div style={bubbleStyle}>
+              <h2>{ffTeam.name}</h2>
+              {Object.entries(
+                countStrings(ffTeam.owned.map((o) => o.nflPlayer.nflTeamId))
+              )
+                .map(([nflTeamId, c]) => ({ nflTeamId, c }))
+                .sort((a, b) => b.c - a.c)
+                .map((o) => (
+                  <div key={o.nflTeamId}>
+                    {wrapped.nflTeams[o.nflTeamId].name}: {o.c}/
+                    {byNFLTeam[o.nflTeamId].owned.length}
+                  </div>
+                ))}
             </div>
           </div>
         ))}
+      </div>
+      <div style={bubbleStyle}></div>
+      <div>
+        {Object.values(byNFLTeam)
+          .sort((a, b) => a.owned.length - b.owned.length)
+          .reverse()
+          .map((t) => (
+            <div key={t.id} style={bubbleStyle}>
+              <h1>{t.name}</h1>
+              <div>
+                {t.owned.map((o, i) => (
+                  <div key={i}>
+                    {o.ffTeam.name}: {o.nflPlayer.name}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+      </div>
     </div>
   );
 }
