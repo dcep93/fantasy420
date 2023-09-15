@@ -43,7 +43,7 @@ export default function Peaked() {
         obj.player.name,
         {
           ...obj.RB,
-          title: `${obj.player.value} -> ${obj.RB.value} ${obj.RB.name}`,
+          title: `${obj.player.value} -> ${obj.RB.name}`,
         },
       ])
   );
@@ -77,6 +77,18 @@ export default function Peaked() {
   return (
     <div>
       <h1>{peaked.lines[0]}</h1>
+      <div>
+        <span
+          style={{
+            border: "2px solid black",
+            borderRadius: "5px",
+            margin: "10px",
+            padding: "10px",
+          }}
+        >
+          the nth best qb is as valuable as the nth best rb
+        </span>
+      </div>
       <div style={{ width: "100vw", display: "flex", overflow: "scroll" }}>
         {teams.map((team, i) => (
           <div key={i}>
