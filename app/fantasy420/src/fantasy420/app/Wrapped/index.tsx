@@ -461,28 +461,30 @@ function DeterminedByDiscreteScoring() {
 
 function GooseEggs() {
   return (
-    <div>
+    <div style={{ display: "flex", flexWrap: "wrap" }}>
       {Object.values(wrapped.ffTeams).map((team, teamIndex) => (
         <div key={teamIndex}>
           <div style={bubbleStyle}>
             <h4>{team.name}</h4>
             <div>
-              {Object.keys(
-                countStrings(
-                  Object.values(team.rosters).flatMap(
-                    (roster) => roster.starting
+              {Object.entries(
+                Object.entries(team.rosters)
+                  .flatMap(([weekNum, r]) =>
+                    r.starting.map((playerId) => ({
+                      weekNum,
+                      p: wrapped.nflPlayers[playerId],
+                    }))
                   )
-                )
+                  .map((o) => ({ ...o, score: o.p.scores[o.weekNum]! }))
+                  .filter(({ score }) => score <= 0)
+                  .reduce((prev, curr) => {
+                    prev[curr.p.name] = (prev[curr.p.name] || []).concat(
+                      curr.weekNum
+                    );
+                    return prev;
+                  }, {} as { [name: string]: string[] })
               )
-                .map((playerId) => wrapped.nflPlayers[playerId])
-                .map((p) => ({
-                  ...p,
-                  gooseEggs: Object.entries(p.scores)
-                    .filter(([_, score]) => score! <= 0)
-                    .map(([periodId]) => periodId)
-                    .filter((periodId) => periodId !== "0"),
-                }))
-                .filter((p) => p.gooseEggs.length > 0)
+                .map(([name, gooseEggs]) => ({ name, gooseEggs }))
                 .sort((a, b) => b.gooseEggs.length - a.gooseEggs.length)
                 .map((p) => `${p.name} -> ${p.gooseEggs}`)
                 .map((str, i) => (
