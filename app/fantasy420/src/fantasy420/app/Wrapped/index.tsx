@@ -20,6 +20,7 @@ export default function Wrapped() {
       Accuracy,
       OwnedTeams,
       Benchwarmers,
+      Injuries,
       json,
     }).map(([k, v]) => [k, v()])
   );
@@ -105,6 +106,46 @@ function json() {
     <pre onClick={() => console.log(printF(FetchWrapped))}>
       {JSON.stringify(wrapped, null, 2)}
     </pre>
+  );
+}
+
+function Injuries() {
+  return (
+    <div style={{ display: "flex", flexWrap: "wrap" }}>
+      {Object.values(wrapped.ffTeams)
+        .map((t) => ({
+          ...t,
+          injuries: Object.values(t.rosters)
+            .filter((r) => r.weekNum !== "0")
+            .flatMap((r) =>
+              r.rostered
+                .map((playerId) => wrapped.nflPlayers[playerId])
+                .map((o) => ({
+                  playerId: o.id,
+                  name: o.name,
+                  weekNum: r.weekNum,
+                  currentScore: o.scores[r.weekNum],
+                  followingScore: o.scores[parseInt(r.weekNum) + 1],
+                }))
+                .filter(
+                  (o) =>
+                    (r.starting.includes(o.playerId) || o.currentScore !== 0) &&
+                    o.followingScore === 0
+                )
+            ),
+        }))
+        .map((team) => (
+          <div key={team.id} style={bubbleStyle}>
+            <h1>{team.name}</h1>
+            {team.injuries.map((injury, i) => (
+              <div key={i}>
+                {injury.name} injured week {injury.weekNum} after scoring{" "}
+                {injury.currentScore}
+              </div>
+            ))}
+          </div>
+        ))}
+    </div>
   );
 }
 
