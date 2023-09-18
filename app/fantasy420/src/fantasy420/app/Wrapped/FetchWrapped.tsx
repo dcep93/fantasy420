@@ -3,7 +3,7 @@ type NFLPlayerType = {
   name: string;
   nflTeamId: string;
   position: string;
-  scores: { [scoringPeriodId: string]: number | undefined };
+  scores: { [weekNum: string]: number | undefined };
   total: number;
   average: number;
 };
@@ -13,7 +13,7 @@ type NFLTeamType = {
   name: string;
   byeWeek: number;
   nflGamesByScoringPeriod: {
-    [scoringPeriodId: string]:
+    [weekNum: string]:
       | {
           fieldGoals: number[];
           pointsAllowed: number;
@@ -27,7 +27,8 @@ type FFTeamType = {
   id: string;
   name: string;
   rosters: {
-    [scoringPeriodId: string]: {
+    [weekNum: string]: {
+      weekNum: string;
       starting: string[];
       rostered: string[];
     };
@@ -46,7 +47,7 @@ export type WrappedType = {
   ffTeams: {
     [id: string]: FFTeamType;
   };
-  ffMatchups: { [scoringPeriodId: string]: MatchupType };
+  ffMatchups: { [weekNum: string]: MatchupType };
 };
 
 // todo scoringperiod vs week
@@ -300,9 +301,7 @@ export default function FetchWrapped() {
             )
             .then((matchups) => fromEntries(matchups))
         )
-        .then(
-          (ffMatchups: { [scoringPeriodId: string]: MatchupType }) => ffMatchups
-        ),
+        .then((ffMatchups: { [weekNum: string]: MatchupType }) => ffMatchups),
       // nflTeams
       Promise.resolve()
         .then(() =>
