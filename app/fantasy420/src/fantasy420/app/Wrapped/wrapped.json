@@ -52,6 +52,17 @@
         "2": 0
       }
     },
+    "9354": {
+      "id": "9354",
+      "nflTeamId": "0",
+      "name": "Robbie Gould",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "9614": {
       "id": "9614",
       "nflTeamId": "3",
@@ -63,6 +74,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "10452": {
+      "id": "10452",
+      "nflTeamId": "0",
+      "name": "Adrian Peterson",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "10621": {
@@ -78,6 +100,17 @@
         "2": 10
       }
     },
+    "10636": {
+      "id": "10636",
+      "nflTeamId": "0",
+      "name": "Mason Crosby",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "11122": {
       "id": "11122",
       "nflTeamId": "22",
@@ -89,6 +122,39 @@
         "0": 20,
         "1": 12,
         "2": 8
+      }
+    },
+    "11237": {
+      "id": "11237",
+      "nflTeamId": "0",
+      "name": "Matt Ryan",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "11252": {
+      "id": "11252",
+      "nflTeamId": "0",
+      "name": "Joe Flacco",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "11283": {
+      "id": "11283",
+      "nflTeamId": "0",
+      "name": "DeSean Jackson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "11291": {
@@ -130,6 +196,17 @@
         "2": 0
       }
     },
+    "11674": {
+      "id": "11674",
+      "nflTeamId": "0",
+      "name": "Danny Amendola",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "12460": {
       "id": "12460",
       "nflTeamId": "19",
@@ -141,6 +218,17 @@
         "0": 5,
         "1": -2,
         "2": 7
+      }
+    },
+    "12471": {
+      "id": "12471",
+      "nflTeamId": "0",
+      "name": "Chase Daniel",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "12477": {
@@ -169,6 +257,61 @@
         "2": 13.98
       }
     },
+    "12537": {
+      "id": "12537",
+      "nflTeamId": "0",
+      "name": "Jared Cook",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "12731": {
+      "id": "12731",
+      "nflTeamId": "0",
+      "name": "Ryan Succop",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "13199": {
+      "id": "13199",
+      "nflTeamId": "0",
+      "name": "Colt McCoy",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "13226": {
+      "id": "13226",
+      "nflTeamId": "0",
+      "name": "Andre Roberts",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "13229": {
+      "id": "13229",
+      "nflTeamId": "0",
+      "name": "Rob Gronkowski",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "13232": {
       "id": "13232",
       "nflTeamId": "18",
@@ -180,6 +323,61 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "13295": {
+      "id": "13295",
+      "nflTeamId": "0",
+      "name": "Emmanuel Sanders",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "13934": {
+      "id": "13934",
+      "nflTeamId": "0",
+      "name": "Antonio Brown",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "13981": {
+      "id": "13981",
+      "nflTeamId": "0",
+      "name": "Mark Ingram II",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "13982": {
+      "id": "13982",
+      "nflTeamId": "0",
+      "name": "Julio Jones",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "13983": {
+      "id": "13983",
+      "nflTeamId": "0",
+      "name": "A.J. Green",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "13987": {
@@ -234,6 +432,28 @@
         "2": 0
       }
     },
+    "14054": {
+      "id": "14054",
+      "nflTeamId": "0",
+      "name": "Kyle Rudolph",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "14099": {
+      "id": "14099",
+      "nflTeamId": "0",
+      "name": "Luke Stocker",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "14163": {
       "id": "14163",
       "nflTeamId": "19",
@@ -258,6 +478,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "14215": {
+      "id": "14215",
+      "nflTeamId": "0",
+      "name": "Lee Smith",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "14402": {
@@ -299,6 +530,17 @@
         "2": 21.04
       }
     },
+    "14877": {
+      "id": "14877",
+      "nflTeamId": "0",
+      "name": "Nick Foles",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "14880": {
       "id": "14880",
       "nflTeamId": "16",
@@ -325,6 +567,28 @@
         "2": 25.92
       }
     },
+    "14922": {
+      "id": "14922",
+      "nflTeamId": "0",
+      "name": "Mohamed Sanu",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "14924": {
+      "id": "14924",
+      "nflTeamId": "0",
+      "name": "T.Y. Hilton",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "14993": {
       "id": "14993",
       "nflTeamId": "20",
@@ -336,6 +600,17 @@
         "0": 11,
         "1": 11,
         "2": 0
+      }
+    },
+    "15062": {
+      "id": "15062",
+      "nflTeamId": "0",
+      "name": "Travis Benjamin",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "15072": {
@@ -351,6 +626,17 @@
         "2": 0
       }
     },
+    "15091": {
+      "id": "15091",
+      "nflTeamId": "0",
+      "name": "Randy Bullock",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "15168": {
       "id": "15168",
       "nflTeamId": "34",
@@ -362,6 +648,28 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "15349": {
+      "id": "15349",
+      "nflTeamId": "0",
+      "name": "Cole Beasley",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "15403": {
+      "id": "15403",
+      "nflTeamId": "0",
+      "name": "Derek Carrier",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "15478": {
@@ -388,6 +696,39 @@
         "0": 15,
         "1": 5,
         "2": 10
+      }
+    },
+    "15705": {
+      "id": "15705",
+      "nflTeamId": "0",
+      "name": "Josh Gordon",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "15773": {
+      "id": "15773",
+      "nflTeamId": "0",
+      "name": "Darren Fells",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "15786": {
+      "id": "15786",
+      "nflTeamId": "0",
+      "name": "Tavon Austin",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "15795": {
@@ -442,6 +783,17 @@
         "2": 0
       }
     },
+    "15826": {
+      "id": "15826",
+      "nflTeamId": "0",
+      "name": "Giovani Bernard",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "15835": {
       "id": "15835",
       "nflTeamId": "22",
@@ -453,6 +805,17 @@
         "0": 19.7,
         "1": 8.1,
         "2": 11.6
+      }
+    },
+    "15837": {
+      "id": "15837",
+      "nflTeamId": "0",
+      "name": "Mike Glennon",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "15839": {
@@ -507,6 +870,17 @@
         "2": 13.4
       }
     },
+    "15887": {
+      "id": "15887",
+      "nflTeamId": "0",
+      "name": "Ryan Griffin",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "15920": {
       "id": "15920",
       "nflTeamId": "2",
@@ -518,6 +892,28 @@
         "0": 13.8,
         "1": 2.7,
         "2": 11.1
+      }
+    },
+    "15921": {
+      "id": "15921",
+      "nflTeamId": "0",
+      "name": "Kenjon Barner",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "15948": {
+      "id": "15948",
+      "nflTeamId": "0",
+      "name": "Matt Barkley",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "15965": {
@@ -533,6 +929,17 @@
         "2": 8
       }
     },
+    "15971": {
+      "id": "15971",
+      "nflTeamId": "0",
+      "name": "Rex Burkhead",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "16002": {
       "id": "16002",
       "nflTeamId": "25",
@@ -544,6 +951,39 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "16016": {
+      "id": "16016",
+      "nflTeamId": "0",
+      "name": "Kenny Stills",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "16140": {
+      "id": "16140",
+      "nflTeamId": "0",
+      "name": "Ryan Griffin",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "16318": {
+      "id": "16318",
+      "nflTeamId": "0",
+      "name": "Demetrius Harris",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "16339": {
@@ -598,6 +1038,17 @@
         "2": 0
       }
     },
+    "16725": {
+      "id": "16725",
+      "nflTeamId": "0",
+      "name": "Sammy Watkins",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "16728": {
       "id": "16728",
       "nflTeamId": "8",
@@ -622,6 +1073,17 @@
         "0": 4.2,
         "1": 4.2,
         "2": 0
+      }
+    },
+    "16732": {
+      "id": "16732",
+      "nflTeamId": "0",
+      "name": "Eric Ebron",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "16733": {
@@ -702,6 +1164,28 @@
         "2": 5.2
       }
     },
+    "16786": {
+      "id": "16786",
+      "nflTeamId": "0",
+      "name": "Richard Rodgers",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "16790": {
+      "id": "16790",
+      "nflTeamId": "0",
+      "name": "Jarvis Landry",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "16799": {
       "id": "16799",
       "nflTeamId": "23",
@@ -726,6 +1210,28 @@
         "0": 33,
         "1": 12.6,
         "2": 20.4
+      }
+    },
+    "16804": {
+      "id": "16804",
+      "nflTeamId": "0",
+      "name": "John Brown",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "16809": {
+      "id": "16809",
+      "nflTeamId": "0",
+      "name": "Garrett Gilbert",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "16813": {
@@ -754,6 +1260,50 @@
         "2": 0
       }
     },
+    "16944": {
+      "id": "16944",
+      "nflTeamId": "0",
+      "name": "Devonta Freeman",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "17051": {
+      "id": "17051",
+      "nflTeamId": "0",
+      "name": "Albert Wilson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "17082": {
+      "id": "17082",
+      "nflTeamId": "0",
+      "name": "Cody Parkey",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "17258": {
+      "id": "17258",
+      "nflTeamId": "0",
+      "name": "Willie Snead IV",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "17315": {
       "id": "17315",
       "nflTeamId": "1",
@@ -765,6 +1315,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "17359": {
+      "id": "17359",
+      "nflTeamId": "0",
+      "name": "Damien Williams",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "17372": {
@@ -793,6 +1354,17 @@
         "2": 7
       }
     },
+    "17453": {
+      "id": "17453",
+      "nflTeamId": "0",
+      "name": "Cameron Brate",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "17463": {
       "id": "17463",
       "nflTeamId": "20",
@@ -804,6 +1376,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "2310331": {
+      "id": "2310331",
+      "nflTeamId": "0",
+      "name": "Tyler Johnson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "2468609": {
@@ -832,6 +1415,28 @@
         "2": 5
       }
     },
+    "2508079": {
+      "id": "2508079",
+      "nflTeamId": "0",
+      "name": "James O'Shaughnessy",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2508176": {
+      "id": "2508176",
+      "nflTeamId": "0",
+      "name": "David Johnson",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "2508256": {
       "id": "2508256",
       "nflTeamId": "1",
@@ -843,6 +1448,28 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "2511109": {
+      "id": "2511109",
+      "nflTeamId": "0",
+      "name": "Trevor Siemian",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2511973": {
+      "id": "2511973",
+      "nflTeamId": "0",
+      "name": "Eric Tomlinson",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "2514206": {
@@ -871,6 +1498,28 @@
         "2": 0.3
       }
     },
+    "2517017": {
+      "id": "2517017",
+      "nflTeamId": "0",
+      "name": "Sean Mannion",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2519013": {
+      "id": "2519013",
+      "nflTeamId": "0",
+      "name": "Daniel Brown",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "2531358": {
       "id": "2531358",
       "nflTeamId": "7",
@@ -895,6 +1544,39 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "2570986": {
+      "id": "2570986",
+      "nflTeamId": "0",
+      "name": "Malcolm Brown",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2572861": {
+      "id": "2572861",
+      "nflTeamId": "0",
+      "name": "J.D. McKissic",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2573079": {
+      "id": "2573079",
+      "nflTeamId": "0",
+      "name": "Carson Wentz",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "2573401": {
@@ -936,6 +1618,83 @@
         "2": 0
       }
     },
+    "2574591": {
+      "id": "2574591",
+      "nflTeamId": "0",
+      "name": "Nick Boyle",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2574630": {
+      "id": "2574630",
+      "nflTeamId": "0",
+      "name": "Jeff Driskel",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2574808": {
+      "id": "2574808",
+      "nflTeamId": "0",
+      "name": "Robbie Chosen",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2574918": {
+      "id": "2574918",
+      "nflTeamId": "0",
+      "name": "Tommylee Lewis",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2575891": {
+      "id": "2575891",
+      "nflTeamId": "0",
+      "name": "Paul Quessenberry",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2575965": {
+      "id": "2575965",
+      "nflTeamId": "0",
+      "name": "Elijhaa Penny",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2576179": {
+      "id": "2576179",
+      "nflTeamId": "0",
+      "name": "Matt LaCosse",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "2576336": {
       "id": "2576336",
       "nflTeamId": "13",
@@ -962,6 +1721,17 @@
         "2": 0
       }
     },
+    "2576399": {
+      "id": "2576399",
+      "nflTeamId": "0",
+      "name": "Nick Vannett",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "2576414": {
       "id": "2576414",
       "nflTeamId": "15",
@@ -985,6 +1755,28 @@
       "scores": {
         "0": 0,
         "2": 0
+      }
+    },
+    "2576450": {
+      "id": "2576450",
+      "nflTeamId": "0",
+      "name": "Derek Watt",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2576491": {
+      "id": "2576491",
+      "nflTeamId": "0",
+      "name": "Adam Humphries",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "2576581": {
@@ -1026,6 +1818,17 @@
         "2": 0
       }
     },
+    "2576854": {
+      "id": "2576854",
+      "nflTeamId": "0",
+      "name": "Stephen Anderson",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "2576925": {
       "id": "2576925",
       "nflTeamId": "19",
@@ -1050,6 +1853,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "2577128": {
+      "id": "2577128",
+      "nflTeamId": "0",
+      "name": "Kevin Hogan",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "2577134": {
@@ -1104,6 +1918,39 @@
         "2": 0
       }
     },
+    "2577667": {
+      "id": "2577667",
+      "nflTeamId": "0",
+      "name": "Damiere Byrd",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2578369": {
+      "id": "2578369",
+      "nflTeamId": "0",
+      "name": "Marvin Hall",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2578533": {
+      "id": "2578533",
+      "nflTeamId": "0",
+      "name": "Chris Conley",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "2578570": {
       "id": "2578570",
       "nflTeamId": "28",
@@ -1115,6 +1962,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "2578718": {
+      "id": "2578718",
+      "nflTeamId": "0",
+      "name": "Taylor Bertolet",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "2579604": {
@@ -1143,6 +2001,17 @@
         "2": 0
       }
     },
+    "2580330": {
+      "id": "2580330",
+      "nflTeamId": "0",
+      "name": "Temarrick Hemingway",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "2582410": {
       "id": "2582410",
       "nflTeamId": "15",
@@ -1156,6 +2025,17 @@
         "2": 0
       }
     },
+    "2587819": {
+      "id": "2587819",
+      "nflTeamId": "0",
+      "name": "Tyrell Williams",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "2969939": {
       "id": "2969939",
       "nflTeamId": "18",
@@ -1167,6 +2047,50 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "2969962": {
+      "id": "2969962",
+      "nflTeamId": "0",
+      "name": "Duke Johnson",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2970090": {
+      "id": "2970090",
+      "nflTeamId": "0",
+      "name": "Trey Edmunds",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2970262": {
+      "id": "2970262",
+      "nflTeamId": "0",
+      "name": "J.P. Holtz",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2970726": {
+      "id": "2970726",
+      "nflTeamId": "0",
+      "name": "Maxx Williams",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "2971281": {
@@ -1208,6 +2132,39 @@
         "2": 17.3
       }
     },
+    "2971718": {
+      "id": "2971718",
+      "nflTeamId": "0",
+      "name": "Marcus Johnson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2971830": {
+      "id": "2971830",
+      "nflTeamId": "0",
+      "name": "JoJo Natson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2972091": {
+      "id": "2972091",
+      "nflTeamId": "0",
+      "name": "Jalen Richard",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "2972236": {
       "id": "2972236",
       "nflTeamId": "3",
@@ -1219,6 +2176,28 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "2972331": {
+      "id": "2972331",
+      "nflTeamId": "0",
+      "name": "Mason Schreck",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2972460": {
+      "id": "2972460",
+      "nflTeamId": "0",
+      "name": "Breshad Perriman",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "2972515": {
@@ -1247,6 +2226,50 @@
         "2": 13.7
       }
     },
+    "2973626": {
+      "id": "2973626",
+      "nflTeamId": "0",
+      "name": "C.J. Board",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2974317": {
+      "id": "2974317",
+      "nflTeamId": "0",
+      "name": "Andy Janovich",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2974503": {
+      "id": "2974503",
+      "nflTeamId": "0",
+      "name": "Reggie Begelton",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2974858": {
+      "id": "2974858",
+      "nflTeamId": "0",
+      "name": "Kenny Golladay",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "2975417": {
       "id": "2975417",
       "nflTeamId": "33",
@@ -1271,6 +2294,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "2975863": {
+      "id": "2975863",
+      "nflTeamId": "0",
+      "name": "Eric Saubert",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "2976212": {
@@ -1338,6 +2372,17 @@
         "2": 0
       }
     },
+    "2977800": {
+      "id": "2977800",
+      "nflTeamId": "0",
+      "name": "Alex Erickson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "2978109": {
       "id": "2978109",
       "nflTeamId": "22",
@@ -1349,6 +2394,28 @@
         "0": 1.9,
         "1": 0,
         "2": 1.9
+      }
+    },
+    "2978308": {
+      "id": "2978308",
+      "nflTeamId": "0",
+      "name": "Jaydon Mickens",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2979477": {
+      "id": "2979477",
+      "nflTeamId": "0",
+      "name": "Tevin Coleman",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "2979501": {
@@ -1377,6 +2444,61 @@
         "2": 0
       }
     },
+    "2979590": {
+      "id": "2979590",
+      "nflTeamId": "0",
+      "name": "Jesse James",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2979843": {
+      "id": "2979843",
+      "nflTeamId": "0",
+      "name": "Kenyan Drake",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2980073": {
+      "id": "2980073",
+      "nflTeamId": "0",
+      "name": "Jeremy Sprinkle",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2980077": {
+      "id": "2980077",
+      "nflTeamId": "0",
+      "name": "Jonathan Williams",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2980120": {
+      "id": "2980120",
+      "nflTeamId": "0",
+      "name": "Colin Thompson",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "2980453": {
       "id": "2980453",
       "nflTeamId": "18",
@@ -1388,6 +2510,28 @@
         "0": 10.1,
         "1": 7.2,
         "2": 2.9
+      }
+    },
+    "2982828": {
+      "id": "2982828",
+      "nflTeamId": "0",
+      "name": "Tajae Sharpe",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "2983209": {
+      "id": "2983209",
+      "nflTeamId": "0",
+      "name": "Chester Rogers",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "2983509": {
@@ -1416,6 +2560,17 @@
         "2": 9
       }
     },
+    "2987440": {
+      "id": "2987440",
+      "nflTeamId": "0",
+      "name": "Garrett Griffin",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "2991662": {
       "id": "2991662",
       "nflTeamId": "1",
@@ -1440,6 +2595,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "2998120": {
+      "id": "2998120",
+      "nflTeamId": "0",
+      "name": "Josh Lambo",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "2998565": {
@@ -1467,6 +2633,17 @@
         "2": 0
       }
     },
+    "3025433": {
+      "id": "3025433",
+      "nflTeamId": "0",
+      "name": "Mike Davis",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3039707": {
       "id": "3039707",
       "nflTeamId": "23",
@@ -1478,6 +2655,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "3040035": {
+      "id": "3040035",
+      "nflTeamId": "0",
+      "name": "Greg Ward",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3040151": {
@@ -1493,6 +2681,28 @@
         "2": 6
       }
     },
+    "3040204": {
+      "id": "3040204",
+      "nflTeamId": "0",
+      "name": "Ryan Santoso",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3040206": {
+      "id": "3040206",
+      "nflTeamId": "0",
+      "name": "Chris Streveler",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3040470": {
       "id": "3040470",
       "nflTeamId": "15",
@@ -1506,6 +2716,28 @@
         "2": 0
       }
     },
+    "3040499": {
+      "id": "3040499",
+      "nflTeamId": "0",
+      "name": "Johnny Stanton IV",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3040535": {
+      "id": "3040535",
+      "nflTeamId": "0",
+      "name": "Kurt Benkert",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3040569": {
       "id": "3040569",
       "nflTeamId": "3",
@@ -1517,6 +2749,28 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "3042429": {
+      "id": "3042429",
+      "nflTeamId": "0",
+      "name": "Wendell Smallwood",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3042435": {
+      "id": "3042435",
+      "nflTeamId": "0",
+      "name": "Kevin White",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3042519": {
@@ -1558,6 +2812,17 @@
         "2": 0
       }
     },
+    "3042910": {
+      "id": "3042910",
+      "nflTeamId": "0",
+      "name": "Rashard Higgins",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3043078": {
       "id": "3043078",
       "nflTeamId": "10",
@@ -1569,6 +2834,17 @@
         "0": 32.4,
         "1": 13.9,
         "2": 18.5
+      }
+    },
+    "3043080": {
+      "id": "3043080",
+      "nflTeamId": "0",
+      "name": "O.J. Howard",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3043116": {
@@ -1584,6 +2860,17 @@
         "2": 0
       }
     },
+    "3043234": {
+      "id": "3043234",
+      "nflTeamId": "0",
+      "name": "Zane Gonzalez",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3043275": {
       "id": "3043275",
       "nflTeamId": "13",
@@ -1595,6 +2882,17 @@
         "0": 7,
         "1": 3,
         "2": 4
+      }
+    },
+    "3043841": {
+      "id": "3043841",
+      "nflTeamId": "0",
+      "name": "Tanner Gentry",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3044720": {
@@ -1610,6 +2908,17 @@
         "2": 25.22
       }
     },
+    "3045127": {
+      "id": "3045127",
+      "nflTeamId": "0",
+      "name": "Wayne Gallman",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3045138": {
       "id": "3045138",
       "nflTeamId": "24",
@@ -1621,6 +2930,17 @@
         "0": 25.1,
         "1": 8.5,
         "2": 16.6
+      }
+    },
+    "3045141": {
+      "id": "3045141",
+      "nflTeamId": "0",
+      "name": "Chris Blewitt",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3045144": {
@@ -1674,6 +2994,17 @@
         "2": 0
       }
     },
+    "3045260": {
+      "id": "3045260",
+      "nflTeamId": "0",
+      "name": "Corey Clement",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3045523": {
       "id": "3045523",
       "nflTeamId": "17",
@@ -1685,6 +3016,17 @@
         "0": 31.3,
         "1": 24.4,
         "2": 6.9
+      }
+    },
+    "3046399": {
+      "id": "3046399",
+      "nflTeamId": "0",
+      "name": "Marcus Kemp",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3046401": {
@@ -1765,6 +3107,50 @@
         "2": 0
       }
     },
+    "3048897": {
+      "id": "3048897",
+      "nflTeamId": "0",
+      "name": "Pharoh Cooper",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3048898": {
+      "id": "3048898",
+      "nflTeamId": "0",
+      "name": "Elliott Fry",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3049290": {
+      "id": "3049290",
+      "nflTeamId": "0",
+      "name": "Kevin Rader",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3049698": {
+      "id": "3049698",
+      "nflTeamId": "0",
+      "name": "Anthony Firkser",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3049899": {
       "id": "3049899",
       "nflTeamId": "1",
@@ -1802,6 +3188,39 @@
         "0": 30,
         "1": 18,
         "2": 12
+      }
+    },
+    "3050481": {
+      "id": "3050481",
+      "nflTeamId": "0",
+      "name": "Tanner Hudson",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3050487": {
+      "id": "3050487",
+      "nflTeamId": "0",
+      "name": "Anthony Miller",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3051308": {
+      "id": "3051308",
+      "nflTeamId": "0",
+      "name": "PJ Walker",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3051381": {
@@ -1856,6 +3275,17 @@
         "2": 3.3
       }
     },
+    "3051806": {
+      "id": "3051806",
+      "nflTeamId": "0",
+      "name": "Ricky Seals-Jones",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3051876": {
       "id": "3051876",
       "nflTeamId": "30",
@@ -1867,6 +3297,39 @@
         "0": 21.6,
         "1": 9.9,
         "2": 11.7
+      }
+    },
+    "3051889": {
+      "id": "3051889",
+      "nflTeamId": "0",
+      "name": "Laquon Treadwell",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3051891": {
+      "id": "3051891",
+      "nflTeamId": "0",
+      "name": "Jordan Wilkins",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3051902": {
+      "id": "3051902",
+      "nflTeamId": "0",
+      "name": "Peyton Barber",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3051909": {
@@ -1908,6 +3371,17 @@
         "2": 5.4
       }
     },
+    "3052083": {
+      "id": "3052083",
+      "nflTeamId": "0",
+      "name": "Devon Allen",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3052096": {
       "id": "3052096",
       "nflTeamId": "16",
@@ -1919,6 +3393,28 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "3052117": {
+      "id": "3052117",
+      "nflTeamId": "0",
+      "name": "Phillip Lindsay",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3052166": {
+      "id": "3052166",
+      "nflTeamId": "0",
+      "name": "Darrell Daniels",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3052177": {
@@ -1934,6 +3430,17 @@
         "2": 0
       }
     },
+    "3052450": {
+      "id": "3052450",
+      "nflTeamId": "0",
+      "name": "Danny Etling",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3052587": {
       "id": "3052587",
       "nflTeamId": "27",
@@ -1945,6 +3452,28 @@
         "0": 34.4,
         "1": 16.02,
         "2": 18.38
+      }
+    },
+    "3052600": {
+      "id": "3052600",
+      "nflTeamId": "0",
+      "name": "Davis Webb",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3052876": {
+      "id": "3052876",
+      "nflTeamId": "0",
+      "name": "William Fuller V",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3052897": {
@@ -2012,6 +3541,39 @@
         "2": 0
       }
     },
+    "3059766": {
+      "id": "3059766",
+      "nflTeamId": "0",
+      "name": "Deon Yelder",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3059915": {
+      "id": "3059915",
+      "nflTeamId": "0",
+      "name": "Kareem Hunt",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3059918": {
+      "id": "3059918",
+      "nflTeamId": "0",
+      "name": "Rodney Adams",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3059989": {
       "id": "3059989",
       "nflTeamId": "16",
@@ -2023,6 +3585,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "3060022": {
+      "id": "3060022",
+      "nflTeamId": "0",
+      "name": "Jordan Howard",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3061612": {
@@ -2049,6 +3622,50 @@
         "0": 26.4,
         "1": 26.4,
         "2": 0
+      }
+    },
+    "3068939": {
+      "id": "3068939",
+      "nflTeamId": "0",
+      "name": "Aldrick Rosas",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3071572": {
+      "id": "3071572",
+      "nflTeamId": "0",
+      "name": "Keelan Cole Sr.",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3085107": {
+      "id": "3085107",
+      "nflTeamId": "0",
+      "name": "Jake Kumerow",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3115252": {
+      "id": "3115252",
+      "nflTeamId": "0",
+      "name": "Will Grier",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3115255": {
@@ -2090,6 +3707,17 @@
         "2": 23.6
       }
     },
+    "3115314": {
+      "id": "3115314",
+      "nflTeamId": "0",
+      "name": "Cam Sims",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3115349": {
       "id": "3115349",
       "nflTeamId": "13",
@@ -2101,6 +3729,50 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "3115359": {
+      "id": "3115359",
+      "nflTeamId": "0",
+      "name": "Daniel Helm",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3115360": {
+      "id": "3115360",
+      "nflTeamId": "0",
+      "name": "Ethan Wolf",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3115364": {
+      "id": "3115364",
+      "nflTeamId": "0",
+      "name": "Leonard Fournette",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3115375": {
+      "id": "3115375",
+      "nflTeamId": "0",
+      "name": "Darrel Williams",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3115378": {
@@ -2127,6 +3799,61 @@
         "0": 2.5,
         "1": 0,
         "2": 2.5
+      }
+    },
+    "3115443": {
+      "id": "3115443",
+      "nflTeamId": "0",
+      "name": "Cody Hollister",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3115913": {
+      "id": "3115913",
+      "nflTeamId": "0",
+      "name": "Geronimo Allison",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3115928": {
+      "id": "3115928",
+      "nflTeamId": "0",
+      "name": "Malik Turner",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3115981": {
+      "id": "3115981",
+      "nflTeamId": "0",
+      "name": "Ian Bunting",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3116074": {
+      "id": "3116074",
+      "nflTeamId": "0",
+      "name": "Rodney Smith",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3116136": {
@@ -2179,6 +3906,28 @@
         "0": 20.9,
         "1": 10.1,
         "2": 10.8
+      }
+    },
+    "3116172": {
+      "id": "3116172",
+      "nflTeamId": "0",
+      "name": "Trace McSorley",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3116188": {
+      "id": "3116188",
+      "nflTeamId": "0",
+      "name": "David Blough",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3116365": {
@@ -2259,6 +4008,28 @@
         "2": 0.2
       }
     },
+    "3116642": {
+      "id": "3116642",
+      "nflTeamId": "0",
+      "name": "Reggie Bonnafon",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3116721": {
+      "id": "3116721",
+      "nflTeamId": "0",
+      "name": "Jaylen Samuels",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3117251": {
       "id": "3117251",
       "nflTeamId": "25",
@@ -2298,6 +4069,17 @@
         "2": 7.2
       }
     },
+    "3118906": {
+      "id": "3118906",
+      "nflTeamId": "0",
+      "name": "John Lovett",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3119195": {
       "id": "3119195",
       "nflTeamId": "27",
@@ -2309,6 +4091,17 @@
         "0": 2,
         "1": 0.8,
         "2": 1.2
+      }
+    },
+    "3119317": {
+      "id": "3119317",
+      "nflTeamId": "0",
+      "name": "Nsimba Webster",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3120303": {
@@ -2350,6 +4143,28 @@
         "2": 0
       }
     },
+    "3120659": {
+      "id": "3120659",
+      "nflTeamId": "0",
+      "name": "Daurice Fountain",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3120980": {
+      "id": "3120980",
+      "nflTeamId": "0",
+      "name": "Keelan Doss",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3121023": {
       "id": "3121023",
       "nflTeamId": "21",
@@ -2361,6 +4176,17 @@
         "0": 8.2,
         "1": 0,
         "2": 8.2
+      }
+    },
+    "3121378": {
+      "id": "3121378",
+      "nflTeamId": "0",
+      "name": "Matt Sokol",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3121409": {
@@ -2415,6 +4241,28 @@
         "2": 6.2
       }
     },
+    "3122103": {
+      "id": "3122103",
+      "nflTeamId": "0",
+      "name": "Kendall Blanton",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3122143": {
+      "id": "3122143",
+      "nflTeamId": "0",
+      "name": "Cullen Gillaspia",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3122154": {
       "id": "3122154",
       "nflTeamId": "3",
@@ -2441,6 +4289,17 @@
         "2": 0
       }
     },
+    "3122449": {
+      "id": "3122449",
+      "nflTeamId": "0",
+      "name": "James Washington",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3122672": {
       "id": "3122672",
       "nflTeamId": "14",
@@ -2451,6 +4310,17 @@
       "scores": {
         "0": 0,
         "2": 0
+      }
+    },
+    "3122716": {
+      "id": "3122716",
+      "nflTeamId": "0",
+      "name": "Buddy Howell",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3122818": {
@@ -2479,6 +4349,17 @@
         "2": 11.6
       }
     },
+    "3122866": {
+      "id": "3122866",
+      "nflTeamId": "0",
+      "name": "Devontae Booker",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3122899": {
       "id": "3122899",
       "nflTeamId": "12",
@@ -2492,6 +4373,17 @@
         "2": -2
       }
     },
+    "3122920": {
+      "id": "3122920",
+      "nflTeamId": "0",
+      "name": "Ryan Izzo",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3122976": {
       "id": "3122976",
       "nflTeamId": "15",
@@ -2503,6 +4395,28 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "3123050": {
+      "id": "3123050",
+      "nflTeamId": "0",
+      "name": "Chris Herndon",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3123052": {
+      "id": "3123052",
+      "nflTeamId": "0",
+      "name": "Michael Badgley",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3123075": {
@@ -2557,6 +4471,39 @@
         "2": 0
       }
     },
+    "3123969": {
+      "id": "3123969",
+      "nflTeamId": "0",
+      "name": "Ito Smith",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3123986": {
+      "id": "3123986",
+      "nflTeamId": "0",
+      "name": "Mike Thomas",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3124069": {
+      "id": "3124069",
+      "nflTeamId": "0",
+      "name": "Isaiah Ford",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3124084": {
       "id": "3124084",
       "nflTeamId": "28",
@@ -2570,6 +4517,28 @@
         "2": 9
       }
     },
+    "3124092": {
+      "id": "3124092",
+      "nflTeamId": "0",
+      "name": "John Wolford",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3124537": {
+      "id": "3124537",
+      "nflTeamId": "0",
+      "name": "KeeSean Johnson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3124679": {
       "id": "3124679",
       "nflTeamId": "15",
@@ -2581,6 +4550,17 @@
         "0": 18,
         "1": 14,
         "2": 4
+      }
+    },
+    "3124900": {
+      "id": "3124900",
+      "nflTeamId": "0",
+      "name": "Jake Luton",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3125107": {
@@ -2622,6 +4602,39 @@
         "2": 0
       }
     },
+    "3125403": {
+      "id": "3125403",
+      "nflTeamId": "0",
+      "name": "Brian Hill",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3125404": {
+      "id": "3125404",
+      "nflTeamId": "0",
+      "name": "Jacob Hollister",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3126002": {
+      "id": "3126002",
+      "nflTeamId": "0",
+      "name": "Christian Blake",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3126115": {
       "id": "3126115",
       "nflTeamId": "26",
@@ -2633,6 +4646,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "3126246": {
+      "id": "3126246",
+      "nflTeamId": "0",
+      "name": "Dontrell Hilliard",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3126486": {
@@ -2661,6 +4685,17 @@
         "2": 0
       }
     },
+    "3127211": {
+      "id": "3127211",
+      "nflTeamId": "0",
+      "name": "Patrick Laird",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3127292": {
       "id": "3127292",
       "nflTeamId": "26",
@@ -2674,6 +4709,17 @@
         "2": 6.5
       }
     },
+    "3127306": {
+      "id": "3127306",
+      "nflTeamId": "0",
+      "name": "Dante Pettis",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3127310": {
       "id": "3127310",
       "nflTeamId": "4",
@@ -2685,6 +4731,39 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "3127313": {
+      "id": "3127313",
+      "nflTeamId": "0",
+      "name": "Tristan Vizcaino",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3127335": {
+      "id": "3127335",
+      "nflTeamId": "0",
+      "name": "Ryan Nall",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3127586": {
+      "id": "3127586",
+      "nflTeamId": "0",
+      "name": "Jeremy McNichols",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3128317": {
@@ -2724,6 +4803,28 @@
         "0": 24.8,
         "1": 13.2,
         "2": 11.6
+      }
+    },
+    "3128439": {
+      "id": "3128439",
+      "nflTeamId": "0",
+      "name": "Jordan Franks",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3128444": {
+      "id": "3128444",
+      "nflTeamId": "0",
+      "name": "Matthew Wright",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3128451": {
@@ -2791,6 +4892,17 @@
         "2": 1.7
       }
     },
+    "3128774": {
+      "id": "3128774",
+      "nflTeamId": "0",
+      "name": "Kalen Ballage",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3134353": {
       "id": "3134353",
       "nflTeamId": "7",
@@ -2843,6 +4955,17 @@
         "2": 0
       }
     },
+    "3139456": {
+      "id": "3139456",
+      "nflTeamId": "0",
+      "name": "Cameron Batson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3139477": {
       "id": "3139477",
       "nflTeamId": "12",
@@ -2854,6 +4977,17 @@
         "0": 40.74,
         "1": 19.54,
         "2": 21.2
+      }
+    },
+    "3139522": {
+      "id": "3139522",
+      "nflTeamId": "0",
+      "name": "Travis Fulgham",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3139602": {
@@ -2947,6 +5081,39 @@
         "2": 8
       }
     },
+    "3155188": {
+      "id": "3155188",
+      "nflTeamId": "0",
+      "name": "Vyncint Smith",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3675550": {
+      "id": "3675550",
+      "nflTeamId": "0",
+      "name": "Tommy Hudson",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3675812": {
+      "id": "3675812",
+      "nflTeamId": "0",
+      "name": "Bryce Perkins",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3676833": {
       "id": "3676833",
       "nflTeamId": "6",
@@ -2958,6 +5125,50 @@
         "0": 13,
         "1": 10.5,
         "2": 2.5
+      }
+    },
+    "3693033": {
+      "id": "3693033",
+      "nflTeamId": "0",
+      "name": "Jacques Patrick",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3699902": {
+      "id": "3699902",
+      "nflTeamId": "0",
+      "name": "Stanley Morgan",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3699935": {
+      "id": "3699935",
+      "nflTeamId": "0",
+      "name": "Devine Ozigbo",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3700815": {
+      "id": "3700815",
+      "nflTeamId": "0",
+      "name": "Kendall Hinton",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3722362": {
@@ -2986,6 +5197,17 @@
         "2": 0
       }
     },
+    "3791110": {
+      "id": "3791110",
+      "nflTeamId": "0",
+      "name": "Tommy Stevens",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3821683": {
       "id": "3821683",
       "nflTeamId": "20",
@@ -3011,6 +5233,28 @@
         "2": 4
       }
     },
+    "3871102": {
+      "id": "3871102",
+      "nflTeamId": "0",
+      "name": "David Sills V",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3886377": {
+      "id": "3886377",
+      "nflTeamId": "0",
+      "name": "Josh Rosen",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3886598": {
       "id": "3886598",
       "nflTeamId": "25",
@@ -3022,6 +5266,17 @@
         "0": 7.1,
         "1": 0,
         "2": 7.1
+      }
+    },
+    "3886809": {
+      "id": "3886809",
+      "nflTeamId": "0",
+      "name": "Andre Baccellia",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3886812": {
@@ -3063,6 +5318,72 @@
         "2": 0
       }
     },
+    "3892889": {
+      "id": "3892889",
+      "nflTeamId": "0",
+      "name": "Dede Westbrook",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3893625": {
+      "id": "3893625",
+      "nflTeamId": "0",
+      "name": "Nick Ralston",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3894912": {
+      "id": "3894912",
+      "nflTeamId": "0",
+      "name": "Tyron Johnson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3895785": {
+      "id": "3895785",
+      "nflTeamId": "0",
+      "name": "Ben DiNucci",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3895827": {
+      "id": "3895827",
+      "nflTeamId": "0",
+      "name": "Ty'Son Williams",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3895835": {
+      "id": "3895835",
+      "nflTeamId": "0",
+      "name": "Jake Bargas",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3895856": {
       "id": "3895856",
       "nflTeamId": "30",
@@ -3087,6 +5408,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "3910287": {
+      "id": "3910287",
+      "nflTeamId": "0",
+      "name": "J.J. Koski",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3910544": {
@@ -3141,6 +5473,30 @@
         "2": 0
       }
     },
+    "3912550": {
+      "id": "3912550",
+      "nflTeamId": "0",
+      "name": "Ronald Jones",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0,
+        "1": 0,
+        "2": 0
+      }
+    },
+    "3913295": {
+      "id": "3913295",
+      "nflTeamId": "0",
+      "name": "Justin Rohrwasser",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3914151": {
       "id": "3914151",
       "nflTeamId": "9",
@@ -3167,6 +5523,39 @@
         "2": 0
       }
     },
+    "3914307": {
+      "id": "3914307",
+      "nflTeamId": "0",
+      "name": "Maurice Alexander",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3914328": {
+      "id": "3914328",
+      "nflTeamId": "0",
+      "name": "Andy Isabella",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3914395": {
+      "id": "3914395",
+      "nflTeamId": "0",
+      "name": "James Morgan",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3914397": {
       "id": "3914397",
       "nflTeamId": "1",
@@ -3180,9 +5569,31 @@
         "2": 0
       }
     },
+    "3915097": {
+      "id": "3915097",
+      "nflTeamId": "0",
+      "name": "Antonio Callaway",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3915115": {
+      "id": "3915115",
+      "nflTeamId": "0",
+      "name": "Jordan Scarlett",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3915145": {
       "id": "3915145",
-      "nflTeamId": "18",
+      "nflTeamId": "0",
       "name": "Kirk Merritt",
       "position": "RB",
       "total": 0,
@@ -3191,6 +5602,39 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "3915165": {
+      "id": "3915165",
+      "nflTeamId": "0",
+      "name": "Rodrigo Blankenship",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3915381": {
+      "id": "3915381",
+      "nflTeamId": "0",
+      "name": "John Kelly Jr.",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3915399": {
+      "id": "3915399",
+      "nflTeamId": "0",
+      "name": "Preston Williams",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3915411": {
@@ -3245,6 +5689,61 @@
         "2": 15.38
       }
     },
+    "3915522": {
+      "id": "3915522",
+      "nflTeamId": "0",
+      "name": "KJ Hill Jr.",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3915772": {
+      "id": "3915772",
+      "nflTeamId": "0",
+      "name": "Jared Pinkney",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3915821": {
+      "id": "3915821",
+      "nflTeamId": "0",
+      "name": "Tony Brown",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3915823": {
+      "id": "3915823",
+      "nflTeamId": "0",
+      "name": "Keke Coutee",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3916129": {
+      "id": "3916129",
+      "nflTeamId": "0",
+      "name": "Isaiah Zuber",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3916148": {
       "id": "3916148",
       "nflTeamId": "6",
@@ -3256,6 +5755,28 @@
         "0": 42.1,
         "1": 22.2,
         "2": 19.9
+      }
+    },
+    "3916204": {
+      "id": "3916204",
+      "nflTeamId": "0",
+      "name": "James Proche II",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3916209": {
+      "id": "3916209",
+      "nflTeamId": "0",
+      "name": "Xavier Jones",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3916387": {
@@ -3297,6 +5818,17 @@
         "2": 0
       }
     },
+    "3916564": {
+      "id": "3916564",
+      "nflTeamId": "0",
+      "name": "Tyree Jackson",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3916566": {
       "id": "3916566",
       "nflTeamId": "16",
@@ -3308,6 +5840,28 @@
         "0": 18.5,
         "1": 6.1,
         "2": 12.4
+      }
+    },
+    "3916587": {
+      "id": "3916587",
+      "nflTeamId": "0",
+      "name": "Tyler Mabry",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3916721": {
+      "id": "3916721",
+      "nflTeamId": "0",
+      "name": "LeVante Bellamy",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3916749": {
@@ -3323,6 +5877,28 @@
         "2": 0
       }
     },
+    "3916925": {
+      "id": "3916925",
+      "nflTeamId": "0",
+      "name": "Kerryon Johnson",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3916927": {
+      "id": "3916927",
+      "nflTeamId": "0",
+      "name": "Will Hastings",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3916945": {
       "id": "3916945",
       "nflTeamId": "19",
@@ -3334,6 +5910,28 @@
         "0": 13.7,
         "1": 4.5,
         "2": 9.2
+      }
+    },
+    "3917067": {
+      "id": "3917067",
+      "nflTeamId": "0",
+      "name": "Bisi Johnson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3917166": {
+      "id": "3917166",
+      "nflTeamId": "0",
+      "name": "Omar Bayless",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3917232": {
@@ -3375,6 +5973,28 @@
         "2": 0
       }
     },
+    "3917558": {
+      "id": "3917558",
+      "nflTeamId": "0",
+      "name": "Brandon Wright",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3917569": {
+      "id": "3917569",
+      "nflTeamId": "0",
+      "name": "Ja'Marcus Bradley",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3917612": {
       "id": "3917612",
       "nflTeamId": "27",
@@ -3414,6 +6034,17 @@
         "2": 30.74
       }
     },
+    "3917812": {
+      "id": "3917812",
+      "nflTeamId": "0",
+      "name": "Nathan Cottrell",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3917849": {
       "id": "3917849",
       "nflTeamId": "19",
@@ -3438,6 +6069,28 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "3917940": {
+      "id": "3917940",
+      "nflTeamId": "0",
+      "name": "Hakeem Butler",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3917960": {
+      "id": "3917960",
+      "nflTeamId": "0",
+      "name": "Steven Sims",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3918003": {
@@ -3479,6 +6132,61 @@
         "2": 7.7
       }
     },
+    "3919510": {
+      "id": "3919510",
+      "nflTeamId": "0",
+      "name": "Alex Bachman",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3919557": {
+      "id": "3919557",
+      "nflTeamId": "0",
+      "name": "Scotty Washington",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3919596": {
+      "id": "3919596",
+      "nflTeamId": "0",
+      "name": "Chris Carson",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3919602": {
+      "id": "3919602",
+      "nflTeamId": "0",
+      "name": "Matt Ammendola",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3921564": {
+      "id": "3921564",
+      "nflTeamId": "0",
+      "name": "Auden Tate",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3921690": {
       "id": "3921690",
       "nflTeamId": "16",
@@ -3518,6 +6226,17 @@
         "2": 0
       }
     },
+    "3923397": {
+      "id": "3923397",
+      "nflTeamId": "0",
+      "name": "Ryquell Armstead",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3924327": {
       "id": "3924327",
       "nflTeamId": "26",
@@ -3542,6 +6261,17 @@
         "0": 20.1,
         "1": 15.1,
         "2": 5
+      }
+    },
+    "3925346": {
+      "id": "3925346",
+      "nflTeamId": "0",
+      "name": "Derrick Gore",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3925347": {
@@ -3583,6 +6313,17 @@
         "2": 0
       }
     },
+    "3926936": {
+      "id": "3926936",
+      "nflTeamId": "0",
+      "name": "Reid Sinnett",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3928925": {
       "id": "3928925",
       "nflTeamId": "30",
@@ -3596,6 +6337,17 @@
         "2": 0
       }
     },
+    "3929118": {
+      "id": "3929118",
+      "nflTeamId": "0",
+      "name": "Jeff Smith",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3929630": {
       "id": "3929630",
       "nflTeamId": "19",
@@ -3607,6 +6359,40 @@
         "0": 36.5,
         "1": 9.3,
         "2": 27.2
+      }
+    },
+    "3929633": {
+      "id": "3929633",
+      "nflTeamId": "0",
+      "name": "Nick Bowers",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3929636": {
+      "id": "3929636",
+      "nflTeamId": "0",
+      "name": "Irvin Charles",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0,
+        "1": 0
+      }
+    },
+    "3929637": {
+      "id": "3929637",
+      "nflTeamId": "0",
+      "name": "Dan Chisena",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3929645": {
@@ -3648,6 +6434,28 @@
         "2": 0
       }
     },
+    "3929924": {
+      "id": "3929924",
+      "nflTeamId": "0",
+      "name": "Zach Gentry",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3930035": {
+      "id": "3930035",
+      "nflTeamId": "0",
+      "name": "Nakia Griffin-Stewart",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3930066": {
       "id": "3930066",
       "nflTeamId": "14",
@@ -3674,6 +6482,28 @@
         "2": 10
       }
     },
+    "3930097": {
+      "id": "3930097",
+      "nflTeamId": "0",
+      "name": "Farrod Green",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3930298": {
+      "id": "3930298",
+      "nflTeamId": "0",
+      "name": "Noah Togiai",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3930900": {
       "id": "3930900",
       "nflTeamId": "16",
@@ -3698,6 +6528,39 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "3931397": {
+      "id": "3931397",
+      "nflTeamId": "0",
+      "name": "J.J. Arcega-Whiteside",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3932144": {
+      "id": "3932144",
+      "nflTeamId": "0",
+      "name": "Jacob Harris",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3932420": {
+      "id": "3932420",
+      "nflTeamId": "0",
+      "name": "Josh Adams",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3932423": {
@@ -3752,6 +6615,50 @@
         "2": 0
       }
     },
+    "3932960": {
+      "id": "3932960",
+      "nflTeamId": "0",
+      "name": "Dominik Eberle",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3933327": {
+      "id": "3933327",
+      "nflTeamId": "0",
+      "name": "Kahale Warring",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3933568": {
+      "id": "3933568",
+      "nflTeamId": "0",
+      "name": "Davion Davis",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "3936647": {
+      "id": "3936647",
+      "nflTeamId": "0",
+      "name": "Ross Travis",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "3940587": {
       "id": "3940587",
       "nflTeamId": "13",
@@ -3763,6 +6670,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "3951441": {
+      "id": "3951441",
+      "nflTeamId": "0",
+      "name": "Codey McElroy",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "3953687": {
@@ -3830,6 +6748,28 @@
         "2": 0
       }
     },
+    "4031033": {
+      "id": "4031033",
+      "nflTeamId": "0",
+      "name": "Cade Johnson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4032247": {
+      "id": "4032247",
+      "nflTeamId": "0",
+      "name": "Raleigh Webb",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4032473": {
       "id": "4032473",
       "nflTeamId": "18",
@@ -3841,6 +6781,28 @@
         "0": 29.3,
         "1": 19,
         "2": 10.3
+      }
+    },
+    "4033806": {
+      "id": "4033806",
+      "nflTeamId": "0",
+      "name": "James McCourt",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4034704": {
+      "id": "4034704",
+      "nflTeamId": "0",
+      "name": "Michael Bandy",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4034779": {
@@ -3867,6 +6829,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "4034944": {
+      "id": "4034944",
+      "nflTeamId": "0",
+      "name": "Josh Hammond",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4034946": {
@@ -3908,9 +6881,20 @@
         "2": 13
       }
     },
+    "4034950": {
+      "id": "4034950",
+      "nflTeamId": "0",
+      "name": "Freddie Swain",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4034952": {
       "id": "4034952",
-      "nflTeamId": "12",
+      "nflTeamId": "0",
       "name": "La'Mical Perine",
       "position": "RB",
       "total": 0,
@@ -3918,6 +6902,28 @@
       "scores": {
         "0": 0,
         "2": 0
+      }
+    },
+    "4034964": {
+      "id": "4034964",
+      "nflTeamId": "0",
+      "name": "Tyrie Cleveland",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4035003": {
+      "id": "4035003",
+      "nflTeamId": "0",
+      "name": "Jacob Eason",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4035004": {
@@ -3933,6 +6939,28 @@
         "2": 1.6
       }
     },
+    "4035006": {
+      "id": "4035006",
+      "nflTeamId": "0",
+      "name": "Elijah Holyfield",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4035019": {
+      "id": "4035019",
+      "nflTeamId": "0",
+      "name": "Javon Wims",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4035020": {
       "id": "4035020",
       "nflTeamId": "25",
@@ -3946,6 +6974,39 @@
         "2": 0
       }
     },
+    "4035072": {
+      "id": "4035072",
+      "nflTeamId": "0",
+      "name": "Benny Snell Jr.",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4035098": {
+      "id": "4035098",
+      "nflTeamId": "0",
+      "name": "Tucker McCann",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4035102": {
+      "id": "4035102",
+      "nflTeamId": "0",
+      "name": "Damarea Crockett",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4035115": {
       "id": "4035115",
       "nflTeamId": "21",
@@ -3957,6 +7018,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "4035170": {
+      "id": "4035170",
+      "nflTeamId": "0",
+      "name": "Marquez Callaway",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4035198": {
@@ -3985,6 +7057,28 @@
         "2": 2.4
       }
     },
+    "4035312": {
+      "id": "4035312",
+      "nflTeamId": "0",
+      "name": "Anthony Brown",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4035403": {
+      "id": "4035403",
+      "nflTeamId": "0",
+      "name": "Denzel Mims",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4035426": {
       "id": "4035426",
       "nflTeamId": "29",
@@ -3996,6 +7090,28 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "4035465": {
+      "id": "4035465",
+      "nflTeamId": "0",
+      "name": "Cornell Powell",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4035526": {
+      "id": "4035526",
+      "nflTeamId": "0",
+      "name": "Chase Allen",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4035537": {
@@ -4022,6 +7138,28 @@
         "0": 25.8,
         "1": 13.4,
         "2": 12.4
+      }
+    },
+    "4035554": {
+      "id": "4035554",
+      "nflTeamId": "0",
+      "name": "Landen Akers",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4035611": {
+      "id": "4035611",
+      "nflTeamId": "0",
+      "name": "Gabe Nabers",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4035656": {
@@ -4089,6 +7227,50 @@
         "2": -0.3
       }
     },
+    "4035776": {
+      "id": "4035776",
+      "nflTeamId": "0",
+      "name": "Kendric Pryor",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4035793": {
+      "id": "4035793",
+      "nflTeamId": "0",
+      "name": "Quintez Cephus",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4035826": {
+      "id": "4035826",
+      "nflTeamId": "0",
+      "name": "Demetric Felton Jr.",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4035853": {
+      "id": "4035853",
+      "nflTeamId": "0",
+      "name": "Jordan Veasy",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4035886": {
       "id": "4035886",
       "nflTeamId": "3",
@@ -4100,6 +7282,17 @@
         "0": 18.2,
         "1": 11.4,
         "2": 6.8
+      }
+    },
+    "4035912": {
+      "id": "4035912",
+      "nflTeamId": "0",
+      "name": "Kwamie Lassiter II",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4036026": {
@@ -4125,6 +7318,28 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "4036055": {
+      "id": "4036055",
+      "nflTeamId": "0",
+      "name": "Maurice Ffrench",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4036129": {
+      "id": "4036129",
+      "nflTeamId": "0",
+      "name": "Dominique Dafney",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4036131": {
@@ -4153,6 +7368,50 @@
         "2": 25.6
       }
     },
+    "4036146": {
+      "id": "4036146",
+      "nflTeamId": "0",
+      "name": "Caleb Shudak",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4036149": {
+      "id": "4036149",
+      "nflTeamId": "0",
+      "name": "Nate Stanley",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4036189": {
+      "id": "4036189",
+      "nflTeamId": "0",
+      "name": "Thaddeus Moss",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4036211": {
+      "id": "4036211",
+      "nflTeamId": "0",
+      "name": "DJ Turner",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4036224": {
       "id": "4036224",
       "nflTeamId": "11",
@@ -4164,6 +7423,17 @@
         "0": 3.2,
         "1": 3.2,
         "2": 0
+      }
+    },
+    "4036275": {
+      "id": "4036275",
+      "nflTeamId": "0",
+      "name": "Sean McKeon",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4036335": {
@@ -4231,6 +7501,17 @@
         "2": 0
       }
     },
+    "4036431": {
+      "id": "4036431",
+      "nflTeamId": "0",
+      "name": "Darrynton Evans",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4036448": {
       "id": "4036448",
       "nflTeamId": "7",
@@ -4257,6 +7538,17 @@
         "2": 0
       }
     },
+    "4037311": {
+      "id": "4037311",
+      "nflTeamId": "0",
+      "name": "Jalen Camp",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4037457": {
       "id": "4037457",
       "nflTeamId": "3",
@@ -4268,6 +7560,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "4037478": {
+      "id": "4037478",
+      "nflTeamId": "0",
+      "name": "Gerrid Doaks",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4037591": {
@@ -4283,6 +7586,17 @@
         "2": 0
       }
     },
+    "4038220": {
+      "id": "4038220",
+      "nflTeamId": "0",
+      "name": "Cole McDonald",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4038441": {
       "id": "4038441",
       "nflTeamId": "33",
@@ -4294,6 +7608,17 @@
         "0": 21.2,
         "1": 12.9,
         "2": 8.3
+      }
+    },
+    "4038460": {
+      "id": "4038460",
+      "nflTeamId": "0",
+      "name": "Dillon Stoner",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4038524": {
@@ -4309,6 +7634,28 @@
         "2": 11.14
       }
     },
+    "4038533": {
+      "id": "4038533",
+      "nflTeamId": "0",
+      "name": "Darius Anderson",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4038539": {
+      "id": "4038539",
+      "nflTeamId": "0",
+      "name": "Sewo Olonilua",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4038815": {
       "id": "4038815",
       "nflTeamId": "6",
@@ -4322,6 +7669,17 @@
         "2": 5.3
       }
     },
+    "4038818": {
+      "id": "4038818",
+      "nflTeamId": "0",
+      "name": "Bryan Edwards",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4038941": {
       "id": "4038941",
       "nflTeamId": "24",
@@ -4333,6 +7691,61 @@
         "0": 43.06,
         "1": 20.86,
         "2": 22.2
+      }
+    },
+    "4038952": {
+      "id": "4038952",
+      "nflTeamId": "0",
+      "name": "Hunter Kampmoyer",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4038994": {
+      "id": "4038994",
+      "nflTeamId": "0",
+      "name": "Sam Sloman",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4039000": {
+      "id": "4039000",
+      "nflTeamId": "0",
+      "name": "Aaron Fuller",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4039034": {
+      "id": "4039034",
+      "nflTeamId": "0",
+      "name": "Shane Buechele",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4039043": {
+      "id": "4039043",
+      "nflTeamId": "0",
+      "name": "Collin Johnson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4039050": {
@@ -4387,6 +7800,39 @@
         "2": 0
       }
     },
+    "4039271": {
+      "id": "4039271",
+      "nflTeamId": "0",
+      "name": "Tony Poljan",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4039274": {
+      "id": "4039274",
+      "nflTeamId": "0",
+      "name": "Jonathan Ward",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4039307": {
+      "id": "4039307",
+      "nflTeamId": "0",
+      "name": "Marquez Stevenson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4039358": {
       "id": "4039358",
       "nflTeamId": "9",
@@ -4398,6 +7844,17 @@
         "0": 2.3,
         "1": 2.2,
         "2": 0.1
+      }
+    },
+    "4039359": {
+      "id": "4039359",
+      "nflTeamId": "0",
+      "name": "Darrell Henderson Jr.",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4039436": {
@@ -4426,6 +7883,17 @@
         "2": 1.3
       }
     },
+    "4039607": {
+      "id": "4039607",
+      "nflTeamId": "0",
+      "name": "J.J. Taylor",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4040612": {
       "id": "4040612",
       "nflTeamId": "30",
@@ -4437,6 +7905,61 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "4040623": {
+      "id": "4040623",
+      "nflTeamId": "0",
+      "name": "Austin Mack",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4040627": {
+      "id": "4040627",
+      "nflTeamId": "0",
+      "name": "C.J. Saunders",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4040628": {
+      "id": "4040628",
+      "nflTeamId": "0",
+      "name": "Binjimen Victor",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4040629": {
+      "id": "4040629",
+      "nflTeamId": "0",
+      "name": "Antonio Williams",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4040640": {
+      "id": "4040640",
+      "nflTeamId": "0",
+      "name": "Darius Bradwell",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4040655": {
@@ -4452,6 +7975,17 @@
         "2": 0
       }
     },
+    "4040714": {
+      "id": "4040714",
+      "nflTeamId": "0",
+      "name": "Miller Forristall",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4040715": {
       "id": "4040715",
       "nflTeamId": "21",
@@ -4463,6 +7997,28 @@
         "0": 37.72,
         "1": 12.5,
         "2": 25.22
+      }
+    },
+    "4040728": {
+      "id": "4040728",
+      "nflTeamId": "0",
+      "name": "Trey Ragas",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4040732": {
+      "id": "4040732",
+      "nflTeamId": "0",
+      "name": "Raymond Calais",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4040761": {
@@ -4491,6 +8047,17 @@
         "2": 0
       }
     },
+    "4040790": {
+      "id": "4040790",
+      "nflTeamId": "0",
+      "name": "Jason Huntley",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4040980": {
       "id": "4040980",
       "nflTeamId": "4",
@@ -4504,6 +8071,39 @@
         "2": 3
       }
     },
+    "4041703": {
+      "id": "4041703",
+      "nflTeamId": "0",
+      "name": "Matt Cole",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4042112": {
+      "id": "4042112",
+      "nflTeamId": "0",
+      "name": "Adrian Killins",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4042808": {
+      "id": "4042808",
+      "nflTeamId": "0",
+      "name": "Artavis Pierce",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4043016": {
       "id": "4043016",
       "nflTeamId": "26",
@@ -4515,6 +8115,50 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "4043158": {
+      "id": "4043158",
+      "nflTeamId": "0",
+      "name": "T.J. Vasher",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4043161": {
+      "id": "4043161",
+      "nflTeamId": "0",
+      "name": "Antoine Wesley",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4044111": {
+      "id": "4044111",
+      "nflTeamId": "0",
+      "name": "Chris Oladokun",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4044121": {
+      "id": "4044121",
+      "nflTeamId": "0",
+      "name": "Isaiah Wright",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4044144": {
@@ -4569,6 +8213,39 @@
         "2": 0
       }
     },
+    "4046164": {
+      "id": "4046164",
+      "nflTeamId": "0",
+      "name": "Alex Kessman",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4046184": {
+      "id": "4046184",
+      "nflTeamId": "0",
+      "name": "Brian Johnson",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4046522": {
+      "id": "4046522",
+      "nflTeamId": "0",
+      "name": "Devin Asiasi",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4046530": {
       "id": "4046530",
       "nflTeamId": "4",
@@ -4580,6 +8257,17 @@
         "0": 2.1,
         "1": 2.1,
         "2": 0
+      }
+    },
+    "4046532": {
+      "id": "4046532",
+      "nflTeamId": "0",
+      "name": "Quinn Nordin",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4046676": {
@@ -4595,6 +8283,17 @@
         "2": 15.4
       }
     },
+    "4046678": {
+      "id": "4046678",
+      "nflTeamId": "0",
+      "name": "Ian Book",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4046692": {
       "id": "4046692",
       "nflTeamId": "3",
@@ -4608,6 +8307,17 @@
         "2": 12.6
       }
     },
+    "4046715": {
+      "id": "4046715",
+      "nflTeamId": "0",
+      "name": "Trishton Jackson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4047365": {
       "id": "4047365",
       "nflTeamId": "13",
@@ -4619,6 +8329,17 @@
         "0": 19,
         "1": 9.1,
         "2": 9.9
+      }
+    },
+    "4047422": {
+      "id": "4047422",
+      "nflTeamId": "0",
+      "name": "Tanner Conner",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4047646": {
@@ -4658,6 +8379,28 @@
         "0": 27.2,
         "1": 13.7,
         "2": 13.5
+      }
+    },
+    "4047836": {
+      "id": "4047836",
+      "nflTeamId": "0",
+      "name": "Frank Darby",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4047839": {
+      "id": "4047839",
+      "nflTeamId": "0",
+      "name": "N'Keal Harry",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4048228": {
@@ -4712,6 +8455,50 @@
         "2": 0
       }
     },
+    "4052042": {
+      "id": "4052042",
+      "nflTeamId": "0",
+      "name": "James Robinson",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4052137": {
+      "id": "4052137",
+      "nflTeamId": "0",
+      "name": "Chris Rowland",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4054085": {
+      "id": "4054085",
+      "nflTeamId": "0",
+      "name": "Dezmon Patmon",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4055171": {
+      "id": "4055171",
+      "nflTeamId": "0",
+      "name": "Anthony Gordon",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4056052": {
       "id": "4056052",
       "nflTeamId": "28",
@@ -4723,6 +8510,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "4057082": {
+      "id": "4057082",
+      "nflTeamId": "0",
+      "name": "Mason Kinsey",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4061956": {
@@ -4738,6 +8536,127 @@
         "2": 0
       }
     },
+    "4062711": {
+      "id": "4062711",
+      "nflTeamId": "0",
+      "name": "Ethan Fernea",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4068152": {
+      "id": "4068152",
+      "nflTeamId": "0",
+      "name": "Kawaan Baker",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4069806": {
+      "id": "4069806",
+      "nflTeamId": "0",
+      "name": "Jason Moore",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4069817": {
+      "id": "4069817",
+      "nflTeamId": "0",
+      "name": "JaQuan Hardy",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4081127": {
+      "id": "4081127",
+      "nflTeamId": "0",
+      "name": "Antony Auclair",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4198676": {
+      "id": "4198676",
+      "nflTeamId": "0",
+      "name": "Adam Shaheen",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4212884": {
+      "id": "4212884",
+      "nflTeamId": "0",
+      "name": "Alex Armah",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4212909": {
+      "id": "4212909",
+      "nflTeamId": "0",
+      "name": "David Moore",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4212989": {
+      "id": "4212989",
+      "nflTeamId": "0",
+      "name": "Dan Arnold",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4217370": {
+      "id": "4217370",
+      "nflTeamId": "0",
+      "name": "Cyril Grayson Jr.",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4239083": {
+      "id": "4239083",
+      "nflTeamId": "0",
+      "name": "Michael Warren II",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4239086": {
       "id": "4239086",
       "nflTeamId": "1",
@@ -4749,6 +8668,17 @@
         "0": 30.28,
         "1": 8.9,
         "2": 21.38
+      }
+    },
+    "4239768": {
+      "id": "4239768",
+      "nflTeamId": "0",
+      "name": "Spencer Brown",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4239934": {
@@ -4775,6 +8705,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "4239992": {
+      "id": "4239992",
+      "nflTeamId": "0",
+      "name": "Amari Rodgers",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4239993": {
@@ -4829,6 +8770,39 @@
         "2": 0
       }
     },
+    "4240069": {
+      "id": "4240069",
+      "nflTeamId": "0",
+      "name": "Malik Cunningham",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4240380": {
+      "id": "4240380",
+      "nflTeamId": "0",
+      "name": "KJ Hamler",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4240432": {
+      "id": "4240432",
+      "nflTeamId": "0",
+      "name": "Sage Surratt",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4240455": {
       "id": "4240455",
       "nflTeamId": "11",
@@ -4868,6 +8842,17 @@
         "2": 0
       }
     },
+    "4240577": {
+      "id": "4240577",
+      "nflTeamId": "0",
+      "name": "Brandon Smith",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4240600": {
       "id": "4240600",
       "nflTeamId": "12",
@@ -4879,6 +8864,28 @@
         "0": 9.8,
         "1": 1,
         "2": 8.8
+      }
+    },
+    "4240603": {
+      "id": "4240603",
+      "nflTeamId": "0",
+      "name": "Malik Davis",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4240626": {
+      "id": "4240626",
+      "nflTeamId": "0",
+      "name": "Jeff Thomas",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4240631": {
@@ -4907,6 +8914,28 @@
         "2": 2.1
       }
     },
+    "4240661": {
+      "id": "4240661",
+      "nflTeamId": "0",
+      "name": "Dazz Newsome",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4240689": {
+      "id": "4240689",
+      "nflTeamId": "0",
+      "name": "Jake Fromm",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4240703": {
       "id": "4240703",
       "nflTeamId": "23",
@@ -4918,6 +8947,17 @@
         "0": 19.96,
         "1": 9.68,
         "2": 10.28
+      }
+    },
+    "4240750": {
+      "id": "4240750",
+      "nflTeamId": "0",
+      "name": "Mohamed Ibrahim",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4240858": {
@@ -4933,6 +8973,50 @@
         "2": 0
       }
     },
+    "4240861": {
+      "id": "4240861",
+      "nflTeamId": "0",
+      "name": "Dalton Keene",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4240904": {
+      "id": "4240904",
+      "nflTeamId": "0",
+      "name": "Kellen Mond",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4241205": {
+      "id": "4241205",
+      "nflTeamId": "0",
+      "name": "Larry Rountree III",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4241224": {
+      "id": "4241224",
+      "nflTeamId": "0",
+      "name": "Abram Smith",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4241263": {
       "id": "4241263",
       "nflTeamId": "33",
@@ -4944,6 +9028,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "4241273": {
+      "id": "4241273",
+      "nflTeamId": "0",
+      "name": "Roger Carter Jr.",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4241372": {
@@ -4983,6 +9078,19 @@
         "0": 37,
         "1": 11.7,
         "2": 25.3
+      }
+    },
+    "4241401": {
+      "id": "4241401",
+      "nflTeamId": "0",
+      "name": "Trey Sermon",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0,
+        "1": 0,
+        "2": 0
       }
     },
     "4241410": {
@@ -5154,6 +9262,28 @@
         "2": 0
       }
     },
+    "4241822": {
+      "id": "4241822",
+      "nflTeamId": "0",
+      "name": "Chris Naggar",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4241940": {
+      "id": "4241940",
+      "nflTeamId": "0",
+      "name": "Javon Leake",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4241941": {
       "id": "4241941",
       "nflTeamId": "23",
@@ -5180,6 +9310,17 @@
         "2": 0
       }
     },
+    "4241983": {
+      "id": "4241983",
+      "nflTeamId": "0",
+      "name": "Cody White",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4241985": {
       "id": "4241985",
       "nflTeamId": "33",
@@ -5193,6 +9334,17 @@
         "2": 0
       }
     },
+    "4242212": {
+      "id": "4242212",
+      "nflTeamId": "0",
+      "name": "Tory Carter",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4242214": {
       "id": "4242214",
       "nflTeamId": "12",
@@ -5204,6 +9356,28 @@
         "0": 7.6,
         "1": 3.9,
         "2": 3.7
+      }
+    },
+    "4242231": {
+      "id": "4242231",
+      "nflTeamId": "0",
+      "name": "Racey McMath",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4242270": {
+      "id": "4242270",
+      "nflTeamId": "0",
+      "name": "Kyric McGowan",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4242335": {
@@ -5282,6 +9456,17 @@
         "0": 5.7,
         "1": 1.4,
         "2": 4.3
+      }
+    },
+    "4242504": {
+      "id": "4242504",
+      "nflTeamId": "0",
+      "name": "Johnny Johnson III",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4242512": {
@@ -5414,6 +9599,17 @@
         "2": 7.1
       }
     },
+    "4243318": {
+      "id": "4243318",
+      "nflTeamId": "0",
+      "name": "Hunter Bryant",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4243322": {
       "id": "4243322",
       "nflTeamId": "18",
@@ -5479,6 +9675,17 @@
         "2": 21.2
       }
     },
+    "4243830": {
+      "id": "4243830",
+      "nflTeamId": "0",
+      "name": "Jaelon Darden",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4244049": {
       "id": "4244049",
       "nflTeamId": "2",
@@ -5490,6 +9697,28 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "4244651": {
+      "id": "4244651",
+      "nflTeamId": "0",
+      "name": "D'vonte Price",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4244732": {
+      "id": "4244732",
+      "nflTeamId": "0",
+      "name": "Caleb Huntley",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4244856": {
@@ -5515,6 +9744,28 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "4245144": {
+      "id": "4245144",
+      "nflTeamId": "0",
+      "name": "Tay Martin",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4245174": {
+      "id": "4245174",
+      "nflTeamId": "0",
+      "name": "Easop Winston Jr.",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4245639": {
@@ -5543,6 +9794,28 @@
         "2": 0
       }
     },
+    "4247812": {
+      "id": "4247812",
+      "nflTeamId": "0",
+      "name": "Lance McCutcheon",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4248504": {
+      "id": "4248504",
+      "nflTeamId": "0",
+      "name": "Isaiah Coulter",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4248528": {
       "id": "4248528",
       "nflTeamId": "9",
@@ -5556,6 +9829,17 @@
         "2": 0
       }
     },
+    "4248822": {
+      "id": "4248822",
+      "nflTeamId": "0",
+      "name": "Montrell Washington",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4248909": {
       "id": "4248909",
       "nflTeamId": "24",
@@ -5567,6 +9851,17 @@
         "0": 3.9,
         "1": 0,
         "2": 3.9
+      }
+    },
+    "4249030": {
+      "id": "4249030",
+      "nflTeamId": "0",
+      "name": "D.J. Montgomery",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4249087": {
@@ -5673,6 +9968,17 @@
         "2": 6
       }
     },
+    "4258170": {
+      "id": "4258170",
+      "nflTeamId": "0",
+      "name": "Tarik Black",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4258173": {
       "id": "4258173",
       "nflTeamId": "34",
@@ -5684,6 +9990,17 @@
         "0": 41.6,
         "1": 14,
         "2": 27.6
+      }
+    },
+    "4258190": {
+      "id": "4258190",
+      "nflTeamId": "0",
+      "name": "Ben Mason",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4258195": {
@@ -5725,6 +10042,39 @@
         "2": 7.8
       }
     },
+    "4259147": {
+      "id": "4259147",
+      "nflTeamId": "0",
+      "name": "Jake Tonges",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4259169": {
+      "id": "4259169",
+      "nflTeamId": "0",
+      "name": "Trestan Ebner",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4259305": {
+      "id": "4259305",
+      "nflTeamId": "0",
+      "name": "Bo Melton",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4259308": {
       "id": "4259308",
       "nflTeamId": "29",
@@ -5736,6 +10086,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "4259499": {
+      "id": "4259499",
+      "nflTeamId": "0",
+      "name": "Shi Smith",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4259545": {
@@ -5790,6 +10151,28 @@
         "2": 8
       }
     },
+    "4259805": {
+      "id": "4259805",
+      "nflTeamId": "0",
+      "name": "Kylin Hill",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4259908": {
+      "id": "4259908",
+      "nflTeamId": "0",
+      "name": "Braylon Sanders",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4259976": {
       "id": "4259976",
       "nflTeamId": "1",
@@ -5841,6 +10224,28 @@
         "2": 0
       }
     },
+    "4261020": {
+      "id": "4261020",
+      "nflTeamId": "0",
+      "name": "Trenton Cannon",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4262900": {
+      "id": "4262900",
+      "nflTeamId": "0",
+      "name": "Daylen Baldwin",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4262921": {
       "id": "4262921",
       "nflTeamId": "16",
@@ -5865,6 +10270,28 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "4282647": {
+      "id": "4282647",
+      "nflTeamId": "0",
+      "name": "Jeff Cotton",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4294520": {
+      "id": "4294520",
+      "nflTeamId": "0",
+      "name": "Brandon Zylstra",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4360078": {
@@ -5917,6 +10344,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "4360231": {
+      "id": "4360231",
+      "nflTeamId": "0",
+      "name": "Lucas Krull",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4360234": {
@@ -6023,6 +10461,17 @@
         "2": 1.3
       }
     },
+    "4360406": {
+      "id": "4360406",
+      "nflTeamId": "0",
+      "name": "Mataeo Durant",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4360438": {
       "id": "4360438",
       "nflTeamId": "25",
@@ -6062,6 +10511,17 @@
         "2": 7.5
       }
     },
+    "4360739": {
+      "id": "4360739",
+      "nflTeamId": "0",
+      "name": "Simi Fehoko",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4360761": {
       "id": "4360761",
       "nflTeamId": "22",
@@ -6086,6 +10546,17 @@
         "0": 33.1,
         "1": 17.9,
         "2": 15.2
+      }
+    },
+    "4360802": {
+      "id": "4360802",
+      "nflTeamId": "0",
+      "name": "Javian Hawkins",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4360939": {
@@ -6192,6 +10663,17 @@
         "2": 1.2
       }
     },
+    "4361417": {
+      "id": "4361417",
+      "nflTeamId": "0",
+      "name": "Zack Kuntz",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4361418": {
       "id": "4361418",
       "nflTeamId": "10",
@@ -6229,6 +10711,17 @@
         "0": 23.6,
         "1": 18.6,
         "2": 5
+      }
+    },
+    "4361435": {
+      "id": "4361435",
+      "nflTeamId": "0",
+      "name": "Carson Strong",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4361438": {
@@ -6296,6 +10789,28 @@
         "2": 7.8
       }
     },
+    "4361606": {
+      "id": "4361606",
+      "nflTeamId": "0",
+      "name": "Darwin Thompson",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4361665": {
+      "id": "4361665",
+      "nflTeamId": "0",
+      "name": "Christopher Dunn",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4361741": {
       "id": "4361741",
       "nflTeamId": "25",
@@ -6361,6 +10876,17 @@
         "2": 0
       }
     },
+    "4362020": {
+      "id": "4362020",
+      "nflTeamId": "0",
+      "name": "Nick Sciba",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4362081": {
       "id": "4362081",
       "nflTeamId": "24",
@@ -6424,6 +10950,17 @@
         "0": 26.3,
         "1": 6.6,
         "2": 19.7
+      }
+    },
+    "4362452": {
+      "id": "4362452",
+      "nflTeamId": "0",
+      "name": "Jaret Patterson",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4362477": {
@@ -6517,6 +11054,39 @@
         "2": 0
       }
     },
+    "4362748": {
+      "id": "4362748",
+      "nflTeamId": "0",
+      "name": "Tyler Badie",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4362874": {
+      "id": "4362874",
+      "nflTeamId": "0",
+      "name": "Matt Corral",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4362878": {
+      "id": "4362878",
+      "nflTeamId": "0",
+      "name": "Scottie Phillips",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4362887": {
       "id": "4362887",
       "nflTeamId": "3",
@@ -6541,6 +11111,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "4363409": {
+      "id": "4363409",
+      "nflTeamId": "0",
+      "name": "Austin Watkins Jr.",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4363538": {
@@ -6606,6 +11187,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "4367186": {
+      "id": "4367186",
+      "nflTeamId": "0",
+      "name": "Chase Cota",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4367209": {
@@ -6688,7 +11280,7 @@
     },
     "4371986": {
       "id": "4371986",
-      "nflTeamId": "5",
+      "nflTeamId": "0",
       "name": "Anthony Schwartz",
       "position": "WR",
       "total": 0,
@@ -6829,6 +11421,17 @@
         "2": 0
       }
     },
+    "4372526": {
+      "id": "4372526",
+      "nflTeamId": "0",
+      "name": "Deneric Prince",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4372780": {
       "id": "4372780",
       "nflTeamId": "29",
@@ -6907,6 +11510,17 @@
         "2": 0
       }
     },
+    "4373673": {
+      "id": "4373673",
+      "nflTeamId": "0",
+      "name": "John Hightower",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4373678": {
       "id": "4373678",
       "nflTeamId": "2",
@@ -6918,6 +11532,17 @@
         "0": 8.1,
         "1": 0,
         "2": 8.1
+      }
+    },
+    "4374033": {
+      "id": "4374033",
+      "nflTeamId": "0",
+      "name": "Jermar Jefferson",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4374045": {
@@ -6959,6 +11584,17 @@
         "2": 14.2
       }
     },
+    "4374496": {
+      "id": "4374496",
+      "nflTeamId": "0",
+      "name": "DeMichael Harris",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4379399": {
       "id": "4379399",
       "nflTeamId": "2",
@@ -6983,6 +11619,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "4379504": {
+      "id": "4379504",
+      "nflTeamId": "0",
+      "name": "Mekhi Sargent",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4382466": {
@@ -7050,6 +11697,17 @@
         "2": 9.3
       }
     },
+    "4390717": {
+      "id": "4390717",
+      "nflTeamId": "0",
+      "name": "Josh Johnson",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4401805": {
       "id": "4401805",
       "nflTeamId": "26",
@@ -7074,6 +11732,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "4408988": {
+      "id": "4408988",
+      "nflTeamId": "0",
+      "name": "Malik Taylor",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4411192": {
@@ -7113,6 +11782,17 @@
         "0": 1.5,
         "1": 0,
         "2": 1.5
+      }
+    },
+    "4422214": {
+      "id": "4422214",
+      "nflTeamId": "0",
+      "name": "Trinity Benson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4424106": {
@@ -7191,6 +11871,17 @@
         "0": 11.8,
         "1": 8.8,
         "2": 3
+      }
+    },
+    "4426426": {
+      "id": "4426426",
+      "nflTeamId": "0",
+      "name": "Joseph Ngata",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4426475": {
@@ -7310,6 +12001,28 @@
         "2": 1.9
       }
     },
+    "4427105": {
+      "id": "4427105",
+      "nflTeamId": "0",
+      "name": "Max Duggan",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4427267": {
+      "id": "4427267",
+      "nflTeamId": "0",
+      "name": "Kaylon Geiger",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4427278": {
       "id": "4427278",
       "nflTeamId": "20",
@@ -7349,6 +12062,17 @@
         "2": 0
       }
     },
+    "4427728": {
+      "id": "4427728",
+      "nflTeamId": "8",
+      "name": "Zonovan Knight",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4428085": {
       "id": "4428085",
       "nflTeamId": "9",
@@ -7360,6 +12084,17 @@
         "0": 12.5,
         "1": 8,
         "2": 4.5
+      }
+    },
+    "4428119": {
+      "id": "4428119",
+      "nflTeamId": "0",
+      "name": "Lew Nichols",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4428331": {
@@ -7412,6 +12147,28 @@
         "0": 12,
         "1": 0,
         "2": 12
+      }
+    },
+    "4428952": {
+      "id": "4428952",
+      "nflTeamId": "0",
+      "name": "Jalen Wydermyer",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4428963": {
+      "id": "4428963",
+      "nflTeamId": "0",
+      "name": "Cade York",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4429006": {
@@ -7581,6 +12338,17 @@
         "0": 16.4,
         "1": 0.4,
         "2": 16
+      }
+    },
+    "4430388": {
+      "id": "4430388",
+      "nflTeamId": "0",
+      "name": "DeWayne McBride",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4430539": {
@@ -7765,6 +12533,17 @@
         "2": 10.6
       }
     },
+    "4567246": {
+      "id": "4567246",
+      "nflTeamId": "0",
+      "name": "Snoop Conner",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4569173": {
       "id": "4569173",
       "nflTeamId": "17",
@@ -7776,6 +12555,17 @@
         "0": 29.9,
         "1": 14.9,
         "2": 15
+      }
+    },
+    "4569390": {
+      "id": "4569390",
+      "nflTeamId": "0",
+      "name": "Jonathan Garibay",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4569587": {
@@ -7830,6 +12620,17 @@
         "2": 12.6
       }
     },
+    "4570106": {
+      "id": "4570106",
+      "nflTeamId": "0",
+      "name": "Myron Mitchell",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4570409": {
       "id": "4570409",
       "nflTeamId": "5",
@@ -7856,6 +12657,17 @@
         "2": 0
       }
     },
+    "4570674": {
+      "id": "4570674",
+      "nflTeamId": "0",
+      "name": "Kevin Harris",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4572680": {
       "id": "4572680",
       "nflTeamId": "9",
@@ -7867,6 +12679,28 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "4572786": {
+      "id": "4572786",
+      "nflTeamId": "0",
+      "name": "Dennis Houston",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4589245": {
+      "id": "4589245",
+      "nflTeamId": "0",
+      "name": "Mike Strachan",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4596334": {
@@ -7906,6 +12740,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "4682912": {
+      "id": "4682912",
+      "nflTeamId": "0",
+      "name": "Lirim Hajrullahu",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "4685035": {
@@ -8064,6 +12909,17 @@
         "2": 0
       }
     },
+    "4696736": {
+      "id": "4696736",
+      "nflTeamId": "0",
+      "name": "Tanner Brown",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4697815": {
       "id": "4697815",
       "nflTeamId": "27",
@@ -8116,6 +12972,28 @@
         "2": 0
       }
     },
+    "4820592": {
+      "id": "4820592",
+      "nflTeamId": "0",
+      "name": "Nate McCrary",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "4879650": {
+      "id": "4879650",
+      "nflTeamId": "0",
+      "name": "Grant DuBose",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
     "4887558": {
       "id": "4887558",
       "nflTeamId": "9",
@@ -8140,6 +13018,17 @@
         "0": 0,
         "1": 0,
         "2": 0
+      }
+    },
+    "4916349": {
+      "id": "4916349",
+      "nflTeamId": "0",
+      "name": "Nikola Kalinic",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
       }
     },
     "-16001": {
@@ -8582,8 +13471,9 @@
             "16760",
             "3123076",
             "3924365",
-            "-16015",
-            "4243371"
+            "-16018",
+            "3049899",
+            "4429160"
           ]
         },
         "1": {
@@ -8674,8 +13564,9 @@
             "16760",
             "3123076",
             "3924365",
-            "-16015",
-            "4243371"
+            "-16018",
+            "3049899",
+            "4429160"
           ]
         }
       }
@@ -8697,14 +13588,14 @@
             "4361579",
             "3121023",
             "3895856",
-            "4360248",
             "15683",
             "4429013",
             "-16017",
-            "4385690",
             "4361259",
             "4032473",
-            "4360797"
+            "4360797",
+            "3046439",
+            "3059915"
           ]
         },
         "1": {
@@ -8790,14 +13681,14 @@
             "4361579",
             "3121023",
             "3895856",
-            "4360248",
             "15683",
             "4429013",
             "-16017",
-            "4385690",
             "4361259",
             "4032473",
-            "4360797"
+            "4360797",
+            "3046439",
+            "3059915"
           ]
         }
       }
@@ -9072,11 +13963,11 @@
             "4429615",
             "2576414",
             "-16002",
-            "4360234",
             "3122976",
             "4432577",
             "3910544",
-            "3059722"
+            "3059722",
+            "4366031"
           ]
         },
         "1": {
@@ -9168,11 +14059,11 @@
             "4429615",
             "2576414",
             "-16002",
-            "4360234",
             "3122976",
             "4432577",
             "3910544",
-            "3059722"
+            "3059722",
+            "4366031"
           ]
         }
       }
@@ -9197,12 +14088,12 @@
             "4426354",
             "3051876",
             "3916433",
-            "2980453",
             "3917315",
             "4373626",
             "4430737",
-            "-16007",
-            "11122"
+            "-16012",
+            "3044720",
+            "3050478"
           ]
         },
         "1": {
@@ -9293,12 +14184,12 @@
             "4426354",
             "3051876",
             "3916433",
-            "2980453",
             "3917315",
             "4373626",
             "4430737",
-            "-16007",
-            "11122"
+            "-16012",
+            "3044720",
+            "3050478"
           ]
         }
       }
@@ -9317,7 +14208,6 @@
             "4569173",
             "4429084",
             "2976499",
-            "4240021",
             "4360438",
             "3040151",
             "4429205",
@@ -9325,10 +14215,11 @@
             "4426385",
             "4569987",
             "4371733",
-            "4361432",
             "4372066",
             "4241416",
-            "-16019"
+            "-16033",
+            "3049916",
+            "4362249"
           ]
         },
         "1": {
@@ -9412,7 +14303,6 @@
             "4569173",
             "4429084",
             "2976499",
-            "4240021",
             "4360438",
             "3040151",
             "4429205",
@@ -9420,10 +14310,11 @@
             "4426385",
             "4569987",
             "4371733",
-            "4361432",
             "4372066",
             "4241416",
-            "-16019"
+            "-16033",
+            "3049916",
+            "4362249"
           ]
         }
       }
@@ -9450,8 +14341,9 @@
             "4241474",
             "3051909",
             "3117256",
-            "3115394",
-            "-16020"
+            "-16020",
+            "3115306",
+            "15835"
           ]
         },
         "1": {
@@ -9542,8 +14434,9 @@
             "4241474",
             "3051909",
             "3117256",
-            "3115394",
-            "-16020"
+            "-16020",
+            "3115306",
+            "15835"
           ]
         }
       }
@@ -9699,7 +14592,7 @@
             "3917232",
             "4426386",
             "-16005",
-            "16733"
+            "4372019"
           ]
         },
         "1": {
@@ -9795,7 +14688,7 @@
             "3917232",
             "4426386",
             "-16005",
-            "16733"
+            "4372019"
           ]
         }
       }

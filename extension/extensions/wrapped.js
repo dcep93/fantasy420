@@ -40,7 +40,9 @@ function FetchWrapped() {
             .then((resp) =>
               resp.players
                 .map((player) => player.player)
-                .filter((player) => player.proTeamId !== 0)
+                .filter(
+                  (player) => player.proTeamId !== 0 || player.onTeamId !== 0
+                )
                 .map((player) => ({
                   id: player.id.toString(),
                   nflTeamId: player.proTeamId.toString(),
