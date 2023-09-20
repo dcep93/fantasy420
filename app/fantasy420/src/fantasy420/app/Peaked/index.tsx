@@ -51,7 +51,10 @@ export default function Peaked() {
     .map((team) => ({
       ...team,
       players: team.rosters["0"].rostered
-        .map((playerId) => wrapped.nflPlayers[playerId].name)
+        .map(
+          (playerId) =>
+            wrapped.nflPlayers[playerId]?.name || `unknown_${playerId}`
+        )
         .map((name) => ({
           name,
           ...parsed[normalize(qbToNonQB[name]?.name || name)],
