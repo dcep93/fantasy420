@@ -149,29 +149,41 @@ function getData(year: string, source: string, sources: SourcesType): DataType {
         Object.entries({
           season_points: (o: EspnPlayerType) => o.season_points,
           average_points: (o: EspnPlayerType) => o.average_points,
-        }).map(([key, f]) => [
-          key,
-          Object.entries(players)
-            .map(([playerName, o]) => ({
-              playerName,
-              x: sources[source][normalize(playerName)]!,
-              y: f(o),
-              ...o,
-            }))
-            .filter(({ x }) => x !== null && x !== undefined)
-            .map(({ ...o }) => ({
-              ...o,
-              y: parseFloat(o.y.toFixed(2)),
-              labelX: o.x < 0 ? `$${-o.x}` : o.x,
-            }))
-            .sort((a, b) => a.x - b.x)
-            .map(({ x, y, ...o }, i) => ({
-              x,
-              y,
-              label: `#${i + 1} ${o.playerName}: ${o.labelX} -> ${y}`,
-            }))
-            .sort((a, b) => a.x - b.x),
-        ])
+        })
+          .map(([key, f]) => ({
+            key,
+            playersData: Object.entries(players)
+              .map(([playerName, o]) => ({
+                playerName,
+                x: sources[source][normalize(playerName)]!,
+                y: f(o),
+                ...o,
+              }))
+              .filter(({ x }) => x !== null && x !== undefined)
+              .map(({ ...o }) => ({
+                ...o,
+                y: parseFloat(o.y.toFixed(2)),
+              })),
+          }))
+          .map(({ key, playersData }) => {
+            const ranks = Object.fromEntries(
+              playersData
+                .sort((a, b) => b.y - a.y)
+                .map((o, i) => [o.playerName, i])
+            );
+            return [
+              key,
+              playersData
+                .sort((a, b) => a.x - b.x)
+                .map(({ x, y, ...o }, i) => ({
+                  x,
+                  y,
+                  label: `${o.playerName}: #${i + 1} ${
+                    x < 0 ? `$${-x}` : x
+                  } -> #${ranks[o.playerName] + 1} ${y}`,
+                })),
+            ];
+          })
       ),
     ])
   );
