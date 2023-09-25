@@ -21,6 +21,7 @@ export default function Wrapped() {
       OwnedTeams,
       Benchwarmers,
       Injuries,
+      ChosenWrong,
       json,
     }).map(([k, v]) => [k, v()])
   );
@@ -63,6 +64,8 @@ export enum Position {
   TE = 4,
   K = 5,
   DST = 16,
+  FLEX = -1,
+  SUPERFLEX = -2,
 }
 
 function toFixed(n: number, d: number = 2): number {
@@ -106,6 +109,25 @@ function json() {
     <pre onClick={() => console.log(printF(FetchWrapped))}>
       {JSON.stringify(wrapped, null, 2)}
     </pre>
+  );
+}
+
+function ChosenWrong() {
+  const startables = {
+    [Position.QB]: 1,
+    [Position.WR]: 2,
+    [Position.RB]: 2,
+    [Position.TE]: 1,
+    [Position.K]: 1,
+    [Position.DST]: 1,
+    [Position.FLEX]: 2,
+    [Position.SUPERFLEX]: 1,
+  };
+  return (
+    <div>
+      {Object.entries(wrapped.ffMatchups).flatMap(([weekNum, matchup]) => null)}
+      WIP
+    </div>
   );
 }
 
@@ -304,6 +326,7 @@ function BestByPosition() {
       {Object.values(Position)
         .filter((p) => Number.isInteger(p))
         .map((p) => p as Position)
+        .filter((p) => p > 0)
         .map((position, i) => (
           <div key={i} style={bubbleStyle}>
             <h3>{Position[position]}</h3>
@@ -545,6 +568,7 @@ function UniquesStarted() {
       {Object.values(Position)
         .filter((p) => Number.isInteger(p))
         .map((p) => p as Position)
+        .filter((p) => p > 0)
         .map((p) => (
           <div key={p}>
             <div style={bubbleStyle}>
