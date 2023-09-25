@@ -360,13 +360,14 @@ function DeterminedByDiscreteScoring() {
   function calculateDSTDifference(
     teamId: string,
     periodId: string
-  ): { superscore: number; msg: string } {
+  ): { superscore: number; msg: string } | null {
     const started = wrapped.ffTeams[teamId].rosters[periodId].starting
       .map((playerId) => wrapped.nflPlayers[playerId])
       .find((p) => p.position === Position[Position.DST]);
     if (!started) return { superscore: 0, msg: "NO DST STARTED" };
     const offense =
-      wrapped.nflTeams[started.nflTeamId].nflGamesByScoringPeriod[periodId]!;
+      wrapped.nflTeams[started.nflTeamId].nflGamesByScoringPeriod[periodId];
+    if (!offense) return null;
     var superscore = 0;
     const yards = offense.yardsAllowed;
     if (yards >= 550) {
@@ -424,13 +425,14 @@ function DeterminedByDiscreteScoring() {
   function calculateKDifference(
     teamId: string,
     periodId: string
-  ): { superscore: number; msg: string } {
+  ): { superscore: number; msg: string } | null {
     const started = wrapped.ffTeams[teamId].rosters[periodId].starting
       .map((playerId) => wrapped.nflPlayers[playerId])
       .find((p) => p.position === Position[Position.K]);
     if (!started) return { superscore: 0, msg: "NO K STARTED" };
     const offense =
-      wrapped.nflTeams[started.nflTeamId].nflGamesByScoringPeriod[periodId]!;
+      wrapped.nflTeams[started.nflTeamId].nflGamesByScoringPeriod[periodId];
+    if (!offense) return null;
     const superscore = offense.fieldGoals
       .map((yards) => {
         var points = yards / 10;
@@ -473,13 +475,13 @@ function DeterminedByDiscreteScoring() {
                   const ds = [
                     calculateDSTDifference(team.id, periodId),
                     calculateKDifference(team.id, periodId),
-                  ];
+                  ].filter((o) => o !== null);
                   return {
                     ...team,
-                    msgs: ds.map((d) => d.msg),
+                    msgs: ds.map((d) => d!.msg),
                     superscore:
                       team.score +
-                      ds.map((d) => d.superscore).reduce((a, b) => a + b, 0),
+                      ds.map((d) => d!.superscore).reduce((a, b) => a + b, 0),
                   };
                 }),
               (team) => -team.score
