@@ -113,20 +113,136 @@ function json() {
 }
 
 function ChosenWrong() {
-  // const startables = {
-  //   [Position.QB]: 1,
-  //   [Position.WR]: 2,
-  //   [Position.RB]: 2,
-  //   [Position.TE]: 1,
-  //   [Position.K]: 1,
-  //   [Position.DST]: 1,
-  //   [Position.FLEX]: 2,
-  //   [Position.SUPERFLEX]: 1,
-  // };
+  const startables = {
+    [Position.QB]: 1,
+    [Position.WR]: 2,
+    [Position.RB]: 2,
+    [Position.TE]: 1,
+    [Position.K]: 1,
+    [Position.DST]: 1,
+    [Position.FLEX]: 2,
+    [Position.SUPERFLEX]: 1,
+  };
+  function getIdeal(rostered: string[], weekNum: string): string[] {
+    const ideal = [] as string[];
+    Object.entries(startables)
+      .flatMap(([position, count]) =>
+        Array.from(new Array(count)).map((_) => parseInt(position) as Position)
+      )
+      .map((position) =>
+        position === Position.FLEX
+          ? [Position.WR, Position.RB, Position.TE]
+          : position === Position.SUPERFLEX
+          ? [Position.QB, Position.WR, Position.RB, Position.TE]
+          : [position]
+      )
+      .map((positionChoices) => {
+        const idealPlayer = rostered
+          .filter((playerId) => !ideal.includes(playerId))
+          .map((playerId) => wrapped.nflPlayers[playerId])
+          .filter((player) =>
+            positionChoices.includes(
+              Position[player.position as any] as unknown as Position
+            )
+          )
+          .map((player) => ({ ...player, score: player.scores[weekNum] || 0 }))
+          .sort((a, b) => b.score - a.score)[0];
+        if (idealPlayer) {
+          ideal.push(idealPlayer.id);
+        }
+        return idealPlayer;
+      });
+    return ideal;
+  }
   return (
     <div>
-      {Object.entries(wrapped.ffMatchups).flatMap(([weekNum, matchup]) => null)}
-      WIP
+      {Object.entries(wrapped.ffMatchups)
+        .map(([weekNum, matchups]) => ({ weekNum, matchups }))
+        .filter(
+          ({ weekNum, matchups }) =>
+            wrapped.ffTeams[matchups[0][0]].rosters[weekNum]
+        )
+        .flatMap(({ weekNum, matchups }) =>
+          matchups.map((matchup) => ({
+            weekNum,
+            teams: matchup
+              .map((m) => wrapped.ffTeams[m])
+              .filter((team) => team.rosters[weekNum])
+              .map((team) => ({
+                ...team,
+                score: team.rosters[weekNum].starting
+                  .map(
+                    (playerId) =>
+                      wrapped.nflPlayers[playerId].scores[weekNum] || 0
+                  )
+                  .reduce((a, b) => a + b, 0),
+                ideal: getIdeal(team.rosters[weekNum].rostered, weekNum),
+              }))
+              .map((team) => ({
+                ...team,
+                idealScore: toFixed(
+                  team.ideal
+                    .map(
+                      (playerId) =>
+                        wrapped.nflPlayers[playerId].scores[weekNum] || 0
+                    )
+                    .reduce((a, b) => a + b, 0)
+                ),
+              }))
+              .map((team) => ({
+                ...team,
+                text: `[${team.name}] ${toFixed(team.score)} -> ${
+                  team.idealScore
+                }`,
+              }))
+              .sort((a, b) => a.score - b.score),
+          }))
+        )
+        .filter(
+          (matchup) => matchup.teams[0].idealScore > matchup.teams[1].score
+        )
+        .map((matchup, i) => (
+          <div key={i}>
+            <div style={bubbleStyle}>
+              <div>week {matchup.weekNum}</div>
+              <div>{matchup.teams[0].text}</div>
+              <div>would have beaten</div>
+              <div>{matchup.teams[1].text}</div>
+              <div>if they had started</div>
+              <div>---</div>
+              <div>
+                {matchup.teams[0].ideal
+                  .filter(
+                    (playerId) =>
+                      !matchup.teams[0].rosters[
+                        matchup.weekNum
+                      ].starting.includes(playerId)
+                  )
+                  .map((playerId) => wrapped.nflPlayers[playerId])
+                  .map((player) => (
+                    <div key={player.id}>
+                      {player.name} {player.scores[matchup.weekNum]}
+                    </div>
+                  ))}
+              </div>
+              <div>---</div>
+              <div>instead of</div>
+              <div>---</div>
+              <div>
+                {matchup.teams[0].rosters[matchup.weekNum].starting
+                  .filter(
+                    (playerId) => !matchup.teams[0].ideal.includes(playerId)
+                  )
+                  .map((playerId) => wrapped.nflPlayers[playerId])
+                  .map((player) => (
+                    <div key={player.id}>
+                      {player.name} {player.scores[matchup.weekNum]}
+                    </div>
+                  ))}
+              </div>
+            </div>
+          </div>
+        ))}
     </div>
   );
 }
