@@ -113,16 +113,16 @@ function json() {
 }
 
 function ChosenWrong() {
-  const startables = {
-    [Position.QB]: 1,
-    [Position.WR]: 2,
-    [Position.RB]: 2,
-    [Position.TE]: 1,
-    [Position.K]: 1,
-    [Position.DST]: 1,
-    [Position.FLEX]: 2,
-    [Position.SUPERFLEX]: 1,
-  };
+  // const startables = {
+  //   [Position.QB]: 1,
+  //   [Position.WR]: 2,
+  //   [Position.RB]: 2,
+  //   [Position.TE]: 1,
+  //   [Position.K]: 1,
+  //   [Position.DST]: 1,
+  //   [Position.FLEX]: 2,
+  //   [Position.SUPERFLEX]: 1,
+  // };
   return (
     <div>
       {Object.entries(wrapped.ffMatchups).flatMap(([weekNum, matchup]) => null)}
