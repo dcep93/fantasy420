@@ -473,8 +473,8 @@ export default function FetchWrapped() {
                                   : {
                                       key: teamId.toString(),
                                       value: {
-                                        yardsAllowed: stats["127"],
-                                        pointsAllowed: stats["187"],
+                                        yardsAllowed: stats["127"] || 0,
+                                        pointsAllowed: stats["187"] || 0,
                                       },
                                     }
                               )
