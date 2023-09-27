@@ -14,15 +14,11 @@ async function execute() {
     },
     {
       p: /https:\/\/fantasy\.espn\.com\/football.*/,
-      jss: ["shared.js", "reddit/inject.js"],
+      jss: ["shared.js", "reddit/inject.js", "vegas.js", "no_ads.js"],
     },
     {
       p: /https:\/\/www\.reddit\.com\/r\/fantasyfootball\/.*/,
       jss: ["shared.js", "reddit/scrape.js"],
-    },
-    {
-      p: /https:\/\/fantasy\.espn\.com\/football.*/,
-      jss: ["vegas.js"],
     },
     {
       p: /https:\/\/www.espn\.com\/$/,
