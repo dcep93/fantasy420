@@ -457,7 +457,7 @@ function BestByPosition() {
                     }))
                   )
                   .filter((p) => p.position === Position[position])
-                  .map((p) => p.scores[p.scoringPeriod]!)
+                  .map((p) => p.scores[p.scoringPeriod] || 0)
                   .reduce((a, b) => a + b, 0),
               })),
               (obj) => -obj.score
