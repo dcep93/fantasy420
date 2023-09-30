@@ -130,9 +130,9 @@ function FetchWrapped() {
                         .filter((s) => s.rosterForCurrentScoringPeriod)
                         .map((s) => ({
                           weekNum: s.weekNum.toString(),
-                          starting: s.rosterForMatchupPeriod.entries.map((e) =>
-                            e.playerId.toString()
-                          ),
+                          starting: s.rosterForCurrentScoringPeriod.entries
+                            .filter((e) => ![20, 21].includes(e.lineupSlotId))
+                            .map((e) => e.playerId.toString()),
                           rostered: s.rosterForCurrentScoringPeriod.entries.map(
                             (e) => e.playerId.toString()
                           ),

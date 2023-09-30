@@ -50,8 +50,6 @@ export type WrappedType = {
   ffMatchups: { [weekNum: string]: MatchupType };
 };
 
-// todo scoringperiod vs week
-
 export default function FetchWrapped() {
   const year = 2023;
   const leagueId =
@@ -181,20 +179,20 @@ export default function FetchWrapped() {
                               }[];
                               schedule: {
                                 home: {
-                                  rosterForMatchupPeriod: {
-                                    entries: { playerId: number }[];
-                                  };
                                   rosterForCurrentScoringPeriod: {
-                                    entries: { playerId: number }[];
+                                    entries: {
+                                      playerId: number;
+                                      lineupSlotId: number;
+                                    }[];
                                   };
                                   teamId: number;
                                 };
                                 away: {
-                                  rosterForMatchupPeriod: {
-                                    entries: { playerId: number }[];
-                                  };
                                   rosterForCurrentScoringPeriod: {
-                                    entries: { playerId: number }[];
+                                    entries: {
+                                      playerId: number;
+                                      lineupSlotId: number;
+                                    }[];
                                   };
                                   teamId: number;
                                 };
@@ -242,9 +240,15 @@ export default function FetchWrapped() {
                           .filter((s) => s.rosterForCurrentScoringPeriod)
                           .map((s) => ({
                             weekNum: s.weekNum.toString(),
-                            starting: s.rosterForMatchupPeriod.entries.map(
-                              (e) => e.playerId.toString()
-                            ),
+                            starting: s.rosterForCurrentScoringPeriod.entries
+                              .filter(
+                                (e) =>
+                                  ![
+                                    20, // bench
+                                    21, // IR
+                                  ].includes(e.lineupSlotId)
+                              )
+                              .map((e) => e.playerId.toString()),
                             rostered:
                               s.rosterForCurrentScoringPeriod.entries.map((e) =>
                                 e.playerId.toString()
