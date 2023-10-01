@@ -15,6 +15,7 @@ export default function Wrapped() {
       BestByPosition,
       DeterminedByDiscreteScoring,
       GooseEggs,
+      Negatives,
       UniquesStarted,
       BoomBust,
       Accuracy,
@@ -635,6 +636,29 @@ function DeterminedByDiscreteScoring() {
                 <div>{match.winner.msgs.join(" ")}</div>
               </div>
             </div>
+          </div>
+        ))}
+    </div>
+  );
+}
+
+function Negatives() {
+  return (
+    <div>
+      {Object.values(wrapped.nflPlayers)
+        .flatMap((p) =>
+          Object.entries(p.scores).map(([weekNum, score]) => ({
+            ...p,
+            weekNum,
+            score,
+          }))
+        )
+        .filter((p) => p.weekNum !== "0")
+        .filter((p) => p.score! < 0)
+        .filter((p) => !["K", "DST"].includes(p.position))
+        .map((p, i) => (
+          <div key={i}>
+            {p.name} scored {p.score} week {p.weekNum}
           </div>
         ))}
     </div>
