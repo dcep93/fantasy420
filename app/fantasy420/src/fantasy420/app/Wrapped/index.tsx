@@ -2,10 +2,13 @@ import { ReactNode, useState } from "react";
 import Accuracy from "../Accuracy";
 import { draft_json } from "../Draft";
 import { printF } from "../Fetch";
+import wrapped2022 from "./2022.json";
 import FetchWrapped, { WrappedType } from "./FetchWrapped";
 import rawWrapped from "./wrapped.json";
 
-export const wrapped: WrappedType = rawWrapped;
+export const wrapped: WrappedType = { "": rawWrapped, "2022": wrapped2022 }[
+  new URLSearchParams(window.location.search).get("year") || ""
+]!;
 
 export default function Wrapped() {
   document.title = "Fantasy Wrapped";
@@ -1066,7 +1069,7 @@ function Matchups() {
           ({ weekNum }) => Object.values(wrapped.ffTeams)[0].rosters[weekNum]
         )
         .map(({ weekNum, matchups }) => (
-          <div>
+          <div key={weekNum}>
             <div style={bubbleStyle}>week {weekNum}</div>
             <div style={{ display: "flex", overflow: "scroll" }}>
               {matchups.map((matchup, i) => (
