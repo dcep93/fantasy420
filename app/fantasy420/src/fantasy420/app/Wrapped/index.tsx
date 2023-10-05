@@ -11,20 +11,20 @@ export default function Wrapped() {
   document.title = "Fantasy Wrapped";
   const toRender: { [key: string]: ReactNode } = Object.fromEntries(
     Object.entries({
+      FantasyCalc,
+      Accuracy,
       SqueezesAndStomps,
       WeekTopsAndBottoms,
-      BestByPosition,
       DeterminedByDiscreteScoring,
       GooseEggs,
+      ChosenWrong,
       Negatives,
       UniquesStarted,
       BoomBust,
-      Accuracy,
       OwnedTeams,
       Benchwarmers,
       Injuries,
-      ChosenWrong,
-      FantasyCalc,
+      BestByPosition,
       Matchups,
       json,
     }).map(([k, v]) => [k, v()])
@@ -1058,5 +1058,82 @@ function FantasyCalc() {
 }
 
 function Matchups() {
-  return <div></div>;
+  return (
+    <div>
+      {Object.entries(wrapped.ffMatchups)
+        .map(([weekNum, matchups]) => ({ weekNum, matchups }))
+        .filter(
+          ({ weekNum }) => Object.values(wrapped.ffTeams)[0].rosters[weekNum]
+        )
+        .map(({ weekNum, matchups }) => (
+          <div>
+            <div style={bubbleStyle}>week {weekNum}</div>
+            <div style={{ display: "flex", overflow: "scroll" }}>
+              {matchups.map((matchup, i) => (
+                <div key={i} style={bubbleStyle}>
+                  <div style={{ display: "flex", whiteSpace: "nowrap" }}>
+                    {matchup
+                      .map((teamId) => wrapped.ffTeams[teamId])
+                      .map((team) => ({
+                        ...team,
+                        roster: team.rosters[weekNum],
+                      }))
+                      .map((team) => (
+                        <div key={team.id} style={bubbleStyle}>
+                          <h2>{team.name}</h2>
+                          <h3>
+                            {team.roster.starting
+                              .map((playerId) => wrapped.nflPlayers[playerId])
+                              .map((p) => p.scores[weekNum] || 0)
+                              .reduce((a, b) => a + b, 0)
+                              .toFixed(2)}
+                          </h3>
+                          <div>
+                            started
+                            <div>
+                              {team.roster.starting
+                                .map((playerId) => wrapped.nflPlayers[playerId])
+                                .map((p) => ({
+                                  ...p,
+                                  score: p.scores[weekNum] || 0,
+                                }))
+                                .sort((a, b) => b.score - a.score)
+                                .map((p) => (
+                                  <div key={p.id}>
+                                    {p.score.toFixed(2)} {p.name}
+                                  </div>
+                                ))}
+                            </div>
+                          </div>
+                          <div>
+                            bench
+                            <div>
+                              {team.roster.rostered
+                                .filter(
+                                  (playerId) =>
+                                    !team.roster.starting.includes(playerId)
+                                )
+                                .map((playerId) => wrapped.nflPlayers[playerId])
+                                .map((p) => ({
+                                  ...p,
+                                  score: p.scores[weekNum] || 0,
+                                }))
+                                .sort((a, b) => b.score - a.score)
+                                .map((p) => (
+                                  <div key={p.id}>
+                                    {p.score.toFixed(2)} {p.name}
+                                  </div>
+                                ))}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+    </div>
+  );
 }
