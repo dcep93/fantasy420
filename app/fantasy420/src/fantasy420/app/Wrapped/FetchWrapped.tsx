@@ -48,6 +48,7 @@ export type WrappedType = {
     [id: string]: FFTeamType;
   };
   ffMatchups: { [weekNum: string]: MatchupType };
+  fantasyCalc: { [espnId: string]: number };
 };
 
 export default function FetchWrapped() {
@@ -519,15 +520,37 @@ export default function FetchWrapped() {
             )
         )
         .then((nflTeams: { [nflTeamId: string]: NFLTeamType }) => nflTeams),
+      // fantasyCalc
+      Promise.resolve().then(() =>
+        fetch(
+          `https://api.fantasycalc.com/values/current?isDynasty=false&numQbs=2&numTeams=10&ppr=1&includeAdp=false`
+        )
+          .then((resp) => resp.json())
+          .then(
+            (
+              resp: {
+                value: number;
+                player: { name: string; espnId: number };
+              }[]
+            ) =>
+              Object.fromEntries(
+                resp.map((p) => [
+                  p.player.espnId ? p.player.espnId.toString() : p.player.name,
+                  p.value / 100,
+                ])
+              )
+          )
+      ),
     ])
     .then((ps) => Promise.all(ps))
     .then(
-      ([nflPlayers, ffTeams, ffMatchups, nflTeams]) =>
+      ([nflPlayers, ffTeams, ffMatchups, nflTeams, fantasyCalc]) =>
         ({
           nflPlayers,
           ffTeams,
           ffMatchups,
           nflTeams,
+          fantasyCalc,
         } as WrappedType)
     )
     .then(console.log);

@@ -1,5 +1,6 @@
 import { ReactNode, useState } from "react";
 import Accuracy from "../Accuracy";
+import { draft_json } from "../Draft";
 import { printF } from "../Fetch";
 import FetchWrapped, { WrappedType } from "./FetchWrapped";
 import rawWrapped from "./wrapped.json";
@@ -23,6 +24,8 @@ export default function Wrapped() {
       Benchwarmers,
       Injuries,
       ChosenWrong,
+      FantasyCalc,
+      Matchups,
       json,
     }).map(([k, v]) => [k, v()])
   );
@@ -984,4 +987,75 @@ function OwnedTeams() {
       </div>
     </div>
   );
+}
+
+function FantasyCalc() {
+  const playerToDraftPick = Object.fromEntries(
+    draft_json.drafts[0].map((name, i) => [name, i + 1])
+  );
+  const owned = Object.fromEntries(
+    Object.values(wrapped.ffTeams)
+      .flatMap((p) => p.rosters["0"].rostered)
+      .map((playerId) => [playerId, true])
+  );
+  return (
+    <div>
+      <div>https://fantasycalc.com/redraft-rankings</div>
+      <div style={bubbleStyle}>
+        <h1>UNOWNED</h1>
+        <div>
+          {Object.entries(wrapped.fantasyCalc)
+            .map(([playerId, value]) => ({
+              playerId,
+              value,
+            }))
+            .filter(({ playerId }) => !owned[playerId])
+            .sort((a, b) => b.value - a.value)
+            .slice(0, 20)
+            .map((f) => ({
+              ...f,
+              name: wrapped.nflPlayers[f.playerId]?.name || f.playerId,
+            }))
+            .map((f) => (
+              <div key={f.playerId}>
+                {f.value.toFixed(2)} {f.name}
+              </div>
+            ))}
+        </div>
+      </div>
+      <div style={{ display: "flex", flexWrap: "wrap", whiteSpace: "nowrap" }}>
+        {Object.values(wrapped.ffTeams)
+          .map(({ rosters, ...t }) => ({
+            ...t,
+            ps: rosters["0"].rostered
+              .map((playerId) => wrapped.nflPlayers[playerId])
+              .map((p) => ({
+                name: p.name,
+                value: wrapped.fantasyCalc[p.id] || 0,
+                draftPick: playerToDraftPick[p.name],
+              }))
+              .sort((a, b) => b.value - a.value),
+          }))
+          .map((t) => ({
+            ...t,
+            value: t.ps.map((p) => p.value).reduce((a, b) => a + b, 0),
+          }))
+          .sort((a, b) => b.value - a.value)
+          .map((t) => (
+            <div key={t.id} style={bubbleStyle}>
+              <h2>{t.name}</h2>
+              {t.ps.map((p, i) => (
+                <div key={i}>
+                  {p.value.toFixed(2)} {p.name} ({p.draftPick})
+                </div>
+              ))}
+            </div>
+          ))}
+      </div>
+    </div>
+  );
+}
+
+function Matchups() {
+  return <div></div>;
 }
