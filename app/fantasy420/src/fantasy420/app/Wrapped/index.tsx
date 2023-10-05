@@ -6,9 +6,10 @@ import wrapped2022 from "./2022.json";
 import FetchWrapped, { WrappedType } from "./FetchWrapped";
 import rawWrapped from "./wrapped.json";
 
-export const wrapped: WrappedType = { "": rawWrapped, "2022": wrapped2022 }[
-  new URLSearchParams(window.location.search).get("year") || ""
-]!;
+export const wrapped: WrappedType =
+  { "2022": wrapped2022 }[
+    new URLSearchParams(window.location.search).get("year") || ""
+  ] || rawWrapped;
 
 export default function Wrapped() {
   document.title = "Fantasy Wrapped";
