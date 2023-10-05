@@ -1044,6 +1044,7 @@ function FantasyCalc() {
           .map((t) => (
             <div key={t.id} style={bubbleStyle}>
               <h2>{t.name}</h2>
+              <h3>{t.value.toFixed(2)}</h3>
               {t.ps.map((p, i) => (
                 <div key={i}>
                   {p.value.toFixed(2)} {p.name} ({p.draftPick})
