@@ -123,18 +123,29 @@ function json() {
 }
 
 function ChosenWrong() {
-  const startables = {
+  const _startables = {
     [Position.QB]: 1,
     [Position.WR]: 2,
     [Position.RB]: 2,
     [Position.TE]: 1,
     [Position.K]: 1,
     [Position.DST]: 1,
-    [Position.FLEX]: 2,
-    [Position.SUPERFLEX]: 1,
+    [Position.FLEX]: 1,
+    [Position.SUPERFLEX]: 0,
   };
-  function getIdeal(rostered: string[], weekNum: string): string[] {
+  function getIdeal(
+    rostered: string[],
+    weekNum: string,
+    numStarted: number
+  ): string[] {
     const ideal = [] as string[];
+    const startables = { ..._startables };
+    if (numStarted >= 10) {
+      startables[Position.FLEX]++;
+    }
+    if (numStarted >= 11) {
+      startables[Position.SUPERFLEX]++;
+    }
     Object.entries(startables)
       .flatMap(([position, count]) =>
         Array.from(new Array(count)).map((_) => parseInt(position) as Position)
@@ -186,7 +197,11 @@ function ChosenWrong() {
                       wrapped.nflPlayers[playerId].scores[weekNum] || 0
                   )
                   .reduce((a, b) => a + b, 0),
-                ideal: getIdeal(team.rosters[weekNum].rostered, weekNum),
+                ideal: getIdeal(
+                  team.rosters[weekNum].rostered,
+                  weekNum,
+                  team.rosters[weekNum].starting.length
+                ),
               }))
               .map((team) => ({
                 ...team,
@@ -659,11 +674,12 @@ function Negatives() {
           Object.entries(p.scores).map(([weekNum, score]) => ({
             ...p,
             weekNum,
-            score,
+            score: score!,
           }))
         )
         .filter((p) => p.weekNum !== "0")
-        .filter((p) => p.score! < 0)
+        .filter((p) => p.score < 0)
+        .sort((a, b) => a.score - b.score)
         .filter((p) => !["K", "DST"].includes(p.position))
         .map((p, i) => (
           <div key={i}>
