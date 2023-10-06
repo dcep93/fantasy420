@@ -2,12 +2,13 @@ import { ReactNode, useState } from "react";
 import Accuracy from "../Accuracy";
 import { draft_json } from "../Draft";
 import { printF } from "../Fetch";
+import wrapped2021 from "./2021.json";
 import wrapped2022 from "./2022.json";
 import FetchWrapped, { WrappedType } from "./FetchWrapped";
 import rawWrapped from "./wrapped.json";
 
 export const wrapped: WrappedType =
-  { "2022": wrapped2022 }[
+  { "2021": wrapped2021, "2022": wrapped2022 }[
     new URLSearchParams(window.location.search).get("year") || ""
   ] || rawWrapped;
 

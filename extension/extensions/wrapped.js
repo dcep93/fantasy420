@@ -194,7 +194,7 @@ function FetchWrapped() {
                 byeWeek: p.byeWeek,
                 proGamesByScoringPeriod: fromEntries(
                   Object.entries(p.proGamesByScoringPeriod)
-                    .filter(([_, o]) => o[0].statsOfficial)
+                    .filter(([_, o]) => year <= 2021 || o[0].statsOfficial)
                     .map(([scoringPeriod, o]) => ({
                       key: scoringPeriod,
                       value: o[0].id,
@@ -241,6 +241,7 @@ function FetchWrapped() {
                             teamId: play.teamId,
                             yards: parseInt(
                               play.text
+                                .replace("Yrd Field Goal", "Yd Field Goal")
                                 .split(" Yd Field Goal")[0]
                                 .split(" ")
                                 .reverse()[0]
