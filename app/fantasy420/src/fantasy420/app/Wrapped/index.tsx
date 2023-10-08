@@ -2,13 +2,14 @@ import { ReactNode, useState } from "react";
 import Accuracy from "../Accuracy";
 import { draft_json } from "../Draft";
 import { printF } from "../Fetch";
-import wrapped2021 from "./2021.json";
-import wrapped2022 from "./2022.json";
+// import wrapped2021 from "./2021.json";
+// import wrapped2022 from "./2022.json";
 import FetchWrapped, { WrappedType } from "./FetchWrapped";
 import rawWrapped from "./wrapped.json";
 
 export const wrapped: WrappedType =
-  { "2021": wrapped2021, "2022": wrapped2022 }[
+  // { "2021": wrapped2021, "2022": wrapped2022 }[
+  { "": rawWrapped }[
     new URLSearchParams(window.location.search).get("year") || ""
   ] || rawWrapped;
 
@@ -1023,10 +1024,11 @@ function FantasyCalc() {
   return (
     <div>
       <div>https://fantasycalc.com/redraft-rankings</div>
+      <div>{new Date(wrapped.fantasyCalc.timestamp).toString()}</div>
       <div style={bubbleStyle}>
         <h1>UNOWNED</h1>
         <div>
-          {Object.entries(wrapped.fantasyCalc)
+          {Object.entries(wrapped.fantasyCalc.players)
             .map(([playerId, value]) => ({
               playerId,
               value,
@@ -1053,7 +1055,7 @@ function FantasyCalc() {
               .map((playerId) => wrapped.nflPlayers[playerId])
               .map((p) => ({
                 name: p.name,
-                value: wrapped.fantasyCalc[p.id] || 0,
+                value: wrapped.fantasyCalc.players[p.id] || 0,
                 draftPick: playerToDraftPick[p.name],
               }))
               .sort((a, b) => b.value - a.value),

@@ -351,20 +351,22 @@ function FetchWrapped() {
             )
         )
         .then((nflTeams) => nflTeams),
-      Promise.resolve().then(() =>
-        fetch(
-          `https://api.fantasycalc.com/values/current?isDynasty=false&numQbs=2&numTeams=10&ppr=1&includeAdp=false`
-        )
-          .then((resp) => resp.json())
-          .then((resp) =>
-            Object.fromEntries(
-              resp.map((p) => [
-                p.player.espnId ? p.player.espnId.toString() : p.player.name,
-                p.value / 100,
-              ])
-            )
+      Promise.resolve()
+        .then(() =>
+          fetch(
+            `https://api.fantasycalc.com/values/current?isDynasty=false&numQbs=2&numTeams=10&ppr=1&includeAdp=false`
           )
-      ),
+            .then((resp) => resp.json())
+            .then((resp) =>
+              Object.fromEntries(
+                resp.map((p) => [
+                  p.player.espnId ? p.player.espnId.toString() : p.player.name,
+                  p.value / 100,
+                ])
+              )
+            )
+        )
+        .then((players) => ({ players, timestamp: Date.now() })),
     ])
     .then((ps) => Promise.all(ps))
     .then(([nflPlayers, ffTeams, ffMatchups, nflTeams, fantasyCalc]) => ({
