@@ -1,6 +1,6 @@
 import { ReactNode, useState } from "react";
 import Accuracy from "../Accuracy";
-import { draft_json } from "../Draft";
+import { draft_json, normalize } from "../Draft";
 import { printF } from "../Fetch";
 // import wrapped2021 from "./2021.json";
 // import wrapped2022 from "./2022.json";
@@ -1056,7 +1056,7 @@ function FantasyCalc() {
               .map((p) => ({
                 name: p.name,
                 value: wrapped.fantasyCalc.players[p.id] || 0,
-                draftPick: playerToDraftPick[p.name],
+                draftPick: playerToDraftPick[normalize(p.name)],
               }))
               .sort((a, b) => b.value - a.value),
           }))
