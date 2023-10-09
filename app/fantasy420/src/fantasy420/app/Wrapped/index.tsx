@@ -801,6 +801,10 @@ function BoomBust() {
             getValue: (scores: number[]) => -getStdDevOverMean(scores),
           },
           {
+            valueName: "total",
+            getValue: (scores: number[]) => scores.reduce((a, b) => a + b, 0),
+          },
+          {
             valueName: "max",
             getValue: (scores: number[]) => Math.max(...scores),
           },
