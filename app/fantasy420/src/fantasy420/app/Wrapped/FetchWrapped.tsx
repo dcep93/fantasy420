@@ -140,6 +140,11 @@ export default function FetchWrapped() {
                         }))
                     ),
                   }))
+                  .filter(
+                    (player) =>
+                      Object.values(player.scores).filter((s) => s !== 0)
+                        .length > 0
+                  )
                   .map((player) => ({ key: player.id, value: player }))
             )
             .then((playersArr) => fromEntries(playersArr))
