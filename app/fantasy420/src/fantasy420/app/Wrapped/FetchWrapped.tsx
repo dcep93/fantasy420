@@ -114,9 +114,6 @@ export default function FetchWrapped() {
               }) =>
                 resp.players
                   .map((player) => player.player)
-                  .filter(
-                    (player) => player.proTeamId !== 0 || player.onTeamId !== 0
-                  )
                   .map((player) => ({
                     id: player.id.toString(),
                     nflTeamId: player.proTeamId.toString(),
@@ -139,13 +136,18 @@ export default function FetchWrapped() {
                           value: parseFloat(stat.appliedTotal.toFixed(2)),
                         }))
                     ),
+                    dontFilter: player.onTeamId !== 0,
                   }))
                   .filter(
                     (player) =>
+                      player.dontFilter ||
                       Object.values(player.scores).filter((s) => s !== 0)
                         .length > 0
                   )
-                  .map((player) => ({ key: player.id, value: player }))
+                  .map(({ dontFilter, ...player }) => ({
+                    key: player.id,
+                    value: player,
+                  }))
             )
             .then((playersArr) => fromEntries(playersArr))
         )
