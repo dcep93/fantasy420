@@ -109,6 +109,7 @@ export default function FetchWrapped() {
                       appliedTotal: number;
                       appliedAverage: number;
                     }[];
+                    ownership: { percentOwned: number };
                   };
                 }[];
               }) =>
@@ -136,7 +137,9 @@ export default function FetchWrapped() {
                           value: parseFloat(stat.appliedTotal.toFixed(2)),
                         }))
                     ),
-                    dontFilter: player.onTeamId !== 0,
+                    dontFilter:
+                      player.onTeamId !== 0 ||
+                      player.ownership.percentOwned > 0.1,
                   }))
                   .filter(
                     (player) =>
