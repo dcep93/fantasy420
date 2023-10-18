@@ -63,6 +63,20 @@ export default function FetchWrapped() {
       arr.filter((a) => a !== undefined).map((a) => [a!.key, a!.value])
     );
   }
+  function fetchE(
+    url: string,
+    maxAgeMs: number,
+    options: any = undefined
+  ): Promise<string> {
+    const extension_id = "jjlokcmkcepehbfepbffkmkkbnggkmje";
+    return new Promise((resolve) =>
+      window.chrome.runtime.sendMessage(
+        extension_id,
+        { url, options },
+        (response: any) => resolve(response)
+      )
+    );
+  }
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   function clog<T>(t: T): T {
     console.log(t);
@@ -534,10 +548,12 @@ export default function FetchWrapped() {
       // fantasyCalc
       Promise.resolve()
         .then(() =>
-          fetch(
-            `https://api.fantasycalc.com/values/current?isDynasty=false&numQbs=2&numTeams=10&ppr=1&includeAdp=false`
+          fetchE(
+            `https://api.fantasycalc.com/values/current?isDynasty=false&numQbs=2&numTeams=10&ppr=1&includeAdp=false`,
+            0
           )
-            .then((resp) => resp.json())
+            // .then((resp) => resp.json())
+            .then((resp) => JSON.parse(resp))
             .then(
               (
                 resp: {
