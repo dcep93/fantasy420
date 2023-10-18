@@ -8,14 +8,21 @@ function FetchWrapped() {
       arr.filter((a) => a !== undefined).map((a) => [a.key, a.value])
     );
   }
-  function fetchE(url, maxAgeMs, options = undefined) {
-    const extension_id = "jjlokcmkcepehbfepbffkmkkbnggkmje";
-    return new Promise((resolve) =>
-      window.chrome.runtime.sendMessage(
-        extension_id,
-        { url, options },
-        (response) => resolve(response)
-      )
+  function ext(data) {
+    const extension_id = "kmpbdkipjlpbckfnpbfbncddjaneeklc";
+    return new Promise((resolve, reject) =>
+      window.chrome.runtime.sendMessage(extension_id, data, (response) => {
+        if (window.chrome.runtime.lastError) {
+          return reject(
+            `chrome.runtime.lastError ${window.chrome.runtime.lastError}`
+          );
+        }
+        if (!response.ok) {
+          console.error(data, response);
+          return reject(`chrome: ${response.err}`);
+        }
+        resolve(response.data);
+      })
     );
   }
   function clog(t) {
@@ -372,11 +379,12 @@ function FetchWrapped() {
         .then((nflTeams) => nflTeams),
       Promise.resolve()
         .then(() =>
-          fetchE(
-            `https://api.fantasycalc.com/values/current?isDynasty=false&numQbs=2&numTeams=10&ppr=1&includeAdp=false`,
-            0
-          )
-            .then((resp) => JSON.parse(resp))
+          ext({
+            fetch: {
+              url: `https://api.fantasycalc.com/values/current?isDynasty=false&numQbs=2&numTeams=10&ppr=1&includeAdp=false`,
+            },
+          })
+            .then((resp) => JSON.parse(resp.msg))
             .then((resp) =>
               Object.fromEntries(
                 resp.map((p) => [
