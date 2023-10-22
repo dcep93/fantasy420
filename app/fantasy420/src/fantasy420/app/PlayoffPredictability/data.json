@@ -1,18 +1,38 @@
 {
   "2022": {
-    "playoffs": ["Chiefs", "Eagles"],
-    "primetimes": {
-      "monday": { "Eagles": 2, "Bills": 1 },
-      "thursday": { "Eagles": 2, "Bills": 1 },
-      "sunday": { "Eagles": 2, "Bills": 1 }
+    "Chiefs": {
+      "playoffs": true,
+      "primetimes": {
+        "monday": 1,
+        "thursday": 2,
+        "sunday": 3
+      }
+    },
+    "Eagles": {
+      "playoffs": true,
+      "primetimes": {
+        "monday": 1,
+        "thursday": 2,
+        "sunday": 3
+      }
     }
   },
   "2021": {
-    "playoffs": ["Chiefs", "Eagles"],
-    "primetimes": {
-      "monday": { "Eagles": 2, "Bills": 1 },
-      "thursday": { "Eagles": 2, "Bills": 1 },
-      "sunday": { "Eagles": 2, "Bills": 1 }
+    "Chiefs": {
+      "playoffs": true,
+      "primetimes": {
+        "monday": 1,
+        "thursday": 2,
+        "sunday": 3
+      }
+    },
+    "Eagles": {
+      "playoffs": true,
+      "primetimes": {
+        "monday": 1,
+        "thursday": 2,
+        "sunday": 3
+      }
     }
   }
 }
