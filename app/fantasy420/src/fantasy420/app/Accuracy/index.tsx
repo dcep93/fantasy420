@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { draft_json, normalize } from "../Draft";
-import { Position, wrapped } from "../Wrapped";
+import { Position, rawWrapped as wrapped } from "../Wrapped";
 import Chart from "./Chart";
 import raw_accuracy_json from "./accuracy.json";
 import distanceCorrelation from "./correlation";

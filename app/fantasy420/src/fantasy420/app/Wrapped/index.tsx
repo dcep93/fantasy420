@@ -1,11 +1,12 @@
 import { ReactNode, useState } from "react";
-import Accuracy from "../Accuracy";
 import { draft_json, normalize } from "../Draft";
 import { printF } from "../Fetch";
 import wrapped2021 from "./2021.json";
 import wrapped2022 from "./2022.json";
 import FetchWrapped, { WrappedType } from "./FetchWrapped";
-import rawWrapped from "./wrapped.json";
+import _rawWrapped from "./wrapped.json";
+
+export const rawWrapped = _rawWrapped;
 
 export const wrapped: WrappedType =
   { "2021": wrapped2021, "2022": wrapped2022 }[
@@ -18,7 +19,6 @@ export default function Wrapped() {
   const toRender: { [key: string]: ReactNode } = Object.fromEntries(
     Object.entries({
       FantasyCalc,
-      Accuracy,
       SqueezesAndStomps,
       WeekTopsAndBottoms,
       DeterminedByDiscreteScoring,

@@ -1,16 +1,17 @@
 import { BrowserRouter } from "react-router-dom";
 
 import Catalog from "../Catalog";
+import Accuracy from "./Accuracy";
 import Defense from "./Defense";
 import Draft from "./Draft";
 import DraftValue from "./Draft/Value";
-import Peaked from "./Peaked";
 import Schedule from "./Schedule";
 import Wrapped from "./Wrapped";
 
 const pages = {
+  // Accuracy,
   Wrapped,
-  Peaked,
+  // Peaked,
   Schedule,
   DraftValue,
   Draft,
@@ -24,7 +25,7 @@ if (process.env.NODE_ENV === "development") {
 function index() {
   return (
     <BrowserRouter>
-      <Catalog location={"ff"} pages={pages} />
+      <Catalog location={"ff"} pages={pages} default={Accuracy} />
     </BrowserRouter>
   );
 }
