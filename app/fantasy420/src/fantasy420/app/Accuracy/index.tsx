@@ -200,6 +200,10 @@ export default function Accuracy() {
   const [year, updateYear] = useState(default_year);
   const [source, updateSource] = useState("composite");
   const sources = getSources(year);
+  if (!sources[source]) {
+    updateSource("composite");
+    return <div></div>;
+  }
   const data = getData(year, source, sources);
   return (
     <div>
