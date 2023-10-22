@@ -50,7 +50,7 @@ export default function Index() {
         {Object.entries(predictabilities).map(([category, predictability]) => (
           <tr key={category}>
             <td>{category}</td>
-            <td>{predictability}</td>
+            <td>{predictability.toFixed(2)}</td>
           </tr>
         ))}
       </table>
