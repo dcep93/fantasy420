@@ -6,16 +6,18 @@ import wrapped2022 from "./2022.json";
 import FetchWrapped, { WrappedType } from "./FetchWrapped";
 import _rawWrapped from "./wrapped.json";
 
-export const rawWrapped = _rawWrapped;
+export const rawWrapped: WrappedType = _rawWrapped;
 
-const wrapped: WrappedType =
-  { "2021": wrapped2021, "2022": wrapped2022 }[
-    // { "": rawWrapped }[
-    new URLSearchParams(window.location.search).get("year") || ""
-  ] || rawWrapped;
+var wrapped: WrappedType;
 
 export default function Wrapped() {
   document.title = "Fantasy Wrapped";
+  const [yearKey, updateYear] = useState(
+    new URLSearchParams(window.location.search).get("year") || ""
+  );
+  wrapped =
+    // { "": rawWrapped }[
+    { "2021": wrapped2021, "2022": wrapped2022 }[yearKey] || rawWrapped;
   const toRender: { [key: string]: ReactNode } = Object.fromEntries(
     Object.entries({
       FantasyCalc,
@@ -61,6 +63,16 @@ export default function Wrapped() {
         ))}
       </div>
       <div>
+        <div>
+          year:{" "}
+          <select onChange={(e) => updateYear(e.target.value)}>
+            {[2023, 2022, 2021].map((y) => (
+              <option key={y} value={y}>
+                {y}
+              </option>
+            ))}
+          </select>
+        </div>
         <h1 style={bubbleStyle}>{toRenderKey}</h1>
         <div>{toRender[toRenderKey]}</div>
       </div>
@@ -1042,7 +1054,7 @@ function FantasyCalc() {
             .slice(0, 20)
             .map((f) => ({
               ...f,
-              name: wrapped.nflPlayers[f.playerId]?.name || f.playerId,
+              name: rawWrapped.nflPlayers[f.playerId]?.name || f.playerId,
             }))
             .map((f) => (
               <div key={f.playerId}>
