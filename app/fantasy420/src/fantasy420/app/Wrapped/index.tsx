@@ -8,7 +8,7 @@ import _rawWrapped from "./wrapped.json";
 
 export const rawWrapped = _rawWrapped;
 
-export const wrapped: WrappedType =
+const wrapped: WrappedType =
   { "2021": wrapped2021, "2022": wrapped2022 }[
     // { "": rawWrapped }[
     new URLSearchParams(window.location.search).get("year") || ""
