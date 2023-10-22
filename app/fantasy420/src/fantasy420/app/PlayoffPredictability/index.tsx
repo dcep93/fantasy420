@@ -4,8 +4,10 @@ import rawPredictabilities from "./predictabilities.json";
 
 type DataType = {
   [year: string]: {
-    playoffs: string[];
-    primetimes: { [category: string]: { [team: string]: number } };
+    [team: string]: {
+      playoffs: boolean;
+      primetimes: { [category: string]: number };
+    };
   };
 };
 
@@ -17,28 +19,21 @@ export default function Index() {
   const defaultYear = Object.keys(data).sort().reverse()[0];
   const [year, updateYear] = useState(defaultYear);
   const yearData = data[year];
-  const allTeams = Object.keys(
-    Object.fromEntries(
-      Object.values(yearData.primetimes)
-        .map((counts) => Object.keys(counts))
-        .flatMap((team) => team)
-        .map((team) => [team, true])
-    )
-  );
   const predictabilities = allPredictabilities[year];
-  const prediction = allTeams
-    .map((team) => ({
+  const playoffs = Object.entries(yearData)
+    .map(([team, teamData]) => ({ team, teamData }))
+    .filter((o) => o.teamData.playoffs)
+    .map((o) => o.team);
+  const prediction = Object.entries(yearData)
+    .map(([team, teamData]) => ({
       team,
-      score: Object.entries(yearData.primetimes)
-        .map(
-          ([category, counts]) =>
-            predictabilities[category] * (counts[team] || 0)
-        )
+      score: Object.entries(teamData.primetimes)
+        .map(([category, count]) => predictabilities[category] * count)
         .reduce((a, b) => a + b, 0),
     }))
     .sort((a, b) => a.score - b.score)
     .map((o) => o.team)
-    .slice(-yearData.playoffs.length);
+    .slice(-playoffs.length);
   return (
     <div>
       <div>
@@ -58,7 +53,7 @@ export default function Index() {
         <tbody>
           <tr>
             <td>playoff teams</td>
-            <td>{yearData.playoffs.join(", ")}</td>
+            <td>{playoffs.join(", ")}</td>
           </tr>
           <tr>
             <td>predicted playoff teams</td>
