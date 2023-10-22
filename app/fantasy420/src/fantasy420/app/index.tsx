@@ -9,9 +9,7 @@ import Schedule from "./Schedule";
 import Wrapped from "./Wrapped";
 
 const pages = {
-  // Accuracy,
   Wrapped,
-  // Peaked,
   Schedule,
   DraftValue,
   Draft,
