@@ -1,5 +1,6 @@
 import { useState } from "react";
 import rawData from "./data.json";
+import rawPredictabilities from "./predictabilities.json";
 
 type DataType = {
   [year: string]: {
@@ -9,6 +10,8 @@ type DataType = {
 };
 
 const data: DataType = rawData;
+const allPredictabilities: { [year: string]: { [category: string]: number } } =
+  rawPredictabilities;
 
 export default function Index() {
   const defaultYear = Object.keys(data).sort().reverse()[0];
@@ -22,12 +25,7 @@ export default function Index() {
         .map((team) => [team, true])
     )
   );
-  const predictabilities: { [category: string]: number } = Object.fromEntries(
-    Object.entries(yearData.primetimes).map(([category, counts]) => [
-      category,
-      1,
-    ])
-  );
+  const predictabilities = allPredictabilities[year];
   const prediction = allTeams
     .map((team) => ({
       team,
