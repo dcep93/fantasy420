@@ -1,6 +1,6 @@
 {
   "2022": {
-    "playoff_teams": ["Chiefs", "Eagles"],
+    "playoffs": ["Chiefs", "Eagles"],
     "primetimes": {
       "monday": { "Eagles": 2, "Bills": 1 },
       "thursday": { "Eagles": 2, "Bills": 1 },
@@ -8,7 +8,7 @@
     }
   },
   "2021": {
-    "playoff_teams": ["Chiefs", "Eagles"],
+    "playoffs": ["Chiefs", "Eagles"],
     "primetimes": {
       "monday": { "Eagles": 2, "Bills": 1 },
       "thursday": { "Eagles": 2, "Bills": 1 },

@@ -3,7 +3,7 @@ import rawData from "./data.json";
 
 type DataType = {
   [year: string]: {
-    playoff_teams: string[];
+    playoffs: string[];
     primetimes: { [category: string]: { [team: string]: number } };
   };
 };
@@ -38,11 +38,11 @@ export default function Index() {
       <table>
         <tr>
           <td>playoff teams</td>
-          <td>{yearData.playoff_teams.join(", ")}</td>
+          <td>{yearData.playoffs.join(", ")}</td>
         </tr>
         <tr>
           <td>predicted playoff teams</td>
-          <td>{yearData.playoff_teams.join(", ")}</td>
+          <td>{yearData.playoffs.join(", ")}</td>
         </tr>
         <tr>
           <td>predictabilities</td>
