@@ -5,6 +5,7 @@ import Accuracy from "./Accuracy";
 import Defense from "./Defense";
 import Draft from "./Draft";
 import DraftValue from "./Draft/Value";
+import PlayoffPredictability from "./PlayoffPredictability";
 import Schedule from "./Schedule";
 import Wrapped from "./Wrapped";
 
@@ -13,6 +14,7 @@ const pages = {
   Schedule,
   DraftValue,
   Draft,
+  PlayoffPredictability,
 };
 if (process.env.NODE_ENV === "development") {
   Object.assign(pages, {
