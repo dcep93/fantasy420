@@ -1,6 +1,6 @@
 {
   "2022": {
-    "playoff_teams": [
+    "playoffs": [
       "Chiefs",
       "Eagles"
     ],
@@ -20,7 +20,7 @@
     }
   },
   "2021": {
-    "playoff_teams": [
+    "playoffs": [
       "Chiefs",
       "Eagles"
     ],
