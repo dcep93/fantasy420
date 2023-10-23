@@ -392,7 +392,7 @@ export default function FetchWrapped() {
                   )
                 )
                 .then((gameIds) =>
-                  clog(gameIds.slice(20, 22)).map((gameId) =>
+                  gameIds.map((gameId) =>
                     fetch(
                       `https://www.espn.com/nfl/playbyplay/_/gameId/${gameId}`
                     )
@@ -405,7 +405,6 @@ export default function FetchWrapped() {
                             .split(";</script>")[0]
                       )
                       .then((resp) => JSON.parse(resp))
-                      .then(clog)
                       .then(
                         (resp: {
                           page: {
