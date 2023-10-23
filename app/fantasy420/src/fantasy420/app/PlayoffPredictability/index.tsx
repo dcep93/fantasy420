@@ -28,7 +28,7 @@ function fetchData() {
     return c;
   }
   return Promise.resolve(
-    Array.from(new Array(historyYears)).map((_, i) => 2022 - i)
+    Array.from(new Array(historyYears)).map((_, i) => 2023 - i)
   )
     .then((years) =>
       years.map((year) =>

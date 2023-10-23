@@ -1,245 +1,4 @@
 {
-  "2013": {
-    "Broncos": {
-      "wins": 15,
-      "primetimes": {
-        "Thu": 2,
-        "Mon": 1,
-        "Sun 8PM": 3
-      }
-    },
-    "Ravens": {
-      "wins": 8,
-      "primetimes": {
-        "Thu": 2,
-        "Mon": 1
-      }
-    },
-    "Patriots": {
-      "wins": 13,
-      "primetimes": {
-        "Thu": 1,
-        "Sun 8PM": 2,
-        "Mon": 1
-      }
-    },
-    "Bills": {
-      "wins": 6,
-      "primetimes": {
-        "Thu": 1
-      }
-    },
-    "Bears": {
-      "wins": 8,
-      "primetimes": {
-        "Sun 8PM": 2,
-        "Thu": 1,
-        "Mon": 2
-      }
-    },
-    "Bengals": {
-      "wins": 11,
-      "primetimes": {
-        "Mon": 1,
-        "Thu": 1,
-        "Sun 8PM": 1
-      }
-    },
-    "Dolphins": {
-      "wins": 8,
-      "primetimes": {
-        "Mon": 2,
-        "Thu": 1
-      }
-    },
-    "Browns": {
-      "wins": 4,
-      "primetimes": {
-        "Thu": 1
-      }
-    },
-    "Colts": {
-      "wins": 12,
-      "primetimes": {
-        "Mon": 1,
-        "Sun 8PM": 2,
-        "Thu": 1
-      }
-    },
-    "Raiders": {
-      "wins": 4,
-      "primetimes": {
-        "Mon": 1,
-        "Sun 11PM": 1,
-        "Thu": 1
-      }
-    },
-    "Lions": {
-      "wins": 7,
-      "primetimes": {
-        "Thu": 1,
-        "Mon": 1
-      }
-    },
-    "Vikings": {
-      "wins": 5.5,
-      "primetimes": {
-        "Mon": 1,
-        "Sun 8PM": 1,
-        "Thu": 1
-      }
-    },
-    "Titans": {
-      "wins": 7,
-      "primetimes": {
-        "Thu": 1
-      }
-    },
-    "Steelers": {
-      "wins": 8,
-      "primetimes": {
-        "Mon": 1,
-        "Sun 8PM": 2,
-        "Thu": 1
-      }
-    },
-    "Saints": {
-      "wins": 12,
-      "primetimes": {
-        "Mon": 2,
-        "Sun 8PM": 2,
-        "Thu": 1
-      }
-    },
-    "Falcons": {
-      "wins": 4,
-      "primetimes": {
-        "Sun 8PM": 1,
-        "Mon": 2,
-        "Thu": 1
-      }
-    },
-    "Chiefs": {
-      "wins": 11,
-      "primetimes": {
-        "Thu": 1,
-        "Sun 8PM": 1
-      }
-    },
-    "Jaguars": {
-      "wins": 4,
-      "primetimes": {
-        "Thu": 1
-      }
-    },
-    "Jets": {
-      "wins": 8,
-      "primetimes": {
-        "Thu": 1,
-        "Mon": 1
-      }
-    },
-    "Buccaneers": {
-      "wins": 4,
-      "primetimes": {
-        "Thu": 1,
-        "Mon": 1
-      }
-    },
-    "Seahawks": {
-      "wins": 16,
-      "primetimes": {
-        "Sun 8PM": 1,
-        "Thu": 1,
-        "Mon": 2
-      }
-    },
-    "Panthers": {
-      "wins": 12,
-      "primetimes": {
-        "Thu": 1,
-        "Mon": 1,
-        "Sun 8PM": 1
-      }
-    },
-    "Rams": {
-      "wins": 7,
-      "primetimes": {
-        "Thu": 1,
-        "Mon": 1
-      }
-    },
-    "Cardinals": {
-      "wins": 10,
-      "primetimes": {
-        "Thu": 1
-      }
-    },
-    "49ers": {
-      "wins": 14,
-      "primetimes": {
-        "Sun 8PM": 2,
-        "Thu": 1,
-        "Mon": 2
-      }
-    },
-    "Packers": {
-      "wins": 8.5,
-      "primetimes": {
-        "Sun 8PM": 1,
-        "Mon": 1,
-        "Thu": 1
-      }
-    },
-    "Cowboys": {
-      "wins": 8,
-      "primetimes": {
-        "Sun 8PM": 4,
-        "Thu": 1,
-        "Mon": 1
-      }
-    },
-    "Giants": {
-      "wins": 7,
-      "primetimes": {
-        "Sun 8PM": 2,
-        "Thu": 1,
-        "Mon": 1
-      }
-    },
-    "Eagles": {
-      "wins": 10,
-      "primetimes": {
-        "Mon": 1,
-        "Thu": 1,
-        "Sun 8PM": 2
-      }
-    },
-    "Redskins": {
-      "wins": 3,
-      "primetimes": {
-        "Mon": 2,
-        "Sun 8PM": 2,
-        "Thu": 1
-      }
-    },
-    "Texans": {
-      "wins": 2,
-      "primetimes": {
-        "Mon": 1,
-        "Sun 8PM": 2,
-        "Thu": 1
-      }
-    },
-    "Chargers": {
-      "wins": 10,
-      "primetimes": {
-        "Mon": 2,
-        "Sun 11PM": 1,
-        "Thu": 1
-      }
-    }
-  },
   "2014": {
     "Seahawks": {
       "wins": 14,
@@ -2429,6 +2188,250 @@
         "Sun 8PM": 1,
         "Thu": 1,
         "Sun 9AM": 1
+      }
+    }
+  },
+  "2023": {
+    "Lions": {
+      "wins": 10.5,
+      "primetimes": {
+        "Thu": 3,
+        "Mon": 1
+      }
+    },
+    "Chiefs": {
+      "wins": 10.5,
+      "primetimes": {
+        "Thu": 2,
+        "Sun 8PM": 2,
+        "Sun 9AM": 1,
+        "Mon": 3
+      }
+    },
+    "Jaguars": {
+      "wins": 10,
+      "primetimes": {
+        "Sun 9AM": 2,
+        "Thu": 1,
+        "Mon": 1,
+        "Sun 8PM": 1
+      }
+    },
+    "Colts": {
+      "wins": 8.5,
+      "primetimes": {
+        "Sun 9AM": 1
+      }
+    },
+    "Falcons": {
+      "wins": 8.5,
+      "primetimes": {
+        "Sun 9AM": 1
+      }
+    },
+    "Panthers": {
+      "wins": 5.5,
+      "primetimes": {
+        "Mon": 1,
+        "Thu": 1
+      }
+    },
+    "49ers": {
+      "wins": 10.5,
+      "primetimes": {
+        "Thu": 2,
+        "Sun 8PM": 1,
+        "Mon": 2
+      }
+    },
+    "Steelers": {
+      "wins": 9,
+      "primetimes": {
+        "Mon": 1,
+        "Sun 8PM": 1,
+        "Thu": 2
+      }
+    },
+    "Commanders": {
+      "wins": 8.5,
+      "primetimes": {
+        "Thu": 2
+      }
+    },
+    "Cardinals": {
+      "wins": 6.5,
+      "primetimes": {}
+    },
+    "Ravens": {
+      "wins": 9.5,
+      "primetimes": {
+        "Sun 9AM": 1,
+        "Thu": 1,
+        "Sun 8PM": 2,
+        "Mon": 1
+      }
+    },
+    "Texans": {
+      "wins": 8.5,
+      "primetimes": {}
+    },
+    "Browns": {
+      "wins": 9,
+      "primetimes": {
+        "Mon": 1,
+        "Thu": 1
+      }
+    },
+    "Bengals": {
+      "wins": 8.5,
+      "primetimes": {
+        "Mon": 2,
+        "Sun 8PM": 1,
+        "Thu": 1
+      }
+    },
+    "Saints": {
+      "wins": 8,
+      "primetimes": {
+        "Mon": 1,
+        "Thu": 2
+      }
+    },
+    "Titans": {
+      "wins": 7.5,
+      "primetimes": {
+        "Sun 9AM": 1,
+        "Thu": 1,
+        "Mon": 1
+      }
+    },
+    "Buccaneers": {
+      "wins": 9,
+      "primetimes": {
+        "Mon": 1,
+        "Thu": 1
+      }
+    },
+    "Vikings": {
+      "wins": 7.5,
+      "primetimes": {
+        "Thu": 1,
+        "Mon": 2,
+        "Sun 8PM": 2
+      }
+    },
+    "Raiders": {
+      "wins": 8.5,
+      "primetimes": {
+        "Sun 8PM": 2,
+        "Mon": 3,
+        "Thu": 1
+      }
+    },
+    "Broncos": {
+      "wins": 6.5,
+      "primetimes": {
+        "Thu": 1,
+        "Mon": 1,
+        "Sun 8PM": 2
+      }
+    },
+    "Packers": {
+      "wins": 8,
+      "primetimes": {
+        "Thu": 2,
+        "Mon": 2,
+        "Sun 8PM": 2
+      }
+    },
+    "Bears": {
+      "wins": 6.5,
+      "primetimes": {
+        "Thu": 2,
+        "Sun 8PM": 1,
+        "Mon": 1
+      }
+    },
+    "Dolphins": {
+      "wins": 10.5,
+      "primetimes": {
+        "Sun 8PM": 2,
+        "Sun 9AM": 1,
+        "Fri": 1,
+        "Mon": 1
+      }
+    },
+    "Chargers": {
+      "wins": 8,
+      "primetimes": {
+        "Mon": 2,
+        "Sun 8PM": 2,
+        "Thu": 1
+      }
+    },
+    "Eagles": {
+      "wins": 10.5,
+      "primetimes": {
+        "Thu": 1,
+        "Mon": 3,
+        "Sun 8PM": 2
+      }
+    },
+    "Patriots": {
+      "wins": 6.5,
+      "primetimes": {
+        "Sun 8PM": 2,
+        "Sun 9AM": 1,
+        "Thu": 1,
+        "Mon": 1
+      }
+    },
+    "Rams": {
+      "wins": 8.5,
+      "primetimes": {
+        "Mon": 1,
+        "Thu": 1
+      }
+    },
+    "Seahawks": {
+      "wins": 9,
+      "primetimes": {
+        "Mon": 1,
+        "Thu": 2
+      }
+    },
+    "Cowboys": {
+      "wins": 9.5,
+      "primetimes": {
+        "Sun 8PM": 3,
+        "Mon": 1,
+        "Thu": 2
+      }
+    },
+    "Giants": {
+      "wins": 6.5,
+      "primetimes": {
+        "Sun 8PM": 2,
+        "Thu": 1,
+        "Mon": 3
+      }
+    },
+    "Jets": {
+      "wins": 8.5,
+      "primetimes": {
+        "Mon": 2,
+        "Sun 8PM": 2,
+        "Fri": 1,
+        "Thu": 1
+      }
+    },
+    "Bills": {
+      "wins": 9.5,
+      "primetimes": {
+        "Mon": 2,
+        "Sun 9AM": 1,
+        "Sun 8PM": 2,
+        "Thu": 1
       }
     }
   }
