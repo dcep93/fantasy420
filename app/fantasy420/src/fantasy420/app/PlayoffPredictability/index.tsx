@@ -1,7 +1,7 @@
+import MLR from "ml-regression-multivariate-linear";
 import { useState } from "react";
 import { printF } from "../Fetch";
 import rawData from "./data.json";
-import rawPredictabilities from "./predictabilities.json";
 
 type DataType = {
   [year: string]: {
@@ -13,8 +13,6 @@ type DataType = {
 };
 
 const data: DataType = rawData;
-const allPredictabilities: { [year: string]: { [category: string]: number } } =
-  rawPredictabilities;
 
 function fetchData() {
   function clog<T>(t: T) {
@@ -118,21 +116,23 @@ export default function Index() {
   const defaultYear = Object.keys(data).sort().reverse()[0];
   const [year, updateYear] = useState(defaultYear);
   const yearData = data[year];
-  const predictabilities = allPredictabilities[year];
-  const playoffs = Object.entries(yearData) // todo
+  const teams = Object.entries(yearData)
     .map(([team, teamData]) => ({ team, teamData }))
-    .filter((o) => o.teamData.playoffs)
+    .sort((a, b) => b.teamData.playoffs - a.teamData.playoffs)
     .map((o) => o.team);
-  const prediction = Object.entries(yearData)
-    .map(([team, teamData]) => ({
-      team,
-      score: Object.entries(teamData.primetimes)
-        .map(([category, count]) => predictabilities[category] * count)
-        .reduce((a, b) => a + b, 0),
-    }))
-    .sort((a, b) => a.score - b.score)
-    .map((o) => o.team)
-    .slice(-playoffs.length);
+  const primetimes = Object.keys(
+    Object.fromEntries(
+      Object.values(yearData)
+        .flatMap((teamData) => Object.keys(teamData.primetimes))
+        .map((category) => [category, 1])
+    )
+  );
+  const x = teams.map((team) =>
+    primetimes.map((category) => yearData[team].primetimes[category] || 0)
+  );
+  const y = teams.map((team) => [yearData[team].playoffs]);
+  const mlr = new MLR(x, y);
+  console.log(mlr);
   return (
     <div>
       <div>
@@ -149,26 +149,47 @@ export default function Index() {
         </select>
       </div>
       <table>
+        <thead>
+          <tr>
+            <th></th>
+            {primetimes.concat(["playoffs"]).map((category) => (
+              <th key={category} style={{ paddingRight: "40px" }}>
+                {category}
+              </th>
+            ))}
+            <th>predicted</th>
+          </tr>
+        </thead>
         <tbody>
           <tr>
-            <td>playoff teams</td>
-            <td>{playoffs.join(", ")}</td>
+            <td>{"<weights>"}</td>
+            {mlr.weights.map((weight, i) => (
+              <td key={i}>{weight[0].toFixed(2)}</td>
+            ))}
           </tr>
           <tr>
-            <td>predicted playoff teams</td>
-            <td>{prediction.join(", ")}</td>
+            <td>_</td>
           </tr>
-          <tr>
-            <td>predictabilities</td>
-          </tr>
-          {Object.entries(predictabilities).map(
-            ([category, predictability]) => (
-              <tr key={category}>
-                <td>{category}</td>
-                <td>{predictability.toFixed(2)}</td>
-              </tr>
-            )
-          )}
+          {teams.map((team) => (
+            <tr key={team}>
+              <td>{team}</td>
+              {primetimes.map((category) => (
+                <td key={category}>
+                  {yearData[team].primetimes[category] || 0}
+                </td>
+              ))}
+              <td>{yearData[team].playoffs}</td>
+              <td>
+                {mlr
+                  .predict(
+                    primetimes.map(
+                      (category) => yearData[team].primetimes[category] || 0
+                    )
+                  )[0]
+                  .toFixed(2)}
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
