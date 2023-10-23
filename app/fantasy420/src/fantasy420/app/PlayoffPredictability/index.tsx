@@ -15,6 +15,7 @@ type DataType = {
 const data: DataType = rawData;
 
 function fetchData() {
+  const historyYears = 10;
   function clog<T>(t: T) {
     console.error(t);
     return t;
@@ -26,7 +27,9 @@ function fetchData() {
     });
     return c;
   }
-  return Promise.resolve(Array.from(new Array(10)).map((_, i) => 2022 - i))
+  return Promise.resolve(
+    Array.from(new Array(historyYears)).map((_, i) => 2022 - i)
+  )
     .then((years) =>
       years.map((year) =>
         fetch(`https://www.pro-football-reference.com/years/${year}/games.htm`)
@@ -53,26 +56,22 @@ function fetchData() {
               );
           })
           .then((rows) =>
-            rows
-              .map((row) => ({
-                teams: ["Winner/tie", "Loser/tie"].map(
-                  (k) => row[k].split(" ").reverse()[0]
-                ),
-                playoffs: isNaN(parseInt(row["Week"])),
-                tie: row["PtsW"] === row["PtsL"],
-                category:
-                  row["Day"] !== "Sun"
-                    ? row["Day"]
-                    : row["Time"].startsWith("1:") ||
-                      row["Time"].startsWith("4:")
-                    ? "Sun"
-                    : `${row["Day"]} ${row["Time"].split(":")[0]}${row[
-                        "Time"
-                      ].slice(-2)}`,
-                row,
-              }))
-              .filter((row) => row.category !== "Sat")
-              .filter((row) => row.category !== "Sun")
+            rows.map((row) => ({
+              teams: ["Winner/tie", "Loser/tie"].map(
+                (k) => row[k].split(" ").reverse()[0]
+              ),
+              playoffs: isNaN(parseInt(row["Week"])),
+              tie: row["PtsW"] === row["PtsL"],
+              category:
+                row["Day"] !== "Sun"
+                  ? row["Day"]
+                  : row["Time"].startsWith("1:") || row["Time"].startsWith("4:")
+                  ? "Sun"
+                  : `${row["Day"]} ${row["Time"].split(":")[0]}${row[
+                      "Time"
+                    ].slice(-2)}`,
+              row,
+            }))
           )
           .then((matches) =>
             Object.fromEntries(
@@ -104,7 +103,12 @@ function fetchData() {
                       )
                       .reduce((a, b) => a + b, 0),
                     primetimes: countStrings(
-                      matches.map((match) => match.category)
+                      matches
+                        .filter((match) => !match.playoffs)
+                        .map((match) => match.category)
+                        .filter(
+                          (category) => !["Sat", "Sun"].includes(category)
+                        )
                     ),
                   },
                 ])
