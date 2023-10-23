@@ -163,9 +163,13 @@ export default function Index() {
         <tbody>
           <tr>
             <td>{"<weights>"}</td>
-            {mlr.weights.map((weight, i) => (
+            {mlr.weights.slice(0, -1).map((weight, i) => (
               <td key={i}>{weight[0].toFixed(2)}</td>
             ))}
+            <td>
+              {mlr.weights.slice().reverse()[0][0].toFixed(2)} (intercept)
+            </td>
+            <td>{mlr.stdError.toFixed(2)} (stdError)</td>
           </tr>
           <tr>
             <td>_</td>
