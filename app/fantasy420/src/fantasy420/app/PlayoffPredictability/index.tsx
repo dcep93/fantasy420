@@ -6,7 +6,7 @@ import rawData from "./data.json";
 type DataType = {
   [year: string]: {
     [team: string]: {
-      playoffs: number;
+      wins: number;
       primetimes: { [category: string]: number };
     };
   };
@@ -125,7 +125,7 @@ export default function Index() {
   const yearData = data[year];
   const teams = Object.entries(yearData)
     .map(([team, teamData]) => ({ team, teamData }))
-    .sort((a, b) => b.teamData.playoffs - a.teamData.playoffs)
+    .sort((a, b) => b.teamData.wins - a.teamData.wins)
     .map((o) => o.team);
   const primetimes = Object.keys(
     Object.fromEntries(
@@ -137,7 +137,7 @@ export default function Index() {
   const x = teams.map((team) =>
     primetimes.map((category) => yearData[team].primetimes[category] || 0)
   );
-  const y = teams.map((team) => [yearData[team].playoffs]);
+  const y = teams.map((team) => [yearData[team].wins]);
   const mlr = new MLR(x, y);
   console.log(mlr);
   return (
@@ -159,7 +159,7 @@ export default function Index() {
         <thead>
           <tr>
             <th></th>
-            {primetimes.concat(["playoffs"]).map((category) => (
+            {primetimes.concat(["wins"]).map((category) => (
               <th key={category} style={{ paddingRight: "40px" }}>
                 {category}
               </th>
@@ -189,7 +189,7 @@ export default function Index() {
                   {yearData[team].primetimes[category] || 0}
                 </td>
               ))}
-              <td>{yearData[team].playoffs}</td>
+              <td>{yearData[team].wins}</td>
               <td>
                 {mlr
                   .predict(

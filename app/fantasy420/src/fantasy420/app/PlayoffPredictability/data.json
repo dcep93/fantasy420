@@ -1,22 +1,24 @@
 {
   "2013": {
     "Broncos": {
-      "playoffs": 2,
+      "wins": 4,
       "primetimes": {
         "Thu": 2,
         "Mon": 1,
-        "Sun 8PM": 3
+        "Sun 8PM": 3,
+        "Sun 3PM": 1,
+        "Sun 6PM": 1
       }
     },
     "Ravens": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Thu": 2,
         "Mon": 1
       }
     },
     "Cowboys": {
-      "playoffs": 0,
+      "wins": 3,
       "primetimes": {
         "Sun 8PM": 4,
         "Thu": 1,
@@ -24,7 +26,7 @@
       }
     },
     "Giants": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Sun 8PM": 2,
         "Thu": 1,
@@ -32,7 +34,7 @@
       }
     },
     "Eagles": {
-      "playoffs": 0,
+      "wins": 3,
       "primetimes": {
         "Mon": 1,
         "Thu": 1,
@@ -40,7 +42,7 @@
       }
     },
     "Redskins": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Mon": 2,
         "Sun 8PM": 2,
@@ -48,7 +50,7 @@
       }
     },
     "Texans": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 1,
         "Sun 8PM": 2,
@@ -56,7 +58,7 @@
       }
     },
     "Chargers": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Mon": 2,
         "Sun 11PM": 1,
@@ -64,38 +66,41 @@
       }
     },
     "Patriots": {
-      "playoffs": 1,
+      "wins": 3,
       "primetimes": {
         "Thu": 1,
         "Sun 8PM": 2,
-        "Mon": 1
+        "Mon": 1,
+        "Sun 3PM": 1
       }
     },
     "Jets": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Mon": 1
       }
     },
     "Seahawks": {
-      "playoffs": 2,
+      "wins": 6,
       "primetimes": {
         "Sun 8PM": 1,
         "Thu": 1,
-        "Mon": 2
+        "Mon": 2,
+        "Sun 6PM": 2
       }
     },
     "49ers": {
-      "playoffs": 1,
+      "wins": 4,
       "primetimes": {
         "Sun 8PM": 2,
         "Thu": 1,
-        "Mon": 2
+        "Mon": 2,
+        "Sun 6PM": 1
       }
     },
     "Bengals": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 1,
         "Thu": 1,
@@ -103,7 +108,7 @@
       }
     },
     "Steelers": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 1,
         "Sun 8PM": 2,
@@ -111,14 +116,14 @@
       }
     },
     "Chiefs": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Sun 8PM": 1
       }
     },
     "Bears": {
-      "playoffs": 0,
+      "wins": 4,
       "primetimes": {
         "Sun 8PM": 2,
         "Thu": 1,
@@ -126,7 +131,7 @@
       }
     },
     "Raiders": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 1,
         "Sun 11PM": 1,
@@ -134,14 +139,14 @@
       }
     },
     "Rams": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1,
         "Mon": 1
       }
     },
     "Falcons": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Sun 8PM": 1,
         "Mon": 2,
@@ -149,7 +154,7 @@
       }
     },
     "Saints": {
-      "playoffs": 0,
+      "wins": 4,
       "primetimes": {
         "Mon": 2,
         "Sun 8PM": 2,
@@ -157,26 +162,26 @@
       }
     },
     "Dolphins": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 2,
         "Thu": 1
       }
     },
     "Browns": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1
       }
     },
     "Bills": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1
       }
     },
     "Colts": {
-      "playoffs": 0,
+      "wins": 3,
       "primetimes": {
         "Mon": 1,
         "Sun 8PM": 2,
@@ -184,13 +189,13 @@
       }
     },
     "Cardinals": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1
       }
     },
     "Vikings": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 1,
         "Sun 8PM": 1,
@@ -198,7 +203,7 @@
       }
     },
     "Panthers": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Thu": 1,
         "Mon": 1,
@@ -206,14 +211,14 @@
       }
     },
     "Buccaneers": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Mon": 1
       }
     },
     "Packers": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Sun 8PM": 1,
         "Mon": 1,
@@ -221,20 +226,20 @@
       }
     },
     "Titans": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1
       }
     },
     "Lions": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Mon": 1
       }
     },
     "Jaguars": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1
       }
@@ -242,23 +247,26 @@
   },
   "2014": {
     "Seahawks": {
-      "playoffs": 2,
+      "wins": 5,
       "primetimes": {
         "Thu": 2,
         "Mon": 1,
-        "Sun 8PM": 1
+        "Sun 8PM": 1,
+        "Sun 3PM": 1,
+        "Sun 6PM": 1
       }
     },
     "Packers": {
-      "playoffs": 1,
+      "wins": 3,
       "primetimes": {
         "Thu": 2,
         "Sun 8PM": 2,
-        "Mon": 1
+        "Mon": 1,
+        "Sun 3PM": 1
       }
     },
     "Broncos": {
-      "playoffs": 0,
+      "wins": 4,
       "primetimes": {
         "Sun 8PM": 3,
         "Thu": 1,
@@ -266,15 +274,16 @@
       }
     },
     "Colts": {
-      "playoffs": 1,
+      "wins": 2,
       "primetimes": {
         "Sun 8PM": 2,
         "Mon": 2,
-        "Thu": 1
+        "Thu": 1,
+        "Sun 6PM": 1
       }
     },
     "Lions": {
-      "playoffs": 0,
+      "wins": 3,
       "primetimes": {
         "Mon": 1,
         "Sun 9AM": 1,
@@ -282,7 +291,7 @@
       }
     },
     "Giants": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 2,
         "Thu": 1,
@@ -290,7 +299,7 @@
       }
     },
     "Cardinals": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Mon": 1,
         "Thu": 1,
@@ -298,7 +307,7 @@
       }
     },
     "Chargers": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Mon": 1,
         "Thu": 1,
@@ -306,7 +315,7 @@
       }
     },
     "Ravens": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Thu": 1,
         "Sun 8PM": 1,
@@ -314,7 +323,7 @@
       }
     },
     "Steelers": {
-      "playoffs": 0,
+      "wins": 5,
       "primetimes": {
         "Thu": 1,
         "Sun 8PM": 3,
@@ -322,7 +331,7 @@
       }
     },
     "Bears": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Sun 8PM": 2,
         "Mon": 2,
@@ -330,7 +339,7 @@
       }
     },
     "49ers": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Sun 8PM": 2,
         "Mon": 1,
@@ -338,7 +347,7 @@
       }
     },
     "Eagles": {
-      "playoffs": 0,
+      "wins": 4,
       "primetimes": {
         "Mon": 2,
         "Sun 8PM": 2,
@@ -346,7 +355,7 @@
       }
     },
     "Falcons": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Sun 9AM": 1,
@@ -354,13 +363,13 @@
       }
     },
     "Buccaneers": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1
       }
     },
     "Panthers": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Sun 8PM": 1,
         "Thu": 1,
@@ -368,21 +377,21 @@
       }
     },
     "Jets": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Mon": 3,
         "Thu": 1
       }
     },
     "Redskins": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Mon": 2
       }
     },
     "Cowboys": {
-      "playoffs": 0,
+      "wins": 4,
       "primetimes": {
         "Sun 8PM": 3,
         "Mon": 1,
@@ -390,7 +399,7 @@
       }
     },
     "Saints": {
-      "playoffs": 0,
+      "wins": 3,
       "primetimes": {
         "Sun 8PM": 2,
         "Thu": 1,
@@ -398,7 +407,7 @@
       }
     },
     "Chiefs": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 1,
         "Thu": 1,
@@ -406,21 +415,22 @@
       }
     },
     "Patriots": {
-      "playoffs": 2,
+      "wins": 6,
       "primetimes": {
         "Mon": 1,
         "Sun 8PM": 3,
-        "Thu": 1
+        "Thu": 1,
+        "Sun 6PM": 2
       }
     },
     "Vikings": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1
       }
     },
     "Bengals": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Sun 8PM": 2,
         "Thu": 1,
@@ -428,54 +438,54 @@
       }
     },
     "Texans": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1,
         "Mon": 1
       }
     },
     "Rams": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Mon": 1,
         "Thu": 1
       }
     },
     "Browns": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1
       }
     },
     "Dolphins": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Thu": 1,
         "Mon": 1
       }
     },
     "Bills": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Mon": 1
       }
     },
     "Titans": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Mon": 1,
         "Thu": 1
       }
     },
     "Raiders": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1
       }
     },
     "Jaguars": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1
       }
@@ -483,15 +493,16 @@
   },
   "2015": {
     "Patriots": {
-      "playoffs": 1,
+      "wins": 5,
       "primetimes": {
         "Thu": 2,
         "Sun 8PM": 3,
-        "Mon": 1
+        "Mon": 1,
+        "Sun 3PM": 1
       }
     },
     "Steelers": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Thu": 2,
         "Mon": 1,
@@ -499,7 +510,7 @@
       }
     },
     "Cowboys": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Sun 8PM": 3,
         "Thu": 1,
@@ -507,7 +518,7 @@
       }
     },
     "Giants": {
-      "playoffs": 0,
+      "wins": 3,
       "primetimes": {
         "Sun 8PM": 3,
         "Thu": 1,
@@ -515,14 +526,14 @@
       }
     },
     "Falcons": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 1,
         "Thu": 1
       }
     },
     "Eagles": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Mon": 2,
         "Sun 8PM": 3,
@@ -530,7 +541,7 @@
       }
     },
     "49ers": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 1,
         "Sun 8PM": 1,
@@ -538,7 +549,7 @@
       }
     },
     "Vikings": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Mon": 1,
         "Thu": 1,
@@ -546,15 +557,17 @@
       }
     },
     "Broncos": {
-      "playoffs": 2,
+      "wins": 7,
       "primetimes": {
         "Thu": 1,
         "Sun 8PM": 3,
-        "Mon": 1
+        "Mon": 1,
+        "Sun 3PM": 1,
+        "Sun 6PM": 1
       }
     },
     "Chiefs": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Mon": 1,
@@ -562,7 +575,7 @@
       }
     },
     "Packers": {
-      "playoffs": 0,
+      "wins": 3,
       "primetimes": {
         "Sun 8PM": 3,
         "Mon": 1,
@@ -570,7 +583,7 @@
       }
     },
     "Seahawks": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Sun 8PM": 2,
         "Mon": 1,
@@ -578,7 +591,7 @@
       }
     },
     "Jets": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Mon": 1,
         "Sun 9AM": 1,
@@ -586,7 +599,7 @@
       }
     },
     "Colts": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 2,
         "Thu": 1,
@@ -594,14 +607,14 @@
       }
     },
     "Redskins": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1,
         "Mon": 1
       }
     },
     "Lions": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Sun 8PM": 1,
         "Mon": 2,
@@ -610,14 +623,14 @@
       }
     },
     "Ravens": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Thu": 1,
         "Mon": 2
       }
     },
     "Dolphins": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Sun 9AM": 1,
         "Thu": 1,
@@ -625,7 +638,7 @@
       }
     },
     "Saints": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Sun 8PM": 1,
         "Thu": 1,
@@ -633,7 +646,7 @@
       }
     },
     "Texans": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Mon": 1,
@@ -641,21 +654,21 @@
       }
     },
     "Chargers": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Mon": 2,
         "Thu": 1
       }
     },
     "Jaguars": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Sun 8AM": 1,
         "Thu": 1
       }
     },
     "Bills": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Sun 8AM": 1,
         "Thu": 1,
@@ -663,23 +676,25 @@
       }
     },
     "Panthers": {
-      "playoffs": 2,
+      "wins": 4,
       "primetimes": {
         "Sun 8PM": 1,
         "Mon": 1,
-        "Thu": 1
+        "Thu": 1,
+        "Sun 6PM": 2
       }
     },
     "Cardinals": {
-      "playoffs": 1,
+      "wins": 5,
       "primetimes": {
         "Mon": 1,
         "Sun 8PM": 3,
-        "Thu": 1
+        "Thu": 1,
+        "Sun 6PM": 1
       }
     },
     "Bengals": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Mon": 2,
@@ -687,39 +702,39 @@
       }
     },
     "Browns": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1,
         "Mon": 1
       }
     },
     "Bears": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Mon": 1,
         "Thu": 1
       }
     },
     "Titans": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1
       }
     },
     "Rams": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1
       }
     },
     "Buccaneers": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1
       }
     },
     "Raiders": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1
       }
@@ -727,7 +742,7 @@
   },
   "2016": {
     "Broncos": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Thu": 2,
         "Mon": 1,
@@ -735,7 +750,7 @@
       }
     },
     "Panthers": {
-      "playoffs": 0,
+      "wins": 3,
       "primetimes": {
         "Thu": 2,
         "Mon": 2,
@@ -744,15 +759,16 @@
       }
     },
     "Patriots": {
-      "playoffs": 2,
+      "wins": 5,
       "primetimes": {
         "Sun 8PM": 2,
         "Thu": 1,
-        "Mon": 1
+        "Mon": 1,
+        "Sun 6PM": 2
       }
     },
     "Cardinals": {
-      "playoffs": 0,
+      "wins": 2.5,
       "primetimes": {
         "Sun 8PM": 2,
         "Thu": 1,
@@ -761,15 +777,16 @@
       }
     },
     "Steelers": {
-      "playoffs": 2,
+      "wins": 4,
       "primetimes": {
         "Mon": 1,
-        "Sun 8PM": 1,
-        "Thu": 1
+        "Sun 8PM": 2,
+        "Thu": 1,
+        "Sun 6PM": 1
       }
     },
     "Redskins": {
-      "playoffs": 0,
+      "wins": 1.5,
       "primetimes": {
         "Mon": 2,
         "Sun 8AM": 1,
@@ -778,14 +795,14 @@
       }
     },
     "49ers": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 1,
         "Thu": 1
       }
     },
     "Rams": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Mon": 1,
         "Sun 9AM": 1,
@@ -793,21 +810,21 @@
       }
     },
     "Jets": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Mon": 2
       }
     },
     "Bills": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1,
         "Mon": 1
       }
     },
     "Vikings": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Sun 8PM": 1,
         "Mon": 2,
@@ -815,15 +832,16 @@
       }
     },
     "Packers": {
-      "playoffs": 1,
+      "wins": 4,
       "primetimes": {
         "Sun 8PM": 4,
         "Thu": 1,
-        "Mon": 1
+        "Mon": 1,
+        "Sun 3PM": 1
       }
     },
     "Eagles": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Mon": 2,
         "Sun 8PM": 1,
@@ -831,7 +849,7 @@
       }
     },
     "Bears": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 2,
         "Sun 8PM": 1,
@@ -839,7 +857,7 @@
       }
     },
     "Texans": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Sun 8PM": 1,
@@ -847,7 +865,7 @@
       }
     },
     "Cowboys": {
-      "playoffs": 0,
+      "wins": 6,
       "primetimes": {
         "Sun 8PM": 4,
         "Thu": 2,
@@ -855,21 +873,23 @@
       }
     },
     "Falcons": {
-      "playoffs": 2,
+      "wins": 3,
       "primetimes": {
         "Mon": 1,
-        "Thu": 1
+        "Thu": 1,
+        "Sun 3PM": 1,
+        "Sun 6PM": 1
       }
     },
     "Saints": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Mon": 1,
         "Thu": 1
       }
     },
     "Bengals": {
-      "playoffs": 0,
+      "wins": 1.5,
       "primetimes": {
         "Thu": 1,
         "Sun 8AM": 1,
@@ -877,20 +897,20 @@
       }
     },
     "Dolphins": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1
       }
     },
     "Jaguars": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Sun 9AM": 1,
         "Thu": 1
       }
     },
     "Colts": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Sun 9AM": 1,
         "Sun 8PM": 1,
@@ -899,14 +919,14 @@
       }
     },
     "Chiefs": {
-      "playoffs": 1,
+      "wins": 3,
       "primetimes": {
-        "Sun 8PM": 3,
+        "Sun 8PM": 4,
         "Thu": 1
       }
     },
     "Giants": {
-      "playoffs": 0,
+      "wins": 3,
       "primetimes": {
         "Mon": 2,
         "Sun 8PM": 2,
@@ -915,7 +935,7 @@
       }
     },
     "Buccaneers": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 1,
         "Thu": 1,
@@ -923,13 +943,13 @@
       }
     },
     "Chargers": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1
       }
     },
     "Seahawks": {
-      "playoffs": 0,
+      "wins": 4.5,
       "primetimes": {
         "Sun 8PM": 3,
         "Mon": 1,
@@ -937,13 +957,13 @@
       }
     },
     "Titans": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1
       }
     },
     "Raiders": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Sun 8PM": 1,
         "Mon": 1,
@@ -951,20 +971,20 @@
       }
     },
     "Ravens": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Mon": 1
       }
     },
     "Browns": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1
       }
     },
     "Lions": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Mon": 1,
@@ -974,7 +994,7 @@
   },
   "2017": {
     "Chiefs": {
-      "playoffs": 0,
+      "wins": 4,
       "primetimes": {
         "Thu": 2,
         "Mon": 2,
@@ -982,15 +1002,17 @@
       }
     },
     "Patriots": {
-      "playoffs": 2,
+      "wins": 4,
       "primetimes": {
         "Thu": 2,
         "Sun 8PM": 2,
-        "Mon": 1
+        "Mon": 1,
+        "Sun 3PM": 1,
+        "Sun 6PM": 1
       }
     },
     "Cowboys": {
-      "playoffs": 0,
+      "wins": 4,
       "primetimes": {
         "Sun 8PM": 3,
         "Mon": 1,
@@ -998,7 +1020,7 @@
       }
     },
     "Giants": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Sun 8PM": 2,
         "Mon": 1,
@@ -1006,15 +1028,16 @@
       }
     },
     "Vikings": {
-      "playoffs": 1,
+      "wins": 4,
       "primetimes": {
         "Mon": 2,
         "Sun 9AM": 1,
-        "Thu": 1
+        "Thu": 1,
+        "Sun 6PM": 1
       }
     },
     "Saints": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 1,
         "Sun 9AM": 1,
@@ -1022,7 +1045,7 @@
       }
     },
     "Broncos": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Mon": 2,
         "Sun 8PM": 2,
@@ -1030,14 +1053,14 @@
       }
     },
     "Chargers": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 1,
         "Thu": 1
       }
     },
     "Texans": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Sun 8PM": 1,
@@ -1045,14 +1068,14 @@
       }
     },
     "Bengals": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1,
         "Mon": 1
       }
     },
     "Falcons": {
-      "playoffs": 0,
+      "wins": 4,
       "primetimes": {
         "Sun 8PM": 2,
         "Mon": 2,
@@ -1060,7 +1083,7 @@
       }
     },
     "Packers": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Sun 8PM": 2,
         "Thu": 1,
@@ -1068,7 +1091,7 @@
       }
     },
     "Lions": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Mon": 2,
         "Sun 8PM": 1,
@@ -1076,25 +1099,26 @@
       }
     },
     "Rams": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1
       }
     },
     "49ers": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1
       }
     },
     "Jaguars": {
-      "playoffs": 1,
+      "wins": 1,
       "primetimes": {
-        "Sun 9AM": 1
+        "Sun 9AM": 1,
+        "Sun 3PM": 1
       }
     },
     "Ravens": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Sun 9AM": 1,
         "Thu": 1,
@@ -1103,7 +1127,7 @@
       }
     },
     "Redskins": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Sun 8PM": 1,
         "Mon": 2,
@@ -1111,7 +1135,7 @@
       }
     },
     "Raiders": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Sun 8PM": 3,
         "Thu": 1,
@@ -1119,21 +1143,21 @@
       }
     },
     "Cardinals": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Mon": 1,
         "Thu": 1
       }
     },
     "Bears": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1,
         "Mon": 1
       }
     },
     "Dolphins": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Sun 9AM": 1,
         "Thu": 1,
@@ -1142,7 +1166,7 @@
       }
     },
     "Seahawks": {
-      "playoffs": 0,
+      "wins": 3,
       "primetimes": {
         "Sun 8PM": 2,
         "Thu": 1,
@@ -1150,7 +1174,7 @@
       }
     },
     "Colts": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Sun 8PM": 1,
         "Mon": 1,
@@ -1158,42 +1182,43 @@
       }
     },
     "Buccaneers": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1,
         "Mon": 1
       }
     },
     "Eagles": {
-      "playoffs": 2,
+      "wins": 6,
       "primetimes": {
         "Thu": 1,
         "Mon": 2,
-        "Sun 8PM": 2
+        "Sun 8PM": 2,
+        "Sun 6PM": 2
       }
     },
     "Panthers": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Mon": 1
       }
     },
     "Titans": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 1,
         "Thu": 1
       }
     },
     "Browns": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Sun 9AM": 1
       }
     },
     "Steelers": {
-      "playoffs": 0,
+      "wins": 6,
       "primetimes": {
         "Sun 8PM": 3,
         "Thu": 1,
@@ -1201,13 +1226,13 @@
       }
     },
     "Jets": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1
       }
     },
     "Bills": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1
       }
@@ -1215,7 +1240,7 @@
   },
   "2018": {
     "Eagles": {
-      "playoffs": 0,
+      "wins": 5,
       "primetimes": {
         "Thu": 2,
         "Sun 9AM": 1,
@@ -1224,14 +1249,14 @@
       }
     },
     "Falcons": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 2,
         "Mon": 1
       }
     },
     "Packers": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Sun 8PM": 3,
         "Mon": 1,
@@ -1239,7 +1264,7 @@
       }
     },
     "Bears": {
-      "playoffs": 0,
+      "wins": 4,
       "primetimes": {
         "Sun 8PM": 3,
         "Mon": 1,
@@ -1247,14 +1272,14 @@
       }
     },
     "Jets": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 1,
         "Thu": 1
       }
     },
     "Lions": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 1,
         "Sun 8PM": 1,
@@ -1262,36 +1287,38 @@
       }
     },
     "Rams": {
-      "playoffs": 2,
+      "wins": 4,
       "primetimes": {
         "Mon": 2,
         "Thu": 1,
-        "Sun 8PM": 2
+        "Sun 8PM": 2,
+        "Sun 3PM": 1,
+        "Sun 6PM": 1
       }
     },
     "Raiders": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 2,
         "Thu": 1
       }
     },
     "Bengals": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Sun 8PM": 1
       }
     },
     "Ravens": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Sun 8PM": 1
       }
     },
     "Cowboys": {
-      "playoffs": 0,
+      "wins": 4,
       "primetimes": {
         "Sun 8PM": 3,
         "Mon": 1,
@@ -1299,7 +1326,7 @@
       }
     },
     "Giants": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Sun 8PM": 1,
         "Thu": 1,
@@ -1307,7 +1334,7 @@
       }
     },
     "Seahawks": {
-      "playoffs": 0,
+      "wins": 3,
       "primetimes": {
         "Mon": 2,
         "Thu": 1,
@@ -1315,21 +1342,22 @@
       }
     },
     "Browns": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1
       }
     },
     "Patriots": {
-      "playoffs": 2,
+      "wins": 6,
       "primetimes": {
         "Sun 8PM": 3,
         "Thu": 1,
-        "Mon": 1
+        "Mon": 1,
+        "Sun 6PM": 2
       }
     },
     "Steelers": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Mon": 1,
         "Sun 8PM": 2,
@@ -1337,13 +1365,13 @@
       }
     },
     "Buccaneers": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Mon": 1
       }
     },
     "Vikings": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Sun 8PM": 3,
@@ -1351,29 +1379,30 @@
       }
     },
     "Chiefs": {
-      "playoffs": 1,
+      "wins": 2,
       "primetimes": {
         "Mon": 2,
         "Sun 8PM": 3,
-        "Thu": 1
+        "Thu": 1,
+        "Sun 6PM": 1
       }
     },
     "Broncos": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 2,
         "Thu": 1
       }
     },
     "Colts": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Sun 8PM": 1
       }
     },
     "Texans": {
-      "playoffs": 0,
+      "wins": 3,
       "primetimes": {
         "Sun 8PM": 1,
         "Thu": 1,
@@ -1381,35 +1410,36 @@
       }
     },
     "Saints": {
-      "playoffs": 1,
+      "wins": 4,
       "primetimes": {
         "Mon": 2,
         "Sun 8PM": 1,
-        "Thu": 2
+        "Thu": 2,
+        "Sun 3PM": 1
       }
     },
     "Redskins": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Mon": 2,
         "Thu": 1
       }
     },
     "49ers": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 2,
         "Thu": 1
       }
     },
     "Cardinals": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1
       }
     },
     "Chargers": {
-      "playoffs": 0,
+      "wins": 3,
       "primetimes": {
         "Sun 9AM": 1,
         "Sun 8PM": 1,
@@ -1417,7 +1447,7 @@
       }
     },
     "Titans": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Sun 9AM": 1,
         "Mon": 2,
@@ -1426,26 +1456,26 @@
       }
     },
     "Dolphins": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1
       }
     },
     "Jaguars": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Sun 9AM": 1,
         "Thu": 1
       }
     },
     "Bills": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Mon": 1
       }
     },
     "Panthers": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1,
         "Mon": 1
@@ -1454,15 +1484,16 @@
   },
   "2019": {
     "Packers": {
-      "playoffs": 2,
+      "wins": 5,
       "primetimes": {
         "Thu": 2,
         "Mon": 2,
-        "Sun 8PM": 2
+        "Sun 8PM": 2,
+        "Sun 6PM": 2
       }
     },
     "Bears": {
-      "playoffs": 0,
+      "wins": 3,
       "primetimes": {
         "Thu": 3,
         "Mon": 1,
@@ -1470,7 +1501,7 @@
       }
     },
     "Patriots": {
-      "playoffs": 0,
+      "wins": 3,
       "primetimes": {
         "Sun 8PM": 3,
         "Thu": 1,
@@ -1478,7 +1509,7 @@
       }
     },
     "Steelers": {
-      "playoffs": 0,
+      "wins": 3,
       "primetimes": {
         "Sun 8PM": 3,
         "Mon": 2,
@@ -1486,7 +1517,7 @@
       }
     },
     "Saints": {
-      "playoffs": 0,
+      "wins": 4,
       "primetimes": {
         "Mon": 2,
         "Sun 8PM": 1,
@@ -1494,51 +1525,52 @@
       }
     },
     "Texans": {
-      "playoffs": 1,
+      "wins": 3,
       "primetimes": {
         "Mon": 1,
         "Sun 9AM": 1,
         "Thu": 1,
-        "Sun 8PM": 1
+        "Sun 8PM": 1,
+        "Sun 3PM": 1
       }
     },
     "Raiders": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Mon": 1,
         "Thu": 1
       }
     },
     "Broncos": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Mon": 1,
         "Thu": 1
       }
     },
     "Buccaneers": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Sun 9AM": 1
       }
     },
     "Panthers": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Sun 9AM": 1
       }
     },
     "Falcons": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Sun 8PM": 1,
         "Thu": 1
       }
     },
     "Eagles": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Sun 8PM": 2,
         "Thu": 1,
@@ -1546,7 +1578,7 @@
       }
     },
     "Browns": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Mon": 2,
         "Sun 8PM": 1,
@@ -1554,27 +1586,28 @@
       }
     },
     "Jets": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Mon": 2,
         "Thu": 1
       }
     },
     "Jaguars": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Sun 9AM": 1
       }
     },
     "Titans": {
-      "playoffs": 1,
+      "wins": 0,
       "primetimes": {
-        "Thu": 1
+        "Thu": 1,
+        "Sun 3PM": 1
       }
     },
     "Rams": {
-      "playoffs": 0,
+      "wins": 3,
       "primetimes": {
         "Sun 8PM": 3,
         "Thu": 1,
@@ -1582,14 +1615,14 @@
       }
     },
     "Redskins": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Mon": 1,
         "Thu": 1
       }
     },
     "Cowboys": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Sun 8PM": 3,
         "Mon": 1,
@@ -1597,21 +1630,22 @@
       }
     },
     "Bengals": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Mon": 1
       }
     },
     "Seahawks": {
-      "playoffs": 1,
+      "wins": 3,
       "primetimes": {
         "Thu": 1,
         "Mon": 2,
-        "Sun 8PM": 2
+        "Sun 8PM": 2,
+        "Sun 6PM": 1
       }
     },
     "Colts": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Sun 8PM": 1,
         "Thu": 1,
@@ -1619,30 +1653,33 @@
       }
     },
     "Chiefs": {
-      "playoffs": 3,
+      "wins": 6,
       "primetimes": {
         "Sun 8PM": 3,
         "Thu": 1,
-        "Mon": 1
+        "Mon": 1,
+        "Sun 3PM": 2,
+        "Sun 6PM": 1
       }
     },
     "49ers": {
-      "playoffs": 2,
+      "wins": 5,
       "primetimes": {
         "Mon": 2,
         "Thu": 1,
-        "Sun 8PM": 2
+        "Sun 8PM": 2,
+        "Sun 6PM": 2
       }
     },
     "Giants": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1,
         "Mon": 2
       }
     },
     "Chargers": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Sun 8PM": 1,
         "Thu": 1,
@@ -1650,14 +1687,14 @@
       }
     },
     "Lions": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Mon": 1,
         "Thu": 1
       }
     },
     "Vikings": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Thu": 1,
         "Sun 8PM": 1,
@@ -1665,19 +1702,19 @@
       }
     },
     "Dolphins": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Mon": 1
       }
     },
     "Cardinals": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1
       }
     },
     "Ravens": {
-      "playoffs": 0,
+      "wins": 3,
       "primetimes": {
         "Sun 8PM": 1,
         "Mon": 1,
@@ -1685,7 +1722,7 @@
       }
     },
     "Bills": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Thu": 1,
         "Sun 8PM": 1
@@ -1694,21 +1731,23 @@
   },
   "2020": {
     "Chiefs": {
-      "playoffs": 3,
+      "wins": 8,
       "primetimes": {
         "Thu": 1,
         "Mon": 3,
-        "Sun 8PM": 2
+        "Sun 8PM": 2,
+        "Sun 3PM": 1,
+        "Sun 6PM": 2
       }
     },
     "Texans": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 2
       }
     },
     "Rams": {
-      "playoffs": 0,
+      "wins": 4,
       "primetimes": {
         "Sun 8PM": 2,
         "Mon": 2,
@@ -1716,7 +1755,7 @@
       }
     },
     "Cowboys": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Sun 8PM": 2,
         "Mon": 1,
@@ -1725,15 +1764,15 @@
       }
     },
     "Steelers": {
-      "playoffs": 1,
+      "wins": 2,
       "primetimes": {
         "Mon": 3,
         "Wed": 1,
-        "Sun 8PM": 1
+        "Sun 8PM": 2
       }
     },
     "Giants": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Mon": 2,
         "Thu": 1,
@@ -1741,7 +1780,7 @@
       }
     },
     "Titans": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Mon": 1,
         "Tue": 1,
@@ -1750,7 +1789,7 @@
       }
     },
     "Broncos": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 1,
         "Thu": 1,
@@ -1758,22 +1797,23 @@
       }
     },
     "Browns": {
-      "playoffs": 2,
+      "wins": 3,
       "primetimes": {
         "Thu": 1,
         "Mon": 1,
-        "Sun 8PM": 1
+        "Sun 8PM": 2,
+        "Sun 3PM": 1
       }
     },
     "Bengals": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Mon": 1
       }
     },
     "Seahawks": {
-      "playoffs": 0,
+      "wins": 4,
       "primetimes": {
         "Sun 8PM": 3,
         "Thu": 1,
@@ -1781,7 +1821,7 @@
       }
     },
     "Patriots": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Sun 8PM": 2,
         "Mon": 3,
@@ -1789,7 +1829,7 @@
       }
     },
     "Raiders": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 1,
         "Sun 8PM": 1,
@@ -1797,35 +1837,37 @@
       }
     },
     "Saints": {
-      "playoffs": 1,
+      "wins": 3,
       "primetimes": {
         "Mon": 2,
         "Sun 8PM": 2,
-        "Fri": 1
+        "Fri": 1,
+        "Sun 6PM": 1
       }
     },
     "Dolphins": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1
       }
     },
     "Jaguars": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1
       }
     },
     "Packers": {
-      "playoffs": 1,
+      "wins": 5,
       "primetimes": {
         "Sun 8PM": 3,
         "Mon": 1,
-        "Thu": 1
+        "Thu": 1,
+        "Sun 3PM": 1
       }
     },
     "Ravens": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Mon": 2,
         "Sun 8PM": 1,
@@ -1834,14 +1876,14 @@
       }
     },
     "Jets": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1,
         "Mon": 1
       }
     },
     "Eagles": {
-      "playoffs": 0,
+      "wins": 3,
       "primetimes": {
         "Sun 8PM": 3,
         "Thu": 1,
@@ -1849,7 +1891,7 @@
       }
     },
     "49ers": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Sun 8PM": 2,
         "Thu": 1,
@@ -1857,14 +1899,14 @@
       }
     },
     "Falcons": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 1,
         "Thu": 1
       }
     },
     "Bears": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Mon": 2,
@@ -1872,15 +1914,17 @@
       }
     },
     "Buccaneers": {
-      "playoffs": 3,
+      "wins": 4,
       "primetimes": {
         "Thu": 1,
         "Mon": 2,
-        "Sun 8PM": 1
+        "Sun 8PM": 1,
+        "Sun 6PM": 2,
+        "Sun 3PM": 1
       }
     },
     "Vikings": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Sun 8PM": 1,
         "Mon": 1,
@@ -1888,22 +1932,23 @@
       }
     },
     "Chargers": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 1,
         "Thu": 1
       }
     },
     "Bills": {
-      "playoffs": 1,
+      "wins": 3,
       "primetimes": {
         "Tue": 1,
         "Mon": 3,
-        "Sun 8PM": 1
+        "Sun 8PM": 1,
+        "Sun 6PM": 1
       }
     },
     "Cardinals": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Mon": 1,
         "Sun 8PM": 1,
@@ -1911,25 +1956,25 @@
       }
     },
     "Panthers": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1
       }
     },
     "Colts": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1
       }
     },
     "Lions": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1
       }
     },
     "Team": {
-      "playoffs": 0,
+      "wins": 3,
       "primetimes": {
         "Thu": 1,
         "Mon": 1,
@@ -1939,15 +1984,16 @@
   },
   "2021": {
     "Buccaneers": {
-      "playoffs": 1,
+      "wins": 4,
       "primetimes": {
         "Thu": 2,
         "Sun 8PM": 2,
-        "Mon": 1
+        "Mon": 1,
+        "Sun 3PM": 1
       }
     },
     "Cowboys": {
-      "playoffs": 0,
+      "wins": 4,
       "primetimes": {
         "Thu": 3,
         "Mon": 1,
@@ -1955,16 +2001,18 @@
       }
     },
     "Rams": {
-      "playoffs": 4,
+      "wins": 8,
       "primetimes": {
         "Sun 8PM": 2,
         "Thu": 1,
-        "Mon": 2,
-        "Tue": 1
+        "Mon": 3,
+        "Tue": 1,
+        "Sun 3PM": 1,
+        "Sun 6PM": 2
       }
     },
     "Bears": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Sun 8PM": 2,
         "Mon": 2,
@@ -1972,7 +2020,7 @@
       }
     },
     "Raiders": {
-      "playoffs": 0,
+      "wins": 4,
       "primetimes": {
         "Mon": 3,
         "Sun 8PM": 2,
@@ -1980,7 +2028,7 @@
       }
     },
     "Ravens": {
-      "playoffs": 0,
+      "wins": 3,
       "primetimes": {
         "Mon": 2,
         "Sun 8PM": 2,
@@ -1988,7 +2036,7 @@
       }
     },
     "Team": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Thu": 1,
         "Mon": 1,
@@ -1997,22 +2045,24 @@
       }
     },
     "Giants": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1,
         "Mon": 2
       }
     },
     "Chiefs": {
-      "playoffs": 3,
+      "wins": 6,
       "primetimes": {
-        "Sun 8PM": 4,
+        "Sun 8PM": 5,
         "Mon": 1,
-        "Thu": 1
+        "Thu": 1,
+        "Sun 6PM": 1,
+        "Sun 3PM": 1
       }
     },
     "Packers": {
-      "playoffs": 0,
+      "wins": 5,
       "primetimes": {
         "Mon": 1,
         "Sun 8PM": 3,
@@ -2020,34 +2070,35 @@
       }
     },
     "Lions": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Mon": 1,
         "Thu": 1
       }
     },
     "Panthers": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1
       }
     },
     "Texans": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1
       }
     },
     "49ers": {
-      "playoffs": 1,
+      "wins": 1,
       "primetimes": {
         "Sun 8PM": 2,
         "Mon": 1,
-        "Thu": 1
+        "Thu": 1,
+        "Sun 6PM": 1
       }
     },
     "Eagles": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 1,
         "Thu": 1,
@@ -2055,20 +2106,22 @@
       }
     },
     "Bengals": {
-      "playoffs": 2,
+      "wins": 2,
       "primetimes": {
-        "Thu": 1
+        "Thu": 1,
+        "Sun 3PM": 1,
+        "Sun 6PM": 1
       }
     },
     "Jaguars": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Sun 9AM": 1
       }
     },
     "Patriots": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Sun 8PM": 1,
         "Thu": 1,
@@ -2076,7 +2129,7 @@
       }
     },
     "Chargers": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Mon": 1,
         "Sun 8PM": 2,
@@ -2084,7 +2137,7 @@
       }
     },
     "Seahawks": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1,
         "Sun 8PM": 1,
@@ -2093,29 +2146,30 @@
       }
     },
     "Falcons": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Sun 9AM": 1,
         "Thu": 1
       }
     },
     "Jets": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Sun 9AM": 1,
         "Thu": 1
       }
     },
     "Bills": {
-      "playoffs": 1,
+      "wins": 2,
       "primetimes": {
         "Sun 8PM": 1,
         "Mon": 2,
-        "Thu": 1
+        "Thu": 1,
+        "Sun 6PM": 1
       }
     },
     "Colts": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Mon": 1,
         "Sun 8PM": 1,
@@ -2123,7 +2177,7 @@
       }
     },
     "Dolphins": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Sun 9AM": 1,
         "Thu": 1,
@@ -2131,15 +2185,15 @@
       }
     },
     "Steelers": {
-      "playoffs": 1,
+      "wins": 3,
       "primetimes": {
-        "Sun 8PM": 2,
+        "Sun 8PM": 3,
         "Mon": 2,
         "Thu": 1
       }
     },
     "Titans": {
-      "playoffs": 0,
+      "wins": 3,
       "primetimes": {
         "Mon": 1,
         "Sun 8PM": 1,
@@ -2147,7 +2201,7 @@
       }
     },
     "Browns": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Sun 8PM": 1,
@@ -2155,14 +2209,14 @@
       }
     },
     "Broncos": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1,
         "Sun 8PM": 1
       }
     },
     "Saints": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Mon": 2,
         "Thu": 2,
@@ -2170,14 +2224,14 @@
       }
     },
     "Cardinals": {
-      "playoffs": 1,
+      "wins": 0,
       "primetimes": {
         "Thu": 1,
-        "Mon": 1
+        "Mon": 2
       }
     },
     "Vikings": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Sun 8PM": 2,
         "Thu": 1,
@@ -2187,39 +2241,41 @@
   },
   "2022": {
     "Bills": {
-      "playoffs": 1,
+      "wins": 5,
       "primetimes": {
         "Thu": 3,
         "Mon": 1,
-        "Sun 8PM": 1
+        "Sun 8PM": 1,
+        "Sun 3PM": 1
       }
     },
     "Rams": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 2,
         "Mon": 2
       }
     },
     "Buccaneers": {
-      "playoffs": 1,
+      "wins": 4,
       "primetimes": {
         "Sun 8PM": 3,
         "Thu": 1,
         "Sun 9AM": 1,
-        "Mon": 1
+        "Mon": 2
       }
     },
     "Cowboys": {
-      "playoffs": 2,
+      "wins": 5,
       "primetimes": {
         "Sun 8PM": 3,
-        "Mon": 1,
-        "Thu": 2
+        "Mon": 2,
+        "Thu": 2,
+        "Sun 6PM": 1
       }
     },
     "Seahawks": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 1,
         "Sun 9AM": 1,
@@ -2227,7 +2283,7 @@
       }
     },
     "Broncos": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Mon": 2,
         "Sun 8PM": 1,
@@ -2236,15 +2292,16 @@
       }
     },
     "Chiefs": {
-      "playoffs": 2,
+      "wins": 7,
       "primetimes": {
         "Thu": 1,
         "Sun 8PM": 3,
-        "Mon": 1
+        "Mon": 1,
+        "Sun 6PM": 2
       }
     },
     "Chargers": {
-      "playoffs": 0,
+      "wins": 3,
       "primetimes": {
         "Thu": 1,
         "Mon": 2,
@@ -2252,7 +2309,7 @@
       }
     },
     "Packers": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Sun 8PM": 4,
         "Sun 9AM": 1,
@@ -2261,7 +2318,7 @@
       }
     },
     "Bears": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Sun 8PM": 1,
         "Thu": 1,
@@ -2269,7 +2326,7 @@
       }
     },
     "Titans": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 1,
         "Sun 8PM": 1,
@@ -2277,15 +2334,17 @@
       }
     },
     "Eagles": {
-      "playoffs": 2,
+      "wins": 5,
       "primetimes": {
         "Mon": 2,
         "Sun 8PM": 2,
-        "Thu": 1
+        "Thu": 1,
+        "Sun 3PM": 1,
+        "Sun 6PM": 1
       }
     },
     "Vikings": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Mon": 1,
         "Sun 9AM": 1,
@@ -2293,14 +2352,14 @@
       }
     },
     "Browns": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Thu": 1,
         "Mon": 1
       }
     },
     "Steelers": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Thu": 1,
         "Sun 8PM": 2,
@@ -2308,15 +2367,17 @@
       }
     },
     "49ers": {
-      "playoffs": 2,
+      "wins": 5,
       "primetimes": {
         "Sun 8PM": 2,
         "Mon": 2,
-        "Thu": 1
+        "Thu": 1,
+        "Sun 6PM": 1,
+        "Sun 3PM": 1
       }
     },
     "Giants": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Mon": 1,
         "Sun 9AM": 1,
@@ -2325,22 +2386,24 @@
       }
     },
     "Bengals": {
-      "playoffs": 3,
+      "wins": 3,
       "primetimes": {
         "Thu": 1,
-        "Sun 8PM": 1,
-        "Mon": 1
+        "Sun 8PM": 2,
+        "Mon": 1,
+        "Sun 3PM": 1,
+        "Sun 6PM": 1
       }
     },
     "Dolphins": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Sun 8PM": 2
       }
     },
     "Saints": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Sun 9AM": 1,
         "Thu": 1,
@@ -2348,7 +2411,7 @@
       }
     },
     "Colts": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Mon": 2,
@@ -2356,22 +2419,22 @@
       }
     },
     "Ravens": {
-      "playoffs": 1,
+      "wins": 3,
       "primetimes": {
-        "Sun 8PM": 2,
+        "Sun 8PM": 3,
         "Thu": 1,
         "Mon": 1
       }
     },
     "Raiders": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Mon": 1,
         "Thu": 1
       }
     },
     "Commanders": {
-      "playoffs": 0,
+      "wins": 2,
       "primetimes": {
         "Thu": 1,
         "Mon": 1,
@@ -2379,7 +2442,7 @@
       }
     },
     "Cardinals": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Mon": 2,
@@ -2387,46 +2450,46 @@
       }
     },
     "Patriots": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Mon": 2,
         "Thu": 2
       }
     },
     "Jaguars": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Sun 9AM": 1,
         "Thu": 1
       }
     },
     "Texans": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1
       }
     },
     "Panthers": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1
       }
     },
     "Falcons": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1
       }
     },
     "Lions": {
-      "playoffs": 0,
+      "wins": 1,
       "primetimes": {
         "Thu": 1,
         "Sun 8PM": 1
       }
     },
     "Jets": {
-      "playoffs": 0,
+      "wins": 0,
       "primetimes": {
         "Thu": 1
       }
