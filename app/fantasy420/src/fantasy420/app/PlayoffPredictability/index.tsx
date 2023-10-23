@@ -58,7 +58,8 @@ function fetchData() {
                 teams: ["Winner/tie", "Loser/tie"].map(
                   (k) => row[k].split(" ").reverse()[0]
                 ),
-                isPlayoffs: isNaN(parseInt(row["Week"])),
+                playoffs: isNaN(parseInt(row["Week"])),
+                tie: row["PtsW"] === row["PtsL"],
                 category:
                   row["Day"] !== "Sun"
                     ? row["Day"]
@@ -92,12 +93,18 @@ function fetchData() {
                 .map(({ team, matches }) => [
                   team,
                   {
-                    playoffs: matches.filter((match) => match.isPlayoffs)
-                      .length,
+                    wins: matches
+                      .map(
+                        (match) =>
+                          (match.tie
+                            ? 0.5
+                            : match.teams[0] === team
+                            ? 1
+                            : 0) as number
+                      )
+                      .reduce((a, b) => a + b, 0),
                     primetimes: countStrings(
-                      matches
-                        .filter((match) => !match.isPlayoffs)
-                        .map((match) => match.category)
+                      matches.map((match) => match.category)
                     ),
                   },
                 ])
