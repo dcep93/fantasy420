@@ -1197,6 +1197,7 @@ function Stacks() {
           players: Object.values(wrapped.nflPlayers)
             .filter((p) => p.nflTeamId === nflTeamId)
             .map((p) => ({ ...p, score: p.scores[weekNum]! }))
+            .filter((p) => p.score !== undefined)
             .sort((a, b) => b.score - a.score)
             .slice(0, 2),
         }))
