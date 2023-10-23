@@ -128,11 +128,8 @@ const bubbleStyle = {
 //
 
 function json() {
-  return (
-    <pre onClick={() => console.log(printF(FetchWrapped))}>
-      {JSON.stringify(wrapped, null, 2)}
-    </pre>
-  );
+  console.log(printF(FetchWrapped));
+  return <pre>{JSON.stringify(wrapped, null, 2)}</pre>;
 }
 
 function ChosenWrong() {
