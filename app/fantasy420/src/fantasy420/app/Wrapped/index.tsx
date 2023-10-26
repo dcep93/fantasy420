@@ -394,17 +394,17 @@ function WeekTopsAndBottoms() {
       { ...p, tops: [] as string[], bottoms: [] as string[] },
     ])
   );
-  const vals = Object.entries(wrapped.ffMatchups)
-    .map(([periodId, matchups]) => {
+  const vals = Object.keys(Object.values(wrapped.ffTeams)[0].rosters)
+    .filter((weekNum) => weekNum !== "0")
+    .map((weekNum) => {
       const sortedTeams = sortByKey(
-        matchups
-          .flatMap((match) => match.map((teamId) => wrapped.ffTeams[teamId]))
-          .filter((team) => team.rosters[periodId]) // todo
+        Object.values(wrapped.ffTeams)
+          .filter((team) => team.rosters[weekNum]) // todo
           .map((team) => ({
             ...team,
-            score: team.rosters[periodId].starting
+            score: team.rosters[weekNum].starting
               .map(
-                (playerId) => wrapped.nflPlayers[playerId].scores[periodId] || 0
+                (playerId) => wrapped.nflPlayers[playerId].scores[weekNum] || 0
               )
               .reduce((a, b) => a + b, 0),
           })),
@@ -415,10 +415,10 @@ function WeekTopsAndBottoms() {
       const winnerAndLoser = {
         loser: sortedTeams[sortedTeams.length - 1],
         winner: sortedTeams[0],
-        periodId,
+        weekNum,
       };
-      counts[winnerAndLoser.winner.id].tops.push(periodId);
-      counts[winnerAndLoser.loser.id].bottoms.push(periodId);
+      counts[winnerAndLoser.winner.id].tops.push(weekNum);
+      counts[winnerAndLoser.loser.id].bottoms.push(weekNum);
       return winnerAndLoser;
     })
     .filter((v) => v !== undefined)
@@ -450,7 +450,7 @@ function WeekTopsAndBottoms() {
           <div style={bubbleStyle}>
             {vals.map((o, i) => (
               <div key={i}>
-                week {o.periodId}: top score {o.winner.score.toFixed(2)}:{" "}
+                week {o.weekNum}: top score {o.winner.score.toFixed(2)}:{" "}
                 <b>{o.winner.name}</b>
               </div>
             ))}
@@ -460,7 +460,7 @@ function WeekTopsAndBottoms() {
           <div style={bubbleStyle}>
             {vals.map((o, i) => (
               <div key={i}>
-                week {o.periodId}: bottom score {o.loser.score.toFixed(2)}{" "}
+                week {o.weekNum}: bottom score {o.loser.score.toFixed(2)}{" "}
                 <b>{o.loser.name}</b>
               </div>
             ))}
