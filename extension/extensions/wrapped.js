@@ -65,11 +65,12 @@ function FetchWrapped() {
                     { 1: "QB", 2: "RB", 3: "WR", 4: "TE", 5: "K", 16: "DST" }[
                       player.defaultPositionId
                     ] || player.defaultPositionId.toString(),
-                  total: player.stats.find((stat) => stat.scoringPeriodId === 0)
-                    .appliedTotal,
-                  average: player.stats.find(
-                    (stat) => stat.scoringPeriodId === 0
-                  ).appliedAverage,
+                  total:
+                    player.stats.find((stat) => stat.scoringPeriodId === 0)
+                      ?.appliedTotal || 0,
+                  average:
+                    player.stats.find((stat) => stat.scoringPeriodId === 0)
+                      ?.appliedAverage || 0,
                   scores: fromEntries(
                     player.stats
                       .filter((stat) => stat.seasonId === year)
