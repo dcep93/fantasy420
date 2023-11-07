@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import React, { ReactNode, useState } from "react";
 import { draft_json, normalize } from "../Draft";
 import { printF } from "../Fetch";
 import wrapped2021 from "./2021.json";
@@ -20,6 +20,7 @@ export default function Wrapped() {
     { "2021": wrapped2021, "2022": wrapped2022 }[yearKey] || rawWrapped;
   const toRender: { [key: string]: ReactNode } = Object.fromEntries(
     Object.entries({
+      Outcomes,
       FantasyCalc,
       SqueezesAndStomps,
       WeekTopsAndBottoms,
@@ -35,7 +36,7 @@ export default function Wrapped() {
       Injuries,
       BestByPosition,
       Matchups,
-      json,
+      // json,
     }).map(([k, v]) => [k, v()])
   );
   var hashKey = window.location.hash.substring(1);
@@ -128,7 +129,7 @@ const bubbleStyle = {
 //
 
 function json() {
-  console.log(printF(FetchWrapped));
+  clog(printF(FetchWrapped));
   return <pre>{JSON.stringify(wrapped, null, 2)}</pre>;
 }
 
@@ -1218,6 +1219,246 @@ function Stacks() {
             </div>
           </div>
         ))}
+    </div>
+  );
+}
+
+function Outcomes() {
+  const MAX_TRAVERSE = 4;
+  const inputRef = React.createRef<HTMLInputElement>();
+  const [outcomes, updateOutcomes] = useState<{
+    [teamId: string]: {
+      position: number;
+      tiedTeamIds: string[];
+      probability: number;
+    }[];
+  }>({});
+  const latestPlayedWeek = Object.entries(
+    Object.values(wrapped.ffTeams)[0].rosters
+  )
+    .map(([weekNum, roster]) => ({ weekNum, roster }))
+    .filter(({ weekNum, roster }) =>
+      roster.rostered.find(
+        (p) => (wrapped.nflPlayers[p].scores[weekNum] || 0) > 0
+      )
+    )
+    .map(({ weekNum }) => parseInt(weekNum))
+    .sort((a, b) => b - a)[0];
+  const totals = Object.fromEntries(
+    Object.values(wrapped.ffTeams).map((team) => [
+      team.id,
+      Object.entries(wrapped.ffMatchups)
+        .filter(([weekNum]) => parseInt(weekNum) <= latestPlayedWeek)
+        .flatMap(([weekNum]) =>
+          team.rosters[weekNum].starting.map(
+            (playerId) => wrapped.nflPlayers[playerId]!.scores[weekNum] || 0
+          )
+        )
+        .reduce((a, b) => a + b, 0),
+    ])
+  );
+  function getRealities(
+    stability: number,
+    realities: { probability: number; reality: { [teamId: string]: number } }[],
+    matchups: string[][]
+  ): { probability: number; reality: { [teamId: string]: number } }[] {
+    if (matchups.length === 0) return realities;
+    const matchup = matchups.pop()!;
+    const probabilityHomeWin =
+      0.5 +
+      Math.atan(Math.log(totals[matchup[1]] / totals[matchup[0]]) * stability) /
+        Math.PI;
+    return getRealities(
+      stability,
+      [
+        { winner: matchup[0], winProbability: 1 - probabilityHomeWin },
+        { winner: matchup[1], winProbability: probabilityHomeWin },
+      ]
+        .filter(({ winProbability }) => winProbability > 0)
+        .flatMap(({ winner, winProbability }) =>
+          realities.map(({ probability, reality }) => ({
+            probability: probability * winProbability,
+            reality: Object.assign({}, reality, {
+              [winner]: reality[winner] + 1,
+            }),
+          }))
+        ),
+      matchups
+    );
+  }
+  return (
+    <div>
+      <div>
+        this shows the probability of each outcome after {MAX_TRAVERSE} weeks
+      </div>
+      <div>min stability means each matchup is 50/50</div>
+      <div>
+        max stability means each matchup is won with extreme likelihood by the
+        team with more points for
+      </div>
+      <div>
+        stability:{" "}
+        <input
+          ref={inputRef}
+          type={"range"}
+          defaultValue={0}
+          min={0}
+          max={100}
+        />
+        <button
+          onClick={() =>
+            Promise.resolve(parseInt(inputRef.current!.value))
+              .then((rawStability) => Math.pow(rawStability / 25, 4))
+              .then((stability) => {
+                const outcomes = Object.fromEntries(
+                  Object.keys(wrapped.ffTeams).map((teamId) => [
+                    teamId,
+                    [] as {
+                      position: number;
+                      tiedTeamIds: string[];
+                      probability: number;
+                    }[],
+                  ])
+                );
+                getRealities(
+                  stability,
+                  [
+                    {
+                      probability: 1,
+                      reality: Object.fromEntries(
+                        Object.values(wrapped.ffTeams)
+                          .map((team) => ({
+                            teamId: team.id,
+                            wins: Object.entries(wrapped.ffMatchups)
+                              .filter(
+                                ([weekNum]) =>
+                                  parseInt(weekNum) <= latestPlayedWeek
+                              )
+                              .map(([weekNum]) => {
+                                const opponentId = wrapped.ffMatchups[weekNum]
+                                  .find((matchup) => matchup.includes(team.id))!
+                                  .find((teamId) => teamId !== team.id)!;
+                                const scores = [team.id, opponentId].map((id) =>
+                                  wrapped.ffTeams[id].rosters[weekNum].starting
+                                    .map(
+                                      (playerId) =>
+                                        wrapped.nflPlayers[playerId]!.scores[
+                                          weekNum
+                                        ] || 0
+                                    )
+                                    .reduce((a, b) => a + b, 0)
+                                );
+                                return (
+                                  scores[0] > scores[1] ? 1 : 0
+                                ) as number;
+                              })
+                              .reduce((a, b) => a + b, 0),
+                          }))
+                          .map(({ teamId, wins }) => [teamId, wins])
+                      ),
+                    },
+                  ],
+                  Object.entries(wrapped.ffMatchups)
+                    .filter(([weekNum]) => parseInt(weekNum) > latestPlayedWeek)
+                    .slice(0, MAX_TRAVERSE)
+                    .flatMap(([_, matchups]) => matchups)
+                ).forEach(({ probability, reality }) => {
+                  var position = 1;
+                  Array.from(new Set(Object.values(reality)))
+                    .sort((a, b) => b - a)
+                    .forEach((wins) => {
+                      const tiedTeamIds = Object.entries(reality)
+                        .map(([teamId, teamWins]) => ({
+                          teamId,
+                          teamWins,
+                        }))
+                        .filter(({ teamWins }) => wins === teamWins)
+                        .map(({ teamId }) => teamId)
+                        .sort();
+                      tiedTeamIds.forEach((teamId) => {
+                        const teamOutcomes = outcomes[teamId];
+                        const found = teamOutcomes.find(
+                          (outcome) =>
+                            outcome.position === position &&
+                            outcome.tiedTeamIds.join(",") ===
+                              tiedTeamIds.join(",")
+                        );
+                        if (found) {
+                          found.probability += probability;
+                        } else {
+                          teamOutcomes.push({
+                            position,
+                            tiedTeamIds,
+                            probability,
+                          });
+                        }
+                      });
+                      position += tiedTeamIds.length;
+                    });
+                });
+                updateOutcomes(outcomes);
+              })
+          }
+        >
+          compute
+        </button>
+      </div>
+      <div>
+        {Object.entries(outcomes)
+          .map(([teamId, teamOutcomes]) => ({ teamId, teamOutcomes }))
+          .map(({ teamId, teamOutcomes }) => {
+            var cumProb = 0;
+            return {
+              teamId,
+              teamOutcomes: teamOutcomes
+                .map((o) => ({
+                  ...o,
+                  tiedLength: o.tiedTeamIds.length - 1,
+                  tiedStr: o.tiedTeamIds
+                    .filter((tiedTeamId) => tiedTeamId !== teamId)
+                    .map((tiedTeamId) => wrapped.ffTeams[tiedTeamId].name)
+                    .join(","),
+                }))
+                .sort((a, b) => b.tiedLength - a.tiedLength)
+                .sort((a, b) => b.position - a.position)
+                .map((o) => {
+                  cumProb += o.probability;
+                  return {
+                    ...o,
+                    cumProb,
+                  };
+                }),
+            };
+          })
+          .map(({ teamId, teamOutcomes }) => (
+            <div key={teamId}>
+              <div style={bubbleStyle}>
+                <div>{wrapped.ffTeams[teamId].name}</div>
+                <table>
+                  <thead>
+                    <tr>
+                      <th style={{ paddingRight: "50px" }}>cumprob</th>
+                      <th style={{ paddingRight: "50px" }}>prob</th>
+                      <th style={{ paddingRight: "50px" }}>place</th>
+                      <th style={{ paddingRight: "50px" }}>tied</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {teamOutcomes.map((o, j) => (
+                      <tr key={j}>
+                        <td>{(o.cumProb * 100).toFixed(3)}%</td>
+                        <td>{(o.probability * 100).toFixed(3)}%</td>
+                        <td>{o.position}</td>
+                        <td>{o.tiedLength}</td>
+                        <td>{o.tiedStr}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          ))}
+      </div>
     </div>
   );
 }
