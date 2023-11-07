@@ -1224,7 +1224,7 @@ function Stacks() {
 }
 
 function Outcomes() {
-  const MAX_TRAVERSE = 4;
+  const MAX_TRAVERSE = 3;
   const inputRef = React.createRef<HTMLInputElement>();
   const [outcomes, updateOutcomes] = useState<{
     [teamId: string]: {
