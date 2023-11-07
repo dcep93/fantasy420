@@ -1433,7 +1433,7 @@ function Outcomes() {
           .map(({ teamId, teamOutcomes }) => (
             <div key={teamId}>
               <div style={bubbleStyle}>
-                <div>{wrapped.ffTeams[teamId].name}</div>
+                <div>*{wrapped.ffTeams[teamId].name}</div>
                 <table>
                   <thead>
                     <tr>
