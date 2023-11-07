@@ -36,7 +36,7 @@ export default function Wrapped() {
       Injuries,
       BestByPosition,
       Matchups,
-      // json,
+      json,
     }).map(([k, v]) => [k, v()])
   );
   var hashKey = window.location.hash.substring(1);
