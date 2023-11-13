@@ -1224,6 +1224,7 @@ function Stacks() {
 }
 
 function Outcomes() {
+  const NUM_RENDER_RESULTS = 20;
   const MAX_TRAVERSE = 4;
   const inputRef = React.createRef<HTMLInputElement>();
   const [outcomes, updateOutcomes] = useState<{
@@ -1445,7 +1446,9 @@ function Outcomes() {
                   </thead>
                   <tbody>
                     {teamOutcomes
-                      .filter(({ probability }) => probability > 0.001)
+                      .sort((a, b) => b.probability - a.probability)
+                      .slice(0, NUM_RENDER_RESULTS)
+                      .sort((a, b) => a.cumProb - b.cumProb)
                       .map((o, j) => (
                         <tr key={j}>
                           <td>{(o.cumProb * 100).toFixed(3)}%</td>
