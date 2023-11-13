@@ -1224,7 +1224,7 @@ function Stacks() {
 }
 
 function Outcomes() {
-  const NUM_RENDER_RESULTS = 20;
+  const NUM_RENDER_RESULTS = 50;
   const MAX_TRAVERSE = 4;
   const inputRef = React.createRef<HTMLInputElement>();
   const [outcomes, updateOutcomes] = useState<{
