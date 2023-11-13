@@ -1444,15 +1444,17 @@ function Outcomes() {
                     </tr>
                   </thead>
                   <tbody>
-                    {teamOutcomes.map((o, j) => (
-                      <tr key={j}>
-                        <td>{(o.cumProb * 100).toFixed(3)}%</td>
-                        <td>{(o.probability * 100).toFixed(3)}%</td>
-                        <td>{o.position}</td>
-                        <td>{o.tiedLength}</td>
-                        <td>{o.tiedStr}</td>
-                      </tr>
-                    ))}
+                    {teamOutcomes
+                      .filter(({ probability }) => probability > 0.001)
+                      .map((o, j) => (
+                        <tr key={j}>
+                          <td>{(o.cumProb * 100).toFixed(3)}%</td>
+                          <td>{(o.probability * 100).toFixed(3)}%</td>
+                          <td>{o.position}</td>
+                          <td>{o.tiedLength}</td>
+                          <td>{o.tiedStr}</td>
+                        </tr>
+                      ))}
                   </tbody>
                 </table>
               </div>
