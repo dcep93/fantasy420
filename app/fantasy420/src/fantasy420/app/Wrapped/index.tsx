@@ -663,6 +663,7 @@ function ExtremeStuds() {
           score: score!,
         }))
         .filter(({ weekNum }) => weekNum !== "0")
+        .filter(({ score }) => score !== 0)
         .sort((a, b) => b.score - a.score)
         .reverse()[0],
     average: (playerId) => ({
@@ -900,7 +901,6 @@ function BoomBust() {
                     ...p,
                     scoresArr: Object.entries(p.scores)
                       .filter(([scoringPeriod]) => scoringPeriod !== "0")
-                      .filter(([scoringPeriod]) => scoringPeriod !== "18")
                       .map(([_, p]) => p)
                       .filter((s) => s !== undefined) as number[],
                   }))
