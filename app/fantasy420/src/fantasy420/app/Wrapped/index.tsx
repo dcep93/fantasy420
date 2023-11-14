@@ -648,6 +648,14 @@ function ExtremeStuds() {
         }))
         .filter(({ weekNum }) => weekNum !== "0")
         .sort((a, b) => b.score - a.score)[0],
+    "2nd": (playerId) =>
+      Object.entries(wrapped.nflPlayers[playerId].scores)
+        .map(([weekNum, score]) => ({
+          weekNum,
+          score: score!,
+        }))
+        .filter(({ weekNum }) => weekNum !== "0")
+        .sort((a, b) => b.score - a.score)[1],
     min: (playerId) =>
       Object.entries(wrapped.nflPlayers[playerId].scores)
         .map(([weekNum, score]) => ({
