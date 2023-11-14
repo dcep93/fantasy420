@@ -146,15 +146,15 @@ function ChosenWrong() {
   };
   function getIdeal(
     rostered: string[],
-    weekNum: string,
-    numStarted: number
+    started: string[],
+    weekNum: string
   ): string[] {
     const ideal = [] as string[];
     const startables = { ..._startables };
-    if (numStarted >= 10) {
+    if (started.length >= 10) {
       startables[Position.FLEX]++;
     }
-    if (numStarted >= 11) {
+    if (started.length >= 11) {
       startables[Position.SUPERFLEX]++;
     }
     Object.entries(startables)
@@ -178,6 +178,7 @@ function ChosenWrong() {
             )
           )
           .map((player) => ({ ...player, score: player.scores[weekNum] || 0 }))
+          .sort((player) => (started.includes(player.id) ? -1 : 1))
           .sort((a, b) => b.score - a.score)[0];
         if (idealPlayer) {
           ideal.push(idealPlayer.id);
@@ -192,7 +193,7 @@ function ChosenWrong() {
         .map(([weekNum, matchups]) => ({ weekNum, matchups }))
         .filter(
           ({ weekNum, matchups }) =>
-            wrapped.ffTeams[matchups[0][0]].rosters[weekNum]
+            weekNum === "9" && wrapped.ffTeams[matchups[0][0]].rosters[weekNum]
         )
         .flatMap(({ weekNum, matchups }) =>
           matchups.map((matchup) => ({
@@ -210,8 +211,8 @@ function ChosenWrong() {
                   .reduce((a, b) => a + b, 0),
                 ideal: getIdeal(
                   team.rosters[weekNum].rostered,
-                  weekNum,
-                  team.rosters[weekNum].starting.length
+                  team.rosters[weekNum].starting,
+                  weekNum
                 ),
               }))
               .map((team) => ({
