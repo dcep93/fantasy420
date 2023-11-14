@@ -1,4 +1,4 @@
-type NFLPlayerType = {
+export type NFLPlayerType = {
   id: string;
   name: string;
   nflTeamId: string;
