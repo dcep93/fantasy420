@@ -900,6 +900,7 @@ function BoomBust() {
                     ...p,
                     scoresArr: Object.entries(p.scores)
                       .filter(([scoringPeriod]) => scoringPeriod !== "0")
+                      .filter(([scoringPeriod]) => scoringPeriod !== "18")
                       .map(([_, p]) => p)
                       .filter((s) => s !== undefined) as number[],
                   }))
