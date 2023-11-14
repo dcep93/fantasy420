@@ -35,7 +35,7 @@ export default function Wrapped() {
       Benchwarmers,
       Injuries,
       BestByPosition,
-      Ceiling,
+      ExtremeStuds,
       Matchups,
       json,
     }).map(([k, v]) => [k, v()])
@@ -631,74 +631,107 @@ function Negatives() {
   );
 }
 
-function Ceiling() {
+function ExtremeStuds() {
+  const funcs: {
+    [funcName: string]: (playerId: string) =>
+      | {
+          weekNum: string;
+          score: number;
+        }
+      | undefined;
+  } = {
+    max: (playerId) =>
+      Object.entries(wrapped.nflPlayers[playerId].scores)
+        .map(([weekNum, score]) => ({
+          weekNum,
+          score: score!,
+        }))
+        .filter(({ weekNum }) => weekNum !== "0")
+        .sort((a, b) => b.score - a.score)[0],
+    min: (playerId) =>
+      Object.entries(wrapped.nflPlayers[playerId].scores)
+        .map(([weekNum, score]) => ({
+          weekNum,
+          score: score!,
+        }))
+        .filter(({ weekNum }) => weekNum !== "0")
+        .sort((a, b) => b.score - a.score)
+        .reverse()[0],
+    average: (playerId) => ({
+      weekNum: "avg",
+      score: wrapped.nflPlayers[playerId].average,
+    }),
+  };
+  const [funcName, updateFuncName] = useState(Object.keys(funcs)[0]);
   return (
     <div>
-      {Object.values(wrapped.ffTeams)
-        .map((t) => ({
-          ...t,
-          ceilingRoster: Object.fromEntries(
-            t.rosters["0"].rostered.map((playerId) => [
-              playerId,
-              Object.entries(wrapped.nflPlayers[playerId].scores)
-                .map(([weekNum, score]) => ({
-                  weekNum,
-                  score: score!,
-                }))
-                .filter(({ weekNum }) => weekNum !== "0")
-                .sort((a, b) => b.score - a.score)[0],
-            ])
-          ),
-        }))
-        .map((t) => ({
-          ...t,
-          ceilingPlayers: Object.fromEntries(
-            Helpers.getIdealHelper(
-              Object.keys(t.ceilingRoster),
-              Object.entries(t.rosters)
-                .map(([weekNum, roster]) => ({
-                  weekNum: parseInt(weekNum),
-                  roster,
-                }))
-                .sort((a, b) => b.weekNum - a.weekNum)[0].roster.starting,
-              (player) => t.ceilingRoster[player.id]?.score || 0
-            ).map((playerId) => [playerId, t.ceilingRoster[playerId].weekNum])
-          ),
-        }))
-        .map((t) => ({
-          ...t,
-          ceilingTotal: Object.entries(t.ceilingPlayers)
-            .map(
-              ([playerId, weekNum]) =>
-                wrapped.nflPlayers[playerId].scores[weekNum]!
-            )
-            .reduce((a, b) => a + b, 0),
-        }))
-        .sort((a, b) => b.ceilingTotal - a.ceilingTotal)
-        .map((t) => (
-          <div key={t.id}>
-            <div style={bubbleStyle}>
+      <div>
+        <div>
+          funcName:{" "}
+          <select onChange={(e) => updateFuncName(e.target.value)}>
+            {Object.keys(funcs).map((f) => (
+              <option key={f} value={f}>
+                {f}
+              </option>
+            ))}
+          </select>
+        </div>
+        {Object.values(wrapped.ffTeams)
+          .map((t) => ({
+            ...t,
+            xroster: Object.fromEntries(
+              t.rosters["0"].rostered.map((playerId) => [
+                playerId,
+                funcs[funcName](playerId),
+              ])
+            ),
+          }))
+          .map((t) => ({
+            ...t,
+            xplayers: Object.fromEntries(
+              Helpers.getIdealHelper(
+                Object.keys(t.xroster),
+                Object.entries(t.rosters)
+                  .map(([weekNum, roster]) => ({
+                    weekNum: parseInt(weekNum),
+                    roster,
+                  }))
+                  .sort((a, b) => b.weekNum - a.weekNum)[0].roster.starting,
+                (player) => t.xroster[player.id]?.score || 0
+              ).map((playerId) => [playerId, t.xroster[playerId]])
+            ),
+          }))
+          .map((t) => ({
+            ...t,
+            xtotal: Object.entries(t.xplayers)
+              .map(([playerId, o]) => ({ playerId, ...o }))
+              .map(({ playerId, score }) => score!)
+              .reduce((a, b) => a + b, 0),
+          }))
+          .sort((a, b) => b.xtotal - a.xtotal)
+          .map((t) => (
+            <div key={t.id} style={bubbleStyle}>
               <h2>{t.name}</h2>
-              <div>{Helpers.toFixed(t.ceilingTotal)}</div>
-              {Object.entries(t.ceilingPlayers)
-                .map(([playerId, weekNum]) => ({
+              <div>{Helpers.toFixed(t.xtotal)}</div>
+              {Object.entries(t.xplayers)
+                .map(([playerId, o]) => ({
                   player: wrapped.nflPlayers[playerId],
-                  weekNum,
+                  o,
                 }))
-                .map(({ player, weekNum }) => ({
+                .map(({ player, o }) => ({
                   player,
-                  weekNum,
-                  score: player.scores[weekNum]!,
+                  ...o,
                 }))
+                .map(({ score, ...o }) => ({ ...o, score: score! }))
                 .sort((a, b) => b.score - a.score)
                 .map(({ player, weekNum, score }) => (
                   <div key={player.id}>
-                    {score} week {weekNum} {player.name}
+                    {Helpers.toFixed(score)} week {weekNum} {player.name}
                   </div>
                 ))}
             </div>
-          </div>
-        ))}
+          ))}
+      </div>
     </div>
   );
 }
