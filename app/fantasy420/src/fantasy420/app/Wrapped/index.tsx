@@ -688,10 +688,9 @@ function ExtremeStuds() {
           .map((t) => ({
             ...t,
             xroster: Object.fromEntries(
-              t.rosters["0"].rostered.map((playerId) => [
-                playerId,
-                funcs[funcName](playerId),
-              ])
+              t.rosters["0"].rostered
+                .map((playerId) => [playerId, funcs[funcName](playerId)])
+                .filter(([_, xx]) => xx !== undefined)
             ),
           }))
           .map((t) => ({
