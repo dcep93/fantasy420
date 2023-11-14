@@ -3,7 +3,7 @@ import { draft_json, normalize } from "../Draft";
 import { printF } from "../Fetch";
 import wrapped2021 from "./2021.json";
 import wrapped2022 from "./2022.json";
-import FetchWrapped, { WrappedType } from "./FetchWrapped";
+import FetchWrapped, { NFLPlayerType, WrappedType } from "./FetchWrapped";
 import _rawWrapped from "./wrapped.json";
 
 export const rawWrapped: WrappedType = _rawWrapped;
@@ -35,6 +35,7 @@ export default function Wrapped() {
       Benchwarmers,
       Injuries,
       BestByPosition,
+      Ceiling,
       Matchups,
       json,
     }).map(([k, v]) => [k, v()])
@@ -92,25 +93,6 @@ export enum Position {
   SUPERFLEX = -2,
 }
 
-function toFixed(n: number, d: number = 2): number {
-  return parseFloat(n.toFixed(d));
-}
-
-function countStrings(arr: string[]): { [key: string]: number } {
-  const c: { [key: string]: number } = {};
-  arr.forEach((k) => {
-    c[k] = (c[k] || 0) + 1;
-  });
-  return c;
-}
-
-function sortByKey<T>(arr: T[], f: (t: T) => number): T[] {
-  return arr
-    .map((obj) => ({ obj, v: f(obj) }))
-    .sort((a, b) => a.v - b.v)
-    .map((w) => w.obj);
-}
-
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function clog<T>(t: T): T {
   console.log(t);
@@ -134,59 +116,6 @@ function json() {
 }
 
 function ChosenWrong() {
-  const _startables = {
-    [Position.QB]: 1,
-    [Position.WR]: 2,
-    [Position.RB]: 2,
-    [Position.TE]: 1,
-    [Position.K]: 1,
-    [Position.DST]: 1,
-    [Position.FLEX]: 1,
-    [Position.SUPERFLEX]: 0,
-  };
-  function getIdeal(
-    rostered: string[],
-    started: string[],
-    weekNum: string
-  ): string[] {
-    const ideal = [] as string[];
-    const startables = { ..._startables };
-    if (started.length >= 10) {
-      startables[Position.FLEX]++;
-    }
-    if (started.length >= 11) {
-      startables[Position.SUPERFLEX]++;
-    }
-    Object.entries(startables)
-      .flatMap(([position, count]) =>
-        Array.from(new Array(count)).map((_) => parseInt(position) as Position)
-      )
-      .map((position) =>
-        position === Position.FLEX
-          ? [Position.WR, Position.RB, Position.TE]
-          : position === Position.SUPERFLEX
-          ? [Position.QB, Position.WR, Position.RB, Position.TE]
-          : [position]
-      )
-      .map((positionChoices) => {
-        const idealPlayer = rostered
-          .filter((playerId) => !ideal.includes(playerId))
-          .map((playerId) => wrapped.nflPlayers[playerId])
-          .filter((player) =>
-            positionChoices.includes(
-              Position[player.position as any] as unknown as Position
-            )
-          )
-          .map((player) => ({ ...player, score: player.scores[weekNum] || 0 }))
-          .sort((player) => (started.includes(player.id) ? -1 : 1))
-          .sort((a, b) => b.score - a.score)[0];
-        if (idealPlayer) {
-          ideal.push(idealPlayer.id);
-        }
-        return idealPlayer;
-      });
-    return ideal;
-  }
   return (
     <div>
       {Object.entries(wrapped.ffMatchups)
@@ -209,7 +138,7 @@ function ChosenWrong() {
                       wrapped.nflPlayers[playerId].scores[weekNum] || 0
                   )
                   .reduce((a, b) => a + b, 0),
-                ideal: getIdeal(
+                ideal: Helpers.getIdeal(
                   team.rosters[weekNum].rostered,
                   team.rosters[weekNum].starting,
                   weekNum
@@ -217,7 +146,7 @@ function ChosenWrong() {
               }))
               .map((team) => ({
                 ...team,
-                idealScore: toFixed(
+                idealScore: Helpers.toFixed(
                   team.ideal
                     .map(
                       (playerId) =>
@@ -228,7 +157,7 @@ function ChosenWrong() {
               }))
               .map((team) => ({
                 ...team,
-                text: `[${team.name}] ${toFixed(team.score)} -> ${
+                text: `[${team.name}] ${Helpers.toFixed(team.score)} -> ${
                   team.idealScore
                 }`,
               }))
@@ -326,12 +255,12 @@ function Injuries() {
 
 function SqueezesAndStomps() {
   const num = 10;
-  const rawPoints = sortByKey(
+  const rawPoints = Helpers.sortByKey(
     Object.entries(wrapped.ffMatchups)
       .map(([periodId, matchups]) => ({
         periodId,
         matchups: matchups.map((matchup) =>
-          sortByKey(
+          Helpers.sortByKey(
             matchup
               .map((teamId) => wrapped.ffTeams[teamId])
               .filter((team) => team.rosters[periodId])
@@ -399,7 +328,7 @@ function WeekTopsAndBottoms() {
   const vals = Object.keys(Object.values(wrapped.ffTeams)[0].rosters)
     .filter((weekNum) => weekNum !== "0")
     .map((weekNum) => {
-      const sortedTeams = sortByKey(
+      const sortedTeams = Helpers.sortByKey(
         Object.values(wrapped.ffTeams)
           .filter((team) => team.rosters[weekNum]) // todo
           .map((team) => ({
@@ -483,7 +412,7 @@ function BestByPosition() {
         .map((position, i) => (
           <div key={i} style={bubbleStyle}>
             <h3>{Position[position]}</h3>
-            {sortByKey(
+            {Helpers.sortByKey(
               Object.values(wrapped.ffTeams).map((team) => ({
                 ...team,
                 score: Object.entries(team.rosters)
@@ -609,13 +538,13 @@ function DeterminedByDiscreteScoring() {
         .flatMap(([periodId, matchup]) =>
           matchup.map((match) => ({
             periodId,
-            teams: sortByKey(
+            teams: Helpers.sortByKey(
               match
                 .map((teamId) => wrapped.ffTeams[teamId])
                 .filter((team) => team.rosters[periodId])
                 .map((team) => ({
                   ...team,
-                  score: toFixed(
+                  score: Helpers.toFixed(
                     team.rosters[periodId].starting
                       .map(
                         (playerId) =>
@@ -702,6 +631,78 @@ function Negatives() {
   );
 }
 
+function Ceiling() {
+  return (
+    <div>
+      {Object.values(wrapped.ffTeams)
+        .map((t) => ({
+          ...t,
+          ceilingRoster: Object.fromEntries(
+            t.rosters["0"].rostered.map((playerId) => [
+              playerId,
+              Object.entries(wrapped.nflPlayers[playerId].scores)
+                .map(([weekNum, score]) => ({
+                  weekNum,
+                  score: score!,
+                }))
+                .filter(({ weekNum }) => weekNum !== "0")
+                .sort((a, b) => b.score - a.score)[0],
+            ])
+          ),
+        }))
+        .map((t) => ({
+          ...t,
+          ceilingPlayers: Object.fromEntries(
+            Helpers.getIdealHelper(
+              Object.keys(t.ceilingRoster),
+              Object.entries(t.rosters)
+                .map(([weekNum, roster]) => ({
+                  weekNum: parseInt(weekNum),
+                  roster,
+                }))
+                .sort((a, b) => b.weekNum - a.weekNum)[0].roster.starting,
+              (player) => t.ceilingRoster[player.id]?.score || 0
+            ).map((playerId) => [playerId, t.ceilingRoster[playerId].weekNum])
+          ),
+        }))
+        .map((t) => ({
+          ...t,
+          ceilingTotal: Object.entries(t.ceilingPlayers)
+            .map(
+              ([playerId, weekNum]) =>
+                wrapped.nflPlayers[playerId].scores[weekNum]!
+            )
+            .reduce((a, b) => a + b, 0),
+        }))
+        .sort((a, b) => b.ceilingTotal - a.ceilingTotal)
+        .map((t) => (
+          <div key={t.id}>
+            <div style={bubbleStyle}>
+              <h2>{t.name}</h2>
+              <div>{Helpers.toFixed(t.ceilingTotal)}</div>
+              {Object.entries(t.ceilingPlayers)
+                .map(([playerId, weekNum]) => ({
+                  player: wrapped.nflPlayers[playerId],
+                  weekNum,
+                }))
+                .map(({ player, weekNum }) => ({
+                  player,
+                  weekNum,
+                  score: player.scores[weekNum]!,
+                }))
+                .sort((a, b) => b.score - a.score)
+                .map(({ player, weekNum, score }) => (
+                  <div key={player.id}>
+                    {score} week {weekNum} {player.name}
+                  </div>
+                ))}
+            </div>
+          </div>
+        ))}
+    </div>
+  );
+}
+
 function GooseEggs() {
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
@@ -757,7 +758,7 @@ function UniquesStarted() {
                   .map((ffTeam) => ({
                     teamName: ffTeam.name,
                     started: Object.entries(
-                      countStrings(
+                      Helpers.countStrings(
                         Object.values(ffTeam.rosters).flatMap(
                           (roster) => roster.starting
                         )
@@ -916,7 +917,8 @@ function Benchwarmers() {
           .sort((a, b) => b.score - a.score)
           .map((o, i) => (
             <div key={i}>
-              [{o.teamName}] bench week {o.weekNum} scored {toFixed(o.score)}
+              [{o.teamName}] bench week {o.weekNum} scored{" "}
+              {Helpers.toFixed(o.score)}
             </div>
           ))}
       </div>
@@ -980,7 +982,9 @@ function OwnedTeams() {
             <div style={bubbleStyle}>
               <h2>{ffTeam.name}</h2>
               {Object.entries(
-                countStrings(ffTeam.owned.map((o) => o.nflPlayer.nflTeamId))
+                Helpers.countStrings(
+                  ffTeam.owned.map((o) => o.nflPlayer.nflTeamId)
+                )
               )
                 .map(([nflTeamId, c]) => ({ nflTeamId, c }))
                 .sort((a, b) => b.c - a.c)
@@ -1016,7 +1020,7 @@ function OwnedTeams() {
                   .map((o, i) => (
                     <div key={i}>
                       {o.ffTeam.name}: {o.nflPlayer.name}{" "}
-                      {toFixed(o.nflPlayer.total)}
+                      {Helpers.toFixed(o.nflPlayer.total)}
                     </div>
                   ))}
               </div>
@@ -1467,4 +1471,92 @@ function Outcomes() {
       </div>
     </div>
   );
+}
+
+class Helpers {
+  static toFixed(n: number, d: number = 2): number {
+    return parseFloat(n.toFixed(d));
+  }
+
+  static countStrings(arr: string[]): { [key: string]: number } {
+    const c: { [key: string]: number } = {};
+    arr.forEach((k) => {
+      c[k] = (c[k] || 0) + 1;
+    });
+    return c;
+  }
+
+  static sortByKey<T>(arr: T[], f: (t: T) => number): T[] {
+    return arr
+      .map((obj) => ({ obj, v: f(obj) }))
+      .sort((a, b) => a.v - b.v)
+      .map((w) => w.obj);
+  }
+
+  static _startables = {
+    [Position.QB]: 1,
+    [Position.WR]: 2,
+    [Position.RB]: 2,
+    [Position.TE]: 1,
+    [Position.K]: 1,
+    [Position.DST]: 1,
+    [Position.FLEX]: 1,
+    [Position.SUPERFLEX]: 0,
+  };
+
+  static getIdeal(
+    rostered: string[],
+    started: string[],
+    weekNum: string
+  ): string[] {
+    return Helpers.getIdealHelper(
+      rostered,
+      started,
+      (player) => player.scores[weekNum] || 0
+    );
+  }
+
+  static getIdealHelper(
+    rostered: string[],
+    started: string[],
+    getScore: (player: NFLPlayerType) => number
+  ): string[] {
+    const ideal = [] as string[];
+    const startables = { ...Helpers._startables };
+    if (started.length >= 10) {
+      startables[Position.FLEX]++;
+    }
+    if (started.length >= 11) {
+      startables[Position.SUPERFLEX]++;
+    }
+    Object.entries(startables)
+      .flatMap(([position, count]) =>
+        Array.from(new Array(count)).map((_) => parseInt(position) as Position)
+      )
+      .map((position) =>
+        position === Position.FLEX
+          ? [Position.WR, Position.RB, Position.TE]
+          : position === Position.SUPERFLEX
+          ? [Position.QB, Position.WR, Position.RB, Position.TE]
+          : [position]
+      )
+      .map((positionChoices) => {
+        const idealPlayer = rostered
+          .filter((playerId) => !ideal.includes(playerId))
+          .map((playerId) => wrapped.nflPlayers[playerId])
+          .filter((player) =>
+            positionChoices.includes(
+              Position[player.position as any] as unknown as Position
+            )
+          )
+          .map((player) => ({ ...player, score: getScore(player) }))
+          .sort((player) => (started.includes(player.id) ? -1 : 1))
+          .sort((a, b) => b.score - a.score)[0];
+        if (idealPlayer) {
+          ideal.push(idealPlayer.id);
+        }
+        return idealPlayer;
+      });
+    return ideal;
+  }
 }
