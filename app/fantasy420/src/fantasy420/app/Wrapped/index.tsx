@@ -1357,15 +1357,17 @@ function Outcomes() {
             Promise.resolve(parseInt(inputRef.current!.value))
               .then((rawStability) => Math.pow(rawStability / 25, 4))
               .then((stability) => {
-                const outcomes = Object.fromEntries(
-                  Object.keys(wrapped.ffTeams).map((teamId) => [
-                    teamId,
-                    [] as {
-                      position: number;
-                      tiedTeamIds: string[];
-                      probability: number;
-                    }[],
-                  ])
+                const _outcomes = Object.fromEntries(
+                  Object.keys(wrapped.ffTeams)
+                    .concat("")
+                    .map((teamId) => [
+                      teamId,
+                      [] as {
+                        position: number;
+                        tiedTeamIds: string[];
+                        probability: number;
+                      }[],
+                    ])
                 );
                 getRealities(
                   stability,
@@ -1422,8 +1424,8 @@ function Outcomes() {
                         .filter(({ teamWins }) => wins === teamWins)
                         .map(({ teamId }) => teamId)
                         .sort();
-                      tiedTeamIds.forEach((teamId) => {
-                        const teamOutcomes = outcomes[teamId];
+                      tiedTeamIds.concat("").forEach((teamId) => {
+                        const teamOutcomes = _outcomes[teamId];
                         const found = teamOutcomes.find(
                           (outcome) =>
                             outcome.position === position &&
@@ -1443,13 +1445,14 @@ function Outcomes() {
                       position += tiedTeamIds.length;
                     });
                 });
-                updateOutcomes(outcomes);
+                updateOutcomes(_outcomes);
               })
           }
         >
           compute
         </button>
       </div>
+      <div></div>
       <div>
         {Object.entries(outcomes)
           .map(([teamId, teamOutcomes]) => ({ teamId, teamOutcomes }))
@@ -1477,35 +1480,66 @@ function Outcomes() {
                 }),
             };
           })
+          .sort((a) => (a.teamId === "" ? -1 : 1))
           .map(({ teamId, teamOutcomes }) => (
             <div key={teamId}>
               <div style={bubbleStyle}>
-                <div>*{wrapped.ffTeams[teamId].name}</div>
-                <table>
-                  <thead>
-                    <tr>
-                      <th style={{ paddingRight: "50px" }}>cumprob</th>
-                      <th style={{ paddingRight: "50px" }}>prob</th>
-                      <th style={{ paddingRight: "50px" }}>place</th>
-                      <th style={{ paddingRight: "50px" }}>tied</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {teamOutcomes
-                      .sort((a, b) => b.probability - a.probability)
-                      .slice(0, NUM_RENDER_RESULTS)
-                      .sort((a, b) => a.cumProb - b.cumProb)
-                      .map((o, j) => (
-                        <tr key={j}>
-                          <td>{(o.cumProb * 100).toFixed(3)}%</td>
-                          <td>{(o.probability * 100).toFixed(3)}%</td>
-                          <td>{o.position}</td>
-                          <td>{o.tiedLength}</td>
-                          <td>{o.tiedStr}</td>
+                {teamId === "" ? (
+                  <div>
+                    {
+                      <table>
+                        <thead>
+                          <tr>
+                            <th style={{ paddingRight: "50px" }}>prob</th>
+                            <th style={{ paddingRight: "50px" }}>place</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {teamOutcomes
+                            .sort((a, b) => b.probability - a.probability)
+                            .slice(0, NUM_RENDER_RESULTS)
+                            .map((o, j) => (
+                              <tr key={j}>
+                                <td>{(o.probability * 100).toFixed(3)}%</td>
+                                <td>{o.position}</td>
+                                <td>{o.tiedStr}</td>
+                              </tr>
+                            ))}
+                        </tbody>
+                      </table>
+                    }
+                  </div>
+                ) : (
+                  <div>
+                    <div>*{wrapped.ffTeams[teamId].name}</div>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th style={{ paddingRight: "50px" }}>cumprob</th>
+                          <th style={{ paddingRight: "50px" }}>prob</th>
+                          <th style={{ paddingRight: "50px" }}>place</th>
+                          <th style={{ paddingRight: "50px" }}>tied</th>
                         </tr>
-                      ))}
-                  </tbody>
-                </table>
+                      </thead>
+                      <tbody>
+                        {teamOutcomes
+                          .slice(0, 0)
+                          .sort((a, b) => b.probability - a.probability)
+                          .slice(0, NUM_RENDER_RESULTS)
+                          .sort((a, b) => a.cumProb - b.cumProb)
+                          .map((o, j) => (
+                            <tr key={j}>
+                              <td>{(o.cumProb * 100).toFixed(3)}%</td>
+                              <td>{(o.probability * 100).toFixed(3)}%</td>
+                              <td>{o.position}</td>
+                              <td>{o.tiedLength}</td>
+                              <td>{o.tiedStr}</td>
+                            </tr>
+                          ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
               </div>
             </div>
           ))}
