@@ -1523,7 +1523,6 @@ function Outcomes() {
                       </thead>
                       <tbody>
                         {teamOutcomes
-                          .slice(0, 0)
                           .sort((a, b) => b.probability - a.probability)
                           .slice(0, NUM_RENDER_RESULTS)
                           .sort((a, b) => a.cumProb - b.cumProb)
