@@ -621,7 +621,6 @@ function Negatives() {
         .filter((p) => p.weekNum !== "0")
         .filter((p) => p.score < 0)
         .sort((a, b) => a.score - b.score)
-        .filter((p) => !["K", "DST"].includes(p.position))
         .map((p, i) => (
           <div key={i}>
             {p.name} scored {p.score} week {p.weekNum}
