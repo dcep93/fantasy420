@@ -1,9 +1,8 @@
 import React, { ReactNode, useState } from "react";
 import { draft_json, normalize } from "../Draft";
-import { printF } from "../Fetch";
 import wrapped2021 from "./2021.json";
 import wrapped2022 from "./2022.json";
-import FetchWrapped, { NFLPlayerType, WrappedType } from "./FetchWrapped";
+import { NFLPlayerType, WrappedType } from "./FetchWrapped";
 import _rawWrapped from "./wrapped.json";
 
 export const rawWrapped: WrappedType = _rawWrapped;
@@ -111,7 +110,7 @@ const bubbleStyle = {
 //
 
 function json() {
-  clog(printF(FetchWrapped));
+  // clog(printF(FetchWrapped));
   return <pre>{JSON.stringify(wrapped, null, 2)}</pre>;
 }
 
@@ -1269,16 +1268,6 @@ function Stacks() {
 }
 
 function Outcomes() {
-  const NUM_RENDER_RESULTS = 50;
-  const MAX_TRAVERSE = 4;
-  const inputRef = React.createRef<HTMLInputElement>();
-  const [outcomes, updateOutcomes] = useState<{
-    [teamId: string]: {
-      position: number;
-      tiedTeamIds: string[];
-      probability: number;
-    }[];
-  }>({});
   const latestPlayedWeek = Object.entries(
     Object.values(wrapped.ffTeams)[0].rosters
   )
@@ -1290,7 +1279,7 @@ function Outcomes() {
     )
     .map(({ weekNum }) => parseInt(weekNum))
     .sort((a, b) => b - a)[0];
-  const totals = Object.fromEntries(
+  const alreadyTotals = Object.fromEntries(
     Object.values(wrapped.ffTeams).map((team) => [
       team.id,
       Object.entries(wrapped.ffMatchups)
@@ -1303,244 +1292,281 @@ function Outcomes() {
         .reduce((a, b) => a + b, 0),
     ])
   );
-  function getRealities(
-    stability: number,
-    realities: { probability: number; reality: { [teamId: string]: number } }[],
-    matchups: string[][]
-  ): { probability: number; reality: { [teamId: string]: number } }[] {
-    if (matchups.length === 0) return realities;
-    const matchup = matchups.pop()!;
-    const probabilityHomeWin =
-      0.5 +
-      Math.atan(Math.log(totals[matchup[1]] / totals[matchup[0]]) * stability) /
-        Math.PI;
-    return getRealities(
-      stability,
-      [
-        { winner: matchup[0], winProbability: 1 - probabilityHomeWin },
-        { winner: matchup[1], winProbability: probabilityHomeWin },
-      ]
-        .filter(({ winProbability }) => winProbability > 0)
-        .flatMap(({ winner, winProbability }) =>
-          realities.map(({ probability, reality }) => ({
-            probability: probability * winProbability,
-            reality: Object.assign({}, reality, {
-              [winner]: reality[winner] + 1,
-            }),
+  const div1TeamId = Object.keys(wrapped.ffTeams)[0];
+  const divisions = Object.fromEntries(
+    Object.keys(wrapped.ffTeams).map((teamId, i) => [
+      teamId,
+      teamId === div1TeamId ||
+        Object.values(wrapped.ffMatchups)
+          .flatMap((matchups) => matchups)
+          .filter(
+            (matchup) =>
+              matchup.includes(div1TeamId) && matchup.includes(teamId)
+          ).length > 1,
+    ])
+  );
+  const alreadyWins = Object.fromEntries(
+    Object.values(wrapped.ffTeams)
+      .map((team) => ({
+        teamId: team.id,
+        wins: Object.entries(wrapped.ffMatchups)
+          .filter(([weekNum]) => parseInt(weekNum) <= latestPlayedWeek)
+          .map(([weekNum]) => {
+            const scores = [
+              team.id,
+              wrapped.ffMatchups[weekNum]
+                .find((matchup) => matchup.includes(team.id))!
+                .find((teamId) => teamId !== team.id)!,
+            ].map((id) =>
+              wrapped.ffTeams[id].rosters[weekNum].starting
+                .map(
+                  (playerId) =>
+                    wrapped.nflPlayers[playerId]!.scores[weekNum] || 0
+                )
+                .reduce((a, b) => a + b, 0)
+            );
+            return (scores[0] > scores[1] ? 1 : 0) as number;
+          })
+          .reduce((a, b) => a + b, 0),
+      }))
+      .map(({ teamId, wins }) => [teamId, wins])
+  );
+  const [state, update] = React.useState({
+    now: Date.now(),
+    state: Object.fromEntries(
+      Object.keys(wrapped.ffMatchups)
+        .filter((weekNum) => parseInt(weekNum) > latestPlayedWeek)
+        .map((weekNum) => [
+          weekNum,
+          Object.fromEntries(
+            wrapped.ffMatchups[weekNum].flatMap((matchup) =>
+              matchup.map((teamId) => [
+                teamId,
+                Helpers.toFixed(alreadyTotals[teamId] / latestPlayedWeek),
+              ])
+            )
+          ),
+        ])
+    ),
+  });
+  const totals = Object.fromEntries(
+    Object.values(wrapped.ffTeams).map((team) => [
+      team.id,
+      alreadyTotals[team.id] +
+        Object.values(state.state)
+          .map((week) => week[team.id])
+          .reduce((a, b) => a + b, 0),
+    ])
+  );
+  const wins = Object.fromEntries(
+    Object.values(wrapped.ffTeams)
+      .map((team) => ({
+        teamId: team.id,
+        wins: Object.entries(wrapped.ffMatchups)
+          .map(([weekNum]) => {
+            const scores = [
+              team.id,
+              wrapped.ffMatchups[weekNum]
+                .find((matchup) => matchup.includes(team.id))!
+                .find((teamId) => teamId !== team.id)!,
+            ].map((id) =>
+              parseInt(weekNum) > latestPlayedWeek
+                ? state.state[weekNum][id]
+                : wrapped.ffTeams[id].rosters[weekNum].starting
+                    .map(
+                      (playerId) =>
+                        wrapped.nflPlayers[playerId]!.scores[weekNum] || 0
+                    )
+                    .reduce((a, b) => a + b, 0)
+            );
+            return (scores[0] > scores[1] ? 1 : 0) as number;
+          })
+          .reduce((a, b) => a + b, 0),
+      }))
+      .map(({ teamId, wins }) => [teamId, wins])
+  );
+  type OrderType = { teamId: string; reason: string };
+  function getOrder(order: OrderType[], toBeRanked: string[]): OrderType[] {
+    if (toBeRanked.length === 0) {
+      return order;
+    }
+    const mostWins = toBeRanked
+      .map((teamId) => ({
+        wins: wins[teamId],
+        teamId,
+      }))
+      .sort((a, b) => b.wins - a.wins)[0].wins;
+    const tiedTeamIds = toBeRanked.filter(
+      (teamId) => wins[teamId] === mostWins
+    );
+    function getNext() {
+      if (tiedTeamIds.length === 1) {
+        return {
+          teamId: tiedTeamIds[0],
+          reason: `${wins[tiedTeamIds[0]]} wins`,
+        };
+      } else if (
+        tiedTeamIds
+          .map((tiedTeamId) => (divisions[tiedTeamId] ? 1 : -1) as number)
+          .reduce((a, b) => a + b, 0) %
+          2 ===
+        0
+      ) {
+        const sortedTiedWins = Object.values(wrapped.ffTeams)
+          .filter((team) => tiedTeamIds.includes(team.id))
+          .map((team) => ({
+            teamId: team.id,
+            wins: Object.entries(wrapped.ffMatchups)
+              .map(([weekNum]) => ({
+                weekNum,
+                teamIds: [
+                  team.id,
+                  wrapped.ffMatchups[weekNum]
+                    .find((matchup) => matchup.includes(team.id))!
+                    .find((teamId) => teamId !== team.id)!,
+                ],
+              }))
+              .map(({ weekNum, teamIds }) => {
+                const scores = teamIds.map((id) =>
+                  parseInt(weekNum) > latestPlayedWeek
+                    ? state.state[weekNum][id]
+                    : wrapped.ffTeams[id].rosters[weekNum].starting
+                        .map(
+                          (playerId) =>
+                            wrapped.nflPlayers[playerId]!.scores[weekNum] || 0
+                        )
+                        .reduce((a, b) => a + b, 0)
+                );
+                return (
+                  tiedTeamIds.includes(teamIds[1]) && scores[0] > scores[1]
+                    ? 1
+                    : 0
+                ) as number;
+              })
+              .reduce((a, b) => a + b, 0),
           }))
-        ),
-      matchups
+          .sort((a, b) => b.wins - a.wins);
+        if (sortedTiedWins[0].wins > sortedTiedWins[1].wins) {
+          return {
+            teamId: sortedTiedWins[0].teamId,
+            reason: `${sortedTiedWins[0].wins} wins among ${tiedTeamIds
+              .filter((teamId) => teamId !== sortedTiedWins[0].teamId)
+              .map((teamId) => wrapped.ffTeams[teamId].name)
+              .join(",")}`,
+          };
+        }
+      }
+      const mostTeam = tiedTeamIds
+        .map((teamId) => ({
+          teamId,
+          total: totals[teamId],
+        }))
+        .sort((a, b) => b.total - a.total)[0].teamId;
+      return {
+        teamId: mostTeam,
+        reason: `${Helpers.toFixed(totals[mostTeam])} points among ${tiedTeamIds
+          .filter((teamId) => teamId !== mostTeam)
+          .map((teamId) => wrapped.ffTeams[teamId].name)
+          .join(",")}`,
+      };
+    }
+    const nextOrder = getNext();
+    return getOrder(
+      order.concat(nextOrder),
+      toBeRanked.filter((nextTeamId) => nextTeamId !== nextOrder.teamId)
     );
   }
+  const rawOrder = getOrder([], Object.keys(wrapped.ffTeams));
+  const first = rawOrder[0];
+  const second = rawOrder.filter(
+    ({ teamId }) => divisions[teamId] !== divisions[first.teamId]
+  )[0];
+  const order = getOrder(
+    [
+      { teamId: first.teamId, reason: `wins overall: ${rawOrder[0].reason}` },
+      {
+        teamId: second.teamId,
+        reason: `wins division ${divisions[second.teamId] ? "A" : "B"}: ${
+          second.reason
+        }`,
+      },
+    ],
+    Object.keys(wrapped.ffTeams).filter(
+      (teamId) => ![first, second].map((o) => o.teamId).includes(teamId)
+    )
+  );
   return (
     <div>
-      <div>
-        this shows the probability of each outcome after {MAX_TRAVERSE} weeks
+      <div style={bubbleStyle}>
+        <div>{Object.keys(state.state).length} weeks remaining</div>
+        <table>
+          <tbody>
+            {order.map((o, i) => (
+              <tr key={o.teamId}>
+                <td>{i + 1}</td>
+                <td style={{ padding: "0 50px" }}>
+                  {alreadyWins[o.teamId]} {"->"} {wins[o.teamId]}
+                </td>
+                <td style={{ padding: "0 50px" }}>
+                  {Helpers.toFixed(totals[o.teamId])}
+                </td>
+                <td style={{ padding: "0 50px" }}>
+                  {wrapped.ffTeams[o.teamId].name}
+                </td>
+                <td>{o.reason}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-      <div>min stability means each matchup is 50/50</div>
       <div>
-        max stability means each matchup is won with extreme likelihood by the
-        team with more points for
-      </div>
-      <div>
-        stability:{" "}
-        <input
-          ref={inputRef}
-          type={"range"}
-          defaultValue={0}
-          min={0}
-          max={100}
-        />
-        <button
-          onClick={() =>
-            Promise.resolve(parseInt(inputRef.current!.value))
-              .then((rawStability) => Math.pow(rawStability / 25, 4))
-              .then((stability) => {
-                const _outcomes = Object.fromEntries(
-                  Object.keys(wrapped.ffTeams)
-                    .concat("")
-                    .map((teamId) => [
-                      teamId,
-                      [] as {
-                        position: number;
-                        tiedTeamIds: string[];
-                        probability: number;
-                      }[],
-                    ])
-                );
-                getRealities(
-                  stability,
-                  [
-                    {
-                      probability: 1,
-                      reality: Object.fromEntries(
-                        Object.values(wrapped.ffTeams)
-                          .map((team) => ({
-                            teamId: team.id,
-                            wins: Object.entries(wrapped.ffMatchups)
-                              .filter(
-                                ([weekNum]) =>
-                                  parseInt(weekNum) <= latestPlayedWeek
-                              )
-                              .map(([weekNum]) => {
-                                const opponentId = wrapped.ffMatchups[weekNum]
-                                  .find((matchup) => matchup.includes(team.id))!
-                                  .find((teamId) => teamId !== team.id)!;
-                                const scores = [team.id, opponentId].map((id) =>
-                                  wrapped.ffTeams[id].rosters[weekNum].starting
-                                    .map(
-                                      (playerId) =>
-                                        wrapped.nflPlayers[playerId]!.scores[
-                                          weekNum
-                                        ] || 0
-                                    )
-                                    .reduce((a, b) => a + b, 0)
-                                );
-                                return (
-                                  scores[0] > scores[1] ? 1 : 0
-                                ) as number;
-                              })
-                              .reduce((a, b) => a + b, 0),
-                          }))
-                          .map(({ teamId, wins }) => [teamId, wins])
-                      ),
-                    },
-                  ],
-                  Object.entries(wrapped.ffMatchups)
-                    .filter(([weekNum]) => parseInt(weekNum) > latestPlayedWeek)
-                    .slice(0, MAX_TRAVERSE)
-                    .flatMap(([_, matchups]) => matchups)
-                ).forEach(({ probability, reality }) => {
-                  var position = 1;
-                  Array.from(new Set(Object.values(reality)))
-                    .sort((a, b) => b - a)
-                    .forEach((wins) => {
-                      const tiedTeamIds = Object.entries(reality)
-                        .map(([teamId, teamWins]) => ({
-                          teamId,
-                          teamWins,
-                        }))
-                        .filter(({ teamWins }) => wins === teamWins)
-                        .map(({ teamId }) => teamId)
-                        .sort();
-                      tiedTeamIds.concat("").forEach((teamId) => {
-                        const teamOutcomes = _outcomes[teamId];
-                        const found = teamOutcomes.find(
-                          (outcome) =>
-                            outcome.position === position &&
-                            outcome.tiedTeamIds.join(",") ===
-                              tiedTeamIds.join(",")
-                        );
-                        if (found) {
-                          found.probability += probability;
-                        } else {
-                          teamOutcomes.push({
-                            position,
-                            tiedTeamIds,
-                            probability,
-                          });
-                        }
-                      });
-                      position += tiedTeamIds.length;
-                    });
-                });
-                updateOutcomes(_outcomes);
-              })
-          }
-        >
-          compute
-        </button>
-      </div>
-      <div></div>
-      <div>
-        {Object.entries(outcomes)
-          .map(([teamId, teamOutcomes]) => ({ teamId, teamOutcomes }))
-          .map(({ teamId, teamOutcomes }) => {
-            var cumProb = 0;
-            return {
-              teamId,
-              teamOutcomes: teamOutcomes
-                .map((o) => ({
-                  ...o,
-                  tiedLength: o.tiedTeamIds.length - 1,
-                  tiedStr: o.tiedTeamIds
-                    .filter((tiedTeamId) => tiedTeamId !== teamId)
-                    .map((tiedTeamId) => wrapped.ffTeams[tiedTeamId].name)
-                    .join(","),
-                }))
-                .sort((a, b) => b.tiedLength - a.tiedLength)
-                .sort((a, b) => b.position - a.position)
-                .map((o) => {
-                  cumProb += o.probability;
-                  return {
-                    ...o,
-                    cumProb,
-                  };
-                }),
-            };
-          })
-          .sort((a) => (a.teamId === "" ? -1 : 1))
-          .map(({ teamId, teamOutcomes }) => (
-            <div key={teamId}>
-              <div style={bubbleStyle}>
-                {teamId === "" ? (
-                  <div>
-                    {
+        {Object.entries(state.state).map(([weekNum, scores]) => (
+          <div key={weekNum}>
+            <div style={bubbleStyle}>
+              <h2>week {weekNum}</h2>
+              <div>
+                {wrapped.ffMatchups[weekNum].map((matchup, i) => (
+                  <div key={i} style={{ display: "inline" }}>
+                    <div style={bubbleStyle}>
                       <table>
-                        <thead>
-                          <tr>
-                            <th style={{ paddingRight: "50px" }}>prob</th>
-                            <th style={{ paddingRight: "50px" }}>place</th>
-                          </tr>
-                        </thead>
                         <tbody>
-                          {teamOutcomes
-                            .sort((a, b) => b.probability - a.probability)
-                            .slice(0, NUM_RENDER_RESULTS)
-                            .map((o, j) => (
-                              <tr key={j}>
-                                <td>{(o.probability * 100).toFixed(3)}%</td>
-                                <td>{o.position}</td>
-                                <td>{o.tiedStr}</td>
-                              </tr>
-                            ))}
-                        </tbody>
-                      </table>
-                    }
-                  </div>
-                ) : (
-                  <div>
-                    <div>*{wrapped.ffTeams[teamId].name}</div>
-                    <table>
-                      <thead>
-                        <tr>
-                          <th style={{ paddingRight: "50px" }}>cumprob</th>
-                          <th style={{ paddingRight: "50px" }}>prob</th>
-                          <th style={{ paddingRight: "50px" }}>place</th>
-                          <th style={{ paddingRight: "50px" }}>tied</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {teamOutcomes
-                          .sort((a, b) => b.probability - a.probability)
-                          .slice(0, NUM_RENDER_RESULTS)
-                          .sort((a, b) => a.cumProb - b.cumProb)
-                          .map((o, j) => (
-                            <tr key={j}>
-                              <td>{(o.cumProb * 100).toFixed(3)}%</td>
-                              <td>{(o.probability * 100).toFixed(3)}%</td>
-                              <td>{o.position}</td>
-                              <td>{o.tiedLength}</td>
-                              <td>{o.tiedStr}</td>
+                          {matchup.map((teamId) => (
+                            <tr key={teamId}>
+                              <td>
+                                <button
+                                  onClick={() => {
+                                    state.state[weekNum][teamId] -= 5;
+                                    update({ ...state, now: Date.now() });
+                                  }}
+                                >
+                                  -
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  onClick={() => {
+                                    state.state[weekNum][teamId] += 15;
+                                    update({ ...state, now: Date.now() });
+                                  }}
+                                >
+                                  +
+                                </button>
+                              </td>
+                              <td style={{ padding: "0 50px" }}>
+                                {state.state[weekNum][teamId]}
+                              </td>
+                              <td>{wrapped.ffTeams[teamId].name}</td>
                             </tr>
                           ))}
-                      </tbody>
-                    </table>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
-                )}
+                ))}
               </div>
             </div>
-          ))}
+          </div>
+        ))}
       </div>
     </div>
   );
