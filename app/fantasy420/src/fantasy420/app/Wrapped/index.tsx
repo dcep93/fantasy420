@@ -1405,12 +1405,13 @@ function Outcomes() {
           teamId: tiedTeamIds[0],
           reason: `${wins[tiedTeamIds[0]]} wins`,
         };
-      } else if (
-        tiedTeamIds
-          .map((tiedTeamId) => (divisions[tiedTeamId] ? 1 : -1) as number)
-          .reduce((a, b) => a + b, 0) %
-          2 ===
-        0
+      }
+      const tiedDivisions = tiedTeamIds
+        .map((tiedTeamId) => (divisions[tiedTeamId] ? 1 : -1) as number)
+        .reduce((a, b) => a + b, 0);
+      if (
+        tiedTeamIds.length === Math.abs(tiedDivisions) ||
+        tiedDivisions % 2 === 0
       ) {
         const sortedTiedWins = Object.values(wrapped.ffTeams)
           .filter((team) => tiedTeamIds.includes(team.id))
