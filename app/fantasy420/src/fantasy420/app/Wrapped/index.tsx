@@ -1476,14 +1476,16 @@ function Outcomes() {
       toBeRanked.filter((nextTeamId) => nextTeamId !== nextOrder.teamId)
     );
   }
-  const rawOrder = getOrder([], Object.keys(wrapped.ffTeams));
-  const first = rawOrder[0];
-  const second = rawOrder.filter(
-    ({ teamId }) => divisions[teamId] !== divisions[first.teamId]
+  const first = getOrder([], Object.keys(wrapped.ffTeams))[0];
+  const second = getOrder(
+    [],
+    Object.keys(wrapped.ffTeams).filter(
+      (teamId) => divisions[teamId] !== divisions[first.teamId]
+    )
   )[0];
   const order = getOrder(
     [
-      { teamId: first.teamId, reason: `wins overall: ${rawOrder[0].reason}` },
+      { teamId: first.teamId, reason: `wins overall: ${first.reason}` },
       {
         teamId: second.teamId,
         reason: `wins division ${divisions[second.teamId] ? "A" : "B"}: ${
