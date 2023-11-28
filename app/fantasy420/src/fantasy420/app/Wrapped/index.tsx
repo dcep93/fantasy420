@@ -614,7 +614,7 @@ function Negatives() {
           Object.entries(p.scores).map(([weekNum, score]) => ({
             ...p,
             started: Object.values(wrapped.ffTeams).find((t) =>
-              t.rosters[weekNum].starting.includes(p.id)
+              t.rosters[weekNum]?.starting.includes(p.id)
             )?.name,
             weekNum,
             score: score!,
