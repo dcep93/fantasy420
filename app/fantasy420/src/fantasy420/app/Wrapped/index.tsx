@@ -26,7 +26,7 @@ export default function Wrapped() {
       DeterminedByDiscreteScoring,
       GooseEggs,
       ChosenWrong,
-      Sheesh: Bopped,
+      Bopped,
       Stacks,
       Negatives,
       UniquesStarted,
