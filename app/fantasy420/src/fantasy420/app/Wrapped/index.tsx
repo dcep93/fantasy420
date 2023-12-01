@@ -26,6 +26,7 @@ export default function Wrapped() {
       DeterminedByDiscreteScoring,
       GooseEggs,
       ChosenWrong,
+      Sheesh,
       Stacks,
       Negatives,
       UniquesStarted,
@@ -208,6 +209,76 @@ function ChosenWrong() {
             </div>
           </div>
         ))}
+    </div>
+  );
+}
+
+function Sheesh() {
+  const players = Object.values(wrapped.nflPlayers)
+    .map((player) => ({
+      ...player,
+      best: Object.entries(player.scores)
+        .map(([weekNum, score]) => ({ weekNum, score: score || 0 }))
+        .filter((o) => o.weekNum !== "0")
+        .sort((a, b) => b.score - a.score)[0],
+    }))
+    .filter((player) => player.best !== undefined)
+    .map((player) => ({
+      ...player,
+      bestOwner: Object.values(wrapped.ffTeams).find((t) =>
+        t.rosters[player.best.weekNum].rostered.includes(player.id)
+      ),
+    }))
+    .filter((player) => player.bestOwner !== undefined)
+    .map((player) => ({
+      ...player,
+      bestOpponent: !wrapped.ffTeams[player.bestOwner!.id].rosters[
+        player.best.weekNum
+      ].starting.includes(player.id)
+        ? null
+        : wrapped.ffMatchups[player.best.weekNum]
+            .find((matchup) => matchup.includes(player.bestOwner!.id))!
+            .find((teamId) => teamId !== player.bestOwner!.id)!,
+    }));
+  return (
+    <div>
+      {Object.values(wrapped.ffTeams).map((t) => (
+        <div key={t.id}>
+          <div style={bubbleStyle}>
+            <h2>{t.name}</h2>
+            <table>
+              <tbody>
+                {players
+                  .filter((player) => player.bestOwner?.id === t.id)
+                  .sort((a, b) => b.best.score - a.best.score)
+                  .map((player) => (
+                    <tr key={player.id}>
+                      <td>[{player.name}]</td>
+                      <td>blew their load for</td>
+                      <td>[{player.best.score}]</td>
+                      <td>week [{player.best.weekNum}]</td>
+                      <>
+                        {player.bestOpponent === null ? (
+                          <>
+                            <td>on the bench</td>
+                            <td></td>
+                          </>
+                        ) : (
+                          <>
+                            <td>against</td>
+                            <td>
+                              [{wrapped.ffTeams[player.bestOpponent!].name}]
+                            </td>
+                          </>
+                        )}
+                      </>
+                    </tr>
+                  ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
