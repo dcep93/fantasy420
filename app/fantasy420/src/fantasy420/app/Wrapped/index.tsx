@@ -245,14 +245,14 @@ function Bopped() {
       ...player,
       best: Object.entries(player.scores)
         .map(([weekNum, score]) => ({ weekNum, score: score || 0 }))
-        .filter((o) => o.weekNum !== "0")
+        .filter((o) => wrapped.ffMatchups[o.weekNum] !== undefined)
         .sort((a, b) => b.score - a.score)[0],
     }))
     .filter((player) => player.best !== undefined)
     .map((player) => ({
       ...player,
       bestOwner: Object.values(wrapped.ffTeams).find((t) =>
-        t.rosters[player.best.weekNum].rostered.includes(player.id)
+        t.rosters[player.best.weekNum]?.rostered.includes(player.id)
       )!,
     }))
     .filter((player) => player.bestOwner !== undefined)
