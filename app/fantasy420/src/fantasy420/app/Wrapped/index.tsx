@@ -295,6 +295,11 @@ function Bopped() {
               ]
             </h2>
             <table>
+              <thead>
+                <tr>
+                  <td>matchup outcome</td>
+                </tr>
+              </thead>
               <tbody>
                 {players
                   .filter((player) => player.key === t.id)
