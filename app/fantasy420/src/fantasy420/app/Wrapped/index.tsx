@@ -38,7 +38,13 @@ export default function Wrapped() {
       ExtremeStuds,
       Matchups,
       json,
-    }).map(([k, v]) => [k, v()])
+    }).map(([k, v]) => {
+      try {
+        return [k, v()];
+      } catch (e) {
+        return [k, <pre>{(e as Error).stack}</pre>];
+      }
+    })
   );
   var hashKey = window.location.hash.substring(1);
   if (!toRender[hashKey]) {
