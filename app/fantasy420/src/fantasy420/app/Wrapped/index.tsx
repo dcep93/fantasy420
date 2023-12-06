@@ -369,7 +369,8 @@ function Injuries() {
                 .filter(
                   (o) =>
                     (r.starting.includes(o.id) || o.currentScore !== 0) &&
-                    o.followingScore === 0
+                    o.followingScore === 0 &&
+                    !t.rosters[parseInt(r.weekNum) + 1].starting.includes(o.id)
                 )
                 .map((o) => ({
                   ...o,
