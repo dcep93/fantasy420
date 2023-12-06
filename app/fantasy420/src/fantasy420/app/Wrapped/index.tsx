@@ -360,18 +360,49 @@ function Injuries() {
               r.rostered
                 .map((playerId) => wrapped.nflPlayers[playerId])
                 .map((o) => ({
-                  playerId: o.id,
-                  name: o.name,
-                  weekNum: r.weekNum,
+                  weekNum: parseInt(r.weekNum),
+                  rank: draft_json.drafts[0].indexOf(normalize(o.name)),
                   currentScore: o.scores[r.weekNum],
                   followingScore: o.scores[parseInt(r.weekNum) + 1],
+                  ...o,
                 }))
                 .filter(
                   (o) =>
-                    (r.starting.includes(o.playerId) || o.currentScore !== 0) &&
+                    (r.starting.includes(o.id) || o.currentScore !== 0) &&
                     o.followingScore === 0
                 )
-            ),
+                .map((o) => ({
+                  ...o,
+                  rawWeekNums: Object.entries(o.scores)
+                    .map(([weekNum, score]) => ({
+                      weekNum: parseInt(weekNum),
+                      score,
+                    }))
+                    .sort((a, b) => a.weekNum - b.weekNum)
+                    .filter((s) => s.weekNum > o.weekNum),
+                }))
+                .map((o) => ({
+                  ...o,
+                  weekNums: o.rawWeekNums
+                    .slice(
+                      0,
+                      o.rawWeekNums
+                        .map((s, i) => ({ s, i }))
+                        .find(({ s }) => s.score !== 0)?.i
+                    )
+                    .map((s) => s.weekNum),
+                }))
+                .map((o) => ({
+                  ...o,
+                  weekNumsStr:
+                    o.weekNums.length === 1
+                      ? `week ${o.weekNums[0]}`
+                      : `weeks ${o.weekNums[0]}-${
+                          o.weekNums[o.weekNums.length - 1]
+                        }`,
+                }))
+            )
+            .sort((a, b) => a.rank - b.rank),
         }))
         .map((team) => (
           <div key={team.id} style={bubbleStyle}>
@@ -380,8 +411,8 @@ function Injuries() {
             </h1>
             {team.injuries.map((injury, i) => (
               <div key={i}>
-                {injury.name} injured week {injury.weekNum} after scoring{" "}
-                {injury.currentScore}
+                {injury.name} ({injury.rank}) injured {injury.weekNumsStr} after
+                scoring {injury.currentScore}
               </div>
             ))}
           </div>
