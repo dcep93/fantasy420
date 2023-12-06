@@ -375,7 +375,9 @@ function Injuries() {
         }))
         .map((team) => (
           <div key={team.id} style={bubbleStyle}>
-            <h1>{team.name}</h1>
+            <h1>
+              {team.name} ({team.injuries.length})
+            </h1>
             {team.injuries.map((injury, i) => (
               <div key={i}>
                 {injury.name} injured week {injury.weekNum} after scoring{" "}
