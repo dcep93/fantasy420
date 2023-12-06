@@ -362,7 +362,7 @@ function Injuries() {
                 .map((o) => ({
                   weekNum: parseInt(r.weekNum),
                   rank: draft_json.drafts[0].indexOf(normalize(o.name)),
-                  currentScore: o.scores[r.weekNum],
+                  currentScore: o.scores[r.weekNum] || 0,
                   followingScore: o.scores[parseInt(r.weekNum) + 1],
                   ...o,
                 }))
