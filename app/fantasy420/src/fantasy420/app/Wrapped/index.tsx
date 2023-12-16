@@ -1324,9 +1324,6 @@ function Matchups() {
             wrapped.ffMatchups[weekNum] ||
             Object.keys(wrapped.ffTeams).map((teamId) => [teamId]),
         }))
-        .filter(
-          ({ weekNum }) => Object.values(wrapped.ffTeams)[0].rosters[weekNum]
-        )
         .map(({ weekNum, matchups }) => (
           <div key={weekNum}>
             <div style={bubbleStyle}>week {weekNum}</div>
