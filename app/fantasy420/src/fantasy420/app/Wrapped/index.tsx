@@ -1317,16 +1317,13 @@ function FantasyCalc() {
 function Matchups() {
   return (
     <div>
-      {Object.entries(wrapped.ffMatchups)
-        .map(([weekNum, matchups]) => ({ weekNum, matchups }))
-        .concat(
-          Object.keys(Object.values(wrapped.ffTeams)[0].rosters).flatMap(
-            (weekNum) => ({
-              weekNum,
-              matchups: Object.keys(wrapped.ffTeams).map((teamId) => [teamId]),
-            })
-          )
-        )
+      {Object.keys(Object.values(wrapped.ffTeams)[0].rosters)
+        .flatMap((weekNum) => ({
+          weekNum,
+          matchups:
+            wrapped.ffMatchups[weekNum] ||
+            Object.keys(wrapped.ffTeams).map((teamId) => [teamId]),
+        }))
         .filter(
           ({ weekNum }) => Object.values(wrapped.ffTeams)[0].rosters[weekNum]
         )
