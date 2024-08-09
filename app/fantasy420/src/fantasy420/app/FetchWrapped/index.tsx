@@ -1,3 +1,10 @@
+import { useEffect, useState } from "react";
+
+const year = 2023;
+const leagueId =
+  new URL(window.document.location.href).searchParams.get("leagueId") ||
+  203836968;
+
 export type NFLPlayerType = {
   id: string;
   name: string;
@@ -52,39 +59,45 @@ export type WrappedType = {
 };
 
 export default function FetchWrapped() {
-  const year = 2023;
-  const leagueId =
-    new URL(window.document.location.href).searchParams.get("leagueId") ||
-    203836968;
-  function fromEntries<T>(arr: ({ key: string; value: T } | undefined)[]): {
-    [key: string]: T;
-  } {
-    return Object.fromEntries(
-      arr.filter((a) => a !== undefined).map((a) => [a!.key, a!.value])
-    );
-  }
-  function ext(data: any): Promise<any> {
-    const extension_id = "kmpbdkipjlpbckfnpbfbncddjaneeklc";
-    return new Promise((resolve, reject) =>
-      window.chrome.runtime.sendMessage(extension_id, data, (response: any) => {
-        if (window.chrome.runtime.lastError) {
-          return reject(
-            `chrome.runtime.lastError ${window.chrome.runtime.lastError}`
-          );
-        }
-        if (!response.ok) {
-          console.error(data, response);
-          return reject(`chrome: ${response.err}`);
-        }
-        resolve(response.data);
-      })
-    );
-  }
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  function clog<T>(t: T): T {
-    console.log(t);
-    return t;
-  }
+  const [wrapped, update] = useState("fetching...");
+  useEffect(() => {
+    getWrapped()
+      .then((wrapped) => JSON.stringify(wrapped))
+      .then(update);
+  }, [update]);
+  return (
+    <div>
+      <pre style={{ whiteSpace: "pre-wrap" }}>{wrapped}</pre>
+    </div>
+  );
+}
+
+function fromEntries<T>(arr: ({ key: string; value: T } | undefined)[]): {
+  [key: string]: T;
+} {
+  return Object.fromEntries(
+    arr.filter((a) => a !== undefined).map((a) => [a!.key, a!.value])
+  );
+}
+function ext(data: any): Promise<any> {
+  const extension_id = "kmpbdkipjlpbckfnpbfbncddjaneeklc";
+  return new Promise((resolve, reject) =>
+    window.chrome.runtime.sendMessage(extension_id, data, (response: any) => {
+      if (window.chrome.runtime.lastError) {
+        return reject(
+          `chrome.runtime.lastError ${window.chrome.runtime.lastError}`
+        );
+      }
+      if (!response.ok) {
+        console.error(data, response);
+        return reject(`chrome: ${response.err}`);
+      }
+      resolve(response.data);
+    })
+  );
+}
+
+function getWrapped(): Promise<WrappedType> {
   return Promise.resolve()
     .then(() => [
       // nflPlayers
@@ -393,10 +406,13 @@ export default function FetchWrapped() {
                 )
                 .then((gameIds) =>
                   gameIds.map((gameId) =>
-                    fetch(
-                      `https://www.espn.com/nfl/playbyplay/_/gameId/${gameId}`
-                    )
-                      .then((resp) => resp.text())
+                    ext({
+                      fetch: {
+                        url: `https://www.espn.com/nfl/playbyplay/_/gameId/${gameId}`,
+                        maxAgeMs: 1000 * 60 * 60 * 24 * 30,
+                      },
+                    })
+                      .then((resp) => resp.msg)
                       .then(
                         (resp) =>
                           resp
@@ -556,7 +572,6 @@ export default function FetchWrapped() {
               url: `https://api.fantasycalc.com/values/current?isDynasty=false&numQbs=2&numTeams=10&ppr=1&includeAdp=false`,
             },
           })
-            // .then((resp) => resp.json())
             .then((resp) => JSON.parse(resp.msg))
             .then(
               (
@@ -587,6 +602,5 @@ export default function FetchWrapped() {
           nflTeams,
           fantasyCalc,
         } as WrappedType)
-    )
-    .then(console.log);
+    );
 }

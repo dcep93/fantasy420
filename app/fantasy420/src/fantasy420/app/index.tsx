@@ -3,10 +3,12 @@ import { BrowserRouter } from "react-router-dom";
 import Catalog from "./Catalog";
 import Defense from "./Defense";
 import Draft from "./Draft";
+import FetchWrapped from "./FetchWrapped";
 import PlayoffPredictability from "./PlayoffPredictability";
 import Wrapped from "./Wrapped";
 
 const pages = {
+  FetchWrapped,
   Draft,
   Defense,
   PlayoffPredictability,
