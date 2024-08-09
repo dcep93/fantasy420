@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const year = 2023;
+const year = 2024;
 const leagueId =
   new URL(window.document.location.href).searchParams.get("leagueId") ||
   203836968;

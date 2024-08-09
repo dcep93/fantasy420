@@ -96,7 +96,6 @@ export default function ByeSchedule() {
                   margin: "10px",
                 }}
               >
-                <pre>{JSON.stringify(obj.teamIds)}</pre>
                 <h3>
                   week {obj.weekNum} vs {wrapped.ffTeams[obj.teamIds[0]].name}
                 </h3>
