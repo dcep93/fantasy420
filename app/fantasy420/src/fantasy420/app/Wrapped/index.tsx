@@ -50,7 +50,7 @@ export default function Wrapped() {
       HistoricalAccuracy,
       DraftValue,
       ByeSchedule,
-      // PlayoffOutcomes,
+      PlayoffOutcomes,
       json,
     }).map(([k, v]) => {
       try {
