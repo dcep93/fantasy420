@@ -1,11 +1,11 @@
 import React, { ReactNode, useState } from "react";
-import Accuracy from "../Accuracy";
-import ByeSchedule from "../ByeSchedule";
 import { draft_json, normalize } from "../Draft";
-import Value from "../Draft/Value";
+import { NFLPlayerType, WrappedType } from "../FetchWrapped";
 import wrapped2021 from "./2021.json";
 import wrapped2022 from "./2022.json";
-import { NFLPlayerType, WrappedType } from "./FetchWrapped";
+import ByeSchedule_ from "./ByeSchedule_";
+import DraftValue_ from "./DraftValue_";
+import HistoricalAccuracy_ from "./HistoricalAccuracy_";
 import _rawWrapped from "./wrapped.json";
 
 export const rawWrapped: WrappedType = _rawWrapped;
@@ -1847,13 +1847,13 @@ class Helpers {
 }
 
 function HistoricalAccuracy() {
-  return <Accuracy />;
+  return <HistoricalAccuracy_ />;
 }
 
 function DraftValue() {
-  return <Value />;
+  return <DraftValue_ />;
 }
 
-function ByeSchedule_() {
-  return <ByeSchedule />;
+function ByeSchedule() {
+  return <ByeSchedule_ />;
 }

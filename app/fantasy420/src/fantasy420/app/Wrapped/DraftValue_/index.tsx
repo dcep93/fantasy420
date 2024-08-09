@@ -1,10 +1,8 @@
 import { useState } from "react";
-import { normalize } from ".";
-import draft_json from "./draft.json";
+import { normalize } from "../../Draft";
+import draft_json from "../../Draft/draft.json";
 
-import { fetched_draft_day } from "../Fetch";
-
-function Value() {
+export default function DraftValue() {
   const picks = Object.fromEntries(
     draft_json.drafts[0].map((playerName, index) => [
       normalize(playerName),
@@ -175,5 +173,3 @@ function get_results(
     }))
     .sort((a, b) => a.total_rank - b.total_rank);
 }
-
-export default Value;
