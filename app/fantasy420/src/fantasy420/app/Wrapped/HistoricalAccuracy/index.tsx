@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Position, rawWrapped as wrapped } from "..";
+import { Position, currentWrapped } from "..";
 import { draft_json, normalize } from "../../Draft";
 import Chart from "./Chart";
 import raw_accuracy_json from "./accuracy.json";
@@ -10,7 +10,7 @@ const accuracy_json = raw_accuracy_json as AccuracyJsonType;
 function populate2023() {
   accuracy_json["2023"] = {
     espn: Object.fromEntries(
-      Object.values(wrapped.nflPlayers)
+      Object.values(currentWrapped.nflPlayers)
         .filter((p) => p.nflTeamId !== "0")
         .filter(
           (p) =>
