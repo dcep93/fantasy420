@@ -1,6 +1,6 @@
 import { draft_json, qbToNonQB } from "../../Draft";
 
-import { Helpers, wrapped } from "..";
+import { Helpers, selectedWrapped } from "..";
 
 export default function ByeSchedule() {
   const auctionValues = Object.fromEntries(
@@ -9,9 +9,9 @@ export default function ByeSchedule() {
       draft_json.espn.auction[qbToNonQB[name] || name],
     ])
   );
-  const byTeam = Object.values(wrapped.ffTeams).map((team) => ({
+  const byTeam = Object.values(selectedWrapped.ffTeams).map((team) => ({
     ...team,
-    matchups: Object.entries(wrapped.ffMatchups)
+    matchups: Object.entries(selectedWrapped.ffMatchups)
       .map(([weekNum, matchups]) => ({
         weekNum,
         teamIds: matchups
@@ -22,16 +22,18 @@ export default function ByeSchedule() {
       .map((obj) => ({
         ...obj,
         byes: obj.teamIds
-          .map((teamId) => wrapped.ffTeams[teamId].rosters)
+          .map((teamId) => selectedWrapped.ffTeams[teamId].rosters)
           .map((rosters) => rosters[obj.weekNum] || rosters["0"])
           .map((weekRoster) =>
-            weekRoster.rostered.map((playerId) => wrapped.nflPlayers[playerId])
+            weekRoster.rostered.map(
+              (playerId) => selectedWrapped.nflPlayers[playerId]
+            )
           )
           .map((byePlayers, ffTeamIndex) =>
             byePlayers
               .filter(
                 (byePlayer) =>
-                  wrapped.nflTeams[byePlayer.nflTeamId].byeWeek ===
+                  selectedWrapped.nflTeams[byePlayer.nflTeamId].byeWeek ===
                   parseInt(obj.weekNum)
               )
               .map((byePlayer) => ({
@@ -97,7 +99,8 @@ export default function ByeSchedule() {
                 }}
               >
                 <h3>
-                  week {obj.weekNum} vs {wrapped.ffTeams[obj.teamIds[0]].name}
+                  week {obj.weekNum} vs{" "}
+                  {selectedWrapped.ffTeams[obj.teamIds[0]].name}
                 </h3>
                 {obj.byes.flatMap((ffTeam) =>
                   ffTeam.map((byePlayer) => (

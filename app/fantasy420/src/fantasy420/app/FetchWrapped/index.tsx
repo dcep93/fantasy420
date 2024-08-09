@@ -150,9 +150,15 @@ function getWrapped(): Promise<WrappedType> {
                     nflTeamId: player.proTeamId.toString(),
                     name: player.fullName,
                     position:
-                      { 1: "QB", 2: "RB", 3: "WR", 4: "TE", 5: "K", 16: "DST" }[
-                        player.defaultPositionId
-                      ] || player.defaultPositionId.toString(),
+                      {
+                        1: "QB",
+                        2: "RB",
+                        3: "WR",
+                        4: "TE",
+                        5: "K",
+                        16: "DST",
+                      }[player.defaultPositionId] ||
+                      player.defaultPositionId.toString(),
                     total:
                       player.stats.find((stat) => stat.scoringPeriodId === 0)
                         ?.appliedTotal || 0,
@@ -272,7 +278,7 @@ function getWrapped(): Promise<WrappedType> {
                   )
                   .then((ps) => Promise.all(ps))
                   .then((weeks) =>
-                    Object.values(weeks[0]).map((team) => ({
+                    Object.values(weeks[0] || {}).map((team) => ({
                       id: team.id,
                       name: team.name,
                       rosters: fromEntries(
@@ -327,7 +333,9 @@ function getWrapped(): Promise<WrappedType> {
             .then((resp) => resp.json())
             .then(
               (resp: {
-                settings: { scheduleSettings: { matchupPeriodCount: number } };
+                settings: {
+                  scheduleSettings: { matchupPeriodCount: number };
+                };
                 schedule: {
                   matchupPeriodId: number;
                   home: { teamId: number };

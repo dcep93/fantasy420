@@ -2,7 +2,7 @@ import { useState } from "react";
 import { normalize } from "../../Draft";
 import draft_json from "../../Draft/draft.json";
 
-import wrapped_json from "../wrapped.json";
+import { selectedWrapped } from "..";
 
 export default function DraftValue() {
   const picks = Object.fromEntries(
@@ -129,7 +129,7 @@ function get_results(
       Object.entries(d).map(([name, score]) => [normalize(name), score])
     )
   );
-  const scored = Object.values(wrapped_json.ffTeams)
+  const scored = Object.values(selectedWrapped.ffTeams)
     .map((team, teamIndex) => ({
       ...team,
       teamIndex,
