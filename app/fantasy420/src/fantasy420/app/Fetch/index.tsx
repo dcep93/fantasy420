@@ -4,6 +4,8 @@ import rawFetched from "./fetched.json";
 export const fetched_draft_day: FetchedType = rawFetchedDraftDay;
 export const fetched: FetchedType = rawFetched;
 
+const year = 2023;
+
 type FetchedType = {
   matchups: number[][][];
   teams: {
@@ -16,9 +18,7 @@ type FetchedType = {
 export default function Fetch() {
   return (
     <div>
-      <div>
-        <input readOnly value={printF(printFetched)} />
-      </div>
+      <pre style={{ whiteSpace: "pre-wrap" }}>{printF(printFetched)}</pre>
     </div>
   );
 }
@@ -32,7 +32,6 @@ export function printF(f: (...args: any[]) => any): string {
 }
 
 function printFetched() {
-  const year = 2023;
   function getFetched(): Promise<FetchedType> {
     const leagueId =
       new URL(window.document.location.href).searchParams.get("leagueId") ||
