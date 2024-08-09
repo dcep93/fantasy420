@@ -542,12 +542,12 @@ function jayzheng() {
 
 function draftsharks() {
   return Object.fromEntries(
-    Array.from(
-      document.getElementsByClassName("adp-table")[0].getElementsByTagName("tr")
-    )
-      .map((tr) => tr.children[0].children[2] as HTMLElement)
-      .filter((tr) => tr)
-      .map((tr, i) => [tr.childNodes[0].nodeValue, i + 1])
+    Array.from(document.getElementById("adp-table")!.getElementsByTagName("tr"))
+      .slice(1)
+      .map((tr, i) => [
+        (tr.getElementsByClassName("name")[0] as HTMLElement).innerText,
+        i + 1,
+      ])
   );
 }
 
