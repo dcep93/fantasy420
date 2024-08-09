@@ -2,6 +2,8 @@ import { useState } from "react";
 import { normalize } from "../../Draft";
 import draft_json from "../../Draft/draft.json";
 
+import wrapped_json from "../wrapped.json";
+
 export default function DraftValue() {
   const picks = Object.fromEntries(
     draft_json.drafts[0].map((playerName, index) => [
@@ -127,17 +129,20 @@ function get_results(
       Object.entries(d).map(([name, score]) => [normalize(name), score])
     )
   );
-  const scored = fetched_draft_day.teams
+  const scored = Object.values(wrapped_json.ffTeams)
     .map((team, teamIndex) => ({
       ...team,
       teamIndex,
-      players: team.players
-        .map((player) => ({ ...player, pick: picks[normalize(player.name)] }))
+      players: team.rosters[1].rostered
+        .map((playerName) => ({
+          playerName,
+          pick: picks[normalize(playerName)],
+        }))
         .sort((a, b) => a.pick - b.pick)
         .map((player) => ({
           ...player,
-          name: `${player.name} (${player.pick + 1})`,
-          scores: extra.map((d) => d[normalize(player.name)]),
+          name: `${player.playerName} (${player.pick + 1})`,
+          scores: extra.map((d) => d[normalize(player.playerName)]),
         })),
     }))
     .map((team) => ({

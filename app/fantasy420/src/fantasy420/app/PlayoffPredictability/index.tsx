@@ -1,6 +1,7 @@
 import MLR from "ml-regression-multivariate-linear";
 import { useState } from "react";
 import { printF } from "..";
+import { clog } from "../Wrapped";
 import rawData from "./data.json";
 
 type DataType = {
@@ -16,10 +17,6 @@ const data: DataType = rawData;
 
 function fetchData() {
   const historyYears = 10;
-  function clog<T>(t: T) {
-    console.error(t);
-    return t;
-  }
   function countStrings(arr: string[]): { [key: string]: number } {
     const c: { [key: string]: number } = {};
     arr.forEach((k) => {

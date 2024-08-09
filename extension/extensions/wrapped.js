@@ -25,10 +25,6 @@ function FetchWrapped() {
       })
     );
   }
-  function clog(t) {
-    console.log(t);
-    return t;
-  }
   return Promise.resolve()
     .then(() => [
       Promise.resolve()

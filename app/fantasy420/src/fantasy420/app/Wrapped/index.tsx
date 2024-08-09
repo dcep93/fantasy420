@@ -3,14 +3,14 @@ import { draft_json, normalize } from "../Draft";
 import { NFLPlayerType, WrappedType } from "../FetchWrapped";
 import wrapped2021 from "./2021.json";
 import wrapped2022 from "./2022.json";
-import ByeSchedule_ from "./ByeSchedule_";
-import DraftValue_ from "./DraftValue_";
-import HistoricalAccuracy_ from "./HistoricalAccuracy_";
+import ByeSchedule from "./ByeSchedule";
+import DraftValue from "./DraftValue";
+import HistoricalAccuracy from "./HistoricalAccuracy";
 import _rawWrapped from "./wrapped.json";
 
 export const rawWrapped: WrappedType = _rawWrapped;
 
-var wrapped: WrappedType;
+export var wrapped: WrappedType;
 
 export default function Wrapped() {
   document.title = "Fantasy Wrapped";
@@ -41,7 +41,7 @@ export default function Wrapped() {
       Matchups,
       HistoricalAccuracy,
       DraftValue,
-      ByeSchedule_,
+      ByeSchedule,
       // PlayoffOutcomes,
       json,
     }).map(([k, v]) => {
@@ -106,7 +106,7 @@ export enum Position {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-function clog<T>(t: T): T {
+export function clog<T>(t: T): T {
   console.log(t);
   return t;
 }
@@ -123,7 +123,6 @@ const bubbleStyle = {
 //
 
 function json() {
-  // clog(printF(FetchWrapped));
   return <pre>{JSON.stringify(wrapped, null, 2)}</pre>;
 }
 
@@ -1758,7 +1757,7 @@ function PlayoffOutcomes() {
   );
 }
 
-class Helpers {
+export class Helpers {
   static toFixed(n: number, d: number = 2): number {
     return parseFloat(n.toFixed(d));
   }
@@ -1844,16 +1843,4 @@ class Helpers {
       });
     return ideal;
   }
-}
-
-function HistoricalAccuracy() {
-  return <HistoricalAccuracy_ />;
-}
-
-function DraftValue() {
-  return <DraftValue_ />;
-}
-
-function ByeSchedule() {
-  return <ByeSchedule_ />;
 }
