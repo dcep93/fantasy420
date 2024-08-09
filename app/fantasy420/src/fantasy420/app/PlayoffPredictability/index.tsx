@@ -1,6 +1,6 @@
 import MLR from "ml-regression-multivariate-linear";
 import { useState } from "react";
-import { printF } from "../Fetch";
+import { printF } from "..";
 import rawData from "./data.json";
 
 type DataType = {

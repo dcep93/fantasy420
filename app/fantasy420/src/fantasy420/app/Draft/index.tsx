@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { printF } from "../Fetch";
+import { printF } from "..";
 import { fetchExtensionStorage } from "./Extension";
 import raw_draft_json from "./draft.json";
 
