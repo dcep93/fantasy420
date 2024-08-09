@@ -1,5 +1,8 @@
 import React, { ReactNode, useState } from "react";
+import Accuracy from "../Accuracy";
+import ByeSchedule from "../ByeSchedule";
 import { draft_json, normalize } from "../Draft";
+import Value from "../Draft/Value";
 import wrapped2021 from "./2021.json";
 import wrapped2022 from "./2022.json";
 import { NFLPlayerType, WrappedType } from "./FetchWrapped";
@@ -19,7 +22,6 @@ export default function Wrapped() {
     { "2021": wrapped2021, "2022": wrapped2022 }[yearKey] || rawWrapped;
   const toRender: { [key: string]: ReactNode } = Object.fromEntries(
     Object.entries({
-      Outcomes,
       FantasyCalc,
       SqueezesAndStomps,
       WeekTopsAndBottoms,
@@ -37,6 +39,10 @@ export default function Wrapped() {
       BestByPosition,
       ExtremeStuds,
       Matchups,
+      HistoricalAccuracy,
+      DraftValue,
+      ByeSchedule_,
+      // PlayoffOutcomes,
       json,
     }).map(([k, v]) => {
       try {
@@ -1444,7 +1450,7 @@ function Stacks() {
   );
 }
 
-function Outcomes() {
+function PlayoffOutcomes() {
   const latestPlayedWeek = Object.entries(
     Object.values(wrapped.ffTeams)[0].rosters
   )
@@ -1838,4 +1844,16 @@ class Helpers {
       });
     return ideal;
   }
+}
+
+function HistoricalAccuracy() {
+  return <Accuracy />;
+}
+
+function DraftValue() {
+  return <Value />;
+}
+
+function ByeSchedule_() {
+  return <ByeSchedule />;
 }

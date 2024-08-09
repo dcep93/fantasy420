@@ -1,7 +1,7 @@
 import { draft_json, qbToNonQB } from "../Draft";
 import { fetched_draft_day } from "../Fetch";
 
-export default function Schedule() {
+export default function ByeSchedule() {
   const auctionValues = Object.fromEntries(
     Object.keys(draft_json.espn.auction).map((name) => [
       name,
