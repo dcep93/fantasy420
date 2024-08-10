@@ -518,12 +518,8 @@ function getEspnLiveDraft(injured_only: boolean) {
     )
       .map((i) => i as HTMLElement)
       .find((i) => i.innerText === index.toString())!;
-    if (clickable) {
-      clickable.click();
-      setTimeout(subHelper, 1000);
-    } else {
-      subHelper();
-    }
+    clickable.click();
+    setTimeout(subHelper, 1000);
   }
   helper(1);
 }
