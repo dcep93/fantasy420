@@ -41,12 +41,6 @@ export default function Wrapped() {
       Negatives,
       UniquesStarted,
       BoomBust,
-      OwnedTeams,
-      Benchwarmers,
-      Injuries,
-      BestByPosition,
-      ExtremeStuds,
-      Matchups,
       HistoricalAccuracy,
       DraftValue,
       ByeSchedule,
@@ -1479,315 +1473,321 @@ function Stacks() {
 }
 
 function PlayoffOutcomes() {
-  const latestPlayedWeek = Object.entries(
-    Object.values(selectedWrapped.ffTeams)[0].rosters
-  )
-    .map(([weekNum, roster]) => ({ weekNum, roster }))
-    .filter(({ weekNum, roster }) =>
-      roster.rostered.find(
-        (p) => (selectedWrapped.nflPlayers[p].scores[weekNum] || 0) > 0
-      )
+  function Helper() {
+    const latestPlayedWeek = Object.entries(
+      Object.values(selectedWrapped.ffTeams)[0].rosters
     )
-    .map(({ weekNum }) => parseInt(weekNum))
-    .sort((a, b) => b - a)[0];
-  const alreadyTotals = Object.fromEntries(
-    Object.values(selectedWrapped.ffTeams).map((team) => [
-      team.id,
-      Object.entries(selectedWrapped.ffMatchups)
-        .filter(([weekNum]) => parseInt(weekNum) <= latestPlayedWeek)
-        .flatMap(([weekNum]) =>
-          team.rosters[weekNum].starting.map(
-            (playerId) =>
-              selectedWrapped.nflPlayers[playerId]!.scores[weekNum] || 0
-          )
+      .map(([weekNum, roster]) => ({ weekNum, roster }))
+      .filter(({ weekNum, roster }) =>
+        roster.rostered.find(
+          (p) => (selectedWrapped.nflPlayers[p].scores[weekNum] || 0) > 0
         )
-        .reduce((a, b) => a + b, 0),
-    ])
-  );
-  const div1TeamId = Object.keys(selectedWrapped.ffTeams)[0];
-  const divisions = Object.fromEntries(
-    Object.keys(selectedWrapped.ffTeams).map((teamId, i) => [
-      teamId,
-      teamId === div1TeamId ||
-        Object.values(selectedWrapped.ffMatchups)
-          .flatMap((matchups) => matchups)
-          .filter(
-            (matchup) =>
-              matchup.includes(div1TeamId) && matchup.includes(teamId)
-          ).length > 1,
-    ])
-  );
-  const alreadyWins = Object.fromEntries(
-    Object.values(selectedWrapped.ffTeams)
-      .map((team) => ({
-        teamId: team.id,
-        wins: Object.entries(selectedWrapped.ffMatchups)
+      )
+      .map(({ weekNum }) => parseInt(weekNum))
+      .sort((a, b) => b - a)[0];
+    const alreadyTotals = Object.fromEntries(
+      Object.values(selectedWrapped.ffTeams).map((team) => [
+        team.id,
+        Object.entries(selectedWrapped.ffMatchups)
           .filter(([weekNum]) => parseInt(weekNum) <= latestPlayedWeek)
-          .map(([weekNum]) => {
-            const scores = [
-              team.id,
-              selectedWrapped.ffMatchups[weekNum]
-                .find((matchup) => matchup.includes(team.id))!
-                .find((teamId) => teamId !== team.id)!,
-            ].map((id) =>
-              selectedWrapped.ffTeams[id].rosters[weekNum].starting
-                .map(
-                  (playerId) =>
-                    selectedWrapped.nflPlayers[playerId]!.scores[weekNum] || 0
-                )
-                .reduce((a, b) => a + b, 0)
-            );
-            return (scores[0] > scores[1] ? 1 : 0) as number;
-          })
-          .reduce((a, b) => a + b, 0),
-      }))
-      .map(({ teamId, wins }) => [teamId, wins])
-  );
-  const [state, update] = React.useState({
-    now: Date.now(),
-    state: Object.fromEntries(
-      Object.keys(selectedWrapped.ffMatchups)
-        .filter((weekNum) => parseInt(weekNum) > latestPlayedWeek)
-        .map((weekNum) => [
-          weekNum,
-          Object.fromEntries(
-            selectedWrapped.ffMatchups[weekNum].flatMap((matchup) =>
-              matchup.map((teamId) => [
-                teamId,
-                Helpers.toFixed(alreadyTotals[teamId] / latestPlayedWeek),
-              ])
+          .flatMap(([weekNum]) =>
+            team.rosters[weekNum].starting.map(
+              (playerId) =>
+                selectedWrapped.nflPlayers[playerId]!.scores[weekNum] || 0
             )
-          ),
-        ])
-    ),
-  });
-  const totals = Object.fromEntries(
-    Object.values(selectedWrapped.ffTeams).map((team) => [
-      team.id,
-      alreadyTotals[team.id] +
-        Object.values(state.state)
-          .map((week) => week[team.id])
+          )
           .reduce((a, b) => a + b, 0),
-    ])
-  );
-  const wins = Object.fromEntries(
-    Object.values(selectedWrapped.ffTeams)
-      .map((team) => ({
-        teamId: team.id,
-        wins: Object.entries(selectedWrapped.ffMatchups)
-          .map(([weekNum]) => {
-            const scores = [
-              team.id,
-              selectedWrapped.ffMatchups[weekNum]
-                .find((matchup) => matchup.includes(team.id))!
-                .find((teamId) => teamId !== team.id)!,
-            ].map((id) =>
-              parseInt(weekNum) > latestPlayedWeek
-                ? state.state[weekNum][id]
-                : selectedWrapped.ffTeams[id].rosters[weekNum].starting
-                    .map(
-                      (playerId) =>
-                        selectedWrapped.nflPlayers[playerId]!.scores[weekNum] ||
-                        0
-                    )
-                    .reduce((a, b) => a + b, 0)
-            );
-            return (scores[0] > scores[1] ? 1 : 0) as number;
-          })
-          .reduce((a, b) => a + b, 0),
-      }))
-      .map(({ teamId, wins }) => [teamId, wins])
-  );
-  type OrderType = { teamId: string; reason: string };
-  function getOrder(order: OrderType[], toBeRanked: string[]): OrderType[] {
-    if (toBeRanked.length === 0) {
-      return order;
-    }
-    const mostWins = toBeRanked
-      .map((teamId) => ({
-        wins: wins[teamId],
-        teamId,
-      }))
-      .sort((a, b) => b.wins - a.wins)[0].wins;
-    const tiedTeamIds = toBeRanked.filter(
-      (teamId) => wins[teamId] === mostWins
+      ])
     );
-    function getNext() {
-      if (tiedTeamIds.length === 1) {
-        return {
-          teamId: tiedTeamIds[0],
-          reason: `${wins[tiedTeamIds[0]]} wins`,
-        };
+    const div1TeamId = Object.keys(selectedWrapped.ffTeams)[0];
+    const divisions = Object.fromEntries(
+      Object.keys(selectedWrapped.ffTeams).map((teamId, i) => [
+        teamId,
+        teamId === div1TeamId ||
+          Object.values(selectedWrapped.ffMatchups)
+            .flatMap((matchups) => matchups)
+            .filter(
+              (matchup) =>
+                matchup.includes(div1TeamId) && matchup.includes(teamId)
+            ).length > 1,
+      ])
+    );
+    const alreadyWins = Object.fromEntries(
+      Object.values(selectedWrapped.ffTeams)
+        .map((team) => ({
+          teamId: team.id,
+          wins: Object.entries(selectedWrapped.ffMatchups)
+            .filter(([weekNum]) => parseInt(weekNum) <= latestPlayedWeek)
+            .map(([weekNum]) => {
+              const scores = [
+                team.id,
+                selectedWrapped.ffMatchups[weekNum]
+                  .find((matchup) => matchup.includes(team.id))!
+                  .find((teamId) => teamId !== team.id)!,
+              ].map((id) =>
+                selectedWrapped.ffTeams[id].rosters[weekNum].starting
+                  .map(
+                    (playerId) =>
+                      selectedWrapped.nflPlayers[playerId]!.scores[weekNum] || 0
+                  )
+                  .reduce((a, b) => a + b, 0)
+              );
+              return (scores[0] > scores[1] ? 1 : 0) as number;
+            })
+            .reduce((a, b) => a + b, 0),
+        }))
+        .map(({ teamId, wins }) => [teamId, wins])
+    );
+    const [state, update] = React.useState({
+      now: Date.now(),
+      state: Object.fromEntries(
+        Object.keys(selectedWrapped.ffMatchups)
+          .filter((weekNum) => parseInt(weekNum) > latestPlayedWeek)
+          .map((weekNum) => [
+            weekNum,
+            Object.fromEntries(
+              selectedWrapped.ffMatchups[weekNum].flatMap((matchup) =>
+                matchup.map((teamId) => [
+                  teamId,
+                  Helpers.toFixed(alreadyTotals[teamId] / latestPlayedWeek),
+                ])
+              )
+            ),
+          ])
+      ),
+    });
+    const totals = Object.fromEntries(
+      Object.values(selectedWrapped.ffTeams).map((team) => [
+        team.id,
+        alreadyTotals[team.id] +
+          Object.values(state.state)
+            .map((week) => week[team.id])
+            .reduce((a, b) => a + b, 0),
+      ])
+    );
+    const wins = Object.fromEntries(
+      Object.values(selectedWrapped.ffTeams)
+        .map((team) => ({
+          teamId: team.id,
+          wins: Object.entries(selectedWrapped.ffMatchups)
+            .map(([weekNum]) => {
+              const scores = [
+                team.id,
+                selectedWrapped.ffMatchups[weekNum]
+                  .find((matchup) => matchup.includes(team.id))!
+                  .find((teamId) => teamId !== team.id)!,
+              ].map((id) =>
+                parseInt(weekNum) > latestPlayedWeek
+                  ? state.state[weekNum][id]
+                  : selectedWrapped.ffTeams[id].rosters[weekNum].starting
+                      .map(
+                        (playerId) =>
+                          selectedWrapped.nflPlayers[playerId]!.scores[
+                            weekNum
+                          ] || 0
+                      )
+                      .reduce((a, b) => a + b, 0)
+              );
+              return (scores[0] > scores[1] ? 1 : 0) as number;
+            })
+            .reduce((a, b) => a + b, 0),
+        }))
+        .map(({ teamId, wins }) => [teamId, wins])
+    );
+    type OrderType = { teamId: string; reason: string };
+    function getOrder(order: OrderType[], toBeRanked: string[]): OrderType[] {
+      if (toBeRanked.length === 0) {
+        return order;
       }
-      const tiedDivisions = tiedTeamIds
-        .map((tiedTeamId) => (divisions[tiedTeamId] ? 1 : -1) as number)
-        .reduce((a, b) => a + b, 0);
-      if (
-        tiedTeamIds.length === Math.abs(tiedDivisions) ||
-        tiedDivisions % 2 === 0
-      ) {
-        const sortedTiedWins = Object.values(selectedWrapped.ffTeams)
-          .filter((team) => tiedTeamIds.includes(team.id))
-          .map((team) => ({
-            teamId: team.id,
-            wins: Object.entries(selectedWrapped.ffMatchups)
-              .map(([weekNum]) => ({
-                weekNum,
-                teamIds: [
-                  team.id,
-                  selectedWrapped.ffMatchups[weekNum]
-                    .find((matchup) => matchup.includes(team.id))!
-                    .find((teamId) => teamId !== team.id)!,
-                ],
-              }))
-              .map(({ weekNum, teamIds }) => {
-                const scores = teamIds.map((id) =>
-                  parseInt(weekNum) > latestPlayedWeek
-                    ? state.state[weekNum][id]
-                    : selectedWrapped.ffTeams[id].rosters[weekNum].starting
-                        .map(
-                          (playerId) =>
-                            selectedWrapped.nflPlayers[playerId]!.scores[
-                              weekNum
-                            ] || 0
-                        )
-                        .reduce((a, b) => a + b, 0)
-                );
-                return (
-                  tiedTeamIds.includes(teamIds[1]) && scores[0] > scores[1]
-                    ? 1
-                    : 0
-                ) as number;
-              })
-              .reduce((a, b) => a + b, 0),
-          }))
-          .sort((a, b) => b.wins - a.wins);
-        if (sortedTiedWins[0].wins > sortedTiedWins[1].wins) {
+      const mostWins = toBeRanked
+        .map((teamId) => ({
+          wins: wins[teamId],
+          teamId,
+        }))
+        .sort((a, b) => b.wins - a.wins)[0].wins;
+      const tiedTeamIds = toBeRanked.filter(
+        (teamId) => wins[teamId] === mostWins
+      );
+      function getNext() {
+        if (tiedTeamIds.length === 1) {
           return {
-            teamId: sortedTiedWins[0].teamId,
-            reason: `${sortedTiedWins[0].wins} wins among ${tiedTeamIds
-              .filter((teamId) => teamId !== sortedTiedWins[0].teamId)
-              .map((teamId) => selectedWrapped.ffTeams[teamId].name)
-              .join(",")}`,
+            teamId: tiedTeamIds[0],
+            reason: `${wins[tiedTeamIds[0]]} wins`,
           };
         }
+        const tiedDivisions = tiedTeamIds
+          .map((tiedTeamId) => (divisions[tiedTeamId] ? 1 : -1) as number)
+          .reduce((a, b) => a + b, 0);
+        if (
+          tiedTeamIds.length === Math.abs(tiedDivisions) ||
+          tiedDivisions % 2 === 0
+        ) {
+          const sortedTiedWins = Object.values(selectedWrapped.ffTeams)
+            .filter((team) => tiedTeamIds.includes(team.id))
+            .map((team) => ({
+              teamId: team.id,
+              wins: Object.entries(selectedWrapped.ffMatchups)
+                .map(([weekNum]) => ({
+                  weekNum,
+                  teamIds: [
+                    team.id,
+                    selectedWrapped.ffMatchups[weekNum]
+                      .find((matchup) => matchup.includes(team.id))!
+                      .find((teamId) => teamId !== team.id)!,
+                  ],
+                }))
+                .map(({ weekNum, teamIds }) => {
+                  const scores = teamIds.map((id) =>
+                    parseInt(weekNum) > latestPlayedWeek
+                      ? state.state[weekNum][id]
+                      : selectedWrapped.ffTeams[id].rosters[weekNum].starting
+                          .map(
+                            (playerId) =>
+                              selectedWrapped.nflPlayers[playerId]!.scores[
+                                weekNum
+                              ] || 0
+                          )
+                          .reduce((a, b) => a + b, 0)
+                  );
+                  return (
+                    tiedTeamIds.includes(teamIds[1]) && scores[0] > scores[1]
+                      ? 1
+                      : 0
+                  ) as number;
+                })
+                .reduce((a, b) => a + b, 0),
+            }))
+            .sort((a, b) => b.wins - a.wins);
+          if (sortedTiedWins[0].wins > sortedTiedWins[1].wins) {
+            return {
+              teamId: sortedTiedWins[0].teamId,
+              reason: `${sortedTiedWins[0].wins} wins among ${tiedTeamIds
+                .filter((teamId) => teamId !== sortedTiedWins[0].teamId)
+                .map((teamId) => selectedWrapped.ffTeams[teamId].name)
+                .join(",")}`,
+            };
+          }
+        }
+        const mostTeam = tiedTeamIds
+          .map((teamId) => ({
+            teamId,
+            total: totals[teamId],
+          }))
+          .sort((a, b) => b.total - a.total)[0].teamId;
+        return {
+          teamId: mostTeam,
+          reason: `${Helpers.toFixed(
+            totals[mostTeam]
+          )} points among ${tiedTeamIds
+            .filter((teamId) => teamId !== mostTeam)
+            .map((teamId) => selectedWrapped.ffTeams[teamId].name)
+            .join(",")}`,
+        };
       }
-      const mostTeam = tiedTeamIds
-        .map((teamId) => ({
-          teamId,
-          total: totals[teamId],
-        }))
-        .sort((a, b) => b.total - a.total)[0].teamId;
-      return {
-        teamId: mostTeam,
-        reason: `${Helpers.toFixed(totals[mostTeam])} points among ${tiedTeamIds
-          .filter((teamId) => teamId !== mostTeam)
-          .map((teamId) => selectedWrapped.ffTeams[teamId].name)
-          .join(",")}`,
-      };
+      const nextOrder = getNext();
+      return getOrder(
+        order.concat(nextOrder),
+        toBeRanked.filter((nextTeamId) => nextTeamId !== nextOrder.teamId)
+      );
     }
-    const nextOrder = getNext();
-    return getOrder(
-      order.concat(nextOrder),
-      toBeRanked.filter((nextTeamId) => nextTeamId !== nextOrder.teamId)
+    const first = getOrder([], Object.keys(selectedWrapped.ffTeams))[0];
+    const second = getOrder(
+      [],
+      Object.keys(selectedWrapped.ffTeams).filter(
+        (teamId) => divisions[teamId] !== divisions[first.teamId]
+      )
+    )[0];
+    const order = getOrder(
+      [
+        { teamId: first.teamId, reason: `wins overall: ${first.reason}` },
+        {
+          teamId: second.teamId,
+          reason: `wins division ${divisions[second.teamId] ? "A" : "B"}: ${
+            second.reason
+          }`,
+        },
+      ],
+      Object.keys(selectedWrapped.ffTeams).filter(
+        (teamId) => ![first, second].map((o) => o.teamId).includes(teamId)
+      )
     );
-  }
-  const first = getOrder([], Object.keys(selectedWrapped.ffTeams))[0];
-  const second = getOrder(
-    [],
-    Object.keys(selectedWrapped.ffTeams).filter(
-      (teamId) => divisions[teamId] !== divisions[first.teamId]
-    )
-  )[0];
-  const order = getOrder(
-    [
-      { teamId: first.teamId, reason: `wins overall: ${first.reason}` },
-      {
-        teamId: second.teamId,
-        reason: `wins division ${divisions[second.teamId] ? "A" : "B"}: ${
-          second.reason
-        }`,
-      },
-    ],
-    Object.keys(selectedWrapped.ffTeams).filter(
-      (teamId) => ![first, second].map((o) => o.teamId).includes(teamId)
-    )
-  );
-  return (
-    <div>
-      <div style={bubbleStyle}>
-        <div>{Object.keys(state.state).length} weeks remaining</div>
-        <table>
-          <tbody>
-            {order.map((o, i) => (
-              <tr key={o.teamId}>
-                <td>{i + 1}</td>
-                <td style={{ padding: "0 50px" }}>
-                  {alreadyWins[o.teamId]} {"->"} {wins[o.teamId]}
-                </td>
-                <td style={{ padding: "0 50px" }}>
-                  {Helpers.toFixed(totals[o.teamId])}
-                </td>
-                <td style={{ padding: "0 50px" }}>
-                  {selectedWrapped.ffTeams[o.teamId].name}
-                </td>
-                <td>{o.reason}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+    return (
       <div>
-        {Object.entries(state.state).map(([weekNum, scores]) => (
-          <div key={weekNum}>
-            <div style={bubbleStyle}>
-              <h2>week {weekNum}</h2>
-              <div>
-                {selectedWrapped.ffMatchups[weekNum].map((matchup, i) => (
-                  <div key={i} style={{ display: "inline" }}>
-                    <div style={bubbleStyle}>
-                      <table>
-                        <tbody>
-                          {matchup.map((teamId) => (
-                            <tr key={teamId}>
-                              <td>
-                                <button
-                                  onClick={() => {
-                                    state.state[weekNum][teamId] -= 5;
-                                    update({ ...state, now: Date.now() });
-                                  }}
-                                >
-                                  -
-                                </button>
-                              </td>
-                              <td>
-                                <button
-                                  onClick={() => {
-                                    state.state[weekNum][teamId] += 15;
-                                    update({ ...state, now: Date.now() });
-                                  }}
-                                >
-                                  +
-                                </button>
-                              </td>
-                              <td style={{ padding: "0 50px" }}>
-                                {state.state[weekNum][teamId]}
-                              </td>
-                              <td>{selectedWrapped.ffTeams[teamId].name}</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
+        <div style={bubbleStyle}>
+          <div>{Object.keys(state.state).length} weeks remaining</div>
+          <table>
+            <tbody>
+              {order.map((o, i) => (
+                <tr key={o.teamId}>
+                  <td>{i + 1}</td>
+                  <td style={{ padding: "0 50px" }}>
+                    {alreadyWins[o.teamId]} {"->"} {wins[o.teamId]}
+                  </td>
+                  <td style={{ padding: "0 50px" }}>
+                    {Helpers.toFixed(totals[o.teamId])}
+                  </td>
+                  <td style={{ padding: "0 50px" }}>
+                    {selectedWrapped.ffTeams[o.teamId].name}
+                  </td>
+                  <td>{o.reason}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div>
+          {Object.entries(state.state).map(([weekNum, scores]) => (
+            <div key={weekNum}>
+              <div style={bubbleStyle}>
+                <h2>week {weekNum}</h2>
+                <div>
+                  {selectedWrapped.ffMatchups[weekNum].map((matchup, i) => (
+                    <div key={i} style={{ display: "inline" }}>
+                      <div style={bubbleStyle}>
+                        <table>
+                          <tbody>
+                            {matchup.map((teamId) => (
+                              <tr key={teamId}>
+                                <td>
+                                  <button
+                                    onClick={() => {
+                                      state.state[weekNum][teamId] -= 5;
+                                      update({ ...state, now: Date.now() });
+                                    }}
+                                  >
+                                    -
+                                  </button>
+                                </td>
+                                <td>
+                                  <button
+                                    onClick={() => {
+                                      state.state[weekNum][teamId] += 15;
+                                      update({ ...state, now: Date.now() });
+                                    }}
+                                  >
+                                    +
+                                  </button>
+                                </td>
+                                <td style={{ padding: "0 50px" }}>
+                                  {state.state[weekNum][teamId]}
+                                </td>
+                                <td>{selectedWrapped.ffTeams[teamId].name}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+  return <Helper />;
 }
 
 export class Helpers {
