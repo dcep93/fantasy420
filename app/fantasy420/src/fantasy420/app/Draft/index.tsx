@@ -6,7 +6,7 @@ import raw_draft_json from "./draft.json";
 
 export const draft_json: DraftJsonType = raw_draft_json;
 
-const PICK_NUMBER = 9;
+const PICK_NUMBER = 8;
 const NUM_TEAMS = 10;
 
 export const MAX_PEAKED = 250;
@@ -585,7 +585,7 @@ function updateDraftRanking(ordered: { [name: string]: number } | undefined) {
   if (!ordered) return;
   const year = 2024;
   fetch(
-    `https://fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/203836968?view=kona_player_info_edit_draft_strategy`,
+    `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/203836968?view=kona_player_info_edit_draft_strategy`,
     {
       headers: {
         "x-fantasy-filter": `{"players":{"filterStatsForSplitTypeIds":{"value":[0]},"filterStatsForSourceIds":{"value":[1]},"filterStatsForExternalIds":{"value":[${year}]},"sortDraftRanks":{"sortPriority":2,"sortAsc":true,"value":"STANDARD"},"sortPercOwned":{"sortPriority":3,"sortAsc":false},"filterRanksForSlotIds":{"value":[0,2,4,6,17,16]},"filterStatsForTopScoringPeriodIds":{"value":2,"additionalValue":["002023","102023","002022","022023"]}}}`,
