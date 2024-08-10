@@ -87,9 +87,12 @@ export default function Wrapped() {
       <div>
         <div>
           year:{" "}
-          <select onChange={(e) => updateYear(e.target.value)}>
+          <select
+            onChange={(e) => updateYear(e.target.value)}
+            defaultValue={yearKey}
+          >
             {Object.keys(allWrapped).map((y) => (
-              <option key={y} value={y} selected={yearKey === y}>
+              <option key={y} value={y}>
                 {y}
               </option>
             ))}
