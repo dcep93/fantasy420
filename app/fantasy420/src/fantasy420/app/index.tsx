@@ -1,6 +1,5 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Catalog from "./Catalog";
 import Defense from "./Defense";
 import Draft from "./Draft";
 import FetchWrapped from "./FetchWrapped";
@@ -17,7 +16,12 @@ const pages = {
 function index() {
   return (
     <BrowserRouter>
-      <Catalog location={"ff"} pages={pages} default={Wrapped} />
+      <Routes>
+        <Route path="/" element={<Wrapped />} />
+        {Object.entries(pages).map(([k, V]) => (
+          <Route key={k} path={`/${k}/*`} element={<V />} />
+        ))}
+      </Routes>
     </BrowserRouter>
   );
 }

@@ -196,9 +196,9 @@ function getCorrelation(data: ChartDataType): number {
 }
 
 export default function Accuracy() {
-  populate2023();
   const [year, updateYear] = useState(default_year);
   const [source, updateSource] = useState("composite");
+  populate2023();
   const sources = getSources(year);
   if (!sources[source]) {
     updateSource("composite");
