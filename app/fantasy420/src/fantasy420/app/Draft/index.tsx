@@ -274,8 +274,7 @@ function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
 }
 
 function isMyPick(pick: number): boolean {
-  // eslint-disable-next-line no-mixed-operators
-  const oddRound = pick > 20 !== (pick / NUM_TEAMS) % 2 < 1;
+  const oddRound = (pick / NUM_TEAMS) % 2 < 1;
   return (
     pick % NUM_TEAMS === (oddRound ? PICK_NUMBER - 1 : NUM_TEAMS - PICK_NUMBER)
   );
@@ -582,13 +581,14 @@ function harrisfootball() {
   );
 }
 
-function updateDraftRanking(ordered: { [name: string]: number }) {
+function updateDraftRanking(ordered: { [name: string]: number } | undefined) {
+  if (!ordered) return;
+  const year = 2024;
   fetch(
-    "https://fantasy.espn.com/apis/v3/games/ffl/seasons/2023/segments/0/leagues/203836968?view=kona_player_info_edit_draft_strategy",
+    `https://fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/203836968?view=kona_player_info_edit_draft_strategy`,
     {
       headers: {
-        "x-fantasy-filter":
-          '{"players":{"filterStatsForSplitTypeIds":{"value":[0]},"filterStatsForSourceIds":{"value":[1]},"filterStatsForExternalIds":{"value":[2023]},"sortDraftRanks":{"sortPriority":2,"sortAsc":true,"value":"STANDARD"},"sortPercOwned":{"sortPriority":3,"sortAsc":false},"filterRanksForSlotIds":{"value":[0,2,4,6,17,16]},"filterStatsForTopScoringPeriodIds":{"value":2,"additionalValue":["002023","102023","002022","022023"]}}}',
+        "x-fantasy-filter": `{"players":{"filterStatsForSplitTypeIds":{"value":[0]},"filterStatsForSourceIds":{"value":[1]},"filterStatsForExternalIds":{"value":[${year}]},"sortDraftRanks":{"sortPriority":2,"sortAsc":true,"value":"STANDARD"},"sortPercOwned":{"sortPriority":3,"sortAsc":false},"filterRanksForSlotIds":{"value":[0,2,4,6,17,16]},"filterStatsForTopScoringPeriodIds":{"value":2,"additionalValue":["002023","102023","002022","022023"]}}}`,
         "x-fantasy-platform":
           "kona-PROD-b8da8220a336fe39a7b677c0dc5fa27a6bbf87ae",
         "x-fantasy-source": "kona",
@@ -620,7 +620,7 @@ function updateDraftRanking(ordered: { [name: string]: number }) {
     )
     .then((body) =>
       fetch(
-        "https://lm-api-writes.fantasy.espn.com/apis/v3/games/ffl/seasons/2023/segments/0/leagues/203836968/teams/1",
+        `https://lm-api-writes.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/203836968/teams/1`,
         {
           headers: {
             accept: "application/json",
