@@ -1031,13 +1031,13 @@
         "position": "WR",
         "team": "LAR"
       },
-      "DJ Moore": {
-        "position": "WR",
-        "team": "Chi"
-      },
       "Anthony Richardson": {
         "position": "QB",
         "team": "Ind"
+      },
+      "DJ Moore": {
+        "position": "WR",
+        "team": "Chi"
       },
       "Jaylen Waddle": {
         "position": "WR",
@@ -1046,111 +1046,1611 @@
       "Trey McBride": {
         "position": "TE",
         "team": "Ari"
+      },
+      "George Kittle": {
+        "position": "TE",
+        "team": "SF"
+      },
+      "Joe Burrow": {
+        "position": "QB",
+        "team": "Cin"
+      },
+      "Malik Nabers": {
+        "position": "WR",
+        "team": "NYG"
+      },
+      "Dalton Kincaid": {
+        "position": "TE",
+        "team": "Buf"
+      },
+      "Aaron Jones": {
+        "position": "RB",
+        "team": "Min"
+      },
+      "Zay Flowers": {
+        "position": "WR",
+        "team": "Bal"
+      },
+      "Evan Engram": {
+        "position": "TE",
+        "team": "Jax"
+      },
+      "Rhamondre Stevenson": {
+        "position": "RB",
+        "team": "NE"
+      },
+      "Tank Dell": {
+        "position": "WR",
+        "team": "Hou"
+      },
+      "Kyle Pitts": {
+        "position": "TE",
+        "team": "Atl"
+      },
+      "Tee Higgins": {
+        "position": "WR",
+        "team": "Cin"
+      },
+      "George Pickens": {
+        "position": "WR",
+        "team": "Pit"
+      },
+      "Calvin Ridley": {
+        "position": "WR",
+        "team": "Ten"
+      },
+      "Dak Prescott": {
+        "position": "QB",
+        "team": "Dal"
+      },
+      "D'Andre Swift": {
+        "position": "RB",
+        "team": "Chi"
+      },
+      "David Montgomery": {
+        "position": "RB",
+        "team": "Det"
+      },
+      "Zamir White": {
+        "position": "RB",
+        "team": "LV"
+      },
+      "Amari Cooper": {
+        "position": "WR",
+        "team": "Cle"
+      },
+      "Browns D/ST": {
+        "position": "D/ST",
+        "team": "Cle"
+      },
+      "James Conner": {
+        "position": "RB",
+        "team": "Ari"
+      },
+      "Keenan Allen": {
+        "position": "WR",
+        "team": "Chi"
+      },
+      "49ers D/ST": {
+        "position": "D/ST",
+        "team": "SF"
+      },
+      "David Njoku": {
+        "position": "TE",
+        "team": "Cle"
+      },
+      "Jordan Love": {
+        "position": "QB",
+        "team": "GB"
+      },
+      "Chris Godwin": {
+        "position": "WR",
+        "team": "TB"
+      },
+      "Kyler Murray": {
+        "position": "QB",
+        "team": "Ari"
+      },
+      "Justin Tucker": {
+        "position": "K",
+        "team": "Bal"
+      },
+      "Jonathon Brooks": {
+        "position": "RB",
+        "team": "Car"
+      },
+      "Terry McLaurin": {
+        "position": "WR",
+        "team": "Wsh"
+      },
+      "Brian Robinson Jr.": {
+        "position": "RB",
+        "team": "Wsh"
+      },
+      "Ravens D/ST": {
+        "position": "D/ST",
+        "team": "Bal"
+      },
+      "Jaylen Warren": {
+        "position": "RB",
+        "team": "Pit"
+      },
+      "Najee Harris": {
+        "position": "RB",
+        "team": "Pit"
+      },
+      "Cowboys D/ST": {
+        "position": "D/ST",
+        "team": "Dal"
+      },
+      "Brandon Aubrey": {
+        "position": "K",
+        "team": "Dal"
+      },
+      "Christian Kirk": {
+        "position": "WR",
+        "team": "Jax"
+      },
+      "Rashee Rice": {
+        "position": "WR",
+        "team": "KC"
+      },
+      "Jake Ferguson": {
+        "position": "TE",
+        "team": "Dal"
+      },
+      "Jayden Reed": {
+        "position": "WR",
+        "team": "GB"
+      },
+      "Diontae Johnson": {
+        "position": "WR",
+        "team": "Car"
+      },
+      "Raheem Mostert": {
+        "position": "RB",
+        "team": "Mia"
+      },
+      "Tony Pollard": {
+        "position": "RB",
+        "team": "Ten"
+      },
+      "Brock Purdy": {
+        "position": "QB",
+        "team": "SF"
+      },
+      "Javonte Williams": {
+        "position": "RB",
+        "team": "Den"
+      },
+      "Jake Elliott": {
+        "position": "K",
+        "team": "Phi"
+      },
+      "Christian Watson": {
+        "position": "WR",
+        "team": "GB"
+      },
+      "Tyjae Spears": {
+        "position": "RB",
+        "team": "Ten"
+      },
+      "Austin Ekeler": {
+        "position": "RB",
+        "team": "Wsh"
+      },
+      "Nick Chubb": {
+        "position": "RB",
+        "team": "Cle"
+      },
+      "Jaxon Smith-Njigba": {
+        "position": "WR",
+        "team": "Sea"
+      },
+      "Jets D/ST": {
+        "position": "D/ST",
+        "team": "NYJ"
+      },
+      "DeAndre Hopkins": {
+        "position": "WR",
+        "team": "Ten"
+      },
+      "Marquise Brown": {
+        "position": "WR",
+        "team": "KC"
+      },
+      "Zack Moss": {
+        "position": "RB",
+        "team": "Cin"
+      },
+      "Ezekiel Elliott": {
+        "position": "RB",
+        "team": "Dal"
+      },
+      "Harrison Butker": {
+        "position": "K",
+        "team": "KC"
+      },
+      "Jordan Addison": {
+        "position": "WR",
+        "team": "Min"
+      },
+      "Brock Bowers": {
+        "position": "TE",
+        "team": "LV"
+      },
+      "Xavier Worthy": {
+        "position": "WR",
+        "team": "KC"
+      },
+      "Keon Coleman": {
+        "position": "WR",
+        "team": "Buf"
+      },
+      "Devin Singletary": {
+        "position": "RB",
+        "team": "NYG"
+      },
+      "Ladd McConkey": {
+        "position": "WR",
+        "team": "LAC"
+      },
+      "Rome Odunze": {
+        "position": "WR",
+        "team": "Chi"
+      },
+      "Jayden Daniels": {
+        "position": "QB",
+        "team": "Wsh"
+      },
+      "Steelers D/ST": {
+        "position": "D/ST",
+        "team": "Pit"
+      },
+      "Courtland Sutton": {
+        "position": "WR",
+        "team": "Den"
+      },
+      "Dallas Goedert": {
+        "position": "TE",
+        "team": "Phi"
+      },
+      "T.J. Hockenson": {
+        "position": "TE",
+        "team": "Min"
+      },
+      "Aaron Rodgers": {
+        "position": "QB",
+        "team": "NYJ"
+      },
+      "Caleb Williams": {
+        "position": "QB",
+        "team": "Chi"
+      },
+      "Ka'imi Fairbairn": {
+        "position": "K",
+        "team": "Hou"
+      },
+      "Jameson Williams": {
+        "position": "WR",
+        "team": "Det"
+      },
+      "Blake Corum": {
+        "position": "RB",
+        "team": "LAR"
+      },
+      "Tyler Lockett": {
+        "position": "WR",
+        "team": "Sea"
+      },
+      "Jerome Ford": {
+        "position": "RB",
+        "team": "Cle"
+      },
+      "Trey Benson": {
+        "position": "RB",
+        "team": "Ari"
+      },
+      "Evan McPherson": {
+        "position": "K",
+        "team": "Cin"
+      },
+      "Gus Edwards": {
+        "position": "RB",
+        "team": "LAC"
+      },
+      "Tua Tagovailoa": {
+        "position": "QB",
+        "team": "Mia"
+      },
+      "Chase Brown": {
+        "position": "RB",
+        "team": "Cin"
+      },
+      "Zach Charbonnet": {
+        "position": "RB",
+        "team": "Sea"
+      },
+      "J.K. Dobbins": {
+        "position": "RB",
+        "team": "LAC"
+      },
+      "Younghoe Koo": {
+        "position": "K",
+        "team": "Atl"
+      },
+      "Lions D/ST": {
+        "position": "D/ST",
+        "team": "Det"
+      },
+      "Brian Thomas Jr.": {
+        "position": "WR",
+        "team": "Jax"
+      },
+      "Mike Williams": {
+        "position": "WR",
+        "team": "NYJ"
+      },
+      "Saints D/ST": {
+        "position": "D/ST",
+        "team": "NO"
+      },
+      "Dalton Schultz": {
+        "position": "TE",
+        "team": "Hou"
+      },
+      "Jerry Jeudy": {
+        "position": "WR",
+        "team": "Cle"
+      },
+      "Chiefs D/ST": {
+        "position": "D/ST",
+        "team": "KC"
+      },
+      "Dolphins D/ST": {
+        "position": "D/ST",
+        "team": "Mia"
+      },
+      "Curtis Samuel": {
+        "position": "WR",
+        "team": "Buf"
+      },
+      "Pat Freiermuth": {
+        "position": "TE",
+        "team": "Pit"
+      },
+      "Jared Goff": {
+        "position": "QB",
+        "team": "Det"
+      },
+      "Jakobi Meyers": {
+        "position": "WR",
+        "team": "LV"
+      },
+      "Kirk Cousins": {
+        "position": "QB",
+        "team": "Atl"
+      },
+      "Greg Zuerlein": {
+        "position": "K",
+        "team": "NYJ"
+      },
+      "Tyler Allgeier": {
+        "position": "RB",
+        "team": "Atl"
+      },
+      "Darnell Mooney": {
+        "position": "WR",
+        "team": "Atl"
+      },
+      "Rashid Shaheed": {
+        "position": "WR",
+        "team": "NO"
+      },
+      "Cole Kmet": {
+        "position": "TE",
+        "team": "Chi"
+      },
+      "Jake Moody": {
+        "position": "K",
+        "team": "SF"
+      },
+      "Trevor Lawrence": {
+        "position": "QB",
+        "team": "Jax"
+      },
+      "Matt Gay": {
+        "position": "K",
+        "team": "Ind"
+      },
+      "Justin Herbert": {
+        "position": "QB",
+        "team": "LAC"
+      },
+      "Kendre Miller": {
+        "position": "RB",
+        "team": "NO"
+      },
+      "MarShawn Lloyd": {
+        "position": "RB",
+        "team": "GB"
+      },
+      "Adam Thielen": {
+        "position": "WR",
+        "team": "Car"
+      },
+      "Deshaun Watson": {
+        "position": "QB",
+        "team": "Cle"
+      },
+      "Ty Chandler": {
+        "position": "RB",
+        "team": "Min"
+      },
+      "Khalil Shakir": {
+        "position": "WR",
+        "team": "Buf"
+      },
+      "Antonio Gibson": {
+        "position": "RB",
+        "team": "NE"
+      },
+      "Jake Bates": {
+        "position": "K",
+        "team": "Det"
+      },
+      "Xavier Legette": {
+        "position": "WR",
+        "team": "Car"
+      },
+      "Bengals D/ST": {
+        "position": "D/ST",
+        "team": "Cin"
+      },
+      "Romeo Doubs": {
+        "position": "WR",
+        "team": "GB"
+      },
+      "Cameron Dicker": {
+        "position": "K",
+        "team": "LAC"
+      },
+      "Matthew Stafford": {
+        "position": "QB",
+        "team": "LAR"
+      },
+      "Gabe Davis": {
+        "position": "WR",
+        "team": "Jax"
+      },
+      "Brandin Cooks": {
+        "position": "WR",
+        "team": "Dal"
+      },
+      "Taysom Hill": {
+        "position": "TE",
+        "team": "NO"
+      },
+      "Adonai Mitchell": {
+        "position": "WR",
+        "team": "Ind"
+      },
+      "DeMario Douglas": {
+        "position": "WR",
+        "team": "NE"
+      },
+      "Bills D/ST": {
+        "position": "D/ST",
+        "team": "Buf"
+      },
+      "Baker Mayfield": {
+        "position": "QB",
+        "team": "TB"
+      },
+      "Eagles D/ST": {
+        "position": "D/ST",
+        "team": "Phi"
+      },
+      "Jaguars D/ST": {
+        "position": "D/ST",
+        "team": "Jax"
+      },
+      "Rico Dowdle": {
+        "position": "RB",
+        "team": "Dal"
+      },
+      "Chargers D/ST": {
+        "position": "D/ST",
+        "team": "LAC"
+      },
+      "Bears D/ST": {
+        "position": "D/ST",
+        "team": "Chi"
+      },
+      "Jaleel McLaughlin": {
+        "position": "RB",
+        "team": "Den"
+      },
+      "Cairo Santos": {
+        "position": "K",
+        "team": "Chi"
+      },
+      "Dustin Hopkins": {
+        "position": "K",
+        "team": "Cle"
+      },
+      "Chuba Hubbard": {
+        "position": "RB",
+        "team": "Car"
+      },
+      "Texans D/ST": {
+        "position": "D/ST",
+        "team": "Hou"
+      },
+      "Tyler Bass": {
+        "position": "K",
+        "team": "Buf"
+      },
+      "Tyler Conklin": {
+        "position": "TE",
+        "team": "NYJ"
+      },
+      "Seahawks D/ST": {
+        "position": "D/ST",
+        "team": "Sea"
+      },
+      "J.J. McCarthy": {
+        "position": "QB",
+        "team": "Min"
+      },
+      "Packers D/ST": {
+        "position": "D/ST",
+        "team": "GB"
+      },
+      "Jaylen Wright": {
+        "position": "RB",
+        "team": "Mia"
+      },
+      "Raiders D/ST": {
+        "position": "D/ST",
+        "team": "LV"
+      },
+      "Jason Sanders": {
+        "position": "K",
+        "team": "Mia"
+      },
+      "Noah Fant": {
+        "position": "TE",
+        "team": "Sea"
+      },
+      "Chris Boswell": {
+        "position": "K",
+        "team": "Pit"
+      },
+      "Bryce Young": {
+        "position": "QB",
+        "team": "Car"
+      },
+      "Justin Fields": {
+        "position": "QB",
+        "team": "Pit"
+      },
+      "Daniel Carlson": {
+        "position": "K",
+        "team": "LV"
+      },
+      "Joshua Palmer": {
+        "position": "WR",
+        "team": "LAC"
+      },
+      "Tom Brady": {
+        "position": "QB",
+        "team": "TB"
+      },
+      "Odell Beckham Jr.": {
+        "position": "WR",
+        "team": "Mia"
+      },
+      "Bo Nix": {
+        "position": "QB",
+        "team": "Den"
+      },
+      "Will Levis": {
+        "position": "QB",
+        "team": "Ten"
+      },
+      "Ja'Lynn Polk": {
+        "position": "WR",
+        "team": "NE"
+      },
+      "Dontayvion Wicks": {
+        "position": "WR",
+        "team": "GB"
+      },
+      "Hunter Henry": {
+        "position": "TE",
+        "team": "NE"
+      },
+      "Elijah Mitchell": {
+        "position": "RB",
+        "team": "SF"
+      },
+      "Patriots D/ST": {
+        "position": "D/ST",
+        "team": "NE"
+      },
+      "Giants D/ST": {
+        "position": "D/ST",
+        "team": "NYG"
+      },
+      "Vikings D/ST": {
+        "position": "D/ST",
+        "team": "Min"
+      },
+      "Luke Musgrave": {
+        "position": "TE",
+        "team": "GB"
+      },
+      "Dawson Knox": {
+        "position": "TE",
+        "team": "Buf"
+      },
+      "Drake Maye": {
+        "position": "QB",
+        "team": "NE"
+      },
+      "Ricky Pearsall": {
+        "position": "WR",
+        "team": "SF"
+      },
+      "Will Reichard": {
+        "position": "K",
+        "team": "Min"
+      },
+      "Russell Wilson": {
+        "position": "QB",
+        "team": "Pit"
+      },
+      "Jason Myers": {
+        "position": "K",
+        "team": "Sea"
+      },
+      "Geno Smith": {
+        "position": "QB",
+        "team": "Sea"
+      },
+      "Daniel Jones": {
+        "position": "QB",
+        "team": "NYG"
+      },
+      "Marvin Mims Jr.": {
+        "position": "WR",
+        "team": "Den"
+      },
+      "Broncos D/ST": {
+        "position": "D/ST",
+        "team": "Den"
+      },
+      "Isaiah Likely": {
+        "position": "TE",
+        "team": "Bal"
+      },
+      "Graham Gano": {
+        "position": "K",
+        "team": "NYG"
+      },
+      "Rams D/ST": {
+        "position": "D/ST",
+        "team": "LAR"
+      },
+      "Clyde Edwards-Helaire": {
+        "position": "RB",
+        "team": "KC"
+      },
+      "Chigoziem Okonkwo": {
+        "position": "TE",
+        "team": "Ten"
+      },
+      "Titans D/ST": {
+        "position": "D/ST",
+        "team": "Ten"
+      },
+      "Colts D/ST": {
+        "position": "D/ST",
+        "team": "Ind"
+      },
+      "Buccaneers D/ST": {
+        "position": "D/ST",
+        "team": "TB"
+      },
+      "Anders Carlson": {
+        "position": "K",
+        "team": "GB"
+      },
+      "Luke McCaffrey": {
+        "position": "WR",
+        "team": "Wsh"
+      },
+      "Kadarius Toney": {
+        "position": "WR",
+        "team": "KC"
+      },
+      "Commanders D/ST": {
+        "position": "D/ST",
+        "team": "Wsh"
+      },
+      "Jahan Dotson": {
+        "position": "WR",
+        "team": "Wsh"
+      },
+      "AJ Dillon": {
+        "position": "RB",
+        "team": "GB"
+      },
+      "Cardinals D/ST": {
+        "position": "D/ST",
+        "team": "Ari"
+      },
+      "Tyrone Tracy Jr.": {
+        "position": "RB",
+        "team": "NYG"
+      },
+      "Louis Rees-Zammit": {
+        "position": "RB",
+        "team": "KC"
+      },
+      "Chris Naggar": {
+        "position": "K",
+        "team": "FA"
+      },
+      "Ben Sinnott": {
+        "position": "TE",
+        "team": "Wsh"
+      },
+      "Derek Carr": {
+        "position": "QB",
+        "team": "NO"
+      },
+      "Falcons D/ST": {
+        "position": "D/ST",
+        "team": "Atl"
+      },
+      "Michael Penix Jr.": {
+        "position": "QB",
+        "team": "Atl"
+      },
+      "Cam Little": {
+        "position": "K",
+        "team": "Jax"
+      },
+      "Wil Lutz": {
+        "position": "K",
+        "team": "Den"
+      },
+      "Kenny Pickett": {
+        "position": "QB",
+        "team": "Phi"
+      },
+      "Chad Ryland": {
+        "position": "K",
+        "team": "NE"
+      },
+      "Jauan Jennings": {
+        "position": "WR",
+        "team": "SF"
+      },
+      "Matt Prater": {
+        "position": "K",
+        "team": "Ari"
+      },
+      "Parris Campbell": {
+        "position": "WR",
+        "team": "Phi"
+      },
+      "Braxton Berrios": {
+        "position": "WR",
+        "team": "Mia"
+      },
+      "Zach Ertz": {
+        "position": "TE",
+        "team": "Wsh"
+      },
+      "Mike Gesicki": {
+        "position": "TE",
+        "team": "Cin"
+      },
+      "Jonnu Smith": {
+        "position": "TE",
+        "team": "Mia"
+      },
+      "Trace McSorley": {
+        "position": "QB",
+        "team": "FA"
+      },
+      "JuJu Smith-Schuster": {
+        "position": "WR",
+        "team": "FA"
+      },
+      "Nick Folk": {
+        "position": "K",
+        "team": "Ten"
+      },
+      "Lucas Havrisik": {
+        "position": "K",
+        "team": "FA"
+      },
+      "Mason Crosby": {
+        "position": "K",
+        "team": "FA"
+      },
+      "Jermar Jefferson": {
+        "position": "RB",
+        "team": "Det"
+      },
+      "Christopher Dunn": {
+        "position": "K",
+        "team": "FA"
+      },
+      "Josh Downs": {
+        "position": "WR",
+        "team": "Ind"
+      },
+      "Blake Grupe": {
+        "position": "K",
+        "team": "NO"
+      },
+      "Justin Watson": {
+        "position": "WR",
+        "team": "KC"
+      },
+      "Noah Gray": {
+        "position": "TE",
+        "team": "KC"
+      },
+      "Javon Baker": {
+        "position": "WR",
+        "team": "NE"
+      },
+      "J.J. Taylor": {
+        "position": "RB",
+        "team": "Hou"
+      },
+      "Allen Lazard": {
+        "position": "WR",
+        "team": "NYJ"
+      },
+      "Tommy DeVito": {
+        "position": "QB",
+        "team": "NYG"
+      },
+      "Joshua Dobbs": {
+        "position": "QB",
+        "team": "SF"
+      },
+      "Joe Milton III": {
+        "position": "QB",
+        "team": "NE"
+      },
+      "Mike White": {
+        "position": "QB",
+        "team": "Mia"
+      },
+      "Hendon Hooker": {
+        "position": "QB",
+        "team": "Det"
+      },
+      "Calvin Austin III": {
+        "position": "WR",
+        "team": "Pit"
+      },
+      "Brock Wright": {
+        "position": "TE",
+        "team": "Det"
+      },
+      "Darren Waller": {
+        "position": "TE",
+        "team": "NYG"
+      },
+      "Joe Flacco": {
+        "position": "QB",
+        "team": "Ind"
+      },
+      "Nick Sciba": {
+        "position": "K",
+        "team": "FA"
+      },
+      "Donovan Peoples-Jones": {
+        "position": "WR",
+        "team": "Det"
+      },
+      "Durham Smythe": {
+        "position": "TE",
+        "team": "Mia"
+      },
+      "Theo Johnson": {
+        "position": "TE",
+        "team": "NYG"
+      },
+      "Gerald Everett": {
+        "position": "TE",
+        "team": "Chi"
+      },
+      "Dalvin Cook": {
+        "position": "RB",
+        "team": "FA"
+      },
+      "Cam Akers": {
+        "position": "RB",
+        "team": "Hou"
+      },
+      "Tyson Bagent": {
+        "position": "QB",
+        "team": "Chi"
+      },
+      "Cade Otton": {
+        "position": "TE",
+        "team": "TB"
+      },
+      "Mecole Hardman": {
+        "position": "WR",
+        "team": "KC"
+      },
+      "Johnny Wilson": {
+        "position": "WR",
+        "team": "Phi"
+      },
+      "Kyle Juszczyk": {
+        "position": "RB",
+        "team": "SF"
+      },
+      "Bo Melton": {
+        "position": "WR",
+        "team": "GB"
+      },
+      "Spencer Rattler": {
+        "position": "QB",
+        "team": "NO"
+      },
+      "Ben DiNucci": {
+        "position": "QB",
+        "team": "FA"
+      },
+      "Brenden Rice": {
+        "position": "WR",
+        "team": "LAC"
+      },
+      "Rodrigo Blankenship": {
+        "position": "K",
+        "team": "FA"
+      },
+      "Ja'Tavion Sanders": {
+        "position": "TE",
+        "team": "Car"
+      },
+      "Tanner Brown": {
+        "position": "K",
+        "team": "LAR"
+      },
+      "Keaontay Ingram": {
+        "position": "RB",
+        "team": "KC"
+      },
+      "Chase McLaughlin": {
+        "position": "K",
+        "team": "TB"
+      },
+      "Bryce Perkins": {
+        "position": "QB",
+        "team": "FA"
+      },
+      "Cade Stover": {
+        "position": "TE",
+        "team": "Hou"
       }
     },
     "pick": {
       "Christian McCaffrey": 1.5,
-      "CeeDee Lamb": 3.3,
+      "CeeDee Lamb": 3.5,
       "Tyreek Hill": 3.9,
       "Breece Hall": 5.6,
-      "Bijan Robinson": 6.8,
-      "Ja'Marr Chase": 7.1,
+      "Bijan Robinson": 6.9,
+      "Ja'Marr Chase": 7,
       "Amon-Ra St. Brown": 7.4,
       "Justin Jefferson": 7.7,
-      "A.J. Brown": 11.6,
+      "A.J. Brown": 11.5,
       "Saquon Barkley": 11.9,
-      "Jonathan Taylor": 12.2,
-      "Jahmyr Gibbs": 15.4,
-      "Garrett Wilson": 15.7,
-      "Puka Nacua": 16,
-      "Kyren Williams": 18.5,
-      "Derrick Henry": 18.8,
+      "Jonathan Taylor": 12.1,
+      "Jahmyr Gibbs": 15.5,
+      "Garrett Wilson": 15.6,
+      "Puka Nacua": 16.2,
+      "Kyren Williams": 18.6,
+      "Derrick Henry": 18.9,
       "Isiah Pacheco": 19.8,
       "Travis Etienne Jr.": 23.4,
-      "Travis Kelce": 23.5,
+      "Travis Kelce": 23.4,
       "Davante Adams": 24,
       "Chris Olave": 24.1,
       "Marvin Harrison Jr.": 25.7,
       "Patrick Mahomes": 28.8,
       "Michael Pittman Jr.": 29.7,
-      "Sam LaPorta": 30,
+      "Sam LaPorta": 30.4,
       "Josh Allen": 30.7,
-      "Jalen Hurts": 32.8,
+      "Jalen Hurts": 32.7,
       "Mike Evans": 33.6,
       "James Cook": 34.4,
       "De'Von Achane": 34.8,
-      "Lamar Jackson": 35.7,
-      "Stefon Diggs": 36,
+      "Lamar Jackson": 35.6,
+      "Stefon Diggs": 36.1,
       "Drake London": 36.6,
-      "Joe Mixon": 36.9,
+      "Joe Mixon": 36.8,
       "Alvin Kamara": 37.8,
       "DK Metcalf": 38,
       "Nico Collins": 38.1,
       "Rachaad White": 40.7,
-      "Josh Jacobs": 41.6,
-      "Mark Andrews": 42.4,
-      "Brandon Aiyuk": 43.9,
-      "C.J. Stroud": 47,
-      "Deebo Samuel Sr.": 48.4,
-      "DeVonta Smith": 48.9,
+      "Josh Jacobs": 41.1,
+      "Mark Andrews": 42.3,
+      "Brandon Aiyuk": 44,
+      "C.J. Stroud": 46.9,
+      "Deebo Samuel Sr.": 48.2,
+      "DeVonta Smith": 48.7,
       "Kenneth Walker III": 49.2,
-      "Cooper Kupp": 50.4,
+      "Cooper Kupp": 50.1,
+      "Anthony Richardson": 50.6,
       "DJ Moore": 50.6,
-      "Anthony Richardson": 50.8,
-      "Jaylen Waddle": 51.4,
-      "Trey McBride": 55.3
+      "Jaylen Waddle": 52,
+      "Trey McBride": 55.2,
+      "George Kittle": 56.8,
+      "Joe Burrow": 61.8,
+      "Malik Nabers": 63.2,
+      "Dalton Kincaid": 63.9,
+      "Aaron Jones": 64.1,
+      "Zay Flowers": 64.3,
+      "Evan Engram": 67.1,
+      "Rhamondre Stevenson": 67.2,
+      "Tank Dell": 71.5,
+      "Kyle Pitts": 72,
+      "Tee Higgins": 74.2,
+      "George Pickens": 74.6,
+      "Calvin Ridley": 74.9,
+      "Dak Prescott": 75,
+      "D'Andre Swift": 75.4,
+      "David Montgomery": 76.4,
+      "Zamir White": 80.7,
+      "Amari Cooper": 83.2,
+      "Browns D/ST": 85,
+      "James Conner": 85.1,
+      "Keenan Allen": 86,
+      "49ers D/ST": 87.2,
+      "David Njoku": 87.3,
+      "Jordan Love": 87.4,
+      "Chris Godwin": 89.6,
+      "Kyler Murray": 90.7,
+      "Justin Tucker": 91.7,
+      "Jonathon Brooks": 92.9,
+      "Terry McLaurin": 94.7,
+      "Brian Robinson Jr.": 95.3,
+      "Ravens D/ST": 95.4,
+      "Jaylen Warren": 96.1,
+      "Najee Harris": 96.9,
+      "Cowboys D/ST": 98.7,
+      "Brandon Aubrey": 99.2,
+      "Christian Kirk": 99.5,
+      "Rashee Rice": 100,
+      "Jake Ferguson": 100.7,
+      "Jayden Reed": 101,
+      "Diontae Johnson": 103.1,
+      "Raheem Mostert": 104.5,
+      "Tony Pollard": 107.4,
+      "Brock Purdy": 107.5,
+      "Javonte Williams": 108.6,
+      "Jake Elliott": 108.8,
+      "Christian Watson": 109.4,
+      "Tyjae Spears": 109.4,
+      "Austin Ekeler": 109.9,
+      "Nick Chubb": 110.9,
+      "Jaxon Smith-Njigba": 111.6,
+      "Jets D/ST": 111.6,
+      "DeAndre Hopkins": 111.7,
+      "Marquise Brown": 112.5,
+      "Zack Moss": 113.2,
+      "Ezekiel Elliott": 113.4,
+      "Harrison Butker": 113.4,
+      "Jordan Addison": 114.3,
+      "Brock Bowers": 114.9,
+      "Xavier Worthy": 117.2,
+      "Keon Coleman": 119.1,
+      "Devin Singletary": 121.3,
+      "Ladd McConkey": 122.1,
+      "Rome Odunze": 122.5,
+      "Jayden Daniels": 123,
+      "Steelers D/ST": 123.3,
+      "Courtland Sutton": 124.6,
+      "Dallas Goedert": 124.7,
+      "T.J. Hockenson": 126,
+      "Aaron Rodgers": 128,
+      "Caleb Williams": 128.9,
+      "Ka'imi Fairbairn": 129.7,
+      "Jameson Williams": 130.3,
+      "Blake Corum": 130.4,
+      "Tyler Lockett": 133.2,
+      "Jerome Ford": 134.1,
+      "Trey Benson": 136.1,
+      "Evan McPherson": 136.5,
+      "Gus Edwards": 136.8,
+      "Tua Tagovailoa": 137.4,
+      "Chase Brown": 137.8,
+      "Zach Charbonnet": 139.4,
+      "J.K. Dobbins": 139.5,
+      "Younghoe Koo": 140.1,
+      "Lions D/ST": 141.9,
+      "Brian Thomas Jr.": 143.2,
+      "Mike Williams": 143.9,
+      "Saints D/ST": 144,
+      "Dalton Schultz": 144.6,
+      "Jerry Jeudy": 144.6,
+      "Chiefs D/ST": 145.8,
+      "Dolphins D/ST": 147.7,
+      "Curtis Samuel": 148.1,
+      "Pat Freiermuth": 149.4,
+      "Jared Goff": 150,
+      "Jakobi Meyers": 151,
+      "Kirk Cousins": 151.6,
+      "Greg Zuerlein": 151.6,
+      "Tyler Allgeier": 152.2,
+      "Darnell Mooney": 152.5,
+      "Rashid Shaheed": 152.6,
+      "Cole Kmet": 153.5,
+      "Jake Moody": 155.6,
+      "Trevor Lawrence": 155.7,
+      "Matt Gay": 157,
+      "Justin Herbert": 157.1,
+      "Kendre Miller": 157.2,
+      "MarShawn Lloyd": 160,
+      "Adam Thielen": 160,
+      "Deshaun Watson": 160.4,
+      "Ty Chandler": 160.9,
+      "Khalil Shakir": 161,
+      "Antonio Gibson": 161.8,
+      "Jake Bates": 162.7,
+      "Xavier Legette": 162.7,
+      "Bengals D/ST": 162.8,
+      "Romeo Doubs": 162.8,
+      "Cameron Dicker": 163.3,
+      "Matthew Stafford": 163.5,
+      "Gabe Davis": 163.8,
+      "Brandin Cooks": 164.2,
+      "Taysom Hill": 164.3,
+      "Adonai Mitchell": 164.3,
+      "DeMario Douglas": 164.4,
+      "Bills D/ST": 164.7,
+      "Baker Mayfield": 164.9,
+      "Eagles D/ST": 165,
+      "Jaguars D/ST": 165.3,
+      "Rico Dowdle": 165.7,
+      "Chargers D/ST": 165.8,
+      "Bears D/ST": 165.8,
+      "Jaleel McLaughlin": 166,
+      "Cairo Santos": 166.6,
+      "Dustin Hopkins": 166.7,
+      "Chuba Hubbard": 166.7,
+      "Texans D/ST": 166.8,
+      "Tyler Bass": 167.6,
+      "Tyler Conklin": 167.7,
+      "Seahawks D/ST": 167.8,
+      "J.J. McCarthy": 167.9,
+      "Packers D/ST": 168.4,
+      "Jaylen Wright": 168.6,
+      "Raiders D/ST": 168.7,
+      "Jason Sanders": 168.7,
+      "Noah Fant": 168.8,
+      "Chris Boswell": 168.9,
+      "Bryce Young": 169,
+      "Justin Fields": 169,
+      "Daniel Carlson": 169,
+      "Joshua Palmer": 169.1,
+      "Tom Brady": 169.1,
+      "Odell Beckham Jr.": 169.1,
+      "Bo Nix": 169.2,
+      "Will Levis": 169.2,
+      "Ja'Lynn Polk": 169.2,
+      "Dontayvion Wicks": 169.3,
+      "Hunter Henry": 169.3,
+      "Elijah Mitchell": 169.3,
+      "Patriots D/ST": 169.3,
+      "Giants D/ST": 169.4,
+      "Vikings D/ST": 169.4,
+      "Luke Musgrave": 169.5,
+      "Dawson Knox": 169.5,
+      "Drake Maye": 169.5,
+      "Ricky Pearsall": 169.5,
+      "Will Reichard": 169.5,
+      "Russell Wilson": 169.5,
+      "Jason Myers": 169.5,
+      "Geno Smith": 169.5,
+      "Daniel Jones": 169.5,
+      "Marvin Mims Jr.": 169.6,
+      "Broncos D/ST": 169.6,
+      "Isaiah Likely": 169.6,
+      "Graham Gano": 169.6,
+      "Rams D/ST": 169.6,
+      "Clyde Edwards-Helaire": 169.7,
+      "Chigoziem Okonkwo": 169.7,
+      "Titans D/ST": 169.7,
+      "Colts D/ST": 169.7,
+      "Buccaneers D/ST": 169.7,
+      "Anders Carlson": 169.7,
+      "Luke McCaffrey": 169.7,
+      "Kadarius Toney": 169.7,
+      "Commanders D/ST": 169.7,
+      "Jahan Dotson": 169.8,
+      "AJ Dillon": 169.8,
+      "Cardinals D/ST": 169.8,
+      "Tyrone Tracy Jr.": 169.8,
+      "Louis Rees-Zammit": 169.8,
+      "Chris Naggar": 169.8,
+      "Ben Sinnott": 169.8,
+      "Derek Carr": 169.8,
+      "Falcons D/ST": 169.8,
+      "Michael Penix Jr.": 169.8,
+      "Cam Little": 169.8,
+      "Wil Lutz": 169.8,
+      "Kenny Pickett": 169.8,
+      "Chad Ryland": 169.8,
+      "Jauan Jennings": 169.8,
+      "Matt Prater": 169.8,
+      "Parris Campbell": 169.8,
+      "Braxton Berrios": 169.9,
+      "Zach Ertz": 169.9,
+      "Mike Gesicki": 169.9,
+      "Jonnu Smith": 169.9,
+      "Trace McSorley": 169.9,
+      "JuJu Smith-Schuster": 169.9,
+      "Nick Folk": 169.9,
+      "Lucas Havrisik": 169.9,
+      "Mason Crosby": 169.9,
+      "Jermar Jefferson": 169.9,
+      "Christopher Dunn": 169.9,
+      "Josh Downs": 169.9,
+      "Blake Grupe": 169.9,
+      "Justin Watson": 169.9,
+      "Noah Gray": 169.9,
+      "Javon Baker": 169.9,
+      "J.J. Taylor": 169.9,
+      "Allen Lazard": 169.9,
+      "Tommy DeVito": 169.9,
+      "Joshua Dobbs": 169.9,
+      "Joe Milton III": 169.9,
+      "Mike White": 169.9,
+      "Hendon Hooker": 169.9,
+      "Calvin Austin III": 169.9,
+      "Brock Wright": 169.9,
+      "Darren Waller": 169.9,
+      "Joe Flacco": 169.9,
+      "Nick Sciba": 169.9,
+      "Donovan Peoples-Jones": 169.9,
+      "Durham Smythe": 169.9,
+      "Theo Johnson": 169.9,
+      "Gerald Everett": 169.9,
+      "Dalvin Cook": 169.9,
+      "Cam Akers": 169.9,
+      "Tyson Bagent": 169.9,
+      "Cade Otton": 169.9,
+      "Mecole Hardman": 169.9,
+      "Johnny Wilson": 169.9,
+      "Kyle Juszczyk": 169.9,
+      "Bo Melton": 169.9,
+      "Spencer Rattler": 169.9,
+      "Ben DiNucci": 169.9,
+      "Brenden Rice": 169.9,
+      "Rodrigo Blankenship": 169.9,
+      "Ja'Tavion Sanders": 169.9,
+      "Tanner Brown": 169.9,
+      "Keaontay Ingram": 169.9,
+      "Chase McLaughlin": 169.9,
+      "Bryce Perkins": 169.9,
+      "Cade Stover": 169.9
     },
     "auction": {
-      "Christian McCaffrey": 63.8,
-      "CeeDee Lamb": 56.9,
-      "Tyreek Hill": 57.9,
-      "Breece Hall": 54.2,
-      "Bijan Robinson": 53.7,
-      "Ja'Marr Chase": 52.5,
-      "Amon-Ra St. Brown": 53.3,
-      "Justin Jefferson": 52.7,
-      "A.J. Brown": 45.3,
-      "Saquon Barkley": 48.2,
-      "Jonathan Taylor": 47.5,
-      "Jahmyr Gibbs": 42,
+      "Christian McCaffrey": 62.9,
+      "CeeDee Lamb": 56,
+      "Tyreek Hill": 57.1,
+      "Breece Hall": 53.9,
+      "Bijan Robinson": 53.4,
+      "Ja'Marr Chase": 52.4,
+      "Amon-Ra St. Brown": 53,
+      "Justin Jefferson": 52.4,
+      "A.J. Brown": 45.2,
+      "Saquon Barkley": 48,
+      "Jonathan Taylor": 47.4,
+      "Jahmyr Gibbs": 41.7,
       "Garrett Wilson": 41.6,
-      "Puka Nacua": 42.1,
-      "Kyren Williams": 38.9,
-      "Derrick Henry": 33.2,
-      "Isiah Pacheco": 35.8,
-      "Travis Etienne Jr.": 35,
-      "Travis Kelce": 24.4,
-      "Davante Adams": 33.3,
+      "Puka Nacua": 41.7,
+      "Kyren Williams": 38.7,
+      "Derrick Henry": 32.9,
+      "Isiah Pacheco": 35.7,
+      "Travis Etienne Jr.": 34.9,
+      "Travis Kelce": 24.2,
+      "Davante Adams": 33.1,
       "Chris Olave": 31.9,
-      "Marvin Harrison Jr.": 30.3,
-      "Patrick Mahomes": 20.8,
-      "Michael Pittman Jr.": 28.9,
-      "Sam LaPorta": 22.5,
-      "Josh Allen": 23.4,
-      "Jalen Hurts": 21,
+      "Marvin Harrison Jr.": 30.2,
+      "Patrick Mahomes": 20.2,
+      "Michael Pittman Jr.": 29,
+      "Sam LaPorta": 22.1,
+      "Josh Allen": 23.2,
+      "Jalen Hurts": 20.8,
       "Mike Evans": 29,
-      "James Cook": 24.7,
+      "James Cook": 24.8,
       "De'Von Achane": 19.2,
       "Lamar Jackson": 16.6,
-      "Stefon Diggs": 20.3,
+      "Stefon Diggs": 20.2,
       "Drake London": 26,
       "Joe Mixon": 23,
-      "Alvin Kamara": 25.2,
-      "DK Metcalf": 24.6,
-      "Nico Collins": 24.6,
+      "Alvin Kamara": 25.3,
+      "DK Metcalf": 24.7,
+      "Nico Collins": 24.5,
       "Rachaad White": 26.5,
       "Josh Jacobs": 20.3,
-      "Mark Andrews": 12.8,
-      "Brandon Aiyuk": 21.1,
-      "C.J. Stroud": 11.7,
+      "Mark Andrews": 12.6,
+      "Brandon Aiyuk": 21.2,
+      "C.J. Stroud": 11.8,
       "Deebo Samuel Sr.": 21.8,
-      "DeVonta Smith": 15.2,
-      "Kenneth Walker III": 18.3,
-      "Cooper Kupp": 16.9,
+      "DeVonta Smith": 15.3,
+      "Kenneth Walker III": 18.4,
+      "Cooper Kupp": 16.7,
+      "Anthony Richardson": 9.1,
       "DJ Moore": 18.7,
-      "Anthony Richardson": 9,
-      "Jaylen Waddle": 15.3,
-      "Trey McBride": 9.2
+      "Jaylen Waddle": 15.2,
+      "Trey McBride": 9.2,
+      "George Kittle": 7.8,
+      "Joe Burrow": 8.9,
+      "Malik Nabers": 12,
+      "Dalton Kincaid": 5.6,
+      "Aaron Jones": 8.4,
+      "Zay Flowers": 12.7,
+      "Evan Engram": 7.7,
+      "Rhamondre Stevenson": 7.4,
+      "Tank Dell": 7.6,
+      "Kyle Pitts": 5,
+      "Tee Higgins": 10.2,
+      "George Pickens": 8.9,
+      "Calvin Ridley": 10.3,
+      "Dak Prescott": 7,
+      "D'Andre Swift": 7.7,
+      "David Montgomery": 5.2,
+      "Zamir White": 6.2,
+      "Amari Cooper": 7.6,
+      "Browns D/ST": 2.6,
+      "James Conner": 6.5,
+      "Keenan Allen": 5,
+      "49ers D/ST": 2.9,
+      "David Njoku": 2.3,
+      "Jordan Love": 4.7,
+      "Chris Godwin": 7,
+      "Kyler Murray": 3.5,
+      "Justin Tucker": 3.3,
+      "Jonathon Brooks": 3.8,
+      "Terry McLaurin": 4.3,
+      "Brian Robinson Jr.": 3.4,
+      "Ravens D/ST": 2.1,
+      "Jaylen Warren": 3,
+      "Najee Harris": 3.8,
+      "Cowboys D/ST": 2.2,
+      "Brandon Aubrey": 2.1,
+      "Christian Kirk": 4.1,
+      "Rashee Rice": 3.8,
+      "Jake Ferguson": 2.1,
+      "Jayden Reed": 2.5,
+      "Diontae Johnson": 4.3,
+      "Raheem Mostert": 2.9,
+      "Tony Pollard": 2.3,
+      "Brock Purdy": 3.3,
+      "Javonte Williams": 2,
+      "Jake Elliott": 1.5,
+      "Christian Watson": 2.4,
+      "Tyjae Spears": 1.9,
+      "Austin Ekeler": 2.6,
+      "Nick Chubb": 3.5,
+      "Jaxon Smith-Njigba": 2.2,
+      "Jets D/ST": 1.8,
+      "DeAndre Hopkins": 3.3,
+      "Marquise Brown": 2.5,
+      "Zack Moss": 1.8,
+      "Ezekiel Elliott": 1.7,
+      "Harrison Butker": 2.3,
+      "Jordan Addison": 2.2,
+      "Brock Bowers": 1.8,
+      "Xavier Worthy": 2.2,
+      "Keon Coleman": 1.7,
+      "Devin Singletary": 1.4,
+      "Ladd McConkey": 1.4,
+      "Rome Odunze": 1.7,
+      "Jayden Daniels": 1.9,
+      "Steelers D/ST": 1.3,
+      "Courtland Sutton": 1.7,
+      "Dallas Goedert": 1.3,
+      "T.J. Hockenson": 1.6,
+      "Aaron Rodgers": 1.9,
+      "Caleb Williams": 1.9,
+      "Ka'imi Fairbairn": 1.2,
+      "Jameson Williams": 1.1,
+      "Blake Corum": 1,
+      "Tyler Lockett": 1.1,
+      "Jerome Ford": 1.4,
+      "Trey Benson": 1,
+      "Evan McPherson": 1,
+      "Gus Edwards": 1.2,
+      "Tua Tagovailoa": 1.4,
+      "Chase Brown": 1.2,
+      "Zach Charbonnet": 0.9,
+      "J.K. Dobbins": 1.1,
+      "Younghoe Koo": 0.9,
+      "Lions D/ST": 0.9,
+      "Brian Thomas Jr.": 1,
+      "Mike Williams": 1,
+      "Saints D/ST": 0.9,
+      "Dalton Schultz": 0.7,
+      "Jerry Jeudy": 0.9,
+      "Chiefs D/ST": 0.7,
+      "Dolphins D/ST": 0.9,
+      "Curtis Samuel": 0.9,
+      "Pat Freiermuth": 0.7,
+      "Jared Goff": 0.9,
+      "Jakobi Meyers": 0.9,
+      "Kirk Cousins": 1.3,
+      "Greg Zuerlein": 0.9,
+      "Tyler Allgeier": 0.8,
+      "Darnell Mooney": 0.7,
+      "Rashid Shaheed": 0.8,
+      "Cole Kmet": 0.4,
+      "Jake Moody": 0.5,
+      "Trevor Lawrence": 0.7,
+      "Matt Gay": 0.7,
+      "Justin Herbert": 1.4,
+      "Kendre Miller": 0.7,
+      "MarShawn Lloyd": 0.7,
+      "Adam Thielen": 0.4,
+      "Deshaun Watson": 1.1,
+      "Ty Chandler": 0.6,
+      "Khalil Shakir": 0.5,
+      "Antonio Gibson": 0.5,
+      "Jake Bates": 0.5,
+      "Xavier Legette": 0.4,
+      "Bengals D/ST": 0.4,
+      "Romeo Doubs": 0.2,
+      "Cameron Dicker": 0.3,
+      "Matthew Stafford": 0.4,
+      "Gabe Davis": 0.2,
+      "Brandin Cooks": 0.2,
+      "Taysom Hill": 0.1,
+      "Adonai Mitchell": 0.3,
+      "DeMario Douglas": 0.5,
+      "Bills D/ST": 0.2,
+      "Baker Mayfield": 0.3,
+      "Eagles D/ST": 0.2,
+      "Jaguars D/ST": 0.2,
+      "Rico Dowdle": 0.3,
+      "Chargers D/ST": 0.3,
+      "Bears D/ST": 0.1,
+      "Jaleel McLaughlin": 0.3,
+      "Cairo Santos": 0.2,
+      "Dustin Hopkins": 0.2,
+      "Chuba Hubbard": 0.9,
+      "Texans D/ST": 0.1,
+      "Tyler Bass": 0.1,
+      "Tyler Conklin": 0.1,
+      "Seahawks D/ST": 0.1,
+      "J.J. McCarthy": 0.1,
+      "Packers D/ST": 0.1,
+      "Jaylen Wright": 0.1,
+      "Raiders D/ST": 0,
+      "Jason Sanders": 0,
+      "Noah Fant": 0.1,
+      "Chris Boswell": 0,
+      "Bryce Young": 0.1,
+      "Justin Fields": 0.1,
+      "Daniel Carlson": 0,
+      "Joshua Palmer": 0.1,
+      "Tom Brady": 0.1,
+      "Odell Beckham Jr.": 0.1,
+      "Bo Nix": 0.1,
+      "Will Levis": 0.1,
+      "Ja'Lynn Polk": 0.1,
+      "Dontayvion Wicks": 0.1,
+      "Hunter Henry": 0,
+      "Elijah Mitchell": 0.1,
+      "Patriots D/ST": 0,
+      "Giants D/ST": 0,
+      "Vikings D/ST": 0,
+      "Luke Musgrave": 0,
+      "Dawson Knox": 0,
+      "Drake Maye": 0,
+      "Ricky Pearsall": 0.1,
+      "Will Reichard": 0,
+      "Russell Wilson": 0.1,
+      "Jason Myers": 0,
+      "Geno Smith": 0.1,
+      "Daniel Jones": 0.1,
+      "Marvin Mims Jr.": 0.1,
+      "Broncos D/ST": 0,
+      "Isaiah Likely": 0,
+      "Graham Gano": 0,
+      "Rams D/ST": 0,
+      "Clyde Edwards-Helaire": 0.1,
+      "Chigoziem Okonkwo": 0,
+      "Titans D/ST": 0,
+      "Colts D/ST": 0,
+      "Buccaneers D/ST": 0,
+      "Anders Carlson": 0,
+      "Luke McCaffrey": 0,
+      "Kadarius Toney": 0,
+      "Commanders D/ST": 0,
+      "Jahan Dotson": 0.1,
+      "AJ Dillon": 0,
+      "Cardinals D/ST": 0.2,
+      "Tyrone Tracy Jr.": 0.1,
+      "Louis Rees-Zammit": 0,
+      "Chris Naggar": 0,
+      "Ben Sinnott": 0,
+      "Derek Carr": 0,
+      "Falcons D/ST": 0,
+      "Michael Penix Jr.": 0,
+      "Cam Little": 0,
+      "Wil Lutz": 0,
+      "Kenny Pickett": 0,
+      "Chad Ryland": 0,
+      "Jauan Jennings": 0,
+      "Matt Prater": 0,
+      "Parris Campbell": 0,
+      "Braxton Berrios": 0,
+      "Zach Ertz": 0,
+      "Mike Gesicki": 0,
+      "Jonnu Smith": 0,
+      "Trace McSorley": 0,
+      "JuJu Smith-Schuster": 0,
+      "Nick Folk": 0,
+      "Lucas Havrisik": 0,
+      "Mason Crosby": 0,
+      "Jermar Jefferson": 0,
+      "Christopher Dunn": 0,
+      "Josh Downs": 0,
+      "Blake Grupe": 0,
+      "Justin Watson": 0,
+      "Noah Gray": 0,
+      "Javon Baker": 0,
+      "J.J. Taylor": 0,
+      "Allen Lazard": 0,
+      "Tommy DeVito": 0,
+      "Joshua Dobbs": 0,
+      "Joe Milton III": 0,
+      "Mike White": 0,
+      "Hendon Hooker": 0,
+      "Calvin Austin III": 0,
+      "Brock Wright": 0,
+      "Darren Waller": 0,
+      "Joe Flacco": 0,
+      "Nick Sciba": 0,
+      "Donovan Peoples-Jones": 0,
+      "Durham Smythe": 0,
+      "Theo Johnson": 0,
+      "Gerald Everett": 0,
+      "Dalvin Cook": 0,
+      "Cam Akers": 0,
+      "Tyson Bagent": 0,
+      "Cade Otton": 0,
+      "Mecole Hardman": 0,
+      "Johnny Wilson": 0,
+      "Kyle Juszczyk": 0,
+      "Bo Melton": 0,
+      "Spencer Rattler": 0,
+      "Ben DiNucci": 0,
+      "Brenden Rice": 0,
+      "Rodrigo Blankenship": 0,
+      "Ja'Tavion Sanders": 0,
+      "Tanner Brown": 0,
+      "Keaontay Ingram": 0,
+      "Chase McLaughlin": 0,
+      "Bryce Perkins": 0,
+      "Cade Stover": 0
     }
   }
 }
