@@ -55,7 +55,7 @@ export const qbToNonQB = Object.fromEntries(
     .map(({ name, lastPlayerName }) => [name, lastPlayerName])
 );
 
-function Draft() {
+export default function Draft() {
   const r = results(draft_json);
   const [liveDraft, updateLiveDraft] = useState<string[]>([]);
   useEffect(() => {
@@ -654,5 +654,3 @@ export function getPeakedValue(name: string, lines: string[]): number {
   if (!found) return MAX_PEAKED;
   return parseInt(found.split(" ")[0]);
 }
-
-export default Draft;
