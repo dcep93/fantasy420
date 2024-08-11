@@ -5,7 +5,10 @@ import { selectedWrapped, selectedYear } from "..";
 import { allDrafts } from "../HistoricalAccuracy";
 
 export default function DraftValue() {
+  const [num_rounds, update] = useState(8);
+
   const draft_json = allDrafts[selectedYear];
+  if (!draft_json) return <div>no data available</div>;
 
   const extra_entries = (
     Object.entries(draft_json.extra) as [string, { [name: string]: number }][]
@@ -22,7 +25,6 @@ export default function DraftValue() {
         ),
       ],
     ]);
-  const [num_rounds, update] = useState(8);
   const results = get_results(extra_entries, num_rounds);
   return (
     <div>

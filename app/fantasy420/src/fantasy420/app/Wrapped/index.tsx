@@ -6,8 +6,8 @@ import wrapped2022 from "./2022.json";
 import wrapped2023 from "./2023.json";
 import wrapped2024 from "./2024.json";
 import ByeSchedule from "./ByeSchedule";
-import DraftValue from "./DraftValue";
-import HistoricalAccuracy from "./HistoricalAccuracy";
+import DraftValue_ from "./DraftValue";
+import HistoricalAccuracy_ from "./HistoricalAccuracy";
 
 const allWrapped: { [year: string]: WrappedType } = {
   "2024": wrapped2024,
@@ -1569,4 +1569,12 @@ export class Helpers {
       });
     return ideal;
   }
+}
+
+function HistoricalAccuracy() {
+  return <HistoricalAccuracy_ />;
+}
+
+function DraftValue() {
+  return <DraftValue_ />;
 }
