@@ -1,70 +1,17 @@
 import { useState } from "react";
-import { Position, selectedWrapped } from "..";
-import { draft_json, normalize } from "../../Draft";
-import Chart from "./Chart";
-import raw_accuracy_json from "./accuracy.json";
+import { Position, selectedWrapped, selectedYear } from "..";
+import { DraftJsonType, normalize, PlayersType } from "../../Draft";
+import Chart, { ChartDataType } from "./Chart";
 import distanceCorrelation from "./correlation";
 
-const accuracy_json = raw_accuracy_json as AccuracyJsonType;
+import _2023 from "../../Draft/2023.json";
+import _2024 from "../../Draft/2024.json";
 
-function populate2023() {
-  accuracy_json["2023"] = {
-    espn: Object.fromEntries(
-      Object.values(selectedWrapped.nflPlayers)
-        .filter((p) => p.nflTeamId !== "0")
-        .filter(
-          (p) =>
-            draft_json.espn.pick[p.name] < 169.9 ||
-            draft_json.drafts[0].includes(p.name)
-        )
-        .map((p) => [
-          p.name,
-          {
-            position: p.position,
-            adp: draft_json.espn.pick[p.name],
-            auction: draft_json.espn.auction[p.name],
-            season_points: p.total,
-            average_points: p.average,
-          },
-        ])
-    ),
-    sources: Object.fromEntries(
-      Object.entries(draft_json.extra).concat([
-        [
-          "biscuit_adp",
-          Object.fromEntries(
-            draft_json.drafts[0].map((playerName, i) => [playerName, i])
-          ),
-        ],
-      ])
-    ),
-  };
-}
-
-const default_year = "2023";
-
-type EspnPlayerType = {
-  position: string;
-  adp: number | null;
-  auction: number | null;
-  season_points: number;
-  average_points: number;
+const allDrafts: { [year: string]: DraftJsonType } = {
+  // TODO biscuit adp
+  2023: _2023,
+  2024: _2024,
 };
-
-type SourcesType = {
-  [source: string]: { [normalizedPlayerName: string]: number | null };
-};
-
-type AccuracyJsonType = {
-  [year: string]: {
-    espn: {
-      [playerName: string]: EspnPlayerType;
-    };
-    sources: SourcesType;
-  };
-};
-
-export type ChartDataType = { x: number; y: number; label: string }[];
 
 type DataType = {
   [position: string]: {
@@ -72,44 +19,26 @@ type DataType = {
   };
 };
 
-function getSources(year: string): SourcesType {
-  const accuracy_year = accuracy_json[year];
-  const sources = Object.fromEntries(
-    Object.entries(accuracy_year.sources).map(([source, data]) => [
-      source,
+function getComposite(sources: {
+  [sourceName: string]: PlayersType;
+}): PlayersType {
+  const source_ranks = Object.values(sources).map((o) =>
+    Object.fromEntries(
+      Object.entries(o)
+        .map(([playerName, value]) => ({ playerName, value }))
+        .filter(({ value }) => value !== null)
+        .sort((a, b) => a.value! - b.value!)
+        .map(({ playerName }, i) => [normalize(playerName), i + 1])
+    )
+  );
+  return Object.fromEntries(
+    Object.keys(
       Object.fromEntries(
-        Object.entries(data).map(([playerName, value]) => [
-          normalize(playerName),
-          value,
-        ])
-      ),
-    ])
-  );
-  sources.espn_auction = Object.fromEntries(
-    Object.entries(accuracy_year.espn)
-      .filter(([playerName, o]) => o.auction !== null && o.auction <= -0.5)
-      .map(([playerName, o]) => [normalize(playerName), o.auction])
-  );
-  sources.espn_adp = Object.fromEntries(
-    Object.entries(accuracy_year.espn)
-      .filter(([playerName, o]) => o.adp !== null && o.adp < 168)
-      .map(([playerName, o]) => [normalize(playerName), o.adp])
-  );
-  const source_ranks = Object.fromEntries(
-    Object.entries(sources).map(([s, o]) => [
-      s,
-      Object.fromEntries(
-        Object.entries(o)
-          .map(([playerName, value]) => ({ playerName, value }))
-          .filter(({ value }) => value !== null)
-          .sort((a, b) => a.value! - b.value!)
-          .map(({ playerName }, i) => [playerName, i + 1])
-      ),
-    ])
-  );
-  sources.composite = Object.fromEntries(
-    Object.keys(accuracy_year.espn)
-      .map((playerName) => normalize(playerName))
+        Object.values(sources)
+          .flatMap((players) => Object.keys(players))
+          .map((playerName) => [normalize(playerName), null])
+      )
+    )
       .map((playerName) => ({
         playerName,
         ranks: Object.values(source_ranks)
@@ -130,34 +59,34 @@ function getSources(year: string): SourcesType {
       })
       .map(({ playerName, value }) => [playerName, value])
   );
-  return sources;
 }
 
-function getData(year: string, source: string, sources: SourcesType): DataType {
-  const accuracy_year = accuracy_json[year];
+function getData(players: PlayersType): DataType {
   const by_position = {} as {
-    [position: string]: { [playerName: string]: EspnPlayerType };
+    [position: string]: PlayersType;
   };
-  Object.entries(accuracy_year.espn).forEach(([playerName, o]) => {
-    if (!by_position[o.position]) by_position[o.position] = {};
-    by_position[o.position][playerName] = o;
+  Object.entries(players).forEach(([playerName, value]) => {
+    const position = selectedWrapped.nflPlayers[playerName].position;
+    if (!by_position[position]) by_position[position] = {};
+    by_position[position][playerName] = value;
   });
   const data = Object.fromEntries(
     Object.entries(by_position).map(([position, players]) => [
       position,
       Object.fromEntries(
         Object.entries({
-          season_points: (o: EspnPlayerType) => o.season_points,
-          average_points: (o: EspnPlayerType) => o.average_points,
+          season_points: (playerName: string) =>
+            selectedWrapped.nflPlayers[playerName].total,
+          average_points: (playerName: string) =>
+            selectedWrapped.nflPlayers[playerName].average,
         })
           .map(([key, f]) => ({
             key,
             playersData: Object.entries(players)
-              .map(([playerName, o]) => ({
+              .map(([playerName, value]) => ({
                 playerName,
-                x: sources[source][normalize(playerName)]!,
-                y: f(o),
-                ...o,
+                x: value,
+                y: f(playerName),
               }))
               .filter(({ x }) => x !== null && x !== undefined)
               .map(({ ...o }) => ({
@@ -196,30 +125,16 @@ function getCorrelation(data: ChartDataType): number {
 }
 
 export default function HistoricalAccuracy() {
-  const [year, updateYear] = useState(default_year);
   const [source, updateSource] = useState("composite");
-  populate2023();
-  const sources = getSources(year);
-  if (!sources[source]) {
-    updateSource("composite");
-    return <div></div>;
-  }
-  const data = getData(year, source, sources);
+  const draftData = allDrafts[selectedYear];
+  const sources = Object.assign({}, draftData.extra);
+  sources.espn_adp = draftData.espn.pick;
+  sources.espn_auction = draftData.espn.auction;
+  sources.composite = getComposite(sources);
+  const data = getData(sources[source]);
   return (
     <div>
       <div>
-        <select
-          defaultValue={year}
-          onChange={(event) =>
-            updateYear((event.target as HTMLSelectElement).value)
-          }
-        >
-          {Object.keys(accuracy_json).map((select_year) => (
-            <option key={select_year} value={select_year}>
-              {select_year}
-            </option>
-          ))}
-        </select>
         <select
           defaultValue={source}
           onChange={(event) =>

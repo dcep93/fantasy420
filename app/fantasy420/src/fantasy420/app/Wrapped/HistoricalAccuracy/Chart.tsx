@@ -1,5 +1,3 @@
-import { ChartDataType } from ".";
-
 import {
   CartesianGrid,
   Scatter,
@@ -8,6 +6,8 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+
+export type ChartDataType = { x: number; y: number; label: string }[];
 
 export default function Chart(props: { data: ChartDataType }) {
   return (

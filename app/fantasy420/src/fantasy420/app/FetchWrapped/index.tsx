@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
+import { currentYear } from "../Wrapped";
 
-const year = 2024;
 const leagueId =
   new URL(window.document.location.href).searchParams.get("leagueId") ||
   203836968;
@@ -104,7 +104,7 @@ function getWrapped(): Promise<WrappedType> {
       Promise.resolve()
         .then(() =>
           fetch(
-            `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/${leagueId}?view=kona_playercard`,
+            `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=kona_playercard`,
             {
               headers: {
                 accept: "application/json",
@@ -112,7 +112,7 @@ function getWrapped(): Promise<WrappedType> {
                   players: {
                     filterStatsForTopScoringPeriodIds: {
                       value: 17,
-                      additionalValue: [`00${year}`],
+                      additionalValue: [`00${currentYear}`],
                     },
                   },
                 }),
@@ -167,7 +167,9 @@ function getWrapped(): Promise<WrappedType> {
                         ?.appliedAverage || 0,
                     scores: fromEntries(
                       player.stats
-                        .filter((stat) => stat.seasonId === year)
+                        .filter(
+                          (stat) => stat.seasonId === parseInt(currentYear)
+                        )
                         .map((stat) => ({
                           key: stat.scoringPeriodId.toString(),
                           value: parseFloat(stat.appliedTotal.toFixed(2)),
@@ -195,7 +197,7 @@ function getWrapped(): Promise<WrappedType> {
       Promise.resolve()
         .then(() =>
           fetch(
-            `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/${leagueId}?view=mRoster`
+            `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mRoster`
           )
             .then((resp) => resp.json())
             .then(
@@ -212,7 +214,7 @@ function getWrapped(): Promise<WrappedType> {
                       .map((_, i) => i + 1)
                       .map((weekNum) =>
                         fetch(
-                          `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/${leagueId}?view=mScoreboard&scoringPeriodId=${weekNum}`,
+                          `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mScoreboard&scoringPeriodId=${weekNum}`,
                           {
                             credentials: "include",
                           }
@@ -325,7 +327,7 @@ function getWrapped(): Promise<WrappedType> {
       Promise.resolve()
         .then(() =>
           fetch(
-            `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/${leagueId}?view=mMatchupScore&view=mSettings`,
+            `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mMatchupScore&view=mSettings`,
             {
               credentials: "include",
             }
@@ -362,7 +364,7 @@ function getWrapped(): Promise<WrappedType> {
       Promise.resolve()
         .then(() =>
           fetch(
-            `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}?view=proTeamSchedules_wl`
+            `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}?view=proTeamSchedules_wl`
           )
             .then((resp) => resp.json())
             .then(
@@ -387,7 +389,7 @@ function getWrapped(): Promise<WrappedType> {
                   byeWeek: p.byeWeek,
                   proGamesByScoringPeriod: fromEntries(
                     Object.entries(p.proGamesByScoringPeriod)
-                      .filter(([_, o]) => year <= 2021 || o[0].statsOfficial)
+                      .filter(([_, o]) => o[0].statsOfficial)
                       .map(([scoringPeriod, o]) => ({
                         key: scoringPeriod,
                         value: o[0].id,
@@ -469,7 +471,7 @@ function getWrapped(): Promise<WrappedType> {
                 .then((gamesByGameId) => fromEntries(gamesByGameId))
                 .then((gamesByGameId) =>
                   fetch(
-                    `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/${leagueId}?view=kona_playercard`,
+                    `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=kona_playercard`,
                     {
                       headers: {
                         accept: "application/json",
