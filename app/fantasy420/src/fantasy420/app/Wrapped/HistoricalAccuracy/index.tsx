@@ -136,6 +136,7 @@ function getCorrelation(data: ChartDataType): number {
 export default function HistoricalAccuracy() {
   const [source, updateSource] = useState("composite");
   const draftData = allDrafts[selectedYear];
+  if (!draftData) return <div>no data available</div>;
   const sources = Object.assign({}, draftData.extra);
   sources.espn_adp = draftData.espn.pick;
   sources.espn_auction = Object.fromEntries(
