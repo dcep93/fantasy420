@@ -1,5 +1,5 @@
 import { ReactNode, useState } from "react";
-import { draft_json, normalize } from "../Draft";
+import { normalize } from "../Draft";
 import { NFLPlayerType, WrappedType } from "../FetchWrapped";
 import wrapped2021 from "./2021.json";
 import wrapped2022 from "./2022.json";
@@ -380,7 +380,11 @@ function Injuries() {
                 .map((playerId) => selectedWrapped.nflPlayers[playerId])
                 .map((o) => ({
                   weekNum: parseInt(r.weekNum),
-                  rank: draft_json.drafts[0].indexOf(normalize(o.name)),
+                  rank:
+                    Object.values(selectedWrapped.ffTeams)
+                      .flatMap((team) => team.draft)
+                      .find((p) => p.playerId === parseInt(o.id))?.pickNum ||
+                    Infinity,
                   currentScore: o.scores[r.weekNum] || 0,
                   followingScore: o.scores[parseInt(r.weekNum) + 1],
                   ...o,
@@ -1271,7 +1275,9 @@ function OwnedTeams() {
 
 function FantasyCalc() {
   const playerToDraftPick = Object.fromEntries(
-    draft_json.drafts[0].map((name, i) => [name, i + 1])
+    Object.values(selectedWrapped.ffTeams)
+      .flatMap((team) => team.draft)
+      .map((p) => [selectedWrapped.nflPlayers[p.playerId].name, p.pickNum])
   );
   const owned = Object.fromEntries(
     Object.values(selectedWrapped.ffTeams)
