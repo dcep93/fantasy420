@@ -42,7 +42,7 @@ function getComposite(sources: {
         playerName,
         ranks: Object.values(source_ranks)
           .map((source) => source[playerName])
-          .filter((rank) => rank !== undefined),
+          .filter((rank) => rank !== undefined && rank < 200),
       }))
       .filter(({ ranks }) => ranks.length > 0)
       .map(({ playerName, ranks }) => ({
@@ -136,7 +136,12 @@ export default function HistoricalAccuracy() {
   const draftData = allDrafts[selectedYear];
   const sources = Object.assign({}, draftData.extra);
   sources.espn_adp = draftData.espn.pick;
-  sources.espn_auction = draftData.espn.auction;
+  sources.espn_auction = Object.fromEntries(
+    Object.entries(draftData.espn.auction).map(([name, value]) => [
+      name,
+      -value,
+    ])
+  );
   sources.composite = getComposite(sources);
   const data = getData(sources[source]);
   return (
