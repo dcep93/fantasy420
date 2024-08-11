@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { normalize } from "../../Draft";
-import draft_json from "../../Draft/2024.json"; // TODO historical biscuit adp
 
-import { selectedWrapped } from "..";
+import { selectedWrapped, selectedYear } from "..";
+import { allDrafts } from "../HistoricalAccuracy";
 
 export default function DraftValue() {
+  const draft_json = allDrafts[selectedYear];
   const picks = Object.fromEntries(
     draft_json.drafts[0].map((playerName, index) => [
       normalize(playerName),

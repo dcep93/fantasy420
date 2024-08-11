@@ -28,7 +28,7 @@ type ResultsType = {
   players: RPType[];
 }[];
 export type DraftJsonType = {
-  drafts: DraftType[];
+  drafts: DraftType[]; // TODO unexpose
   extra: { [source: string]: PlayersType };
   espn: {
     players: { [name: string]: PType };
