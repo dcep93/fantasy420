@@ -9,9 +9,9 @@ export default function DraftValue() {
   const picks = Object.fromEntries(
     Object.values(selectedWrapped.ffTeams)
       .flatMap((team) => team.draft)
-      .map(({ playerId, pickNum }) => [
+      .map(({ playerId, pickIndex }) => [
         normalize(selectedWrapped.nflPlayers[playerId].name),
-        pickNum,
+        pickIndex,
       ])
   );
 

@@ -383,7 +383,7 @@ function Injuries() {
                   rank:
                     Object.values(selectedWrapped.ffTeams)
                       .flatMap((team) => team.draft)
-                      .find((p) => p.playerId === parseInt(o.id))?.pickNum ||
+                      .find((p) => p.playerId === parseInt(o.id))?.pickIndex ||
                     Infinity,
                   currentScore: o.scores[r.weekNum] || 0,
                   followingScore: o.scores[parseInt(r.weekNum) + 1],
@@ -435,8 +435,8 @@ function Injuries() {
             </h1>
             {team.injuries.map((injury, i) => (
               <div key={i}>
-                {injury.name} ({injury.rank}) injured {injury.weekNumsStr} after
-                scoring {injury.currentScore}
+                {injury.name} ({injury.rank + 1}) injured {injury.weekNumsStr}{" "}
+                after scoring {injury.currentScore}
               </div>
             ))}
           </div>
@@ -1274,10 +1274,10 @@ function OwnedTeams() {
 }
 
 function FantasyCalc() {
-  const playerToDraftPick = Object.fromEntries(
+  const playerToDraftIndex = Object.fromEntries(
     Object.values(selectedWrapped.ffTeams)
       .flatMap((team) => team.draft)
-      .map((p) => [selectedWrapped.nflPlayers[p.playerId].name, p.pickNum])
+      .map((p) => [selectedWrapped.nflPlayers[p.playerId].name, p.pickIndex])
   );
   const owned = Object.fromEntries(
     Object.values(selectedWrapped.ffTeams)
@@ -1319,7 +1319,7 @@ function FantasyCalc() {
               .map((p) => ({
                 name: p.name,
                 value: selectedWrapped.fantasyCalc.players[p.id] || 0,
-                draftPick: playerToDraftPick[normalize(p.name)],
+                draftPick: playerToDraftIndex[normalize(p.name)],
               }))
               .sort((a, b) => b.value - a.value),
           }))
@@ -1334,7 +1334,7 @@ function FantasyCalc() {
               <h3>{t.value.toFixed(2)}</h3>
               {t.ps.map((p, i) => (
                 <div key={i}>
-                  {p.value.toFixed(2)} {p.name} ({p.draftPick})
+                  {p.value.toFixed(2)} {p.name} ({p.draftPick + 1})
                 </div>
               ))}
             </div>

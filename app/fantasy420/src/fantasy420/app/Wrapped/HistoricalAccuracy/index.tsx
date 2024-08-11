@@ -27,7 +27,7 @@ function getComposite(sources: {
         .map(([playerName, value]) => ({ playerName, value }))
         .filter(({ value }) => value !== null)
         .sort((a, b) => a.value! - b.value!)
-        .map(({ playerName }, i) => [normalize(playerName), i + 1])
+        .map(({ playerName }, i) => [normalize(playerName), i])
     )
   );
   return Object.fromEntries(
@@ -49,7 +49,9 @@ function getComposite(sources: {
         playerName,
         ranks,
         value: parseFloat(
-          (ranks.reduce((a, b) => a + b, 0) / ranks.length).toFixed(2)
+          (
+            ranks.map((r) => r + 1).reduce((a, b) => a + b, 0) / ranks.length
+          ).toFixed(2)
         ),
       }))
       .map((o) => {
