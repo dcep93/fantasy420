@@ -28,7 +28,7 @@ type ResultsType = {
   players: RPType[];
 }[];
 export type DraftJsonType = {
-  drafts: DraftType[]; // TODO unexpose
+  history: DraftType[]; // TODO unexpose
   extra: { [source: string]: PlayersType };
   espn: {
     players: { [name: string]: PType };
@@ -39,7 +39,7 @@ export type DraftJsonType = {
 
 var lastPlayerName = "";
 export const qbToNonQB = Object.fromEntries(
-  draft_json.drafts[0]
+  draft_json.history[0]
     .map((playerName) => ({
       name: playerName,
       value: (draft_json as DraftJsonType).espn.auction[playerName],
@@ -292,7 +292,7 @@ function getScore(average: number, value: number): number {
 }
 
 function results(draft_json: DraftJsonType): ResultsType {
-  draft_json.drafts = draft_json.drafts
+  draft_json.history = draft_json.history
     .slice(0, 1)
     .map((d) => d.map((n) => normalize(n)));
   draft_json.extra = Object.fromEntries(
@@ -314,7 +314,7 @@ function results(draft_json: DraftJsonType): ResultsType {
   );
   console.log(draft_json.espn);
 
-  const ds = draft_json.drafts.map((d) => ({
+  const ds = draft_json.history.map((d) => ({
     size: d.length,
     picks: Object.fromEntries(d.map((p, i) => [p, i])),
   }));

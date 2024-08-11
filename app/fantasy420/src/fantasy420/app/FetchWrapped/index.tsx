@@ -40,6 +40,7 @@ type FFTeamType = {
       rostered: string[];
     };
   };
+  draft: { playerId: number; pickNum: number }[];
 };
 
 type MatchupType = string[][];
@@ -287,7 +288,10 @@ function getWrapped(): Promise<WrappedType> {
                       draft: resp.draftDetail.picks
                         .map((p, pickNum) => ({ ...p, pickNum }))
                         .filter((p) => p.teamId === parseInt(team.id))
-                        .map((p) => ({ id: p.playerId, pickNum: p.pickNum })),
+                        .map(({ playerId, pickNum }) => ({
+                          playerId,
+                          pickNum,
+                        })),
                       rosters: fromEntries(
                         weeks
                           .map((week) => week[team.id].schedule)

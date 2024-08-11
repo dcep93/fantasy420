@@ -7,10 +7,12 @@ import { allDrafts } from "../HistoricalAccuracy";
 export default function DraftValue() {
   const draft_json = allDrafts[selectedYear];
   const picks = Object.fromEntries(
-    draft_json.drafts[0].map((playerName, index) => [
-      normalize(playerName),
-      index,
-    ])
+    Object.values(selectedWrapped.ffTeams)
+      .flatMap((team) => team.draft)
+      .map(({ playerId, pickNum }) => [
+        normalize(selectedWrapped.nflPlayers[playerId].name),
+        pickNum,
+      ])
   );
 
   const extra_entries = (
