@@ -7,8 +7,7 @@ import distanceCorrelation from "./correlation";
 import _2023 from "../../Draft/2023.json";
 import _2024 from "../../Draft/2024.json";
 
-const allDrafts: { [year: string]: DraftJsonType } = {
-  // TODO biscuit adp
+export const allDrafts: { [year: string]: DraftJsonType } = {
   2023: _2023,
   2024: _2024,
 };
@@ -62,13 +61,21 @@ function getComposite(sources: {
 }
 
 function getData(players: PlayersType): DataType {
+  const normalizedPlayers = Object.fromEntries(
+    Object.values(selectedWrapped.nflPlayers).map((player) => [
+      normalize(player.name),
+      player,
+    ])
+  );
   const by_position = {} as {
     [position: string]: PlayersType;
   };
   Object.entries(players).forEach(([playerName, value]) => {
-    const position = selectedWrapped.nflPlayers[playerName].position;
+    const normalized = normalize(playerName);
+    const position = normalizedPlayers[normalize(playerName)]?.position;
+    if (position === undefined) return;
     if (!by_position[position]) by_position[position] = {};
-    by_position[position][playerName] = value;
+    by_position[position][normalized] = value;
   });
   const data = Object.fromEntries(
     Object.entries(by_position).map(([position, players]) => [
@@ -76,9 +83,9 @@ function getData(players: PlayersType): DataType {
       Object.fromEntries(
         Object.entries({
           season_points: (playerName: string) =>
-            selectedWrapped.nflPlayers[playerName].total,
+            normalizedPlayers[normalize(playerName)].total,
           average_points: (playerName: string) =>
-            selectedWrapped.nflPlayers[playerName].average,
+            normalizedPlayers[normalize(playerName)].average,
         })
           .map(([key, f]) => ({
             key,
@@ -91,7 +98,7 @@ function getData(players: PlayersType): DataType {
               .filter(({ x }) => x !== null && x !== undefined)
               .map(({ ...o }) => ({
                 ...o,
-                y: parseFloat(o.y.toFixed(2)),
+                y: parseFloat(o.y?.toFixed(2)),
               })),
           }))
           .map(({ key, playersData }) => {
