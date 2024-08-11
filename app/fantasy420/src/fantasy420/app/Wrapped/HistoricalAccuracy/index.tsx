@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Position, currentWrapped } from "..";
+import { Position, selectedWrapped } from "..";
 import { draft_json, normalize } from "../../Draft";
 import Chart from "./Chart";
 import raw_accuracy_json from "./accuracy.json";
@@ -10,7 +10,7 @@ const accuracy_json = raw_accuracy_json as AccuracyJsonType;
 function populate2023() {
   accuracy_json["2023"] = {
     espn: Object.fromEntries(
-      Object.values(currentWrapped.nflPlayers)
+      Object.values(selectedWrapped.nflPlayers)
         .filter((p) => p.nflTeamId !== "0")
         .filter(
           (p) =>
@@ -195,7 +195,7 @@ function getCorrelation(data: ChartDataType): number {
   return c;
 }
 
-export default function Accuracy() {
+export default function HistoricalAccuracy() {
   const [year, updateYear] = useState(default_year);
   const [source, updateSource] = useState("composite");
   populate2023();
