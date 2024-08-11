@@ -197,11 +197,12 @@ function getWrapped(): Promise<WrappedType> {
       Promise.resolve()
         .then(() =>
           fetch(
-            `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mRoster`
+            `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mDraftDetail&view=mRoster`
           )
             .then((resp) => resp.json())
             .then(
               (resp: {
+                draftDetail: { picks: { playerId: number; teamId: number }[] };
                 teams: {
                   id: number;
                   roster: { entries: { playerId: number }[] };
@@ -283,6 +284,10 @@ function getWrapped(): Promise<WrappedType> {
                     Object.values(weeks[0] || {}).map((team) => ({
                       id: team.id,
                       name: team.name,
+                      draft: resp.draftDetail.picks
+                        .map((p, pickNum) => ({ ...p, pickNum }))
+                        .filter((p) => p.teamId === parseInt(team.id))
+                        .map((p) => ({ id: p.playerId, pickNum: p.pickNum })),
                       rosters: fromEntries(
                         weeks
                           .map((week) => week[team.id].schedule)
