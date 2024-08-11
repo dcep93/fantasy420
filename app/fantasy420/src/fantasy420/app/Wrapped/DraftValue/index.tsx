@@ -6,14 +6,6 @@ import { allDrafts } from "../HistoricalAccuracy";
 
 export default function DraftValue() {
   const draft_json = allDrafts[selectedYear];
-  const picks = Object.fromEntries(
-    Object.values(selectedWrapped.ffTeams)
-      .flatMap((team) => team.draft)
-      .map(({ playerId, pickIndex }) => [
-        normalize(selectedWrapped.nflPlayers[playerId].name),
-        pickIndex,
-      ])
-  );
 
   const extra_entries = (
     Object.entries(draft_json.extra) as [string, { [name: string]: number }][]
@@ -31,7 +23,7 @@ export default function DraftValue() {
       ],
     ]);
   const [num_rounds, update] = useState(8);
-  const results = get_results(picks, extra_entries, num_rounds);
+  const results = get_results(extra_entries, num_rounds);
   return (
     <div>
       <div>
@@ -118,7 +110,6 @@ export default function DraftValue() {
 }
 
 function get_results(
-  picks: { [name: string]: number },
   extra_entries: [string, { [name: string]: number }][],
   num_rounds: number
 ): {
@@ -136,15 +127,15 @@ function get_results(
     .map((team, teamIndex) => ({
       ...team,
       teamIndex,
-      players: team.rosters[1].rostered
-        .map((playerName) => ({
-          playerName,
-          pick: picks[normalize(playerName)],
+      players: team.draft
+        .map(({ playerId, pickIndex }) => ({
+          playerName: selectedWrapped.nflPlayers[playerId].name,
+          pickIndex,
         }))
-        .sort((a, b) => a.pick - b.pick)
+        .sort((a, b) => a.pickIndex - b.pickIndex)
         .map((player) => ({
           ...player,
-          name: `${player.playerName} (${player.pick + 1})`,
+          name: `${player.playerName} (${player.pickIndex + 1})`,
           scores: extra.map((d) => d[normalize(player.playerName)]),
         })),
     }))

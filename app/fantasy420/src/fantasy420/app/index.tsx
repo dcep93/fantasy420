@@ -13,7 +13,7 @@ const pages = {
   PlayoffPredictability,
 };
 
-function index() {
+export default function index() {
   return (
     <BrowserRouter>
       <Routes>
@@ -33,5 +33,3 @@ export function printF(f: (...args: any[]) => any): string {
     .map((i) => i.split("// ")[0].trim())
     .join(" ")}; ${f.name}()`;
 }
-
-export default index;
