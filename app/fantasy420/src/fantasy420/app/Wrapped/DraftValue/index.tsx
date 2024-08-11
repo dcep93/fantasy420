@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { normalize } from "../../Draft";
-import draft_json from "../../Draft/draft.json";
+import draft_json from "../../Draft/2024.json"; // TODO historical biscuit adp
 
 import { selectedWrapped } from "..";
 

@@ -16,8 +16,9 @@ const allWrapped: { [year: string]: WrappedType } = {
   "2021": wrapped2021,
 };
 
-const currentYear = "2024";
+export const currentYear = "2024";
 
+export var selectedYear = currentYear;
 export var selectedWrapped: WrappedType;
 
 export default function Wrapped() {
@@ -25,6 +26,7 @@ export default function Wrapped() {
   const [yearKey, updateYear] = useState(
     new URLSearchParams(window.location.search).get("year") || currentYear
   );
+  selectedYear = yearKey;
   selectedWrapped = allWrapped[yearKey];
   const toRender: { [key: string]: ReactNode } = Object.fromEntries(
     Object.entries({
@@ -516,7 +518,7 @@ function WeekTopsAndBottoms() {
     .map((weekNum) => {
       const sortedTeams = Helpers.sortByKey(
         Object.values(selectedWrapped.ffTeams)
-          .filter((team) => team.rosters[weekNum]) // todo
+          .filter((team) => team.rosters[weekNum])
           .map((team) => ({
             ...team,
             score: team.rosters[weekNum].starting

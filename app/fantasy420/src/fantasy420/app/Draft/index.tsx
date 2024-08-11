@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
 import { printF } from "..";
+import raw_draft_json from "./2024.json";
 import { fetchExtensionStorage } from "./Extension";
-import raw_draft_json from "./draft.json";
 
 export const draft_json: DraftJsonType = raw_draft_json;
 
@@ -14,7 +14,7 @@ export const MAX_PEAKED = 250;
 const FETCH_LIVE_DRAFT_PERIOD_MS = 500;
 
 type DraftType = string[];
-type PlayersType = { [name: string]: number };
+export type PlayersType = { [name: string]: number };
 type LiveDraftType = string[];
 type PType = { position: string; team: string };
 type RPType = {
