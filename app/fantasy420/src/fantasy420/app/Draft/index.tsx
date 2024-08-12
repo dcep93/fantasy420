@@ -118,9 +118,10 @@ function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
         flexWrap: "wrap",
         justifyContent: "space-around",
         fontSize: "1.5em",
+        height: "100vH",
       }}
     >
-      <div>
+      <div style={{ height: "100%", overflow: "scroll" }}>
         <div>
           <ul
             style={{ backgroundColor: isMyPick(drafted.length) ? "#ccc" : "" }}
@@ -227,64 +228,61 @@ function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
           </div>
         </div>
       </div>
-      <div
-        style={{
-          height: "10%",
-          overflowY: "scroll",
-        }}
-      >
-        <table>
-          <tbody>
-            {players
-              .map((player, i) => ({
-                ...player,
-                i,
-                pos_rank: players
-                  .slice(0, i)
-                  .filter((p, j) => p.position === player.position).length,
-              }))
-              .map((v, i) => (
-                <tr
-                  key={i}
-                  style={{
-                    backgroundColor: v.seen ? "lightgray" : "",
-                  }}
-                >
-                  <td>
-                    {v.pos_rank + 1}/{v.i + 1}
-                  </td>
-                  <td>
-                    {v.value < 0 && "$"}
-                    {(v.value > 0 ? v.value : -v.value).toFixed(1)}
-                  </td>
-                  <td
+      <div style={{ height: "100%", overflow: "scroll" }}>
+        <div style={{ height: "100%", flex: "1 1 auto" }}>
+          <table>
+            <tbody>
+              {players
+                .map((player, i) => ({
+                  ...player,
+                  i,
+                  pos_rank: players
+                    .slice(0, i)
+                    .filter((p, j) => p.position === player.position).length,
+                }))
+                .map((v, i) => (
+                  <tr
+                    key={i}
                     style={{
-                      backgroundColor: {
-                        RB: "lightblue",
-                        WR: "lightseagreen",
-                        TE: "lightcoral",
-                        QB: "plum",
-                        K: "tan",
-                        "D/ST": "lightsalmon",
-                      }[v.position],
+                      backgroundColor: v.seen ? "lightgray" : "",
                     }}
                   >
-                    {v.fname}, {v.position} {v.team}
-                  </td>
-                  {v.picks.map((w, j) => (
+                    <td>
+                      {v.pos_rank + 1}/{v.i + 1}
+                    </td>
+                    <td>
+                      {v.value < 0 && "$"}
+                      {(v.value > 0 ? v.value : -v.value).toFixed(1)}
+                    </td>
                     <td
-                      key={j}
                       style={{
-                        backgroundColor: isMyPick(w) ? "khaki" : "",
+                        backgroundColor: {
+                          RB: "lightblue",
+                          WR: "lightseagreen",
+                          TE: "lightcoral",
+                          QB: "plum",
+                          K: "tan",
+                          "D/ST": "lightsalmon",
+                        }[v.position],
                       }}
                     >
-                      {w + 1}
+                      {v.fname}, {v.position} {v.team}
                     </td>
-                  ))}
-                </tr>
-              ))}
-          </tbody>
-        </table>
+                    {v.picks.map((w, j) => (
+                      <td
+                        key={j}
+                        style={{
+                          backgroundColor: isMyPick(w) ? "khaki" : "",
+                        }}
+                      >
+                        {w + 1}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </pre>
   );
