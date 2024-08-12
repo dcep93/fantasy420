@@ -439,42 +439,6 @@ function results(draft_json: DraftJsonType): ResultsType {
     }));
 }
 
-export function getDraft() {
-  const history = document.getElementsByClassName("pick-history")[0];
-  var s: { name: string; rank: number }[];
-  if (!history) {
-    // @ts-ignore
-    s = window.state;
-  } else {
-    s = Array.from(
-      history.getElementsByClassName("fixedDataTableCellGroupLayout_cellGroup")
-    )
-      .map((row) => ({
-        name_e: row.getElementsByClassName(
-          "playerinfo__playername"
-        )[0] as HTMLElement,
-        rank_e: Array.from(row.children).reverse()[0] as HTMLElement,
-      }))
-      .filter(({ name_e, rank_e }) => name_e && rank_e)
-      .map(({ name_e, rank_e }) => ({
-        name: name_e.innerText,
-        rank: parseInt(rank_e.innerText),
-      }));
-  }
-  const seen = Object.fromEntries(s.map((o) => [o.name, true]));
-  const recent = Array.from(
-    document.getElementsByClassName("pick__message-content")
-  )
-    .map(
-      (e) =>
-        e.getElementsByClassName("playerinfo__playername")[0] as HTMLElement
-    )
-    .map((e) => e.innerText)
-    .filter((name) => !seen[name])
-    .map((name, i) => ({ name, rank: s.length + 1 + i }));
-  return s.concat(recent);
-}
-
 function getEspnLiveDraft(injured_only: boolean) {
   const max_index = 6;
   const data = {
