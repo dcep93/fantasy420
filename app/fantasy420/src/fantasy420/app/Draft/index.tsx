@@ -59,19 +59,28 @@ export default function Draft() {
   const r = results(draft_json);
   const [liveDraft, updateLiveDraft] = useState<string[]>([]);
   useEffect(() => {
-    fetchLiveDraft(updateLiveDraft);
+    fetchLiveDraft(updateLiveDraft, -1);
   }, []);
   return <SubDraft r={r} liveDraft={liveDraft} />;
 }
 
-function fetchLiveDraft(updateLiveDraft: (draft: string[]) => void) {
+function fetchLiveDraft(
+  updateLiveDraft: (draft: string[]) => void,
+  prev: number
+) {
   fetchExtensionStorage("draft")
-    .then((draft) => updateLiveDraft(draft))
-    .then(() =>
-      setTimeout(
-        () => fetchLiveDraft(updateLiveDraft),
-        FETCH_LIVE_DRAFT_PERIOD_MS
-      )
+    .then((draft) =>
+      Promise.resolve(draft)
+        .then((draft) => {
+          if (draft.length === prev) return;
+          updateLiveDraft(draft);
+        })
+        .then(() =>
+          setTimeout(
+            () => fetchLiveDraft(updateLiveDraft, draft.length),
+            FETCH_LIVE_DRAFT_PERIOD_MS
+          )
+        )
     )
     .catch((err) => {
       console.error(err);
@@ -108,7 +117,6 @@ function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "space-around",
-        height: "90vh",
         fontSize: "1.5em",
       }}
     >
@@ -221,7 +229,7 @@ function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
       </div>
       <div
         style={{
-          height: "100%",
+          height: "10%",
           overflowY: "scroll",
         }}
       >
@@ -297,7 +305,7 @@ export function normalize(s: string) {
 }
 
 function getScore(average: number, value: number): number {
-  return -(100 * (value - average)) / (value + average);
+  return (100 * (value - average)) / (value + average);
 }
 
 function results(draft_json: DraftJsonType): ResultsType {
