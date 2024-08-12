@@ -28,7 +28,7 @@ type ResultsType = {
   players: RPType[];
 }[];
 export type DraftJsonType = {
-  history: DraftType[]; // TODO unexpose
+  history: DraftType[];
   extra: { [source: string]: PlayersType };
   espn: {
     players: { [name: string]: PType };
@@ -138,19 +138,28 @@ function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
         </div>
         <pre>
           {JSON.stringify(
-            drafted
-              .map(
-                (name) =>
-                  (
-                    draft_json.espn.players as {
-                      [n: string]: { position: string };
-                    }
-                  )[name]?.position
-              )
-              .reduce((prev, current) => {
-                prev[current] = (prev[current] || 0) + 1;
-                return prev;
-              }, {} as { [position: string]: number }),
+            Object.fromEntries(
+              Object.entries(
+                drafted
+                  .map((name) => ({
+                    name,
+                    position: (
+                      draft_json.espn.players as {
+                        [n: string]: { position: string };
+                      }
+                    )[name]?.position,
+                  }))
+                  .reduce((prev, current) => {
+                    prev[current.position] = (
+                      prev[current.position] || []
+                    ).concat(current.name);
+                    return prev;
+                  }, {} as { [position: string]: string[] })
+              ).map(([position, names]) => [
+                position,
+                position === "undefined" ? names : names.length,
+              ])
+            ),
             null,
             2
           )}
@@ -288,7 +297,7 @@ export function normalize(s: string) {
 }
 
 function getScore(average: number, value: number): number {
-  return (100 * (value - average)) / average;
+  return -(100 * (value - average)) / (value + average);
 }
 
 function results(draft_json: DraftJsonType): ResultsType {
