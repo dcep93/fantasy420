@@ -207,6 +207,14 @@ function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
         </div>
         <div>
           <div>
+            <a href="https://app.fantasyplaybook.ai/customrankings">
+              fantasyplaybook
+            </a>
+          </div>
+          <input readOnly value={printF(fantasyplaybook)} />
+        </div>
+        <div>
+          <div>
             <a href="https://fantasy.espn.com/football/livedraftresults">
               espn
             </a>
@@ -557,6 +565,21 @@ function harrisfootball() {
       .map((tr) => tr.children[1] as HTMLElement)
       .filter((td) => td)
       .map((td, i) => [td.innerText, i + 1])
+  );
+}
+
+function fantasyplaybook() {
+  return Object.fromEntries(
+    Array.from(
+      Array.from(document.getElementsByClassName("text-card-foreground"))
+        .find(
+          (e) => (e.children[0] as HTMLElement)?.innerText === "All Players"
+        )
+        ?.children[1]?.children[1]?.getElementsByClassName("items-center") || []
+    ).map((e, i) => [
+      (e.children[1] as HTMLElement)?.firstChild?.nodeValue,
+      i + 1,
+    ])
   );
 }
 
