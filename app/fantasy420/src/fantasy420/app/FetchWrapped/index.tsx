@@ -62,7 +62,7 @@ export type WrappedType = {
 export default function FetchWrapped() {
   const [wrapped, update] = useState("fetching...");
   useEffect(() => {
-    getWrapped()
+    getWrapped(currentYear)
       .then((wrapped) => JSON.stringify(wrapped))
       .then(update);
   }, [update, currentYear]);
@@ -98,7 +98,7 @@ function ext(data: any): Promise<any> {
   );
 }
 
-function getWrapped(): Promise<WrappedType> {
+function getWrapped(currentYear: string): Promise<WrappedType> {
   return Promise.resolve()
     .then(() => [
       // nflPlayers
