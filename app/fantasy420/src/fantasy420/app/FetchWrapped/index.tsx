@@ -65,7 +65,7 @@ export default function FetchWrapped() {
     getWrapped()
       .then((wrapped) => JSON.stringify(wrapped))
       .then(update);
-  }, [update]);
+  }, [update, currentYear]);
   return (
     <div>
       <pre style={{ whiteSpace: "pre-wrap" }}>{wrapped}</pre>
@@ -176,9 +176,7 @@ function getWrapped(): Promise<WrappedType> {
                           value: parseFloat(stat.appliedTotal.toFixed(2)),
                         }))
                     ),
-                    dontFilter:
-                      player.onTeamId !== 0 ||
-                      player.ownership.percentOwned > 0.1,
+                    dontFilter: player.ownership?.percentOwned > 0.1,
                   }))
                   .filter(
                     (player) =>
