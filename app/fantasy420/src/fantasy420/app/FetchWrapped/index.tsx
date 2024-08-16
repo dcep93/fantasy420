@@ -65,7 +65,7 @@ export default function FetchWrapped() {
     getWrapped(currentYear)
       .then((wrapped) => JSON.stringify(wrapped))
       .then(update);
-  }, [update, currentYear]);
+  }, [update]);
   return (
     <div>
       <pre style={{ whiteSpace: "pre-wrap" }}>{wrapped}</pre>
