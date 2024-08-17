@@ -30,7 +30,7 @@ type NFLTeamType = {
   };
 };
 
-type FFTeamType = {
+export type FFTeamType = {
   id: string;
   name: string;
   rosters: {
