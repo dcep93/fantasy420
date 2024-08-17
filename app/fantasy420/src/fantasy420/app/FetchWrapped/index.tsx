@@ -64,7 +64,8 @@ export default function FetchWrapped() {
   useEffect(() => {
     getWrapped(currentYear)
       .then((wrapped) => JSON.stringify(wrapped))
-      .then(update);
+      .then(update)
+      .catch((e: Error) => update(e.toString()));
   }, [update]);
   return (
     <div>
