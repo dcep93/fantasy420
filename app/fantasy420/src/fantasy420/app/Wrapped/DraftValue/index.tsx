@@ -1,24 +1,25 @@
 import { useState } from "react";
-import { normalize } from "../../Draft";
+import { normalize, selectedDraft } from "../../Draft";
 
-import { selectedWrapped, selectedYear } from "..";
-import { allDrafts } from "../HistoricalAccuracy";
+import { selectedWrapped } from "..";
 
 export default function DraftValue() {
   const [num_rounds, update] = useState(8);
 
-  const draft_json = allDrafts[selectedYear];
-  if (!draft_json) return <div>no data available</div>;
+  if (!selectedDraft()) return <div>no data available</div>;
 
   const extra_entries = (
-    Object.entries(draft_json.extra) as [string, { [name: string]: number }][]
+    Object.entries(selectedDraft().extra) as [
+      string,
+      { [name: string]: number }
+    ][]
   )
-    .concat([["espnpick", draft_json.espn.pick]])
+    .concat([["espnpick", selectedDraft().espn.pick]])
     .concat([
       [
         "espnauction",
         Object.fromEntries(
-          Object.entries(draft_json.espn.auction).map(([name, value]) => [
+          Object.entries(selectedDraft().espn.auction).map(([name, value]) => [
             name,
             -value,
           ])
@@ -81,7 +82,7 @@ export default function DraftValue() {
                       ...o,
                     }))
                     .map(({ key, score, rank }) => (
-                      <td key={key}>
+                      <td key={key} style={{ paddingLeft: "5em" }}>
                         <div>{key}</div>
                         <div>#{rank + 1}</div>
                         <div>{score < 0 ? `$${-score}` : score}</div>
@@ -125,13 +126,13 @@ function get_results(
       Object.entries(d).map(([name, score]) => [normalize(name), score])
     )
   );
-  const scored = Object.values(selectedWrapped.ffTeams)
+  const scored = Object.values(selectedWrapped().ffTeams)
     .map((team, teamIndex) => ({
       ...team,
       teamIndex,
       players: team.draft
         .map(({ playerId, pickIndex }) => ({
-          playerName: selectedWrapped.nflPlayers[playerId].name,
+          playerName: selectedWrapped().nflPlayers[playerId].name,
           pickIndex,
         }))
         .sort((a, b) => a.pickIndex - b.pickIndex)

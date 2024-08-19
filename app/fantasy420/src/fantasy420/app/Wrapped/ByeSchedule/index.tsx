@@ -1,24 +1,23 @@
-import { draft_json } from "../../Draft";
-
 import { Helpers, selectedWrapped } from "..";
+import { selectedDraft } from "../../Draft";
 
 export default function ByeSchedule() {
-  var value = Math.max(...Object.values(draft_json.espn.auction));
+  var value = Math.max(...Object.values(selectedDraft().espn.auction));
   const auctionValues = Object.fromEntries(
-    Object.values(selectedWrapped.ffTeams)
+    Object.values(selectedWrapped().ffTeams)
       .flatMap((team) => team.draft)
       .sort((a, b) => b.pickIndex - a.pickIndex)
-      .map(({ playerId }) => selectedWrapped.nflPlayers[playerId])
+      .map(({ playerId }) => selectedWrapped().nflPlayers[playerId])
       .map((player) => {
         if (player.position !== "QB") {
-          value = draft_json.espn.auction[player.id];
+          value = selectedDraft().espn.auction[player.id];
         }
         return [player.id, value];
       })
   );
-  const byTeam = Object.values(selectedWrapped.ffTeams).map((team) => ({
+  const byTeam = Object.values(selectedWrapped().ffTeams).map((team) => ({
     ...team,
-    matchups: Object.entries(selectedWrapped.ffMatchups)
+    matchups: Object.entries(selectedWrapped().ffMatchups)
       .map(([weekNum, matchups]) => ({
         weekNum,
         teamIds: matchups
@@ -29,18 +28,18 @@ export default function ByeSchedule() {
       .map((obj) => ({
         ...obj,
         byes: obj.teamIds
-          .map((teamId) => selectedWrapped.ffTeams[teamId].rosters)
+          .map((teamId) => selectedWrapped().ffTeams[teamId].rosters)
           .map((rosters) => rosters[obj.weekNum] || rosters["0"])
           .map((weekRoster) =>
             weekRoster.rostered.map(
-              (playerId) => selectedWrapped.nflPlayers[playerId]
+              (playerId) => selectedWrapped().nflPlayers[playerId]
             )
           )
           .map((byePlayers, ffTeamIndex) =>
             byePlayers
               .filter(
                 (byePlayer) =>
-                  selectedWrapped.nflTeams[byePlayer.nflTeamId].byeWeek ===
+                  selectedWrapped().nflTeams[byePlayer.nflTeamId].byeWeek ===
                   parseInt(obj.weekNum)
               )
               .map((byePlayer) => ({
@@ -107,7 +106,7 @@ export default function ByeSchedule() {
               >
                 <h3>
                   week {obj.weekNum} vs{" "}
-                  {selectedWrapped.ffTeams[obj.teamIds[0]].name}
+                  {selectedWrapped().ffTeams[obj.teamIds[0]].name}
                 </h3>
                 {obj.byes.flatMap((ffTeam) =>
                   ffTeam.map((byePlayer) => (

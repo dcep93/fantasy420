@@ -1,10 +1,20 @@
 import { useEffect, useState } from "react";
 
 import { printF } from "..";
-import raw_draft_json from "./2024.json";
 import { fetchExtensionStorage } from "./Extension";
 
-export const draft_json: DraftJsonType = raw_draft_json;
+import { selectedYear } from "../Wrapped";
+import draft2023 from "./2023.json";
+import draft2024 from "./2024.json";
+
+const allDrafts: { [year: string]: DraftJsonType } = {
+  2023: draft2023,
+  2024: draft2024,
+};
+
+export function selectedDraft(): DraftJsonType {
+  return allDrafts[selectedYear];
+}
 
 const PICK_NUMBER = 8;
 const NUM_TEAMS = 10;
@@ -37,7 +47,7 @@ export type DraftJsonType = {
 };
 
 export default function Draft() {
-  const r = results(draft_json);
+  const r = results(selectedDraft());
   const [liveDraft, updateLiveDraft] = useState<string[]>([]);
   useEffect(() => {
     fetchLiveDraft(updateLiveDraft, -1);
@@ -70,7 +80,7 @@ function fetchLiveDraft(
 
 function getDstName(name: string) {
   const dstName = `${name.split(" ").reverse()[0]} DST`;
-  return (draft_json as DraftJsonType).espn.players[dstName] ? dstName : null;
+  return selectedDraft().espn.players[dstName] ? dstName : null;
 }
 
 function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
@@ -134,7 +144,7 @@ function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
                   .map((name) => ({
                     name,
                     position: (
-                      draft_json.espn.players as {
+                      selectedDraft().espn.players as {
                         [n: string]: { position: string };
                       }
                     )[name]?.position,

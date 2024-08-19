@@ -9,6 +9,8 @@ import ByeSchedule from "./ByeSchedule";
 import DraftValueStateful from "./DraftValue";
 import HistoricalAccuracyStateful from "./HistoricalAccuracy";
 
+export const currentYear = "2024";
+
 const allWrapped: { [year: string]: WrappedType } = {
   "2024": wrapped2024,
   "2023": wrapped2023,
@@ -16,10 +18,10 @@ const allWrapped: { [year: string]: WrappedType } = {
   "2021": wrapped2021,
 };
 
-export const currentYear = "2024";
-
 export var selectedYear = currentYear;
-export var selectedWrapped: WrappedType;
+export function selectedWrapped(): WrappedType {
+  return allWrapped[selectedYear];
+}
 
 export default function Wrapped() {
   document.title = "Fantasy Wrapped";
@@ -27,7 +29,6 @@ export default function Wrapped() {
     new URLSearchParams(window.location.search).get("year") || currentYear
   );
   selectedYear = yearKey;
-  selectedWrapped = allWrapped[yearKey];
   const toRender: { [key: string]: ReactNode } = Object.fromEntries(
     Object.entries({
       FantasyCalc,
@@ -140,25 +141,26 @@ function json() {
 function ChosenWrong() {
   return (
     <div>
-      {Object.entries(selectedWrapped.ffMatchups)
+      {Object.entries(selectedWrapped().ffMatchups)
         .map(([weekNum, matchups]) => ({ weekNum, matchups }))
         .filter(
           ({ weekNum, matchups }) =>
             weekNum === "9" &&
-            selectedWrapped.ffTeams[matchups[0][0]].rosters[weekNum]
+            selectedWrapped().ffTeams[matchups[0][0]].rosters[weekNum]
         )
         .flatMap(({ weekNum, matchups }) =>
           matchups.map((matchup) => ({
             weekNum,
             teams: matchup
-              .map((m) => selectedWrapped.ffTeams[m])
+              .map((m) => selectedWrapped().ffTeams[m])
               .filter((team) => team.rosters[weekNum])
               .map((team) => ({
                 ...team,
                 score: team.rosters[weekNum].starting
                   .map(
                     (playerId) =>
-                      selectedWrapped.nflPlayers[playerId].scores[weekNum] || 0
+                      selectedWrapped().nflPlayers[playerId].scores[weekNum] ||
+                      0
                   )
                   .reduce((a, b) => a + b, 0),
                 ideal: Helpers.getIdeal(
@@ -173,8 +175,9 @@ function ChosenWrong() {
                   team.ideal
                     .map(
                       (playerId) =>
-                        selectedWrapped.nflPlayers[playerId].scores[weekNum] ||
-                        0
+                        selectedWrapped().nflPlayers[playerId].scores[
+                          weekNum
+                        ] || 0
                     )
                     .reduce((a, b) => a + b, 0)
                 ),
@@ -208,7 +211,7 @@ function ChosenWrong() {
                         matchup.weekNum
                       ].starting.includes(playerId)
                   )
-                  .map((playerId) => selectedWrapped.nflPlayers[playerId])
+                  .map((playerId) => selectedWrapped().nflPlayers[playerId])
                   .map((player) => (
                     <div key={player.id}>
                       {player.name} {player.scores[matchup.weekNum]}
@@ -223,7 +226,7 @@ function ChosenWrong() {
                   .filter(
                     (playerId) => !matchup.teams[0].ideal.includes(playerId)
                   )
-                  .map((playerId) => selectedWrapped.nflPlayers[playerId])
+                  .map((playerId) => selectedWrapped().nflPlayers[playerId])
                   .map((player) => (
                     <div key={player.id}>
                       {player.name} {player.scores[matchup.weekNum]}
@@ -239,23 +242,23 @@ function ChosenWrong() {
 
 function Bopped() {
   const managerScores = Object.fromEntries(
-    Object.values(selectedWrapped.ffTeams).map((o) => [
+    Object.values(selectedWrapped().ffTeams).map((o) => [
       o.id,
       Object.fromEntries(
         Object.values(o.rosters).map((oo) => [
           oo.weekNum,
           oo.starting
-            .map((id) => selectedWrapped.nflPlayers[id].scores[oo.weekNum]!)
+            .map((id) => selectedWrapped().nflPlayers[id].scores[oo.weekNum]!)
             .reduce((a, b) => a + b, 0),
         ])
       ),
     ])
   );
   const opponents = Object.fromEntries(
-    Object.values(selectedWrapped.ffTeams).map((o) => [
+    Object.values(selectedWrapped().ffTeams).map((o) => [
       o.id,
       Object.fromEntries(
-        Object.entries(selectedWrapped.ffMatchups).map(
+        Object.entries(selectedWrapped().ffMatchups).map(
           ([weekNum, matchups]) => [
             weekNum,
             matchups
@@ -266,25 +269,25 @@ function Bopped() {
       ),
     ])
   );
-  const players = Object.values(selectedWrapped.nflPlayers)
+  const players = Object.values(selectedWrapped().nflPlayers)
     .map((player) => ({
       ...player,
       best: Object.entries(player.scores)
         .map(([weekNum, score]) => ({ weekNum, score: score || 0 }))
-        .filter((o) => selectedWrapped.ffMatchups[o.weekNum] !== undefined)
+        .filter((o) => selectedWrapped().ffMatchups[o.weekNum] !== undefined)
         .sort((a, b) => b.score - a.score)[0],
     }))
     .filter((player) => player.best !== undefined)
     .map((player) => ({
       ...player,
-      bestOwner: Object.values(selectedWrapped.ffTeams).find((t) =>
+      bestOwner: Object.values(selectedWrapped().ffTeams).find((t) =>
         t.rosters[player.best.weekNum]?.rostered.includes(player.id)
       )!,
     }))
     .filter((player) => player.bestOwner !== undefined)
     .map((player) => ({
       ...player,
-      bestOpponentId: !selectedWrapped.ffTeams[player.bestOwner.id].rosters[
+      bestOpponentId: !selectedWrapped().ffTeams[player.bestOwner.id].rosters[
         player.best.weekNum
       ].starting.includes(player.id)
         ? null
@@ -296,7 +299,7 @@ function Bopped() {
     }));
   return (
     <div>
-      {Object.values(selectedWrapped.ffTeams).map((t) => (
+      {Object.values(selectedWrapped().ffTeams).map((t) => (
         <div key={t.id}>
           <div style={bubbleStyle}>
             <h2>
@@ -345,7 +348,7 @@ function Bopped() {
                           <td>
                             on the bench vs [
                             {
-                              selectedWrapped.ffTeams[
+                              selectedWrapped().ffTeams[
                                 opponents[player.key][player.best.weekNum]
                               ].name
                             }
@@ -371,18 +374,18 @@ function Bopped() {
 function Injuries() {
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
-      {Object.values(selectedWrapped.ffTeams)
+      {Object.values(selectedWrapped().ffTeams)
         .map((t) => ({
           ...t,
           injuries: Object.values(t.rosters)
             .filter((r) => r.weekNum !== "0")
             .flatMap((r) =>
               r.rostered
-                .map((playerId) => selectedWrapped.nflPlayers[playerId])
+                .map((playerId) => selectedWrapped().nflPlayers[playerId])
                 .map((o) => ({
                   weekNum: parseInt(r.weekNum),
                   rank:
-                    Object.values(selectedWrapped.ffTeams)
+                    Object.values(selectedWrapped().ffTeams)
                       .flatMap((team) => team.draft)
                       .find((p) => p.playerId === parseInt(o.id))?.pickIndex ||
                     Infinity,
@@ -449,20 +452,21 @@ function Injuries() {
 function SqueezesAndStomps() {
   const num = 10;
   const rawPoints = Helpers.sortByKey(
-    Object.entries(selectedWrapped.ffMatchups)
+    Object.entries(selectedWrapped().ffMatchups)
       .map(([periodId, matchups]) => ({
         periodId,
         matchups: matchups.map((matchup) =>
           Helpers.sortByKey(
             matchup
-              .map((teamId) => selectedWrapped.ffTeams[teamId])
+              .map((teamId) => selectedWrapped().ffTeams[teamId])
               .filter((team) => team.rosters[periodId])
               .map((team) => ({
                 ...team,
                 score: team.rosters[periodId].starting
                   .map(
                     (playerId) =>
-                      selectedWrapped.nflPlayers[playerId].scores[periodId] || 0
+                      selectedWrapped().nflPlayers[playerId].scores[periodId] ||
+                      0
                   )
                   .reduce((a, b) => a + b, 0),
               })),
@@ -513,23 +517,23 @@ function SqueezesAndStomps() {
 
 function WeekTopsAndBottoms() {
   const counts = Object.fromEntries(
-    Object.values(selectedWrapped.ffTeams).map((p) => [
+    Object.values(selectedWrapped().ffTeams).map((p) => [
       p.id,
       { ...p, tops: [] as string[], bottoms: [] as string[] },
     ])
   );
-  const vals = Object.keys(Object.values(selectedWrapped.ffTeams)[0].rosters)
+  const vals = Object.keys(Object.values(selectedWrapped().ffTeams)[0].rosters)
     .filter((weekNum) => weekNum !== "0")
     .map((weekNum) => {
       const sortedTeams = Helpers.sortByKey(
-        Object.values(selectedWrapped.ffTeams)
+        Object.values(selectedWrapped().ffTeams)
           .filter((team) => team.rosters[weekNum])
           .map((team) => ({
             ...team,
             score: team.rosters[weekNum].starting
               .map(
                 (playerId) =>
-                  selectedWrapped.nflPlayers[playerId].scores[weekNum] || 0
+                  selectedWrapped().nflPlayers[playerId].scores[weekNum] || 0
               )
               .reduce((a, b) => a + b, 0),
           })),
@@ -607,13 +611,13 @@ function BestByPosition() {
           <div key={i} style={bubbleStyle}>
             <h3>{Position[position]}</h3>
             {Helpers.sortByKey(
-              Object.values(selectedWrapped.ffTeams).map((team) => ({
+              Object.values(selectedWrapped().ffTeams).map((team) => ({
                 ...team,
                 score: Object.entries(team.rosters)
                   .flatMap(([scoringPeriod, rosters]) =>
                     rosters.starting.map((playerId) => ({
                       scoringPeriod,
-                      ...selectedWrapped.nflPlayers[playerId],
+                      ...selectedWrapped().nflPlayers[playerId],
                     }))
                   )
                   .filter((p) => p.position === Position[position])
@@ -637,12 +641,14 @@ function DeterminedByDiscreteScoring() {
     teamId: string,
     periodId: string
   ): { superscore: number; msg: string } | null {
-    const started = selectedWrapped.ffTeams[teamId].rosters[periodId].starting
-      .map((playerId) => selectedWrapped.nflPlayers[playerId])
+    const started = selectedWrapped()
+      .ffTeams[teamId].rosters[periodId].starting.map(
+        (playerId) => selectedWrapped().nflPlayers[playerId]
+      )
       .find((p) => p.position === Position[Position.DST]);
     if (!started) return { superscore: 0, msg: "NO DST STARTED" };
     const offense =
-      selectedWrapped.nflTeams[started.nflTeamId].nflGamesByScoringPeriod[
+      selectedWrapped().nflTeams[started.nflTeamId].nflGamesByScoringPeriod[
         periodId
       ];
     if (!offense) return null;
@@ -704,12 +710,14 @@ function DeterminedByDiscreteScoring() {
     teamId: string,
     periodId: string
   ): { superscore: number; msg: string } | null {
-    const started = selectedWrapped.ffTeams[teamId].rosters[periodId].starting
-      .map((playerId) => selectedWrapped.nflPlayers[playerId])
+    const started = selectedWrapped()
+      .ffTeams[teamId].rosters[periodId].starting.map(
+        (playerId) => selectedWrapped().nflPlayers[playerId]
+      )
       .find((p) => p.position === Position[Position.K]);
     if (!started) return { superscore: 0, msg: "NO K STARTED" };
     const offense =
-      selectedWrapped.nflTeams[started.nflTeamId].nflGamesByScoringPeriod[
+      selectedWrapped().nflTeams[started.nflTeamId].nflGamesByScoringPeriod[
         periodId
       ];
     if (!offense) return null;
@@ -732,13 +740,13 @@ function DeterminedByDiscreteScoring() {
   }
   return (
     <div>
-      {Object.entries(selectedWrapped.ffMatchups)
+      {Object.entries(selectedWrapped().ffMatchups)
         .flatMap(([periodId, matchup]) =>
           matchup.map((match) => ({
             periodId,
             teams: Helpers.sortByKey(
               match
-                .map((teamId) => selectedWrapped.ffTeams[teamId])
+                .map((teamId) => selectedWrapped().ffTeams[teamId])
                 .filter((team) => team.rosters[periodId])
                 .map((team) => ({
                   ...team,
@@ -746,7 +754,9 @@ function DeterminedByDiscreteScoring() {
                     team.rosters[periodId].starting
                       .map(
                         (playerId) =>
-                          selectedWrapped.nflPlayers[playerId].scores[periodId]!
+                          selectedWrapped().nflPlayers[playerId].scores[
+                            periodId
+                          ]!
                       )
                       .reduce((a, b) => a + b, 0)
                   ),
@@ -808,11 +818,11 @@ function DeterminedByDiscreteScoring() {
 function Negatives() {
   return (
     <div>
-      {Object.values(selectedWrapped.nflPlayers)
+      {Object.values(selectedWrapped().nflPlayers)
         .flatMap((p) =>
           Object.entries(p.scores).map(([weekNum, score]) => ({
             ...p,
-            started: Object.values(selectedWrapped.ffTeams).find((t) =>
+            started: Object.values(selectedWrapped().ffTeams).find((t) =>
               t.rosters[weekNum]?.starting.includes(p.id)
             )?.name,
             weekNum,
@@ -843,7 +853,7 @@ function ExtremeStuds() {
       | undefined;
   } = {
     max: (playerId) =>
-      Object.entries(selectedWrapped.nflPlayers[playerId].scores)
+      Object.entries(selectedWrapped().nflPlayers[playerId].scores)
         .map(([weekNum, score]) => ({
           weekNum,
           score: score!,
@@ -851,7 +861,7 @@ function ExtremeStuds() {
         .filter(({ weekNum }) => weekNum !== "0")
         .sort((a, b) => b.score - a.score)[0],
     "2nd": (playerId) =>
-      Object.entries(selectedWrapped.nflPlayers[playerId].scores)
+      Object.entries(selectedWrapped().nflPlayers[playerId].scores)
         .map(([weekNum, score]) => ({
           weekNum,
           score: score!,
@@ -859,7 +869,7 @@ function ExtremeStuds() {
         .filter(({ weekNum }) => weekNum !== "0")
         .sort((a, b) => b.score - a.score)[1],
     min: (playerId) =>
-      Object.entries(selectedWrapped.nflPlayers[playerId].scores)
+      Object.entries(selectedWrapped().nflPlayers[playerId].scores)
         .map(([weekNum, score]) => ({
           weekNum,
           score: score!,
@@ -870,7 +880,7 @@ function ExtremeStuds() {
         .reverse()[0],
     average: (playerId) => ({
       weekNum: "avg",
-      score: selectedWrapped.nflPlayers[playerId].average,
+      score: selectedWrapped().nflPlayers[playerId].average,
     }),
   };
   const [funcName, updateFuncName] = useState(Object.keys(funcs)[0]);
@@ -887,7 +897,7 @@ function ExtremeStuds() {
             ))}
           </select>
         </div>
-        {Object.values(selectedWrapped.ffTeams)
+        {Object.values(selectedWrapped().ffTeams)
           .map((t) => ({
             ...t,
             xroster: Object.fromEntries(
@@ -925,7 +935,7 @@ function ExtremeStuds() {
               <div>{Helpers.toFixed(t.xtotal)}</div>
               {Object.entries(t.xplayers)
                 .map(([playerId, o]) => ({
-                  player: selectedWrapped.nflPlayers[playerId],
+                  player: selectedWrapped().nflPlayers[playerId],
                   o,
                 }))
                 .map(({ player, o }) => ({
@@ -949,7 +959,7 @@ function ExtremeStuds() {
 function GooseEggs() {
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
-      {Object.values(selectedWrapped.ffTeams).map((team, teamIndex) => (
+      {Object.values(selectedWrapped().ffTeams).map((team, teamIndex) => (
         <div key={teamIndex}>
           <div style={bubbleStyle}>
             <h4>{team.name}</h4>
@@ -959,7 +969,7 @@ function GooseEggs() {
                   .flatMap(([weekNum, r]) =>
                     r.starting.map((playerId) => ({
                       weekNum,
-                      p: selectedWrapped.nflPlayers[playerId],
+                      p: selectedWrapped().nflPlayers[playerId],
                     }))
                   )
                   .map((o) => ({ ...o, score: o.p.scores[o.weekNum]! }))
@@ -997,7 +1007,7 @@ function UniquesStarted() {
             <div style={bubbleStyle}>
               {Position[p]}
               <div>
-                {Object.values(selectedWrapped.ffTeams)
+                {Object.values(selectedWrapped().ffTeams)
                   .map((ffTeam) => ({
                     teamName: ffTeam.name,
                     started: Object.entries(
@@ -1008,7 +1018,7 @@ function UniquesStarted() {
                       )
                     )
                       .map(([playerId, c]) => ({
-                        player: selectedWrapped.nflPlayers[playerId],
+                        player: selectedWrapped().nflPlayers[playerId],
                         c,
                       }))
                       .filter(({ player }) => player?.position === Position[p])
@@ -1098,7 +1108,7 @@ function BoomBust() {
                 </tr>
               </thead>
               <tbody>
-                {Object.values(selectedWrapped.nflPlayers)
+                {Object.values(selectedWrapped().nflPlayers)
                   .map((p) => ({
                     ...p,
                     scoresArr: Object.entries(p.scores)
@@ -1135,14 +1145,14 @@ function BoomBust() {
 
 function Benchwarmers() {
   const weeks = Object.keys(
-    Object.values(selectedWrapped.ffTeams)[0].rosters
+    Object.values(selectedWrapped().ffTeams)[0].rosters
   ).filter((weekNum) => weekNum !== "0");
   return (
     <div>
       <div style={bubbleStyle}>
         {weeks
           .flatMap((weekNum) =>
-            Object.values(selectedWrapped.ffTeams).map((team) => ({
+            Object.values(selectedWrapped().ffTeams).map((team) => ({
               teamName: team.name,
               weekNum,
               score: team.rosters[weekNum].rostered
@@ -1152,7 +1162,7 @@ function Benchwarmers() {
                 )
                 .map(
                   (playerId) =>
-                    selectedWrapped.nflPlayers[playerId].scores[weekNum] || 0
+                    selectedWrapped().nflPlayers[playerId].scores[weekNum] || 0
                 )
                 .reduce((a, b) => a + b, 0),
             }))
@@ -1168,7 +1178,7 @@ function Benchwarmers() {
       <div style={bubbleStyle}>
         {weeks
           .flatMap((weekNum) =>
-            Object.values(selectedWrapped.ffTeams).flatMap((team) =>
+            Object.values(selectedWrapped().ffTeams).flatMap((team) =>
               team.rosters[weekNum].rostered
                 .filter(
                   (playerId) =>
@@ -1177,13 +1187,16 @@ function Benchwarmers() {
                 .map((playerId) => ({
                   teamName: team.name,
                   weekNum,
-                  player: selectedWrapped.nflPlayers[playerId],
+                  player: selectedWrapped().nflPlayers[playerId],
                 }))
             )
           )
           .map((o) => ({ ...o, score: o.player.scores[o.weekNum]! }))
           .sort((a, b) => b.score - a.score)
-          .slice(0, weeks.length * Object.keys(selectedWrapped.ffTeams).length)
+          .slice(
+            0,
+            weeks.length * Object.keys(selectedWrapped().ffTeams).length
+          )
           .map((o, i) => (
             <div key={i}>
               [{o.teamName}]: [{o.player.name}] week {o.weekNum}: {o.score}
@@ -1196,11 +1209,11 @@ function Benchwarmers() {
 
 function OwnedTeams() {
   const byNFLTeam = Object.fromEntries(
-    Object.values(selectedWrapped.nflTeams)
+    Object.values(selectedWrapped().nflTeams)
       .map((nflTeam) => ({
-        owned: Object.values(selectedWrapped.ffTeams).flatMap((ffTeam) =>
+        owned: Object.values(selectedWrapped().ffTeams).flatMap((ffTeam) =>
           ffTeam.rosters["0"].rostered
-            .map((playerId) => selectedWrapped.nflPlayers[playerId])
+            .map((playerId) => selectedWrapped().nflPlayers[playerId])
             .filter((p) => p.nflTeamId === nflTeam.id)
             .map((nflPlayer) => ({ ffTeam, nflPlayer }))
         ),
@@ -1208,10 +1221,10 @@ function OwnedTeams() {
       }))
       .map((o) => [o.id, o])
   );
-  const byFFTeam = Object.values(selectedWrapped.ffTeams).map((ffTeam) => ({
-    owned: Object.values(selectedWrapped.nflTeams).flatMap((nflTeam) =>
+  const byFFTeam = Object.values(selectedWrapped().ffTeams).map((ffTeam) => ({
+    owned: Object.values(selectedWrapped().nflTeams).flatMap((nflTeam) =>
       ffTeam.rosters["0"].rostered
-        .map((playerId) => selectedWrapped.nflPlayers[playerId])
+        .map((playerId) => selectedWrapped().nflPlayers[playerId])
         .filter((p) => p.nflTeamId === nflTeam.id)
         .map((nflPlayer) => ({ ffTeam, nflPlayer }))
     ),
@@ -1239,7 +1252,7 @@ function OwnedTeams() {
                       .map((oo) => oo.nflPlayer.name)
                       .join("\n")}
                   >
-                    {selectedWrapped.nflTeams[o.nflTeamId].name}: {o.c}/
+                    {selectedWrapped().nflTeams[o.nflTeamId].name}: {o.c}/
                     {byNFLTeam[o.nflTeamId].owned.length}
                   </div>
                 ))}
@@ -1276,23 +1289,23 @@ function OwnedTeams() {
 
 function FantasyCalc() {
   const playerToDraftIndex = Object.fromEntries(
-    Object.values(selectedWrapped.ffTeams)
+    Object.values(selectedWrapped().ffTeams)
       .flatMap((team) => team.draft)
-      .map((p) => [selectedWrapped.nflPlayers[p.playerId].name, p.pickIndex])
+      .map((p) => [selectedWrapped().nflPlayers[p.playerId].name, p.pickIndex])
   );
   const owned = Object.fromEntries(
-    Object.values(selectedWrapped.ffTeams)
+    Object.values(selectedWrapped().ffTeams)
       .flatMap((p) => p.rosters["0"].rostered)
       .map((playerId) => [playerId, true])
   );
   return (
     <div>
       <div>https://fantasycalc.com/redraft-rankings</div>
-      <div>{new Date(selectedWrapped.fantasyCalc.timestamp).toString()}</div>
+      <div>{new Date(selectedWrapped().fantasyCalc.timestamp).toString()}</div>
       <div style={bubbleStyle}>
         <h1>UNOWNED</h1>
         <div>
-          {Object.entries(selectedWrapped.fantasyCalc.players)
+          {Object.entries(selectedWrapped().fantasyCalc.players)
             .map(([playerId, value]) => ({
               playerId,
               value,
@@ -1314,14 +1327,14 @@ function FantasyCalc() {
         </div>
       </div>
       <div style={{ display: "flex", flexWrap: "wrap", whiteSpace: "nowrap" }}>
-        {Object.values(selectedWrapped.ffTeams)
+        {Object.values(selectedWrapped().ffTeams)
           .map(({ rosters, ...t }) => ({
             ...t,
             ps: rosters["0"].rostered
-              .map((playerId) => selectedWrapped.nflPlayers[playerId])
+              .map((playerId) => selectedWrapped().nflPlayers[playerId])
               .map((p) => ({
                 name: p.name,
-                value: selectedWrapped.fantasyCalc.players[p.id] || 0,
+                value: selectedWrapped().fantasyCalc.players[p.id] || 0,
                 draftPick: playerToDraftIndex[normalize(p.name)],
               }))
               .sort((a, b) => b.value - a.value),
@@ -1350,13 +1363,13 @@ function FantasyCalc() {
 function Performance() {
   return (
     <div>
-      {Object.keys(Object.values(selectedWrapped.ffTeams)[0].rosters)
+      {Object.keys(Object.values(selectedWrapped().ffTeams)[0].rosters)
         .filter((weekNum) => weekNum !== "0")
         .flatMap((weekNum) => ({
           weekNum,
           matchups:
-            selectedWrapped.ffMatchups[weekNum] ||
-            Object.keys(selectedWrapped.ffTeams).map((teamId) => [teamId]),
+            selectedWrapped().ffMatchups[weekNum] ||
+            Object.keys(selectedWrapped().ffTeams).map((teamId) => [teamId]),
         }))
         .map(({ weekNum, matchups }) => (
           <div key={weekNum}>
@@ -1369,7 +1382,7 @@ function Performance() {
                 >
                   <div style={{ display: "flex", whiteSpace: "nowrap" }}>
                     {matchup
-                      .map((teamId) => selectedWrapped.ffTeams[teamId])
+                      .map((teamId) => selectedWrapped().ffTeams[teamId])
                       .map((team) => ({
                         ...team,
                         roster: team.rosters[weekNum],
@@ -1381,7 +1394,7 @@ function Performance() {
                             {team.roster.starting
                               .map(
                                 (playerId) =>
-                                  selectedWrapped.nflPlayers[playerId]
+                                  selectedWrapped().nflPlayers[playerId]
                               )
                               .map((p) => p.scores[weekNum] || 0)
                               .reduce((a, b) => a + b, 0)
@@ -1400,8 +1413,9 @@ function Performance() {
                                           playerId,
                                           w,
                                           score:
-                                            selectedWrapped.nflPlayers[playerId]
-                                              .scores[w] || 0,
+                                            selectedWrapped().nflPlayers[
+                                              playerId
+                                            ].scores[w] || 0,
                                         }))
                                       )
                                       .reduce((prev, curr) => {
@@ -1416,13 +1430,16 @@ function Performance() {
                                         return prev;
                                       }, {} as { [playerId: string]: { score: number; weeks: string[] } })
                                   ).map(([playerId, obj]) => ({
-                                    name: `${selectedWrapped.nflPlayers[playerId].name} ${obj.weeks}`,
+                                    name: `${
+                                      selectedWrapped().nflPlayers[playerId]
+                                        .name
+                                    } ${obj.weeks}`,
                                     ...obj,
                                   }))
                                 : team.roster.starting
                                     .map(
                                       (playerId) =>
-                                        selectedWrapped.nflPlayers[playerId]
+                                        selectedWrapped().nflPlayers[playerId]
                                     )
                                     .map((p) => ({
                                       ...p,
@@ -1447,7 +1464,7 @@ function Performance() {
                                 )
                                 .map(
                                   (playerId) =>
-                                    selectedWrapped.nflPlayers[playerId]
+                                    selectedWrapped().nflPlayers[playerId]
                                 )
                                 .map((p) => ({
                                   ...p,
@@ -1484,7 +1501,7 @@ function PerformanceTotals() {
   };
   return (
     <div>
-      {Object.values(selectedWrapped.ffTeams)
+      {Object.values(selectedWrapped().ffTeams)
         .map((team) => ({
           team,
           data: Object.fromEntries(
@@ -1496,7 +1513,7 @@ function PerformanceTotals() {
                   .flatMap((weekNum) =>
                     f(team, weekNum).map((playerId) => ({
                       weekNum,
-                      player: selectedWrapped.nflPlayers[playerId],
+                      player: selectedWrapped().nflPlayers[playerId],
                     }))
                   )
                   .map((obj) => ({
@@ -1568,7 +1585,7 @@ function PerformanceTotals() {
   //       return prev;
   //     }, {} as { [playerId: string]: { score: number; weeks: string[] } })
   // ).map(([playerId, obj]) => ({
-  //   name: `${selectedWrapped.nflPlayers[playerId].name} ${obj.weeks}`,
+  //   name: `${selectedWrapped().nflPlayers[playerId].name} ${obj.weeks}`,
   //   ...obj,
   // }));
 }
@@ -1576,7 +1593,7 @@ function PerformanceTotals() {
 function Stacks() {
   return (
     <div>
-      {Object.values(selectedWrapped.nflPlayers)
+      {Object.values(selectedWrapped().nflPlayers)
         .filter((p) => p.position === "DST")
         .flatMap((p) =>
           Object.keys(p.scores)
@@ -1589,7 +1606,7 @@ function Stacks() {
         .map(({ weekNum, nflTeamId }) => ({
           weekNum,
           nflTeamId,
-          players: Object.values(selectedWrapped.nflPlayers)
+          players: Object.values(selectedWrapped().nflPlayers)
             .filter((p) => p.nflTeamId === nflTeamId)
             .map((p) => ({ ...p, score: p.scores[weekNum]! }))
             .filter((p) => p.score !== undefined)
@@ -1690,7 +1707,7 @@ export class Helpers {
       .map((positionChoices) => {
         const idealPlayer = rostered
           .filter((playerId) => !ideal.includes(playerId))
-          .map((playerId) => selectedWrapped.nflPlayers[playerId])
+          .map((playerId) => selectedWrapped().nflPlayers[playerId])
           .filter((player) =>
             positionChoices.includes(
               Position[player.position as any] as unknown as Position

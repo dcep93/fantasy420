@@ -1,16 +1,8 @@
 import { useState } from "react";
-import { Position, selectedWrapped, selectedYear } from "..";
-import { DraftJsonType, normalize, PlayersType } from "../../Draft";
+import { Position, selectedWrapped } from "..";
+import { normalize, PlayersType, selectedDraft } from "../../Draft";
 import Chart, { ChartDataType } from "./Chart";
 import distanceCorrelation from "./correlation";
-
-import _2023 from "../../Draft/2023.json";
-import _2024 from "../../Draft/2024.json";
-
-export const allDrafts: { [year: string]: DraftJsonType } = {
-  2023: _2023,
-  2024: _2024,
-};
 
 type DataType = {
   [position: string]: {
@@ -64,7 +56,7 @@ function getComposite(sources: {
 
 function getData(players: PlayersType): DataType {
   const normalizedPlayers = Object.fromEntries(
-    Object.values(selectedWrapped.nflPlayers).map((player) => [
+    Object.values(selectedWrapped().nflPlayers).map((player) => [
       normalize(player.name),
       player,
     ])
@@ -135,12 +127,11 @@ function getCorrelation(data: ChartDataType): number {
 
 export default function HistoricalAccuracy() {
   const [source, updateSource] = useState("composite");
-  const draftData = allDrafts[selectedYear];
-  if (!draftData) return <div>no data available</div>;
-  const sources = Object.assign({}, draftData.extra);
-  sources.espn_adp = draftData.espn.pick;
+  if (!selectedDraft()) return <div>no data available</div>;
+  const sources = Object.assign({}, selectedDraft().extra);
+  sources.espn_adp = selectedDraft().espn.pick;
   sources.espn_auction = Object.fromEntries(
-    Object.entries(draftData.espn.auction).map(([name, value]) => [
+    Object.entries(selectedDraft().espn.auction).map(([name, value]) => [
       name,
       -value,
     ])
