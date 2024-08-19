@@ -1,13 +1,20 @@
-import { draft_json, qbToNonQB } from "../../Draft";
+import { draft_json } from "../../Draft";
 
 import { Helpers, selectedWrapped } from "..";
 
 export default function ByeSchedule() {
+  var value = Math.max(...Object.values(draft_json.espn.auction));
   const auctionValues = Object.fromEntries(
-    Object.keys(draft_json.espn.auction).map((name) => [
-      name,
-      draft_json.espn.auction[qbToNonQB[name] || name],
-    ])
+    Object.values(selectedWrapped.ffTeams)
+      .flatMap((team) => team.draft)
+      .sort((a, b) => b.pickIndex - a.pickIndex)
+      .map(({ playerId }) => selectedWrapped.nflPlayers[playerId])
+      .map((player) => {
+        if (player.position !== "QB") {
+          value = draft_json.espn.auction[player.id];
+        }
+        return [player.id, value];
+      })
   );
   const byTeam = Object.values(selectedWrapped.ffTeams).map((team) => ({
     ...team,

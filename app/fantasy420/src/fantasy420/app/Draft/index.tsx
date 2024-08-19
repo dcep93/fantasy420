@@ -20,7 +20,6 @@ type PType = { position: string; team: string };
 type RPType = {
   name: string;
   fname: string;
-  picks: number[];
   value: number;
 } & PType;
 type ResultsType = {
@@ -36,24 +35,6 @@ export type DraftJsonType = {
     auction: PlayersType;
   };
 };
-
-var lastPlayerName = "";
-export const qbToNonQB = Object.fromEntries(
-  draft_json.history[0]
-    .map((playerName) => ({
-      name: playerName,
-      value: (draft_json as DraftJsonType).espn.auction[playerName],
-    }))
-    .sort((a, b) => b.value - a.value)
-    .map(({ name }) => {
-      if ((draft_json as DraftJsonType).espn.players[name]?.position !== "QB") {
-        lastPlayerName = name;
-      }
-      return { name, lastPlayerName };
-    })
-    .filter(({ name, lastPlayerName }) => name !== lastPlayerName)
-    .map(({ name, lastPlayerName }) => [name, lastPlayerName])
-);
 
 export default function Draft() {
   const r = results(draft_json);
@@ -276,16 +257,6 @@ function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
                     >
                       {v.fname}, {v.position} {v.team}
                     </td>
-                    {v.picks.map((w, j) => (
-                      <td
-                        key={j}
-                        style={{
-                          backgroundColor: isMyPick(w) ? "khaki" : "",
-                        }}
-                      >
-                        {w + 1}
-                      </td>
-                    ))}
                   </tr>
                 ))}
             </tbody>
@@ -315,9 +286,6 @@ function getScore(average: number, value: number): number {
 }
 
 function results(draft_json: DraftJsonType): ResultsType {
-  draft_json.history = draft_json.history
-    .slice(0, 1)
-    .map((d) => d.map((n) => normalize(n)));
   draft_json.extra = Object.fromEntries(
     Object.entries(draft_json.extra).map(([s, ps]) => [
       s,
@@ -337,10 +305,6 @@ function results(draft_json: DraftJsonType): ResultsType {
   );
   console.log(draft_json.espn);
 
-  const ds = draft_json.history.map((d) => ({
-    size: d.length,
-    picks: Object.fromEntries(d.map((p, i) => [p, i])),
-  }));
   const extra = Object.keys(draft_json.extra);
   const raw = Object.entries(draft_json.espn.pick)
     .map(([name, pick]) => ({
@@ -352,9 +316,6 @@ function results(draft_json: DraftJsonType): ResultsType {
     .map((o, i) => ({ ...o, i }))
     .map((o) => ({
       ...o,
-      picks: ds.map((d) =>
-        d.picks[o.name] === undefined ? d.size : d.picks[o.name]
-      ),
       extra: Object.fromEntries(
         extra.map((s) => [
           s,
@@ -365,22 +326,15 @@ function results(draft_json: DraftJsonType): ResultsType {
     }))
     .map((o) => ({
       ...o,
-      history: 1 + o.picks.reduce((a, b) => a + b, 0) / o.picks.length,
-    }))
-    .map((o) => ({
-      ...o,
-      history_score: getScore(o.pick, o.history),
       scores: Object.fromEntries(
         extra.map((s) => [
           s,
-          getScore(o.extra[s] > 0 ? o.history : o.auction, o.extra[s]),
+          getScore(o.extra[s] > 0 ? o.pick : o.auction, o.extra[s]),
         ])
       ),
     }))
     .map((o) => ({
       fname: `${[
-        o.history.toFixed(1),
-        "",
         o.pick,
         `$${-o.auction}`,
         "",
@@ -393,10 +347,6 @@ function results(draft_json: DraftJsonType): ResultsType {
     .map((o) => ({ ...o, ...draft_json.espn.players[o.name] }));
 
   const values = [
-    {
-      source: "history",
-      players: raw.map((p) => ({ ...p, value: p.history })),
-    },
     { source: "espnpick", players: raw.map((p) => ({ ...p, value: p.pick })) },
     {
       source: "espnauction",
@@ -409,17 +359,10 @@ function results(draft_json: DraftJsonType): ResultsType {
     }))
   );
 
-  const scores = [
-    {
-      source: "history_score",
-      players: raw.map((p) => ({ ...p, value: p.history_score })),
-    },
-  ].concat(
-    extra.map((source) => ({
-      source: `${source}_score`,
-      players: raw.map((p) => ({ ...p, value: p.scores[source] })),
-    }))
-  );
+  const scores = extra.map((source) => ({
+    source: `${source}_score`,
+    players: raw.map((p) => ({ ...p, value: p.scores[source] })),
+  }));
 
   const composite = {
     source: "composite",
