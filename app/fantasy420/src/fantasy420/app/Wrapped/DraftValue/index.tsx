@@ -7,26 +7,33 @@ import { NFLPlayerType } from "../../FetchWrapped";
 export default function DraftValue() {
   const [num_rounds, update] = useState(8);
 
-  if (!selectedDraft()) return <div>no data available</div>;
-
   const performance = get_performance();
 
-  const extra_entries = {
-    performance: Object.fromEntries(
-      Object.values(performance).map((player) => [
-        player.name,
-        player.performance,
-      ])
-    ),
-    espnpick: selectedDraft().espn.pick,
-    espnauction: Object.fromEntries(
-      Object.entries(selectedDraft().espn.auction).map(([name, value]) => [
-        name,
-        -value,
-      ])
-    ),
-    ...selectedDraft().extra,
-  };
+  const extra_entries =
+    selectedDraft() === undefined
+      ? {
+          performance: Object.fromEntries(
+            Object.values(performance).map((player) => [
+              player.name,
+              player.performance,
+            ])
+          ),
+        }
+      : {
+          performance: Object.fromEntries(
+            Object.values(performance).map((player) => [
+              player.name,
+              player.performance,
+            ])
+          ),
+          espnpick: selectedDraft().espn.pick,
+          espnauction: Object.fromEntries(
+            Object.entries(selectedDraft().espn.auction).map(
+              ([name, value]) => [name, -value]
+            )
+          ),
+          ...selectedDraft().extra,
+        };
 
   const results = get_results(extra_entries, num_rounds, performance);
   return (
