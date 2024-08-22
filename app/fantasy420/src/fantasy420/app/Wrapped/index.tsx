@@ -123,6 +123,18 @@ export function clog<T>(t: T): T {
   return t;
 }
 
+export function groupByF<T>(
+  ts: T[],
+  f: (t: T) => string
+): { [key: string]: T[] } {
+  return ts.reduce((prev, curr) => {
+    const key = f(curr);
+    if (!prev[key]) prev[key] = [];
+    prev[key]!.push(curr);
+    return prev;
+  }, {} as { [key: string]: T[] });
+}
+
 const bubbleStyle = {
   backgroundColor: "white",
   display: "inline-block",

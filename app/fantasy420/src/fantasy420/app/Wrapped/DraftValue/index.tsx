@@ -1,32 +1,34 @@
 import { useState } from "react";
 import { normalize, selectedDraft } from "../../Draft";
 
-import { selectedWrapped } from "..";
+import { groupByF, selectedWrapped } from "..";
+import { NFLPlayerType } from "../../FetchWrapped";
 
 export default function DraftValue() {
   const [num_rounds, update] = useState(8);
 
   if (!selectedDraft()) return <div>no data available</div>;
 
-  const extra_entries = (
-    Object.entries(selectedDraft().extra) as [
-      string,
-      { [name: string]: number }
-    ][]
-  )
-    .concat([["espnpick", selectedDraft().espn.pick]])
-    .concat([
-      [
-        "espnauction",
-        Object.fromEntries(
-          Object.entries(selectedDraft().espn.auction).map(([name, value]) => [
-            name,
-            -value,
-          ])
-        ),
-      ],
-    ]);
-  const results = get_results(extra_entries, num_rounds);
+  const performance = get_performance();
+
+  const extra_entries = {
+    performance: Object.fromEntries(
+      Object.values(performance).map((player) => [
+        player.name,
+        player.performance,
+      ])
+    ),
+    espnpick: selectedDraft().espn.pick,
+    espnauction: Object.fromEntries(
+      Object.entries(selectedDraft().espn.auction).map(([name, value]) => [
+        name,
+        -value,
+      ])
+    ),
+    ...selectedDraft().extra,
+  };
+
+  const results = get_results(extra_entries, num_rounds, performance);
   return (
     <div>
       <div>
@@ -69,7 +71,7 @@ export default function DraftValue() {
                     <div>#{i + 1}</div>
                     <div>{name}</div>
                   </td>
-                  {extra_entries
+                  {Object.entries(extra_entries)
                     .map(([key, _], j) => ({
                       key,
                       score: scores[j],
@@ -112,16 +114,82 @@ export default function DraftValue() {
   );
 }
 
+type PerformanceType = {
+  [playerId: string]: {
+    msg: string;
+    performance: number;
+    pickIndex: number;
+  } & NFLPlayerType;
+};
+
+function get_performance(): PerformanceType {
+  const drafted = Object.values(selectedWrapped().ffTeams)
+    .flatMap((team) => team.draft)
+    .map(({ playerId, pickIndex }) => ({
+      pickIndex,
+      ...selectedWrapped().nflPlayers[playerId],
+    }));
+  const grouped = groupByF(drafted, (player) => player.position);
+  const byTotal = Object.fromEntries(
+    Object.entries(grouped).map(([position, players]) => [
+      position,
+      Object.fromEntries(
+        players
+          .slice()
+          .sort((a, b) => b.total - a.total)
+          .map((player, rank) => [player.id, { rank, ...player }])
+      ),
+    ])
+  );
+  const sortedByPick = Object.fromEntries(
+    Object.entries(grouped).map(([position, players]) => [
+      position,
+      players
+        .slice()
+        .sort((a, b) => a.pickIndex - b.pickIndex)
+        .map((player, rank) => ({ ...player, rank })),
+    ])
+  );
+  const byPick = Object.fromEntries(
+    Object.entries(sortedByPick).map(([position, players]) => [
+      position,
+      Object.fromEntries(players.map((player) => [player.id, player])),
+    ])
+  );
+  return Object.fromEntries(
+    drafted
+      .map((player) => ({
+        ...player,
+        draftRank: byPick[player.position][player.id].rank,
+        totalRank: byTotal[player.position][player.id].rank,
+      }))
+      .map((player) => [
+        player.id,
+        {
+          ...player,
+          msg: `(drafted ${player.pickIndex + 1} = ${player.position}${
+            player.draftRank + 1
+          }; scored ${player.total.toFixed(2)} = ${player.position}${
+            player.totalRank + 1
+          })`,
+          performance:
+            sortedByPick[player.position][player.totalRank].pickIndex + 1,
+        },
+      ])
+  );
+}
+
 function get_results(
-  extra_entries: [string, { [name: string]: number }][],
-  num_rounds: number
+  extra_entries: { [key: string]: { [name: string]: number } },
+  num_rounds: number,
+  performance: PerformanceType
 ): {
   name: string;
   scores: number[];
   ranks: number[];
   players: { name: string; scores: number[] }[];
 }[] {
-  const extra = extra_entries.map(([_, d]) =>
+  const extra = Object.entries(extra_entries).map(([_, d]) =>
     Object.fromEntries(
       Object.entries(d).map(([name, score]) => [normalize(name), score])
     )
@@ -131,20 +199,17 @@ function get_results(
       ...team,
       teamIndex,
       players: team.draft
-        .map(({ playerId, pickIndex }) => ({
-          playerName: selectedWrapped().nflPlayers[playerId].name,
-          pickIndex,
-        }))
+        .map(({ playerId }) => performance[playerId])
         .sort((a, b) => a.pickIndex - b.pickIndex)
         .map((player) => ({
           ...player,
-          name: `${player.playerName} (${player.pickIndex + 1})`,
-          scores: extra.map((d) => d[normalize(player.playerName)]),
+          name: `${player.name} ${player.msg}`,
+          scores: extra.map((d) => d[normalize(player.name)]),
         })),
     }))
     .map((team) => ({
       ...team,
-      scores: extra_entries.map((_, i) =>
+      scores: Object.entries(extra_entries).map((_, i) =>
         team.players
           .filter((_, j) => j < num_rounds)
           .map((player) => player.scores[i] || 0)
