@@ -127,15 +127,29 @@ function getCorrelation(data: ChartDataType): number {
 
 export default function HistoricalAccuracy() {
   const [source, updateSource] = useState("composite");
-  if (!selectedDraft()) return <div>no data available</div>;
-  const sources = Object.assign({}, selectedDraft().extra);
-  sources.espn_adp = selectedDraft().espn.pick;
-  sources.espn_auction = Object.fromEntries(
-    Object.entries(selectedDraft().espn.auction).map(([name, value]) => [
-      name,
-      -value,
-    ])
+  const draft = Object.fromEntries(
+    Object.values(selectedWrapped().ffTeams)
+      .flatMap((team) => team.draft)
+      .map((player) => [
+        selectedWrapped().nflPlayers[player.playerId].name,
+        player.pickIndex,
+      ])
   );
+  const sources =
+    selectedDraft() === undefined
+      ? {
+          draft,
+        }
+      : ({
+          ...selectedDraft().extra,
+          draft,
+          espn_adp: selectedDraft().espn.pick,
+          espn_auction: Object.fromEntries(
+            Object.entries(selectedDraft().espn.auction).map(
+              ([name, value]) => [name, -value]
+            )
+          ),
+        } as { [k: string]: {} });
   sources.composite = getComposite(sources);
   const data = getData(sources[source]);
   return (
@@ -168,8 +182,6 @@ export default function HistoricalAccuracy() {
             <div
               key={position}
               style={{
-                border: "2px solid black",
-                borderRadius: "20px",
                 margin: "20px",
                 padding: "20px",
               }}
