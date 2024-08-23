@@ -1744,3 +1744,43 @@ function HistoricalAccuracy() {
 function DraftValue() {
   return <DraftValueStateful />;
 }
+
+export function Experiment() {
+  return (
+    <pre>
+      {JSON.stringify(
+        Object.fromEntries(
+          Object.entries(
+            groupByF(
+              Object.values(allWrapped["2023"].nflPlayers)
+                .filter((p) => p.total >= 250)
+                .map((player) => ({
+                  ...player,
+                  prev: allWrapped["2022"].nflPlayers[player.id],
+                })),
+              (player) =>
+                player.prev === undefined
+                  ? "rookie"
+                  : player.prev.total >= 250
+                  ? "stud"
+                  : "noob"
+            )
+          ).map(([key, arr]) => [
+            key,
+            {
+              count: arr.length,
+              arr: arr.map(({ name, total, prev }) => ({
+                name,
+                total,
+                prev: prev?.total,
+                key,
+              })),
+            },
+          ])
+        ),
+        null,
+        2
+      )}
+    </pre>
+  );
+}

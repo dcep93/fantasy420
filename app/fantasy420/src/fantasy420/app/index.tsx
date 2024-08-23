@@ -4,11 +4,12 @@ import Defense from "./Defense";
 import Draft from "./Draft";
 import FetchWrapped from "./FetchWrapped";
 import PlayoffPredictability from "./PlayoffPredictability";
-import Wrapped from "./Wrapped";
+import Wrapped, { Experiment } from "./Wrapped";
 
 const pages = {
   FetchWrapped,
   Draft,
+  Experiment,
   Defense,
   PlayoffPredictability,
 };
