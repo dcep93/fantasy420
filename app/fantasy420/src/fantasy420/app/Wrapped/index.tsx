@@ -1752,11 +1752,11 @@ export function Experiment() {
         Object.fromEntries(
           Object.entries(
             groupByF(
-              Object.values(allWrapped["2023"].nflPlayers)
-                .filter((p) => p.total >= 250)
+              Object.values(allWrapped["2022"].nflPlayers)
+                .filter((p) => p.total >= 250 && p.position === "WR")
                 .map((player) => ({
                   ...player,
-                  prev: allWrapped["2022"].nflPlayers[player.id],
+                  prev: allWrapped["2023"].nflPlayers[player.id],
                 })),
               (player) =>
                 player.prev === undefined
