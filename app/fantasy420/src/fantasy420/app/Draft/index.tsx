@@ -540,9 +540,6 @@ function updateDraftRanking(
   teamId: number,
   ordered: { [name: string]: number }
 ) {
-  if (!teamId) {
-    alert("need to provide teamId: number");
-  }
   if (!teamId || !ordered) {
     alert(
       "updateDraftRanking(teamId: number, ordered: {[playerName: string]: integer})"
