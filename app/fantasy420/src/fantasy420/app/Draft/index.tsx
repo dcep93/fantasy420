@@ -536,11 +536,23 @@ function fantasyplaybook() {
   );
 }
 
-function updateDraftRanking(ordered: { [name: string]: number } | undefined) {
-  if (!ordered) return;
+function updateDraftRanking(
+  teamId: number,
+  ordered: { [name: string]: number }
+) {
+  if (!teamId) {
+    alert("need to provide teamId: number");
+  }
+  if (!teamId || !ordered) {
+    alert(
+      "updateDraftRanking(teamId: number, ordered: {[playerName: string]: integer})"
+    );
+    return;
+  }
   const year = 2024;
+  const leagueId = 203836968;
   fetch(
-    `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/203836968?view=kona_player_info_edit_draft_strategy`,
+    `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/${leagueId}?view=kona_player_info_edit_draft_strategy`,
     {
       headers: {
         "x-fantasy-filter": `{"players":{"filterStatsForSplitTypeIds":{"value":[0]},"filterStatsForSourceIds":{"value":[1]},"filterStatsForExternalIds":{"value":[${year}]},"sortDraftRanks":{"sortPriority":2,"sortAsc":true,"value":"STANDARD"},"sortPercOwned":{"sortPriority":3,"sortAsc":false},"filterRanksForSlotIds":{"value":[0,2,4,6,17,16]},"filterStatsForTopScoringPeriodIds":{"value":2,"additionalValue":["002023","102023","002022","022023"]}}}`,
@@ -548,8 +560,7 @@ function updateDraftRanking(ordered: { [name: string]: number } | undefined) {
           "kona-PROD-b8da8220a336fe39a7b677c0dc5fa27a6bbf87ae",
         "x-fantasy-source": "kona",
       },
-      referrer:
-        "https://fantasy.espn.com/football/editdraftstrategy?leagueId=203836968",
+      referrer: `https://fantasy.espn.com/football/editdraftstrategy?leagueId=${leagueId}`,
     }
   )
     .then((resp) => resp.json())
@@ -575,7 +586,7 @@ function updateDraftRanking(ordered: { [name: string]: number } | undefined) {
     )
     .then((body) =>
       fetch(
-        `https://lm-api-writes.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/203836968/teams/1`,
+        `https://lm-api-writes.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/${leagueId}/teams/${teamId}`,
         {
           headers: {
             accept: "application/json",
