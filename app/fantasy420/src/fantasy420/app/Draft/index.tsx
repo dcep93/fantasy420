@@ -220,7 +220,7 @@ function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
           <div>
             <input
               readOnly
-              value={`${updateDraftRanking.name}(${JSON.stringify(
+              value={`${updateDraftRanking.name}(1, ${JSON.stringify(
                 Object.fromEntries(players.map((p, i) => [p.name, i]))
               )})`}
             />
