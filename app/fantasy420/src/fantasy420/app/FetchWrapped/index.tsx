@@ -13,6 +13,11 @@ export type NFLPlayerType = {
   scores: { [weekNum: string]: number | undefined };
   total: number;
   average: number;
+  // ownership: {
+  //   averageDraftPosition: number;
+  //   auctionValueAverage: number;
+  //   percentOwned: number;
+  // };
 };
 
 type NFLTeamType = {
@@ -141,7 +146,11 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                       appliedTotal: number;
                       appliedAverage: number;
                     }[];
-                    ownership: { percentOwned: number };
+                    ownership: {
+                      averageDraftPosition: number;
+                      auctionValueAverage: number;
+                      percentOwned: number;
+                    };
                   };
                 }[];
               }) =>
@@ -177,15 +186,23 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                           value: parseFloat(stat.appliedTotal.toFixed(2)),
                         }))
                     ),
-                    dontFilter: player.ownership?.percentOwned > 0.1,
+                    ownership: Object.fromEntries(
+                      Object.entries(player.ownership || {}).filter(([k]) =>
+                        [
+                          "averageDraftPosition",
+                          "auctionValueAverage",
+                          "percentOwned",
+                        ].includes(k)
+                      )
+                    ),
                   }))
                   .filter(
                     (player) =>
-                      player.dontFilter ||
+                      player.ownership?.percentOwned > 0.1 ||
                       Object.values(player.scores).filter((s) => s !== 0)
                         .length > 0
                   )
-                  .map(({ dontFilter, ...player }) => ({
+                  .map((player) => ({
                     key: player.id,
                     value: player,
                   }))
