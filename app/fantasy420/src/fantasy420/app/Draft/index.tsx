@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 import { printF } from "..";
 import { fetchExtensionStorage } from "./Extension";
 
-import { allWrapped, selectedWrapped, selectedYear } from "../Wrapped";
-import draft2023 from "./2023.json";
+import { allWrapped, clog, selectedWrapped, selectedYear } from "../Wrapped";
+// import draft2023 from "./2023.json";
 import draft2024 from "./2024.json";
 
 const allDrafts: { [year: string]: DraftJsonType } = Object.fromEntries(
   Object.entries({
-    2023: draft2023,
+    // 2023: draft2023,
     2024: draft2024,
   }).map(([year, rawDraft]) => {
     function normalize(name: string): string {
@@ -27,20 +27,25 @@ const allDrafts: { [year: string]: DraftJsonType } = Object.fromEntries(
     return [
       year,
       Object.fromEntries(
-        Object.entries(rawDraft)
-          .map(([name, value]) => ({
-            playerId: normalizedNameToId[normalize(name)],
-            value,
-          }))
-          .filter(({ playerId }) => playerId)
-          .map(({ playerId, value }) => [playerId, value])
+        Object.entries(rawDraft).map(([name, players]) => [
+          name,
+          Object.fromEntries(
+            Object.entries(players)
+              .map(([name, value]) => ({
+                playerId: normalizedNameToId[normalize(name)],
+                value,
+              }))
+              .filter(({ playerId }) => playerId)
+              .map(({ playerId, value }) => [playerId, value])
+          ),
+        ])
       ),
     ];
   })
 );
 
 export function selectedDraft(): DraftJsonType {
-  return allDrafts[selectedYear];
+  return clog(allDrafts[selectedYear]);
 }
 
 export type PlayersType = { [playerId: string]: number };
@@ -90,8 +95,9 @@ function SubDraft(props: { liveDraft: string[] }) {
   const results = getResults();
   const sources = Object.keys(results);
   const [source, update] = useState(sources[0]);
-  const sourcePlayers = Object.entries(results[source].players)
+  const sourcePlayers = Object.entries(results[source])
     .map(([playerId, value], sourceRank) => ({
+      playerId,
       player: selectedWrapped().nflPlayers[playerId],
       sourceRank,
       value,
