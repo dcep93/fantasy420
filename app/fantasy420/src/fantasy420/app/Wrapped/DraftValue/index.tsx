@@ -1,41 +1,13 @@
 import { useState } from "react";
-import { normalize, selectedDraft } from "../../Draft";
 
 import { groupByF, selectedWrapped } from "..";
+import { selectedDraft } from "../../Draft";
 import { NFLPlayerType } from "../../FetchWrapped";
 
 export default function DraftValue() {
-  const [num_rounds, update] = useState(8);
+  const [numRounds, update] = useState(8);
 
-  const performance = get_performance();
-
-  const extra_entries =
-    selectedDraft() === undefined
-      ? {
-          performance: Object.fromEntries(
-            Object.values(performance).map((player) => [
-              player.name,
-              player.performance,
-            ])
-          ),
-        }
-      : {
-          performance: Object.fromEntries(
-            Object.values(performance).map((player) => [
-              player.name,
-              player.performance,
-            ])
-          ),
-          espnpick: selectedDraft().espn.pick,
-          espnauction: Object.fromEntries(
-            Object.entries(selectedDraft().espn.auction).map(
-              ([name, value]) => [name, -value]
-            )
-          ),
-          ...selectedDraft().extra,
-        };
-
-  const results = get_results(extra_entries, num_rounds, performance);
+  const results = getResults(numRounds);
   return (
     <div>
       <div>
@@ -49,13 +21,13 @@ export default function DraftValue() {
       <div>
         num_rounds:{" "}
         <input
-          value={num_rounds}
+          value={numRounds}
           type="number"
           onChange={(e) => update(parseInt(e.currentTarget.value))}
         />
       </div>
       <div style={{ display: "flex", flexWrap: "wrap" }}>
-        {results.map(({ name, players, scores, ranks }, i) => (
+        {results.map(({ teamName: name, players, categories }, i) => (
           <div
             key={i}
             style={{
@@ -78,11 +50,11 @@ export default function DraftValue() {
                     <div>#{i + 1}</div>
                     <div>{name}</div>
                   </td>
-                  {Object.entries(extra_entries)
-                    .map(([key, _], j) => ({
+                  {Object.entries(categories)
+                    .map(([key, { score, rank }], j) => ({
                       key,
-                      score: scores[j],
-                      rank: ranks[j],
+                      score,
+                      rank,
                     }))
                     .map(({ score, ...o }) => ({
                       score: Number.isInteger(score)
@@ -103,10 +75,10 @@ export default function DraftValue() {
                     key={j}
                     style={{
                       borderTop:
-                        j === 0 || j === num_rounds ? "2px solid black" : "",
+                        j === 0 || j === numRounds ? "2px solid black" : "",
                     }}
                   >
-                    <td>{player.name}</td>
+                    <td>{player.player.id}</td>
                     {player.scores.map((score, k) => (
                       <td key={k}>{score < 0 ? `$${-score}` : score}</td>
                     ))}
@@ -129,7 +101,7 @@ type PerformanceType = {
   } & NFLPlayerType;
 };
 
-function get_performance(): PerformanceType {
+function getPerformance(): PerformanceType {
   const drafted = Object.values(selectedWrapped().ffTeams)
     .flatMap((team) => team.draft)
     .map(({ playerId, pickIndex }) => ({
@@ -186,39 +158,29 @@ function get_performance(): PerformanceType {
   );
 }
 
-function get_results(
-  extra_entries: { [key: string]: { [name: string]: number } },
-  num_rounds: number,
-  performance: PerformanceType
-): {
-  name: string;
-  scores: number[];
-  ranks: number[];
-  players: { name: string; scores: number[] }[];
+function getResults(numRounds: number): {
+  teamName: string;
+  categories: { [key: string]: { score: number; rank: number } };
+  players: { player: NFLPlayerType; msg: string; scores: number[] }[];
 }[] {
-  const extra = Object.entries(extra_entries).map(([_, d]) =>
-    Object.fromEntries(
-      Object.entries(d).map(([name, score]) => [normalize(name), score])
-    )
-  );
+  const performance = getPerformance();
   const scored = Object.values(selectedWrapped().ffTeams)
-    .map((team, teamIndex) => ({
+    .map((team) => ({
       ...team,
-      teamIndex,
       players: team.draft
         .map(({ playerId }) => performance[playerId])
         .sort((a, b) => a.pickIndex - b.pickIndex)
         .map((player) => ({
           ...player,
           name: `${player.name} ${player.msg}`,
-          scores: extra.map((d) => d[normalize(player.name)]),
+          scores: Object.values(selectedDraft()).map((d) => d[player.id]),
         })),
     }))
     .map((team) => ({
       ...team,
-      scores: Object.entries(extra_entries).map((_, i) =>
+      scores: Object.entries(extraEntries).map((_, i) =>
         team.players
-          .filter((_, j) => j < num_rounds)
+          .filter((_, j) => j < numRounds)
           .map((player) => player.scores[i] || 0)
           .reduce((a, b) => a + b, 0)
       ),
@@ -242,8 +204,8 @@ function get_results(
       ...o,
     }))
     .map(({ ...o }) => ({
-      total_rank: o.ranks.reduce((a, b) => a + b, 0),
+      totalRank: o.ranks.reduce((a, b) => a + b, 0),
       ...o,
     }))
-    .sort((a, b) => a.total_rank - b.total_rank);
+    .sort((a, b) => a.totalRank - b.totalRank);
 }

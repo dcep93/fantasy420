@@ -13,11 +13,11 @@ export type NFLPlayerType = {
   scores: { [weekNum: string]: number | undefined };
   total: number;
   average: number;
-  // ownership: {
-  //   averageDraftPosition: number;
-  //   auctionValueAverage: number;
-  //   percentOwned: number;
-  // };
+  ownership: {
+    averageDraftPosition: number;
+    auctionValueAverage: number;
+    percentOwned: number;
+  };
 };
 
 type NFLTeamType = {
@@ -194,7 +194,7 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                           "percentOwned",
                         ].includes(k)
                       )
-                    ),
+                    ) as any,
                   }))
                   .filter(
                     (player) =>

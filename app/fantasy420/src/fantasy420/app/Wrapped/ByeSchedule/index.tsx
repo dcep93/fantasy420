@@ -10,7 +10,9 @@ export default function ByeSchedule() {
       .map(({ playerId }) => selectedWrapped().nflPlayers[playerId])
       .map((player) => {
         if (player.position !== "QB") {
-          value = selectedDraft().espn.auction[player.id];
+          value =
+            selectedWrapped().nflPlayers[player.id].ownership
+              .averageDraftPosition;
         }
         return [player.id, value];
       })
