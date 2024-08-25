@@ -8,7 +8,7 @@ import ByeSchedule from "./ByeSchedule";
 import DraftValueStateful from "./DraftValue";
 import HistoricalAccuracyStateful from "./HistoricalAccuracy";
 
-export const currentYear = "2021";
+export const currentYear = "2024";
 
 export const allWrapped: { [year: string]: WrappedType } = {
   "2024": wrapped2024,
