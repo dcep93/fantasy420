@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { printF } from "..";
 import { fetchExtensionStorage } from "./Extension";
 
-import { allWrapped, clog, selectedWrapped, selectedYear } from "../Wrapped";
+import { allWrapped, selectedWrapped, selectedYear } from "../Wrapped";
 // import draft2023 from "./2023.json";
 import draft2024 from "./2024.json";
 
@@ -45,7 +45,7 @@ const allDrafts: { [year: string]: DraftJsonType } = Object.fromEntries(
 );
 
 export function selectedDraft(): DraftJsonType {
-  return clog(allDrafts[selectedYear]);
+  return allDrafts[selectedYear];
 }
 
 export type PlayersType = { [playerId: string]: number };
@@ -340,7 +340,7 @@ function getResults(): DraftJsonType {
             value: p.value === null ? players.length : p.value,
           }))
           .sort((a, b) => a.value - b.value)
-          .map((p) => [p.name, p.value])
+          .map((p) => [p.id, p.value])
       ),
     ])
   );
