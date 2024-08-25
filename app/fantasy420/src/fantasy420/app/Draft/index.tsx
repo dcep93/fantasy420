@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { printF } from "..";
 import { fetchExtensionStorage } from "./Extension";
 
-import { allWrapped, clog, selectedWrapped, selectedYear } from "../Wrapped";
+import { allWrapped, selectedWrapped, selectedYear } from "../Wrapped";
 import draft2023 from "./2023.json";
 import draft2024 from "./2024.json";
 
@@ -95,22 +95,20 @@ function SubDraft(props: { liveDraft: string[] }) {
   const results = getResults();
   const sources = Object.keys(results);
   const [source, update] = useState(sources[0]);
-  const sourcePlayers = clog(
-    Object.entries(results[source])
-      .map(([playerId, value]) => ({
-        playerId,
-        player: selectedWrapped().nflPlayers[playerId],
-        value,
-        seen: draftedById[playerId] !== undefined,
-      }))
-      .filter(({ value }) => value !== undefined)
-      .sort((a, b) => a.value - b.value)
-      .map((p, sourceRank) => ({
-        ...p,
-        sourceRank,
-        team: selectedWrapped().nflTeams[p.player.nflTeamId].name,
-      }))
-  );
+  const sourcePlayers = Object.entries(results[source])
+    .map(([playerId, value]) => ({
+      playerId,
+      player: selectedWrapped().nflPlayers[playerId],
+      value,
+      seen: draftedById[playerId] !== undefined,
+    }))
+    .filter(({ value }) => value !== undefined)
+    .sort((a, b) => a.value - b.value)
+    .map((p, sourceRank) => ({
+      ...p,
+      sourceRank,
+      team: selectedWrapped().nflTeams[p.player.nflTeamId].name,
+    }));
   return (
     <pre
       style={{
@@ -247,10 +245,7 @@ function SubDraft(props: { liveDraft: string[] }) {
                     <td>
                       {v.posRank + 1}/{v.i + 1}
                     </td>
-                    <td>
-                      {v.value < 0 && "$"}
-                      {(v.value > 0 ? v.value : -v.value).toFixed(1)}
-                    </td>
+                    <td>{v.value.toFixed(1)}</td>
                     <td
                       style={{
                         backgroundColor: {
@@ -263,6 +258,11 @@ function SubDraft(props: { liveDraft: string[] }) {
                         }[v.player.position],
                       }}
                     >
+                      {[
+                        ...Object.values(results).map((r) =>
+                          parseFloat(r[v.playerId]?.toFixed(1))
+                        ),
+                      ].join("/")}{" "}
                       {v.player.name}, {v.player.position} {v.team}
                     </td>
                   </tr>
@@ -321,22 +321,23 @@ function getResults(): DraftJsonType {
           })),
         ])
       ),
-      ...Object.fromEntries(
-        Object.keys(draftJson).map((source) => [
-          `${source}_score`,
-          Object.values(selectedWrapped().nflPlayers)
-            .map((p) => ({ ...p, value: draftJson[source][p.id] }))
-            .map((p) => ({
-              ...p,
-              value: getScore(
-                p.value > 0
-                  ? p.ownership.averageDraftPosition
-                  : p.ownership.auctionValueAverage,
-                p.value
-              ),
-            })),
-        ])
-      ),
+      // ...Object.fromEntries(
+      //   Object.keys(draftJson).map((source) => [
+      //     `${source}_score`,
+      //     Object.values(selectedWrapped().nflPlayers)
+      //       .map((p) => ({ ...p, value: draftJson[source][p.id] }))
+      //       .filter(({ value }) => value !== undefined)
+      //       .map((p) => ({
+      //         ...p,
+      //         value: getScore(
+      //           p.value > 0
+      //             ? p.ownership.averageDraftPosition
+      //             : p.ownership.auctionValueAverage,
+      //           p.value
+      //         ),
+      //       })),
+      //   ])
+      // ),
     }).map(([sourceName, players]) => [
       sourceName,
       Object.fromEntries(
