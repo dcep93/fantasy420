@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { groupByF, selectedWrapped } from "..";
-import { selectedDraft } from "../../Draft";
+import { DraftJsonType, selectedDraft } from "../../Draft";
 import { NFLPlayerType } from "../../FetchWrapped";
 
 export default function DraftValue() {
@@ -164,47 +164,71 @@ function getResults(numRounds: number): {
   players: { player: NFLPlayerType; msg: string; scores: number[] }[];
 }[] {
   const performance = getPerformance();
+  const categories = Object.fromEntries(
+    [
+      [
+        "categories",
+        Object.fromEntries(
+          Object.entries(performance).map(([playerId, p]) => [
+            playerId,
+            p.performance,
+          ])
+        ),
+      ],
+    ].concat(Object.entries(selectedDraft()))
+  ) as DraftJsonType;
   const scored = Object.values(selectedWrapped().ffTeams)
     .map((team) => ({
-      ...team,
+      team,
       players: team.draft
         .map(({ playerId }) => performance[playerId])
         .sort((a, b) => a.pickIndex - b.pickIndex)
         .map((player) => ({
-          ...player,
-          name: `${player.name} ${player.msg}`,
-          scores: Object.values(selectedDraft()).map((d) => d[player.id]),
+          player,
+          msg: player.msg,
+          scores: Object.values(categories).map((d) => d[player.id]),
         })),
     }))
-    .map((team) => ({
-      ...team,
-      scores: Object.entries(extraEntries).map((_, i) =>
-        team.players
+    .map((o) => ({
+      ...o,
+      scores: Object.keys(categories).map((_, i) =>
+        o.players
           .filter((_, j) => j < numRounds)
           .map((player) => player.scores[i] || 0)
           .reduce((a, b) => a + b, 0)
       ),
     }));
-  const ranks = extra.map((_, i) =>
-    scored
-      .map(({ scores, ...team }) => ({
-        ...team,
-        score: scores[i],
-      }))
-      .sort((a, b) =>
-        isNaN(a.score) ? 1 : isNaN(b.score) ? -1 : a.score - b.score
-      )
-      .map(({ teamIndex }, rank) => ({ teamIndex, rank }))
-      .sort((a, b) => a.teamIndex - b.teamIndex)
-      .map(({ rank }) => rank)
+  const ranks = Object.fromEntries(
+    Object.keys(categories).map((key, i) => [
+      key,
+      Object.fromEntries(
+        scored
+          .map(({ scores, team }) => ({
+            team,
+            score: scores[i],
+          }))
+          .sort((a, b) =>
+            isNaN(a.score) ? 1 : isNaN(b.score) ? -1 : a.score - b.score
+          )
+          .map((o, rank) => [o.team.id, rank])
+      ),
+    ])
   );
   return scored
-    .map(({ teamIndex, ...o }) => ({
-      ranks: ranks.map((r) => r[teamIndex]),
-      ...o,
+    .map((o) => ({
+      teamName: o.team.name,
+      categories: Object.fromEntries(
+        Object.keys(categories).map((key, i) => [
+          key,
+          { rank: ranks[key][i], score: o.scores[i] },
+        ])
+      ),
+      players: o.players,
     }))
     .map(({ ...o }) => ({
-      totalRank: o.ranks.reduce((a, b) => a + b, 0),
+      totalRank: Object.values(o.categories)
+        .map(({ rank }) => rank)
+        .reduce((a, b) => a + b, 0),
       ...o,
     }))
     .sort((a, b) => a.totalRank - b.totalRank);
