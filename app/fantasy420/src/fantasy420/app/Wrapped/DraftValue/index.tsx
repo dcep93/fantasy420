@@ -171,7 +171,7 @@ function getResults(numRounds: number): {
   const categories = Object.fromEntries(
     [
       [
-        "categories",
+        "performance",
         Object.fromEntries(
           Object.entries(performance).map(([playerId, p]) => [
             playerId,

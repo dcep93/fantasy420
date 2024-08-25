@@ -11,7 +11,7 @@ const allDrafts: { [year: string]: DraftJsonType } = Object.fromEntries(
   Object.entries({
     2023: draft2023,
     2024: draft2024,
-  }).map(([year, rawDraft]) => {
+  } as { [year: string]: DraftJsonType }).map(([year, rawDraft]) => {
     function normalize(name: string): string {
       return name
         .replaceAll(/[^A-Za-z0-9 ]/g, "")
