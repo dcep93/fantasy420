@@ -87,7 +87,7 @@ function SubDraft(props: { liveDraft: string[] }) {
       .map((playerName) => playersByName[playerName])
       .map((p, pickIndex) => [p.id, { pickIndex, ...p }])
   );
-  const results = getResults(selectedDraft());
+  const results = getResults();
   const sources = Object.keys(results);
   const [source, update] = useState(sources[0]);
   const sourcePlayers = Object.entries(results[source].players)
@@ -269,7 +269,8 @@ function getScore(average: number, value: number): number {
   return (100 * (value - average)) / (value + average);
 }
 
-function getResults(draftJson: DraftJsonType): DraftJsonType {
+function getResults(): DraftJsonType {
+  const draftJson = selectedDraft();
   return Object.fromEntries(
     Object.entries({
       composite: Object.values(selectedWrapped().nflPlayers)
