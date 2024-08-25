@@ -16,7 +16,9 @@ const allDrafts: { [year: string]: DraftJsonType } = Object.fromEntries(
       return name
         .toLocaleLowerCase()
         .replaceAll(/[^A-Za-z0-9 ]/g, "")
-        .replaceAll(/ I+$/g, "")
+        .replaceAll(/ i+$/g, "")
+        .replaceAll(/gabriel davis$/gi, "gabe davis")
+        .replaceAll(/hollywood brown$/gi, "marquise brown")
         .replaceAll(/nathaniel dell$/gi, "tank dell")
         .replaceAll(/ sr$/gi, "")
         .replaceAll(/ jr$/gi, "");
