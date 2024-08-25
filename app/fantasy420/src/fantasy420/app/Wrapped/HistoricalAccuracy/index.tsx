@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Position, selectedWrapped } from "..";
-import { normalize, PlayersType, selectedDraft } from "../../Draft";
+import { DraftJsonType, PlayersType, selectedDraft } from "../../Draft";
 import Chart, { ChartDataType } from "./Chart";
 import distanceCorrelation from "./correlation";
 
@@ -10,16 +10,13 @@ type DataType = {
   };
 };
 
-function getComposite(sources: {
-  [sourceName: string]: PlayersType;
-}): PlayersType {
-  const source_ranks = Object.values(sources).map((o) =>
+function getComposite(sources: DraftJsonType): PlayersType {
+  const sourceRanks = Object.values(sources).map((o) =>
     Object.fromEntries(
       Object.entries(o)
-        .map(([playerName, value]) => ({ playerName, value }))
-        .filter(({ value }) => value !== null)
+        .map(([playerId, value]) => ({ playerId, value }))
         .sort((a, b) => a.value! - b.value!)
-        .map(({ playerName }, i) => [normalize(playerName), i])
+        .map(({ playerId }, i) => [playerId, i])
     )
   );
   return Object.fromEntries(
@@ -27,18 +24,18 @@ function getComposite(sources: {
       Object.fromEntries(
         Object.values(sources)
           .flatMap((players) => Object.keys(players))
-          .map((playerName) => [normalize(playerName), null])
+          .map((playerId) => [playerId, null])
       )
     )
-      .map((playerName) => ({
-        playerName,
-        ranks: Object.values(source_ranks)
-          .map((source) => source[playerName])
+      .map((playerId) => ({
+        playerId,
+        ranks: Object.values(sourceRanks)
+          .map((source) => source[playerId])
           .filter((rank) => rank !== undefined && rank < 200),
       }))
       .filter(({ ranks }) => ranks.length > 0)
-      .map(({ playerName, ranks }) => ({
-        playerName,
+      .map(({ playerId, ranks }) => ({
+        playerId,
         ranks,
         value: parseFloat(
           (
@@ -47,39 +44,31 @@ function getComposite(sources: {
         ),
       }))
       .map((o) => {
-        if (isNaN(o.value)) console.log(o.playerName, o.ranks);
+        if (isNaN(o.value)) console.log(o.playerId, o.ranks);
         return o;
       })
-      .map(({ playerName, value }) => [playerName, value])
+      .map(({ playerId, value }) => [playerId, value])
   );
 }
 
 function getData(players: PlayersType): DataType {
-  const normalizedPlayers = Object.fromEntries(
-    Object.values(selectedWrapped().nflPlayers).map((player) => [
-      normalize(player.name),
-      player,
-    ])
-  );
-  const by_position = {} as {
+  const byPosition = {} as {
     [position: string]: PlayersType;
   };
-  Object.entries(players).forEach(([playerName, value]) => {
-    const normalized = normalize(playerName);
-    const position = normalizedPlayers[normalize(playerName)]?.position;
-    if (position === undefined) return;
-    if (!by_position[position]) by_position[position] = {};
-    by_position[position][normalized] = value;
+  Object.entries(players).forEach(([playerId, value]) => {
+    const position = selectedWrapped().nflPlayers[playerId]!.position;
+    if (!byPosition[position]) byPosition[position] = {};
+    byPosition[position][playerId] = value;
   });
   const data = Object.fromEntries(
-    Object.entries(by_position).map(([position, players]) => [
+    Object.entries(byPosition).map(([position, players]) => [
       position,
       Object.fromEntries(
         Object.entries({
-          season_points: (playerName: string) =>
-            normalizedPlayers[normalize(playerName)].total,
-          average_points: (playerName: string) =>
-            normalizedPlayers[normalize(playerName)].average,
+          season_points: (playerId: string) =>
+            selectedWrapped().nflPlayers[playerId]!.total,
+          average_points: (playerId: string) =>
+            selectedWrapped().nflPlayers[playerId]!.average,
         })
           .map(([key, f]) => ({
             key,
@@ -163,9 +152,9 @@ export default function HistoricalAccuracy() {
         >
           {Object.keys(sources)
             .reverse()
-            .map((select_source) => (
-              <option key={select_source} value={select_source}>
-                {select_source}
+            .map((selectSource) => (
+              <option key={selectSource} value={selectSource}>
+                {selectSource}
               </option>
             ))}
         </select>

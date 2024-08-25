@@ -3,62 +3,62 @@ import { useEffect, useState } from "react";
 import { printF } from "..";
 import { fetchExtensionStorage } from "./Extension";
 
-import { selectedYear } from "../Wrapped";
+import { allWrapped, selectedWrapped, selectedYear } from "../Wrapped";
 import draft2023 from "./2023.json";
 import draft2024 from "./2024.json";
 
-const allDrafts: { [year: string]: DraftJsonType } = {
-  2023: draft2023,
-  2024: draft2024,
-};
+const allDrafts: { [year: string]: DraftJsonType } = Object.fromEntries(
+  Object.entries({
+    2023: draft2023,
+    2024: draft2024,
+  }).map(([year, rawDraft]) => {
+    function normalize(name: string): string {
+      return name
+        .replaceAll(/[^A-Za-z0-9 ]/g, "")
+        .replaceAll(/ I+$/g, "")
+        .replaceAll(/ jr$/gi, "");
+    }
+    const normalizedNameToId = Object.fromEntries(
+      Object.values(allWrapped[year].nflPlayers).map((p) => [
+        normalize(p.name),
+        p.id,
+      ])
+    );
+    return [
+      year,
+      Object.fromEntries(
+        Object.entries(rawDraft)
+          .map(([name, value]) => ({
+            playerId: normalizedNameToId[normalize(name)],
+            value,
+          }))
+          .filter(({ playerId }) => playerId)
+          .map(({ playerId, value }) => [playerId, value])
+      ),
+    ];
+  })
+);
 
 export function selectedDraft(): DraftJsonType {
   return allDrafts[selectedYear];
 }
 
-const PICK_NUMBER = 8;
-const NUM_TEAMS = 10;
-
-export const MAX_PEAKED = 250;
-
-const FETCH_LIVE_DRAFT_PERIOD_MS = 500;
-
-type DraftType = string[];
-export type PlayersType = { [name: string]: number };
-type LiveDraftType = string[];
-type PType = { position: string; team: string };
-type RPType = {
-  name: string;
-  fname: string;
-  value: number;
-} & PType;
-type ResultsType = {
-  source: string;
-  players: RPType[];
-}[];
-export type DraftJsonType = {
-  history: DraftType[];
-  extra: { [source: string]: PlayersType };
-  espn: {
-    players: { [name: string]: PType };
-    pick: PlayersType;
-    auction: PlayersType;
-  };
-};
+export type PlayersType = { [playerId: string]: number };
+export type DraftJsonType = { [source: string]: PlayersType };
 
 export default function Draft() {
-  const r = results(selectedDraft());
   const [liveDraft, updateLiveDraft] = useState<string[]>([]);
   useEffect(() => {
     fetchLiveDraft(updateLiveDraft, -1);
   }, []);
-  return <SubDraft r={r} liveDraft={liveDraft} />;
+  return <SubDraft liveDraft={liveDraft} />;
 }
 
 function fetchLiveDraft(
   updateLiveDraft: (draft: string[]) => void,
   prev: number
 ) {
+  const FETCH_LIVE_DRAFT_PERIOD_MS = 500;
   fetchExtensionStorage("draft")
     .then((draft) =>
       Promise.resolve(draft)
@@ -78,30 +78,29 @@ function fetchLiveDraft(
     });
 }
 
-function getDstName(name: string) {
-  const dstName = `${name.split(" ").reverse()[0]} DST`;
-  return selectedDraft().espn.players[dstName] ? dstName : null;
-}
-
-function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
-  const espn = Object.fromEntries(
+function SubDraft(props: { liveDraft: string[] }) {
+  const playersByName = Object.fromEntries(
+    Object.values(selectedWrapped().nflPlayers).map((p) => [p.name, p])
+  );
+  const draftedById = Object.fromEntries(
     props.liveDraft
-      .map((name) => {
-        const dstName = getDstName(name);
-        if (dstName) return dstName;
-        return name;
-      })
-      .map((name, i) => [normalize(name), i])
+      .map((playerName) => playersByName[playerName])
+      .map((p, pickIndex) => [p.id, { pickIndex, ...p }])
   );
-  const drafted = Object.keys(espn);
-  const sources = props.r.map((d) => d.source);
+  const results = getResults(selectedDraft());
+  const sources = Object.keys(results);
   const [source, update] = useState(sources[0]);
-  const players = (props.r.find((d) => d.source === source)?.players || []).map(
-    (p) => ({
+  const sourcePlayers = Object.entries(results[source].players)
+    .map(([playerId, value], sourceRank) => ({
+      player: selectedWrapped().nflPlayers[playerId],
+      sourceRank,
+      value,
+      seen: draftedById[playerId] !== undefined,
+    }))
+    .map((p) => ({
       ...p,
-      seen: espn[p.name] !== undefined,
-    })
-  );
+      team: selectedWrapped().nflTeams[p.player.nflTeamId].name,
+    }));
   return (
     <pre
       style={{
@@ -114,9 +113,7 @@ function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
     >
       <div style={{ height: "100%", overflow: "scroll" }}>
         <div>
-          <ul
-            style={{ backgroundColor: isMyPick(drafted.length) ? "#ccc" : "" }}
-          >
+          <ul>
             {sources.map((s) => (
               <li key={s}>
                 <span
@@ -134,27 +131,18 @@ function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
           </ul>
         </div>
         <div>
-          {source} ({drafted.length})
+          {source} ({props.liveDraft.length})
         </div>
         <pre>
           {JSON.stringify(
             Object.fromEntries(
               Object.entries(
-                drafted
-                  .map((name) => ({
-                    name,
-                    position: (
-                      selectedDraft().espn.players as {
-                        [n: string]: { position: string };
-                      }
-                    )[name]?.position,
-                  }))
-                  .reduce((prev, current) => {
-                    prev[current.position] = (
-                      prev[current.position] || []
-                    ).concat(current.name);
-                    return prev;
-                  }, {} as { [position: string]: string[] })
+                Object.values(draftedById).reduce((prev, current) => {
+                  prev[current.position] = (
+                    prev[current.position] || []
+                  ).concat(current.name);
+                  return prev;
+                }, {} as { [position: string]: string[] })
               ).map(([position, names]) => [
                 position,
                 position === "undefined" ? names : names.length,
@@ -166,7 +154,7 @@ function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
         </pre>
         <div>
           <div>drafted</div>
-          <input readOnly value={JSON.stringify(drafted)} />
+          <input readOnly value={JSON.stringify(props.liveDraft)} />
         </div>
         <div>
           <div>
@@ -205,14 +193,6 @@ function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
           <input readOnly value={printF(fantasyplaybook)} />
         </div>
         <div>
-          <div>
-            <a href="https://fantasy.espn.com/football/livedraftresults">
-              espn
-            </a>
-          </div>
-          <input readOnly value={printF(getEspnLiveDraft)} />
-        </div>
-        <div>
           <div>updateDraftRanking</div>
           <div>
             <input readOnly value={printF(updateDraftRanking)} />
@@ -221,7 +201,12 @@ function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
             <input
               readOnly
               value={`${updateDraftRanking.name}(1, ${JSON.stringify(
-                Object.fromEntries(players.map((p, i) => [p.name, i]))
+                Object.fromEntries(
+                  sourcePlayers.map(({ player, sourceRank }) => [
+                    player.name,
+                    sourceRank,
+                  ])
+                )
               )})`}
             />
           </div>
@@ -231,13 +216,16 @@ function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
         <div style={{ height: "100%", flex: "1 1 auto" }}>
           <table>
             <tbody>
-              {players
+              {sourcePlayers
                 .map((player, i) => ({
                   ...player,
                   i,
-                  pos_rank: players
+                  posRank: sourcePlayers
                     .slice(0, i)
-                    .filter((p, j) => p.position === player.position).length,
+                    .filter(
+                      (prev, j) =>
+                        prev.player.position === player.player.position
+                    ).length,
                 }))
                 .map((v, i) => (
                   <tr
@@ -247,7 +235,7 @@ function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
                     }}
                   >
                     <td>
-                      {v.pos_rank + 1}/{v.i + 1}
+                      {v.posRank + 1}/{v.i + 1}
                     </td>
                     <td>
                       {v.value < 0 && "$"}
@@ -262,10 +250,10 @@ function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
                           QB: "plum",
                           K: "tan",
                           "D/ST": "lightsalmon",
-                        }[v.position],
+                        }[v.player.position],
                       }}
                     >
-                      {v.fname}, {v.position} {v.team}
+                      {v.player.name}, {v.player.position} {v.team}
                     </td>
                   </tr>
                 ))}
@@ -277,194 +265,78 @@ function SubDraft(props: { r: ResultsType; liveDraft: LiveDraftType }) {
   );
 }
 
-function isMyPick(pick: number): boolean {
-  const oddRound = (pick / NUM_TEAMS) % 2 < 1;
-  return (
-    pick % NUM_TEAMS === (oddRound ? PICK_NUMBER - 1 : NUM_TEAMS - PICK_NUMBER)
-  );
-}
-
-export function normalize(s: string) {
-  return s
-    .replaceAll(/[^A-Za-z0-9 ]/g, "")
-    .replaceAll(/ I+$/g, "")
-    .replaceAll(/ jr$/gi, "");
-}
-
 function getScore(average: number, value: number): number {
   return (100 * (value - average)) / (value + average);
 }
 
-function results(draft_json: DraftJsonType): ResultsType {
-  draft_json.extra = Object.fromEntries(
-    Object.entries(draft_json.extra).map(([s, ps]) => [
-      s,
-      Object.fromEntries(
-        Object.entries(ps).map(([name, value]) => [normalize(name), value])
-      ),
-    ])
-  );
-  // @ts-ignore
-  draft_json.espn = Object.fromEntries(
-    Object.entries(draft_json.espn).map(([k, v]) => [
-      k,
-      Object.fromEntries(
-        Object.entries(v).map(([kk, vv]) => [normalize(kk), vv])
-      ),
-    ])
-  );
-  console.log(draft_json.espn);
-
-  const extra = Object.keys(draft_json.extra);
-  const raw = Object.entries(draft_json.espn.pick)
-    .map(([name, pick]) => ({
-      name,
-      pick,
-      auction: -draft_json.espn.auction[name] || -1,
-    }))
-    .sort((a, b) => a.pick - b.pick)
-    .map((o, i) => ({ ...o, i }))
-    .map((o) => ({
-      ...o,
-      extra: Object.fromEntries(
-        extra.map((s) => [
-          s,
-          draft_json.extra[s][o.name] ||
-            Object.entries(draft_json.extra[s]).length + 1,
-        ])
-      ),
-    }))
-    .map((o) => ({
-      ...o,
-      scores: Object.fromEntries(
-        extra.map((s) => [
-          s,
-          getScore(o.extra[s] > 0 ? o.pick : o.auction, o.extra[s]),
-        ])
-      ),
-    }))
-    .map((o) => ({
-      fname: `${[
-        o.pick,
-        `$${-o.auction}`,
-        "",
-        ...extra
-          .map((s) => parseFloat(o.extra[s].toFixed(1)))
-          .map((e) => (e < 0 ? `$${-e}` : e)),
-      ].join("/")} ${o.name.substring(0, 20)}`,
-      ...o,
-    }))
-    .map((o) => ({ ...o, ...draft_json.espn.players[o.name] }));
-
-  const values = [
-    { source: "espnpick", players: raw.map((p) => ({ ...p, value: p.pick })) },
-    {
-      source: "espnauction",
-      players: raw.map((p) => ({ ...p, value: p.auction })),
-    },
-  ].concat(
-    extra.map((source) => ({
-      source,
-      players: raw.map((p) => ({ ...p, value: p.extra[source] })),
-    }))
-  );
-
-  const scores = extra.map((source) => ({
-    source: `${source}_score`,
-    players: raw.map((p) => ({ ...p, value: p.scores[source] })),
-  }));
-
-  const composite = {
-    source: "composite",
-    players: raw
-      .map((p) => ({
+function getResults(draftJson: DraftJsonType): DraftJsonType {
+  return Object.fromEntries(
+    Object.entries({
+      composite: Object.values(selectedWrapped().nflPlayers)
+        .map((p) => ({
+          ...p,
+          extra: Object.values(draftJson)
+            .map(
+              (d) =>
+                Object.keys(d)
+                  .map((playerId, rank) => ({ playerId, rank }))
+                  .find(({ playerId }) => playerId === p.id)?.rank
+            )
+            .filter((rank) => rank !== undefined) as number[],
+        }))
+        .map(({ extra, ...p }) => ({
+          ...p,
+          value:
+            extra.length === 0
+              ? null
+              : extra.reduce((a, b) => a + b, extra.length) / extra.length,
+        })),
+      espnpick: Object.values(selectedWrapped().nflPlayers).map((p) => ({
         ...p,
-        extra: Object.values(draft_json.extra)
-          .map(
-            (d) =>
-              Object.keys(d)
-                .map((name, i) => ({ name, i }))
-                .find(({ name }) => normalize(name) === normalize(p.name))?.i!
-          )
-          .filter((rank) => rank !== undefined),
-      }))
-      .map(({ extra, ...p }) => ({
-        ...p,
-        value:
-          extra.length === 0
-            ? raw.length
-            : extra.reduce((a, b) => a + b, extra.length) / extra.length,
+        value: p.ownership.averageDraftPosition,
       })),
-  };
-
-  return [composite]
-    .concat(values)
-    .concat(scores)
-    .map(({ players, ...o }) => ({
-      ...o,
-      players: players.sort((a, b) => a.value - b.value),
-    }));
-}
-
-function getEspnLiveDraft(injured_only: boolean) {
-  const max_index = 6;
-  const data = {
-    players: {} as { [name: string]: { position: string; team: string } },
-    pick: {} as { [name: string]: number },
-    auction: {} as { [name: string]: number },
-  };
-  function helper(index: number) {
-    if (index > max_index) {
-      console.log(data);
-      return;
-    }
-    function subHelper() {
-      Array.from(document.getElementsByTagName("tr"))
-        .map((tr) => tr)
-        .map((tr) => ({
-          name: tr.getElementsByClassName(
-            "player-column__athlete"
-          )[0] as HTMLElement,
-          position: tr.getElementsByClassName(
-            "player-column__position"
-          )[0] as HTMLElement,
-          pick: tr.getElementsByClassName("adp")[0] as HTMLElement,
-          auction: tr.getElementsByClassName("avc")[0] as HTMLElement,
-          injury: tr.getElementsByClassName(
-            "playerinfo__injurystatus"
-          )[0] as HTMLElement,
-        }))
-        .filter(({ name, pick, auction }) => name && pick && auction)
-        .map(({ name, position, pick, auction, injury }) => ({
-          name: (name.children[0] as HTMLElement).innerText
-            .split(") ")
-            .reverse()[0],
-          position: position.innerText.split("\n"),
-          pick: parseFloat(pick.innerText),
-          auction: parseFloat(auction.innerText),
-          injury: injury?.innerText,
-        }))
-        .filter(({ injury }) => !injured_only || ["O", "IR"].includes(injury))
-        .forEach(({ name, position, pick, auction }) => {
-          data.players[name] = { position: position[1], team: position[0] };
-          data.pick[name] = pick;
-          data.auction[name] = auction;
-        });
-      helper(index + 1);
-    }
-    const clickable = Array.from(
-      document.getElementsByClassName("Pagination__list__item__link")
-    )
-      .map((i) => i as HTMLElement)
-      .find((i) => i.innerText === index.toString())!;
-    if (clickable) {
-      clickable.click();
-      setTimeout(subHelper, 5000);
-    } else {
-      subHelper();
-    }
-  }
-  helper(1);
+      espnauction: Object.values(selectedWrapped().nflPlayers).map((p) => ({
+        ...p,
+        value: p.ownership.auctionValueAverage,
+      })),
+      ...Object.fromEntries(
+        Object.keys(draftJson).map((source) => [
+          source,
+          Object.values(selectedWrapped().nflPlayers).map((p) => ({
+            ...p,
+            value: draftJson[source][p.id],
+          })),
+        ])
+      ),
+      ...Object.fromEntries(
+        Object.keys(draftJson).map((source) => [
+          `${source}_score`,
+          Object.values(selectedWrapped().nflPlayers)
+            .map((p) => ({ ...p, value: draftJson[source][p.id] }))
+            .map((p) => ({
+              ...p,
+              value: getScore(
+                p.value > 0
+                  ? p.ownership.averageDraftPosition
+                  : p.ownership.auctionValueAverage,
+                p.value
+              ),
+            })),
+        ])
+      ),
+    }).map(([sourceName, players]) => [
+      sourceName,
+      Object.fromEntries(
+        players
+          .map((p) => ({
+            ...p,
+            value: p.value === null ? players.length : p.value,
+          }))
+          .sort((a, b) => a.value - b.value)
+          .map((p) => [p.name, p.value])
+      ),
+    ])
+  );
 }
 
 function jayzheng() {
@@ -610,10 +482,4 @@ function updateDraftRanking(
       )
     )
     .then((resp) => alert(resp.ok));
-}
-
-export function getPeakedValue(name: string, lines: string[]): number {
-  const found = lines.find((line) => normalize(line).includes(normalize(name)));
-  if (!found) return MAX_PEAKED;
-  return parseInt(found.split(" ")[0]);
 }

@@ -1,5 +1,4 @@
 import { ReactNode, useState } from "react";
-import { normalize } from "../Draft";
 import { FFTeamType, NFLPlayerType, WrappedType } from "../FetchWrapped";
 import wrapped2021 from "./2021.json";
 import wrapped2022 from "./2022.json";
@@ -11,7 +10,7 @@ import HistoricalAccuracyStateful from "./HistoricalAccuracy";
 
 export const currentYear = "2021";
 
-const allWrapped: { [year: string]: WrappedType } = {
+export const allWrapped: { [year: string]: WrappedType } = {
   "2024": wrapped2024,
   "2023": wrapped2023,
   "2022": wrapped2022,
@@ -1300,10 +1299,10 @@ function OwnedTeams() {
 }
 
 function FantasyCalc() {
-  const playerToDraftIndex = Object.fromEntries(
+  const playerIdToDraftIndex = Object.fromEntries(
     Object.values(selectedWrapped().ffTeams)
       .flatMap((team) => team.draft)
-      .map((p) => [selectedWrapped().nflPlayers[p.playerId].name, p.pickIndex])
+      .map((p) => [selectedWrapped().nflPlayers[p.playerId].id, p.pickIndex])
   );
   const owned = Object.fromEntries(
     Object.values(selectedWrapped().ffTeams)
@@ -1347,7 +1346,7 @@ function FantasyCalc() {
               .map((p) => ({
                 name: p.name,
                 value: selectedWrapped().fantasyCalc.players[p.id] || 0,
-                draftPick: playerToDraftIndex[normalize(p.name)],
+                draftPick: playerIdToDraftIndex[p.id],
               }))
               .sort((a, b) => b.value - a.value),
           }))
