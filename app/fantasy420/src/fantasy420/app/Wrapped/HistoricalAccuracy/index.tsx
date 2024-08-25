@@ -73,10 +73,10 @@ function getData(players: PlayersType): DataType {
           .map(([key, f]) => ({
             key,
             playersData: Object.entries(players)
-              .map(([playerName, value]) => ({
-                playerName,
+              .map(([playerId, value]) => ({
+                playerId,
                 x: value,
-                y: f(playerName),
+                y: f(playerId),
               }))
               .filter(({ x }) => x !== null && x !== undefined)
               .map(({ ...o }) => ({
@@ -88,7 +88,7 @@ function getData(players: PlayersType): DataType {
             const ranks = Object.fromEntries(
               playersData
                 .sort((a, b) => b.y - a.y)
-                .map((o, i) => [o.playerName, i])
+                .map((o, i) => [o.playerId, i])
             );
             return [
               key,
@@ -97,9 +97,9 @@ function getData(players: PlayersType): DataType {
                 .map(({ x, y, ...o }, i) => ({
                   x,
                   y,
-                  label: `${o.playerName}: #${i + 1} ${
-                    x < 0 ? `$${-x}` : x
-                  } -> #${ranks[o.playerName] + 1} ${y}`,
+                  label: `${selectedWrapped().nflPlayers[o.playerId].name}: #${
+                    i + 1
+                  } ${x < 0 ? `$${-x}` : x} -> #${ranks[o.playerId] + 1} ${y}`,
                 })),
             ];
           })
