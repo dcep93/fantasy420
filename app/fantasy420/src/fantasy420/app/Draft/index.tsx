@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { printF } from "..";
 import { fetchExtensionStorage } from "./Extension";
 
-import { allWrapped, selectedWrapped, selectedYear } from "../Wrapped";
+import { allWrapped, clog, selectedWrapped, selectedYear } from "../Wrapped";
 import draft2023 from "./2023.json";
 import draft2024 from "./2024.json";
 
@@ -95,18 +95,22 @@ function SubDraft(props: { liveDraft: string[] }) {
   const results = getResults();
   const sources = Object.keys(results);
   const [source, update] = useState(sources[0]);
-  const sourcePlayers = Object.entries(results[source])
-    .map(([playerId, value], sourceRank) => ({
-      playerId,
-      player: selectedWrapped().nflPlayers[playerId],
-      sourceRank,
-      value,
-      seen: draftedById[playerId] !== undefined,
-    }))
-    .map((p) => ({
-      ...p,
-      team: selectedWrapped().nflTeams[p.player.nflTeamId].name,
-    }));
+  const sourcePlayers = clog(
+    Object.entries(results[source])
+      .map(([playerId, value]) => ({
+        playerId,
+        player: selectedWrapped().nflPlayers[playerId],
+        value,
+        seen: draftedById[playerId] !== undefined,
+      }))
+      .filter(({ value }) => value !== undefined)
+      .sort((a, b) => a.value - b.value)
+      .map((p, sourceRank) => ({
+        ...p,
+        sourceRank,
+        team: selectedWrapped().nflTeams[p.player.nflTeamId].name,
+      }))
+  );
   return (
     <pre
       style={{
@@ -285,8 +289,10 @@ function getResults(): DraftJsonType {
           extra: Object.values(draftJson)
             .map(
               (d) =>
-                Object.keys(d)
-                  .map((playerId, rank) => ({ playerId, rank }))
+                Object.entries(d)
+                  .map(([playerId, value]) => ({ playerId, value }))
+                  .sort((a, b) => a.value - b.value)
+                  .map(({ playerId }, rank) => ({ playerId, rank }))
                   .find(({ playerId }) => playerId === p.id)?.rank
             )
             .filter((rank) => rank !== undefined) as number[],
@@ -304,7 +310,7 @@ function getResults(): DraftJsonType {
       })),
       espnauction: Object.values(selectedWrapped().nflPlayers).map((p) => ({
         ...p,
-        value: p.ownership.auctionValueAverage,
+        value: -p.ownership.auctionValueAverage,
       })),
       ...Object.fromEntries(
         Object.keys(draftJson).map((source) => [
@@ -339,7 +345,6 @@ function getResults(): DraftJsonType {
             ...p,
             value: p.value === null ? players.length : p.value,
           }))
-          .sort((a, b) => a.value - b.value)
           .map((p) => [p.id, p.value])
       ),
     ])
