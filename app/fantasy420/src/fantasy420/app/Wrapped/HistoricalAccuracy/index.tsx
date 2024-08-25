@@ -56,7 +56,7 @@ function getData(players: PlayersType): DataType {
     [position: string]: PlayersType;
   };
   Object.entries(players).forEach(([playerId, value]) => {
-    const position = selectedWrapped().nflPlayers[playerId]!.position;
+    const position = selectedWrapped().nflPlayers[playerId]?.position;
     if (!byPosition[position]) byPosition[position] = {};
     byPosition[position][playerId] = value;
   });
@@ -66,9 +66,9 @@ function getData(players: PlayersType): DataType {
       Object.fromEntries(
         Object.entries({
           season_points: (playerId: string) =>
-            selectedWrapped().nflPlayers[playerId]!.total,
+            selectedWrapped().nflPlayers[playerId]?.total,
           average_points: (playerId: string) =>
-            selectedWrapped().nflPlayers[playerId]!.average,
+            selectedWrapped().nflPlayers[playerId]?.average,
         })
           .map(([key, f]) => ({
             key,
@@ -120,25 +120,15 @@ export default function HistoricalAccuracy() {
     Object.values(selectedWrapped().ffTeams)
       .flatMap((team) => team.draft)
       .map((player) => [
-        selectedWrapped().nflPlayers[player.playerId].name,
+        selectedWrapped().nflPlayers[player.playerId].id,
         player.pickIndex,
       ])
   );
-  const sources =
-    selectedDraft() === undefined
-      ? {
-          draft,
-        }
-      : ({
-          ...selectedDraft().extra,
-          draft,
-          espn_adp: selectedDraft().espn.pick,
-          espn_auction: Object.fromEntries(
-            Object.entries(selectedDraft().espn.auction).map(
-              ([name, value]) => [name, -value]
-            )
-          ),
-        } as { [k: string]: {} });
+  const sources = {
+    ...(selectedDraft() || {}),
+    draft,
+  } as { [k: string]: {} };
+  console.log(sources);
   sources.composite = getComposite(sources);
   const data = getData(sources[source]);
   return (
