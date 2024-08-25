@@ -7,7 +7,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.06833022388059702,
+        "averageDraftPosition": 169.36968737595708,
+        "percentOwned": 1.6376209722273722
+      }
     },
     "8439": {
       "id": "8439",
@@ -16,7 +21,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 3.0408306112925807,
+        "averageDraftPosition": 120.62252456899644,
+        "percentOwned": 76.84807697655664
+      }
     },
     "10621": {
       "id": "10621",
@@ -25,16 +35,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "10636": {
-      "id": "10636",
-      "nflTeamId": "0",
-      "name": "Mason Crosby",
-      "position": "K",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.020844055584148223,
+        "averageDraftPosition": 170.17750766695434,
+        "percentOwned": 2.973085809173154
+      }
     },
     "11122": {
       "id": "11122",
@@ -43,7 +49,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.018518518518518517,
+        "averageDraftPosition": 170.10636326847035,
+        "percentOwned": 1.8526669752240976
+      }
     },
     "11252": {
       "id": "11252",
@@ -52,7 +63,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0034997666822211854,
+        "averageDraftPosition": 169.93460223332775,
+        "percentOwned": 0.35855650416678253
+      }
     },
     "12460": {
       "id": "12460",
@@ -61,7 +77,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.00874485596707819,
+        "averageDraftPosition": 169.7928795015066,
+        "percentOwned": 0.8408504850333903
+      }
     },
     "12483": {
       "id": "12483",
@@ -70,16 +91,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "14012": {
-      "id": "14012",
-      "nflTeamId": "29",
-      "name": "Andy Dalton",
-      "position": "QB",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.9752798507462687,
+        "averageDraftPosition": 162.32427236468325,
+        "percentOwned": 25.612460185916476
+      }
     },
     "14163": {
       "id": "14163",
@@ -88,7 +105,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0023331777881474567,
+        "averageDraftPosition": 169.99273574168126,
+        "percentOwned": 0.1685237027011995
+      }
     },
     "14880": {
       "id": "14880",
@@ -97,7 +119,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 2.0389458955223883,
+        "averageDraftPosition": 146.7609945290382,
+        "percentOwned": 50.74937335923943
+      }
     },
     "14881": {
       "id": "14881",
@@ -106,7 +133,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.13322445170321978,
+        "averageDraftPosition": 169.77534467999638,
+        "percentOwned": 4.7407520018094615
+      }
     },
     "14993": {
       "id": "14993",
@@ -115,7 +147,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.9544518785383428,
+        "averageDraftPosition": 150.54613048078284,
+        "percentOwned": 73.08732046343717
+      }
     },
     "15683": {
       "id": "15683",
@@ -124,7 +161,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 3.4477611940298507,
+        "averageDraftPosition": 96.9676504000429,
+        "percentOwned": 99.56097763706225
+      }
     },
     "15795": {
       "id": "15795",
@@ -133,7 +175,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 1.8626539623518477,
+        "averageDraftPosition": 112.33802978290657,
+        "percentOwned": 82.99898000174011
+      }
     },
     "15807": {
       "id": "15807",
@@ -142,7 +189,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.009526022304832713,
+        "averageDraftPosition": 170.07263820786923,
+        "percentOwned": 0.8772725505695144
+      }
     },
     "15818": {
       "id": "15818",
@@ -151,7 +203,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 5.860162601626016,
+        "averageDraftPosition": 82.72989825588336,
+        "percentOwned": 90.5301564793715
+      }
     },
     "15835": {
       "id": "15835",
@@ -160,7 +217,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.03368176538908246,
+        "averageDraftPosition": 169.8477504189764,
+        "percentOwned": 1.9836054041445599
+      }
     },
     "15847": {
       "id": "15847",
@@ -169,7 +231,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 28.054613060655356,
+        "averageDraftPosition": 23.64425643253773,
+        "percentOwned": 99.8424610873332
+      }
     },
     "15864": {
       "id": "15864",
@@ -178,7 +245,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.32859141791044777,
+        "averageDraftPosition": 169.1996604576648,
+        "percentOwned": 9.480038414048567
+      }
     },
     "15880": {
       "id": "15880",
@@ -187,7 +259,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.00046479200557750407,
+        "averageDraftPosition": 169.96888040105037,
+        "percentOwned": 0.1538330531881021
+      }
     },
     "15965": {
       "id": "15965",
@@ -196,7 +273,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.1451363870303654,
+        "averageDraftPosition": 169.55403600124814,
+        "percentOwned": 16.889203740436383
+      }
     },
     "16002": {
       "id": "16002",
@@ -205,7 +287,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.015331010452961672,
+        "averageDraftPosition": 169.93102213479497,
+        "percentOwned": 0.6512559539566855
+      }
     },
     "16339": {
       "id": "16339",
@@ -214,7 +301,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0015436068947774634,
+        "averageDraftPosition": 169.97135557603326,
+        "percentOwned": 0.12279210352318883
+      }
     },
     "16460": {
       "id": "16460",
@@ -223,7 +315,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.5979094076655053,
+        "averageDraftPosition": 158.0615955349086,
+        "percentOwned": 50.15901694576394
+      }
     },
     "16731": {
       "id": "16731",
@@ -232,7 +329,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.3277584204413473,
+        "averageDraftPosition": 166.88090065744555,
+        "percentOwned": 27.5004905645009
+      }
     },
     "16733": {
       "id": "16733",
@@ -241,7 +343,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.06042296072507553,
+        "averageDraftPosition": 169.76914299355454,
+        "percentOwned": 4.731236937635715
+      }
     },
     "16737": {
       "id": "16737",
@@ -250,7 +357,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 29.88478513356562,
+        "averageDraftPosition": 32.45192339828214,
+        "percentOwned": 99.08940121511901
+      }
     },
     "16757": {
       "id": "16757",
@@ -259,7 +371,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.1515858208955224,
+        "averageDraftPosition": 169.7617799670022,
+        "percentOwned": 3.3065435635028786
+      }
     },
     "16760": {
       "id": "16760",
@@ -268,25 +385,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "16782": {
-      "id": "16782",
-      "nflTeamId": "0",
-      "name": "Jerick McKinnon",
-      "position": "RB",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
-    },
-    "16799": {
-      "id": "16799",
-      "nflTeamId": "19",
-      "name": "Allen Robinson II",
-      "position": "WR",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0013992537313432835,
+        "averageDraftPosition": 169.9365196265973,
+        "percentOwned": 0.1701935163315325
+      }
     },
     "16800": {
       "id": "16800",
@@ -295,16 +399,26 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 33.66651173599814,
+        "averageDraftPosition": 27.714160897588922,
+        "percentOwned": 99.57200878196512
+      }
     },
     "16813": {
       "id": "16813",
-      "nflTeamId": "0",
+      "nflTeamId": "25",
       "name": "Logan Thomas",
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0009291521486643438,
+        "averageDraftPosition": 169.98909945139158,
+        "percentOwned": 0.1295869139431817
+      }
     },
     "17372": {
       "id": "17372",
@@ -313,7 +427,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.028564076170869788,
+        "averageDraftPosition": 169.2600875653327,
+        "percentOwned": 3.6506899001042785
+      }
     },
     "17427": {
       "id": "17427",
@@ -322,7 +441,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.2353395061728395,
+        "averageDraftPosition": 167.28296790361821,
+        "percentOwned": 27.924730045263228
+      }
     },
     "2468609": {
       "id": "2468609",
@@ -331,7 +455,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.48803716608594655,
+        "averageDraftPosition": 159.44616119174944,
+        "percentOwned": 28.20046688227421
+      }
     },
     "2473037": {
       "id": "2473037",
@@ -340,7 +469,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.05941358024691358,
+        "averageDraftPosition": 169.85460405066746,
+        "percentOwned": 4.584644680119542
+      }
     },
     "2573079": {
       "id": "2573079",
@@ -349,7 +483,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.003965477023559599,
+        "averageDraftPosition": 169.93624855936378,
+        "percentOwned": 0.18298278626980227
+      }
     },
     "2573401": {
       "id": "2573401",
@@ -358,16 +497,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "2574576": {
-      "id": "2574576",
-      "nflTeamId": "21",
-      "name": "C.J. Uzomah",
-      "position": "TE",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0020905923344947735,
+        "averageDraftPosition": 169.94520600270246,
+        "percentOwned": 0.6366419957865741
+      }
     },
     "2576336": {
       "id": "2576336",
@@ -376,7 +511,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0039507320474087846,
+        "averageDraftPosition": 170.1724724036515,
+        "percentOwned": 0.4342916381273256
+      }
     },
     "2576414": {
       "id": "2576414",
@@ -385,16 +525,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "2576623": {
-      "id": "2576623",
-      "nflTeamId": "21",
-      "name": "DeVante Parker",
-      "position": "WR",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 4.731117824773414,
+        "averageDraftPosition": 99.7652400595852,
+        "percentOwned": 86.58828712753984
+      }
     },
     "2576716": {
       "id": "2576716",
@@ -403,7 +539,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.00023228803716608595,
+        "averageDraftPosition": 169.9931820460546,
+        "percentOwned": 0.1084795462370926
+      }
     },
     "2576925": {
       "id": "2576925",
@@ -412,7 +553,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.005807200929152149,
+        "averageDraftPosition": 169.91997307130376,
+        "percentOwned": 4.05253054068914
+      }
     },
     "2576980": {
       "id": "2576980",
@@ -421,7 +567,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0004664179104477612,
+        "averageDraftPosition": 169.9868583397894,
+        "percentOwned": 0.10734407762886387
+      }
     },
     "2577327": {
       "id": "2577327",
@@ -430,7 +581,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 1.1716608594657376,
+        "averageDraftPosition": 137.65240702987361,
+        "percentOwned": 73.762115972721
+      }
     },
     "2577417": {
       "id": "2577417",
@@ -439,7 +595,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 8.402985074626866,
+        "averageDraftPosition": 71.37544415060232,
+        "percentOwned": 93.54173078277894
+      }
     },
     "2578570": {
       "id": "2578570",
@@ -448,7 +609,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.011199253383107793,
+        "averageDraftPosition": 170.12617282769835,
+        "percentOwned": 0.60531116516374
+      }
     },
     "2969939": {
       "id": "2969939",
@@ -457,7 +623,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0018665422305179655,
+        "averageDraftPosition": 169.97942231361483,
+        "percentOwned": 0.26956176746496996
+      }
     },
     "2971573": {
       "id": "2971573",
@@ -466,7 +637,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 1.2552753474009264,
+        "averageDraftPosition": 130.50358351291527,
+        "percentOwned": 91.49452255867068
+      }
     },
     "2971618": {
       "id": "2971618",
@@ -475,16 +651,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "2972515": {
-      "id": "2972515",
-      "nflTeamId": "6",
-      "name": "Cooper Rush",
-      "position": "QB",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.01138740413664885,
+        "averageDraftPosition": 170.16015602620172,
+        "percentOwned": 0.6675330156720314
+      }
     },
     "2973405": {
       "id": "2973405",
@@ -493,7 +665,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0065040650406504065,
+        "averageDraftPosition": 170.20654768725413,
+        "percentOwned": 0.6753116929997501
+      }
     },
     "2976212": {
       "id": "2976212",
@@ -502,7 +679,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 18.45991168951894,
+        "averageDraftPosition": 36.31523212955713,
+        "percentOwned": 99.17178822658275
+      }
     },
     "2976316": {
       "id": "2976316",
@@ -511,7 +693,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0009291521486643438,
+        "averageDraftPosition": 169.98245387876705,
+        "percentOwned": 0.360425401938189
+      }
     },
     "2976499": {
       "id": "2976499",
@@ -520,7 +707,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 8.567046246804555,
+        "averageDraftPosition": 80.85089662547982,
+        "percentOwned": 90.55477703587012
+      }
     },
     "2977187": {
       "id": "2977187",
@@ -529,7 +721,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 20.6931475029036,
+        "averageDraftPosition": 46.37896098811644,
+        "percentOwned": 97.40631178313058
+      }
     },
     "2980453": {
       "id": "2980453",
@@ -538,7 +735,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.03414634146341464,
+        "averageDraftPosition": 170.65710820824262,
+        "percentOwned": 3.0489215851430327
+      }
     },
     "2983509": {
       "id": "2983509",
@@ -547,7 +749,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0018591680223100163,
+        "averageDraftPosition": 170.11520116876977,
+        "percentOwned": 0.31062971937807415
+      }
     },
     "2985659": {
       "id": "2985659",
@@ -556,7 +763,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.022645393721049924,
+        "averageDraftPosition": 169.76021296201495,
+        "percentOwned": 0.8946770869344275
+      }
     },
     "2991662": {
       "id": "2991662",
@@ -565,7 +777,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.98341879362533,
+        "percentOwned": 0.14142831491124633
+      }
     },
     "3039707": {
       "id": "3039707",
@@ -574,7 +791,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.004666355576294913,
+        "averageDraftPosition": 169.97932208577222,
+        "percentOwned": 0.12755102040816327
+      }
     },
     "3040151": {
       "id": "3040151",
@@ -583,7 +805,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 9.97026713124274,
+        "averageDraftPosition": 55.75638356792269,
+        "percentOwned": 97.25278285321825
+      }
     },
     "3042519": {
       "id": "3042519",
@@ -592,7 +819,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 10.28548199767712,
+        "averageDraftPosition": 61.635242946970386,
+        "percentOwned": 94.11098276168474
+      }
     },
     "3043078": {
       "id": "3043078",
@@ -601,7 +833,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 37.51266558215199,
+        "averageDraftPosition": 18.68612856406241,
+        "percentOwned": 99.7186211696844
+      }
     },
     "3043116": {
       "id": "3043116",
@@ -610,7 +847,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.07363530778164924,
+        "averageDraftPosition": 171.0921174504655,
+        "percentOwned": 6.919697813945653
+      }
     },
     "3043275": {
       "id": "3043275",
@@ -619,7 +861,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.01138740413664885,
+        "averageDraftPosition": 169.97305762316958,
+        "percentOwned": 0.19511833908753484
+      }
     },
     "3044720": {
       "id": "3044720",
@@ -628,7 +875,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.003498134328358209,
+        "averageDraftPosition": 169.91117508655813,
+        "percentOwned": 0.2549185373052423
+      }
     },
     "3045138": {
       "id": "3045138",
@@ -637,7 +889,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 1.106902161282826,
+        "averageDraftPosition": 143.86797578465917,
+        "percentOwned": 70.13963321060123
+      }
     },
     "3045144": {
       "id": "3045144",
@@ -646,7 +903,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.04810597257727167,
+        "averageDraftPosition": 170.89436821450056,
+        "percentOwned": 5.7835986671603115
+      }
     },
     "3045147": {
       "id": "3045147",
@@ -655,7 +917,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 8.8931475029036,
+        "averageDraftPosition": 78.52460026068398,
+        "percentOwned": 89.68440850660507
+      }
     },
     "3045523": {
       "id": "3045523",
@@ -664,7 +931,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0629793167557518,
+        "averageDraftPosition": 171.62609928671688,
+        "percentOwned": 7.941873380229544
+      }
     },
     "3046439": {
       "id": "3046439",
@@ -673,7 +945,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.12665582151986987,
+        "averageDraftPosition": 170.44663327715364,
+        "percentOwned": 7.105145264779169
+      }
     },
     "3046779": {
       "id": "3046779",
@@ -682,7 +959,26 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 1.7756529850746268,
+        "averageDraftPosition": 149.38340769646453,
+        "percentOwned": 49.86781315120099
+      }
+    },
+    "3047876": {
+      "id": "3047876",
+      "nflTeamId": "1",
+      "name": "KhaDarel Hodge",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0013937282229965157,
+        "averageDraftPosition": 170.07748866077822,
+        "percentOwned": 0.10662776727749321
+      }
     },
     "3049899": {
       "id": "3049899",
@@ -691,7 +987,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 1.2633744855967077,
+        "averageDraftPosition": 141.24718071231808,
+        "percentOwned": 80.528300318499
+      }
     },
     "3050478": {
       "id": "3050478",
@@ -700,7 +1001,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 1.7415123456790123,
+        "averageDraftPosition": 111.72924244049419,
+        "percentOwned": 98.30474535287895
+      }
     },
     "3050481": {
       "id": "3050481",
@@ -709,7 +1015,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.00046479200557750407,
+        "averageDraftPosition": 169.9862160833051,
+        "percentOwned": 0.12588256637528555
+      }
     },
     "3051381": {
       "id": "3051381",
@@ -718,7 +1029,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0011665888940737283,
+        "averageDraftPosition": 169.96075308925361,
+        "percentOwned": 0.11197793070716658
+      }
     },
     "3051392": {
       "id": "3051392",
@@ -727,7 +1043,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 2.388617886178862,
+        "averageDraftPosition": 109.0977899154448,
+        "percentOwned": 82.09148076364168
+      }
     },
     "3051738": {
       "id": "3051738",
@@ -736,7 +1057,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0016267720195212642,
+        "averageDraftPosition": 169.97792832793834,
+        "percentOwned": 0.2652716303746198
+      }
     },
     "3051876": {
       "id": "3051876",
@@ -745,7 +1071,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 8.136881245642575,
+        "averageDraftPosition": 64.03254283899985,
+        "percentOwned": 95.49249520537295
+      }
     },
     "3051909": {
       "id": "3051909",
@@ -754,7 +1085,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.06948018528049409,
+        "averageDraftPosition": 169.2223852799501,
+        "percentOwned": 4.383258871645682
+      }
     },
     "3051926": {
       "id": "3051926",
@@ -763,7 +1099,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 1.6546595398559145,
+        "averageDraftPosition": 134.6950661726792,
+        "percentOwned": 73.65636483121835
+      }
     },
     "3052096": {
       "id": "3052096",
@@ -772,7 +1113,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.003716608594657375,
+        "averageDraftPosition": 169.99972784958197,
+        "percentOwned": 2.7107480242806603
+      }
     },
     "3052587": {
       "id": "3052587",
@@ -781,7 +1127,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.6343283582089553,
+        "averageDraftPosition": 164.24859762133624,
+        "percentOwned": 26.899410631619737
+      }
     },
     "3052897": {
       "id": "3052897",
@@ -790,7 +1141,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0009295840111550081,
+        "averageDraftPosition": 169.95798459753541,
+        "percentOwned": 0.15179956533490316
+      }
     },
     "3054212": {
       "id": "3054212",
@@ -799,7 +1155,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.024860594795539034,
+        "averageDraftPosition": 169.9677770509962,
+        "percentOwned": 2.550213813658157
+      }
     },
     "3054850": {
       "id": "3054850",
@@ -808,7 +1169,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 25.751684088269453,
+        "averageDraftPosition": 38.61780672144532,
+        "percentOwned": 98.40853176549864
+      }
     },
     "3055899": {
       "id": "3055899",
@@ -817,7 +1183,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 2.4909933093154915,
+        "averageDraftPosition": 113.33158141076896,
+        "percentOwned": 95.14227477175397
+      }
     },
     "3059722": {
       "id": "3059722",
@@ -826,7 +1197,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.011149825783972125,
+        "averageDraftPosition": 170.5436736993378,
+        "percentOwned": 2.182311595369923
+      }
     },
     "3059915": {
       "id": "3059915",
@@ -835,7 +1211,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0030211480362537764,
+        "averageDraftPosition": 169.95991348646675,
+        "percentOwned": 0.26509583806939147
+      }
     },
     "3068267": {
       "id": "3068267",
@@ -844,7 +1225,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 3.2717770034843205,
+        "averageDraftPosition": 108.00204345687972,
+        "percentOwned": 84.57497223250648
+      }
     },
     "3115255": {
       "id": "3115255",
@@ -853,7 +1239,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0011614401858304297,
+        "averageDraftPosition": 169.9804631176892,
+        "percentOwned": 0.16864186835197464
+      }
     },
     "3115306": {
       "id": "3115306",
@@ -862,7 +1253,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0030204460966542753,
+        "averageDraftPosition": 170.2027834140985,
+        "percentOwned": 0.510358028096533
+      }
     },
     "3115394": {
       "id": "3115394",
@@ -871,7 +1267,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.03554832713754647,
+        "averageDraftPosition": 170.9478455992934,
+        "percentOwned": 2.938862551345868
+      }
     },
     "3116164": {
       "id": "3116164",
@@ -880,7 +1281,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.02974668835696026,
+        "averageDraftPosition": 169.8916342003743,
+        "percentOwned": 1.8926779059844092
+      }
     },
     "3116165": {
       "id": "3116165",
@@ -889,7 +1295,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 7.10801393728223,
+        "averageDraftPosition": 84.65766380841434,
+        "percentOwned": 89.534061458719
+      }
     },
     "3116172": {
       "id": "3116172",
@@ -898,7 +1309,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.005363805970149254,
+        "averageDraftPosition": 169.91359051977676,
+        "percentOwned": 0.16314756140744435
+      }
     },
     "3116365": {
       "id": "3116365",
@@ -907,7 +1323,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 13.665117359981409,
+        "averageDraftPosition": 46.274009424728696,
+        "percentOwned": 99.53793864358335
+      }
     },
     "3116385": {
       "id": "3116385",
@@ -916,7 +1337,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 25.80804090169649,
+        "averageDraftPosition": 30.961796089852236,
+        "percentOwned": 98.83746760459088
+      }
     },
     "3116389": {
       "id": "3116389",
@@ -925,7 +1351,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.007436672089240065,
+        "averageDraftPosition": 170.29011004750424,
+        "percentOwned": 0.812850103110341
+      }
     },
     "3116406": {
       "id": "3116406",
@@ -934,16 +1365,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "3116407": {
-      "id": "3116407",
-      "nflTeamId": "10",
-      "name": "Mason Rudolph",
-      "position": "QB",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 62.06855682082268,
+        "averageDraftPosition": 3.986154676138778,
+        "percentOwned": 99.90707265918435
+      }
     },
     "3116593": {
       "id": "3116593",
@@ -952,7 +1379,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.005112712061352545,
+        "averageDraftPosition": 169.9289042730962,
+        "percentOwned": 0.32414820848413045
+      }
     },
     "3117251": {
       "id": "3117251",
@@ -961,7 +1393,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 67.12613240418119,
+        "averageDraftPosition": 1.3677089152116724,
+        "percentOwned": 99.88041377574066
+      }
     },
     "3117256": {
       "id": "3117256",
@@ -970,7 +1407,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 1.0769230769230769,
+        "averageDraftPosition": 137.84678516693643,
+        "percentOwned": 67.98268023221374
+      }
     },
     "3118892": {
       "id": "3118892",
@@ -979,7 +1421,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.004415524052986289,
+        "averageDraftPosition": 169.9390522204929,
+        "percentOwned": 0.3243213224609176
+      }
     },
     "3119195": {
       "id": "3119195",
@@ -988,7 +1435,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.005110336817653891,
+        "averageDraftPosition": 170.36373488913927,
+        "percentOwned": 0.5623884664084888
+      }
     },
     "3120348": {
       "id": "3120348",
@@ -997,7 +1449,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.009993028119916338,
+        "averageDraftPosition": 169.97459585398227,
+        "percentOwned": 0.2743438516988216
+      }
     },
     "3121023": {
       "id": "3121023",
@@ -1006,7 +1463,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 1.5586527293844368,
+        "averageDraftPosition": 125.35406879034414,
+        "percentOwned": 80.64377587062282
+      }
     },
     "3121409": {
       "id": "3121409",
@@ -1015,7 +1477,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0027887520334650244,
+        "averageDraftPosition": 169.96481872260787,
+        "percentOwned": 0.3209892540794698
+      }
     },
     "3121410": {
       "id": "3121410",
@@ -1024,7 +1491,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0018583042973286876,
+        "averageDraftPosition": 169.9627127545296,
+        "percentOwned": 0.18122816792946356
+      }
     },
     "3121422": {
       "id": "3121422",
@@ -1033,7 +1505,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 6.266666666666667,
+        "averageDraftPosition": 89.27501372609868,
+        "percentOwned": 88.4134297662175
+      }
     },
     "3121427": {
       "id": "3121427",
@@ -1042,7 +1519,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.8975371747211895,
+        "averageDraftPosition": 151.28731774389138,
+        "percentOwned": 61.06188137598087
+      }
     },
     "3122672": {
       "id": "3122672",
@@ -1051,7 +1533,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.003484320557491289,
+        "averageDraftPosition": 170.237437515815,
+        "percentOwned": 0.4141081864579033
+      }
     },
     "3122840": {
       "id": "3122840",
@@ -1060,7 +1547,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.918338777414839,
+        "averageDraftPosition": 158.4968677671723,
+        "percentOwned": 33.95309947960408
+      }
     },
     "3122976": {
       "id": "3122976",
@@ -1069,7 +1561,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0006971880083662561,
+        "averageDraftPosition": 169.9838343136506,
+        "percentOwned": 0.17289924638883078
+      }
     },
     "3123052": {
       "id": "3123052",
@@ -1078,7 +1575,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.00051440329218107,
+        "averageDraftPosition": 169.95899741113263,
+        "percentOwned": 2.709518735973522
+      }
     },
     "3123075": {
       "id": "3123075",
@@ -1087,7 +1589,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.010457820125493842,
+        "averageDraftPosition": 169.85963773166935,
+        "percentOwned": 0.3191381049786655
+      }
     },
     "3123076": {
       "id": "3123076",
@@ -1096,7 +1603,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 2.9609574715314895,
+        "averageDraftPosition": 89.3713517720135,
+        "percentOwned": 90.77011649583203
+      }
     },
     "3124679": {
       "id": "3124679",
@@ -1105,7 +1617,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.12686567164179105,
+        "averageDraftPosition": 169.44136159092793,
+        "percentOwned": 12.118647589758314
+      }
     },
     "3125116": {
       "id": "3125116",
@@ -1114,7 +1631,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.023234200743494422,
+        "averageDraftPosition": 170.52030727070473,
+        "percentOwned": 2.7345123897179966
+      }
     },
     "3126486": {
       "id": "3126486",
@@ -1123,7 +1645,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 24.891056910569105,
+        "averageDraftPosition": 46.046042863212975,
+        "percentOwned": 98.27695041697133
+      }
     },
     "3127292": {
       "id": "3127292",
@@ -1132,7 +1659,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.00046479200557750407,
+        "averageDraftPosition": 169.98976381336146,
+        "percentOwned": 0.1617934264478568
+      }
     },
     "3128390": {
       "id": "3128390",
@@ -1141,7 +1673,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.008831048105972577,
+        "averageDraftPosition": 169.96845221044592,
+        "percentOwned": 0.4551958786169006
+      }
     },
     "3128429": {
       "id": "3128429",
@@ -1150,7 +1687,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 2.464094817569138,
+        "averageDraftPosition": 118.61123364842929,
+        "percentOwned": 80.87369888321003
+      }
     },
     "3128720": {
       "id": "3128720",
@@ -1159,16 +1701,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "3128724": {
-      "id": "3128724",
-      "nflTeamId": "19",
-      "name": "Isaiah McKenzie",
-      "position": "WR",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 3.4278410411340925,
+        "averageDraftPosition": 117.04018944131998,
+        "percentOwned": 83.00651053959544
+      }
     },
     "3134353": {
       "id": "3134353",
@@ -1177,16 +1715,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "3135321": {
-      "id": "3135321",
-      "nflTeamId": "13",
-      "name": "Hunter Renfrow",
-      "position": "WR",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.027190332326283987,
+        "averageDraftPosition": 170.30562398548648,
+        "percentOwned": 1.6097532982726992
+      }
     },
     "3139477": {
       "id": "3139477",
@@ -1195,7 +1729,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 24.338544097060197,
+        "averageDraftPosition": 28.621539035377154,
+        "percentOwned": 99.74341908895238
+      }
     },
     "3139602": {
       "id": "3139602",
@@ -1204,7 +1743,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0032535440390425285,
+        "averageDraftPosition": 170.22957347057644,
+        "percentOwned": 0.37078791042593406
+      }
     },
     "3150744": {
       "id": "3150744",
@@ -1213,7 +1757,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0257201646090535,
+        "averageDraftPosition": 170.33079810833212,
+        "percentOwned": 4.019941023233672
+      }
     },
     "3676833": {
       "id": "3676833",
@@ -1222,7 +1771,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0065040650406504065,
+        "averageDraftPosition": 170.05407340921244,
+        "percentOwned": 0.5877409275014625
+      }
     },
     "3728262": {
       "id": "3728262",
@@ -1231,7 +1785,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.00743321718931475,
+        "averageDraftPosition": 170.22327839737224,
+        "percentOwned": 0.5190631687288506
+      }
     },
     "3886598": {
       "id": "3886598",
@@ -1240,7 +1799,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.01556329849012776,
+        "averageDraftPosition": 169.93019058895425,
+        "percentOwned": 0.5533094904887783
+      }
     },
     "3886812": {
       "id": "3886812",
@@ -1249,7 +1813,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0013999066728884741,
+        "averageDraftPosition": 169.9736847138936,
+        "percentOwned": 0.20615536921647984
+      }
     },
     "3892775": {
       "id": "3892775",
@@ -1258,7 +1827,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0004666355576294914,
+        "averageDraftPosition": 169.98504672003367,
+        "percentOwned": 0.11809439765368493
+      }
     },
     "3895856": {
       "id": "3895856",
@@ -1267,7 +1841,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 4.293051359516617,
+        "averageDraftPosition": 99.54716629826078,
+        "percentOwned": 85.79311749134597
+      }
     },
     "3911853": {
       "id": "3911853",
@@ -1276,7 +1855,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0016267720195212642,
+        "averageDraftPosition": 169.95103459470815,
+        "percentOwned": 0.13569224332784766
+      }
     },
     "3912547": {
       "id": "3912547",
@@ -1285,7 +1869,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.18540111940298507,
+        "averageDraftPosition": 169.86398393228606,
+        "percentOwned": 3.085482492486981
+      }
     },
     "3915411": {
       "id": "3915411",
@@ -1294,7 +1883,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.007204276086451313,
+        "averageDraftPosition": 170.39474551105468,
+        "percentOwned": 0.645684392134794
+      }
     },
     "3915416": {
       "id": "3915416",
@@ -1303,7 +1897,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 20.588617886178863,
+        "averageDraftPosition": 47.25320589330558,
+        "percentOwned": 97.15719558834964
+      }
     },
     "3915486": {
       "id": "3915486",
@@ -1312,7 +1911,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.28677666744132,
+        "averageDraftPosition": 165.8322925320118,
+        "percentOwned": 22.92398656778861
+      }
     },
     "3915511": {
       "id": "3915511",
@@ -1321,7 +1925,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 10.900606626224919,
+        "averageDraftPosition": 58.92948034372773,
+        "percentOwned": 96.11050756207801
+      }
     },
     "3916148": {
       "id": "3916148",
@@ -1330,7 +1939,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 3.7648698884758365,
+        "averageDraftPosition": 101.73446004010312,
+        "percentOwned": 85.5859491419062
+      }
     },
     "3916387": {
       "id": "3916387",
@@ -1339,7 +1953,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 19.694587027531497,
+        "averageDraftPosition": 36.8759462315715,
+        "percentOwned": 99.66129095051734
+      }
     },
     "3916430": {
       "id": "3916430",
@@ -1348,7 +1967,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.005345108064141297,
+        "averageDraftPosition": 170.29837820289413,
+        "percentOwned": 0.5296166989385451
+      }
     },
     "3916433": {
       "id": "3916433",
@@ -1357,7 +1981,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 1.0527538926330466,
+        "averageDraftPosition": 148.13780130907423,
+        "percentOwned": 65.25221673053072
+      }
     },
     "3916566": {
       "id": "3916566",
@@ -1366,7 +1995,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0016263940520446097,
+        "averageDraftPosition": 169.97844467466498,
+        "percentOwned": 0.2658200901492924
+      }
     },
     "3916945": {
       "id": "3916945",
@@ -1375,7 +2009,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.01602787456445993,
+        "averageDraftPosition": 170.6090844421528,
+        "percentOwned": 1.9194565026240038
+      }
     },
     "3917232": {
       "id": "3917232",
@@ -1384,7 +2023,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.1523417395779722,
+        "averageDraftPosition": 168.54635471006367,
+        "percentOwned": 16.431384772321557
+      }
     },
     "3917315": {
       "id": "3917315",
@@ -1393,16 +2037,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "3917668": {
-      "id": "3917668",
-      "nflTeamId": "15",
-      "name": "Alec Ingold",
-      "position": "RB",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 6.572294776119403,
+        "averageDraftPosition": 84.20934792172766,
+        "percentOwned": 88.75598352237124
+      }
     },
     "3917792": {
       "id": "3917792",
@@ -1411,7 +2051,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.17257462686567165,
+        "averageDraftPosition": 170.1650192477823,
+        "percentOwned": 5.233631691744099
+      }
     },
     "3918298": {
       "id": "3918298",
@@ -1420,7 +2065,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 27.34951003266449,
+        "averageDraftPosition": 29.18652059353765,
+        "percentOwned": 99.80404225420003
+      }
     },
     "3918639": {
       "id": "3918639",
@@ -1429,7 +2079,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0030197444831591173,
+        "averageDraftPosition": 170.0303461446646,
+        "percentOwned": 0.5238848934181175
+      }
     },
     "3921690": {
       "id": "3921690",
@@ -1438,7 +2093,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0009291521486643438,
+        "averageDraftPosition": 169.96685620980563,
+        "percentOwned": 0.1390249004518772
+      }
     },
     "3924327": {
       "id": "3924327",
@@ -1447,7 +2107,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0011660447761194029,
+        "averageDraftPosition": 169.97751487212838,
+        "percentOwned": 0.1690776923119706
+      }
     },
     "3924365": {
       "id": "3924365",
@@ -1456,7 +2121,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.01812688821752266,
+        "averageDraftPosition": 170.38760592967463,
+        "percentOwned": 2.390049574415307
+      }
     },
     "3925357": {
       "id": "3925357",
@@ -1465,16 +2135,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "3926231": {
-      "id": "3926231",
-      "nflTeamId": "21",
-      "name": "Britain Covey",
-      "position": "WR",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 11.451080641412968,
+        "averageDraftPosition": 68.98805033848622,
+        "percentOwned": 93.28003317222344
+      }
     },
     "3928925": {
       "id": "3928925",
@@ -1483,7 +2149,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0011619800139437602,
+        "averageDraftPosition": 170.09301059868233,
+        "percentOwned": 0.1286553388263301
+      }
     },
     "3929630": {
       "id": "3929630",
@@ -1492,7 +2163,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 52.18838559814169,
+        "averageDraftPosition": 11.486954362948003,
+        "percentOwned": 99.88744950962788
+      }
     },
     "3929645": {
       "id": "3929645",
@@ -1501,16 +2177,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "3929785": {
-      "id": "3929785",
-      "nflTeamId": "10",
-      "name": "Nick Westbrook-Ikhine",
-      "position": "WR",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.048548199767711964,
+        "averageDraftPosition": 170.59673145508972,
+        "percentOwned": 5.901801399875229
+      }
     },
     "3930066": {
       "id": "3930066",
@@ -1519,7 +2191,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.007436672089240065,
+        "averageDraftPosition": 170.1647315503528,
+        "percentOwned": 0.7791400027026477
+      }
     },
     "3930086": {
       "id": "3930086",
@@ -1528,7 +2205,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.037415756448989076,
+        "averageDraftPosition": 169.6820940058724,
+        "percentOwned": 2.771411752074255
+      }
     },
     "3931391": {
       "id": "3931391",
@@ -1537,7 +2219,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0023239600278875203,
+        "averageDraftPosition": 169.97670221806342,
+        "percentOwned": 0.11477039442141837
+      }
     },
     "3932905": {
       "id": "3932905",
@@ -1546,7 +2233,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 4.678281068524971,
+        "averageDraftPosition": 100.89468105930038,
+        "percentOwned": 85.21064839239337
+      }
     },
     "3953687": {
       "id": "3953687",
@@ -1555,7 +2247,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 2.8973765432098766,
+        "averageDraftPosition": 97.25021085732394,
+        "percentOwned": 98.69676012943614
+      }
     },
     "3975763": {
       "id": "3975763",
@@ -1564,7 +2261,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0007716049382716049,
+        "averageDraftPosition": 169.93885291938062,
+        "percentOwned": 0.19910873339265034
+      }
     },
     "4032473": {
       "id": "4032473",
@@ -1573,7 +2275,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.8950058072009291,
+        "averageDraftPosition": 152.6774786473725,
+        "percentOwned": 52.16703967182951
+      }
     },
     "4034949": {
       "id": "4034949",
@@ -1582,7 +2289,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.01748971193415638,
+        "averageDraftPosition": 170.49392286203215,
+        "percentOwned": 2.6694499017681728
+      }
     },
     "4035004": {
       "id": "4035004",
@@ -1591,7 +2303,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0039507320474087846,
+        "averageDraftPosition": 169.95970152103962,
+        "percentOwned": 0.18400285815304818
+      }
     },
     "4035222": {
       "id": "4035222",
@@ -1600,7 +2317,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0032535440390425285,
+        "averageDraftPosition": 170.17808173398262,
+        "percentOwned": 0.37800604587534686
+      }
     },
     "4035537": {
       "id": "4035537",
@@ -1609,7 +2331,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0013934045517882026,
+        "averageDraftPosition": 169.97505442670538,
+        "percentOwned": 0.1471674432294646
+      }
     },
     "4035538": {
       "id": "4035538",
@@ -1618,7 +2345,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 7.78704133766837,
+        "averageDraftPosition": 71.08589829893486,
+        "percentOwned": 91.80436207196567
+      }
     },
     "4035676": {
       "id": "4035676",
@@ -1627,7 +2359,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 2.486988847583643,
+        "averageDraftPosition": 109.94235176167287,
+        "percentOwned": 82.07698929110245
+      }
     },
     "4035687": {
       "id": "4035687",
@@ -1636,7 +2373,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 28.507434944237918,
+        "averageDraftPosition": 29.251296177827005,
+        "percentOwned": 98.8047285139908
+      }
     },
     "4035693": {
       "id": "4035693",
@@ -1645,7 +2387,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0018578727357176034,
+        "averageDraftPosition": 169.9760763494352,
+        "percentOwned": 0.16419631733761317
+      }
     },
     "4035886": {
       "id": "4035886",
@@ -1654,7 +2401,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.2115652577798421,
+        "averageDraftPosition": 170.4509278754112,
+        "percentOwned": 10.589372123761112
+      }
     },
     "4036131": {
       "id": "4036131",
@@ -1663,7 +2415,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.1172782164421737,
+        "averageDraftPosition": 169.65272068407407,
+        "percentOwned": 9.436274509803921
+      }
     },
     "4036133": {
       "id": "4036133",
@@ -1672,7 +2429,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 1.758244310264747,
+        "averageDraftPosition": 129.94396302715194,
+        "percentOwned": 78.1050071085836
+      }
     },
     "4036348": {
       "id": "4036348",
@@ -1681,7 +2443,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0004645760743321719,
+        "averageDraftPosition": 169.98796446150394,
+        "percentOwned": 0.16956086327952183
+      }
     },
     "4036378": {
       "id": "4036378",
@@ -1690,7 +2457,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 6.573793425040802,
+        "averageDraftPosition": 83.55105778610914,
+        "percentOwned": 91.48569330994924
+      }
     },
     "4037235": {
       "id": "4037235",
@@ -1699,7 +2471,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.009057129586623316,
+        "averageDraftPosition": 170.01129582064183,
+        "percentOwned": 0.5923655191435876
+      }
     },
     "4038441": {
       "id": "4038441",
@@ -1708,7 +2485,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.030901486988847583,
+        "averageDraftPosition": 170.47536772955348,
+        "percentOwned": 2.4068640608657823
+      }
     },
     "4038524": {
       "id": "4038524",
@@ -1717,7 +2499,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.12759505481688826,
+        "averageDraftPosition": 169.86271584393725,
+        "percentOwned": 2.3336868098864674
+      }
     },
     "4038815": {
       "id": "4038815",
@@ -1726,7 +2513,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.7064561077566187,
+        "averageDraftPosition": 162.35567512341376,
+        "percentOwned": 30.39986819769605
+      }
     },
     "4038941": {
       "id": "4038941",
@@ -1735,16 +2527,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "4039043": {
-      "id": "4039043",
-      "nflTeamId": "3",
-      "name": "Collin Johnson",
-      "position": "WR",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 2.1336599020293914,
+        "averageDraftPosition": 154.10939121369924,
+        "percentOwned": 50.21690526245537
+      }
     },
     "4039050": {
       "id": "4039050",
@@ -1753,7 +2541,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0016263940520446097,
+        "averageDraftPosition": 169.99716895107966,
+        "percentOwned": 0.13513238345757492
+      }
     },
     "4039160": {
       "id": "4039160",
@@ -1762,7 +2555,26 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0009293680297397769,
+        "averageDraftPosition": 169.98155698571537,
+        "percentOwned": 0.15846100304333982
+      }
+    },
+    "4039607": {
+      "id": "4039607",
+      "nflTeamId": "34",
+      "name": "J.J. Taylor",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.01533457249070632,
+        "averageDraftPosition": 169.81889229975985,
+        "percentOwned": 0.13957664220064606
+      }
     },
     "4040655": {
       "id": "4040655",
@@ -1771,7 +2583,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.8272178355782629,
+        "averageDraftPosition": 150.60486777841965,
+        "percentOwned": 59.645914166395166
+      }
     },
     "4040715": {
       "id": "4040715",
@@ -1780,7 +2597,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 24.152949405455818,
+        "averageDraftPosition": 32.19415354010654,
+        "percentOwned": 99.77882832777159
+      }
     },
     "4040761": {
       "id": "4040761",
@@ -1789,7 +2611,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 2.5027868091035765,
+        "averageDraftPosition": 118.2664734696216,
+        "percentOwned": 81.23966835058283
+      }
     },
     "4040980": {
       "id": "4040980",
@@ -1798,7 +2625,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.00046468401486988845,
+        "averageDraftPosition": 169.96843251088535,
+        "percentOwned": 0.1232885841435331
+      }
     },
     "4045163": {
       "id": "4045163",
@@ -1807,16 +2639,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "4046530": {
-      "id": "4046530",
-      "nflTeamId": "4",
-      "name": "Chris Evans",
-      "position": "RB",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.12796098467254993,
+        "averageDraftPosition": 170.94693949651244,
+        "percentOwned": 7.293911189106337
+      }
     },
     "4046692": {
       "id": "4046692",
@@ -1825,7 +2653,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.98118035729632,
+        "percentOwned": 0.14087114270376336
+      }
     },
     "4047365": {
       "id": "4047365",
@@ -1834,7 +2667,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 23.671156525777985,
+        "averageDraftPosition": 40.392872147426715,
+        "percentOwned": 98.14109671961512
+      }
     },
     "4047646": {
       "id": "4047646",
@@ -1843,7 +2681,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 49.1730143985137,
+        "averageDraftPosition": 11.516761990241667,
+        "percentOwned": 99.87727040495213
+      }
     },
     "4047650": {
       "id": "4047650",
@@ -1852,7 +2695,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 23.309103576405015,
+        "averageDraftPosition": 37.316448806943505,
+        "percentOwned": 98.99280096110594
+      }
     },
     "4048244": {
       "id": "4048244",
@@ -1861,16 +2709,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "4050373": {
-      "id": "4050373",
-      "nflTeamId": "23",
-      "name": "Quez Watkins",
-      "position": "WR",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.1821561338289963,
+        "averageDraftPosition": 171.20615475690335,
+        "percentOwned": 8.963855064844672
+      }
     },
     "4239086": {
       "id": "4239086",
@@ -1879,7 +2723,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0006994637444625787,
+        "averageDraftPosition": 169.99241580152926,
+        "percentOwned": 0.10585816489031351
+      }
     },
     "4239934": {
       "id": "4239934",
@@ -1888,7 +2737,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.03274500696702276,
+        "averageDraftPosition": 170.04698749164518,
+        "percentOwned": 1.7548893475624994
+      }
     },
     "4239993": {
       "id": "4239993",
@@ -1897,7 +2751,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 11.861524163568774,
+        "averageDraftPosition": 69.04305253861027,
+        "percentOwned": 93.4522244888137
+      }
     },
     "4239996": {
       "id": "4239996",
@@ -1906,7 +2765,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 38.717007434944236,
+        "averageDraftPosition": 22.106018724070598,
+        "percentOwned": 99.52740513393891
+      }
     },
     "4240021": {
       "id": "4240021",
@@ -1915,7 +2779,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.017189314750290362,
+        "averageDraftPosition": 169.9391589962953,
+        "percentOwned": 0.6917603329038755
+      }
     },
     "4240391": {
       "id": "4240391",
@@ -1924,7 +2793,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0009326183259501049,
+        "averageDraftPosition": 169.94043133129304,
+        "percentOwned": 0.14367789455340274
+      }
     },
     "4240472": {
       "id": "4240472",
@@ -1933,7 +2807,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.008596654275092937,
+        "averageDraftPosition": 169.88384839037712,
+        "percentOwned": 0.4496491107906531
+      }
     },
     "4240600": {
       "id": "4240600",
@@ -1942,7 +2821,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.016263940520446097,
+        "averageDraftPosition": 169.88304545845148,
+        "percentOwned": 0.5886556068520994
+      }
     },
     "4240657": {
       "id": "4240657",
@@ -1951,7 +2835,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.005109150023223409,
+        "averageDraftPosition": 170.28971980464144,
+        "percentOwned": 0.5014735065011995
+      }
     },
     "4240703": {
       "id": "4240703",
@@ -1960,7 +2849,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0018652366519002097,
+        "averageDraftPosition": 169.91281602517202,
+        "percentOwned": 0.3025539109542313
+      }
     },
     "4240858": {
       "id": "4240858",
@@ -1969,7 +2863,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0011657729074376311,
+        "averageDraftPosition": 169.9317906857752,
+        "percentOwned": 0.2589900315719416
+      }
     },
     "4241372": {
       "id": "4241372",
@@ -1978,7 +2877,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 1.451335656213705,
+        "averageDraftPosition": 121.61365936563102,
+        "percentOwned": 77.35593396036067
+      }
     },
     "4241389": {
       "id": "4241389",
@@ -1987,7 +2891,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 58.80376219228983,
+        "averageDraftPosition": 4.069267272657831,
+        "percentOwned": 99.89170958175833
+      }
     },
     "4241401": {
       "id": "4241401",
@@ -1996,7 +2905,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.014172862453531599,
+        "averageDraftPosition": 170.26326945661825,
+        "percentOwned": 0.7970974250754336
+      }
     },
     "4241410": {
       "id": "4241410",
@@ -2005,7 +2919,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0023234200743494425,
+        "averageDraftPosition": 170.08191461935817,
+        "percentOwned": 0.663825754069774
+      }
     },
     "4241416": {
       "id": "4241416",
@@ -2014,7 +2933,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 1.0559684161634928,
+        "averageDraftPosition": 163.1927873047397,
+        "percentOwned": 41.41822887067783
+      }
     },
     "4241457": {
       "id": "4241457",
@@ -2023,7 +2947,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 6.272537174721189,
+        "averageDraftPosition": 89.59584087230924,
+        "percentOwned": 88.66299033899591
+      }
     },
     "4241463": {
       "id": "4241463",
@@ -2032,7 +2961,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 1.1277881040892193,
+        "averageDraftPosition": 138.84681265485585,
+        "percentOwned": 69.85481813856973
+      }
     },
     "4241464": {
       "id": "4241464",
@@ -2041,7 +2975,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0006997900629811056,
+        "averageDraftPosition": 169.95512296355804,
+        "percentOwned": 0.16165840762760725
+      }
     },
     "4241474": {
       "id": "4241474",
@@ -2050,7 +2989,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 5.313051555968416,
+        "averageDraftPosition": 88.96513482030325,
+        "percentOwned": 87.71549529904166
+      }
     },
     "4241478": {
       "id": "4241478",
@@ -2059,7 +3003,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 17.29447282861124,
+        "averageDraftPosition": 47.0799891151786,
+        "percentOwned": 97.4567533296928
+      }
     },
     "4241479": {
       "id": "4241479",
@@ -2068,7 +3017,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 2.7709353860508514,
+        "averageDraftPosition": 134.46205415847786,
+        "percentOwned": 62.947294265957254
+      }
     },
     "4241555": {
       "id": "4241555",
@@ -2077,7 +3031,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.2712494194147701,
+        "averageDraftPosition": 169.7764426175506,
+        "percentOwned": 13.938149749726032
+      }
     },
     "4241822": {
       "id": "4241822",
@@ -2086,7 +3045,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.006946231026498585,
+        "averageDraftPosition": 169.86762741446387,
+        "percentOwned": 0.22178101108716147
+      }
     },
     "4241961": {
       "id": "4241961",
@@ -2095,7 +3059,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0006970260223048327,
+        "averageDraftPosition": 169.95478893546323,
+        "percentOwned": 0.17104712681552456
+      }
     },
     "4241985": {
       "id": "4241985",
@@ -2104,7 +3073,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 1.5137081784386617,
+        "averageDraftPosition": 138.48180381635294,
+        "percentOwned": 73.5122017137748
+      }
     },
     "4242214": {
       "id": "4242214",
@@ -2113,7 +3087,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.1345260223048327,
+        "averageDraftPosition": 170.80828006320806,
+        "percentOwned": 8.04333862139053
+      }
     },
     "4242335": {
       "id": "4242335",
@@ -2122,7 +3101,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 51.74163568773234,
+        "averageDraftPosition": 11.243360529343525,
+        "percentOwned": 99.71511237234202
+      }
     },
     "4242355": {
       "id": "4242355",
@@ -2131,7 +3115,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 3.127032048304691,
+        "averageDraftPosition": 92.66671281730554,
+        "percentOwned": 88.83728248796741
+      }
     },
     "4242392": {
       "id": "4242392",
@@ -2140,7 +3129,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.003483511379470506,
+        "averageDraftPosition": 169.9250446390207,
+        "percentOwned": 0.1743801821180713
+      }
     },
     "4242431": {
       "id": "4242431",
@@ -2149,7 +3143,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.7087784486762657,
+        "averageDraftPosition": 159.9177853951037,
+        "percentOwned": 44.88947796130757
+      }
     },
     "4242433": {
       "id": "4242433",
@@ -2158,7 +3157,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.4658457249070632,
+        "averageDraftPosition": 167.78837918737378,
+        "percentOwned": 20.78997884183578
+      }
     },
     "4242519": {
       "id": "4242519",
@@ -2167,16 +3171,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "4242540": {
-      "id": "4242540",
-      "nflTeamId": "19",
-      "name": "Isaiah Hodgins",
-      "position": "WR",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.014913859604011315,
+        "averageDraftPosition": 169.88445243980323,
+        "percentOwned": 1.128137703827961
+      }
     },
     "4242557": {
       "id": "4242557",
@@ -2185,7 +3185,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.013701811425917325,
+        "averageDraftPosition": 170.13011200336106,
+        "percentOwned": 1.0227712380067346
+      }
     },
     "4243003": {
       "id": "4243003",
@@ -2194,16 +3199,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "4243160": {
-      "id": "4243160",
-      "nflTeamId": "26",
-      "name": "Laviska Shenault Jr.",
-      "position": "WR",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0013934045517882026,
+        "averageDraftPosition": 170.00214357666985,
+        "percentOwned": 0.1047744572460978
+      }
     },
     "4243331": {
       "id": "4243331",
@@ -2212,16 +3213,26 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.02786809103576405,
+        "averageDraftPosition": 170.22185248664417,
+        "percentOwned": 5.651795631247686
+      }
     },
     "4243371": {
       "id": "4243371",
-      "nflTeamId": "28",
+      "nflTeamId": "0",
       "name": "Riley Patterson",
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0020570840833119054,
+        "averageDraftPosition": 169.9348673946958,
+        "percentOwned": 0.16415522397081853
+      }
     },
     "4243389": {
       "id": "4243389",
@@ -2230,7 +3241,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0030204460966542753,
+        "averageDraftPosition": 170.06165590135055,
+        "percentOwned": 0.3655938261846628
+      }
     },
     "4243537": {
       "id": "4243537",
@@ -2239,16 +3255,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "4245661": {
-      "id": "4245661",
-      "nflTeamId": "0",
-      "name": "Lucas Havrisik",
-      "position": "K",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.45399628252788105,
+        "averageDraftPosition": 162.16231518745016,
+        "percentOwned": 34.78095879811484
+      }
     },
     "4248528": {
       "id": "4248528",
@@ -2257,7 +3269,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 3.5095215977705525,
+        "averageDraftPosition": 103.22854196603761,
+        "percentOwned": 84.84772757563641
+      }
     },
     "4249087": {
       "id": "4249087",
@@ -2266,7 +3283,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.7396449704142012,
+        "averageDraftPosition": 159.22715638909338,
+        "percentOwned": 51.12859504132231
+      }
     },
     "4249417": {
       "id": "4249417",
@@ -2275,25 +3297,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "4249836": {
-      "id": "4249836",
-      "nflTeamId": "5",
-      "name": "Pierre Strong Jr.",
-      "position": "RB",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
-    },
-    "4257188": {
-      "id": "4257188",
-      "nflTeamId": "4",
-      "name": "Charlie Jones",
-      "position": "WR",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.06479331165815141,
+        "averageDraftPosition": 171.3620778551173,
+        "percentOwned": 7.362253917421767
+      }
     },
     "4258173": {
       "id": "4258173",
@@ -2302,7 +3311,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 26.522769516728623,
+        "averageDraftPosition": 34.95870052990882,
+        "percentOwned": 98.247010477213
+      }
     },
     "4258195": {
       "id": "4258195",
@@ -2311,7 +3325,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0058058522991175105,
+        "averageDraftPosition": 169.9375602723115,
+        "percentOwned": 0.2619327489980841
+      }
     },
     "4258595": {
       "id": "4258595",
@@ -2320,7 +3339,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.6024152345564329,
+        "averageDraftPosition": 151.82603444077895,
+        "percentOwned": 50.76637998378385
+      }
     },
     "4259305": {
       "id": "4259305",
@@ -2329,7 +3353,26 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0009289363678588017,
+        "averageDraftPosition": 169.9705299641471,
+        "percentOwned": 0.20732447761636089
+      }
+    },
+    "4259308": {
+      "id": "4259308",
+      "nflTeamId": "29",
+      "name": "Raheem Blackshear",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0011611704598235022,
+        "averageDraftPosition": 169.98288019478196,
+        "percentOwned": 0.1047740693434035
+      }
     },
     "4259545": {
       "id": "4259545",
@@ -2338,7 +3381,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 10.024152345564328,
+        "averageDraftPosition": 69.82580466519626,
+        "percentOwned": 91.91926858209108
+      }
     },
     "4259553": {
       "id": "4259553",
@@ -2347,7 +3395,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0006994637444625787,
+        "averageDraftPosition": 169.97014704124328,
+        "percentOwned": 0.10900859647724259
+      }
     },
     "4259592": {
       "id": "4259592",
@@ -2356,7 +3409,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.00046630916297505244,
+        "averageDraftPosition": 169.9708260609683,
+        "percentOwned": 0.12309814296069574
+      }
     },
     "4259619": {
       "id": "4259619",
@@ -2365,7 +3423,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.011571097968629467,
+        "averageDraftPosition": 169.93599418882422,
+        "percentOwned": 0.6707960957438167
+      }
     },
     "4260394": {
       "id": "4260394",
@@ -2374,7 +3437,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.01212969442500583,
+        "averageDraftPosition": 170.16270818490023,
+        "percentOwned": 0.5782232842860083
+      }
     },
     "4262921": {
       "id": "4262921",
@@ -2383,16 +3451,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "4266790": {
-      "id": "4266790",
-      "nflTeamId": "0",
-      "name": "Ramiz Ahmed",
-      "position": "K",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 55.45680445889457,
+        "averageDraftPosition": 8.285752477705426,
+        "percentOwned": 99.88301019218167
+      }
     },
     "4360078": {
       "id": "4360078",
@@ -2401,7 +3465,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.004414498141263941,
+        "averageDraftPosition": 169.96694053114751,
+        "percentOwned": 0.2961761804009115
+      }
     },
     "4360234": {
       "id": "4360234",
@@ -2410,7 +3479,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 1.1991252894262927,
+        "averageDraftPosition": 135.76716522688716,
+        "percentOwned": 87.66606784956656
+      }
     },
     "4360238": {
       "id": "4360238",
@@ -2419,7 +3493,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.04460966542750929,
+        "averageDraftPosition": 170.3881624488588,
+        "percentOwned": 3.1617041363160965
+      }
     },
     "4360248": {
       "id": "4360248",
@@ -2428,7 +3507,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 6.81421272642824,
+        "averageDraftPosition": 69.3873083772158,
+        "percentOwned": 93.62719871455492
+      }
     },
     "4360294": {
       "id": "4360294",
@@ -2437,7 +3521,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.5630662020905923,
+        "averageDraftPosition": 161.1190438680664,
+        "percentOwned": 41.98204802126545
+      }
     },
     "4360310": {
       "id": "4360310",
@@ -2446,7 +3535,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 1.703055749941684,
+        "averageDraftPosition": 151.09180936168585,
+        "percentOwned": 43.559839232349304
+      }
     },
     "4360405": {
       "id": "4360405",
@@ -2455,7 +3549,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.010218300046446818,
+        "averageDraftPosition": 169.9353501983606,
+        "percentOwned": 0.3145038280983903
+      }
     },
     "4360423": {
       "id": "4360423",
@@ -2464,7 +3563,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.034973187223128935,
+        "averageDraftPosition": 169.88753191855628,
+        "percentOwned": 1.4119182511197461
+      }
     },
     "4360438": {
       "id": "4360438",
@@ -2473,7 +3577,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 20.44519275429633,
+        "averageDraftPosition": 43.95850459972598,
+        "percentOwned": 98.16722138099804
+      }
     },
     "4360516": {
       "id": "4360516",
@@ -2482,7 +3591,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.12169066418950301,
+        "averageDraftPosition": 170.9814958036149,
+        "percentOwned": 11.189146463141254
+      }
     },
     "4360569": {
       "id": "4360569",
@@ -2491,7 +3605,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.03413841151881096,
+        "averageDraftPosition": 170.02978512128402,
+        "percentOwned": 1.5827119723367862
+      }
     },
     "4360635": {
       "id": "4360635",
@@ -2500,7 +3619,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.10896840148698884,
+        "averageDraftPosition": 169.41777862650085,
+        "percentOwned": 10.012125026610267
+      }
     },
     "4360698": {
       "id": "4360698",
@@ -2509,7 +3633,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0032656869605784933,
+        "averageDraftPosition": 169.94116100033472,
+        "percentOwned": 0.3492698517457004
+      }
     },
     "4360761": {
       "id": "4360761",
@@ -2518,7 +3647,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.14862981885740828,
+        "averageDraftPosition": 171.0870538698035,
+        "percentOwned": 7.484955119887009
+      }
     },
     "4360797": {
       "id": "4360797",
@@ -2527,7 +3661,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0025545750116117046,
+        "averageDraftPosition": 170.01057440754673,
+        "percentOwned": 0.37558980928034474
+      }
     },
     "4360799": {
       "id": "4360799",
@@ -2536,7 +3675,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.97470472911587,
+        "percentOwned": 0.11364247299369126
+      }
     },
     "4360939": {
       "id": "4360939",
@@ -2545,7 +3689,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.036477695167286245,
+        "averageDraftPosition": 170.53335051940115,
+        "percentOwned": 3.9657917144866905
+      }
     },
     "4361050": {
       "id": "4361050",
@@ -2554,7 +3703,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.09758364312267657,
+        "averageDraftPosition": 169.5636454777648,
+        "percentOwned": 4.904240234280997
+      }
     },
     "4361259": {
       "id": "4361259",
@@ -2563,7 +3717,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.00536505714952181,
+        "averageDraftPosition": 169.94567972074785,
+        "percentOwned": 0.16870221648758277
+      }
     },
     "4361307": {
       "id": "4361307",
@@ -2572,7 +3731,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 10.894333488156061,
+        "averageDraftPosition": 53.31721266864634,
+        "percentOwned": 97.69475549006577
+      }
     },
     "4361370": {
       "id": "4361370",
@@ -2581,7 +3745,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 33.38643752902926,
+        "averageDraftPosition": 22.98748263466193,
+        "percentOwned": 99.21272523314661
+      }
     },
     "4361372": {
       "id": "4361372",
@@ -2590,16 +3759,26 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0006970260223048327,
+        "averageDraftPosition": 169.98733439954168,
+        "percentOwned": 0.12939532214622226
+      }
     },
     "4361409": {
       "id": "4361409",
-      "nflTeamId": "28",
+      "nflTeamId": "21",
       "name": "Jahan Dotson",
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.14909428704133768,
+        "averageDraftPosition": 169.9006440093761,
+        "percentOwned": 14.559122428352996
+      }
     },
     "4361411": {
       "id": "4361411",
@@ -2608,7 +3787,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.9532992565055762,
+        "averageDraftPosition": 144.13551667342992,
+        "percentOwned": 61.172774830342505
+      }
     },
     "4361418": {
       "id": "4361418",
@@ -2617,7 +3801,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.31280615815255425,
+        "averageDraftPosition": 169.37140534595707,
+        "percentOwned": 6.509124750654416
+      }
     },
     "4361432": {
       "id": "4361432",
@@ -2626,7 +3815,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.5048769159312587,
+        "averageDraftPosition": 162.94844081196175,
+        "percentOwned": 33.91692597604296
+      }
     },
     "4361516": {
       "id": "4361516",
@@ -2635,7 +3829,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0020901068276823038,
+        "averageDraftPosition": 170.06897671176634,
+        "percentOwned": 0.4439071978496973
+      }
     },
     "4361529": {
       "id": "4361529",
@@ -2644,7 +3843,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 40.24326208178439,
+        "averageDraftPosition": 18.569257797022022,
+        "percentOwned": 99.65957998204419
+      }
     },
     "4361577": {
       "id": "4361577",
@@ -2653,7 +3857,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.003947979563399907,
+        "averageDraftPosition": 169.9883276284319,
+        "percentOwned": 0.4387117793187195
+      }
     },
     "4361579": {
       "id": "4361579",
@@ -2662,7 +3871,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 4.459804832713755,
+        "averageDraftPosition": 101.3069541845888,
+        "percentOwned": 84.63225820782799
+      }
     },
     "4361741": {
       "id": "4361741",
@@ -2671,7 +3885,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 4.378643040335743,
+        "averageDraftPosition": 107.56529972074519,
+        "percentOwned": 85.53308244192729
+      }
     },
     "4361777": {
       "id": "4361777",
@@ -2680,7 +3899,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 7.83550185873606,
+        "averageDraftPosition": 75.17495977963537,
+        "percentOwned": 89.85942659973047
+      }
     },
     "4362019": {
       "id": "4362019",
@@ -2689,7 +3913,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.00023223409196470042,
+        "averageDraftPosition": 169.98493810539983,
+        "percentOwned": 0.1619716484826496
+      }
     },
     "4362081": {
       "id": "4362081",
@@ -2698,7 +3927,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.5065603293028043,
+        "averageDraftPosition": 162.94256700759533,
+        "percentOwned": 41.44648729926952
+      }
     },
     "4362087": {
       "id": "4362087",
@@ -2707,7 +3941,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0016263940520446097,
+        "averageDraftPosition": 169.9716380787794,
+        "percentOwned": 0.10014512713433146
+      }
     },
     "4362238": {
       "id": "4362238",
@@ -2716,7 +3955,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 1.7681226765799256,
+        "averageDraftPosition": 134.61056661781345,
+        "percentOwned": 71.693307294318
+      }
     },
     "4362249": {
       "id": "4362249",
@@ -2725,7 +3969,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 3.378309335810497,
+        "averageDraftPosition": 96.90876497827851,
+        "percentOwned": 85.85814271619473
+      }
     },
     "4362477": {
       "id": "4362477",
@@ -2734,16 +3983,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "4362478": {
-      "id": "4362478",
-      "nflTeamId": "22",
-      "name": "Emari Demercado",
-      "position": "RB",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.002091078066914498,
+        "averageDraftPosition": 169.98099516405455,
+        "percentOwned": 0.20639701159340346
+      }
     },
     "4362504": {
       "id": "4362504",
@@ -2752,7 +3997,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0009293680297397769,
+        "averageDraftPosition": 169.96768449294873,
+        "percentOwned": 0.12976531175144299
+      }
     },
     "4362619": {
       "id": "4362619",
@@ -2761,7 +4011,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.003251277287505806,
+        "averageDraftPosition": 170.17882530422455,
+        "percentOwned": 0.302288731090757
+      }
     },
     "4362628": {
       "id": "4362628",
@@ -2770,7 +4025,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 55.42983271375465,
+        "averageDraftPosition": 7.916752994419329,
+        "percentOwned": 99.82303637009832
+      }
     },
     "4362887": {
       "id": "4362887",
@@ -2779,7 +4039,26 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.12639925373134328,
+        "averageDraftPosition": 169.59313734866018,
+        "percentOwned": 4.865763724875886
+      }
+    },
+    "4362921": {
+      "id": "4362921",
+      "nflTeamId": "17",
+      "name": "Tyquan Thornton",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0006970260223048327,
+        "averageDraftPosition": 169.98768815074018,
+        "percentOwned": 0.11273164130976027
+      }
     },
     "4363538": {
       "id": "4363538",
@@ -2788,7 +4067,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.002572678157962439,
+        "averageDraftPosition": 169.88792742021977,
+        "percentOwned": 0.29242196413863975
+      }
     },
     "4366031": {
       "id": "4366031",
@@ -2797,7 +4081,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 9.430529739776953,
+        "averageDraftPosition": 67.69737865977955,
+        "percentOwned": 93.90843023793923
+      }
     },
     "4366963": {
       "id": "4366963",
@@ -2806,7 +4095,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.007899628252788104,
+        "averageDraftPosition": 170.05388812771218,
+        "percentOwned": 0.4790685190155772
+      }
     },
     "4367209": {
       "id": "4367209",
@@ -2815,7 +4109,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.01812267657992565,
+        "averageDraftPosition": 170.019449364339,
+        "percentOwned": 1.0901356514527738
+      }
     },
     "4367567": {
       "id": "4367567",
@@ -2824,7 +4123,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0016263940520446097,
+        "averageDraftPosition": 170.1262125725634,
+        "percentOwned": 0.22898248108164143
+      }
     },
     "4368003": {
       "id": "4368003",
@@ -2833,7 +4137,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.016263940520446097,
+        "averageDraftPosition": 170.1853499718342,
+        "percentOwned": 0.9386881689379551
+      }
     },
     "4369863": {
       "id": "4369863",
@@ -2842,7 +4151,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0037174721189591076,
+        "averageDraftPosition": 170.19847331888445,
+        "percentOwned": 0.4492597487699502
+      }
     },
     "4371733": {
       "id": "4371733",
@@ -2851,7 +4165,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.035067347886669764,
+        "averageDraftPosition": 170.5005227503831,
+        "percentOwned": 2.466244858519031
+      }
     },
     "4372016": {
       "id": "4372016",
@@ -2860,7 +4179,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 16.850371747211895,
+        "averageDraftPosition": 52.398546850235824,
+        "percentOwned": 96.77116614157778
+      }
     },
     "4372019": {
       "id": "4372019",
@@ -2869,16 +4193,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "4372063": {
-      "id": "4372063",
-      "nflTeamId": "25",
-      "name": "Ronnie Bell",
-      "position": "WR",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 2.225371747211896,
+        "averageDraftPosition": 130.03233336834165,
+        "percentOwned": 74.98944874310466
+      }
     },
     "4372066": {
       "id": "4372066",
@@ -2887,7 +4207,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.7672923630753407,
+        "averageDraftPosition": 155.68183302864108,
+        "percentOwned": 61.884540623860694
+      }
     },
     "4372096": {
       "id": "4372096",
@@ -2896,7 +4221,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0018578727357176034,
+        "averageDraftPosition": 169.94400973909723,
+        "percentOwned": 0.21010503400554606
+      }
     },
     "4372414": {
       "id": "4372414",
@@ -2905,7 +4235,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.006970260223048327,
+        "averageDraftPosition": 170.15707766044798,
+        "percentOwned": 0.8624200331714251
+      }
     },
     "4372485": {
       "id": "4372485",
@@ -2914,7 +4249,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.99565574396578,
+        "percentOwned": 0.46147780260300875
+      }
     },
     "4372526": {
       "id": "4372526",
@@ -2923,7 +4263,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0023234200743494425,
+        "averageDraftPosition": 169.98086158664083,
+        "percentOwned": 0.1379072892795131
+      }
     },
     "4372561": {
       "id": "4372561",
@@ -2932,7 +4277,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.010682768230376219,
+        "averageDraftPosition": 170.08219792810425,
+        "percentOwned": 0.5956887535518266
+      }
     },
     "4372780": {
       "id": "4372780",
@@ -2941,7 +4291,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.001625638643752903,
+        "averageDraftPosition": 169.96671042894994,
+        "percentOwned": 0.15605158032306193
+      }
     },
     "4373626": {
       "id": "4373626",
@@ -2950,7 +4305,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 1.0027868091035763,
+        "averageDraftPosition": 150.96610986723698,
+        "percentOwned": 57.72987101455714
+      }
     },
     "4373678": {
       "id": "4373678",
@@ -2959,7 +4319,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.8252788104089219,
+        "averageDraftPosition": 157.49000840191715,
+        "percentOwned": 39.58154395213837
+      }
     },
     "4374033": {
       "id": "4374033",
@@ -2968,7 +4333,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.014166279609846726,
+        "averageDraftPosition": 169.83884088413615,
+        "percentOwned": 0.1384633895763724
+      }
     },
     "4374302": {
       "id": "4374302",
@@ -2977,7 +4347,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 57.821876451463076,
+        "averageDraftPosition": 7.146567815422513,
+        "percentOwned": 99.90207747541294
+      }
     },
     "4379399": {
       "id": "4379399",
@@ -2986,7 +4361,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 27.049024163568774,
+        "averageDraftPosition": 32.313418371731096,
+        "percentOwned": 98.85583651105105
+      }
     },
     "4382466": {
       "id": "4382466",
@@ -2995,7 +4375,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.005109150023223409,
+        "averageDraftPosition": 169.96578540329972,
+        "percentOwned": 0.24730619505720805
+      }
     },
     "4383351": {
       "id": "4383351",
@@ -3004,7 +4389,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.00046630916297505244,
+        "averageDraftPosition": 169.96506957394922,
+        "percentOwned": 0.18520166403417054
+      }
     },
     "4385690": {
       "id": "4385690",
@@ -3013,7 +4403,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 7.811338289962825,
+        "averageDraftPosition": 60.879309110178596,
+        "percentOwned": 94.9325168592156
+      }
     },
     "4421446": {
       "id": "4421446",
@@ -3022,7 +4417,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0006967022758941013,
+        "averageDraftPosition": 170.07155201222133,
+        "percentOwned": 0.2967337078755681
+      }
     },
     "4426338": {
       "id": "4426338",
@@ -3031,7 +4431,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.5470025658968976,
+        "averageDraftPosition": 166.47852094829153,
+        "percentOwned": 10.143006510744954
+      }
     },
     "4426339": {
       "id": "4426339",
@@ -3040,7 +4445,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0013989274889251574,
+        "averageDraftPosition": 169.96697747812365,
+        "percentOwned": 0.2888330255908285
+      }
     },
     "4426348": {
       "id": "4426348",
@@ -3049,7 +4459,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 3.66449055723945,
+        "averageDraftPosition": 116.15995313919572,
+        "percentOwned": 81.5369328083172
+      }
     },
     "4426354": {
       "id": "4426354",
@@ -3058,7 +4473,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 9.360362453531598,
+        "averageDraftPosition": 73.16672474782435,
+        "percentOwned": 92.45132138897168
+      }
     },
     "4426385": {
       "id": "4426385",
@@ -3067,7 +4487,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.988388295401765,
+        "averageDraftPosition": 142.84054670791323,
+        "percentOwned": 65.49294079971567
+      }
     },
     "4426386": {
       "id": "4426386",
@@ -3076,7 +4501,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.019972131908964234,
+        "averageDraftPosition": 170.40858921478767,
+        "percentOwned": 2.0114139318088844
+      }
     },
     "4426388": {
       "id": "4426388",
@@ -3085,7 +4515,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 1.5241523455643289,
+        "averageDraftPosition": 130.46052713237506,
+        "percentOwned": 73.17065946962545
+      }
     },
     "4426407": {
       "id": "4426407",
@@ -3094,7 +4529,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.006734788666976312,
+        "averageDraftPosition": 170.33199982814014,
+        "percentOwned": 0.8257716272199208
+      }
     },
     "4426485": {
       "id": "4426485",
@@ -3103,7 +4543,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0025545750116117046,
+        "averageDraftPosition": 170.17630266141543,
+        "percentOwned": 0.5842021087548869
+      }
     },
     "4426496": {
       "id": "4426496",
@@ -3112,7 +4557,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0060408921933085506,
+        "averageDraftPosition": 169.9557554231592,
+        "percentOwned": 0.24694009018681554
+      }
     },
     "4426502": {
       "id": "4426502",
@@ -3121,7 +4571,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 27.997677659080352,
+        "averageDraftPosition": 34.74081995073421,
+        "percentOwned": 97.57841640057383
+      }
     },
     "4426515": {
       "id": "4426515",
@@ -3130,7 +4585,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 44.0157919182536,
+        "averageDraftPosition": 16.26587294009815,
+        "percentOwned": 99.70142070433616
+      }
     },
     "4426875": {
       "id": "4426875",
@@ -3139,7 +4599,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.00489624621123805,
+        "averageDraftPosition": 169.99121141846175,
+        "percentOwned": 0.40265619612248754
+      }
     },
     "4426891": {
       "id": "4426891",
@@ -3148,7 +4613,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.98942132348026,
+        "percentOwned": 0.13327854104423736
+      }
     },
     "4426948": {
       "id": "4426948",
@@ -3157,7 +4627,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.04876915931258709,
+        "averageDraftPosition": 170.10447497565355,
+        "percentOwned": 5.1861724281549355
+      }
     },
     "4427095": {
       "id": "4427095",
@@ -3166,7 +4641,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.5341542750929368,
+        "averageDraftPosition": 162.25400038189804,
+        "percentOwned": 34.78753415224683
+      }
     },
     "4427278": {
       "id": "4427278",
@@ -3175,7 +4655,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.007434944237918215,
+        "averageDraftPosition": 170.1594758449494,
+        "percentOwned": 0.4155652798448063
+      }
     },
     "4427366": {
       "id": "4427366",
@@ -3184,7 +4669,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 59.2739312267658,
+        "averageDraftPosition": 4.973042515204461,
+        "percentOwned": 99.802859919478
+      }
     },
     "4427391": {
       "id": "4427391",
@@ -3193,7 +4683,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0025545750116117046,
+        "averageDraftPosition": 170.1094264682013,
+        "percentOwned": 0.2639670207823124
+      }
     },
     "4427834": {
       "id": "4427834",
@@ -3202,7 +4697,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0009293680297397769,
+        "averageDraftPosition": 169.99426179030232,
+        "percentOwned": 0.12661672340354638
+      }
     },
     "4427985": {
       "id": "4427985",
@@ -3211,7 +4711,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.00023223409196470042,
+        "averageDraftPosition": 169.99781359201054,
+        "percentOwned": 0.10865842935813783
+      }
     },
     "4428085": {
       "id": "4428085",
@@ -3220,7 +4725,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.09846725499303298,
+        "averageDraftPosition": 169.8735803388568,
+        "percentOwned": 6.050795061179912
+      }
     },
     "4428209": {
       "id": "4428209",
@@ -3229,7 +4739,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.08871342313051556,
+        "averageDraftPosition": 170.80897572991654,
+        "percentOwned": 8.279142949696885
+      }
     },
     "4428331": {
       "id": "4428331",
@@ -3238,7 +4753,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 7.058317843866171,
+        "averageDraftPosition": 87.35249188466679,
+        "percentOwned": 89.12759380263961
+      }
     },
     "4428532": {
       "id": "4428532",
@@ -3247,7 +4767,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0025545750116117046,
+        "averageDraftPosition": 169.9626353376998,
+        "percentOwned": 0.1364246378823638
+      }
     },
     "4428557": {
       "id": "4428557",
@@ -3256,7 +4781,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 3.0011617100371746,
+        "averageDraftPosition": 103.79669464096469,
+        "percentOwned": 83.50104216414734
+      }
     },
     "4428718": {
       "id": "4428718",
@@ -3265,7 +4795,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0362453531598513,
+        "averageDraftPosition": 170.4953169753676,
+        "percentOwned": 1.8903129789644373
+      }
     },
     "4428850": {
       "id": "4428850",
@@ -3274,7 +4809,26 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.2763585694379935,
+        "averageDraftPosition": 169.3874715957914,
+        "percentOwned": 15.191262899717712
+      }
+    },
+    "4428963": {
+      "id": "4428963",
+      "nflTeamId": "28",
+      "name": "Cade York",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0007714065312419646,
+        "averageDraftPosition": 169.95609634818726,
+        "percentOwned": 0.11654879559948016
+      }
     },
     "4429001": {
       "id": "4429001",
@@ -3283,7 +4837,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.00046446818392940084,
+        "averageDraftPosition": 170.08572901648893,
+        "percentOwned": 0.17067152395602525
+      }
     },
     "4429013": {
       "id": "4429013",
@@ -3292,7 +4851,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.07434944237918216,
+        "averageDraftPosition": 170.62176457670972,
+        "percentOwned": 3.8188004190869678
+      }
     },
     "4429023": {
       "id": "4429023",
@@ -3301,7 +4865,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.6052020436600093,
+        "averageDraftPosition": 163.52841150495286,
+        "percentOwned": 32.71519010773389
+      }
     },
     "4429025": {
       "id": "4429025",
@@ -3310,7 +4879,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.037407063197026025,
+        "averageDraftPosition": 170.65550097622219,
+        "percentOwned": 6.025592850439351
+      }
     },
     "4429033": {
       "id": "4429033",
@@ -3319,7 +4893,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.029275092936802975,
+        "averageDraftPosition": 170.42677856225623,
+        "percentOwned": 3.236775515568398
+      }
     },
     "4429084": {
       "id": "4429084",
@@ -3328,7 +4907,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 11.299043620247259,
+        "averageDraftPosition": 50.87427500370567,
+        "percentOwned": 97.15546327536984
+      }
     },
     "4429086": {
       "id": "4429086",
@@ -3337,7 +4921,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.006273234200743495,
+        "averageDraftPosition": 169.95135911855408,
+        "percentOwned": 0.9577685880040132
+      }
     },
     "4429096": {
       "id": "4429096",
@@ -3346,7 +4935,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 1.4514630747793775,
+        "averageDraftPosition": 130.31371285356246,
+        "percentOwned": 69.38080781903669
+      }
     },
     "4429148": {
       "id": "4429148",
@@ -3355,7 +4949,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0058058522991175105,
+        "averageDraftPosition": 170.0972406549864,
+        "percentOwned": 0.6965796697956909
+      }
     },
     "4429160": {
       "id": "4429160",
@@ -3364,7 +4963,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 24.070399628252787,
+        "averageDraftPosition": 32.675666773280376,
+        "percentOwned": 98.1957517700958
+      }
     },
     "4429202": {
       "id": "4429202",
@@ -3373,7 +4977,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0011617100371747212,
+        "averageDraftPosition": 169.98784603707293,
+        "percentOwned": 0.2498968018762622
+      }
     },
     "4429205": {
       "id": "4429205",
@@ -3382,7 +4991,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 2.3485833720390152,
+        "averageDraftPosition": 119.54384231279657,
+        "percentOwned": 81.3563557541552
+      }
     },
     "4429275": {
       "id": "4429275",
@@ -3391,7 +5005,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 1.2104040873200186,
+        "averageDraftPosition": 136.36407208497434,
+        "percentOwned": 66.31057717226315
+      }
     },
     "4429501": {
       "id": "4429501",
@@ -3400,7 +5019,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.2170074349442379,
+        "averageDraftPosition": 170.9362322714926,
+        "percentOwned": 9.20971524722198
+      }
     },
     "4429615": {
       "id": "4429615",
@@ -3409,7 +5033,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 12.224210037174721,
+        "averageDraftPosition": 62.83580372444279,
+        "percentOwned": 95.44433934498147
+      }
     },
     "4429795": {
       "id": "4429795",
@@ -3418,7 +5047,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 44.37482582443103,
+        "averageDraftPosition": 17.009160953999505,
+        "percentOwned": 99.6349642090922
+      }
     },
     "4430027": {
       "id": "4430027",
@@ -3427,7 +5061,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 23.381792847189967,
+        "averageDraftPosition": 32.212811258783994,
+        "percentOwned": 99.74250944995872
+      }
     },
     "4430034": {
       "id": "4430034",
@@ -3436,7 +5075,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.461216906641895,
+        "averageDraftPosition": 162.51710442146668,
+        "percentOwned": 34.0567946437331
+      }
     },
     "4430191": {
       "id": "4430191",
@@ -3445,7 +5089,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0060408921933085506,
+        "averageDraftPosition": 169.93785146217814,
+        "percentOwned": 0.38557651370712476
+      }
     },
     "4430637": {
       "id": "4430637",
@@ -3454,7 +5103,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.2274628252788104,
+        "averageDraftPosition": 169.8419816499747,
+        "percentOwned": 15.704607296892064
+      }
     },
     "4430723": {
       "id": "4430723",
@@ -3463,7 +5117,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0023234200743494425,
+        "averageDraftPosition": 169.97586824203367,
+        "percentOwned": 0.15253186231407864
+      }
     },
     "4430737": {
       "id": "4430737",
@@ -3472,7 +5131,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 42.11913608917789,
+        "averageDraftPosition": 17.75448378580942,
+        "percentOwned": 99.57239801414974
+      }
     },
     "4430802": {
       "id": "4430802",
@@ -3481,7 +5145,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0011617100371747212,
+        "averageDraftPosition": 169.95971356963838,
+        "percentOwned": 0.21195264848254863
+      }
     },
     "4430807": {
       "id": "4430807",
@@ -3490,7 +5159,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 59.77008824895495,
+        "averageDraftPosition": 5.648285969342696,
+        "percentOwned": 99.8195189764227
+      }
     },
     "4430834": {
       "id": "4430834",
@@ -3499,16 +5173,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "4430871": {
-      "id": "4430871",
-      "nflTeamId": "27",
-      "name": "Sean Tucker",
-      "position": "RB",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.019972131908964234,
+        "averageDraftPosition": 170.5265682956287,
+        "percentOwned": 1.530094700755977
+      }
     },
     "4430878": {
       "id": "4430878",
@@ -3517,7 +5187,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 3.733163028332559,
+        "averageDraftPosition": 107.25868818025587,
+        "percentOwned": 84.29851044649584
+      }
     },
     "4430968": {
       "id": "4430968",
@@ -3526,7 +5201,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.08224907063197026,
+        "averageDraftPosition": 170.95216272597514,
+        "percentOwned": 4.748947197926789
+      }
     },
     "4431280": {
       "id": "4431280",
@@ -3535,7 +5215,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.010455390334572491,
+        "averageDraftPosition": 169.96924332762086,
+        "percentOwned": 0.9756937310150657
+      }
     },
     "4431299": {
       "id": "4431299",
@@ -3544,7 +5229,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 3.237343241987924,
+        "averageDraftPosition": 115.74503888217912,
+        "percentOwned": 79.87553403377832
+      }
     },
     "4431452": {
       "id": "4431452",
@@ -3553,7 +5243,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.10963377653370655,
+        "averageDraftPosition": 169.8040795444222,
+        "percentOwned": 3.392143086223613
+      }
     },
     "4431453": {
       "id": "4431453",
@@ -3562,7 +5257,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.01602415234556433,
+        "averageDraftPosition": 169.92167636542436,
+        "percentOwned": 0.8072607187415544
+      }
     },
     "4431492": {
       "id": "4431492",
@@ -3571,7 +5271,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.007899628252788104,
+        "averageDraftPosition": 170.07480797964513,
+        "percentOwned": 1.2505761424279613
+      }
     },
     "4431545": {
       "id": "4431545",
@@ -3580,7 +5285,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.02183000464468184,
+        "averageDraftPosition": 170.1002974073526,
+        "percentOwned": 1.1882152152263328
+      }
     },
     "4431588": {
       "id": "4431588",
@@ -3589,7 +5299,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.007895959126799815,
+        "averageDraftPosition": 169.94759681484877,
+        "percentOwned": 0.575698844714955
+      }
     },
     "4431611": {
       "id": "4431611",
@@ -3598,7 +5313,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 4.102821170435999,
+        "averageDraftPosition": 112.66367500729187,
+        "percentOwned": 82.30506840680731
+      }
     },
     "4432577": {
       "id": "4432577",
@@ -3607,7 +5327,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 14.708420807091207,
+        "averageDraftPosition": 46.98558388838152,
+        "percentOwned": 97.99916206917007
+      }
     },
     "4432620": {
       "id": "4432620",
@@ -3616,7 +5341,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.9821560699436,
+        "percentOwned": 0.104029572534712
+      }
     },
     "4432665": {
       "id": "4432665",
@@ -3625,7 +5355,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 2.5271840148698885,
+        "averageDraftPosition": 115.58360384960568,
+        "percentOwned": 83.40478623365468
+      }
     },
     "4432708": {
       "id": "4432708",
@@ -3634,7 +5369,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 33.47840222944728,
+        "averageDraftPosition": 24.609827238052503,
+        "percentOwned": 99.06557971819306
+      }
     },
     "4432773": {
       "id": "4432773",
@@ -3643,7 +5383,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 1.5274163568773234,
+        "averageDraftPosition": 137.59651618508423,
+        "percentOwned": 70.86135375422737
+      }
     },
     "4433970": {
       "id": "4433970",
@@ -3652,7 +5397,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.017486593611564467,
+        "averageDraftPosition": 169.90703701401475,
+        "percentOwned": 3.131517428937431
+      }
     },
     "4434153": {
       "id": "4434153",
@@ -3661,7 +5411,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0006994637444625787,
+        "averageDraftPosition": 169.9617475626025,
+        "percentOwned": 0.15887434652033666
+      }
     },
     "4565908": {
       "id": "4565908",
@@ -3670,7 +5425,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0009289363678588017,
+        "averageDraftPosition": 169.9617193131531,
+        "percentOwned": 0.15678565346483336
+      }
     },
     "4566192": {
       "id": "4566192",
@@ -3679,7 +5439,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.02211365389560298,
+        "averageDraftPosition": 170.02414554601694,
+        "percentOwned": 1.2284204700224226
+      }
     },
     "4567048": {
       "id": "4567048",
@@ -3688,7 +5453,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 21.67394333488156,
+        "averageDraftPosition": 46.491569520426964,
+        "percentOwned": 97.23632647999068
+      }
     },
     "4567096": {
       "id": "4567096",
@@ -3697,7 +5467,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0030204460966542753,
+        "averageDraftPosition": 169.95985831785873,
+        "percentOwned": 0.2845079234623707
+      }
     },
     "4567104": {
       "id": "4567104",
@@ -3706,7 +5481,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.08742607354075597,
+        "averageDraftPosition": 169.30673569572613,
+        "percentOwned": 2.471386284684508
+      }
     },
     "4567156": {
       "id": "4567156",
@@ -3715,7 +5495,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0034851301115241635,
+        "averageDraftPosition": 170.0706453506967,
+        "percentOwned": 0.6041848687230672
+      }
     },
     "4569173": {
       "id": "4569173",
@@ -3724,7 +5509,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 8.711198884758364,
+        "averageDraftPosition": 63.336259613043666,
+        "percentOwned": 92.81172544134225
+      }
     },
     "4569382": {
       "id": "4569382",
@@ -3733,7 +5523,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.028564793311658152,
+        "averageDraftPosition": 169.91108893970278,
+        "percentOwned": 1.4554965681156844
+      }
     },
     "4569587": {
       "id": "4569587",
@@ -3742,7 +5537,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.03901532745006967,
+        "averageDraftPosition": 170.99540765422788,
+        "percentOwned": 4.78612733882731
+      }
     },
     "4569603": {
       "id": "4569603",
@@ -3751,7 +5551,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0025557620817843866,
+        "averageDraftPosition": 169.96868003608884,
+        "percentOwned": 0.2647015813605661
+      }
     },
     "4569609": {
       "id": "4569609",
@@ -3760,7 +5565,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.00766728624535316,
+        "averageDraftPosition": 170.19987492899116,
+        "percentOwned": 0.37817576009995835
+      }
     },
     "4569618": {
       "id": "4569618",
@@ -3769,7 +5579,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 46.10385687732342,
+        "averageDraftPosition": 14.88211453912728,
+        "percentOwned": 99.66699553711084
+      }
     },
     "4569682": {
       "id": "4569682",
@@ -3778,7 +5593,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.019516728624535316,
+        "averageDraftPosition": 170.17458862617613,
+        "percentOwned": 1.5686056735619416
+      }
     },
     "4569987": {
       "id": "4569987",
@@ -3787,7 +5607,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 3.2857806691449816,
+        "averageDraftPosition": 97.05030050458036,
+        "percentOwned": 86.06308089007028
+      }
     },
     "4570561": {
       "id": "4570561",
@@ -3796,16 +5621,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "4570674": {
-      "id": "4570674",
-      "nflTeamId": "17",
-      "name": "Kevin Harris",
-      "position": "RB",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.008128193218764514,
+        "averageDraftPosition": 170.28308119745844,
+        "percentOwned": 1.257260903850639
+      }
     },
     "4572680": {
       "id": "4572680",
@@ -3814,7 +5635,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.02810032512772875,
+        "averageDraftPosition": 170.4249187246089,
+        "percentOwned": 2.9619743286919626
+      }
     },
     "4575665": {
       "id": "4575665",
@@ -3823,7 +5649,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0009289363678588017,
+        "averageDraftPosition": 169.9801555287165,
+        "percentOwned": 0.1658558978801543
+      }
     },
     "4595348": {
       "id": "4595348",
@@ -3832,7 +5663,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 23.06525777984208,
+        "averageDraftPosition": 58.7775194649583,
+        "percentOwned": 94.76924557779309
+      }
     },
     "4596334": {
       "id": "4596334",
@@ -3841,7 +5677,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0687732342007435,
+        "averageDraftPosition": 171.2572691556752,
+        "percentOwned": 6.355685131195335
+      }
     },
     "4596448": {
       "id": "4596448",
@@ -3850,7 +5691,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.09591267998142128,
+        "averageDraftPosition": 170.319624588857,
+        "percentOwned": 4.663082954785255
+      }
     },
     "4597500": {
       "id": "4597500",
@@ -3859,7 +5705,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.44354089219330856,
+        "averageDraftPosition": 163.69088661132406,
+        "percentOwned": 29.62880693629207
+      }
     },
     "4599739": {
       "id": "4599739",
@@ -3868,7 +5719,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.6644217371110079,
+        "averageDraftPosition": 159.2863989841367,
+        "percentOwned": 38.450488873092915
+      }
     },
     "4612826": {
       "id": "4612826",
@@ -3877,7 +5733,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 2.3884758364312266,
+        "averageDraftPosition": 118.02684227359738,
+        "percentOwned": 78.98732208999483
+      }
     },
     "4613104": {
       "id": "4613104",
@@ -3886,7 +5747,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.01092007434944238,
+        "averageDraftPosition": 170.43987817627206,
+        "percentOwned": 1.4267970553337368
+      }
     },
     "4635008": {
       "id": "4635008",
@@ -3895,7 +5761,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 2.5648234200743496,
+        "averageDraftPosition": 117.55963968436579,
+        "percentOwned": 81.23358341154062
+      }
     },
     "4678008": {
       "id": "4678008",
@@ -3904,7 +5775,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 2.4407803065490015,
+        "averageDraftPosition": 93.03044248294562,
+        "percentOwned": 82.2822839499317
+      }
     },
     "4682745": {
       "id": "4682745",
@@ -3913,7 +5789,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.4059014869888476,
+        "averageDraftPosition": 168.017276029807,
+        "percentOwned": 19.321393863667915
+      }
     },
     "4683062": {
       "id": "4683062",
@@ -3922,16 +5803,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "4685035": {
-      "id": "4685035",
-      "nflTeamId": "14",
-      "name": "Zach Evans",
-      "position": "RB",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 4.069470260223048,
+        "averageDraftPosition": 110.58827207935728,
+        "percentOwned": 84.25395802906534
+      }
     },
     "4685247": {
       "id": "4685247",
@@ -3940,7 +5817,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.13592007434944237,
+        "averageDraftPosition": 170.47835841914065,
+        "percentOwned": 6.890277199315101
+      }
     },
     "4685720": {
       "id": "4685720",
@@ -3949,7 +5831,12 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.2877127535556074,
+        "averageDraftPosition": 169.21846923308644,
+        "percentOwned": 8.058099440139408
+      }
     },
     "4686104": {
       "id": "4686104",
@@ -3958,7 +5845,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0011611704598235022,
+        "averageDraftPosition": 169.96880355548765,
+        "percentOwned": 0.18917938351955102
+      }
     },
     "4686361": {
       "id": "4686361",
@@ -3967,7 +5859,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.009776177000257269,
+        "averageDraftPosition": 169.74169079723498,
+        "percentOwned": 1.0160942989912727
+      }
     },
     "4686472": {
       "id": "4686472",
@@ -3976,7 +5873,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.237453531598513,
+        "averageDraftPosition": 169.71825398719704,
+        "percentOwned": 14.687790963495246
+      }
     },
     "4686781": {
       "id": "4686781",
@@ -3985,7 +5887,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.007899628252788104,
+        "averageDraftPosition": 169.95604416587503,
+        "percentOwned": 0.528477632716375
+      }
     },
     "4688813": {
       "id": "4688813",
@@ -3994,16 +5901,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
-    },
-    "4689334": {
-      "id": "4689334",
-      "nflTeamId": "9",
-      "name": "Malik Heath",
-      "position": "WR",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.09828066914498142,
+        "averageDraftPosition": 171.08985454666967,
+        "percentOwned": 10.13640461210112
+      }
     },
     "4689936": {
       "id": "4689936",
@@ -4012,7 +5915,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.5618410902545642,
+        "averageDraftPosition": 163.55144273659272,
+        "percentOwned": 40.313083820854246
+      }
     },
     "4690013": {
       "id": "4690013",
@@ -4021,7 +5929,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.00023234200743494423,
+        "averageDraftPosition": 169.98533041182733,
+        "percentOwned": 0.16992919616826324
+      }
     },
     "4690923": {
       "id": "4690923",
@@ -4030,7 +5943,12 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.11797491871806781,
+        "averageDraftPosition": 169.69353899327834,
+        "percentOwned": 8.741181719062666
+      }
     },
     "4692022": {
       "id": "4692022",
@@ -4039,7 +5957,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.006273234200743495,
+        "averageDraftPosition": 169.99052906441096,
+        "percentOwned": 0.7243197817230037
+      }
     },
     "4692590": {
       "id": "4692590",
@@ -4048,7 +5971,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.028797027403622853,
+        "averageDraftPosition": 170.70171234348072,
+        "percentOwned": 2.9320953375241565
+      }
     },
     "4695404": {
       "id": "4695404",
@@ -4057,7 +5985,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0055762081784386614,
+        "averageDraftPosition": 170.3134651829999,
+        "percentOwned": 0.47887454301448473
+      }
     },
     "4696736": {
       "id": "4696736",
@@ -4066,7 +5999,12 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.92134294670234,
+        "percentOwned": 0.2028799891192855
+      }
     },
     "4696882": {
       "id": "4696882",
@@ -4075,7 +6013,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0009293680297397769,
+        "averageDraftPosition": 169.9872447883599,
+        "percentOwned": 0.32430571366693134
+      }
     },
     "4697815": {
       "id": "4697815",
@@ -4084,7 +6027,26 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 27.27380399442638,
+        "averageDraftPosition": 37.89012211306199,
+        "percentOwned": 98.19370889428995
+      }
+    },
+    "4714365": {
+      "id": "4714365",
+      "nflTeamId": "12",
+      "name": "Carson Steele",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.03717472118959108,
+        "averageDraftPosition": 169.75514724485754,
+        "percentOwned": 1.1467444120505346
+      }
     },
     "4722893": {
       "id": "4722893",
@@ -4093,7 +6055,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.5002323420074349,
+        "averageDraftPosition": 164.72976546798995,
+        "percentOwned": 28.31135175158499
+      }
     },
     "4912274": {
       "id": "4912274",
@@ -4102,7 +6069,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0074314909428704135,
+        "averageDraftPosition": 169.9740782997656,
+        "percentOwned": 0.20435778160742946
+      }
     },
     "5083754": {
       "id": "5083754",
@@ -4111,7 +6083,12 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.0011611704598235022,
+        "averageDraftPosition": 169.9846189832871,
+        "percentOwned": 0.11180464544599687
+      }
     },
     "5208436": {
       "id": "5208436",
@@ -4120,7 +6097,12 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.012778810408921933,
+        "averageDraftPosition": 169.91189654431668,
+        "percentOwned": 0.6643528159563145
+      }
     },
     "-16001": {
       "id": "-16001",
@@ -4129,7 +6111,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.1221841332027424,
+        "averageDraftPosition": 168.75591183528138,
+        "percentOwned": 7.638364318973584
+      }
     },
     "-16002": {
       "id": "-16002",
@@ -4138,7 +6125,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.26286134247917686,
+        "averageDraftPosition": 166.35917680183448,
+        "percentOwned": 26.601125917908707
+      }
     },
     "-16003": {
       "id": "-16003",
@@ -4147,7 +6139,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.33667972575905974,
+        "averageDraftPosition": 165.0626932101304,
+        "percentOwned": 29.554064007937104
+      }
     },
     "-16004": {
       "id": "-16004",
@@ -4156,7 +6153,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.5208231259186673,
+        "averageDraftPosition": 162.8077414298569,
+        "percentOwned": 51.027468046645694
+      }
     },
     "-16005": {
       "id": "-16005",
@@ -4165,7 +6167,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 2.949779519843214,
+        "averageDraftPosition": 88.38653933606184,
+        "percentOwned": 98.39023354484966
+      }
     },
     "-16006": {
       "id": "-16006",
@@ -4174,7 +6181,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 2.5061214495592554,
+        "averageDraftPosition": 103.64545608475848,
+        "percentOwned": 97.71828752245447
+      }
     },
     "-16007": {
       "id": "-16007",
@@ -4183,7 +6195,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.029887310142087214,
+        "averageDraftPosition": 169.49226437548984,
+        "percentOwned": 1.2929714291082988
+      }
     },
     "-16008": {
       "id": "-16008",
@@ -4192,7 +6209,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.9767384916748286,
+        "averageDraftPosition": 144.2391450535309,
+        "percentOwned": 67.4038246529833
+      }
     },
     "-16009": {
       "id": "-16009",
@@ -4201,7 +6223,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.08570029382957885,
+        "averageDraftPosition": 169.21694411788894,
+        "percentOwned": 5.588345274804155
+      }
     },
     "-16010": {
       "id": "-16010",
@@ -4210,7 +6237,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.014208721215090642,
+        "averageDraftPosition": 169.86691178249197,
+        "percentOwned": 0.9280677062878983
+      }
     },
     "-16011": {
       "id": "-16011",
@@ -4219,7 +6251,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.04385105340519353,
+        "averageDraftPosition": 170.15646452674102,
+        "percentOwned": 4.750397886457204
+      }
     },
     "-16012": {
       "id": "-16012",
@@ -4228,7 +6265,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.9507594316511514,
+        "averageDraftPosition": 147.16985559130163,
+        "percentOwned": 66.74358213105944
+      }
     },
     "-16013": {
       "id": "-16013",
@@ -4237,7 +6279,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.04556589906908378,
+        "averageDraftPosition": 169.2713480564089,
+        "percentOwned": 5.977079312943104
+      }
     },
     "-16014": {
       "id": "-16014",
@@ -4246,7 +6293,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.020323212536728696,
+        "averageDraftPosition": 169.70265890025254,
+        "percentOwned": 0.9688469481133227
+      }
     },
     "-16015": {
       "id": "-16015",
@@ -4255,7 +6307,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.8838804507594317,
+        "averageDraftPosition": 148.7853898067294,
+        "percentOwned": 71.59655907189646
+      }
     },
     "-16016": {
       "id": "-16016",
@@ -4264,7 +6321,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.06807051909892263,
+        "averageDraftPosition": 169.47251598920184,
+        "percentOwned": 13.67016109180899
+      }
     },
     "-16017": {
       "id": "-16017",
@@ -4273,7 +6335,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.021313081822635964,
+        "averageDraftPosition": 169.63411141481822,
+        "percentOwned": 2.376254739919802
+      }
     },
     "-16018": {
       "id": "-16018",
@@ -4282,7 +6349,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.9615572967678746,
+        "averageDraftPosition": 142.1184942574334,
+        "percentOwned": 78.61945206509075
+      }
     },
     "-16019": {
       "id": "-16019",
@@ -4291,7 +6363,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.03721841332027424,
+        "averageDraftPosition": 170.4948065079511,
+        "percentOwned": 5.256729459294405
+      }
     },
     "-16020": {
       "id": "-16020",
@@ -4300,7 +6377,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 2.0039196472317493,
+        "averageDraftPosition": 113.21959420233765,
+        "percentOwned": 90.05240619404009
+      }
     },
     "-16021": {
       "id": "-16021",
@@ -4309,7 +6391,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.3014201762977473,
+        "averageDraftPosition": 166.4130777641242,
+        "percentOwned": 15.536284715697695
+      }
     },
     "-16022": {
       "id": "-16022",
@@ -4318,7 +6405,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.19539666993143975,
+        "averageDraftPosition": 169.8566867117237,
+        "percentOwned": 0.4455301357636116
+      }
     },
     "-16023": {
       "id": "-16023",
@@ -4327,7 +6419,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 1.3973542381185693,
+        "averageDraftPosition": 125.1179028949609,
+        "percentOwned": 88.67724569463627
+      }
     },
     "-16024": {
       "id": "-16024",
@@ -4336,7 +6433,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.3503184713375796,
+        "averageDraftPosition": 167.91795514358697,
+        "percentOwned": 22.76044661412825
+      }
     },
     "-16025": {
       "id": "-16025",
@@ -4345,7 +6447,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 3.159892262487757,
+        "averageDraftPosition": 94.16668924345193,
+        "percentOwned": 98.45090880392647
+      }
     },
     "-16026": {
       "id": "-16026",
@@ -4354,7 +6461,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.15572967678746327,
+        "averageDraftPosition": 168.7921877494545,
+        "percentOwned": 35.310929801682896
+      }
     },
     "-16027": {
       "id": "-16027",
@@ -4363,7 +6475,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.02497551420176298,
+        "averageDraftPosition": 169.80181614111135,
+        "percentOwned": 3.8626173949317706
+      }
     },
     "-16028": {
       "id": "-16028",
@@ -4372,7 +6489,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.016405484818805095,
+        "averageDraftPosition": 169.88632372363946,
+        "percentOwned": 0.856852944492465
+      }
     },
     "-16029": {
       "id": "-16029",
@@ -4381,7 +6503,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.009794319294809012,
+        "averageDraftPosition": 170.08854335489426,
+        "percentOwned": 0.8713299196692817
+      }
     },
     "-16030": {
       "id": "-16030",
@@ -4390,7 +6517,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.218765311121999,
+        "averageDraftPosition": 168.3663693010295,
+        "percentOwned": 23.352493409222017
+      }
     },
     "-16033": {
       "id": "-16033",
@@ -4399,7 +6531,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 2.5112689857912787,
+        "averageDraftPosition": 99.27579050236086,
+        "percentOwned": 96.1849661019497
+      }
     },
     "-16034": {
       "id": "-16034",
@@ -4408,7 +6545,12 @@
       "position": "DST",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 }
+      "scores": { "0": 0 },
+      "ownership": {
+        "auctionValueAverage": 0.18618324350808427,
+        "averageDraftPosition": 167.74616843408933,
+        "percentOwned": 15.651136352959966
+      }
     }
   },
   "ffTeams": {},
@@ -4707,206 +6849,186 @@
   },
   "fantasyCalc": {
     "players": {
-      "8439": 34.09,
-      "12483": 34.64,
-      "14880": 45.03,
-      "14881": 17.82,
-      "15795": 7.33,
-      "15818": 16.06,
-      "15847": 50.63,
-      "15864": 21.46,
-      "16460": 3.95,
-      "16731": 3.64,
-      "16737": 27.97,
-      "16757": 13.97,
-      "16800": 34.81,
-      "2468609": 1.49,
-      "2576414": 12.48,
-      "2577327": 4.88,
-      "2577417": 66.51,
-      "2578570": 3.68,
-      "2976212": 25.35,
-      "2976499": 21.76,
-      "2977187": 35.63,
-      "3040151": 24.38,
-      "3042519": 13.35,
-      "3043078": 38.84,
-      "3045138": 3.49,
-      "3045147": 12.23,
-      "3046439": 0.02,
-      "3046779": 53.1,
-      "3051392": 3.66,
-      "3051876": 14.79,
-      "3051926": 6.02,
-      "3052587": 27.06,
-      "3054850": 20.04,
-      "3068267": 7.2,
-      "3116165": 13.2,
-      "3116365": 36.2,
-      "3116385": 16.93,
-      "3116406": 77.45,
-      "3117251": 81.17,
-      "3117256": 4.87,
-      "3121023": 6.51,
-      "3121422": 17.4,
-      "3121427": 3.79,
-      "3122840": 34.43,
-      "3123076": 8.33,
-      "3126486": 35.43,
-      "3128429": 4.72,
-      "3128720": 11.74,
-      "3139477": 94.75,
-      "3895856": 11.89,
-      "3912547": 7.93,
-      "3915416": 34.27,
-      "3915511": 83.77,
-      "3916148": 7.99,
-      "3916387": 92.5,
-      "3916433": 4.12,
-      "3917315": 70.63,
-      "3917792": 12.68,
-      "3918298": 95.13,
-      "3925357": 12.86,
-      "3929630": 48.18,
-      "3932905": 7.63,
-      "4032473": 1.87,
-      "4035538": 13.13,
-      "4035676": 4.98,
-      "4035687": 29.51,
-      "4035886": 0.96,
-      "4036131": 0.58,
-      "4036133": 18.02,
-      "4036378": 75.34,
-      "4038524": 4.39,
-      "4038815": 1.86,
-      "4038941": 71.28,
-      "4040655": 1.84,
-      "4040715": 88.25,
-      "4040761": 5.69,
-      "4047365": 24.31,
-      "4047646": 61.27,
-      "4047650": 30.99,
-      "4239993": 18.65,
-      "4239996": 38.9,
-      "4241372": 5.91,
-      "4241389": 76.04,
-      "4241416": 2.06,
-      "4241457": 9.17,
-      "4241463": 2.39,
-      "4241474": 5.69,
-      "4241478": 28.79,
-      "4241479": 56.35,
-      "4241985": 2.72,
-      "4242335": 47.85,
-      "4242355": 6.94,
-      "4242431": 1.8,
-      "4242433": 1.36,
-      "4243331": 0.88,
-      "4243537": 0.93,
-      "4248528": 5.92,
-      "4258173": 30.62,
-      "4258595": 3,
-      "4259545": 13.58,
-      "4260394": 1.95,
-      "4262921": 79.21,
-      "4360238": 0.44,
-      "4360248": 15.53,
-      "4360294": 0.71,
-      "4360310": 54.57,
-      "4360423": 15.11,
-      "4360438": 37.34,
-      "4360516": 0.49,
-      "4360635": 0.19,
-      "4360761": 0.78,
-      "4360939": 0.3,
-      "4361050": 1.53,
-      "4361307": 25.91,
-      "4361370": 33.44,
-      "4361409": 1.74,
-      "4361411": 3.92,
-      "4361418": 20.25,
-      "4361432": 2.9,
-      "4361529": 26.24,
-      "4361579": 6.57,
-      "4361741": 52.12,
-      "4361777": 7.02,
-      "4362238": 4.53,
-      "4362249": 7.82,
-      "4362628": 66.74,
-      "4362887": 14.11,
-      "4366031": 19.18,
-      "4372016": 37.37,
-      "4372019": 2.9,
-      "4373626": 1.4,
-      "4373678": 2.45,
-      "4374302": 66.65,
-      "4379399": 21.27,
-      "4385690": 23.72,
-      "4426338": 22.83,
-      "4426348": 59.71,
-      "4426354": 10.41,
-      "4426385": 2.37,
-      "4426388": 2.98,
-      "4426502": 20.91,
-      "4426515": 38.07,
-      "4426875": 2.46,
-      "4427095": 0.05,
-      "4427366": 55.27,
-      "4428085": 0.88,
-      "4428209": 3.83,
-      "4428331": 9.35,
-      "4428557": 3.95,
-      "4428850": 1.22,
-      "4429023": 1.64,
-      "4429033": 0.75,
-      "4429084": 71.25,
-      "4429086": 0.04,
-      "4429096": 4.27,
-      "4429160": 24.07,
-      "4429205": 5.37,
-      "4429275": 4.46,
-      "4429501": 0.22,
-      "4429615": 13.04,
-      "4429795": 44.34,
-      "4430027": 39.83,
-      "4430034": 2.25,
-      "4430637": 1.03,
-      "4430737": 26.75,
-      "4430807": 59.16,
-      "4430834": 0.46,
-      "4430878": 6.7,
-      "4430968": 0.02,
-      "4431299": 14.52,
-      "4431452": 24.83,
-      "4431492": 0.38,
-      "4431611": 69.61,
-      "4432577": 83.84,
-      "4432665": 11.13,
-      "4432708": 45.78,
-      "4432773": 5.66,
-      "4433970": 19.85,
-      "4567048": 18.06,
-      "4569173": 10.11,
-      "4569618": 45.07,
-      "4569987": 6.38,
-      "4595348": 22,
-      "4596448": 0.1,
-      "4597500": 1.26,
-      "4599739": 0.48,
-      "4612826": 6.01,
-      "4635008": 3.58,
-      "4678008": 6.77,
-      "4682745": 1.47,
-      "4683062": 4.82,
-      "4685720": 21.28,
-      "4688813": 1.46,
-      "4690923": 1.03,
-      "4692022": 0.36,
-      "4697815": 23.02,
-      "4722893": 0.72,
-      "Spencer Rattler": 2.89,
-      "Joe Milton": 0.76
+      "8439": 27.53,
+      "12483": 48.78,
+      "14880": 16.99,
+      "15795": 2.78,
+      "15818": 13.96,
+      "15847": 51.41,
+      "16460": 0.54,
+      "16731": 0.74,
+      "16737": 29.48,
+      "16800": 45.41,
+      "2468609": 0.11,
+      "2576414": 8.97,
+      "2577327": 1.81,
+      "2577417": 67.21,
+      "2976212": 26.11,
+      "2976499": 16.09,
+      "2977187": 38.41,
+      "3040151": 20.68,
+      "3042519": 10.76,
+      "3043078": 44.98,
+      "3045138": 0.91,
+      "3045147": 12.67,
+      "3046779": 52.15,
+      "3051392": 2.5,
+      "3051876": 9.25,
+      "3051926": 2.49,
+      "3052587": 24.99,
+      "3054850": 23.31,
+      "3068267": 5.43,
+      "3116165": 10.05,
+      "3116365": 29.77,
+      "3116385": 20.85,
+      "3116406": 86.52,
+      "3117251": 89.79,
+      "3117256": 1.51,
+      "3121023": 3.43,
+      "3121422": 12.66,
+      "3121427": 2.25,
+      "3122840": 24.18,
+      "3123076": 7.6,
+      "3126486": 33.2,
+      "3128429": 3.3,
+      "3128720": 7.54,
+      "3139477": 96.38,
+      "3895856": 11.77,
+      "3915416": 34.22,
+      "3915511": 77.73,
+      "3916148": 5.61,
+      "3916387": 97.54,
+      "3916433": 1.29,
+      "3917315": 75.21,
+      "3918298": 100.51,
+      "3925357": 11.03,
+      "3929630": 60.48,
+      "3932905": 5.71,
+      "4032473": 0.71,
+      "4035538": 11.46,
+      "4035676": 4.47,
+      "4035687": 28.91,
+      "4035886": 0.29,
+      "4036133": 5.27,
+      "4036378": 69.09,
+      "4038815": 0.51,
+      "4038941": 66.45,
+      "4040655": 0.41,
+      "4040715": 90.89,
+      "4040761": 4.31,
+      "4047365": 34.46,
+      "4047646": 69.51,
+      "4047650": 29.14,
+      "4239993": 18.76,
+      "4239996": 43.56,
+      "4241372": 3.25,
+      "4241389": 89.2,
+      "4241416": 1.37,
+      "4241457": 7.95,
+      "4241463": 1.11,
+      "4241474": 3.73,
+      "4241478": 26.28,
+      "4241479": 63.17,
+      "4241985": 0.98,
+      "4242335": 60.2,
+      "4242355": 5.09,
+      "4242431": 0.45,
+      "4242433": 1.23,
+      "4243331": 0.12,
+      "4243537": 1.06,
+      "4248528": 4.63,
+      "4258173": 29.5,
+      "4258595": 1.42,
+      "4259545": 8.68,
+      "4262921": 81.7,
+      "4360238": 0.07,
+      "4360248": 15.45,
+      "4360294": 0.21,
+      "4360310": 56.76,
+      "4360438": 33.62,
+      "4361307": 37.14,
+      "4361370": 40.08,
+      "4361409": 0.67,
+      "4361411": 1.44,
+      "4361418": 2.05,
+      "4361432": 1.9,
+      "4361529": 38.74,
+      "4361579": 4.01,
+      "4361741": 50.69,
+      "4361777": 6.48,
+      "4362238": 2.71,
+      "4362249": 7.02,
+      "4362628": 78.75,
+      "4362887": 2.87,
+      "4366031": 18.21,
+      "4372016": 34.72,
+      "4372019": 2.61,
+      "4373626": 0.56,
+      "4373678": 1.65,
+      "4374302": 84.11,
+      "4379399": 22.49,
+      "4385690": 30.21,
+      "4426338": 5.72,
+      "4426348": 54.79,
+      "4426354": 12.14,
+      "4426385": 0.84,
+      "4426388": 1.73,
+      "4426502": 29.84,
+      "4426515": 52.16,
+      "4427095": 0.36,
+      "4427366": 72.87,
+      "4428085": 0.38,
+      "4428209": 0.78,
+      "4428331": 9.03,
+      "4428557": 3.05,
+      "4428850": 0.87,
+      "4429023": 0.23,
+      "4429025": 0.24,
+      "4429084": 77.26,
+      "4429096": 1.6,
+      "4429160": 29.93,
+      "4429205": 5.89,
+      "4429275": 1.19,
+      "4429501": 0.17,
+      "4429615": 14.3,
+      "4429795": 54.89,
+      "4430027": 47.1,
+      "4430034": 0.59,
+      "4430637": 0.47,
+      "4430737": 46.8,
+      "4430807": 75.24,
+      "4430878": 4.09,
+      "4430968": 0.05,
+      "4431280": 0.18,
+      "4431299": 6.82,
+      "4431452": 2.33,
+      "4431492": 0.09,
+      "4431611": 64.79,
+      "4432577": 93.6,
+      "4432665": 2.17,
+      "4432708": 48.14,
+      "4432773": 3.56,
+      "4567048": 18.08,
+      "4569173": 8.44,
+      "4569587": 0.07,
+      "4569618": 62.22,
+      "4569987": 3.17,
+      "4595348": 21.68,
+      "4597500": 1.01,
+      "4599739": 0.32,
+      "4612826": 4.48,
+      "4613104": 0.03,
+      "4635008": 3.8,
+      "4678008": 2.01,
+      "4682745": 0.34,
+      "4683062": 4.92,
+      "4685247": 0.03,
+      "4685720": 7.97,
+      "4688813": 0.63,
+      "4690923": 0.26,
+      "4697815": 26.07,
+      "4722893": 0.15
     },
-    "timestamp": 1723837705554
+    "timestamp": 1724615308653
   }
 }
