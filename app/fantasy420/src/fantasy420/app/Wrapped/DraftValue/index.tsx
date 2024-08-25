@@ -224,7 +224,7 @@ function getResults(numRounds: number): {
       categories: Object.fromEntries(
         Object.keys(categories).map((key, i) => [
           key,
-          { rank: ranks[key][i], score: o.scores[i] },
+          { rank: ranks[key][o.team.id], score: o.scores[i] },
         ])
       ),
       players: o.players,
