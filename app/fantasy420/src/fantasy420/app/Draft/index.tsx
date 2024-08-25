@@ -14,8 +14,11 @@ const allDrafts: { [year: string]: DraftJsonType } = Object.fromEntries(
   } as { [year: string]: DraftJsonType }).map(([year, rawDraft]) => {
     function normalize(name: string): string {
       return name
+        .toLocaleLowerCase()
         .replaceAll(/[^A-Za-z0-9 ]/g, "")
         .replaceAll(/ I+$/g, "")
+        .replaceAll(/nathaniel dell$/gi, "tank dell")
+        .replaceAll(/ sr$/gi, "")
         .replaceAll(/ jr$/gi, "");
     }
     const normalizedNameToId = Object.fromEntries(
