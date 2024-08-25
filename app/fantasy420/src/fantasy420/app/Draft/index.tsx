@@ -280,9 +280,9 @@ function SubDraft(props: { liveDraft: string[] }) {
   );
 }
 
-function _getScore(average: number, value: number): number {
-  return (100 * (value - average)) / (value + average);
-}
+// function getScore(average: number, value: number): number {
+//   return (100 * (value - average)) / (value + average);
+// }
 
 function getResults(): DraftJsonType {
   const draftJson = selectedDraft();
