@@ -4,12 +4,12 @@ import { printF } from "..";
 import { fetchExtensionStorage } from "./Extension";
 
 import { allWrapped, selectedWrapped, selectedYear } from "../Wrapped";
-// import draft2023 from "./2023.json";
+import draft2023 from "./2023.json";
 import draft2024 from "./2024.json";
 
 const allDrafts: { [year: string]: DraftJsonType } = Object.fromEntries(
   Object.entries({
-    // 2023: draft2023,
+    2023: draft2023,
     2024: draft2024,
   }).map(([year, rawDraft]) => {
     function normalize(name: string): string {
