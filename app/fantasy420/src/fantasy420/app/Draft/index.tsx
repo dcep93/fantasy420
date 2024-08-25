@@ -280,7 +280,7 @@ function SubDraft(props: { liveDraft: string[] }) {
   );
 }
 
-function getScore(average: number, value: number): number {
+function _getScore(average: number, value: number): number {
   return (100 * (value - average)) / (value + average);
 }
 
