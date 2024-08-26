@@ -118,29 +118,30 @@ function SubDraft(props: { liveDraft: string[] }) {
     <pre
       style={{
         display: "flex",
-        flexWrap: "wrap",
         justifyContent: "space-around",
         fontSize: "1.5em",
         height: "100vH",
       }}
     >
-      <div style={{ height: "100%", overflow: "scroll" }}>
+      <div>
         <div>
           <ul>
-            {sources.map((s) => (
-              <li key={s}>
-                <span
-                  style={{
-                    cursor: "pointer",
-                    color: "blue",
-                    textDecoration: "underline",
-                  }}
-                  onClick={() => update(s)}
-                >
-                  {s}
-                </span>
-              </li>
-            ))}
+            {sources
+              .filter((s) => s !== "")
+              .map((s) => (
+                <li key={s}>
+                  <span
+                    style={{
+                      cursor: "pointer",
+                      color: "blue",
+                      textDecoration: "underline",
+                    }}
+                    onClick={() => update(s)}
+                  >
+                    {s}
+                  </span>
+                </li>
+              ))}
           </ul>
         </div>
         <div>
@@ -171,12 +172,6 @@ function SubDraft(props: { liveDraft: string[] }) {
         </div>
         <div>
           <div>
-            <a href="https://jayzheng.com/ff/">jayzheng</a>
-          </div>
-          <input readOnly value={printF(jayzheng)} />
-        </div>
-        <div>
-          <div>
             <a href="https://www.draftsharks.com/adp/superflex">draftsharks</a>
           </div>
           <input readOnly value={printF(draftsharks)} />
@@ -191,11 +186,9 @@ function SubDraft(props: { liveDraft: string[] }) {
         </div>
         <div>
           <div>
-            <a href="https://www.harrisfootball.com/top-160-ranks-draft">
-              harrisfootball
-            </a>
+            <a href="https://jayzheng.com/ff/">jayzheng</a>
           </div>
-          <input readOnly value={printF(harrisfootball)} />
+          <input readOnly value={printF(jayzheng)} />
         </div>
         <div>
           <div>
@@ -204,6 +197,20 @@ function SubDraft(props: { liveDraft: string[] }) {
             </a>
           </div>
           <input readOnly value={printF(fantasyplaybook)} />
+        </div>
+        <div>
+          <div>
+            <a href="https://www.harrisfootball.com/top-160-ranks-draft">
+              harrisfootball
+            </a>
+          </div>
+          <input readOnly value={printF(harrisfootball)} />
+        </div>
+        <div>
+          <div>
+            <a href="https://www.thescore.com/news/2835319">justinboone</a>
+          </div>
+          <input readOnly value={printF(justinboone)} />
         </div>
         <div>
           <div>updateDraftRanking</div>
@@ -225,7 +232,7 @@ function SubDraft(props: { liveDraft: string[] }) {
           </div>
         </div>
       </div>
-      <div style={{ height: "100%", overflow: "scroll" }}>
+      <div style={{}}>
         <div style={{ height: "100%", flex: "1 1 auto" }}>
           <table>
             <tbody>
@@ -251,11 +258,14 @@ function SubDraft(props: { liveDraft: string[] }) {
                       {v.posRank + 1}/{v.i + 1}
                     </td>
                     {[
-                      ...Object.values(results).map((r) =>
-                        parseFloat(r[v.playerId]?.toFixed(1))
-                      ),
                       v.player.name,
                       `${v.player.position} ${v.team}`,
+                      ...Object.entries(results)
+                        .map(([key, value]) => ({ key, value }))
+                        .filter(({ key }) => !key.endsWith("[score]"))
+                        .map(({ value }) =>
+                          parseFloat(value[v.playerId]?.toFixed(1)).toString()
+                        ),
                     ].map((t, i) => (
                       <td
                         key={i}
@@ -284,9 +294,9 @@ function SubDraft(props: { liveDraft: string[] }) {
   );
 }
 
-// function getScore(average: number, value: number): number {
-//   return (100 * (value - average)) / (value + average);
-// }
+function getScore(average: number, value: number): number {
+  return (100 * (value - average)) / (value + average);
+}
 
 function getResults(): DraftJsonType {
   const draftJson = selectedDraft();
@@ -321,6 +331,7 @@ function getResults(): DraftJsonType {
         ...p,
         value: -p.ownership.auctionValueAverage,
       })),
+      "": [],
       ...Object.fromEntries(
         Object.keys(draftJson).map((source) => [
           source,
@@ -330,23 +341,23 @@ function getResults(): DraftJsonType {
           })),
         ])
       ),
-      // ...Object.fromEntries(
-      //   Object.keys(draftJson).map((source) => [
-      //     `${source}_score`,
-      //     Object.values(selectedWrapped().nflPlayers)
-      //       .map((p) => ({ ...p, value: draftJson[source][p.id] }))
-      //       .filter(({ value }) => value !== undefined)
-      //       .map((p) => ({
-      //         ...p,
-      //         value: getScore(
-      //           p.value > 0
-      //             ? p.ownership.averageDraftPosition
-      //             : p.ownership.auctionValueAverage,
-      //           p.value
-      //         ),
-      //       })),
-      //   ])
-      // ),
+      ...Object.fromEntries(
+        Object.keys(draftJson).map((source) => [
+          `${source}[score]`,
+          Object.values(selectedWrapped().nflPlayers)
+            .map((p) => ({ ...p, value: draftJson[source][p.id] }))
+            .filter(({ value }) => value !== undefined)
+            .map((p) => ({
+              ...p,
+              value: getScore(
+                p.value > 0
+                  ? p.ownership.averageDraftPosition
+                  : p.ownership.auctionValueAverage,
+                p.value
+              ),
+            })),
+        ])
+      ),
     }).map(([sourceName, players]) => [
       sourceName,
       Object.fromEntries(
@@ -408,6 +419,16 @@ function harrisfootball() {
         )!
         .getElementsByTagName("tr")
     )
+      .slice(1)
+      .map((tr) => tr.children[1] as HTMLElement)
+      .filter((td) => td)
+      .map((td, i) => [td.innerText, i + 1])
+  );
+}
+
+function justinboone() {
+  return Object.fromEntries(
+    Array.from(Array.from(document.getElementsByTagName("tr")))
       .slice(1)
       .map((tr) => tr.children[1] as HTMLElement)
       .filter((td) => td)
