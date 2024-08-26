@@ -3,7 +3,14 @@ import { useEffect, useState } from "react";
 import { printF } from "..";
 import { fetchExtensionStorage } from "./Extension";
 
-import { allWrapped, selectedWrapped, selectedYear } from "../Wrapped";
+import { NFLPlayerType } from "../FetchWrapped";
+import {
+  allWrapped,
+  groupByF,
+  mapDict,
+  selectedWrapped,
+  selectedYear,
+} from "../Wrapped";
 import draft2023 from "./2023.json";
 import draft2024 from "./2024.json";
 
@@ -126,22 +133,20 @@ function SubDraft(props: { liveDraft: string[] }) {
       <div>
         <div>
           <ul>
-            {sources
-              .filter((s) => s !== "")
-              .map((s) => (
-                <li key={s}>
-                  <span
-                    style={{
-                      cursor: "pointer",
-                      color: "blue",
-                      textDecoration: "underline",
-                    }}
-                    onClick={() => update(s)}
-                  >
-                    {s}
-                  </span>
-                </li>
-              ))}
+            {sources.map((s) => (
+              <li key={s}>
+                <span
+                  style={{
+                    cursor: "pointer",
+                    color: "blue",
+                    textDecoration: "underline",
+                  }}
+                  onClick={() => update(s)}
+                >
+                  {s}
+                </span>
+              </li>
+            ))}
           </ul>
         </div>
         <div>
@@ -263,8 +268,12 @@ function SubDraft(props: { liveDraft: string[] }) {
                       ...Object.entries(results)
                         .map(([key, value]) => ({ key, value }))
                         .filter(({ key }) => !key.endsWith("[score]"))
-                        .map(({ value }) =>
-                          parseFloat(value[v.playerId]?.toFixed(1)).toString()
+                        .map(({ key, value }) =>
+                          key === ""
+                            ? ""
+                            : parseFloat(
+                                value[v.playerId]?.toFixed(1)
+                              ).toString()
                         ),
                     ].map((t, i) => (
                       <td
@@ -294,12 +303,37 @@ function SubDraft(props: { liveDraft: string[] }) {
   );
 }
 
-function getScore(average: number, value: number): number {
+function getScore(value: number, average: number): number {
   return (100 * (value - average)) / (value + average);
 }
 
 function getResults(): DraftJsonType {
   const draftJson = selectedDraft();
+  const idToRankBySource = mapDict(
+    {
+      espn: (player: NFLPlayerType) => player.ownership.averageDraftPosition,
+      ...mapDict(
+        draftJson,
+        (values) => (player: NFLPlayerType) => values[player.id]
+      ),
+    },
+    (f) => ({
+      ...Object.fromEntries(
+        Object.values(
+          groupByF(
+            Object.values(selectedWrapped().nflPlayers),
+            (player) => player.position
+          )
+        ).flatMap((players) =>
+          players
+            .map((p) => ({ p, f: f(p) }))
+            .filter(({ f }) => f !== undefined)
+            .sort((a, b) => a.f - b.f)
+            .map((p, rank) => [p.p.id, { p, rank }])
+        )
+      ),
+    })
+  );
   return Object.fromEntries(
     Object.entries({
       composite: Object.values(selectedWrapped().nflPlayers)
@@ -337,7 +371,7 @@ function getResults(): DraftJsonType {
           source,
           Object.values(selectedWrapped().nflPlayers).map((p) => ({
             ...p,
-            value: draftJson[source][p.id],
+            value: source === "" ? "" : draftJson[source][p.id],
           })),
         ])
       ),
@@ -350,10 +384,8 @@ function getResults(): DraftJsonType {
             .map((p) => ({
               ...p,
               value: getScore(
-                p.value > 0
-                  ? p.ownership.averageDraftPosition
-                  : p.ownership.auctionValueAverage,
-                p.value
+                idToRankBySource[source][p.id].rank,
+                idToRankBySource.espn[p.id].rank
               ),
             })),
         ])

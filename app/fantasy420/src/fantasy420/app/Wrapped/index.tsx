@@ -134,6 +134,10 @@ export function groupByF<T>(
   }, {} as { [key: string]: T[] });
 }
 
+export function mapDict<T, U>(d: { [key: string]: T }, f: (t: T) => U) {
+  return Object.fromEntries(Object.entries(d).map(([key, t]) => [key, f(t)]));
+}
+
 const bubbleStyle = {
   backgroundColor: "white",
   display: "inline-block",
