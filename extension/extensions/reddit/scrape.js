@@ -25,7 +25,8 @@
     )
       .then(loadPlayers)
       .then(transform)
-      .then(() => setTimeout(main, INTERVAL_MS));
+      .then(() => setTimeout(main, INTERVAL_MS))
+      .catch((e) => alert(e));
   }
 
   function clean(str) {
@@ -240,13 +241,15 @@
   }
 
   function loadPlayers() {
+    const currentYear = 2024;
+
     const timestamp = new Date().getTime();
     // 6 hours
     if (data.fetched.timestamp > timestamp - 6 * 60 * 60 * 1000)
       return Promise.resolve();
     console.log("fetching", data.fetched.timestamp);
     return fetch(
-      "https://fantasy.espn.com/apis/v3/games/ffl/seasons/2023/players?scoringPeriodId=0&view=players_wl",
+      `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/players?scoringPeriodId=0&view=players_wl`,
       {
         headers: {
           "x-fantasy-filter": '{"filterActive":{"value":true}}',
