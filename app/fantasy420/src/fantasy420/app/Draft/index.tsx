@@ -95,7 +95,7 @@ export default function Draft() {
   const [liveDraft, updateLiveDraft] = useState<string[]>([]);
   useEffect(() => {
     fetchLiveDraft(updateLiveDraft, -1);
-  }, []);
+  }, [fetchLiveDraft]);
   return <SubDraft liveDraft={liveDraft} />;
 
   function fetchLiveDraft(
