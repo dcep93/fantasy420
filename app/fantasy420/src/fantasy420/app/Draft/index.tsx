@@ -6,7 +6,6 @@ import { fetchExtensionStorage } from "./Extension";
 import { NFLPlayerType } from "../FetchWrapped";
 import {
   allWrapped,
-  clog,
   groupByF,
   mapDict,
   selectedWrapped,
@@ -146,7 +145,7 @@ function SubDraft(props: { liveDraft: string[] }) {
                   }}
                   onClick={() => update(s)}
                 >
-                  {s}
+                  {s.replaceAll("_", "").length === 0 ? "" : s}
                 </span>
               </li>
             ))}
@@ -265,26 +264,23 @@ function SubDraft(props: { liveDraft: string[] }) {
                     }}
                   >
                     <td>
-                      {v.posRank + 1}/{v.i + 1}
-                    </td>
-                    {[
-                      v.player.name,
-                      `ff bye p ${
+                      {v.i + 1}/{v.posRank + 1}/
+                      {
                         {
                           freeAgent: "FA",
                           playoffs: "p",
                           ...Object.fromEntries(
                             [
-                              9, // 9
-                              2, // Tiffany
-                              6, // 6
-                              7, // Heify
-                              8, // George
-                              5, // Bu
-                              3, // Neil
-                              4, // Ahmed
-                              10, // Ruifan
-                              1, // Dan
+                              9, //
+                              2,
+                              6,
+                              7,
+                              8,
+                              5,
+                              3,
+                              4,
+                              10,
+                              1,
                             ].map((teamId, pickIndex) => [
                               teamId,
                               pickIndex + 1,
@@ -293,30 +289,26 @@ function SubDraft(props: { liveDraft: string[] }) {
                         }[
                           v.player.nflTeamId === "0"
                             ? "freeAgent"
-                            : clog(
-                                clog(selectedWrapped().ffMatchups)[
-                                  clog(
-                                    clog(
-                                      selectedWrapped().nflTeams[
-                                        clog(v.player).nflTeamId
-                                      ]
-                                    ).byeWeek
-                                  )
-                                ]
-                              )
-                                ?.find((teamIds) =>
+                            : selectedWrapped()
+                                .ffMatchups[
+                                  selectedWrapped().nflTeams[v.player.nflTeamId]
+                                    .byeWeek
+                                ]?.find((teamIds) =>
                                   teamIds.includes(MY_TEAM_ID)
                                 )!
                                 .find((teamId) => teamId !== MY_TEAM_ID) ||
                               "playoffs"
                         ]
-                      }`,
+                      }
+                    </td>
+                    {[
+                      v.player.name,
                       `${v.player.position} ${v.team}`,
                       ...Object.entries(results)
                         .map(([key, value]) => ({ key, value }))
                         .filter(({ key }) => !key.endsWith("[score]"))
                         .map(({ key, value }) =>
-                          key === ""
+                          key.replaceAll("_", "") === ""
                             ? ""
                             : parseFloat(
                                 value[v.playerId]?.toFixed(1)
@@ -412,7 +404,7 @@ function getResults(): DraftJsonType {
         ...p,
         value: -p.ownership.auctionValueAverage,
       })),
-      "": [],
+      _: [],
       ...Object.fromEntries(
         Object.keys(draftJson).map((source) => [
           source,
@@ -422,6 +414,7 @@ function getResults(): DraftJsonType {
           })),
         ])
       ),
+      __: [],
       ...Object.fromEntries(
         Object.keys(draftJson).map((source) => [
           `${source}[score]`,
