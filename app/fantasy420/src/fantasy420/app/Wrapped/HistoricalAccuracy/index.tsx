@@ -115,7 +115,6 @@ function getCorrelation(data: ChartDataType): number {
 }
 
 export default function HistoricalAccuracy() {
-  const [source, updateSource] = useState("composite");
   const draft = Object.fromEntries(
     Object.values(selectedWrapped().ffTeams)
       .flatMap((team) => team.draft)
@@ -125,10 +124,11 @@ export default function HistoricalAccuracy() {
       ])
   );
   const sources = {
-    ...(selectedDraft() || {}),
     draft,
+    ...(selectedDraft() || {}),
   } as { [k: string]: {} };
   console.log(sources);
+  const [source, updateSource] = useState(Object.keys(sources)[0]);
   sources.composite = getComposite(sources);
   const data = getData(sources[source]);
   return (
@@ -141,7 +141,7 @@ export default function HistoricalAccuracy() {
           }
         >
           {Object.keys(sources)
-            .reverse()
+            .filter((s) => s.replaceAll("_", "").length !== 0)
             .map((selectSource) => (
               <option key={selectSource} value={selectSource}>
                 {selectSource}
