@@ -250,26 +250,30 @@ function SubDraft(props: { liveDraft: string[] }) {
                     <td>
                       {v.posRank + 1}/{v.i + 1}
                     </td>
-                    <td>{v.value.toFixed(1)}</td>
-                    <td
-                      style={{
-                        backgroundColor: {
-                          RB: "lightblue",
-                          WR: "lightseagreen",
-                          TE: "lightcoral",
-                          QB: "plum",
-                          K: "tan",
-                          "D/ST": "lightsalmon",
-                        }[v.player.position],
-                      }}
-                    >
-                      {[
-                        ...Object.values(results).map((r) =>
-                          parseFloat(r[v.playerId]?.toFixed(1))
-                        ),
-                      ].join("/")}{" "}
-                      {v.player.name}, {v.player.position} {v.team}
-                    </td>
+                    {[
+                      ...Object.values(results).map((r) =>
+                        parseFloat(r[v.playerId]?.toFixed(1))
+                      ),
+                      v.player.name,
+                      `${v.player.position} ${v.team}`,
+                    ].map((t, i) => (
+                      <td
+                        key={i}
+                        style={{
+                          padding: "0 0.5em",
+                          backgroundColor: {
+                            RB: "lightblue",
+                            WR: "lightseagreen",
+                            TE: "lightcoral",
+                            QB: "plum",
+                            K: "tan",
+                            "D/ST": "lightsalmon",
+                          }[v.player.position],
+                        }}
+                      >
+                        {t}
+                      </td>
+                    ))}
                   </tr>
                 ))}
             </tbody>
