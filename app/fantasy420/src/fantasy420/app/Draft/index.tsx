@@ -68,13 +68,10 @@ export type DraftJsonType = { [source: string]: PlayersType };
 export default function Draft() {
   const draftJson = selectedDraft();
   const idToRankBySource = mapDict(
-    {
-      espn: (player: NFLPlayerType) => player.ownership.averageDraftPosition,
-      ...mapDict(
-        draftJson,
-        (values) => (player: NFLPlayerType) => values[player.id]
-      ),
-    },
+    mapDict(
+      draftJson,
+      (values) => (player: NFLPlayerType) => values[player.id]
+    ),
     (f) =>
       Object.fromEntries(
         Object.values(
@@ -136,22 +133,20 @@ export default function Draft() {
         <div>
           <div>
             <ul>
-              {sources
-                .filter((s) => s !== "espn[score]")
-                .map((s) => (
-                  <li key={s}>
-                    <span
-                      style={{
-                        cursor: "pointer",
-                        color: "blue",
-                        textDecoration: "underline",
-                      }}
-                      onClick={() => update(s)}
-                    >
-                      {s.replaceAll("_", "").length === 0 ? "" : s}
-                    </span>
-                  </li>
-                ))}
+              {sources.map((s) => (
+                <li key={s}>
+                  <span
+                    style={{
+                      cursor: "pointer",
+                      color: "blue",
+                      textDecoration: "underline",
+                    }}
+                    onClick={() => update(s)}
+                  >
+                    {s.replaceAll("_", "").length === 0 ? "" : s}
+                  </span>
+                </li>
+              ))}
             </ul>
           </div>
           <div>
@@ -223,6 +218,14 @@ export default function Draft() {
               <a href="https://www.thescore.com/news/2835319">justinboone</a>
             </div>
             <input readOnly value={printF(justinboone)} />
+          </div>
+          <div>
+            <div>
+              <a href="https://fantasy.espn.com/football/livedraftresults">
+                espn
+              </a>
+            </div>
+            <input readOnly value={JSON.stringify(getEspnLiveDraft())} />
           </div>
           <div>
             <div>updateDraftRanking</div>
@@ -317,7 +320,7 @@ export default function Draft() {
                               ? idToRankBySource[key.split("[score]")[0]][
                                   v.playerId
                                 ]?.rank || null
-                              : key.replaceAll("_", "") === ""
+                              : key.replaceAll("_", "").length === 0
                               ? null
                               : parseFloat(value[v.playerId]?.toFixed(1))
                           )
@@ -352,72 +355,77 @@ export default function Draft() {
     );
   }
 
-  function getScore(source: string, playerId: string): number {
+  function getScore(source: string, playerId: string): number | null {
     const value = idToRankBySource[source][playerId].rank;
-    const average = idToRankBySource.espn[playerId].rank;
+    const average = source.startsWith("espn")
+      ? Object.entries(idToRankBySource)
+          .map(([s, ranks]) => ({ s, rank: ranks[playerId]?.rank }))
+          .find(({ s, rank }) => !s.startsWith("espn") && rank !== undefined)
+          ?.rank
+      : idToRankBySource.espnpick[playerId].rank;
+    if (average === undefined) {
+      return null;
+    }
     return (100 * (value - average)) / (value + average);
   }
 
   function getResults(): DraftJsonType {
-    const base = {
-      composite: Object.values(selectedWrapped().nflPlayers)
-        .map((p) => ({
-          ...p,
-          extra: Object.values(draftJson)
-            .map(
-              (d) =>
-                Object.entries(d)
-                  .map(([playerId, value]) => ({ playerId, value }))
-                  .sort((a, b) => a.value - b.value)
-                  .map(({ playerId }, rank) => ({ playerId, rank }))
-                  .find(({ playerId }) => playerId === p.id)?.rank
-            )
-            .filter((rank) => rank !== undefined) as number[],
-        }))
-        .map(({ extra, ...p }) => ({
-          ...p,
-          value:
-            extra.length === 0
-              ? null
-              : extra.reduce((a, b) => a + b, extra.length) / extra.length,
-        })),
-      espnpick: Object.values(selectedWrapped().nflPlayers).map((p) => ({
-        ...p,
-        value: p.ownership.averageDraftPosition,
-      })),
-      espnauction: Object.values(selectedWrapped().nflPlayers).map((p) => ({
-        ...p,
-        value: -p.ownership.auctionValueAverage,
-      })),
-    };
     return Object.fromEntries(
       Object.entries({
-        ...base,
-        _: [],
+        composite: Object.values(selectedWrapped().nflPlayers)
+          .map((p) => ({
+            ...p,
+            extra: Object.values(draftJson)
+              .map(
+                (d) =>
+                  Object.entries(d)
+                    .map(([playerId, value]) => ({ playerId, value }))
+                    .sort((a, b) => a.value - b.value)
+                    .map(({ playerId }, rank) => ({ playerId, rank }))
+                    .find(({ playerId }) => playerId === p.id)?.rank
+              )
+              .filter((rank) => rank !== undefined) as number[],
+          }))
+          .map(({ extra, ...p }) => ({
+            ...p,
+            value:
+              extra.length === 0
+                ? null
+                : extra.reduce((a, b) => a + b, extra.length) / extra.length,
+          }))
+          .filter(({ value }) => value !== null)
+          .sort((a, b) => a.value! - b.value!)
+          .map((p, rank) => ({ ...p, value: rank + 1 })),
         ...Object.fromEntries(
           Object.keys(draftJson).map((source) => [
             source,
             Object.values(selectedWrapped().nflPlayers).map((p) => ({
               ...p,
-              value: source === "" ? "" : draftJson[source][p.id],
+              value:
+                source.replaceAll("_", "").length === 0
+                  ? ""
+                  : draftJson[source][p.id],
             })),
           ])
         ),
         __: [],
-        "espn[score]": [],
         ...Object.fromEntries(
           Object.keys(draftJson)
-            .filter((source) => source !== "")
+            .filter(
+              (source) =>
+                source === "" || source.replaceAll("_", "").length !== 0
+            )
             .map((source) => [
-              `${source}[score]`,
+              source === "" ? "" : `${source}[score]`,
               Object.values(selectedWrapped().nflPlayers)
                 .map((p) => ({ ...p, value: draftJson[source][p.id] }))
                 .filter(({ value }) => value !== undefined)
-                .filter((p) => p.ownership.averageDraftPosition < 170)
+                .filter((p) => p.ownership.averageDraftPosition < 169.8)
                 .map((p) => ({
                   ...p,
                   value: getScore(source, p.id),
-                })),
+                }))
+                .filter(({ value }) => value !== null),
             ])
         ),
       }).map(([sourceName, players]) => [
@@ -514,6 +522,23 @@ export default function Draft() {
         i + 1,
       ])
     );
+  }
+
+  function getEspnLiveDraft() {
+    return {
+      espnpick: Object.fromEntries(
+        Object.values(selectedWrapped().nflPlayers).map((p) => [
+          p.name,
+          p.ownership.averageDraftPosition,
+        ])
+      ),
+      espnauction: Object.fromEntries(
+        Object.values(selectedWrapped().nflPlayers).map((p) => [
+          p.name,
+          -p.ownership.auctionValueAverage,
+        ])
+      ),
+    };
   }
 
   function updateDraftRanking(
