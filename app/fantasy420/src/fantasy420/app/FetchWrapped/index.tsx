@@ -151,61 +151,89 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                       auctionValueAverage: number;
                       percentOwned: number;
                     };
+                    injuryStatus?: string;
                   };
                 }[];
-              }) =>
-                resp.players
-                  .map((player) => player.player)
-                  .map((player) => ({
-                    id: player.id.toString(),
-                    nflTeamId: player.proTeamId.toString(),
-                    name: player.fullName,
-                    position:
-                      {
-                        1: "QB",
-                        2: "RB",
-                        3: "WR",
-                        4: "TE",
-                        5: "K",
-                        16: "DST",
-                      }[player.defaultPositionId] ||
-                      player.defaultPositionId.toString(),
-                    total:
-                      player.stats.find((stat) => stat.scoringPeriodId === 0)
-                        ?.appliedTotal || 0,
-                    average:
-                      player.stats.find((stat) => stat.scoringPeriodId === 0)
-                        ?.appliedAverage || 0,
-                    scores: fromEntries(
-                      player.stats
-                        .filter(
-                          (stat) => stat.seasonId === parseInt(currentYear)
-                        )
-                        .map((stat) => ({
-                          key: stat.scoringPeriodId.toString(),
-                          value: parseFloat(stat.appliedTotal.toFixed(2)),
-                        }))
-                    ),
-                    ownership: Object.fromEntries(
-                      Object.entries(player.ownership || {}).filter(([k]) =>
-                        [
-                          "averageDraftPosition",
-                          "auctionValueAverage",
-                          "percentOwned",
-                        ].includes(k)
+              }) => {
+                alert(
+                  `injuries: ${JSON.stringify(
+                    resp.players
+                      .map(({ player }) => player)
+                      .filter(
+                        ({ injuryStatus, ownership }) =>
+                          ownership.auctionValueAverage > 0.05 &&
+                          injuryStatus &&
+                          ["OUT", "IR"].includes(injuryStatus)
                       )
-                    ) as any,
-                  }))
-                  .filter(
-                    (player) =>
-                      player.ownership?.percentOwned > 0.1 ||
-                      Object.values(player.scores).filter((s) => s !== 0)
-                        .length > 0
-                  )
-                  .map((player) => ({
-                    key: player.id,
-                    value: player,
-                  }))
+                      .sort(
+                        (a, b) =>
+                          a.ownership.averageDraftPosition -
+                          b.ownership.averageDraftPosition
+                      )
+                      .map((p) => p.fullName),
+                    null,
+                    2
+                  )}`
+                );
+                return resp;
+              }
+            )
+            .then((resp) =>
+              resp.players
+                .map((player) => player.player)
+                .map((player) => ({
+                  id: player.id.toString(),
+                  nflTeamId: player.proTeamId.toString(),
+                  name: player.fullName,
+                  position:
+                    {
+                      1: "QB",
+                      2: "RB",
+                      3: "WR",
+                      4: "TE",
+                      5: "K",
+                      16: "DST",
+                    }[player.defaultPositionId] ||
+                    player.defaultPositionId.toString(),
+                  total:
+                    player.stats.find((stat) => stat.scoringPeriodId === 0)
+                      ?.appliedTotal || 0,
+                  average:
+                    player.stats.find((stat) => stat.scoringPeriodId === 0)
+                      ?.appliedAverage || 0,
+                  scores: fromEntries(
+                    player.stats
+                      .filter((stat) => stat.seasonId === parseInt(currentYear))
+                      .map((stat) => ({
+                        key: stat.scoringPeriodId.toString(),
+                        value: parseFloat(stat.appliedTotal.toFixed(2)),
+                      }))
+                  ),
+                  ownership: Object.fromEntries(
+                    Object.entries(player.ownership || {}).filter(([k]) =>
+                      [
+                        "averageDraftPosition",
+                        "auctionValueAverage",
+                        "percentOwned",
+                      ].includes(k)
+                    )
+                  ) as {
+                    averageDraftPosition: number;
+                    auctionValueAverage: number;
+                    percentOwned: number;
+                  },
+                  injuryStatus: player.injuryStatus,
+                }))
+                .filter(
+                  (player) =>
+                    player.ownership?.percentOwned > 0.1 ||
+                    Object.values(player.scores).filter((s) => s !== 0).length >
+                      0
+                )
+                .map((player) => ({
+                  key: player.id,
+                  value: player,
+                }))
             )
             .then((playersArr) => fromEntries(playersArr))
         )
