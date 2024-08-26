@@ -527,16 +527,21 @@ export default function Draft() {
   function getEspnLiveDraft() {
     return {
       espnpick: Object.fromEntries(
-        Object.values(selectedWrapped().nflPlayers).map((p) => [
-          p.name,
-          p.ownership.averageDraftPosition,
-        ])
+        Object.values(selectedWrapped().nflPlayers)
+          .sort(
+            (a, b) =>
+              a.ownership.averageDraftPosition -
+              b.ownership.averageDraftPosition
+          )
+          .map((p) => [p.name, p.ownership.averageDraftPosition])
       ),
       espnauction: Object.fromEntries(
-        Object.values(selectedWrapped().nflPlayers).map((p) => [
-          p.name,
-          -p.ownership.auctionValueAverage,
-        ])
+        Object.values(selectedWrapped().nflPlayers)
+          .sort(
+            (a, b) =>
+              b.ownership.auctionValueAverage - a.ownership.auctionValueAverage
+          )
+          .map((p) => [p.name, -p.ownership.auctionValueAverage])
       ),
     };
   }

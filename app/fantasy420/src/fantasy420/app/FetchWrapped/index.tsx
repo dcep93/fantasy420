@@ -154,29 +154,7 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                     injuryStatus?: string;
                   };
                 }[];
-              }) => {
-                alert(
-                  `injuries: ${JSON.stringify(
-                    resp.players
-                      .map(({ player }) => player)
-                      .filter(
-                        ({ injuryStatus, ownership }) =>
-                          ownership.auctionValueAverage > 0.05 &&
-                          injuryStatus &&
-                          ["OUT", "IR"].includes(injuryStatus)
-                      )
-                      .sort(
-                        (a, b) =>
-                          a.ownership.averageDraftPosition -
-                          b.ownership.averageDraftPosition
-                      )
-                      .map((p) => p.fullName),
-                    null,
-                    2
-                  )}`
-                );
-                return resp;
-              }
+              }) => resp
             )
             .then((resp) =>
               resp.players
