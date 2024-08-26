@@ -95,32 +95,8 @@ export default function Draft() {
   const [liveDraft, updateLiveDraft] = useState<string[]>([]);
   useEffect(() => {
     fetchLiveDraft(updateLiveDraft, -1);
-  }, [fetchLiveDraft]);
+  }, []);
   return <SubDraft liveDraft={liveDraft} />;
-
-  function fetchLiveDraft(
-    updateLiveDraft: (draft: string[]) => void,
-    prev: number
-  ) {
-    const FETCH_LIVE_DRAFT_PERIOD_MS = 500;
-    fetchExtensionStorage("draft")
-      .then((draft) =>
-        Promise.resolve(draft)
-          .then((draft) => {
-            if (draft.length === prev) return;
-            updateLiveDraft(draft);
-          })
-          .then(() =>
-            setTimeout(
-              () => fetchLiveDraft(updateLiveDraft, draft.length),
-              FETCH_LIVE_DRAFT_PERIOD_MS
-            )
-          )
-      )
-      .catch((err) => {
-        console.error(err);
-      });
-  }
 
   function SubDraft(props: { liveDraft: string[] }) {
     const playersByName = Object.fromEntries(
@@ -615,4 +591,28 @@ export default function Draft() {
       )
       .then((resp) => alert(resp.ok));
   }
+}
+
+function fetchLiveDraft(
+  updateLiveDraft: (draft: string[]) => void,
+  prev: number
+) {
+  const FETCH_LIVE_DRAFT_PERIOD_MS = 500;
+  fetchExtensionStorage("draft")
+    .then((draft) =>
+      Promise.resolve(draft)
+        .then((draft) => {
+          if (draft.length === prev) return;
+          updateLiveDraft(draft);
+        })
+        .then(() =>
+          setTimeout(
+            () => fetchLiveDraft(updateLiveDraft, draft.length),
+            FETCH_LIVE_DRAFT_PERIOD_MS
+          )
+        )
+    )
+    .catch((err) => {
+      console.error(err);
+    });
 }
