@@ -6,6 +6,7 @@ import { fetchExtensionStorage } from "./Extension";
 import { NFLPlayerType } from "../FetchWrapped";
 import {
   allWrapped,
+  clog,
   groupByF,
   mapDict,
   selectedWrapped,
@@ -55,6 +56,8 @@ const allDrafts: { [year: string]: DraftJsonType } = Object.fromEntries(
     ];
   })
 );
+
+const MY_TEAM_ID = "1";
 
 export function selectedDraft(): DraftJsonType {
   return allDrafts[selectedYear];
@@ -225,7 +228,9 @@ function SubDraft(props: { liveDraft: string[] }) {
           <div>
             <input
               readOnly
-              value={`${updateDraftRanking.name}(1, ${JSON.stringify(
+              value={`${
+                updateDraftRanking.name
+              }(${MY_TEAM_ID}, ${JSON.stringify(
                 Object.fromEntries(
                   sourcePlayers.map(({ player, sourceRank }) => [
                     player.name,
@@ -264,6 +269,48 @@ function SubDraft(props: { liveDraft: string[] }) {
                     </td>
                     {[
                       v.player.name,
+                      `ff bye p ${
+                        {
+                          freeAgent: "FA",
+                          playoffs: "p",
+                          ...Object.fromEntries(
+                            [
+                              9, // 9
+                              2, // Tiffany
+                              6, // 6
+                              7, // Heify
+                              8, // George
+                              5, // Bu
+                              3, // Neil
+                              4, // Ahmed
+                              10, // Ruifan
+                              1, // Dan
+                            ].map((teamId, pickIndex) => [
+                              teamId,
+                              pickIndex + 1,
+                            ])
+                          ),
+                        }[
+                          v.player.nflTeamId === "0"
+                            ? "freeAgent"
+                            : clog(
+                                clog(selectedWrapped().ffMatchups)[
+                                  clog(
+                                    clog(
+                                      selectedWrapped().nflTeams[
+                                        clog(v.player).nflTeamId
+                                      ]
+                                    ).byeWeek
+                                  )
+                                ]
+                              )
+                                ?.find((teamIds) =>
+                                  teamIds.includes(MY_TEAM_ID)
+                                )!
+                                .find((teamId) => teamId !== MY_TEAM_ID) ||
+                              "playoffs"
+                        ]
+                      }`,
                       `${v.player.position} ${v.team}`,
                       ...Object.entries(results)
                         .map(([key, value]) => ({ key, value }))
