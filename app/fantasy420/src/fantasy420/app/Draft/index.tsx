@@ -420,7 +420,7 @@ export default function Draft() {
               Object.values(selectedWrapped().nflPlayers)
                 .map((p) => ({ ...p, value: draftJson[source][p.id] }))
                 .filter(({ value }) => value !== undefined)
-                .filter((p) => p.ownership.averageDraftPosition < 169.8)
+                .filter((p) => p.ownership.auctionValueAverage > 0.05)
                 .map((p) => ({
                   ...p,
                   value: getScore(source, p.id),
