@@ -309,10 +309,11 @@ function SubDraft(props: { liveDraft: string[] }) {
                         .filter(({ key }) => !key.endsWith("[score]"))
                         .map(({ key, value }) =>
                           key.replaceAll("_", "") === ""
-                            ? ""
-                            : parseFloat(
-                                value[v.playerId]?.toFixed(1)
-                              ).toString()
+                            ? null
+                            : parseFloat(value[v.playerId]?.toFixed(1))
+                        )
+                        .map((v) =>
+                          v === null ? "" : v < 0 ? `$${-v}` : v.toString()
                         ),
                     ].map((t, i) => (
                       <td
@@ -416,19 +417,21 @@ function getResults(): DraftJsonType {
       ),
       __: [],
       ...Object.fromEntries(
-        Object.keys(draftJson).map((source) => [
-          `${source}[score]`,
-          Object.values(selectedWrapped().nflPlayers)
-            .map((p) => ({ ...p, value: draftJson[source][p.id] }))
-            .filter(({ value }) => value !== undefined)
-            .map((p) => ({
-              ...p,
-              value: getScore(
-                idToRankBySource[source][p.id].rank,
-                idToRankBySource.espn[p.id].rank
-              ),
-            })),
-        ])
+        Object.keys(draftJson)
+          .filter((source) => source !== "")
+          .map((source) => [
+            `${source}[score]`,
+            Object.values(selectedWrapped().nflPlayers)
+              .map((p) => ({ ...p, value: draftJson[source][p.id] }))
+              .filter(({ value }) => value !== undefined)
+              .map((p) => ({
+                ...p,
+                value: getScore(
+                  idToRankBySource[source][p.id].rank,
+                  idToRankBySource.espn[p.id].rank
+                ),
+              })),
+          ])
       ),
     }).map(([sourceName, players]) => [
       sourceName,
