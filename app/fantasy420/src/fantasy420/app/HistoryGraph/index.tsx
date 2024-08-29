@@ -22,7 +22,7 @@ export default function HistoryGraph() {
   const fs: {
     [key: string]: (year: string) => { [position: string]: number };
   } = {
-    num_games_played: (year) =>
+    ratio_games_played: (year) =>
       mapDict(historyJson[year], (players) => {
         const d = groupByF(
           players.flatMap((p) => Object.values(p.weeks).slice(1)),
