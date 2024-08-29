@@ -32,7 +32,7 @@ export default function Chart(props: {
       <Tooltip />
       <Legend />
       {Object.entries(props.keys).map(([key, stroke]) => (
-        <Line type="monotone" dataKey={key} stroke={stroke} />
+        <Line key={key} type="monotone" dataKey={key} stroke={stroke} />
       ))}
     </LineChart>
   );
