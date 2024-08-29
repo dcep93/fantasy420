@@ -3,13 +3,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Defense from "./Defense";
 import Draft from "./Draft";
 import FetchWrapped from "./FetchWrapped";
+import HistoryGraph from "./HistoryGraph";
 import PlayoffPredictability from "./PlayoffPredictability";
-import Wrapped, { Experiment } from "./Wrapped";
+import Wrapped from "./Wrapped";
 
 const pages = {
   FetchWrapped,
   Draft,
-  Experiment,
+  HistoryGraph,
   Defense,
   PlayoffPredictability,
 };
@@ -31,6 +32,6 @@ export function printF(f: (...args: any[]) => any): string {
   return `${f
     .toString()
     .split("\n")
-    .map((i) => i.split("// ")[0].trim())
+    .map((i) => i.replace(/\/\/$/, "").split("// ")[0].trim())
     .join(" ")}; ${f.name}()`;
 }
