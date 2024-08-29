@@ -548,14 +548,18 @@ function vegas(idToRankBySource: IdToRankBySource) {
         Object.values(wrapped.nflPlayers)
           .map((p) => ({
             p,
-            pointsArr: Object.values(d)
-              .map((dd) => dd[p.id])
-              .filter((points) => points !== undefined),
+            pointsMap: Object.fromEntries(
+              Object.entries(d)
+                .map(([subcategory, dd]) => ({ subcategory, points: dd[p.id] }))
+                .filter(({ points }) => points !== undefined)
+                .map((obj) => [obj.subcategory, obj.points])
+            ),
           }))
-          .filter(({ pointsArr }) => pointsArr.length > 0)
-          .map(({ pointsArr, p }) => ({
+          .filter(({ pointsMap }) => Object.keys(pointsMap).length > 0)
+          .map(({ pointsMap, p }) => ({
             p,
-            points: pointsArr.reduce((a, b) => a + b, 0),
+            pointsMap,
+            points: Object.values(pointsMap).reduce((a, b) => a + b, 0),
           }))
           .sort((a, b) => b.points - a.points),
         ({ p }) => p.position
@@ -569,12 +573,18 @@ function vegas(idToRankBySource: IdToRankBySource) {
         .map((playerId) => idToRankBySource.draftsharks_super[playerId])
         .map(({ p, rank }, overallRank) => ({
           overallRank: overallRank + 1,
-          rank,
-          p: playersByPosition[p.position][rank],
-          ref: p,
+          positionRank: rank,
+          vegas: playersByPosition[p.position][rank],
+          ref: p.name,
         }))
-        .filter((p) => p.p !== undefined)
-        .map((obj) => [obj.p.p.name, obj])
+        .filter((p) => p.vegas !== undefined)
+        .map(({ vegas, ...p }) => ({
+          ...p,
+          name: vegas.p.name,
+          points: vegas.points,
+          pointsMap: vegas.pointsMap,
+        }))
+        .map((obj) => [obj.name, obj])
     )
     .then(Object.fromEntries)
     .then(clog)
