@@ -566,7 +566,6 @@ function vegas(idToRankBySource: IdToRankBySource) {
         .map(([playerId, value]) => ({ playerId, value }))
         .sort((a, b) => a.value - b.value)
         .map(({ playerId }) => playerId)
-        .slice(0, 2)
         .map((playerId) => idToRankBySource.draftsharks_super[playerId])
         .map(({ p, rank }, overallRank) => ({
           overallRank: overallRank + 1,
