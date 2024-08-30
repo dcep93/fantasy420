@@ -9,7 +9,8 @@ import regenerate from "./regenerate";
 const historyJson: {
   [year: string]: {
     [position: string]: {
-      year: string;
+      year: number;
+      fullName: string;
       defence?: {
         [weekNum: string]: { yardsAllowed: number; pointsAllowed: number };
       };
@@ -22,6 +23,13 @@ export default function HistoryGraph() {
   const fs: {
     [key: string]: (year: string) => { [position: string]: number };
   } = {
+    player_games: (year) => ({
+      player: Object.values(
+        Object.values(historyJson[year])
+          .flatMap((players) => players)
+          .find((player) => player.fullName === "Eli Manning")?.weeks || {}
+      ).filter((v) => v).length,
+    }),
     ratio_games_played: (year) =>
       mapDict(historyJson[year], (players) => {
         const d = groupByF(
@@ -49,10 +57,17 @@ export default function HistoryGraph() {
     .filter(({ ys }) => Object.keys(ys).length > 0);
   return (
     <div>
-      <div hidden>
-        regenerate: <input readOnly value={printF(regenerate)} /> input:{" "}
-        <input readOnly value={JSON.stringify(historyJson)} /> output:
-        <input readOnly value={JSON.stringify(clog(data))} />
+      <div>
+        <span>
+          regenerate: <input readOnly value={printF(regenerate)} />{" "}
+        </span>
+        <span>
+          {/* input: <input readOnly value={JSON.stringify(historyJson)} />{" "} */}
+        </span>
+        <span>
+          output:
+          <input readOnly value={JSON.stringify(clog(data))} />{" "}
+        </span>
       </div>
       <div>
         <select defaultValue={f} onChange={(e) => update(e.target.value)}>
@@ -70,6 +85,7 @@ export default function HistoryGraph() {
             QB: "red",
             RB: "purple",
             WR: "green",
+            player: "red",
             // TE: "#8884d8",
             // K: "#8884d8",
             // DST: "#8884d8",
