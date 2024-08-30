@@ -84,12 +84,11 @@ export default function Draft() {
         )
       )
   );
-  const [draftKingsData, updateDraftKingsData] = useState("");
+  const [draftKingsData, updateDraftKingsData] = useState<DraftKingsType>(null);
   useEffect(() => {
-    draftKingsData === "" &&
+    draftKingsData === null &&
       Promise.resolve()
         .then(() => draftKings(idToRankBySource))
-        .then(JSON.stringify)
         .then(updateDraftKingsData);
   }, [draftKingsData, idToRankBySource]);
   const [liveDraft, updateLiveDraft] = useState<string[]>([]);
@@ -105,9 +104,13 @@ export default function Draft() {
   );
 }
 
+type DraftKingsType = {
+  [name: string]: { overallRank: number; points: number };
+} | null;
+
 function SubDraft(props: {
   liveDraft: string[];
-  draftKingsData: string;
+  draftKingsData: DraftKingsType;
   idToRankBySource: IdToRankBySource;
 }) {
   const playersByName = Object.fromEntries(
@@ -198,7 +201,19 @@ function SubDraft(props: {
               draftKings
             </a>
           </div>
-          <input readOnly value={props.draftKingsData} />
+          <input
+            readOnly
+            value={
+              props.draftKingsData === null
+                ? ""
+                : JSON.stringify(
+                    mapDict(
+                      props.draftKingsData,
+                      (p: { overallRank: number }) => p.overallRank
+                    )
+                  )
+            }
+          />
         </div>
         <div>
           <div>
@@ -331,6 +346,11 @@ function SubDraft(props: {
                               "playoffs"
                         ]
                       }
+                    </td>
+                    <td>
+                      {Math.floor(
+                        props.draftKingsData?.[v.player.name]?.points || -1
+                      )}
                     </td>
                     {[
                       v.player.name,
@@ -479,7 +499,9 @@ function jayzheng() {
   );
 }
 
-function draftKings(idToRankBySource: IdToRankBySource) {
+function draftKings(
+  idToRankBySource: IdToRankBySource
+): Promise<DraftKingsType> {
   const wrapped = selectedWrapped();
   const normalizedNameToId = getNormalizedNameToId(wrapped);
   return Promise.resolve()
@@ -589,10 +611,7 @@ function draftKings(idToRankBySource: IdToRankBySource) {
         .map((obj) => [obj.name, obj])
     )
     .then(Object.fromEntries)
-    .then(clog)
-    .then((players) =>
-      mapDict(players, (p: { overallRank: number }) => p.overallRank)
-    );
+    .then(clog);
 }
 
 function draftsharks() {
