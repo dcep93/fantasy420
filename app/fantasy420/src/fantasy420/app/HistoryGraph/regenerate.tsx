@@ -18,51 +18,23 @@ export default function regenerate() {
   return Promise.resolve()
     .then(() =>
       [
-        2004, //
-        // 2005,
-        // 2006,
-        // 2007,
-        // 2008,
-        // 2009,
-        // 2010,
-        // 2011,
-        // 2012,
-        // 2013,
-        // 2014,
-        // 2015,
-        // 2016,
-        // 2017,
-        // 2018,
-        // 2019,
-        // 2020,
-        // 2021,
-        // 2022,
-        // 2023,
+        2018, //
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
       ].map((year) =>
         fetch(
-          `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/players?scoringPeriodId=0&view=kona_playercard`,
-          // `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/${leagueId}?view=kona_playercard`,
+          `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/players?scoringPeriodId=0&view=kona_playercard&view=kona_player_info`,
           {
             headers: {
               accept: "application/json",
-              "x-fantasy-filter": JSON.stringify({
-                players: {
-                  filterSlotIds: {
-                    value: [16],
-                  },
-                  filterStatsForTopScoringPeriodIds: {
-                    value: 17,
-                  },
-                },
-              }),
-              "x-fantasy-platform":
-                "kona-PROD-5b4759b3e340d25d9e1ae248daac086ea7c37db7",
-              "x-fantasy-source": "kona",
+              "x-fantasy-filter": JSON.stringify({}),
             },
           }
         )
           .then((resp) => resp.json())
-          .then(clog)
           .then(
             (
               json: {
@@ -81,7 +53,7 @@ export default function regenerate() {
                 Object.entries(
                   groupByF(
                     json
-                      .map(({ defaultPositionId, id, fullName, stats }) => ({
+                      .map((j) => ({
                         year,
                         position: {
                           1: "QB",
@@ -90,11 +62,12 @@ export default function regenerate() {
                           4: "TE",
                           5: "K",
                           16: "DST",
-                        }[defaultPositionId]!,
-                        id,
-                        fullName,
-                        stats: (stats || []).filter(
-                          ({ statSourceId }) => statSourceId === 0
+                        }[j.defaultPositionId]!,
+                        id: j.id,
+                        fullName: j.fullName,
+                        stats: (j.stats || []).filter(
+                          ({ statSourceId, scoringPeriodId }) =>
+                            statSourceId === 0 && scoringPeriodId !== 0
                         ),
                       }))
                       .filter(({ position }) => position !== undefined)
@@ -110,6 +83,7 @@ export default function regenerate() {
                           ])
                         ),
                       }))
+                      .filter(({ total }) => total > 0)
                       .map(({ stats, ...p }) =>
                         p.position !== "DST"
                           ? p

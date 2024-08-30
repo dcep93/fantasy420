@@ -23,17 +23,19 @@ export default function HistoryGraph() {
   const fs: {
     [key: string]: (year: string) => { [position: string]: number };
   } = {
-    player_games: (year) => ({
-      player: Object.values(
-        Object.values(historyJson[year])
-          .flatMap((players) => players)
-          .find((player) => player.fullName === "Eli Manning")?.weeks || {}
-      ).filter((v) => v).length,
-    }),
+    // player_games: (year) => ({
+    //   QB: Object.values(
+    //     Object.values(historyJson[year])
+    //       .flatMap((players) => players)
+    //       .find((player) => player.fullName === "Eli Manning")?.weeks || {}
+    //   ).filter((v) => v).length,
+    // }),
     ratio_games_played: (year) =>
       mapDict(historyJson[year], (players) => {
         const d = groupByF(
-          players.flatMap((p) => Object.values(p.weeks).slice(1)),
+          players
+            .filter((p) => p.weeks["1"])
+            .flatMap((p) => Object.values(p.weeks).slice(1)),
           (v) => v.toString()
         );
         return parseFloat(
@@ -85,7 +87,6 @@ export default function HistoryGraph() {
             QB: "red",
             RB: "purple",
             WR: "green",
-            player: "red",
             // TE: "#8884d8",
             // K: "#8884d8",
             // DST: "#8884d8",
