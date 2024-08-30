@@ -1,21 +1,20 @@
-const numTickets = 10;
-const tickets = Array.from(new Array(numTickets)).map((_) => null);
-const queue = [];
-function takeTicket() {
-  const ticket = tickets.pop();
-  if (ticket === undefined) {
-    return new Promise((resolve) => queue.push(resolve));
+function findALeague(start, size, numTickets) {
+  const tickets = Array.from(new Array(numTickets)).map((_) => null);
+  const queue = [];
+  function takeTicket() {
+    const ticket = tickets.pop();
+    if (ticket === undefined) {
+      return new Promise((resolve) => queue.push(resolve));
+    }
   }
-}
 
-function releaseTicket(t) {
-  tickets.push(null);
-  const resolve = queue.pop();
-  if (resolve) resolve();
-  return t;
-}
+  function releaseTicket(t) {
+    tickets.push(null);
+    const resolve = queue.pop();
+    if (resolve) resolve();
+    return t;
+  }
 
-function findALeague(start, size) {
   var foundLeagueId = null;
   var year = 2024;
   return Promise.resolve()
@@ -69,4 +68,4 @@ function findALeague(start, size) {
     .then(console.log);
 }
 
-findALeague(203836968, 1);
+findALeague(203836968, 1, 50);
