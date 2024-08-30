@@ -70,3 +70,4 @@ function findALeague(start, size, numTickets, year) {
 
 // 203836968
 findALeague(1, 10000, 50, 2021);
+new Promise((resolve) => setTimeout(resolve, 60 * 60 * 1000));
