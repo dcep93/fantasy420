@@ -1,4 +1,4 @@
-function findALeague(start, size, numTickets) {
+function findALeague(start, size, numTickets, year) {
   const tickets = Array.from(new Array(numTickets)).map((_) => null);
   const queue = [];
   function takeTicket() {
@@ -16,7 +16,6 @@ function findALeague(start, size, numTickets) {
   }
 
   var foundLeagueId = null;
-  var year = 2024;
   return Promise.resolve()
     .then(() =>
       Array.from(new Array(size))
@@ -68,4 +67,4 @@ function findALeague(start, size, numTickets) {
     .then(console.log);
 }
 
-findALeague(203836968, 1, 50);
+findALeague(203836000, 1000, 50, 2021);
