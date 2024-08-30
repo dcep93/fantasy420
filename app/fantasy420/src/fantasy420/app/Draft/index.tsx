@@ -84,17 +84,18 @@ export default function Draft() {
         )
       )
   );
+  const [vegasData, updateVegasData] = useState("");
+  useEffect(() => {
+    vegasData === "" &&
+      Promise.resolve()
+        .then(() => vegas(idToRankBySource))
+        .then(JSON.stringify)
+        .then(updateVegasData);
+  }, [vegasData, idToRankBySource]);
   const [liveDraft, updateLiveDraft] = useState<string[]>([]);
   useEffect(() => {
     fetchLiveDraft(updateLiveDraft, -1);
   }, []);
-  const [vegasData, updateVegasData] = useState("");
-  useEffect(() => {
-    Promise.resolve()
-      .then(() => vegas(idToRankBySource))
-      .then(JSON.stringify)
-      .then(updateVegasData);
-  }, [idToRankBySource]);
   return (
     <SubDraft
       liveDraft={liveDraft}
