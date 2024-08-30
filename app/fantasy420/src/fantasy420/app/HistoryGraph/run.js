@@ -24,12 +24,13 @@ function findALeague(start, size) {
                 "x-fantasy-source": "kona",
               },
             }
-          ).then((resp) => resp.json())
+          )
+            .then((resp) => resp.json())
+            .then((resp) => resp.players[0].stats)
         )
     )
     .then((ps) => Promise.all(ps))
     .then(JSON.stringify)
-    .then((str) => str.slice(0, 1000))
     .then(console.log);
 }
 
