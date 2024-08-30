@@ -30,7 +30,13 @@ export default function regenerate() {
           {
             headers: {
               accept: "application/json",
-              "x-fantasy-filter": JSON.stringify({}),
+              "x-fantasy-filter": JSON.stringify({
+                players: {
+                  filterSlotIds: {
+                    value: [16, 20, 21],
+                  },
+                },
+              }),
             },
           }
         )
@@ -40,6 +46,7 @@ export default function regenerate() {
               json: {
                 id: number;
                 fullName: string;
+                lastName: string;
                 defaultPositionId: number;
                 stats: {
                   scoringPeriodId: number;
@@ -53,6 +60,7 @@ export default function regenerate() {
                 Object.entries(
                   groupByF(
                     json
+                      .filter((j) => !j.lastName?.startsWith("vs. "))
                       .map((j) => ({
                         year,
                         position: {
@@ -79,7 +87,8 @@ export default function regenerate() {
                         weeks: Object.fromEntries(
                           p.stats.map(({ scoringPeriodId, stats }) => [
                             scoringPeriodId,
-                            Object.keys(stats).length > 0,
+                            Object.keys(stats).filter((s) => s !== "155")
+                              .length > 0,
                           ])
                         ),
                       }))
@@ -115,5 +124,3 @@ export default function regenerate() {
     .then((arr) => Object.fromEntries(arr))
     .then(clog);
 }
-
-regenerate();
