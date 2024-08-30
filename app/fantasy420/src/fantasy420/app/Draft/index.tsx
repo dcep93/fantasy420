@@ -84,14 +84,14 @@ export default function Draft() {
         )
       )
   );
-  const [vegasData, updateVegasData] = useState("");
+  const [draftKingsData, updateDraftKingsData] = useState("");
   useEffect(() => {
-    vegasData === "" &&
+    draftKingsData === "" &&
       Promise.resolve()
-        .then(() => vegas(idToRankBySource))
+        .then(() => draftKings(idToRankBySource))
         .then(JSON.stringify)
-        .then(updateVegasData);
-  }, [vegasData, idToRankBySource]);
+        .then(updateDraftKingsData);
+  }, [draftKingsData, idToRankBySource]);
   const [liveDraft, updateLiveDraft] = useState<string[]>([]);
   useEffect(() => {
     fetchLiveDraft(updateLiveDraft, -1);
@@ -99,7 +99,7 @@ export default function Draft() {
   return (
     <SubDraft
       liveDraft={liveDraft}
-      vegasData={vegasData}
+      draftKingsData={draftKingsData}
       idToRankBySource={idToRankBySource}
     />
   );
@@ -107,7 +107,7 @@ export default function Draft() {
 
 function SubDraft(props: {
   liveDraft: string[];
-  vegasData: string;
+  draftKingsData: string;
   idToRankBySource: IdToRankBySource;
 }) {
   const playersByName = Object.fromEntries(
@@ -195,10 +195,10 @@ function SubDraft(props: {
         <div>
           <div>
             <a href="https://sportsbook.draftkings.com/leagues/football/nfl?category=player-stats&subcategory=passing-yards">
-              vegas
+              draftKings
             </a>
           </div>
-          <input readOnly value={props.vegasData} />
+          <input readOnly value={props.draftKingsData} />
         </div>
         <div>
           <div>
@@ -479,7 +479,7 @@ function jayzheng() {
   );
 }
 
-function vegas(idToRankBySource: IdToRankBySource) {
+function draftKings(idToRankBySource: IdToRankBySource) {
   const wrapped = selectedWrapped();
   const normalizedNameToId = getNormalizedNameToId(wrapped);
   return Promise.resolve()
@@ -576,15 +576,15 @@ function vegas(idToRankBySource: IdToRankBySource) {
         .map(({ p, rank }, overallRank) => ({
           overallRank: overallRank + 1,
           positionRank: rank,
-          vegas: playersByPosition[p.position][rank],
+          draftKings: playersByPosition[p.position][rank],
           ref: p.name,
         }))
-        .filter((p) => p.vegas !== undefined)
-        .map(({ vegas, ...p }) => ({
+        .filter((p) => p.draftKings !== undefined)
+        .map(({ draftKings, ...p }) => ({
           ...p,
-          name: vegas.p.name,
-          points: vegas.points,
-          pointsMap: vegas.pointsMap,
+          name: draftKings.p.name,
+          points: draftKings.points,
+          pointsMap: draftKings.pointsMap,
         }))
         .map((obj) => [obj.name, obj])
     )
