@@ -35,7 +35,7 @@ export default function HistoryGraph() {
         const d = groupByF(
           players
             .filter((p) => p.weeks["1"])
-            .flatMap((p) => Object.values(p.weeks).slice(1)),
+            .flatMap((p) => Object.values(p.weeks)),
           (v) => v.toString()
         );
         return parseFloat(
