@@ -89,12 +89,13 @@ export default function Draft() {
     fetchLiveDraft(updateLiveDraft, -1);
   }, []);
   const [vegasData, updateVegasData] = useState("");
-  // useEffect(() => {
-  //   Promise.resolve()
-  //     .then(() => vegas(idToRankBySource))
-  //     .then(JSON.stringify)
-  //     .then(updateVegasData);
-  // }, [idToRankBySource]);
+  useEffect(() => {
+    false &&
+      Promise.resolve()
+        .then(() => vegas(idToRankBySource))
+        .then(JSON.stringify)
+        .then(updateVegasData);
+  }, [idToRankBySource]);
   return (
     <SubDraft
       liveDraft={liveDraft}
