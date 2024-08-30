@@ -179,7 +179,11 @@ function getResults(numRounds: number): {
           ])
         ),
       ],
-    ].concat(Object.entries(selectedDraft() || {}))
+    ].concat(
+      Object.entries(selectedDraft() || {}).filter(
+        ([key]) => key.replaceAll("_", "").length > 0
+      )
+    )
   ) as DraftJsonType;
   const scored = Object.values(selectedWrapped().ffTeams)
     .map((team) => ({
