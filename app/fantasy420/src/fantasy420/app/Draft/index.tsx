@@ -141,12 +141,13 @@ function SubDraft(props: {
     <pre
       style={{
         display: "flex",
+        flexWrap: "wrap",
         justifyContent: "space-around",
         fontSize: "1.5em",
         height: "100vH",
       }}
     >
-      <div>
+      <div style={{ height: "100%", overflow: "scroll" }}>
         <div>
           <ul>
             {sources.map((s) => (
@@ -271,8 +272,8 @@ function SubDraft(props: {
           </div>
         </div>
       </div>
-      <div style={{}}>
-        <div style={{ height: "100%", flex: "1 1 auto" }}>
+      <div style={{ height: "100%", overflow: "scroll" }}>
+        <div style={{ height: "100%", flex: "1 1 auto", maxWidth: "1000px" }}>
           <table>
             <tbody>
               {sourcePlayers
