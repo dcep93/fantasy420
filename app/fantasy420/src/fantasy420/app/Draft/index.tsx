@@ -90,11 +90,10 @@ export default function Draft() {
   }, []);
   const [vegasData, updateVegasData] = useState("");
   useEffect(() => {
-    false &&
-      Promise.resolve()
-        .then(() => vegas(idToRankBySource))
-        .then(JSON.stringify)
-        .then(updateVegasData);
+    Promise.resolve()
+      .then(() => vegas(idToRankBySource))
+      .then(JSON.stringify)
+      .then(updateVegasData);
   }, [idToRankBySource]);
   return (
     <SubDraft
