@@ -11,11 +11,12 @@ function findALeague(start, size, numTickets, year) {
   function releaseTicket(t) {
     tickets.push(null);
     const resolve = queue.pop();
-    if (resolve) resolve();
+    if (resolve) setTimeout(resolve, 1000);
     return t;
   }
 
   var foundLeagueId = null;
+  var errors = 0;
   return Promise.resolve()
     .then(() =>
       Array.from(new Array(size))
@@ -57,14 +58,15 @@ function findALeague(start, size, numTickets, year) {
               }
             })
             .catch((e) => {
-              console.log(e);
+              errors++;
             })
         )
     )
     .then((ps) => Promise.all(ps))
-    .then(() => ({ foundLeagueId, year }))
+    .then(() => ({ foundLeagueId, year, errors }))
     .then(JSON.stringify)
     .then(console.log);
 }
 
-findALeague(203836000, 1000, 50, 2021);
+// 203836968
+findALeague(1, 10000, 50, 2021);
