@@ -26,6 +26,11 @@ function findALeague(start, size) {
             }
           )
             .then((resp) => resp.json())
+            .then((resp) =>
+              resp.messages !== undefined
+                ? false
+                : Promise.resolve().then(() => true)
+            )
             .catch((e) => {
               console.log(e);
               return null;
