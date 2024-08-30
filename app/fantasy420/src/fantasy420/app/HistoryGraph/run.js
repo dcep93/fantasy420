@@ -26,7 +26,11 @@ function findALeague(start, size) {
             }
           )
             .then((resp) => resp.json())
-            .then((resp) => resp.players[0].stats)
+            .catch((e) => {
+              console.log(e);
+              return null;
+            })
+            .then((resp) => resp !== null)
         )
     )
     .then((ps) => Promise.all(ps))
