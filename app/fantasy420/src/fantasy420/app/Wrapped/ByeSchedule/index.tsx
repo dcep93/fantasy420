@@ -1,4 +1,4 @@
-import { clog, Helpers, selectedWrapped } from "..";
+import { Helpers, selectedWrapped } from "..";
 
 export default function ByeSchedule() {
   var value = Math.max(
@@ -63,9 +63,9 @@ export default function ByeSchedule() {
   }));
   return (
     <div>
-      {clog(byTeam).map((team) => (
+      {byTeam.map((team) => (
         <div
-          key={clog(team).id}
+          key={team.id}
           style={{
             border: "2px solid black",
             borderRadius: "20px",
@@ -89,14 +89,12 @@ export default function ByeSchedule() {
           <div>
             gifts from opps:{" "}
             {Helpers.toFixed(
-              clog(
-                team.matchups
-                  .filter((matchup) => matchup.byes[1])
-                  .flatMap((matchup) =>
-                    matchup.byes[1].map((byePlayer) => byePlayer.value)
-                  )
-                  .reduce((a, b) => a + b)
-              )
+              team.matchups
+                .filter((matchup) => matchup.byes[1])
+                .flatMap((matchup) =>
+                  matchup.byes[1].map((byePlayer) => byePlayer.value)
+                )
+                .reduce((a, b) => a + b)
             )}
           </div>
           <div
