@@ -15,6 +15,8 @@ export type NFLPlayerType = {
     auctionValueAverage: number;
     percentOwned: number;
   };
+  injuryStatus?: string;
+  projectedStats?: { [key: string]: number };
 };
 
 type NFLTeamType = {
@@ -163,7 +165,6 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
             .then((resp) =>
               resp.players
                 .map((player) => player.player)
-                .filter((p) => p.fullName === "Patrick Mahomes")
                 .map((player) => ({
                   id: player.id.toString(),
                   nflTeamId: player.proTeamId.toString(),
