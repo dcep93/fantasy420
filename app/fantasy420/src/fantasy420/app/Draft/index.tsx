@@ -522,7 +522,7 @@ function draftKings(
         receiving_touchdowns: { points: 6, subcategory: 7239 },
         rushing_yards: { points: 0.1, subcategory: 7277 },
         rushing_touchdowns: { points: 6, subcategory: 7694 },
-        receptions: { points: 1, subcategory: 7694 },
+        receptions: { points: 1, subcategory: 782 },
         interceptions: { points: -2, subcategory: 13350 },
       }).map(([key, { points, subcategory }]) =>
         Promise.resolve()
