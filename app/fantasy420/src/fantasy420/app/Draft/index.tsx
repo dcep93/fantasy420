@@ -511,11 +511,11 @@ function draftKings(
         passing_yards: { points: 0.04, subcategory: 7200 },
         passing_tds: { points: 4, subcategory: 14770 },
         receiving_yards: { points: 0.1, subcategory: 7276 },
-        receiving_tds: { points: 6, subcategory: 7239 },
+        receiving_touchdowns: { points: 6, subcategory: 7239 },
         rushing_yards: { points: 0.1, subcategory: 7277 },
-        rushing_tds: { points: 6, subcategory: 7694 },
+        rushing_touchdowns: { points: 6, subcategory: 7694 },
         receptions: { points: 1, subcategory: 7694 },
-        ints: { points: -2, subcategory: 13350 },
+        interceptions: { points: -2, subcategory: 13350 },
       }).map(([key, { points, subcategory }]) =>
         Promise.resolve()
           .then(() =>
@@ -575,8 +575,10 @@ function draftKings(
             p,
             pointsMap: Object.fromEntries(
               Object.entries(d)
-                .map(([subcategory, dd]) => ({ subcategory, points: dd[p.id] }))
-                .filter(({ points }) => points !== undefined)
+                .map(([subcategory, dd]) => ({
+                  subcategory,
+                  points: dd[p.id] || p.projectedStats?.[subcategory] || 0,
+                }))
                 .map((obj) => [obj.subcategory, obj.points])
             ),
           }))
