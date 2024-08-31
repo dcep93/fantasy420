@@ -353,24 +353,32 @@ function SubDraft(props: {
                       )}
                     </td>
                     {[
-                      v.player.name,
-                      `${v.player.position} ${v.team}`,
+                      { key: "", value: v.player.name },
+                      { key: "", value: `${v.player.position} ${v.team}` },
                       ...Object.entries(results)
                         .map(([key, value]) => ({ key, value }))
-                        .map(({ key, value }) =>
-                          key.endsWith("[score]")
+                        .map(({ key, value }) => ({
+                          key,
+                          value: key.endsWith("[score]")
                             ? props.idToRankBySource[key.split("[score]")[0]][
                                 v.playerId
                               ]?.rank + 1 || null
                             : key.replaceAll("_", "").length === 0
                             ? null
-                            : parseFloat(value[v.playerId]?.toFixed(1))
-                        )
-                        .map((v) =>
-                          v === null ? "" : v < 0 ? `$${-v}` : v.toString()
-                        ),
+                            : parseFloat(value[v.playerId]?.toFixed(1)),
+                        }))
+                        .map(({ key, value }) => ({
+                          key,
+                          value:
+                            value === null
+                              ? ""
+                              : value < 0
+                              ? `$${-value}`
+                              : value.toString(),
+                        })),
                     ].map((t, i) => (
                       <td
+                        title={t.key}
                         key={i}
                         style={{
                           padding: "0 0.5em",
@@ -384,7 +392,7 @@ function SubDraft(props: {
                           }[v.player.position],
                         }}
                       >
-                        {t}
+                        {t.value}
                       </td>
                     ))}
                   </tr>
