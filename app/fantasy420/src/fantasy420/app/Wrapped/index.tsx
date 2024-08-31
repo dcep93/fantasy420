@@ -159,16 +159,16 @@ function ChosenWrong() {
       {Object.entries(selectedWrapped().ffMatchups)
         .map(([weekNum, matchups]) => ({ weekNum, matchups }))
         .filter(
-          ({ weekNum, matchups }) =>
-            weekNum === "9" &&
-            selectedWrapped().ffTeams[matchups[0][0]].rosters[weekNum]
+          ({ weekNum }) =>
+            Object.values(selectedWrapped().ffTeams)[0].rosters[weekNum]
         )
         .flatMap(({ weekNum, matchups }) =>
           matchups.map((matchup) => ({
             weekNum,
             teams: matchup
-              .map((m) => selectedWrapped().ffTeams[m])
-              .filter((team) => team.rosters[weekNum])
+              .map((m) => (m === null ? null : selectedWrapped().ffTeams[m]))
+              .filter((team) => team?.rosters[weekNum])
+              .map((team) => team!)
               .map((team) => ({
                 ...team,
                 score: team.rosters[weekNum].starting
@@ -473,8 +473,11 @@ function SqueezesAndStomps() {
         matchups: matchups.map((matchup) =>
           Helpers.sortByKey(
             matchup
-              .map((teamId) => selectedWrapped().ffTeams[teamId])
-              .filter((team) => team.rosters[periodId])
+              .map((teamId) =>
+                teamId === null ? null : selectedWrapped().ffTeams[teamId]
+              )
+              .filter((team) => team?.rosters[periodId])
+              .map((team) => team!)
               .map((team) => ({
                 ...team,
                 score: team.rosters[periodId].starting
@@ -761,7 +764,10 @@ function DeterminedByDiscreteScoring() {
             periodId,
             teams: Helpers.sortByKey(
               match
-                .map((teamId) => selectedWrapped().ffTeams[teamId])
+                .map((teamId) =>
+                  teamId === null ? null : selectedWrapped().ffTeams[teamId]
+                )
+                .map((team) => team!)
                 .filter((team) => team.rosters[periodId])
                 .map((team) => ({
                   ...team,
@@ -1397,7 +1403,12 @@ function Performance() {
                 >
                   <div style={{ display: "flex", whiteSpace: "nowrap" }}>
                     {matchup
-                      .map((teamId) => selectedWrapped().ffTeams[teamId])
+                      .map((teamId) =>
+                        teamId === null
+                          ? null
+                          : selectedWrapped().ffTeams[teamId]
+                      )
+                      .map((team) => team!)
                       .map((team) => ({
                         ...team,
                         roster: team.rosters[weekNum],

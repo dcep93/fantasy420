@@ -45,7 +45,7 @@ export type FFTeamType = {
   draft: { playerId: number; pickIndex: number }[];
 };
 
-type MatchupType = string[][];
+type MatchupType = (string | null)[][];
 
 export type WrappedType = {
   nflPlayers: {
