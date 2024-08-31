@@ -122,7 +122,7 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                   players: {
                     filterStatsForTopScoringPeriodIds: {
                       value: 17,
-                      additionalValue: [`00${currentYear}`],
+                      additionalValue: [`00${currentYear}`, `10${currentYear}`],
                     },
                   },
                 }),
@@ -148,6 +148,7 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                       scoringPeriodId: number;
                       appliedTotal: number;
                       appliedAverage: number;
+                      appliedStats: { [key: string]: number };
                     }[];
                     ownership: {
                       averageDraftPosition: number;
@@ -162,6 +163,7 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
             .then((resp) =>
               resp.players
                 .map((player) => player.player)
+                .filter((p) => p.fullName === "Patrick Mahomes")
                 .map((player) => ({
                   id: player.id.toString(),
                   nflTeamId: player.proTeamId.toString(),
@@ -204,6 +206,30 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                     percentOwned: number;
                   },
                   injuryStatus: player.injuryStatus,
+                  projectedStats: Object.fromEntries(
+                    Object.entries(
+                      player.stats.find(
+                        (s) =>
+                          s.scoringPeriodId === 0 &&
+                          s.seasonId.toString() === currentYear
+                      )!.appliedStats
+                    )
+                      .map(([k, v]) => [
+                        {
+                          "53": "receptions",
+                          "72": "fumbles",
+                          "42": "receiving_yards",
+                          "43": "receiving_touchdowns",
+                          "20": "interceptions",
+                          "3": "passing_yards",
+                          "4": "passing_touchdowns",
+                          "24": "rushing_yards",
+                          "25": "rushing_touchdowns",
+                        }[k],
+                        v,
+                      ])
+                      .filter(([k]) => k)
+                  ),
                 }))
                 .filter(
                   (player) =>
