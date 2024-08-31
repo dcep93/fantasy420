@@ -28,10 +28,13 @@ export default function index() {
   );
 }
 
-export function printF(f: (...args: any[]) => any): string {
+export function printF(
+  f: (...args: any[]) => any,
+  argsStr: string = ""
+): string {
   return `${f
     .toString()
     .split("\n")
     .map((i) => i.replace(/\/\/$/, "").split("// ")[0].trim())
-    .join(" ")}; ${f.name}()`;
+    .join(" ")}; ${f.name}(${argsStr})`;
 }

@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
+import { printF } from "..";
 import { currentYear } from "../Wrapped";
-
-const leagueId =
-  new URL(window.document.location.href).searchParams.get("leagueId") ||
-  203836968;
 
 export type NFLPlayerType = {
   id: string;
@@ -74,37 +71,42 @@ export default function FetchWrapped() {
   }, [update]);
   return (
     <div>
+      <pre>{printF(getWrapped, `${currentYear}`)}</pre>
       <pre style={{ whiteSpace: "pre-wrap" }}>{wrapped}</pre>
     </div>
   );
 }
 
-function fromEntries<T>(arr: ({ key: string; value: T } | undefined)[]): {
-  [key: string]: T;
-} {
-  return Object.fromEntries(
-    arr.filter((a) => a !== undefined).map((a) => [a!.key, a!.value])
-  );
-}
-function ext(data: any): Promise<any> {
-  const extension_id = "kmpbdkipjlpbckfnpbfbncddjaneeklc";
-  return new Promise((resolve, reject) =>
-    window.chrome.runtime.sendMessage(extension_id, data, (response: any) => {
-      if (window.chrome.runtime.lastError) {
-        return reject(
-          `chrome.runtime.lastError ${window.chrome.runtime.lastError}`
-        );
-      }
-      if (!response.ok) {
-        console.error(data, response);
-        return reject(`chrome: ${response.err}`);
-      }
-      resolve(response.data);
-    })
-  );
-}
-
 function getWrapped(currentYear: string): Promise<WrappedType> {
+  const leagueId =
+    new URL(window.document.location.href).searchParams.get("leagueId") ||
+    67201591;
+
+  function ext(data: any): Promise<any> {
+    const extension_id = "kmpbdkipjlpbckfnpbfbncddjaneeklc";
+    return new Promise((resolve, reject) =>
+      window.chrome.runtime.sendMessage(extension_id, data, (response: any) => {
+        if (window.chrome.runtime.lastError) {
+          return reject(
+            `chrome.runtime.lastError ${window.chrome.runtime.lastError}`
+          );
+        }
+        if (!response.ok) {
+          console.error(data, response);
+          return reject(`chrome: ${response.err}`);
+        }
+        resolve(response.data);
+      })
+    );
+  }
+
+  function fromEntries<T>(arr: ({ key: string; value: T } | undefined)[]): {
+    [key: string]: T;
+  } {
+    return Object.fromEntries(
+      arr.filter((a) => a !== undefined).map((a) => [a!.key, a!.value])
+    );
+  }
   return Promise.resolve()
     .then(() => [
       // nflPlayers
@@ -220,7 +222,8 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
       Promise.resolve()
         .then(() =>
           fetch(
-            `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mDraftDetail&view=mRoster`
+            `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mDraftDetail&view=mRoster`,
+            { credentials: "include" }
           )
             .then((resp) => resp.json())
             .then(
@@ -285,7 +288,7 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                                         ])
                                         .find(
                                           (s) =>
-                                            s.rosterForCurrentScoringPeriod &&
+                                            s?.rosterForCurrentScoringPeriod &&
                                             s.teamId === team.id
                                         )!,
                                     },
@@ -384,7 +387,7 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                     value: resp.schedule
                       .filter((s) => s.matchupPeriodId === matchupPeriodId)
                       .map((s) =>
-                        [s.home, s.away].map((t) => t.teamId.toString())
+                        [s.home, s.away].map((t) => t?.teamId.toString())
                       ),
                   }))
             )
@@ -633,6 +636,7 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
         )
         .then((players) => ({ players, timestamp: Date.now() })),
     ])
+    .then((ps) => ps.map((p) => p.catch((e) => console.error(e))))
     .then((ps) => Promise.all(ps))
     .then(
       ([nflPlayers, ffTeams, ffMatchups, nflTeams, fantasyCalc]) =>
@@ -643,5 +647,9 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
           nflTeams,
           fantasyCalc,
         } as WrappedType)
-    );
+    )
+    .then((rval) => {
+      console.log(rval);
+      return rval;
+    });
 }
