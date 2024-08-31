@@ -408,7 +408,8 @@ function getScore(
         .map(([s, ranks]) => ({ s, rank: ranks[playerId]?.rank }))
         .find(({ s, rank }) => !s.startsWith("espn") && rank !== undefined)
         ?.rank
-    : idToRankBySource.espnpick[playerId].rank;
+    : idToRankBySource.espnpick[playerId]?.rank ||
+      Object.keys(idToRankBySource.espnpick).length;
   if (average === undefined) {
     return null;
   }
