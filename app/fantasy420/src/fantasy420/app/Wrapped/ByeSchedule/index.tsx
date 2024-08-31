@@ -1,8 +1,11 @@
 import { Helpers, selectedWrapped } from "..";
-import { selectedDraft } from "../../Draft";
 
 export default function ByeSchedule() {
-  var value = Math.min(...Object.values(selectedDraft().espnauction));
+  var value = Math.max(
+    ...Object.values(selectedWrapped().nflPlayers).map(
+      (p) => p.ownership.auctionValueAverage
+    )
+  );
   const auctionValues = Object.fromEntries(
     Object.values(selectedWrapped().ffTeams)
       .flatMap((team) => team.draft)
@@ -71,7 +74,7 @@ export default function ByeSchedule() {
         >
           <div>team: {team.name}</div>
           <div>
-            owned:{" "}
+            gifts from opps:{" "}
             {Helpers.toFixed(
               team.matchups
                 .flatMap((matchup) =>
@@ -81,7 +84,7 @@ export default function ByeSchedule() {
             )}
           </div>
           <div>
-            opponent byes:{" "}
+            team value:{" "}
             {Helpers.toFixed(
               team.matchups
                 .flatMap((matchup) =>
@@ -113,9 +116,14 @@ export default function ByeSchedule() {
                 </h3>
                 {obj.byes.flatMap((ffTeam) =>
                   ffTeam.map((byePlayer) => (
-                    <div key={byePlayer.name}>
-                      {byePlayer.name} {byePlayer.value}
-                    </div>
+                    <table key={byePlayer.name}>
+                      <tbody>
+                        <tr style={{ marginRight: "10em" }}>
+                          <td>{byePlayer.value.toFixed(2)}</td>
+                          <td>{byePlayer.name}</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   ))
                 )}
               </div>
