@@ -1,4 +1,4 @@
-import { Helpers, selectedWrapped } from "..";
+import { clog, Helpers, selectedWrapped } from "..";
 
 export default function ByeSchedule() {
   var value = Math.max(
@@ -28,8 +28,9 @@ export default function ByeSchedule() {
         teamIds: matchups
           .find((m) => m.includes(team.id))!
           .slice()
-          .sort((a, b) => (a !== team.id ? -1 : 1)),
+          .sort((a, b) => (a !== team.id ? 1 : -1)),
       }))
+      .concat({ weekNum: "14", teamIds: [team.id, null] })
       .map((obj) => ({
         ...obj,
         byes: obj.teamIds
@@ -62,9 +63,9 @@ export default function ByeSchedule() {
   }));
   return (
     <div>
-      {byTeam.map((team) => (
+      {clog(byTeam).map((team) => (
         <div
-          key={team.id}
+          key={clog(team).id}
           style={{
             border: "2px solid black",
             borderRadius: "20px",
@@ -74,23 +75,28 @@ export default function ByeSchedule() {
         >
           <div>team: {team.name}</div>
           <div>
-            gifts from opps:{" "}
-            {Helpers.toFixed(
-              team.matchups
-                .flatMap((matchup) =>
-                  matchup.byes[0].map((byePlayer) => byePlayer.value)
-                )
-                .reduce((a, b) => a + b)
-            )}
+            team value:{" "}
+            {
+              -Helpers.toFixed(
+                team.matchups
+                  .flatMap((matchup) =>
+                    matchup.byes[0].map((byePlayer) => byePlayer.value)
+                  )
+                  .reduce((a, b) => a + b)
+              )
+            }
           </div>
           <div>
-            team value:{" "}
+            gifts from opps:{" "}
             {Helpers.toFixed(
-              team.matchups
-                .flatMap((matchup) =>
-                  matchup.byes[1].map((byePlayer) => byePlayer.value)
-                )
-                .reduce((a, b) => a + b)
+              clog(
+                team.matchups
+                  .filter((matchup) => matchup.byes[1])
+                  .flatMap((matchup) =>
+                    matchup.byes[1].map((byePlayer) => byePlayer.value)
+                  )
+                  .reduce((a, b) => a + b)
+              )
             )}
           </div>
           <div
