@@ -87,7 +87,7 @@ export default function HistoryGraph() {
             QB: "red",
             RB: "purple",
             WR: "green",
-            // TE: "#8884d8",
+            TE: "#8884d8",
             // K: "#8884d8",
             // DST: "#8884d8",
           }}
