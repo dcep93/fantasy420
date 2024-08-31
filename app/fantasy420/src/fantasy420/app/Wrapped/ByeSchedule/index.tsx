@@ -2,17 +2,17 @@ import { Helpers, selectedWrapped } from "..";
 import { selectedDraft } from "../../Draft";
 
 export default function ByeSchedule() {
-  var value = Math.max(...Object.values(selectedDraft().espn.auction));
+  var value = Math.min(...Object.values(selectedDraft().espnauction));
   const auctionValues = Object.fromEntries(
     Object.values(selectedWrapped().ffTeams)
       .flatMap((team) => team.draft)
-      .sort((a, b) => b.pickIndex - a.pickIndex)
+      .sort((a, b) => a.pickIndex - b.pickIndex)
       .map(({ playerId }) => selectedWrapped().nflPlayers[playerId])
       .map((player) => {
         if (player.position !== "QB") {
           value =
             selectedWrapped().nflPlayers[player.id].ownership
-              .averageDraftPosition;
+              .auctionValueAverage;
         }
         return [player.id, value];
       })
@@ -47,7 +47,7 @@ export default function ByeSchedule() {
               )
               .map((byePlayer) => ({
                 name: byePlayer.name,
-                rawValue: auctionValues[byePlayer.name] || 0,
+                rawValue: auctionValues[byePlayer.id] || 0,
               }))
               .sort((a, b) => b.rawValue - a.rawValue)
               .map(({ rawValue, ...obj }) => ({
