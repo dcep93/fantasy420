@@ -70,8 +70,10 @@ function getData(players: PlayersType, selectedOwner: string): DataType {
       position,
       Object.fromEntries(
         Object.entries({
+          fantasycalc: (playerId: string) =>
+            selectedWrapped().fantasyCalc.players[playerId] || 0,
           draftKings: (playerId: string) =>
-            selectedDraft()?.draftkings_super?.[playerId] || 0,
+            -selectedDraft()?.draftkings_super?.[playerId] || 0,
           espnprojection: (playerId: string) =>
             Object.values(
               selectedWrapped().nflPlayers[playerId].projectedStats || {}
@@ -125,7 +127,9 @@ function getData(players: PlayersType, selectedOwner: string): DataType {
 }
 
 function getCorrelation(data: ChartDataType): number {
-  const c = distanceCorrelation(data.map((o) => [o.x, o.y]));
+  const c = distanceCorrelation(
+    data.filter((d) => d.y !== 0).map((o) => [o.x, o.y])
+  );
   return c;
 }
 
