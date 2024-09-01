@@ -51,7 +51,7 @@ function getComposite(sources: DraftJsonType): PlayersType {
   );
 }
 
-function getData(players: PlayersType): DataType {
+function getData(players: PlayersType, selectedOwner: string): DataType {
   const byPosition = {} as {
     [position: string]: PlayersType;
   };
@@ -60,6 +60,11 @@ function getData(players: PlayersType): DataType {
     if (!byPosition[position]) byPosition[position] = {};
     byPosition[position][playerId] = value;
   });
+  const playerIdToOwner = Object.fromEntries(
+    Object.values(selectedWrapped().ffTeams).flatMap((t) =>
+      t.rosters[0].rostered.map((playerId) => [playerId, t.id])
+    )
+  );
   const data = Object.fromEntries(
     Object.entries(byPosition).map(([position, players]) => [
       position,
@@ -67,8 +72,10 @@ function getData(players: PlayersType): DataType {
         Object.entries({
           draftKings: (playerId: string) =>
             selectedDraft()?.draftkings_super?.[playerId] || 0,
-          projection: (playerId: string) =>
-            selectedDraft()?.espnpick[playerId] || 0,
+          espnprojection: (playerId: string) =>
+            Object.values(
+              selectedWrapped().nflPlayers[playerId].projectedStats || {}
+            ).reduce((a, b) => a + b, 0),
           season_points: (playerId: string) =>
             selectedWrapped().nflPlayers[playerId]?.total,
           average_points: (playerId: string) =>
@@ -99,6 +106,9 @@ function getData(players: PlayersType): DataType {
               playersData
                 .sort((a, b) => a.x - b.x)
                 .map(({ x, y, ...o }, i) => ({
+                  fill:
+                    (playerIdToOwner[o.playerId] || "") === selectedOwner &&
+                    "red",
                   x,
                   y,
                   label: `${selectedWrapped().nflPlayers[o.playerId].name}: #${
@@ -133,8 +143,12 @@ export default function HistoricalAccuracy() {
   } as { [k: string]: {} };
   console.log(sources);
   const [source, updateSource] = useState(Object.keys(sources)[0]);
+  const owners = Object.values(selectedWrapped().ffTeams)
+    .map((t) => t.id)
+    .concat("");
+  const [selectedOwner, updateSelectedOwner] = useState(owners[0]);
   sources.composite = getComposite(sources);
-  const data = getData(sources[source]);
+  const data = getData(sources[source], selectedOwner);
   return (
     <div>
       <div>
@@ -151,6 +165,20 @@ export default function HistoricalAccuracy() {
                 {selectSource}
               </option>
             ))}
+        </select>
+      </div>
+      <div>
+        <select
+          defaultValue={selectedOwner}
+          onChange={(event) =>
+            updateSelectedOwner((event.target as HTMLSelectElement).value)
+          }
+        >
+          {owners.map((s) => (
+            <option key={s} value={s}>
+              {selectedWrapped().ffTeams[s]?.name || "<UNOWNED>"}
+            </option>
+          ))}
         </select>
       </div>
       <div>
