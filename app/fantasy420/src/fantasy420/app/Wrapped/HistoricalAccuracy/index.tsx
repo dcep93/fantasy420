@@ -110,8 +110,9 @@ function getData(players: PlayersType, selectedOwner: string): DataType {
                 .map((p) => ({ ...p, x: parseFloat(p.x.toFixed(2)) }))
                 .map(({ x, y, ...o }, i) => ({
                   fill:
-                    (playerIdToOwner[o.playerId] || "") === selectedOwner &&
-                    "red",
+                    (playerIdToOwner[o.playerId] || "") === selectedOwner
+                      ? "red"
+                      : undefined,
                   x,
                   y,
                   label: `${selectedWrapped().nflPlayers[o.playerId].name}: #${
