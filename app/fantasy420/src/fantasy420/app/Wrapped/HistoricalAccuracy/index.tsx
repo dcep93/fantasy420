@@ -51,11 +51,18 @@ function getComposite(sources: DraftJsonType): PlayersType {
   );
 }
 
-function getData(players: PlayersType, selectedOwner: string): DataType {
+function getData(
+  players: PlayersType,
+  selectedOwner: string,
+  draft: PlayersType,
+  top40: boolean
+): DataType {
   const byPosition = { all: {} } as {
     [position: string]: PlayersType;
   };
   Object.entries(players).forEach(([playerId, value]) => {
+    if (top40 && (draft[playerId] > 40 || draft[playerId] === undefined))
+      return;
     const position = selectedWrapped().nflPlayers[playerId]?.position;
     if (!byPosition[position]) byPosition[position] = {};
     byPosition[position][playerId] = value;
@@ -136,10 +143,10 @@ function getCorrelation(data: ChartDataType): number {
 }
 
 export default function HistoricalAccuracy() {
+  const [top40, updateTop40] = useState(true);
   const draft = Object.fromEntries(
     Object.values(selectedWrapped().ffTeams)
       .flatMap((team) => team.draft)
-      .filter((p) => p.pickIndex < 40)
       .map((player) => [
         selectedWrapped().nflPlayers[player.playerId].id,
         player.pickIndex,
@@ -156,7 +163,7 @@ export default function HistoricalAccuracy() {
     .concat("");
   const [selectedOwner, updateSelectedOwner] = useState(owners[0]);
   sources.composite = getComposite(sources);
-  const data = getData(sources[source], selectedOwner);
+  const data = getData(sources[source], selectedOwner, draft, top40);
   return (
     <div>
       <div>
@@ -185,6 +192,20 @@ export default function HistoricalAccuracy() {
           {owners.map((s) => (
             <option key={s} value={s}>
               {selectedWrapped().ffTeams[s]?.name || "<UNOWNED>"}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <select
+          defaultValue={top40.toString()}
+          onChange={(event) =>
+            updateTop40((event.target as HTMLSelectElement).value === "true")
+          }
+        >
+          {[true, false].map((s) => (
+            <option key={s.toString()} value={s.toString()}>
+              {s ? "top40" : "all"}
             </option>
           ))}
         </select>

@@ -36,42 +36,49 @@
             new Date(startDate) - Date.now() < MAX_FUTURE_GAME_MS
         )
       )
+      .then((respx) => {
+        console.log({ respx });
+        return [];
+      })
       .then((events) =>
         events.map(({ eventId }) =>
           fetchC(
-            `https://sportsbook-nash.draftkings.com/api/sportscontent/dkusny/v1/events/${eventId}/categories`,
+            `https://sportsbook-nash.draftkings.com/api/sportscontent/dkusny/v1/events/${eventId}/categories?category=odds`,
             15 * 60 * 1000 // 15 minutes
           )
         )
       )
       .then((promises) => Promise.all(promises))
+      .then(
+        (events) => events.filter(Boolean).flatMap(({ events }) => events)
+        // .flatMap(({ selections }) => selections)
+      )
       .then((respx) => {
         console.log({ respx });
-        return resp;
+        return [];
       })
       .then((events) =>
-        events.filter(Boolean).flatMap(({ event, eventCategories }) =>
-          (eventCategories || []).flatMap(({ name, componentizedOffers }) =>
-            componentizedOffers.flatMap(({ offers }) =>
-              offers
-                .flatMap((offers) => offers)
-                .flatMap(({ label, outcomes }) =>
-                  outcomes.flatMap(
-                    ({ participant, line, oddsDecimal, ...outcome }) => ({
-                      startDate: event.startDate,
-                      eventName: event.name,
-                      name,
-                      label,
-                      participant,
-                      line,
-                      oddsDecimal,
-                      sublabel: outcome.label,
-                    })
-                  )
-                )
+        events
+          .filter(Boolean)
+          .flatMap(({ events }) => events)
+          .flatMap(({ selections }) =>
+            (selections || []).flatMap(
+              ({ marketId, trueOdds, points, participants }) => ({
+                marketId,
+                trueOdds,
+                points,
+                participants,
+                // startDate: event.startDate,
+                // eventName: event.name,
+                // name,
+                // label,
+                // participant,
+                // line,
+                // oddsDecimal,
+                // sublabel: outcome.label,
+              })
             )
           )
-        )
       )
       .then((events) => (data === undefined && console.log(events)) || events);
   }
