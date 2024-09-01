@@ -210,10 +210,7 @@ function SubDraft(props: {
               props.draftKingsData === null
                 ? ""
                 : JSON.stringify(
-                    mapDict(
-                      props.draftKingsData,
-                      (p: { overallRank: number }) => p.overallRank
-                    )
+                    mapDict(props.draftKingsData, (p) => -p.points)
                   )
             }
           />
