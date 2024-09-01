@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { printF } from "..";
-import { clog, groupByF, mapDict } from "../Wrapped";
+import { allWrapped, clog, groupByF, mapDict } from "../Wrapped";
 import Chart from "./Chart";
 import rawHistoryJson from "./history.json";
 import regenerate from "./regenerate";
@@ -21,15 +21,13 @@ const historyJson: {
 
 export default function HistoryGraph() {
   const fs: {
-    [key: string]: (year: string) => { [position: string]: number };
+    [key: string]: (year: string) => { [position: string]: number | undefined };
   } = {
-    // player_games: (year) => ({
-    //   QB: Object.values(
-    //     Object.values(historyJson[year])
-    //       .flatMap((players) => players)
-    //       .find((player) => player.fullName === "Eli Manning")?.weeks || {}
-    //   ).filter((v) => v).length,
-    // }),
+    player: (year) => ({
+      QB: Object.values(allWrapped[year]?.nflPlayers || {}).find(
+        (player) => player.name === "Christian McCaffrey"
+      )?.average,
+    }),
     ratio_played_all: (year) =>
       mapDict(historyJson[year], (players) => {
         const d = groupByF(
@@ -76,7 +74,9 @@ export default function HistoryGraph() {
     .map((year) => ({
       name: year,
       ys: Object.fromEntries(
-        Object.entries(fs[f](year)).filter(([_k, v]) => !Number.isNaN(v))
+        Object.entries(fs[f](year)).filter(
+          ([_k, v]) => v !== undefined && !Number.isNaN(v)
+        )
       ),
     }))
     .filter(({ ys }) => Object.keys(ys).length > 0);
