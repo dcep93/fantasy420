@@ -126,7 +126,7 @@ function getPerformance(): PerformanceType {
           .slice()
           .map((p) => ({
             ...p,
-            total: selectedDraft().draftkings_super[p.player.id] || 0,
+            total: selectedDraft()?.draftkings_super?.[p.player.id] || 0,
           }))
           .sort((a, b) => b.player.total - a.player.total)
           .map((player, rank) => [player.player.id, { rank, ...player }])
