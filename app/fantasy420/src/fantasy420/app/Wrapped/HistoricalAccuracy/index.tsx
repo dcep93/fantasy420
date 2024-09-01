@@ -105,6 +105,7 @@ function getData(players: PlayersType, selectedOwner: string): DataType {
               key,
               playersData
                 .sort((a, b) => a.x - b.x)
+                .map((p) => ({ ...p, x: parseFloat(p.x.toFixed(2)) }))
                 .map(({ x, y, ...o }, i) => ({
                   fill:
                     (playerIdToOwner[o.playerId] || "") === selectedOwner &&
