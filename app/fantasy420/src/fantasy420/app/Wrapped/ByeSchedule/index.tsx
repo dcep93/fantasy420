@@ -116,7 +116,7 @@ export default function ByeSchedule() {
               >
                 <h3>
                   week {obj.weekNum} vs{" "}
-                  {selectedWrapped().ffTeams[obj.teamIds[0]!].name}
+                  {selectedWrapped().ffTeams[obj.teamIds[1]!]?.name}
                 </h3>
                 {obj.byes.flatMap((ffTeam) =>
                   ffTeam.map((byePlayer) => (

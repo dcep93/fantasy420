@@ -147,6 +147,7 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                     defaultPositionId: number;
                     stats: {
                       seasonId: number;
+                      statSourceId: number;
                       scoringPeriodId: number;
                       appliedTotal: number;
                       appliedAverage: number;
@@ -211,6 +212,7 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                     Object.entries(
                       player.stats.find(
                         (s) =>
+                          s.statSourceId === 1 &&
                           s.scoringPeriodId === 0 &&
                           s.seasonId.toString() === currentYear
                       )!.appliedStats
@@ -234,9 +236,10 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                 }))
                 .filter(
                   (player) =>
-                    player.ownership?.percentOwned > 0.1 ||
-                    Object.values(player.scores).filter((s) => s !== 0).length >
-                      0
+                    Object.keys(player.ownership).length > 0 &&
+                    (player.ownership?.percentOwned > 0.1 ||
+                      Object.values(player.scores).filter((s) => s !== 0)
+                        .length > 0)
                 )
                 .map((player) => ({
                   key: player.id,
