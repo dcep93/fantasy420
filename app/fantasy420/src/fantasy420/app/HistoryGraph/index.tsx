@@ -31,18 +31,18 @@ export default function HistoryGraph() {
     //   ).filter((v) => v).length,
     // }),
     ratio_played_all: (year) =>
-      mapDict(clog(historyJson[year]), (players) => {
-        const d = clog(
-          groupByF(
-            players
-              .filter((p) => p.weeks["1"])
-              .map(
-                (p) =>
-                  Object.values(p.weeks).filter((played) => !played).length ===
-                  0
-              ),
-            (v) => v.toString()
-          )
+      mapDict(historyJson[year], (players) => {
+        const d = groupByF(
+          players
+            .filter((p) => p.weeks["1"])
+            .map(
+              (p) =>
+                Object.entries(p.weeks)
+                  .map(([weekNum, played]) => ({ weekNum, played }))
+                  .filter(({ weekNum }) => weekNum !== "18")
+                  .filter(({ played }) => !played).length === 0
+            ),
+          (v) => v.toString()
         );
         return parseFloat(
           (
