@@ -110,6 +110,10 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
       arr.filter((a) => a !== undefined).map((a) => [a!.key, a!.value])
     );
   }
+  function clog<T>(t: T): T {
+    console.log(t);
+    return t;
+  }
   return Promise.resolve()
     .then(() => [
       // nflPlayers
@@ -215,7 +219,7 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                           s.statSourceId === 1 &&
                           s.scoringPeriodId === 0 &&
                           s.seasonId.toString() === currentYear
-                      )!.appliedStats
+                      )?.appliedStats || {}
                     )
                       .map(([k, v]) => [
                         {
