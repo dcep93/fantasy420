@@ -171,6 +171,12 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
               resp.players
                 .map((player) => player.player)
                 .map((player) => ({
+                  player,
+                  seasonStats: player.stats.find(
+                    (s) => s.scoringPeriodId === 0 && s.statSourceId === 0
+                  ),
+                }))
+                .map(({ player, seasonStats }) => ({
                   id: player.id.toString(),
                   nflTeamId: player.proTeamId.toString(),
                   name: player.fullName,
@@ -184,12 +190,8 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                       16: "DST",
                     }[player.defaultPositionId] ||
                     player.defaultPositionId.toString(),
-                  total:
-                    player.stats.find((stat) => stat.scoringPeriodId === 0)
-                      ?.appliedTotal || 0,
-                  average:
-                    player.stats.find((stat) => stat.scoringPeriodId === 0)
-                      ?.appliedAverage || 0,
+                  total: seasonStats?.appliedTotal || 0,
+                  average: seasonStats?.appliedAverage || 0,
                   scores: fromEntries(
                     player.stats
                       .filter((stat) => stat.seasonId === parseInt(currentYear))
