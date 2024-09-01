@@ -8,7 +8,10 @@ import {
   YAxis,
 } from "recharts";
 
-export type ChartDataType = { name: string; ys: { [key: string]: number } }[];
+export type ChartDataType = {
+  name: string;
+  ys: { [key: string]: number | undefined };
+}[];
 
 export default function Chart(props: {
   data: ChartDataType;
