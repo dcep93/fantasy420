@@ -30,6 +30,29 @@ export default function HistoryGraph() {
     //       .find((player) => player.fullName === "Eli Manning")?.weeks || {}
     //   ).filter((v) => v).length,
     // }),
+    ratio_played_all: (year) =>
+      mapDict(clog(historyJson[year]), (players) => {
+        const d = clog(
+          groupByF(
+            players
+              .filter((p) => p.weeks["1"])
+              .map(
+                (p) =>
+                  Object.values(p.weeks).filter((played) => !played).length ===
+                  0
+              ),
+            (v) => v.toString()
+          )
+        );
+        return parseFloat(
+          (
+            d[true.toString()]?.length /
+            Object.values(d)
+              .map((v) => v.length)
+              .reduce((a, b) => a + b, 0)
+          ).toFixed(2)
+        );
+      }),
     ratio_games_played: (year) =>
       mapDict(historyJson[year], (players) => {
         const d = groupByF(
