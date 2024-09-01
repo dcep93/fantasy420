@@ -1033,8 +1033,9 @@ function UniquesStarted() {
                     teamName: ffTeam.name,
                     started: Object.entries(
                       Helpers.countStrings(
-                        Object.values(ffTeam.rosters).flatMap(
-                          (roster) => roster.starting
+                        Object.entries(ffTeam.rosters).flatMap(
+                          ([weekNum, roster]) =>
+                            weekNum === "0" ? [] : roster.starting
                         )
                       )
                     )
