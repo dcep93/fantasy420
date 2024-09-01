@@ -1335,8 +1335,8 @@ function OwnedTeams() {
                   .sort((a, b) => b.nflPlayer.total - a.nflPlayer.total)
                   .map((o, i) => (
                     <div key={i}>
-                      {o.ffTeam.name}: {o.nflPlayer.name}{" "}
-                      {Helpers.toFixed(o.nflPlayer.total)}
+                      {Helpers.toFixed(o.nflPlayer.total)} {o.ffTeam.name}:{" "}
+                      {o.nflPlayer.name}
                     </div>
                   ))}
               </div>
