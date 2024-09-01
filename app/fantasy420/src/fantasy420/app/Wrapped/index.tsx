@@ -1275,7 +1275,6 @@ function OwnedTeams() {
           ffTeam.rosters["0"].rostered
             .map((playerId) => selectedWrapped().nflPlayers[playerId])
             .filter((p) => p.nflTeamId === nflTeam.id)
-            .filter((p) => p.position === "QB")
             .map((nflPlayer) => ({ ffTeam, nflPlayer }))
         ),
         nflTeam,
