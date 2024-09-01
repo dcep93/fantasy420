@@ -1,21 +1,11 @@
 import { ReactNode, useState } from "react";
 import { FFTeamType, NFLPlayerType, WrappedType } from "../FetchWrapped";
-import wrapped2021 from "./2021.json";
-import wrapped2022 from "./2022.json";
-import wrapped2023 from "./2023.json";
-import wrapped2024 from "./2024.json";
 import ByeSchedule from "./ByeSchedule";
 import DraftValueStateful from "./DraftValue";
 import HistoricalAccuracyStateful from "./HistoricalAccuracy";
+import allWrapped from "./allWrapped";
 
 export const currentYear = "2024";
-
-export const allWrapped: { [year: string]: WrappedType } = {
-  "2024": wrapped2024,
-  "2023": wrapped2023,
-  "2022": wrapped2022,
-  "2021": wrapped2021,
-};
 
 export var selectedYear = currentYear;
 export function selectedWrapped(): WrappedType {
@@ -151,7 +141,7 @@ const bubbleStyle = {
 //
 
 function json() {
-  return <pre>{JSON.stringify(selectedWrapped, null, 2)}</pre>;
+  return <pre>{JSON.stringify(selectedWrapped(), null, 2)}</pre>;
 }
 
 function ChosenWrong() {
@@ -1285,11 +1275,12 @@ function OwnedTeams() {
           ffTeam.rosters["0"].rostered
             .map((playerId) => selectedWrapped().nflPlayers[playerId])
             .filter((p) => p.nflTeamId === nflTeam.id)
+            .filter((p) => p.position === "QB")
             .map((nflPlayer) => ({ ffTeam, nflPlayer }))
         ),
-        ...nflTeam,
+        nflTeam,
       }))
-      .map((o) => [o.id, o])
+      .map((o) => [o.nflTeam.id, o])
   );
   const byFFTeam = Object.values(selectedWrapped().ffTeams).map((ffTeam) => ({
     owned: Object.values(selectedWrapped().nflTeams).flatMap((nflTeam) =>
@@ -1336,9 +1327,9 @@ function OwnedTeams() {
           .sort((a, b) => a.owned.length - b.owned.length)
           .reverse()
           .map((t) => (
-            <div key={t.id} style={bubbleStyle}>
+            <div key={t.nflTeam.id} style={bubbleStyle}>
               <h1>
-                {t.name} {t.owned.length}
+                {t.nflTeam.name} {t.owned.length}
               </h1>
               <div>
                 {t.owned
