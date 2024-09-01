@@ -81,9 +81,15 @@ export default function DraftValue() {
                     <td>
                       {player.player.name} {player.msg}
                     </td>
-                    {player.scores.map((score, k) => (
-                      <td key={k}>{score < 0 ? `$${-score}` : score}</td>
-                    ))}
+                    {player.scores
+                      .map((score) =>
+                        score === undefined
+                          ? score
+                          : parseFloat(score.toFixed(2))
+                      )
+                      .map((score, k) => (
+                        <td key={k}>{score < 0 ? `$${-score}` : score}</td>
+                      ))}
                   </tr>
                 ))}
               </tbody>
