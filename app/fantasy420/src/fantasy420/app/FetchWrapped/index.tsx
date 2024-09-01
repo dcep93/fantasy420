@@ -683,8 +683,5 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
           fantasyCalc,
         } as WrappedType)
     )
-    .then((rval) => {
-      console.log(rval);
-      return rval;
-    });
+    .then(clog);
 }
