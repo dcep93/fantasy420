@@ -65,6 +65,8 @@ function getData(players: PlayersType): DataType {
       position,
       Object.fromEntries(
         Object.entries({
+          draftKings: (playerId: string) =>
+            selectedDraft()?.draftkings_super[playerId] || 0,
           projection: (playerId: string) =>
             selectedDraft()?.espnpick[playerId] || 0,
           season_points: (playerId: string) =>
