@@ -5,13 +5,13 @@ import { fetchExtensionStorage } from "./Extension";
 
 import { NFLPlayerType, WrappedType } from "../FetchWrapped";
 import {
-  allWrapped,
   clog,
   groupByF,
   mapDict,
   selectedWrapped,
   selectedYear,
 } from "../Wrapped";
+import allWrapped from "../Wrapped/allWrapped";
 import draft2023 from "./2023.json";
 import draft2024 from "./2024.json";
 
@@ -28,7 +28,10 @@ const allDrafts: { [year: string]: DraftJsonType } = Object.fromEntries(
     2023: draft2023,
     2024: draft2024,
   } as { [year: string]: DraftJsonType }).map(([year, rawDraft]) => {
-    const normalizedNameToId = getNormalizedNameToId(allWrapped[year]);
+    const normalizedNameToId =
+      allWrapped[year] === undefined
+        ? {}
+        : getNormalizedNameToId(allWrapped[year]);
     return [
       year,
       Object.fromEntries(

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { printF } from "..";
-import { allWrapped, clog, groupByF, mapDict } from "../Wrapped";
+import { clog, groupByF, mapDict } from "../Wrapped";
+import allWrapped from "../Wrapped/allWrapped";
 import Chart from "./Chart";
 import rawHistoryJson from "./history.json";
 import regenerate from "./regenerate";
