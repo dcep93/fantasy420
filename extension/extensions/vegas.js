@@ -27,10 +27,9 @@
 
   function vegas() {
     return fetchC(
-      "https://sportsbook-us-ny.draftkings.com//sites/US-NY-SB/api/v5/eventgroups/88808?format=json",
+      "https://sportsbook-nash.draftkings.com/api/sportscontent/navigation/dkusny/v1/nav/leagues/88808?format=json",
       12 * 60 * 60 * 1000 // 12 hours
     )
-      .then(({ eventGroup }) => eventGroup)
       .then(({ events }) =>
         events.filter(
           ({ startDate }) =>
@@ -40,12 +39,16 @@
       .then((events) =>
         events.map(({ eventId }) =>
           fetchC(
-            `https://sportsbook-us-ny.draftkings.com//sites/US-NY-SB/api/v3/event/${eventId}?format=json`,
+            `https://sportsbook-nash.draftkings.com/api/sportscontent/dkusny/v1/events/${eventId}/categories`,
             15 * 60 * 1000 // 15 minutes
           )
         )
       )
       .then((promises) => Promise.all(promises))
+      .then((respx) => {
+        console.log({ respx });
+        return resp;
+      })
       .then((events) =>
         events.filter(Boolean).flatMap(({ event, eventCategories }) =>
           (eventCategories || []).flatMap(({ name, componentizedOffers }) =>

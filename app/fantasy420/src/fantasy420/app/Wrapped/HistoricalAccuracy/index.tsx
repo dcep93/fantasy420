@@ -52,13 +52,14 @@ function getComposite(sources: DraftJsonType): PlayersType {
 }
 
 function getData(players: PlayersType, selectedOwner: string): DataType {
-  const byPosition = {} as {
+  const byPosition = { all: {} } as {
     [position: string]: PlayersType;
   };
   Object.entries(players).forEach(([playerId, value]) => {
     const position = selectedWrapped().nflPlayers[playerId]?.position;
     if (!byPosition[position]) byPosition[position] = {};
     byPosition[position][playerId] = value;
+    byPosition.all[playerId] = value;
   });
   const playerIdToOwner = Object.fromEntries(
     Object.values(selectedWrapped().ffTeams).flatMap((t) =>
@@ -138,6 +139,7 @@ export default function HistoricalAccuracy() {
   const draft = Object.fromEntries(
     Object.values(selectedWrapped().ffTeams)
       .flatMap((team) => team.draft)
+      .filter((p) => p.pickIndex < 40)
       .map((player) => [
         selectedWrapped().nflPlayers[player.playerId].id,
         player.pickIndex,
