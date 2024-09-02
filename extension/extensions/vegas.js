@@ -92,40 +92,41 @@
       .then(Array.from)
       .then((arr) =>
         arr
-          .map((bio) => bio.getElementsByTagName("a")[0])
-          .filter(Boolean)
-          .map((a) => ({ a, name: getName(a) }))
+          .map((bio) => ({
+            aE: bio.getElementsByTagName("a")[0],
+            posE: bio.getElementsByClassName("playerinfo__playerpos")[0],
+          }))
+          .filter(({ aE }) => aE)
+          .map((o) => ({ ...o, name: getName(o.aE) }))
           .map((o) => ({
             raw: getRaw(o.name, events),
             ...o,
           }))
-          .filter(({ a, name, raw }) => {
+          .filter(({ aE, name, raw }) => {
             if (raw.length > 0) return true;
-            if (a.innerText !== name) {
-              a.innerText = name;
-              a.style.backgroundColor = "";
-              a.title = name;
+            if (aE.innerText !== name) {
+              posE.innerText = "";
             }
             return false;
           })
-          .map(({ raw, ...o }) => ({
-            raw,
-            scores: getScores(raw),
+          .map((o) => ({
+            scores: getScores(o.raw),
             ...o,
           }))
           .filter(({ scores }) => scores !== null)
-          .map(({ scores, ...o }) => ({
-            scores,
-            title: getTitle(scores),
+          .map((o) => ({
+            text: getText(o.scores),
+            title: getTitle(o.scores),
             ...o,
           }))
-          .filter(({ title, a }) => a.title !== title)
-          .map(({ name, scores, title, raw, a }) => {
-            a.setAttribute("fantasy420_name", name);
-            if (location.href.match("https://fantasy.espn.com/football/team"))
-              a.innerText = `(${getText(scores)}) ${name}`;
-            a.style.backgroundColor = "lightgreen";
-            a.title = `${getText(scores)}\n${title}`;
+          .filter(({ title, aE }) => aE.title !== title)
+          .map(({ name, scores, title, raw, aE, posE, text }) => {
+            aE.setAttribute("fantasy420_name", name);
+            if (location.href.match("https://fantasy.espn.com/football/team")) {
+              posE.innerText = text;
+            }
+            posE.style.backgroundColor = "lightgreen";
+            posE.title = `${text}\n${title}`;
             return { startDate: raw[0].startDate, name, scores };
           })
       )
@@ -187,13 +188,6 @@
         ({ marketTypeName }) => marketTypeName === "Kicking Points O/U"
       )?.points,
     };
-    console.log({
-      firstEvent,
-      scores,
-      touchdownOdds,
-      raw,
-      marketTypeName: raw.map((r) => r.marketTypeName),
-    });
     scores = Object.fromEntries(
       Object.entries(scores).filter(([_, val]) => val)
     );
