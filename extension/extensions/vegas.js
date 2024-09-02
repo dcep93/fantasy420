@@ -10,6 +10,11 @@
 
   var saved = undefined;
 
+  function clog(t) {
+    console.log(t);
+    return t;
+  }
+
   function main() {
     if (location.pathname === "/football/fantasycast") return;
     return new Promise((resolve, reject) =>
@@ -36,49 +41,47 @@
             new Date(startDate) - Date.now() < MAX_FUTURE_GAME_MS
         )
       )
-      .then((respx) => {
-        console.log({ respx });
-        return [];
-      })
       .then((events) =>
-        events.map(({ eventId }) =>
-          fetchC(
-            `https://sportsbook-nash.draftkings.com/api/sportscontent/dkusny/v1/events/${eventId}/categories?category=odds`,
-            15 * 60 * 1000 // 15 minutes
+        events.flatMap(({ eventId }) =>
+          [1000, 1001, 1002, 1003, 1342].map((categoryId) =>
+            fetchC(
+              `https://sportsbook-nash.draftkings.com/api/sportscontent/dkusny/v1/events/${eventId}/categories/${categoryId}`,
+              15 * 60 * 1000 // 15 minutes
+            )
           )
         )
       )
       .then((promises) => Promise.all(promises))
-      .then(
-        (events) => events.filter(Boolean).flatMap(({ events }) => events)
-        // .flatMap(({ selections }) => selections)
-      )
-      .then((respx) => {
-        console.log({ respx });
-        return [];
-      })
       .then((events) =>
-        events
-          .filter(Boolean)
-          .flatMap(({ events }) => events)
-          .flatMap(({ selections }) =>
-            (selections || []).flatMap(
-              ({ marketId, trueOdds, points, participants }) => ({
-                marketId,
-                trueOdds,
-                points,
-                participants,
-                // startDate: event.startDate,
-                // eventName: event.name,
-                // name,
-                // label,
-                // participant,
-                // line,
-                // oddsDecimal,
-                // sublabel: outcome.label,
-              })
-            )
-          )
+        events.filter(Boolean).flatMap(({ selections, markets }) =>
+          (selections || [])
+            .filter(({ participants }) => participants)
+            .map((s) => ({
+              outcomeType: s.outcomeType,
+              odds: s.trueOdds,
+              participant: s.participants.find((p) => p.type === "Player")
+                ?.name,
+              points: s.points,
+              s,
+              ...markets
+                .map((m) => ({
+                  name: m.name,
+                  eventId: m.eventId,
+                  marketTypeName: m.marketType.name,
+                  m,
+                }))
+                .find(({ m }) => m.id === s.marketId),
+              // participant: participants[0],
+              // startDate: event.startDate,
+              // eventName: event.name,
+              // name,
+              // label,
+              // participant,
+              // line,
+              // oddsDecimal,
+              // sublabel: outcome.label,
+            }))
+        )
       )
       .then((events) => (data === undefined && console.log(events)) || events);
   }
@@ -92,9 +95,8 @@
           .map((bio) => bio.getElementsByTagName("a")[0])
           .filter(Boolean)
           .map((a) => ({ a, name: getName(a) }))
-          .map(({ name, ...o }) => ({
-            name,
-            raw: getRaw(name, events),
+          .map((o) => ({
+            raw: getRaw(o.name, events),
             ...o,
           }))
           .filter(({ a, name, raw }) => {
@@ -144,53 +146,54 @@
       return [];
     }
     return events
-      .filter(({ sublabel }) => sublabel !== "Under")
-      .filter(({ name }) => name !== "Popular")
-      .filter(({ name }) => name !== "H2H Player Matchups")
-      .filter(({ participant, sublabel }) =>
-        [participant, sublabel]
-          .map((name) =>
-            name
-              ?.replace("Gabriel Davis", "Gabe Davis")
-              .replace("D.J. Moore", "DJ Moore")
-              .replace(/ \(.*\)$/, "")
-          )
+      .filter(({ outcomeType }) => outcomeType !== "Under")
+      .filter(({ participant }) =>
+        participant
+          ?.replace("Gabriel Davis", "Gabe Davis")
+          .replace("D.J. Moore", "DJ Moore")
+          .replace(/ \(.*\)$/, "")
           .includes(player_name)
       );
   }
 
   function getScores(raw) {
-    const firstEvent = raw[0].eventName;
-    raw = raw.filter(({ eventName }) => eventName === firstEvent);
+    const firstEvent = raw[0].eventId;
+    raw = raw.filter((r) => r.eventId === firstEvent);
     const touchdownOdds = raw.find(
-      ({ label }) => label === "Anytime TD Scorer"
-    )?.oddsDecimal;
+      ({ marketTypeName }) => marketTypeName === "Anytime Touchdown Scorer"
+    )?.odds;
     var scores = {
       passing: raw.find(
-        ({ label, participant }) => label === `${participant} Passing Yards`
-      )?.line,
+        ({ marketTypeName }) => marketTypeName === "Passing Yards O/U"
+      )?.points,
       interceptions: raw.find(
-        ({ label, participant }) => label === `${participant} Interceptions`
-      )?.line,
+        ({ marketTypeName }) => marketTypeName === "Interceptions Thrown O/U"
+      )?.points,
       passingTd: raw.find(
-        ({ label, participant }) =>
-          label === `${participant} Passing Touchdowns`
-      )?.line,
-      rushing: raw.find(
-        ({ label, participant }) => label === `${participant} Rushing Yards`
-      )?.line,
-      receiving: raw.find(
-        ({ label, participant }) => label === `${participant} Receiving Yards`
-      )?.line,
-      receptions: raw.find(
-        ({ label, participant }) => label === `${participant} Receptions`
-      )?.line,
+        ({ marketTypeName }) => marketTypeName === "Passing Touchdowns O/U"
+      )?.points,
       touchdowns: getTouchdowns(touchdownOdds),
       touchdownOdds: touchdownOdds && ((1 / touchdownOdds) * 1.1).toFixed(2),
-      fieldGoals: raw.find(
-        ({ label, participant }) => label === `${participant} Field Goal Made`
-      )?.line,
+      rushing: raw.find(
+        ({ marketTypeName }) => marketTypeName === "Rushing Yards O/U"
+      )?.points,
+      receiving: raw.find(
+        ({ marketTypeName }) => marketTypeName === "Receiving Yards O/U"
+      )?.points,
+      receptions: raw.find(
+        ({ marketTypeName }) => marketTypeName === "Receptions O/U" // TODO BROKEN?
+      )?.points,
+      kickingPoints: raw.find(
+        ({ marketTypeName }) => marketTypeName === "Kicking Points O/U"
+      )?.points,
     };
+    console.log({
+      firstEvent,
+      scores,
+      touchdownOdds,
+      raw,
+      marketTypeName: raw.map((r) => r.marketTypeName),
+    });
     scores = Object.fromEntries(
       Object.entries(scores).filter(([_, val]) => val)
     );
@@ -203,7 +206,7 @@
       (0.1 * scores.rushing || 0) +
       (0.1 * scores.receiving || 0) +
       (scores.receptions || 0) +
-      (3 * scores.fieldGoals || 0)
+      (scores.kickingPoints || 0)
     ).toFixed(2);
     return scores;
   }
@@ -228,17 +231,17 @@
         .map(
           (key) =>
             ({
-              passing: "P",
+              passing: "Py",
               interceptions: "I",
-              passingTd: "4",
-              rushing: "R",
-              receiving: "W",
-              receptions: "C",
-              touchdowns: "T",
-              fieldGoals: "F",
+              passingTd: "PT",
+              rushing: "RSHy",
+              receiving: "R",
+              receptions: "RCPy",
+              touchdowns: "TD",
+              kickingPoints: "K",
             }[key] || "X")
         )
-        .join(""),
+        .join("_"),
     ].join(" ");
   }
 
