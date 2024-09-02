@@ -86,7 +86,7 @@
       .then((events) => (data === undefined && console.log(events)) || events);
   }
 
-  function inject(events) {
+  function inject(events, clicked) {
     return Promise.resolve()
       .then(() => document.getElementsByClassName("player-column__bio"))
       .then(Array.from)
@@ -116,17 +116,26 @@
           .filter(({ scores }) => scores !== null)
           .map((o) => ({
             text: getText(o.scores),
-            title: getTitle(o.scores),
             ...o,
           }))
-          .filter(({ title, aE }) => aE.title !== title)
+          .map((o) => ({
+            title: `${o.text}\n${getTitle(o.scores)}`,
+            ...o,
+          }))
+          .filter(({ aE, title }) => clicked || aE.title !== title)
           .map(({ name, scores, title, raw, aE, posE, text }) => {
-            aE.setAttribute("fantasy420_name", name);
-            if (location.href.match("https://fantasy.espn.com/football/team")) {
+            if (
+              clicked ||
+              location.href.match("https://fantasy.espn.com/football/team")
+            ) {
               posE.innerText = text;
             }
+            posE.onclick = () => {
+              inject(events, true);
+            };
+            aE.setAttribute("fantasy420_name", name);
             posE.style.backgroundColor = "lightgreen";
-            posE.title = `${text}\n${title}`;
+            aE.title = title;
             return { startDate: raw[0].startDate, name, scores };
           })
       )
