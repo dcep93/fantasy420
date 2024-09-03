@@ -45,6 +45,7 @@ export type FFTeamType = {
     };
   };
   draft: { playerId: number; pickIndex: number }[];
+  pickOrder?: number;
 };
 
 type MatchupType = (string | null)[][];
@@ -83,7 +84,9 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
   const leagueId =
     new URL(window.document.location.href).searchParams.get("leagueId") ||
     203836968;
-  // 67201591;
+  // 203836968 ADP
+  // 67201591; QZ
+  // 17110401 WS
 
   function ext(data: any): Promise<any> {
     const extension_id = "kmpbdkipjlpbckfnpbfbncddjaneeklc";
@@ -271,6 +274,7 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                   roster: { entries: { playerId: number }[] };
                 }[];
                 status: { latestScoringPeriod: number };
+                settings: { draftSettings: { pickOrder: number[] } };
               }) =>
                 Promise.resolve()
                   .then(() =>
@@ -354,6 +358,9 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                           playerId,
                           pickIndex,
                         })),
+                      pickOrder: resp.settings.draftSettings.pickOrder.indexOf(
+                        parseInt(team.id)
+                      ),
                       rosters: fromEntries(
                         weeks
                           .map((week) => week[team.id].schedule)
