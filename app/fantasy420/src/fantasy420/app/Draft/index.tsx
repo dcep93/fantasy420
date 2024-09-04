@@ -92,7 +92,8 @@ export default function Draft() {
     draftKingsData === null &&
       Promise.resolve()
         .then(() => draftKings(idToRankBySource))
-        .then(updateDraftKingsData);
+        .then(updateDraftKingsData)
+        .catch(console.error);
   }, [draftKingsData, idToRankBySource]);
   const [liveDraft, updateLiveDraft] = useState<string[]>([]);
   useEffect(() => {
@@ -316,21 +317,9 @@ function SubDraft(props: {
                           freeAgent: "FA",
                           playoffs: "p",
                           ...Object.fromEntries(
-                            [
-                              9, //
-                              2,
-                              6,
-                              7,
-                              8,
-                              5,
-                              3,
-                              4,
-                              10,
-                              1,
-                            ].map((teamId, pickIndex) => [
-                              teamId,
-                              pickIndex + 1,
-                            ])
+                            Object.values(selectedWrapped().ffTeams).map(
+                              ({ id, pickOrder }) => [id, pickOrder! + 1]
+                            )
                           ),
                         }[
                           v.player.nflTeamId === "0"
