@@ -5,6 +5,7 @@ import Draft from "./Draft";
 import FetchWrapped from "./FetchWrapped";
 import HistoryGraph from "./HistoryGraph";
 import PlayoffPredictability from "./PlayoffPredictability";
+import Vegas from "./Vegas";
 import Wrapped from "./Wrapped";
 
 const pages = {
@@ -13,6 +14,7 @@ const pages = {
   HistoryGraph,
   Defense,
   PlayoffPredictability,
+  Vegas,
 };
 
 export default function index() {

@@ -130,7 +130,7 @@ export function mapDict<T, U>(d: { [key: string]: T }, f: (t: T) => U) {
   return Object.fromEntries(Object.entries(d).map(([key, t]) => [key, f(t)]));
 }
 
-const bubbleStyle = {
+export const bubbleStyle = {
   backgroundColor: "white",
   display: "inline-block",
   borderRadius: "1em",
