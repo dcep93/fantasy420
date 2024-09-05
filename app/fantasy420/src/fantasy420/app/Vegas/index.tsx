@@ -132,7 +132,7 @@ function getVegas(): Promise<VegasType> {
                           headers: JSON.parse(caesarsHeaders!),
                         },
                         json: true,
-                        maxAgeMs: 1000 * 60 * 15,
+                        maxAgeMs: 1000 * 60 * 60 * 12,
                       },
                     })
                   )
@@ -159,6 +159,7 @@ function getVegas(): Promise<VegasType> {
                         o: { m, s },
                       }))
                     )
+                    .filter((o) => o.odds < 6 && o.odds > 2)
               )
               .then((players) => ({ source, players }))
           )
@@ -174,13 +175,19 @@ function getVegas(): Promise<VegasType> {
           .then((resp: { msg: { events: { eventId: string }[] } }) => resp.msg)
           .then(({ events }) =>
             events.flatMap(({ eventId }) =>
-              ext({
-                fetch: {
-                  url: `https://sportsbook-nash.draftkings.com/api/sportscontent/dkusny/v1/events/${eventId}/categories/1003`,
-                  maxAgeMs: 15 * 60 * 1000,
-                  json: true,
-                },
-              })
+              Object.keys({
+                1000: "passing",
+                1001: "rushing",
+                1342: "receiving",
+              }).map((categoryId) =>
+                ext({
+                  fetch: {
+                    url: `https://sportsbook-nash.draftkings.com/api/sportscontent/dkusny/v1/events/${eventId}/categories/${categoryId}`,
+                    maxAgeMs: 12 * 60 * 60 * 1000,
+                    json: true,
+                  },
+                })
+              )
             )
           )
           .then((promises) => Promise.all(promises))
@@ -218,7 +225,7 @@ function getVegas(): Promise<VegasType> {
           .then((players) => ({ source, players }))
       ),
     ])
-    .then((ps) => Promise.all(ps.map((p) => p?.catch((err) => null))))
+    .then((ps) => Promise.all(ps.map((p) => p?.catch((err) => undefined))))
     .then(clog)
     .then((vs) => vs.filter((v) => v).map((v) => v!));
 }
