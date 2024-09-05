@@ -218,8 +218,7 @@ function getVegas(): Promise<VegasType> {
           .then((players) => ({ source, players }))
       ),
     ])
-    .then((ps) => Promise.all(ps))
+    .then((ps) => Promise.all(ps.map((p) => p?.catch((err) => null))))
     .then(clog)
-    .then((vs) => vs.filter((v) => v).map((v) => v!))
-    .catch((err) => null);
+    .then((vs) => vs.filter((v) => v).map((v) => v!));
 }
