@@ -79,7 +79,10 @@ function getVegas(): Promise<VegasType> {
           .then(() => {
             var caesarsHeaders = localStorage.getItem("caesarsHeaders");
             if (caesarsHeaders === null) {
-              caesarsHeaders = prompt("caesarsHeaders (x-app-version)");
+              caesarsHeaders = prompt("caesarsHeaders (x-aws-waf-token)");
+              if (!caesarsHeaders) {
+                throw new Error("caesarsHeaders");
+              }
               localStorage.setItem("caesarsHeaders", caesarsHeaders!);
             }
             return caesarsHeaders;
@@ -92,7 +95,7 @@ function getVegas(): Promise<VegasType> {
                   headers: JSON.parse(caesarsHeaders!),
                 },
                 json: true,
-                maxAgeMs: 0 * 1000 * 60 * 15,
+                maxAgeMs: 1000 * 60 * 60 * 12,
               },
             })
               .then(clog)
@@ -145,61 +148,58 @@ function getVegas(): Promise<VegasType> {
               .then((players) => ({ source, players }))
           )
       ),
-      null &&
-        Promise.resolve("draftkings").then((source) =>
-          ext({
-            fetch: {
-              url: "https://sportsbook-nash.draftkings.com/api/sportscontent/navigation/dkusny/v1/nav/leagues/88808?format=json",
-              maxAgeMs: 12 * 60 * 60 * 1000,
-              json: true,
-            },
-          })
-            .then(
-              (resp: { msg: { events: { eventId: string }[] } }) => resp.msg
+      Promise.resolve("draftkings").then((source) =>
+        ext({
+          fetch: {
+            url: "https://sportsbook-nash.draftkings.com/api/sportscontent/navigation/dkusny/v1/nav/leagues/88808?format=json",
+            maxAgeMs: 12 * 60 * 60 * 1000,
+            json: true,
+          },
+        })
+          .then((resp: { msg: { events: { eventId: string }[] } }) => resp.msg)
+          .then(({ events }) =>
+            events.flatMap(({ eventId }) =>
+              ext({
+                fetch: {
+                  url: `https://sportsbook-nash.draftkings.com/api/sportscontent/dkusny/v1/events/${eventId}/categories/1003`,
+                  maxAgeMs: 15 * 60 * 1000,
+                  json: true,
+                },
+              })
             )
-            .then(({ events }) =>
-              events.flatMap(({ eventId }) =>
-                ext({
-                  fetch: {
-                    url: `https://sportsbook-nash.draftkings.com/api/sportscontent/dkusny/v1/events/${eventId}/categories/1003`,
-                    maxAgeMs: 15 * 60 * 1000,
-                    json: true,
-                  },
-                })
-              )
-            )
-            .then((promises) => Promise.all(promises))
-            .then(
-              (
-                resps: {
-                  msg: {
-                    selections: {
-                      marketId: string;
-                      trueOdds: number;
-                      participants: { name: string }[];
-                    }[];
-                    markets: { id: string }[];
-                  };
-                }[]
-              ) =>
-                resps
-                  .map((resp) => resp.msg)
-                  .filter(Boolean)
-                  .filter(({ selections }) => selections)
-                  .flatMap(({ selections, markets }) =>
-                    selections.map((s) => ({
-                      name: s.participants?.find((p) => p)?.name!,
-                      odds: s.trueOdds,
-                      o: {
-                        s,
-                        m: markets.find((m) => m.id === s.marketId),
-                      },
-                    }))
-                  )
-                  .filter((p) => p.name)
-            )
-            .then((players) => ({ source, players }))
-        ),
+          )
+          .then((promises) => Promise.all(promises))
+          .then(
+            (
+              resps: {
+                msg: {
+                  selections: {
+                    marketId: string;
+                    trueOdds: number;
+                    participants: { name: string }[];
+                  }[];
+                  markets: { id: string }[];
+                };
+              }[]
+            ) =>
+              resps
+                .map((resp) => resp.msg)
+                .filter(Boolean)
+                .filter(({ selections }) => selections)
+                .flatMap(({ selections, markets }) =>
+                  selections.map((s) => ({
+                    name: s.participants?.find((p) => p)?.name!,
+                    odds: s.trueOdds,
+                    o: {
+                      s,
+                      m: markets.find((m) => m.id === s.marketId),
+                    },
+                  }))
+                )
+                .filter((p) => p.name)
+          )
+          .then((players) => ({ source, players }))
+      ),
     ])
     .then((ps) => Promise.all(ps))
     .then(clog)
