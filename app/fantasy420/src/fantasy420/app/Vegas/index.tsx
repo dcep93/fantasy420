@@ -29,13 +29,13 @@ export default function Vegas() {
                     .filter((vv) => vv.odds !== undefined)
                     .sort((a, b) => a.odds - b.odds)[0] || {
                     source: "<none>",
-                    odds: 0,
+                    odds: -1,
                   },
                 }))
-                .map((o) => ({ ...o, score: o.p.odds / o.alt.odds }))
+                .map((o) => ({ ...o, score: -o.p.odds / o.alt.odds }))
                 .sort((a, b) => a.score - b.score)
                 .map((o, i) => (
-                  <div key={i} title={JSON.stringify(o.p.o)}>
+                  <div key={i} title={JSON.stringify(o.score)}>
                     <div style={bubbleStyle}>
                       <div>{o.p.name}</div>
                       <div>{o.p.odds}</div>
@@ -103,7 +103,6 @@ function getVegas(): Promise<VegasType> {
                 maxAgeMs: 1000 * 60 * 60 * 12,
               },
             })
-              .then(clog)
               .then((resp) => resp.msg)
               .then(
                 (resp: { events: { id: string; competitionName: string } }[]) =>
@@ -148,7 +147,6 @@ function getVegas(): Promise<VegasType> {
                       name: o.s.name.slice(1, -1),
                       odds: o.s.price.d,
                     }))
-                    .sort((a, b) => a.odds - b.odds)
               )
               .then((players) => ({ source, players }))
           )
@@ -183,23 +181,25 @@ function getVegas(): Promise<VegasType> {
                     trueOdds: number;
                     participants: { name: string }[];
                   }[];
-                  markets: { id: string }[];
+                  markets: { id: string; name: string }[];
                 };
               }[]
             ) =>
               resps
                 .map((resp) => resp.msg)
                 .filter(Boolean)
-                .filter(({ selections }) => selections)
                 .flatMap(({ selections, markets }) =>
-                  selections.map((s) => ({
-                    name: s.participants?.find((p) => p)?.name!,
-                    odds: s.trueOdds,
-                    o: {
-                      s,
-                      m: markets.find((m) => m.id === s.marketId),
-                    },
-                  }))
+                  (markets || [])
+                    .filter((m) => m.name === "Anytime TD Scorer")
+                    .flatMap((m) =>
+                      selections
+                        .filter((s) => s.marketId === m.id)
+                        .map((s) => ({
+                          name: s.participants?.find((p) => p)?.name!,
+                          odds: s.trueOdds,
+                          o: { m, s },
+                        }))
+                    )
                 )
                 .filter((p) => p.name)
           )
