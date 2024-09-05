@@ -35,7 +35,7 @@ export default function Vegas() {
                 .map((o) => ({ ...o, score: -o.p.odds / o.alt.odds }))
                 .sort((a, b) => a.score - b.score)
                 .map((o, i) => (
-                  <div key={i} title={JSON.stringify(o.score)}>
+                  <div key={i} title={JSON.stringify(o)}>
                     <div style={bubbleStyle}>
                       <div>{o.p.name}</div>
                       <div>{o.p.odds}</div>
@@ -141,12 +141,13 @@ function getVegas(): Promise<VegasType> {
                   resps
                     .flatMap((r) => r.msg.markets)
                     .filter((m) => m.name === "|Player To Score a Touchdown|")
-                    .flatMap((m) => m.selections.map((s) => ({ m, s })))
-                    .map((o) => ({
-                      o,
-                      name: o.s.name.slice(1, -1),
-                      odds: o.s.price.d,
-                    }))
+                    .flatMap((m) =>
+                      m.selections.map((s) => ({
+                        name: s.name.slice(1, -1),
+                        odds: s.price.d,
+                        o: { m, s },
+                      }))
+                    )
               )
               .then((players) => ({ source, players }))
           )
