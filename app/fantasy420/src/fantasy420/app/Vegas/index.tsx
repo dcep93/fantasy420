@@ -72,72 +72,80 @@ function getVegas(): Promise<VegasType> {
     );
   }
 
-  var caesarsHeaders = localStorage.getItem("caesarsHeaders");
-  if (caesarsHeaders === null) {
-    caesarsHeaders = prompt("caesarsHeaders (x-app-version)");
-    localStorage.setItem("caesarsHeaders", caesarsHeaders!);
-  }
   return Promise.resolve()
     .then(() => [
       null &&
         Promise.resolve("caesars").then((source) =>
-          ext({
-            fetch: {
-              url: "https://api.americanwagering.com/regions/us/locations/ny/brands/czr/sb/v3/cannedparlays/americanfootball",
-              options: {
-                headers: JSON.parse(caesarsHeaders!),
-              },
-              json: true,
-              maxAgeMs: 1000 * 60 * 15,
-            },
-          })
-            .then((resp) => resp.msg)
-            .then(
-              (resp: { events: { id: string; competitionName: string } }[]) =>
-                Object.keys(
-                  Object.fromEntries(
-                    resp
-                      .flatMap((r) => r.events)
-                      .filter((e) => e.competitionName === "NFL")
-                      .map((e) => [e.id, e])
-                  )
-                ).map((id) =>
-                  ext({
-                    fetch: {
-                      url: `https://api.americanwagering.com/regions/us/locations/ny/brands/czr/sb/v3/events/${id}`,
-                      options: {
-                        headers: JSON.parse(caesarsHeaders!),
-                      },
-                      json: true,
-                      maxAgeMs: 1000 * 60 * 15,
-                    },
-                  })
+          Promise.resolve()
+            .then(() => {
+              var caesarsHeaders = localStorage.getItem("caesarsHeaders");
+              if (caesarsHeaders === null) {
+                caesarsHeaders = prompt("caesarsHeaders (x-app-version)");
+                localStorage.setItem("caesarsHeaders", caesarsHeaders!);
+              }
+              return caesarsHeaders;
+            })
+            .then((caesarsHeaders) =>
+              ext({
+                fetch: {
+                  url: "https://api.americanwagering.com/regions/us/locations/ny/brands/czr/sb/v3/cannedparlays/americanfootball",
+                  options: {
+                    headers: JSON.parse(caesarsHeaders!),
+                  },
+                  json: true,
+                  maxAgeMs: 1000 * 60 * 15,
+                },
+              })
+                .then((resp) => resp.msg)
+                .then(
+                  (
+                    resp: { events: { id: string; competitionName: string } }[]
+                  ) =>
+                    Object.keys(
+                      Object.fromEntries(
+                        resp
+                          .flatMap((r) => r.events)
+                          .filter((e) => e.competitionName === "NFL")
+                          .map((e) => [e.id, e])
+                      )
+                    ).map((id) =>
+                      ext({
+                        fetch: {
+                          url: `https://api.americanwagering.com/regions/us/locations/ny/brands/czr/sb/v3/events/${id}`,
+                          options: {
+                            headers: JSON.parse(caesarsHeaders!),
+                          },
+                          json: true,
+                          maxAgeMs: 1000 * 60 * 15,
+                        },
+                      })
+                    )
                 )
+                .then((ps) => Promise.all(ps))
+                .then(
+                  (
+                    resps: {
+                      msg: {
+                        markets: {
+                          name: string;
+                          selections: { name: string; price: { a: number } }[];
+                        }[];
+                      };
+                    }[]
+                  ) =>
+                    resps
+                      .flatMap((r) => r.msg.markets)
+                      .filter((m) => m.name === "|Player To Score a Touchdown|")
+                      .flatMap((m) => m.selections.map((s) => ({ m, s })))
+                      .map((o) => ({
+                        o,
+                        name: o.s.name.slice(1, -1),
+                        odds: o.s.price.a,
+                      }))
+                      .sort((a, b) => a.odds - b.odds)
+                )
+                .then((players) => ({ source, players }))
             )
-            .then((ps) => Promise.all(ps))
-            .then(
-              (
-                resps: {
-                  msg: {
-                    markets: {
-                      name: string;
-                      selections: { name: string; price: { a: number } }[];
-                    }[];
-                  };
-                }[]
-              ) =>
-                resps
-                  .flatMap((r) => r.msg.markets)
-                  .filter((m) => m.name === "|Player To Score a Touchdown|")
-                  .flatMap((m) => m.selections.map((s) => ({ m, s })))
-                  .map((o) => ({
-                    o,
-                    name: o.s.name.slice(1, -1),
-                    odds: o.s.price.a,
-                  }))
-                  .sort((a, b) => a.odds - b.odds)
-            )
-            .then((players) => ({ source, players }))
         ),
       Promise.resolve("draftkings").then((source) =>
         ext({
