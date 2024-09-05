@@ -12,38 +12,43 @@ export default function Vegas() {
   }, []);
   return (
     <div>
-      {vegas.map((v) => (
-        <div key={v.source}>
-          {v.players
-            .map((p) => ({
-              p,
-              alt: vegas
-                .filter((vv) => vv.source !== v.source)
-                .map((o) => ({
-                  source: o.source,
-                  odds: o.players.find((pp) => pp.name === p.name)?.odds!,
+      <div style={{ display: "flex" }}>
+        {vegas.map((v) => (
+          <div key={v.source}>
+            <div style={bubbleStyle}>{v.source}</div>
+            <div>
+              {v.players
+                .map((p) => ({
+                  p,
+                  alt: vegas
+                    .filter((vv) => vv.source !== v.source)
+                    .map((o) => ({
+                      source: o.source,
+                      odds: o.players.find((pp) => pp.name === p.name)?.odds!,
+                    }))
+                    .filter((vv) => vv.odds !== undefined)
+                    .sort((a, b) => a.odds - b.odds)[0] || {
+                    source: "<none>",
+                    odds: 0,
+                  },
                 }))
-                .filter((vv) => vv.odds !== undefined)
-                .sort((a, b) => a.odds - b.odds)[0] || {
-                source: "<none>",
-                odds: 0,
-              },
-            }))
-            .map((o) => ({ ...o, score: o.p.odds / o.alt.odds }))
-            .sort((a, b) => a.score - b.score)
-            .map((o, i) => (
-              <div key={i} title={JSON.stringify(o.p.o)}>
-                <div style={bubbleStyle}>
-                  <div>{o.p.name}</div>
-                  <div>{o.p.odds}</div>
-                  <div>
-                    alt: {o.alt.source} {o.alt.odds}
+                .map((o) => ({ ...o, score: o.p.odds / o.alt.odds }))
+                .sort((a, b) => a.score - b.score)
+                .map((o, i) => (
+                  <div key={i} title={JSON.stringify(o.p.o)}>
+                    <div style={bubbleStyle}>
+                      <div>{o.p.name}</div>
+                      <div>{o.p.odds}</div>
+                      <div>
+                        alt: {o.alt.source} {o.alt.odds}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
-        </div>
-      ))}
+                ))}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -129,7 +134,7 @@ function getVegas(): Promise<VegasType> {
                     msg: {
                       markets: {
                         name: string;
-                        selections: { name: string; price: { a: number } }[];
+                        selections: { name: string; price: { d: number } }[];
                       }[];
                     };
                   }[]
@@ -141,7 +146,7 @@ function getVegas(): Promise<VegasType> {
                     .map((o) => ({
                       o,
                       name: o.s.name.slice(1, -1),
-                      odds: o.s.price.a,
+                      odds: o.s.price.d,
                     }))
                     .sort((a, b) => a.odds - b.odds)
               )
