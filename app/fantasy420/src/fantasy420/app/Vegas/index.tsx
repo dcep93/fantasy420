@@ -4,13 +4,17 @@ import { bubbleStyle, clog } from "../Wrapped";
 var initialized = false;
 
 export default function Vegas() {
-  const [vegas, updateVegas] = useState<VegasType>([]);
+  const [vegas, updateVegas] = useState<VegasType | undefined>(undefined);
   useEffect(() => {
     if (initialized) return;
     initialized = true;
     Promise.resolve().then(getVegas).then(updateVegas);
   }, []);
-  return (
+  return vegas === undefined ? (
+    <div>fetching</div>
+  ) : vegas === null ? (
+    <div>failed</div>
+  ) : (
     <div>
       <div style={{ display: "flex" }}>
         {vegas.map((v) => (
@@ -53,10 +57,12 @@ export default function Vegas() {
   );
 }
 
-type VegasType = {
-  source: string;
-  players: { name: string; odds: number; o: any }[];
-}[];
+type VegasType =
+  | {
+      source: string;
+      players: { name: string; odds: number; o: any }[];
+    }[]
+  | null;
 
 function getVegas(): Promise<VegasType> {
   function ext(data: any): Promise<any> {
@@ -69,12 +75,17 @@ function getVegas(): Promise<VegasType> {
           );
         }
         if (!response.ok) {
-          console.error(data, response);
           return reject(`chrome: ${response.err}`);
+        }
+        if (response.data.err) {
+          return reject(response.data.err);
         }
         resolve(response.data);
       })
-    );
+    ).catch((err) => {
+      console.error(err);
+      throw err;
+    });
   }
 
   return Promise.resolve()
@@ -209,5 +220,6 @@ function getVegas(): Promise<VegasType> {
     ])
     .then((ps) => Promise.all(ps))
     .then(clog)
-    .then((vs) => vs.filter((v) => v).map((v) => v!));
+    .then((vs) => vs.filter((v) => v).map((v) => v!))
+    .catch((err) => null);
 }
