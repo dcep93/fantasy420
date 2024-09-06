@@ -32,6 +32,7 @@
   function clean(str) {
     return str
       .toLowerCase()
+      .replaceAll(/[^a-z ]/g, "")
       .replaceAll(/\./g, "")
       .replaceAll(/ jr\b/g, "")
       .replaceAll(/ sr\b/g, "")
