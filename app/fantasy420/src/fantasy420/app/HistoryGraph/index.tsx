@@ -25,9 +25,11 @@ export default function HistoryGraph() {
     [key: string]: (year: string) => { [position: string]: number | undefined };
   } = {
     player: (year) => ({
-      QB: Object.values(allWrapped[year]?.nflPlayers || {}).find(
-        (player) => player.name === "Christian McCaffrey"
-      )?.average,
+      QB: Object.values(
+        Object.values(allWrapped[year]?.nflPlayers || {}).find(
+          (player) => player.name === "Tee Higgins"
+        )?.scores || {}
+      ).filter((s) => s !== 0).length,
     }),
     ratio_played_all: (year) =>
       mapDict(historyJson[year], (players) => {
