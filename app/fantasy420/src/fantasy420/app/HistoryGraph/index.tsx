@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { printF } from "..";
 import { clog, groupByF, mapDict } from "../Wrapped";
-import allWrapped from "../Wrapped/allWrapped";
 import Chart from "./Chart";
 import rawHistoryJson from "./history.json";
 import regenerate from "./regenerate";
@@ -26,10 +25,10 @@ export default function HistoryGraph() {
   } = {
     player: (year) => ({
       QB: Object.values(
-        Object.values(allWrapped[year]?.nflPlayers || {}).find(
-          (player) => player.name === "Tee Higgins"
-        )?.scores || {}
-      ).filter((s) => s !== 0).length,
+        Object.values(historyJson[year])
+          .flatMap((players) => players)
+          .find((player) => player.fullName === "Tee Higgins")?.weeks || {}
+      ).filter((w) => w).length,
     }),
     ratio_played_all: (year) =>
       mapDict(historyJson[year], (players) => {
