@@ -64,9 +64,12 @@ export type WrappedType = {
   fantasyCalc: { timestamp: number; players: { [espnId: string]: number } };
 };
 
+var initialized = false;
 export default function FetchWrapped() {
   const [wrapped, update] = useState("fetching...");
   useEffect(() => {
+    if (initialized) return;
+    initialized = true;
     getWrapped(currentYear)
       .then((wrapped) => JSON.stringify(wrapped))
       .then(update)
@@ -197,10 +200,14 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                   average: seasonStats?.appliedAverage || 0,
                   scores: fromEntries(
                     player.stats
-                      .filter((stat) => stat.seasonId === parseInt(currentYear))
+                      .filter(
+                        (stat) =>
+                          stat.seasonId === parseInt(currentYear) &&
+                          stat.statSourceId === 0
+                      )
                       .map((stat) => ({
                         key: stat.scoringPeriodId.toString(),
-                        value: parseFloat(stat.appliedTotal.toFixed(2)),
+                        value: parseFloat((stat.appliedTotal || 0).toFixed(2)),
                       }))
                   ),
                   ownership: Object.fromEntries(
