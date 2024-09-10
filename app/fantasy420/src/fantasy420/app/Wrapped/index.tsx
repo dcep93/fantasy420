@@ -48,6 +48,7 @@ export default function Wrapped() {
       try {
         return [k, v()];
       } catch (e) {
+        if (process.env.NODE_ENV === "development") throw e;
         return [k, <pre>{(e as Error).stack}</pre>];
       }
     })
@@ -977,7 +978,14 @@ function SecondLost() {
           <div style={bubbleStyle}>SecondLost</div>
           <div>
             {Object.entries(selectedWrapped().ffMatchups)
-              .map(([weekNum, matchups]) => ({
+              .map(([weekNum, matchups]) => ({ weekNum, matchups }))
+              .filter(
+                ({ weekNum }) =>
+                  Object.values(selectedWrapped().ffTeams)[0].rosters[
+                    weekNum
+                  ] !== undefined
+              )
+              .map(({ weekNum, matchups }) => ({
                 weekNum,
                 matchups,
                 scores: Object.values(selectedWrapped().ffTeams)
@@ -1029,7 +1037,13 @@ function SecondLost() {
         <div style={bubbleStyle}>NinthWon</div>
         <div>
           {Object.entries(selectedWrapped().ffMatchups)
-            .map(([weekNum, matchups]) => ({
+            .map(([weekNum, matchups]) => ({ weekNum, matchups }))
+            .filter(
+              ({ weekNum }) =>
+                Object.values(selectedWrapped().ffTeams)[0].rosters[weekNum] !==
+                undefined
+            )
+            .map(({ weekNum, matchups }) => ({
               weekNum,
               matchups,
               scores: Object.values(selectedWrapped().ffTeams)
