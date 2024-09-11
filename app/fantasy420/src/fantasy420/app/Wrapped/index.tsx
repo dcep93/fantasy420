@@ -867,7 +867,7 @@ function ExtremeStuds() {
       | undefined;
   } = {
     max: (playerId) =>
-      Object.entries(selectedWrapped().nflPlayers[playerId].scores)
+      Object.entries(selectedWrapped().nflPlayers[playerId]?.scores || {})
         .map(([weekNum, score]) => ({
           weekNum,
           score: score!,
@@ -1400,7 +1400,7 @@ function OwnedTeams() {
         owned: Object.values(selectedWrapped().ffTeams).flatMap((ffTeam) =>
           ffTeam.rosters["0"].rostered
             .map((playerId) => selectedWrapped().nflPlayers[playerId])
-            .filter((p) => p.nflTeamId === nflTeam.id)
+            .filter((p) => p?.nflTeamId === nflTeam.id)
             .map((nflPlayer) => ({ ffTeam, nflPlayer }))
         ),
         nflTeam,
@@ -1411,7 +1411,7 @@ function OwnedTeams() {
     owned: Object.values(selectedWrapped().nflTeams).flatMap((nflTeam) =>
       ffTeam.rosters["0"].rostered
         .map((playerId) => selectedWrapped().nflPlayers[playerId])
-        .filter((p) => p.nflTeamId === nflTeam.id)
+        .filter((p) => p?.nflTeamId === nflTeam.id)
         .map((nflPlayer) => ({ ffTeam, nflPlayer }))
     ),
     ...ffTeam,
@@ -1519,9 +1519,9 @@ function FantasyCalc() {
             ps: rosters["0"].rostered
               .map((playerId) => selectedWrapped().nflPlayers[playerId])
               .map((p) => ({
-                name: p.name,
-                value: selectedWrapped().fantasyCalc.players[p.id] || 0,
-                draftPick: playerIdToDraftIndex[p.id],
+                name: p?.name || "missing",
+                value: selectedWrapped().fantasyCalc.players[p?.id] || 0,
+                draftPick: playerIdToDraftIndex[p?.id],
               }))
               .sort((a, b) => b.value - a.value),
           }))
