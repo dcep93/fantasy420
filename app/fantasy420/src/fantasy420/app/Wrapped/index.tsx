@@ -1809,7 +1809,7 @@ function Stacks() {
           sum: o.players.map((p) => p.score).reduce((a, b) => a + b, 0),
         }))
         .sort((a, b) => b.sum - a.sum)
-        .slice(0, 10)
+        .slice(0, 50)
         .map((o, i) => (
           <div key={i}>
             <div style={bubbleStyle}>
