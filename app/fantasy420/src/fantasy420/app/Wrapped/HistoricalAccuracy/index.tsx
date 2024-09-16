@@ -80,12 +80,6 @@ function getData(
         Object.entries({
           fantasycalc: (playerId: string) =>
             selectedWrapped().fantasyCalc.players[playerId] || 0,
-          draftKings: (playerId: string) =>
-            -selectedDraft()?.draftkings_super?.[playerId] || 0,
-          espnprojection: (playerId: string) =>
-            Object.values(
-              selectedWrapped().nflPlayers[playerId].projectedStats || {}
-            ).reduce((a, b) => a + b, 0),
           season_points: (playerId: string) =>
             selectedWrapped().nflPlayers[playerId]?.total,
           average_points: (playerId: string) =>
