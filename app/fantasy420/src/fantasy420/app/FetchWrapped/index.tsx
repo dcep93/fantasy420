@@ -16,7 +16,6 @@ export type NFLPlayerType = {
     percentOwned: number;
   };
   injuryStatus?: string;
-  projectedStats?: { [key: string]: number };
 };
 
 type NFLTeamType = {
@@ -225,31 +224,6 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                     percentOwned: number;
                   },
                   injuryStatus: player.injuryStatus,
-                  projectedStats: Object.fromEntries(
-                    Object.entries(
-                      player.stats.find(
-                        (s) =>
-                          s.statSourceId === 1 &&
-                          s.scoringPeriodId === 0 &&
-                          s.seasonId.toString() === currentYear
-                      )?.appliedStats || {}
-                    )
-                      .map(([k, v]) => [
-                        {
-                          "53": "receptions",
-                          "72": "fumbles",
-                          "42": "receiving_yards",
-                          "43": "receiving_touchdowns",
-                          "20": "interceptions",
-                          "3": "passing_yards",
-                          "4": "passing_touchdowns",
-                          "24": "rushing_yards",
-                          "25": "rushing_touchdowns",
-                        }[k],
-                        v,
-                      ])
-                      .filter(([k]) => k)
-                  ),
                 }))
                 .filter(
                   (player) =>

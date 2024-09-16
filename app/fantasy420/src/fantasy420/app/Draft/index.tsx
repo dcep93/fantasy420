@@ -574,7 +574,7 @@ function draftKings(
               Object.entries(d)
                 .map(([subcategory, dd]) => ({
                   subcategory,
-                  points: dd[p.id] || p.projectedStats?.[subcategory] || 0,
+                  points: dd[p.id] || 0,
                 }))
                 .map((obj) => [obj.subcategory, obj.points])
             ),
