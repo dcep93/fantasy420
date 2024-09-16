@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Position, selectedWrapped } from "..";
+import { groupByF, Position, selectedWrapped } from "..";
 import { DraftJsonType, PlayersType, selectedDraft } from "../../Draft";
 import Chart, { ChartDataType } from "./Chart";
 import distanceCorrelation from "./correlation";
@@ -53,7 +53,7 @@ function getComposite(sources: DraftJsonType): PlayersType {
 
 function getData(
   players: PlayersType,
-  selectedOwner: string,
+  selectedPosition: string,
   draft: PlayersType,
   top40: boolean
 ): DataType {
@@ -68,11 +68,6 @@ function getData(
     byPosition[position][playerId] = value;
     byPosition.all[playerId] = value;
   });
-  const playerIdToOwner = Object.fromEntries(
-    Object.values(selectedWrapped().ffTeams).flatMap((t) =>
-      t.rosters[0].rostered.map((playerId) => [playerId, t.id])
-    )
-  );
   const data = Object.fromEntries(
     Object.entries(byPosition).map(([position, players]) => [
       position,
@@ -112,7 +107,8 @@ function getData(
                 .map((p) => ({ ...p, x: parseFloat(p.x.toFixed(2)) }))
                 .map(({ x, y, ...o }, i) => ({
                   fill:
-                    (playerIdToOwner[o.playerId] || "") === selectedOwner
+                    selectedWrapped().nflPlayers[o.playerId].position ===
+                    selectedPosition
                       ? "red"
                       : undefined,
                   x,
@@ -137,7 +133,7 @@ function getCorrelation(data: ChartDataType): number {
 }
 
 export default function HistoricalAccuracy() {
-  const [top40, updateTop40] = useState(true);
+  const [top40, updateTop40] = useState(false);
   const draft = Object.fromEntries(
     Object.values(selectedWrapped().ffTeams)
       .flatMap((team) => team.draft)
@@ -152,12 +148,12 @@ export default function HistoricalAccuracy() {
   } as { [k: string]: {} };
   console.log(sources);
   const [source, updateSource] = useState(Object.keys(sources)[0]);
-  const owners = Object.values(selectedWrapped().ffTeams)
-    .map((t) => t.id)
-    .concat("");
-  const [selectedOwner, updateSelectedOwner] = useState(owners[0]);
+  const positions = Object.keys(
+    groupByF(Object.values(selectedWrapped().nflPlayers), (p) => p.position)
+  );
+  const [selectedPosition, updateSelectedPosition] = useState(positions[0]);
   sources.composite = getComposite(sources);
-  const data = getData(sources[source], selectedOwner, draft, top40);
+  const data = getData(sources[source], selectedPosition, draft, top40);
   return (
     <div>
       <div>
@@ -178,14 +174,14 @@ export default function HistoricalAccuracy() {
       </div>
       <div>
         <select
-          defaultValue={selectedOwner}
+          defaultValue={selectedPosition}
           onChange={(event) =>
-            updateSelectedOwner((event.target as HTMLSelectElement).value)
+            updateSelectedPosition((event.target as HTMLSelectElement).value)
           }
         >
-          {owners.map((s) => (
+          {positions.map((s) => (
             <option key={s} value={s}>
-              {selectedWrapped().ffTeams[s]?.name || "<UNOWNED>"}
+              {s}
             </option>
           ))}
         </select>
