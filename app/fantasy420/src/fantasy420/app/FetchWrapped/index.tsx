@@ -29,6 +29,7 @@ type NFLTeamType = {
           fieldGoals: number[];
           pointsAllowed: number;
           yardsAllowed: number;
+          drives?: (string | null)[];
         }
       | undefined;
   };
@@ -521,6 +522,14 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                           page: {
                             content: {
                               gamepackage: {
+                                pbp: {
+                                  tms: {
+                                    [key: string]: {
+                                      id: string;
+                                      displayName: string;
+                                    };
+                                  };
+                                };
                                 scrSumm: {
                                   scrPlayGrps: {
                                     teamId: string;
@@ -528,23 +537,39 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                                     text: string;
                                   }[][];
                                 };
+                                allPlys: {
+                                  teamName: string;
+                                  headline: string;
+                                }[];
                               };
                             };
                           };
-                        }) =>
-                          resp.page.content.gamepackage.scrSumm.scrPlayGrps
-                            .flatMap((periodPlays) => periodPlays)
-                            .filter((play) => play.typeAbbreviation === "FG")
-                            .map((play) => ({
-                              teamId: play.teamId,
-                              yards: parseInt(
-                                play.text
-                                  .replace("Yrd Field Goal", "Yd Field Goal")
-                                  .split(" Yd Field Goal")[0]
-                                  .split(" ")
-                                  .reverse()[0]
-                              ),
-                            }))
+                        }) => ({
+                          fieldGoals:
+                            resp.page.content.gamepackage.scrSumm.scrPlayGrps
+                              .flatMap((periodPlays) => periodPlays)
+                              .filter((play) => play.typeAbbreviation === "FG")
+                              .map((play) => ({
+                                teamId: play.teamId,
+                                yards: parseInt(
+                                  play.text
+                                    .replace("Yrd Field Goal", "Yd Field Goal")
+                                    .split(" Yd Field Goal")[0]
+                                    .split(" ")
+                                    .reverse()[0]
+                                ),
+                              })),
+                          drives: Object.fromEntries(
+                            Object.values(
+                              resp.page.content.gamepackage.pbp.tms
+                            ).map(({ id, displayName }) => [
+                              id,
+                              resp.page.content.gamepackage.allPlys
+                                .filter((p) => p.teamName === displayName)
+                                .map((drive) => drive.headline),
+                            ])
+                          ),
+                        })
                       )
                       .then((value) => ({
                         key: gameId.toString(),
@@ -642,7 +667,8 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                               .map(([scoringPeriod, gameId]) => ({
                                 key: scoringPeriod,
                                 value: {
-                                  fieldGoals: gamesByGameId[gameId]
+                                  drives: gamesByGameId[gameId].drives[team.id],
+                                  fieldGoals: gamesByGameId[gameId].fieldGoals
                                     .filter((play) => play.teamId === team.id)
                                     .map((play) => play.yards),
                                   ...defensesByScoringPeriod[scoringPeriod][

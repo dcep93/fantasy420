@@ -43,6 +43,7 @@ export default function Wrapped() {
       DraftValue,
       ByeSchedule,
       SecondLost,
+      DriveOutcomes,
       json,
     }).map(([k, v]) => {
       try {
@@ -1914,6 +1915,58 @@ export class Helpers {
       });
     return ideal;
   }
+}
+
+function DriveOutcomes() {
+  function distribution(arr: string[]): { [key: string]: number } {
+    return {
+      __total: arr.length,
+      ...mapDict(
+        groupByF(arr, (a) => a),
+        (as) => Helpers.toFixed(as.length / arr.length, 4)
+      ),
+    };
+  }
+  return (
+    <div>
+      {Object.values(selectedWrapped().nflTeams).map((team) => (
+        <div key={team.id}>
+          <div style={bubbleStyle}>
+            <div>{team.name}</div>
+            <div>
+              {[true, false].map((isAll) => (
+                <div key={isAll.toString()} style={bubbleStyle}>
+                  <div>
+                    <div>{isAll ? "all" : "first"}</div>
+                    <pre>
+                      {JSON.stringify(
+                        distribution(
+                          (team.name === "FA"
+                            ? Object.values(selectedWrapped().nflTeams).flatMap(
+                                (team) =>
+                                  Object.values(team.nflGamesByScoringPeriod)
+                              )
+                            : Object.values(team.nflGamesByScoringPeriod)
+                          ).flatMap((game) =>
+                            (game!.drives || [])
+                              .filter((d) => d !== null)
+                              .map((d) => d!.toLowerCase())
+                              .filter((_, i) => isAll || i === 0)
+                          )
+                        ),
+                        null,
+                        2
+                      )}
+                    </pre>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 function HistoricalAccuracy() {
