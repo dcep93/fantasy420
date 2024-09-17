@@ -128,8 +128,16 @@ export function groupByF<T>(
   }, {} as { [key: string]: T[] });
 }
 
-export function mapDict<T, U>(d: { [key: string]: T }, f: (t: T) => U) {
-  return Object.fromEntries(Object.entries(d).map(([key, t]) => [key, f(t)]));
+export function mapDict<T, U>(
+  d: { [key: string]: T },
+  f: (t: T) => U,
+  g: (t: T) => boolean = () => true
+) {
+  return Object.fromEntries(
+    Object.entries(d)
+      .filter(([key, t]) => g(t))
+      .map(([key, t]) => [key, f(t)])
+  );
 }
 
 export const bubbleStyle = {
