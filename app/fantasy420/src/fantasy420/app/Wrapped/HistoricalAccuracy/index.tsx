@@ -53,7 +53,7 @@ function getComposite(sources: DraftJsonType): PlayersType {
 
 function getData(
   players: PlayersType,
-  selectedPosition: string,
+  selectedPosition: string | null,
   draft: PlayersType,
   top40: boolean
 ): DataType {
@@ -68,6 +68,11 @@ function getData(
     byPosition[position][playerId] = value;
     byPosition.all[playerId] = value;
   });
+  const playerIdToOwner = Object.fromEntries(
+    Object.values(selectedWrapped().ffTeams).flatMap((t) =>
+      t.draft.map((p) => [p.playerId, t.id])
+    )
+  );
   const data = Object.fromEntries(
     Object.entries(byPosition).map(([position, players]) => [
       position,
@@ -106,11 +111,14 @@ function getData(
                 .sort((a, b) => a.x - b.x)
                 .map((p) => ({ ...p, x: parseFloat(p.x.toFixed(2)) }))
                 .map(({ x, y, ...o }, i) => ({
-                  fill:
-                    selectedWrapped().nflPlayers[o.playerId].position ===
-                    selectedPosition
-                      ? "red"
-                      : undefined,
+                  fill: (
+                    selectedPosition === null
+                      ? playerIdToOwner[o.playerId] === undefined
+                      : selectedWrapped().nflPlayers[o.playerId].position ===
+                        selectedPosition
+                  )
+                    ? "red"
+                    : undefined,
                   x,
                   y,
                   label: `${selectedWrapped().nflPlayers[o.playerId].name}: #${
@@ -148,9 +156,13 @@ export default function HistoricalAccuracy() {
   } as { [k: string]: {} };
   console.log(sources);
   const [source, updateSource] = useState(Object.keys(sources)[0]);
-  const positions = Object.keys(
-    groupByF(Object.values(selectedWrapped().nflPlayers), (p) => p.position)
-  );
+  const positions = (
+    Object.keys(
+      groupByF(Object.values(selectedWrapped().nflPlayers), (p) => p.position)
+    ) as (string | null)[]
+  )
+    .concat(null)
+    .reverse();
   const [selectedPosition, updateSelectedPosition] = useState(positions[0]);
   sources.composite = getComposite(sources);
   const data = getData(sources[source], selectedPosition, draft, top40);
@@ -174,13 +186,13 @@ export default function HistoricalAccuracy() {
       </div>
       <div>
         <select
-          defaultValue={selectedPosition}
+          defaultValue={selectedPosition === null ? "" : selectedPosition}
           onChange={(event) =>
             updateSelectedPosition((event.target as HTMLSelectElement).value)
           }
         >
           {positions.map((s) => (
-            <option key={s} value={s}>
+            <option key={s} value={s === null ? "" : s}>
               {s}
             </option>
           ))}
