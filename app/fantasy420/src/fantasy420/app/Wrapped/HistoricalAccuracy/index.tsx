@@ -150,7 +150,11 @@ export default function HistoricalAccuracy() {
         player.pickIndex,
       ])
   );
-  const scorers = mapDict(selectedWrapped().nflPlayers, (p) => p.total);
+  const scorers = mapDict(
+    selectedWrapped().nflPlayers,
+    (p) => p.total,
+    (p) => p.total >= 20
+  );
   const sources = {
     draft,
     scorers,
