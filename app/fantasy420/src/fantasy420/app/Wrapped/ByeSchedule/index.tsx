@@ -1,11 +1,7 @@
 import { Helpers, selectedWrapped } from "..";
 
 export default function ByeSchedule() {
-  var value = Math.max(
-    ...Object.values(selectedWrapped().nflPlayers).map(
-      (p) => p.ownership.auctionValueAverage
-    )
-  );
+  var value = Math.max(...Object.values(selectedWrapped().fantasyCalc.players));
   const auctionValues = Object.fromEntries(
     Object.values(selectedWrapped().ffTeams)
       .flatMap((team) => team.draft)
@@ -13,9 +9,7 @@ export default function ByeSchedule() {
       .map(({ playerId }) => selectedWrapped().nflPlayers[playerId])
       .map((player) => {
         if (player.position !== "QB") {
-          value =
-            selectedWrapped().nflPlayers[player.id].ownership
-              .auctionValueAverage;
+          value = selectedWrapped().fantasyCalc.players[player.id];
         }
         return [player.id, value];
       })
