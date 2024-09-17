@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { groupByF, Position, selectedWrapped } from "..";
+import { groupByF, mapDict, Position, selectedWrapped } from "..";
 import { DraftJsonType, PlayersType, selectedDraft } from "../../Draft";
 import Chart, { ChartDataType } from "./Chart";
 import distanceCorrelation from "./correlation";
@@ -150,8 +150,10 @@ export default function HistoricalAccuracy() {
         player.pickIndex,
       ])
   );
+  const scorers = mapDict(selectedWrapped().nflPlayers, (p) => p.total);
   const sources = {
     draft,
+    scorers,
     ...(selectedDraft() || {}),
   } as { [k: string]: {} };
   console.log(sources);
@@ -193,7 +195,7 @@ export default function HistoricalAccuracy() {
         >
           {positions.map((s) => (
             <option key={s} value={s === null ? "" : s}>
-              {s}
+              {s === null ? "<undrafted>" : s}
             </option>
           ))}
         </select>
