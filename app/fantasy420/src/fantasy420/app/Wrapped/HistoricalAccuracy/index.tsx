@@ -53,7 +53,7 @@ function getComposite(sources: DraftJsonType): PlayersType {
 
 function getData(
   players: PlayersType,
-  selectedPosition: string | null,
+  selectedPosition: string,
   draft: PlayersType,
   top40: boolean
 ): DataType {
@@ -68,11 +68,6 @@ function getData(
     byPosition[position][playerId] = value;
     byPosition.all[playerId] = value;
   });
-  const playerIdToOwner = Object.fromEntries(
-    Object.values(selectedWrapped().ffTeams).flatMap((t) =>
-      t.draft.map((p) => [p.playerId, t.id])
-    )
-  );
   const data = Object.fromEntries(
     Object.entries(byPosition).map(([position, players]) => [
       position,
@@ -111,14 +106,11 @@ function getData(
                 .sort((a, b) => a.x - b.x)
                 .map((p) => ({ ...p, x: parseFloat(p.x.toFixed(2)) }))
                 .map(({ x, y, ...o }, i) => ({
-                  fill: (
-                    selectedPosition === null
-                      ? playerIdToOwner[o.playerId] === undefined
-                      : selectedWrapped().nflPlayers[o.playerId].position ===
-                        selectedPosition
-                  )
-                    ? "red"
-                    : undefined,
+                  fill:
+                    selectedWrapped().nflPlayers[o.playerId].position ===
+                    selectedPosition
+                      ? "red"
+                      : undefined,
                   x,
                   y,
                   label: `${selectedWrapped().nflPlayers[o.playerId].name}: #${
@@ -147,28 +139,31 @@ export default function HistoricalAccuracy() {
       .flatMap((team) => team.draft)
       .map((player) => [
         selectedWrapped().nflPlayers[player.playerId].id,
-        player.pickIndex,
+        player.pickIndex + 1,
       ])
   );
-  const scorers = mapDict(
+  const playerIdToOwner = Object.fromEntries(
+    Object.values(selectedWrapped().ffTeams).flatMap((t) =>
+      t.draft.map((p) => [p.playerId, t.id])
+    )
+  );
+  const undrafted = mapDict(
     selectedWrapped().nflPlayers,
-    (p) => p.total,
-    (p) => p.total >= 20
+    (p) => Math.pow(p.total, 0.5),
+    (p) =>
+      playerIdToOwner[p.id] === undefined &&
+      Object.values(p.scores).filter((s) => s! >= 12).length >= 3
   );
   const sources = {
     draft,
-    scorers,
+    undrafted,
     ...(selectedDraft() || {}),
   } as { [k: string]: {} };
   console.log(sources);
   const [source, updateSource] = useState(Object.keys(sources)[0]);
-  const positions = (
-    Object.keys(
-      groupByF(Object.values(selectedWrapped().nflPlayers), (p) => p.position)
-    ) as (string | null)[]
-  )
-    .concat(null)
-    .reverse();
+  const positions = Object.keys(
+    groupByF(Object.values(selectedWrapped().nflPlayers), (p) => p.position)
+  );
   const [selectedPosition, updateSelectedPosition] = useState(positions[0]);
   sources.composite = getComposite(sources);
   const data = getData(sources[source], selectedPosition, draft, top40);
@@ -192,14 +187,14 @@ export default function HistoricalAccuracy() {
       </div>
       <div>
         <select
-          defaultValue={selectedPosition === null ? "" : selectedPosition}
+          defaultValue={selectedPosition}
           onChange={(event) =>
             updateSelectedPosition((event.target as HTMLSelectElement).value)
           }
         >
           {positions.map((s) => (
-            <option key={s} value={s === null ? "" : s}>
-              {s === null ? "<undrafted>" : s}
+            <option key={s} value={s}>
+              {s}
             </option>
           ))}
         </select>
