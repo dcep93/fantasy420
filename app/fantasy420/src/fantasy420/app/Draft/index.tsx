@@ -394,24 +394,24 @@ function SubDraft(props: {
   );
 }
 
-function getScore(
-  source: string,
-  playerId: string,
-  idToRankBySource: IdToRankBySource
-): number | null {
-  const value = idToRankBySource[source][playerId].rank;
-  const average = source.startsWith("espn")
-    ? Object.entries(idToRankBySource)
-        .map(([s, ranks]) => ({ s, rank: ranks[playerId]?.rank }))
-        .find(({ s, rank }) => !s.startsWith("espn") && rank !== undefined)
-        ?.rank
-    : idToRankBySource.espnpick[playerId]?.rank ||
-      Object.keys(idToRankBySource.espnpick).length;
-  if (average === undefined) {
-    return null;
-  }
-  return (100 * (value - average)) / (1 + value + average);
-}
+// function getScore(
+//   source: string,
+//   playerId: string,
+//   idToRankBySource: IdToRankBySource
+// ): number | null {
+//   const value = idToRankBySource[source][playerId].rank;
+//   const average = source.startsWith("espn")
+//     ? Object.entries(idToRankBySource)
+//         .map(([s, ranks]) => ({ s, rank: ranks[playerId]?.rank }))
+//         .find(({ s, rank }) => !s.startsWith("espn") && rank !== undefined)
+//         ?.rank
+//     : idToRankBySource.espnpick[playerId]?.rank ||
+//       Object.keys(idToRankBySource.espnpick).length;
+//   if (average === undefined) {
+//     return null;
+//   }
+//   return (100 * (value - average)) / (1 + value + average);
+// }
 
 function getResults(idToRankBySource: IdToRankBySource): DraftJsonType {
   return Object.fromEntries(
