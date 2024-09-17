@@ -264,7 +264,7 @@ function SubDraft(props: {
               espn
             </a>
           </div>
-          <input readOnly value={JSON.stringify(getEspnLiveDraft())} />
+          {/* <input readOnly value={JSON.stringify(getEspnLiveDraft())} /> */}
         </div>
         <div>
           <div>updateDraftRanking</div>
@@ -452,25 +452,25 @@ function getResults(idToRankBySource: IdToRankBySource): DraftJsonType {
           })),
         ])
       ),
-      __: [],
-      ...Object.fromEntries(
-        Object.keys(selectedDraft())
-          .filter(
-            (source) => source === "" || source.replaceAll("_", "").length !== 0
-          )
-          .map((source) => [
-            source === "" ? "" : `${source}[score]`,
-            Object.values(selectedWrapped().nflPlayers)
-              .map((p) => ({ ...p, value: selectedDraft()[source][p.id] }))
-              .filter(({ value }) => value !== undefined)
-              .filter((p) => p.ownership.auctionValueAverage > 0.05)
-              .map((p) => ({
-                ...p,
-                value: getScore(source, p.id, idToRankBySource),
-              }))
-              .filter(({ value }) => value !== null),
-          ])
-      ),
+      // __: [],
+      // ...Object.fromEntries(
+      //   Object.keys(selectedDraft())
+      //     .filter(
+      //       (source) => source === "" || source.replaceAll("_", "").length !== 0
+      //     )
+      //     .map((source) => [
+      //       source === "" ? "" : `${source}[score]`,
+      //       Object.values(selectedWrapped().nflPlayers)
+      //         .map((p) => ({ ...p, value: selectedDraft()[source][p.id] }))
+      //         .filter(({ value }) => value !== undefined)
+      //         .filter((p) => p.ownership.auctionValueAverage > 0.05)
+      //         .map((p) => ({
+      //           ...p,
+      //           value: getScore(source, p.id, idToRankBySource),
+      //         }))
+      //         .filter(({ value }) => value !== null),
+      //     ])
+      // ),
     }).map(([sourceName, players]) => [
       sourceName,
       Object.fromEntries(
@@ -681,26 +681,26 @@ function fantasyplaybook() {
   );
 }
 
-function getEspnLiveDraft() {
-  return {
-    espnpick: Object.fromEntries(
-      Object.values(selectedWrapped().nflPlayers)
-        .sort(
-          (a, b) =>
-            a.ownership.averageDraftPosition - b.ownership.averageDraftPosition
-        )
-        .map((p) => [p.name, p.ownership.averageDraftPosition])
-    ),
-    espnauction: Object.fromEntries(
-      Object.values(selectedWrapped().nflPlayers)
-        .sort(
-          (a, b) =>
-            b.ownership.auctionValueAverage - a.ownership.auctionValueAverage
-        )
-        .map((p) => [p.name, -p.ownership.auctionValueAverage])
-    ),
-  };
-}
+// function getEspnLiveDraft() {
+//   return {
+//     espnpick: Object.fromEntries(
+//       Object.values(selectedWrapped().nflPlayers)
+//         .sort(
+//           (a, b) =>
+//             a.ownership.averageDraftPosition - b.ownership.averageDraftPosition
+//         )
+//         .map((p) => [p.name, p.ownership.averageDraftPosition])
+//     ),
+//     espnauction: Object.fromEntries(
+//       Object.values(selectedWrapped().nflPlayers)
+//         .sort(
+//           (a, b) =>
+//             b.ownership.auctionValueAverage - a.ownership.auctionValueAverage
+//         )
+//         .map((p) => [p.name, -p.ownership.auctionValueAverage])
+//     ),
+//   };
+// }
 
 function updateDraftRanking(
   teamId: number,
