@@ -7,7 +7,7 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 }
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 }
     },
     "8439": {
       "id": "8439",
@@ -24,9 +24,9 @@
       "nflTeamId": "10",
       "name": "Nick Folk",
       "position": "K",
-      "total": 12,
-      "average": 6,
-      "scores": { "0": 12, "1": 6, "2": 6 },
+      "total": 14,
+      "average": 4.666666666666667,
+      "scores": { "0": 14, "1": 6, "2": 6, "3": 2 },
       "injuryStatus": "ACTIVE"
     },
     "11122": {
@@ -34,9 +34,9 @@
       "nflTeamId": "22",
       "name": "Matt Prater",
       "position": "K",
-      "total": 22,
-      "average": 11,
-      "scores": { "0": 22, "1": 8, "2": 14 },
+      "total": 31,
+      "average": 10.333333333333334,
+      "scores": { "0": 31, "1": 8, "2": 14, "3": 9 },
       "injuryStatus": "ACTIVE"
     },
     "11252": {
@@ -46,7 +46,7 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "12460": {
@@ -56,7 +56,7 @@
       "position": "K",
       "total": 8,
       "average": 4,
-      "scores": { "0": 8, "1": 8, "2": 0 },
+      "scores": { "0": 8, "1": 8, "2": 0, "3": 0 },
       "injuryStatus": "INJURY_RESERVE"
     },
     "12483": {
@@ -64,9 +64,9 @@
       "nflTeamId": "14",
       "name": "Matthew Stafford",
       "position": "QB",
-      "total": 21.32,
-      "average": 10.66,
-      "scores": { "0": 21.32, "1": 14.68, "2": 6.64 },
+      "total": 34.16,
+      "average": 11.386666666666665,
+      "scores": { "0": 34.16, "1": 14.68, "2": 6.64, "3": 12.84 },
       "injuryStatus": "ACTIVE"
     },
     "14012": {
@@ -74,9 +74,9 @@
       "nflTeamId": "29",
       "name": "Andy Dalton",
       "position": "QB",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "total": 24.560000000000002,
+      "average": 12.280000000000001,
+      "scores": { "0": 24.56, "1": 0, "2": 0, "3": 24.56 },
       "injuryStatus": "ACTIVE"
     },
     "14163": {
@@ -94,9 +94,9 @@
       "nflTeamId": "1",
       "name": "Kirk Cousins",
       "position": "QB",
-      "total": 23.740000000000002,
-      "average": 11.870000000000001,
-      "scores": { "0": 23.74, "1": 6.2, "2": 17.54 },
+      "total": 34.84,
+      "average": 11.613333333333335,
+      "scores": { "0": 34.84, "1": 6.2, "2": 17.54, "3": 11.1 },
       "injuryStatus": "ACTIVE"
     },
     "14881": {
@@ -106,8 +106,8 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
-      "injuryStatus": "QUESTIONABLE"
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
+      "injuryStatus": "OUT"
     },
     "14993": {
       "id": "14993",
@@ -124,9 +124,9 @@
       "nflTeamId": "33",
       "name": "Justin Tucker",
       "position": "K",
-      "total": 19,
-      "average": 9.5,
-      "scores": { "0": 19, "1": 7, "2": 12 },
+      "total": 22,
+      "average": 7.333333333333333,
+      "scores": { "0": 22, "1": 7, "2": 12, "3": 3 },
       "injuryStatus": "ACTIVE"
     },
     "15795": {
@@ -134,9 +134,9 @@
       "nflTeamId": "10",
       "name": "DeAndre Hopkins",
       "position": "WR",
-      "total": 3.7,
-      "average": 1.85,
-      "scores": { "0": 3.7, "1": 1.8, "2": 1.9 },
+      "total": 23,
+      "average": 7.666666666666667,
+      "scores": { "0": 23, "1": 1.8, "2": 1.9, "3": 19.3 },
       "injuryStatus": "ACTIVE"
     },
     "15807": {
@@ -144,9 +144,9 @@
       "nflTeamId": "23",
       "name": "Cordarrelle Patterson",
       "position": "RB",
-      "total": 1.6,
-      "average": 0.8,
-      "scores": { "0": 1.6, "1": 1.3, "2": 0.3 },
+      "total": 9.4,
+      "average": 3.1333333333333333,
+      "scores": { "0": 9.4, "1": 1.3, "2": 0.3, "3": 7.8 },
       "injuryStatus": "ACTIVE"
     },
     "15818": {
@@ -156,7 +156,7 @@
       "position": "WR",
       "total": 6.9,
       "average": 6.9,
-      "scores": { "0": 6.9, "1": 6.9, "2": 0 },
+      "scores": { "0": 6.9, "1": 6.9, "2": 0, "3": 0 },
       "injuryStatus": "OUT"
     },
     "15835": {
@@ -174,9 +174,9 @@
       "nflTeamId": "12",
       "name": "Travis Kelce",
       "position": "TE",
-      "total": 8,
-      "average": 4,
-      "scores": { "0": 8, "1": 6.4, "2": 1.6 },
+      "total": 15,
+      "average": 5,
+      "scores": { "0": 15, "1": 6.4, "2": 1.6, "3": 7 },
       "injuryStatus": "ACTIVE"
     },
     "15864": {
@@ -184,9 +184,19 @@
       "nflTeamId": "26",
       "name": "Geno Smith",
       "position": "QB",
-      "total": 35.72,
-      "average": 17.86,
-      "scores": { "0": 35.72, "1": 17.84, "2": 17.88 },
+      "total": 47.08,
+      "average": 15.693333333333333,
+      "scores": { "0": 47.08, "1": 17.84, "2": 17.88, "3": 11.36 },
+      "injuryStatus": "ACTIVE"
+    },
+    "15880": {
+      "id": "15880",
+      "nflTeamId": "34",
+      "name": "Robert Woods",
+      "position": "WR",
+      "total": 3.8,
+      "average": 1.2666666666666666,
+      "scores": { "0": 3.8, "1": 0, "2": 0, "3": 3.8 },
       "injuryStatus": "ACTIVE"
     },
     "15965": {
@@ -195,8 +205,8 @@
       "name": "Dustin Hopkins",
       "position": "K",
       "total": 20,
-      "average": 10,
-      "scores": { "0": 20, "1": 7, "2": 13 },
+      "average": 6.666666666666667,
+      "scores": { "0": 20, "1": 7, "2": 13, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "16002": {
@@ -204,9 +214,9 @@
       "nflTeamId": "25",
       "name": "Kyle Juszczyk",
       "position": "RB",
-      "total": 10.9,
-      "average": 5.45,
-      "scores": { "0": 10.9, "1": 6, "2": 4.9 },
+      "total": 12.5,
+      "average": 4.166666666666667,
+      "scores": { "0": 12.5, "1": 6, "2": 4.9, "3": 1.6 },
       "injuryStatus": "ACTIVE"
     },
     "16460": {
@@ -214,19 +224,19 @@
       "nflTeamId": "29",
       "name": "Adam Thielen",
       "position": "WR",
-      "total": 11.9,
-      "average": 5.95,
-      "scores": { "0": 11.9, "1": 7.9, "2": 4 },
-      "injuryStatus": "ACTIVE"
+      "total": 24.9,
+      "average": 8.299999999999999,
+      "scores": { "0": 24.9, "1": 7.9, "2": 4, "3": 13 },
+      "injuryStatus": "QUESTIONABLE"
     },
     "16731": {
       "id": "16731",
       "nflTeamId": "6",
       "name": "Brandin Cooks",
       "position": "WR",
-      "total": 18.1,
-      "average": 9.05,
-      "scores": { "0": 18.1, "1": 14.5, "2": 3.6 },
+      "total": 21.7,
+      "average": 7.233333333333333,
+      "scores": { "0": 21.7, "1": 14.5, "2": 3.6, "3": 3.6 },
       "injuryStatus": "ACTIVE"
     },
     "16733": {
@@ -236,7 +246,7 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "OUT"
     },
     "16737": {
@@ -244,9 +254,9 @@
       "nflTeamId": "27",
       "name": "Mike Evans",
       "position": "WR",
-      "total": 30.3,
-      "average": 15.15,
-      "scores": { "0": 30.3, "1": 23.1, "2": 7.2 },
+      "total": 34,
+      "average": 11.333333333333334,
+      "scores": { "0": 34, "1": 23.1, "2": 7.2, "3": 3.7 },
       "injuryStatus": "ACTIVE"
     },
     "16757": {
@@ -254,9 +264,9 @@
       "nflTeamId": "18",
       "name": "Derek Carr",
       "position": "QB",
-      "total": 43.12,
-      "average": 21.56,
-      "scores": { "0": 43.12, "1": 21.3, "2": 21.82 },
+      "total": 51.1,
+      "average": 17.033333333333335,
+      "scores": { "0": 51.1, "1": 21.3, "2": 21.82, "3": 7.98 },
       "injuryStatus": "ACTIVE"
     },
     "16760": {
@@ -266,7 +276,7 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "16800": {
@@ -274,9 +284,9 @@
       "nflTeamId": "13",
       "name": "Davante Adams",
       "position": "WR",
-      "total": 36.900000000000006,
-      "average": 18.450000000000003,
-      "scores": { "0": 36.9, "1": 10.9, "2": 26 },
+      "total": 44.900000000000006,
+      "average": 14.966666666666669,
+      "scores": { "0": 44.9, "1": 10.9, "2": 26, "3": 8 },
       "injuryStatus": "ACTIVE"
     },
     "17372": {
@@ -284,9 +294,9 @@
       "nflTeamId": "23",
       "name": "Chris Boswell",
       "position": "K",
-      "total": 35,
-      "average": 17.5,
-      "scores": { "0": 35, "1": 26, "2": 9 },
+      "total": 42,
+      "average": 14,
+      "scores": { "0": 42, "1": 26, "2": 9, "3": 7 },
       "injuryStatus": "ACTIVE"
     },
     "17427": {
@@ -294,9 +304,9 @@
       "nflTeamId": "3",
       "name": "Cairo Santos",
       "position": "K",
-      "total": 24,
-      "average": 12,
-      "scores": { "0": 24, "1": 13, "2": 11 },
+      "total": 29,
+      "average": 9.666666666666666,
+      "scores": { "0": 29, "1": 13, "2": 11, "3": 5 },
       "injuryStatus": "ACTIVE"
     },
     "2310331": {
@@ -304,9 +314,9 @@
       "nflTeamId": "14",
       "name": "Tyler Johnson",
       "position": "WR",
-      "total": 16.9,
-      "average": 8.45,
-      "scores": { "0": 16.9, "1": 12.9, "2": 4 },
+      "total": 21.9,
+      "average": 7.3,
+      "scores": { "0": 21.9, "1": 12.9, "2": 4, "3": 5 },
       "injuryStatus": "ACTIVE"
     },
     "2468609": {
@@ -316,17 +326,17 @@
       "position": "TE",
       "total": 7.500000000000001,
       "average": 3.7500000000000004,
-      "scores": { "0": 7.5, "1": 4.6, "2": 2.9 },
-      "injuryStatus": "QUESTIONABLE"
+      "scores": { "0": 7.5, "1": 4.6, "2": 2.9, "3": 0 },
+      "injuryStatus": "OUT"
     },
     "2473037": {
       "id": "2473037",
       "nflTeamId": "26",
       "name": "Jason Myers",
       "position": "K",
-      "total": 22,
-      "average": 11,
-      "scores": { "0": 22, "1": 10, "2": 12 },
+      "total": 29,
+      "average": 9.666666666666666,
+      "scores": { "0": 29, "1": 10, "2": 12, "3": 7 },
       "injuryStatus": "ACTIVE"
     },
     "2508256": {
@@ -336,7 +346,7 @@
       "position": "TE",
       "total": 1.9,
       "average": 0.95,
-      "scores": { "0": 1.9, "1": 1.9, "2": 0 },
+      "scores": { "0": 1.9, "1": 1.9, "2": 0, "3": 0 },
       "injuryStatus": "OUT"
     },
     "2515270": {
@@ -345,8 +355,18 @@
       "name": "Michael Burton",
       "position": "RB",
       "total": 2.4,
-      "average": 1.2,
-      "scores": { "0": 2.4, "1": 1.3, "2": 1.1 },
+      "average": 0.7999999999999999,
+      "scores": { "0": 2.4, "1": 1.3, "2": 1.1, "3": 0 },
+      "injuryStatus": "ACTIVE"
+    },
+    "2565969": {
+      "id": "2565969",
+      "nflTeamId": "24",
+      "name": "Taylor Heinicke",
+      "position": "QB",
+      "total": 0.96,
+      "average": 0.96,
+      "scores": { "0": 0.96, "1": 0, "2": 0, "3": 0.96 },
       "injuryStatus": "ACTIVE"
     },
     "2573079": {
@@ -356,7 +376,7 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "2573401": {
@@ -366,7 +386,7 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "OUT"
     },
     "2574511": {
@@ -376,7 +396,7 @@
       "position": "QB",
       "total": -0.1,
       "average": -0.1,
-      "scores": { "0": -0.1, "1": -0.1, "2": 0 },
+      "scores": { "0": -0.1, "1": -0.1, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "2574808": {
@@ -394,9 +414,9 @@
       "nflTeamId": "13",
       "name": "Ameer Abdullah",
       "position": "RB",
-      "total": 2.2,
-      "average": 1.1,
-      "scores": { "0": 2.2, "1": 0, "2": 2.2 },
+      "total": 5.5,
+      "average": 1.8333333333333333,
+      "scores": { "0": 5.5, "1": 0, "2": 2.2, "3": 3.3 },
       "injuryStatus": "ACTIVE"
     },
     "2576399": {
@@ -404,9 +424,9 @@
       "nflTeamId": "10",
       "name": "Nick Vannett",
       "position": "TE",
-      "total": 3.1,
-      "average": 1.55,
-      "scores": { "0": 3.1, "1": 3.1, "2": 0 },
+      "total": 12,
+      "average": 4,
+      "scores": { "0": 12, "1": 3.1, "2": 0, "3": 8.9 },
       "injuryStatus": "ACTIVE"
     },
     "2576414": {
@@ -416,8 +436,8 @@
       "position": "RB",
       "total": 3.9,
       "average": 3.9,
-      "scores": { "0": 3.9, "1": 3.9, "2": 0 },
-      "injuryStatus": "DOUBTFUL"
+      "scores": { "0": 3.9, "1": 3.9, "2": 0, "3": 0 },
+      "injuryStatus": "OUT"
     },
     "2576716": {
       "id": "2576716",
@@ -436,7 +456,7 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "2577327": {
@@ -444,9 +464,9 @@
       "nflTeamId": "26",
       "name": "Tyler Lockett",
       "position": "WR",
-      "total": 17.200000000000003,
-      "average": 8.600000000000001,
-      "scores": { "0": 17.2, "1": 13.7, "2": 3.5 },
+      "total": 26.8,
+      "average": 8.933333333333334,
+      "scores": { "0": 26.8, "1": 13.7, "2": 3.5, "3": 9.6 },
       "injuryStatus": "ACTIVE"
     },
     "2577417": {
@@ -454,9 +474,9 @@
       "nflTeamId": "6",
       "name": "Dak Prescott",
       "position": "QB",
-      "total": 24.38,
-      "average": 12.19,
-      "scores": { "0": 24.38, "1": 11.46, "2": 12.92 },
+      "total": 54.239999999999995,
+      "average": 18.08,
+      "scores": { "0": 54.24, "1": 11.46, "2": 12.92, "3": 29.86 },
       "injuryStatus": "ACTIVE"
     },
     "2578533": {
@@ -465,8 +485,8 @@
       "name": "Chris Conley",
       "position": "WR",
       "total": 1.4,
-      "average": 0.7,
-      "scores": { "0": 1.4, "1": 0, "2": 1.4 },
+      "average": 0.4666666666666666,
+      "scores": { "0": 1.4, "1": 0, "2": 1.4, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "2578570": {
@@ -484,9 +504,9 @@
       "nflTeamId": "3",
       "name": "DeAndre Carter",
       "position": "WR",
-      "total": 7.800000000000001,
-      "average": 3.9000000000000004,
-      "scores": { "0": 7.8, "1": 1.6, "2": 6.2 },
+      "total": 13,
+      "average": 4.333333333333333,
+      "scores": { "0": 13, "1": 1.6, "2": 6.2, "3": 5.2 },
       "injuryStatus": "ACTIVE"
     },
     "2969939": {
@@ -494,9 +514,19 @@
       "nflTeamId": "5",
       "name": "Jameis Winston",
       "position": "QB",
-      "total": 0.4,
-      "average": 0.4,
-      "scores": { "0": 0.4, "1": 0, "2": 0.4 },
+      "total": 0.5,
+      "average": 0.25,
+      "scores": { "0": 0.5, "1": 0, "2": 0.4, "3": 0.1 },
+      "injuryStatus": "ACTIVE"
+    },
+    "2971281": {
+      "id": "2971281",
+      "nflTeamId": "26",
+      "name": "Pharaoh Brown",
+      "position": "TE",
+      "total": 1.9,
+      "average": 1.9,
+      "scores": { "0": 1.9, "1": 0, "2": 0, "3": 1.9 },
       "injuryStatus": "ACTIVE"
     },
     "2971573": {
@@ -505,8 +535,8 @@
       "name": "Ka'imi Fairbairn",
       "position": "K",
       "total": 37,
-      "average": 18.5,
-      "scores": { "0": 37, "1": 17, "2": 20 },
+      "average": 12.333333333333334,
+      "scores": { "0": 37, "1": 17, "2": 20, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "2971618": {
@@ -514,9 +544,9 @@
       "nflTeamId": "33",
       "name": "Nelson Agholor",
       "position": "WR",
-      "total": 3.9000000000000004,
-      "average": 1.9500000000000002,
-      "scores": { "0": 3.9, "1": 1.6, "2": 2.3 },
+      "total": 10.5,
+      "average": 3.5,
+      "scores": { "0": 10.5, "1": 1.6, "2": 2.3, "3": 6.6 },
       "injuryStatus": "ACTIVE"
     },
     "2972515": {
@@ -526,7 +556,7 @@
       "position": "QB",
       "total": 0.13999999999999999,
       "average": 0.06999999999999999,
-      "scores": { "0": 0.14, "1": -0.1, "2": 0.24 },
+      "scores": { "0": 0.14, "1": -0.1, "2": 0.24, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "2973405": {
@@ -535,8 +565,8 @@
       "name": "Kalif Raymond",
       "position": "WR",
       "total": 6.9,
-      "average": 3.45,
-      "scores": { "0": 6.9, "1": 1.2, "2": 5.7 },
+      "average": 2.3000000000000003,
+      "scores": { "0": 6.9, "1": 1.2, "2": 5.7, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "2975863": {
@@ -544,9 +574,9 @@
       "nflTeamId": "25",
       "name": "Eric Saubert",
       "position": "TE",
-      "total": 4.6,
-      "average": 2.3,
-      "scores": { "0": 4.6, "1": 0, "2": 4.6 },
+      "total": 10.7,
+      "average": 3.5666666666666664,
+      "scores": { "0": 10.7, "1": 0, "2": 4.6, "3": 6.1 },
       "injuryStatus": "ACTIVE"
     },
     "2976212": {
@@ -554,9 +584,9 @@
       "nflTeamId": "34",
       "name": "Stefon Diggs",
       "position": "WR",
-      "total": 29.6,
-      "average": 14.8,
-      "scores": { "0": 29.6, "1": 21.9, "2": 7.7 },
+      "total": 49.52000000000001,
+      "average": 16.50666666666667,
+      "scores": { "0": 49.52, "1": 21.9, "2": 7.7, "3": 19.92 },
       "injuryStatus": "ACTIVE"
     },
     "2976316": {
@@ -574,10 +604,10 @@
       "nflTeamId": "5",
       "name": "Amari Cooper",
       "position": "WR",
-      "total": 7.7,
-      "average": 3.85,
-      "scores": { "0": 7.7, "1": 3.6, "2": 4.1 },
-      "injuryStatus": "ACTIVE"
+      "total": 35.3,
+      "average": 11.766666666666666,
+      "scores": { "0": 35.3, "1": 3.6, "2": 4.1, "3": 27.6 },
+      "injuryStatus": "QUESTIONABLE"
     },
     "2977187": {
       "id": "2977187",
@@ -586,7 +616,7 @@
       "position": "WR",
       "total": 39.7,
       "average": 19.85,
-      "scores": { "0": 39.7, "1": 32, "2": 7.7 },
+      "scores": { "0": 39.7, "1": 32, "2": 7.7, "3": 0 },
       "injuryStatus": "OUT"
     },
     "2980453": {
@@ -594,9 +624,9 @@
       "nflTeamId": "18",
       "name": "Jamaal Williams",
       "position": "RB",
-      "total": 16,
-      "average": 8,
-      "scores": { "0": 16, "1": 12.1, "2": 3.9 },
+      "total": 16.900000000000002,
+      "average": 5.633333333333334,
+      "scores": { "0": 16.9, "1": 12.1, "2": 3.9, "3": 0.9 },
       "injuryStatus": "ACTIVE"
     },
     "2983509": {
@@ -604,9 +634,9 @@
       "nflTeamId": "34",
       "name": "Dare Ogunbowale",
       "position": "RB",
-      "total": 5.6,
-      "average": 2.8,
-      "scores": { "0": 5.6, "1": 1.3, "2": 4.3 },
+      "total": 10.4,
+      "average": 3.466666666666667,
+      "scores": { "0": 10.4, "1": 1.3, "2": 4.3, "3": 4.8 },
       "injuryStatus": "ACTIVE"
     },
     "2985659": {
@@ -614,9 +644,9 @@
       "nflTeamId": "7",
       "name": "Wil Lutz",
       "position": "K",
-      "total": 17,
-      "average": 8.5,
-      "scores": { "0": 17, "1": 11, "2": 6 },
+      "total": 33,
+      "average": 11,
+      "scores": { "0": 33, "1": 11, "2": 6, "3": 16 },
       "injuryStatus": "ACTIVE"
     },
     "2991662": {
@@ -635,8 +665,8 @@
       "name": "Mo Alie-Cox",
       "position": "TE",
       "total": 3.2,
-      "average": 1.6,
-      "scores": { "0": 3.2, "1": 0, "2": 3.2 },
+      "average": 1.0666666666666667,
+      "scores": { "0": 3.2, "1": 0, "2": 3.2, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "3039707": {
@@ -656,17 +686,17 @@
       "position": "TE",
       "total": 28.6,
       "average": 14.3,
-      "scores": { "0": 28.6, "1": 8, "2": 20.6 },
-      "injuryStatus": "DOUBTFUL"
+      "scores": { "0": 28.6, "1": 8, "2": 20.6, "3": 0 },
+      "injuryStatus": "OUT"
     },
     "3042519": {
       "id": "3042519",
       "nflTeamId": "16",
       "name": "Aaron Jones",
       "position": "RB",
-      "total": 28.700000000000003,
-      "average": 14.350000000000001,
-      "scores": { "0": 28.7, "1": 18.9, "2": 9.8 },
+      "total": 54.5,
+      "average": 18.166666666666668,
+      "scores": { "0": 54.5, "1": 18.9, "2": 9.8, "3": 25.8 },
       "injuryStatus": "ACTIVE"
     },
     "3043078": {
@@ -674,9 +704,9 @@
       "nflTeamId": "33",
       "name": "Derrick Henry",
       "position": "RB",
-      "total": 27.2,
-      "average": 13.6,
-      "scores": { "0": 27.2, "1": 10.6, "2": 16.6 },
+      "total": 57.6,
+      "average": 19.2,
+      "scores": { "0": 57.6, "1": 10.6, "2": 16.6, "3": 30.4 },
       "injuryStatus": "ACTIVE"
     },
     "3043116": {
@@ -684,9 +714,9 @@
       "nflTeamId": "14",
       "name": "Demarcus Robinson",
       "position": "WR",
-      "total": 15.200000000000001,
-      "average": 7.6000000000000005,
-      "scores": { "0": 15.2, "1": 8.2, "2": 7 },
+      "total": 19.4,
+      "average": 6.466666666666666,
+      "scores": { "0": 19.4, "1": 8.2, "2": 7, "3": 4.2 },
       "injuryStatus": "ACTIVE"
     },
     "3043275": {
@@ -706,8 +736,8 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
-      "injuryStatus": "ACTIVE"
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
+      "injuryStatus": "OUT"
     },
     "3045138": {
       "id": "3045138",
@@ -724,9 +754,9 @@
       "nflTeamId": "10",
       "name": "Tyler Boyd",
       "position": "WR",
-      "total": 9.4,
-      "average": 4.7,
-      "scores": { "0": 9.4, "1": 4.8, "2": 4.6 },
+      "total": 15.7,
+      "average": 5.233333333333333,
+      "scores": { "0": 15.7, "1": 4.8, "2": 4.6, "3": 6.3 },
       "injuryStatus": "ACTIVE"
     },
     "3045147": {
@@ -734,9 +764,19 @@
       "nflTeamId": "22",
       "name": "James Conner",
       "position": "RB",
-      "total": 38.7,
-      "average": 19.35,
-      "scores": { "0": 38.7, "1": 19.3, "2": 19.4 },
+      "total": 42.2,
+      "average": 14.066666666666668,
+      "scores": { "0": 42.2, "1": 19.3, "2": 19.4, "3": 3.5 },
+      "injuryStatus": "ACTIVE"
+    },
+    "3045169": {
+      "id": "3045169",
+      "nflTeamId": "15",
+      "name": "Tim Boyle",
+      "position": "QB",
+      "total": 3.7600000000000002,
+      "average": 3.7600000000000002,
+      "scores": { "0": 3.76, "3": 3.76 },
       "injuryStatus": "ACTIVE"
     },
     "3045523": {
@@ -764,9 +804,9 @@
       "nflTeamId": "8",
       "name": "Jared Goff",
       "position": "QB",
-      "total": 20.16,
-      "average": 10.08,
-      "scores": { "0": 20.16, "1": 11.38, "2": 8.78 },
+      "total": 34.72,
+      "average": 11.573333333333332,
+      "scores": { "0": 34.72, "1": 11.38, "2": 8.78, "3": 14.56 },
       "injuryStatus": "ACTIVE"
     },
     "3047876": {
@@ -776,7 +816,7 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "3049899": {
@@ -784,9 +824,9 @@
       "nflTeamId": "1",
       "name": "Younghoe Koo",
       "position": "K",
-      "total": 14,
+      "total": 21,
       "average": 7,
-      "scores": { "0": 14, "1": 4, "2": 10 },
+      "scores": { "0": 21, "1": 4, "2": 10, "3": 7 },
       "injuryStatus": "ACTIVE"
     },
     "3050478": {
@@ -795,8 +835,8 @@
       "name": "Jake Elliott",
       "position": "K",
       "total": 17,
-      "average": 8.5,
-      "scores": { "0": 17, "1": 10, "2": 7 },
+      "average": 5.666666666666667,
+      "scores": { "0": 17, "1": 10, "2": 7, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "3050481": {
@@ -814,9 +854,9 @@
       "nflTeamId": "6",
       "name": "Ezekiel Elliott",
       "position": "RB",
-      "total": 18.1,
-      "average": 9.05,
-      "scores": { "0": 18.1, "1": 12.9, "2": 5.2 },
+      "total": 20.3,
+      "average": 6.766666666666667,
+      "scores": { "0": 20.3, "1": 12.9, "2": 5.2, "3": 2.2 },
       "injuryStatus": "ACTIVE"
     },
     "3051738": {
@@ -844,9 +884,9 @@
       "nflTeamId": "13",
       "name": "Daniel Carlson",
       "position": "K",
-      "total": 21,
-      "average": 10.5,
-      "scores": { "0": 21, "1": 3, "2": 18 },
+      "total": 22,
+      "average": 7.333333333333333,
+      "scores": { "0": 22, "1": 3, "2": 18, "3": 1 },
       "injuryStatus": "ACTIVE"
     },
     "3051926": {
@@ -854,9 +894,9 @@
       "nflTeamId": "24",
       "name": "Gus Edwards",
       "position": "RB",
-      "total": 9.7,
-      "average": 4.85,
-      "scores": { "0": 9.7, "1": 3.8, "2": 5.9 },
+      "total": 10.6,
+      "average": 3.533333333333333,
+      "scores": { "0": 10.6, "1": 3.8, "2": 5.9, "3": 0.9 },
       "injuryStatus": "ACTIVE"
     },
     "3052096": {
@@ -864,9 +904,9 @@
       "nflTeamId": "16",
       "name": "Johnny Mundt",
       "position": "TE",
-      "total": 6.7,
-      "average": 3.35,
-      "scores": { "0": 6.7, "1": 3.5, "2": 3.2 },
+      "total": 13.9,
+      "average": 4.633333333333334,
+      "scores": { "0": 13.9, "1": 3.5, "2": 3.2, "3": 7.2 },
       "injuryStatus": "ACTIVE"
     },
     "3052587": {
@@ -874,9 +914,9 @@
       "nflTeamId": "27",
       "name": "Baker Mayfield",
       "position": "QB",
-      "total": 48.46,
-      "average": 24.23,
-      "scores": { "0": 48.46, "1": 29.66, "2": 18.8 },
+      "total": 56.980000000000004,
+      "average": 18.993333333333336,
+      "scores": { "0": 56.98, "1": 29.66, "2": 18.8, "3": 8.52 },
       "injuryStatus": "ACTIVE"
     },
     "3052897": {
@@ -884,9 +924,9 @@
       "nflTeamId": "15",
       "name": "Durham Smythe",
       "position": "TE",
-      "total": 1.8,
-      "average": 0.9,
-      "scores": { "0": 1.8, "1": 0, "2": 1.8 },
+      "total": 3.1,
+      "average": 1.0333333333333334,
+      "scores": { "0": 3.1, "1": 0, "2": 1.8, "3": 1.3 },
       "injuryStatus": "ACTIVE"
     },
     "3054212": {
@@ -894,9 +934,9 @@
       "nflTeamId": "15",
       "name": "Jonnu Smith",
       "position": "TE",
-      "total": 13,
-      "average": 6.5,
-      "scores": { "0": 13, "1": 1.7, "2": 11.3 },
+      "total": 16.8,
+      "average": 5.6000000000000005,
+      "scores": { "0": 16.8, "1": 1.7, "2": 11.3, "3": 3.8 },
       "injuryStatus": "ACTIVE"
     },
     "3054850": {
@@ -904,9 +944,9 @@
       "nflTeamId": "18",
       "name": "Alvin Kamara",
       "position": "RB",
-      "total": 66,
-      "average": 33,
-      "scores": { "0": 66, "1": 22, "2": 44 },
+      "total": 81.7,
+      "average": 27.233333333333334,
+      "scores": { "0": 81.7, "1": 22, "2": 44, "3": 15.7 },
       "injuryStatus": "ACTIVE"
     },
     "3055899": {
@@ -914,9 +954,9 @@
       "nflTeamId": "12",
       "name": "Harrison Butker",
       "position": "K",
-      "total": 19,
-      "average": 9.5,
-      "scores": { "0": 19, "1": 9, "2": 10 },
+      "total": 32,
+      "average": 10.666666666666666,
+      "scores": { "0": 32, "1": 9, "2": 10, "3": 13 },
       "injuryStatus": "ACTIVE"
     },
     "3059722": {
@@ -926,7 +966,7 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "SUSPENSION"
     },
     "3059915": {
@@ -954,9 +994,9 @@
       "nflTeamId": "16",
       "name": "Brandon Powell",
       "position": "WR",
-      "total": 3.6,
-      "average": 1.8,
-      "scores": { "0": 3.6, "1": 0, "2": 3.6 },
+      "total": 5.9,
+      "average": 1.9666666666666668,
+      "scores": { "0": 5.9, "1": 0, "2": 3.6, "3": 2.3 },
       "injuryStatus": "ACTIVE"
     },
     "3115306": {
@@ -964,9 +1004,9 @@
       "nflTeamId": "7",
       "name": "Josh Reynolds",
       "position": "WR",
-      "total": 22.8,
-      "average": 11.4,
-      "scores": { "0": 22.8, "1": 9.5, "2": 13.3 },
+      "total": 28.400000000000002,
+      "average": 9.466666666666667,
+      "scores": { "0": 28.4, "1": 9.5, "2": 13.3, "3": 5.6 },
       "injuryStatus": "ACTIVE"
     },
     "3115394": {
@@ -976,7 +1016,7 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "INJURY_RESERVE"
     },
     "3116164": {
@@ -994,9 +1034,9 @@
       "nflTeamId": "27",
       "name": "Chris Godwin",
       "position": "WR",
-      "total": 47,
-      "average": 23.5,
-      "scores": { "0": 47, "1": 22.3, "2": 24.7 },
+      "total": 64.3,
+      "average": 21.433333333333334,
+      "scores": { "0": 64.3, "1": 22.3, "2": 24.7, "3": 17.3 },
       "injuryStatus": "ACTIVE"
     },
     "3116365": {
@@ -1005,8 +1045,8 @@
       "name": "Mark Andrews",
       "position": "TE",
       "total": 12.5,
-      "average": 6.25,
-      "scores": { "0": 12.5, "1": 3.4, "2": 9.1 },
+      "average": 4.166666666666667,
+      "scores": { "0": 12.5, "1": 3.4, "2": 9.1, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "3116385": {
@@ -1016,7 +1056,7 @@
       "position": "RB",
       "total": 34.800000000000004,
       "average": 17.400000000000002,
-      "scores": { "0": 34.8, "1": 26.8, "2": 8 },
+      "scores": { "0": 34.8, "1": 26.8, "2": 8, "3": 0 },
       "injuryStatus": "OUT"
     },
     "3116389": {
@@ -1024,9 +1064,9 @@
       "nflTeamId": "12",
       "name": "Samaje Perine",
       "position": "RB",
-      "total": 3.3,
-      "average": 1.65,
-      "scores": { "0": 3.3, "1": 2, "2": 1.3 },
+      "total": 10.3,
+      "average": 3.4333333333333336,
+      "scores": { "0": 10.3, "1": 2, "2": 1.3, "3": 7 },
       "injuryStatus": "ACTIVE"
     },
     "3116406": {
@@ -1034,9 +1074,9 @@
       "nflTeamId": "15",
       "name": "Tyreek Hill",
       "position": "WR",
-      "total": 32.6,
-      "average": 16.3,
-      "scores": { "0": 32.6, "1": 26, "2": 6.6 },
+      "total": 39.6,
+      "average": 13.200000000000001,
+      "scores": { "0": 39.6, "1": 26, "2": 6.6, "3": 7 },
       "injuryStatus": "ACTIVE"
     },
     "3116593": {
@@ -1046,7 +1086,7 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "3117251": {
@@ -1056,7 +1096,7 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "INJURY_RESERVE"
     },
     "3117256": {
@@ -1064,9 +1104,9 @@
       "nflTeamId": "34",
       "name": "Dalton Schultz",
       "position": "TE",
-      "total": 8.7,
-      "average": 4.35,
-      "scores": { "0": 8.7, "1": 4.6, "2": 4.1 },
+      "total": 11.8,
+      "average": 3.9333333333333336,
+      "scores": { "0": 11.8, "1": 4.6, "2": 4.1, "3": 3.1 },
       "injuryStatus": "ACTIVE"
     },
     "3118892": {
@@ -1074,9 +1114,9 @@
       "nflTeamId": "12",
       "name": "Justin Watson",
       "position": "WR",
-      "total": 7.7,
-      "average": 3.85,
-      "scores": { "0": 7.7, "1": 3.5, "2": 4.2 },
+      "total": 10,
+      "average": 3.3333333333333335,
+      "scores": { "0": 10, "1": 3.5, "2": 4.2, "3": 2.3 },
       "injuryStatus": "ACTIVE"
     },
     "3119195": {
@@ -1086,7 +1126,7 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "INJURY_RESERVE"
     },
     "3120348": {
@@ -1094,9 +1134,9 @@
       "nflTeamId": "12",
       "name": "JuJu Smith-Schuster",
       "position": "WR",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "total": 9.7,
+      "average": 3.233333333333333,
+      "scores": { "0": 9.7, "1": 0, "2": 0, "3": 9.7 },
       "injuryStatus": "ACTIVE"
     },
     "3121023": {
@@ -1104,9 +1144,9 @@
       "nflTeamId": "21",
       "name": "Dallas Goedert",
       "position": "TE",
-      "total": 13.9,
-      "average": 6.95,
-      "scores": { "0": 13.9, "1": 7.1, "2": 6.8 },
+      "total": 40.900000000000006,
+      "average": 13.633333333333335,
+      "scores": { "0": 40.9, "1": 7.1, "2": 6.8, "3": 27 },
       "injuryStatus": "ACTIVE"
     },
     "3121409": {
@@ -1117,6 +1157,16 @@
       "total": 8.600000000000001,
       "average": 8.600000000000001,
       "scores": { "0": 8.6, "1": 0, "2": 8.6 },
+      "injuryStatus": "ACTIVE"
+    },
+    "3121410": {
+      "id": "3121410",
+      "nflTeamId": "21",
+      "name": "Parris Campbell",
+      "position": "WR",
+      "total": 3.3,
+      "average": 1.65,
+      "scores": { "0": 3.3, "2": 0, "3": 3.3 },
       "injuryStatus": "ACTIVE"
     },
     "3121422": {
@@ -1144,9 +1194,9 @@
       "nflTeamId": "16",
       "name": "Trent Sherfield Sr.",
       "position": "WR",
-      "total": 2.7,
-      "average": 1.35,
-      "scores": { "0": 2.7, "1": 0, "2": 2.7 },
+      "total": 4.5,
+      "average": 1.5,
+      "scores": { "0": 4.5, "1": 0, "2": 2.7, "3": 1.8 },
       "injuryStatus": "ACTIVE"
     },
     "3122840": {
@@ -1154,9 +1204,9 @@
       "nflTeamId": "5",
       "name": "Deshaun Watson",
       "position": "QB",
-      "total": 26.1,
-      "average": 13.05,
-      "scores": { "0": 26.1, "1": 10.66, "2": 15.44 },
+      "total": 42.54,
+      "average": 14.18,
+      "scores": { "0": 42.54, "1": 10.66, "2": 15.44, "3": 16.44 },
       "injuryStatus": "ACTIVE"
     },
     "3122976": {
@@ -1164,9 +1214,9 @@
       "nflTeamId": "15",
       "name": "Jeff Wilson Jr.",
       "position": "RB",
-      "total": 5.8,
-      "average": 2.9,
-      "scores": { "0": 5.8, "1": 2.6, "2": 3.2 },
+      "total": 7.2,
+      "average": 2.4,
+      "scores": { "0": 7.2, "1": 2.6, "2": 3.2, "3": 1.4 },
       "injuryStatus": "ACTIVE"
     },
     "3123052": {
@@ -1176,7 +1226,7 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "INJURY_RESERVE"
     },
     "3123075": {
@@ -1186,7 +1236,7 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "3123076": {
@@ -1196,7 +1246,7 @@
       "position": "TE",
       "total": 8.4,
       "average": 8.4,
-      "scores": { "0": 8.4, "1": 8.4, "2": 0 },
+      "scores": { "0": 8.4, "1": 8.4, "2": 0, "3": 0 },
       "injuryStatus": "OUT"
     },
     "3124084": {
@@ -1214,9 +1264,9 @@
       "nflTeamId": "15",
       "name": "Jason Sanders",
       "position": "K",
-      "total": 13,
-      "average": 6.5,
-      "scores": { "0": 13, "1": 9, "2": 4 },
+      "total": 15,
+      "average": 5,
+      "scores": { "0": 15, "1": 9, "2": 4, "3": 2 },
       "injuryStatus": "ACTIVE"
     },
     "3125116": {
@@ -1224,9 +1274,9 @@
       "nflTeamId": "5",
       "name": "D'Onta Foreman",
       "position": "RB",
-      "total": 6.1000000000000005,
-      "average": 3.0500000000000003,
-      "scores": { "0": 6.1, "1": 0, "2": 6.1 },
+      "total": 6.6000000000000005,
+      "average": 2.2,
+      "scores": { "0": 6.6, "1": 0, "2": 6.1, "3": 0.5 },
       "injuryStatus": "ACTIVE"
     },
     "3126486": {
@@ -1236,7 +1286,7 @@
       "position": "WR",
       "total": 36.7,
       "average": 18.35,
-      "scores": { "0": 36.7, "1": 18.7, "2": 18 },
+      "scores": { "0": 36.7, "1": 18.7, "2": 18, "3": 0 },
       "injuryStatus": "OUT"
     },
     "3127292": {
@@ -1244,9 +1294,9 @@
       "nflTeamId": "24",
       "name": "Will Dissly",
       "position": "TE",
-      "total": 8.2,
-      "average": 4.1,
-      "scores": { "0": 8.2, "1": 2.3, "2": 5.9 },
+      "total": 13.100000000000001,
+      "average": 4.366666666666667,
+      "scores": { "0": 13.1, "1": 2.3, "2": 5.9, "3": 4.9 },
       "injuryStatus": "ACTIVE"
     },
     "3127310": {
@@ -1284,9 +1334,9 @@
       "nflTeamId": "7",
       "name": "Courtland Sutton",
       "position": "WR",
-      "total": 11.4,
-      "average": 5.7,
-      "scores": { "0": 11.4, "1": 7.8, "2": 3.6 },
+      "total": 25.200000000000003,
+      "average": 8.4,
+      "scores": { "0": 25.2, "1": 7.8, "2": 3.6, "3": 13.8 },
       "injuryStatus": "ACTIVE"
     },
     "3128452": {
@@ -1294,9 +1344,9 @@
       "nflTeamId": "5",
       "name": "Jordan Akins",
       "position": "TE",
-      "total": 7.7,
-      "average": 3.85,
-      "scores": { "0": 7.7, "1": 5.7, "2": 2 },
+      "total": 14.600000000000001,
+      "average": 4.866666666666667,
+      "scores": { "0": 14.6, "1": 5.7, "2": 2, "3": 6.9 },
       "injuryStatus": "ACTIVE"
     },
     "3128720": {
@@ -1306,7 +1356,7 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "OUT"
     },
     "3134353": {
@@ -1314,9 +1364,9 @@
       "nflTeamId": "8",
       "name": "Tim Patrick",
       "position": "WR",
-      "total": 3.2,
-      "average": 3.2,
-      "scores": { "0": 3.2, "2": 3.2 },
+      "total": 5,
+      "average": 2.5,
+      "scores": { "0": 5, "2": 3.2, "3": 1.8 },
       "injuryStatus": "ACTIVE"
     },
     "3139033": {
@@ -1325,8 +1375,8 @@
       "name": "Mike Boone",
       "position": "RB",
       "total": 0.7000000000000001,
-      "average": 0.7000000000000001,
-      "scores": { "0": 0.7, "1": 0.7, "2": 0 },
+      "average": 0.35000000000000003,
+      "scores": { "0": 0.7, "1": 0.7, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "3139477": {
@@ -1334,9 +1384,9 @@
       "nflTeamId": "12",
       "name": "Patrick Mahomes",
       "position": "QB",
-      "total": 28.08,
-      "average": 14.04,
-      "scores": { "0": 28.08, "1": 15.14, "2": 12.94 },
+      "total": 44.46,
+      "average": 14.82,
+      "scores": { "0": 44.46, "1": 15.14, "2": 12.94, "3": 16.38 },
       "injuryStatus": "ACTIVE"
     },
     "3139602": {
@@ -1349,14 +1399,24 @@
       "scores": { "0": 2.6, "1": 0, "2": 2.6 },
       "injuryStatus": "ACTIVE"
     },
+    "3149687": {
+      "id": "3149687",
+      "nflTeamId": "9",
+      "name": "Chris Brooks",
+      "position": "RB",
+      "total": 0.30000000000000004,
+      "average": 0.30000000000000004,
+      "scores": { "0": 0.3, "3": 0.3 },
+      "injuryStatus": "ACTIVE"
+    },
     "3150744": {
       "id": "3150744",
       "nflTeamId": "27",
       "name": "Chase McLaughlin",
       "position": "K",
-      "total": 25,
-      "average": 12.5,
-      "scores": { "0": 25, "1": 15, "2": 10 },
+      "total": 26,
+      "average": 8.666666666666666,
+      "scores": { "0": 26, "1": 15, "2": 10, "3": 1 },
       "injuryStatus": "ACTIVE"
     },
     "3676833": {
@@ -1364,9 +1424,9 @@
       "nflTeamId": "6",
       "name": "KaVontae Turpin",
       "position": "WR",
-      "total": 8.6,
-      "average": 4.3,
-      "scores": { "0": 8.6, "1": 6, "2": 2.6 },
+      "total": 22.8,
+      "average": 7.6000000000000005,
+      "scores": { "0": 22.8, "1": 6, "2": 2.6, "3": 14.2 },
       "injuryStatus": "ACTIVE"
     },
     "3728262": {
@@ -1374,9 +1434,9 @@
       "nflTeamId": "1",
       "name": "Ray-Ray McCloud III",
       "position": "WR",
-      "total": 16.7,
-      "average": 8.35,
-      "scores": { "0": 16.7, "1": 9.2, "2": 7.5 },
+      "total": 22.400000000000002,
+      "average": 7.466666666666668,
+      "scores": { "0": 22.4, "1": 9.2, "2": 7.5, "3": 5.7 },
       "injuryStatus": "ACTIVE"
     },
     "3821683": {
@@ -1394,9 +1454,9 @@
       "nflTeamId": "18",
       "name": "Foster Moreau",
       "position": "TE",
-      "total": 14.3,
-      "average": 7.15,
-      "scores": { "0": 14.3, "1": 14.3, "2": 0 },
+      "total": 15.5,
+      "average": 5.166666666666667,
+      "scores": { "0": 15.5, "1": 14.3, "2": 0, "3": 1.2 },
       "injuryStatus": "ACTIVE"
     },
     "3886598": {
@@ -1404,9 +1464,9 @@
       "nflTeamId": "25",
       "name": "Jauan Jennings",
       "position": "WR",
-      "total": 17.1,
-      "average": 8.55,
-      "scores": { "0": 17.1, "1": 11.4, "2": 5.7 },
+      "total": 63.6,
+      "average": 21.2,
+      "scores": { "0": 63.6, "1": 11.4, "2": 5.7, "3": 46.5 },
       "injuryStatus": "ACTIVE"
     },
     "3886812": {
@@ -1425,8 +1485,8 @@
       "name": "Myles Gaskin",
       "position": "RB",
       "total": -0.30000000000000004,
-      "average": -0.15000000000000002,
-      "scores": { "0": -0.3, "1": -0.3, "2": 0 },
+      "average": -0.10000000000000002,
+      "scores": { "0": -0.3, "1": -0.3, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "3895856": {
@@ -1439,14 +1499,34 @@
       "scores": { "0": 4.9, "1": 4, "2": 0.9 },
       "injuryStatus": "ACTIVE"
     },
+    "3911853": {
+      "id": "3911853",
+      "nflTeamId": "7",
+      "name": "Adam Trautman",
+      "position": "TE",
+      "total": 2.3,
+      "average": 0.7666666666666666,
+      "scores": { "0": 2.3, "1": 0, "2": 0, "3": 2.3 },
+      "injuryStatus": "ACTIVE"
+    },
     "3912547": {
       "id": "3912547",
       "nflTeamId": "16",
       "name": "Sam Darnold",
       "position": "QB",
-      "total": 34.54,
-      "average": 17.27,
-      "scores": { "0": 34.54, "1": 14.62, "2": 19.92 },
+      "total": 57.78,
+      "average": 19.26,
+      "scores": { "0": 57.78, "1": 14.62, "2": 19.92, "3": 23.24 },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "3914397": {
+      "id": "3914397",
+      "nflTeamId": "23",
+      "name": "Scotty Miller",
+      "position": "WR",
+      "total": 5.1,
+      "average": 1.7,
+      "scores": { "0": 5.1, "1": 0, "2": 0, "3": 5.1 },
       "injuryStatus": "ACTIVE"
     },
     "3915411": {
@@ -1464,9 +1544,9 @@
       "nflTeamId": "3",
       "name": "DJ Moore",
       "position": "WR",
-      "total": 21.3,
-      "average": 10.65,
-      "scores": { "0": 21.3, "1": 10, "2": 11.3 },
+      "total": 36.5,
+      "average": 12.166666666666666,
+      "scores": { "0": 36.5, "1": 10, "2": 11.3, "3": 15.2 },
       "injuryStatus": "ACTIVE"
     },
     "3915486": {
@@ -1494,9 +1574,9 @@
       "nflTeamId": "10",
       "name": "Tony Pollard",
       "position": "RB",
-      "total": 33.6,
-      "average": 16.8,
-      "scores": { "0": 33.6, "1": 18.4, "2": 15.2 },
+      "total": 39.5,
+      "average": 13.166666666666666,
+      "scores": { "0": 39.5, "1": 18.4, "2": 15.2, "3": 5.9 },
       "injuryStatus": "ACTIVE"
     },
     "3916387": {
@@ -1504,9 +1584,9 @@
       "nflTeamId": "33",
       "name": "Lamar Jackson",
       "position": "QB",
-      "total": 41.5,
-      "average": 20.75,
-      "scores": { "0": 41.5, "1": 25.12, "2": 16.38 },
+      "total": 67.48,
+      "average": 22.493333333333336,
+      "scores": { "0": 67.48, "1": 25.12, "2": 16.38, "3": 25.98 },
       "injuryStatus": "ACTIVE"
     },
     "3916430": {
@@ -1516,7 +1596,7 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "OUT"
     },
     "3916433": {
@@ -1524,9 +1604,9 @@
       "nflTeamId": "13",
       "name": "Jakobi Meyers",
       "position": "WR",
-      "total": 16.3,
-      "average": 8.15,
-      "scores": { "0": 16.3, "1": 9.4, "2": 6.9 },
+      "total": 37.5,
+      "average": 12.5,
+      "scores": { "0": 37.5, "1": 9.4, "2": 6.9, "3": 21.2 },
       "injuryStatus": "ACTIVE"
     },
     "3916566": {
@@ -1544,9 +1624,9 @@
       "nflTeamId": "19",
       "name": "Darius Slayton",
       "position": "WR",
-      "total": 11.9,
-      "average": 5.95,
-      "scores": { "0": 11.9, "1": 5.6, "2": 6.3 },
+      "total": 13.600000000000001,
+      "average": 4.533333333333334,
+      "scores": { "0": 13.6, "1": 5.6, "2": 6.3, "3": 1.7 },
       "injuryStatus": "ACTIVE"
     },
     "3917232": {
@@ -1564,9 +1644,9 @@
       "nflTeamId": "22",
       "name": "Kyler Murray",
       "position": "QB",
-      "total": 42.72,
-      "average": 21.36,
-      "scores": { "0": 42.72, "1": 14.18, "2": 28.54 },
+      "total": 57.5,
+      "average": 19.166666666666668,
+      "scores": { "0": 57.5, "1": 14.18, "2": 28.54, "3": 14.78 },
       "injuryStatus": "ACTIVE"
     },
     "3917668": {
@@ -1574,9 +1654,9 @@
       "nflTeamId": "15",
       "name": "Alec Ingold",
       "position": "RB",
-      "total": 1,
-      "average": 0.5,
-      "scores": { "0": 1, "1": 0.8, "2": 0.2 },
+      "total": 5.4,
+      "average": 1.8,
+      "scores": { "0": 5.4, "1": 0.8, "2": 0.2, "3": 4.4 },
       "injuryStatus": "ACTIVE"
     },
     "3917792": {
@@ -1584,9 +1664,9 @@
       "nflTeamId": "19",
       "name": "Daniel Jones",
       "position": "QB",
-      "total": 23.259999999999998,
-      "average": 11.629999999999999,
-      "scores": { "0": 23.26, "1": 4.94, "2": 18.32 },
+      "total": 42.7,
+      "average": 14.233333333333334,
+      "scores": { "0": 42.7, "1": 4.94, "2": 18.32, "3": 19.44 },
       "injuryStatus": "ACTIVE"
     },
     "3917914": {
@@ -1615,8 +1695,8 @@
       "name": "Gerald Everett",
       "position": "TE",
       "total": 3,
-      "average": 1.5,
-      "scores": { "0": 3, "1": 0.9, "2": 2.1 },
+      "average": 1,
+      "scores": { "0": 3, "1": 0.9, "2": 2.1, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "3921690": {
@@ -1625,8 +1705,8 @@
       "name": "Josh Oliver",
       "position": "TE",
       "total": 4.7,
-      "average": 2.35,
-      "scores": { "0": 4.7, "1": 4.7, "2": 0 },
+      "average": 1.5666666666666667,
+      "scores": { "0": 4.7, "1": 4.7, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "3924327": {
@@ -1636,7 +1716,7 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "3924365": {
@@ -1644,9 +1724,9 @@
       "nflTeamId": "24",
       "name": "Hayden Hurst",
       "position": "TE",
-      "total": 6.800000000000001,
-      "average": 3.4000000000000004,
-      "scores": { "0": 6.8, "1": 5.3, "2": 1.5 },
+      "total": 10.3,
+      "average": 3.4333333333333336,
+      "scores": { "0": 10.3, "1": 5.3, "2": 1.5, "3": 3.5 },
       "injuryStatus": "ACTIVE"
     },
     "3925357": {
@@ -1654,9 +1734,9 @@
       "nflTeamId": "10",
       "name": "Calvin Ridley",
       "position": "WR",
-      "total": 32.7,
-      "average": 16.35,
-      "scores": { "0": 32.7, "1": 8, "2": 24.7 },
+      "total": 34.6,
+      "average": 11.533333333333333,
+      "scores": { "0": 34.6, "1": 8, "2": 24.7, "3": 1.9 },
       "injuryStatus": "ACTIVE"
     },
     "3926231": {
@@ -1664,10 +1744,10 @@
       "nflTeamId": "21",
       "name": "Britain Covey",
       "position": "WR",
-      "total": 8.3,
-      "average": 4.15,
-      "scores": { "0": 8.3, "1": 0, "2": 8.3 },
-      "injuryStatus": "ACTIVE"
+      "total": 10.4,
+      "average": 3.466666666666667,
+      "scores": { "0": 10.4, "1": 0, "2": 8.3, "3": 2.1 },
+      "injuryStatus": "QUESTIONABLE"
     },
     "3928925": {
       "id": "3928925",
@@ -1684,9 +1764,9 @@
       "nflTeamId": "21",
       "name": "Saquon Barkley",
       "position": "RB",
-      "total": 50.800000000000004,
-      "average": 25.400000000000002,
-      "scores": { "0": 50.8, "1": 33.2, "2": 17.6 },
+      "total": 84.39999999999999,
+      "average": 28.13333333333333,
+      "scores": { "0": 84.4, "1": 33.2, "2": 17.6, "3": 33.6 },
       "injuryStatus": "ACTIVE"
     },
     "3929645": {
@@ -1695,8 +1775,8 @@
       "name": "Juwan Johnson",
       "position": "TE",
       "total": 10.6,
-      "average": 5.3,
-      "scores": { "0": 10.6, "1": 10.6, "2": 0 },
+      "average": 3.533333333333333,
+      "scores": { "0": 10.6, "1": 10.6, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "3930066": {
@@ -1705,9 +1785,9 @@
       "name": "Van Jefferson",
       "position": "WR",
       "total": 4.5,
-      "average": 2.25,
-      "scores": { "0": 4.5, "1": 1.1, "2": 3.4 },
-      "injuryStatus": "ACTIVE"
+      "average": 1.5,
+      "scores": { "0": 4.5, "1": 1.1, "2": 3.4, "3": 0 },
+      "injuryStatus": "QUESTIONABLE"
     },
     "3930086": {
       "id": "3930086",
@@ -1734,9 +1814,9 @@
       "nflTeamId": "29",
       "name": "Diontae Johnson",
       "position": "WR",
-      "total": 8.4,
-      "average": 4.2,
-      "scores": { "0": 8.4, "1": 3.9, "2": 4.5 },
+      "total": 34.6,
+      "average": 11.533333333333333,
+      "scores": { "0": 34.6, "1": 3.9, "2": 4.5, "3": 26.2 },
       "injuryStatus": "ACTIVE"
     },
     "3953687": {
@@ -1744,9 +1824,19 @@
       "nflTeamId": "6",
       "name": "Brandon Aubrey",
       "position": "K",
-      "total": 38,
-      "average": 19,
-      "scores": { "0": 38, "1": 21, "2": 17 },
+      "total": 50,
+      "average": 16.666666666666668,
+      "scores": { "0": 50, "1": 21, "2": 17, "3": 12 },
+      "injuryStatus": "ACTIVE"
+    },
+    "3975763": {
+      "id": "3975763",
+      "nflTeamId": "19",
+      "name": "Greg Joseph",
+      "position": "K",
+      "total": 2,
+      "average": 2,
+      "scores": { "0": 2, "2": 0, "3": 2 },
       "injuryStatus": "ACTIVE"
     },
     "4012556": {
@@ -1755,8 +1845,8 @@
       "name": "C.J. Ham",
       "position": "RB",
       "total": 1.1,
-      "average": 0.55,
-      "scores": { "0": 1.1, "1": 1.1, "2": 0 },
+      "average": 0.3666666666666667,
+      "scores": { "0": 1.1, "1": 1.1, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4032473": {
@@ -1765,8 +1855,8 @@
       "name": "Rashid Shaheed",
       "position": "WR",
       "total": 37.2,
-      "average": 18.6,
-      "scores": { "0": 37.2, "1": 16.3, "2": 20.9 },
+      "average": 12.4,
+      "scores": { "0": 37.2, "1": 16.3, "2": 20.9, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4034946": {
@@ -1776,7 +1866,7 @@
       "position": "QB",
       "total": -0.2,
       "average": -0.2,
-      "scores": { "0": -0.2, "1": -0.2, "2": 0 },
+      "scores": { "0": -0.2, "1": -0.2, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4034949": {
@@ -1784,9 +1874,9 @@
       "nflTeamId": "29",
       "name": "Eddy Pineiro",
       "position": "K",
-      "total": 8,
-      "average": 4,
-      "scores": { "0": 8, "1": 5, "2": 3 },
+      "total": 21,
+      "average": 7,
+      "scores": { "0": 21, "1": 5, "2": 3, "3": 13 },
       "injuryStatus": "ACTIVE"
     },
     "4035004": {
@@ -1796,7 +1886,7 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4035020": {
@@ -1806,7 +1896,7 @@
       "position": "TE",
       "total": 1.4,
       "average": 0.7,
-      "scores": { "0": 1.4, "1": 1.4, "2": 0 },
+      "scores": { "0": 1.4, "1": 1.4, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4035222": {
@@ -1824,9 +1914,9 @@
       "nflTeamId": "8",
       "name": "David Montgomery",
       "position": "RB",
-      "total": 33.300000000000004,
-      "average": 16.650000000000002,
-      "scores": { "0": 33.3, "1": 16.3, "2": 17 },
+      "total": 54.5,
+      "average": 18.166666666666668,
+      "scores": { "0": 54.5, "1": 16.3, "2": 17, "3": 21.2 },
       "injuryStatus": "ACTIVE"
     },
     "4035671": {
@@ -1836,8 +1926,8 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 },
-      "injuryStatus": "ACTIVE"
+      "scores": { "0": 0, "3": 0 },
+      "injuryStatus": "OUT"
     },
     "4035676": {
       "id": "4035676",
@@ -1854,10 +1944,10 @@
       "nflTeamId": "11",
       "name": "Michael Pittman Jr.",
       "position": "WR",
-      "total": 12.2,
-      "average": 6.1,
-      "scores": { "0": 12.2, "1": 7.1, "2": 5.1 },
-      "injuryStatus": "QUESTIONABLE"
+      "total": 19.8,
+      "average": 6.6000000000000005,
+      "scores": { "0": 19.8, "1": 7.1, "2": 5.1, "3": 7.6 },
+      "injuryStatus": "ACTIVE"
     },
     "4035693": {
       "id": "4035693",
@@ -1866,17 +1956,17 @@
       "position": "WR",
       "total": 0.9000000000000001,
       "average": 0.9000000000000001,
-      "scores": { "0": 0.9, "1": 0.9, "2": 0 },
-      "injuryStatus": "ACTIVE"
+      "scores": { "0": 0.9, "1": 0.9, "2": 0, "3": 0 },
+      "injuryStatus": "OUT"
     },
     "4035886": {
       "id": "4035886",
       "nflTeamId": "3",
       "name": "Khalil Herbert",
       "position": "RB",
-      "total": 9.1,
-      "average": 4.55,
-      "scores": { "0": 9.1, "1": 0.4, "2": 8.7 },
+      "total": 10,
+      "average": 3.3333333333333335,
+      "scores": { "0": 10, "1": 0.4, "2": 8.7, "3": 0.9 },
       "injuryStatus": "ACTIVE"
     },
     "4036131": {
@@ -1884,9 +1974,9 @@
       "nflTeamId": "26",
       "name": "Noah Fant",
       "position": "TE",
-      "total": 5.5,
-      "average": 2.75,
-      "scores": { "0": 5.5, "1": 3.1, "2": 2.4 },
+      "total": 17.5,
+      "average": 5.833333333333333,
+      "scores": { "0": 17.5, "1": 3.1, "2": 2.4, "3": 12 },
       "injuryStatus": "ACTIVE"
     },
     "4036133": {
@@ -1896,7 +1986,7 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "OUT"
     },
     "4036211": {
@@ -1905,8 +1995,8 @@
       "name": "DJ Turner",
       "position": "WR",
       "total": 2.1,
-      "average": 1.05,
-      "scores": { "0": 2.1, "1": 1.9, "2": 0.2 },
+      "average": 0.7000000000000001,
+      "scores": { "0": 2.1, "1": 1.9, "2": 0.2, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4036335": {
@@ -1914,9 +2004,9 @@
       "nflTeamId": "18",
       "name": "Cedrick Wilson Jr.",
       "position": "WR",
-      "total": -2,
-      "average": -1,
-      "scores": { "0": -2, "1": -2, "2": 0 },
+      "total": -0.7,
+      "average": -0.2333333333333333,
+      "scores": { "0": -0.7, "1": -2, "2": 0, "3": 1.3 },
       "injuryStatus": "ACTIVE"
     },
     "4036378": {
@@ -1926,28 +2016,28 @@
       "position": "QB",
       "total": 16.4,
       "average": 16.4,
-      "scores": { "0": 16.4, "1": 16.4, "2": 0 },
-      "injuryStatus": "QUESTIONABLE"
+      "scores": { "0": 16.4, "1": 16.4, "2": 0, "3": 0 },
+      "injuryStatus": "OUT"
     },
     "4036419": {
       "id": "4036419",
       "nflTeamId": "15",
       "name": "Skylar Thompson",
       "position": "QB",
-      "total": 3.6,
-      "average": 3.6,
-      "scores": { "0": 3.6, "1": 0, "2": 3.6 },
-      "injuryStatus": "ACTIVE"
+      "total": 7.880000000000001,
+      "average": 3.9400000000000004,
+      "scores": { "0": 7.88, "1": 0, "2": 3.6, "3": 4.28 },
+      "injuryStatus": "QUESTIONABLE"
     },
     "4037235": {
       "id": "4037235",
       "nflTeamId": "22",
       "name": "Greg Dortch",
       "position": "WR",
-      "total": 14.200000000000001,
-      "average": 7.1000000000000005,
-      "scores": { "0": 14.2, "1": 11.1, "2": 3.1 },
-      "injuryStatus": "QUESTIONABLE"
+      "total": 20.700000000000003,
+      "average": 6.900000000000001,
+      "scores": { "0": 20.7, "1": 11.1, "2": 3.1, "3": 6.5 },
+      "injuryStatus": "ACTIVE"
     },
     "4037457": {
       "id": "4037457",
@@ -1956,17 +2046,17 @@
       "position": "RB",
       "total": 1.6,
       "average": 0.8,
-      "scores": { "0": 1.6, "1": 1, "2": 0.6 },
-      "injuryStatus": "OUT"
+      "scores": { "0": 1.6, "1": 1, "2": 0.6, "3": 0 },
+      "injuryStatus": "INJURY_RESERVE"
     },
     "4038441": {
       "id": "4038441",
       "nflTeamId": "33",
       "name": "Justice Hill",
       "position": "RB",
-      "total": 16.7,
-      "average": 8.35,
-      "scores": { "0": 16.7, "1": 11.5, "2": 5.2 },
+      "total": 24.1,
+      "average": 8.033333333333333,
+      "scores": { "0": 24.1, "1": 11.5, "2": 5.2, "3": 7.4 },
       "injuryStatus": "ACTIVE"
     },
     "4038524": {
@@ -1974,9 +2064,9 @@
       "nflTeamId": "13",
       "name": "Gardner Minshew",
       "position": "QB",
-      "total": 23.72,
-      "average": 11.86,
-      "scores": { "0": 23.72, "1": 10.78, "2": 12.94 },
+      "total": 37.68,
+      "average": 12.56,
+      "scores": { "0": 37.68, "1": 10.78, "2": 12.94, "3": 13.96 },
       "injuryStatus": "ACTIVE"
     },
     "4038815": {
@@ -1984,9 +2074,9 @@
       "nflTeamId": "6",
       "name": "Rico Dowdle",
       "position": "RB",
-      "total": 14.100000000000001,
-      "average": 7.050000000000001,
-      "scores": { "0": 14.1, "1": 4.2, "2": 9.9 },
+      "total": 22.700000000000003,
+      "average": 7.566666666666667,
+      "scores": { "0": 22.7, "1": 4.2, "2": 9.9, "3": 8.6 },
       "injuryStatus": "ACTIVE"
     },
     "4038941": {
@@ -1994,9 +2084,9 @@
       "nflTeamId": "24",
       "name": "Justin Herbert",
       "position": "QB",
-      "total": 21.36,
-      "average": 10.68,
-      "scores": { "0": 21.36, "1": 10.36, "2": 11 },
+      "total": 30.36,
+      "average": 10.12,
+      "scores": { "0": 30.36, "1": 10.36, "2": 11, "3": 9 },
       "injuryStatus": "QUESTIONABLE"
     },
     "4039050": {
@@ -2014,9 +2104,9 @@
       "nflTeamId": "7",
       "name": "Lil'Jordan Humphrey",
       "position": "WR",
-      "total": 9,
-      "average": 4.5,
-      "scores": { "0": 9, "1": 0, "2": 9 },
+      "total": 18.700000000000003,
+      "average": 6.233333333333334,
+      "scores": { "0": 18.7, "1": 0, "2": 9, "3": 9.7 },
       "injuryStatus": "ACTIVE"
     },
     "4039160": {
@@ -2024,9 +2114,19 @@
       "nflTeamId": "11",
       "name": "Kylen Granson",
       "position": "TE",
-      "total": 1.9,
-      "average": 0.95,
-      "scores": { "0": 1.9, "1": 0, "2": 1.9 },
+      "total": 6.9,
+      "average": 2.3000000000000003,
+      "scores": { "0": 6.9, "1": 0, "2": 1.9, "3": 5 },
+      "injuryStatus": "ACTIVE"
+    },
+    "4039607": {
+      "id": "4039607",
+      "nflTeamId": "34",
+      "name": "J.J. Taylor",
+      "position": "RB",
+      "total": 2.3,
+      "average": 2.3,
+      "scores": { "0": 2.3, "3": 2.3 },
       "injuryStatus": "ACTIVE"
     },
     "4040612": {
@@ -2044,9 +2144,9 @@
       "nflTeamId": "1",
       "name": "Darnell Mooney",
       "position": "WR",
-      "total": 20.3,
-      "average": 10.15,
-      "scores": { "0": 20.3, "1": 2.5, "2": 17.8 },
+      "total": 34.900000000000006,
+      "average": 11.633333333333335,
+      "scores": { "0": 34.9, "1": 2.5, "2": 17.8, "3": 14.6 },
       "injuryStatus": "ACTIVE"
     },
     "4040715": {
@@ -2054,9 +2154,9 @@
       "nflTeamId": "21",
       "name": "Jalen Hurts",
       "position": "QB",
-      "total": 40.24,
-      "average": 20.12,
-      "scores": { "0": 40.24, "1": 16.42, "2": 23.82 },
+      "total": 51.18,
+      "average": 17.06,
+      "scores": { "0": 51.18, "1": 16.42, "2": 23.82, "3": 10.94 },
       "injuryStatus": "ACTIVE"
     },
     "4040761": {
@@ -2064,9 +2164,19 @@
       "nflTeamId": "19",
       "name": "Devin Singletary",
       "position": "RB",
-      "total": 23.700000000000003,
-      "average": 11.850000000000001,
-      "scores": { "0": 23.7, "1": 9.2, "2": 14.5 },
+      "total": 42.5,
+      "average": 14.166666666666666,
+      "scores": { "0": 42.5, "1": 9.2, "2": 14.5, "3": 18.8 },
+      "injuryStatus": "ACTIVE"
+    },
+    "4043016": {
+      "id": "4043016",
+      "nflTeamId": "15",
+      "name": "Dee Eskridge",
+      "position": "WR",
+      "total": 4,
+      "average": 4,
+      "scores": { "0": 4, "3": 4 },
       "injuryStatus": "ACTIVE"
     },
     "4045163": {
@@ -2074,9 +2184,9 @@
       "nflTeamId": "29",
       "name": "Miles Sanders",
       "position": "RB",
-      "total": 7.7,
-      "average": 3.85,
-      "scores": { "0": 7.7, "1": 2.2, "2": 5.5 },
+      "total": 18.7,
+      "average": 6.233333333333333,
+      "scores": { "0": 18.7, "1": 2.2, "2": 5.5, "3": 11 },
       "injuryStatus": "ACTIVE"
     },
     "4047365": {
@@ -2084,9 +2194,19 @@
       "nflTeamId": "9",
       "name": "Josh Jacobs",
       "position": "RB",
-      "total": 25.5,
-      "average": 12.75,
-      "scores": { "0": 25.5, "1": 12.4, "2": 13.1 },
+      "total": 31.3,
+      "average": 10.433333333333334,
+      "scores": { "0": 31.3, "1": 12.4, "2": 13.1, "3": 5.8 },
+      "injuryStatus": "ACTIVE"
+    },
+    "4047422": {
+      "id": "4047422",
+      "nflTeamId": "15",
+      "name": "Tanner Conner",
+      "position": "TE",
+      "total": 1.1,
+      "average": 0.3666666666666667,
+      "scores": { "0": 1.1, "1": 0, "2": 0, "3": 1.1 },
       "injuryStatus": "ACTIVE"
     },
     "4047646": {
@@ -2096,7 +2216,7 @@
       "position": "WR",
       "total": 22.9,
       "average": 22.9,
-      "scores": { "0": 22.9, "1": 22.9, "2": 0 },
+      "scores": { "0": 22.9, "1": 22.9, "2": 0, "3": 0 },
       "injuryStatus": "OUT"
     },
     "4047650": {
@@ -2104,9 +2224,9 @@
       "nflTeamId": "26",
       "name": "DK Metcalf",
       "position": "WR",
-      "total": 34.8,
-      "average": 17.4,
-      "scores": { "0": 34.8, "1": 5.9, "2": 28.9 },
+      "total": 55.2,
+      "average": 18.400000000000002,
+      "scores": { "0": 55.2, "1": 5.9, "2": 28.9, "3": 20.4 },
       "injuryStatus": "ACTIVE"
     },
     "4048228": {
@@ -2124,9 +2244,9 @@
       "nflTeamId": "13",
       "name": "Alexander Mattison",
       "position": "RB",
-      "total": 22.3,
-      "average": 11.15,
-      "scores": { "0": 22.3, "1": 16.2, "2": 6.1 },
+      "total": 35.7,
+      "average": 11.9,
+      "scores": { "0": 35.7, "1": 16.2, "2": 6.1, "3": 13.4 },
       "injuryStatus": "ACTIVE"
     },
     "4061956": {
@@ -2135,8 +2255,8 @@
       "name": "Ashton Dulin",
       "position": "WR",
       "total": 14.7,
-      "average": 7.35,
-      "scores": { "0": 14.7, "1": 12.4, "2": 2.3 },
+      "average": 4.8999999999999995,
+      "scores": { "0": 14.7, "1": 12.4, "2": 2.3, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4212909": {
@@ -2145,8 +2265,8 @@
       "name": "David Moore",
       "position": "WR",
       "total": 2.4000000000000004,
-      "average": 1.2000000000000002,
-      "scores": { "0": 2.4, "1": 2.4, "2": 0 },
+      "average": 0.8000000000000002,
+      "scores": { "0": 2.4, "1": 2.4, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4239934": {
@@ -2156,7 +2276,7 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "INJURY_RESERVE"
     },
     "4239993": {
@@ -2184,9 +2304,9 @@
       "nflTeamId": "34",
       "name": "Cam Akers",
       "position": "RB",
-      "total": 2.5,
-      "average": 2.5,
-      "scores": { "0": 2.5, "1": 0, "2": 2.5 },
+      "total": 12.4,
+      "average": 6.2,
+      "scores": { "0": 12.4, "1": 0, "2": 2.5, "3": 9.9 },
       "injuryStatus": "ACTIVE"
     },
     "4240472": {
@@ -2194,9 +2314,9 @@
       "nflTeamId": "12",
       "name": "Noah Gray",
       "position": "TE",
-      "total": 6.7,
-      "average": 3.35,
-      "scores": { "0": 6.7, "1": 6.7, "2": 0 },
+      "total": 9,
+      "average": 3,
+      "scores": { "0": 9, "1": 6.7, "2": 0, "3": 2.3 },
       "injuryStatus": "ACTIVE"
     },
     "4240600": {
@@ -2215,8 +2335,8 @@
       "name": "DeeJay Dallas",
       "position": "RB",
       "total": 6,
-      "average": 3,
-      "scores": { "0": 6, "1": 6, "2": 0 },
+      "average": 2,
+      "scores": { "0": 6, "1": 6, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4240703": {
@@ -2226,7 +2346,7 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4240858": {
@@ -2236,7 +2356,7 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4241263": {
@@ -2244,9 +2364,9 @@
       "nflTeamId": "33",
       "name": "Charlie Kolar",
       "position": "TE",
-      "total": 1.4,
-      "average": 0.7,
-      "scores": { "0": 1.4, "1": 0, "2": 1.4 },
+      "total": 5.4,
+      "average": 1.8,
+      "scores": { "0": 5.4, "1": 0, "2": 1.4, "3": 4 },
       "injuryStatus": "ACTIVE"
     },
     "4241372": {
@@ -2256,7 +2376,7 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "INJURY_RESERVE"
     },
     "4241374": {
@@ -2265,8 +2385,8 @@
       "name": "Grant Calcaterra",
       "position": "TE",
       "total": 6,
-      "average": 3,
-      "scores": { "0": 6, "1": 2.1, "2": 3.9 },
+      "average": 2,
+      "scores": { "0": 6, "1": 2.1, "2": 3.9, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4241389": {
@@ -2274,9 +2394,9 @@
       "nflTeamId": "6",
       "name": "CeeDee Lamb",
       "position": "WR",
-      "total": 32.6,
-      "average": 16.3,
-      "scores": { "0": 32.6, "1": 13.6, "2": 19 },
+      "total": 41.3,
+      "average": 13.766666666666666,
+      "scores": { "0": 41.3, "1": 13.6, "2": 19, "3": 8.7 },
       "injuryStatus": "ACTIVE"
     },
     "4241401": {
@@ -2284,9 +2404,9 @@
       "nflTeamId": "11",
       "name": "Trey Sermon",
       "position": "RB",
-      "total": 1.7000000000000002,
-      "average": 0.8500000000000001,
-      "scores": { "0": 1.7, "1": 0, "2": 1.7 },
+      "total": 9.299999999999999,
+      "average": 3.0999999999999996,
+      "scores": { "0": 9.3, "1": 0, "2": 1.7, "3": 7.6 },
       "injuryStatus": "ACTIVE"
     },
     "4241410": {
@@ -2296,7 +2416,7 @@
       "position": "TE",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "INJURY_RESERVE"
     },
     "4241416": {
@@ -2304,9 +2424,9 @@
       "nflTeamId": "29",
       "name": "Chuba Hubbard",
       "position": "RB",
-      "total": 13,
-      "average": 6.5,
-      "scores": { "0": 13, "1": 1.4, "2": 11.6 },
+      "total": 40.900000000000006,
+      "average": 13.633333333333335,
+      "scores": { "0": 40.9, "1": 1.4, "2": 11.6, "3": 27.9 },
       "injuryStatus": "ACTIVE"
     },
     "4241457": {
@@ -2314,9 +2434,9 @@
       "nflTeamId": "23",
       "name": "Najee Harris",
       "position": "RB",
-      "total": 17.3,
-      "average": 8.65,
-      "scores": { "0": 17.3, "1": 8.9, "2": 8.4 },
+      "total": 30.900000000000002,
+      "average": 10.3,
+      "scores": { "0": 30.9, "1": 8.9, "2": 8.4, "3": 13.6 },
       "injuryStatus": "ACTIVE"
     },
     "4241463": {
@@ -2324,9 +2444,9 @@
       "nflTeamId": "5",
       "name": "Jerry Jeudy",
       "position": "WR",
-      "total": 23.8,
-      "average": 11.9,
-      "scores": { "0": 23.8, "1": 11.5, "2": 12.3 },
+      "total": 32.5,
+      "average": 10.833333333333334,
+      "scores": { "0": 32.5, "1": 11.5, "2": 12.3, "3": 8.7 },
       "injuryStatus": "ACTIVE"
     },
     "4241474": {
@@ -2344,10 +2464,10 @@
       "nflTeamId": "21",
       "name": "DeVonta Smith",
       "position": "WR",
-      "total": 36,
-      "average": 18,
-      "scores": { "0": 36, "1": 15.4, "2": 20.6 },
-      "injuryStatus": "ACTIVE"
+      "total": 50.900000000000006,
+      "average": 16.96666666666667,
+      "scores": { "0": 50.9, "1": 15.4, "2": 20.6, "3": 14.9 },
+      "injuryStatus": "QUESTIONABLE"
     },
     "4241479": {
       "id": "4241479",
@@ -2356,7 +2476,7 @@
       "position": "QB",
       "total": 24.12,
       "average": 12.06,
-      "scores": { "0": 24.12, "1": 18.62, "2": 5.5 },
+      "scores": { "0": 24.12, "1": 18.62, "2": 5.5, "3": 0 },
       "injuryStatus": "INJURY_RESERVE"
     },
     "4241555": {
@@ -2366,7 +2486,7 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "INJURY_RESERVE"
     },
     "4241822": {
@@ -2384,9 +2504,9 @@
       "nflTeamId": "23",
       "name": "Connor Heyward",
       "position": "TE",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "total": 1.2,
+      "average": 0.39999999999999997,
+      "scores": { "0": 1.2, "1": 0, "2": 0, "3": 1.2 },
       "injuryStatus": "ACTIVE"
     },
     "4241985": {
@@ -2394,9 +2514,9 @@
       "nflTeamId": "24",
       "name": "J.K. Dobbins",
       "position": "RB",
-      "total": 43,
-      "average": 21.5,
-      "scores": { "0": 43, "1": 22.9, "2": 20.1 },
+      "total": 51.4,
+      "average": 17.133333333333333,
+      "scores": { "0": 51.4, "1": 22.9, "2": 20.1, "3": 8.4 },
       "injuryStatus": "ACTIVE"
     },
     "4242214": {
@@ -2406,7 +2526,7 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "OUT"
     },
     "4242335": {
@@ -2414,9 +2534,9 @@
       "nflTeamId": "11",
       "name": "Jonathan Taylor",
       "position": "RB",
-      "total": 26.3,
-      "average": 13.15,
-      "scores": { "0": 26.3, "1": 10.8, "2": 15.5 },
+      "total": 52.800000000000004,
+      "average": 17.6,
+      "scores": { "0": 52.8, "1": 10.8, "2": 15.5, "3": 26.5 },
       "injuryStatus": "ACTIVE"
     },
     "4242355": {
@@ -2424,9 +2544,9 @@
       "nflTeamId": "6",
       "name": "Jake Ferguson",
       "position": "TE",
-      "total": 4.5,
-      "average": 4.5,
-      "scores": { "0": 4.5, "1": 4.5, "2": 0 },
+      "total": 20,
+      "average": 10,
+      "scores": { "0": 20, "1": 4.5, "2": 0, "3": 15.5 },
       "injuryStatus": "ACTIVE"
     },
     "4242392": {
@@ -2434,9 +2554,9 @@
       "nflTeamId": "8",
       "name": "Brock Wright",
       "position": "TE",
-      "total": 1.2,
-      "average": 0.6,
-      "scores": { "0": 1.2, "1": 1.2, "2": 0 },
+      "total": 8.6,
+      "average": 2.8666666666666667,
+      "scores": { "0": 8.6, "1": 1.2, "2": 0, "3": 7.4 },
       "injuryStatus": "ACTIVE"
     },
     "4242431": {
@@ -2444,9 +2564,9 @@
       "nflTeamId": "16",
       "name": "Ty Chandler",
       "position": "RB",
-      "total": 15.4,
-      "average": 7.7,
-      "scores": { "0": 15.4, "1": 7.2, "2": 8.2 },
+      "total": 16.700000000000003,
+      "average": 5.566666666666667,
+      "scores": { "0": 16.7, "1": 7.2, "2": 8.2, "3": 1.3 },
       "injuryStatus": "ACTIVE"
     },
     "4242433": {
@@ -2456,27 +2576,27 @@
       "position": "WR",
       "total": 7.4,
       "average": 3.7,
-      "scores": { "0": 7.4, "1": 3.5, "2": 3.9 },
-      "injuryStatus": "QUESTIONABLE"
+      "scores": { "0": 7.4, "1": 3.5, "2": 3.9, "3": 0 },
+      "injuryStatus": "OUT"
     },
     "4242512": {
       "id": "4242512",
       "nflTeamId": "9",
       "name": "Malik Willis",
       "position": "QB",
-      "total": 12.98,
-      "average": 6.49,
-      "scores": { "0": 12.98, "1": 0, "2": 12.98 },
+      "total": 38.36,
+      "average": 12.786666666666667,
+      "scores": { "0": 38.36, "1": 0, "2": 12.98, "3": 25.38 },
       "injuryStatus": "ACTIVE"
     },
-    "4242519": {
-      "id": "4242519",
-      "nflTeamId": "0",
-      "name": "Anders Carlson",
-      "position": "K",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0 },
+    "4242546": {
+      "id": "4242546",
+      "nflTeamId": "34",
+      "name": "Davis Mills",
+      "position": "QB",
+      "total": 3.16,
+      "average": 1.58,
+      "scores": { "0": 3.16, "1": 0, "2": 0, "3": 3.16 },
       "injuryStatus": "ACTIVE"
     },
     "4242557": {
@@ -2484,9 +2604,9 @@
       "nflTeamId": "14",
       "name": "Colby Parkinson",
       "position": "TE",
-      "total": 10.9,
-      "average": 5.45,
-      "scores": { "0": 10.9, "1": 8.7, "2": 2.2 },
+      "total": 16,
+      "average": 5.333333333333333,
+      "scores": { "0": 16, "1": 8.7, "2": 2.2, "3": 5.1 },
       "injuryStatus": "ACTIVE"
     },
     "4243003": {
@@ -2494,9 +2614,9 @@
       "nflTeamId": "14",
       "name": "Ronnie Rivers",
       "position": "RB",
-      "total": 2.6,
-      "average": 1.3,
-      "scores": { "0": 2.6, "1": 1.6, "2": 1 },
+      "total": 3.5,
+      "average": 1.1666666666666667,
+      "scores": { "0": 3.5, "1": 1.6, "2": 1, "3": 0.9 },
       "injuryStatus": "ACTIVE"
     },
     "4243004": {
@@ -2505,8 +2625,8 @@
       "name": "Jordan Mims",
       "position": "RB",
       "total": 1.1,
-      "average": 0.55,
-      "scores": { "0": 1.1, "1": 1.1, "2": 0 },
+      "average": 0.3666666666666667,
+      "scores": { "0": 1.1, "1": 1.1, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4243160": {
@@ -2514,10 +2634,10 @@
       "nflTeamId": "26",
       "name": "Laviska Shenault Jr.",
       "position": "WR",
-      "total": 2.7,
-      "average": 1.35,
-      "scores": { "0": 2.7, "1": 1.1, "2": 1.6 },
-      "injuryStatus": "QUESTIONABLE"
+      "total": 3.9000000000000004,
+      "average": 1.3,
+      "scores": { "0": 3.9, "1": 1.1, "2": 1.6, "3": 1.2 },
+      "injuryStatus": "ACTIVE"
     },
     "4243322": {
       "id": "4243322",
@@ -2526,7 +2646,7 @@
       "position": "QB",
       "total": -0.30000000000000004,
       "average": -0.15000000000000002,
-      "scores": { "0": -0.3, "1": 0, "2": -0.3 },
+      "scores": { "0": -0.3, "1": 0, "2": -0.3, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4243331": {
@@ -2534,9 +2654,9 @@
       "nflTeamId": "27",
       "name": "Cade Otton",
       "position": "TE",
-      "total": 1.1,
-      "average": 0.55,
-      "scores": { "0": 1.1, "1": 1.5, "2": -0.4 },
+      "total": 10.8,
+      "average": 3.6,
+      "scores": { "0": 10.8, "1": 1.5, "2": -0.4, "3": 9.7 },
       "injuryStatus": "ACTIVE"
     },
     "4243389": {
@@ -2544,9 +2664,9 @@
       "nflTeamId": "23",
       "name": "Calvin Austin III",
       "position": "WR",
-      "total": 3.3,
-      "average": 1.65,
-      "scores": { "0": 3.3, "1": 1.7, "2": 1.6 },
+      "total": 22.8,
+      "average": 7.6000000000000005,
+      "scores": { "0": 22.8, "1": 1.7, "2": 1.6, "3": 19.5 },
       "injuryStatus": "ACTIVE"
     },
     "4243537": {
@@ -2564,9 +2684,9 @@
       "nflTeamId": "9",
       "name": "Christian Watson",
       "position": "WR",
-      "total": 10.3,
-      "average": 5.15,
-      "scores": { "0": 10.3, "1": 10.3, "2": 0 },
+      "total": 19,
+      "average": 6.333333333333333,
+      "scores": { "0": 19, "1": 10.3, "2": 0, "3": 8.7 },
       "injuryStatus": "ACTIVE"
     },
     "4249087": {
@@ -2574,9 +2694,9 @@
       "nflTeamId": "11",
       "name": "Matt Gay",
       "position": "K",
-      "total": 3,
+      "total": 6,
       "average": 3,
-      "scores": { "0": 3, "1": 0, "2": 3 },
+      "scores": { "0": 6, "1": 0, "2": 3, "3": 3 },
       "injuryStatus": "ACTIVE"
     },
     "4249417": {
@@ -2584,9 +2704,9 @@
       "nflTeamId": "6",
       "name": "Jalen Tolbert",
       "position": "WR",
-      "total": 16.4,
-      "average": 8.2,
-      "scores": { "0": 16.4, "1": 2.2, "2": 14.2 },
+      "total": 29.6,
+      "average": 9.866666666666667,
+      "scores": { "0": 29.6, "1": 2.2, "2": 14.2, "3": 13.2 },
       "injuryStatus": "ACTIVE"
     },
     "4249836": {
@@ -2596,7 +2716,7 @@
       "position": "RB",
       "total": 6.5,
       "average": 3.25,
-      "scores": { "0": 6.5, "1": 5, "2": 1.5 },
+      "scores": { "0": 6.5, "1": 5, "2": 1.5, "3": 0 },
       "injuryStatus": "OUT"
     },
     "4257188": {
@@ -2614,9 +2734,9 @@
       "nflTeamId": "34",
       "name": "Nico Collins",
       "position": "WR",
-      "total": 45.2,
-      "average": 22.6,
-      "scores": { "0": 45.2, "1": 17.7, "2": 27.5 },
+      "total": 57.800000000000004,
+      "average": 19.26666666666667,
+      "scores": { "0": 57.8, "1": 17.7, "2": 27.5, "3": 12.6 },
       "injuryStatus": "ACTIVE"
     },
     "4258595": {
@@ -2624,9 +2744,9 @@
       "nflTeamId": "3",
       "name": "Cole Kmet",
       "position": "TE",
-      "total": 8.1,
-      "average": 4.05,
-      "scores": { "0": 8.1, "1": 1.4, "2": 6.7 },
+      "total": 33.8,
+      "average": 11.266666666666666,
+      "scores": { "0": 33.8, "1": 1.4, "2": 6.7, "3": 25.7 },
       "injuryStatus": "ACTIVE"
     },
     "4259305": {
@@ -2635,8 +2755,8 @@
       "name": "Bo Melton",
       "position": "WR",
       "total": 0.8,
-      "average": 0.4,
-      "scores": { "0": 0.8, "1": 0, "2": 0.8 },
+      "average": 0.26666666666666666,
+      "scores": { "0": 0.8, "1": 0, "2": 0.8, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4259308": {
@@ -2646,7 +2766,7 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4259545": {
@@ -2654,9 +2774,9 @@
       "nflTeamId": "3",
       "name": "D'Andre Swift",
       "position": "RB",
-      "total": 13.200000000000001,
-      "average": 6.6000000000000005,
-      "scores": { "0": 13.2, "1": 5, "2": 8.2 },
+      "total": 19.400000000000002,
+      "average": 6.466666666666668,
+      "scores": { "0": 19.4, "1": 5, "2": 8.2, "3": 6.2 },
       "injuryStatus": "ACTIVE"
     },
     "4259619": {
@@ -2664,9 +2784,9 @@
       "nflTeamId": "18",
       "name": "Blake Grupe",
       "position": "K",
-      "total": 30,
-      "average": 15,
-      "scores": { "0": 30, "1": 22, "2": 8 },
+      "total": 36,
+      "average": 12,
+      "scores": { "0": 36, "1": 22, "2": 8, "3": 6 },
       "injuryStatus": "ACTIVE"
     },
     "4260394": {
@@ -2674,9 +2794,9 @@
       "nflTeamId": "13",
       "name": "Aidan O'Connell",
       "position": "QB",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "total": 7.28,
+      "average": 7.28,
+      "scores": { "0": 7.28, "1": 0, "2": 0, "3": 7.28 },
       "injuryStatus": "ACTIVE"
     },
     "4262921": {
@@ -2684,9 +2804,9 @@
       "nflTeamId": "16",
       "name": "Justin Jefferson",
       "position": "WR",
-      "total": 39.2,
-      "average": 19.6,
-      "scores": { "0": 39.2, "1": 15.9, "2": 23.3 },
+      "total": 59.3,
+      "average": 19.766666666666666,
+      "scores": { "0": 59.3, "1": 15.9, "2": 23.3, "3": 20.1 },
       "injuryStatus": "ACTIVE"
     },
     "4360078": {
@@ -2694,9 +2814,9 @@
       "nflTeamId": "11",
       "name": "Alec Pierce",
       "position": "WR",
-      "total": 38.1,
-      "average": 19.05,
-      "scores": { "0": 38.1, "1": 21.5, "2": 16.6 },
+      "total": 43.5,
+      "average": 14.5,
+      "scores": { "0": 43.5, "1": 21.5, "2": 16.6, "3": 5.4 },
       "injuryStatus": "ACTIVE"
     },
     "4360086": {
@@ -2704,9 +2824,9 @@
       "nflTeamId": "10",
       "name": "Josh Whyle",
       "position": "TE",
-      "total": 3.3,
-      "average": 1.65,
-      "scores": { "0": 3.3, "1": 0, "2": 3.3 },
+      "total": 11.600000000000001,
+      "average": 3.866666666666667,
+      "scores": { "0": 11.6, "1": 0, "2": 3.3, "3": 8.3 },
       "injuryStatus": "ACTIVE"
     },
     "4360175": {
@@ -2716,7 +2836,7 @@
       "position": "QB",
       "total": -2.6,
       "average": -2.6,
-      "scores": { "0": -2.6, "1": 0, "2": -2.6 },
+      "scores": { "0": -2.6, "1": 0, "2": -2.6, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4360234": {
@@ -2736,7 +2856,7 @@
       "position": "RB",
       "total": 1.6,
       "average": 1.6,
-      "scores": { "0": 1.6, "1": 1.6, "2": 0 },
+      "scores": { "0": 1.6, "1": 1.6, "2": 0, "3": 0 },
       "injuryStatus": "OUT"
     },
     "4360248": {
@@ -2744,9 +2864,9 @@
       "nflTeamId": "1",
       "name": "Kyle Pitts",
       "position": "TE",
-      "total": 16.6,
-      "average": 8.3,
-      "scores": { "0": 16.6, "1": 11.6, "2": 5 },
+      "total": 24.5,
+      "average": 8.166666666666666,
+      "scores": { "0": 24.5, "1": 11.6, "2": 5, "3": 7.9 },
       "injuryStatus": "ACTIVE"
     },
     "4360294": {
@@ -2775,8 +2895,8 @@
       "name": "Jake Bobo",
       "position": "WR",
       "total": 3.5,
-      "average": 1.75,
-      "scores": { "0": 3.5, "1": 0, "2": 3.5 },
+      "average": 1.1666666666666667,
+      "scores": { "0": 3.5, "1": 0, "2": 3.5, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4360423": {
@@ -2786,7 +2906,7 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4360438": {
@@ -2794,9 +2914,9 @@
       "nflTeamId": "25",
       "name": "Brandon Aiyuk",
       "position": "WR",
-      "total": 13.100000000000001,
-      "average": 6.550000000000001,
-      "scores": { "0": 13.1, "1": 4.8, "2": 8.3 },
+      "total": 22.9,
+      "average": 7.633333333333333,
+      "scores": { "0": 22.9, "1": 4.8, "2": 8.3, "3": 9.8 },
       "injuryStatus": "ACTIVE"
     },
     "4360516": {
@@ -2804,9 +2924,9 @@
       "nflTeamId": "19",
       "name": "Tyrone Tracy Jr.",
       "position": "RB",
-      "total": 1.9,
-      "average": 0.95,
-      "scores": { "0": 1.9, "1": 1.7, "2": 0.2 },
+      "total": 7.9,
+      "average": 2.6333333333333333,
+      "scores": { "0": 7.9, "1": 1.7, "2": 0.2, "3": 6 },
       "injuryStatus": "ACTIVE"
     },
     "4360569": {
@@ -2814,9 +2934,9 @@
       "nflTeamId": "25",
       "name": "Jordan Mason",
       "position": "RB",
-      "total": 39.6,
-      "average": 19.8,
-      "scores": { "0": 39.6, "1": 22.2, "2": 17.4 },
+      "total": 50.4,
+      "average": 16.8,
+      "scores": { "0": 50.4, "1": 22.2, "2": 17.4, "3": 10.8 },
       "injuryStatus": "ACTIVE"
     },
     "4360635": {
@@ -2824,9 +2944,9 @@
       "nflTeamId": "10",
       "name": "Chig Okonkwo",
       "position": "TE",
-      "total": 14.1,
-      "average": 7.05,
-      "scores": { "0": 14.1, "1": 9.5, "2": 4.6 },
+      "total": 17.6,
+      "average": 5.866666666666667,
+      "scores": { "0": 17.6, "1": 9.5, "2": 4.6, "3": 3.5 },
       "injuryStatus": "ACTIVE"
     },
     "4360698": {
@@ -2839,14 +2959,24 @@
       "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "OUT"
     },
+    "4360739": {
+      "id": "4360739",
+      "nflTeamId": "24",
+      "name": "Simi Fehoko",
+      "position": "WR",
+      "total": 2.7,
+      "average": 0.9,
+      "scores": { "0": 2.7, "1": 0, "2": 0, "3": 2.7 },
+      "injuryStatus": "ACTIVE"
+    },
     "4360761": {
       "id": "4360761",
       "nflTeamId": "22",
       "name": "Michael Wilson",
       "position": "WR",
-      "total": 12.6,
-      "average": 6.3,
-      "scores": { "0": 12.6, "1": 7.5, "2": 5.1 },
+      "total": 27,
+      "average": 9,
+      "scores": { "0": 27, "1": 7.5, "2": 5.1, "3": 14.4 },
       "injuryStatus": "ACTIVE"
     },
     "4360797": {
@@ -2854,9 +2984,9 @@
       "nflTeamId": "14",
       "name": "Tutu Atwell",
       "position": "WR",
-      "total": 7.800000000000001,
-      "average": 3.9000000000000004,
-      "scores": { "0": 7.8, "1": 0, "2": 7.8 },
+      "total": 21.1,
+      "average": 7.033333333333334,
+      "scores": { "0": 21.1, "1": 0, "2": 7.8, "3": 13.3 },
       "injuryStatus": "ACTIVE"
     },
     "4360939": {
@@ -2864,9 +2994,9 @@
       "nflTeamId": "33",
       "name": "Rashod Bateman",
       "position": "WR",
-      "total": 14.3,
-      "average": 7.15,
-      "scores": { "0": 14.3, "1": 7.3, "2": 7 },
+      "total": 26.1,
+      "average": 8.700000000000001,
+      "scores": { "0": 26.1, "1": 7.3, "2": 7, "3": 11.8 },
       "injuryStatus": "ACTIVE"
     },
     "4361050": {
@@ -2874,9 +3004,9 @@
       "nflTeamId": "33",
       "name": "Isaiah Likely",
       "position": "TE",
-      "total": 30.700000000000003,
-      "average": 15.350000000000001,
-      "scores": { "0": 30.7, "1": 26.1, "2": 4.6 },
+      "total": 32.1,
+      "average": 10.700000000000001,
+      "scores": { "0": 32.1, "1": 26.1, "2": 4.6, "3": 1.4 },
       "injuryStatus": "ACTIVE"
     },
     "4361307": {
@@ -2884,19 +3014,19 @@
       "nflTeamId": "22",
       "name": "Trey McBride",
       "position": "TE",
-      "total": 26.700000000000003,
-      "average": 13.350000000000001,
-      "scores": { "0": 26.7, "1": 8, "2": 18.7 },
-      "injuryStatus": "ACTIVE"
+      "total": 32.2,
+      "average": 10.733333333333334,
+      "scores": { "0": 32.2, "1": 8, "2": 18.7, "3": 5.5 },
+      "injuryStatus": "QUESTIONABLE"
     },
     "4361370": {
       "id": "4361370",
       "nflTeamId": "18",
       "name": "Chris Olave",
       "position": "WR",
-      "total": 15.900000000000002,
-      "average": 7.950000000000001,
-      "scores": { "0": 15.9, "1": 3.1, "2": 12.8 },
+      "total": 36.5,
+      "average": 12.166666666666666,
+      "scores": { "0": 36.5, "1": 3.1, "2": 12.8, "3": 20.6 },
       "injuryStatus": "ACTIVE"
     },
     "4361372": {
@@ -2914,9 +3044,9 @@
       "nflTeamId": "21",
       "name": "Jahan Dotson",
       "position": "WR",
-      "total": 1.6,
-      "average": 0.8,
-      "scores": { "0": 1.6, "1": 0, "2": 1.6 },
+      "total": 4.4,
+      "average": 1.4666666666666668,
+      "scores": { "0": 4.4, "1": 0, "2": 1.6, "3": 2.8 },
       "injuryStatus": "ACTIVE"
     },
     "4361411": {
@@ -2924,9 +3054,9 @@
       "nflTeamId": "23",
       "name": "Pat Freiermuth",
       "position": "TE",
-      "total": 14.600000000000001,
-      "average": 7.300000000000001,
-      "scores": { "0": 14.6, "1": 6.7, "2": 7.9 },
+      "total": 21.9,
+      "average": 7.3,
+      "scores": { "0": 21.9, "1": 6.7, "2": 7.9, "3": 7.3 },
       "injuryStatus": "ACTIVE"
     },
     "4361418": {
@@ -2934,9 +3064,9 @@
       "nflTeamId": "10",
       "name": "Will Levis",
       "position": "QB",
-      "total": 18.16,
-      "average": 9.08,
-      "scores": { "0": 18.16, "1": 6.68, "2": 11.48 },
+      "total": 31.759999999999998,
+      "average": 10.586666666666666,
+      "scores": { "0": 31.76, "1": 6.68, "2": 11.48, "3": 13.6 },
       "injuryStatus": "ACTIVE"
     },
     "4361432": {
@@ -2944,9 +3074,9 @@
       "nflTeamId": "9",
       "name": "Romeo Doubs",
       "position": "WR",
-      "total": 18.200000000000003,
-      "average": 9.100000000000001,
-      "scores": { "0": 18.2, "1": 9, "2": 9.2 },
+      "total": 21,
+      "average": 7,
+      "scores": { "0": 21, "1": 9, "2": 9.2, "3": 2.8 },
       "injuryStatus": "ACTIVE"
     },
     "4361516": {
@@ -2954,9 +3084,9 @@
       "nflTeamId": "19",
       "name": "Daniel Bellinger",
       "position": "TE",
-      "total": 1.3,
-      "average": 0.65,
-      "scores": { "0": 1.3, "1": 1.3, "2": 0 },
+      "total": 4,
+      "average": 1.3333333333333333,
+      "scores": { "0": 4, "1": 1.3, "2": 0, "3": 2.7 },
       "injuryStatus": "ACTIVE"
     },
     "4361529": {
@@ -2966,7 +3096,7 @@
       "position": "RB",
       "total": 31.9,
       "average": 15.95,
-      "scores": { "0": 31.9, "1": 15.8, "2": 16.1 },
+      "scores": { "0": 31.9, "1": 15.8, "2": 16.1, "3": 0 },
       "injuryStatus": "INJURY_RESERVE"
     },
     "4361577": {
@@ -2984,9 +3114,9 @@
       "nflTeamId": "7",
       "name": "Javonte Williams",
       "position": "RB",
-      "total": 14.8,
-      "average": 7.4,
-      "scores": { "0": 14.8, "1": 3.3, "2": 11.5 },
+      "total": 20.9,
+      "average": 6.966666666666666,
+      "scores": { "0": 20.9, "1": 3.3, "2": 11.5, "3": 6.1 },
       "injuryStatus": "ACTIVE"
     },
     "4361741": {
@@ -2994,9 +3124,9 @@
       "nflTeamId": "25",
       "name": "Brock Purdy",
       "position": "QB",
-      "total": 24.3,
-      "average": 12.15,
-      "scores": { "0": 24.3, "1": 10.34, "2": 13.96 },
+      "total": 50.08,
+      "average": 16.69333333333333,
+      "scores": { "0": 50.08, "1": 10.34, "2": 13.96, "3": 25.78 },
       "injuryStatus": "ACTIVE"
     },
     "4361765": {
@@ -3004,9 +3134,9 @@
       "nflTeamId": "9",
       "name": "Brayden Narveson",
       "position": "K",
-      "total": 21,
-      "average": 10.5,
-      "scores": { "0": 21, "1": 10, "2": 11 },
+      "total": 34,
+      "average": 11.333333333333334,
+      "scores": { "0": 34, "1": 10, "2": 11, "3": 13 },
       "injuryStatus": "ACTIVE"
     },
     "4361777": {
@@ -3014,9 +3144,9 @@
       "nflTeamId": "13",
       "name": "Zamir White",
       "position": "RB",
-      "total": 11.4,
-      "average": 5.7,
-      "scores": { "0": 11.4, "1": 4.6, "2": 6.8 },
+      "total": 14.8,
+      "average": 4.933333333333334,
+      "scores": { "0": 14.8, "1": 4.6, "2": 6.8, "3": 3.4 },
       "injuryStatus": "ACTIVE"
     },
     "4362081": {
@@ -3024,9 +3154,9 @@
       "nflTeamId": "24",
       "name": "Cameron Dicker",
       "position": "K",
-      "total": 22,
-      "average": 11,
-      "scores": { "0": 22, "1": 12, "2": 10 },
+      "total": 26,
+      "average": 8.666666666666666,
+      "scores": { "0": 26, "1": 12, "2": 10, "3": 4 },
       "injuryStatus": "ACTIVE"
     },
     "4362087": {
@@ -3036,7 +3166,7 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0 },
+      "scores": { "0": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4362238": {
@@ -3054,9 +3184,9 @@
       "nflTeamId": "9",
       "name": "Jayden Reed",
       "position": "WR",
-      "total": 39.7,
-      "average": 19.85,
-      "scores": { "0": 39.7, "1": 33.1, "2": 6.6 },
+      "total": 50.6,
+      "average": 16.866666666666667,
+      "scores": { "0": 50.6, "1": 33.1, "2": 6.6, "3": 10.9 },
       "injuryStatus": "ACTIVE"
     },
     "4362477": {
@@ -3064,9 +3194,9 @@
       "nflTeamId": "24",
       "name": "Derius Davis",
       "position": "WR",
-      "total": 0.9,
-      "average": 0.45,
-      "scores": { "0": 0.9, "1": 0.9, "2": 0 },
+      "total": 1.7000000000000002,
+      "average": 0.5666666666666668,
+      "scores": { "0": 1.7, "1": 0.9, "2": 0, "3": 0.8 },
       "injuryStatus": "ACTIVE"
     },
     "4362478": {
@@ -3074,9 +3204,9 @@
       "nflTeamId": "22",
       "name": "Emari Demercado",
       "position": "RB",
-      "total": 9.200000000000001,
-      "average": 4.6000000000000005,
-      "scores": { "0": 9.2, "1": 4.6, "2": 4.6 },
+      "total": 9.9,
+      "average": 3.3000000000000003,
+      "scores": { "0": 9.9, "1": 4.6, "2": 4.6, "3": 0.7 },
       "injuryStatus": "ACTIVE"
     },
     "4362504": {
@@ -3086,7 +3216,7 @@
       "position": "TE",
       "total": 2.7,
       "average": 1.35,
-      "scores": { "0": 2.7, "1": 1.3, "2": 1.4 },
+      "scores": { "0": 2.7, "1": 1.3, "2": 1.4, "3": 0 },
       "injuryStatus": "INJURY_RESERVE"
     },
     "4362628": {
@@ -3104,9 +3234,9 @@
       "nflTeamId": "7",
       "name": "Tyler Badie",
       "position": "RB",
-      "total": 2.8000000000000003,
-      "average": 2.8000000000000003,
-      "scores": { "0": 2.8, "2": 2.8 },
+      "total": 9.799999999999999,
+      "average": 4.8999999999999995,
+      "scores": { "0": 9.8, "2": 2.8, "3": 7 },
       "injuryStatus": "ACTIVE"
     },
     "4362887": {
@@ -3114,9 +3244,9 @@
       "nflTeamId": "23",
       "name": "Justin Fields",
       "position": "QB",
-      "total": 23.32,
-      "average": 11.66,
-      "scores": { "0": 23.32, "1": 11.94, "2": 11.38 },
+      "total": 41.72,
+      "average": 13.906666666666666,
+      "scores": { "0": 41.72, "1": 11.94, "2": 11.38, "3": 18.4 },
       "injuryStatus": "ACTIVE"
     },
     "4362921": {
@@ -3134,9 +3264,9 @@
       "nflTeamId": "15",
       "name": "Julian Hill",
       "position": "TE",
-      "total": 1.6,
-      "average": 0.8,
-      "scores": { "0": 1.6, "1": 1.6, "2": 0 },
+      "total": 6,
+      "average": 2,
+      "scores": { "0": 6, "1": 1.6, "2": 0, "3": 4.4 },
       "injuryStatus": "ACTIVE"
     },
     "4366031": {
@@ -3144,9 +3274,9 @@
       "nflTeamId": "34",
       "name": "Tank Dell",
       "position": "WR",
-      "total": 11.2,
-      "average": 5.6,
-      "scores": { "0": 11.2, "1": 8.9, "2": 2.3 },
+      "total": 22.4,
+      "average": 7.466666666666666,
+      "scores": { "0": 22.4, "1": 8.9, "2": 2.3, "3": 11.2 },
       "injuryStatus": "ACTIVE"
     },
     "4366963": {
@@ -3156,8 +3286,8 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
-      "injuryStatus": "ACTIVE"
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
+      "injuryStatus": "OUT"
     },
     "4367209": {
       "id": "4367209",
@@ -3165,8 +3295,8 @@
       "name": "Greg Dulcich",
       "position": "TE",
       "total": 7.800000000000001,
-      "average": 3.9000000000000004,
-      "scores": { "0": 7.8, "1": 3.2, "2": 4.6 },
+      "average": 2.6,
+      "scores": { "0": 7.8, "1": 3.2, "2": 4.6, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4367567": {
@@ -3176,7 +3306,7 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4368003": {
@@ -3194,9 +3324,9 @@
       "nflTeamId": "5",
       "name": "Cedric Tillman",
       "position": "WR",
-      "total": 2.5,
-      "average": 1.25,
-      "scores": { "0": 2.5, "1": 1.3, "2": 1.2 },
+      "total": 3.9,
+      "average": 1.3,
+      "scores": { "0": 3.9, "1": 1.3, "2": 1.2, "3": 1.4 },
       "injuryStatus": "ACTIVE"
     },
     "4371733": {
@@ -3204,9 +3334,9 @@
       "nflTeamId": "21",
       "name": "Kenneth Gainwell",
       "position": "RB",
-      "total": 2.8,
-      "average": 1.4,
-      "scores": { "0": 2.8, "1": 2.2, "2": 0.6 },
+      "total": 6,
+      "average": 2,
+      "scores": { "0": 6, "1": 2.2, "2": 0.6, "3": 3.2 },
       "injuryStatus": "ACTIVE"
     },
     "4372016": {
@@ -3214,9 +3344,9 @@
       "nflTeamId": "15",
       "name": "Jaylen Waddle",
       "position": "WR",
-      "total": 24.7,
-      "average": 12.35,
-      "scores": { "0": 24.7, "1": 16.2, "2": 8.5 },
+      "total": 31.3,
+      "average": 10.433333333333334,
+      "scores": { "0": 31.3, "1": 16.2, "2": 8.5, "3": 6.6 },
       "injuryStatus": "ACTIVE"
     },
     "4372019": {
@@ -3224,9 +3354,19 @@
       "nflTeamId": "5",
       "name": "Jerome Ford",
       "position": "RB",
-      "total": 26.3,
-      "average": 13.15,
-      "scores": { "0": 26.3, "1": 18.9, "2": 7.4 },
+      "total": 36.3,
+      "average": 12.1,
+      "scores": { "0": 36.3, "1": 18.9, "2": 7.4, "3": 10 },
+      "injuryStatus": "ACTIVE"
+    },
+    "4372063": {
+      "id": "4372063",
+      "nflTeamId": "25",
+      "name": "Ronnie Bell",
+      "position": "WR",
+      "total": 2.2,
+      "average": 0.7333333333333334,
+      "scores": { "0": 2.2, "1": 0, "2": 0, "3": 2.2 },
       "injuryStatus": "ACTIVE"
     },
     "4372066": {
@@ -3234,9 +3374,9 @@
       "nflTeamId": "25",
       "name": "Jake Moody",
       "position": "K",
-      "total": 31,
-      "average": 15.5,
-      "scores": { "0": 31, "1": 26, "2": 5 },
+      "total": 36,
+      "average": 12,
+      "scores": { "0": 36, "1": 26, "2": 5, "3": 5 },
       "injuryStatus": "ACTIVE"
     },
     "4372071": {
@@ -3245,8 +3385,8 @@
       "name": "Hassan Haskins",
       "position": "RB",
       "total": 1.1,
-      "average": 0.55,
-      "scores": { "0": 1.1, "1": 0, "2": 1.1 },
+      "average": 0.3666666666666667,
+      "scores": { "0": 1.1, "1": 0, "2": 1.1, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4372096": {
@@ -3254,9 +3394,9 @@
       "nflTeamId": "6",
       "name": "Luke Schoonmaker",
       "position": "TE",
-      "total": 10.3,
-      "average": 5.15,
-      "scores": { "0": 10.3, "1": 0, "2": 10.3 },
+      "total": 11.8,
+      "average": 3.9333333333333336,
+      "scores": { "0": 11.8, "1": 0, "2": 10.3, "3": 1.5 },
       "injuryStatus": "ACTIVE"
     },
     "4372414": {
@@ -3264,9 +3404,9 @@
       "nflTeamId": "5",
       "name": "Elijah Moore",
       "position": "WR",
-      "total": 14.3,
-      "average": 7.15,
-      "scores": { "0": 14.3, "1": 3.9, "2": 10.4 },
+      "total": 18,
+      "average": 6,
+      "scores": { "0": 18, "1": 3.9, "2": 10.4, "3": 3.7 },
       "injuryStatus": "ACTIVE"
     },
     "4372485": {
@@ -3276,17 +3416,27 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "INJURY_RESERVE"
+    },
+    "4372505": {
+      "id": "4372505",
+      "nflTeamId": "27",
+      "name": "Payne Durham",
+      "position": "TE",
+      "total": 1.8,
+      "average": 0.6,
+      "scores": { "0": 1.8, "1": 0, "2": 0, "3": 1.8 },
+      "injuryStatus": "ACTIVE"
     },
     "4372561": {
       "id": "4372561",
       "nflTeamId": "25",
       "name": "Isaac Guerendo",
       "position": "RB",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "total": 1.9000000000000001,
+      "average": 0.6333333333333334,
+      "scores": { "0": 1.9, "1": 0, "2": 0, "3": 1.9 },
       "injuryStatus": "ACTIVE"
     },
     "4372780": {
@@ -3294,9 +3444,19 @@
       "nflTeamId": "29",
       "name": "Tommy Tremble",
       "position": "TE",
-      "total": 5.300000000000001,
-      "average": 5.300000000000001,
-      "scores": { "0": 5.3, "1": 0, "2": 5.3 },
+      "total": 11.2,
+      "average": 5.6,
+      "scores": { "0": 11.2, "1": 0, "2": 5.3, "3": 5.9 },
+      "injuryStatus": "ACTIVE"
+    },
+    "4373273": {
+      "id": "4373273",
+      "nflTeamId": "34",
+      "name": "British Brooks",
+      "position": "RB",
+      "total": 0.2,
+      "average": 0.06666666666666667,
+      "scores": { "0": 0.2, "1": 0, "2": 0, "3": 0.2 },
       "injuryStatus": "ACTIVE"
     },
     "4373626": {
@@ -3304,9 +3464,9 @@
       "nflTeamId": "1",
       "name": "Tyler Allgeier",
       "position": "RB",
-      "total": 9.600000000000001,
-      "average": 4.800000000000001,
-      "scores": { "0": 9.6, "1": 2.1, "2": 7.5 },
+      "total": 12.8,
+      "average": 4.266666666666667,
+      "scores": { "0": 12.8, "1": 2.1, "2": 7.5, "3": 3.2 },
       "injuryStatus": "ACTIVE"
     },
     "4373678": {
@@ -3324,9 +3484,9 @@
       "nflTeamId": "8",
       "name": "Amon-Ra St. Brown",
       "position": "WR",
-      "total": 27.200000000000003,
-      "average": 13.600000000000001,
-      "scores": { "0": 27.2, "1": 4.3, "2": 22.9 },
+      "total": 47.7,
+      "average": 15.9,
+      "scores": { "0": 47.7, "1": 4.3, "2": 22.9, "3": 20.5 },
       "injuryStatus": "ACTIVE"
     },
     "4379399": {
@@ -3344,9 +3504,9 @@
       "nflTeamId": "16",
       "name": "Jalen Nailor",
       "position": "WR",
-      "total": 23.5,
-      "average": 11.75,
-      "scores": { "0": 23.5, "1": 9.1, "2": 14.4 },
+      "total": 35.900000000000006,
+      "average": 11.966666666666669,
+      "scores": { "0": 35.9, "1": 9.1, "2": 14.4, "3": 12.4 },
       "injuryStatus": "ACTIVE"
     },
     "4383396": {
@@ -3354,9 +3514,19 @@
       "nflTeamId": "6",
       "name": "Hunter Luepke",
       "position": "RB",
-      "total": 3.8,
-      "average": 1.9,
-      "scores": { "0": 3.8, "1": 3.8, "2": 0 },
+      "total": 9.9,
+      "average": 3.3000000000000003,
+      "scores": { "0": 9.9, "1": 3.8, "2": 0, "3": 6.1 },
+      "injuryStatus": "ACTIVE"
+    },
+    "4383440": {
+      "id": "4383440",
+      "nflTeamId": "7",
+      "name": "Nate Adkins",
+      "position": "TE",
+      "total": 1.6,
+      "average": 0.5333333333333333,
+      "scores": { "0": 1.6, "1": 0, "2": 0, "3": 1.6 },
       "injuryStatus": "ACTIVE"
     },
     "4385690": {
@@ -3376,7 +3546,7 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4426338": {
@@ -3384,9 +3554,9 @@
       "nflTeamId": "7",
       "name": "Bo Nix",
       "position": "QB",
-      "total": 19.36,
-      "average": 9.68,
-      "scores": { "0": 19.36, "1": 11.02, "2": 8.34 },
+      "total": 38.7,
+      "average": 12.9,
+      "scores": { "0": 38.7, "1": 11.02, "2": 8.34, "3": 19.34 },
       "injuryStatus": "ACTIVE"
     },
     "4426339": {
@@ -3396,8 +3566,8 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
-      "injuryStatus": "ACTIVE"
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
+      "injuryStatus": "OUT"
     },
     "4426348": {
       "id": "4426348",
@@ -3414,9 +3584,9 @@
       "nflTeamId": "23",
       "name": "George Pickens",
       "position": "WR",
-      "total": 18.4,
-      "average": 9.2,
-      "scores": { "0": 18.4, "1": 13.5, "2": 4.9 },
+      "total": 29.1,
+      "average": 9.700000000000001,
+      "scores": { "0": 29.1, "1": 13.5, "2": 4.9, "3": 10.7 },
       "injuryStatus": "ACTIVE"
     },
     "4426385": {
@@ -3424,9 +3594,9 @@
       "nflTeamId": "26",
       "name": "Zach Charbonnet",
       "position": "RB",
-      "total": 30,
-      "average": 15,
-      "scores": { "0": 30, "1": 12.1, "2": 17.9 },
+      "total": 55.7,
+      "average": 18.566666666666666,
+      "scores": { "0": 55.7, "1": 12.1, "2": 17.9, "3": 25.7 },
       "injuryStatus": "ACTIVE"
     },
     "4426386": {
@@ -3434,9 +3604,9 @@
       "nflTeamId": "3",
       "name": "Roschon Johnson",
       "position": "RB",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "total": 10.2,
+      "average": 5.1,
+      "scores": { "0": 10.2, "1": 0, "2": 0, "3": 10.2 },
       "injuryStatus": "ACTIVE"
     },
     "4426388": {
@@ -3444,9 +3614,9 @@
       "nflTeamId": "8",
       "name": "Jameson Williams",
       "position": "WR",
-      "total": 38.8,
-      "average": 19.4,
-      "scores": { "0": 38.8, "1": 24.4, "2": 14.4 },
+      "total": 40,
+      "average": 13.333333333333334,
+      "scores": { "0": 40, "1": 24.4, "2": 14.4, "3": 1.2 },
       "injuryStatus": "ACTIVE"
     },
     "4426407": {
@@ -3455,8 +3625,8 @@
       "name": "Trey Palmer",
       "position": "WR",
       "total": 2.9000000000000004,
-      "average": 1.4500000000000002,
-      "scores": { "0": 2.9, "1": 2.9, "2": 0 },
+      "average": 0.9666666666666668,
+      "scores": { "0": 2.9, "1": 2.9, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4426485": {
@@ -3464,9 +3634,9 @@
       "nflTeamId": "29",
       "name": "Jonathan Mingo",
       "position": "WR",
-      "total": 5.4,
-      "average": 2.7,
-      "scores": { "0": 5.4, "1": 4.3, "2": 1.1 },
+      "total": 10.4,
+      "average": 3.466666666666667,
+      "scores": { "0": 10.4, "1": 4.3, "2": 1.1, "3": 5 },
       "injuryStatus": "ACTIVE"
     },
     "4426496": {
@@ -3475,8 +3645,8 @@
       "name": "Cade Stover",
       "position": "TE",
       "total": 2.8,
-      "average": 1.4,
-      "scores": { "0": 2.8, "1": 0, "2": 2.8 },
+      "average": 0.9333333333333332,
+      "scores": { "0": 2.8, "1": 0, "2": 2.8, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4426502": {
@@ -3484,9 +3654,9 @@
       "nflTeamId": "1",
       "name": "Drake London",
       "position": "WR",
-      "total": 20.9,
-      "average": 10.45,
-      "scores": { "0": 20.9, "1": 3.5, "2": 17.4 },
+      "total": 39.6,
+      "average": 13.200000000000001,
+      "scores": { "0": 39.6, "1": 3.5, "2": 17.4, "3": 18.7 },
       "injuryStatus": "ACTIVE"
     },
     "4426515": {
@@ -3496,7 +3666,7 @@
       "position": "WR",
       "total": 8.2,
       "average": 8.2,
-      "scores": { "0": 8.2, "1": 8.2, "2": 0 },
+      "scores": { "0": 8.2, "1": 8.2, "2": 0, "3": 0 },
       "injuryStatus": "INJURY_RESERVE"
     },
     "4426844": {
@@ -3504,9 +3674,9 @@
       "nflTeamId": "22",
       "name": "Elijah Higgins",
       "position": "TE",
-      "total": 12,
-      "average": 6,
-      "scores": { "0": 12, "1": 3.2, "2": 8.8 },
+      "total": 14.100000000000001,
+      "average": 4.7,
+      "scores": { "0": 14.1, "1": 3.2, "2": 8.8, "3": 2.1 },
       "injuryStatus": "ACTIVE"
     },
     "4426875": {
@@ -3516,7 +3686,7 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4426948": {
@@ -3564,9 +3734,9 @@
       "nflTeamId": "26",
       "name": "Kenny McIntosh",
       "position": "RB",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "total": 1.1,
+      "average": 0.3666666666666667,
+      "scores": { "0": 1.1, "1": 0, "2": 0, "3": 1.1 },
       "injuryStatus": "ACTIVE"
     },
     "4427834": {
@@ -3584,9 +3754,9 @@
       "nflTeamId": "9",
       "name": "Luke Musgrave",
       "position": "TE",
-      "total": 1.6,
-      "average": 0.8,
-      "scores": { "0": 1.6, "1": 0, "2": 1.6 },
+      "total": 2.9,
+      "average": 0.9666666666666667,
+      "scores": { "0": 2.9, "1": 0, "2": 1.6, "3": 1.3 },
       "injuryStatus": "ACTIVE"
     },
     "4428209": {
@@ -3596,7 +3766,7 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "OUT"
     },
     "4428331": {
@@ -3604,9 +3774,9 @@
       "nflTeamId": "12",
       "name": "Rashee Rice",
       "position": "WR",
-      "total": 35.8,
-      "average": 17.9,
-      "scores": { "0": 35.8, "1": 17.3, "2": 18.5 },
+      "total": 64.9,
+      "average": 21.633333333333336,
+      "scores": { "0": 64.9, "1": 17.3, "2": 18.5, "3": 29.1 },
       "injuryStatus": "ACTIVE"
     },
     "4428557": {
@@ -3614,19 +3784,19 @@
       "nflTeamId": "10",
       "name": "Tyjae Spears",
       "position": "RB",
-      "total": 12.3,
-      "average": 6.15,
-      "scores": { "0": 12.3, "1": 7.2, "2": 5.1 },
-      "injuryStatus": "QUESTIONABLE"
+      "total": 22.400000000000002,
+      "average": 7.466666666666668,
+      "scores": { "0": 22.4, "1": 7.2, "2": 5.1, "3": 10.1 },
+      "injuryStatus": "ACTIVE"
     },
     "4428718": {
       "id": "4428718",
       "nflTeamId": "13",
       "name": "Tre Tucker",
       "position": "WR",
-      "total": 7.5,
-      "average": 3.75,
-      "scores": { "0": 7.5, "1": 4.2, "2": 3.3 },
+      "total": 30.1,
+      "average": 10.033333333333333,
+      "scores": { "0": 30.1, "1": 4.2, "2": 3.3, "3": 22.6 },
       "injuryStatus": "ACTIVE"
     },
     "4428850": {
@@ -3635,8 +3805,8 @@
       "name": "Dontayvion Wicks",
       "position": "WR",
       "total": 11.6,
-      "average": 5.8,
-      "scores": { "0": 11.6, "1": 0, "2": 11.6 },
+      "average": 3.8666666666666667,
+      "scores": { "0": 11.6, "1": 0, "2": 11.6, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4429001": {
@@ -3646,8 +3816,8 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
-      "injuryStatus": "ACTIVE"
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
+      "injuryStatus": "OUT"
     },
     "4429013": {
       "id": "4429013",
@@ -3676,7 +3846,7 @@
       "position": "RB",
       "total": 2.8,
       "average": 2.8,
-      "scores": { "0": 2.8, "1": 0, "2": 2.8 },
+      "scores": { "0": 2.8, "1": 0, "2": 2.8, "3": 0 },
       "injuryStatus": "INJURY_RESERVE"
     },
     "4429025": {
@@ -3684,9 +3854,9 @@
       "nflTeamId": "24",
       "name": "Quentin Johnston",
       "position": "WR",
-      "total": 28.9,
-      "average": 14.45,
-      "scores": { "0": 28.9, "1": 6.8, "2": 22.1 },
+      "total": 41.3,
+      "average": 13.766666666666666,
+      "scores": { "0": 41.3, "1": 6.8, "2": 22.1, "3": 12.4 },
       "injuryStatus": "ACTIVE"
     },
     "4429033": {
@@ -3704,9 +3874,9 @@
       "nflTeamId": "11",
       "name": "Anthony Richardson",
       "position": "QB",
-      "total": 35.94,
-      "average": 17.97,
-      "scores": { "0": 35.94, "1": 26.08, "2": 9.86 },
+      "total": 41.02,
+      "average": 13.673333333333334,
+      "scores": { "0": 41.02, "1": 26.08, "2": 9.86, "3": 5.08 },
       "injuryStatus": "ACTIVE"
     },
     "4429086": {
@@ -3714,9 +3884,9 @@
       "nflTeamId": "13",
       "name": "Michael Mayer",
       "position": "TE",
-      "total": 4.4,
-      "average": 2.2,
-      "scores": { "0": 4.4, "1": 2.3, "2": 2.1 },
+      "total": 6.1,
+      "average": 2.033333333333333,
+      "scores": { "0": 6.1, "1": 2.3, "2": 2.1, "3": 1.7 },
       "injuryStatus": "ACTIVE"
     },
     "4429096": {
@@ -3725,8 +3895,8 @@
       "name": "Blake Corum",
       "position": "RB",
       "total": 2.8000000000000003,
-      "average": 1.4000000000000001,
-      "scores": { "0": 2.8, "1": 0, "2": 2.8 },
+      "average": 0.9333333333333335,
+      "scores": { "0": 2.8, "1": 0, "2": 2.8, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4429148": {
@@ -3734,9 +3904,9 @@
       "nflTeamId": "19",
       "name": "Theo Johnson",
       "position": "TE",
-      "total": 2.8,
-      "average": 1.4,
-      "scores": { "0": 2.8, "1": 2.8, "2": 0 },
+      "total": 5.1,
+      "average": 1.7,
+      "scores": { "0": 5.1, "1": 2.8, "2": 0, "3": 2.3 },
       "injuryStatus": "ACTIVE"
     },
     "4429160": {
@@ -3744,9 +3914,9 @@
       "nflTeamId": "15",
       "name": "De'Von Achane",
       "position": "RB",
-      "total": 52.5,
-      "average": 26.25,
-      "scores": { "0": 52.5, "1": 23, "2": 29.5 },
+      "total": 61.3,
+      "average": 20.433333333333334,
+      "scores": { "0": 61.3, "1": 23, "2": 29.5, "3": 8.8 },
       "injuryStatus": "ACTIVE"
     },
     "4429202": {
@@ -3766,7 +3936,7 @@
       "position": "WR",
       "total": 6.5,
       "average": 6.5,
-      "scores": { "0": 6.5, "1": 6.5, "2": 0 },
+      "scores": { "0": 6.5, "1": 6.5, "2": 0, "3": 0 },
       "injuryStatus": "OUT"
     },
     "4429275": {
@@ -3774,9 +3944,9 @@
       "nflTeamId": "22",
       "name": "Trey Benson",
       "position": "RB",
-      "total": 5.500000000000001,
-      "average": 2.7500000000000004,
-      "scores": { "0": 5.5, "1": 2.8, "2": 2.7 },
+      "total": 6.3,
+      "average": 2.1,
+      "scores": { "0": 6.3, "1": 2.8, "2": 2.7, "3": 0.8 },
       "injuryStatus": "ACTIVE"
     },
     "4429501": {
@@ -3794,9 +3964,9 @@
       "nflTeamId": "33",
       "name": "Zay Flowers",
       "position": "WR",
-      "total": 33.2,
-      "average": 16.6,
-      "scores": { "0": 33.2, "1": 11.1, "2": 22.1 },
+      "total": 38.5,
+      "average": 12.833333333333334,
+      "scores": { "0": 38.5, "1": 11.1, "2": 22.1, "3": 5.3 },
       "injuryStatus": "ACTIVE"
     },
     "4429676": {
@@ -3805,8 +3975,8 @@
       "name": "Tyler Goodson",
       "position": "RB",
       "total": 1.2,
-      "average": 1.2,
-      "scores": { "0": 1.2, "1": 0, "2": 1.2 },
+      "average": 0.6,
+      "scores": { "0": 1.2, "1": 0, "2": 1.2, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4429795": {
@@ -3814,9 +3984,9 @@
       "nflTeamId": "8",
       "name": "Jahmyr Gibbs",
       "position": "RB",
-      "total": 35,
-      "average": 17.5,
-      "scores": { "0": 35, "1": 17.4, "2": 17.6 },
+      "total": 51.300000000000004,
+      "average": 17.1,
+      "scores": { "0": 51.3, "1": 17.4, "2": 17.6, "3": 16.3 },
       "injuryStatus": "ACTIVE"
     },
     "4430027": {
@@ -3824,19 +3994,19 @@
       "nflTeamId": "8",
       "name": "Sam LaPorta",
       "position": "TE",
-      "total": 11.8,
-      "average": 5.9,
-      "scores": { "0": 11.8, "1": 8.5, "2": 3.3 },
-      "injuryStatus": "ACTIVE"
+      "total": 17.4,
+      "average": 5.8,
+      "scores": { "0": 17.4, "1": 8.5, "2": 3.3, "3": 5.6 },
+      "injuryStatus": "QUESTIONABLE"
     },
     "4430034": {
       "id": "4430034",
       "nflTeamId": "29",
       "name": "Xavier Legette",
       "position": "WR",
-      "total": 7.5,
-      "average": 3.75,
-      "scores": { "0": 7.5, "1": 7.5, "2": 0 },
+      "total": 13.7,
+      "average": 4.566666666666666,
+      "scores": { "0": 13.7, "1": 7.5, "2": 0, "3": 6.2 },
       "injuryStatus": "ACTIVE"
     },
     "4430191": {
@@ -3846,7 +4016,7 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4430539": {
@@ -3876,7 +4046,7 @@
       "position": "TE",
       "total": 1.7000000000000002,
       "average": 0.8500000000000001,
-      "scores": { "0": 1.7, "1": 0, "2": 1.7 },
+      "scores": { "0": 1.7, "1": 0, "2": 1.7, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4430737": {
@@ -3884,9 +4054,9 @@
       "nflTeamId": "14",
       "name": "Kyren Williams",
       "position": "RB",
-      "total": 29.6,
-      "average": 14.8,
-      "scores": { "0": 29.6, "1": 14.4, "2": 15.2 },
+      "total": 61.2,
+      "average": 20.400000000000002,
+      "scores": { "0": 61.2, "1": 14.4, "2": 15.2, "3": 31.6 },
       "injuryStatus": "ACTIVE"
     },
     "4430802": {
@@ -3895,8 +4065,8 @@
       "name": "Darnell Washington",
       "position": "TE",
       "total": 9,
-      "average": 4.5,
-      "scores": { "0": 9, "1": 1.5, "2": 7.5 },
+      "average": 3,
+      "scores": { "0": 9, "1": 1.5, "2": 7.5, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4430807": {
@@ -3904,9 +4074,9 @@
       "nflTeamId": "1",
       "name": "Bijan Robinson",
       "position": "RB",
-      "total": 32.3,
-      "average": 16.15,
-      "scores": { "0": 32.3, "1": 16.1, "2": 16.2 },
+      "total": 45.5,
+      "average": 15.166666666666666,
+      "scores": { "0": 45.5, "1": 16.1, "2": 16.2, "3": 13.2 },
       "injuryStatus": "ACTIVE"
     },
     "4430834": {
@@ -3914,9 +4084,9 @@
       "nflTeamId": "27",
       "name": "Jalen McMillan",
       "position": "WR",
-      "total": 13.3,
-      "average": 6.65,
-      "scores": { "0": 13.3, "1": 10.2, "2": 3.1 },
+      "total": 14.9,
+      "average": 4.966666666666667,
+      "scores": { "0": 14.9, "1": 10.2, "2": 3.1, "3": 1.6 },
       "injuryStatus": "ACTIVE"
     },
     "4430871": {
@@ -3924,9 +4094,9 @@
       "nflTeamId": "27",
       "name": "Sean Tucker",
       "position": "RB",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "total": 0.4,
+      "average": 0.13333333333333333,
+      "scores": { "0": 0.4, "1": 0, "2": 0, "3": 0.4 },
       "injuryStatus": "ACTIVE"
     },
     "4430878": {
@@ -3934,9 +4104,9 @@
       "nflTeamId": "26",
       "name": "Jaxon Smith-Njigba",
       "position": "WR",
-      "total": 27.6,
-      "average": 13.8,
-      "scores": { "0": 27.6, "1": 3.9, "2": 23.7 },
+      "total": 34.5,
+      "average": 11.5,
+      "scores": { "0": 34.5, "1": 3.9, "2": 23.7, "3": 6.9 },
       "injuryStatus": "ACTIVE"
     },
     "4430968": {
@@ -3946,17 +4116,17 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
-      "injuryStatus": "ACTIVE"
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
+      "injuryStatus": "OUT"
     },
     "4431280": {
       "id": "4431280",
       "nflTeamId": "7",
       "name": "Troy Franklin",
       "position": "WR",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "total": 3.1,
+      "average": 1.55,
+      "scores": { "0": 3.1, "1": 0, "2": 0, "3": 3.1 },
       "injuryStatus": "ACTIVE"
     },
     "4431299": {
@@ -3964,9 +4134,9 @@
       "nflTeamId": "3",
       "name": "Rome Odunze",
       "position": "WR",
-      "total": 7.4,
-      "average": 3.7,
-      "scores": { "0": 7.4, "1": 2.1, "2": 5.3 },
+      "total": 30.8,
+      "average": 10.266666666666667,
+      "scores": { "0": 30.8, "1": 2.1, "2": 5.3, "3": 23.4 },
       "injuryStatus": "ACTIVE"
     },
     "4431452": {
@@ -3984,9 +4154,9 @@
       "nflTeamId": "6",
       "name": "Deuce Vaughn",
       "position": "RB",
-      "total": 3.1,
-      "average": 1.55,
-      "scores": { "0": 3.1, "1": 0.4, "2": 2.7 },
+      "total": 5.4,
+      "average": 1.8,
+      "scores": { "0": 5.4, "1": 0.4, "2": 2.7, "3": 2.3 },
       "injuryStatus": "ACTIVE"
     },
     "4431492": {
@@ -3996,8 +4166,8 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
-      "injuryStatus": "ACTIVE"
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
+      "injuryStatus": "OUT"
     },
     "4431545": {
       "id": "4431545",
@@ -4006,7 +4176,7 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4431588": {
@@ -4015,8 +4185,8 @@
       "name": "Ja'Tavion Sanders",
       "position": "TE",
       "total": 4.2,
-      "average": 2.1,
-      "scores": { "0": 4.2, "1": 1.4, "2": 2.8 },
+      "average": 1.4000000000000001,
+      "scores": { "0": 4.2, "1": 1.4, "2": 2.8, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4431611": {
@@ -4024,9 +4194,9 @@
       "nflTeamId": "3",
       "name": "Caleb Williams",
       "position": "QB",
-      "total": 14.58,
-      "average": 7.29,
-      "scores": { "0": 14.58, "1": 7.22, "2": 7.36 },
+      "total": 31.9,
+      "average": 10.633333333333333,
+      "scores": { "0": 31.9, "1": 7.22, "2": 7.36, "3": 17.32 },
       "injuryStatus": "ACTIVE"
     },
     "4432577": {
@@ -4034,9 +4204,9 @@
       "nflTeamId": "34",
       "name": "C.J. Stroud",
       "position": "QB",
-      "total": 32.96,
-      "average": 16.48,
-      "scores": { "0": 32.96, "1": 18.66, "2": 14.3 },
+      "total": 42.76,
+      "average": 14.253333333333332,
+      "scores": { "0": 42.76, "1": 18.66, "2": 14.3, "3": 9.8 },
       "injuryStatus": "ACTIVE"
     },
     "4432620": {
@@ -4054,9 +4224,9 @@
       "nflTeamId": "13",
       "name": "Brock Bowers",
       "position": "TE",
-      "total": 30.6,
-      "average": 15.3,
-      "scores": { "0": 30.6, "1": 11.8, "2": 18.8 },
+      "total": 37.7,
+      "average": 12.566666666666668,
+      "scores": { "0": 37.7, "1": 11.8, "2": 18.8, "3": 7.1 },
       "injuryStatus": "ACTIVE"
     },
     "4432708": {
@@ -4064,9 +4234,9 @@
       "nflTeamId": "22",
       "name": "Marvin Harrison Jr.",
       "position": "WR",
-      "total": 30.4,
-      "average": 15.2,
-      "scores": { "0": 30.4, "1": 1.4, "2": 29 },
+      "total": 47.8,
+      "average": 15.933333333333332,
+      "scores": { "0": 47.8, "1": 1.4, "2": 29, "3": 17.4 },
       "injuryStatus": "ACTIVE"
     },
     "4432773": {
@@ -4086,7 +4256,7 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "INJURY_RESERVE"
     },
     "4434153": {
@@ -4096,7 +4266,7 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4566192": {
@@ -4104,10 +4274,10 @@
       "nflTeamId": "14",
       "name": "Joshua Karty",
       "position": "K",
-      "total": 13,
-      "average": 6.5,
-      "scores": { "0": 13, "1": 9, "2": 4 },
-      "injuryStatus": "QUESTIONABLE"
+      "total": 22,
+      "average": 7.333333333333333,
+      "scores": { "0": 22, "1": 9, "2": 4, "3": 9 },
+      "injuryStatus": "ACTIVE"
     },
     "4567048": {
       "id": "4567048",
@@ -4116,8 +4286,8 @@
       "position": "RB",
       "total": 18.900000000000002,
       "average": 18.900000000000002,
-      "scores": { "0": 18.9, "1": 18.9, "2": 0 },
-      "injuryStatus": "DOUBTFUL"
+      "scores": { "0": 18.9, "1": 18.9, "2": 0, "3": 0 },
+      "injuryStatus": "OUT"
     },
     "4567096": {
       "id": "4567096",
@@ -4126,17 +4296,17 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
-      "injuryStatus": "ACTIVE"
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
+      "injuryStatus": "OUT"
     },
     "4567104": {
       "id": "4567104",
       "nflTeamId": "16",
       "name": "Will Reichard",
       "position": "K",
-      "total": 15,
-      "average": 7.5,
-      "scores": { "0": 15, "1": 4, "2": 11 },
+      "total": 27,
+      "average": 9,
+      "scores": { "0": 27, "1": 4, "2": 11, "3": 12 },
       "injuryStatus": "ACTIVE"
     },
     "4567156": {
@@ -4144,9 +4314,9 @@
       "nflTeamId": "10",
       "name": "Treylon Burks",
       "position": "WR",
-      "total": 1.3,
-      "average": 0.65,
-      "scores": { "0": 1.3, "1": 1.3, "2": 0 },
+      "total": 3.2,
+      "average": 1.0666666666666667,
+      "scores": { "0": 3.2, "1": 1.3, "2": 0, "3": 1.9 },
       "injuryStatus": "ACTIVE"
     },
     "4569173": {
@@ -4164,9 +4334,9 @@
       "nflTeamId": "14",
       "name": "Jordan Whittington",
       "position": "WR",
-      "total": 4.2,
-      "average": 2.1,
-      "scores": { "0": 4.2, "1": 0, "2": 4.2 },
+      "total": 10,
+      "average": 3.3333333333333335,
+      "scores": { "0": 10, "1": 0, "2": 4.2, "3": 5.8 },
       "injuryStatus": "ACTIVE"
     },
     "4569559": {
@@ -4176,17 +4346,17 @@
       "position": "WR",
       "total": 11.9,
       "average": 11.9,
-      "scores": { "0": 11.9, "1": 11.9, "2": 0 },
-      "injuryStatus": "ACTIVE"
+      "scores": { "0": 11.9, "1": 11.9, "2": 0, "3": 0 },
+      "injuryStatus": "OUT"
     },
     "4569587": {
       "id": "4569587",
       "nflTeamId": "19",
       "name": "Wan'Dale Robinson",
       "position": "WR",
-      "total": 21.6,
-      "average": 10.8,
-      "scores": { "0": 21.6, "1": 11.8, "2": 9.8 },
+      "total": 34.7,
+      "average": 11.566666666666668,
+      "scores": { "0": 34.7, "1": 11.8, "2": 9.8, "3": 13.1 },
       "injuryStatus": "ACTIVE"
     },
     "4569603": {
@@ -4196,8 +4366,8 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
-      "injuryStatus": "DOUBTFUL"
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
+      "injuryStatus": "OUT"
     },
     "4569618": {
       "id": "4569618",
@@ -4216,7 +4386,7 @@
       "position": "RB",
       "total": 1.4000000000000001,
       "average": 1.4000000000000001,
-      "scores": { "0": 1.4, "1": 1.4, "2": 0 },
+      "scores": { "0": 1.4, "1": 1.4, "2": 0, "3": 0 },
       "injuryStatus": "INJURY_RESERVE"
     },
     "4569987": {
@@ -4224,9 +4394,9 @@
       "nflTeamId": "23",
       "name": "Jaylen Warren",
       "position": "RB",
-      "total": 12.100000000000001,
-      "average": 6.050000000000001,
-      "scores": { "0": 12.1, "1": 4, "2": 8.1 },
+      "total": 13.200000000000001,
+      "average": 4.4,
+      "scores": { "0": 13.2, "1": 4, "2": 8.1, "3": 1.1 },
       "injuryStatus": "ACTIVE"
     },
     "4570409": {
@@ -4235,8 +4405,8 @@
       "name": "David Bell",
       "position": "WR",
       "total": 5.7,
-      "average": 5.7,
-      "scores": { "0": 5.7, "2": 5.7 },
+      "average": 2.85,
+      "scores": { "0": 5.7, "2": 5.7, "3": 0 },
       "injuryStatus": "INJURY_RESERVE"
     },
     "4570561": {
@@ -4244,9 +4414,9 @@
       "nflTeamId": "19",
       "name": "Eric Gray",
       "position": "RB",
-      "total": 2.5,
-      "average": 1.25,
-      "scores": { "0": 2.5, "1": 2.5, "2": 0 },
+      "total": 0.5000000000000001,
+      "average": 0.1666666666666667,
+      "scores": { "0": 0.5, "1": 2.5, "2": 0, "3": -2 },
       "injuryStatus": "ACTIVE"
     },
     "4571557": {
@@ -4256,7 +4426,7 @@
       "position": "K",
       "total": 3,
       "average": 3,
-      "scores": { "0": 3, "1": 3, "2": 0 },
+      "scores": { "0": 3, "1": 3, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4572680": {
@@ -4264,9 +4434,9 @@
       "nflTeamId": "9",
       "name": "Tucker Kraft",
       "position": "TE",
-      "total": 9.3,
-      "average": 4.65,
-      "scores": { "0": 9.3, "1": 5.7, "2": 3.6 },
+      "total": 13.7,
+      "average": 4.566666666666666,
+      "scores": { "0": 13.7, "1": 5.7, "2": 3.6, "3": 4.4 },
       "injuryStatus": "ACTIVE"
     },
     "4573697": {
@@ -4274,9 +4444,9 @@
       "nflTeamId": "18",
       "name": "Mason Tipton",
       "position": "WR",
-      "total": 1.6,
-      "average": 0.8,
-      "scores": { "0": 1.6, "1": 1.6, "2": 0 },
+      "total": 4.7,
+      "average": 1.5666666666666667,
+      "scores": { "0": 4.7, "1": 1.6, "2": 0, "3": 3.1 },
       "injuryStatus": "ACTIVE"
     },
     "4575665": {
@@ -4286,7 +4456,17 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
+      "injuryStatus": "ACTIVE"
+    },
+    "4576297": {
+      "id": "4576297",
+      "nflTeamId": "26",
+      "name": "AJ Barner",
+      "position": "TE",
+      "total": 4.3,
+      "average": 1.4333333333333333,
+      "scores": { "0": 4.3, "1": 0, "2": 0, "3": 4.3 },
       "injuryStatus": "ACTIVE"
     },
     "4595348": {
@@ -4294,9 +4474,9 @@
       "nflTeamId": "19",
       "name": "Malik Nabers",
       "position": "WR",
-      "total": 40.3,
-      "average": 20.15,
-      "scores": { "0": 40.3, "1": 11.6, "2": 28.7 },
+      "total": 68.5,
+      "average": 22.833333333333332,
+      "scores": { "0": 68.5, "1": 11.6, "2": 28.7, "3": 28.2 },
       "injuryStatus": "ACTIVE"
     },
     "4596334": {
@@ -4306,7 +4486,7 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "OUT"
     },
     "4596448": {
@@ -4314,9 +4494,9 @@
       "nflTeamId": "27",
       "name": "Bucky Irving",
       "position": "RB",
-      "total": 11.8,
-      "average": 5.9,
-      "scores": { "0": 11.8, "1": 9.6, "2": 2.2 },
+      "total": 23.2,
+      "average": 7.733333333333333,
+      "scores": { "0": 23.2, "1": 9.6, "2": 2.2, "3": 11.4 },
       "injuryStatus": "ACTIVE"
     },
     "4597500": {
@@ -4325,8 +4505,8 @@
       "name": "Adonai Mitchell",
       "position": "WR",
       "total": 5.2,
-      "average": 2.6,
-      "scores": { "0": 5.2, "1": 1.2, "2": 4 },
+      "average": 1.7333333333333334,
+      "scores": { "0": 5.2, "1": 1.2, "2": 4, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4599739": {
@@ -4336,7 +4516,7 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "INJURY_RESERVE"
     },
     "4612826": {
@@ -4344,9 +4524,9 @@
       "nflTeamId": "24",
       "name": "Ladd McConkey",
       "position": "WR",
-      "total": 19.5,
-      "average": 9.75,
-      "scores": { "0": 19.5, "1": 14.9, "2": 4.6 },
+      "total": 26.9,
+      "average": 8.966666666666667,
+      "scores": { "0": 26.9, "1": 14.9, "2": 4.6, "3": 7.4 },
       "injuryStatus": "ACTIVE"
     },
     "4613104": {
@@ -4376,7 +4556,7 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "OUT"
     },
     "4682745": {
@@ -4384,9 +4564,9 @@
       "nflTeamId": "15",
       "name": "Jaylen Wright",
       "position": "RB",
-      "total": 0.4,
-      "average": 0.4,
-      "scores": { "0": 0.4, "1": 0, "2": 0.4 },
+      "total": 2.1,
+      "average": 1.05,
+      "scores": { "0": 2.1, "1": 0, "2": 0.4, "3": 1.7 },
       "injuryStatus": "ACTIVE"
     },
     "4683062": {
@@ -4394,9 +4574,9 @@
       "nflTeamId": "12",
       "name": "Xavier Worthy",
       "position": "WR",
-      "total": 25,
-      "average": 12.5,
-      "scores": { "0": 25, "1": 20.8, "2": 4.2 },
+      "total": 30,
+      "average": 10,
+      "scores": { "0": 30, "1": 20.8, "2": 4.2, "3": 5 },
       "injuryStatus": "ACTIVE"
     },
     "4685247": {
@@ -4416,7 +4596,7 @@
       "position": "QB",
       "total": 11.600000000000001,
       "average": 5.800000000000001,
-      "scores": { "0": 11.6, "1": 9.64, "2": 1.96 },
+      "scores": { "0": 11.6, "1": 9.64, "2": 1.96, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4686104": {
@@ -4424,9 +4604,9 @@
       "nflTeamId": "21",
       "name": "Johnny Wilson",
       "position": "WR",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "total": 1.9,
+      "average": 0.6333333333333333,
+      "scores": { "0": 1.9, "1": 0, "2": 0, "3": 1.9 },
       "injuryStatus": "ACTIVE"
     },
     "4686361": {
@@ -4445,8 +4625,8 @@
       "name": "Xavier Hutchinson",
       "position": "WR",
       "total": 1.3,
-      "average": 0.65,
-      "scores": { "0": 1.3, "1": 1.3, "2": 0 },
+      "average": 0.43333333333333335,
+      "scores": { "0": 1.3, "1": 1.3, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4686472": {
@@ -4454,9 +4634,9 @@
       "nflTeamId": "7",
       "name": "Marvin Mims Jr.",
       "position": "WR",
-      "total": 2,
-      "average": 1,
-      "scores": { "0": 2, "1": 0, "2": 2 },
+      "total": 3.9000000000000004,
+      "average": 1.3,
+      "scores": { "0": 3.9, "1": 0, "2": 2, "3": 1.9 },
       "injuryStatus": "ACTIVE"
     },
     "4686781": {
@@ -4466,7 +4646,7 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4688813": {
@@ -4474,9 +4654,9 @@
       "nflTeamId": "11",
       "name": "Josh Downs",
       "position": "WR",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "total": 5.2,
+      "average": 5.2,
+      "scores": { "0": 5.2, "1": 0, "2": 0, "3": 5.2 },
       "injuryStatus": "ACTIVE"
     },
     "4689936": {
@@ -4484,9 +4664,9 @@
       "nflTeamId": "8",
       "name": "Jake Bates",
       "position": "K",
-      "total": 18,
-      "average": 9,
-      "scores": { "0": 18, "1": 8, "2": 10 },
+      "total": 20,
+      "average": 6.666666666666667,
+      "scores": { "0": 20, "1": 8, "2": 10, "3": 2 },
       "injuryStatus": "ACTIVE"
     },
     "4690923": {
@@ -4516,7 +4696,7 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4692835": {
@@ -4524,10 +4704,10 @@
       "nflTeamId": "6",
       "name": "Jalen Brooks",
       "position": "WR",
-      "total": 4.800000000000001,
-      "average": 2.4000000000000004,
-      "scores": { "0": 4.8, "1": 2.8, "2": 2 },
-      "injuryStatus": "QUESTIONABLE"
+      "total": 8.2,
+      "average": 2.733333333333333,
+      "scores": { "0": 8.2, "1": 2.8, "2": 2, "3": 3.4 },
+      "injuryStatus": "ACTIVE"
     },
     "4695404": {
       "id": "4695404",
@@ -4546,17 +4726,17 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 },
-      "injuryStatus": "ACTIVE"
+      "scores": { "0": 0, "1": 0, "2": 0, "3": 0 },
+      "injuryStatus": "OUT"
     },
     "4697815": {
       "id": "4697815",
       "nflTeamId": "27",
       "name": "Rachaad White",
       "position": "RB",
-      "total": 19.9,
-      "average": 9.95,
-      "scores": { "0": 19.9, "1": 16.6, "2": 3.3 },
+      "total": 28.400000000000002,
+      "average": 9.466666666666667,
+      "scores": { "0": 28.4, "1": 16.6, "2": 3.3, "3": 8.5 },
       "injuryStatus": "ACTIVE"
     },
     "4714365": {
@@ -4564,9 +4744,9 @@
       "nflTeamId": "12",
       "name": "Carson Steele",
       "position": "RB",
-      "total": 0.7000000000000002,
-      "average": 0.3500000000000001,
-      "scores": { "0": 0.7, "1": 0.3, "2": 0.4 },
+      "total": 9.1,
+      "average": 3.033333333333333,
+      "scores": { "0": 9.1, "1": 0.3, "2": 0.4, "3": 8.4 },
       "injuryStatus": "ACTIVE"
     },
     "4722893": {
@@ -4574,9 +4754,9 @@
       "nflTeamId": "7",
       "name": "Jaleel McLaughlin",
       "position": "RB",
-      "total": 6.4,
-      "average": 3.2,
-      "scores": { "0": 6.4, "1": 5.8, "2": 0.6 },
+      "total": 14.8,
+      "average": 4.933333333333334,
+      "scores": { "0": 14.8, "1": 5.8, "2": 0.6, "3": 8.4 },
       "injuryStatus": "ACTIVE"
     },
     "4722908": {
@@ -4585,8 +4765,8 @@
       "name": "Drew Ogletree",
       "position": "TE",
       "total": 2.2,
-      "average": 1.1,
-      "scores": { "0": 2.2, "1": 0, "2": 2.2 },
+      "average": 0.7333333333333334,
+      "scores": { "0": 2.2, "1": 0, "2": 2.2, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4879650": {
@@ -4596,17 +4776,17 @@
       "position": "WR",
       "total": 2.3,
       "average": 1.15,
-      "scores": { "0": 2.3, "1": 0, "2": 2.3 },
-      "injuryStatus": "OUT"
+      "scores": { "0": 2.3, "1": 0, "2": 2.3, "3": 0 },
+      "injuryStatus": "INJURY_RESERVE"
     },
     "4887558": {
       "id": "4887558",
       "nflTeamId": "9",
       "name": "Emanuel Wilson",
       "position": "RB",
-      "total": 7.7,
-      "average": 3.85,
-      "scores": { "0": 7.7, "1": 6.8, "2": 0.9 },
+      "total": 24.2,
+      "average": 8.066666666666666,
+      "scores": { "0": 24.2, "1": 6.8, "2": 0.9, "3": 16.5 },
       "injuryStatus": "ACTIVE"
     },
     "4912274": {
@@ -4615,8 +4795,8 @@
       "name": "Sione Vaki",
       "position": "RB",
       "total": 2.7,
-      "average": 1.35,
-      "scores": { "0": 2.7, "1": 0, "2": 2.7 },
+      "average": 0.9,
+      "scores": { "0": 2.7, "1": 0, "2": 2.7, "3": 0 },
       "injuryStatus": "ACTIVE"
     },
     "-16001": {
@@ -4624,9 +4804,9 @@
       "nflTeamId": "1",
       "name": "Falcons D/ST",
       "position": "DST",
-      "total": 6,
-      "average": 3,
-      "scores": { "0": 6, "1": 4, "2": 2 }
+      "total": 8,
+      "average": 2.6666666666666665,
+      "scores": { "0": 8, "1": 4, "2": 2, "3": 2 }
     },
     "-16002": {
       "id": "-16002",
@@ -4642,9 +4822,9 @@
       "nflTeamId": "3",
       "name": "Bears D/ST",
       "position": "DST",
-      "total": 31,
-      "average": 15.5,
-      "scores": { "0": 31, "1": 26, "2": 5 }
+      "total": 36,
+      "average": 12,
+      "scores": { "0": 36, "1": 26, "2": 5, "3": 5 }
     },
     "-16004": {
       "id": "-16004",
@@ -4660,81 +4840,81 @@
       "nflTeamId": "5",
       "name": "Browns D/ST",
       "position": "DST",
-      "total": 13,
-      "average": 6.5,
-      "scores": { "0": 13, "1": 4, "2": 9 }
+      "total": 19,
+      "average": 6.333333333333333,
+      "scores": { "0": 19, "1": 4, "2": 9, "3": 6 }
     },
     "-16006": {
       "id": "-16006",
       "nflTeamId": "6",
       "name": "Cowboys D/ST",
       "position": "DST",
-      "total": 18,
-      "average": 9,
-      "scores": { "0": 18, "1": 19, "2": -1 }
+      "total": 12,
+      "average": 4,
+      "scores": { "0": 12, "1": 19, "2": -1, "3": -6 }
     },
     "-16007": {
       "id": "-16007",
       "nflTeamId": "7",
       "name": "Broncos D/ST",
       "position": "DST",
-      "total": 17,
-      "average": 8.5,
-      "scores": { "0": 17, "1": 10, "2": 7 }
+      "total": 33,
+      "average": 11,
+      "scores": { "0": 33, "1": 10, "2": 7, "3": 16 }
     },
     "-16008": {
       "id": "-16008",
       "nflTeamId": "8",
       "name": "Lions D/ST",
       "position": "DST",
-      "total": 12,
-      "average": 6,
-      "scores": { "0": 12, "1": 3, "2": 9 }
+      "total": 20,
+      "average": 6.666666666666667,
+      "scores": { "0": 20, "1": 3, "2": 9, "3": 8 }
     },
     "-16009": {
       "id": "-16009",
       "nflTeamId": "9",
       "name": "Packers D/ST",
       "position": "DST",
-      "total": 14,
-      "average": 7,
-      "scores": { "0": 14, "1": 4, "2": 10 }
+      "total": 37,
+      "average": 12.333333333333334,
+      "scores": { "0": 37, "1": 4, "2": 10, "3": 23 }
     },
     "-16010": {
       "id": "-16010",
       "nflTeamId": "10",
       "name": "Titans D/ST",
       "position": "DST",
-      "total": 11,
-      "average": 5.5,
-      "scores": { "0": 11, "1": 7, "2": 4 }
+      "total": 13,
+      "average": 4.333333333333333,
+      "scores": { "0": 13, "1": 7, "2": 4, "3": 2 }
     },
     "-16011": {
       "id": "-16011",
       "nflTeamId": "11",
       "name": "Colts D/ST",
       "position": "DST",
-      "total": 4,
-      "average": 2,
-      "scores": { "0": 4, "1": 2, "2": 2 }
+      "total": 14,
+      "average": 4.666666666666667,
+      "scores": { "0": 14, "1": 2, "2": 2, "3": 10 }
     },
     "-16012": {
       "id": "-16012",
       "nflTeamId": "12",
       "name": "Chiefs D/ST",
       "position": "DST",
-      "total": 9,
-      "average": 4.5,
-      "scores": { "0": 9, "1": -2, "2": 11 }
+      "total": 14,
+      "average": 4.666666666666667,
+      "scores": { "0": 14, "1": -2, "2": 11, "3": 5 }
     },
     "-16013": {
       "id": "-16013",
       "nflTeamId": "13",
       "name": "Raiders D/ST",
       "position": "DST",
-      "total": 4,
-      "average": 2,
-      "scores": { "0": 4, "1": 1, "2": 3 }
+      "total": 0,
+      "average": 0,
+      "scores": { "0": 0, "1": 1, "2": 3, "3": -4 }
     },
     "-16014": {
       "id": "-16014",
@@ -4742,26 +4922,26 @@
       "name": "Rams D/ST",
       "position": "DST",
       "total": -2,
-      "average": -1,
-      "scores": { "0": -2, "1": 3, "2": -5 }
+      "average": -0.6666666666666666,
+      "scores": { "0": -2, "1": 3, "2": -5, "3": 0 }
     },
     "-16015": {
       "id": "-16015",
       "nflTeamId": "15",
       "name": "Dolphins D/ST",
       "position": "DST",
-      "total": 10,
-      "average": 5,
-      "scores": { "0": 10, "1": 8, "2": 2 }
+      "total": 16,
+      "average": 5.333333333333333,
+      "scores": { "0": 16, "1": 8, "2": 2, "3": 6 }
     },
     "-16016": {
       "id": "-16016",
       "nflTeamId": "16",
       "name": "Vikings D/ST",
       "position": "DST",
-      "total": 33,
-      "average": 16.5,
-      "scores": { "0": 33, "1": 21, "2": 12 }
+      "total": 47,
+      "average": 15.666666666666666,
+      "scores": { "0": 47, "1": 21, "2": 12, "3": 14 }
     },
     "-16017": {
       "id": "-16017",
@@ -4777,18 +4957,18 @@
       "nflTeamId": "18",
       "name": "Saints D/ST",
       "position": "DST",
-      "total": 22,
-      "average": 11,
-      "scores": { "0": 22, "1": 16, "2": 6 }
+      "total": 28,
+      "average": 9.333333333333334,
+      "scores": { "0": 28, "1": 16, "2": 6, "3": 6 }
     },
     "-16019": {
       "id": "-16019",
       "nflTeamId": "19",
       "name": "Giants D/ST",
       "position": "DST",
-      "total": 7,
-      "average": 3.5,
-      "scores": { "0": 7, "1": 5, "2": 2 }
+      "total": 22,
+      "average": 7.333333333333333,
+      "scores": { "0": 22, "1": 5, "2": 2, "3": 15 }
     },
     "-16020": {
       "id": "-16020",
@@ -4804,63 +4984,63 @@
       "nflTeamId": "21",
       "name": "Eagles D/ST",
       "position": "DST",
-      "total": 0,
-      "average": 0,
-      "scores": { "0": 0, "1": 0, "2": 0 }
+      "total": 8,
+      "average": 2.6666666666666665,
+      "scores": { "0": 8, "1": 0, "2": 0, "3": 8 }
     },
     "-16022": {
       "id": "-16022",
       "nflTeamId": "22",
       "name": "Cardinals D/ST",
       "position": "DST",
-      "total": 20,
-      "average": 10,
-      "scores": { "0": 20, "1": 8, "2": 12 }
+      "total": 23,
+      "average": 7.666666666666667,
+      "scores": { "0": 23, "1": 8, "2": 12, "3": 3 }
     },
     "-16023": {
       "id": "-16023",
       "nflTeamId": "23",
       "name": "Steelers D/ST",
       "position": "DST",
-      "total": 25,
-      "average": 12.5,
-      "scores": { "0": 25, "1": 13, "2": 12 }
+      "total": 36,
+      "average": 12,
+      "scores": { "0": 36, "1": 13, "2": 12, "3": 11 }
     },
     "-16024": {
       "id": "-16024",
       "nflTeamId": "24",
       "name": "Chargers D/ST",
       "position": "DST",
-      "total": 26,
-      "average": 13,
-      "scores": { "0": 26, "1": 15, "2": 11 }
+      "total": 30,
+      "average": 10,
+      "scores": { "0": 30, "1": 15, "2": 11, "3": 4 }
     },
     "-16025": {
       "id": "-16025",
       "nflTeamId": "25",
       "name": "49ers D/ST",
       "position": "DST",
-      "total": 12,
-      "average": 6,
-      "scores": { "0": 12, "1": 7, "2": 5 }
+      "total": 17,
+      "average": 5.666666666666667,
+      "scores": { "0": 17, "1": 7, "2": 5, "3": 5 }
     },
     "-16026": {
       "id": "-16026",
       "nflTeamId": "26",
       "name": "Seahawks D/ST",
       "position": "DST",
-      "total": 16,
-      "average": 8,
-      "scores": { "0": 16, "1": 11, "2": 5 }
+      "total": 28,
+      "average": 9.333333333333334,
+      "scores": { "0": 28, "1": 11, "2": 5, "3": 12 }
     },
     "-16027": {
       "id": "-16027",
       "nflTeamId": "27",
       "name": "Buccaneers D/ST",
       "position": "DST",
-      "total": 4,
-      "average": 2,
-      "scores": { "0": 4, "1": 4, "2": 0 }
+      "total": 5,
+      "average": 1.6666666666666667,
+      "scores": { "0": 5, "1": 4, "2": 0, "3": 1 }
     },
     "-16028": {
       "id": "-16028",
@@ -4876,9 +5056,9 @@
       "nflTeamId": "29",
       "name": "Panthers D/ST",
       "position": "DST",
-      "total": 2,
-      "average": 1,
-      "scores": { "0": 2, "1": -3, "2": 5 }
+      "total": 7,
+      "average": 2.3333333333333335,
+      "scores": { "0": 7, "1": -3, "2": 5, "3": 5 }
     },
     "-16030": {
       "id": "-16030",
@@ -4894,18 +5074,18 @@
       "nflTeamId": "33",
       "name": "Ravens D/ST",
       "position": "DST",
-      "total": 12,
-      "average": 6,
-      "scores": { "0": 12, "1": 3, "2": 9 }
+      "total": 14,
+      "average": 4.666666666666667,
+      "scores": { "0": 14, "1": 3, "2": 9, "3": 2 }
     },
     "-16034": {
       "id": "-16034",
       "nflTeamId": "34",
       "name": "Texans D/ST",
       "position": "DST",
-      "total": 20,
-      "average": 10,
-      "scores": { "0": 20, "1": 4, "2": 16 }
+      "total": 25,
+      "average": 8.333333333333334,
+      "scores": { "0": 25, "1": 4, "2": 16, "3": 5 }
     }
   },
   "ffTeams": {
@@ -5226,7 +5406,7 @@
     },
     "3": {
       "id": "3",
-      "name": "Throw some D's on that",
+      "name": "Meet the Owens",
       "draft": [
         { "playerId": 3116406, "pickIndex": 6 },
         { "playerId": 2577417, "pickIndex": 13 },
@@ -5577,14 +5757,14 @@
             "8439",
             "3040151",
             "4241474",
-            "4428557",
             "4432773",
             "15864",
             "-16006",
             "15683",
             "3045523",
             "14012",
-            "4685247"
+            "4685247",
+            "15835"
           ]
         },
         "1": {
@@ -5665,13 +5845,14 @@
             "3139477",
             "4242335",
             "4429795",
-            "4035687",
             "4697815",
             "3915416",
             "4241474",
+            "4432773",
             "15864",
             "-16006",
-            "15683"
+            "15683",
+            "15835"
           ],
           "rostered": [
             "3139477",
@@ -5684,14 +5865,14 @@
             "8439",
             "3040151",
             "4241474",
-            "4428557",
             "4432773",
             "15864",
             "-16006",
             "15683",
             "3045523",
             "14012",
-            "4685247"
+            "4685247",
+            "15835"
           ]
         }
       }
@@ -5738,10 +5919,10 @@
             "16757",
             "4360569",
             "4362887",
-            "17372",
             "3121023",
             "3043116",
-            "-16027"
+            "-16027",
+            "3150744"
           ]
         },
         "1": {
@@ -5819,17 +6000,17 @@
         "3": {
           "weekNum": "3",
           "starting": [
-            "3117251",
+            "4429084",
+            "4361370",
             "4360438",
             "4569173",
-            "4431611",
             "4366031",
-            "4612826",
-            "3051392",
-            "17372",
+            "4040761",
+            "16757",
+            "4360569",
             "3121023",
-            "3043116",
-            "-16027"
+            "-16027",
+            "3150744"
           ],
           "rostered": [
             "3117251",
@@ -5846,10 +6027,10 @@
             "16757",
             "4360569",
             "4362887",
-            "17372",
             "3121023",
             "3043116",
-            "-16027"
+            "-16027",
+            "3150744"
           ]
         }
       }
@@ -6055,7 +6236,8 @@
             "4429025",
             "3046439",
             "4038524",
-            "4240021"
+            "4240021",
+            "3116389"
           ]
         },
         "1": {
@@ -6135,13 +6317,13 @@
             "3917315",
             "4239996",
             "4258173",
-            "3116385",
             "2976212",
             "3046779",
-            "4683062",
+            "3925357",
             "4372066",
             "-16023",
-            "3046439"
+            "3046439",
+            "4240021"
           ],
           "rostered": [
             "4241389",
@@ -6160,7 +6342,8 @@
             "4429025",
             "3046439",
             "4038524",
-            "4240021"
+            "4240021",
+            "3116389"
           ]
         }
       }
@@ -6295,7 +6478,7 @@
             "3116165",
             "4429615",
             "4385690",
-            "4372019",
+            "3932905",
             "-16005",
             "3122840",
             "4259619"
@@ -6367,7 +6550,8 @@
             "14881",
             "2971573",
             "4032473",
-            "-16010"
+            "-16010",
+            "-16002"
           ]
         },
         "1": {
@@ -6453,7 +6637,7 @@
             "12483",
             "2971573",
             "4032473",
-            "-16010"
+            "-16002"
           ],
           "rostered": [
             "4427366",
@@ -6472,7 +6656,8 @@
             "14881",
             "2971573",
             "4032473",
-            "-16010"
+            "-16010",
+            "-16002"
           ]
         }
       }
@@ -6700,6 +6885,25 @@
           "fieldGoals": [53, 54],
           "yardsAllowed": 310,
           "pointsAllowed": 19
+        },
+        "3": {
+          "drives": [
+            "Missed FG",
+            "Punt",
+            "Punt",
+            "Interception",
+            "Downs",
+            "End of Half",
+            "Field Goal",
+            "Interception",
+            "Punt",
+            "Touchdown",
+            "Fumble",
+            "Touchdown"
+          ],
+          "fieldGoals": [53],
+          "yardsAllowed": 306,
+          "pointsAllowed": 21
         }
       }
     },
@@ -6783,6 +6987,27 @@
           "fieldGoals": [53, 38, 44],
           "yardsAllowed": 323,
           "pointsAllowed": 13
+        },
+        "3": {
+          "drives": [
+            "Touchdown",
+            "Punt",
+            "Punt",
+            "Punt",
+            "Fumble",
+            "End of Half",
+            "Punt",
+            "Missed FG",
+            "Punt",
+            "Punt",
+            "Touchdown",
+            "Fumble",
+            "Downs",
+            "Downs"
+          ],
+          "fieldGoals": [],
+          "yardsAllowed": 340,
+          "pointsAllowed": 21
         }
       }
     },
@@ -6828,6 +7053,24 @@
           "fieldGoals": [52, 38, 48, 40],
           "yardsAllowed": 432,
           "pointsAllowed": 44
+        },
+        "3": {
+          "drives": [
+            "Punt",
+            "Field Goal",
+            "Fumble",
+            "Punt",
+            "Punt",
+            "Field Goal",
+            "Punt",
+            "Downs",
+            "Touchdown",
+            "Touchdown",
+            "Touchdown"
+          ],
+          "fieldGoals": [65, 51],
+          "yardsAllowed": 456,
+          "pointsAllowed": 28
         }
       }
     },
@@ -6875,6 +7118,23 @@
           "fieldGoals": [35, 29],
           "yardsAllowed": 251,
           "pointsAllowed": 13
+        },
+        "3": {
+          "drives": [
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "Field Goal",
+            "Fumble",
+            "Field Goal",
+            "Punt",
+            "Field Goal",
+            "Field Goal",
+            "Downs"
+          ],
+          "fieldGoals": [43, 38, 33, 43],
+          "yardsAllowed": 223,
+          "pointsAllowed": 7
         }
       }
     },
@@ -6918,6 +7178,24 @@
           "fieldGoals": [22, 35, 32],
           "yardsAllowed": 216,
           "pointsAllowed": 20
+        },
+        "3": {
+          "drives": [
+            "Touchdown",
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Interception",
+            "Downs",
+            "Punt",
+            "Punt",
+            "Punt",
+            "End of Game"
+          ],
+          "fieldGoals": [],
+          "yardsAllowed": 277,
+          "pointsAllowed": 13
         }
       }
     },
@@ -6960,6 +7238,23 @@
           "fieldGoals": [46, 42, 34],
           "yardsAllowed": 338,
           "pointsAllowed": 10
+        },
+        "3": {
+          "drives": [
+            "Touchdown",
+            "Field Goal",
+            "Punt",
+            "Field Goal",
+            "Touchdown",
+            "Punt",
+            "Punt",
+            "Punt",
+            "Field Goal",
+            "Punt"
+          ],
+          "fieldGoals": [21, 26, 47],
+          "yardsAllowed": 237,
+          "pointsAllowed": 14
         }
       }
     },
@@ -7005,6 +7300,24 @@
           "fieldGoals": [41],
           "yardsAllowed": 265,
           "pointsAllowed": 24
+        },
+        "3": {
+          "drives": [
+            "Touchdown",
+            "Interception Touchdown",
+            "Punt",
+            "Punt",
+            "Downs",
+            "Touchdown",
+            "Fumble",
+            "Punt",
+            "Punt",
+            "Interception",
+            "End of Game"
+          ],
+          "fieldGoals": [],
+          "yardsAllowed": 378,
+          "pointsAllowed": 24
         }
       }
     },
@@ -7044,6 +7357,25 @@
           ],
           "fieldGoals": [34],
           "yardsAllowed": 383,
+          "pointsAllowed": 16
+        },
+        "3": {
+          "drives": [
+            "Punt",
+            "Punt",
+            "Interception",
+            "Touchdown",
+            "Punt",
+            "Interception",
+            "Punt",
+            "Downs",
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "End of Game"
+          ],
+          "fieldGoals": [],
+          "yardsAllowed": 395,
           "pointsAllowed": 16
         }
       }
@@ -7131,6 +7463,25 @@
           "fieldGoals": [53, 51, 25, 38],
           "yardsAllowed": 383,
           "pointsAllowed": 23
+        },
+        "3": {
+          "drives": [
+            "Punt",
+            "Touchdown",
+            "Downs",
+            "Punt",
+            "Punt",
+            "Missed FG",
+            "Punt",
+            "Downs",
+            "Punt",
+            "Touchdown",
+            "Interception",
+            "Touchdown"
+          ],
+          "fieldGoals": [],
+          "yardsAllowed": 437,
+          "pointsAllowed": 36
         }
       }
     },
@@ -7172,6 +7523,22 @@
           "fieldGoals": [29],
           "yardsAllowed": 489,
           "pointsAllowed": 41
+        },
+        "3": {
+          "drives": [
+            "Punt",
+            "Punt",
+            "Touchdown",
+            "End of Half",
+            "Punt",
+            "Touchdown",
+            "Field Goal",
+            "Touchdown",
+            "Field Goal"
+          ],
+          "fieldGoals": [33, 37],
+          "yardsAllowed": 425,
+          "pointsAllowed": 24
         }
       }
     },
@@ -7214,6 +7581,25 @@
           "fieldGoals": [34],
           "yardsAllowed": 247,
           "pointsAllowed": 25
+        },
+        "3": {
+          "drives": [
+            "Missed FG",
+            "Punt",
+            "Field Goal",
+            "Punt",
+            "Punt",
+            "Punt",
+            "End of Half",
+            "Punt",
+            "Downs",
+            "Punt",
+            "Downs",
+            "Downs"
+          ],
+          "fieldGoals": [23],
+          "yardsAllowed": 370,
+          "pointsAllowed": 24
         }
       }
     },
@@ -7256,6 +7642,24 @@
           "fieldGoals": [22, 39, 27],
           "yardsAllowed": 396,
           "pointsAllowed": 17
+        },
+        "3": {
+          "drives": [
+            "Touchdown",
+            "Touchdown",
+            "Punt",
+            "Punt",
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Field Goal",
+            "Touchdown",
+            "Field Goal",
+            "End of Game"
+          ],
+          "fieldGoals": [35, 58],
+          "yardsAllowed": 296,
+          "pointsAllowed": 7
         }
       }
     },
@@ -7356,6 +7760,23 @@
           "fieldGoals": [26],
           "yardsAllowed": 353,
           "pointsAllowed": 19
+        },
+        "3": {
+          "drives": [
+            "Field Goal",
+            "Punt",
+            "Punt",
+            "Punt",
+            "End of Half",
+            "Punt",
+            "Downs",
+            "Field Goal",
+            "Touchdown",
+            "Interception"
+          ],
+          "fieldGoals": [34, 38],
+          "yardsAllowed": 460,
+          "pointsAllowed": 15
         }
       }
     },
@@ -7395,6 +7816,27 @@
           "fieldGoals": [],
           "yardsAllowed": 425,
           "pointsAllowed": 21
+        },
+        "3": {
+          "drives": [
+            "Fumble",
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "Touchdown",
+            "Fumble",
+            "Punt",
+            "Punt",
+            "Punt",
+            "Punt",
+            "Punt",
+            "Missed FG",
+            "End of Game"
+          ],
+          "fieldGoals": [],
+          "yardsAllowed": 217,
+          "pointsAllowed": 15
         }
       }
     },
@@ -7493,6 +7935,23 @@
           "fieldGoals": [29, 28],
           "yardsAllowed": 385,
           "pointsAllowed": 22
+        },
+        "3": {
+          "drives": [
+            "Punt",
+            "Interception",
+            "Fumble",
+            "Downs",
+            "Downs",
+            "Blocked Punt",
+            "Touchdown",
+            "Missed FG",
+            "Touchdown",
+            "End of Game"
+          ],
+          "fieldGoals": [],
+          "yardsAllowed": 219,
+          "pointsAllowed": 12
         }
       }
     },
@@ -7533,6 +7992,24 @@
           "fieldGoals": [48, 57],
           "yardsAllowed": 245,
           "pointsAllowed": 10
+        },
+        "3": {
+          "drives": [
+            "Touchdown",
+            "Punt",
+            "Punt",
+            "Field Goal",
+            "Interception",
+            "Punt",
+            "Downs",
+            "Punt",
+            "Downs",
+            "Punt",
+            "Field Goal"
+          ],
+          "fieldGoals": [42, 45],
+          "yardsAllowed": 373,
+          "pointsAllowed": 20
         }
       }
     },
@@ -7575,6 +8052,23 @@
           "fieldGoals": [22, 53],
           "yardsAllowed": 295,
           "pointsAllowed": 6
+        },
+        "3": {
+          "drives": [
+            "Punt",
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Missed FG",
+            "Field Goal",
+            "Interception",
+            "Field Goal",
+            "Touchdown",
+            "End of Game"
+          ],
+          "fieldGoals": [38, 30],
+          "yardsAllowed": 168,
+          "pointsAllowed": 10
         }
       }
     },
@@ -7621,6 +8115,23 @@
           "fieldGoals": [46, 42],
           "yardsAllowed": 159,
           "pointsAllowed": 3
+        },
+        "3": {
+          "drives": [
+            "Punt",
+            "Punt",
+            "Touchdown",
+            "Field Goal",
+            "Punt",
+            "End of Half",
+            "Punt",
+            "Punt",
+            "Punt",
+            "Punt"
+          ],
+          "fieldGoals": [28],
+          "yardsAllowed": 346,
+          "pointsAllowed": 20
         }
       }
     },
@@ -7662,6 +8173,22 @@
           "fieldGoals": [31],
           "yardsAllowed": 403,
           "pointsAllowed": 23
+        },
+        "3": {
+          "drives": [
+            "Touchdown",
+            "Touchdown",
+            "Punt",
+            "Fumble",
+            "Touchdown",
+            "Field Goal",
+            "Missed FG",
+            "Punt",
+            "End of Game"
+          ],
+          "fieldGoals": [26],
+          "yardsAllowed": 296,
+          "pointsAllowed": 27
         }
       }
     },
@@ -7710,6 +8237,25 @@
           "fieldGoals": [44, 38, 31],
           "yardsAllowed": 310,
           "pointsAllowed": 20
+        },
+        "3": {
+          "drives": [
+            "Field Goal",
+            "Touchdown",
+            "Interception",
+            "Touchdown",
+            "Missed FG",
+            "Punt",
+            "Punt",
+            "Punt",
+            "Punt",
+            "Interception",
+            "Touchdown",
+            "End of Game"
+          ],
+          "fieldGoals": [56],
+          "yardsAllowed": 205,
+          "pointsAllowed": 3
         }
       }
     },
@@ -7751,6 +8297,24 @@
           "fieldGoals": [30, 55],
           "yardsAllowed": 463,
           "pointsAllowed": 16
+        },
+        "3": {
+          "drives": [
+            "Punt",
+            "Interception",
+            "Punt",
+            "Downs",
+            "Touchdown",
+            "End of Half",
+            "Punt",
+            "Punt",
+            "Downs",
+            "Fumble",
+            "End of Game"
+          ],
+          "fieldGoals": [],
+          "yardsAllowed": 352,
+          "pointsAllowed": 26
         }
       }
     },
@@ -7834,6 +8398,25 @@
           "fieldGoals": [38],
           "yardsAllowed": 349,
           "pointsAllowed": 26
+        },
+        "3": {
+          "drives": [
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Punt",
+            "Touchdown",
+            "Field Goal",
+            "Field Goal",
+            "Touchdown",
+            "Punt",
+            "Field Goal",
+            "End of Game"
+          ],
+          "fieldGoals": [43, 35, 26],
+          "yardsAllowed": 331,
+          "pointsAllowed": 22
         }
       }
     },
@@ -7919,6 +8502,24 @@
           "fieldGoals": [48, 42, 32],
           "yardsAllowed": 260,
           "pointsAllowed": 26
+        },
+        "3": {
+          "drives": [
+            "Touchdown",
+            "Touchdown",
+            "Punt",
+            "Punt",
+            "Touchdown",
+            "End of Half",
+            "Touchdown",
+            "Punt",
+            "Missed FG",
+            "Punt",
+            "End of Game"
+          ],
+          "fieldGoals": [],
+          "yardsAllowed": 412,
+          "pointsAllowed": 25
         }
       }
     },
@@ -7963,211 +8564,227 @@
           "fieldGoals": [56, 47, 59, 53],
           "yardsAllowed": 205,
           "pointsAllowed": 13
+        },
+        "3": {
+          "drives": [
+            "Interception",
+            "Missed FG",
+            "Punt",
+            "Punt",
+            "Punt",
+            "End of Half",
+            "Punt",
+            "Touchdown",
+            "Interception",
+            "Downs",
+            "Downs"
+          ],
+          "fieldGoals": [],
+          "yardsAllowed": 274,
+          "pointsAllowed": 34
         }
       }
     }
   },
   "fantasyCalc": {
     "players": {
-      "8439": 31.08,
-      "12483": 33.03,
-      "14012": 3.98,
-      "14880": 29.43,
-      "15795": 3.39,
-      "15818": 14.1,
-      "15835": 0.65,
-      "15847": 33.42,
-      "15864": 31.84,
-      "16460": 1.72,
-      "16731": 3.11,
-      "16737": 40.28,
-      "16757": 40.79,
-      "16800": 53.86,
-      "2310331": 0.76,
-      "2468609": 0.85,
-      "2576414": 8.34,
-      "2577327": 4.74,
-      "2577417": 59.73,
-      "2578570": 2.01,
-      "2976212": 32.04,
-      "2976499": 16.53,
-      "2977187": 39.53,
-      "3040151": 23.34,
-      "3042519": 21.58,
-      "3043078": 41.08,
-      "3043116": 5.77,
-      "3045138": 0.84,
-      "3045147": 39.07,
-      "3046439": 3.9,
-      "3046779": 41.86,
-      "3051392": 5.04,
-      "3051876": 7.29,
-      "3051926": 3.54,
-      "3052587": 51.69,
-      "3054850": 62.41,
-      "3059915": 2.24,
-      "3068267": 10.94,
-      "3115306": 0.17,
-      "3116164": 1.46,
-      "3116165": 39.44,
-      "3116365": 22.66,
-      "3116385": 41.58,
-      "3116389": 2.11,
-      "3116406": 74.29,
-      "3117251": 49.83,
-      "3117256": 2.82,
-      "3121023": 6.71,
-      "3121422": 12.51,
-      "3121427": 0.73,
-      "3122840": 14.03,
-      "3123076": 4.98,
-      "3125116": 0.1,
-      "3126486": 36.52,
-      "3128390": 3.38,
-      "3128429": 4.83,
-      "3128720": 6.91,
-      "3139477": 91.38,
-      "3886598": 1.2,
-      "3895856": 10.73,
-      "3912547": 19.38,
-      "3915416": 28.61,
-      "3915511": 68.55,
-      "3916148": 24.46,
-      "3916387": 100.47,
-      "3916433": 2.74,
-      "3917315": 80.67,
-      "3917792": 3.79,
-      "3918298": 102.78,
-      "3925357": 20.14,
-      "3929630": 78.79,
-      "3932905": 10.14,
-      "4032473": 14.5,
-      "4035538": 24.48,
-      "4035676": 12.08,
-      "4035687": 20.15,
-      "4036133": 5.22,
-      "4036378": 59.57,
-      "4037235": 0.95,
-      "4038441": 1.88,
-      "4038524": 3.63,
-      "4038815": 3.29,
-      "4038941": 44.28,
-      "4040655": 3.37,
-      "4040715": 92.3,
-      "4040761": 12.43,
-      "4047365": 38.92,
-      "4047646": 59.81,
-      "4047650": 37.62,
-      "4048244": 3.27,
-      "4239993": 23.27,
-      "4239996": 38.38,
-      "4240021": 1.98,
-      "4241389": 89.85,
-      "4241416": 4.17,
-      "4241457": 15.05,
-      "4241463": 7.27,
-      "4241474": 21.78,
-      "4241478": 46.97,
-      "4241479": 31.75,
-      "4241985": 24.62,
-      "4242335": 58.02,
-      "4242355": 9.22,
-      "4242431": 2.77,
-      "4242433": 1.48,
-      "4242557": 0.94,
-      "4243537": 2.55,
-      "4248528": 4.03,
+      "8439": 19.46,
+      "12483": 31.19,
+      "14012": 4.48,
+      "14880": 30.02,
+      "15795": 3.64,
+      "15818": 13.27,
+      "15835": 0.69,
+      "15847": 34.6,
+      "15864": 33.99,
+      "16460": 1.58,
+      "16731": 2.86,
+      "16737": 42.84,
+      "16757": 41.07,
+      "16800": 54.04,
+      "2310331": 0.85,
+      "2468609": 0.99,
+      "2576414": 9.08,
+      "2577327": 5.29,
+      "2577417": 60.38,
+      "2578570": 0.89,
+      "2976212": 29.65,
+      "2976499": 17.29,
+      "2977187": 36.22,
+      "3040151": 21.94,
+      "3042519": 21.17,
+      "3043078": 42.2,
+      "3043116": 5.12,
+      "3045138": 0.62,
+      "3045147": 39.67,
+      "3046439": 3.12,
+      "3046779": 43.73,
+      "3051392": 5.32,
+      "3051876": 9.51,
+      "3051926": 3.44,
+      "3052587": 52.51,
+      "3054850": 60.88,
+      "3059915": 2.31,
+      "3068267": 9.67,
+      "3115306": 0.18,
+      "3116164": 2.01,
+      "3116165": 39.7,
+      "3116365": 22.17,
+      "3116385": 37.96,
+      "3116389": 2.47,
+      "3116406": 70.06,
+      "3117251": 53.26,
+      "3117256": 3.18,
+      "3121023": 11.3,
+      "3121422": 13.42,
+      "3121427": 0.74,
+      "3122840": 11.31,
+      "3123076": 4.92,
+      "3125116": 0.22,
+      "3126486": 36.09,
+      "3128390": 3.14,
+      "3128429": 4.45,
+      "3128720": 6.2,
+      "3139477": 90.76,
+      "3886598": 1.55,
+      "3895856": 11.13,
+      "3912547": 20.94,
+      "3915416": 28.51,
+      "3915511": 66.4,
+      "3916148": 23.83,
+      "3916387": 99.86,
+      "3916433": 2.81,
+      "3917315": 83.48,
+      "3917792": 2.97,
+      "3918298": 102.1,
+      "3925357": 18.17,
+      "3929630": 79.06,
+      "3932905": 9.32,
+      "4032473": 15.08,
+      "4035538": 23.78,
+      "4035676": 12.23,
+      "4035687": 18.79,
+      "4036133": 5.68,
+      "4036378": 59.37,
+      "4036419": 1.06,
+      "4037235": 0.85,
+      "4038441": 2.15,
+      "4038524": 4.42,
+      "4038815": 3.34,
+      "4038941": 44.66,
+      "4040655": 3.24,
+      "4040715": 92.61,
+      "4040761": 13.67,
+      "4047365": 41.44,
+      "4047646": 61.64,
+      "4047650": 39.36,
+      "4048244": 3.31,
+      "4239993": 23.37,
+      "4239996": 36.85,
+      "4240021": 5.09,
+      "4241389": 90.1,
+      "4241416": 4.57,
+      "4241457": 14.64,
+      "4241463": 7.94,
+      "4241474": 22.77,
+      "4241478": 47.17,
+      "4241479": 28.71,
+      "4241985": 24.85,
+      "4242335": 58.23,
+      "4242355": 10.85,
+      "4242431": 2.85,
+      "4242433": 1.18,
+      "4242557": 0.97,
+      "4243537": 2.31,
+      "4248528": 4.48,
       "4249417": 0.01,
-      "4258173": 58.43,
-      "4258595": 1,
-      "4259545": 11.66,
-      "4262921": 84.64,
-      "4360078": 5.28,
-      "4360248": 14.69,
-      "4360294": 0.63,
-      "4360310": 34.9,
-      "4360438": 42.1,
-      "4360569": 18.94,
-      "4360761": 0.26,
-      "4360939": 0.07,
-      "4361050": 10.48,
-      "4361307": 41.87,
-      "4361370": 35.39,
-      "4361411": 3.76,
-      "4361418": 9.37,
-      "4361432": 3.52,
-      "4361529": 19.1,
-      "4361579": 9.03,
-      "4361741": 49.95,
-      "4361777": 6.82,
-      "4362238": 3.46,
-      "4362249": 18.82,
-      "4362628": 72.89,
-      "4362887": 16.41,
-      "4366031": 18.59,
-      "4368003": 0.4,
-      "4372016": 25.49,
-      "4372019": 9.67,
-      "4373626": 1.82,
-      "4373678": 8.52,
-      "4374302": 76.95,
-      "4379399": 47.99,
-      "4382466": 0.39,
-      "4385690": 22.75,
-      "4426338": 4.47,
-      "4426348": 60.15,
-      "4426354": 20.06,
-      "4426385": 8.48,
-      "4426388": 21.74,
-      "4426502": 30.52,
-      "4426515": 31.81,
-      "4427095": 0.08,
-      "4427366": 75.97,
-      "4428331": 48.53,
-      "4428557": 3.75,
-      "4428850": 0.64,
-      "4429013": 1.54,
-      "4429025": 4.89,
-      "4429084": 65.42,
-      "4429096": 2.47,
-      "4429160": 61.73,
-      "4429205": 9.49,
-      "4429275": 2.2,
-      "4429501": 0.3,
-      "4429615": 27.62,
-      "4429795": 58.5,
-      "4430027": 41.29,
-      "4430034": 0.89,
-      "4430637": 0.73,
-      "4430737": 40.73,
-      "4430807": 79.01,
-      "4430878": 16.25,
-      "4431299": 8.71,
-      "4431611": 41.22,
-      "4432577": 84.56,
-      "4432665": 40.71,
-      "4432708": 57.42,
-      "4432773": 14.12,
-      "4567048": 27.88,
-      "4569173": 31.14,
-      "4569382": 0.03,
-      "4569587": 1.65,
-      "4569618": 53.58,
-      "4569987": 6.66,
-      "4595348": 43.15,
-      "4596448": 3.61,
-      "4597500": 1.39,
-      "4612826": 8.9,
-      "4635008": 7.49,
-      "4678008": 5.9,
-      "4682745": 0.83,
-      "4683062": 15.35,
-      "4685247": 3.71,
-      "4688813": 1.11,
+      "4258173": 57.49,
+      "4258595": 1.17,
+      "4259545": 12.37,
+      "4262921": 82.41,
+      "4360078": 5.42,
+      "4360248": 17.88,
+      "4360294": 0.7,
+      "4360310": 33.23,
+      "4360438": 42.34,
+      "4360569": 19.32,
+      "4361050": 9.61,
+      "4361307": 43.84,
+      "4361370": 42.01,
+      "4361411": 3.86,
+      "4361418": 7.35,
+      "4361432": 3.93,
+      "4361529": 17.67,
+      "4361579": 9.11,
+      "4361741": 50.56,
+      "4361777": 8.22,
+      "4362238": 3.03,
+      "4362249": 18.81,
+      "4362628": 72.21,
+      "4362887": 16.77,
+      "4366031": 18.5,
+      "4368003": 0.51,
+      "4372016": 24.14,
+      "4372019": 10.28,
+      "4373626": 1.9,
+      "4373678": 8.47,
+      "4374302": 76.49,
+      "4379399": 51.23,
+      "4382466": 0.57,
+      "4385690": 23.57,
+      "4426338": 5.78,
+      "4426348": 59.86,
+      "4426354": 19.37,
+      "4426385": 10.04,
+      "4426388": 23.26,
+      "4426502": 28.44,
+      "4426515": 32.83,
+      "4427366": 75.42,
+      "4428331": 51.49,
+      "4428557": 3.89,
+      "4428850": 0.78,
+      "4429013": 1.36,
+      "4429025": 6.27,
+      "4429084": 64.52,
+      "4429096": 2.72,
+      "4429160": 63.13,
+      "4429205": 9.75,
+      "4429275": 2.34,
+      "4429615": 28.1,
+      "4429795": 58.1,
+      "4430027": 40.19,
+      "4430034": 1.11,
+      "4430637": 0.52,
+      "4430737": 38.57,
+      "4430807": 79.05,
+      "4430878": 18.33,
+      "4431299": 9.07,
+      "4431452": 0.65,
+      "4431611": 40.06,
+      "4432577": 82.43,
+      "4432665": 42.09,
+      "4432708": 61.33,
+      "4432773": 13.58,
+      "4567048": 29.6,
+      "4569173": 29.63,
+      "4569382": 0.1,
+      "4569587": 1.48,
+      "4569618": 54.58,
+      "4569987": 5.53,
+      "4595348": 45.24,
+      "4596448": 3.73,
+      "4597500": 1.3,
+      "4612826": 9.21,
+      "4635008": 7.54,
+      "4678008": 5.99,
+      "4682745": 0.79,
+      "4683062": 16.23,
+      "4685247": 4.12,
+      "4688813": 1.43,
       "4697815": 21.02,
-      "4722893": 1.09,
-      "Carson Steele": 4.75
+      "4722893": 0.98,
+      "Carson Steele": 4.7
     },
-    "timestamp": 1726945202717
+    "timestamp": 1727062523894
   }
 }
