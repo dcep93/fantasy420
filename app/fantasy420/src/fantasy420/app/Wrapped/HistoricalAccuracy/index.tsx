@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { groupByF, mapDict, Position, selectedWrapped } from "..";
+import { mapDict, Position, selectedWrapped } from "..";
 import { DraftJsonType, PlayersType, selectedDraft } from "../../Draft";
 import Chart, { ChartDataType } from "./Chart";
 import distanceCorrelation from "./correlation";
@@ -53,7 +53,8 @@ function getComposite(sources: DraftJsonType): PlayersType {
 
 function getData(
   players: PlayersType,
-  selectedPosition: string,
+  playerIdToOwner: { [id: string]: string },
+  selectedOwner: string,
   draft: PlayersType,
   top40: boolean
 ): DataType {
@@ -107,8 +108,7 @@ function getData(
                 .map((p) => ({ ...p, x: parseFloat(p.x.toFixed(2)) }))
                 .map(({ x, y, ...o }, i) => ({
                   fill:
-                    selectedWrapped().nflPlayers[o.playerId].position ===
-                    selectedPosition
+                    playerIdToOwner[o.playerId] === selectedOwner
                       ? "red"
                       : undefined,
                   x,
@@ -161,12 +161,16 @@ export default function HistoricalAccuracy() {
   } as { [k: string]: {} };
   console.log(sources);
   const [source, updateSource] = useState(Object.keys(sources)[0]);
-  const positions = Object.keys(
-    groupByF(Object.values(selectedWrapped().nflPlayers), (p) => p.position)
-  );
-  const [selectedPosition, updateSelectedPosition] = useState(positions[0]);
+  const owners = Object.keys(selectedWrapped().ffTeams);
+  const [selectedOwner, updateSelectedOwner] = useState(owners[0]);
   sources.composite = getComposite(sources);
-  const data = getData(sources[source], selectedPosition, draft, top40);
+  const data = getData(
+    sources[source],
+    playerIdToOwner,
+    selectedOwner,
+    draft,
+    top40
+  );
   return (
     <div>
       <div>
@@ -187,12 +191,12 @@ export default function HistoricalAccuracy() {
       </div>
       <div>
         <select
-          defaultValue={selectedPosition}
+          defaultValue={selectedOwner}
           onChange={(event) =>
-            updateSelectedPosition((event.target as HTMLSelectElement).value)
+            updateSelectedOwner((event.target as HTMLSelectElement).value)
           }
         >
-          {positions.map((s) => (
+          {owners.map((s) => (
             <option key={s} value={s}>
               {s}
             </option>
