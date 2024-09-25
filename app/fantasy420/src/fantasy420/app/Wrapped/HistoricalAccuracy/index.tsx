@@ -198,7 +198,7 @@ export default function HistoricalAccuracy() {
         >
           {owners.map((s) => (
             <option key={s} value={s}>
-              {s}
+              {selectedWrapped().ffTeams[s].name}
             </option>
           ))}
         </select>
