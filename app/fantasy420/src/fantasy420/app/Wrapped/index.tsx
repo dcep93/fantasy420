@@ -1493,6 +1493,18 @@ function FantasyCalc() {
       .flatMap((p) => p.rosters["0"].rostered)
       .map((playerId) => [playerId, true])
   );
+  const fantasyCalcPlayers: { [playerId: string]: number } = Object.fromEntries(
+    Object.entries(selectedWrapped().fantasyCalc.players).map(
+      ([playerId, value]) => [
+        !isNaN(parseInt(playerId))
+          ? playerId
+          : Object.values(selectedWrapped().nflPlayers).find(
+              (p) => p.name === playerId
+            )?.id || playerId,
+        value,
+      ]
+    )
+  );
   return (
     <div>
       <div>https://fantasycalc.com/redraft-rankings</div>
@@ -1500,7 +1512,7 @@ function FantasyCalc() {
       <div style={bubbleStyle}>
         <h1>UNOWNED</h1>
         <div>
-          {Object.entries(selectedWrapped().fantasyCalc.players)
+          {Object.entries(fantasyCalcPlayers)
             .map(([playerId, value]) => ({
               playerId,
               value,
@@ -1529,7 +1541,7 @@ function FantasyCalc() {
               .map((playerId) => selectedWrapped().nflPlayers[playerId])
               .map((p) => ({
                 name: p?.name || "missing",
-                value: selectedWrapped().fantasyCalc.players[p?.id] || 0,
+                value: fantasyCalcPlayers[p?.id] || 0,
                 draftPick: playerIdToDraftIndex[p?.id],
               }))
               .sort((a, b) => b.value - a.value),
