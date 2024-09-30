@@ -4,7 +4,7 @@ import allWrapped from "./allWrapped";
 import ByeSchedule from "./ByeSchedule";
 import DraftValueStateful from "./DraftValue";
 import HistoricalAccuracyStateful from "./HistoricalAccuracy";
-import PerformanceGraph from "./PerformanceGraph";
+import PerformanceGraphStateful from "./PerformanceGraph";
 
 export const currentYear = "2024";
 
@@ -1997,4 +1997,8 @@ function HistoricalAccuracy() {
 
 function DraftValue() {
   return <DraftValueStateful />;
+}
+
+function PerformanceGraph() {
+  return <PerformanceGraphStateful />;
 }
