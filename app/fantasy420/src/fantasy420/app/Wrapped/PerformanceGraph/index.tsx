@@ -139,8 +139,7 @@ export default function PerformanceGraph() {
                     week {label} avg:{" "}
                     {Helpers.toFixed(
                       data.find((d) => d.weekNum === label)!.average
-                    )}{" "}
-                    cv: {cursorValue}
+                    )}
                   </div>
                   <div>
                     {mappedPayload.map((p) => (
