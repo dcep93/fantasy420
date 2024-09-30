@@ -1,3 +1,4 @@
+import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis } from "recharts";
 import { mapDict, selectedWrapped } from "..";
 
 const colors = Object.values({
@@ -17,37 +18,61 @@ export default function PerformanceGraph() {
   const totals = mapDict(selectedWrapped().ffTeams, (t) => ({
     t,
     rosters: mapDict(
-      mapDict(t.rosters, (w) => ({
-        weekNum: parseInt(w.weekNum),
-        opp: selectedWrapped()
-          .ffMatchups[w.weekNum]?.find((m) => m.includes(t.id))
-          ?.find((id) => id !== t.id),
-        total: w.starting
-          .map(
-            (playerId) =>
-              selectedWrapped().nflPlayers[playerId].scores[w.weekNum] || 0
-          )
-          .reduce((a, b) => a + b, 0),
-      })),
-      (o) => o,
-      (o) => o.opp !== undefined
+      mapDict(
+        t.rosters,
+        (w) => ({
+          weekNum: parseInt(w.weekNum),
+          opp: selectedWrapped()
+            .ffMatchups[w.weekNum]?.find((m) => m.includes(t.id))
+            ?.find((id) => id !== t.id),
+          total: w.starting
+            .map(
+              (playerId) =>
+                selectedWrapped().nflPlayers[playerId].scores[w.weekNum] || 0
+            )
+            .reduce((a, b) => a + b, 0),
+        }),
+        (w) => w.weekNum !== "0"
+      ),
+      (o) => o
     ),
   }));
-  const data = Object.values(totals).map(({ t, rosters }, index) => ({
-    // t,
-    name: t.name,
-    color: colors[index],
-    opps: Object.values(rosters).map((w) => totals[w.opp!]!.t.name),
-    points: Object.values(rosters).reduce(
+  const raw = mapDict(totals, (t) => ({
+    opps: Object.values(t.rosters).map((w) => totals[w.opp!]?.t.name),
+    points: Object.values(t.rosters).reduce(
       (prev, curr) => prev.concat(prev[prev.length - 1] + curr.total),
       [0]
     ),
-    wins: Object.values(rosters)
-      .map((w) => w.total > totals[w.opp!].rosters[w.weekNum].total)
+    wins: Object.values(t.rosters)
+      .map((w) => w.total > totals[w.opp!]?.rosters[w.weekNum].total)
       .reduce(
         (prev, curr) => prev.concat(prev[prev.length - 1] + (curr ? 1 : 0)),
         [0]
       ),
   }));
-  return <pre>{JSON.stringify(data, null, 2)}</pre>;
+  const data = Object.keys(Object.values(selectedWrapped().ffTeams)[0].rosters)
+    .map((weekNum) => parseInt(weekNum))
+    .map((weekNum) => ({
+      weekNum,
+      ...mapDict(selectedWrapped().ffTeams, (t) => raw[t.id].points[weekNum]),
+    }));
+  return (
+    <div style={{ width: "80em", height: "30em" }}>
+      <ResponsiveContainer width="100%" height="100%">
+        <LineChart data={data}>
+          <XAxis dataKey="weekNum" />
+          <Tooltip />
+          {Object.values(selectedWrapped().ffTeams).map((t, index) => (
+            <Line
+              key={t.id}
+              type="monotone"
+              dataKey={t.id}
+              stroke={colors[index]}
+              label={"t.name"}
+            />
+          ))}
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
+  );
 }
