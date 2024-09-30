@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Line,
   LineChart,
@@ -6,7 +7,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { Helpers, mapDict, selectedWrapped } from "..";
+import { clog, Helpers, mapDict, selectedWrapped, selectedYear } from "..";
 
 const colors = Object.values({
   Red: "#FF0000",
@@ -75,15 +76,38 @@ export default function PerformanceGraph() {
         (t) => raw[t.id].points[weekNum] - average
       ),
     }));
+  const [domainData, updateDomainData] = useState({
+    year: "",
+    min: 0,
+    range: 0,
+  });
   return (
     <div style={{ width: "80em", height: "30em" }}>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data}>
           <XAxis dataKey="weekNum" />
-          <YAxis domain={(props) => props} hide />
+          <YAxis
+            domain={(domain) => {
+              if (domainData.year !== selectedYear)
+                updateDomainData(
+                  clog({
+                    year: selectedYear,
+                    min: domain[0],
+                    range: domain[1] - domain[0],
+                  })
+                );
+              return domain;
+            }}
+            hide
+          />
           <Tooltip
             content={({ label, payload, coordinate, viewBox }) => {
-              if (label === undefined || payload!.length === 0) return null;
+              if (
+                domainData.year !== selectedYear ||
+                label === undefined ||
+                payload!.length === 0
+              )
+                return null;
               const mappedPayload = payload!
                 .map(({ name, value, dataKey }) => ({
                   name,
@@ -91,12 +115,9 @@ export default function PerformanceGraph() {
                   value: value as number,
                 }))
                 .sort((a, b) => b.value - a.value);
-              const allYs = mappedPayload.map(({ value }) => value);
-              const minY = Math.min(...allYs);
-              const yRange = Math.max(...allYs) - minY;
               const cursorValue =
-                minY +
-                yRange *
+                domainData.min +
+                domainData.range *
                   (1 - (coordinate!.y! - viewBox!.y!) / viewBox!.height!);
               const minDistanceKey = mappedPayload
                 .map(({ dataKey, value }) => ({
@@ -117,7 +138,8 @@ export default function PerformanceGraph() {
                     week {label} avg:{" "}
                     {Helpers.toFixed(
                       data.find((d) => d.weekNum === label)!.average
-                    )}
+                    )}{" "}
+                    cv: {cursorValue}
                   </div>
                   <div>
                     {mappedPayload.map((p) => (
