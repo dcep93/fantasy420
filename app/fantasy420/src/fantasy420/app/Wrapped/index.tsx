@@ -1,9 +1,10 @@
 import { ReactNode, useState } from "react";
 import { FFTeamType, NFLPlayerType, WrappedType } from "../FetchWrapped";
+import allWrapped from "./allWrapped";
 import ByeSchedule from "./ByeSchedule";
 import DraftValueStateful from "./DraftValue";
 import HistoricalAccuracyStateful from "./HistoricalAccuracy";
-import allWrapped from "./allWrapped";
+import PerformanceGraph from "./PerformanceGraph";
 
 export const currentYear = "2024";
 
@@ -23,6 +24,7 @@ export default function Wrapped() {
       FantasyCalc,
       Performance,
       PerformanceTotals,
+      PerformanceGraph,
       WeekTopsAndBottoms,
       SqueezesAndStomps,
       DeterminedByDiscreteScoring,
