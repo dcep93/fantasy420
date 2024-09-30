@@ -1,11 +1,11 @@
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis } from "recharts";
-import { mapDict, selectedWrapped } from "..";
+import { Helpers, mapDict, selectedWrapped } from "..";
 
 const colors = Object.values({
   Red: "#FF0000",
   Green: "#00FF00",
   Blue: "#0000FF",
-  Yellow: "#FFFF00",
+  Black: "#000000",
   Cyan: "#00FFFF",
   Magenta: "#FF00FF",
   Orange: "#FFA500",
@@ -62,9 +62,8 @@ export default function PerformanceGraph() {
     }))
     .map(({ weekNum, average }) => ({
       weekNum,
-      ...mapDict(
-        selectedWrapped().ffTeams,
-        (t) => raw[t.id].points[weekNum] - average
+      ...mapDict(selectedWrapped().ffTeams, (t) =>
+        Helpers.toFixed(raw[t.id].points[weekNum] - average)
       ),
     }));
   return (
