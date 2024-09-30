@@ -1,5 +1,5 @@
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis } from "recharts";
-import { Helpers, mapDict, selectedWrapped } from "..";
+import { clog, Helpers, mapDict, selectedWrapped } from "..";
 
 const colors = Object.values({
   Red: "#FF0000",
@@ -68,41 +68,67 @@ export default function PerformanceGraph() {
         (t) => raw[t.id].points[weekNum] - average
       ),
     }));
+  const allYs = Object.values(raw).flatMap((r) => r.points);
+  const minY = Math.min(...allYs);
+  const yRange = Math.max(...allYs) - minY;
   return (
     <div style={{ width: "80em", height: "30em" }}>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data}>
           <XAxis dataKey="weekNum" />
           <Tooltip
-            content={({ label, payload }) => (
-              <div
-                style={{
-                  background: "white",
-                  border: "1px solid black",
-                  padding: "1em",
-                  opacity: 0.8,
-                }}
-              >
-                <div>
-                  week {label} avg:{" "}
-                  {data.find((d) => d.weekNum === label)?.average}
-                </div>
-                <div>
-                  {payload!
-                    .map(({ name, value, dataKey }) => ({
-                      name,
-                      dataKey,
-                      value: value as number,
-                    }))
-                    .sort((a, b) => b.value - a.value)
-                    .map((p) => (
-                      <div key={p.dataKey}>
+            content={({ label, payload, coordinate, viewBox }) => {
+              if (label === undefined || payload!.length === 0) return null;
+              const average = Helpers.toFixed(
+                data.find((d) => d.weekNum === label)!.average
+              );
+              const mappedPayload = payload!
+                .map(({ name, value, dataKey }) => ({
+                  name,
+                  dataKey,
+                  value: value as number,
+                }))
+                .sort((a, b) => b.value - a.value);
+              const cursorValue = clog(
+                minY +
+                  yRange *
+                    (1 - (coordinate!.y! - viewBox!.y!) / viewBox!.height!) -
+                  average
+              );
+              const minDistanceKey = mappedPayload
+                .map(({ dataKey, value }) => ({
+                  dataKey,
+                  value: Math.abs(value - cursorValue),
+                }))
+                .sort((a, b) => a.value - b.value)[0].dataKey;
+              return (
+                <div
+                  style={{
+                    background: "white",
+                    border: "1px solid black",
+                    padding: "1em",
+                    opacity: 0.8,
+                  }}
+                >
+                  <div>
+                    week {label} avg: {average}
+                  </div>
+                  <div>
+                    {mappedPayload.map((p) => (
+                      <div
+                        key={p.dataKey}
+                        style={{
+                          fontWeight:
+                            p.dataKey === minDistanceKey ? "bold" : undefined,
+                        }}
+                      >
                         {Helpers.toFixed(p.value as number)}: {p.name}
                       </div>
                     ))}
+                  </div>
                 </div>
-              </div>
-            )}
+              );
+            }}
           />
           {Object.values(selectedWrapped().ffTeams).map((t, index) => (
             <Line
