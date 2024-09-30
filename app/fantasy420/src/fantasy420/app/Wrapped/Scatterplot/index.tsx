@@ -132,7 +132,7 @@ function getCorrelation(data: ChartDataType): number {
   return c;
 }
 
-export default function HistoricalAccuracy() {
+export default function Scatterplot() {
   const [top40, updateTop40] = useState(false);
   const draft = Object.fromEntries(
     Object.values(selectedWrapped().ffTeams)

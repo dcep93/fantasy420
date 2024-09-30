@@ -3,8 +3,8 @@ import { FFTeamType, NFLPlayerType, WrappedType } from "../FetchWrapped";
 import allWrapped from "./allWrapped";
 import ByeSchedule from "./ByeSchedule";
 import DraftValueStateful from "./DraftValue";
-import HistoricalAccuracyStateful from "./HistoricalAccuracy";
-import PerformanceGraphStateful from "./PerformanceGraph";
+import PointsForStateful from "./PointsFor";
+import ScatterplotStateful from "./Scatterplot";
 
 export const currentYear = "2024";
 
@@ -22,16 +22,17 @@ export default function Wrapped() {
   const toRender: { [key: string]: ReactNode } = Object.fromEntries(
     Object.entries({
       FantasyCalc,
-      HistoricalAccuracy,
-      Performance,
-      PerformanceTotals,
-      PerformanceGraph,
+      Scatterplot,
+      PointsFor,
       WeekTopsAndBottoms,
       SqueezesAndStomps,
-      DeterminedByDiscreteScoring,
       GooseEggs,
-      ChosenWrong,
       Bopped,
+      ChosenWrong,
+      DraftValue,
+      Performance,
+      PerformanceTotals,
+      DeterminedByDiscreteScoring,
       Stacks,
       Negatives,
       UniquesStarted,
@@ -42,7 +43,6 @@ export default function Wrapped() {
       Injuries,
       BestByPosition,
       ExtremeStuds,
-      DraftValue,
       ByeSchedule,
       SecondLost,
       json,
@@ -1938,14 +1938,14 @@ export class Helpers {
   }
 }
 
-function HistoricalAccuracy() {
-  return <HistoricalAccuracyStateful />;
+function Scatterplot() {
+  return <ScatterplotStateful />;
 }
 
 function DraftValue() {
   return <DraftValueStateful />;
 }
 
-function PerformanceGraph() {
-  return <PerformanceGraphStateful />;
+function PointsFor() {
+  return <PointsForStateful />;
 }
