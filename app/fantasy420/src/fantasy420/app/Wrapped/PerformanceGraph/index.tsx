@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   Line,
   LineChart,
@@ -7,7 +6,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { clog, Helpers, mapDict, selectedWrapped, selectedYear } from "..";
+import { Helpers, mapDict, selectedWrapped, selectedYear } from "..";
 
 const colors = Object.values({
   Red: "#FF0000",
@@ -76,11 +75,14 @@ export default function PerformanceGraph() {
         (t) => raw[t.id].points[weekNum] - average
       ),
     }));
-  const [domainData, updateDomainData] = useState({
+  var domainData = {
+    // useState makes the bubbles
+    // disappear, perhaps because
+    // the component is rerendered
     year: "",
     min: 0,
     range: 0,
-  });
+  };
   return (
     <div style={{ width: "80em", height: "30em" }}>
       <ResponsiveContainer width="100%" height="100%">
@@ -88,14 +90,13 @@ export default function PerformanceGraph() {
           <XAxis dataKey="weekNum" />
           <YAxis
             domain={(domain) => {
-              if (domainData.year !== selectedYear)
-                updateDomainData(
-                  clog({
-                    year: selectedYear,
-                    min: domain[0],
-                    range: domain[1] - domain[0],
-                  })
-                );
+              if (domainData.year !== selectedYear) {
+                domainData = {
+                  year: selectedYear,
+                  min: domain[0],
+                  range: domain[1] - domain[0],
+                };
+              }
               return domain;
             }}
             hide
