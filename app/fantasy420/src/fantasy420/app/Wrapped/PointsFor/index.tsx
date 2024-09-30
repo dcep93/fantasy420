@@ -21,7 +21,7 @@ const colors = Object.values({
   Pink: "#FFC0CB",
 });
 
-export default function PerformanceGraph() {
+export default function PointsFor() {
   const totals = mapDict(selectedWrapped().ffTeams, (t) => ({
     t,
     rosters: mapDict(
