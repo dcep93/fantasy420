@@ -62,6 +62,7 @@ export default function PerformanceGraph() {
     }))
     .map(({ weekNum, average }) => ({
       weekNum,
+      average,
       ...mapDict(
         selectedWrapped().ffTeams,
         (t) => raw[t.id].points[weekNum] - average
@@ -82,7 +83,10 @@ export default function PerformanceGraph() {
                   opacity: 0.8,
                 }}
               >
-                <div>week {label}</div>
+                <div>
+                  week {label} avg:{" "}
+                  {data.find((d) => d.weekNum === label)?.average}
+                </div>
                 <div>
                   {payload!
                     .map(({ name, value, dataKey }) => ({
