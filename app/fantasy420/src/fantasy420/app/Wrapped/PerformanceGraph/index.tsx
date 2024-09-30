@@ -54,7 +54,18 @@ export default function PerformanceGraph() {
     .map((weekNum) => parseInt(weekNum))
     .map((weekNum) => ({
       weekNum,
-      ...mapDict(selectedWrapped().ffTeams, (t) => raw[t.id].points[weekNum]),
+      points: Object.values(raw).map(({ points }) => points[weekNum]),
+    }))
+    .map(({ weekNum, points }) => ({
+      weekNum,
+      average: points.reduce((a, b) => a + b, 0) / points.length,
+    }))
+    .map(({ weekNum, average }) => ({
+      weekNum,
+      ...mapDict(
+        selectedWrapped().ffTeams,
+        (t) => raw[t.id].points[weekNum] - average
+      ),
     }));
   return (
     <div style={{ width: "80em", height: "30em" }}>
@@ -68,7 +79,7 @@ export default function PerformanceGraph() {
               type="monotone"
               dataKey={t.id}
               stroke={colors[index]}
-              label={"t.name"}
+              name={t.name}
             />
           ))}
         </LineChart>
