@@ -1,5 +1,12 @@
-import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis } from "recharts";
-import { clog, Helpers, mapDict, selectedWrapped } from "..";
+import {
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
+import { Helpers, mapDict, selectedWrapped } from "..";
 
 const colors = Object.values({
   Red: "#FF0000",
@@ -68,20 +75,15 @@ export default function PerformanceGraph() {
         (t) => raw[t.id].points[weekNum] - average
       ),
     }));
-  const allYs = Object.values(raw).flatMap((r) => r.points);
-  const minY = Math.min(...allYs);
-  const yRange = Math.max(...allYs) - minY;
   return (
     <div style={{ width: "80em", height: "30em" }}>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data}>
           <XAxis dataKey="weekNum" />
+          <YAxis domain={(props) => props} hide />
           <Tooltip
             content={({ label, payload, coordinate, viewBox }) => {
               if (label === undefined || payload!.length === 0) return null;
-              const average = Helpers.toFixed(
-                data.find((d) => d.weekNum === label)!.average
-              );
               const mappedPayload = payload!
                 .map(({ name, value, dataKey }) => ({
                   name,
@@ -89,12 +91,13 @@ export default function PerformanceGraph() {
                   value: value as number,
                 }))
                 .sort((a, b) => b.value - a.value);
-              const cursorValue = clog(
+              const allYs = mappedPayload.map(({ value }) => value);
+              const minY = Math.min(...allYs);
+              const yRange = Math.max(...allYs) - minY;
+              const cursorValue =
                 minY +
-                  yRange *
-                    (1 - (coordinate!.y! - viewBox!.y!) / viewBox!.height!) -
-                  average
-              );
+                yRange *
+                  (1 - (coordinate!.y! - viewBox!.y!) / viewBox!.height!);
               const minDistanceKey = mappedPayload
                 .map(({ dataKey, value }) => ({
                   dataKey,
@@ -110,8 +113,11 @@ export default function PerformanceGraph() {
                     opacity: 0.8,
                   }}
                 >
-                  <div>
-                    week {label} avg: {average}
+                  <div style={{ textDecoration: "underline" }}>
+                    week {label} avg:{" "}
+                    {Helpers.toFixed(
+                      data.find((d) => d.weekNum === label)!.average
+                    )}
                   </div>
                   <div>
                     {mappedPayload.map((p) => (
