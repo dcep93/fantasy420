@@ -150,7 +150,8 @@ export default function PerformanceGraph() {
                             p.dataKey === minDistanceKey ? "bold" : undefined,
                         }}
                       >
-                        {Helpers.toFixed(p.value as number)}: {p.name}
+                        {Helpers.toFixed(p.value as number)}: (
+                        {raw[p.dataKey!].wins[label]}) {p.name}
                       </div>
                     ))}
                   </div>
