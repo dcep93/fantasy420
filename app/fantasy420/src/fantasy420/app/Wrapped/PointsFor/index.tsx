@@ -151,7 +151,11 @@ export default function PointsFor() {
                         }}
                       >
                         {Helpers.toFixed(p.value as number)}: (
-                        {raw[p.dataKey!].wins[label]}) {p.name}
+                        {raw[p.dataKey!].wins[label]}) (
+                        {Helpers.toFixed(
+                          totals[p.dataKey!].rosters[label].total
+                        )}
+                        ) {p.name}
                       </div>
                     ))}
                   </div>
