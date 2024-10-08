@@ -44,12 +44,18 @@ export default function PointsFor() {
       (o) => o
     ),
   }));
-  const raw = mapDict(totals, (t) => ({
-    opps: Object.values(t.rosters).map((w) => totals[w.opp!]?.t.name),
-    points: Object.values(t.rosters).reduce(
-      (prev, curr) => prev.concat(prev[prev.length - 1] + curr.total),
+  const reduce = (rosters: number[]) =>
+    rosters.reduce(
+      (prev, curr) => prev.concat(prev[prev.length - 1] + curr),
       [0]
+    );
+  const raw = mapDict(totals, (t) => ({
+    opps: reduce(
+      Object.values(t.rosters).map(
+        ({ weekNum, opp }) => totals[opp!]!.rosters[weekNum].total
+      )
     ),
+    points: reduce(Object.values(t.rosters).map(({ total }) => total)),
     wins: Object.values(t.rosters)
       .map((w) => w.total > totals[w.opp!]?.rosters[w.weekNum].total)
       .reduce(
@@ -57,123 +63,149 @@ export default function PointsFor() {
         [0]
       ),
   }));
-  const data = Object.keys(Object.values(selectedWrapped().ffTeams)[0].rosters)
+  const predata = Object.keys(
+    Object.values(selectedWrapped().ffTeams)[0].rosters
+  )
     .map((weekNum) => parseInt(weekNum))
     .map((weekNum) => ({
       weekNum,
       points: Object.values(raw).map(({ points }) => points[weekNum]),
+      opps: Object.values(raw).map(({ opps }) => opps[weekNum]),
     }))
-    .map(({ weekNum, points }) => ({
+    .map(({ weekNum, points, opps }) => ({
       weekNum,
       average: points.reduce((a, b) => a + b, 0) / points.length,
-    }))
-    .map(({ weekNum, average }) => ({
+      averageOpps: opps.reduce((a, b) => a + b, 0) / opps.length,
+    }));
+  const allData = {
+    pointsFor: predata.map(({ weekNum, average }) => ({
       weekNum,
       average,
       ...mapDict(
         selectedWrapped().ffTeams,
         (t) => raw[t.id].points[weekNum] - average
       ),
-    }));
-  var domainData = {
-    // useState makes the bubbles
-    // disappear, perhaps because
-    // the component is rerendered
-    year: "",
-    min: 0,
-    range: 0,
+    })),
+    pointsAgainst: predata.map(({ weekNum, averageOpps }) => ({
+      weekNum,
+      average: averageOpps,
+      ...mapDict(
+        selectedWrapped().ffTeams,
+        (t) => raw[t.id].opps[weekNum] - averageOpps
+      ),
+    })),
   };
   return (
-    <div style={{ width: "80em", height: "30em" }}>
-      <ResponsiveContainer width="100%" height="100%">
-        <LineChart data={data}>
-          <XAxis dataKey="weekNum" />
-          <YAxis
-            domain={(domain) => {
-              if (domainData.year !== selectedYear) {
-                domainData = {
-                  year: selectedYear,
-                  min: domain[0],
-                  range: domain[1] - domain[0],
-                };
-              }
-              return domain;
-            }}
-            hide
-          />
-          <Tooltip
-            content={({ label, payload, coordinate, viewBox }) => {
-              if (
-                domainData.year !== selectedYear ||
-                label === undefined ||
-                payload!.length === 0
-              )
-                return null;
-              const mappedPayload = payload!
-                .map(({ name, value, dataKey }) => ({
-                  name,
-                  dataKey,
-                  value: value as number,
-                }))
-                .sort((a, b) => b.value - a.value);
-              const cursorValue =
-                domainData.min +
-                domainData.range *
-                  (1 - (coordinate!.y! - viewBox!.y!) / viewBox!.height!);
-              const minDistanceKey = mappedPayload
-                .map(({ dataKey, value }) => ({
-                  dataKey,
-                  value: Math.abs(value - cursorValue),
-                }))
-                .sort((a, b) => a.value - b.value)[0].dataKey;
-              return (
-                <div
-                  style={{
-                    background: "white",
-                    border: "1px solid black",
-                    padding: "1em",
-                    opacity: 0.8,
-                  }}
-                >
-                  <div style={{ textDecoration: "underline" }}>
-                    week {label} avg:{" "}
-                    {Helpers.toFixed(
-                      data.find((d) => d.weekNum === label)!.average
-                    )}
-                  </div>
-                  <div>
-                    {mappedPayload.map((p) => (
-                      <div
-                        key={p.dataKey}
-                        style={{
-                          fontWeight:
-                            p.dataKey === minDistanceKey ? "bold" : undefined,
-                        }}
-                      >
-                        {Helpers.toFixed(p.value as number)}: (
-                        {raw[p.dataKey!].wins[label]}) (
-                        {Helpers.toFixed(
-                          totals[p.dataKey!].rosters[label].total
-                        )}
-                        ) {p.name}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              );
-            }}
-          />
-          {Object.values(selectedWrapped().ffTeams).map((t, index) => (
-            <Line
-              key={t.id}
-              type="monotone"
-              dataKey={t.id}
-              stroke={colors[index]}
-              name={t.name}
-            />
-          ))}
-        </LineChart>
-      </ResponsiveContainer>
+    <div>
+      {Object.entries(allData).map(([key, data]) => {
+        var domainData = {
+          // useState makes the bubbles
+          // disappear, perhaps because
+          // the component is rerendered
+          year: "",
+          min: 0,
+          range: 0,
+        };
+        return (
+          <div key={key}>
+            <h1>{key}</h1>
+            <div style={{ width: "80em", height: "30em" }}>
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={data}>
+                  <XAxis dataKey="weekNum" />
+                  <YAxis
+                    domain={(domain) => {
+                      if (domainData.year !== selectedYear) {
+                        domainData = {
+                          year: selectedYear,
+                          min: domain[0],
+                          range: domain[1] - domain[0],
+                        };
+                      }
+                      return domain;
+                    }}
+                    hide
+                  />
+                  <Tooltip
+                    content={({ label, payload, coordinate, viewBox }) => {
+                      if (
+                        domainData.year !== selectedYear ||
+                        label === undefined ||
+                        payload!.length === 0
+                      )
+                        return null;
+                      const mappedPayload = payload!
+                        .map(({ name, value, dataKey }) => ({
+                          name,
+                          dataKey,
+                          value: value as number,
+                        }))
+                        .sort((a, b) => b.value - a.value);
+                      const cursorValue =
+                        domainData.min +
+                        domainData.range *
+                          (1 -
+                            (coordinate!.y! - viewBox!.y!) / viewBox!.height!);
+                      const minDistanceKey = mappedPayload
+                        .map(({ dataKey, value }) => ({
+                          dataKey,
+                          value: Math.abs(value - cursorValue),
+                        }))
+                        .sort((a, b) => a.value - b.value)[0].dataKey;
+                      return (
+                        <div
+                          style={{
+                            background: "white",
+                            border: "1px solid black",
+                            padding: "1em",
+                            opacity: 0.8,
+                          }}
+                        >
+                          <div style={{ textDecoration: "underline" }}>
+                            week {label} avg:{" "}
+                            {Helpers.toFixed(
+                              data.find((d) => d.weekNum === label)!.average
+                            )}
+                          </div>
+                          <div>
+                            {mappedPayload.map((p) => (
+                              <div
+                                key={p.dataKey}
+                                style={{
+                                  fontWeight:
+                                    p.dataKey === minDistanceKey
+                                      ? "bold"
+                                      : undefined,
+                                }}
+                              >
+                                {Helpers.toFixed(p.value as number)}: (
+                                {raw[p.dataKey!].wins[label]}) (
+                                {Helpers.toFixed(
+                                  totals[p.dataKey!].rosters[label].total
+                                )}
+                                ) {p.name}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      );
+                    }}
+                  />
+                  {Object.values(selectedWrapped().ffTeams).map((t, index) => (
+                    <Line
+                      key={t.id}
+                      type="monotone"
+                      dataKey={t.id}
+                      stroke={colors[index]}
+                      name={t.name}
+                    />
+                  ))}
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
