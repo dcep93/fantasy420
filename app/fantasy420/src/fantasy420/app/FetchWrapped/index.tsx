@@ -710,11 +710,15 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
           ),
         ])
       );
-      const history = selectedWrapped().fantasyCalc.history;
+      wrapped.fantasyCalc.history = selectedWrapped().fantasyCalc.history;
       if (
-        JSON.stringify(values) !== JSON.stringify(history[history.length - 1])
+        JSON.stringify(values) !==
+        JSON.stringify(
+          wrapped.fantasyCalc.history[wrapped.fantasyCalc.history.length - 1]
+            .values
+        )
       )
-        wrapped.fantasyCalc.history = history.concat({
+        wrapped.fantasyCalc.history.push({
           values,
           date: Date.now(),
         });
