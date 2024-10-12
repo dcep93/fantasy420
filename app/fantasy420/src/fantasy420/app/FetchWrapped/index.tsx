@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { printF } from "..";
-import { currentYear } from "../Wrapped";
+import { currentYear, selectedWrapped } from "../Wrapped";
 
 export type NFLPlayerType = {
   id: string;
@@ -56,7 +56,11 @@ export type WrappedType = {
     [id: string]: FFTeamType;
   };
   ffMatchups: { [weekNum: string]: MatchupType };
-  fantasyCalc: { timestamp: number; players: { [espnId: string]: number } };
+  fantasyCalc: {
+    timestamp: number;
+    history: { date: number; values: { [teamId: string]: number } }[];
+    players: { [espnId: string]: number };
+  };
 };
 
 var initialized = false;
@@ -694,5 +698,27 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
           fantasyCalc,
         } as WrappedType)
     )
+    .then((wrapped) => {
+      const values = Object.fromEntries(
+        Object.values(wrapped.ffTeams).map((team) => [
+          team.id,
+          parseFloat(
+            team.rosters["0"].rostered
+              .map((playerId) => wrapped.fantasyCalc.players[playerId] || 0)
+              .reduce((a, b) => a + b, 0)
+              .toFixed(2)
+          ),
+        ])
+      );
+      const history = selectedWrapped().fantasyCalc.history;
+      if (
+        JSON.stringify(values) !== JSON.stringify(history[history.length - 1])
+      )
+        wrapped.fantasyCalc.history = history.concat({
+          values,
+          date: Date.now(),
+        });
+      return wrapped;
+    })
     .then(clog);
 }
