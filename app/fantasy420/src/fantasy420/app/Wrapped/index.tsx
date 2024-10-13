@@ -22,8 +22,8 @@ export default function Wrapped() {
   const toRender: { [key: string]: ReactNode } = Object.fromEntries(
     Object.entries({
       FantasyCalc,
-      Scatterplot,
-      PointsFor,
+      PlayerPlot,
+      MangerPlot,
       WeekTopsAndBottoms,
       SqueezesAndStomps,
       GooseEggs,
@@ -1938,7 +1938,7 @@ export class Helpers {
   }
 }
 
-function Scatterplot() {
+function PlayerPlot() {
   return <ScatterplotStateful />;
 }
 
@@ -1946,6 +1946,6 @@ function DraftValue() {
   return <DraftValueStateful />;
 }
 
-function PointsFor() {
+function MangerPlot() {
   return <PointsForStateful />;
 }
