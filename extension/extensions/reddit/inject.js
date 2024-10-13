@@ -5,6 +5,10 @@
   var written = undefined;
 
   function main() {
+    const pro = document.getElementById("pro");
+    if (pro?.tagName === "SECTION") {
+      pro.hidden = true;
+    }
     return new Promise((resolve, reject) =>
       chrome.runtime
         ? get_from_storage("reddit")
