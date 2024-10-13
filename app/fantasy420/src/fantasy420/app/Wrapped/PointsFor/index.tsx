@@ -51,8 +51,8 @@ export default function PointsFor() {
     );
   const raw = mapDict(totals, (t) => ({
     opps: reduce(
-      Object.values(t.rosters).map(
-        ({ weekNum, opp }) => totals[opp!]!.rosters[weekNum].total
+      Object.values(t.rosters).map(({ weekNum, opp }) =>
+        opp === undefined ? 0 : totals[opp!]!.rosters[weekNum].total
       )
     ),
     points: reduce(Object.values(t.rosters).map(({ total }) => total)),
@@ -211,39 +211,41 @@ export default function PointsFor() {
           );
         })}
       </div>
-      <div>
-        <h1>fantasyCalc</h1>
-        <div style={{ width: "80em", height: "30em" }}>
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart
-              data={selectedWrapped().fantasyCalc.history.map((obj) => ({
-                date: new Date(obj.date).toLocaleDateString(),
-                x: obj.date,
-                ...obj.values,
-              }))}
-            >
-              <XAxis
-                dataKey={"x"}
-                type={"number"}
-                scale={"time"}
-                domain={[selectedWrapped().fantasyCalc.history[0].date]}
-                tickFormatter={(tick) => new Date(tick).toLocaleDateString()}
-              />
-              <YAxis domain={[200, 600]} />
-              <Tooltip />
-              {Object.values(selectedWrapped().ffTeams).map((t, index) => (
-                <Line
-                  key={t.id}
-                  type="monotone"
-                  dataKey={t.id}
-                  stroke={colors[index]}
-                  name={t.name}
+      {selectedWrapped().fantasyCalc.history.length === 0 ? null : (
+        <div>
+          <h1>fantasyCalc</h1>
+          <div style={{ width: "80em", height: "30em" }}>
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart
+                data={selectedWrapped().fantasyCalc.history.map((obj) => ({
+                  date: new Date(obj.date).toLocaleDateString(),
+                  x: obj.date,
+                  ...obj.values,
+                }))}
+              >
+                <XAxis
+                  dataKey={"x"}
+                  type={"number"}
+                  scale={"time"}
+                  domain={[selectedWrapped().fantasyCalc.history[0].date]}
+                  tickFormatter={(tick) => new Date(tick).toLocaleDateString()}
                 />
-              ))}
-            </LineChart>
-          </ResponsiveContainer>
+                <YAxis domain={[200, 600]} />
+                <Tooltip />
+                {Object.values(selectedWrapped().ffTeams).map((t, index) => (
+                  <Line
+                    key={t.id}
+                    type="monotone"
+                    dataKey={t.id}
+                    stroke={colors[index]}
+                    name={t.name}
+                  />
+                ))}
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
