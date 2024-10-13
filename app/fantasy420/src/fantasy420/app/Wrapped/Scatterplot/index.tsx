@@ -134,7 +134,7 @@ function getCorrelation(data: ChartDataType): number {
 
 export default function Scatterplot() {
   const [top40, updateTop40] = useState(false);
-  const draft = Object.fromEntries(
+  const rawdraft = Object.fromEntries(
     Object.values(selectedWrapped().ffTeams)
       .flatMap((team) => team.draft)
       .map((player) => [
@@ -142,21 +142,31 @@ export default function Scatterplot() {
         player.pickIndex + 1,
       ])
   );
-  const playerIdToOwner = Object.fromEntries(
-    Object.values(selectedWrapped().ffTeams).flatMap((t) =>
-      t.draft.map((p) => [p.playerId, t.id])
-    )
-  );
-  const undrafted = mapDict(
-    selectedWrapped().nflPlayers,
-    (p) => Math.pow(p.total, 0.5),
-    (p) =>
-      playerIdToOwner[p.id] === undefined &&
-      Object.values(p.scores).filter((s) => s! >= 12).length >= 3
-  );
+  const numdrafted = Object.keys(rawdraft).length;
+  const draft = {
+    ...rawdraft,
+    ...mapDict(
+      selectedWrapped().fantasyCalc.players,
+      (p) => numdrafted + 30,
+      (playerId, value) =>
+        rawdraft[playerId] === undefined &&
+        selectedWrapped().nflPlayers[playerId] !== undefined
+    ),
+  };
+  const playerIdToOwner = {
+    ...Object.fromEntries(
+      Object.values(selectedWrapped().ffTeams).flatMap((t) =>
+        t.draft.map((p) => [p.playerId, t.id])
+      )
+    ),
+    ...Object.fromEntries(
+      Object.values(selectedWrapped().ffTeams).flatMap((t) =>
+        t.rosters["0"].rostered.map((playerId) => [playerId, t.id])
+      )
+    ),
+  };
   const sources = {
     draft,
-    undrafted,
     ...(selectedDraft() || {}),
   } as { [k: string]: {} };
   console.log(sources);
