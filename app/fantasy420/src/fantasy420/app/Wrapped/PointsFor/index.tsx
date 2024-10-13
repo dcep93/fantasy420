@@ -39,7 +39,7 @@ export default function PointsFor() {
             )
             .reduce((a, b) => a + b, 0),
         }),
-        (w) => w.weekNum !== "0"
+        (weekNum) => weekNum !== "0"
       ),
       (o) => o
     ),

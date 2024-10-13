@@ -132,11 +132,11 @@ export function groupByF<T>(
 export function mapDict<T, U>(
   d: { [key: string]: T },
   f: (t: T) => U,
-  g: (t: T) => boolean = () => true
+  g: (key: string, t: T) => boolean = () => true
 ) {
   return Object.fromEntries(
     Object.entries(d)
-      .filter(([key, t]) => g(t))
+      .filter(([key, t]) => g(key, t))
       .map(([key, t]) => [key, f(t)])
   );
 }
