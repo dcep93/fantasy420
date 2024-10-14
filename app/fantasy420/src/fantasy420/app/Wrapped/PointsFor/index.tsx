@@ -81,7 +81,7 @@ export default function PointsFor() {
   const allData = {
     pointsFor: {
       data: predata.map(({ weekNum, average }) => ({
-        weekNum,
+        x: weekNum,
         average,
         ...mapDict(
           selectedWrapped().ffTeams,
@@ -91,7 +91,7 @@ export default function PointsFor() {
     },
     pointsAgainst: {
       data: predata.map(({ weekNum, averageOpps }) => ({
-        weekNum,
+        x: weekNum,
         average: averageOpps,
         ...mapDict(
           selectedWrapped().ffTeams,
@@ -104,8 +104,10 @@ export default function PointsFor() {
       : {
           fantasyCalc: {
             data: selectedWrapped().fantasyCalc.history.map((obj) => ({
-              date: new Date(obj.date).toLocaleDateString(),
               x: obj.date,
+              average:
+                Object.values(obj.values).reduce((a, b) => a + b, 0) /
+                Object.keys(obj.values).length,
               ...obj.values,
             })),
           },
@@ -127,16 +129,19 @@ export default function PointsFor() {
               <div style={{ width: "80em", height: "30em" }}>
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart data={data.data}>
-                    <XAxis dataKey="weekNum" />
-                    {/* <XAxis
-                      dataKey={"x"}
-                      type={"number"}
-                      scale={"time"}
-                      domain={[selectedWrapped().fantasyCalc.history[0].date]}
-                      tickFormatter={(tick) =>
-                        new Date(tick).toLocaleDateString()
-                      }
-                    /> TODO */}
+                    {key === "fantasyCalc" ? (
+                      <XAxis
+                        dataKey={"x"}
+                        type={"number"}
+                        scale={"time"}
+                        domain={[selectedWrapped().fantasyCalc.history[0].date]}
+                        tickFormatter={(tick) =>
+                          new Date(tick).toLocaleDateString()
+                        }
+                      />
+                    ) : (
+                      <XAxis dataKey="x" />
+                    )}
                     <YAxis
                       domain={(domain) => {
                         if (domainData.year !== selectedYear) {
@@ -189,11 +194,20 @@ export default function PointsFor() {
                             }}
                           >
                             <div style={{ textDecoration: "underline" }}>
-                              week {label} avg:{" "}
-                              {/* {Helpers.toFixed(
-                                data.data.find((d) => d.weekNum === label)!
-                                  .average
-                              )} TODO */}
+                              week{" "}
+                              {key === "fantasyCalc"
+                                ? Helpers.toFixed(
+                                    (label -
+                                      selectedWrapped().fantasyCalc.history[0]
+                                        .date) /
+                                      (1000 * 60 * 60 * 24 * 7),
+                                    4
+                                  )
+                                : label}{" "}
+                              avg:{" "}
+                              {Helpers.toFixed(
+                                data.data.find((d) => d.x === label)!.average
+                              )}
                             </div>
                             <div>
                               {mappedPayload.map((p) => (
@@ -206,12 +220,19 @@ export default function PointsFor() {
                                         : undefined,
                                   }}
                                 >
-                                  {Helpers.toFixed(p.value as number)}: (
-                                  {raw[p.dataKey!].wins[label]}) (
-                                  {/* {Helpers.toFixed(
-                                    totals[p.dataKey!].rosters[label].total
-                                  )} TODO */}
-                                  ) {p.name}
+                                  {key === "fantasyCalc" ? (
+                                    p.value
+                                  ) : (
+                                    <>
+                                      {Helpers.toFixed(p.value as number)}: (
+                                      {raw[p.dataKey!].wins[label]}) (
+                                      {Helpers.toFixed(
+                                        totals[p.dataKey!].rosters[label].total
+                                      )}
+                                      )
+                                    </>
+                                  )}{" "}
+                                  {p.name}
                                 </div>
                               ))}
                             </div>
