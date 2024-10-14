@@ -79,169 +79,165 @@ export default function PointsFor() {
       averageOpps: opps.reduce((a, b) => a + b, 0) / opps.length,
     }));
   const allData = {
-    pointsFor: predata.map(({ weekNum, average }) => ({
-      weekNum,
-      average,
-      ...mapDict(
-        selectedWrapped().ffTeams,
-        (t) => raw[t.id].points[weekNum] - average
-      ),
-    })),
-    pointsAgainst: predata.map(({ weekNum, averageOpps }) => ({
-      weekNum,
-      average: averageOpps,
-      ...mapDict(
-        selectedWrapped().ffTeams,
-        (t) => raw[t.id].opps[weekNum] - averageOpps
-      ),
-    })),
+    pointsFor: {
+      data: predata.map(({ weekNum, average }) => ({
+        weekNum,
+        average,
+        ...mapDict(
+          selectedWrapped().ffTeams,
+          (t) => raw[t.id].points[weekNum] - average
+        ),
+      })),
+    },
+    pointsAgainst: {
+      data: predata.map(({ weekNum, averageOpps }) => ({
+        weekNum,
+        average: averageOpps,
+        ...mapDict(
+          selectedWrapped().ffTeams,
+          (t) => raw[t.id].opps[weekNum] - averageOpps
+        ),
+      })),
+    },
+    ...(selectedWrapped().fantasyCalc.history.length === 0
+      ? {}
+      : {
+          fantasyCalc: {
+            data: selectedWrapped().fantasyCalc.history.map((obj) => ({
+              date: new Date(obj.date).toLocaleDateString(),
+              x: obj.date,
+              ...obj.values,
+            })),
+          },
+        }),
   };
   const [selectedIndex, updateSelectedIndex] = useState("");
-  var domainData = {
-    year: "",
-    min: 0,
-    range: 0,
-  };
   return (
     <div>
       <div>
-        {Object.entries(allData).map(([key, data]) => (
-          <div key={key}>
-            <h1>{key}</h1>
-            <div style={{ width: "80em", height: "30em" }}>
-              <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={data}>
-                  <XAxis dataKey="weekNum" />
-                  <YAxis
-                    domain={(domain) => {
-                      if (domainData.year !== selectedYear) {
-                        domainData = {
-                          year: selectedYear,
-                          min: domain[0],
-                          range: domain[1] - domain[0],
-                        };
+        {Object.entries(allData).map(([key, data]) => {
+          var domainData = {
+            year: "",
+            min: 0,
+            range: 0,
+          };
+          return (
+            <div key={key}>
+              <h1>{key}</h1>
+              <div style={{ width: "80em", height: "30em" }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={data.data}>
+                    <XAxis dataKey="weekNum" />
+                    {/* <XAxis
+                      dataKey={"x"}
+                      type={"number"}
+                      scale={"time"}
+                      domain={[selectedWrapped().fantasyCalc.history[0].date]}
+                      tickFormatter={(tick) =>
+                        new Date(tick).toLocaleDateString()
                       }
-                      return domain;
-                    }}
-                    hide
-                  />
-                  <Tooltip
-                    content={({ label, payload, coordinate, viewBox }) => {
-                      if (
-                        domainData.year !== selectedYear ||
-                        label === undefined ||
-                        payload!.length === 0
-                      )
-                        return null;
-                      const mappedPayload = payload!
-                        .map(({ name, value, dataKey }) => ({
-                          name,
-                          dataKey,
-                          value: value as number,
-                        }))
-                        .sort((a, b) => b.value - a.value);
-                      const cursorValue =
-                        domainData.min +
-                        domainData.range *
-                          (1 -
-                            (coordinate!.y! - viewBox!.y!) / viewBox!.height!);
-                      const closestIndex = mappedPayload
-                        .map(({ dataKey, value }) => ({
-                          dataKey,
-                          value: Math.abs(value - cursorValue),
-                        }))
-                        .sort((a, b) => a.value - b.value)[0].dataKey as string;
-                      setTimeout(() => updateSelectedIndex(closestIndex));
-                      return (
-                        <div
-                          style={{
-                            background: "white",
-                            border: "1px solid black",
-                            padding: "1em",
-                            opacity: 0.8,
-                          }}
-                        >
-                          <div style={{ textDecoration: "underline" }}>
-                            week {label} avg:{" "}
-                            {Helpers.toFixed(
-                              data.find((d) => d.weekNum === label)!.average
-                            )}
-                          </div>
-                          <div>
-                            {mappedPayload.map((p) => (
-                              <div
-                                key={p.dataKey}
-                                style={{
-                                  fontWeight:
-                                    p.dataKey === closestIndex
-                                      ? "bold"
-                                      : undefined,
-                                }}
-                              >
-                                {Helpers.toFixed(p.value as number)}: (
-                                {raw[p.dataKey!].wins[label]}) (
-                                {Helpers.toFixed(
-                                  totals[p.dataKey!].rosters[label].total
-                                )}
-                                ) {p.name}
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      );
-                    }}
-                  />
-                  {Object.values(selectedWrapped().ffTeams).map((t, index) => (
-                    <Line
-                      key={t.id}
-                      type="linear"
-                      dataKey={t.id}
-                      stroke={colors[index]}
-                      strokeWidth={t.id === selectedIndex ? 10 : undefined}
-                      name={t.name}
+                    /> TODO */}
+                    <YAxis
+                      domain={(domain) => {
+                        if (domainData.year !== selectedYear) {
+                          domainData = {
+                            year: selectedYear,
+                            min: domain[0],
+                            range: domain[1] - domain[0],
+                          };
+                        }
+                        return domain;
+                      }}
+                      hide
                     />
-                  ))}
-                </LineChart>
-              </ResponsiveContainer>
+                    <Tooltip
+                      content={({ label, payload, coordinate, viewBox }) => {
+                        if (
+                          domainData.year !== selectedYear ||
+                          label === undefined ||
+                          payload!.length === 0
+                        )
+                          return null;
+                        const mappedPayload = payload!
+                          .map(({ name, value, dataKey }) => ({
+                            name,
+                            dataKey,
+                            value: value as number,
+                          }))
+                          .sort((a, b) => b.value - a.value);
+                        const cursorValue =
+                          domainData.min +
+                          domainData.range *
+                            (1 -
+                              (coordinate!.y! - viewBox!.y!) /
+                                viewBox!.height!);
+                        const closestIndex = mappedPayload
+                          .map(({ dataKey, value }) => ({
+                            dataKey,
+                            value: Math.abs(value - cursorValue),
+                          }))
+                          .sort((a, b) => a.value - b.value)[0]
+                          .dataKey as string;
+                        setTimeout(() => updateSelectedIndex(closestIndex));
+                        return (
+                          <div
+                            style={{
+                              background: "white",
+                              border: "1px solid black",
+                              padding: "1em",
+                              opacity: 0.8,
+                            }}
+                          >
+                            <div style={{ textDecoration: "underline" }}>
+                              week {label} avg:{" "}
+                              {/* {Helpers.toFixed(
+                                data.data.find((d) => d.weekNum === label)!
+                                  .average
+                              )} TODO */}
+                            </div>
+                            <div>
+                              {mappedPayload.map((p) => (
+                                <div
+                                  key={p.dataKey}
+                                  style={{
+                                    fontWeight:
+                                      p.dataKey === closestIndex
+                                        ? "bold"
+                                        : undefined,
+                                  }}
+                                >
+                                  {Helpers.toFixed(p.value as number)}: (
+                                  {raw[p.dataKey!].wins[label]}) (
+                                  {/* {Helpers.toFixed(
+                                    totals[p.dataKey!].rosters[label].total
+                                  )} TODO */}
+                                  ) {p.name}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        );
+                      }}
+                    />
+                    {Object.values(selectedWrapped().ffTeams).map(
+                      (t, index) => (
+                        <Line
+                          key={t.id}
+                          type="linear"
+                          dataKey={t.id}
+                          stroke={colors[index]}
+                          strokeWidth={t.id === selectedIndex ? 10 : undefined}
+                          name={t.name}
+                        />
+                      )
+                    )}
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
-      {selectedWrapped().fantasyCalc.history.length === 0 ? null : (
-        <div>
-          <h1>fantasyCalc</h1>
-          <div style={{ width: "80em", height: "30em" }}>
-            <ResponsiveContainer width="100%" height="100%">
-              <LineChart
-                data={selectedWrapped().fantasyCalc.history.map((obj) => ({
-                  date: new Date(obj.date).toLocaleDateString(),
-                  x: obj.date,
-                  ...obj.values,
-                }))}
-              >
-                <XAxis
-                  dataKey={"x"}
-                  type={"number"}
-                  scale={"time"}
-                  domain={[selectedWrapped().fantasyCalc.history[0].date]}
-                  tickFormatter={(tick) => new Date(tick).toLocaleDateString()}
-                />
-                <YAxis domain={[200, 600]} />
-                <Tooltip />
-                {Object.values(selectedWrapped().ffTeams).map((t, index) => (
-                  <Line
-                    key={t.id}
-                    type="monotone"
-                    dataKey={t.id}
-                    stroke={colors[index]}
-                    name={t.name}
-                  />
-                ))}
-              </LineChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
