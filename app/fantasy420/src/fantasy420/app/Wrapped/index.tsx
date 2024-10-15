@@ -295,7 +295,7 @@ function Bopped() {
         .filter((o) => selectedWrapped().ffMatchups[o.weekNum] !== undefined)
         .sort((a, b) => b.score - a.score)[0],
     }))
-    .filter((player) => player.best !== undefined)
+    .filter((player) => player.best !== undefined && player.best !== 0)
     .map((player) => ({
       ...player,
       bestOwner: Object.values(selectedWrapped().ffTeams).find((t) =>
