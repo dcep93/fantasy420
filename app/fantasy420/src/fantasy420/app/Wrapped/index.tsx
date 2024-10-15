@@ -79,7 +79,7 @@ export default function Wrapped() {
           </div>
         ))}
       </div>
-      <div>
+      <div style={{ overflow: "scroll" }}>
         <div>
           year:{" "}
           <select
