@@ -169,7 +169,6 @@ export default function Scatterplot() {
     draft,
     ...(selectedDraft() || {}),
   } as { [k: string]: {} };
-  console.log(sources);
   const [source, updateSource] = useState(Object.keys(sources)[0]);
   const owners = Object.keys(selectedWrapped().ffTeams);
   const [selectedOwner, updateSelectedOwner] = useState(owners[0]);
