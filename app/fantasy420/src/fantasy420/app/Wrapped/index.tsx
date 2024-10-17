@@ -870,26 +870,38 @@ function Negatives() {
 }
 
 function OpponentDefenses() {
-  const defenses = mapDict(
-    selectedWrapped().nflPlayers,
-    (p) => p,
-    (_id, p) => p.position === Position[Position.DST]
+  const defenses = Object.fromEntries(
+    Object.values(selectedWrapped().nflPlayers)
+      .filter((p) => p.position === Position[Position.DST])
+      .map((p) => [p.nflTeamId, p])
   );
   return (
     <div>
       {Object.values(selectedWrapped().nflTeams)
         .filter((t) => t.name !== "FA")
-        .map((t) => (
+        .map((t) => ({
+          t,
+          weeks: Object.entries(t.nflGamesByScoringPeriod)
+            .map(([weekNum, o]) => ({ weekNum, o, defense: defenses[o!.opp!] }))
+            .filter(({ o }) => o?.opp !== undefined)
+            .map((o) => ({ ...o, defenseScore: o.defense.scores[o.weekNum]! })),
+        }))
+        .map((o) => ({
+          ...o,
+          total: o.weeks.map((w) => w.defenseScore).reduce((a, b) => a + b, 0),
+        }))
+        .sort((a, b) => b.total - a.total)
+        .map(({ t, weeks, total }) => (
           <div key={t.id} style={bubbleStyle}>
-            <div>{t.name}</div>
             <div>
-              {Object.entries(t.nflGamesByScoringPeriod)
-                .map(([weekNum, o]) => ({ weekNum, o }))
-                .filter(({ o }) => o?.opp !== undefined)
-                .map(({ weekNum, o }) => defenses[o!.opp!].scores[weekNum])
-                .map((score, i) => (
-                  <div key={i}>{score}</div>
-                ))}
+              {t.name} ({total})
+            </div>
+            <div>
+              {weeks.map(({ weekNum, defense, defenseScore }) => (
+                <div key={weekNum}>
+                  w{weekNum} {defenseScore} {defense?.name}
+                </div>
+              ))}
             </div>
           </div>
         ))}

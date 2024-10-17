@@ -24,7 +24,7 @@ type NFLTeamType = {
           fieldGoals: number[];
           pointsAllowed: number;
           yardsAllowed: number;
-          drives?: (string | null)[];
+          drives: (string | null)[];
         }
       | undefined;
   };
@@ -641,6 +641,9 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                               .map(([scoringPeriod, gameId]) => ({
                                 key: scoringPeriod,
                                 value: {
+                                  opp: Object.keys(
+                                    gamesByGameId[gameId].drives
+                                  ).find((t) => t !== team.id)!,
                                   drives: gamesByGameId[gameId].drives[team.id],
                                   fieldGoals: gamesByGameId[gameId].fieldGoals
                                     .filter((play) => play.teamId === team.id)

@@ -1982,7 +1982,7 @@
         "5": 0,
         "6": 27.2
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "3116389": {
       "id": "3116389",
@@ -9972,10 +9972,10 @@
             "4379399",
             "4595348",
             "3052587",
-            "4426388",
             "4432665",
             "3821683",
             "4429795",
+            "2976499",
             "-16018"
           ],
           "rostered": [
@@ -13467,6 +13467,7 @@
       "byeWeek": 12,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "23",
           "drives": [
             "Field Goal",
             "Interception",
@@ -13486,6 +13487,7 @@
           "pointsAllowed": 18
         },
         "2": {
+          "opp": "21",
           "drives": [
             "Punt",
             "Punt",
@@ -13506,6 +13508,7 @@
           "pointsAllowed": 21
         },
         "3": {
+          "opp": "12",
           "drives": [
             "Touchdown",
             "Punt",
@@ -13525,6 +13528,7 @@
           "pointsAllowed": 22
         },
         "4": {
+          "opp": "18",
           "drives": [
             "Punt",
             "Interception",
@@ -13546,6 +13550,7 @@
           "pointsAllowed": 24
         },
         "5": {
+          "opp": "27",
           "drives": [
             "Touchdown",
             "Missed FG",
@@ -13568,6 +13573,7 @@
           "pointsAllowed": 30
         },
         "6": {
+          "opp": "29",
           "drives": [
             "Punt",
             "Touchdown",
@@ -13597,6 +13603,7 @@
       "byeWeek": 12,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "22",
           "drives": [
             "Fumble",
             "Field Goal",
@@ -13617,6 +13624,7 @@
           "pointsAllowed": 28
         },
         "2": {
+          "opp": "15",
           "drives": [
             "Touchdown",
             "Punt",
@@ -13636,6 +13644,7 @@
           "pointsAllowed": 10
         },
         "3": {
+          "opp": "30",
           "drives": [
             "Touchdown",
             "Touchdown",
@@ -13656,6 +13665,7 @@
           "pointsAllowed": 10
         },
         "4": {
+          "opp": "33",
           "drives": [
             "Punt",
             "Field Goal",
@@ -13676,6 +13686,7 @@
           "pointsAllowed": 35
         },
         "5": {
+          "opp": "34",
           "drives": [
             "Punt",
             "Field Goal",
@@ -13698,6 +13709,7 @@
           "pointsAllowed": 23
         },
         "6": {
+          "opp": "20",
           "drives": [
             "Touchdown",
             "Punt",
@@ -13723,6 +13735,7 @@
       "byeWeek": 7,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "10",
           "drives": [
             "Punt",
             "Punt",
@@ -13744,6 +13757,7 @@
           "pointsAllowed": 17
         },
         "2": {
+          "opp": "34",
           "drives": [
             "Field Goal",
             "Punt",
@@ -13767,6 +13781,7 @@
           "pointsAllowed": 19
         },
         "3": {
+          "opp": "11",
           "drives": [
             "Missed FG",
             "Punt",
@@ -13788,6 +13803,7 @@
           "pointsAllowed": 21
         },
         "4": {
+          "opp": "14",
           "drives": [
             "Punt",
             "Punt",
@@ -13807,6 +13823,7 @@
           "pointsAllowed": 18
         },
         "5": {
+          "opp": "29",
           "drives": [
             "Punt",
             "Touchdown",
@@ -13828,6 +13845,7 @@
           "pointsAllowed": 10
         },
         "6": {
+          "opp": "30",
           "drives": [
             "Punt",
             "Punt",
@@ -13852,6 +13870,7 @@
       "byeWeek": 12,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "17",
           "drives": [
             "Punt",
             "Punt",
@@ -13869,6 +13888,7 @@
           "pointsAllowed": 16
         },
         "2": {
+          "opp": "12",
           "drives": [
             "Field Goal",
             "Punt",
@@ -13891,6 +13911,7 @@
           "pointsAllowed": 20
         },
         "3": {
+          "opp": "28",
           "drives": [
             "Touchdown",
             "Missed FG",
@@ -13908,6 +13929,7 @@
           "pointsAllowed": 38
         },
         "4": {
+          "opp": "29",
           "drives": [
             "Punt",
             "Touchdown",
@@ -13928,6 +13950,7 @@
           "pointsAllowed": 24
         },
         "5": {
+          "opp": "33",
           "drives": [
             "Punt",
             "Touchdown",
@@ -13947,6 +13970,7 @@
           "pointsAllowed": 41
         },
         "6": {
+          "opp": "19",
           "drives": [
             "Touchdown",
             "Punt",
@@ -13974,6 +13998,7 @@
       "byeWeek": 10,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "6",
           "drives": [
             "Field Goal",
             "Punt",
@@ -13997,6 +14022,7 @@
           "pointsAllowed": 33
         },
         "2": {
+          "opp": "30",
           "drives": [
             "Touchdown",
             "Field Goal",
@@ -14017,6 +14043,7 @@
           "pointsAllowed": 13
         },
         "3": {
+          "opp": "19",
           "drives": [
             "Touchdown",
             "Punt",
@@ -14038,6 +14065,7 @@
           "pointsAllowed": 21
         },
         "4": {
+          "opp": "13",
           "drives": [
             "Touchdown",
             "Field Goal",
@@ -14056,6 +14084,7 @@
           "pointsAllowed": 20
         },
         "5": {
+          "opp": "28",
           "drives": [
             "Downs",
             "Punt",
@@ -14079,6 +14108,7 @@
           "pointsAllowed": 34
         },
         "6": {
+          "opp": "21",
           "drives": [
             "Punt",
             "Punt",
@@ -14105,6 +14135,7 @@
       "byeWeek": 7,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "5",
           "drives": [
             "Punt",
             "Touchdown",
@@ -14131,6 +14162,7 @@
           "pointsAllowed": 17
         },
         "2": {
+          "opp": "18",
           "drives": [
             "Field Goal",
             "Field Goal",
@@ -14153,6 +14185,7 @@
           "pointsAllowed": 44
         },
         "3": {
+          "opp": "33",
           "drives": [
             "Punt",
             "Field Goal",
@@ -14174,6 +14207,7 @@
           "pointsAllowed": 28
         },
         "4": {
+          "opp": "19",
           "drives": [
             "Punt",
             "Touchdown",
@@ -14193,6 +14227,7 @@
           "pointsAllowed": 15
         },
         "5": {
+          "opp": "23",
           "drives": [
             "Field Goal",
             "Punt",
@@ -14212,6 +14247,7 @@
           "pointsAllowed": 17
         },
         "6": {
+          "opp": "8",
           "drives": [
             "Field Goal",
             "Interception",
@@ -14241,6 +14277,7 @@
       "byeWeek": 14,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "26",
           "drives": [
             "Field Goal",
             "Punt",
@@ -14267,6 +14304,7 @@
           "pointsAllowed": 26
         },
         "2": {
+          "opp": "23",
           "drives": [
             "Punt",
             "Punt",
@@ -14288,6 +14326,7 @@
           "pointsAllowed": 13
         },
         "3": {
+          "opp": "27",
           "drives": [
             "Touchdown",
             "Punt",
@@ -14310,6 +14349,7 @@
           "pointsAllowed": 7
         },
         "4": {
+          "opp": "20",
           "drives": [
             "Punt",
             "Punt",
@@ -14332,6 +14372,7 @@
           "pointsAllowed": 9
         },
         "5": {
+          "opp": "13",
           "drives": [
             "Punt",
             "Field Goal",
@@ -14354,6 +14395,7 @@
           "pointsAllowed": 18
         },
         "6": {
+          "opp": "24",
           "drives": [
             "Interception",
             "Punt",
@@ -14380,6 +14422,7 @@
       "byeWeek": 5,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "14",
           "drives": [
             "Punt",
             "Field Goal",
@@ -14401,6 +14444,7 @@
           "pointsAllowed": 20
         },
         "2": {
+          "opp": "27",
           "drives": [
             "Interception",
             "Field Goal",
@@ -14423,6 +14467,7 @@
           "pointsAllowed": 20
         },
         "3": {
+          "opp": "22",
           "drives": [
             "Touchdown",
             "Touchdown",
@@ -14441,6 +14486,7 @@
           "pointsAllowed": 13
         },
         "4": {
+          "opp": "26",
           "drives": [
             "Punt",
             "Touchdown",
@@ -14459,6 +14505,7 @@
           "pointsAllowed": 27
         },
         "6": {
+          "opp": "6",
           "drives": [
             "Touchdown",
             "Field Goal",
@@ -14490,6 +14537,7 @@
       "byeWeek": 10,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "21",
           "drives": [
             "Punt",
             "Field Goal",
@@ -14512,6 +14560,7 @@
           "pointsAllowed": 34
         },
         "2": {
+          "opp": "11",
           "drives": [
             "Field Goal",
             "Touchdown",
@@ -14533,6 +14582,7 @@
           "pointsAllowed": 10
         },
         "3": {
+          "opp": "10",
           "drives": [
             "Touchdown",
             "Field Goal",
@@ -14554,6 +14604,7 @@
           "pointsAllowed": 14
         },
         "4": {
+          "opp": "16",
           "drives": [
             "Missed FG",
             "Interception",
@@ -14576,6 +14627,7 @@
           "pointsAllowed": 31
         },
         "5": {
+          "opp": "14",
           "drives": [
             "Punt",
             "Touchdown",
@@ -14596,6 +14648,7 @@
           "pointsAllowed": 13
         },
         "6": {
+          "opp": "22",
           "drives": [
             "Punt",
             "Touchdown",
@@ -14624,6 +14677,7 @@
       "byeWeek": 5,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "3",
           "drives": [
             "Punt",
             "Punt",
@@ -14646,6 +14700,7 @@
           "pointsAllowed": 18
         },
         "2": {
+          "opp": "20",
           "drives": [
             "Punt",
             "Touchdown",
@@ -14666,6 +14721,7 @@
           "pointsAllowed": 24
         },
         "3": {
+          "opp": "9",
           "drives": [
             "Touchdown",
             "Interception Touchdown",
@@ -14684,6 +14740,7 @@
           "pointsAllowed": 24
         },
         "4": {
+          "opp": "15",
           "drives": [
             "Interception",
             "Punt",
@@ -14710,6 +14767,7 @@
           "pointsAllowed": 12
         },
         "6": {
+          "opp": "11",
           "drives": [
             "Punt",
             "Touchdown",
@@ -14737,6 +14795,7 @@
       "byeWeek": 14,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "34",
           "drives": [
             "Downs",
             "Touchdown",
@@ -14753,6 +14812,7 @@
           "pointsAllowed": 29
         },
         "2": {
+          "opp": "9",
           "drives": [
             "Punt",
             "Interception",
@@ -14772,6 +14832,7 @@
           "pointsAllowed": 16
         },
         "3": {
+          "opp": "3",
           "drives": [
             "Punt",
             "Punt",
@@ -14791,6 +14852,7 @@
           "pointsAllowed": 16
         },
         "4": {
+          "opp": "23",
           "drives": [
             "Touchdown",
             "Touchdown",
@@ -14812,6 +14874,7 @@
           "pointsAllowed": 24
         },
         "5": {
+          "opp": "30",
           "drives": [
             "Touchdown",
             "Punt",
@@ -14835,6 +14898,7 @@
           "pointsAllowed": 37
         },
         "6": {
+          "opp": "10",
           "drives": [
             "Touchdown",
             "Interception",
@@ -14862,6 +14926,7 @@
       "byeWeek": 6,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "33",
           "drives": [
             "Touchdown",
             "Punt",
@@ -14882,6 +14947,7 @@
           "pointsAllowed": 20
         },
         "2": {
+          "opp": "4",
           "drives": [
             "Field Goal",
             "Interception",
@@ -14901,6 +14967,7 @@
           "pointsAllowed": 25
         },
         "3": {
+          "opp": "1",
           "drives": [
             "Interception",
             "Touchdown",
@@ -14922,6 +14989,7 @@
           "pointsAllowed": 17
         },
         "4": {
+          "opp": "24",
           "drives": [
             "Fumble",
             "Interception",
@@ -14942,6 +15010,7 @@
           "pointsAllowed": 10
         },
         "5": {
+          "opp": "18",
           "drives": [
             "Touchdown",
             "Punt",
@@ -14971,6 +15040,7 @@
       "byeWeek": 10,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "24",
           "drives": [
             "Punt",
             "Downs",
@@ -14993,6 +15063,7 @@
           "pointsAllowed": 22
         },
         "2": {
+          "opp": "33",
           "drives": [
             "Punt",
             "Punt",
@@ -15017,6 +15088,7 @@
           "pointsAllowed": 23
         },
         "3": {
+          "opp": "29",
           "drives": [
             "Punt",
             "Touchdown",
@@ -15036,6 +15108,7 @@
           "pointsAllowed": 36
         },
         "4": {
+          "opp": "5",
           "drives": [
             "Punt",
             "Touchdown",
@@ -15057,6 +15130,7 @@
           "pointsAllowed": 10
         },
         "5": {
+          "opp": "7",
           "drives": [
             "Touchdown",
             "Field Goal",
@@ -15078,6 +15152,7 @@
           "pointsAllowed": 28
         },
         "6": {
+          "opp": "23",
           "drives": [
             "Touchdown",
             "Punt",
@@ -15103,6 +15178,7 @@
       "byeWeek": 6,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "8",
           "drives": [
             "Punt",
             "Field Goal",
@@ -15123,6 +15199,7 @@
           "pointsAllowed": 26
         },
         "2": {
+          "opp": "22",
           "drives": [
             "Downs",
             "Punt",
@@ -15142,6 +15219,7 @@
           "pointsAllowed": 41
         },
         "3": {
+          "opp": "25",
           "drives": [
             "Punt",
             "Punt",
@@ -15161,6 +15239,7 @@
           "pointsAllowed": 24
         },
         "4": {
+          "opp": "3",
           "drives": [
             "Field Goal",
             "Field Goal",
@@ -15183,6 +15262,7 @@
           "pointsAllowed": 24
         },
         "5": {
+          "opp": "9",
           "drives": [
             "Punt",
             "Downs",
@@ -15206,6 +15286,7 @@
       "byeWeek": 6,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "30",
           "drives": [
             "Downs",
             "Punt",
@@ -15227,6 +15308,7 @@
           "pointsAllowed": 17
         },
         "2": {
+          "opp": "2",
           "drives": [
             "Interception",
             "Touchdown",
@@ -15246,6 +15328,7 @@
           "pointsAllowed": 25
         },
         "3": {
+          "opp": "26",
           "drives": [
             "Missed FG",
             "Punt",
@@ -15267,6 +15350,7 @@
           "pointsAllowed": 24
         },
         "4": {
+          "opp": "10",
           "drives": [
             "Fumble",
             "Punt",
@@ -15290,6 +15374,7 @@
           "pointsAllowed": 29
         },
         "5": {
+          "opp": "17",
           "drives": [
             "Field Goal",
             "Interception",
@@ -15319,6 +15404,7 @@
       "byeWeek": 6,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "19",
           "drives": [
             "Fumble",
             "Touchdown",
@@ -15336,6 +15422,7 @@
           "pointsAllowed": 6
         },
         "2": {
+          "opp": "25",
           "drives": [
             "Punt",
             "Field Goal",
@@ -15358,6 +15445,7 @@
           "pointsAllowed": 17
         },
         "3": {
+          "opp": "34",
           "drives": [
             "Touchdown",
             "Touchdown",
@@ -15379,6 +15467,7 @@
           "pointsAllowed": 7
         },
         "4": {
+          "opp": "9",
           "drives": [
             "Touchdown",
             "Touchdown",
@@ -15403,6 +15492,7 @@
           "pointsAllowed": 29
         },
         "5": {
+          "opp": "20",
           "drives": [
             "Field Goal",
             "Fumble",
@@ -15434,6 +15524,7 @@
       "byeWeek": 14,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "4",
           "drives": [
             "Punt",
             "Touchdown",
@@ -15455,6 +15546,7 @@
           "pointsAllowed": 10
         },
         "2": {
+          "opp": "26",
           "drives": [
             "Punt",
             "Touchdown",
@@ -15476,6 +15568,7 @@
           "pointsAllowed": 23
         },
         "3": {
+          "opp": "20",
           "drives": [
             "Punt",
             "Punt",
@@ -15494,6 +15587,7 @@
           "pointsAllowed": 24
         },
         "4": {
+          "opp": "25",
           "drives": [
             "Punt",
             "Fumble",
@@ -15516,6 +15610,7 @@
           "pointsAllowed": 24
         },
         "5": {
+          "opp": "15",
           "drives": [
             "Punt",
             "Touchdown",
@@ -15536,6 +15631,7 @@
           "pointsAllowed": 15
         },
         "6": {
+          "opp": "34",
           "drives": [
             "Punt",
             "Interception",
@@ -15564,6 +15660,7 @@
       "byeWeek": 12,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "29",
           "drives": [
             "Touchdown",
             "Field Goal",
@@ -15587,6 +15684,7 @@
           "pointsAllowed": 10
         },
         "2": {
+          "opp": "6",
           "drives": [
             "Touchdown",
             "Touchdown",
@@ -15606,6 +15704,7 @@
           "pointsAllowed": 19
         },
         "3": {
+          "opp": "21",
           "drives": [
             "Field Goal",
             "Punt",
@@ -15626,6 +15725,7 @@
           "pointsAllowed": 15
         },
         "4": {
+          "opp": "1",
           "drives": [
             "Touchdown",
             "Touchdown",
@@ -15645,6 +15745,7 @@
           "pointsAllowed": 20
         },
         "5": {
+          "opp": "12",
           "drives": [
             "Interception",
             "Punt",
@@ -15662,6 +15763,7 @@
           "pointsAllowed": 26
         },
         "6": {
+          "opp": "27",
           "drives": [
             "Fumble Return Touchdown",
             "Punt",
@@ -15693,6 +15795,7 @@
       "byeWeek": 11,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "16",
           "drives": [
             "Punt",
             "Field Goal",
@@ -15714,6 +15817,7 @@
           "pointsAllowed": 22
         },
         "2": {
+          "opp": "28",
           "drives": [
             "Touchdown",
             "Punt",
@@ -15728,6 +15832,7 @@
           "pointsAllowed": 21
         },
         "3": {
+          "opp": "5",
           "drives": [
             "Fumble",
             "Punt",
@@ -15749,6 +15854,7 @@
           "pointsAllowed": 15
         },
         "4": {
+          "opp": "6",
           "drives": [
             "Field Goal",
             "Field Goal",
@@ -15771,6 +15877,7 @@
           "pointsAllowed": 20
         },
         "5": {
+          "opp": "26",
           "drives": [
             "Fumble Return Touchdown",
             "Punt",
@@ -15794,6 +15901,7 @@
           "pointsAllowed": 14
         },
         "6": {
+          "opp": "4",
           "drives": [
             "Punt",
             "Interception",
@@ -15819,6 +15927,7 @@
       "byeWeek": 12,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "25",
           "drives": [
             "Punt",
             "Fumble",
@@ -15836,6 +15945,7 @@
           "pointsAllowed": 32
         },
         "2": {
+          "opp": "10",
           "drives": [
             "Punt",
             "Punt",
@@ -15856,6 +15966,7 @@
           "pointsAllowed": 17
         },
         "3": {
+          "opp": "17",
           "drives": [
             "Punt",
             "Touchdown",
@@ -15873,6 +15984,7 @@
           "pointsAllowed": 3
         },
         "4": {
+          "opp": "7",
           "drives": [
             "Fumble",
             "Punt",
@@ -15897,6 +16009,7 @@
           "pointsAllowed": 10
         },
         "5": {
+          "opp": "16",
           "drives": [
             "Punt",
             "Punt",
@@ -15919,6 +16032,7 @@
           "pointsAllowed": 17
         },
         "6": {
+          "opp": "2",
           "drives": [
             "Field Goal",
             "Touchdown",
@@ -15945,6 +16059,7 @@
       "byeWeek": 5,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "9",
           "drives": [
             "Interception",
             "Fumble",
@@ -15966,6 +16081,7 @@
           "pointsAllowed": 29
         },
         "2": {
+          "opp": "1",
           "drives": [
             "Punt",
             "Downs",
@@ -15985,6 +16101,7 @@
           "pointsAllowed": 22
         },
         "3": {
+          "opp": "18",
           "drives": [
             "Punt",
             "Interception",
@@ -16002,6 +16119,7 @@
           "pointsAllowed": 12
         },
         "4": {
+          "opp": "27",
           "drives": [
             "Punt",
             "Punt",
@@ -16019,6 +16137,7 @@
           "pointsAllowed": 33
         },
         "6": {
+          "opp": "5",
           "drives": [
             "Punt",
             "Punt",
@@ -16046,6 +16165,7 @@
       "byeWeek": 11,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "2",
           "drives": [
             "Touchdown",
             "Field Goal",
@@ -16066,6 +16186,7 @@
           "pointsAllowed": 34
         },
         "2": {
+          "opp": "14",
           "drives": [
             "Touchdown",
             "Touchdown",
@@ -16085,6 +16206,7 @@
           "pointsAllowed": 10
         },
         "3": {
+          "opp": "8",
           "drives": [
             "Touchdown",
             "Punt",
@@ -16106,6 +16228,7 @@
           "pointsAllowed": 20
         },
         "4": {
+          "opp": "28",
           "drives": [
             "Touchdown",
             "Punt",
@@ -16122,6 +16245,7 @@
           "pointsAllowed": 42
         },
         "5": {
+          "opp": "25",
           "drives": [
             "Touchdown",
             "Punt",
@@ -16143,6 +16267,7 @@
           "pointsAllowed": 23
         },
         "6": {
+          "opp": "9",
           "drives": [
             "Punt",
             "Punt",
@@ -16170,6 +16295,7 @@
       "byeWeek": 9,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "1",
           "drives": [
             "Field Goal",
             "Field Goal",
@@ -16194,6 +16320,7 @@
           "pointsAllowed": 10
         },
         "2": {
+          "opp": "7",
           "drives": [
             "Punt",
             "Touchdown",
@@ -16215,6 +16342,7 @@
           "pointsAllowed": 6
         },
         "3": {
+          "opp": "24",
           "drives": [
             "Punt",
             "Punt",
@@ -16235,6 +16363,7 @@
           "pointsAllowed": 10
         },
         "4": {
+          "opp": "11",
           "drives": [
             "Punt",
             "Downs",
@@ -16255,6 +16384,7 @@
           "pointsAllowed": 27
         },
         "5": {
+          "opp": "6",
           "drives": [
             "Field Goal",
             "Punt",
@@ -16274,6 +16404,7 @@
           "pointsAllowed": 20
         },
         "6": {
+          "opp": "13",
           "drives": [
             "Field Goal",
             "Punt",
@@ -16304,6 +16435,7 @@
       "byeWeek": 5,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "13",
           "drives": [
             "Punt",
             "Punt",
@@ -16328,6 +16460,7 @@
           "pointsAllowed": 10
         },
         "2": {
+          "opp": "29",
           "drives": [
             "Touchdown",
             "Interception",
@@ -16350,6 +16483,7 @@
           "pointsAllowed": 3
         },
         "3": {
+          "opp": "23",
           "drives": [
             "Punt",
             "Punt",
@@ -16369,6 +16503,7 @@
           "pointsAllowed": 20
         },
         "4": {
+          "opp": "12",
           "drives": [
             "Touchdown",
             "Field Goal",
@@ -16388,6 +16523,7 @@
           "pointsAllowed": 17
         },
         "6": {
+          "opp": "7",
           "drives": [
             "Field Goal",
             "Touchdown",
@@ -16417,6 +16553,7 @@
       "byeWeek": 9,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "20",
           "drives": [
             "Punt",
             "Field Goal",
@@ -16441,6 +16578,7 @@
           "pointsAllowed": 19
         },
         "2": {
+          "opp": "16",
           "drives": [
             "Punt",
             "Blocked Punt",
@@ -16460,6 +16598,7 @@
           "pointsAllowed": 23
         },
         "3": {
+          "opp": "14",
           "drives": [
             "Touchdown",
             "Touchdown",
@@ -16478,6 +16617,7 @@
           "pointsAllowed": 27
         },
         "4": {
+          "opp": "17",
           "drives": [
             "Field Goal",
             "Field Goal",
@@ -16500,6 +16640,7 @@
           "pointsAllowed": 13
         },
         "5": {
+          "opp": "22",
           "drives": [
             "Punt",
             "Field Goal",
@@ -16520,6 +16661,7 @@
           "pointsAllowed": 24
         },
         "6": {
+          "opp": "26",
           "drives": [
             "Field Goal",
             "Punt",
@@ -16550,6 +16692,7 @@
       "byeWeek": 10,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "7",
           "drives": [
             "Interception",
             "Punt",
@@ -16575,6 +16718,7 @@
           "pointsAllowed": 16
         },
         "2": {
+          "opp": "17",
           "drives": [
             "Punt",
             "Touchdown",
@@ -16598,6 +16742,7 @@
           "pointsAllowed": 20
         },
         "3": {
+          "opp": "15",
           "drives": [
             "Field Goal",
             "Touchdown",
@@ -16619,6 +16764,7 @@
           "pointsAllowed": 3
         },
         "4": {
+          "opp": "8",
           "drives": [
             "Punt",
             "Fumble",
@@ -16637,6 +16783,7 @@
           "pointsAllowed": 42
         },
         "5": {
+          "opp": "19",
           "drives": [
             "Punt",
             "Punt",
@@ -16658,6 +16805,7 @@
           "pointsAllowed": 29
         },
         "6": {
+          "opp": "25",
           "drives": [
             "Interception",
             "Punt",
@@ -16686,6 +16834,7 @@
       "byeWeek": 11,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "28",
           "drives": [
             "Field Goal",
             "Field Goal",
@@ -16706,6 +16855,7 @@
           "pointsAllowed": 20
         },
         "2": {
+          "opp": "8",
           "drives": [
             "Field Goal",
             "Field Goal",
@@ -16727,6 +16877,7 @@
           "pointsAllowed": 16
         },
         "3": {
+          "opp": "7",
           "drives": [
             "Punt",
             "Interception",
@@ -16745,6 +16896,7 @@
           "pointsAllowed": 26
         },
         "4": {
+          "opp": "21",
           "drives": [
             "Touchdown",
             "Touchdown",
@@ -16766,6 +16918,7 @@
           "pointsAllowed": 14
         },
         "5": {
+          "opp": "1",
           "drives": [
             "Touchdown",
             "Field Goal",
@@ -16787,6 +16940,7 @@
           "pointsAllowed": 36
         },
         "6": {
+          "opp": "18",
           "drives": [
             "Touchdown",
             "Field Goal",
@@ -16817,6 +16971,7 @@
       "byeWeek": 14,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "27",
           "drives": [
             "Punt",
             "Missed FG",
@@ -16833,6 +16988,7 @@
           "pointsAllowed": 37
         },
         "2": {
+          "opp": "19",
           "drives": [
             "Field Goal",
             "Field Goal",
@@ -16856,6 +17012,7 @@
           "pointsAllowed": 18
         },
         "3": {
+          "opp": "4",
           "drives": [
             "Touchdown",
             "Touchdown",
@@ -16873,6 +17030,7 @@
           "pointsAllowed": 33
         },
         "4": {
+          "opp": "22",
           "drives": [
             "Touchdown",
             "Touchdown",
@@ -16892,6 +17050,7 @@
           "pointsAllowed": 14
         },
         "5": {
+          "opp": "5",
           "drives": [
             "Punt",
             "Interception",
@@ -16914,6 +17073,7 @@
           "pointsAllowed": 13
         },
         "6": {
+          "opp": "33",
           "drives": [
             "Field Goal",
             "Punt",
@@ -16941,6 +17101,7 @@
       "byeWeek": 11,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "18",
           "drives": [
             "Interception",
             "Punt",
@@ -16963,6 +17124,7 @@
           "pointsAllowed": 47
         },
         "2": {
+          "opp": "24",
           "drives": [
             "Punt",
             "Punt",
@@ -16983,6 +17145,7 @@
           "pointsAllowed": 26
         },
         "3": {
+          "opp": "13",
           "drives": [
             "Touchdown",
             "Punt",
@@ -17006,6 +17169,7 @@
           "pointsAllowed": 22
         },
         "4": {
+          "opp": "4",
           "drives": [
             "Downs",
             "Interception",
@@ -17026,6 +17190,7 @@
           "pointsAllowed": 34
         },
         "5": {
+          "opp": "3",
           "drives": [
             "Punt",
             "Touchdown",
@@ -17047,6 +17212,7 @@
           "pointsAllowed": 36
         },
         "6": {
+          "opp": "1",
           "drives": [
             "Punt",
             "Touchdown",
@@ -17074,6 +17240,7 @@
       "byeWeek": 12,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "15",
           "drives": [
             "Punt",
             "Touchdown",
@@ -17094,6 +17261,7 @@
           "pointsAllowed": 20
         },
         "2": {
+          "opp": "5",
           "drives": [
             "Punt",
             "Punt",
@@ -17114,6 +17282,7 @@
           "pointsAllowed": 16
         },
         "3": {
+          "opp": "2",
           "drives": [
             "Punt",
             "Field Goal",
@@ -17133,6 +17302,7 @@
           "pointsAllowed": 47
         },
         "4": {
+          "opp": "34",
           "drives": [
             "Punt",
             "Touchdown",
@@ -17155,6 +17325,7 @@
           "pointsAllowed": 24
         },
         "5": {
+          "opp": "11",
           "drives": [
             "Downs",
             "Field Goal",
@@ -17178,6 +17349,7 @@
           "pointsAllowed": 34
         },
         "6": {
+          "opp": "3",
           "drives": [
             "Field Goal",
             "Punt",
@@ -17204,6 +17376,7 @@
       "byeWeek": 14,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "12",
           "drives": [
             "Touchdown",
             "Punt",
@@ -17224,6 +17397,7 @@
           "pointsAllowed": 27
         },
         "2": {
+          "opp": "13",
           "drives": [
             "Field Goal",
             "Punt",
@@ -17247,6 +17421,7 @@
           "pointsAllowed": 26
         },
         "3": {
+          "opp": "6",
           "drives": [
             "Touchdown",
             "Touchdown",
@@ -17265,6 +17440,7 @@
           "pointsAllowed": 25
         },
         "4": {
+          "opp": "2",
           "drives": [
             "Touchdown",
             "Touchdown",
@@ -17283,6 +17459,7 @@
           "pointsAllowed": 10
         },
         "5": {
+          "opp": "4",
           "drives": [
             "Touchdown",
             "Punt",
@@ -17306,6 +17483,7 @@
           "pointsAllowed": 36
         },
         "6": {
+          "opp": "28",
           "drives": [
             "Interception",
             "Field Goal",
@@ -17333,6 +17511,7 @@
       "byeWeek": 14,
       "nflGamesByScoringPeriod": {
         "1": {
+          "opp": "11",
           "drives": [
             "Field Goal",
             "Field Goal",
@@ -17354,6 +17533,7 @@
           "pointsAllowed": 27
         },
         "2": {
+          "opp": "3",
           "drives": [
             "Field Goal",
             "Touchdown",
@@ -17379,6 +17559,7 @@
           "pointsAllowed": 13
         },
         "3": {
+          "opp": "16",
           "drives": [
             "Interception",
             "Missed FG",
@@ -17397,6 +17578,7 @@
           "pointsAllowed": 34
         },
         "4": {
+          "opp": "30",
           "drives": [
             "Touchdown",
             "Punt",
@@ -17416,6 +17598,7 @@
           "pointsAllowed": 20
         },
         "5": {
+          "opp": "2",
           "drives": [
             "Punt",
             "Touchdown",
@@ -17440,6 +17623,7 @@
           "pointsAllowed": 20
         },
         "6": {
+          "opp": "17",
           "drives": [
             "Touchdown",
             "Touchdown",
@@ -17468,205 +17652,206 @@
   },
   "fantasyCalc": {
     "players": {
-      "8439": 29.56,
-      "11252": 1.65,
-      "12483": 16.25,
-      "14012": 6.18,
-      "14880": 43.97,
-      "15795": 3.32,
-      "15818": 10.44,
-      "15835": 2.09,
-      "15847": 42.78,
-      "15864": 35.09,
-      "16737": 38.91,
-      "16757": 1.55,
-      "16800": 45.33,
-      "2576414": 8.37,
+      "8439": 32.29,
+      "11252": 0.88,
+      "12483": 16.28,
+      "14012": 3.16,
+      "14880": 43.4,
+      "14881": 1.6,
+      "15795": 3.05,
+      "15818": 10.81,
+      "15835": 1.88,
+      "15847": 43.37,
+      "15864": 40.95,
+      "16737": 38.15,
+      "16757": 4.41,
+      "16800": 47.29,
+      "2576414": 7.4,
       "2577327": 8.98,
-      "2577417": 51,
-      "2976212": 42.87,
-      "2976499": 29.25,
-      "2977187": 41.61,
-      "3040151": 28.27,
-      "3042519": 25.27,
-      "3043078": 73.58,
-      "3045147": 24.36,
-      "3046439": 0.69,
-      "3046779": 45.89,
-      "3051392": 0.47,
-      "3051876": 14.35,
-      "3052587": 62.79,
-      "3054850": 64.9,
-      "3059915": 10.18,
-      "3068267": 12.2,
-      "3116165": 43,
-      "3116365": 12.61,
-      "3116385": 39.84,
-      "3116406": 62.93,
-      "3117251": 43.94,
-      "3117256": 1.81,
-      "3120348": 4.47,
-      "3121023": 11.33,
-      "3121422": 32.17,
-      "3122840": 5.78,
-      "3122920": 1.09,
-      "3123076": 7.9,
-      "3126486": 37.1,
-      "3128390": 6.51,
-      "3128429": 8.62,
-      "3128720": 16.7,
-      "3139477": 69.66,
-      "3728262": 0.67,
-      "3886598": 2.16,
-      "3895856": 11.19,
-      "3912547": 29.78,
-      "3915411": 0.8,
-      "3915416": 30.85,
-      "3915511": 76.3,
-      "3916148": 23.1,
-      "3916387": 104.16,
-      "3916433": 8.33,
-      "3916945": 2.38,
-      "3917315": 60.38,
-      "3917792": 20.52,
-      "3918298": 99.52,
-      "3925357": 7.29,
-      "3929630": 80.5,
-      "3932905": 18.99,
-      "4032473": 11.06,
-      "4035538": 42.57,
-      "4035676": 7.82,
-      "4035687": 14.25,
-      "4036131": 0.01,
-      "4036133": 15.92,
-      "4036378": 69.73,
-      "4038441": 1.79,
-      "4038815": 8.74,
-      "4038941": 28.96,
-      "4040655": 12.28,
-      "4040715": 88.41,
-      "4040761": 6.99,
-      "4047365": 32.01,
-      "4047646": 69.98,
-      "4047650": 41.46,
-      "4048244": 5.86,
-      "4239993": 26.2,
-      "4239996": 15.06,
-      "4240021": 0.75,
-      "4241389": 76.5,
-      "4241401": 3.04,
-      "4241416": 15.78,
-      "4241457": 13.6,
-      "4241463": 4.88,
-      "4241474": 22.82,
-      "4241478": 36.52,
-      "4241479": 11.36,
-      "4241985": 21.53,
-      "4242335": 50.65,
-      "4242355": 17.01,
-      "4242431": 2.09,
-      "4242557": 0.4,
-      "4243331": 2.27,
-      "4243537": 0.38,
-      "4248528": 2.66,
-      "4249417": 3.62,
-      "4258173": 47.03,
-      "4258595": 10.39,
-      "4259545": 22.17,
-      "4260394": 1.86,
-      "4262921": 90.23,
-      "4360078": 1.47,
-      "4360238": 0.2,
-      "4360248": 10.86,
-      "4360294": 3.09,
-      "4360310": 23.1,
-      "4360438": 25.13,
-      "4360516": 6.25,
-      "4360569": 15.84,
-      "4360761": 1.16,
-      "4360797": 0.61,
-      "4360939": 0.24,
-      "4361050": 3.86,
-      "4361307": 33.24,
-      "4361370": 22.37,
-      "4361411": 4.21,
-      "4361418": 2,
-      "4361432": 2.75,
-      "4361529": 17.28,
-      "4361579": 8.01,
-      "4361741": 47.57,
-      "4361777": 0.74,
-      "4362238": 13.19,
-      "4362249": 41.79,
-      "4362628": 85.59,
-      "4362887": 30.43,
-      "4366031": 19.15,
-      "4368003": 0.08,
-      "4372016": 16.2,
-      "4372019": 4.69,
-      "4373626": 3.57,
-      "4373678": 8.82,
-      "4374302": 76.73,
-      "4379399": 34.19,
-      "4385690": 13.13,
-      "4426338": 12.89,
-      "4426348": 90.17,
-      "4426354": 15.02,
-      "4426385": 3.8,
-      "4426386": 1.48,
-      "4426388": 16.7,
-      "4426502": 49.41,
-      "4426515": 30.87,
-      "4427095": 1.22,
-      "4427366": 57.81,
-      "4428557": 2.91,
-      "4428718": 1.27,
-      "4428850": 3.15,
-      "4429013": 5.41,
-      "4429025": 1.16,
-      "4429084": 37.69,
-      "4429096": 0.25,
-      "4429160": 34.37,
-      "4429205": 12.38,
-      "4429275": 0.6,
-      "4429501": 1.01,
-      "4429615": 23.74,
-      "4429795": 51.52,
-      "4430027": 24.6,
-      "4430034": 2.91,
-      "4430637": 0.41,
-      "4430737": 63.19,
-      "4430807": 57.71,
-      "4430878": 14.47,
-      "4430968": 0.46,
-      "4431299": 9.34,
-      "4431452": 10.15,
-      "4431611": 49.56,
-      "4432577": 71.44,
-      "4432665": 38.12,
-      "4432708": 35.05,
-      "4432773": 24.61,
-      "4567048": 46.95,
-      "4569173": 15.6,
-      "4569382": 0.79,
-      "4569587": 8.21,
-      "4569618": 47.88,
-      "4569987": 1.43,
-      "4572680": 8.07,
-      "4595348": 66.1,
-      "4596448": 6.8,
-      "4612826": 10.55,
-      "4635008": 5.01,
-      "4678008": 8.53,
-      "4682745": 0.26,
-      "4683062": 9.21,
-      "4685247": 4.14,
-      "4688813": 12.25,
-      "4697815": 7.56,
-      "4887558": 0.23,
-      "Spencer Rattler": 3.01
+      "2577417": 49.61,
+      "2976212": 44.91,
+      "2976499": 29.02,
+      "2977187": 44.32,
+      "3040151": 32.54,
+      "3042519": 25.67,
+      "3043078": 77.23,
+      "3045147": 23.01,
+      "3046439": 0.61,
+      "3046779": 46.8,
+      "3051392": 0.17,
+      "3051876": 15.55,
+      "3052587": 63.95,
+      "3054850": 66.05,
+      "3059915": 9.63,
+      "3068267": 12.13,
+      "3116165": 45.41,
+      "3116365": 12.14,
+      "3116385": 44.65,
+      "3116406": 63.08,
+      "3117251": 45.88,
+      "3117256": 1.89,
+      "3120348": 4.59,
+      "3121023": 12.6,
+      "3121422": 31.56,
+      "3122840": 3.72,
+      "3122920": 0.96,
+      "3123076": 8.18,
+      "3126486": 39.25,
+      "3128390": 7.63,
+      "3128429": 7.56,
+      "3128720": 20.15,
+      "3139477": 71.43,
+      "3728262": 0.71,
+      "3886598": 2.26,
+      "3895856": 10.48,
+      "3912547": 29.87,
+      "3915411": 0.52,
+      "3915416": 31.45,
+      "3915511": 76.46,
+      "3916148": 24.57,
+      "3916387": 104.56,
+      "3916433": 9.26,
+      "3916945": 2.26,
+      "3917315": 62.05,
+      "3917792": 16.4,
+      "3918298": 99.98,
+      "3925357": 7.21,
+      "3929630": 81.32,
+      "3932905": 19.16,
+      "4032473": 10.05,
+      "4035538": 44.43,
+      "4035676": 5.93,
+      "4035687": 13.94,
+      "4036133": 16.66,
+      "4036378": 67.57,
+      "4038441": 1.45,
+      "4038815": 8.48,
+      "4038941": 28.77,
+      "4040655": 11.75,
+      "4040715": 85.76,
+      "4040761": 6.03,
+      "4047365": 30.56,
+      "4047646": 71.91,
+      "4047650": 44,
+      "4048244": 5.65,
+      "4239993": 27.33,
+      "4239996": 14.31,
+      "4240021": 0.49,
+      "4241389": 78.99,
+      "4241401": 2.5,
+      "4241416": 16.98,
+      "4241457": 12.92,
+      "4241463": 5.69,
+      "4241474": 25.89,
+      "4241478": 35.68,
+      "4241479": 10.21,
+      "4241985": 21.47,
+      "4242335": 52.09,
+      "4242355": 15.39,
+      "4242431": 2.16,
+      "4242433": 0.16,
+      "4242557": 0.52,
+      "4243331": 2.11,
+      "4243537": 0.25,
+      "4248528": 2.86,
+      "4249417": 3.68,
+      "4258173": 47.43,
+      "4258595": 10.48,
+      "4259545": 22.21,
+      "4260394": 1.62,
+      "4262921": 90.94,
+      "4360078": 1.36,
+      "4360238": 0.15,
+      "4360248": 11.32,
+      "4360294": 2.79,
+      "4360310": 27.19,
+      "4360438": 23.95,
+      "4360516": 5.78,
+      "4360569": 13.57,
+      "4360761": 1.25,
+      "4360797": 0.67,
+      "4360939": 0.21,
+      "4361050": 4.45,
+      "4361307": 35.67,
+      "4361370": 21.4,
+      "4361411": 5.02,
+      "4361418": 1.48,
+      "4361432": 3.96,
+      "4361529": 18.03,
+      "4361579": 7.58,
+      "4361741": 46.74,
+      "4361777": 0.77,
+      "4362238": 11.01,
+      "4362249": 41.17,
+      "4362628": 84.39,
+      "4362887": 29.29,
+      "4366031": 19.07,
+      "4372016": 14.65,
+      "4372019": 3.87,
+      "4372561": 0.01,
+      "4373626": 3.76,
+      "4373678": 8.71,
+      "4374302": 77.11,
+      "4379399": 36.11,
+      "4385690": 14.48,
+      "4426338": 14,
+      "4426348": 89.69,
+      "4426354": 15.48,
+      "4426385": 3.64,
+      "4426386": 1.32,
+      "4426388": 18.04,
+      "4426502": 52.53,
+      "4426515": 29.42,
+      "4427095": 3.54,
+      "4427366": 60.7,
+      "4428557": 2.68,
+      "4428718": 1.08,
+      "4428850": 2.59,
+      "4429013": 5.85,
+      "4429025": 1.38,
+      "4429084": 35.25,
+      "4429096": 0.33,
+      "4429160": 35.71,
+      "4429205": 12.93,
+      "4429275": 0.55,
+      "4429501": 1.15,
+      "4429615": 23.52,
+      "4429795": 52.88,
+      "4430027": 24.65,
+      "4430034": 3.06,
+      "4430737": 66.19,
+      "4430807": 59.15,
+      "4430871": 0.68,
+      "4430878": 14.31,
+      "4430968": 0.59,
+      "4431299": 9.47,
+      "4431452": 12.85,
+      "4431611": 50.14,
+      "4432577": 74.47,
+      "4432665": 41.02,
+      "4432708": 35.13,
+      "4432773": 24.99,
+      "4567048": 51.18,
+      "4569173": 14.82,
+      "4569382": 0.66,
+      "4569587": 8.93,
+      "4569618": 44.4,
+      "4569987": 1.37,
+      "4572680": 7.02,
+      "4595348": 70.25,
+      "4596448": 8.65,
+      "4612826": 9.66,
+      "4635008": 4.03,
+      "4678008": 8.83,
+      "4682745": 0.27,
+      "4683062": 9.22,
+      "4685247": 3.62,
+      "4688813": 10.88,
+      "4697815": 7.38,
+      "4887558": 0.04,
+      "Spencer Rattler": 1.88
     },
-    "timestamp": 1729131116016,
+    "timestamp": 1729146903970,
     "history": [
       {
         "values": {
@@ -18297,6 +18482,21 @@
           "10": 441.17
         },
         "date": 1729131121706
+      },
+      {
+        "values": {
+          "1": 605.13,
+          "2": 340.78,
+          "3": 460.23,
+          "4": 430.8,
+          "5": 426.83,
+          "6": 271.52,
+          "7": 545.79,
+          "8": 415.42,
+          "9": 483.61,
+          "10": 451.9
+        },
+        "date": 1729146911498
       }
     ]
   }
