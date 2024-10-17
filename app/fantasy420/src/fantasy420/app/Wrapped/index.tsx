@@ -35,6 +35,7 @@ export default function Wrapped() {
       DeterminedByDiscreteScoring,
       Stacks,
       Negatives,
+      OpponentDefenses,
       UniquesStarted,
       UniquesRostered,
       BoomBust,
@@ -862,6 +863,34 @@ function Negatives() {
           <div key={i}>
             week {p.weekNum} {p.name} scored {p.score}{" "}
             {p.started && `(${p.started})`}
+          </div>
+        ))}
+    </div>
+  );
+}
+
+function OpponentDefenses() {
+  const defenses = mapDict(
+    selectedWrapped().nflPlayers,
+    (p) => p,
+    (_id, p) => p.position === Position[Position.DST]
+  );
+  return (
+    <div>
+      {Object.values(selectedWrapped().nflTeams)
+        .filter((t) => t.name !== "FA")
+        .map((t) => (
+          <div key={t.id} style={bubbleStyle}>
+            <div>{t.name}</div>
+            <div>
+              {Object.entries(t.nflGamesByScoringPeriod)
+                .map(([weekNum, o]) => ({ weekNum, o }))
+                .filter(({ o }) => o?.opp !== undefined)
+                .map(({ weekNum, o }) => defenses[o!.opp!].scores[weekNum])
+                .map((score, i) => (
+                  <div key={i}>{score}</div>
+                ))}
+            </div>
           </div>
         ))}
     </div>
