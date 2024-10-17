@@ -20,7 +20,7 @@ type NFLTeamType = {
   nflGamesByScoringPeriod: {
     [weekNum: string]:
       | {
-          opp?: string;
+          opp: string;
           fieldGoals: number[];
           pointsAllowed: number;
           yardsAllowed: number;
