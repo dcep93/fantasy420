@@ -28,7 +28,7 @@ export default function ByeSchedule() {
       .map((obj) => ({
         ...obj,
         byes: obj.teamIds
-          .filter((teamId) => teamId !== null)
+          .filter((teamId) => teamId !== "")
           .map((teamId) => selectedWrapped().ffTeams[teamId!].rosters)
           .map((rosters) => rosters[obj.weekNum] || rosters["0"])
           .map((weekRoster) =>
