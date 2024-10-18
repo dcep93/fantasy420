@@ -237,7 +237,7 @@
         "5": 0,
         "6": 0
       },
-      "injuryStatus": "QUESTIONABLE"
+      "injuryStatus": "OUT"
     },
     "15818": {
       "id": "15818",
@@ -395,7 +395,7 @@
       "total": 0,
       "average": 0,
       "scores": { "0": 0, "1": 0, "2": 0, "3": 0, "4": 0, "5": 0 },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "16737": {
       "id": "16737",
@@ -690,7 +690,7 @@
         "5": 11.5,
         "6": 16.5
       },
-      "injuryStatus": "QUESTIONABLE"
+      "injuryStatus": "ACTIVE"
     },
     "2577417": {
       "id": "2577417",
@@ -1734,7 +1734,7 @@
       "total": 54.1,
       "average": 10.82,
       "scores": { "0": 54.1, "1": 7.1, "2": 6.8, "3": 27, "4": 13.2, "6": 0 },
-      "injuryStatus": "QUESTIONABLE"
+      "injuryStatus": "OUT"
     },
     "3121409": {
       "id": "3121409",
@@ -3002,7 +3002,7 @@
         "5": 14.7,
         "6": 12.5
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4035693": {
       "id": "4035693",
@@ -3123,7 +3123,7 @@
       "total": 7.880000000000001,
       "average": 3.9400000000000004,
       "scores": { "0": 7.88, "1": 0, "2": 3.6, "3": 4.28, "4": 0, "5": 0 },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4037235": {
       "id": "4037235",
@@ -3742,7 +3742,7 @@
         "5": 18.3,
         "6": 2.9
       },
-      "injuryStatus": "QUESTIONABLE"
+      "injuryStatus": "ACTIVE"
     },
     "4241416": {
       "id": "4241416",
@@ -14972,7 +14972,7 @@
       "Bub Means": 0.78,
       "Tyler Goodson": 0.01
     },
-    "timestamp": 1729279710001,
+    "timestamp": 1729281601073,
     "history": [
       {
         "values": {
