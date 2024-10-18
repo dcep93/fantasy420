@@ -23,9 +23,9 @@ const colors = Object.values({
 });
 
 export default function PointsFor() {
-  const totals = mapDict(selectedWrapped().ffTeams, (t) => ({
+  const dataA = mapDict(selectedWrapped().ffTeams, (t) => ({
     t,
-    rosters: mapDict(
+    weeks: mapDict(
       mapDict(
         t.rosters,
         (w) => ({
@@ -45,79 +45,78 @@ export default function PointsFor() {
       (o) => o
     ),
   }));
-  const reduce = (rosters: number[]) =>
+  const cumSum = (rosters: number[]) =>
     rosters.reduce(
       (prev, curr) => prev.concat(prev[prev.length - 1] + curr),
       [0]
     );
-  const raw = mapDict(totals, (t) => ({
-    opps: reduce(
-      Object.values(t.rosters).map(({ weekNum, opp }) =>
-        opp === undefined ? 0 : totals[opp!]!.rosters[weekNum].total
-      )
-    ),
-    points: reduce(Object.values(t.rosters).map(({ total }) => total)),
-    wins: Object.values(t.rosters)
-      .map((w) => w.total > totals[w.opp!]?.rosters[w.weekNum].total)
-      .reduce(
-        (prev, curr) => prev.concat(prev[prev.length - 1] + (curr ? 1 : 0)),
-        [0]
+  const dataB = mapDict(
+    mapDict(dataA, (o) => ({
+      ...o,
+      weeks: mapDict(o.weeks, (w) => ({
+        ...w,
+        oppTotal: w.opp === undefined ? 0 : dataA[w.opp].weeks[w.weekNum].total,
+      })),
+    })),
+    (o) => ({
+      t: o.t,
+      wins: cumSum(
+        Object.values(o.weeks).map((w) => (w.total > w.oppTotal ? 1 : 0))
       ),
+      pointsFor: cumSum(Object.values(o.weeks).map((w) => w.total)),
+      pointsAgainst: cumSum(
+        Object.values(o.weeks).map((w) =>
+          w.opp === undefined ? 0 : dataA[w.opp].weeks[w.weekNum].total
+        )
+      ),
+    })
+  );
+  const appendAverage = (data: { [teamId: string]: number }) => ({
+    data,
+    average:
+      Object.values(data).reduce((a, b) => a + b, 0) /
+      Object.values(data).length,
+  });
+  const dataC = Object.values(dataB)[0].wins.map((_, weekIndex) => ({
+    weekNum: weekIndex,
+    pointsFor: appendAverage(mapDict(dataB, (o) => o.pointsFor[weekIndex])),
+    pointsAgainst: appendAverage(
+      mapDict(dataB, (o) => o.pointsAgainst[weekIndex])
+    ),
   }));
-  const predata = Object.keys(
-    Object.values(selectedWrapped().ffTeams)[0].rosters
-  )
-    .map((weekNum) => parseInt(weekNum))
-    .map((weekNum) => ({
-      weekNum,
-      points: Object.values(raw).map(({ points }) => points[weekNum]),
-      opps: Object.values(raw).map(({ opps }) => opps[weekNum]),
-    }))
-    .map(({ weekNum, points, opps }) => ({
-      weekNum,
-      average: points.reduce((a, b) => a + b, 0) / points.length,
-      averageOpps: opps.reduce((a, b) => a + b, 0) / opps.length,
-    }));
-  const allData = {
-    pointsFor: {
-      data: predata.map(({ weekNum, average }) => ({
-        x: weekNum,
-        average,
-        ...mapDict(
-          selectedWrapped().ffTeams,
-          (t) => raw[t.id].points[weekNum] - average
-        ),
-      })),
-    },
-    pointsAgainst: {
-      data: predata.map(({ weekNum, averageOpps }) => ({
-        x: weekNum,
-        average: averageOpps,
-        ...mapDict(
-          selectedWrapped().ffTeams,
-          (t) => raw[t.id].opps[weekNum] - averageOpps
-        ),
-      })),
-    },
+  const dataD: {
+    [key: string]: {
+      x: number;
+      ys: { average: number; data: { [teamId: string]: number } };
+    }[];
+  } = {
+    pointsFor: dataC.map((o) => ({
+      x: o.weekNum,
+      ys: o.pointsFor,
+    })),
+    pointsAgainst: dataC.map((o) => ({
+      x: o.weekNum,
+      ys: o.pointsAgainst,
+    })),
     ...(selectedWrapped().fantasyCalc.history.length === 0
       ? {}
       : {
-          fantasyCalc: {
-            data: selectedWrapped().fantasyCalc.history.map((obj) => ({
-              x: obj.date,
+          fantasyCalc: selectedWrapped().fantasyCalc.history.map((obj) => ({
+            x: obj.date,
+            ys: {
               average:
                 Object.values(obj.values).reduce((a, b) => a + b, 0) /
                 Object.keys(obj.values).length,
-              ...obj.values,
-            })),
-          },
+              data: obj.values,
+            },
+          })),
         }),
   };
-  const [selectedIndex, updateSelectedIndex] = useState("");
+  const [selectedTeamId, updateSelectedTeamId] = useState("");
   return (
     <div>
       <div>
-        {Object.entries(allData).map(([key, data]) => {
+        {Object.entries(dataD).map(([key, data]) => {
           var domainData = {
             year: "",
             min: 0,
@@ -128,7 +127,7 @@ export default function PointsFor() {
               <h1>{key}</h1>
               <div style={{ width: "80em", height: "30em" }}>
                 <ResponsiveContainer width="100%" height="100%">
-                  <LineChart data={data.data}>
+                  <LineChart data={data}>
                     {key === "fantasyCalc" ? (
                       <XAxis
                         dataKey={"x"}
@@ -176,14 +175,14 @@ export default function PointsFor() {
                             (1 -
                               (coordinate!.y! - viewBox!.y!) /
                                 viewBox!.height!);
-                        const closestIndex = mappedPayload
+                        const closestTeamId = mappedPayload
                           .map(({ dataKey, value }) => ({
                             dataKey,
                             value: Math.abs(value - cursorValue),
                           }))
                           .sort((a, b) => a.value - b.value)[0]
                           .dataKey as string;
-                        setTimeout(() => updateSelectedIndex(closestIndex));
+                        setTimeout(() => updateSelectedTeamId(closestTeamId));
                         return (
                           <div
                             style={{
@@ -206,7 +205,7 @@ export default function PointsFor() {
                                 : label}{" "}
                               avg:{" "}
                               {Helpers.toFixed(
-                                data.data.find((d) => d.x === label)!.average
+                                data.find((d) => d.x === label)!.ys.average
                               )}
                             </div>
                             <div>
@@ -215,7 +214,7 @@ export default function PointsFor() {
                                   key={p.dataKey}
                                   style={{
                                     fontWeight:
-                                      p.dataKey === closestIndex
+                                      p.dataKey === closestTeamId
                                         ? "bold"
                                         : undefined,
                                   }}
@@ -225,9 +224,9 @@ export default function PointsFor() {
                                   ) : (
                                     <>
                                       {Helpers.toFixed(p.value as number)}: (
-                                      {raw[p.dataKey!].wins[label]}) (
+                                      {dataB[p.dataKey!].wins[label]}) (
                                       {Helpers.toFixed(
-                                        totals[p.dataKey!].rosters[label].total
+                                        dataB[p.dataKey!].wins[label]
                                       )}
                                       )
                                     </>
@@ -247,7 +246,7 @@ export default function PointsFor() {
                           type="linear"
                           dataKey={t.id}
                           stroke={colors[index]}
-                          strokeWidth={t.id === selectedIndex ? 10 : undefined}
+                          strokeWidth={t.id === selectedTeamId ? 10 : undefined}
                           name={t.name}
                         />
                       )

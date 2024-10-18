@@ -44,7 +44,7 @@ export type FFTeamType = {
   pickOrder?: number;
 };
 
-type MatchupType = (string | null)[][];
+type MatchupType = string[][];
 
 export type WrappedType = {
   nflPlayers: {
