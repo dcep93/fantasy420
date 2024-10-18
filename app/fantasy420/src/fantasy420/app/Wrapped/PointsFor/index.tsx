@@ -127,7 +127,12 @@ export default function PointsFor() {
               <h1>{key}</h1>
               <div style={{ width: "80em", height: "30em" }}>
                 <ResponsiveContainer width="100%" height="100%">
-                  <LineChart data={data}>
+                  <LineChart
+                    data={data.map((o) => ({
+                      x: o.x,
+                      ...mapDict(o.ys.data, (v) => v - o.ys.average),
+                    }))}
+                  >
                     {key === "fantasyCalc" ? (
                       <XAxis
                         dataKey={"x"}
@@ -164,8 +169,8 @@ export default function PointsFor() {
                           return null;
                         const mappedPayload = payload!
                           .map(({ name, value, dataKey }) => ({
-                            name,
-                            dataKey,
+                            name: name!,
+                            dataKey: dataKey!,
                             value: value as number,
                           }))
                           .sort((a, b) => b.value - a.value);
@@ -183,6 +188,7 @@ export default function PointsFor() {
                           .sort((a, b) => a.value - b.value)[0]
                           .dataKey as string;
                         setTimeout(() => updateSelectedTeamId(closestTeamId));
+                        const values = data.find((d) => d.x === label)!.ys.data;
                         return (
                           <div
                             style={{
@@ -202,11 +208,7 @@ export default function PointsFor() {
                                       (1000 * 60 * 60 * 24 * 7),
                                     4
                                   )
-                                : label}{" "}
-                              avg:{" "}
-                              {Helpers.toFixed(
-                                data.find((d) => d.x === label)!.ys.average
-                              )}
+                                : label}
                             </div>
                             <div>
                               {mappedPayload.map((p) => (
@@ -220,18 +222,14 @@ export default function PointsFor() {
                                   }}
                                 >
                                   {key === "fantasyCalc" ? (
-                                    p.value
+                                    values[p.dataKey].toFixed(2)
                                   ) : (
                                     <>
-                                      {Helpers.toFixed(p.value as number)}: (
-                                      {dataB[p.dataKey!].wins[label]}) (
-                                      {Helpers.toFixed(
-                                        dataB[p.dataKey!].wins[label]
-                                      )}
-                                      )
+                                      {values[p.dataKey].toFixed(2)}: (
+                                      {dataB[p.dataKey].wins[label]})
                                     </>
                                   )}{" "}
-                                  {p.name}
+                                  {selectedWrapped().ffTeams[p.name].name}
                                 </div>
                               ))}
                             </div>
@@ -247,7 +245,6 @@ export default function PointsFor() {
                           dataKey={t.id}
                           stroke={colors[index]}
                           strokeWidth={t.id === selectedTeamId ? 10 : undefined}
-                          name={t.name}
                         />
                       )
                     )}
