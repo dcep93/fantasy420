@@ -24,7 +24,7 @@ export default function ByeSchedule() {
           .slice()
           .sort((a, b) => (a !== team.id ? 1 : -1)),
       }))
-      .concat({ weekNum: "14", teamIds: [team.id, null] })
+      .concat({ weekNum: "14", teamIds: [team.id, ""] })
       .map((obj) => ({
         ...obj,
         byes: obj.teamIds
