@@ -674,7 +674,7 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
             .then(
               (
                 resp: {
-                  value: number;
+                  redraftValue: number;
                   player: { name: string; espnId: number };
                 }[]
               ) =>
@@ -683,7 +683,7 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                     p.player.espnId
                       ? p.player.espnId.toString()
                       : p.player.name,
-                    p.value / 100,
+                    p.redraftValue / 100,
                   ])
                 )
             )
