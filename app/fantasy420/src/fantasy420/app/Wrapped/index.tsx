@@ -941,7 +941,9 @@ function PointsAgainst() {
                   {weeks.map(({ weekNum, players, score }) => (
                     <div key={weekNum}>
                       w{weekNum} {Helpers.toFixed(score)}{" "}
-                      {players.map((p) => p.name).join(" / ")}
+                      {players
+                        .map((p) => `${p.name}:${p.scores[weekNum]}`)
+                        .join(" / ")}
                     </div>
                   ))}
                 </div>
