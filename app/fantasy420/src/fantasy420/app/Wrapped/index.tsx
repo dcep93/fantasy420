@@ -35,7 +35,7 @@ export default function Wrapped() {
       DeterminedByDiscreteScoring,
       Stacks,
       Negatives,
-      OpponentDefenses,
+      PointsAgainst,
       UniquesStarted,
       UniquesRostered,
       BoomBust,
@@ -869,44 +869,89 @@ function Negatives() {
   );
 }
 
-function OpponentDefenses() {
-  const defenses = Object.fromEntries(
-    Object.values(selectedWrapped().nflPlayers)
-      .filter((p) => p.position === Position[Position.DST])
-      .map((p) => [p.nflTeamId, p])
-  );
-  return (
-    <div>
-      {Object.values(selectedWrapped().nflTeams)
-        .filter((t) => t.name !== "FA")
-        .map((t) => ({
-          t,
-          weeks: Object.entries(t.nflGamesByScoringPeriod)
-            .map(([weekNum, o]) => ({ weekNum, o, defense: defenses[o!.opp!] }))
-            .filter(({ o }) => o?.opp !== undefined)
-            .map((o) => ({ ...o, defenseScore: o.defense.scores[o.weekNum]! })),
-        }))
-        .map((o) => ({
-          ...o,
-          total: o.weeks.map((w) => w.defenseScore).reduce((a, b) => a + b, 0),
-        }))
-        .sort((a, b) => b.total - a.total)
-        .map(({ t, weeks, total }) => (
-          <div key={t.id} style={bubbleStyle}>
-            <div>
-              {t.name} ({total})
-            </div>
-            <div>
-              {weeks.map(({ weekNum, defense, defenseScore }) => (
-                <div key={weekNum}>
-                  w{weekNum} {defenseScore} {defense?.name}
-                </div>
+function PointsAgainst() {
+  function Helper() {
+    const [position, updatePosition] = useState(
+      Position[Position.DST] as string
+    );
+    return (
+      <div>
+        <div>
+          <select
+            defaultValue={position}
+            onChange={(e) => updatePosition(e.target.value)}
+          >
+            {Object.keys(Position)
+              .filter((y) =>
+                [
+                  Position.DST,
+                  Position.QB,
+                  Position.RB,
+                  Position.TE,
+                  Position.TE,
+                ]
+                  .map((p) => Position[p])
+                  .includes(y)
+              )
+              .map((y) => (
+                <option key={y} value={y}>
+                  {y}
+                </option>
               ))}
-            </div>
-          </div>
-        ))}
-    </div>
-  );
+          </select>
+        </div>
+        <div>
+          {Object.values(selectedWrapped().nflTeams)
+            .filter((t) => t.name !== "FA")
+            .map((t) => ({
+              t,
+              weeks: Object.entries(t.nflGamesByScoringPeriod)
+                .map(([weekNum, o]) => ({
+                  weekNum,
+                  o,
+                }))
+                .filter(({ o }) => o?.opp !== undefined)
+                .map((o) => ({
+                  ...o,
+                  players: Object.values(selectedWrapped().nflPlayers).filter(
+                    (p) =>
+                      p.position === position &&
+                      p.nflTeamId === o.o!.opp &&
+                      p.scores[o.weekNum]
+                  ),
+                }))
+                .map((o) => ({
+                  ...o,
+                  score: o.players
+                    .map((p) => p.scores[o.weekNum]!)
+                    .reduce((a, b) => a + b, 0),
+                })),
+            }))
+            .map((o) => ({
+              ...o,
+              total: o.weeks.map((w) => w.score).reduce((a, b) => a + b, 0),
+            }))
+            .sort((a, b) => b.total - a.total)
+            .map(({ t, weeks, total }) => (
+              <div key={t.id} style={bubbleStyle}>
+                <div>
+                  {t.name} ({Helpers.toFixed(total)})
+                </div>
+                <div>
+                  {weeks.map(({ weekNum, players, score }) => (
+                    <div key={weekNum}>
+                      w{weekNum} {Helpers.toFixed(score)}{" "}
+                      {players.map((p) => p.name).join(" / ")}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+        </div>
+      </div>
+    );
+  }
+  return <Helper />;
 }
 
 function ExtremeStuds() {
