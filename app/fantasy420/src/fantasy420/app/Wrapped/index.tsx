@@ -888,7 +888,7 @@ function PointsAgainst() {
                   Position.QB,
                   Position.RB,
                   Position.TE,
-                  Position.TE,
+                  Position.WR,
                 ]
                   .map((p) => Position[p])
                   .includes(y)
