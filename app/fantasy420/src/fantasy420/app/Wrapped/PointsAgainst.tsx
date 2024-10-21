@@ -1,6 +1,13 @@
 import { useState } from "react";
-import { bubbleStyle, Helpers, Position, selectedWrapped } from ".";
-import Chart from "./Scatterplot/Chart";
+import {
+  CartesianGrid,
+  LabelList,
+  Scatter,
+  ScatterChart,
+  XAxis,
+  YAxis,
+} from "recharts";
+import { bubbleStyle, clog, Helpers, Position, selectedWrapped } from ".";
 
 export default function PointsAgainst() {
   const [position, updatePosition] = useState(Position[Position.DST] as string);
@@ -42,13 +49,41 @@ export default function PointsAgainst() {
   return (
     <div>
       <div>
-        <Chart
-          data={data.map((d, i) => ({
-            x: i,
-            y: d.total,
-            label: `${d.t.name} ${d.total}`,
-          }))}
-        />
+        <ScatterChart width={600} height={400}>
+          <CartesianGrid />
+          <XAxis type="number" dataKey="x" />
+          <YAxis type="number" dataKey="y" />
+          <Scatter
+            data={data.map((d, i) => ({
+              x: i,
+              y: d.total,
+              label: `${d.t.name} ${d.total}`,
+            }))}
+          >
+            <LabelList
+              dataKey="label"
+              position="right"
+              content={(props) => {
+                // return <div style={{ height: "100px" }}>{props.value}</div>;
+                const { x, y, value } = clog(props);
+                const verticalOffset = -10; // Adjust this value to control vertical spacing
+                return (
+                  <text
+                    x={x}
+                    dx={0 * (x as number)}
+                    y={(y as number) + verticalOffset}
+                    dy={-4}
+                    textAnchor="middle"
+                    fill="#8884d8"
+                    style={{ height: "100px" }}
+                  >
+                    {value}
+                  </text>
+                );
+              }}
+            />
+          </Scatter>
+        </ScatterChart>
       </div>
       <div>
         <select
