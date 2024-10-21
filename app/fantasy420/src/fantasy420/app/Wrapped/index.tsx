@@ -874,8 +874,6 @@ function PointsAgainst() {
     const [position, updatePosition] = useState(
       Position[Position.DST] as string
     );
-    const average = (scores: number[]) =>
-      Helpers.toFixed(scores.reduce((a, b) => a + b, 0) / scores.length);
     return (
       <div>
         <div>
@@ -919,7 +917,7 @@ function PointsAgainst() {
                     (p) =>
                       p.position === position &&
                       p.nflTeamId === o.o!.opp &&
-                      p.scores[o.weekNum]
+                      p.scores[o.weekNum] !== undefined
                   ),
                 }))
                 .map((o) => ({
@@ -935,14 +933,17 @@ function PointsAgainst() {
             }))
             .map((o) => ({
               ...o,
-              average: average(o.scores),
               total: Helpers.toFixed(o.scores.reduce((a, b) => a + b, 0)),
             }))
             .sort((a, b) => b.total - a.total)
             .map((o) => (
               <div key={o.t.id} style={bubbleStyle}>
                 <div>
-                  {o.t.name} (tot:{o.total}::avg:{o.average})
+                  {o.t.name} (tot:{o.total}::avg:
+                  {Helpers.toFixed(
+                    o.scores.reduce((a, b) => a + b, 0) / o.scores.length
+                  )}
+                  )
                 </div>
                 <div>
                   {o.weeks.map(({ weekNum, players, score }) => (
@@ -953,10 +954,8 @@ function PointsAgainst() {
                         .sort((a, b) => b.s - a.s)
                         .map(
                           (p) =>
-                            `${p.name}:w::${p.s}:avg:${average(
-                              Object.values(p.scores)
-                                .filter((s) => s !== 0)
-                                .map((s) => s as number)
+                            `${p.name}:w::${p.s}:avg:${Helpers.toFixed(
+                              p.average
                             )}`
                         )
                         .join(" / ")}
