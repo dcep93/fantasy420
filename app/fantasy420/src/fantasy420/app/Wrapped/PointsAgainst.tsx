@@ -7,7 +7,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { bubbleStyle, clog, Helpers, Position, selectedWrapped } from ".";
+import { bubbleStyle, Helpers, Position, selectedWrapped } from ".";
 
 export default function PointsAgainst() {
   const [position, updatePosition] = useState(Position[Position.DST] as string);
@@ -44,40 +44,47 @@ export default function PointsAgainst() {
     .map((o) => ({
       ...o,
       total: Helpers.toFixed(o.scores.reduce((a, b) => a + b, 0)),
+      average: Helpers.toFixed(
+        o.scores.reduce((a, b) => a + b, 0) / o.scores.length
+      ),
     }))
     .sort((a, b) => b.total - a.total);
+  const dims = { width: 1000, height: 600 };
   return (
     <div>
       <div>
-        <ScatterChart width={600} height={400}>
+        <ScatterChart width={dims.width + 50} height={dims.height + 50}>
           <CartesianGrid />
           <XAxis type="number" dataKey="x" />
           <YAxis type="number" dataKey="y" />
           <Scatter
             data={data.map((d, i) => ({
-              x: i,
+              x: i + 1,
               y: d.total,
-              label: `${d.t.name} ${d.total}`,
+              label: `${d.t.name} ${d.average}`,
             }))}
           >
             <LabelList
               dataKey="label"
-              position="right"
               content={(props) => {
-                // return <div style={{ height: "100px" }}>{props.value}</div>;
-                const { x, y, value } = clog(props);
-                const verticalOffset = -10; // Adjust this value to control vertical spacing
+                // @ts-ignore
+                const index: number = props.index + 1;
+                const coords =
+                  index <= data.length / 2
+                    ? {
+                        x: (4 / 3) * (index / data.length) * dims.width + 110,
+                        y: (1 * (dims.height * index)) / data.length,
+                      }
+                    : {
+                        x:
+                          (1 - (4 / 3) * (1 - index / data.length)) *
+                            dims.width -
+                          80,
+                        y: (1 - 1 * (1 - index / data.length)) * dims.height,
+                      };
                 return (
-                  <text
-                    x={x}
-                    dx={0 * (x as number)}
-                    y={(y as number) + verticalOffset}
-                    dy={-4}
-                    textAnchor="middle"
-                    fill="#8884d8"
-                    style={{ height: "100px" }}
-                  >
-                    {value}
+                  <text {...coords} fill="#8884d8">
+                    {props.value}
                   </text>
                 );
               }}
@@ -108,10 +115,7 @@ export default function PointsAgainst() {
           <div key={o.t.id} style={bubbleStyle}>
             <div>
               {o.t.name} (tot:{o.total}::avg:
-              {Helpers.toFixed(
-                o.scores.reduce((a, b) => a + b, 0) / o.scores.length
-              )}
-              )
+              {o.average})
             </div>
             <div>
               {o.weeks.map(({ weekNum, players, score }) => (
