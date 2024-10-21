@@ -949,9 +949,10 @@ function PointsAgainst() {
                     <div key={weekNum}>
                       w{weekNum} {Helpers.toFixed(score)}{" "}
                       {players
+                        .map((p) => ({ ...p, s: p.scores[weekNum] }))
                         .map(
                           (p) =>
-                            `${p.name}:tot::${p.scores[weekNum]}:avg:${average(
+                            `${p.name}:w::${p.s}:avg:${average(
                               Object.values(p.scores)
                                 .filter((s) => s !== 0)
                                 .map((s) => s as number)
