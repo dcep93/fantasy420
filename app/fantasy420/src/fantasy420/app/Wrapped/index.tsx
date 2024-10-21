@@ -874,6 +874,8 @@ function PointsAgainst() {
     const [position, updatePosition] = useState(
       Position[Position.DST] as string
     );
+    const average = (scores: number[]) =>
+      Helpers.toFixed(scores.reduce((a, b) => a + b, 0) / scores.length);
     return (
       <div>
         <div>
@@ -929,20 +931,32 @@ function PointsAgainst() {
             }))
             .map((o) => ({
               ...o,
-              total: o.weeks.map((w) => w.score).reduce((a, b) => a + b, 0),
+              scores: o.weeks.map((w) => w.score),
+            }))
+            .map((o) => ({
+              ...o,
+              average: average(o.scores),
+              total: Helpers.toFixed(o.scores.reduce((a, b) => a + b, 0)),
             }))
             .sort((a, b) => b.total - a.total)
-            .map(({ t, weeks, total }) => (
-              <div key={t.id} style={bubbleStyle}>
+            .map((o) => (
+              <div key={o.t.id} style={bubbleStyle}>
                 <div>
-                  {t.name} ({Helpers.toFixed(total)})
+                  {o.t.name} (tot:{o.total}::avg:{o.average})
                 </div>
                 <div>
-                  {weeks.map(({ weekNum, players, score }) => (
+                  {o.weeks.map(({ weekNum, players, score }) => (
                     <div key={weekNum}>
                       w{weekNum} {Helpers.toFixed(score)}{" "}
                       {players
-                        .map((p) => `${p.name}:${p.scores[weekNum]}`)
+                        .map(
+                          (p) =>
+                            `${p.name}:tot::${p.scores[weekNum]}:avg:${average(
+                              Object.values(p.scores)
+                                .filter((s) => s !== 0)
+                                .map((s) => s as number)
+                            )}`
+                        )
                         .join(" / ")}
                     </div>
                   ))}
