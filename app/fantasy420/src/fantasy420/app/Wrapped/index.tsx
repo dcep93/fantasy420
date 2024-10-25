@@ -299,6 +299,7 @@ function Bopped() {
         .sort((a, b) => b.score - a.score)[0],
     }))
     .filter((player) => player.best !== undefined)
+    .filter((player) => player.best.score >= 20)
     .map((player) => ({
       ...player,
       bestOwner: Object.values(selectedWrapped().ffTeams).find((t) =>
