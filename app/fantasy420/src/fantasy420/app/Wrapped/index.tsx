@@ -2021,17 +2021,12 @@ function AllTimeRecords() {
             .sort((a, b) => b.value - a.value)
             .map((o, i) => ({ ...o, i })),
         }))
-        .map((o) => ({
-          ...o,
-          tops: o.sorted.slice(0, 20),
-          bottoms: o.sorted.slice(-20),
-        }))
-        .map(({ recordName, tops, bottoms }) => (
+        .map(({ recordName, sorted }) => (
           <div key={recordName} style={bubbleStyle}>
             <h1>{recordName}</h1>
             <table>
               <tbody>
-                {[tops, [null], bottoms]
+                {[sorted.slice(0, 20), [null], sorted.slice(-20)]
                   .flatMap((s) => s)
                   .map((o, i) => (
                     <tr key={i}>
