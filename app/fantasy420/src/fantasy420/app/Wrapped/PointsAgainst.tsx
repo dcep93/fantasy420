@@ -126,7 +126,9 @@ export default function PointsAgainst() {
                     .sort((a, b) => b.s - a.s)
                     .map(
                       (p) =>
-                        `${p.name}:w::${p.s}:avg:${Helpers.toFixed(p.average)}`
+                        `${p.name}:week::${p.s}:avg:${Helpers.toFixed(
+                          p.average
+                        )}`
                     )
                     .join(" / ")}
                 </div>
