@@ -47,7 +47,6 @@ export type FFTeamType = {
 type MatchupType = string[][];
 
 export type WrappedType = {
-  nflPlayerProjections?: { [id: string]: { [weekNum: string]: number } };
   nflPlayers: {
     [id: string]: NFLPlayerType;
   };
@@ -123,79 +122,6 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
   }
   return Promise.resolve()
     .then(() => [
-      // nflPlayerProjections
-      Promise.resolve()
-        .then(() =>
-          fetch(
-            `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=kona_playercard&view=mRoster`,
-            {
-              headers: {
-                accept: "application/json",
-                "x-fantasy-filter": JSON.stringify({
-                  players: {
-                    filterStatsForTopScoringPeriodIds: {
-                      value: 17,
-                      additionalValue: [`00${currentYear}`, `10${currentYear}`],
-                    },
-                  },
-                }),
-                "x-fantasy-platform":
-                  "kona-PROD-5b4759b3e340d25d9e1ae248daac086ea7c37db7",
-                "x-fantasy-source": "kona",
-              },
-              credentials: "include",
-            }
-          )
-            .then((resp) => resp.json())
-            .then(
-              (resp: {
-                teams: {
-                  roster: {
-                    entries: {
-                      playerId: number;
-                      playerPoolEntry: {
-                        player: {
-                          stats: {
-                            seasonId: number;
-                            statSourceId: number;
-                            scoringPeriodId: number;
-                            appliedTotal: number;
-                            appliedAverage: number;
-                            appliedStats: { [key: string]: number };
-                          }[];
-                        };
-                      };
-                    }[];
-                  };
-                }[];
-              }) => resp
-            )
-            .then((resp) =>
-              resp.teams
-                .flatMap((t) => t.roster.entries)
-                .map((p) => ({
-                  key: p.playerId.toString(),
-                  value: fromEntries(
-                    p.playerPoolEntry.player.stats
-                      .filter(
-                        (stat) =>
-                          stat.seasonId === parseInt(currentYear) &&
-                          stat.statSourceId === 1 &&
-                          stat.scoringPeriodId !== 0
-                      )
-                      .map((stat) => ({
-                        key: stat.scoringPeriodId.toString(),
-                        value: parseFloat((stat.appliedTotal || 0).toFixed(2)),
-                      }))
-                  ),
-                }))
-            )
-            .then((playersArr) => fromEntries(playersArr))
-        )
-        .then(
-          (players: { [id: string]: { [weekNum: string]: number } }) => players
-        ),
-
       // nflPlayers
       Promise.resolve()
         .then(() =>
@@ -772,16 +698,8 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
     .then((ps) => ps.map((p) => p.catch((e) => console.error(e))))
     .then((ps) => Promise.all(ps))
     .then(
-      ([
-        nflPlayerProjections,
-        nflPlayers,
-        ffTeams,
-        ffMatchups,
-        nflTeams,
-        fantasyCalc,
-      ]) =>
+      ([nflPlayers, ffTeams, ffMatchups, nflTeams, fantasyCalc]) =>
         ({
-          nflPlayerProjections,
           nflPlayers,
           ffTeams,
           ffMatchups,
