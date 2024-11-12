@@ -126,7 +126,7 @@ export default function PointsFor() {
             <div key={key}>
               <h1>{key}</h1>
               <div style={{ width: "80em", height: "30em" }}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="80%" height="100%">
                   <LineChart
                     data={data.map((o) => ({
                       x: o.x,
