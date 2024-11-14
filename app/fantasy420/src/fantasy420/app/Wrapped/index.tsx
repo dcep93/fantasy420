@@ -49,6 +49,7 @@ export default function Wrapped() {
       ByeSchedule,
       SecondLost,
       WhatIf,
+      ConsistentlyAverage,
       json,
     }).map(([k, v]) => {
       try {
@@ -2061,7 +2062,7 @@ function WhatIf() {
     <div>
       <div>
         what would the standings be if every matchup within X points were
-        flipped?
+        flipped? hypotheticalWins(realWins)
       </div>
       <div>
         pointsDiff:{" "}
@@ -2111,6 +2112,110 @@ function WhatIf() {
               </div>
             </div>
           ))}
+      </div>
+    </div>
+  );
+}
+
+function ConsistentlyAverage() {
+  function getAvgScore(playerId: string, weekNum: number): number {
+    const scores = Object.entries(selectedWrapped().nflPlayers[playerId].scores)
+      .filter(
+        ([iWeekNum, _]) => iWeekNum !== "0" && parseInt(iWeekNum) <= weekNum
+      )
+      .map(([_, score]) => score);
+    if (selectedWrapped().nflPlayers[playerId].name === "Drake London") {
+      console.log({ scores, weekNum });
+    }
+    return scores.reduce((a, b) => a + b, 0) / scores.length;
+  }
+
+  return (
+    <div>
+      <div>
+        <div>
+          how many wins would each manager have if every player scored X, where
+          X is their mean score on the season
+        </div>
+        <div style={bubbleStyle}>
+          {Object.values(selectedWrapped().ffTeams)
+            .map((t) => ({
+              t,
+              advantages: Object.entries(selectedWrapped().ffMatchups)
+                .filter(
+                  ([weekNum]) =>
+                    selectedWrapped().ffTeams[t.id].rosters[weekNum]
+                )
+                .map(([weekNum, teamIds]) =>
+                  teamIds
+                    .find((teamIds) => teamIds.includes(t.id))!
+                    .sort((a, b) => (a === t.id ? 1 : -1))
+                    .map((teamId) =>
+                      selectedWrapped()
+                        .ffTeams[teamId].rosters[weekNum].starting.map(
+                          (playerId) =>
+                            selectedWrapped().nflPlayers[playerId].average
+                        )
+                        .reduce((a, b) => a + b, 0)
+                    )
+                )
+                .map((scores) => scores[1] - scores[0]),
+            }))
+            .map((o) => ({
+              ...o,
+              wins: o.advantages.filter((a) => a > 0).length,
+            }))
+            .sort((a, b) => b.wins - a.wins)
+            .map((o) => (
+              <div key={o.t.id}>
+                <div>
+                  {o.wins} {o.t.name}
+                </div>
+              </div>
+            ))}
+        </div>
+      </div>
+      <div>
+        <div>
+          how many wins would each manager have if every player scored X, where
+          X is their mean score on the season thus far week on week
+        </div>
+        <div style={bubbleStyle}>
+          {Object.values(selectedWrapped().ffTeams)
+            .map((t) => ({
+              t,
+              advantages: Object.entries(selectedWrapped().ffMatchups)
+                .filter(
+                  ([weekNum]) =>
+                    selectedWrapped().ffTeams[t.id].rosters[weekNum]
+                )
+                .map(([weekNum, teamIds]) =>
+                  teamIds
+                    .find((teamIds) => teamIds.includes(t.id))!
+                    .sort((a, b) => (a === t.id ? 1 : -1))
+                    .map((teamId) =>
+                      selectedWrapped()
+                        .ffTeams[teamId].rosters[weekNum].starting.map(
+                          (playerId) => getAvgScore(playerId, parseInt(weekNum))
+                        )
+                        .reduce((a, b) => a + b, 0)
+                    )
+                )
+                .map((scores) => scores[1] - scores[0]),
+            }))
+            .map((o) => ({
+              ...o,
+              wins: o.advantages.filter((a) => a > 0).length,
+            }))
+            .sort((a, b) => b.wins - a.wins)
+            .map((o) => (
+              <div key={o.t.id}>
+                <div>
+                  {o.wins} {o.t.name}
+                </div>
+              </div>
+            ))}
+        </div>
       </div>
     </div>
   );
