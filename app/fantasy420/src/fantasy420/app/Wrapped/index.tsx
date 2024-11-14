@@ -2118,15 +2118,6 @@ function WhatIf() {
 }
 
 function ConsistentlyAverage() {
-  function getAvgScore(playerId: string, weekNum: number): number {
-    const scores = Object.entries(selectedWrapped().nflPlayers[playerId].scores)
-      .filter(
-        ([iWeekNum, _]) => iWeekNum !== "0" && parseInt(iWeekNum) <= weekNum
-      )
-      .map(([_, score]) => score);
-    return scores.reduce((a, b) => a + b, 0) / scores.length;
-  }
-
   return (
     <div>
       <div>
@@ -2193,7 +2184,20 @@ function ConsistentlyAverage() {
                     .map((teamId) =>
                       selectedWrapped()
                         .ffTeams[teamId].rosters[weekNum].starting.map(
-                          (playerId) => getAvgScore(playerId, parseInt(weekNum))
+                          (playerId) =>
+                            Object.entries(
+                              selectedWrapped().nflPlayers[playerId].scores
+                            )
+                              .filter(
+                                ([iWeekNum, _]) =>
+                                  iWeekNum !== "0" &&
+                                  parseInt(iWeekNum) <= parseInt(weekNum)
+                              )
+                              .map(([_, score]) => score)
+                        )
+                        .map(
+                          (scores) =>
+                            scores.reduce((a, b) => a + b, 0) / scores.length
                         )
                         .reduce((a, b) => a + b, 0)
                     )
