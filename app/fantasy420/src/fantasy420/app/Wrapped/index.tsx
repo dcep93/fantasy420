@@ -2124,9 +2124,6 @@ function ConsistentlyAverage() {
         ([iWeekNum, _]) => iWeekNum !== "0" && parseInt(iWeekNum) <= weekNum
       )
       .map(([_, score]) => score);
-    if (selectedWrapped().nflPlayers[playerId].name === "Drake London") {
-      console.log({ scores, weekNum });
-    }
     return scores.reduce((a, b) => a + b, 0) / scores.length;
   }
 
