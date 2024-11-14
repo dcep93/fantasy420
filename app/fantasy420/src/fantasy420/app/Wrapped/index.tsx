@@ -2164,10 +2164,7 @@ function ConsistentlyAverage() {
         </div>
       </div>
       <div>
-        <div>
-          how many wins would each manager have if every player scored X, where
-          X is their mean score on the season thus far week on week
-        </div>
+        <div>...thus far week on week</div>
         <div style={bubbleStyle}>
           {Object.values(selectedWrapped().ffTeams)
             .map((t) => ({
