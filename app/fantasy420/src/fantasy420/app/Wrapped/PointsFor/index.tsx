@@ -61,7 +61,7 @@ export default function PointsFor() {
     (o) => ({
       t: o.t,
       wins: cumSum(
-        Object.values(o.weeks).map((w) => (w.total > w.oppTotal ? 1 : 0))
+        Object.values(o.weeks).map((w) => (w.total < w.oppTotal ? 0 : 1))
       ),
       pointsFor: cumSum(Object.values(o.weeks).map((w) => w.total)),
       pointsAgainst: cumSum(

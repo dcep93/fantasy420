@@ -24,7 +24,7 @@ export default function Wrapped() {
     Object.entries({
       FantasyCalc,
       PlayerPlot,
-      MangerPlot,
+      ManagerPlot,
       WeekTopsAndBottoms,
       SqueezesAndStomps,
       GooseEggs,
@@ -2227,6 +2227,6 @@ function DraftValue() {
   return <DraftValueStateful />;
 }
 
-function MangerPlot() {
+function ManagerPlot() {
   return <PointsForStateful />;
 }
