@@ -635,26 +635,50 @@ function BestByPosition() {
         .filter((p) => Number.isInteger(p))
         .map((p) => p as Position)
         .filter((p) => p > 0)
-        .map((position, i) => (
-          <div key={i} style={bubbleStyle}>
-            <h3>{Position[position]}</h3>
-            {Helpers.sortByKey(
-              Object.values(selectedWrapped().ffTeams).map((team) => ({
+        .map((position) => ({
+          position,
+          asdf: Helpers.sortByKey(
+            Object.values(selectedWrapped().ffTeams)
+              .map((team) => ({
                 ...team,
-                score: Object.entries(team.rosters)
+                p: Object.entries(team.rosters)
                   .flatMap(([scoringPeriod, rosters]) =>
                     rosters.starting.map((playerId) => ({
                       scoringPeriod,
-                      ...selectedWrapped().nflPlayers[playerId],
+                      asdf: selectedWrapped().nflPlayers[playerId],
                     }))
                   )
-                  .filter((p) => p.position === Position[position])
-                  .map((p) => p.scores[p.scoringPeriod] || 0)
+                  .filter((p) => p.asdf.position === Position[position]),
+              }))
+              .map((team) => ({
+                ...team,
+                score: team.p
+                  .map((p) => p.asdf.scores[p.scoringPeriod] || 0)
                   .reduce((a, b) => a + b, 0),
               })),
-              (obj) => -obj.score
-            ).map((obj, i) => (
-              <div key={i}>
+            (obj) => -obj.score
+          ),
+        }))
+        .map(({ position, asdf }, i) => (
+          <div key={i} style={bubbleStyle}>
+            <h3>{Position[position]}</h3>
+            {asdf.map((obj, i) => (
+              <div
+                key={i}
+                title={JSON.stringify(
+                  obj.p.map(
+                    (a) =>
+                      `w${a.scoringPeriod} vs ${
+                        selectedWrapped().nflTeams[
+                          selectedWrapped().nflTeams[a.asdf.nflTeamId]
+                            .nflGamesByScoringPeriod[a.scoringPeriod]?.opp || ""
+                        ]?.name
+                      } / ${a.asdf.name}: ${a.asdf.scores[a.scoringPeriod]}`
+                  ),
+                  null,
+                  2
+                )}
+              >
                 ({i + 1}) {obj.score.toFixed(2)} <b>{obj.name}</b>
               </div>
             ))}
