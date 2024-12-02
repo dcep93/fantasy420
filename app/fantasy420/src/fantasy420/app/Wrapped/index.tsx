@@ -1977,6 +1977,28 @@ function AllTimeRecords() {
   return (
     <div>
       {Object.entries({
+        // interceptions: (year, wrapped) =>
+        //   Object.values(wrapped.nflTeams).flatMap((t) =>
+        //     Object.entries(t.nflGamesByScoringPeriod).map(([weekNum, obj]) => ({
+        //       year,
+        //       weekNum,
+        //       name: t.name,
+        //       value: (obj?.drives || []).filter(
+        //         (drive) => drive?.toLowerCase() === "interception"
+        //       ).length,
+        //     }))
+        //   ),
+        // fumbles: (year, wrapped) =>
+        //   Object.values(wrapped.nflTeams).flatMap((t) =>
+        //     Object.entries(t.nflGamesByScoringPeriod).map(([weekNum, obj]) => ({
+        //       year,
+        //       weekNum,
+        //       name: t.name,
+        //       value: (obj?.drives || []).filter(
+        //         (drive) => drive?.toLowerCase() === "fumble"
+        //       ).length,
+        //     }))
+        //   ),
         manager_score: (year, wrapped) =>
           Object.values(wrapped.ffTeams).flatMap((t) =>
             Object.values(t.rosters)
