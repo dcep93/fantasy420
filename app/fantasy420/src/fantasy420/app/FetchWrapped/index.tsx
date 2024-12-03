@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { printF } from "..";
 import { currentYear, selectedWrapped } from "../Wrapped";
 
+// todo ignore current week
 export type NFLPlayerType = {
   id: string;
   name: string;
@@ -44,7 +45,7 @@ export type FFTeamType = {
   pickOrder?: number;
 };
 
-type MatchupType = string[][];
+type MatchupsType = string[][];
 
 export type WrappedType = {
   nflPlayers: {
@@ -56,7 +57,7 @@ export type WrappedType = {
   ffTeams: {
     [id: string]: FFTeamType;
   };
-  ffMatchups: { [weekNum: string]: MatchupType };
+  ffMatchups: { [weekNum: string]: MatchupsType };
   fantasyCalc: {
     timestamp: number;
     history: { date: number; values: { [teamId: string]: number } }[];
@@ -424,7 +425,7 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
             )
             .then((matchups) => fromEntries(matchups))
         )
-        .then((ffMatchups: { [weekNum: string]: MatchupType }) => ffMatchups),
+        .then((ffMatchups: { [weekNum: string]: MatchupsType }) => ffMatchups),
       // nflTeams
       Promise.resolve()
         .then(() =>
