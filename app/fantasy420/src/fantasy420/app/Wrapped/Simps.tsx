@@ -1,27 +1,10 @@
-import { useState } from "react";
 import { bubbleStyle, groupByF, newManagers, selectedYear } from ".";
 import allWrapped from "./allWrapped";
 
 export default function Simps() {
-  const [allowKDST, updateAllowKDST] = useState(false);
   return (
     <div>
       <div style={bubbleStyle}>how many times did a manager own a player?</div>
-      <div style={bubbleStyle}>
-        allow kicker and dst?{" "}
-        <select
-          onChange={(e) => updateAllowKDST(e.target.value === "true")}
-          defaultValue={allowKDST.toString()}
-        >
-          {[true, false]
-            .map((y) => y.toString())
-            .map((y) => (
-              <option key={y} value={y}>
-                {y}
-              </option>
-            ))}
-        </select>
-      </div>
       <div>
         <div style={bubbleStyle}>
           {Object.entries(
@@ -42,21 +25,13 @@ export default function Simps() {
                       Object.values(team.rosters)
                         .filter((roster) => roster.weekNum !== "0")
                         .flatMap((roster) =>
-                          roster.rostered
-                            .filter(
-                              (playerId) =>
-                                allowKDST ||
-                                (wrapped.nflPlayers[playerId].position !==
-                                  "DST" &&
-                                  wrapped.nflPlayers[playerId].position !== "K")
-                            )
-                            .flatMap((playerId) => ({
-                              year: parseInt(year),
-                              weekNum: parseInt(roster.weekNum),
-                              key: `${wrapped.nflPlayers[playerId].name} ❤️ ${
-                                allWrapped[teamNameYear].ffTeams[team.id].name
-                              }`,
-                            }))
+                          roster.rostered.flatMap((playerId) => ({
+                            year: parseInt(year),
+                            weekNum: parseInt(roster.weekNum),
+                            key: `${wrapped.nflPlayers[playerId].name} ❤️ ${
+                              allWrapped[teamNameYear].ffTeams[team.id].name
+                            }`,
+                          }))
                         )
                     )
                 ),
