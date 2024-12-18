@@ -79,8 +79,8 @@ export default function Simps() {
                   )
                   .join("\n")}
               >
-                stints: {obj.numStints} / years:
-                {obj.numYears} / weeks: {obj.numWeeks} / {obj.key}
+                stints:{obj.numStints} / years:
+                {obj.numYears} / weeks:{obj.numWeeks} / {obj.key}
               </div>
             ))}
         </div>
