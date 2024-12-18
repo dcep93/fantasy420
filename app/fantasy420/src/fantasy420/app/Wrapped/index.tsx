@@ -6,6 +6,7 @@ import DraftValueStateful from "./DraftValue";
 import PointsAgainstStateful from "./PointsAgainst";
 import PointsForStateful from "./PointsFor";
 import ScatterplotStateful from "./Scatterplot";
+import SimpsStateful from "./Simps";
 
 export const currentYear = "2024";
 
@@ -13,6 +14,11 @@ export var selectedYear = currentYear;
 export function selectedWrapped(): WrappedType {
   return allWrapped[selectedYear];
 }
+
+export const newManagers: { [teamId: string]: string } = {
+  "4": "2022",
+  "2": "2024",
+};
 
 export default function Wrapped() {
   document.title = "Fantasy Wrapped";
@@ -51,6 +57,7 @@ export default function Wrapped() {
       SecondLost,
       WhatIf,
       ConsistentlyAverage,
+      Simps,
       json,
     }).map(([k, v]) => {
       try {
@@ -2104,10 +2111,6 @@ function AllTimeRecords() {
 }
 
 function HeadToHead() {
-  const newManagers: { [teamId: string]: string } = {
-    "4": "2022",
-    "2": "2024",
-  };
   return Object.values(selectedWrapped().ffTeams)
     .map((t) => ({
       t,
@@ -2381,4 +2384,8 @@ function DraftValue() {
 
 function ManagerPlot() {
   return <PointsForStateful />;
+}
+
+function Simps() {
+  return <SimpsStateful />;
 }
