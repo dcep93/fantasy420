@@ -30,7 +30,7 @@
       "nflTeamId": "20",
       "name": "Aaron Rodgers",
       "position": "QB",
-      "total": 218.29999999999998,
+      "total": 218.3,
       "average": 15.592857142857142,
       "scores": {
         "0": 218.3,
@@ -57,7 +57,7 @@
       "name": "Marcedes Lewis",
       "position": "TE",
       "total": 1.2,
-      "average": 0.0923076923076923,
+      "average": 0.08571428571428572,
       "scores": {
         "0": 1.2,
         "1": 0,
@@ -101,7 +101,7 @@
         "14": 7,
         "15": 3
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "11122": {
       "id": "11122",
@@ -212,7 +212,7 @@
       "nflTeamId": "14",
       "name": "Matthew Stafford",
       "position": "QB",
-      "total": 199.42000000000002,
+      "total": 199.42,
       "average": 14.244285714285715,
       "scores": {
         "0": 199.42,
@@ -276,7 +276,7 @@
       "nflTeamId": "20",
       "name": "Tyrod Taylor",
       "position": "QB",
-      "total": 6.140000000000001,
+      "total": 6.14,
       "average": 6.140000000000001,
       "scores": {
         "0": 6.14,
@@ -432,7 +432,7 @@
       "nflTeamId": "23",
       "name": "Cordarrelle Patterson",
       "position": "RB",
-      "total": 29.000000000000004,
+      "total": 29,
       "average": 2.9000000000000004,
       "scores": {
         "0": 29,
@@ -660,7 +660,7 @@
       "nflTeamId": "29",
       "name": "Adam Thielen",
       "position": "WR",
-      "total": 86.80000000000001,
+      "total": 86.8,
       "average": 12.400000000000002,
       "scores": {
         "0": 86.8,
@@ -763,7 +763,7 @@
       "nflTeamId": "18",
       "name": "Derek Carr",
       "position": "QB",
-      "total": 150.89999999999998,
+      "total": 150.9,
       "average": 15.089999999999998,
       "scores": {
         "0": 150.9,
@@ -782,7 +782,7 @@
         "14": 11.96,
         "15": 0
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "DOUBTFUL"
     },
     "16799": {
       "id": "16799",
@@ -1066,14 +1066,14 @@
         "14": 0,
         "15": 0
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "2565969": {
       "id": "2565969",
       "nflTeamId": "24",
       "name": "Taylor Heinicke",
       "position": "QB",
-      "total": 2.3200000000000003,
+      "total": 2.32,
       "average": 0.7733333333333334,
       "scores": {
         "0": 2.32,
@@ -1144,14 +1144,14 @@
         "14": 0,
         "15": 0
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "2574511": {
       "id": "2574511",
       "nflTeamId": "25",
       "name": "Brandon Allen",
       "position": "QB",
-      "total": 6.359999999999999,
+      "total": 6.36,
       "average": 2.1199999999999997,
       "scores": {
         "0": 6.36,
@@ -1243,7 +1243,7 @@
       "nflTeamId": "15",
       "name": "Raheem Mostert",
       "position": "RB",
-      "total": 60.400000000000006,
+      "total": 60.4,
       "average": 6.040000000000001,
       "scores": {
         "0": 60.4,
@@ -1347,7 +1347,7 @@
       "nflTeamId": "26",
       "name": "Tyler Lockett",
       "position": "WR",
-      "total": 107.30000000000001,
+      "total": 107.3,
       "average": 7.6642857142857155,
       "scores": {
         "0": 107.3,
@@ -1373,7 +1373,7 @@
       "nflTeamId": "6",
       "name": "Dak Prescott",
       "position": "QB",
-      "total": 116.52000000000001,
+      "total": 116.52,
       "average": 14.565000000000001,
       "scores": {
         "0": 116.52,
@@ -1425,7 +1425,7 @@
       "nflTeamId": "17",
       "name": "Jacoby Brissett",
       "position": "QB",
-      "total": 45.31999999999999,
+      "total": 45.32,
       "average": 6.474285714285713,
       "scores": {
         "0": 45.32,
@@ -1574,7 +1574,7 @@
         "13": 0,
         "15": 3.6
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "2972515": {
       "id": "2972515",
@@ -1607,7 +1607,7 @@
       "nflTeamId": "8",
       "name": "Kalif Raymond",
       "position": "WR",
-      "total": 54.400000000000006,
+      "total": 54.4,
       "average": 4.945454545454546,
       "scores": {
         "0": 54.4,
@@ -1685,7 +1685,7 @@
       "nflTeamId": "34",
       "name": "Stefon Diggs",
       "position": "WR",
-      "total": 121.91999999999999,
+      "total": 121.92,
       "average": 15.239999999999998,
       "scores": {
         "0": 121.92,
@@ -1705,6 +1705,18 @@
         "15": 0
       },
       "injuryStatus": "INJURY_RESERVE"
+    },
+    "2976316": {
+      "id": "2976316",
+      "nflTeamId": "0",
+      "name": "Michael Thomas",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
     },
     "2976499": {
       "id": "2976499",
@@ -1891,7 +1903,7 @@
       "nflTeamId": "11",
       "name": "Mo Alie-Cox",
       "position": "TE",
-      "total": 30.200000000000003,
+      "total": 30.2,
       "average": 2.1571428571428575,
       "scores": {
         "0": 30.2,
@@ -1910,7 +1922,7 @@
         "13": 3.5,
         "15": 0
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "3039707": {
       "id": "3039707",
@@ -1943,7 +1955,7 @@
       "nflTeamId": "25",
       "name": "George Kittle",
       "position": "TE",
-      "total": 194.10000000000002,
+      "total": 194.1,
       "average": 16.175,
       "scores": {
         "0": 194.1,
@@ -1969,7 +1981,7 @@
       "nflTeamId": "16",
       "name": "Aaron Jones",
       "position": "RB",
-      "total": 205.10000000000002,
+      "total": 205.1,
       "average": 14.650000000000002,
       "scores": {
         "0": 205.1,
@@ -2021,7 +2033,7 @@
       "nflTeamId": "14",
       "name": "Demarcus Robinson",
       "position": "WR",
-      "total": 113.30000000000001,
+      "total": 113.3,
       "average": 8.092857142857143,
       "scores": {
         "0": 113.3,
@@ -2057,7 +2069,7 @@
         "13": 4,
         "15": 0
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "QUESTIONABLE"
     },
     "3043275": {
       "id": "3043275",
@@ -2090,7 +2102,7 @@
       "nflTeamId": "23",
       "name": "Mike Williams",
       "position": "WR",
-      "total": 47.900000000000006,
+      "total": 47.9,
       "average": 3.193333333333334,
       "scores": {
         "0": 47.9,
@@ -2136,7 +2148,7 @@
         "14": 1.7,
         "15": 5.9
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "3045147": {
       "id": "3045147",
@@ -2169,7 +2181,7 @@
       "nflTeamId": "19",
       "name": "Tim Boyle",
       "position": "QB",
-      "total": 13.940000000000001,
+      "total": 13.94,
       "average": 4.646666666666667,
       "scores": {
         "0": 13.94,
@@ -2188,7 +2200,7 @@
       "nflTeamId": "17",
       "name": "Kendrick Bourne",
       "position": "WR",
-      "total": 53.900000000000006,
+      "total": 53.9,
       "average": 5.98888888888889,
       "scores": {
         "0": 53.9,
@@ -2240,7 +2252,7 @@
       "nflTeamId": "5",
       "name": "Geoff Swaim",
       "position": "TE",
-      "total": 1.7000000000000002,
+      "total": 1.7,
       "average": 0.21250000000000002,
       "scores": {
         "0": 1.7,
@@ -2309,7 +2321,7 @@
         "14": 0,
         "15": 0
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "3049899": {
       "id": "3049899",
@@ -2335,7 +2347,7 @@
         "14": 7,
         "15": 8
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "INJURY_RESERVE"
     },
     "3050478": {
       "id": "3050478",
@@ -2368,7 +2380,7 @@
       "nflTeamId": "4",
       "name": "Tanner Hudson",
       "position": "TE",
-      "total": 36.400000000000006,
+      "total": 36.4,
       "average": 3.6400000000000006,
       "scores": {
         "0": 36.4,
@@ -2394,7 +2406,7 @@
       "nflTeamId": "6",
       "name": "Ezekiel Elliott",
       "position": "RB",
-      "total": 51.199999999999996,
+      "total": 51.2,
       "average": 3.9384615384615382,
       "scores": {
         "0": 51.2,
@@ -2827,7 +2839,7 @@
       "nflTeamId": "16",
       "name": "Brandon Powell",
       "position": "WR",
-      "total": 14.100000000000001,
+      "total": 14.1,
       "average": 1.0071428571428573,
       "scores": {
         "0": 14.1,
@@ -3029,14 +3041,14 @@
         "13": 21.9,
         "15": 10.6
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "3116389": {
       "id": "3116389",
       "nflTeamId": "12",
       "name": "Samaje Perine",
       "position": "RB",
-      "total": 66.10000000000001,
+      "total": 66.1,
       "average": 4.721428571428572,
       "scores": {
         "0": 66.1,
@@ -3140,7 +3152,7 @@
       "nflTeamId": "25",
       "name": "Christian McCaffrey",
       "position": "RB",
-      "total": 47.800000000000004,
+      "total": 47.8,
       "average": 11.950000000000001,
       "scores": {
         "0": 47.8,
@@ -3192,7 +3204,7 @@
       "nflTeamId": "12",
       "name": "Justin Watson",
       "position": "WR",
-      "total": 47.400000000000006,
+      "total": 47.4,
       "average": 3.385714285714286,
       "scores": {
         "0": 47.4,
@@ -3219,7 +3231,7 @@
       "name": "Ross Dwelley",
       "position": "TE",
       "total": 1.5,
-      "average": 0.11538461538461539,
+      "average": 0.10714285714285714,
       "scores": {
         "0": 1.5,
         "1": 0,
@@ -3237,14 +3249,14 @@
         "14": 0,
         "15": 0
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "3120348": {
       "id": "3120348",
       "nflTeamId": "12",
       "name": "JuJu Smith-Schuster",
       "position": "WR",
-      "total": 47.900000000000006,
+      "total": 47.9,
       "average": 4.354545454545455,
       "scores": {
         "0": 47.9,
@@ -3296,7 +3308,7 @@
       "nflTeamId": "28",
       "name": "Noah Brown",
       "position": "WR",
-      "total": 86.30000000000001,
+      "total": 86.3,
       "average": 7.845454545454547,
       "scores": {
         "0": 86.3,
@@ -3541,7 +3553,7 @@
         "14": 17.2,
         "15": 0
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "QUESTIONABLE"
     },
     "3124084": {
       "id": "3124084",
@@ -3652,7 +3664,7 @@
       "nflTeamId": "24",
       "name": "Will Dissly",
       "position": "TE",
-      "total": 90.80000000000001,
+      "total": 90.8,
       "average": 6.984615384615386,
       "scores": {
         "0": 90.8,
@@ -3678,7 +3690,7 @@
       "nflTeamId": "18",
       "name": "Dante Pettis",
       "position": "WR",
-      "total": 11.600000000000001,
+      "total": 11.6,
       "average": 2.3200000000000003,
       "scores": {
         "0": 11.6,
@@ -3843,7 +3855,7 @@
       "nflTeamId": "5",
       "name": "Nick Chubb",
       "position": "RB",
-      "total": 63.300000000000004,
+      "total": 63.3,
       "average": 7.9125000000000005,
       "scores": {
         "0": 63.3,
@@ -3862,7 +3874,7 @@
         "14": 4.8,
         "15": 2.1
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "INJURY_RESERVE"
     },
     "3134353": {
       "id": "3134353",
@@ -3931,14 +3943,14 @@
         "14": 14.1,
         "15": 15.76
       },
-      "injuryStatus": "QUESTIONABLE"
+      "injuryStatus": "ACTIVE"
     },
     "3139602": {
       "id": "3139602",
       "nflTeamId": "30",
       "name": "D'Ernest Johnson",
       "position": "RB",
-      "total": 27.400000000000002,
+      "total": 27.4,
       "average": 2.490909090909091,
       "scores": {
         "0": 27.4,
@@ -4014,7 +4026,7 @@
       "nflTeamId": "6",
       "name": "KaVontae Turpin",
       "position": "WR",
-      "total": 88.19999999999999,
+      "total": 88.2,
       "average": 6.299999999999999,
       "scores": {
         "0": 88.2,
@@ -4292,7 +4304,7 @@
       "nflTeamId": "16",
       "name": "Sam Darnold",
       "position": "QB",
-      "total": 252.60000000000002,
+      "total": 252.6,
       "average": 18.042857142857144,
       "scores": {
         "0": 252.6,
@@ -4439,7 +4451,7 @@
         "14": 6.3,
         "15": 0
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "3915511": {
       "id": "3915511",
@@ -4465,7 +4477,7 @@
         "14": 24.56,
         "15": 16.84
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "3916148": {
       "id": "3916148",
@@ -4491,7 +4503,7 @@
         "14": 14.4,
         "15": 8.5
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "3916204": {
       "id": "3916204",
@@ -4561,7 +4573,7 @@
         "14": 13.7,
         "15": 10.9
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "3916566": {
       "id": "3916566",
@@ -4789,7 +4801,7 @@
       "nflTeamId": "2",
       "name": "Josh Allen",
       "position": "QB",
-      "total": 344.90000000000003,
+      "total": 344.9,
       "average": 24.63571428571429,
       "scores": {
         "0": 344.9,
@@ -4816,7 +4828,7 @@
       "name": "Gerald Everett",
       "position": "TE",
       "total": 10,
-      "average": 0.7692307692307693,
+      "average": 0.7142857142857143,
       "scores": {
         "0": 10,
         "1": 0.9,
@@ -4860,7 +4872,7 @@
       "name": "Josh Oliver",
       "position": "TE",
       "total": 62.2,
-      "average": 5.654545454545455,
+      "average": 5.183333333333334,
       "scores": {
         "0": 62.2,
         "1": 4.7,
@@ -4904,7 +4916,7 @@
         "14": 14.98,
         "15": 0
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "QUESTIONABLE"
     },
     "3924365": {
       "id": "3924365",
@@ -4982,14 +4994,14 @@
         "14": 0,
         "15": 0
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "3928925": {
       "id": "3928925",
       "nflTeamId": "17",
       "name": "JaMycal Hasty",
       "position": "RB",
-      "total": 28.799999999999997,
+      "total": 28.8,
       "average": 2.057142857142857,
       "scores": {
         "0": 28.8,
@@ -5008,14 +5020,14 @@
         "13": 0,
         "15": 0
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "3929630": {
       "id": "3929630",
       "nflTeamId": "21",
       "name": "Saquon Barkley",
       "position": "RB",
-      "total": 309.40000000000003,
+      "total": 309.4,
       "average": 22.1,
       "scores": {
         "0": 309.4,
@@ -5087,7 +5099,7 @@
       "nflTeamId": "10",
       "name": "Nick Westbrook-Ikhine",
       "position": "WR",
-      "total": 110.30000000000001,
+      "total": 110.3,
       "average": 7.878571428571429,
       "scores": {
         "0": 110.3,
@@ -5106,7 +5118,7 @@
         "14": 2.9,
         "15": 2.9
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "3930066": {
       "id": "3930066",
@@ -5263,7 +5275,7 @@
       "name": "C.J. Ham",
       "position": "RB",
       "total": 8.1,
-      "average": 0.6230769230769231,
+      "average": 0.5785714285714285,
       "scores": {
         "0": 8.1,
         "1": 1.1,
@@ -5435,7 +5447,7 @@
         "14": 2.1,
         "15": 2.7
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4035198": {
       "id": "4035198",
@@ -5618,7 +5630,7 @@
       "nflTeamId": "11",
       "name": "Michael Pittman Jr.",
       "position": "WR",
-      "total": 122.80000000000001,
+      "total": 122.8,
       "average": 9.446153846153846,
       "scores": {
         "0": 122.8,
@@ -5637,14 +5649,14 @@
         "13": 9.2,
         "15": 9.8
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4035693": {
       "id": "4035693",
       "nflTeamId": "29",
       "name": "Velus Jones Jr.",
       "position": "WR",
-      "total": 0.9000000000000001,
+      "total": 0.9,
       "average": 0.45000000000000007,
       "scores": {
         "0": 0.9,
@@ -5849,7 +5861,7 @@
       "nflTeamId": "0",
       "name": "Skylar Thompson",
       "position": "QB",
-      "total": 7.880000000000001,
+      "total": 7.88,
       "average": 2.626666666666667,
       "scores": {
         "0": 7.88,
@@ -5874,8 +5886,8 @@
       "nflTeamId": "3",
       "name": "Darrynton Evans",
       "position": "RB",
-      "total": 0.30000000000000004,
-      "average": 0.30000000000000004,
+      "total": 0.3,
+      "average": 0.15000000000000002,
       "scores": {
         "0": 0.3,
         "1": 0,
@@ -5896,7 +5908,7 @@
       "nflTeamId": "22",
       "name": "Greg Dortch",
       "position": "WR",
-      "total": 60.400000000000006,
+      "total": 60.4,
       "average": 4.314285714285715,
       "scores": {
         "0": 60.4,
@@ -6045,7 +6057,7 @@
         "14": 13.72,
         "15": 13.8
       },
-      "injuryStatus": "QUESTIONABLE"
+      "injuryStatus": "ACTIVE"
     },
     "4039043": {
       "id": "4039043",
@@ -6053,7 +6065,7 @@
       "name": "Collin Johnson",
       "position": "WR",
       "total": 1.6,
-      "average": 0.32,
+      "average": 0.26666666666666666,
       "scores": {
         "0": 1.6,
         "2": 0,
@@ -6268,7 +6280,7 @@
       "nflTeamId": "21",
       "name": "Jalen Hurts",
       "position": "QB",
-      "total": 310.58000000000004,
+      "total": 310.58,
       "average": 22.184285714285718,
       "scores": {
         "0": 310.58,
@@ -6321,7 +6333,7 @@
       "name": "Harrison Bryant",
       "position": "TE",
       "total": 17.6,
-      "average": 1.9555555555555557,
+      "average": 1.7600000000000002,
       "scores": {
         "0": 17.6,
         "1": 0,
@@ -6363,7 +6375,7 @@
         "14": 0,
         "15": 0
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4044144": {
       "id": "4044144",
@@ -6448,7 +6460,7 @@
       "nflTeamId": "9",
       "name": "Josh Jacobs",
       "position": "RB",
-      "total": 249.89999999999998,
+      "total": 249.9,
       "average": 17.849999999999998,
       "scores": {
         "0": 249.9,
@@ -6500,7 +6512,7 @@
       "nflTeamId": "21",
       "name": "A.J. Brown",
       "position": "WR",
-      "total": 180.60000000000002,
+      "total": 180.6,
       "average": 16.41818181818182,
       "scores": {
         "0": 180.6,
@@ -6578,7 +6590,7 @@
       "nflTeamId": "13",
       "name": "Alexander Mattison",
       "position": "RB",
-      "total": 109.89999999999999,
+      "total": 109.9,
       "average": 9.99090909090909,
       "scores": {
         "0": 109.9,
@@ -6654,7 +6666,7 @@
         "13": 0,
         "15": 0
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4212909": {
       "id": "4212909",
@@ -6680,7 +6692,7 @@
         "14": 4.5,
         "15": 3.9
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4239086": {
       "id": "4239086",
@@ -6777,7 +6789,7 @@
         "14": 4.3,
         "15": 19.8
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4239996": {
       "id": "4239996",
@@ -6810,7 +6822,7 @@
       "nflTeamId": "16",
       "name": "Cam Akers",
       "position": "RB",
-      "total": 72.70000000000002,
+      "total": 72.7,
       "average": 5.192857142857144,
       "scores": {
         "0": 72.7,
@@ -7035,7 +7047,7 @@
       "nflTeamId": "21",
       "name": "Grant Calcaterra",
       "position": "TE",
-      "total": 52.400000000000006,
+      "total": 52.4,
       "average": 3.7428571428571433,
       "scores": {
         "0": 52.4,
@@ -7080,7 +7092,7 @@
         "14": 21.4,
         "15": 26.6
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4241401": {
       "id": "4241401",
@@ -7113,7 +7125,7 @@
       "nflTeamId": "29",
       "name": "Chuba Hubbard",
       "position": "RB",
-      "total": 209.10000000000002,
+      "total": 209.1,
       "average": 14.935714285714287,
       "scores": {
         "0": 209.1,
@@ -7165,7 +7177,7 @@
       "nflTeamId": "23",
       "name": "Najee Harris",
       "position": "RB",
-      "total": 174.70000000000002,
+      "total": 174.7,
       "average": 12.47857142857143,
       "scores": {
         "0": 174.7,
@@ -7295,7 +7307,7 @@
       "nflTeamId": "15",
       "name": "Tua Tagovailoa",
       "position": "QB",
-      "total": 169.07999999999998,
+      "total": 169.08,
       "average": 16.907999999999998,
       "scores": {
         "0": 169.08,
@@ -7424,7 +7436,7 @@
       "nflTeamId": "24",
       "name": "J.K. Dobbins",
       "position": "RB",
-      "total": 166.00000000000003,
+      "total": 166,
       "average": 15.090909090909093,
       "scores": {
         "0": 166,
@@ -7447,7 +7459,7 @@
     },
     "4242214": {
       "id": "4242214",
-      "nflTeamId": "12",
+      "nflTeamId": "0",
       "name": "Clyde Edwards-Helaire",
       "position": "RB",
       "total": 0,
@@ -7606,7 +7618,7 @@
       "nflTeamId": "9",
       "name": "Malik Willis",
       "position": "QB",
-      "total": 46.900000000000006,
+      "total": 46.9,
       "average": 9.38,
       "scores": {
         "0": 46.9,
@@ -7650,7 +7662,7 @@
       "nflTeamId": "0",
       "name": "John Samuel Shenker",
       "position": "TE",
-      "total": 1.7000000000000002,
+      "total": 1.7,
       "average": 0.34,
       "scores": {
         "0": 1.7,
@@ -7759,7 +7771,7 @@
       "nflTeamId": "14",
       "name": "Ronnie Rivers",
       "position": "RB",
-      "total": 6.1000000000000005,
+      "total": 6.1,
       "average": 0.4357142857142858,
       "scores": {
         "0": 6.1,
@@ -7785,7 +7797,7 @@
       "nflTeamId": "18",
       "name": "Jordan Mims",
       "position": "RB",
-      "total": 12.399999999999999,
+      "total": 12.4,
       "average": 1.3777777777777775,
       "scores": {
         "0": 12.4,
@@ -7835,7 +7847,7 @@
       "nflTeamId": "18",
       "name": "Jake Haener",
       "position": "QB",
-      "total": 13.240000000000002,
+      "total": 13.24,
       "average": 1.6550000000000002,
       "scores": {
         "0": 13.24,
@@ -7928,7 +7940,7 @@
       "nflTeamId": "30",
       "name": "Gabe Davis",
       "position": "WR",
-      "total": 53.900000000000006,
+      "total": 53.9,
       "average": 5.390000000000001,
       "scores": {
         "0": 53.9,
@@ -8046,7 +8058,7 @@
       "nflTeamId": "0",
       "name": "Aaron Shampklin",
       "position": "RB",
-      "total": 1.7000000000000002,
+      "total": 1.7,
       "average": 0.5666666666666668,
       "scores": {
         "0": 1.7,
@@ -8107,7 +8119,7 @@
         "13": 5,
         "15": 8
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4249417": {
       "id": "4249417",
@@ -8211,7 +8223,7 @@
         "14": 0,
         "15": 0
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4258173": {
       "id": "4258173",
@@ -8291,7 +8303,7 @@
       "nflTeamId": "9",
       "name": "Bo Melton",
       "position": "WR",
-      "total": 16.200000000000003,
+      "total": 16.2,
       "average": 1.1571428571428573,
       "scores": {
         "0": 16.2,
@@ -8336,14 +8348,14 @@
         "14": 0,
         "15": 0
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "4259545": {
       "id": "4259545",
       "nflTeamId": "3",
       "name": "D'Andre Swift",
       "position": "RB",
-      "total": 181.60000000000002,
+      "total": 181.6,
       "average": 12.971428571428573,
       "scores": {
         "0": 181.6,
@@ -8414,14 +8426,14 @@
         "14": 6.76,
         "15": 0
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "4262921": {
       "id": "4262921",
       "nflTeamId": "16",
       "name": "Justin Jefferson",
       "position": "WR",
-      "total": 255.48000000000002,
+      "total": 255.48,
       "average": 18.24857142857143,
       "scores": {
         "0": 255.48,
@@ -8473,7 +8485,7 @@
       "nflTeamId": "10",
       "name": "Josh Whyle",
       "position": "TE",
-      "total": 50.900000000000006,
+      "total": 50.9,
       "average": 3.635714285714286,
       "scores": {
         "0": 50.9,
@@ -8514,7 +8526,7 @@
       "nflTeamId": "22",
       "name": "Clayton Tune",
       "position": "QB",
-      "total": -2.2800000000000002,
+      "total": -2.28,
       "average": -0.45600000000000007,
       "scores": {
         "0": -2.28,
@@ -8696,7 +8708,7 @@
       "nflTeamId": "26",
       "name": "Jake Bobo",
       "position": "WR",
-      "total": 20.700000000000003,
+      "total": 20.7,
       "average": 1.4785714285714289,
       "scores": {
         "0": 20.7,
@@ -8793,7 +8805,7 @@
         "14": 19.3,
         "15": 4.5
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4360569": {
       "id": "4360569",
@@ -8971,7 +8983,7 @@
         "13": 0,
         "15": 23
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4360967": {
       "id": "4360967",
@@ -9186,7 +9198,7 @@
       "nflTeamId": "9",
       "name": "Romeo Doubs",
       "position": "WR",
-      "total": 113.30000000000001,
+      "total": 113.3,
       "average": 10.3,
       "scores": {
         "0": 113.3,
@@ -9264,7 +9276,7 @@
       "nflTeamId": "28",
       "name": "Dyami Brown",
       "position": "WR",
-      "total": 54.400000000000006,
+      "total": 54.4,
       "average": 3.885714285714286,
       "scores": {
         "0": 54.4,
@@ -9536,7 +9548,7 @@
       "nflTeamId": "22",
       "name": "Emari Demercado",
       "position": "RB",
-      "total": 54.699999999999996,
+      "total": 54.7,
       "average": 4.207692307692307,
       "scores": {
         "0": 54.7,
@@ -9633,7 +9645,7 @@
       "nflTeamId": "28",
       "name": "Chris Rodriguez Jr.",
       "position": "RB",
-      "total": 21.200000000000003,
+      "total": 21.2,
       "average": 3.5333333333333337,
       "scores": {
         "0": 21.2,
@@ -9723,7 +9735,7 @@
       "nflTeamId": "23",
       "name": "Justin Fields",
       "position": "QB",
-      "total": 119.14000000000001,
+      "total": 119.14,
       "average": 11.914000000000001,
       "scores": {
         "0": 119.14,
@@ -9897,7 +9909,7 @@
       "nflTeamId": "19",
       "name": "Greg Dulcich",
       "position": "TE",
-      "total": 7.800000000000001,
+      "total": 7.8,
       "average": 1.3,
       "scores": {
         "0": 7.8,
@@ -10016,7 +10028,7 @@
         "14": 0,
         "15": 0
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4371733": {
       "id": "4371733",
@@ -10075,7 +10087,7 @@
       "nflTeamId": "5",
       "name": "Jerome Ford",
       "position": "RB",
-      "total": 107.69999999999999,
+      "total": 107.7,
       "average": 8.975,
       "scores": {
         "0": 107.7,
@@ -10299,14 +10311,14 @@
         "14": 26.8,
         "15": 11.5
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4372758": {
       "id": "4372758",
       "nflTeamId": "18",
       "name": "Kevin Austin Jr.",
       "position": "WR",
-      "total": 18.700000000000003,
+      "total": 18.7,
       "average": 3.7400000000000007,
       "scores": {
         "0": 18.7,
@@ -10622,7 +10634,7 @@
       "nflTeamId": "6",
       "name": "Trey Lance",
       "position": "QB",
-      "total": 0.2400000000000001,
+      "total": 0.24,
       "average": 0.12000000000000005,
       "scores": {
         "0": 0.24,
@@ -10772,7 +10784,7 @@
       "nflTeamId": "8",
       "name": "Craig Reynolds",
       "position": "RB",
-      "total": 5.1000000000000005,
+      "total": 5.1,
       "average": 0.3642857142857143,
       "scores": {
         "0": 5.1,
@@ -10798,7 +10810,7 @@
       "nflTeamId": "7",
       "name": "Bo Nix",
       "position": "QB",
-      "total": 240.77999999999997,
+      "total": 240.78,
       "average": 17.198571428571427,
       "scores": {
         "0": 240.78,
@@ -10850,7 +10862,7 @@
       "nflTeamId": "28",
       "name": "Jayden Daniels",
       "position": "QB",
-      "total": 285.40000000000003,
+      "total": 285.4,
       "average": 20.38571428571429,
       "scores": {
         "0": 285.4,
@@ -10895,7 +10907,7 @@
         "14": 0,
         "15": 0
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4426385": {
       "id": "4426385",
@@ -10947,7 +10959,7 @@
         "14": 0,
         "15": 0
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4426388": {
       "id": "4426388",
@@ -10980,8 +10992,8 @@
       "nflTeamId": "13",
       "name": "Ramel Keyton",
       "position": "WR",
-      "total": 1.7000000000000002,
-      "average": 0.42500000000000004,
+      "total": 1.7,
+      "average": 0.34,
       "scores": {
         "0": 1.7,
         "1": 0,
@@ -11073,14 +11085,14 @@
         "13": 1.4,
         "15": 0
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4426502": {
       "id": "4426502",
       "nflTeamId": "1",
       "name": "Drake London",
       "position": "WR",
-      "total": 211.60000000000002,
+      "total": 211.6,
       "average": 15.114285714285716,
       "scores": {
         "0": 211.6,
@@ -11184,7 +11196,7 @@
       "nflTeamId": "26",
       "name": "Sam Howell",
       "position": "QB",
-      "total": -0.8400000000000001,
+      "total": -0.84,
       "average": -0.28,
       "scores": {
         "0": -0.84,
@@ -11229,14 +11241,14 @@
         "13": 3.3,
         "15": 1
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4427095": {
       "id": "4427095",
       "nflTeamId": "17",
       "name": "DeMario Douglas",
       "position": "WR",
-      "total": 118.80000000000001,
+      "total": 118.8,
       "average": 8.485714285714286,
       "scores": {
         "0": 118.8,
@@ -11288,7 +11300,7 @@
       "nflTeamId": "20",
       "name": "Breece Hall",
       "position": "RB",
-      "total": 202.39999999999998,
+      "total": 202.4,
       "average": 15.569230769230767,
       "scores": {
         "0": 202.4,
@@ -11517,7 +11529,7 @@
       "nflTeamId": "21",
       "name": "Ainias Smith",
       "position": "WR",
-      "total": 3.8000000000000003,
+      "total": 3.8,
       "average": 0.76,
       "scores": {
         "0": 3.8,
@@ -11621,7 +11633,7 @@
       "nflTeamId": "1",
       "name": "Casey Washington",
       "position": "WR",
-      "total": 2.4000000000000004,
+      "total": 2.4,
       "average": 0.30000000000000004,
       "scores": {
         "0": 2.4,
@@ -11640,7 +11652,7 @@
         "14": 0,
         "15": 0
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4428850": {
       "id": "4428850",
@@ -11714,7 +11726,7 @@
       "nflTeamId": "27",
       "name": "Rakim Jarrett",
       "position": "WR",
-      "total": 17.700000000000003,
+      "total": 17.7,
       "average": 2.528571428571429,
       "scores": {
         "0": 17.7,
@@ -11837,14 +11849,14 @@
         "14": 15.8,
         "15": 15.5
       },
-      "injuryStatus": "QUESTIONABLE"
+      "injuryStatus": "ACTIVE"
     },
     "4429033": {
       "id": "4429033",
       "nflTeamId": "4",
       "name": "Jermaine Burton",
       "position": "WR",
-      "total": 14.700000000000001,
+      "total": 14.7,
       "average": 1.225,
       "scores": {
         "0": 14.7,
@@ -11870,7 +11882,7 @@
       "nflTeamId": "11",
       "name": "Anthony Richardson",
       "position": "QB",
-      "total": 143.12000000000003,
+      "total": 143.12,
       "average": 14.312000000000003,
       "scores": {
         "0": 143.12,
@@ -11974,7 +11986,7 @@
       "nflTeamId": "15",
       "name": "De'Von Achane",
       "position": "RB",
-      "total": 245.00000000000003,
+      "total": 245,
       "average": 17.500000000000004,
       "scores": {
         "0": 245,
@@ -12026,7 +12038,7 @@
       "nflTeamId": "16",
       "name": "Jordan Addison",
       "position": "WR",
-      "total": 178.10000000000002,
+      "total": 178.1,
       "average": 14.841666666666669,
       "scores": {
         "0": 178.1,
@@ -12182,7 +12194,7 @@
       "nflTeamId": "11",
       "name": "Anthony Gould",
       "position": "WR",
-      "total": 3.3000000000000003,
+      "total": 3.3,
       "average": 0.66,
       "scores": {
         "0": 3.3,
@@ -12285,7 +12297,7 @@
       "nflTeamId": "29",
       "name": "Xavier Legette",
       "position": "WR",
-      "total": 111.30000000000001,
+      "total": 111.3,
       "average": 7.950000000000001,
       "scores": {
         "0": 111.3,
@@ -12311,7 +12323,7 @@
       "nflTeamId": "13",
       "name": "Sincere McCormick",
       "position": "RB",
-      "total": 27.200000000000003,
+      "total": 27.2,
       "average": 5.44,
       "scores": {
         "0": 27.2,
@@ -12324,7 +12336,7 @@
         "14": 10.9,
         "15": 4.5
       },
-      "injuryStatus": "QUESTIONABLE"
+      "injuryStatus": "INJURY_RESERVE"
     },
     "4430191": {
       "id": "4430191",
@@ -12376,7 +12388,7 @@
         "14": 3.1,
         "15": 18.3
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4430637": {
       "id": "4430637",
@@ -12409,7 +12421,7 @@
       "nflTeamId": "12",
       "name": "Jared Wiley",
       "position": "TE",
-      "total": 1.7000000000000002,
+      "total": 1.7,
       "average": 0.24285714285714288,
       "scores": {
         "0": 1.7,
@@ -12435,7 +12447,7 @@
       "nflTeamId": "14",
       "name": "Kyren Williams",
       "position": "RB",
-      "total": 236.00000000000003,
+      "total": 236,
       "average": 16.857142857142858,
       "scores": {
         "0": 236,
@@ -12539,7 +12551,7 @@
       "nflTeamId": "27",
       "name": "Sean Tucker",
       "position": "RB",
-      "total": 61.699999999999996,
+      "total": 61.7,
       "average": 4.407142857142857,
       "scores": {
         "0": 61.7,
@@ -12591,7 +12603,7 @@
       "nflTeamId": "24",
       "name": "Kimani Vidal",
       "position": "RB",
-      "total": 27.900000000000002,
+      "total": 27.9,
       "average": 3.985714285714286,
       "scores": {
         "0": 27.9,
@@ -12695,7 +12707,7 @@
       "nflTeamId": "6",
       "name": "Deuce Vaughn",
       "position": "RB",
-      "total": 8.100000000000001,
+      "total": 8.1,
       "average": 1.3500000000000003,
       "scores": {
         "0": 8.1,
@@ -12799,7 +12811,7 @@
       "nflTeamId": "3",
       "name": "Caleb Williams",
       "position": "QB",
-      "total": 214.28000000000003,
+      "total": 214.28,
       "average": 15.305714285714288,
       "scores": {
         "0": 214.28,
@@ -12825,7 +12837,7 @@
       "nflTeamId": "34",
       "name": "C.J. Stroud",
       "position": "QB",
-      "total": 192.22000000000003,
+      "total": 192.22,
       "average": 13.730000000000002,
       "scores": {
         "0": 192.22,
@@ -12877,7 +12889,7 @@
       "nflTeamId": "13",
       "name": "Brock Bowers",
       "position": "TE",
-      "total": 212.20000000000002,
+      "total": 212.2,
       "average": 15.157142857142858,
       "scores": {
         "0": 212.2,
@@ -12929,7 +12941,7 @@
       "nflTeamId": "30",
       "name": "Brian Thomas Jr.",
       "position": "WR",
-      "total": 214.60000000000002,
+      "total": 214.6,
       "average": 15.328571428571431,
       "scores": {
         "0": 214.6,
@@ -12981,7 +12993,7 @@
       "nflTeamId": "3",
       "name": "Tyson Bagent",
       "position": "QB",
-      "total": -0.26000000000000006,
+      "total": -0.26,
       "average": -0.06500000000000002,
       "scores": {
         "0": -0.26,
@@ -13059,7 +13071,7 @@
       "nflTeamId": "26",
       "name": "Kenneth Walker III",
       "position": "RB",
-      "total": 167.29999999999998,
+      "total": 167.3,
       "average": 16.729999999999997,
       "scores": {
         "0": 167.3,
@@ -13078,7 +13090,7 @@
         "14": 0,
         "15": 0
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4567096": {
       "id": "4567096",
@@ -13104,7 +13116,7 @@
         "13": 3.6,
         "15": 3.7
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4567104": {
       "id": "4567104",
@@ -13284,7 +13296,7 @@
         "14": 7.8,
         "15": 7.8
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4569603": {
       "id": "4569603",
@@ -13420,7 +13432,7 @@
       "nflTeamId": "19",
       "name": "Eric Gray",
       "position": "RB",
-      "total": 14.100000000000001,
+      "total": 14.1,
       "average": 1.0071428571428573,
       "scores": {
         "0": 14.1,
@@ -13611,7 +13623,7 @@
         "14": 14.9,
         "15": 24.2
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4596334": {
       "id": "4596334",
@@ -13644,7 +13656,7 @@
       "nflTeamId": "27",
       "name": "Bucky Irving",
       "position": "RB",
-      "total": 186.79999999999998,
+      "total": 186.8,
       "average": 13.342857142857142,
       "scores": {
         "0": 186.8,
@@ -13670,7 +13682,7 @@
       "nflTeamId": "11",
       "name": "Adonai Mitchell",
       "position": "WR",
-      "total": 44.96000000000001,
+      "total": 44.96,
       "average": 3.211428571428572,
       "scores": {
         "0": 44.96,
@@ -13925,7 +13937,7 @@
       "nflTeamId": "29",
       "name": "Bryce Young",
       "position": "QB",
-      "total": 114.53999999999999,
+      "total": 114.54,
       "average": 10.412727272727272,
       "scores": {
         "0": 114.54,
@@ -14204,7 +14216,7 @@
         "13": 0,
         "15": 0
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4692590": {
       "id": "4692590",
@@ -14263,7 +14275,7 @@
       "nflTeamId": "20",
       "name": "Isaiah Davis",
       "position": "RB",
-      "total": 35.300000000000004,
+      "total": 35.3,
       "average": 2.521428571428572,
       "scores": {
         "0": 35.3,
@@ -14282,14 +14294,14 @@
         "14": 15.7,
         "15": 3.6
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4695883": {
       "id": "4695883",
       "nflTeamId": "29",
       "name": "Jalen Coker",
       "position": "WR",
-      "total": 70.30000000000001,
+      "total": 70.3,
       "average": 8.787500000000001,
       "scores": {
         "0": 70.3,
@@ -14364,7 +14376,7 @@
       "nflTeamId": "27",
       "name": "Rachaad White",
       "position": "RB",
-      "total": 184.20000000000002,
+      "total": 184.2,
       "average": 14.16923076923077,
       "scores": {
         "0": 184.2,
@@ -14426,7 +14438,7 @@
       "nflTeamId": "12",
       "name": "Carson Steele",
       "position": "RB",
-      "total": 19.200000000000003,
+      "total": 19.2,
       "average": 1.3714285714285717,
       "scores": {
         "0": 19.2,
@@ -14452,7 +14464,7 @@
       "nflTeamId": "7",
       "name": "Jaleel McLaughlin",
       "position": "RB",
-      "total": 80.80000000000001,
+      "total": 80.8,
       "average": 5.771428571428572,
       "scores": {
         "0": 80.8,
@@ -14471,7 +14483,7 @@
         "13": 9.4,
         "15": 6.4
       },
-      "injuryStatus": "QUESTIONABLE"
+      "injuryStatus": "OUT"
     },
     "4722908": {
       "id": "4722908",
@@ -14539,14 +14551,14 @@
         "14": 0,
         "15": 0.8
       },
-      "injuryStatus": "QUESTIONABLE"
+      "injuryStatus": "INJURY_RESERVE"
     },
     "4887558": {
       "id": "4887558",
       "nflTeamId": "9",
       "name": "Emanuel Wilson",
       "position": "RB",
-      "total": 60.400000000000006,
+      "total": 60.4,
       "average": 4.314285714285715,
       "scores": {
         "0": 60.4,
@@ -14572,7 +14584,7 @@
       "nflTeamId": "8",
       "name": "Sione Vaki",
       "position": "RB",
-      "total": 4.1000000000000005,
+      "total": 4.1,
       "average": 0.31538461538461543,
       "scores": {
         "0": 4.1,
@@ -16077,6 +16089,42 @@
             "-16015",
             "3124679"
           ]
+        },
+        "16": {
+          "weekNum": "16",
+          "starting": [
+            "4362628",
+            "3915511",
+            "4426502",
+            "4379399",
+            "4595348",
+            "3052587",
+            "4596448",
+            "4432665",
+            "4429795",
+            "-16012",
+            "3124679"
+          ],
+          "rostered": [
+            "4362628",
+            "3915511",
+            "4426502",
+            "4379399",
+            "4430027",
+            "4595348",
+            "4678008",
+            "3052587",
+            "4426388",
+            "3912547",
+            "4596448",
+            "4432665",
+            "4038815",
+            "4429795",
+            "2976499",
+            "-16012",
+            "-16015",
+            "3124679"
+          ]
         }
       }
     },
@@ -16162,7 +16210,6 @@
             "4040715",
             "4047646",
             "4361529",
-            "3126486",
             "4426354",
             "3953687",
             "4241985",
@@ -16170,13 +16217,14 @@
             "4243331",
             "4429025",
             "4241463",
-            "3929785",
             "3116365",
             "4426385",
             "4685720",
-            "3051926",
-            "-16025",
-            "4430834"
+            "4430834",
+            "4599739",
+            "-16034",
+            "4360423",
+            "4038441"
           ]
         },
         "1": {
@@ -16717,6 +16765,42 @@
             "-16025",
             "4430834"
           ]
+        },
+        "16": {
+          "weekNum": "16",
+          "starting": [
+            "4040715",
+            "4047646",
+            "4361529",
+            "3953687",
+            "4429025",
+            "4241463",
+            "3116365",
+            "4426385",
+            "4430834",
+            "-16034",
+            "4360423"
+          ],
+          "rostered": [
+            "4040715",
+            "4047646",
+            "4361529",
+            "4426354",
+            "3953687",
+            "4241985",
+            "3059915",
+            "4243331",
+            "4429025",
+            "4241463",
+            "3116365",
+            "4426385",
+            "4685720",
+            "4430834",
+            "4599739",
+            "-16034",
+            "4360423",
+            "4038441"
+          ]
         }
       }
     },
@@ -16815,8 +16899,7 @@
             "4248528",
             "3917232",
             "-16033",
-            "4572680",
-            "4429275"
+            "4572680"
           ]
         },
         "1": {
@@ -17355,6 +17438,41 @@
             "4572680",
             "4429275"
           ]
+        },
+        "16": {
+          "weekNum": "16",
+          "starting": [
+            "3116406",
+            "4036378",
+            "16737",
+            "4047365",
+            "3045147",
+            "3121422",
+            "4430878",
+            "4362238",
+            "3123076",
+            "-16002",
+            "3917232"
+          ],
+          "rostered": [
+            "3116406",
+            "4036378",
+            "16737",
+            "4047365",
+            "4241478",
+            "3045147",
+            "3121422",
+            "4362249",
+            "4430878",
+            "4362238",
+            "3123076",
+            "4361418",
+            "-16002",
+            "4248528",
+            "3917232",
+            "-16033",
+            "4572680"
+          ]
         }
       }
     },
@@ -17450,11 +17568,11 @@
             "4430034",
             "-16008",
             "3054212",
-            "4430104",
             "-16007",
             "2985659",
             "4037457",
-            "3055899"
+            "3055899",
+            "2576336"
           ]
         },
         "1": {
@@ -17993,6 +18111,42 @@
             "4037457",
             "3055899"
           ]
+        },
+        "16": {
+          "weekNum": "16",
+          "starting": [
+            "4430807",
+            "4374302",
+            "4361741",
+            "4432708",
+            "4567048",
+            "2977187",
+            "4259545",
+            "4426338",
+            "3054212",
+            "-16007",
+            "2985659"
+          ],
+          "rostered": [
+            "4430807",
+            "4374302",
+            "4361741",
+            "4432708",
+            "4567048",
+            "2977187",
+            "4038941",
+            "4259545",
+            "4035676",
+            "4426338",
+            "4430034",
+            "-16008",
+            "3054212",
+            "-16007",
+            "2985659",
+            "4037457",
+            "3055899",
+            "2576336"
+          ]
         }
       }
     },
@@ -18087,12 +18241,12 @@
             "15864",
             "4040655",
             "-16016",
-            "4035538",
             "4239993",
             "4360516",
             "4362081",
             "4260394",
-            "4373626"
+            "4373626",
+            "4361432"
           ]
         },
         "1": {
@@ -18631,6 +18785,42 @@
             "4260394",
             "4373626"
           ]
+        },
+        "16": {
+          "weekNum": "16",
+          "starting": [
+            "3139477",
+            "4242335",
+            "3915416",
+            "8439",
+            "3040151",
+            "4432773",
+            "-16016",
+            "4239993",
+            "4360516",
+            "4362081",
+            "4361432"
+          ],
+          "rostered": [
+            "3139477",
+            "4242335",
+            "4035687",
+            "4697815",
+            "3915416",
+            "8439",
+            "3040151",
+            "4241474",
+            "4432773",
+            "15864",
+            "4040655",
+            "-16016",
+            "4239993",
+            "4360516",
+            "4362081",
+            "4260394",
+            "4373626",
+            "4361432"
+          ]
         }
       }
     },
@@ -18718,19 +18908,19 @@
             "4361370",
             "4569173",
             "4612826",
-            "16757",
             "4635008",
             "4369863",
             "-16021",
             "4689936",
-            "-16006",
-            "4239086",
             "3728262",
             "15835",
             "-16001",
             "4722893",
             "4372019",
-            "4366031"
+            "4366031",
+            "-16018",
+            "4241464",
+            "4430968"
           ]
         },
         "1": {
@@ -19271,6 +19461,42 @@
             "4372019",
             "4366031"
           ]
+        },
+        "16": {
+          "weekNum": "16",
+          "starting": [
+            "4429084",
+            "4361370",
+            "4569173",
+            "4612826",
+            "4635008",
+            "-16021",
+            "4689936",
+            "15835",
+            "4372019",
+            "4366031",
+            "4241464"
+          ],
+          "rostered": [
+            "4426515",
+            "4429084",
+            "4361370",
+            "4569173",
+            "4612826",
+            "4635008",
+            "4369863",
+            "-16021",
+            "4689936",
+            "3728262",
+            "15835",
+            "-16001",
+            "4722893",
+            "4372019",
+            "4366031",
+            "-16018",
+            "4241464",
+            "4430968"
+          ]
         }
       }
     },
@@ -19369,7 +19595,7 @@
             "16460",
             "17372",
             "4428557",
-            "4682745"
+            "-16009"
           ]
         },
         "1": {
@@ -19906,6 +20132,41 @@
             "4428557",
             "4682745"
           ]
+        },
+        "16": {
+          "weekNum": "16",
+          "starting": [
+            "3916387",
+            "4262921",
+            "4569618",
+            "4426348",
+            "4429160",
+            "4361307",
+            "3916148",
+            "4429205",
+            "4241416",
+            "17372",
+            "-16009"
+          ],
+          "rostered": [
+            "3916387",
+            "4262921",
+            "4569618",
+            "4426348",
+            "4429160",
+            "4372016",
+            "4361307",
+            "4241457",
+            "3916148",
+            "4429205",
+            "4241416",
+            "4431611",
+            "-16024",
+            "16460",
+            "17372",
+            "4428557",
+            "-16009"
+          ]
         }
       }
     },
@@ -20003,8 +20264,8 @@
             "4048244",
             "4569987",
             "4567104",
-            "4039358",
-            "-16028"
+            "-16028",
+            "4241372"
           ]
         },
         "1": {
@@ -20541,6 +20802,41 @@
             "4039358",
             "-16028"
           ]
+        },
+        "16": {
+          "weekNum": "16",
+          "starting": [
+            "4241389",
+            "3917315",
+            "4239996",
+            "4258173",
+            "3116385",
+            "3046779",
+            "3925357",
+            "3916433",
+            "3046439",
+            "4567104",
+            "-16028"
+          ],
+          "rostered": [
+            "4241389",
+            "3917315",
+            "4239996",
+            "4258173",
+            "3116385",
+            "3046779",
+            "3925357",
+            "4683062",
+            "3916433",
+            "4429013",
+            "4431452",
+            "3046439",
+            "4048244",
+            "4569987",
+            "4567104",
+            "-16028",
+            "4241372"
+          ]
         }
       }
     },
@@ -20635,11 +20931,9 @@
             "4688813",
             "2969939",
             "15795",
-            "-16022",
             "4431299",
             "3150744",
             "4372414",
-            "4685247",
             "-16011"
           ]
         },
@@ -21180,6 +21474,40 @@
             "4685247",
             "-16011"
           ]
+        },
+        "16": {
+          "weekNum": "16",
+          "starting": [
+            "3918298",
+            "3929630",
+            "4430737",
+            "4241479",
+            "4429615",
+            "4373678",
+            "4036133",
+            "15795",
+            "4431299",
+            "3150744",
+            "-16011"
+          ],
+          "rostered": [
+            "3918298",
+            "3929630",
+            "4430737",
+            "3054850",
+            "4241479",
+            "4429615",
+            "4385690",
+            "4373678",
+            "4036133",
+            "4688813",
+            "2969939",
+            "15795",
+            "4431299",
+            "3150744",
+            "4372414",
+            "-16011"
+          ]
         }
       }
     },
@@ -21276,10 +21604,9 @@
             "3128429",
             "3886598",
             "4372561",
-            "-16020",
-            "14880",
             "-16004",
-            "4361579"
+            "4361579",
+            "2972515"
           ]
         },
         "1": {
@@ -21816,6 +22143,41 @@
             "14880",
             "-16004",
             "4361579"
+          ]
+        },
+        "16": {
+          "weekNum": "16",
+          "starting": [
+            "3043078",
+            "16800",
+            "15847",
+            "3042519",
+            "12483",
+            "2971573",
+            "14881",
+            "3128429",
+            "3886598",
+            "4372561",
+            "-16004"
+          ],
+          "rostered": [
+            "4427366",
+            "4432577",
+            "3043078",
+            "16800",
+            "15847",
+            "4047650",
+            "3042519",
+            "12483",
+            "15818",
+            "2971573",
+            "14881",
+            "3128429",
+            "3886598",
+            "4372561",
+            "-16004",
+            "4361579",
+            "2972515"
           ]
         }
       }
@@ -22391,6 +22753,28 @@
           ],
           "yardsAllowed": 433,
           "pointsAllowed": 42
+        },
+        "15": {
+          "opp": "13",
+          "drives": [
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Punt",
+            "Interception",
+            "Field Goal",
+            "Punt",
+            "Field Goal",
+            "Punt",
+            "Missed FG",
+            "Punt"
+          ],
+          "fieldGoals": [
+            40,
+            48
+          ],
+          "yardsAllowed": 249,
+          "pointsAllowed": 9
         }
       }
     },
@@ -22963,6 +23347,28 @@
           "fieldGoals": [],
           "yardsAllowed": 452,
           "pointsAllowed": 38
+        },
+        "15": {
+          "opp": "16",
+          "drives": [
+            "Downs",
+            "Fumble",
+            "Punt",
+            "Downs",
+            "End of Half",
+            "Punt",
+            "Field Goal",
+            "Field Goal",
+            "Punt",
+            "Touchdown",
+            "End of Game"
+          ],
+          "fieldGoals": [
+            29,
+            39
+          ],
+          "yardsAllowed": 329,
+          "pointsAllowed": 30
         }
       }
     },
@@ -26045,6 +26451,28 @@
           ],
           "yardsAllowed": 420,
           "pointsAllowed": 28
+        },
+        "15": {
+          "opp": "1",
+          "drives": [
+            "Fumble",
+            "Punt",
+            "Field Goal",
+            "Safety",
+            "End of Half",
+            "Blocked Punt, Downs",
+            "Punt",
+            "Punt",
+            "Punt",
+            "Interception",
+            "Touchdown",
+            "Interception"
+          ],
+          "fieldGoals": [
+            52
+          ],
+          "yardsAllowed": 261,
+          "pointsAllowed": 13
         }
       }
     },
@@ -26935,6 +27363,28 @@
           "fieldGoals": [],
           "yardsAllowed": 496,
           "pointsAllowed": 21
+        },
+        "15": {
+          "opp": "3",
+          "drives": [
+            "Field Goal",
+            "Touchdown",
+            "Interception",
+            "Field Goal",
+            "Punt",
+            "Punt",
+            "Touchdown",
+            "Touchdown",
+            "Blocked Punt",
+            "Field Goal"
+          ],
+          "fieldGoals": [
+            52,
+            31,
+            46
+          ],
+          "yardsAllowed": 284,
+          "pointsAllowed": 12
         }
       }
     },
@@ -31842,191 +32292,191 @@
   },
   "fantasyCalc": {
     "players": {
-      "8439": 19.09,
-      "12483": 30.03,
-      "14880": 33.63,
-      "14881": 29.53,
-      "15795": 15.88,
-      "15818": 12.87,
-      "15835": 7.74,
-      "15847": 40.49,
-      "15864": 27.74,
-      "16460": 7.48,
-      "16731": 0.98,
-      "16737": 43.92,
-      "16757": 10.23,
-      "16800": 23.56,
-      "2576336": 1.49,
-      "2576414": 1.42,
-      "2577327": 3.23,
-      "2969939": 12.55,
-      "2972515": 1.69,
-      "2976499": 13.35,
+      "8439": 16.25,
+      "12483": 32.28,
+      "14880": 34.37,
+      "14881": 29.99,
+      "15795": 15.69,
+      "15818": 12.9,
+      "15835": 7.32,
+      "15847": 39.71,
+      "15864": 28.5,
+      "16460": 7.82,
+      "16731": 1.04,
+      "16737": 44.1,
+      "16757": 9.47,
+      "16800": 24.31,
+      "2576336": 1.43,
+      "2576414": 1.34,
+      "2577327": 3.14,
+      "2969939": 15.51,
+      "2972515": 1.73,
+      "2976499": 13.63,
       "2976592": 0.39,
-      "2977187": 42.85,
-      "3040151": 41.25,
-      "3042519": 22.62,
-      "3043078": 60.71,
-      "3043116": 0.59,
-      "3045147": 25.69,
-      "3046439": 3.61,
-      "3046779": 40.4,
-      "3051738": 2.91,
-      "3051926": 5.88,
-      "3052587": 66.42,
-      "3054212": 15.39,
-      "3054850": 58.87,
-      "3059915": 7.28,
-      "3116164": 1.24,
-      "3116365": 17.17,
-      "3116385": 52.88,
-      "3116406": 42.74,
-      "3117256": 2.25,
-      "3121422": 42.13,
-      "3123076": 17.98,
-      "3126486": 17.74,
-      "3127292": 4.25,
-      "3128390": 0.31,
-      "3128429": 30.23,
-      "3139477": 70.82,
+      "2977187": 42.62,
+      "3040151": 41.47,
+      "3042519": 22.58,
+      "3043078": 59.14,
+      "3043116": 0.46,
+      "3045147": 25.32,
+      "3046439": 3.79,
+      "3046779": 41.4,
+      "3051738": 2.86,
+      "3051926": 5.91,
+      "3052587": 67.44,
+      "3054212": 15.84,
+      "3054850": 58.01,
+      "3059915": 7.41,
+      "3116164": 1.12,
+      "3116365": 17.2,
+      "3116385": 52.89,
+      "3116406": 42.07,
+      "3117256": 2.12,
+      "3121422": 41.43,
+      "3123076": 18.52,
+      "3126486": 18.21,
+      "3127292": 4.27,
+      "3128390": 0.06,
+      "3128429": 30.71,
+      "3139477": 71.27,
       "3728262": 0.54,
-      "3886598": 12.44,
-      "3912547": 31.82,
-      "3915416": 30.2,
-      "3915511": 91.65,
-      "3916148": 21.95,
-      "3916387": 105.69,
+      "3886598": 13.69,
+      "3912547": 31.95,
+      "3915416": 32.32,
+      "3915511": 91.37,
+      "3916148": 22.03,
+      "3916387": 105.8,
       "3916433": 18.99,
-      "3917315": 66.24,
-      "3918298": 104.34,
-      "3925357": 17.59,
-      "3929630": 91.54,
-      "3929785": 3.53,
-      "3932905": 1.6,
-      "4035687": 12.55,
-      "4036133": 19.59,
-      "4036378": 60.97,
+      "3917315": 67.14,
+      "3918298": 104.01,
+      "3925357": 18.18,
+      "3929630": 91.78,
+      "3929785": 3.58,
+      "3932905": 1.43,
+      "4035687": 13.03,
+      "4036133": 19.88,
+      "4036378": 62.22,
       "4038441": 0.46,
-      "4038815": 8.37,
-      "4038941": 56.11,
-      "4040655": 14.49,
-      "4040715": 101.31,
-      "4040761": 0.71,
-      "4047365": 50.2,
-      "4047646": 61.9,
-      "4047650": 27.79,
-      "4048244": 2.74,
-      "4239993": 39.82,
-      "4239996": 9.84,
-      "4240021": 0.93,
-      "4240391": 0.33,
-      "4240472": 0.23,
-      "4241389": 58.18,
-      "4241416": 20.65,
-      "4241457": 16.76,
-      "4241463": 16.68,
-      "4241464": 0.81,
-      "4241474": 18.49,
-      "4241478": 18.09,
-      "4241479": 37.62,
-      "4241985": 19.69,
-      "4242335": 33.61,
-      "4242355": 3.85,
-      "4242433": 0.12,
-      "4243331": 12.75,
-      "4243389": 0.03,
-      "4248528": 4.42,
-      "4258173": 66.46,
-      "4258595": 2.33,
-      "4259545": 16.38,
-      "4260394": 1.66,
-      "4262921": 75.3,
-      "4360078": 0.85,
-      "4360248": 10.14,
-      "4360516": 15.16,
-      "4360939": 1.03,
-      "4361050": 0.56,
-      "4361307": 43.83,
-      "4361370": 6.91,
-      "4361411": 2.26,
-      "4361418": 7.55,
-      "4361432": 2.45,
-      "4361529": 21.04,
-      "4361579": 7.55,
-      "4361741": 52.09,
-      "4362238": 35.79,
-      "4362249": 20.81,
-      "4362628": 89.88,
-      "4366031": 13.33,
-      "4369863": 7,
-      "4372016": 17.47,
-      "4372019": 1.4,
-      "4372096": 0.29,
-      "4372414": 2.13,
-      "4372561": 7.1,
-      "4373626": 1.66,
-      "4373678": 10.96,
-      "4374302": 69.6,
-      "4379399": 36.27,
-      "4385690": 4.97,
-      "4426338": 52.86,
-      "4426348": 75,
-      "4426354": 30.04,
-      "4426385": 6.95,
+      "4038815": 8.68,
+      "4038941": 56.1,
+      "4040655": 13.84,
+      "4040715": 100.29,
+      "4040761": 0.7,
+      "4047365": 49.61,
+      "4047646": 60.03,
+      "4047650": 28.76,
+      "4048244": 2.75,
+      "4239993": 40.44,
+      "4239996": 9.81,
+      "4240021": 0.92,
+      "4240472": 0.19,
+      "4241389": 57.67,
+      "4241416": 21.4,
+      "4241457": 17.34,
+      "4241463": 16.69,
+      "4241464": 0.87,
+      "4241474": 19.09,
+      "4241478": 18.47,
+      "4241479": 39.61,
+      "4241985": 19.44,
+      "4242335": 32.81,
+      "4242355": 3.68,
+      "4243331": 12.18,
+      "4243389": 0.02,
+      "4248528": 4.62,
+      "4258173": 66.8,
+      "4258595": 2.24,
+      "4259545": 17.09,
+      "4260394": 1.51,
+      "4262921": 75.7,
+      "4360078": 0.93,
+      "4360248": 10.23,
+      "4360516": 15.24,
+      "4360939": 0.9,
+      "4361050": 0.4,
+      "4361307": 43.65,
+      "4361370": 7.17,
+      "4361411": 2.27,
+      "4361418": 7.69,
+      "4361432": 2.6,
+      "4361529": 21.8,
+      "4361579": 7.69,
+      "4361741": 53.76,
+      "4362238": 36.35,
+      "4362249": 20.85,
+      "4362628": 87.89,
+      "4366031": 12.86,
+      "4369863": 7.1,
+      "4372016": 18.58,
+      "4372019": 1.72,
+      "4372096": 0.3,
+      "4372414": 2.19,
+      "4372561": 7.48,
+      "4373626": 1.73,
+      "4373678": 10.76,
+      "4374302": 70.03,
+      "4379399": 35.97,
+      "4385690": 5.17,
+      "4426338": 53.23,
+      "4426348": 77.05,
+      "4426354": 30.36,
+      "4426385": 7.07,
       "4426386": 0.93,
-      "4426388": 11.71,
-      "4426502": 42.02,
-      "4426515": 56.28,
-      "4427095": 2.05,
-      "4427366": 39.12,
-      "4428209": 2.77,
-      "4428557": 1.91,
-      "4428850": 0.46,
-      "4429013": 2.96,
-      "4429025": 5.29,
-      "4429084": 39.52,
-      "4429096": 1.06,
-      "4429160": 55.11,
-      "4429205": 10.05,
-      "4429275": 2.11,
-      "4429501": 0.95,
-      "4429615": 23.81,
-      "4429795": 58.13,
-      "4430027": 14.75,
-      "4430034": 3.88,
-      "4430737": 46.26,
-      "4430807": 68.78,
-      "4430834": 0.3,
-      "4430878": 27.22,
+      "4426388": 12.01,
+      "4426502": 42.25,
+      "4426515": 54.78,
+      "4427095": 2.11,
+      "4427366": 39.26,
+      "4428209": 2.78,
+      "4428557": 1.88,
+      "4428718": 0.12,
+      "4428850": 0.39,
+      "4429013": 2.9,
+      "4429025": 5.39,
+      "4429084": 36.39,
+      "4429096": 0.99,
+      "4429160": 55.21,
+      "4429205": 10.12,
+      "4429275": 2,
+      "4429501": 0.87,
+      "4429615": 24.2,
+      "4429795": 57.28,
+      "4430027": 14.4,
+      "4430034": 3.85,
+      "4430737": 45.56,
+      "4430807": 68.3,
+      "4430834": 0.44,
+      "4430878": 27.48,
       "4430968": 0.39,
-      "4431299": 13.4,
-      "4431452": 28.51,
-      "4431611": 36.7,
-      "4432577": 60.49,
-      "4432620": 0.06,
-      "4432665": 51.92,
-      "4432708": 27.33,
-      "4432773": 22.36,
-      "4567048": 29.03,
-      "4569173": 15.37,
-      "4569587": 3.04,
-      "4569618": 33.2,
-      "4569682": 1,
-      "4569987": 6.4,
-      "4572680": 7.52,
-      "4595348": 38.78,
-      "4596448": 26.76,
-      "4612826": 24.59,
-      "4635008": 4.02,
-      "4683062": 6.01,
-      "4685247": 3.98,
-      "4685720": 4.71,
-      "4688813": 10.19,
-      "4697815": 13.03,
-      "4722893": 0.29,
-      "Devaughn Vele": 1.08
+      "4431299": 14.2,
+      "4431452": 28.39,
+      "4431611": 36.6,
+      "4432577": 60.62,
+      "4432620": 0.03,
+      "4432665": 52.13,
+      "4432708": 27.35,
+      "4432773": 22.73,
+      "4567048": 30.18,
+      "4569173": 15.4,
+      "4569587": 2.97,
+      "4569618": 33.84,
+      "4569682": 1.13,
+      "4569987": 6.5,
+      "4572680": 7.64,
+      "4595348": 39.79,
+      "4596448": 26.79,
+      "4599739": 0.01,
+      "4612826": 24.72,
+      "4635008": 4.12,
+      "4683062": 6.14,
+      "4685247": 4.04,
+      "4685720": 4.42,
+      "4688813": 10.11,
+      "4697815": 13.42,
+      "4722893": 0.28,
+      "Devaughn Vele": 1.11
     },
-    "timestamp": 1734412292986,
+    "timestamp": 1734563900676,
     "history": [
       {
         "values": {
@@ -33302,6 +33752,21 @@
           "10": 438.16
         },
         "date": 1734412292987
+      },
+      {
+        "values": {
+          "1": 581.58,
+          "2": 303.19,
+          "3": 406.37,
+          "4": 439.78,
+          "5": 366.25,
+          "6": 173.66,
+          "7": 527.02,
+          "8": 383.35,
+          "9": 456.68,
+          "10": 410.85
+        },
+        "date": 1734563920839
       }
     ]
   }

@@ -53,7 +53,7 @@ export default function Simps() {
                             .flatMap((playerId) => ({
                               year: parseInt(year),
                               weekNum: parseInt(roster.weekNum),
-                              key: `${wrapped.nflPlayers[playerId]?.name} ❤️ ${
+                              key: `${wrapped.nflPlayers[playerId].name} ❤️ ${
                                 allWrapped[teamNameYear].ffTeams[team.id].name
                               }`,
                             }))
