@@ -88,7 +88,6 @@ export default function Simps() {
             .sort((a, b) => b.numWeeks - a.numWeeks)
             .sort((a, b) => b.numYears - a.numYears)
             .sort((a, b) => b.numStints - a.numStints)
-            .slice(0, 50)
             .map((obj) => (
               <div
                 key={obj.key}
