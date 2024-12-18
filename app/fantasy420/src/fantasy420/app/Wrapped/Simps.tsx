@@ -85,9 +85,9 @@ export default function Simps() {
               numYears: new Set(obj.stints.map((stint) => stint.year)).size,
               numStints: obj.stints.length,
             }))
-            .sort((a, b) => b.numWeeks - a.numWeeks)
-            .sort((a, b) => b.numYears - a.numYears)
             .sort((a, b) => b.numStints - a.numStints)
+            .sort((a, b) => b.numYears - a.numYears)
+            .sort((a, b) => b.numWeeks - a.numWeeks)
             .map((obj) => (
               <div
                 key={obj.key}
