@@ -7,7 +7,7 @@ export default function Simps() {
       <div style={bubbleStyle}>how many times did a manager own a player?</div>
       <div>
         <div style={bubbleStyle}>
-          {Object.entries(
+          {Object.values(
             groupByF(
               Object.entries(allWrapped)
                 .map(([year, wrapped]) => ({ year, wrapped }))
@@ -28,18 +28,20 @@ export default function Simps() {
                           roster.rostered.flatMap((playerId) => ({
                             year: parseInt(year),
                             weekNum: parseInt(roster.weekNum),
-                            key: `${wrapped.nflPlayers[playerId].name} ❤️ ${
-                              allWrapped[teamNameYear].ffTeams[team.id].name
-                            }`,
+                            playerId,
+                            teamName:
+                              allWrapped[teamNameYear].ffTeams[team.id].name,
+
+                            playerName: wrapped.nflPlayers[playerId].name,
                           }))
                         )
                     )
                 ),
-              (obj) => obj.key
+              (obj) => `${obj.playerId} ${obj.teamName}`
             )
           )
-            .map(([key, objs]) => ({
-              key,
+            .map((objs) => ({
+              key: `${objs[0].playerName} ❤️ ${objs[0].teamName}`,
               stints: objs.reduce((prev, curr) => {
                 const p = prev[prev.length - 1];
                 if (p?.year === curr.year && p.end === curr.weekNum - 1) {
