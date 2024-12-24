@@ -22,7 +22,7 @@ type NFLTeamType = {
     [weekNum: string]:
       | {
           opp: string;
-          fieldGoals: number[];
+          fieldGoals: (number | null)[];
           pointsAllowed: number;
           yardsAllowed: number;
           drives: (string | null)[];
@@ -533,6 +533,7 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                                 teamId: play.teamId,
                                 yards: parseInt(
                                   play.text
+                                    .replace("yard field goal", "Yd Field Goal")
                                     .replace("Yrd Field Goal", "Yd Field Goal")
                                     .split(" Yd Field Goal")[0]
                                     .split(" ")
