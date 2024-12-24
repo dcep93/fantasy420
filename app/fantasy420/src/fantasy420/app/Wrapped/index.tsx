@@ -782,6 +782,8 @@ function DeterminedByDiscreteScoring() {
       ];
     if (!offense) return null;
     const superscore = offense.fieldGoals
+      .filter((yards) => yards)
+      .map((yards) => yards as number)
       .map((yards) => {
         var points = yards / 10;
         if (yards >= 60) {
