@@ -1586,6 +1586,7 @@ function FantasyCalc() {
             ps: rosters["0"].rostered
               .map((playerId) => selectedWrapped().nflPlayers[playerId])
               .map((p) => ({
+                ...p,
                 name: p?.name || "missing",
                 value: fantasyCalcPlayers[p?.id] || 0,
                 draftPick: playerIdToDraftIndex[p?.id],
@@ -1600,6 +1601,18 @@ function FantasyCalc() {
           .map((t) => (
             <div key={t.id} style={bubbleStyle}>
               <h2>{t.name}</h2>
+              <h3>
+                {(
+                  (100 *
+                    t.ps.filter((p) =>
+                      selectedWrapped().ffTeams[t.id].draft.find(
+                        (pp) => pp.playerId.toString() === p.id
+                      )
+                    ).length) /
+                  t.ps.length
+                ).toFixed(2)}
+                % self-drafted
+              </h3>
               <h3>
                 {(
                   (100 * t.ps.filter((p) => !isNaN(p.draftPick)).length) /
