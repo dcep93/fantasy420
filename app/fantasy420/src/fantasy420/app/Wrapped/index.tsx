@@ -1601,7 +1601,19 @@ function FantasyCalc() {
           .map((t) => (
             <div key={t.id} style={bubbleStyle}>
               <h2>{t.name}</h2>
-              <h3>
+              <h3
+                title={JSON.stringify(
+                  t.ps
+                    .filter((p) =>
+                      selectedWrapped().ffTeams[t.id].draft.find(
+                        (pp) => pp.playerId.toString() === p.id
+                      )
+                    )
+                    .map((p) => p.name),
+                  null,
+                  2
+                )}
+              >
                 {(
                   (100 *
                     t.ps.filter((p) =>
@@ -1613,7 +1625,13 @@ function FantasyCalc() {
                 ).toFixed(2)}
                 % self-drafted
               </h3>
-              <h3>
+              <h3
+                title={JSON.stringify(
+                  t.ps.filter((p) => !isNaN(p.draftPick)).map((p) => p.name),
+                  null,
+                  2
+                )}
+              >
                 {(
                   (100 * t.ps.filter((p) => !isNaN(p.draftPick)).length) /
                   t.ps.length
