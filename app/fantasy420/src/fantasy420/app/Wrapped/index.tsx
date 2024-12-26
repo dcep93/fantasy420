@@ -1600,6 +1600,13 @@ function FantasyCalc() {
           .map((t) => (
             <div key={t.id} style={bubbleStyle}>
               <h2>{t.name}</h2>
+              <h3>
+                {(
+                  (100 * t.ps.filter((p) => !isNaN(p.draftPick)).length) /
+                  t.ps.length
+                ).toFixed(2)}
+                % drafted
+              </h3>
               <h3>{t.value.toFixed(2)}</h3>
               {t.ps.map((p, i) => (
                 <div key={i}>
