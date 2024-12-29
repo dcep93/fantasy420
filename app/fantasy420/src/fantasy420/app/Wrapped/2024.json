@@ -224,10 +224,10 @@
       "nflTeamId": "14",
       "name": "Matthew Stafford",
       "position": "QB",
-      "total": 211.64,
-      "average": 13.2275,
+      "total": 214.58,
+      "average": 13.411249999999999,
       "scores": {
-        "0": 211.64,
+        "0": 214.58,
         "1": 14.68,
         "2": 6.64,
         "3": 12.84,
@@ -243,7 +243,7 @@
         "14": 20.8,
         "15": 8.2,
         "16": 6,
-        "17": 6.22
+        "17": 9.16
       },
       "injuryStatus": "ACTIVE"
     },
@@ -1228,10 +1228,10 @@
       "nflTeamId": "14",
       "name": "Tyler Higbee",
       "position": "TE",
-      "total": 8.1,
-      "average": 4.05,
+      "total": 11,
+      "average": 5.5,
       "scores": {
-        "0": 8.1,
+        "0": 11,
         "1": 0,
         "2": 0,
         "3": 0,
@@ -1247,7 +1247,7 @@
         "14": 0,
         "15": 0,
         "16": 8.1,
-        "17": 0
+        "17": 2.9
       },
       "injuryStatus": "ACTIVE"
     },
@@ -2965,10 +2965,10 @@
       "nflTeamId": "22",
       "name": "Zay Jones",
       "position": "WR",
-      "total": 4.9,
-      "average": 0.5444444444444445,
+      "total": 7.8,
+      "average": 0.78,
       "scores": {
-        "0": 4.9,
+        "0": 7.8,
         "1": 0,
         "2": 0,
         "3": 0,
@@ -2984,7 +2984,7 @@
         "14": 2.3,
         "15": 1.3,
         "16": 0,
-        "17": 0
+        "17": 2.9
       },
       "injuryStatus": "ACTIVE"
     },
@@ -5005,10 +5005,10 @@
       "nflTeamId": "22",
       "name": "Kyler Murray",
       "position": "QB",
-      "total": 260.28,
-      "average": 16.2675,
+      "total": 269.36,
+      "average": 16.835,
       "scores": {
-        "0": 260.28,
+        "0": 269.36,
         "1": 14.18,
         "2": 28.54,
         "3": 14.78,
@@ -5024,7 +5024,7 @@
         "14": 17.96,
         "15": 10.06,
         "16": 20.38,
-        "17": 6.96
+        "17": 16.04
       },
       "injuryStatus": "ACTIVE"
     },
@@ -6264,7 +6264,7 @@
     },
     "4036419": {
       "id": "4036419",
-      "nflTeamId": "0",
+      "nflTeamId": "15",
       "name": "Skylar Thompson",
       "position": "QB",
       "total": 7.88,
@@ -6316,10 +6316,10 @@
       "nflTeamId": "22",
       "name": "Greg Dortch",
       "position": "WR",
-      "total": 66.9,
-      "average": 4.18125,
+      "total": 68.9,
+      "average": 4.30625,
       "scores": {
-        "0": 66.9,
+        "0": 68.9,
         "1": 11.1,
         "2": 3.1,
         "3": 6.5,
@@ -6335,7 +6335,7 @@
         "14": 1.5,
         "15": 9.6,
         "16": 3.7,
-        "17": 2.8
+        "17": 4.8
       },
       "injuryStatus": "ACTIVE"
     },
@@ -7191,7 +7191,7 @@
       "name": "Hunter Long",
       "position": "TE",
       "total": 13,
-      "average": 0.8666666666666667,
+      "average": 0.8125,
       "scores": {
         "0": 13,
         "1": 0,
@@ -7400,12 +7400,12 @@
       "nflTeamId": "22",
       "name": "Michael Carter",
       "position": "RB",
-      "total": 12.1,
-      "average": 6.050000000000001,
+      "total": 19.9,
+      "average": 9.950000000000001,
       "scores": {
-        "0": 12.1,
+        "0": 19.9,
         "16": 9.8,
-        "17": 2.3
+        "17": 10.1
       },
       "injuryStatus": "ACTIVE"
     },
@@ -7958,7 +7958,7 @@
     },
     "4242214": {
       "id": "4242214",
-      "nflTeamId": "0",
+      "nflTeamId": "18",
       "name": "Clyde Edwards-Helaire",
       "position": "RB",
       "total": 0,
@@ -8287,7 +8287,7 @@
       "name": "Ronnie Rivers",
       "position": "RB",
       "total": 6.1,
-      "average": 0.4066666666666667,
+      "average": 0.38125000000000003,
       "scores": {
         "0": 6.1,
         "1": 1.6,
@@ -9466,10 +9466,10 @@
       "nflTeamId": "22",
       "name": "Michael Wilson",
       "position": "WR",
-      "total": 120.4,
-      "average": 7.525,
+      "total": 124.5,
+      "average": 7.78125,
       "scores": {
-        "0": 120.4,
+        "0": 124.5,
         "1": 7.5,
         "2": 5.1,
         "3": 14.4,
@@ -9485,7 +9485,7 @@
         "14": 13.7,
         "15": 2.9,
         "16": 6.4,
-        "17": 2.8
+        "17": 6.9
       },
       "injuryStatus": "ACTIVE"
     },
@@ -9518,7 +9518,7 @@
       "name": "Tutu Atwell",
       "position": "WR",
       "total": 90.2,
-      "average": 6.013333333333334,
+      "average": 5.6375,
       "scores": {
         "0": 90.2,
         "1": 0,
@@ -9655,10 +9655,10 @@
       "nflTeamId": "22",
       "name": "Trey McBride",
       "position": "TE",
-      "total": 207.6,
-      "average": 13.840000000000002,
+      "total": 230.3,
+      "average": 15.353333333333333,
       "scores": {
-        "0": 207.6,
+        "0": 230.3,
         "1": 8,
         "2": 18.7,
         "3": 5.5,
@@ -9674,7 +9674,7 @@
         "14": 14,
         "15": 17.7,
         "16": 5,
-        "17": 7.6
+        "17": 30.3
       },
       "injuryStatus": "ACTIVE"
     },
@@ -10457,10 +10457,10 @@
       "nflTeamId": "22",
       "name": "Chad Ryland",
       "position": "K",
-      "total": 104,
-      "average": 8.666666666666666,
+      "total": 107,
+      "average": 8.916666666666666,
       "scores": {
-        "0": 104,
+        "0": 107,
         "5": 10,
         "6": 8,
         "7": 5,
@@ -10472,7 +10472,7 @@
         "14": 3,
         "15": 14,
         "16": 15,
-        "17": 0
+        "17": 3
       },
       "injuryStatus": "ACTIVE"
     },
@@ -11898,10 +11898,10 @@
       "nflTeamId": "14",
       "name": "Puka Nacua",
       "position": "WR",
-      "total": 198.5,
-      "average": 18.045454545454547,
+      "total": 206.6,
+      "average": 18.78181818181818,
       "scores": {
-        "0": 198.5,
+        "0": 206.6,
         "1": 8.2,
         "2": 0,
         "3": 0,
@@ -11917,7 +11917,7 @@
         "14": 41.8,
         "15": 17.8,
         "16": 13.6,
-        "17": 14.8
+        "17": 22.9
       },
       "injuryStatus": "ACTIVE"
     },
@@ -11954,10 +11954,10 @@
       "nflTeamId": "22",
       "name": "Elijah Higgins",
       "position": "TE",
-      "total": 47.4,
-      "average": 2.9625000000000004,
+      "total": 49.2,
+      "average": 3.075,
       "scores": {
-        "0": 47.4,
+        "0": 49.2,
         "1": 3.2,
         "2": 8.8,
         "3": 2.1,
@@ -11973,7 +11973,7 @@
         "14": 0,
         "15": 1.5,
         "16": 0,
-        "17": 2.5
+        "17": 4.3
       },
       "injuryStatus": "ACTIVE"
     },
@@ -13300,10 +13300,10 @@
       "nflTeamId": "14",
       "name": "Kyren Williams",
       "position": "RB",
-      "total": 267,
-      "average": 16.6875,
+      "total": 272.1,
+      "average": 17.00625,
       "scores": {
-        "0": 267,
+        "0": 272.1,
         "1": 14.4,
         "2": 15.2,
         "3": 31.6,
@@ -13319,7 +13319,7 @@
         "14": 23.7,
         "15": 13.2,
         "16": 19.9,
-        "17": 11.1
+        "17": 16.2
       },
       "injuryStatus": "ACTIVE"
     },
@@ -13796,10 +13796,10 @@
       "nflTeamId": "22",
       "name": "Marvin Harrison Jr.",
       "position": "WR",
-      "total": 169.4,
-      "average": 10.5875,
+      "total": 179.2,
+      "average": 11.2,
       "scores": {
-        "0": 169.4,
+        "0": 179.2,
         "1": 1.4,
         "2": 29,
         "3": 17.4,
@@ -13815,7 +13815,7 @@
         "14": 8.9,
         "15": 5.2,
         "16": 7.9,
-        "17": 5.8
+        "17": 15.6
       },
       "injuryStatus": "ACTIVE"
     },
@@ -13934,10 +13934,10 @@
       "nflTeamId": "14",
       "name": "Joshua Karty",
       "position": "K",
-      "total": 110,
-      "average": 6.875,
+      "total": 113,
+      "average": 7.0625,
       "scores": {
-        "0": 110,
+        "0": 113,
         "1": 9,
         "2": 4,
         "3": 9,
@@ -13953,7 +13953,7 @@
         "14": 8,
         "15": 13,
         "16": 8,
-        "17": 6
+        "17": 9
       },
       "injuryStatus": "ACTIVE"
     },
@@ -14126,10 +14126,10 @@
       "nflTeamId": "14",
       "name": "Jordan Whittington",
       "position": "WR",
-      "total": 38.1,
-      "average": 2.930769230769231,
+      "total": 39.7,
+      "average": 2.835714285714286,
       "scores": {
-        "0": 38.1,
+        "0": 39.7,
         "1": 0,
         "2": 4.2,
         "3": 5.8,
@@ -14145,7 +14145,7 @@
         "14": 0,
         "15": 0,
         "16": 0,
-        "17": 0
+        "17": 1.6
       },
       "injuryStatus": "ACTIVE"
     },
@@ -15281,7 +15281,7 @@
       "name": "Tip Reiman",
       "position": "TE",
       "total": 9.7,
-      "average": 0.6466666666666666,
+      "average": 0.60625,
       "scores": {
         "0": 9.7,
         "1": 0,
@@ -15971,10 +15971,10 @@
       "nflTeamId": "14",
       "name": "Rams D/ST",
       "position": "DST",
-      "total": 99,
-      "average": 6.1875,
+      "total": 100,
+      "average": 6.25,
       "scores": {
-        "0": 99,
+        "0": 100,
         "1": 3,
         "2": -5,
         "3": 0,
@@ -15990,7 +15990,7 @@
         "14": 2,
         "15": 12,
         "16": 8,
-        "17": 11
+        "17": 12
       }
     },
     "-16015": {
@@ -16181,10 +16181,10 @@
       "nflTeamId": "22",
       "name": "Cardinals D/ST",
       "position": "DST",
-      "total": 84,
-      "average": 5.25,
+      "total": 83,
+      "average": 5.1875,
       "scores": {
-        "0": 84,
+        "0": 83,
         "1": 8,
         "2": 12,
         "3": 3,
@@ -16200,7 +16200,7 @@
         "14": -4,
         "15": 5,
         "16": -1,
-        "17": 6
+        "17": 5
       }
     },
     "-16023": {
@@ -23879,6 +23879,7 @@
             59,
             55
           ],
+          "punter": "B.Pinion",
           "yardsAllowed": 270,
           "pointsAllowed": 18
         },
@@ -23904,6 +23905,7 @@
             45,
             44
           ],
+          "punter": "B.Pinion",
           "yardsAllowed": 365,
           "pointsAllowed": 21
         },
@@ -23929,6 +23931,7 @@
             39,
             65
           ],
+          "punter": "B.Pinion",
           "yardsAllowed": 345,
           "pointsAllowed": 22
         },
@@ -23956,6 +23959,7 @@
             41,
             45
           ],
+          "punter": "B.Pinion",
           "yardsAllowed": 366,
           "pointsAllowed": 24
         },
@@ -23982,6 +23986,7 @@
           "punts": [
             35
           ],
+          "punter": "B.Pinion",
           "yardsAllowed": 333,
           "pointsAllowed": 30
         },
@@ -24008,6 +24013,7 @@
           "punts": [
             52
           ],
+          "punter": "B.Pinion",
           "yardsAllowed": 335,
           "pointsAllowed": 20
         },
@@ -24032,6 +24038,7 @@
             45,
             47
           ],
+          "punter": "B.Pinion",
           "yardsAllowed": 339,
           "pointsAllowed": 28
         },
@@ -24057,6 +24064,7 @@
             45,
             46
           ],
+          "punter": "B.Pinion",
           "yardsAllowed": 432,
           "pointsAllowed": 24
         },
@@ -24083,6 +24091,7 @@
             55,
             53
           ],
+          "punter": "B.Pinion",
           "yardsAllowed": 378,
           "pointsAllowed": 21
         },
@@ -24109,6 +24118,7 @@
             42,
             57
           ],
+          "punter": "B.Pinion",
           "yardsAllowed": 365,
           "pointsAllowed": 20
         },
@@ -24137,6 +24147,7 @@
             51,
             42
           ],
+          "punter": "B.Pinion",
           "yardsAllowed": 400,
           "pointsAllowed": 38
         },
@@ -24162,6 +24173,7 @@
             43,
             39
           ],
+          "punter": "B.Pinion",
           "yardsAllowed": 187,
           "pointsAllowed": 11
         },
@@ -24186,6 +24198,7 @@
           "punts": [
             40
           ],
+          "punter": "B.Pinion",
           "yardsAllowed": 433,
           "pointsAllowed": 42
         },
@@ -24216,6 +24229,7 @@
             37,
             45
           ],
+          "punter": "B.Pinion",
           "yardsAllowed": 249,
           "pointsAllowed": 9
         },
@@ -24240,6 +24254,7 @@
             46,
             42
           ],
+          "punter": "B.Pinion",
           "yardsAllowed": 234,
           "pointsAllowed": 7
         }
@@ -24272,6 +24287,7 @@
             51,
             34
           ],
+          "punter": "S.Martin",
           "yardsAllowed": 270,
           "pointsAllowed": 28
         },
@@ -24297,6 +24313,7 @@
             39,
             65
           ],
+          "punter": "S.Martin",
           "yardsAllowed": 351,
           "pointsAllowed": 10
         },
@@ -24321,6 +24338,7 @@
           "punts": [
             49
           ],
+          "punter": "S.Martin",
           "yardsAllowed": 239,
           "pointsAllowed": 10
         },
@@ -24350,6 +24368,7 @@
             52,
             51
           ],
+          "punter": "S.Martin",
           "yardsAllowed": 427,
           "pointsAllowed": 35
         },
@@ -24383,6 +24402,7 @@
             56,
             56
           ],
+          "punter": "S.Martin",
           "yardsAllowed": 425,
           "pointsAllowed": 23
         },
@@ -24407,6 +24427,7 @@
             40,
             57
           ],
+          "punter": "S.Martin",
           "yardsAllowed": 393,
           "pointsAllowed": 20
         },
@@ -24436,6 +24457,7 @@
             44,
             27
           ],
+          "punter": "S.Martin",
           "yardsAllowed": 289,
           "pointsAllowed": 10
         },
@@ -24461,6 +24483,7 @@
             58,
             40
           ],
+          "punter": "S.Martin",
           "yardsAllowed": 233,
           "pointsAllowed": 10
         },
@@ -24484,6 +24507,7 @@
           "punts": [
             49
           ],
+          "punter": "S.Martin",
           "yardsAllowed": 373,
           "pointsAllowed": 27
         },
@@ -24511,6 +24535,7 @@
             48,
             61
           ],
+          "punter": "S.Martin",
           "yardsAllowed": 361,
           "pointsAllowed": 20
         },
@@ -24536,6 +24561,7 @@
             47,
             44
           ],
+          "punter": "S.Martin",
           "yardsAllowed": 259,
           "pointsAllowed": 21
         },
@@ -24559,6 +24585,7 @@
             38,
             54
           ],
+          "punter": "S.Martin",
           "yardsAllowed": 239,
           "pointsAllowed": 10
         },
@@ -24580,6 +24607,7 @@
             46,
             55
           ],
+          "punter": "S.Martin",
           "yardsAllowed": 457,
           "pointsAllowed": 44
         },
@@ -24606,6 +24634,7 @@
           "punts": [
             51
           ],
+          "punter": "S.Martin",
           "yardsAllowed": 521,
           "pointsAllowed": 42
         },
@@ -24631,6 +24660,7 @@
             30,
             37
           ],
+          "punter": "S.Martin",
           "yardsAllowed": 379,
           "pointsAllowed": 21
         }
@@ -24667,6 +24697,7 @@
             60,
             34
           ],
+          "punter": "T.Taylor",
           "yardsAllowed": 244,
           "pointsAllowed": 17
         },
@@ -24699,6 +24730,7 @@
             25,
             54
           ],
+          "punter": "T.Taylor",
           "yardsAllowed": 310,
           "pointsAllowed": 19
         },
@@ -24726,6 +24758,7 @@
             54,
             37
           ],
+          "punter": "T.Taylor",
           "yardsAllowed": 306,
           "pointsAllowed": 21
         },
@@ -24753,6 +24786,7 @@
             66,
             35
           ],
+          "punter": "T.Taylor",
           "yardsAllowed": 322,
           "pointsAllowed": 18
         },
@@ -24781,6 +24815,7 @@
             48,
             40
           ],
+          "punter": "T.Taylor",
           "yardsAllowed": 292,
           "pointsAllowed": 10
         },
@@ -24803,6 +24838,7 @@
             64,
             59
           ],
+          "punter": "T.Taylor",
           "yardsAllowed": 278,
           "pointsAllowed": 16
         },
@@ -24831,6 +24867,7 @@
             53,
             55
           ],
+          "punter": "T.Taylor",
           "yardsAllowed": 481,
           "pointsAllowed": 18
         },
@@ -24861,6 +24898,7 @@
             62,
             67
           ],
+          "punter": "T.Taylor",
           "yardsAllowed": 350,
           "pointsAllowed": 27
         },
@@ -24892,6 +24930,7 @@
             50,
             62
           ],
+          "punter": "T.Taylor",
           "yardsAllowed": 328,
           "pointsAllowed": 19
         },
@@ -24914,6 +24953,7 @@
             35,
             48
           ],
+          "punter": "T.Taylor",
           "yardsAllowed": 366,
           "pointsAllowed": 20
         },
@@ -24946,6 +24986,7 @@
             41,
             54
           ],
+          "punter": "T.Taylor",
           "yardsAllowed": 452,
           "pointsAllowed": 30
         },
@@ -24970,6 +25011,7 @@
             58,
             54
           ],
+          "punter": "T.Taylor",
           "yardsAllowed": 405,
           "pointsAllowed": 23
         },
@@ -24996,6 +25038,7 @@
             46,
             43
           ],
+          "punter": "T.Taylor",
           "yardsAllowed": 452,
           "pointsAllowed": 38
         },
@@ -25023,6 +25066,7 @@
             51,
             43
           ],
+          "punter": "T.Taylor",
           "yardsAllowed": 329,
           "pointsAllowed": 30
         },
@@ -25047,6 +25091,7 @@
             42,
             30
           ],
+          "punter": "T.Taylor",
           "yardsAllowed": 475,
           "pointsAllowed": 34
         }
@@ -25078,6 +25123,7 @@
             51,
             70
           ],
+          "punter": "R.Rehkow",
           "yardsAllowed": 290,
           "pointsAllowed": 16
         },
@@ -25105,6 +25151,7 @@
             45,
             53
           ],
+          "punter": "R.Rehkow",
           "yardsAllowed": 286,
           "pointsAllowed": 20
         },
@@ -25124,6 +25171,7 @@
             31
           ],
           "punts": [],
+          "punter": "",
           "yardsAllowed": 356,
           "pointsAllowed": 38
         },
@@ -25150,6 +25198,7 @@
             63,
             50
           ],
+          "punter": "R.Rehkow",
           "yardsAllowed": 375,
           "pointsAllowed": 24
         },
@@ -25177,6 +25226,7 @@
             36,
             57
           ],
+          "punter": "R.Rehkow",
           "yardsAllowed": 520,
           "pointsAllowed": 41
         },
@@ -25206,6 +25256,7 @@
             57,
             33
           ],
+          "punter": "R.Rehkow",
           "yardsAllowed": 309,
           "pointsAllowed": 7
         },
@@ -25238,6 +25289,7 @@
             58,
             43
           ],
+          "punter": "R.Rehkow",
           "yardsAllowed": 336,
           "pointsAllowed": 14
         },
@@ -25258,6 +25310,7 @@
             27
           ],
           "punts": [],
+          "punter": "",
           "yardsAllowed": 397,
           "pointsAllowed": 37
         },
@@ -25287,6 +25340,7 @@
             65,
             58
           ],
+          "punter": "R.Rehkow",
           "yardsAllowed": 217,
           "pointsAllowed": 18
         },
@@ -25311,6 +25365,7 @@
             46,
             32
           ],
+          "punter": "R.Rehkow",
           "yardsAllowed": 389,
           "pointsAllowed": 35
         },
@@ -25342,6 +25397,7 @@
             67,
             64
           ],
+          "punter": "R.Rehkow",
           "yardsAllowed": 435,
           "pointsAllowed": 34
         },
@@ -25366,6 +25422,7 @@
             41,
             46
           ],
+          "punter": "R.Rehkow",
           "yardsAllowed": 520,
           "pointsAllowed": 38
         },
@@ -25394,6 +25451,7 @@
             61,
             13
           ],
+          "punter": "R.Rehkow",
           "yardsAllowed": 322,
           "pointsAllowed": 20
         },
@@ -25416,6 +25474,7 @@
           "punts": [
             36
           ],
+          "punter": "R.Rehkow",
           "yardsAllowed": 374,
           "pointsAllowed": 27
         },
@@ -25443,6 +25502,7 @@
             62,
             56
           ],
+          "punter": "R.Rehkow",
           "yardsAllowed": 273,
           "pointsAllowed": 6
         }
@@ -25482,6 +25542,7 @@
             46,
             62
           ],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 265,
           "pointsAllowed": 33
         },
@@ -25510,6 +25571,7 @@
             39,
             28
           ],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 323,
           "pointsAllowed": 13
         },
@@ -25540,6 +25602,7 @@
             47,
             41
           ],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 340,
           "pointsAllowed": 21
         },
@@ -25566,6 +25629,7 @@
             74,
             84
           ],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 268,
           "pointsAllowed": 20
         },
@@ -25599,6 +25663,7 @@
             50,
             43
           ],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 434,
           "pointsAllowed": 34
         },
@@ -25625,6 +25690,7 @@
             55,
             64
           ],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 372,
           "pointsAllowed": 20
         },
@@ -25656,6 +25722,7 @@
             55,
             51
           ],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 223,
           "pointsAllowed": 21
         },
@@ -25684,6 +25751,7 @@
             58,
             52
           ],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 387,
           "pointsAllowed": 24
         },
@@ -25715,6 +25783,7 @@
             60,
             43
           ],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 342,
           "pointsAllowed": 27
         },
@@ -25741,6 +25810,7 @@
             49,
             44
           ],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 473,
           "pointsAllowed": 35
         },
@@ -25766,6 +25836,7 @@
             41,
             39
           ],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 368,
           "pointsAllowed": 19
         },
@@ -25799,6 +25870,7 @@
             48,
             60
           ],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 400,
           "pointsAllowed": 29
         },
@@ -25826,6 +25898,7 @@
             55,
             35
           ],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 267,
           "pointsAllowed": 27
         },
@@ -25856,6 +25929,7 @@
             56,
             41
           ],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 311,
           "pointsAllowed": 21
         },
@@ -25880,6 +25954,7 @@
             43,
             47
           ],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 326,
           "pointsAllowed": 24
         }
@@ -25922,6 +25997,7 @@
             52,
             59
           ],
+          "punter": "B.Anger",
           "yardsAllowed": 230,
           "pointsAllowed": 17
         },
@@ -25948,6 +26024,7 @@
           "punts": [
             53
           ],
+          "punter": "B.Anger",
           "yardsAllowed": 432,
           "pointsAllowed": 44
         },
@@ -25976,6 +26053,7 @@
             54,
             37
           ],
+          "punter": "B.Anger",
           "yardsAllowed": 456,
           "pointsAllowed": 28
         },
@@ -26001,6 +26079,7 @@
             60,
             55
           ],
+          "punter": "B.Anger",
           "yardsAllowed": 303,
           "pointsAllowed": 15
         },
@@ -26024,6 +26103,7 @@
           "punts": [
             45
           ],
+          "punter": "B.Anger",
           "yardsAllowed": 226,
           "pointsAllowed": 17
         },
@@ -26051,6 +26131,7 @@
             38,
             55
           ],
+          "punter": "B.Anger",
           "yardsAllowed": 492,
           "pointsAllowed": 47
         },
@@ -26079,6 +26160,7 @@
             59,
             40
           ],
+          "punter": "B.Anger",
           "yardsAllowed": 469,
           "pointsAllowed": 30
         },
@@ -26106,6 +26188,7 @@
             53,
             45
           ],
+          "punter": "B.Anger",
           "yardsAllowed": 310,
           "pointsAllowed": 27
         },
@@ -26138,6 +26221,7 @@
             53,
             44
           ],
+          "punter": "B.Anger",
           "yardsAllowed": 348,
           "pointsAllowed": 34
         },
@@ -26164,6 +26248,7 @@
             40,
             42
           ],
+          "punter": "B.Anger",
           "yardsAllowed": 391,
           "pointsAllowed": 28
         },
@@ -26198,6 +26283,7 @@
             48,
             36
           ],
+          "punter": "B.Anger",
           "yardsAllowed": 412,
           "pointsAllowed": 26
         },
@@ -26227,6 +26313,7 @@
             47,
             45
           ],
+          "punter": "B.Anger",
           "yardsAllowed": 247,
           "pointsAllowed": 20
         },
@@ -26254,6 +26341,7 @@
             52,
             48
           ],
+          "punter": "B.Anger",
           "yardsAllowed": 433,
           "pointsAllowed": 27
         },
@@ -26281,6 +26369,7 @@
             56,
             57
           ],
+          "punter": "B.Anger",
           "yardsAllowed": 235,
           "pointsAllowed": 14
         },
@@ -26313,6 +26402,7 @@
             57,
             52
           ],
+          "punter": "B.Anger",
           "yardsAllowed": 410,
           "pointsAllowed": 24
         }
@@ -26357,6 +26447,7 @@
             65,
             49
           ],
+          "punter": "R.Dixon",
           "yardsAllowed": 304,
           "pointsAllowed": 26
         },
@@ -26387,6 +26478,7 @@
             58,
             54
           ],
+          "punter": "R.Dixon",
           "yardsAllowed": 251,
           "pointsAllowed": 13
         },
@@ -26414,6 +26506,7 @@
             49,
             47
           ],
+          "punter": "R.Dixon",
           "yardsAllowed": 223,
           "pointsAllowed": 7
         },
@@ -26447,6 +26540,7 @@
             37,
             46
           ],
+          "punter": "R.Dixon",
           "yardsAllowed": 248,
           "pointsAllowed": 9
         },
@@ -26478,6 +26572,7 @@
             45,
             34
           ],
+          "punter": "R.Dixon",
           "yardsAllowed": 330,
           "pointsAllowed": 18
         },
@@ -26505,6 +26600,7 @@
             45,
             43
           ],
+          "punter": "R.Dixon",
           "yardsAllowed": 350,
           "pointsAllowed": 23
         },
@@ -26534,6 +26630,7 @@
             50,
             46
           ],
+          "punter": "R.Dixon",
           "yardsAllowed": 271,
           "pointsAllowed": 10
         },
@@ -26559,6 +26656,7 @@
             60,
             53
           ],
+          "punter": "R.Dixon",
           "yardsAllowed": 284,
           "pointsAllowed": 14
         },
@@ -26583,6 +26681,7 @@
             50,
             46
           ],
+          "punter": "R.Dixon",
           "yardsAllowed": 396,
           "pointsAllowed": 41
         },
@@ -26607,6 +26706,7 @@
             54,
             39
           ],
+          "punter": "R.Dixon",
           "yardsAllowed": 300,
           "pointsAllowed": 16
         },
@@ -26631,6 +26731,7 @@
             37,
             47
           ],
+          "punter": "R.Dixon",
           "yardsAllowed": 226,
           "pointsAllowed": 6
         },
@@ -26662,6 +26763,7 @@
             43,
             54
           ],
+          "punter": "R.Dixon",
           "yardsAllowed": 369,
           "pointsAllowed": 19
         },
@@ -26694,6 +26796,7 @@
             37,
             41
           ],
+          "punter": "R.Dixon",
           "yardsAllowed": 552,
           "pointsAllowed": 32
         },
@@ -26727,6 +26830,7 @@
             42,
             49
           ],
+          "punter": "R.Dixon",
           "yardsAllowed": 310,
           "pointsAllowed": 13
         },
@@ -26755,6 +26859,7 @@
             45,
             41
           ],
+          "punter": "R.Dixon",
           "yardsAllowed": 380,
           "pointsAllowed": 34
         }
@@ -26790,6 +26895,7 @@
             45,
             54
           ],
+          "punter": "J.Fox",
           "yardsAllowed": 387,
           "pointsAllowed": 20
         },
@@ -26817,6 +26923,7 @@
             35,
             32
           ],
+          "punter": "J.Fox",
           "yardsAllowed": 216,
           "pointsAllowed": 20
         },
@@ -26843,6 +26950,7 @@
             36,
             46
           ],
+          "punter": "J.Fox",
           "yardsAllowed": 277,
           "pointsAllowed": 13
         },
@@ -26867,6 +26975,7 @@
             48,
             42
           ],
+          "punter": "J.Fox",
           "yardsAllowed": 516,
           "pointsAllowed": 27
         },
@@ -26893,6 +27002,7 @@
             33
           ],
           "punts": [],
+          "punter": "",
           "yardsAllowed": 251,
           "pointsAllowed": 9
         },
@@ -26920,6 +27030,7 @@
             38,
             63
           ],
+          "punter": "J.Fox",
           "yardsAllowed": 383,
           "pointsAllowed": 23
         },
@@ -26950,6 +27061,7 @@
             62,
             56
           ],
+          "punter": "J.Fox",
           "yardsAllowed": 416,
           "pointsAllowed": 14
         },
@@ -26974,6 +27086,7 @@
             44,
             41
           ],
+          "punter": "J.Fox",
           "yardsAllowed": 411,
           "pointsAllowed": 14
         },
@@ -27005,6 +27118,7 @@
             60,
             42
           ],
+          "punter": "J.Fox",
           "yardsAllowed": 248,
           "pointsAllowed": 23
         },
@@ -27025,6 +27139,7 @@
             54
           ],
           "punts": [],
+          "punter": "",
           "yardsAllowed": 170,
           "pointsAllowed": 6
         },
@@ -27051,6 +27166,7 @@
             60,
             40
           ],
+          "punter": "J.Fox",
           "yardsAllowed": 268,
           "pointsAllowed": 6
         },
@@ -27076,6 +27192,7 @@
             39,
             61
           ],
+          "punter": "J.Fox",
           "yardsAllowed": 301,
           "pointsAllowed": 20
         },
@@ -27101,6 +27218,7 @@
             42,
             50
           ],
+          "punter": "J.Fox",
           "yardsAllowed": 298,
           "pointsAllowed": 31
         },
@@ -27125,6 +27243,7 @@
             48,
             59
           ],
+          "punter": "J.Fox",
           "yardsAllowed": 559,
           "pointsAllowed": 48
         },
@@ -27149,6 +27268,7 @@
           "punts": [
             47
           ],
+          "punter": "J.Fox",
           "yardsAllowed": 382,
           "pointsAllowed": 17
         }
@@ -27183,6 +27303,7 @@
             33,
             56
           ],
+          "punter": "D.Whelan",
           "yardsAllowed": 410,
           "pointsAllowed": 34
         },
@@ -27210,6 +27331,7 @@
             59,
             38
           ],
+          "punter": "D.Whelan",
           "yardsAllowed": 338,
           "pointsAllowed": 10
         },
@@ -27239,6 +27361,7 @@
             63,
             52
           ],
+          "punter": "D.Whelan",
           "yardsAllowed": 237,
           "pointsAllowed": 14
         },
@@ -27267,6 +27390,7 @@
             46,
             60
           ],
+          "punter": "D.Whelan",
           "yardsAllowed": 374,
           "pointsAllowed": 31
         },
@@ -27295,6 +27419,7 @@
             41,
             28
           ],
+          "punter": "D.Whelan",
           "yardsAllowed": 370,
           "pointsAllowed": 13
         },
@@ -27320,6 +27445,7 @@
           "punts": [
             46
           ],
+          "punter": "D.Whelan",
           "yardsAllowed": 303,
           "pointsAllowed": 13
         },
@@ -27348,6 +27474,7 @@
             66,
             61
           ],
+          "punter": "D.Whelan",
           "yardsAllowed": 197,
           "pointsAllowed": 22
         },
@@ -27380,6 +27507,7 @@
             37,
             63
           ],
+          "punter": "D.Whelan",
           "yardsAllowed": 390,
           "pointsAllowed": 27
         },
@@ -27404,6 +27532,7 @@
             33,
             51
           ],
+          "punter": "D.Whelan",
           "yardsAllowed": 261,
           "pointsAllowed": 18
         },
@@ -27422,6 +27551,7 @@
           "punts": [
             47
           ],
+          "punter": "D.Whelan",
           "yardsAllowed": 391,
           "pointsAllowed": 19
         },
@@ -27449,6 +27579,7 @@
             59,
             51
           ],
+          "punter": "D.Whelan",
           "yardsAllowed": 241,
           "pointsAllowed": 10
         },
@@ -27477,6 +27608,7 @@
             35,
             50
           ],
+          "punter": "D.Whelan",
           "yardsAllowed": 375,
           "pointsAllowed": 17
         },
@@ -27502,6 +27634,7 @@
             41,
             41
           ],
+          "punter": "D.Whelan",
           "yardsAllowed": 391,
           "pointsAllowed": 34
         },
@@ -27532,6 +27665,7 @@
             42,
             44
           ],
+          "punter": "D.Whelan",
           "yardsAllowed": 208,
           "pointsAllowed": 13
         },
@@ -27556,6 +27690,7 @@
             60,
             44
           ],
+          "punter": "D.Whelan",
           "yardsAllowed": 196,
           "pointsAllowed": 0
         }
@@ -27593,6 +27728,7 @@
             59,
             55
           ],
+          "punter": "R.Stonehouse",
           "yardsAllowed": 148,
           "pointsAllowed": 18
         },
@@ -27620,6 +27756,7 @@
             59,
             55
           ],
+          "punter": "R.Stonehouse",
           "yardsAllowed": 265,
           "pointsAllowed": 24
         },
@@ -27645,6 +27782,7 @@
             52,
             57
           ],
+          "punter": "R.Stonehouse",
           "yardsAllowed": 378,
           "pointsAllowed": 24
         },
@@ -27679,6 +27817,7 @@
             64,
             35
           ],
+          "punter": "R.Stonehouse",
           "yardsAllowed": 184,
           "pointsAllowed": 12
         },
@@ -27707,6 +27846,7 @@
             58,
             75
           ],
+          "punter": "R.Stonehouse",
           "yardsAllowed": 269,
           "pointsAllowed": 20
         },
@@ -27736,6 +27876,7 @@
             53,
             48
           ],
+          "punter": "R.Stonehouse",
           "yardsAllowed": 389,
           "pointsAllowed": 34
         },
@@ -27765,6 +27906,7 @@
             62,
             47
           ],
+          "punter": "R.Stonehouse",
           "yardsAllowed": 225,
           "pointsAllowed": 52
         },
@@ -27794,6 +27936,7 @@
             44,
             58
           ],
+          "punter": "R.Stonehouse",
           "yardsAllowed": 295,
           "pointsAllowed": 17
         },
@@ -27819,6 +27962,7 @@
             58,
             48
           ],
+          "punter": "R.Stonehouse",
           "yardsAllowed": 309,
           "pointsAllowed": 27
         },
@@ -27848,6 +27992,7 @@
             62,
             46
           ],
+          "punter": "R.Stonehouse",
           "yardsAllowed": 318,
           "pointsAllowed": 23
         },
@@ -27881,6 +28026,7 @@
             37,
             61
           ],
+          "punter": "R.Stonehouse",
           "yardsAllowed": 260,
           "pointsAllowed": 21
         },
@@ -27909,6 +28055,7 @@
             58,
             52
           ],
+          "punter": "R.Stonehouse",
           "yardsAllowed": 463,
           "pointsAllowed": 42
         },
@@ -27934,6 +28081,7 @@
             52,
             45
           ],
+          "punter": "R.Stonehouse",
           "yardsAllowed": 291,
           "pointsAllowed": 10
         },
@@ -27957,6 +28105,7 @@
           "punts": [
             67
           ],
+          "punter": "R.Stonehouse",
           "yardsAllowed": 370,
           "pointsAllowed": 31
         },
@@ -27984,6 +28133,7 @@
             46,
             54
           ],
+          "punter": "R.Stonehouse",
           "yardsAllowed": 458,
           "pointsAllowed": 38
         }
@@ -28013,6 +28163,7 @@
             39,
             55
           ],
+          "punter": "R.Sanchez",
           "yardsAllowed": 417,
           "pointsAllowed": 29
         },
@@ -28038,6 +28189,7 @@
             53,
             59
           ],
+          "punter": "R.Sanchez",
           "yardsAllowed": 383,
           "pointsAllowed": 16
         },
@@ -28065,6 +28217,7 @@
             52,
             47
           ],
+          "punter": "R.Sanchez",
           "yardsAllowed": 395,
           "pointsAllowed": 16
         },
@@ -28093,6 +28246,7 @@
             42,
             58
           ],
+          "punter": "R.Sanchez",
           "yardsAllowed": 404,
           "pointsAllowed": 24
         },
@@ -28123,6 +28277,7 @@
             44,
             65
           ],
+          "punter": "R.Sanchez",
           "yardsAllowed": 497,
           "pointsAllowed": 37
         },
@@ -28151,6 +28306,7 @@
             54,
             57
           ],
+          "punter": "R.Sanchez",
           "yardsAllowed": 241,
           "pointsAllowed": 17
         },
@@ -28185,6 +28341,7 @@
             48,
             51
           ],
+          "punter": "R.Sanchez",
           "yardsAllowed": 337,
           "pointsAllowed": 10
         },
@@ -28217,6 +28374,7 @@
             33,
             47
           ],
+          "punter": "R.Sanchez",
           "yardsAllowed": 363,
           "pointsAllowed": 23
         },
@@ -28243,6 +28401,7 @@
             50,
             44
           ],
+          "punter": "R.Sanchez",
           "yardsAllowed": 415,
           "pointsAllowed": 21
         },
@@ -28269,6 +28428,7 @@
             55,
             53
           ],
+          "punter": "R.Sanchez",
           "yardsAllowed": 415,
           "pointsAllowed": 24
         },
@@ -28299,6 +28459,7 @@
             43,
             58
           ],
+          "punter": "R.Sanchez",
           "yardsAllowed": 253,
           "pointsAllowed": 27
         },
@@ -28328,6 +28489,7 @@
             52,
             57
           ],
+          "punter": "R.Sanchez",
           "yardsAllowed": 390,
           "pointsAllowed": 24
         },
@@ -28351,6 +28513,7 @@
             49,
             51
           ],
+          "punter": "R.Sanchez",
           "yardsAllowed": 422,
           "pointsAllowed": 24
         },
@@ -28384,6 +28547,7 @@
             51,
             54
           ],
+          "punter": "R.Sanchez",
           "yardsAllowed": 193,
           "pointsAllowed": 25
         },
@@ -28412,6 +28576,7 @@
             57,
             34
           ],
+          "punter": "R.Sanchez",
           "yardsAllowed": 307,
           "pointsAllowed": 30
         }
@@ -28445,6 +28610,7 @@
             40,
             48
           ],
+          "punter": "M.Araiza",
           "yardsAllowed": 452,
           "pointsAllowed": 20
         },
@@ -28469,6 +28635,7 @@
             49,
             63
           ],
+          "punter": "M.Araiza",
           "yardsAllowed": 320,
           "pointsAllowed": 25
         },
@@ -28496,6 +28663,7 @@
             52,
             51
           ],
+          "punter": "M.Araiza",
           "yardsAllowed": 311,
           "pointsAllowed": 17
         },
@@ -28523,6 +28691,7 @@
             48,
             48
           ],
+          "punter": "M.Araiza",
           "yardsAllowed": 224,
           "pointsAllowed": 10
         },
@@ -28549,6 +28718,7 @@
           "punts": [
             56
           ],
+          "punter": "M.Araiza",
           "yardsAllowed": 220,
           "pointsAllowed": 13
         },
@@ -28573,6 +28743,7 @@
             64,
             67
           ],
+          "punter": "M.Araiza",
           "yardsAllowed": 310,
           "pointsAllowed": 18
         },
@@ -28597,6 +28768,7 @@
             42,
             51
           ],
+          "punter": "M.Araiza",
           "yardsAllowed": 228,
           "pointsAllowed": 20
         },
@@ -28624,6 +28796,7 @@
             47,
             40
           ],
+          "punter": "M.Araiza",
           "yardsAllowed": 284,
           "pointsAllowed": 24
         },
@@ -28650,6 +28823,7 @@
             64,
             41
           ],
+          "punter": "M.Araiza",
           "yardsAllowed": 260,
           "pointsAllowed": 14
         },
@@ -28673,6 +28847,7 @@
             58,
             44
           ],
+          "punter": "M.Araiza",
           "yardsAllowed": 366,
           "pointsAllowed": 30
         },
@@ -28697,6 +28872,7 @@
             46,
             48
           ],
+          "punter": "M.Araiza",
           "yardsAllowed": 334,
           "pointsAllowed": 27
         },
@@ -28729,6 +28905,7 @@
             54,
             36
           ],
+          "punter": "M.Araiza",
           "yardsAllowed": 434,
           "pointsAllowed": 17
         },
@@ -28757,6 +28934,7 @@
             48,
             50
           ],
+          "punter": "M.Araiza",
           "yardsAllowed": 288,
           "pointsAllowed": 17
         },
@@ -28791,6 +28969,7 @@
             41,
             58
           ],
+          "punter": "M.Araiza",
           "yardsAllowed": 266,
           "pointsAllowed": 7
         },
@@ -28815,6 +28994,7 @@
             49,
             41
           ],
+          "punter": "M.Araiza",
           "yardsAllowed": 311,
           "pointsAllowed": 19
         },
@@ -28842,6 +29022,7 @@
             44,
             55
           ],
+          "punter": "M.Araiza",
           "yardsAllowed": 364,
           "pointsAllowed": 10
         }
@@ -28879,6 +29060,7 @@
             62,
             35
           ],
+          "punter": "A.Cole",
           "yardsAllowed": 316,
           "pointsAllowed": 22
         },
@@ -28909,6 +29091,7 @@
             40,
             34
           ],
+          "punter": "A.Cole",
           "yardsAllowed": 383,
           "pointsAllowed": 23
         },
@@ -28936,6 +29119,7 @@
             55,
             46
           ],
+          "punter": "A.Cole",
           "yardsAllowed": 437,
           "pointsAllowed": 36
         },
@@ -28964,6 +29148,7 @@
             45,
             67
           ],
+          "punter": "A.Cole",
           "yardsAllowed": 241,
           "pointsAllowed": 10
         },
@@ -28993,6 +29178,7 @@
             60,
             60
           ],
+          "punter": "A.Cole",
           "yardsAllowed": 289,
           "pointsAllowed": 28
         },
@@ -29017,6 +29203,7 @@
             61,
             66
           ],
+          "punter": "A.Cole",
           "yardsAllowed": 293,
           "pointsAllowed": 32
         },
@@ -29050,6 +29237,7 @@
             48,
             56
           ],
+          "punter": "A.Cole",
           "yardsAllowed": 259,
           "pointsAllowed": 14
         },
@@ -29074,6 +29262,7 @@
             68,
             60
           ],
+          "punter": "A.Cole",
           "yardsAllowed": 334,
           "pointsAllowed": 27
         },
@@ -29102,6 +29291,7 @@
             62,
             70
           ],
+          "punter": "A.Cole",
           "yardsAllowed": 373,
           "pointsAllowed": 41
         },
@@ -29123,6 +29313,7 @@
           "punts": [
             54
           ],
+          "punter": "A.Cole",
           "yardsAllowed": 353,
           "pointsAllowed": 34
         },
@@ -29154,6 +29345,7 @@
             42,
             57
           ],
+          "punter": "A.Cole",
           "yardsAllowed": 325,
           "pointsAllowed": 29
         },
@@ -29180,6 +29372,7 @@
             39,
             55
           ],
+          "punter": "A.Cole",
           "yardsAllowed": 329,
           "pointsAllowed": 19
         },
@@ -29208,6 +29401,7 @@
             44,
             50
           ],
+          "punter": "A.Cole",
           "yardsAllowed": 420,
           "pointsAllowed": 28
         },
@@ -29236,6 +29430,7 @@
             37,
             45
           ],
+          "punter": "A.Cole",
           "yardsAllowed": 261,
           "pointsAllowed": 13
         },
@@ -29268,6 +29463,7 @@
             55,
             41
           ],
+          "punter": "A.Cole",
           "yardsAllowed": 308,
           "pointsAllowed": 14
         }
@@ -29301,6 +29497,7 @@
             43,
             50
           ],
+          "punter": "E.Evans",
           "yardsAllowed": 363,
           "pointsAllowed": 26
         },
@@ -29327,6 +29524,7 @@
             46,
             57
           ],
+          "punter": "E.Evans",
           "yardsAllowed": 489,
           "pointsAllowed": 41
         },
@@ -29352,6 +29550,7 @@
             38,
             41
           ],
+          "punter": "E.Evans",
           "yardsAllowed": 425,
           "pointsAllowed": 24
         },
@@ -29378,6 +29577,7 @@
           "punts": [
             67
           ],
+          "punter": "E.Evans",
           "yardsAllowed": 264,
           "pointsAllowed": 24
         },
@@ -29400,6 +29600,7 @@
             34,
             44
           ],
+          "punter": "E.Evans",
           "yardsAllowed": 323,
           "pointsAllowed": 24
         },
@@ -29428,6 +29629,7 @@
             44,
             36
           ],
+          "punter": "E.Evans",
           "yardsAllowed": 317,
           "pointsAllowed": 15
         },
@@ -29450,6 +29652,7 @@
             45,
             41
           ],
+          "punter": "E.Evans",
           "yardsAllowed": 276,
           "pointsAllowed": 20
         },
@@ -29484,6 +29687,7 @@
             44,
             36
           ],
+          "punter": "T.Zentner",
           "yardsAllowed": 424,
           "pointsAllowed": 20
         },
@@ -29514,6 +29718,7 @@
             51,
             50
           ],
+          "punter": "E.Evans",
           "yardsAllowed": 238,
           "pointsAllowed": 23
         },
@@ -29538,6 +29743,7 @@
             50,
             30
           ],
+          "punter": "E.Evans",
           "yardsAllowed": 382,
           "pointsAllowed": 22
         },
@@ -29562,6 +29768,7 @@
             28,
             46
           ],
+          "punter": "E.Evans",
           "yardsAllowed": 481,
           "pointsAllowed": 37
         },
@@ -29584,6 +29791,7 @@
             35,
             36
           ],
+          "punter": "E.Evans",
           "yardsAllowed": 327,
           "pointsAllowed": 14
         },
@@ -29607,6 +29815,7 @@
             53,
             42
           ],
+          "punter": "E.Evans",
           "yardsAllowed": 445,
           "pointsAllowed": 42
         },
@@ -29639,6 +29848,7 @@
             49,
             46
           ],
+          "punter": "E.Evans",
           "yardsAllowed": 191,
           "pointsAllowed": 6
         },
@@ -29662,7 +29872,38 @@
             36,
             42
           ],
+          "punter": "E.Evans",
           "yardsAllowed": 321,
+          "pointsAllowed": 9
+        },
+        "17": {
+          "opp": "22",
+          "drives": [
+            "Punt",
+            "Punt",
+            "Punt",
+            "Punt",
+            "Touchdown",
+            "Field Goal",
+            "Punt",
+            "Field Goal",
+            "Punt",
+            "End of Game"
+          ],
+          "fieldGoals": [
+            53,
+            25
+          ],
+          "punts": [
+            45,
+            57,
+            53,
+            46,
+            51,
+            47
+          ],
+          "punter": "E.Evans",
+          "yardsAllowed": 396,
           "pointsAllowed": 9
         }
       }
@@ -29697,6 +29938,7 @@
             51,
             43
           ],
+          "punter": "J.Bailey",
           "yardsAllowed": 267,
           "pointsAllowed": 17
         },
@@ -29720,6 +29962,7 @@
           "punts": [
             48
           ],
+          "punter": "J.Bailey",
           "yardsAllowed": 247,
           "pointsAllowed": 25
         },
@@ -29750,6 +29993,7 @@
             49,
             53
           ],
+          "punter": "J.Bailey",
           "yardsAllowed": 370,
           "pointsAllowed": 24
         },
@@ -29781,6 +30025,7 @@
             53,
             51
           ],
+          "punter": "J.Bailey",
           "yardsAllowed": 244,
           "pointsAllowed": 29
         },
@@ -29808,6 +30053,7 @@
             42,
             46
           ],
+          "punter": "J.Bailey",
           "yardsAllowed": 299,
           "pointsAllowed": 10
         },
@@ -29838,6 +30084,7 @@
             56,
             59
           ],
+          "punter": "J.Bailey",
           "yardsAllowed": 284,
           "pointsAllowed": 16
         },
@@ -29861,6 +30108,7 @@
             56,
             36
           ],
+          "punter": "J.Bailey",
           "yardsAllowed": 389,
           "pointsAllowed": 26
         },
@@ -29884,6 +30132,7 @@
           "punts": [
             37
           ],
+          "punter": "J.Bailey",
           "yardsAllowed": 325,
           "pointsAllowed": 30
         },
@@ -29912,6 +30161,7 @@
             35,
             51
           ],
+          "punter": "J.Bailey",
           "yardsAllowed": 327,
           "pointsAllowed": 15
         },
@@ -29931,6 +30181,7 @@
             46
           ],
           "punts": [],
+          "punter": "",
           "yardsAllowed": 328,
           "pointsAllowed": 19
         },
@@ -29962,6 +30213,7 @@
             53,
             45
           ],
+          "punter": "J.Bailey",
           "yardsAllowed": 267,
           "pointsAllowed": 9
         },
@@ -29986,6 +30238,7 @@
             44,
             53
           ],
+          "punter": "J.Bailey",
           "yardsAllowed": 388,
           "pointsAllowed": 30
         },
@@ -30014,6 +30267,7 @@
             56,
             44
           ],
+          "punter": "J.Bailey",
           "yardsAllowed": 402,
           "pointsAllowed": 26
         },
@@ -30040,6 +30294,7 @@
             59,
             64
           ],
+          "punter": "J.Bailey",
           "yardsAllowed": 181,
           "pointsAllowed": 20
         },
@@ -30069,6 +30324,7 @@
             58,
             40
           ],
+          "punter": "J.Bailey",
           "yardsAllowed": 374,
           "pointsAllowed": 17
         }
@@ -30100,6 +30356,7 @@
             26,
             47
           ],
+          "punter": "R.Wright",
           "yardsAllowed": 240,
           "pointsAllowed": 6
         },
@@ -30128,6 +30385,7 @@
             43,
             56
           ],
+          "punter": "R.Wright",
           "yardsAllowed": 396,
           "pointsAllowed": 17
         },
@@ -30156,6 +30414,7 @@
             46,
             49
           ],
+          "punter": "R.Wright",
           "yardsAllowed": 296,
           "pointsAllowed": 7
         },
@@ -30188,6 +30447,7 @@
             47,
             40
           ],
+          "punter": "R.Wright",
           "yardsAllowed": 465,
           "pointsAllowed": 29
         },
@@ -30219,6 +30479,7 @@
             43,
             39
           ],
+          "punter": "R.Wright",
           "yardsAllowed": 254,
           "pointsAllowed": 17
         },
@@ -30247,6 +30508,7 @@
             34,
             51
           ],
+          "punter": "R.Wright",
           "yardsAllowed": 391,
           "pointsAllowed": 31
         },
@@ -30272,6 +30534,7 @@
             53,
             37
           ],
+          "punter": "R.Wright",
           "yardsAllowed": 386,
           "pointsAllowed": 28
         },
@@ -30295,6 +30558,7 @@
             44,
             39
           ],
+          "punter": "R.Wright",
           "yardsAllowed": 227,
           "pointsAllowed": 7
         },
@@ -30322,6 +30586,7 @@
             43,
             29
           ],
+          "punter": "R.Wright",
           "yardsAllowed": 143,
           "pointsAllowed": 7
         },
@@ -30351,6 +30616,7 @@
             29,
             40
           ],
+          "punter": "R.Wright",
           "yardsAllowed": 294,
           "pointsAllowed": 13
         },
@@ -30381,6 +30647,7 @@
             41,
             36
           ],
+          "punter": "R.Wright",
           "yardsAllowed": 398,
           "pointsAllowed": 27
         },
@@ -30407,6 +30674,7 @@
             59,
             51
           ],
+          "punter": "R.Wright",
           "yardsAllowed": 406,
           "pointsAllowed": 22
         },
@@ -30430,6 +30698,7 @@
             45,
             57
           ],
+          "punter": "R.Wright",
           "yardsAllowed": 496,
           "pointsAllowed": 21
         },
@@ -30456,6 +30725,7 @@
             55,
             49
           ],
+          "punter": "R.Wright",
           "yardsAllowed": 284,
           "pointsAllowed": 12
         },
@@ -30488,6 +30758,7 @@
             56,
             38
           ],
+          "punter": "R.Wright",
           "yardsAllowed": 361,
           "pointsAllowed": 24
         }
@@ -30524,6 +30795,7 @@
             47,
             49
           ],
+          "punter": "B.Baringer",
           "yardsAllowed": 224,
           "pointsAllowed": 10
         },
@@ -30554,6 +30826,7 @@
             54,
             45
           ],
+          "punter": "B.Baringer",
           "yardsAllowed": 358,
           "pointsAllowed": 23
         },
@@ -30580,6 +30853,7 @@
             36,
             51
           ],
+          "punter": "B.Baringer",
           "yardsAllowed": 400,
           "pointsAllowed": 24
         },
@@ -30609,6 +30883,7 @@
             40,
             56
           ],
+          "punter": "B.Baringer",
           "yardsAllowed": 431,
           "pointsAllowed": 24
         },
@@ -30638,6 +30913,7 @@
             49,
             43
           ],
+          "punter": "B.Baringer",
           "yardsAllowed": 372,
           "pointsAllowed": 15
         },
@@ -30668,6 +30944,7 @@
             58,
             56
           ],
+          "punter": "B.Baringer",
           "yardsAllowed": 368,
           "pointsAllowed": 41
         },
@@ -30692,6 +30969,7 @@
             57,
             46
           ],
+          "punter": "B.Baringer",
           "yardsAllowed": 364,
           "pointsAllowed": 32
         },
@@ -30719,6 +30997,7 @@
             49,
             55
           ],
+          "punter": "B.Baringer",
           "yardsAllowed": 336,
           "pointsAllowed": 22
         },
@@ -30746,6 +31025,7 @@
             45,
             60
           ],
+          "punter": "B.Baringer",
           "yardsAllowed": 400,
           "pointsAllowed": 20
         },
@@ -30778,6 +31058,7 @@
             54,
             50
           ],
+          "punter": "B.Baringer",
           "yardsAllowed": 142,
           "pointsAllowed": 3
         },
@@ -30803,6 +31084,7 @@
             32,
             42
           ],
+          "punter": "B.Baringer",
           "yardsAllowed": 402,
           "pointsAllowed": 28
         },
@@ -30830,6 +31112,7 @@
             39,
             41
           ],
+          "punter": "B.Baringer",
           "yardsAllowed": 373,
           "pointsAllowed": 34
         },
@@ -30854,6 +31137,7 @@
           "punts": [
             38
           ],
+          "punter": "B.Baringer",
           "yardsAllowed": 253,
           "pointsAllowed": 25
         },
@@ -30877,6 +31161,7 @@
             57,
             53
           ],
+          "punter": "B.Baringer",
           "yardsAllowed": 395,
           "pointsAllowed": 24
         },
@@ -30900,6 +31185,7 @@
             46,
             45
           ],
+          "punter": "B.Baringer",
           "yardsAllowed": 324,
           "pointsAllowed": 18
         }
@@ -30935,6 +31221,7 @@
             38,
             35
           ],
+          "punter": "M.Hayball",
           "yardsAllowed": 193,
           "pointsAllowed": 10
         },
@@ -30958,6 +31245,7 @@
           "punts": [
             49
           ],
+          "punter": "M.Hayball",
           "yardsAllowed": 353,
           "pointsAllowed": 19
         },
@@ -30985,6 +31273,7 @@
             33,
             33
           ],
+          "punter": "M.Hayball",
           "yardsAllowed": 460,
           "pointsAllowed": 15
         },
@@ -31010,6 +31299,7 @@
             40,
             48
           ],
+          "punter": "M.Hayball",
           "yardsAllowed": 315,
           "pointsAllowed": 20
         },
@@ -31034,6 +31324,7 @@
             49,
             48
           ],
+          "punter": "M.Hayball",
           "yardsAllowed": 460,
           "pointsAllowed": 26
         },
@@ -31067,6 +31358,7 @@
             41,
             58
           ],
+          "punter": "M.Hayball",
           "yardsAllowed": 594,
           "pointsAllowed": 45
         },
@@ -31097,6 +31389,7 @@
             43,
             45
           ],
+          "punter": "M.Hayball",
           "yardsAllowed": 389,
           "pointsAllowed": 27
         },
@@ -31132,6 +31425,7 @@
             45,
             46
           ],
+          "punter": "M.Hayball",
           "yardsAllowed": 378,
           "pointsAllowed": 26
         },
@@ -31161,6 +31455,7 @@
             43,
             50
           ],
+          "punter": "M.Hayball",
           "yardsAllowed": 246,
           "pointsAllowed": 23
         },
@@ -31190,6 +31485,7 @@
             51,
             42
           ],
+          "punter": "M.Hayball",
           "yardsAllowed": 468,
           "pointsAllowed": 17
         },
@@ -31214,6 +31510,7 @@
             34,
             43
           ],
+          "punter": "M.Hayball",
           "yardsAllowed": 443,
           "pointsAllowed": 14
         },
@@ -31238,6 +31535,7 @@
             49,
             33
           ],
+          "punter": "M.Hayball",
           "yardsAllowed": 322,
           "pointsAllowed": 21
         },
@@ -31269,6 +31567,7 @@
             51,
             43
           ],
+          "punter": "M.Hayball",
           "yardsAllowed": 325,
           "pointsAllowed": 11
         },
@@ -31295,6 +31594,7 @@
             47,
             52
           ],
+          "punter": "M.Hayball",
           "yardsAllowed": 326,
           "pointsAllowed": 20
         },
@@ -31318,6 +31618,7 @@
             48,
             37
           ],
+          "punter": "M.Hayball",
           "yardsAllowed": 404,
           "pointsAllowed": 34
         }
@@ -31355,6 +31656,7 @@
             50,
             48
           ],
+          "punter": "J.Gillan",
           "yardsAllowed": 312,
           "pointsAllowed": 22
         },
@@ -31374,6 +31676,7 @@
             27,
             60
           ],
+          "punter": "J.Gillan",
           "yardsAllowed": 425,
           "pointsAllowed": 21
         },
@@ -31405,6 +31708,7 @@
             67,
             40
           ],
+          "punter": "J.Gillan",
           "yardsAllowed": 217,
           "pointsAllowed": 15
         },
@@ -31431,6 +31735,7 @@
           "punts": [
             44
           ],
+          "punter": "J.Gillan",
           "yardsAllowed": 293,
           "pointsAllowed": 20
         },
@@ -31461,6 +31766,7 @@
             59,
             45
           ],
+          "punter": "J.Gillan",
           "yardsAllowed": 333,
           "pointsAllowed": 14
         },
@@ -31486,6 +31792,7 @@
             43,
             42
           ],
+          "punter": "M.Haack",
           "yardsAllowed": 304,
           "pointsAllowed": 17
         },
@@ -31522,6 +31829,7 @@
             56,
             55
           ],
+          "punter": "M.Haack",
           "yardsAllowed": 339,
           "pointsAllowed": 28
         },
@@ -31551,6 +31859,7 @@
             27,
             66
           ],
+          "punter": "M.Haack",
           "yardsAllowed": 426,
           "pointsAllowed": 26
         },
@@ -31573,6 +31882,7 @@
             32,
             60
           ],
+          "punter": "M.Haack",
           "yardsAllowed": 358,
           "pointsAllowed": 27
         },
@@ -31603,6 +31913,7 @@
             42,
             41
           ],
+          "punter": "J.Gillan",
           "yardsAllowed": 306,
           "pointsAllowed": 20
         },
@@ -31627,6 +31938,7 @@
             29,
             43
           ],
+          "punter": "J.Gillan",
           "yardsAllowed": 450,
           "pointsAllowed": 30
         },
@@ -31657,6 +31969,7 @@
             46,
             41
           ],
+          "punter": "J.Gillan",
           "yardsAllowed": 317,
           "pointsAllowed": 21
         },
@@ -31690,6 +32003,7 @@
             44,
             34
           ],
+          "punter": "J.Gillan",
           "yardsAllowed": 292,
           "pointsAllowed": 14
         },
@@ -31712,6 +32026,7 @@
             37,
             30
           ],
+          "punter": "J.Gillan",
           "yardsAllowed": 445,
           "pointsAllowed": 35
         },
@@ -31738,6 +32053,7 @@
             51,
             21
           ],
+          "punter": "J.Gillan",
           "yardsAllowed": 329,
           "pointsAllowed": 22
         }
@@ -31768,6 +32084,7 @@
             45,
             60
           ],
+          "punter": "T.Morstead",
           "yardsAllowed": 401,
           "pointsAllowed": 32
         },
@@ -31797,6 +32114,7 @@
             53,
             48
           ],
+          "punter": "T.Morstead",
           "yardsAllowed": 300,
           "pointsAllowed": 17
         },
@@ -31820,6 +32138,7 @@
             37,
             42
           ],
+          "punter": "T.Morstead",
           "yardsAllowed": 139,
           "pointsAllowed": 3
         },
@@ -31854,6 +32173,7 @@
             51,
             32
           ],
+          "punter": "T.Morstead",
           "yardsAllowed": 186,
           "pointsAllowed": 10
         },
@@ -31885,6 +32205,7 @@
             39,
             48
           ],
+          "punter": "T.Morstead",
           "yardsAllowed": 253,
           "pointsAllowed": 17
         },
@@ -31909,6 +32230,7 @@
             45,
             51
           ],
+          "punter": "T.Morstead",
           "yardsAllowed": 359,
           "pointsAllowed": 23
         },
@@ -31935,6 +32257,7 @@
             47,
             37
           ],
+          "punter": "T.Morstead",
           "yardsAllowed": 409,
           "pointsAllowed": 37
         },
@@ -31961,6 +32284,7 @@
             52,
             51
           ],
+          "punter": "T.Morstead",
           "yardsAllowed": 248,
           "pointsAllowed": 25
         },
@@ -31986,6 +32310,7 @@
             38,
             54
           ],
+          "punter": "T.Morstead",
           "yardsAllowed": 322,
           "pointsAllowed": 13
         },
@@ -32007,6 +32332,7 @@
             47,
             46
           ],
+          "punter": "T.Morstead",
           "yardsAllowed": 406,
           "pointsAllowed": 31
         },
@@ -32037,6 +32363,7 @@
             52,
             49
           ],
+          "punter": "T.Morstead",
           "yardsAllowed": 332,
           "pointsAllowed": 28
         },
@@ -32063,6 +32390,7 @@
             42,
             34
           ],
+          "punter": "T.Morstead",
           "yardsAllowed": 259,
           "pointsAllowed": 20
         },
@@ -32090,6 +32418,7 @@
             44,
             52
           ],
+          "punter": "T.Morstead",
           "yardsAllowed": 375,
           "pointsAllowed": 32
         },
@@ -32115,6 +32444,7 @@
             54,
             40
           ],
+          "punter": "T.Morstead",
           "yardsAllowed": 421,
           "pointsAllowed": 25
         },
@@ -32133,6 +32463,7 @@
             21
           ],
           "punts": [],
+          "punter": "",
           "yardsAllowed": 242,
           "pointsAllowed": 19
         }
@@ -32166,6 +32497,7 @@
             54,
             47
           ],
+          "punter": "B.Mann",
           "yardsAllowed": 414,
           "pointsAllowed": 29
         },
@@ -32190,6 +32522,7 @@
             40,
             53
           ],
+          "punter": "B.Mann",
           "yardsAllowed": 385,
           "pointsAllowed": 22
         },
@@ -32211,6 +32544,7 @@
           "punts": [
             43
           ],
+          "punter": "B.Mann",
           "yardsAllowed": 219,
           "pointsAllowed": 12
         },
@@ -32236,6 +32570,7 @@
             47,
             62
           ],
+          "punter": "B.Mann",
           "yardsAllowed": 445,
           "pointsAllowed": 33
         },
@@ -32262,6 +32597,7 @@
             44,
             47
           ],
+          "punter": "B.Mann",
           "yardsAllowed": 244,
           "pointsAllowed": 16
         },
@@ -32293,6 +32629,7 @@
             43,
             54
           ],
+          "punter": "B.Mann",
           "yardsAllowed": 119,
           "pointsAllowed": 3
         },
@@ -32316,6 +32653,7 @@
           "punts": [
             52
           ],
+          "punter": "B.Mann",
           "yardsAllowed": 280,
           "pointsAllowed": 17
         },
@@ -32344,6 +32682,7 @@
             54,
             50
           ],
+          "punter": "B.Mann",
           "yardsAllowed": 215,
           "pointsAllowed": 17
         },
@@ -32375,6 +32714,7 @@
             51,
             47
           ],
+          "punter": "B.Mann",
           "yardsAllowed": 146,
           "pointsAllowed": 6
         },
@@ -32402,6 +32742,7 @@
             51,
             44
           ],
+          "punter": "B.Mann",
           "yardsAllowed": 264,
           "pointsAllowed": 18
         },
@@ -32427,6 +32768,7 @@
           "punts": [
             54
           ],
+          "punter": "B.Mann",
           "yardsAllowed": 290,
           "pointsAllowed": 20
         },
@@ -32457,6 +32799,7 @@
             51,
             48
           ],
+          "punter": "B.Mann",
           "yardsAllowed": 372,
           "pointsAllowed": 19
         },
@@ -32480,6 +32823,7 @@
             44,
             38
           ],
+          "punter": "B.Mann",
           "yardsAllowed": 302,
           "pointsAllowed": 16
         },
@@ -32503,6 +32847,7 @@
           "punts": [
             29
           ],
+          "punter": "B.Mann",
           "yardsAllowed": 163,
           "pointsAllowed": 13
         },
@@ -32536,6 +32881,7 @@
             36,
             43
           ],
+          "punter": "B.Mann",
           "yardsAllowed": 368,
           "pointsAllowed": 36
         }
@@ -32568,6 +32914,7 @@
             50,
             28
           ],
+          "punter": "B.Gillikin",
           "yardsAllowed": 352,
           "pointsAllowed": 34
         },
@@ -32591,6 +32938,7 @@
           "punts": [
             60
           ],
+          "punter": "B.Gillikin",
           "yardsAllowed": 245,
           "pointsAllowed": 10
         },
@@ -32620,6 +32968,7 @@
             47,
             53
           ],
+          "punter": "B.Gillikin",
           "yardsAllowed": 373,
           "pointsAllowed": 20
         },
@@ -32643,6 +32992,7 @@
             52,
             62
           ],
+          "punter": "B.Gillikin",
           "yardsAllowed": 449,
           "pointsAllowed": 42
         },
@@ -32669,6 +33019,7 @@
             46,
             60
           ],
+          "punter": "B.Gillikin",
           "yardsAllowed": 384,
           "pointsAllowed": 23
         },
@@ -32696,6 +33047,7 @@
             55,
             51
           ],
+          "punter": "B.Gillikin",
           "yardsAllowed": 437,
           "pointsAllowed": 34
         },
@@ -32721,6 +33073,7 @@
             44,
             44
           ],
+          "punter": "B.Gillikin",
           "yardsAllowed": 395,
           "pointsAllowed": 15
         },
@@ -32746,6 +33099,7 @@
             37,
             59
           ],
+          "punter": "B.Gillikin",
           "yardsAllowed": 377,
           "pointsAllowed": 27
         },
@@ -32774,6 +33128,7 @@
             45,
             36
           ],
+          "punter": "B.Gillikin",
           "yardsAllowed": 241,
           "pointsAllowed": 9
         },
@@ -32794,6 +33149,7 @@
           "punts": [
             40
           ],
+          "punter": "B.Gillikin",
           "yardsAllowed": 207,
           "pointsAllowed": 6
         },
@@ -32823,6 +33179,7 @@
             49,
             54
           ],
+          "punter": "B.Gillikin",
           "yardsAllowed": 285,
           "pointsAllowed": 10
         },
@@ -32850,6 +33207,7 @@
           "punts": [
             42
           ],
+          "punter": "B.Gillikin",
           "yardsAllowed": 273,
           "pointsAllowed": 23
         },
@@ -32878,6 +33236,7 @@
             44,
             37
           ],
+          "punter": "B.Gillikin,C.Ryland",
           "yardsAllowed": 409,
           "pointsAllowed": 30
         },
@@ -32903,6 +33262,7 @@
             54,
             43
           ],
+          "punter": "M.Palardy",
           "yardsAllowed": 311,
           "pointsAllowed": 17
         },
@@ -32931,8 +33291,36 @@
             37,
             58
           ],
+          "punter": "M.Palardy",
           "yardsAllowed": 392,
           "pointsAllowed": 36
+        },
+        "17": {
+          "opp": "14",
+          "drives": [
+            "Punt",
+            "Punt",
+            "Downs",
+            "Punt",
+            "Punt",
+            "End of Half",
+            "Touchdown",
+            "Field Goal",
+            "Interception",
+            "Interception"
+          ],
+          "fieldGoals": [
+            28
+          ],
+          "punts": [
+            50,
+            47,
+            39,
+            28
+          ],
+          "punter": "M.Palardy",
+          "yardsAllowed": 257,
+          "pointsAllowed": 13
         }
       }
     },
@@ -32968,6 +33356,7 @@
             58,
             51
           ],
+          "punter": "C.Johnston",
           "yardsAllowed": 226,
           "pointsAllowed": 10
         },
@@ -33000,6 +33389,7 @@
             56,
             54
           ],
+          "punter": "C.Waitman",
           "yardsAllowed": 295,
           "pointsAllowed": 6
         },
@@ -33026,6 +33416,7 @@
             48,
             56
           ],
+          "punter": "C.Waitman",
           "yardsAllowed": 166,
           "pointsAllowed": 10
         },
@@ -33052,6 +33443,7 @@
             40,
             36
           ],
+          "punter": "C.Waitman",
           "yardsAllowed": 358,
           "pointsAllowed": 27
         },
@@ -33079,6 +33471,7 @@
             47,
             47
           ],
+          "punter": "C.Waitman",
           "yardsAllowed": 445,
           "pointsAllowed": 20
         },
@@ -33108,6 +33501,7 @@
             47,
             43
           ],
+          "punter": "C.Waitman",
           "yardsAllowed": 275,
           "pointsAllowed": 13
         },
@@ -33137,6 +33531,7 @@
             51,
             35
           ],
+          "punter": "C.Waitman",
           "yardsAllowed": 323,
           "pointsAllowed": 15
         },
@@ -33166,6 +33561,7 @@
             55,
             36
           ],
+          "punter": "C.Waitman",
           "yardsAllowed": 394,
           "pointsAllowed": 18
         },
@@ -33195,6 +33591,7 @@
             47,
             34
           ],
+          "punter": "C.Waitman",
           "yardsAllowed": 242,
           "pointsAllowed": 27
         },
@@ -33229,6 +33626,7 @@
             71,
             52
           ],
+          "punter": "C.Waitman",
           "yardsAllowed": 329,
           "pointsAllowed": 16
         },
@@ -33254,6 +33652,7 @@
           "punts": [
             15
           ],
+          "punter": "C.Waitman",
           "yardsAllowed": 304,
           "pointsAllowed": 24
         },
@@ -33280,6 +33679,7 @@
           "punts": [
             38
           ],
+          "punter": "C.Waitman",
           "yardsAllowed": 375,
           "pointsAllowed": 32
         },
@@ -33313,6 +33713,7 @@
             55,
             58
           ],
+          "punter": "C.Waitman",
           "yardsAllowed": 300,
           "pointsAllowed": 14
         },
@@ -33340,6 +33741,7 @@
             43,
             40
           ],
+          "punter": "C.Waitman",
           "yardsAllowed": 401,
           "pointsAllowed": 27
         },
@@ -33368,6 +33770,7 @@
             42,
             49
           ],
+          "punter": "C.Waitman",
           "yardsAllowed": 418,
           "pointsAllowed": 28
         },
@@ -33395,6 +33798,7 @@
             32,
             49
           ],
+          "punter": "C.Waitman",
           "yardsAllowed": 389,
           "pointsAllowed": 29
         }
@@ -33436,6 +33840,7 @@
             49,
             41
           ],
+          "punter": "J.Scott",
           "yardsAllowed": 296,
           "pointsAllowed": 10
         },
@@ -33464,6 +33869,7 @@
             44,
             47
           ],
+          "punter": "J.Scott",
           "yardsAllowed": 159,
           "pointsAllowed": 3
         },
@@ -33493,6 +33899,7 @@
             41,
             59
           ],
+          "punter": "J.Scott",
           "yardsAllowed": 346,
           "pointsAllowed": 20
         },
@@ -33521,6 +33928,7 @@
             56,
             55
           ],
+          "punter": "J.Scott",
           "yardsAllowed": 329,
           "pointsAllowed": 17
         },
@@ -33550,6 +33958,7 @@
             43,
             39
           ],
+          "punter": "J.Scott",
           "yardsAllowed": 316,
           "pointsAllowed": 16
         },
@@ -33576,6 +33985,7 @@
             36,
             39
           ],
+          "punter": "J.Scott",
           "yardsAllowed": 326,
           "pointsAllowed": 17
         },
@@ -33608,6 +34018,7 @@
             54,
             67
           ],
+          "punter": "J.Scott",
           "yardsAllowed": 366,
           "pointsAllowed": 6
         },
@@ -33639,6 +34050,7 @@
             46,
             55
           ],
+          "punter": "J.Scott",
           "yardsAllowed": 292,
           "pointsAllowed": 10
         },
@@ -33664,6 +34076,7 @@
             29,
             40
           ],
+          "punter": "J.Scott",
           "yardsAllowed": 289,
           "pointsAllowed": 17
         },
@@ -33696,6 +34109,7 @@
             55,
             43
           ],
+          "punter": "J.Scott",
           "yardsAllowed": 452,
           "pointsAllowed": 27
         },
@@ -33723,6 +34137,7 @@
             38,
             39
           ],
+          "punter": "J.Scott",
           "yardsAllowed": 389,
           "pointsAllowed": 30
         },
@@ -33750,6 +34165,7 @@
             46,
             52
           ],
+          "punter": "J.Scott",
           "yardsAllowed": 350,
           "pointsAllowed": 13
         },
@@ -33776,6 +34192,7 @@
             46,
             44
           ],
+          "punter": "J.Scott",
           "yardsAllowed": 298,
           "pointsAllowed": 19
         },
@@ -33802,6 +34219,7 @@
             57,
             42
           ],
+          "punter": "J.Scott",
           "yardsAllowed": 506,
           "pointsAllowed": 40
         },
@@ -33829,6 +34247,7 @@
             41,
             46
           ],
+          "punter": "J.Scott",
           "yardsAllowed": 355,
           "pointsAllowed": 27
         }
@@ -33864,6 +34283,7 @@
           "punts": [
             58
           ],
+          "punter": "M.Wishnowsky",
           "yardsAllowed": 266,
           "pointsAllowed": 19
         },
@@ -33888,6 +34308,7 @@
             58,
             41
           ],
+          "punter": "M.Wishnowsky",
           "yardsAllowed": 403,
           "pointsAllowed": 23
         },
@@ -33911,6 +34332,7 @@
             47,
             43
           ],
+          "punter": "M.Wishnowsky",
           "yardsAllowed": 296,
           "pointsAllowed": 27
         },
@@ -33939,6 +34361,7 @@
             44,
             47
           ],
+          "punter": "M.Wishnowsky",
           "yardsAllowed": 216,
           "pointsAllowed": 13
         },
@@ -33963,6 +34386,7 @@
           "punts": [
             41
           ],
+          "punter": "M.Wishnowsky",
           "yardsAllowed": 358,
           "pointsAllowed": 24
         },
@@ -33993,6 +34417,7 @@
             49,
             37
           ],
+          "punter": "M.Wishnowsky",
           "yardsAllowed": 358,
           "pointsAllowed": 24
         },
@@ -34021,6 +34446,7 @@
             47,
             45
           ],
+          "punter": "M.Wishnowsky",
           "yardsAllowed": 329,
           "pointsAllowed": 28
         },
@@ -34051,6 +34477,7 @@
             44,
             39
           ],
+          "punter": "M.Wishnowsky",
           "yardsAllowed": 292,
           "pointsAllowed": 24
         },
@@ -34076,6 +34503,7 @@
           "punts": [
             35
           ],
+          "punter": "M.Wishnowsky",
           "yardsAllowed": 215,
           "pointsAllowed": 20
         },
@@ -34100,6 +34528,7 @@
             38,
             42
           ],
+          "punter": "P.O'Donnell",
           "yardsAllowed": 289,
           "pointsAllowed": 20
         },
@@ -34127,6 +34556,7 @@
             45,
             56
           ],
+          "punter": "P.O'Donnell",
           "yardsAllowed": 325,
           "pointsAllowed": 38
         },
@@ -34152,6 +34582,7 @@
             46,
             40
           ],
+          "punter": "P.O'Donnell",
           "yardsAllowed": 372,
           "pointsAllowed": 35
         },
@@ -34176,6 +34607,7 @@
             45,
             47
           ],
+          "punter": "P.O'Donnell",
           "yardsAllowed": 162,
           "pointsAllowed": 13
         },
@@ -34207,6 +34639,7 @@
             42,
             46
           ],
+          "punter": "P.O'Donnell",
           "yardsAllowed": 302,
           "pointsAllowed": 12
         },
@@ -34233,6 +34666,7 @@
             45,
             39
           ],
+          "punter": "P.O'Donnell",
           "yardsAllowed": 381,
           "pointsAllowed": 29
         }
@@ -34273,6 +34707,7 @@
             50,
             43
           ],
+          "punter": "M.Dickson",
           "yardsAllowed": 231,
           "pointsAllowed": 16
         },
@@ -34304,6 +34739,7 @@
             40,
             61
           ],
+          "punter": "M.Dickson",
           "yardsAllowed": 310,
           "pointsAllowed": 20
         },
@@ -34332,6 +34768,7 @@
             47,
             49
           ],
+          "punter": "M.Dickson",
           "yardsAllowed": 205,
           "pointsAllowed": 3
         },
@@ -34356,6 +34793,7 @@
             36,
             54
           ],
+          "punter": "M.Dickson",
           "yardsAllowed": 389,
           "pointsAllowed": 42
         },
@@ -34384,6 +34822,7 @@
             40,
             48
           ],
+          "punter": "M.Dickson",
           "yardsAllowed": 420,
           "pointsAllowed": 29
         },
@@ -34412,6 +34851,7 @@
             57,
             58
           ],
+          "punter": "M.Dickson",
           "yardsAllowed": 483,
           "pointsAllowed": 36
         },
@@ -34438,6 +34878,7 @@
             41,
             42
           ],
+          "punter": "M.Dickson",
           "yardsAllowed": 369,
           "pointsAllowed": 14
         },
@@ -34463,6 +34904,7 @@
             58,
             58
           ],
+          "punter": "M.Dickson",
           "yardsAllowed": 445,
           "pointsAllowed": 31
         },
@@ -34495,6 +34937,7 @@
             45,
             49
           ],
+          "punter": "M.Dickson",
           "yardsAllowed": 366,
           "pointsAllowed": 20
         },
@@ -34518,6 +34961,7 @@
             53,
             44
           ],
+          "punter": "M.Dickson",
           "yardsAllowed": 277,
           "pointsAllowed": 17
         },
@@ -34545,6 +34989,7 @@
             36,
             38
           ],
+          "punter": "M.Dickson",
           "yardsAllowed": 298,
           "pointsAllowed": 6
         },
@@ -34572,6 +35017,7 @@
             52,
             43
           ],
+          "punter": "M.Dickson",
           "yardsAllowed": 258,
           "pointsAllowed": 21
         },
@@ -34602,6 +35048,7 @@
             58,
             48
           ],
+          "punter": "M.Dickson",
           "yardsAllowed": 356,
           "pointsAllowed": 18
         },
@@ -34633,6 +35080,7 @@
             47,
             53
           ],
+          "punter": "M.Dickson",
           "yardsAllowed": 369,
           "pointsAllowed": 30
         },
@@ -34662,6 +35110,7 @@
             51,
             59
           ],
+          "punter": "M.Dickson",
           "yardsAllowed": 298,
           "pointsAllowed": 27
         }
@@ -34693,6 +35142,7 @@
           "punts": [
             38
           ],
+          "punter": "J.Camarda",
           "yardsAllowed": 299,
           "pointsAllowed": 20
         },
@@ -34722,6 +35172,7 @@
             47,
             43
           ],
+          "punter": "J.Camarda",
           "yardsAllowed": 463,
           "pointsAllowed": 16
         },
@@ -34747,6 +35198,7 @@
             42,
             47
           ],
+          "punter": "J.Camarda",
           "yardsAllowed": 352,
           "pointsAllowed": 26
         },
@@ -34775,6 +35227,7 @@
             32,
             39
           ],
+          "punter": "T.Gill",
           "yardsAllowed": 227,
           "pointsAllowed": 14
         },
@@ -34801,6 +35254,7 @@
             45,
             42
           ],
+          "punter": "T.Gill",
           "yardsAllowed": 550,
           "pointsAllowed": 36
         },
@@ -34829,6 +35283,7 @@
             41,
             49
           ],
+          "punter": "J.Camarda",
           "yardsAllowed": 303,
           "pointsAllowed": 27
         },
@@ -34855,6 +35310,7 @@
             41,
             52
           ],
+          "punter": "T.Gill",
           "yardsAllowed": 508,
           "pointsAllowed": 41
         },
@@ -34879,6 +35335,7 @@
           "punts": [
             42
           ],
+          "punter": "T.Gill",
           "yardsAllowed": 394,
           "pointsAllowed": 31
         },
@@ -34905,6 +35362,7 @@
             40,
             31
           ],
+          "punter": "T.Gill",
           "yardsAllowed": 384,
           "pointsAllowed": 30
         },
@@ -34934,6 +35392,7 @@
             50,
             44
           ],
+          "punter": "T.Gill",
           "yardsAllowed": 413,
           "pointsAllowed": 23
         },
@@ -34957,6 +35416,7 @@
             47,
             33
           ],
+          "punter": "T.Gill",
           "yardsAllowed": 245,
           "pointsAllowed": 7
         },
@@ -34992,6 +35452,7 @@
             47,
             53
           ],
+          "punter": "T.Gill",
           "yardsAllowed": 367,
           "pointsAllowed": 23
         },
@@ -35015,6 +35476,7 @@
             39,
             40
           ],
+          "punter": "J.Browning",
           "yardsAllowed": 286,
           "pointsAllowed": 13
         },
@@ -35040,6 +35502,7 @@
             43
           ],
           "punts": [],
+          "punter": "",
           "yardsAllowed": 206,
           "pointsAllowed": 17
         },
@@ -35067,6 +35530,7 @@
             39,
             54
           ],
+          "punter": "J.Browning",
           "yardsAllowed": 317,
           "pointsAllowed": 26
         }
@@ -35096,6 +35560,7 @@
             41,
             44
           ],
+          "punter": "T.Way",
           "yardsAllowed": 392,
           "pointsAllowed": 37
         },
@@ -35121,6 +35586,7 @@
             30
           ],
           "punts": [],
+          "punter": "",
           "yardsAllowed": 304,
           "pointsAllowed": 18
         },
@@ -35140,6 +35606,7 @@
             42
           ],
           "punts": [],
+          "punter": "",
           "yardsAllowed": 436,
           "pointsAllowed": 33
         },
@@ -35163,6 +35630,7 @@
           "punts": [
             51
           ],
+          "punter": "T.Way",
           "yardsAllowed": 296,
           "pointsAllowed": 14
         },
@@ -35192,6 +35660,7 @@
             53,
             47
           ],
+          "punter": "T.Way",
           "yardsAllowed": 212,
           "pointsAllowed": 13
         },
@@ -35218,6 +35687,7 @@
             34,
             38
           ],
+          "punter": "T.Way",
           "yardsAllowed": 484,
           "pointsAllowed": 30
         },
@@ -35243,6 +35713,7 @@
           "punts": [
             40
           ],
+          "punter": "T.Way",
           "yardsAllowed": 180,
           "pointsAllowed": 7
         },
@@ -35275,6 +35746,7 @@
             34,
             57
           ],
+          "punter": "T.Way",
           "yardsAllowed": 307,
           "pointsAllowed": 15
         },
@@ -35298,6 +35770,7 @@
             56,
             53
           ],
+          "punter": "T.Way",
           "yardsAllowed": 326,
           "pointsAllowed": 22
         },
@@ -35329,6 +35802,7 @@
             49,
             60
           ],
+          "punter": "T.Way",
           "yardsAllowed": 312,
           "pointsAllowed": 28
         },
@@ -35357,6 +35831,7 @@
             36,
             51
           ],
+          "punter": "T.Way",
           "yardsAllowed": 434,
           "pointsAllowed": 26
         },
@@ -35392,6 +35867,7 @@
             39,
             39
           ],
+          "punter": "T.Way",
           "yardsAllowed": 332,
           "pointsAllowed": 34
         },
@@ -35415,6 +35891,7 @@
           "punts": [
             52
           ],
+          "punter": "T.Way",
           "yardsAllowed": 245,
           "pointsAllowed": 19
         },
@@ -35440,6 +35917,7 @@
             50,
             37
           ],
+          "punter": "T.Way",
           "yardsAllowed": 245,
           "pointsAllowed": 19
         },
@@ -35465,6 +35943,7 @@
             49,
             43
           ],
+          "punter": "T.Way",
           "yardsAllowed": 338,
           "pointsAllowed": 33
         }
@@ -35502,6 +35981,7 @@
             11,
             34
           ],
+          "punter": "J.Hekker",
           "yardsAllowed": 379,
           "pointsAllowed": 47
         },
@@ -35532,6 +36012,7 @@
             45,
             50
           ],
+          "punter": "J.Hekker",
           "yardsAllowed": 349,
           "pointsAllowed": 26
         },
@@ -35562,6 +36043,7 @@
             43,
             51
           ],
+          "punter": "J.Hekker",
           "yardsAllowed": 331,
           "pointsAllowed": 22
         },
@@ -35587,6 +36069,7 @@
             47,
             55
           ],
+          "punter": "J.Hekker",
           "yardsAllowed": 373,
           "pointsAllowed": 34
         },
@@ -35615,6 +36098,7 @@
             47,
             47
           ],
+          "punter": "J.Hekker",
           "yardsAllowed": 424,
           "pointsAllowed": 36
         },
@@ -35641,6 +36125,7 @@
             58,
             15
           ],
+          "punter": "J.Hekker",
           "yardsAllowed": 423,
           "pointsAllowed": 38
         },
@@ -35666,6 +36151,7 @@
             43,
             47
           ],
+          "punter": "J.Hekker",
           "yardsAllowed": 421,
           "pointsAllowed": 34
         },
@@ -35692,6 +36178,7 @@
             50,
             50
           ],
+          "punter": "J.Hekker",
           "yardsAllowed": 400,
           "pointsAllowed": 28
         },
@@ -35720,6 +36207,7 @@
             48,
             52
           ],
+          "punter": "J.Hekker",
           "yardsAllowed": 427,
           "pointsAllowed": 22
         },
@@ -35753,6 +36241,7 @@
             54,
             47
           ],
+          "punter": "J.Hekker",
           "yardsAllowed": 342,
           "pointsAllowed": 17
         },
@@ -35778,6 +36267,7 @@
             55,
             48
           ],
+          "punter": "J.Hekker",
           "yardsAllowed": 391,
           "pointsAllowed": 30
         },
@@ -35810,6 +36300,7 @@
             49,
             45
           ],
+          "punter": "J.Hekker",
           "yardsAllowed": 445,
           "pointsAllowed": 26
         },
@@ -35833,6 +36324,7 @@
             52,
             45
           ],
+          "punter": "J.Hekker",
           "yardsAllowed": 292,
           "pointsAllowed": 22
         },
@@ -35857,6 +36349,7 @@
             44,
             53
           ],
+          "punter": "J.Hekker",
           "yardsAllowed": 410,
           "pointsAllowed": 30
         },
@@ -35886,6 +36379,7 @@
             43,
             57
           ],
+          "punter": "J.Hekker",
           "yardsAllowed": 382,
           "pointsAllowed": 30
         }
@@ -35922,6 +36416,7 @@
             44,
             45
           ],
+          "punter": "L.Cooke",
           "yardsAllowed": 400,
           "pointsAllowed": 20
         },
@@ -35948,6 +36443,7 @@
             55,
             46
           ],
+          "punter": "L.Cooke",
           "yardsAllowed": 297,
           "pointsAllowed": 16
         },
@@ -35972,6 +36468,7 @@
             59,
             50
           ],
+          "punter": "L.Cooke",
           "yardsAllowed": 388,
           "pointsAllowed": 47
         },
@@ -36002,6 +36499,7 @@
             45,
             49
           ],
+          "punter": "L.Cooke",
           "yardsAllowed": 435,
           "pointsAllowed": 24
         },
@@ -36030,6 +36528,7 @@
             44,
             58
           ],
+          "punter": "L.Cooke",
           "yardsAllowed": 447,
           "pointsAllowed": 34
         },
@@ -36056,6 +36555,7 @@
             48,
             56
           ],
+          "punter": "L.Cooke",
           "yardsAllowed": 373,
           "pointsAllowed": 35
         },
@@ -36078,6 +36578,7 @@
             38,
             32
           ],
+          "punter": "L.Cooke",
           "yardsAllowed": 295,
           "pointsAllowed": 16
         },
@@ -36108,6 +36609,7 @@
             62,
             60
           ],
+          "punter": "L.Cooke",
           "yardsAllowed": 422,
           "pointsAllowed": 30
         },
@@ -36134,6 +36636,7 @@
             56,
             40
           ],
+          "punter": "L.Cooke",
           "yardsAllowed": 447,
           "pointsAllowed": 28
         },
@@ -36159,6 +36662,7 @@
             55,
             60
           ],
+          "punter": "L.Cooke",
           "yardsAllowed": 402,
           "pointsAllowed": 12
         },
@@ -36186,6 +36690,7 @@
             52,
             61
           ],
+          "punter": "L.Cooke",
           "yardsAllowed": 645,
           "pointsAllowed": 52
         },
@@ -36213,6 +36718,7 @@
             48,
             39
           ],
+          "punter": "L.Cooke",
           "yardsAllowed": 326,
           "pointsAllowed": 23
         },
@@ -36238,6 +36744,7 @@
             53,
             52
           ],
+          "punter": "L.Cooke",
           "yardsAllowed": 272,
           "pointsAllowed": 6
         },
@@ -36265,6 +36772,7 @@
             57,
             33
           ],
+          "punter": "L.Cooke",
           "yardsAllowed": 400,
           "pointsAllowed": 32
         },
@@ -36294,6 +36802,7 @@
             20,
             44
           ],
+          "punter": "L.Cooke",
           "yardsAllowed": 314,
           "pointsAllowed": 19
         }
@@ -36326,6 +36835,7 @@
             40,
             35
           ],
+          "punter": "J.Stout",
           "yardsAllowed": 353,
           "pointsAllowed": 27
         },
@@ -36356,6 +36866,7 @@
             45,
             24
           ],
+          "punter": "J.Stout",
           "yardsAllowed": 260,
           "pointsAllowed": 26
         },
@@ -36381,6 +36892,7 @@
             51,
             31
           ],
+          "punter": "J.Stout",
           "yardsAllowed": 412,
           "pointsAllowed": 25
         },
@@ -36406,6 +36918,7 @@
             43,
             34
           ],
+          "punter": "J.Stout",
           "yardsAllowed": 236,
           "pointsAllowed": 10
         },
@@ -36435,6 +36948,7 @@
             65,
             67
           ],
+          "punter": "J.Stout",
           "yardsAllowed": 442,
           "pointsAllowed": 36
         },
@@ -36459,6 +36973,7 @@
           "punts": [
             50
           ],
+          "punter": "J.Stout",
           "yardsAllowed": 305,
           "pointsAllowed": 23
         },
@@ -36484,6 +36999,7 @@
             57,
             30
           ],
+          "punter": "J.Stout",
           "yardsAllowed": 481,
           "pointsAllowed": 31
         },
@@ -36511,6 +37027,7 @@
             30,
             64
           ],
+          "punter": "J.Stout",
           "yardsAllowed": 401,
           "pointsAllowed": 29
         },
@@ -36536,6 +37053,7 @@
             40,
             65
           ],
+          "punter": "J.Stout",
           "yardsAllowed": 319,
           "pointsAllowed": 10
         },
@@ -36563,6 +37081,7 @@
             35,
             48
           ],
+          "punter": "J.Stout",
           "yardsAllowed": 470,
           "pointsAllowed": 34
         },
@@ -36592,6 +37111,7 @@
             49,
             61
           ],
+          "punter": "J.Stout",
           "yardsAllowed": 303,
           "pointsAllowed": 18
         },
@@ -36616,6 +37136,7 @@
             62,
             44
           ],
+          "punter": "J.Stout",
           "yardsAllowed": 285,
           "pointsAllowed": 23
         },
@@ -36644,6 +37165,7 @@
             43,
             42
           ],
+          "punter": "J.Stout",
           "yardsAllowed": 252,
           "pointsAllowed": 24
         },
@@ -36665,6 +37187,7 @@
             42,
             50
           ],
+          "punter": "J.Stout",
           "yardsAllowed": 236,
           "pointsAllowed": 14
         },
@@ -36691,6 +37214,7 @@
             14,
             50
           ],
+          "punter": "J.Stout",
           "yardsAllowed": 315,
           "pointsAllowed": 17
         },
@@ -36717,6 +37241,7 @@
             41,
             50
           ],
+          "punter": "J.Stout",
           "yardsAllowed": 211,
           "pointsAllowed": 0
         }
@@ -36749,6 +37274,7 @@
           "punts": [
             56
           ],
+          "punter": "T.Townsend",
           "yardsAllowed": 303,
           "pointsAllowed": 27
         },
@@ -36783,6 +37309,7 @@
             37,
             44
           ],
+          "punter": "T.Townsend",
           "yardsAllowed": 205,
           "pointsAllowed": 13
         },
@@ -36808,6 +37335,7 @@
             40,
             45
           ],
+          "punter": "T.Townsend",
           "yardsAllowed": 274,
           "pointsAllowed": 34
         },
@@ -36836,6 +37364,7 @@
             49,
             50
           ],
+          "punter": "T.Townsend",
           "yardsAllowed": 313,
           "pointsAllowed": 20
         },
@@ -36868,6 +37397,7 @@
             41,
             46
           ],
+          "punter": "T.Townsend",
           "yardsAllowed": 276,
           "pointsAllowed": 20
         },
@@ -36899,6 +37429,7 @@
             35,
             39
           ],
+          "punter": "T.Townsend",
           "yardsAllowed": 291,
           "pointsAllowed": 21
         },
@@ -36931,6 +37462,7 @@
             38,
             57
           ],
+          "punter": "T.Townsend",
           "yardsAllowed": 277,
           "pointsAllowed": 24
         },
@@ -36963,6 +37495,7 @@
             45,
             41
           ],
+          "punter": "T.Townsend",
           "yardsAllowed": 303,
           "pointsAllowed": 20
         },
@@ -36989,6 +37522,7 @@
             52,
             56
           ],
+          "punter": "T.Townsend",
           "yardsAllowed": 293,
           "pointsAllowed": 21
         },
@@ -37021,6 +37555,7 @@
             54,
             49
           ],
+          "punter": "T.Townsend",
           "yardsAllowed": 345,
           "pointsAllowed": 26
         },
@@ -37048,6 +37583,7 @@
             59,
             48
           ],
+          "punter": "T.Townsend",
           "yardsAllowed": 388,
           "pointsAllowed": 10
         },
@@ -37079,6 +37615,7 @@
             42,
             52
           ],
+          "punter": "T.Townsend",
           "yardsAllowed": 369,
           "pointsAllowed": 30
         },
@@ -37108,6 +37645,7 @@
             63,
             54
           ],
+          "punter": "T.Townsend",
           "yardsAllowed": 373,
           "pointsAllowed": 20
         },
@@ -37137,6 +37675,7 @@
             34,
             51
           ],
+          "punter": "T.Townsend",
           "yardsAllowed": 224,
           "pointsAllowed": 12
         },
@@ -37161,6 +37700,7 @@
             48,
             57
           ],
+          "punter": "T.Townsend",
           "yardsAllowed": 375,
           "pointsAllowed": 27
         },
@@ -37188,6 +37728,7 @@
             41,
             61
           ],
+          "punter": "T.Townsend",
           "yardsAllowed": 432,
           "pointsAllowed": 31
         }
@@ -37196,189 +37737,189 @@
   },
   "fantasyCalc": {
     "players": {
-      "8439": 16.94,
-      "12483": 32.69,
-      "14880": 33.49,
-      "14881": 29.25,
-      "15795": 15.75,
-      "15818": 12.51,
-      "15835": 8.09,
-      "15847": 40.78,
-      "15864": 28.17,
-      "16460": 8.26,
-      "16731": 1.07,
-      "16737": 42.83,
-      "16757": 9.94,
-      "16800": 24.09,
-      "2576336": 1.52,
-      "2576414": 1.33,
-      "2577327": 3.05,
-      "2969939": 14.37,
-      "2972515": 1.42,
-      "2976499": 14.44,
-      "2976592": 0.33,
-      "2977187": 43.56,
-      "3040151": 41.55,
-      "3042519": 22.54,
-      "3043078": 58.89,
+      "8439": 16.81,
+      "12483": 32.63,
+      "14880": 33.59,
+      "14881": 29.18,
+      "15795": 15.62,
+      "15818": 12.33,
+      "15835": 7.85,
+      "15847": 40.7,
+      "15864": 28.12,
+      "16460": 8.15,
+      "16731": 1.06,
+      "16737": 42.73,
+      "16757": 9.83,
+      "16800": 23.95,
+      "2576336": 1.51,
+      "2576414": 1.31,
+      "2577327": 2.99,
+      "2969939": 14.26,
+      "2972515": 1.4,
+      "2976499": 14.31,
+      "2976592": 0.32,
+      "2977187": 43.48,
+      "3040151": 41.47,
+      "3042519": 22.41,
+      "3043078": 58.95,
       "3043116": 0.35,
-      "3045147": 25.38,
-      "3046439": 4.34,
-      "3046779": 45.11,
-      "3051738": 2.77,
-      "3051926": 5.91,
-      "3052587": 71.08,
-      "3054212": 16.17,
-      "3054850": 57.02,
-      "3059915": 7.45,
+      "3045147": 25.3,
+      "3046439": 4.22,
+      "3046779": 45,
+      "3051738": 2.72,
+      "3051926": 5.78,
+      "3052587": 70.75,
+      "3054212": 16.05,
+      "3054850": 57.37,
+      "3059915": 7.32,
       "3116164": 0.96,
-      "3116365": 17.21,
-      "3116385": 52.59,
-      "3116406": 43.07,
-      "3117256": 2.12,
-      "3121422": 39.74,
-      "3123076": 18.43,
-      "3126486": 18.95,
-      "3127292": 3.97,
-      "3128429": 31.04,
-      "3139477": 72.89,
-      "3728262": 0.53,
-      "3886598": 14.56,
-      "3912547": 31.33,
-      "3915416": 31.91,
-      "3915511": 91.26,
-      "3916148": 22.65,
-      "3916387": 105.99,
-      "3916433": 18.73,
-      "3917315": 65.31,
-      "3918298": 104.25,
-      "3925357": 17.89,
-      "3929630": 90.73,
-      "3929785": 3.62,
-      "3932905": 1.31,
-      "4035687": 14.06,
-      "4036133": 19.97,
-      "4036378": 62.49,
-      "4038441": 0.4,
-      "4038815": 9.41,
-      "4038941": 56.57,
-      "4040655": 14.34,
-      "4040715": 99.61,
+      "3116365": 17.07,
+      "3116385": 52.6,
+      "3116406": 42.98,
+      "3117256": 2.09,
+      "3121422": 39.65,
+      "3123076": 18.29,
+      "3126486": 18.66,
+      "3127292": 3.94,
+      "3128429": 30.96,
+      "3139477": 72.68,
+      "3728262": 0.52,
+      "3886598": 14.43,
+      "3912547": 31.46,
+      "3915416": 31.86,
+      "3915511": 91.1,
+      "3916148": 22.38,
+      "3916387": 105.71,
+      "3916433": 18.58,
+      "3917315": 65.16,
+      "3918298": 104.13,
+      "3925357": 17.82,
+      "3929630": 90.48,
+      "3929785": 3.55,
+      "3932905": 1.3,
+      "4035687": 14.12,
+      "4036133": 19.83,
+      "4036378": 62.4,
+      "4038441": 0.39,
+      "4038815": 9.3,
+      "4038941": 56.54,
+      "4040655": 14.22,
+      "4040715": 99.57,
       "4040761": 0.71,
-      "4047365": 48.19,
-      "4047646": 60.36,
-      "4047650": 29.66,
-      "4048244": 2.87,
-      "4239993": 40.25,
-      "4239996": 10.14,
-      "4240021": 0.96,
-      "4240472": 0.21,
-      "4241389": 57.1,
-      "4241416": 20.9,
-      "4241457": 17.95,
-      "4241463": 17.18,
-      "4241464": 1.51,
-      "4241474": 21.17,
-      "4241478": 18.93,
-      "4241479": 36.81,
-      "4241985": 19.56,
-      "4242335": 32.02,
-      "4242355": 4.47,
-      "4243331": 12.75,
+      "4047365": 48.16,
+      "4047646": 60.37,
+      "4047650": 29.58,
+      "4048244": 2.82,
+      "4239993": 40.21,
+      "4239996": 10.01,
+      "4240021": 0.94,
+      "4240472": 0.2,
+      "4241389": 57.01,
+      "4241416": 20.74,
+      "4241457": 17.89,
+      "4241463": 17.06,
+      "4241464": 1.49,
+      "4241474": 21.05,
+      "4241478": 18.78,
+      "4241479": 36.73,
+      "4241985": 19.25,
+      "4242335": 31.92,
+      "4242355": 4.38,
+      "4243331": 12.65,
       "4243389": 0.02,
-      "4248528": 5,
-      "4258173": 67.28,
-      "4258595": 2.28,
-      "4259545": 17.34,
-      "4260394": 1.32,
-      "4262921": 73.69,
-      "4360078": 0.9,
-      "4360248": 10.36,
-      "4360516": 15.49,
-      "4360939": 1.14,
-      "4361050": 0.47,
-      "4361307": 43.63,
-      "4361370": 6.2,
-      "4361411": 2.72,
-      "4361418": 6.73,
-      "4361432": 2.92,
-      "4361529": 21.78,
-      "4361579": 7.77,
-      "4361741": 54.03,
-      "4362238": 36.25,
-      "4362249": 20.93,
-      "4362628": 86.73,
-      "4369863": 7.09,
-      "4372016": 18.5,
+      "4248528": 4.91,
+      "4258173": 67.08,
+      "4258595": 2.24,
+      "4259545": 17.24,
+      "4260394": 1.31,
+      "4262921": 73.55,
+      "4360078": 0.89,
+      "4360248": 10.15,
+      "4360516": 15.51,
+      "4360939": 1.13,
+      "4361050": 0.46,
+      "4361307": 43.48,
+      "4361370": 6.1,
+      "4361411": 2.67,
+      "4361418": 6.64,
+      "4361432": 2.86,
+      "4361529": 21.62,
+      "4361579": 7.65,
+      "4361741": 53.98,
+      "4362238": 36.2,
+      "4362249": 20.81,
+      "4362628": 87.84,
+      "4369863": 6.97,
+      "4372016": 18.38,
       "4372019": 2.53,
       "4372096": 0.21,
-      "4372414": 2.2,
-      "4372561": 7.56,
-      "4373626": 1.77,
-      "4373678": 10.94,
-      "4374302": 70.09,
-      "4379399": 35.78,
-      "4385690": 5.93,
-      "4426338": 52.45,
-      "4426348": 78.79,
-      "4426354": 30.49,
-      "4426385": 7.92,
-      "4426386": 0.92,
-      "4426388": 11.59,
-      "4426502": 43.18,
+      "4372414": 2.16,
+      "4372561": 7.45,
+      "4373626": 1.74,
+      "4373678": 10.87,
+      "4374302": 69.89,
+      "4379399": 35.73,
+      "4385690": 5.85,
+      "4426338": 52.46,
+      "4426348": 78.49,
+      "4426354": 30.44,
+      "4426385": 7.81,
+      "4426386": 0.91,
+      "4426388": 11.51,
+      "4426502": 43.14,
       "4426515": 53.71,
-      "4427095": 2.11,
-      "4427366": 39.52,
-      "4428209": 2.63,
-      "4428557": 2.05,
+      "4427095": 2.08,
+      "4427366": 39.46,
+      "4428209": 2.58,
+      "4428557": 2.02,
       "4428718": 0.18,
       "4428850": 0.32,
-      "4429013": 3.17,
-      "4429025": 5.76,
-      "4429084": 35.97,
-      "4429096": 0.98,
-      "4429160": 55.15,
-      "4429205": 9.86,
-      "4429275": 2.08,
-      "4429501": 0.78,
-      "4429615": 23.99,
-      "4429795": 55.19,
-      "4430027": 13.8,
-      "4430034": 4.11,
+      "4429013": 3.11,
+      "4429025": 5.66,
+      "4429084": 35.91,
+      "4429096": 0.97,
+      "4429160": 55.17,
+      "4429205": 9.74,
+      "4429275": 2.04,
+      "4429501": 0.77,
+      "4429615": 23.85,
+      "4429795": 55.29,
+      "4430027": 13.66,
+      "4430034": 4.04,
       "4430539": 0.05,
-      "4430737": 44.51,
-      "4430807": 68.81,
-      "4430834": 0.61,
-      "4430878": 26.59,
+      "4430737": 44.42,
+      "4430807": 68.65,
+      "4430834": 0.67,
+      "4430878": 26.16,
       "4430968": 0.4,
-      "4431299": 14.36,
-      "4431452": 28.84,
-      "4431611": 36.94,
-      "4432577": 61.76,
-      "4432665": 50.9,
-      "4432708": 27.17,
-      "4432773": 22.35,
-      "4567048": 31,
-      "4569173": 16.64,
-      "4569587": 3.21,
-      "4569618": 34.73,
-      "4569682": 1.12,
-      "4569987": 7.08,
-      "4572680": 7.91,
-      "4595348": 42.27,
-      "4596448": 27.11,
+      "4431299": 14.23,
+      "4431452": 29.18,
+      "4431611": 36.87,
+      "4432577": 61.62,
+      "4432665": 50.94,
+      "4432708": 27.16,
+      "4432773": 22.22,
+      "4567048": 30.93,
+      "4569173": 16.53,
+      "4569587": 3.15,
+      "4569618": 34.67,
+      "4569682": 1.11,
+      "4569987": 6.98,
+      "4572680": 7.79,
+      "4595348": 42.25,
+      "4596448": 27.09,
       "4599739": 0.2,
-      "4612826": 24.37,
-      "4635008": 4.24,
-      "4683062": 6.17,
-      "4685247": 4.05,
-      "4685720": 4.43,
-      "4688813": 10.04,
-      "4697815": 13.82,
-      "4722893": 0.25,
-      "Devaughn Vele": 1.18
+      "4612826": 24.27,
+      "4635008": 4.16,
+      "4683062": 6.08,
+      "4685247": 3.98,
+      "4685720": 4.36,
+      "4688813": 9.92,
+      "4697815": 13.59,
+      "4722893": 0.24,
+      "Devaughn Vele": 1.17
     },
-    "timestamp": 1735440285283,
+    "timestamp": 1735452867568,
     "history": [
       {
         "values": {
@@ -38714,6 +39255,36 @@
           "10": 414.04
         },
         "date": 1735437142085
+      },
+      {
+        "values": {
+          "1": 582.49,
+          "2": 304.06,
+          "3": 392.47,
+          "4": 440.38,
+          "5": 348.09,
+          "6": 142.23,
+          "7": 525.95,
+          "8": 384.63,
+          "9": 432.43,
+          "10": 410.84
+        },
+        "date": 1735452324274
+      },
+      {
+        "values": {
+          "1": 584.37,
+          "2": 304.44,
+          "3": 394.16,
+          "4": 441.93,
+          "5": 349.66,
+          "6": 142.31,
+          "7": 527.24,
+          "8": 385.65,
+          "9": 433.3,
+          "10": 412.7
+        },
+        "date": 1735452733592
       }
     ]
   }
