@@ -15,7 +15,7 @@ export default function Chart(props: { data: ChartDataType }) {
       <CartesianGrid />
       <XAxis type="number" dataKey="x" />
       <YAxis type="number" dataKey="y" />
-      <Scatter data={props.data} />{" "}
+      <Scatter data={props.data} />
       <Tooltip
         content={(data) =>
           !data.active ? null : (
