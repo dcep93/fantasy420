@@ -26,6 +26,7 @@ type NFLTeamType = {
           pointsAllowed: number;
           yardsAllowed: number;
           drives: (string | null)[];
+          punts?: number[];
         }
       | undefined;
   };
@@ -520,6 +521,7 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                                 allPlys: {
                                   teamName: string;
                                   headline: string;
+                                  plays: { description: string }[];
                                 }[];
                               };
                             };
@@ -540,6 +542,22 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                                     .reverse()[0]
                                 ),
                               })),
+                          punts: resp.page.content.gamepackage.allPlys
+                            .flatMap((p) => ({
+                              teamId: p.teamName,
+                              yards: (p.plays || []).map(
+                                (p) =>
+                                  parseInt(
+                                    p.description.match(
+                                      /punts (\d+) yard/
+                                    )?.[1]!
+                                  )
+                                // sometimes, like in
+                                // https://www.espn.com/nfl/playbyplay/_/gameId/401547427 @ (7:51 - 3rd)
+                                // espn mislabels a drive with the punt going to the other team
+                              )[0],
+                            }))
+                            .filter((p) => !isNaN(p.yards)),
                           drives: Object.fromEntries(
                             Object.values(
                               resp.page.content.gamepackage.pbp.tms
@@ -655,6 +673,9 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                                   fieldGoals: gamesByGameId[gameId].fieldGoals
                                     .filter((play) => play.teamId === team.id)
                                     .map((play) => play.yards),
+                                  punts: gamesByGameId[gameId].punts
+                                    .filter((play) => play.teamId === team.id)
+                                    .map((play) => play.yards),
                                   ...defensesByScoringPeriod[scoringPeriod][
                                     team.id
                                   ],
@@ -726,7 +747,7 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
         JSON.stringify(values) !==
         JSON.stringify(
           wrapped.fantasyCalc.history[wrapped.fantasyCalc.history.length - 1]
-            .values
+            ?.values
         )
       )
         wrapped.fantasyCalc.history.push({
