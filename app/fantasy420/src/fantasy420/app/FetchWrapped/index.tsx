@@ -529,16 +529,14 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                           fieldGoals:
                             resp.page.content.gamepackage.scrSumm.scrPlayGrps
                               .flatMap((periodPlays) => periodPlays)
+                              .filter((play) => play.text !== "Team Safety")
                               .filter((play) => play.typeAbbreviation === "FG")
                               .map((play) => ({
                                 teamId: play.teamId,
                                 yards: parseInt(
-                                  play.text
-                                    .replace("yard field goal", "Yd Field Goal")
-                                    .replace("Yrd Field Goal", "Yd Field Goal")
-                                    .split(" Yd Field Goal")[0]
-                                    .split(" ")
-                                    .reverse()[0]
+                                  play.text.match(
+                                    /(\d+) (yard|yrd|yd) field goal/i
+                                  )![1]
                                 ),
                               })),
                           punts: resp.page.content.gamepackage.allPlys
