@@ -3,9 +3,9 @@ import { FFTeamType, NFLPlayerType, WrappedType } from "../FetchWrapped";
 import allWrapped from "./allWrapped";
 import ByeSchedule from "./ByeSchedule";
 import DraftValueStateful from "./DraftValue";
+import PlaysStateful from "./Plays";
 import PointsAgainstStateful from "./PointsAgainst";
 import PointsForStateful from "./PointsFor";
-import PuntsStateful from "./Punts";
 import ScatterplotStateful from "./Scatterplot";
 import SimpsStateful from "./Simps";
 
@@ -59,7 +59,7 @@ export default function Wrapped() {
       WhatIf,
       ConsistentlyAverage,
       Simps,
-      Punts,
+      Plays,
       json,
     }).map(([k, v]) => {
       try {
@@ -2416,8 +2416,8 @@ function ConsistentlyAverage() {
   );
 }
 
-function Punts() {
-  return <PuntsStateful />;
+function Plays() {
+  return <PlaysStateful />;
 }
 
 function PlayerPlot() {

@@ -27,7 +27,7 @@ type NFLTeamType = {
           yardsAllowed: number;
           drives: (string | null)[];
           punts: number[];
-          punter?: string;
+          punter: string;
         }
       | undefined;
   };

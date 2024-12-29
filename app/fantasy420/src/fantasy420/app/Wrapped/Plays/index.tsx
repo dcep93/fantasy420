@@ -6,10 +6,10 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { clog, groupByF } from "..";
+import { groupByF } from "..";
 import allWrapped from "../allWrapped";
 
-export default function Punts() {
+export default function Plays() {
   const data = Object.values(allWrapped).flatMap((wrapped) =>
     Object.values(
       groupByF(
@@ -25,7 +25,7 @@ export default function Punts() {
               ...p,
               label: `${p.key} / ${p.team.name} vs ${
                 wrapped.nflTeams[p.obj.opp].name
-              } / ${p.obj.punts}`,
+              }`,
             }))
         ),
         (obj) => obj.key
@@ -34,31 +34,29 @@ export default function Punts() {
   );
   return (
     <div>
-      {clog(
-        Object.entries({
-          distance: data.flatMap((d) =>
-            d
-              .map((p) => ({
-                x: p.key,
-                y: p.obj.punts.reduce((a, b) => a + b, 0) / p.obj.punts.length,
-                label: p.label,
-              }))
-              .map((d) => ({ ...d, label: `${d.y.toFixed(2)} / ${d.label}` }))
-          ),
-          count: data.flatMap((d) =>
-            d
-              .map((p) => ({
-                x: p.key,
-                y: p.obj.punts.length,
-                label: p.label,
-              }))
-              .map((d) => ({ ...d, label: `${d.y} / ${d.label}` }))
-          ),
-        })
-      ).map(([key, d]) => (
+      {Object.entries({
+        avg_punt_distance: data.flatMap((d) =>
+          d
+            .map((p) => ({
+              x: p.key,
+              y: p.obj.punts.reduce((a, b) => a + b, 0) / p.obj.punts.length,
+              label: `${p.label} / ${p.obj.punter} / ${p.obj.punts}`,
+            }))
+            .map((d) => ({ ...d, label: `${d.y.toFixed(2)} / ${d.label}` }))
+        ),
+        // count: Object.values(groupByF(data, (data) => `${data}`)).flatMap((d) =>
+        //   d
+        //     .map((p) => ({
+        //       x: p.key,
+        //       y: p.obj.punts.length,
+        //       label: p.label,
+        //     }))
+        //     .map((d) => ({ ...d, label: `${d.y} / ${d.label}` }))
+        // ),
+      }).map(([key, d]) => (
         <div key={key}>
           <h3>{key}</h3>
-          <ScatterChart width={1200} height={400}>
+          <ScatterChart width={1200} height={800}>
             <CartesianGrid />
             <XAxis type="category" dataKey="x" />
             <YAxis type="number" dataKey="y" />
@@ -70,7 +68,7 @@ export default function Punts() {
             <Tooltip
               content={(data) =>
                 !data.active ? null : (
-                  <pre style={{ backgroundColor: "white" }}>
+                  <pre style={{ backgroundColor: "white", padding: "5em" }}>
                     {data.payload![0].payload.label}
                   </pre>
                 )
