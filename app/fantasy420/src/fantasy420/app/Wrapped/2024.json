@@ -223,10 +223,10 @@
       "nflTeamId": "14",
       "name": "Matthew Stafford",
       "position": "QB",
-      "total": 206.4,
-      "average": 12.9,
+      "total": 209.96,
+      "average": 13.122499999999999,
       "scores": {
-        "0": 206.4,
+        "0": 209.96,
         "1": 14.68,
         "2": 6.64,
         "3": 12.84,
@@ -242,7 +242,7 @@
         "14": 20.8,
         "15": 8.2,
         "16": 6,
-        "17": 0.98
+        "17": 4.54
       },
       "injuryStatus": "ACTIVE"
     },
@@ -253,9 +253,7 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": {
-        "0": 0
-      },
+      "scores": { "0": 0 },
       "injuryStatus": "QUESTIONABLE"
     },
     "14012": {
@@ -319,9 +317,7 @@
       "position": "QB",
       "total": 0,
       "average": 0,
-      "scores": {
-        "0": 0
-      },
+      "scores": { "0": 0 },
       "injuryStatus": "ACTIVE"
     },
     "14880": {
@@ -1228,7 +1224,7 @@
       "name": "Tyler Higbee",
       "position": "TE",
       "total": 8.1,
-      "average": 8.1,
+      "average": 4.05,
       "scores": {
         "0": 8.1,
         "1": 0,
@@ -1284,11 +1280,7 @@
       "position": "WR",
       "total": 1.5,
       "average": 0.75,
-      "scores": {
-        "0": 1.5,
-        "1": 0,
-        "2": 1.5
-      },
+      "scores": { "0": 1.5, "1": 0, "2": 1.5 },
       "injuryStatus": "ACTIVE"
     },
     "2576336": {
@@ -1846,9 +1838,7 @@
       "position": "WR",
       "total": 0,
       "average": 0,
-      "scores": {
-        "0": 0
-      },
+      "scores": { "0": 0 },
       "injuryStatus": "ACTIVE"
     },
     "2976499": {
@@ -1908,10 +1898,10 @@
       "nflTeamId": "14",
       "name": "Cooper Kupp",
       "position": "WR",
-      "total": 171.1,
-      "average": 14.258333333333335,
+      "total": 175,
+      "average": 14.583333333333334,
       "scores": {
-        "0": 171.1,
+        "0": 175,
         "1": 32,
         "2": 7.7,
         "3": 0,
@@ -1927,7 +1917,7 @@
         "14": 20.2,
         "15": 0,
         "16": 5.4,
-        "17": 0
+        "17": 3.9
       },
       "injuryStatus": "ACTIVE"
     },
@@ -2360,7 +2350,7 @@
         "16": 26.6,
         "17": 2.8
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "3045169": {
       "id": "3045169",
@@ -2606,11 +2596,7 @@
       "position": "WR",
       "total": 2.6,
       "average": 1.3,
-      "scores": {
-        "0": 2.6,
-        "16": 0,
-        "17": 2.6
-      },
+      "scores": { "0": 2.6, "16": 0, "17": 2.6 },
       "injuryStatus": "ACTIVE"
     },
     "3051392": {
@@ -3156,9 +3142,7 @@
       "position": "RB",
       "total": 0,
       "average": 0,
-      "scores": {
-        "0": 0
-      },
+      "scores": { "0": 0 },
       "injuryStatus": "ACTIVE"
     },
     "3115394": {
@@ -4702,9 +4686,7 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": {
-        "0": 0
-      },
+      "scores": { "0": 0 },
       "injuryStatus": "ACTIVE"
     },
     "3915411": {
@@ -5004,10 +4986,10 @@
       "nflTeamId": "22",
       "name": "Kyler Murray",
       "position": "QB",
-      "total": 257.56,
-      "average": 16.0975,
+      "total": 259.68,
+      "average": 16.23,
       "scores": {
-        "0": 257.56,
+        "0": 259.68,
         "1": 14.18,
         "2": 28.54,
         "3": 14.78,
@@ -5023,7 +5005,7 @@
         "14": 17.96,
         "15": 10.06,
         "16": 20.38,
-        "17": 4.24
+        "17": 6.36
       },
       "injuryStatus": "ACTIVE"
     },
@@ -5034,12 +5016,7 @@
       "position": "RB",
       "total": 0.4,
       "average": 0.13333333333333333,
-      "scores": {
-        "0": 0.4,
-        "14": 0.4,
-        "15": 0,
-        "16": 0
-      },
+      "scores": { "0": 0.4, "14": 0.4, "15": 0, "16": 0 },
       "injuryStatus": "ACTIVE"
     },
     "3917668": {
@@ -5211,15 +5188,7 @@
       "position": "WR",
       "total": 6.1,
       "average": 1.0166666666666666,
-      "scores": {
-        "0": 6.1,
-        "4": 0,
-        "5": 0,
-        "6": 6.1,
-        "7": 0,
-        "8": 0,
-        "9": 0
-      },
+      "scores": { "0": 6.1, "4": 0, "5": 0, "6": 6.1, "7": 0, "8": 0, "9": 0 },
       "injuryStatus": "ACTIVE"
     },
     "3921690": {
@@ -6315,10 +6284,10 @@
       "nflTeamId": "22",
       "name": "Greg Dortch",
       "position": "WR",
-      "total": 65.5,
-      "average": 4.09375,
+      "total": 66.9,
+      "average": 4.18125,
       "scores": {
-        "0": 65.5,
+        "0": 66.9,
         "1": 11.1,
         "2": 3.1,
         "3": 6.5,
@@ -6334,7 +6303,7 @@
         "14": 1.5,
         "15": 9.6,
         "16": 3.7,
-        "17": 1.4
+        "17": 2.8
       },
       "injuryStatus": "ACTIVE"
     },
@@ -7058,13 +7027,7 @@
       "position": "K",
       "total": 45,
       "average": 11.25,
-      "scores": {
-        "0": 45,
-        "10": 13,
-        "11": 6,
-        "12": 13,
-        "13": 13
-      },
+      "scores": { "0": 45, "10": 13, "11": 6, "12": 13, "13": 13 },
       "injuryStatus": "ACTIVE"
     },
     "4057082": {
@@ -7074,13 +7037,7 @@
       "position": "WR",
       "total": 3.7,
       "average": 0.925,
-      "scores": {
-        "0": 3.7,
-        "8": 0,
-        "14": 0,
-        "15": 2.1,
-        "16": 1.6
-      },
+      "scores": { "0": 3.7, "8": 0, "14": 0, "15": 2.1, "16": 1.6 },
       "injuryStatus": "ACTIVE"
     },
     "4061956": {
@@ -7357,13 +7314,7 @@
       "position": "WR",
       "total": -2.4,
       "average": -0.7999999999999999,
-      "scores": {
-        "0": -2.4,
-        "11": -0.7,
-        "12": 0,
-        "13": 0.3,
-        "14": -2
-      },
+      "scores": { "0": -2.4, "11": -0.7, "12": 0, "13": 0.3, "14": -2 },
       "injuryStatus": "ACTIVE"
     },
     "4240631": {
@@ -7371,10 +7322,10 @@
       "nflTeamId": "22",
       "name": "DeeJay Dallas",
       "position": "RB",
-      "total": 15.8,
-      "average": 1.0533333333333332,
+      "total": 17.3,
+      "average": 1.08125,
       "scores": {
-        "0": 15.8,
+        "0": 17.3,
         "1": 6,
         "2": 0,
         "3": 0,
@@ -7390,7 +7341,7 @@
         "14": 0,
         "15": 1.5,
         "16": 7.1,
-        "17": 0
+        "17": 1.5
       },
       "injuryStatus": "ACTIVE"
     },
@@ -7399,13 +7350,9 @@
       "nflTeamId": "22",
       "name": "Michael Carter",
       "position": "RB",
-      "total": 10.5,
-      "average": 5.25,
-      "scores": {
-        "0": 10.5,
-        "16": 9.8,
-        "17": 0.7
-      },
+      "total": 11.7,
+      "average": 5.85,
+      "scores": { "0": 11.7, "16": 9.8, "17": 1.9 },
       "injuryStatus": "ACTIVE"
     },
     "4240703": {
@@ -7874,9 +7821,7 @@
       "position": "K",
       "total": 0,
       "average": 0,
-      "scores": {
-        "0": 0
-      },
+      "scores": { "0": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4241961": {
@@ -8170,15 +8115,7 @@
       "position": "TE",
       "total": 1.7,
       "average": 0.2833333333333334,
-      "scores": {
-        "0": 1.7,
-        "4": 0,
-        "5": 0,
-        "6": 0,
-        "7": 0,
-        "8": 1.7,
-        "16": 0
-      },
+      "scores": { "0": 1.7, "4": 0, "5": 0, "6": 0, "7": 0, "8": 1.7, "16": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4242540": {
@@ -8422,13 +8359,7 @@
       "position": "K",
       "total": 15,
       "average": 5,
-      "scores": {
-        "0": 15,
-        "9": 3,
-        "13": 0,
-        "15": 1,
-        "16": 11
-      },
+      "scores": { "0": 15, "9": 3, "13": 0, "15": 1, "16": 11 },
       "injuryStatus": "ACTIVE"
     },
     "4243389": {
@@ -8590,13 +8521,7 @@
       "position": "RB",
       "total": 1.7,
       "average": 0.5666666666666668,
-      "scores": {
-        "0": 1.7,
-        "4": 0.5,
-        "5": 1.4,
-        "6": -0.2,
-        "7": 0
-      },
+      "scores": { "0": 1.7, "4": 0.5, "5": 1.4, "6": -0.2, "7": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4248528": {
@@ -9066,13 +8991,7 @@
       "position": "WR",
       "total": 12.2,
       "average": 3.05,
-      "scores": {
-        "0": 12.2,
-        "13": 7.3,
-        "14": 2.2,
-        "15": 2.7,
-        "16": 0
-      },
+      "scores": { "0": 12.2, "13": 7.3, "14": 2.2, "15": 2.7, "16": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4360175": {
@@ -9465,10 +9384,10 @@
       "nflTeamId": "22",
       "name": "Michael Wilson",
       "position": "WR",
-      "total": 118.9,
-      "average": 7.43125,
+      "total": 120.4,
+      "average": 7.525,
       "scores": {
-        "0": 118.9,
+        "0": 120.4,
         "1": 7.5,
         "2": 5.1,
         "3": 14.4,
@@ -9484,7 +9403,7 @@
         "14": 13.7,
         "15": 2.9,
         "16": 6.4,
-        "17": 1.3
+        "17": 2.8
       },
       "injuryStatus": "ACTIVE"
     },
@@ -9654,10 +9573,10 @@
       "nflTeamId": "22",
       "name": "Trey McBride",
       "position": "TE",
-      "total": 206.1,
-      "average": 13.740000000000002,
+      "total": 207.6,
+      "average": 13.840000000000002,
       "scores": {
-        "0": 206.1,
+        "0": 207.6,
         "1": 8,
         "2": 18.7,
         "3": 5.5,
@@ -9673,7 +9592,7 @@
         "14": 14,
         "15": 17.7,
         "16": 5,
-        "17": 6.1
+        "17": 7.6
       },
       "injuryStatus": "ACTIVE"
     },
@@ -11253,10 +11172,7 @@
       "position": "RB",
       "total": 3.3,
       "average": 3.3,
-      "scores": {
-        "0": 3.3,
-        "16": 3.3
-      },
+      "scores": { "0": 3.3, "16": 3.3 },
       "injuryStatus": "ACTIVE"
     },
     "4374187": {
@@ -11897,10 +11813,10 @@
       "nflTeamId": "14",
       "name": "Puka Nacua",
       "position": "WR",
-      "total": 186.3,
-      "average": 16.936363636363637,
+      "total": 191.3,
+      "average": 17.39090909090909,
       "scores": {
-        "0": 186.3,
+        "0": 191.3,
         "1": 8.2,
         "2": 0,
         "3": 0,
@@ -11916,7 +11832,7 @@
         "14": 41.8,
         "15": 17.8,
         "16": 13.6,
-        "17": 2.6
+        "17": 7.6
       },
       "injuryStatus": "ACTIVE"
     },
@@ -11954,7 +11870,7 @@
       "name": "Elijah Higgins",
       "position": "TE",
       "total": 44.9,
-      "average": 2.993333333333333,
+      "average": 2.80625,
       "scores": {
         "0": 44.9,
         "1": 3.2,
@@ -12497,14 +12413,7 @@
       "position": "K",
       "total": 28,
       "average": 5.6,
-      "scores": {
-        "0": 28,
-        "1": 0,
-        "14": 9,
-        "15": 7,
-        "16": 7,
-        "17": 5
-      },
+      "scores": { "0": 28, "1": 0, "14": 9, "15": 7, "16": 7, "17": 5 },
       "injuryStatus": "ACTIVE"
     },
     "4429001": {
@@ -13299,10 +13208,10 @@
       "nflTeamId": "14",
       "name": "Kyren Williams",
       "position": "RB",
-      "total": 260.2,
-      "average": 16.2625,
+      "total": 266.5,
+      "average": 16.65625,
       "scores": {
-        "0": 260.2,
+        "0": 266.5,
         "1": 14.4,
         "2": 15.2,
         "3": 31.6,
@@ -13318,7 +13227,7 @@
         "14": 23.7,
         "15": 13.2,
         "16": 19.9,
-        "17": 4.3
+        "17": 10.6
       },
       "injuryStatus": "ACTIVE"
     },
@@ -13795,10 +13704,10 @@
       "nflTeamId": "22",
       "name": "Marvin Harrison Jr.",
       "position": "WR",
-      "total": 167,
-      "average": 10.4375,
+      "total": 169.4,
+      "average": 10.5875,
       "scores": {
-        "0": 167,
+        "0": 169.4,
         "1": 1.4,
         "2": 29,
         "3": 17.4,
@@ -13814,7 +13723,7 @@
         "14": 8.9,
         "15": 5.2,
         "16": 7.9,
-        "17": 3.4
+        "17": 5.8
       },
       "injuryStatus": "ACTIVE"
     },
@@ -13933,10 +13842,10 @@
       "nflTeamId": "14",
       "name": "Joshua Karty",
       "position": "K",
-      "total": 104,
-      "average": 6.933333333333334,
+      "total": 105,
+      "average": 6.5625,
       "scores": {
-        "0": 104,
+        "0": 105,
         "1": 9,
         "2": 4,
         "3": 9,
@@ -13952,7 +13861,7 @@
         "14": 8,
         "15": 13,
         "16": 8,
-        "17": 0
+        "17": 1
       },
       "injuryStatus": "ACTIVE"
     },
@@ -15486,14 +15395,7 @@
       "position": "TE",
       "total": 1.5,
       "average": 0.5,
-      "scores": {
-        "0": 1.5,
-        "11": 1.5,
-        "13": 0,
-        "14": 0,
-        "15": 0,
-        "16": 0
-      },
+      "scores": { "0": 1.5, "11": 1.5, "13": 0, "14": 0, "15": 0, "16": 0 },
       "injuryStatus": "ACTIVE"
     },
     "4879650": {
@@ -15970,10 +15872,10 @@
       "nflTeamId": "14",
       "name": "Rams D/ST",
       "position": "DST",
-      "total": 99,
-      "average": 6.1875,
+      "total": 98,
+      "average": 6.125,
       "scores": {
-        "0": 99,
+        "0": 98,
         "1": 3,
         "2": -5,
         "3": 0,
@@ -15989,7 +15891,7 @@
         "14": 2,
         "15": 12,
         "16": 8,
-        "17": 11
+        "17": 10
       }
     },
     "-16015": {
@@ -16180,10 +16082,10 @@
       "nflTeamId": "22",
       "name": "Cardinals D/ST",
       "position": "DST",
-      "total": 88,
-      "average": 5.5,
+      "total": 84,
+      "average": 5.25,
       "scores": {
-        "0": 88,
+        "0": 84,
         "1": 8,
         "2": 12,
         "3": 3,
@@ -16199,7 +16101,7 @@
         "14": -4,
         "15": 5,
         "16": -1,
-        "17": 10
+        "17": 6
       }
     },
     "-16023": {
@@ -16473,74 +16375,23 @@
       "id": "1",
       "name": "judged",
       "draft": [
-        {
-          "playerId": 4362628,
-          "pickIndex": 9
-        },
-        {
-          "playerId": 3915511,
-          "pickIndex": 10
-        },
-        {
-          "playerId": 4426502,
-          "pickIndex": 29
-        },
-        {
-          "playerId": 4379399,
-          "pickIndex": 30
-        },
-        {
-          "playerId": 4430027,
-          "pickIndex": 49
-        },
-        {
-          "playerId": 4595348,
-          "pickIndex": 50
-        },
-        {
-          "playerId": 4035538,
-          "pickIndex": 69
-        },
-        {
-          "playerId": 4239993,
-          "pickIndex": 70
-        },
-        {
-          "playerId": 4678008,
-          "pickIndex": 89
-        },
-        {
-          "playerId": 3052587,
-          "pickIndex": 90
-        },
-        {
-          "playerId": -16025,
-          "pickIndex": 109
-        },
-        {
-          "playerId": 4426388,
-          "pickIndex": 110
-        },
-        {
-          "playerId": 4685720,
-          "pickIndex": 129
-        },
-        {
-          "playerId": 3912547,
-          "pickIndex": 130
-        },
-        {
-          "playerId": 3050478,
-          "pickIndex": 149
-        },
-        {
-          "playerId": 4361411,
-          "pickIndex": 150
-        },
-        {
-          "playerId": 15807,
-          "pickIndex": 169
-        }
+        { "playerId": 4362628, "pickIndex": 9 },
+        { "playerId": 3915511, "pickIndex": 10 },
+        { "playerId": 4426502, "pickIndex": 29 },
+        { "playerId": 4379399, "pickIndex": 30 },
+        { "playerId": 4430027, "pickIndex": 49 },
+        { "playerId": 4595348, "pickIndex": 50 },
+        { "playerId": 4035538, "pickIndex": 69 },
+        { "playerId": 4239993, "pickIndex": 70 },
+        { "playerId": 4678008, "pickIndex": 89 },
+        { "playerId": 3052587, "pickIndex": 90 },
+        { "playerId": -16025, "pickIndex": 109 },
+        { "playerId": 4426388, "pickIndex": 110 },
+        { "playerId": 4685720, "pickIndex": 129 },
+        { "playerId": 3912547, "pickIndex": 130 },
+        { "playerId": 3050478, "pickIndex": 149 },
+        { "playerId": 4361411, "pickIndex": 150 },
+        { "playerId": 15807, "pickIndex": 169 }
       ],
       "pickOrder": 9,
       "rosters": {
@@ -17186,74 +17037,23 @@
       "id": "2",
       "name": "Just being silly",
       "draft": [
-        {
-          "playerId": 4040715,
-          "pickIndex": 1
-        },
-        {
-          "playerId": 4047646,
-          "pickIndex": 18
-        },
-        {
-          "playerId": 4361529,
-          "pickIndex": 21
-        },
-        {
-          "playerId": 14880,
-          "pickIndex": 38
-        },
-        {
-          "playerId": 3126486,
-          "pickIndex": 41
-        },
-        {
-          "playerId": 4426354,
-          "pickIndex": 58
-        },
-        {
-          "playerId": 3116365,
-          "pickIndex": 61
-        },
-        {
-          "playerId": 4361579,
-          "pickIndex": 78
-        },
-        {
-          "playerId": 4361777,
-          "pickIndex": 81
-        },
-        {
-          "playerId": 4248528,
-          "pickIndex": 98
-        },
-        {
-          "playerId": 4635008,
-          "pickIndex": 101
-        },
-        {
-          "playerId": 3953687,
-          "pickIndex": 118
-        },
-        {
-          "playerId": 4241985,
-          "pickIndex": 121
-        },
-        {
-          "playerId": 3122840,
-          "pickIndex": 138
-        },
-        {
-          "playerId": -16020,
-          "pickIndex": 141
-        },
-        {
-          "playerId": 4426385,
-          "pickIndex": 158
-        },
-        {
-          "playerId": 4032473,
-          "pickIndex": 161
-        }
+        { "playerId": 4040715, "pickIndex": 1 },
+        { "playerId": 4047646, "pickIndex": 18 },
+        { "playerId": 4361529, "pickIndex": 21 },
+        { "playerId": 14880, "pickIndex": 38 },
+        { "playerId": 3126486, "pickIndex": 41 },
+        { "playerId": 4426354, "pickIndex": 58 },
+        { "playerId": 3116365, "pickIndex": 61 },
+        { "playerId": 4361579, "pickIndex": 78 },
+        { "playerId": 4361777, "pickIndex": 81 },
+        { "playerId": 4248528, "pickIndex": 98 },
+        { "playerId": 4635008, "pickIndex": 101 },
+        { "playerId": 3953687, "pickIndex": 118 },
+        { "playerId": 4241985, "pickIndex": 121 },
+        { "playerId": 3122840, "pickIndex": 138 },
+        { "playerId": -16020, "pickIndex": 141 },
+        { "playerId": 4426385, "pickIndex": 158 },
+        { "playerId": 4032473, "pickIndex": 161 }
       ],
       "pickOrder": 1,
       "rosters": {
@@ -17898,74 +17698,23 @@
       "id": "3",
       "name": "Matthew 7:1",
       "draft": [
-        {
-          "playerId": 3116406,
-          "pickIndex": 6
-        },
-        {
-          "playerId": 2577417,
-          "pickIndex": 13
-        },
-        {
-          "playerId": 4036378,
-          "pickIndex": 26
-        },
-        {
-          "playerId": 16737,
-          "pickIndex": 33
-        },
-        {
-          "playerId": 4047365,
-          "pickIndex": 46
-        },
-        {
-          "playerId": 4241478,
-          "pickIndex": 53
-        },
-        {
-          "playerId": 3045147,
-          "pickIndex": 66
-        },
-        {
-          "playerId": 4360310,
-          "pickIndex": 73
-        },
-        {
-          "playerId": 3121422,
-          "pickIndex": 86
-        },
-        {
-          "playerId": 4362249,
-          "pickIndex": 93
-        },
-        {
-          "playerId": 4430878,
-          "pickIndex": 106
-        },
-        {
-          "playerId": 4362238,
-          "pickIndex": 113
-        },
-        {
-          "playerId": 4242355,
-          "pickIndex": 126
-        },
-        {
-          "playerId": 4373626,
-          "pickIndex": 133
-        },
-        {
-          "playerId": 3049899,
-          "pickIndex": 146
-        },
-        {
-          "playerId": 2577327,
-          "pickIndex": 153
-        },
-        {
-          "playerId": -16024,
-          "pickIndex": 166
-        }
+        { "playerId": 3116406, "pickIndex": 6 },
+        { "playerId": 2577417, "pickIndex": 13 },
+        { "playerId": 4036378, "pickIndex": 26 },
+        { "playerId": 16737, "pickIndex": 33 },
+        { "playerId": 4047365, "pickIndex": 46 },
+        { "playerId": 4241478, "pickIndex": 53 },
+        { "playerId": 3045147, "pickIndex": 66 },
+        { "playerId": 4360310, "pickIndex": 73 },
+        { "playerId": 3121422, "pickIndex": 86 },
+        { "playerId": 4362249, "pickIndex": 93 },
+        { "playerId": 4430878, "pickIndex": 106 },
+        { "playerId": 4362238, "pickIndex": 113 },
+        { "playerId": 4242355, "pickIndex": 126 },
+        { "playerId": 4373626, "pickIndex": 133 },
+        { "playerId": 3049899, "pickIndex": 146 },
+        { "playerId": 2577327, "pickIndex": 153 },
+        { "playerId": -16024, "pickIndex": 166 }
       ],
       "pickOrder": 6,
       "rosters": {
@@ -18575,9 +18324,9 @@
             "3121422",
             "4430878",
             "4362238",
-            "3123076",
             "-16002",
-            "3917232"
+            "3917232",
+            "4572680"
           ],
           "rostered": [
             "3116406",
@@ -18605,74 +18354,23 @@
       "id": "4",
       "name": "STL Cookies",
       "draft": [
-        {
-          "playerId": 4430807,
-          "pickIndex": 7
-        },
-        {
-          "playerId": 4374302,
-          "pickIndex": 12
-        },
-        {
-          "playerId": 4361741,
-          "pickIndex": 27
-        },
-        {
-          "playerId": 4432708,
-          "pickIndex": 32
-        },
-        {
-          "playerId": 4567048,
-          "pickIndex": 47
-        },
-        {
-          "playerId": 2977187,
-          "pickIndex": 52
-        },
-        {
-          "playerId": 4038941,
-          "pickIndex": 67
-        },
-        {
-          "playerId": 4259545,
-          "pickIndex": 72
-        },
-        {
-          "playerId": 4360248,
-          "pickIndex": 87
-        },
-        {
-          "playerId": 2576414,
-          "pickIndex": 92
-        },
-        {
-          "playerId": 4035676,
-          "pickIndex": 107
-        },
-        {
-          "playerId": 4429275,
-          "pickIndex": 112
-        },
-        {
-          "playerId": 3051926,
-          "pickIndex": 127
-        },
-        {
-          "playerId": 4241372,
-          "pickIndex": 132
-        },
-        {
-          "playerId": 4426338,
-          "pickIndex": 147
-        },
-        {
-          "playerId": 3055899,
-          "pickIndex": 152
-        },
-        {
-          "playerId": -16015,
-          "pickIndex": 167
-        }
+        { "playerId": 4430807, "pickIndex": 7 },
+        { "playerId": 4374302, "pickIndex": 12 },
+        { "playerId": 4361741, "pickIndex": 27 },
+        { "playerId": 4432708, "pickIndex": 32 },
+        { "playerId": 4567048, "pickIndex": 47 },
+        { "playerId": 2977187, "pickIndex": 52 },
+        { "playerId": 4038941, "pickIndex": 67 },
+        { "playerId": 4259545, "pickIndex": 72 },
+        { "playerId": 4360248, "pickIndex": 87 },
+        { "playerId": 2576414, "pickIndex": 92 },
+        { "playerId": 4035676, "pickIndex": 107 },
+        { "playerId": 4429275, "pickIndex": 112 },
+        { "playerId": 3051926, "pickIndex": 127 },
+        { "playerId": 4241372, "pickIndex": 132 },
+        { "playerId": 4426338, "pickIndex": 147 },
+        { "playerId": 3055899, "pickIndex": 152 },
+        { "playerId": -16015, "pickIndex": 167 }
       ],
       "pickOrder": 7,
       "rosters": {
@@ -19315,74 +19013,23 @@
       "id": "5",
       "name": "Monday Night Fucking",
       "draft": [
-        {
-          "playerId": 3139477,
-          "pickIndex": 5
-        },
-        {
-          "playerId": 4242335,
-          "pickIndex": 14
-        },
-        {
-          "playerId": 4429795,
-          "pickIndex": 25
-        },
-        {
-          "playerId": 4035687,
-          "pickIndex": 34
-        },
-        {
-          "playerId": 4697815,
-          "pickIndex": 45
-        },
-        {
-          "playerId": 3915416,
-          "pickIndex": 54
-        },
-        {
-          "playerId": 2976499,
-          "pickIndex": 65
-        },
-        {
-          "playerId": 8439,
-          "pickIndex": 74
-        },
-        {
-          "playerId": 3040151,
-          "pickIndex": 85
-        },
-        {
-          "playerId": 4241474,
-          "pickIndex": 94
-        },
-        {
-          "playerId": 4428557,
-          "pickIndex": 105
-        },
-        {
-          "playerId": 4432773,
-          "pickIndex": 114
-        },
-        {
-          "playerId": 15864,
-          "pickIndex": 125
-        },
-        {
-          "playerId": -16006,
-          "pickIndex": 134
-        },
-        {
-          "playerId": 15683,
-          "pickIndex": 145
-        },
-        {
-          "playerId": 4682745,
-          "pickIndex": 154
-        },
-        {
-          "playerId": 3045523,
-          "pickIndex": 165
-        }
+        { "playerId": 3139477, "pickIndex": 5 },
+        { "playerId": 4242335, "pickIndex": 14 },
+        { "playerId": 4429795, "pickIndex": 25 },
+        { "playerId": 4035687, "pickIndex": 34 },
+        { "playerId": 4697815, "pickIndex": 45 },
+        { "playerId": 3915416, "pickIndex": 54 },
+        { "playerId": 2976499, "pickIndex": 65 },
+        { "playerId": 8439, "pickIndex": 74 },
+        { "playerId": 3040151, "pickIndex": 85 },
+        { "playerId": 4241474, "pickIndex": 94 },
+        { "playerId": 4428557, "pickIndex": 105 },
+        { "playerId": 4432773, "pickIndex": 114 },
+        { "playerId": 15864, "pickIndex": 125 },
+        { "playerId": -16006, "pickIndex": 134 },
+        { "playerId": 15683, "pickIndex": 145 },
+        { "playerId": 4682745, "pickIndex": 154 },
+        { "playerId": 3045523, "pickIndex": 165 }
       ],
       "pickOrder": 5,
       "rosters": {
@@ -20023,74 +19670,23 @@
       "id": "6",
       "name": "Live Ladd Love",
       "draft": [
-        {
-          "playerId": 3117251,
-          "pickIndex": 2
-        },
-        {
-          "playerId": 4426515,
-          "pickIndex": 17
-        },
-        {
-          "playerId": 4429084,
-          "pickIndex": 22
-        },
-        {
-          "playerId": 4361370,
-          "pickIndex": 37
-        },
-        {
-          "playerId": 4360438,
-          "pickIndex": 42
-        },
-        {
-          "playerId": 4569173,
-          "pickIndex": 57
-        },
-        {
-          "playerId": 4431611,
-          "pickIndex": 62
-        },
-        {
-          "playerId": 4366031,
-          "pickIndex": 77
-        },
-        {
-          "playerId": 4040761,
-          "pickIndex": 82
-        },
-        {
-          "playerId": 4612826,
-          "pickIndex": 97
-        },
-        {
-          "playerId": 3123076,
-          "pickIndex": 102
-        },
-        {
-          "playerId": 3051392,
-          "pickIndex": 117
-        },
-        {
-          "playerId": -16004,
-          "pickIndex": 122
-        },
-        {
-          "playerId": 16757,
-          "pickIndex": 137
-        },
-        {
-          "playerId": 4367209,
-          "pickIndex": 142
-        },
-        {
-          "playerId": 4430637,
-          "pickIndex": 157
-        },
-        {
-          "playerId": 4259619,
-          "pickIndex": 162
-        }
+        { "playerId": 3117251, "pickIndex": 2 },
+        { "playerId": 4426515, "pickIndex": 17 },
+        { "playerId": 4429084, "pickIndex": 22 },
+        { "playerId": 4361370, "pickIndex": 37 },
+        { "playerId": 4360438, "pickIndex": 42 },
+        { "playerId": 4569173, "pickIndex": 57 },
+        { "playerId": 4431611, "pickIndex": 62 },
+        { "playerId": 4366031, "pickIndex": 77 },
+        { "playerId": 4040761, "pickIndex": 82 },
+        { "playerId": 4612826, "pickIndex": 97 },
+        { "playerId": 3123076, "pickIndex": 102 },
+        { "playerId": 3051392, "pickIndex": 117 },
+        { "playerId": -16004, "pickIndex": 122 },
+        { "playerId": 16757, "pickIndex": 137 },
+        { "playerId": 4367209, "pickIndex": 142 },
+        { "playerId": 4430637, "pickIndex": 157 },
+        { "playerId": 4259619, "pickIndex": 162 }
       ],
       "pickOrder": 2,
       "rosters": {
@@ -20731,74 +20327,23 @@
       "id": "7",
       "name": "Jackson Heights",
       "draft": [
-        {
-          "playerId": 3916387,
-          "pickIndex": 3
-        },
-        {
-          "playerId": 4262921,
-          "pickIndex": 16
-        },
-        {
-          "playerId": 4569618,
-          "pickIndex": 23
-        },
-        {
-          "playerId": 4426348,
-          "pickIndex": 36
-        },
-        {
-          "playerId": 4429160,
-          "pickIndex": 43
-        },
-        {
-          "playerId": 4372016,
-          "pickIndex": 56
-        },
-        {
-          "playerId": 4361307,
-          "pickIndex": 63
-        },
-        {
-          "playerId": 3895856,
-          "pickIndex": 76
-        },
-        {
-          "playerId": 4241457,
-          "pickIndex": 83
-        },
-        {
-          "playerId": 3916148,
-          "pickIndex": 96
-        },
-        {
-          "playerId": 4431299,
-          "pickIndex": 103
-        },
-        {
-          "playerId": 15795,
-          "pickIndex": 116
-        },
-        {
-          "playerId": 4361418,
-          "pickIndex": 123
-        },
-        {
-          "playerId": 4429205,
-          "pickIndex": 136
-        },
-        {
-          "playerId": -16033,
-          "pickIndex": 143
-        },
-        {
-          "playerId": 4429501,
-          "pickIndex": 156
-        },
-        {
-          "playerId": 4360234,
-          "pickIndex": 163
-        }
+        { "playerId": 3916387, "pickIndex": 3 },
+        { "playerId": 4262921, "pickIndex": 16 },
+        { "playerId": 4569618, "pickIndex": 23 },
+        { "playerId": 4426348, "pickIndex": 36 },
+        { "playerId": 4429160, "pickIndex": 43 },
+        { "playerId": 4372016, "pickIndex": 56 },
+        { "playerId": 4361307, "pickIndex": 63 },
+        { "playerId": 3895856, "pickIndex": 76 },
+        { "playerId": 4241457, "pickIndex": 83 },
+        { "playerId": 3916148, "pickIndex": 96 },
+        { "playerId": 4431299, "pickIndex": 103 },
+        { "playerId": 15795, "pickIndex": 116 },
+        { "playerId": 4361418, "pickIndex": 123 },
+        { "playerId": 4429205, "pickIndex": 136 },
+        { "playerId": -16033, "pickIndex": 143 },
+        { "playerId": 4429501, "pickIndex": 156 },
+        { "playerId": 4360234, "pickIndex": 163 }
       ],
       "pickOrder": 3,
       "rosters": {
@@ -21439,74 +20984,23 @@
       "id": "8",
       "name": "Team Cepeda",
       "draft": [
-        {
-          "playerId": 4241389,
-          "pickIndex": 4
-        },
-        {
-          "playerId": 3917315,
-          "pickIndex": 15
-        },
-        {
-          "playerId": 4239996,
-          "pickIndex": 24
-        },
-        {
-          "playerId": 4258173,
-          "pickIndex": 35
-        },
-        {
-          "playerId": 3116385,
-          "pickIndex": 44
-        },
-        {
-          "playerId": 2976212,
-          "pickIndex": 55
-        },
-        {
-          "playerId": 3046779,
-          "pickIndex": 64
-        },
-        {
-          "playerId": 3925357,
-          "pickIndex": 75
-        },
-        {
-          "playerId": 3051876,
-          "pickIndex": 84
-        },
-        {
-          "playerId": 4683062,
-          "pickIndex": 95
-        },
-        {
-          "playerId": 3045138,
-          "pickIndex": 104
-        },
-        {
-          "playerId": 4429096,
-          "pickIndex": 115
-        },
-        {
-          "playerId": 3128429,
-          "pickIndex": 124
-        },
-        {
-          "playerId": 4431452,
-          "pickIndex": 135
-        },
-        {
-          "playerId": 3916433,
-          "pickIndex": 144
-        },
-        {
-          "playerId": 4372066,
-          "pickIndex": 155
-        },
-        {
-          "playerId": -16023,
-          "pickIndex": 164
-        }
+        { "playerId": 4241389, "pickIndex": 4 },
+        { "playerId": 3917315, "pickIndex": 15 },
+        { "playerId": 4239996, "pickIndex": 24 },
+        { "playerId": 4258173, "pickIndex": 35 },
+        { "playerId": 3116385, "pickIndex": 44 },
+        { "playerId": 2976212, "pickIndex": 55 },
+        { "playerId": 3046779, "pickIndex": 64 },
+        { "playerId": 3925357, "pickIndex": 75 },
+        { "playerId": 3051876, "pickIndex": 84 },
+        { "playerId": 4683062, "pickIndex": 95 },
+        { "playerId": 3045138, "pickIndex": 104 },
+        { "playerId": 4429096, "pickIndex": 115 },
+        { "playerId": 3128429, "pickIndex": 124 },
+        { "playerId": 4431452, "pickIndex": 135 },
+        { "playerId": 3916433, "pickIndex": 144 },
+        { "playerId": 4372066, "pickIndex": 155 },
+        { "playerId": -16023, "pickIndex": 164 }
       ],
       "pickOrder": 4,
       "rosters": {
@@ -22144,74 +21638,23 @@
       "id": "9",
       "name": "Hock Tua",
       "draft": [
-        {
-          "playerId": 3918298,
-          "pickIndex": 0
-        },
-        {
-          "playerId": 3929630,
-          "pickIndex": 19
-        },
-        {
-          "playerId": 4430737,
-          "pickIndex": 20
-        },
-        {
-          "playerId": 3054850,
-          "pickIndex": 39
-        },
-        {
-          "playerId": 4241479,
-          "pickIndex": 40
-        },
-        {
-          "playerId": 3116165,
-          "pickIndex": 59
-        },
-        {
-          "playerId": 4429615,
-          "pickIndex": 60
-        },
-        {
-          "playerId": 4385690,
-          "pickIndex": 79
-        },
-        {
-          "playerId": 3932905,
-          "pickIndex": 80
-        },
-        {
-          "playerId": 4372019,
-          "pickIndex": 99
-        },
-        {
-          "playerId": 3128720,
-          "pickIndex": 100
-        },
-        {
-          "playerId": 4373678,
-          "pickIndex": 119
-        },
-        {
-          "playerId": 4242433,
-          "pickIndex": 120
-        },
-        {
-          "playerId": 4036133,
-          "pickIndex": 139
-        },
-        {
-          "playerId": -16005,
-          "pickIndex": 140
-        },
-        {
-          "playerId": 14993,
-          "pickIndex": 159
-        },
-        {
-          "playerId": 4038524,
-          "pickIndex": 160
-        }
+        { "playerId": 3918298, "pickIndex": 0 },
+        { "playerId": 3929630, "pickIndex": 19 },
+        { "playerId": 4430737, "pickIndex": 20 },
+        { "playerId": 3054850, "pickIndex": 39 },
+        { "playerId": 4241479, "pickIndex": 40 },
+        { "playerId": 3116165, "pickIndex": 59 },
+        { "playerId": 4429615, "pickIndex": 60 },
+        { "playerId": 4385690, "pickIndex": 79 },
+        { "playerId": 3932905, "pickIndex": 80 },
+        { "playerId": 4372019, "pickIndex": 99 },
+        { "playerId": 3128720, "pickIndex": 100 },
+        { "playerId": 4373678, "pickIndex": 119 },
+        { "playerId": 4242433, "pickIndex": 120 },
+        { "playerId": 4036133, "pickIndex": 139 },
+        { "playerId": -16005, "pickIndex": 140 },
+        { "playerId": 14993, "pickIndex": 159 },
+        { "playerId": 4038524, "pickIndex": 160 }
       ],
       "pickOrder": 0,
       "rosters": {
@@ -22852,74 +22295,23 @@
       "id": "10",
       "name": "Happy Ending Massage Grannies",
       "draft": [
-        {
-          "playerId": 4427366,
-          "pickIndex": 8
-        },
-        {
-          "playerId": 4432577,
-          "pickIndex": 11
-        },
-        {
-          "playerId": 3043078,
-          "pickIndex": 28
-        },
-        {
-          "playerId": 16800,
-          "pickIndex": 31
-        },
-        {
-          "playerId": 15847,
-          "pickIndex": 48
-        },
-        {
-          "playerId": 4047650,
-          "pickIndex": 51
-        },
-        {
-          "playerId": 3042519,
-          "pickIndex": 68
-        },
-        {
-          "playerId": 4428331,
-          "pickIndex": 71
-        },
-        {
-          "playerId": 12483,
-          "pickIndex": 88
-        },
-        {
-          "playerId": 15818,
-          "pickIndex": 91
-        },
-        {
-          "playerId": 3068267,
-          "pickIndex": 108
-        },
-        {
-          "playerId": 4569987,
-          "pickIndex": 111
-        },
-        {
-          "playerId": 3121427,
-          "pickIndex": 128
-        },
-        {
-          "playerId": 3917792,
-          "pickIndex": 131
-        },
-        {
-          "playerId": 14881,
-          "pickIndex": 148
-        },
-        {
-          "playerId": -16018,
-          "pickIndex": 151
-        },
-        {
-          "playerId": 2971573,
-          "pickIndex": 168
-        }
+        { "playerId": 4427366, "pickIndex": 8 },
+        { "playerId": 4432577, "pickIndex": 11 },
+        { "playerId": 3043078, "pickIndex": 28 },
+        { "playerId": 16800, "pickIndex": 31 },
+        { "playerId": 15847, "pickIndex": 48 },
+        { "playerId": 4047650, "pickIndex": 51 },
+        { "playerId": 3042519, "pickIndex": 68 },
+        { "playerId": 4428331, "pickIndex": 71 },
+        { "playerId": 12483, "pickIndex": 88 },
+        { "playerId": 15818, "pickIndex": 91 },
+        { "playerId": 3068267, "pickIndex": 108 },
+        { "playerId": 4569987, "pickIndex": 111 },
+        { "playerId": 3121427, "pickIndex": 128 },
+        { "playerId": 3917792, "pickIndex": 131 },
+        { "playerId": 14881, "pickIndex": 148 },
+        { "playerId": -16018, "pickIndex": 151 },
+        { "playerId": 2971573, "pickIndex": 168 }
       ],
       "pickOrder": 8,
       "rosters": {
@@ -33653,7 +33045,7 @@
       "4722893": 0.25,
       "Devaughn Vele": 1.18
     },
-    "timestamp": 1735437140281,
+    "timestamp": 1735438882971,
     "history": [
       {
         "values": {
