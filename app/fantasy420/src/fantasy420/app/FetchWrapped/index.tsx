@@ -535,24 +535,29 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                                 teamId: play.teamId,
                                 yards: parseInt(
                                   play.text.match(
-                                    /(\d+) (yard|yrd|yd) field goal/i
+                                    /(\d+) (?:yard|yrd|yd) field goal/i
                                   )![1]
                                 ),
                               })),
                           punts: resp.page.content.gamepackage.allPlys
-                            .flatMap((p) => ({
-                              teamId: p.teamName,
-                              yards: (p.plays || []).map(
-                                (p) =>
-                                  parseInt(
-                                    p.description.match(
-                                      /punts (\d+) yard/
-                                    )?.[1]!
+                            .filter((p) => p.headline === "Punt")
+                            .map((p) => ({
+                              teamId: Object.values(
+                                resp.page.content.gamepackage.pbp.tms
+                              ).find((t) => t.displayName === p.teamName)!.id,
+                              yards: parseInt(
+                                (p.plays || [])
+                                  .map(
+                                    (p) =>
+                                      p.description.match(
+                                        /punts (\d+) yard/
+                                      )?.[1]!
+                                    // sometimes, like in
+                                    // https://www.espn.com/nfl/playbyplay/_/gameId/401547427 @ (7:51 - 3rd)
+                                    // espn mislabels a drive with the punt going to the other team
                                   )
-                                // sometimes, like in
-                                // https://www.espn.com/nfl/playbyplay/_/gameId/401547427 @ (7:51 - 3rd)
-                                // espn mislabels a drive with the punt going to the other team
-                              )[0],
+                                  .find((yards) => yards !== undefined)!
+                              ),
                             }))
                             .filter((p) => !isNaN(p.yards)),
                           drives: Object.fromEntries(
