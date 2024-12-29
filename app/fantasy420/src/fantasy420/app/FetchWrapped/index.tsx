@@ -49,6 +49,7 @@ export type FFTeamType = {
 type MatchupsType = string[][];
 
 export type WrappedType = {
+  year: string;
   nflPlayers: {
     [id: string]: NFLPlayerType;
   };
@@ -124,6 +125,8 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
   }
   return Promise.resolve()
     .then(() => [
+      // year
+      Promise.resolve().then(() => currentYear),
       // nflPlayers
       Promise.resolve()
         .then(() =>
@@ -723,8 +726,9 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
     .then((ps) => ps.map((p) => p.catch((e) => console.error(e))))
     .then((ps) => Promise.all(ps))
     .then(
-      ([nflPlayers, ffTeams, ffMatchups, nflTeams, fantasyCalc]) =>
+      ([year, nflPlayers, ffTeams, ffMatchups, nflTeams, fantasyCalc]) =>
         ({
+          year,
           nflPlayers,
           ffTeams,
           ffMatchups,

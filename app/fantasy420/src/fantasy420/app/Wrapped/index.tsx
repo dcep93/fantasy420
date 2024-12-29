@@ -5,6 +5,7 @@ import ByeSchedule from "./ByeSchedule";
 import DraftValueStateful from "./DraftValue";
 import PointsAgainstStateful from "./PointsAgainst";
 import PointsForStateful from "./PointsFor";
+import PuntsStateful from "./Punts";
 import ScatterplotStateful from "./Scatterplot";
 import SimpsStateful from "./Simps";
 
@@ -58,6 +59,7 @@ export default function Wrapped() {
       WhatIf,
       ConsistentlyAverage,
       Simps,
+      Punts,
       json,
     }).map(([k, v]) => {
       try {
@@ -2412,6 +2414,10 @@ function ConsistentlyAverage() {
       </div>
     </div>
   );
+}
+
+function Punts() {
+  return <PuntsStateful />;
 }
 
 function PlayerPlot() {
