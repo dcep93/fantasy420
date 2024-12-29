@@ -26,7 +26,7 @@ type NFLTeamType = {
           pointsAllowed: number;
           yardsAllowed: number;
           drives: (string | null)[];
-          punts?: number[];
+          punts: number[];
         }
       | undefined;
   };
@@ -492,10 +492,9 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                       .then((resp) => resp.msg)
                       .then(
                         (resp) =>
-                          resp
-                            .split("window['__espnfitt__']=")
-                            .reverse()[0]
-                            .split(";</script>")[0]
+                          resp.match(
+                            /window\['__espnfitt__'\]=(.*?);<\/script>/
+                          )[1]
                       )
                       .then((resp) => JSON.parse(resp))
                       .then(
