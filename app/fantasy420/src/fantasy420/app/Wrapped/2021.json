@@ -26258,7 +26258,8 @@
             "Field Goal"
           ],
           "fieldGoals": [40],
-          "punts": [],
+          "punts": [57, 42, 39, 37, 58, 51],
+          "punter": "C.Nizialek",
           "yardsAllowed": 346,
           "pointsAllowed": 14
         },
@@ -26277,7 +26278,8 @@
             "End of Game"
           ],
           "fieldGoals": [25],
-          "punts": [],
+          "punts": [51, 25, 45],
+          "punter": "C.Nizialek,Y.Koo",
           "yardsAllowed": 412,
           "pointsAllowed": 34
         },
@@ -26296,7 +26298,8 @@
             "End of Game"
           ],
           "fieldGoals": [31, 52],
-          "punts": [],
+          "punts": [24, 32],
+          "punter": "D.Colquitt",
           "yardsAllowed": 230,
           "pointsAllowed": 20
         },
@@ -26316,7 +26319,8 @@
             "Field Goal"
           ],
           "fieldGoals": [33, 36, 36],
-          "punts": [],
+          "punts": [50, 38, 38],
+          "punter": "D.Colquitt",
           "yardsAllowed": 413,
           "pointsAllowed": 28
         },
@@ -26335,7 +26339,8 @@
             "Field Goal"
           ],
           "fieldGoals": [46, 53],
-          "punts": [],
+          "punts": [55, 51, 38, 46],
+          "punter": "D.Colquitt",
           "yardsAllowed": 332,
           "pointsAllowed": 19
         },
@@ -26355,7 +26360,8 @@
             "Field Goal"
           ],
           "fieldGoals": [32, 29],
-          "punts": [],
+          "punts": [30, 41, 52, 50, 51],
+          "punter": "D.Colquitt",
           "yardsAllowed": 376,
           "pointsAllowed": 25
         },
@@ -26376,7 +26382,8 @@
             "Downs"
           ],
           "fieldGoals": [35],
-          "punts": [],
+          "punts": [41, 60, 66, 64],
+          "punter": "D.Colquitt",
           "yardsAllowed": 431,
           "pointsAllowed": 43
         },
@@ -26396,7 +26403,8 @@
             "Interception"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [51, 50, 52, 54, 62],
+          "punter": "D.Colquitt",
           "yardsAllowed": 308,
           "pointsAllowed": 19
         },
@@ -26415,7 +26423,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [32, 55, 54, 32, 51],
+          "punter": "T.Morstead",
           "yardsAllowed": 357,
           "pointsAllowed": 14
         },
@@ -26433,7 +26442,8 @@
             "End of Game"
           ],
           "fieldGoals": [21],
-          "punts": [],
+          "punts": [43, 40, 35, 53, 44],
+          "punter": "T.Morstead",
           "yardsAllowed": 425,
           "pointsAllowed": 30
         },
@@ -26452,7 +26462,8 @@
             "End of Game"
           ],
           "fieldGoals": [32, 38, 48],
-          "punts": [],
+          "punts": [46, 64],
+          "punter": "T.Morstead",
           "yardsAllowed": 334,
           "pointsAllowed": 21
         },
@@ -26472,7 +26483,8 @@
             "End of Game"
           ],
           "fieldGoals": [48, 22],
-          "punts": [],
+          "punts": [53, 46],
+          "punter": "T.Morstead",
           "yardsAllowed": 397,
           "pointsAllowed": 31
         },
@@ -26489,7 +26501,8 @@
             "End of Game"
           ],
           "fieldGoals": [53, 48],
-          "punts": [],
+          "punts": [54, 61],
+          "punter": "T.Morstead",
           "yardsAllowed": 338,
           "pointsAllowed": 16
         },
@@ -26507,7 +26520,8 @@
             "Downs"
           ],
           "fieldGoals": [28, 24],
-          "punts": [],
+          "punts": [40, 37, 48],
+          "punter": "T.Morstead",
           "yardsAllowed": 351,
           "pointsAllowed": 29
         },
@@ -26527,7 +26541,8 @@
             "Touchdown"
           ],
           "fieldGoals": [48, 54],
-          "punts": [],
+          "punts": [45, 48],
+          "punter": "T.Morstead",
           "yardsAllowed": 369,
           "pointsAllowed": 30
         }
@@ -26555,7 +26570,8 @@
             "End of Game"
           ],
           "fieldGoals": [21, 48, 29],
-          "punts": [],
+          "punts": [37, 60],
+          "punter": "M.Haack",
           "yardsAllowed": 290,
           "pointsAllowed": 21
         },
@@ -26576,7 +26592,8 @@
             "End of Game"
           ],
           "fieldGoals": [33, 26, 21, 28],
-          "punts": [],
+          "punts": [44],
+          "punter": "M.Haack",
           "yardsAllowed": 109,
           "pointsAllowed": 0
         },
@@ -26596,7 +26613,8 @@
             "End of Game"
           ],
           "fieldGoals": [30],
-          "punts": [],
+          "punts": [47, 45, 32, 35],
+          "punter": "M.Haack",
           "yardsAllowed": 392,
           "pointsAllowed": 20
         },
@@ -26615,7 +26633,8 @@
             "Downs"
           ],
           "fieldGoals": [24, 28, 52],
-          "punts": [],
+          "punts": [53, 40],
+          "punter": "M.Haack",
           "yardsAllowed": 362,
           "pointsAllowed": 34
         },
@@ -26635,7 +26654,8 @@
             "Touchdown"
           ],
           "fieldGoals": [57, 39],
-          "punts": [],
+          "punts": [55, 19, 41, 48],
+          "punter": "M.Haack",
           "yardsAllowed": 262,
           "pointsAllowed": 11
         },
@@ -26653,7 +26673,8 @@
             "Downs"
           ],
           "fieldGoals": [24, 41],
-          "punts": [],
+          "punts": [59, 41, 48],
+          "punter": "M.Haack",
           "yardsAllowed": 218,
           "pointsAllowed": 9
         },
@@ -26675,7 +26696,8 @@
             "End of Game"
           ],
           "fieldGoals": [29],
-          "punts": [],
+          "punts": [41, 37],
+          "punter": "M.Haack",
           "yardsAllowed": 366,
           "pointsAllowed": 17
         },
@@ -26694,7 +26716,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [55],
+          "punter": "M.Haack",
           "yardsAllowed": 370,
           "pointsAllowed": 41
         },
@@ -26713,7 +26736,8 @@
             "Punt"
           ],
           "fieldGoals": [34],
-          "punts": [],
+          "punts": [48, 43, 36],
+          "punter": "M.Haack",
           "yardsAllowed": 190,
           "pointsAllowed": 6
         },
@@ -26732,7 +26756,8 @@
             "Downs"
           ],
           "fieldGoals": [35],
-          "punts": [],
+          "punts": [49, 54, 33, 34, 59],
+          "punter": "M.Haack",
           "yardsAllowed": 241,
           "pointsAllowed": 14
         },
@@ -26754,7 +26779,8 @@
             "Punt"
           ],
           "fieldGoals": [21, 25],
-          "punts": [],
+          "punts": [44, 39, 34, 61, 45, 63],
+          "punter": "M.Haack",
           "yardsAllowed": 488,
           "pointsAllowed": 33
         },
@@ -26775,7 +26801,8 @@
             "End of Game"
           ],
           "fieldGoals": [26],
-          "punts": [],
+          "punts": [40, 43, 28, 37, 40],
+          "punter": "M.Haack",
           "yardsAllowed": 275,
           "pointsAllowed": 14
         },
@@ -26794,6 +26821,7 @@
           ],
           "fieldGoals": [25, 34],
           "punts": [],
+          "punter": "",
           "yardsAllowed": 288,
           "pointsAllowed": 21
         },
@@ -26811,6 +26839,7 @@
           ],
           "fieldGoals": [],
           "punts": [],
+          "punter": "",
           "yardsAllowed": 265,
           "pointsAllowed": 15
         },
@@ -26833,7 +26862,8 @@
             "End of Game"
           ],
           "fieldGoals": [41, 21],
-          "punts": [],
+          "punts": [42, 28, 22, 49, 53, 7, 43],
+          "punter": "M.Haack",
           "yardsAllowed": 53,
           "pointsAllowed": 10
         }
@@ -26860,7 +26890,8 @@
             "Downs"
           ],
           "fieldGoals": [47, 22],
-          "punts": [],
+          "punts": [61, 61, 52, 50, 63, 48, 62],
+          "punter": "P.O'Donnell",
           "yardsAllowed": 418,
           "pointsAllowed": 26
         },
@@ -26879,7 +26910,8 @@
             "End of Game"
           ],
           "fieldGoals": [33],
-          "punts": [],
+          "punts": [55, 44, 60],
+          "punter": "P.O'Donnell",
           "yardsAllowed": 351,
           "pointsAllowed": 14
         },
@@ -26898,7 +26930,8 @@
             "Field Goal"
           ],
           "fieldGoals": [46, 46],
-          "punts": [],
+          "punts": [43, 53, 52, 44, 42],
+          "punter": "P.O'Donnell",
           "yardsAllowed": 259,
           "pointsAllowed": 9
         },
@@ -26915,7 +26948,8 @@
             "Downs"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [48, 43, 43, 27],
+          "punter": "P.O'Donnell",
           "yardsAllowed": 323,
           "pointsAllowed": 24
         },
@@ -26937,7 +26971,8 @@
             "End of Game"
           ],
           "fieldGoals": [28],
-          "punts": [],
+          "punts": [50, 28, 38, 44],
+          "punter": "P.O'Donnell",
           "yardsAllowed": 408,
           "pointsAllowed": 38
         },
@@ -26954,7 +26989,8 @@
             "Interception"
           ],
           "fieldGoals": [39, 40, 25],
-          "punts": [],
+          "punts": [41, 44],
+          "punter": "P.O'Donnell",
           "yardsAllowed": 467,
           "pointsAllowed": 33
         },
@@ -26975,7 +27011,8 @@
             "Missed FG"
           ],
           "fieldGoals": [30, 22],
-          "punts": [],
+          "punts": [43, 49, 54, 31],
+          "punter": "P.O'Donnell",
           "yardsAllowed": 280,
           "pointsAllowed": 29
         },
@@ -26996,7 +27033,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [53, 40, 34, 50, 28],
+          "punter": "P.O'Donnell",
           "yardsAllowed": 299,
           "pointsAllowed": 16
         },
@@ -27015,7 +27053,8 @@
             "Field Goal"
           ],
           "fieldGoals": [28, 43, 28],
-          "punts": [],
+          "punts": [46, 44, 51, 39],
+          "punter": "P.O'Donnell",
           "yardsAllowed": 239,
           "pointsAllowed": 14
         },
@@ -27034,7 +27073,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [53, 38],
+          "punter": "P.O'Donnell",
           "yardsAllowed": 257,
           "pointsAllowed": 33
         },
@@ -27055,7 +27095,8 @@
             "Interception"
           ],
           "fieldGoals": [23, 44, 43],
-          "punts": [],
+          "punts": [40, 49, 42, 46],
+          "punter": "P.O'Donnell",
           "yardsAllowed": 439,
           "pointsAllowed": 39
         },
@@ -27075,7 +27116,8 @@
             "Touchdown"
           ],
           "fieldGoals": [34],
-          "punts": [],
+          "punts": [44, 45, 72],
+          "punter": "P.O'Donnell",
           "yardsAllowed": 193,
           "pointsAllowed": 17
         },
@@ -27095,7 +27137,8 @@
             "End of Game"
           ],
           "fieldGoals": [35],
-          "punts": [],
+          "punts": [64, 28, 43],
+          "punter": "P.O'Donnell",
           "yardsAllowed": 331,
           "pointsAllowed": 24
         },
@@ -27116,7 +27159,8 @@
             "Interception"
           ],
           "fieldGoals": [21, 44],
-          "punts": [],
+          "punts": [42, 42, 56, 52, 35],
+          "punter": "P.O'Donnell",
           "yardsAllowed": 155,
           "pointsAllowed": 3
         },
@@ -27136,7 +27180,8 @@
             "Downs"
           ],
           "fieldGoals": [43, 46, 42],
-          "punts": [],
+          "punts": [43],
+          "punter": "P.O'Donnell",
           "yardsAllowed": 331,
           "pointsAllowed": 25
         }
@@ -27164,7 +27209,8 @@
             "End of Game"
           ],
           "fieldGoals": [43],
-          "punts": [],
+          "punts": [48, 37, 54, 49, 53],
+          "punter": "K.Huber",
           "yardsAllowed": 342,
           "pointsAllowed": 10
         },
@@ -27182,7 +27228,8 @@
             "Field Goal"
           ],
           "fieldGoals": [35],
-          "punts": [],
+          "punts": [46, 56, 40],
+          "punter": "K.Huber",
           "yardsAllowed": 341,
           "pointsAllowed": 21
         },
@@ -27203,7 +27250,8 @@
             "Missed FG"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [46, 41, 38, 42, 25],
+          "punter": "K.Huber",
           "yardsAllowed": 466,
           "pointsAllowed": 25
         },
@@ -27223,7 +27271,8 @@
             "End of Game"
           ],
           "fieldGoals": [38, 40],
-          "punts": [],
+          "punts": [58, 51, 54],
+          "punter": "K.Huber",
           "yardsAllowed": 228,
           "pointsAllowed": 11
         },
@@ -27245,7 +27294,8 @@
             "Downs"
           ],
           "fieldGoals": [52, 30],
-          "punts": [],
+          "punts": [39, 60, 58, 59],
+          "punter": "K.Huber",
           "yardsAllowed": 393,
           "pointsAllowed": 17
         },
@@ -27266,7 +27316,8 @@
             "Punt"
           ],
           "fieldGoals": [21],
-          "punts": [],
+          "punts": [47, 45, 55],
+          "punter": "K.Huber",
           "yardsAllowed": 511,
           "pointsAllowed": 34
         },
@@ -27287,7 +27338,8 @@
             "End of Game"
           ],
           "fieldGoals": [27],
-          "punts": [],
+          "punts": [37, 44, 41],
+          "punter": "K.Huber",
           "yardsAllowed": 361,
           "pointsAllowed": 35
         },
@@ -27306,7 +27358,8 @@
             "Field Goal"
           ],
           "fieldGoals": [54, 53, 51, 47],
-          "punts": [],
+          "punts": [47, 58],
+          "punter": "K.Huber",
           "yardsAllowed": 278,
           "pointsAllowed": 13
         },
@@ -27325,7 +27378,8 @@
             "Punt"
           ],
           "fieldGoals": [31, 51],
-          "punts": [],
+          "punts": [41, 45, 53],
+          "punter": "K.Huber",
           "yardsAllowed": 301,
           "pointsAllowed": 10
         },
@@ -27349,7 +27403,8 @@
             "End of Game"
           ],
           "fieldGoals": [48],
-          "punts": [],
+          "punts": [50, 46, 46, 38],
+          "punter": "K.Huber",
           "yardsAllowed": 363,
           "pointsAllowed": 35
         },
@@ -27369,7 +27424,8 @@
             "Field Goal"
           ],
           "fieldGoals": [37, 28, 41],
-          "punts": [],
+          "punts": [46, 36, 41, 50],
+          "punter": "K.Huber",
           "yardsAllowed": 355,
           "pointsAllowed": 26
         },
@@ -27390,7 +27446,8 @@
             "End of Game"
           ],
           "fieldGoals": [53, 58, 26],
-          "punts": [],
+          "punts": [57, 57, 41, 61, 45, 56, 51],
+          "punter": "K.Huber",
           "yardsAllowed": 292,
           "pointsAllowed": 10
         },
@@ -27409,6 +27466,7 @@
           ],
           "fieldGoals": [30, 36],
           "punts": [],
+          "punter": "",
           "yardsAllowed": 334,
           "pointsAllowed": 21
         },
@@ -27426,7 +27484,8 @@
             "Field Goal"
           ],
           "fieldGoals": [46, 20],
-          "punts": [],
+          "punts": [40, 51, 27],
+          "punter": "K.Huber",
           "yardsAllowed": 414,
           "pointsAllowed": 31
         },
@@ -27444,7 +27503,8 @@
             "Touchdown"
           ],
           "fieldGoals": [36],
-          "punts": [],
+          "punts": [37, 49, 52, 29, 57, 35, 49],
+          "punter": "K.Huber",
           "yardsAllowed": 376,
           "pointsAllowed": 21
         }
@@ -27471,7 +27531,8 @@
             "End of Game"
           ],
           "fieldGoals": [57, 41, 52, 28],
-          "punts": [],
+          "punts": [34, 48],
+          "punter": "J.Gillan",
           "yardsAllowed": 47,
           "pointsAllowed": 6
         },
@@ -27491,7 +27552,8 @@
             "Punt"
           ],
           "fieldGoals": [48, 53],
-          "punts": [],
+          "punts": [33, 49, 36, 38, 54, 35, 34],
+          "punter": "J.Gillan",
           "yardsAllowed": 255,
           "pointsAllowed": 7
         },
@@ -27512,7 +27574,8 @@
             "Downs"
           ],
           "fieldGoals": [35, 31],
-          "punts": [],
+          "punts": [53, 39, 42],
+          "punter": "J.Gillan",
           "yardsAllowed": 493,
           "pointsAllowed": 47
         },
@@ -27531,7 +27594,8 @@
             "Downs"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [54, 52],
+          "punter": "J.Gillan",
           "yardsAllowed": 352,
           "pointsAllowed": 37
         },
@@ -27548,7 +27612,8 @@
             "End of Game"
           ],
           "fieldGoals": [52],
-          "punts": [],
+          "punts": [43, 65, 47],
+          "punter": "J.Gillan",
           "yardsAllowed": 223,
           "pointsAllowed": 14
         },
@@ -27566,7 +27631,8 @@
             "Downs"
           ],
           "fieldGoals": [30],
-          "punts": [],
+          "punts": [52, 56, 50, 39],
+          "punter": "J.Gillan",
           "yardsAllowed": 370,
           "pointsAllowed": 15
         },
@@ -27586,7 +27652,8 @@
             "Punt"
           ],
           "fieldGoals": [28, 24],
-          "punts": [],
+          "punts": [34, 48, 36],
+          "punter": "J.Gillan",
           "yardsAllowed": 348,
           "pointsAllowed": 16
         },
@@ -27604,7 +27671,8 @@
             "Punt"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [58, 39, 59, 33],
+          "punter": "J.Gillan",
           "yardsAllowed": 452,
           "pointsAllowed": 45
         },
@@ -27624,7 +27692,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [28, 33, 52, 38],
+          "punter": "J.Gillan",
           "yardsAllowed": 245,
           "pointsAllowed": 10
         },
@@ -27645,7 +27714,8 @@
             "Downs"
           ],
           "fieldGoals": [46],
-          "punts": [],
+          "punts": [47, 52, 33, 40, 48, 41],
+          "punter": "J.Gillan",
           "yardsAllowed": 303,
           "pointsAllowed": 16
         },
@@ -27666,7 +27736,8 @@
             "End of Game"
           ],
           "fieldGoals": [43],
-          "punts": [],
+          "punts": [38, 35, 44, 41, 43],
+          "punter": "D.Colquitt",
           "yardsAllowed": 389,
           "pointsAllowed": 22
         },
@@ -27685,7 +27756,8 @@
             "Punt"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [49, 51, 44, 43, 37, 44, 43],
+          "punter": "D.Colquitt",
           "yardsAllowed": 328,
           "pointsAllowed": 16
         },
@@ -27704,7 +27776,8 @@
             "Interception"
           ],
           "fieldGoals": [37],
-          "punts": [],
+          "punts": [37],
+          "punter": "D.Colquitt",
           "yardsAllowed": 311,
           "pointsAllowed": 24
         },
@@ -27726,7 +27799,8 @@
             "Interception"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [55, 36, 53, 37, 42, 44, 21, 46],
+          "punter": "D.Colquitt",
           "yardsAllowed": 299,
           "pointsAllowed": 26
         },
@@ -27746,7 +27820,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [35, 56, 22, 37],
+          "punter": "D.Colquitt",
           "yardsAllowed": 182,
           "pointsAllowed": 10
         }
@@ -27775,7 +27850,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [56, 49, 40, 57],
+          "punter": "B.Anger",
           "yardsAllowed": 367,
           "pointsAllowed": 15
         },
@@ -27795,7 +27871,8 @@
             "End of Game"
           ],
           "fieldGoals": [37],
-          "punts": [],
+          "punts": [51, 40, 36, 63],
+          "punter": "B.Anger",
           "yardsAllowed": 379,
           "pointsAllowed": 28
         },
@@ -27814,7 +27891,8 @@
             "Field Goal"
           ],
           "fieldGoals": [31, 38, 31],
-          "punts": [],
+          "punts": [61],
+          "punter": "B.Anger",
           "yardsAllowed": 367,
           "pointsAllowed": 20
         },
@@ -27834,7 +27912,8 @@
             "Touchdown"
           ],
           "fieldGoals": [30, 45, 49],
-          "punts": [],
+          "punts": [51],
+          "punter": "B.Anger",
           "yardsAllowed": 335,
           "pointsAllowed": 29
         },
@@ -27854,7 +27933,8 @@
             "Touchdown"
           ],
           "fieldGoals": [38, 39],
-          "punts": [],
+          "punts": [50, 54, 36, 41],
+          "punter": "B.Anger",
           "yardsAllowed": 278,
           "pointsAllowed": 16
         },
@@ -27873,7 +27953,8 @@
             "Touchdown"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [55, 55, 46, 38],
+          "punter": "B.Anger",
           "yardsAllowed": 407,
           "pointsAllowed": 30
         },
@@ -27893,7 +27974,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [51, 60, 37, 42],
+          "punter": "B.Anger",
           "yardsAllowed": 214,
           "pointsAllowed": 3
         },
@@ -27914,7 +27996,8 @@
             "Interception"
           ],
           "fieldGoals": [33, 30, 48],
-          "punts": [],
+          "punts": [52, 46, 47, 34, 48, 53],
+          "punter": "B.Anger",
           "yardsAllowed": 370,
           "pointsAllowed": 19
         },
@@ -27937,7 +28020,8 @@
             "Punt"
           ],
           "fieldGoals": [29, 45],
-          "punts": [],
+          "punts": [60, 55, 53, 44, 58, 56, 59],
+          "punter": "B.Anger",
           "yardsAllowed": 509,
           "pointsAllowed": 36
         },
@@ -27960,7 +28044,8 @@
             "End of Game"
           ],
           "fieldGoals": [55, 34],
-          "punts": [],
+          "punts": [49, 59, 59, 54, 31, 37, 37],
+          "punter": "B.Anger",
           "yardsAllowed": 405,
           "pointsAllowed": 17
         },
@@ -27983,7 +28068,8 @@
             "End of Game"
           ],
           "fieldGoals": [35, 38, 37, 29],
-          "punts": [],
+          "punts": [43, 31, 59, 35, 50, 50],
+          "punter": "B.Anger",
           "yardsAllowed": 224,
           "pointsAllowed": 14
         },
@@ -28003,7 +28089,8 @@
             "End of Game"
           ],
           "fieldGoals": [26, 42, 27],
-          "punts": [],
+          "punts": [32, 36, 50, 42],
+          "punter": "B.Anger",
           "yardsAllowed": 302,
           "pointsAllowed": 6
         },
@@ -28023,7 +28110,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [47, 54, 62, 51],
+          "punter": "B.Anger",
           "yardsAllowed": 257,
           "pointsAllowed": 14
         },
@@ -28041,7 +28129,8 @@
             "Touchdown"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [42, 57, 45, 51],
+          "punter": "B.Anger",
           "yardsAllowed": 399,
           "pointsAllowed": 25
         },
@@ -28060,7 +28149,8 @@
             "End of Game"
           ],
           "fieldGoals": [48],
-          "punts": [],
+          "punts": [44],
+          "punter": "B.Anger",
           "yardsAllowed": 315,
           "pointsAllowed": 26
         }
@@ -28087,7 +28177,8 @@
             "End of Game"
           ],
           "fieldGoals": [45, 47, 21, 36],
-          "punts": [],
+          "punts": [43, 53, 26],
+          "punter": "S.Martin",
           "yardsAllowed": 162,
           "pointsAllowed": 0
         },
@@ -28108,7 +28199,8 @@
             "Interception"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [50, 47, 57, 49, 39, 56, 44, 28, 68, 53],
+          "punter": "S.Martin",
           "yardsAllowed": 406,
           "pointsAllowed": 23
         },
@@ -28126,7 +28218,8 @@
             "Interception"
           ],
           "fieldGoals": [39, 29],
-          "punts": [],
+          "punts": [52, 52, 39, 33],
+          "punter": "S.Martin",
           "yardsAllowed": 391,
           "pointsAllowed": 27
         },
@@ -28148,7 +28241,8 @@
             "Interception"
           ],
           "fieldGoals": [32],
-          "punts": [],
+          "punts": [47, 33, 46, 38],
+          "punter": "S.Martin",
           "yardsAllowed": 426,
           "pointsAllowed": 34
         },
@@ -28165,7 +28259,8 @@
             "Touchdown"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [46, 59, 47, 50],
+          "punter": "S.Martin",
           "yardsAllowed": 376,
           "pointsAllowed": 17
         },
@@ -28182,7 +28277,8 @@
             "Fumble"
           ],
           "fieldGoals": [45],
-          "punts": [],
+          "punts": [44, 48, 43],
+          "punter": "S.Martin",
           "yardsAllowed": 342,
           "pointsAllowed": 10
         },
@@ -28203,7 +28299,8 @@
             "End of Game"
           ],
           "fieldGoals": [53, 27, 42],
-          "punts": [],
+          "punts": [51, 2, 41],
+          "punter": "S.Martin",
           "yardsAllowed": 290,
           "pointsAllowed": 16
         },
@@ -28223,7 +28320,8 @@
             "Downs"
           ],
           "fieldGoals": [21, 28],
-          "punts": [],
+          "punts": [56, 60, 44, 52],
+          "punter": "S.Martin",
           "yardsAllowed": 386,
           "pointsAllowed": 24
         },
@@ -28241,7 +28339,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [42, 43, 40],
+          "punter": "S.Martin",
           "yardsAllowed": 357,
           "pointsAllowed": 13
         },
@@ -28260,7 +28359,8 @@
             "Downs"
           ],
           "fieldGoals": [42],
-          "punts": [],
+          "punts": [56, 56, 48],
+          "punter": "S.Martin",
           "yardsAllowed": 267,
           "pointsAllowed": 16
         },
@@ -28278,7 +28378,8 @@
             "Touchdown"
           ],
           "fieldGoals": [52],
-          "punts": [],
+          "punts": [47, 41, 42],
+          "punter": "S.Martin",
           "yardsAllowed": 316,
           "pointsAllowed": 10
         },
@@ -28298,7 +28399,8 @@
             "Downs"
           ],
           "fieldGoals": [54],
-          "punts": [],
+          "punts": [51, 57, 44, 48, 63, 46],
+          "punter": "S.Martin",
           "yardsAllowed": 249,
           "pointsAllowed": 15
         },
@@ -28316,7 +28418,8 @@
             "Punt"
           ],
           "fieldGoals": [49, 55],
-          "punts": [],
+          "punts": [54, 28, 56, 40, 45],
+          "punter": "S.Martin",
           "yardsAllowed": 342,
           "pointsAllowed": 17
         },
@@ -28334,7 +28437,8 @@
             "Touchdown"
           ],
           "fieldGoals": [61, 23],
-          "punts": [],
+          "punts": [41, 56, 40],
+          "punter": "S.Martin",
           "yardsAllowed": 341,
           "pointsAllowed": 34
         },
@@ -28351,7 +28455,8 @@
             "Field Goal"
           ],
           "fieldGoals": [31],
-          "punts": [],
+          "punts": [65, 44, 36],
+          "punter": "S.Martin",
           "yardsAllowed": 390,
           "pointsAllowed": 22
         }
@@ -28377,7 +28482,8 @@
             "Field Goal"
           ],
           "fieldGoals": [35],
-          "punts": [],
+          "punts": [48, 25, 38, 57, 49, 46],
+          "punter": "J.Fox",
           "yardsAllowed": 387,
           "pointsAllowed": 19
         },
@@ -28395,7 +28501,8 @@
             "Downs"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [56, 54, 56],
+          "punter": "J.Fox",
           "yardsAllowed": 373,
           "pointsAllowed": 24
         },
@@ -28415,7 +28522,8 @@
             "Touchdown"
           ],
           "fieldGoals": [39, 52, 40],
-          "punts": [],
+          "punts": [43, 67, 47, 47],
+          "punter": "J.Fox",
           "yardsAllowed": 384,
           "pointsAllowed": 19
         },
@@ -28434,7 +28542,8 @@
             "Touchdown"
           ],
           "fieldGoals": [35],
-          "punts": [],
+          "punts": [44, 49, 64, 63, 64, 49],
+          "punter": "J.Fox",
           "yardsAllowed": 398,
           "pointsAllowed": 34
         },
@@ -28452,7 +28561,8 @@
             "Interception"
           ],
           "fieldGoals": [37, 47, 41, 31],
-          "punts": [],
+          "punts": [36],
+          "punter": "J.Fox",
           "yardsAllowed": 374,
           "pointsAllowed": 28
         },
@@ -28471,7 +28581,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [39, 43, 58],
+          "punter": "J.Fox",
           "yardsAllowed": 350,
           "pointsAllowed": 38
         },
@@ -28495,7 +28606,8 @@
             null
           ],
           "fieldGoals": [20],
-          "punts": [],
+          "punts": [52, 61, 52, 39, 42, 49, 46, 43, 33, 47],
+          "punter": "J.Fox",
           "yardsAllowed": 387,
           "pointsAllowed": 16
         },
@@ -28515,7 +28627,8 @@
             "Punt"
           ],
           "fieldGoals": [43],
-          "punts": [],
+          "punts": [45, 40, 43, 61, 32, 59],
+          "punter": "J.Fox",
           "yardsAllowed": 349,
           "pointsAllowed": 13
         },
@@ -28533,7 +28646,8 @@
             "Punt"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [70, 41, 45, 43, 52, 49],
+          "punter": "J.Fox",
           "yardsAllowed": 378,
           "pointsAllowed": 16
         },
@@ -28554,7 +28668,8 @@
             "Touchdown"
           ],
           "fieldGoals": [31, 41, 49],
-          "punts": [],
+          "punts": [62, 47, 57],
+          "punter": "J.Fox",
           "yardsAllowed": 426,
           "pointsAllowed": 27
         },
@@ -28572,7 +28687,8 @@
             "End of Game"
           ],
           "fieldGoals": [36],
-          "punts": [],
+          "punts": [54, 52],
+          "punter": "J.Fox",
           "yardsAllowed": 358,
           "pointsAllowed": 38
         },
@@ -28591,7 +28707,8 @@
             "Field Goal"
           ],
           "fieldGoals": [37, 47, 45],
-          "punts": [],
+          "punts": [40, 55, 38],
+          "punter": "J.Fox",
           "yardsAllowed": 398,
           "pointsAllowed": 12
         },
@@ -28608,7 +28725,8 @@
             "Interception"
           ],
           "fieldGoals": [26, 37, 26],
-          "punts": [],
+          "punts": [52, 57],
+          "punter": "J.Fox",
           "yardsAllowed": 254,
           "pointsAllowed": 20
         },
@@ -28629,7 +28747,8 @@
             "Interception"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [38, 37, 57],
+          "punter": "J.Fox",
           "yardsAllowed": 497,
           "pointsAllowed": 51
         },
@@ -28649,7 +28768,8 @@
             "End of Game"
           ],
           "fieldGoals": [34, 36, 27],
-          "punts": [],
+          "punts": [67],
+          "punter": "J.Fox",
           "yardsAllowed": 378,
           "pointsAllowed": 30
         }
@@ -28675,7 +28795,8 @@
             "Field Goal"
           ],
           "fieldGoals": [54, 38, 51],
-          "punts": [],
+          "punts": [51, 50, 63],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 298,
           "pointsAllowed": 28
         },
@@ -28695,7 +28816,8 @@
             "End of Game"
           ],
           "fieldGoals": [26, 29],
-          "punts": [],
+          "punts": [36, 57, 45],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 282,
           "pointsAllowed": 17
         },
@@ -28717,7 +28839,8 @@
             "Field Goal"
           ],
           "fieldGoals": [44, 44, 22, 49],
-          "punts": [],
+          "punts": [36, 31],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 367,
           "pointsAllowed": 22
         },
@@ -28735,7 +28858,8 @@
             "End of Game"
           ],
           "fieldGoals": [39],
-          "punts": [],
+          "punts": [36, 50, 82],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 277,
           "pointsAllowed": 14
         },
@@ -28753,7 +28877,8 @@
             "Punt"
           ],
           "fieldGoals": [39],
-          "punts": [],
+          "punts": [49, 53, 37],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 430,
           "pointsAllowed": 10
         },
@@ -28772,7 +28897,8 @@
             "End of Game"
           ],
           "fieldGoals": [21],
-          "punts": [],
+          "punts": [58, 48, 48],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 334,
           "pointsAllowed": 21
         },
@@ -28791,7 +28917,8 @@
             "Touchdown"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [39, 55, 56, 60],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 237,
           "pointsAllowed": 13
         },
@@ -28809,7 +28936,8 @@
             "Touchdown"
           ],
           "fieldGoals": [27],
-          "punts": [],
+          "punts": [50, 41, 49],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 208,
           "pointsAllowed": 0
         },
@@ -28827,7 +28955,8 @@
             "Touchdown"
           ],
           "fieldGoals": [54],
-          "punts": [],
+          "punts": [40, 58],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 408,
           "pointsAllowed": 34
         },
@@ -28849,7 +28978,8 @@
             "End of Game"
           ],
           "fieldGoals": [45, 28, 29],
-          "punts": [],
+          "punts": [23, 58, 53, 61, 34],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 353,
           "pointsAllowed": 28
         },
@@ -28869,7 +28999,8 @@
             "End of Game"
           ],
           "fieldGoals": [20],
-          "punts": [],
+          "punts": [57, 45, 22],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 347,
           "pointsAllowed": 30
         },
@@ -28887,7 +29018,8 @@
             "End of Game"
           ],
           "fieldGoals": [29],
-          "punts": [],
+          "punts": [47, 59, 40],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 354,
           "pointsAllowed": 30
         },
@@ -28906,7 +29038,8 @@
             "End of Game"
           ],
           "fieldGoals": [32],
-          "punts": [],
+          "punts": [45, 44, 56, 49, 41],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 408,
           "pointsAllowed": 22
         },
@@ -28926,7 +29059,8 @@
             "End of Game"
           ],
           "fieldGoals": [35, 36, 37],
-          "punts": [],
+          "punts": [24, 39],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 206,
           "pointsAllowed": 10
         },
@@ -28946,7 +29080,8 @@
             "Interception"
           ],
           "fieldGoals": [36],
-          "punts": [],
+          "punts": [35],
+          "punter": "C.Bojorquez",
           "yardsAllowed": 404,
           "pointsAllowed": 37
         }
@@ -28971,7 +29106,8 @@
             "End of Game"
           ],
           "fieldGoals": [32],
-          "punts": [],
+          "punts": [42],
+          "punter": "B.Kern",
           "yardsAllowed": 265,
           "pointsAllowed": 16
         },
@@ -28993,7 +29129,8 @@
             "Missed FG"
           ],
           "fieldGoals": [44, 46, 36],
-          "punts": [],
+          "punts": [12, 63, 30, 42, 41],
+          "punter": "J.Townsend",
           "yardsAllowed": 355,
           "pointsAllowed": 27
         },
@@ -29011,7 +29148,8 @@
             "Touchdown"
           ],
           "fieldGoals": [34],
-          "punts": [],
+          "punts": [39, 45, 44, 42],
+          "punter": "J.Townsend",
           "yardsAllowed": 454,
           "pointsAllowed": 19
         },
@@ -29031,7 +29169,8 @@
             "End of Game"
           ],
           "fieldGoals": [43, 38],
-          "punts": [],
+          "punts": [63, 44],
+          "punter": "J.Townsend",
           "yardsAllowed": 417,
           "pointsAllowed": 31
         },
@@ -29049,7 +29188,8 @@
             "End of Game"
           ],
           "fieldGoals": [34, 51],
-          "punts": [],
+          "punts": [45, 49],
+          "punter": "B.Kern",
           "yardsAllowed": 334,
           "pointsAllowed": 3
         },
@@ -29070,7 +29210,8 @@
             "Field Goal"
           ],
           "fieldGoals": [46, 44],
-          "punts": [],
+          "punts": [50, 52, 37, 49],
+          "punter": "B.Kern",
           "yardsAllowed": 307,
           "pointsAllowed": 31
         },
@@ -29090,7 +29231,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [41, 57, 35, 42, 42],
+          "punter": "B.Kern",
           "yardsAllowed": 347,
           "pointsAllowed": 16
         },
@@ -29110,7 +29252,8 @@
             "End of Game"
           ],
           "fieldGoals": [28, 36, 36],
-          "punts": [],
+          "punts": [36, 41, 42, 46, 40],
+          "punter": "B.Kern",
           "yardsAllowed": 373,
           "pointsAllowed": 21
         },
@@ -29131,7 +29274,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [27, 53],
+          "punter": "B.Kern",
           "yardsAllowed": 190,
           "pointsAllowed": 22
         },
@@ -29151,7 +29295,8 @@
             "Fumble"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [59, 48],
+          "punter": "B.Kern",
           "yardsAllowed": 394,
           "pointsAllowed": 36
         },
@@ -29171,7 +29316,8 @@
             "End of Game"
           ],
           "fieldGoals": [44, 29],
-          "punts": [],
+          "punts": [35, 37, 35, 39, 46],
+          "punter": "B.Kern",
           "yardsAllowed": 192,
           "pointsAllowed": 0
         },
@@ -29191,7 +29337,8 @@
             "Downs"
           ],
           "fieldGoals": [26, 32],
-          "punts": [],
+          "punts": [50, 39, 54],
+          "punter": "B.Kern",
           "yardsAllowed": 168,
           "pointsAllowed": 19
         },
@@ -29209,7 +29356,8 @@
             "Field Goal"
           ],
           "fieldGoals": [38, 44],
-          "punts": [],
+          "punts": [53, 39, 46, 33, 59],
+          "punter": "B.Kern",
           "yardsAllowed": 389,
           "pointsAllowed": 17
         },
@@ -29229,7 +29377,8 @@
             "Touchdown"
           ],
           "fieldGoals": [23, 44],
-          "punts": [],
+          "punts": [52, 38, 46, 37],
+          "punter": "B.Kern",
           "yardsAllowed": 256,
           "pointsAllowed": 3
         },
@@ -29248,7 +29397,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [53, 46, 49, 49],
+          "punter": "B.Kern",
           "yardsAllowed": 353,
           "pointsAllowed": 25
         }
@@ -29273,7 +29423,8 @@
             "Missed FG"
           ],
           "fieldGoals": [43, 28, 24],
-          "punts": [],
+          "punts": [40, 50, 56, 51],
+          "punter": "R.Sanchez",
           "yardsAllowed": 368,
           "pointsAllowed": 25
         },
@@ -29292,7 +29443,8 @@
             "End of Game"
           ],
           "fieldGoals": [34, 43],
-          "punts": [],
+          "punts": [56, 57, 37, 50],
+          "punter": "R.Sanchez",
           "yardsAllowed": 203,
           "pointsAllowed": 17
         },
@@ -29311,7 +29463,8 @@
             "Missed FG"
           ],
           "fieldGoals": [37, 43],
-          "punts": [],
+          "punts": [38, 52],
+          "punter": "R.Sanchez",
           "yardsAllowed": 523,
           "pointsAllowed": 31
         },
@@ -29331,7 +29484,8 @@
             "Punt"
           ],
           "fieldGoals": [41],
-          "punts": [],
+          "punts": [42, 40, 50, 49, 36],
+          "punter": "R.Sanchez",
           "yardsAllowed": 353,
           "pointsAllowed": 3
         },
@@ -29353,7 +29507,8 @@
             "Punt"
           ],
           "fieldGoals": [42],
-          "punts": [],
+          "punts": [34, 79, 46, 35, 42, 37],
+          "punter": "R.Sanchez",
           "yardsAllowed": 280,
           "pointsAllowed": 18
         },
@@ -29374,7 +29529,8 @@
             "Interception"
           ],
           "fieldGoals": [34],
-          "punts": [],
+          "punts": [63, 46, 35, 38],
+          "punter": "R.Sanchez",
           "yardsAllowed": 340,
           "pointsAllowed": 28
         },
@@ -29394,7 +29550,8 @@
             "End of Game"
           ],
           "fieldGoals": [39],
-          "punts": [],
+          "punts": [47, 38],
+          "punter": "R.Sanchez",
           "yardsAllowed": 486,
           "pointsAllowed": 30
         },
@@ -29415,7 +29572,8 @@
             "End of Game"
           ],
           "fieldGoals": [24, 29, 37],
-          "punts": [],
+          "punts": [47, 43, 43, 42, 43, 55, 46],
+          "punter": "R.Sanchez",
           "yardsAllowed": 331,
           "pointsAllowed": 17
         },
@@ -29433,7 +29591,8 @@
             "Downs"
           ],
           "fieldGoals": [36, 35],
-          "punts": [],
+          "punts": [31],
+          "punter": "R.Sanchez",
           "yardsAllowed": 311,
           "pointsAllowed": 15
         },
@@ -29454,7 +29613,8 @@
             "Interception"
           ],
           "fieldGoals": [45],
-          "punts": [],
+          "punts": [41, 47, 46],
+          "punter": "R.Sanchez",
           "yardsAllowed": 359,
           "pointsAllowed": 38
         },
@@ -29475,7 +29635,8 @@
             "End of Game"
           ],
           "fieldGoals": [23],
-          "punts": [],
+          "punts": [40, 43, 41],
+          "punter": "R.Sanchez",
           "yardsAllowed": 141,
           "pointsAllowed": 0
         },
@@ -29494,7 +29655,8 @@
             "End of Game"
           ],
           "fieldGoals": [25, 41],
-          "punts": [],
+          "punts": [46, 41],
+          "punter": "R.Sanchez",
           "yardsAllowed": 365,
           "pointsAllowed": 17
         },
@@ -29513,7 +29675,8 @@
             "End of Game"
           ],
           "fieldGoals": [41, 37],
-          "punts": [],
+          "punts": [39, 44, 32],
+          "punter": "R.Sanchez",
           "yardsAllowed": 378,
           "pointsAllowed": 16
         },
@@ -29531,7 +29694,8 @@
             "Field Goal"
           ],
           "fieldGoals": [46, 41],
-          "punts": [],
+          "punts": [45, 40, 45, 38, 55],
+          "punter": "R.Sanchez",
           "yardsAllowed": 326,
           "pointsAllowed": 23
         },
@@ -29549,7 +29713,8 @@
             "Touchdown"
           ],
           "fieldGoals": [41],
-          "punts": [],
+          "punts": [41, 33],
+          "punter": "R.Sanchez",
           "yardsAllowed": 318,
           "pointsAllowed": 26
         }
@@ -29575,7 +29740,8 @@
             "End of Game"
           ],
           "fieldGoals": [34],
-          "punts": [],
+          "punts": [51],
+          "punter": "T.Townsend",
           "yardsAllowed": 352,
           "pointsAllowed": 30
         },
@@ -29593,6 +29759,7 @@
           ],
           "fieldGoals": [],
           "punts": [],
+          "punter": "",
           "yardsAllowed": 461,
           "pointsAllowed": 30
         },
@@ -29612,7 +29779,8 @@
             "Fumble"
           ],
           "fieldGoals": [38, 54],
-          "punts": [],
+          "punts": [46, 42],
+          "punter": "T.Townsend",
           "yardsAllowed": 436,
           "pointsAllowed": 32
         },
@@ -29632,7 +29800,8 @@
             "Downs"
           ],
           "fieldGoals": [52],
-          "punts": [],
+          "punts": [34, 19],
+          "punter": "T.Townsend",
           "yardsAllowed": 276,
           "pointsAllowed": 13
         },
@@ -29650,7 +29819,8 @@
             "Fumble"
           ],
           "fieldGoals": [42],
-          "punts": [],
+          "punts": [52, 41],
+          "punter": "T.Townsend",
           "yardsAllowed": 369,
           "pointsAllowed": 27
         },
@@ -29670,7 +29840,8 @@
             "End of Game"
           ],
           "fieldGoals": [36, 34],
-          "punts": [],
+          "punts": [50, 58, 52, 43],
+          "punter": "T.Townsend",
           "yardsAllowed": 300,
           "pointsAllowed": 17
         },
@@ -29690,7 +29861,8 @@
             "End of Game"
           ],
           "fieldGoals": [24, 55],
-          "punts": [],
+          "punts": [54, 71, 63, 55, 44, 64],
+          "punter": "T.Townsend",
           "yardsAllowed": 301,
           "pointsAllowed": 7
         },
@@ -29709,7 +29881,8 @@
             "End of Game"
           ],
           "fieldGoals": [40, 35],
-          "punts": [],
+          "punts": [42],
+          "punter": "T.Townsend",
           "yardsAllowed": 299,
           "pointsAllowed": 14
         },
@@ -29731,7 +29904,8 @@
             "End of Game"
           ],
           "fieldGoals": [37, 53],
-          "punts": [],
+          "punts": [49, 49, 68, 31],
+          "punter": "T.Townsend,H.Butker",
           "yardsAllowed": 276,
           "pointsAllowed": 9
         },
@@ -29750,7 +29924,8 @@
             "End of Game"
           ],
           "fieldGoals": [56, 45, 26],
-          "punts": [],
+          "punts": [54, 50, 47, 37],
+          "punter": "T.Townsend",
           "yardsAllowed": 404,
           "pointsAllowed": 9
         },
@@ -29768,7 +29943,8 @@
             "End of Game"
           ],
           "fieldGoals": [54, 37],
-          "punts": [],
+          "punts": [52],
+          "punter": "T.Townsend",
           "yardsAllowed": 290,
           "pointsAllowed": 9
         },
@@ -29788,7 +29964,8 @@
             "Touchdown"
           ],
           "fieldGoals": [30, 33],
-          "punts": [],
+          "punts": [32],
+          "punter": "T.Townsend",
           "yardsAllowed": 428,
           "pointsAllowed": 28
         },
@@ -29807,7 +29984,8 @@
             "Punt"
           ],
           "fieldGoals": [44, 34, 30],
-          "punts": [],
+          "punts": [41, 50],
+          "punter": "J.Townsend",
           "yardsAllowed": 303,
           "pointsAllowed": 10
         },
@@ -29825,7 +30003,8 @@
             "Field Goal"
           ],
           "fieldGoals": [34],
-          "punts": [],
+          "punts": [42, 35, 31],
+          "punter": "T.Townsend",
           "yardsAllowed": 475,
           "pointsAllowed": 34
         },
@@ -29842,7 +30021,8 @@
             "End of Game"
           ],
           "fieldGoals": [34, 51],
-          "punts": [],
+          "punts": [58, 43],
+          "punter": "T.Townsend",
           "yardsAllowed": 364,
           "pointsAllowed": 24
         }
@@ -29871,7 +30051,8 @@
             "Field Goal"
           ],
           "fieldGoals": [50, 38, 22],
-          "punts": [],
+          "punts": [55, 49, 45, 67],
+          "punter": "A.Cole",
           "yardsAllowed": 330,
           "pointsAllowed": 22
         },
@@ -29892,7 +30073,8 @@
             "Downs"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [54, 49, 56, 52],
+          "punter": "A.Cole",
           "yardsAllowed": 380,
           "pointsAllowed": 28
         },
@@ -29911,7 +30093,8 @@
             "End of Game"
           ],
           "fieldGoals": [31],
-          "punts": [],
+          "punts": [68, 39, 70, 47],
+          "punter": "A.Cole",
           "yardsAllowed": 252,
           "pointsAllowed": 20
         },
@@ -29932,7 +30115,8 @@
             "End of Game"
           ],
           "fieldGoals": [50, 30],
-          "punts": [],
+          "punts": [66, 71, 54, 37],
+          "punter": "A.Cole",
           "yardsAllowed": 421,
           "pointsAllowed": 24
         },
@@ -29951,7 +30135,8 @@
             "End of Game"
           ],
           "fieldGoals": [28, 39],
-          "punts": [],
+          "punts": [59, 35],
+          "punter": "A.Cole",
           "yardsAllowed": 358,
           "pointsAllowed": 22
         },
@@ -29970,7 +30155,8 @@
             "Fumble"
           ],
           "fieldGoals": [25, 32, 25],
-          "punts": [],
+          "punts": [42, 58],
+          "punter": "A.Cole",
           "yardsAllowed": 247,
           "pointsAllowed": 17
         },
@@ -29989,7 +30175,8 @@
             "Downs"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [40, 61, 42, 44, 63],
+          "punter": "A.Cole",
           "yardsAllowed": 516,
           "pointsAllowed": 41
         },
@@ -30009,7 +30196,8 @@
             "End of Game"
           ],
           "fieldGoals": [26, 47],
-          "punts": [],
+          "punts": [37, 47, 54, 48],
+          "punter": "A.Cole",
           "yardsAllowed": 288,
           "pointsAllowed": 32
         },
@@ -30033,7 +30221,8 @@
             "Field Goal"
           ],
           "fieldGoals": [22, 46, 30, 56, 29],
-          "punts": [],
+          "punts": [68, 32, 53, 36, 54],
+          "punter": "A.Cole",
           "yardsAllowed": 437,
           "pointsAllowed": 33
         },
@@ -30051,7 +30240,8 @@
             "End of Game"
           ],
           "fieldGoals": [52, 38, 37],
-          "punts": [],
+          "punts": [42, 67, 38, 55],
+          "punter": "A.Cole",
           "yardsAllowed": 298,
           "pointsAllowed": 17
         },
@@ -30070,7 +30260,8 @@
             "Fumble"
           ],
           "fieldGoals": [26],
-          "punts": [],
+          "punts": [44, 60, 46],
+          "punter": "A.Cole",
           "yardsAllowed": 372,
           "pointsAllowed": 42
         },
@@ -30089,7 +30280,8 @@
             "Field Goal"
           ],
           "fieldGoals": [24, 40, 48],
-          "punts": [],
+          "punts": [42, 49, 41, 45],
+          "punter": "A.Cole",
           "yardsAllowed": 236,
           "pointsAllowed": 14
         },
@@ -30108,7 +30300,8 @@
             "End of Game"
           ],
           "fieldGoals": [41],
-          "punts": [],
+          "punts": [38, 47],
+          "punter": "A.Cole",
           "yardsAllowed": 158,
           "pointsAllowed": 13
         },
@@ -30127,7 +30320,8 @@
             "Field Goal"
           ],
           "fieldGoals": [47, 44, 33],
-          "punts": [],
+          "punts": [44, 60],
+          "punter": "A.Cole",
           "yardsAllowed": 262,
           "pointsAllowed": 20
         }
@@ -30153,7 +30347,8 @@
             "End of Game"
           ],
           "fieldGoals": [48, 26],
-          "punts": [],
+          "punts": [41, 51, 27],
+          "punter": "J.Hekker",
           "yardsAllowed": 446,
           "pointsAllowed": 24
         },
@@ -30172,7 +30367,8 @@
             "Touchdown"
           ],
           "fieldGoals": [42, 22],
-          "punts": [],
+          "punts": [37],
+          "punter": "J.Hekker",
           "yardsAllowed": 465,
           "pointsAllowed": 37
         },
@@ -30193,7 +30389,8 @@
             "Field Goal"
           ],
           "fieldGoals": [31, 47],
-          "punts": [],
+          "punts": [52, 45, 33, 54, 48],
+          "punter": "J.Hekker",
           "yardsAllowed": 354,
           "pointsAllowed": 17
         },
@@ -30215,7 +30412,8 @@
             "End of Game"
           ],
           "fieldGoals": [32],
-          "punts": [],
+          "punts": [38, 34, 52, 47],
+          "punter": "J.Hekker",
           "yardsAllowed": 261,
           "pointsAllowed": 11
         },
@@ -30233,7 +30431,8 @@
             "End of Game"
           ],
           "fieldGoals": [33, 47],
-          "punts": [],
+          "punts": [41],
+          "punter": "J.Hekker",
           "yardsAllowed": 415,
           "pointsAllowed": 19
         },
@@ -30253,7 +30452,8 @@
             "Punt"
           ],
           "fieldGoals": [27],
-          "punts": [],
+          "punts": [46, 49, 48, 35],
+          "punter": "J.Hekker",
           "yardsAllowed": 323,
           "pointsAllowed": 22
         },
@@ -30273,7 +30473,8 @@
             "Touchdown"
           ],
           "fieldGoals": [34, 22, 54],
-          "punts": [],
+          "punts": [57, 52, 45, 45],
+          "punter": "J.Hekker",
           "yardsAllowed": 194,
           "pointsAllowed": 22
         },
@@ -30292,7 +30493,8 @@
             "End of Game"
           ],
           "fieldGoals": [37],
-          "punts": [],
+          "punts": [38, 42, 44],
+          "punter": "J.Hekker",
           "yardsAllowed": 335,
           "pointsAllowed": 25
         },
@@ -30315,7 +30517,8 @@
             "Field Goal"
           ],
           "fieldGoals": [36, 39],
-          "punts": [],
+          "punts": [53, 37, 41, 41, 33],
+          "punter": "J.Hekker",
           "yardsAllowed": 399,
           "pointsAllowed": 30
         },
@@ -30334,7 +30537,8 @@
             "Punt"
           ],
           "fieldGoals": [40, 44, 37],
-          "punts": [],
+          "punts": [46, 46, 58],
+          "punter": "J.Hekker",
           "yardsAllowed": 197,
           "pointsAllowed": 7
         },
@@ -30352,7 +30556,8 @@
             "Punt"
           ],
           "fieldGoals": [55, 35, 33],
-          "punts": [],
+          "punts": [38, 42, 40],
+          "punter": "J.Hekker",
           "yardsAllowed": 447,
           "pointsAllowed": 23
         },
@@ -30372,7 +30577,8 @@
             "End of Game"
           ],
           "fieldGoals": [55, 35],
-          "punts": [],
+          "punts": [33, 51, 46],
+          "punter": "J.Hekker",
           "yardsAllowed": 214,
           "pointsAllowed": 10
         },
@@ -30392,7 +30598,8 @@
             "End of Game"
           ],
           "fieldGoals": [32, 31, 24],
-          "punts": [],
+          "punts": [53, 55],
+          "punter": "J.Hekker",
           "yardsAllowed": 361,
           "pointsAllowed": 23
         },
@@ -30411,7 +30618,8 @@
             "Touchdown"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [39, 53],
+          "punter": "J.Hekker",
           "yardsAllowed": 327,
           "pointsAllowed": 13
         },
@@ -30431,7 +30639,8 @@
             "Interception"
           ],
           "fieldGoals": [43],
-          "punts": [],
+          "punts": [51, 45, 59, 43],
+          "punter": "J.Hekker",
           "yardsAllowed": 449,
           "pointsAllowed": 27
         }
@@ -30458,7 +30667,8 @@
             "Field Goal"
           ],
           "fieldGoals": [46, 50],
-          "punts": [],
+          "punts": [39, 34, 50, 32],
+          "punter": "M.Palardy",
           "yardsAllowed": 497,
           "pointsAllowed": 29
         },
@@ -30477,7 +30687,8 @@
             "Touchdown"
           ],
           "fieldGoals": [38],
-          "punts": [],
+          "punts": [43, 41, 46, 53, 56],
+          "punter": "M.Palardy",
           "yardsAllowed": 349,
           "pointsAllowed": 27
         },
@@ -30495,7 +30706,8 @@
             "Punt"
           ],
           "fieldGoals": [23],
-          "punts": [],
+          "punts": [39, 35, 36, 44],
+          "punter": "M.Palardy",
           "yardsAllowed": 558,
           "pointsAllowed": 45
         },
@@ -30515,7 +30727,8 @@
             "Downs"
           ],
           "fieldGoals": [33, 24],
-          "punts": [],
+          "punts": [30, 37, 32, 59],
+          "punter": "M.Palardy",
           "yardsAllowed": 396,
           "pointsAllowed": 23
         },
@@ -30535,7 +30748,8 @@
             "Touchdown"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [49, 47, 58],
+          "punter": "M.Palardy",
           "yardsAllowed": 397,
           "pointsAllowed": 30
         },
@@ -30555,7 +30769,8 @@
             "End of Game"
           ],
           "fieldGoals": [51],
-          "punts": [],
+          "punts": [43, 59, 58, 55, 44],
+          "punter": "M.Palardy",
           "yardsAllowed": 351,
           "pointsAllowed": 26
         },
@@ -30576,7 +30791,8 @@
             "Punt"
           ],
           "fieldGoals": [42],
-          "punts": [],
+          "punts": [49, 39, 33, 50, 36],
+          "punter": "M.Palardy",
           "yardsAllowed": 272,
           "pointsAllowed": 9
         },
@@ -30598,7 +30814,8 @@
             "End of Game"
           ],
           "fieldGoals": [31, 22, 29],
-          "punts": [],
+          "punts": [38, 40, 38, 49, 44, 52, 47],
+          "punter": "M.Palardy",
           "yardsAllowed": 304,
           "pointsAllowed": 10
         },
@@ -30618,7 +30835,8 @@
             "End of Game"
           ],
           "fieldGoals": [24],
-          "punts": [],
+          "punts": [46, 41, 57, 40],
+          "punter": "M.Palardy",
           "yardsAllowed": 380,
           "pointsAllowed": 17
         },
@@ -30638,7 +30856,8 @@
             "End of Game"
           ],
           "fieldGoals": [46, 33],
-          "punts": [],
+          "punts": [37, 44, 35, 46],
+          "punter": "M.Palardy",
           "yardsAllowed": 198,
           "pointsAllowed": 10
         },
@@ -30659,7 +30878,8 @@
             "End of Game"
           ],
           "fieldGoals": [48, 48],
-          "punts": [],
+          "punts": [53, 50, 65, 39, 37, 46],
+          "punter": "M.Palardy",
           "yardsAllowed": 250,
           "pointsAllowed": 9
         },
@@ -30681,7 +30901,8 @@
             "End of Game"
           ],
           "fieldGoals": [24],
-          "punts": [],
+          "punts": [51, 52, 56],
+          "punter": "M.Palardy",
           "yardsAllowed": 228,
           "pointsAllowed": 18
         },
@@ -30701,7 +30922,8 @@
             "Punt"
           ],
           "fieldGoals": [48, 34],
-          "punts": [],
+          "punts": [41, 37, 47, 43, 42, 45],
+          "punter": "M.Palardy",
           "yardsAllowed": 164,
           "pointsAllowed": 3
         },
@@ -30721,7 +30943,8 @@
             "End of Game"
           ],
           "fieldGoals": [39],
-          "punts": [],
+          "punts": [37, 36, 42, 32],
+          "punter": "M.Palardy",
           "yardsAllowed": 308,
           "pointsAllowed": 34
         },
@@ -30739,7 +30962,8 @@
             "Punt"
           ],
           "fieldGoals": [30, 49],
-          "punts": [],
+          "punts": [44, 63, 57, 45],
+          "punter": "M.Palardy",
           "yardsAllowed": 379,
           "pointsAllowed": 24
         }
@@ -30763,7 +30987,8 @@
             "Punt"
           ],
           "fieldGoals": [43, 34, 20],
-          "punts": [],
+          "punts": [49, 45],
+          "punter": "J.Berry",
           "yardsAllowed": 389,
           "pointsAllowed": 17
         },
@@ -30784,7 +31009,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [58, 47, 58, 46, 36, 46],
+          "punter": "J.Berry",
           "yardsAllowed": 327,
           "pointsAllowed": 14
         },
@@ -30805,7 +31031,8 @@
             "Field Goal"
           ],
           "fieldGoals": [38, 38, 55, 54],
-          "punts": [],
+          "punts": [50, 54, 46],
+          "punter": "J.Berry",
           "yardsAllowed": 288,
           "pointsAllowed": 17
         },
@@ -30830,7 +31057,8 @@
             "Touchdown"
           ],
           "fieldGoals": [25, 25, 38],
-          "punts": [],
+          "punts": [44, 54, 53, 37],
+          "punter": "J.Berry",
           "yardsAllowed": 306,
           "pointsAllowed": 28
         },
@@ -30851,7 +31079,8 @@
             "Downs"
           ],
           "fieldGoals": [45, 40, 24],
-          "punts": [],
+          "punts": [44, 37, 37, 39, 51, 29],
+          "punter": "J.Berry",
           "yardsAllowed": 419,
           "pointsAllowed": 20
         },
@@ -30871,7 +31100,8 @@
             "Punt"
           ],
           "fieldGoals": [36],
-          "punts": [],
+          "punts": [53, 54, 41, 53, 41],
+          "punter": "J.Berry",
           "yardsAllowed": 500,
           "pointsAllowed": 34
         },
@@ -30891,7 +31121,8 @@
             "End of Game"
           ],
           "fieldGoals": [46, 30],
-          "punts": [],
+          "punts": [40, 42, 55],
+          "punter": "J.Berry",
           "yardsAllowed": 253,
           "pointsAllowed": 20
         },
@@ -30909,7 +31140,8 @@
             "Field Goal"
           ],
           "fieldGoals": [51, 29],
-          "punts": [],
+          "punts": [45, 33, 47],
+          "punter": "J.Berry",
           "yardsAllowed": 467,
           "pointsAllowed": 31
         },
@@ -30930,7 +31162,8 @@
             "Downs"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [45, 56, 59],
+          "punter": "J.Berry",
           "yardsAllowed": 423,
           "pointsAllowed": 34
         },
@@ -30951,7 +31184,8 @@
             "Touchdown"
           ],
           "fieldGoals": [41, 31, 31],
-          "punts": [],
+          "punts": [46, 49, 37],
+          "punter": "J.Berry",
           "yardsAllowed": 372,
           "pointsAllowed": 29
         },
@@ -30973,7 +31207,8 @@
             "Punt"
           ],
           "fieldGoals": [38, 42, 25],
-          "punts": [],
+          "punts": [46, 49, 51],
+          "punter": "J.Berry",
           "yardsAllowed": 375,
           "pointsAllowed": 28
         },
@@ -30994,7 +31229,8 @@
             "Punt"
           ],
           "fieldGoals": [37],
-          "punts": [],
+          "punts": [48, 49, 17, 43, 31, 46, 61],
+          "punter": "J.Berry",
           "yardsAllowed": 370,
           "pointsAllowed": 9
         },
@@ -31015,7 +31251,8 @@
             "Field Goal"
           ],
           "fieldGoals": [23, 24, 44],
-          "punts": [],
+          "punts": [37, 47, 63, 39],
+          "punter": "J.Berry",
           "yardsAllowed": 356,
           "pointsAllowed": 30
         },
@@ -31035,7 +31272,8 @@
             "Downs"
           ],
           "fieldGoals": [51],
-          "punts": [],
+          "punts": [45, 42, 55, 44, 46, 64],
+          "punter": "J.Berry",
           "yardsAllowed": 481,
           "pointsAllowed": 37
         },
@@ -31055,7 +31293,8 @@
             "End of Game"
           ],
           "fieldGoals": [39],
-          "punts": [],
+          "punts": [42, 29, 52, 57, 52, 40],
+          "punter": "J.Berry",
           "yardsAllowed": 356,
           "pointsAllowed": 17
         }
@@ -31083,7 +31322,8 @@
             "Interception"
           ],
           "fieldGoals": [45, 26],
-          "punts": [],
+          "punts": [64, 52, 58, 41, 68],
+          "punter": "J.Bailey",
           "yardsAllowed": 252,
           "pointsAllowed": 22
         },
@@ -31103,7 +31343,8 @@
             "Missed FG"
           ],
           "fieldGoals": [27],
-          "punts": [],
+          "punts": [37, 49, 44, 59],
+          "punter": "J.Bailey",
           "yardsAllowed": 381,
           "pointsAllowed": 19
         },
@@ -31121,7 +31362,8 @@
             "Field Goal"
           ],
           "fieldGoals": [52, 52, 32, 21],
-          "punts": [],
+          "punts": [58],
+          "punter": "J.Bailey",
           "yardsAllowed": 360,
           "pointsAllowed": 22
         },
@@ -31143,7 +31385,8 @@
             "Punt"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [44, 41, 42, 34],
+          "punter": "J.Bailey",
           "yardsAllowed": 567,
           "pointsAllowed": 29
         },
@@ -31163,7 +31406,8 @@
             "End of Game"
           ],
           "fieldGoals": [39, 50],
-          "punts": [],
+          "punts": [35],
+          "punter": "J.Bailey",
           "yardsAllowed": 299,
           "pointsAllowed": 13
         },
@@ -31183,7 +31427,8 @@
             "End of Game"
           ],
           "fieldGoals": [24, 48, 48, 30],
-          "punts": [],
+          "punts": [46, 38, 62],
+          "punter": "J.Bailey",
           "yardsAllowed": 369,
           "pointsAllowed": 24
         },
@@ -31202,7 +31447,8 @@
             "End of Game"
           ],
           "fieldGoals": [37],
-          "punts": [],
+          "punts": [55, 42, 55],
+          "punter": "J.Bailey",
           "yardsAllowed": 240,
           "pointsAllowed": 6
         },
@@ -31220,7 +31466,8 @@
             "End of Game"
           ],
           "fieldGoals": [38],
-          "punts": [],
+          "punts": [66],
+          "punter": "J.Bailey",
           "yardsAllowed": 217,
           "pointsAllowed": 7
         },
@@ -31240,7 +31487,8 @@
             "End of Game"
           ],
           "fieldGoals": [32, 44, 53, 33],
-          "punts": [],
+          "punts": [44, 42, 60, 47],
+          "punter": "J.Bailey",
           "yardsAllowed": 165,
           "pointsAllowed": 0
         },
@@ -31260,7 +31508,8 @@
             "End of Game"
           ],
           "fieldGoals": [22, 37, 44, 28, 52],
-          "punts": [],
+          "punts": [48],
+          "punter": "J.Bailey",
           "yardsAllowed": 355,
           "pointsAllowed": 13
         },
@@ -31279,7 +31528,8 @@
             "Downs"
           ],
           "fieldGoals": [41, 34],
-          "punts": [],
+          "punts": [36, 15, 46, 45, 39, 71],
+          "punter": "J.Bailey",
           "yardsAllowed": 230,
           "pointsAllowed": 10
         },
@@ -31298,7 +31548,8 @@
             "Downs"
           ],
           "fieldGoals": [25],
-          "punts": [],
+          "punts": [46, 34],
+          "punter": "J.Bailey",
           "yardsAllowed": 275,
           "pointsAllowed": 27
         },
@@ -31315,7 +31566,8 @@
             "Interception"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [46, 49, 63],
+          "punter": "J.Bailey",
           "yardsAllowed": 428,
           "pointsAllowed": 33
         },
@@ -31334,7 +31586,8 @@
             "End of Game"
           ],
           "fieldGoals": [43],
-          "punts": [],
+          "punts": [40],
+          "punter": "J.Bailey",
           "yardsAllowed": 253,
           "pointsAllowed": 10
         },
@@ -31353,7 +31606,8 @@
             "Fumble Return Touchdown"
           ],
           "fieldGoals": [43],
-          "punts": [],
+          "punts": [46, 45, 47],
+          "punter": "J.Bailey",
           "yardsAllowed": 298,
           "pointsAllowed": 21
         }
@@ -31381,7 +31635,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [51, 44, 54, 56, 44],
+          "punter": "B.Gillikin",
           "yardsAllowed": 300,
           "pointsAllowed": 13
         },
@@ -31400,7 +31655,8 @@
             "End of Half"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [34, 55, 43],
+          "punter": "B.Gillikin",
           "yardsAllowed": 485,
           "pointsAllowed": 27
         },
@@ -31422,7 +31678,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [46, 60, 57, 52, 53],
+          "punter": "B.Gillikin",
           "yardsAllowed": 373,
           "pointsAllowed": 22
         },
@@ -31442,7 +31699,8 @@
             "End of Game"
           ],
           "fieldGoals": [21, 33],
-          "punts": [],
+          "punts": [58, 41, 41, 48, 41, 56],
+          "punter": "B.Gillikin",
           "yardsAllowed": 219,
           "pointsAllowed": 10
         },
@@ -31462,7 +31720,8 @@
             "End of Game"
           ],
           "fieldGoals": [23, 35, 23],
-          "punts": [],
+          "punts": [45, 50, 63],
+          "punter": "B.Gillikin",
           "yardsAllowed": 421,
           "pointsAllowed": 27
         },
@@ -31482,7 +31741,8 @@
             "Touchdown"
           ],
           "fieldGoals": [35, 52],
-          "punts": [],
+          "punts": [39, 45, 38],
+          "punter": "B.Gillikin",
           "yardsAllowed": 366,
           "pointsAllowed": 27
         },
@@ -31502,7 +31762,8 @@
             "Touchdown"
           ],
           "fieldGoals": [20],
-          "punts": [],
+          "punts": [39, 38, 41, 41, 43],
+          "punter": "B.Gillikin",
           "yardsAllowed": 264,
           "pointsAllowed": 23
         },
@@ -31526,7 +31787,8 @@
             "Touchdown"
           ],
           "fieldGoals": [28],
-          "punts": [],
+          "punts": [62, 53, 39, 54, 49, 42],
+          "punter": "B.Gillikin",
           "yardsAllowed": 380,
           "pointsAllowed": 34
         },
@@ -31546,7 +31808,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [52, 42, 43, 45, 53],
+          "punter": "B.Gillikin",
           "yardsAllowed": 361,
           "pointsAllowed": 31
         },
@@ -31569,7 +31832,8 @@
             "Touchdown"
           ],
           "fieldGoals": [42],
-          "punts": [],
+          "punts": [47, 59, 52, 55, 33, 62],
+          "punter": "B.Gillikin",
           "yardsAllowed": 377,
           "pointsAllowed": 21
         },
@@ -31589,7 +31853,8 @@
             "Touchdown"
           ],
           "fieldGoals": [23, 31, 37],
-          "punts": [],
+          "punts": [45, 62, 48, 49, 54],
+          "punter": "B.Gillikin",
           "yardsAllowed": 256,
           "pointsAllowed": 9
         },
@@ -31611,7 +31876,8 @@
             "Punt"
           ],
           "fieldGoals": [39, 35, 42],
-          "punts": [],
+          "punts": [45, 58, 33, 46, 54, 46, 49, 34],
+          "punter": "B.Gillikin",
           "yardsAllowed": 302,
           "pointsAllowed": 0
         },
@@ -31632,7 +31898,8 @@
             "End of Game"
           ],
           "fieldGoals": [38],
-          "punts": [],
+          "punts": [49, 42, 46, 45, 38, 42, 54],
+          "punter": "B.Gillikin",
           "yardsAllowed": 259,
           "pointsAllowed": 14
         },
@@ -31652,7 +31919,8 @@
             "End of Game"
           ],
           "fieldGoals": [41, 27, 41, 33],
-          "punts": [],
+          "punts": [63, 41, 31, 34, 46],
+          "punter": "B.Gillikin",
           "yardsAllowed": 178,
           "pointsAllowed": 10
         },
@@ -31672,7 +31940,8 @@
             "End of Game"
           ],
           "fieldGoals": [37, 27, 33],
-          "punts": [],
+          "punts": [52, 48],
+          "punter": "B.Gillikin",
           "yardsAllowed": 257,
           "pointsAllowed": 20
         }
@@ -31698,7 +31967,8 @@
             "Punt"
           ],
           "fieldGoals": [25, 31],
-          "punts": [],
+          "punts": [55, 49, 41, 34, 50],
+          "punter": "R.Dixon",
           "yardsAllowed": 296,
           "pointsAllowed": 17
         },
@@ -31718,7 +31988,8 @@
             "Touchdown"
           ],
           "fieldGoals": [23, 48],
-          "punts": [],
+          "punts": [43, 51, 33, 30],
+          "punter": "R.Dixon",
           "yardsAllowed": 405,
           "pointsAllowed": 21
         },
@@ -31739,7 +32010,8 @@
             "End of Game"
           ],
           "fieldGoals": [51, 51],
-          "punts": [],
+          "punts": [40, 50],
+          "punter": "R.Dixon",
           "yardsAllowed": 515,
           "pointsAllowed": 38
         },
@@ -31760,7 +32032,8 @@
             "Downs"
           ],
           "fieldGoals": [27],
-          "punts": [],
+          "punts": [57, 57, 33, 63],
+          "punter": "R.Dixon",
           "yardsAllowed": 365,
           "pointsAllowed": 38
         },
@@ -31782,7 +32055,8 @@
             "End of Game"
           ],
           "fieldGoals": [49, 53, 44],
-          "punts": [],
+          "punts": [36, 44, 48, 50, 51],
+          "punter": "R.Dixon",
           "yardsAllowed": 173,
           "pointsAllowed": 3
         },
@@ -31802,7 +32076,8 @@
             "Downs"
           ],
           "fieldGoals": [23],
-          "punts": [],
+          "punts": [45, 51, 51, 34, 34],
+          "punter": "R.Dixon",
           "yardsAllowed": 368,
           "pointsAllowed": 20
         },
@@ -31821,7 +32096,8 @@
             "End of Game"
           ],
           "fieldGoals": [35, 32, 38],
-          "punts": [],
+          "punts": [42, 58, 46],
+          "punter": "R.Dixon",
           "yardsAllowed": 403,
           "pointsAllowed": 16
         },
@@ -31841,7 +32117,8 @@
             "Downs"
           ],
           "fieldGoals": [37],
-          "punts": [],
+          "punts": [52, 39, 51, 51],
+          "punter": "R.Dixon",
           "yardsAllowed": 402,
           "pointsAllowed": 30
         },
@@ -31860,7 +32137,8 @@
             "End of Game"
           ],
           "fieldGoals": [35, 39],
-          "punts": [],
+          "punts": [46, 33, 36, 42, 39],
+          "punter": "R.Dixon",
           "yardsAllowed": 332,
           "pointsAllowed": 7
         },
@@ -31881,7 +32159,8 @@
             "Missed FG"
           ],
           "fieldGoals": [39, 34, 51],
-          "punts": [],
+          "punts": [36, 41, 45, 46, 44, 36],
+          "punter": "R.Dixon",
           "yardsAllowed": 297,
           "pointsAllowed": 20
         },
@@ -31902,7 +32181,8 @@
             "Interception"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [50, 46, 51, 63, 18],
+          "punter": "R.Dixon",
           "yardsAllowed": 423,
           "pointsAllowed": 37
         },
@@ -31921,7 +32201,8 @@
             "Downs"
           ],
           "fieldGoals": [35, 42],
-          "punts": [],
+          "punts": [50, 51],
+          "punter": "R.Dixon",
           "yardsAllowed": 328,
           "pointsAllowed": 21
         },
@@ -31943,7 +32224,8 @@
             "End of Game"
           ],
           "fieldGoals": [54],
-          "punts": [],
+          "punts": [47, 48, 28, 38, 33, 33, 31, 36],
+          "punter": "R.Dixon",
           "yardsAllowed": 324,
           "pointsAllowed": 28
         },
@@ -31964,7 +32246,8 @@
             "End of Game"
           ],
           "fieldGoals": [38],
-          "punts": [],
+          "punts": [46, 39, 33, 38],
+          "punter": "R.Dixon",
           "yardsAllowed": 249,
           "pointsAllowed": 27
         },
@@ -31984,7 +32267,8 @@
             "Interception"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [50, 49, 49, 54, 56, 48],
+          "punter": "R.Dixon",
           "yardsAllowed": 325,
           "pointsAllowed": 16
         }
@@ -32011,7 +32295,8 @@
             "Interception"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [50, 49, 37, 45, 48, 51],
+          "punter": "T.Morstead",
           "yardsAllowed": 343,
           "pointsAllowed": 26
         },
@@ -32033,7 +32318,8 @@
             "Field Goal"
           ],
           "fieldGoals": [27, 22],
-          "punts": [],
+          "punts": [49, 56, 40, 52, 40, 40],
+          "punter": "T.Morstead",
           "yardsAllowed": 430,
           "pointsAllowed": 24
         },
@@ -32051,7 +32337,8 @@
             "Field Goal"
           ],
           "fieldGoals": [31, 49],
-          "punts": [],
+          "punts": [59, 56, 36, 54],
+          "punter": "T.Morstead",
           "yardsAllowed": 450,
           "pointsAllowed": 27
         },
@@ -32071,7 +32358,8 @@
             "Fumble"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [49, 51],
+          "punter": "T.Morstead",
           "yardsAllowed": 551,
           "pointsAllowed": 54
         },
@@ -32092,7 +32380,8 @@
             "End of Game"
           ],
           "fieldGoals": [24, 24],
-          "punts": [],
+          "punts": [45],
+          "punter": "T.Morstead",
           "yardsAllowed": 318,
           "pointsAllowed": 31
         },
@@ -32112,7 +32401,8 @@
             "Interception"
           ],
           "fieldGoals": [33],
-          "punts": [],
+          "punts": [51, 57, 48],
+          "punter": "T.Morstead",
           "yardsAllowed": 532,
           "pointsAllowed": 45
         },
@@ -32133,7 +32423,8 @@
             "Touchdown"
           ],
           "fieldGoals": [48],
-          "punts": [],
+          "punts": [44, 46, 45],
+          "punter": "B.Mann",
           "yardsAllowed": 489,
           "pointsAllowed": 45
         },
@@ -32152,7 +32443,8 @@
             "Field Goal"
           ],
           "fieldGoals": [35],
-          "punts": [],
+          "punts": [38, 43, 33, 38],
+          "punter": "B.Mann",
           "yardsAllowed": 388,
           "pointsAllowed": 24
         },
@@ -32172,7 +32464,8 @@
             "Punt"
           ],
           "fieldGoals": [31, 37],
-          "punts": [],
+          "punts": [43, 44, 29, 40],
+          "punter": "B.Mann",
           "yardsAllowed": 202,
           "pointsAllowed": 14
         },
@@ -32190,7 +32483,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [45, 33],
+          "punter": "B.Mann",
           "yardsAllowed": 418,
           "pointsAllowed": 33
         },
@@ -32211,7 +32505,8 @@
             "End of Game"
           ],
           "fieldGoals": [36, 46, 36],
-          "punts": [],
+          "punts": [52, 51, 60, 47, 49, 54],
+          "punter": "B.Mann",
           "yardsAllowed": 344,
           "pointsAllowed": 30
         },
@@ -32231,7 +32526,8 @@
             "Downs"
           ],
           "fieldGoals": [27],
-          "punts": [],
+          "punts": [48, 52, 50, 29, 37, 63],
+          "punter": "B.Mann",
           "yardsAllowed": 379,
           "pointsAllowed": 31
         },
@@ -32249,7 +32545,8 @@
             "End of Game"
           ],
           "fieldGoals": [42, 20],
-          "punts": [],
+          "punts": [55],
+          "punter": "B.Mann",
           "yardsAllowed": 384,
           "pointsAllowed": 21
         },
@@ -32268,7 +32565,8 @@
             "Fumble"
           ],
           "fieldGoals": [51],
-          "punts": [],
+          "punts": [38, 32, 46, 38],
+          "punter": "B.Mann",
           "yardsAllowed": 467,
           "pointsAllowed": 28
         },
@@ -32290,7 +32588,8 @@
             "Punt"
           ],
           "fieldGoals": [49],
-          "punts": [],
+          "punts": [59, 45, 52, 48, 54, 57, 60, 53, 28, 41],
+          "punter": "B.Mann",
           "yardsAllowed": 424,
           "pointsAllowed": 27
         }
@@ -32318,7 +32617,8 @@
             "Downs"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [49, 41, 40, 38, 39, 51],
+          "punter": "A.Siposs",
           "yardsAllowed": 380,
           "pointsAllowed": 35
         },
@@ -32336,6 +32636,7 @@
           ],
           "fieldGoals": [29, 25, 31],
           "punts": [],
+          "punter": "",
           "yardsAllowed": 471,
           "pointsAllowed": 42
         },
@@ -32359,7 +32660,8 @@
             "End of Game"
           ],
           "fieldGoals": [30, 58],
-          "punts": [],
+          "punts": [41, 64, 49, 60, 16, 46],
+          "punter": "A.Siposs",
           "yardsAllowed": 267,
           "pointsAllowed": 16
         },
@@ -32378,7 +32680,8 @@
             "Touchdown"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [47, 39, 39, 40, 55],
+          "punter": "A.Siposs",
           "yardsAllowed": 399,
           "pointsAllowed": 28
         },
@@ -32397,7 +32700,8 @@
             "Downs"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [46, 45, 52],
+          "punter": "A.Siposs",
           "yardsAllowed": 442,
           "pointsAllowed": 33
         },
@@ -32415,7 +32719,8 @@
             "Field Goal"
           ],
           "fieldGoals": [43, 26, 41],
-          "punts": [],
+          "punts": [47],
+          "punter": "A.Siposs",
           "yardsAllowed": 228,
           "pointsAllowed": 6
         },
@@ -32432,7 +32737,8 @@
             "End of Game"
           ],
           "fieldGoals": [24],
-          "punts": [],
+          "punts": [44, 44, 42],
+          "punter": "A.Siposs",
           "yardsAllowed": 445,
           "pointsAllowed": 27
         },
@@ -32451,7 +32757,8 @@
             "End of Game"
           ],
           "fieldGoals": [30, 52, 23],
-          "punts": [],
+          "punts": [54, 53, 47],
+          "punter": "A.Siposs",
           "yardsAllowed": 308,
           "pointsAllowed": 13
         },
@@ -32474,7 +32781,8 @@
             "End of Game"
           ],
           "fieldGoals": [50, 37, 33, 47],
-          "punts": [],
+          "punts": [44, 40, 53, 41, 43],
+          "punter": "A.Siposs",
           "yardsAllowed": 323,
           "pointsAllowed": 29
         },
@@ -32493,7 +32801,8 @@
             "Downs"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [42, 46, 42],
+          "punter": "A.Siposs",
           "yardsAllowed": 264,
           "pointsAllowed": 13
         },
@@ -32510,7 +32819,8 @@
             "Punt"
           ],
           "fieldGoals": [31, 32, 43, 46],
-          "punts": [],
+          "punts": [38],
+          "punter": "A.Siposs",
           "yardsAllowed": 281,
           "pointsAllowed": 18
         },
@@ -32529,7 +32839,8 @@
             "Downs"
           ],
           "fieldGoals": [20, 37],
-          "punts": [],
+          "punts": [41, 34],
+          "punter": "A.Siposs",
           "yardsAllowed": 237,
           "pointsAllowed": 17
         },
@@ -32550,7 +32861,8 @@
             "Downs"
           ],
           "fieldGoals": [22, 37],
-          "punts": [],
+          "punts": [39, 41, 39, 51],
+          "punter": "A.Siposs",
           "yardsAllowed": 192,
           "pointsAllowed": 10
         },
@@ -32568,7 +32880,8 @@
             "End of Game"
           ],
           "fieldGoals": [42, 41],
-          "punts": [],
+          "punts": [39, 35],
+          "punter": "A.Siposs",
           "yardsAllowed": 312,
           "pointsAllowed": 16
         },
@@ -32587,7 +32900,8 @@
             "Touchdown"
           ],
           "fieldGoals": [38, 40],
-          "punts": [],
+          "punts": [42, 21, 24],
+          "punter": "A.Siposs",
           "yardsAllowed": 475,
           "pointsAllowed": 51
         }
@@ -32614,7 +32928,8 @@
             "Punt"
           ],
           "fieldGoals": [34],
-          "punts": [],
+          "punts": [59, 45, 47, 43, 59],
+          "punter": "A.Lee",
           "yardsAllowed": 361,
           "pointsAllowed": 19
         },
@@ -32633,7 +32948,8 @@
             "End of Game"
           ],
           "fieldGoals": [23, 55, 23],
-          "punts": [],
+          "punts": [47, 41],
+          "punter": "A.Lee",
           "yardsAllowed": 401,
           "pointsAllowed": 20
         },
@@ -32652,7 +32968,8 @@
             "End of Game"
           ],
           "fieldGoals": [21],
-          "punts": [],
+          "punts": [56, 47, 52, 50],
+          "punter": "A.Lee",
           "yardsAllowed": 338,
           "pointsAllowed": 10
         },
@@ -32671,7 +32988,8 @@
             "End of Game"
           ],
           "fieldGoals": [36, 51, 33],
-          "punts": [],
+          "punts": [44, 57],
+          "punter": "A.Lee",
           "yardsAllowed": 290,
           "pointsAllowed": 14
         },
@@ -32692,7 +33010,8 @@
             "End of Game"
           ],
           "fieldGoals": [31],
-          "punts": [],
+          "punts": [55, 52, 43, 49],
+          "punter": "A.Lee",
           "yardsAllowed": 160,
           "pointsAllowed": 3
         },
@@ -32709,7 +33028,8 @@
             "Interception"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [49, 62, 55],
+          "punter": "A.Lee",
           "yardsAllowed": 335,
           "pointsAllowed": 24
         },
@@ -32729,7 +33049,8 @@
             "Downs"
           ],
           "fieldGoals": [26],
-          "punts": [],
+          "punts": [52, 53, 51, 51],
+          "punter": "A.Lee",
           "yardsAllowed": 337,
           "pointsAllowed": 17
         },
@@ -32750,7 +33071,8 @@
             "End of Game"
           ],
           "fieldGoals": [47],
-          "punts": [],
+          "punts": [46, 51, 47, 50],
+          "punter": "A.Lee",
           "yardsAllowed": 341,
           "pointsAllowed": 34
         },
@@ -32769,7 +33091,8 @@
             "Punt"
           ],
           "fieldGoals": [53],
-          "punts": [],
+          "punts": [41, 43, 48, 33],
+          "punter": "A.Lee",
           "yardsAllowed": 266,
           "pointsAllowed": 13
         },
@@ -32788,7 +33111,8 @@
             "Downs"
           ],
           "fieldGoals": [33, 25],
-          "punts": [],
+          "punts": [41, 58],
+          "punter": "A.Lee",
           "yardsAllowed": 329,
           "pointsAllowed": 22
         },
@@ -32808,7 +33132,8 @@
             "End of Game"
           ],
           "fieldGoals": [53, 53, 49],
-          "punts": [],
+          "punts": [52],
+          "punter": "A.Lee",
           "yardsAllowed": 356,
           "pointsAllowed": 30
         },
@@ -32828,7 +33153,8 @@
             "End of Game"
           ],
           "fieldGoals": [29, 29],
-          "punts": [],
+          "punts": [34, 49, 49],
+          "punter": "A.Lee",
           "yardsAllowed": 338,
           "pointsAllowed": 30
         },
@@ -32847,7 +33173,8 @@
             "Field Goal"
           ],
           "fieldGoals": [28],
-          "punts": [],
+          "punts": [39],
+          "punter": "R.Winslow",
           "yardsAllowed": 346,
           "pointsAllowed": 20
         },
@@ -32866,7 +33193,8 @@
             "End of Game"
           ],
           "fieldGoals": [24, 53, 26, 38],
-          "punts": [],
+          "punts": [31, 43, 47],
+          "punter": "A.Lee",
           "yardsAllowed": 301,
           "pointsAllowed": 22
         },
@@ -32885,7 +33213,8 @@
             "Field Goal"
           ],
           "fieldGoals": [41, 30, 36],
-          "punts": [],
+          "punts": [57, 49, 48],
+          "punter": "A.Lee",
           "yardsAllowed": 431,
           "pointsAllowed": 38
         }
@@ -32912,7 +33241,8 @@
             "Downs"
           ],
           "fieldGoals": [26],
-          "punts": [],
+          "punts": [45, 50, 27, 40],
+          "punter": "P.Harvin",
           "yardsAllowed": 268,
           "pointsAllowed": 24
         },
@@ -32932,7 +33262,8 @@
             "Interception"
           ],
           "fieldGoals": [52],
-          "punts": [],
+          "punts": [45, 20, 37],
+          "punter": "P.Harvin",
           "yardsAllowed": 367,
           "pointsAllowed": 27
         },
@@ -32951,7 +33282,8 @@
             "End of Game"
           ],
           "fieldGoals": [48, 43],
-          "punts": [],
+          "punts": [56, 63],
+          "punter": "P.Harvin",
           "yardsAllowed": 374,
           "pointsAllowed": 19
         },
@@ -32973,7 +33305,8 @@
             "Field Goal"
           ],
           "fieldGoals": [27, 52, 37],
-          "punts": [],
+          "punts": [45, 38, 58, 56, 32, 50, 56],
+          "punter": "P.Harvin",
           "yardsAllowed": 309,
           "pointsAllowed": 20
         },
@@ -32992,7 +33325,8 @@
             "Downs"
           ],
           "fieldGoals": [31],
-          "punts": [],
+          "punts": [38, 56, 44, 38],
+          "punter": "P.Harvin",
           "yardsAllowed": 306,
           "pointsAllowed": 10
         },
@@ -33013,7 +33347,8 @@
             "Field Goal"
           ],
           "fieldGoals": [54, 52, 40],
-          "punts": [],
+          "punts": [38, 32, 46, 41, 39],
+          "punter": "P.Harvin",
           "yardsAllowed": 414,
           "pointsAllowed": 21
         },
@@ -33036,7 +33371,8 @@
             "Fumble"
           ],
           "fieldGoals": [20, 23, 51],
-          "punts": [],
+          "punts": [39, 61, 46, 39, 45, 50],
+          "punter": "P.Harvin",
           "yardsAllowed": 306,
           "pointsAllowed": 16
         },
@@ -33056,7 +33392,8 @@
             "Downs"
           ],
           "fieldGoals": [36, 36, 45],
-          "punts": [],
+          "punts": [46],
+          "punter": "P.Harvin",
           "yardsAllowed": 533,
           "pointsAllowed": 41
         },
@@ -33077,7 +33414,8 @@
             "End of Game"
           ],
           "fieldGoals": [40],
-          "punts": [],
+          "punts": [31, 37, 42, 38, 42],
+          "punter": "P.Harvin",
           "yardsAllowed": 370,
           "pointsAllowed": 35
         },
@@ -33096,7 +33434,8 @@
             "End of Game"
           ],
           "fieldGoals": [53, 43],
-          "punts": [],
+          "punts": [38, 64, 43, 47, 25],
+          "punter": "P.Harvin",
           "yardsAllowed": 326,
           "pointsAllowed": 19
         },
@@ -33119,7 +33458,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [40, 49, 45, 49, 41, 34],
+          "punter": "P.Harvin",
           "yardsAllowed": 458,
           "pointsAllowed": 36
         },
@@ -33140,7 +33480,8 @@
             "End of Game"
           ],
           "fieldGoals": [36, 28, 46, 48],
-          "punts": [],
+          "punts": [27, 51, 32, 40, 49],
+          "punter": "P.Harvin",
           "yardsAllowed": 318,
           "pointsAllowed": 13
         },
@@ -33160,7 +33501,8 @@
             "End of Game"
           ],
           "fieldGoals": [34],
-          "punts": [],
+          "punts": [58, 63],
+          "punter": "C.Waitman",
           "yardsAllowed": 381,
           "pointsAllowed": 36
         },
@@ -33183,7 +33525,8 @@
             "End of Game"
           ],
           "fieldGoals": [22, 30, 50, 48],
-          "punts": [],
+          "punts": [53, 43, 44, 53, 51],
+          "punter": "C.Waitman",
           "yardsAllowed": 232,
           "pointsAllowed": 14
         },
@@ -33207,7 +33550,8 @@
             "Field Goal"
           ],
           "fieldGoals": [28, 40, 36],
-          "punts": [],
+          "punts": [36, 34, 26, 49, 33, 46, 36, 38],
+          "punter": "P.Harvin",
           "yardsAllowed": 381,
           "pointsAllowed": 13
         }
@@ -33233,7 +33577,8 @@
             "Touchdown"
           ],
           "fieldGoals": [24],
-          "punts": [],
+          "punts": [55, 24, 40, 53],
+          "punter": "T.Long",
           "yardsAllowed": 437,
           "pointsAllowed": 24
         },
@@ -33254,7 +33599,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [48, 58, 41, 35, 39, 32],
+          "punter": "T.Long,T.Vizcaino",
           "yardsAllowed": 213,
           "pointsAllowed": 14
         },
@@ -33275,7 +33621,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [63, 55, 41],
+          "punter": "T.Long",
           "yardsAllowed": 531,
           "pointsAllowed": 42
         },
@@ -33295,7 +33642,8 @@
             "Downs"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [37, 69, 53, 57, 46],
+          "punter": "T.Long",
           "yardsAllowed": 327,
           "pointsAllowed": 34
         },
@@ -33316,7 +33664,8 @@
             "Touchdown"
           ],
           "fieldGoals": [48],
-          "punts": [],
+          "punts": [52, 50, 49, 41, 39],
+          "punter": "T.Long",
           "yardsAllowed": 352,
           "pointsAllowed": 21
         },
@@ -33334,6 +33683,7 @@
           ],
           "fieldGoals": [30, 29],
           "punts": [],
+          "punter": "",
           "yardsAllowed": 331,
           "pointsAllowed": 24
         },
@@ -33352,7 +33702,8 @@
             "Field Goal"
           ],
           "fieldGoals": [46, 24],
-          "punts": [],
+          "punts": [59, 32, 35, 59, 57],
+          "punter": "T.Long",
           "yardsAllowed": 381,
           "pointsAllowed": 27
         },
@@ -33373,6 +33724,7 @@
           ],
           "fieldGoals": [30, 41],
           "punts": [],
+          "punter": "",
           "yardsAllowed": 300,
           "pointsAllowed": 37
         },
@@ -33390,7 +33742,8 @@
             "Touchdown"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [48, 43, 45],
+          "punter": "T.Long",
           "yardsAllowed": 302,
           "pointsAllowed": 22
         },
@@ -33412,7 +33765,8 @@
             "Field Goal"
           ],
           "fieldGoals": [43, 43],
-          "punts": [],
+          "punts": [39, 49, 45, 36],
+          "punter": "T.Long",
           "yardsAllowed": 356,
           "pointsAllowed": 22
         },
@@ -33432,7 +33786,8 @@
             "End of Game"
           ],
           "fieldGoals": [27, 28, 39],
-          "punts": [],
+          "punts": [38, 33, 7],
+          "punter": "T.Long",
           "yardsAllowed": 316,
           "pointsAllowed": 21
         },
@@ -33451,7 +33806,8 @@
             "Punt"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [41],
+          "punter": "T.Long",
           "yardsAllowed": 496,
           "pointsAllowed": 34
         },
@@ -33471,6 +33827,7 @@
           ],
           "fieldGoals": [50, 46, 35],
           "punts": [],
+          "punter": "",
           "yardsAllowed": 437,
           "pointsAllowed": 35
         },
@@ -33489,7 +33846,8 @@
             "End of Game"
           ],
           "fieldGoals": [19, 23],
-          "punts": [],
+          "punts": [25, 48, 42],
+          "punter": "T.Long",
           "yardsAllowed": 319,
           "pointsAllowed": 13
         }
@@ -33515,7 +33873,8 @@
             "Touchdown"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [59, 56, 41, 57],
+          "punter": "M.Wishnowsky",
           "yardsAllowed": 353,
           "pointsAllowed": 30
         },
@@ -33537,7 +33896,8 @@
             "Touchdown"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [45, 54, 44, 37, 45, 33],
+          "punter": "M.Wishnowsky",
           "yardsAllowed": 234,
           "pointsAllowed": 28
         },
@@ -33555,7 +33915,8 @@
             "Field Goal"
           ],
           "fieldGoals": [47],
-          "punts": [],
+          "punts": [58, 39],
+          "punter": "M.Wishnowsky",
           "yardsAllowed": 304,
           "pointsAllowed": 17
         },
@@ -33578,7 +33939,8 @@
             "End of Game"
           ],
           "fieldGoals": [34, 56],
-          "punts": [],
+          "punts": [42, 65, 48, 38],
+          "punter": "M.Wishnowsky",
           "yardsAllowed": 295,
           "pointsAllowed": 30
         },
@@ -33597,6 +33959,7 @@
           ],
           "fieldGoals": [48, 52, 22, 32],
           "punts": [],
+          "punter": "",
           "yardsAllowed": 324,
           "pointsAllowed": 22
         },
@@ -33616,7 +33979,8 @@
             "End of Game"
           ],
           "fieldGoals": [26],
-          "punts": [],
+          "punts": [34, 44, 57, 28],
+          "punter": "M.Wishnowsky",
           "yardsAllowed": 437,
           "pointsAllowed": 31
         },
@@ -33634,7 +33998,8 @@
             "Downs"
           ],
           "fieldGoals": [50],
-          "punts": [],
+          "punts": [41, 46, 40],
+          "punter": "M.Wishnowsky",
           "yardsAllowed": 278,
           "pointsAllowed": 10
         },
@@ -33652,7 +34017,8 @@
             "End of Game"
           ],
           "fieldGoals": [20, 48, 45],
-          "punts": [],
+          "punts": [45, 43],
+          "punter": "M.Wishnowsky",
           "yardsAllowed": 200,
           "pointsAllowed": 10
         },
@@ -33673,7 +34039,8 @@
             "End of Game"
           ],
           "fieldGoals": [46, 22],
-          "punts": [],
+          "punts": [65, 51, 67],
+          "punter": "M.Wishnowsky",
           "yardsAllowed": 323,
           "pointsAllowed": 26
         },
@@ -33695,7 +34062,8 @@
             "Downs"
           ],
           "fieldGoals": [50],
-          "punts": [],
+          "punts": [60, 37, 40],
+          "punter": "M.Wishnowsky",
           "yardsAllowed": 327,
           "pointsAllowed": 28
         },
@@ -33717,7 +34085,8 @@
             "Touchdown"
           ],
           "fieldGoals": [33, 24],
-          "punts": [],
+          "punts": [42, 39, 43, 47, 29, 39, 50],
+          "punter": "M.Wishnowsky",
           "yardsAllowed": 397,
           "pointsAllowed": 23
         },
@@ -33736,7 +34105,8 @@
             "Punt"
           ],
           "fieldGoals": [30],
-          "punts": [],
+          "punts": [39, 42, 60, 55],
+          "punter": "M.Wishnowsky",
           "yardsAllowed": 275,
           "pointsAllowed": 13
         },
@@ -33755,7 +34125,8 @@
             "End of Game"
           ],
           "fieldGoals": [48],
-          "punts": [],
+          "punts": [30, 40],
+          "punter": "M.Wishnowsky",
           "yardsAllowed": 278,
           "pointsAllowed": 20
         },
@@ -33776,7 +34147,8 @@
             "Field Goal"
           ],
           "fieldGoals": [37, 27, 36],
-          "punts": [],
+          "punts": [52, 28, 36, 43],
+          "punter": "M.Wishnowsky",
           "yardsAllowed": 222,
           "pointsAllowed": 7
         },
@@ -33796,7 +34168,8 @@
             "Field Goal"
           ],
           "fieldGoals": [42, 24],
-          "punts": [],
+          "punts": [42, 43, 47, 43],
+          "punter": "M.Wishnowsky,R.Gould",
           "yardsAllowed": 265,
           "pointsAllowed": 24
         }
@@ -33821,7 +34194,8 @@
             "End of Game"
           ],
           "fieldGoals": [53],
-          "punts": [],
+          "punts": [43, 45],
+          "punter": "M.Dickson",
           "yardsAllowed": 453,
           "pointsAllowed": 30
         },
@@ -33844,7 +34218,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [50, 60, 55, 62, 64, 50, 43],
+          "punter": "M.Dickson",
           "yardsAllowed": 457,
           "pointsAllowed": 21
         },
@@ -33865,7 +34240,8 @@
             "End of Game"
           ],
           "fieldGoals": [32],
-          "punts": [],
+          "punts": [31, 51, 52, 68],
+          "punter": "M.Dickson",
           "yardsAllowed": 476,
           "pointsAllowed": 26
         },
@@ -33888,7 +34264,8 @@
             "Fumble"
           ],
           "fieldGoals": [40, 43],
-          "punts": [],
+          "punts": [57, 43, 24, 47, 42, 39, 65, 47],
+          "punter": "M.Dickson",
           "yardsAllowed": 345,
           "pointsAllowed": 23
         },
@@ -33908,7 +34285,8 @@
             "Downs"
           ],
           "fieldGoals": [50],
-          "punts": [],
+          "punts": [65, 51, 32, 44, 50],
+          "punter": "M.Dickson",
           "yardsAllowed": 304,
           "pointsAllowed": 13
         },
@@ -33927,7 +34305,8 @@
             "Touchdown"
           ],
           "fieldGoals": [31],
-          "punts": [],
+          "punts": [48, 44, 34, 41, 59],
+          "punter": "M.Dickson",
           "yardsAllowed": 309,
           "pointsAllowed": 7
         },
@@ -33946,7 +34325,8 @@
             "Downs"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [46, 45, 36, 35, 51, 61],
+          "punter": "M.Dickson",
           "yardsAllowed": 393,
           "pointsAllowed": 17
         },
@@ -33965,7 +34345,8 @@
             "End of Game"
           ],
           "fieldGoals": [27, 27],
-          "punts": [],
+          "punts": [53, 42, 60, 50, 52],
+          "punter": "M.Dickson",
           "yardsAllowed": 413,
           "pointsAllowed": 23
         },
@@ -33985,7 +34366,8 @@
             "Touchdown"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [48, 55, 54, 53, 38, 54, 50, 48],
+          "punter": "M.Dickson",
           "yardsAllowed": 371,
           "pointsAllowed": 17
         },
@@ -34007,7 +34389,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [58, 65, 36, 54],
+          "punter": "M.Dickson",
           "yardsAllowed": 365,
           "pointsAllowed": 23
         },
@@ -34026,7 +34409,8 @@
             "Punt"
           ],
           "fieldGoals": [38, 38],
-          "punts": [],
+          "punts": [41, 48, 48, 32],
+          "punter": "M.Dickson",
           "yardsAllowed": 380,
           "pointsAllowed": 13
         },
@@ -34045,7 +34429,8 @@
             "Interception"
           ],
           "fieldGoals": [39],
-          "punts": [],
+          "punts": [40, 47, 54, 59, 48, 49],
+          "punter": "M.Dickson",
           "yardsAllowed": 332,
           "pointsAllowed": 20
         },
@@ -34064,7 +34449,8 @@
             "Downs"
           ],
           "fieldGoals": [36],
-          "punts": [],
+          "punts": [41, 41, 25, 41],
+          "punter": "M.Dickson",
           "yardsAllowed": 317,
           "pointsAllowed": 25
         },
@@ -34084,7 +34470,8 @@
             "End of Game"
           ],
           "fieldGoals": [51, 36, 42],
-          "punts": [],
+          "punts": [45],
+          "punter": "M.Dickson",
           "yardsAllowed": 357,
           "pointsAllowed": 29
         },
@@ -34104,7 +34491,8 @@
             "End of Game"
           ],
           "fieldGoals": [38],
-          "punts": [],
+          "punts": [41, 37],
+          "punter": "M.Dickson",
           "yardsAllowed": 305,
           "pointsAllowed": 24
         }
@@ -34130,7 +34518,8 @@
             "Touchdown"
           ],
           "fieldGoals": [26],
-          "punts": [],
+          "punts": [38, 53, 39, 15],
+          "punter": "B.Pinion",
           "yardsAllowed": 407,
           "pointsAllowed": 34
         },
@@ -34150,7 +34539,8 @@
             "End of Game"
           ],
           "fieldGoals": [29, 44, 27, 48],
-          "punts": [],
+          "punts": [55, 38, 34, 43],
+          "punter": "B.Pinion",
           "yardsAllowed": 294,
           "pointsAllowed": 17
         },
@@ -34169,7 +34559,8 @@
             "End of Game"
           ],
           "fieldGoals": [42],
-          "punts": [],
+          "punts": [41],
+          "punter": "B.Pinion",
           "yardsAllowed": 301,
           "pointsAllowed": 17
         },
@@ -34189,7 +34580,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [41, 44, 42],
+          "punter": "B.Pinion",
           "yardsAllowed": 213,
           "pointsAllowed": 22
         },
@@ -34210,7 +34602,8 @@
             "Punt"
           ],
           "fieldGoals": [22],
-          "punts": [],
+          "punts": [49, 42, 46, 24],
+          "punter": "B.Pinion",
           "yardsAllowed": 311,
           "pointsAllowed": 3
         },
@@ -34231,7 +34624,8 @@
             "Downs"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [54, 32, 40],
+          "punter": "B.Pinion",
           "yardsAllowed": 361,
           "pointsAllowed": 30
         },
@@ -34250,7 +34644,8 @@
             "End of Game"
           ],
           "fieldGoals": [25, 31],
-          "punts": [],
+          "punts": [43, 46, 35],
+          "punter": "B.Pinion",
           "yardsAllowed": 320,
           "pointsAllowed": 29
         },
@@ -34270,7 +34665,8 @@
             "End of Game"
           ],
           "fieldGoals": [25, 40, 30],
-          "punts": [],
+          "punts": [41, 55, 40],
+          "punter": "B.Pinion",
           "yardsAllowed": 215,
           "pointsAllowed": 10
         },
@@ -34292,7 +34688,8 @@
             "Touchdown"
           ],
           "fieldGoals": [25],
-          "punts": [],
+          "punts": [14, 54, 55, 41],
+          "punter": "B.Pinion",
           "yardsAllowed": 392,
           "pointsAllowed": 31
         },
@@ -34311,7 +34708,8 @@
             "Field Goal"
           ],
           "fieldGoals": [31],
-          "punts": [],
+          "punts": [60, 41, 32],
+          "punter": "B.Pinion",
           "yardsAllowed": 380,
           "pointsAllowed": 11
         },
@@ -34334,7 +34732,8 @@
             "Touchdown"
           ],
           "fieldGoals": [23, 24],
-          "punts": [],
+          "punts": [55, 20, 39, 35, 47],
+          "punter": "B.Pinion",
           "yardsAllowed": 466,
           "pointsAllowed": 27
         },
@@ -34356,7 +34755,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [40, 53, 48, 45, 39, 42, 30, 39],
+          "punter": "B.Pinion",
           "yardsAllowed": 212,
           "pointsAllowed": 9
         },
@@ -34376,7 +34776,8 @@
             "Punt"
           ],
           "fieldGoals": [36, 43, 21, 48],
-          "punts": [],
+          "punts": [45, 40, 38],
+          "punter": "S.Hofrichter",
           "yardsAllowed": 273,
           "pointsAllowed": 6
         },
@@ -34395,7 +34796,8 @@
             "Touchdown"
           ],
           "fieldGoals": [39, 27],
-          "punts": [],
+          "punts": [35, 39, 30],
+          "punter": "S.Hofrichter",
           "yardsAllowed": 374,
           "pointsAllowed": 24
         },
@@ -34416,7 +34818,8 @@
             "End of Game"
           ],
           "fieldGoals": [39, 40],
-          "punts": [],
+          "punts": [45, 42, 46],
+          "punter": "B.Pinion",
           "yardsAllowed": 317,
           "pointsAllowed": 17
         }
@@ -34444,7 +34847,8 @@
             "Touchdown"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [52, 42, 55, 38, 48],
+          "punter": "T.Way",
           "yardsAllowed": 481,
           "pointsAllowed": 43
         },
@@ -34463,7 +34867,8 @@
             "Touchdown"
           ],
           "fieldGoals": [21],
-          "punts": [],
+          "punts": [39, 45],
+          "punter": "T.Way",
           "yardsAllowed": 374,
           "pointsAllowed": 30
         },
@@ -34484,7 +34889,8 @@
             "Downs"
           ],
           "fieldGoals": [45, 23, 24],
-          "punts": [],
+          "punts": [56, 51, 47],
+          "punter": "T.Way",
           "yardsAllowed": 369,
           "pointsAllowed": 33
         },
@@ -34505,7 +34911,8 @@
             "End of Game"
           ],
           "fieldGoals": [50, 43],
-          "punts": [],
+          "punts": [66, 60, 55, 51],
+          "punter": "T.Way",
           "yardsAllowed": 499,
           "pointsAllowed": 31
         },
@@ -34525,6 +34932,7 @@
           ],
           "fieldGoals": [45],
           "punts": [],
+          "punter": "",
           "yardsAllowed": 304,
           "pointsAllowed": 24
         },
@@ -34542,7 +34950,8 @@
             "Downs"
           ],
           "fieldGoals": [52],
-          "punts": [],
+          "punts": [66],
+          "punter": "T.Way",
           "yardsAllowed": 273,
           "pointsAllowed": 17
         },
@@ -34560,7 +34969,8 @@
             "Touchdown"
           ],
           "fieldGoals": [46, 28, 29],
-          "punts": [],
+          "punts": [44, 45],
+          "punter": "T.Way",
           "yardsAllowed": 273,
           "pointsAllowed": 19
         },
@@ -34579,7 +34989,8 @@
             "End of Game"
           ],
           "fieldGoals": [36, 29],
-          "punts": [],
+          "punts": [56, 49, 34],
+          "punter": "T.Way",
           "yardsAllowed": 297,
           "pointsAllowed": 21
         },
@@ -34600,7 +35011,8 @@
             "End of Game"
           ],
           "fieldGoals": [23],
-          "punts": [],
+          "punts": [48, 37, 53, 47, 33],
+          "punter": "T.Way",
           "yardsAllowed": 267,
           "pointsAllowed": 15
         },
@@ -34618,7 +35030,8 @@
             "Field Goal"
           ],
           "fieldGoals": [48],
-          "punts": [],
+          "punts": [54, 47, 43, 53],
+          "punter": "T.Way",
           "yardsAllowed": 310,
           "pointsAllowed": 15
         },
@@ -34641,7 +35054,8 @@
             "Fumble"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [59, 57, 55, 53, 42, 41, 49],
+          "punter": "T.Way",
           "yardsAllowed": 323,
           "pointsAllowed": 21
         },
@@ -34661,7 +35075,8 @@
             "End of Game"
           ],
           "fieldGoals": [22],
-          "punts": [],
+          "punts": [36, 60, 44, 46, 54],
+          "punter": "T.Way",
           "yardsAllowed": 519,
           "pointsAllowed": 27
         },
@@ -34683,7 +35098,8 @@
             "Touchdown"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [50, 56, 42, 53, 53, 54],
+          "punter": "T.Way",
           "yardsAllowed": 497,
           "pointsAllowed": 50
         },
@@ -34700,7 +35116,8 @@
             "Interception"
           ],
           "fieldGoals": [31, 39, 55],
-          "punts": [],
+          "punts": [38, 46],
+          "punter": "R.Winslow",
           "yardsAllowed": 330,
           "pointsAllowed": 20
         },
@@ -34719,7 +35136,8 @@
             "Punt"
           ],
           "fieldGoals": [23, 43, 23],
-          "punts": [],
+          "punts": [46, 56, 35, 48, 23, 37],
+          "punter": "T.Way",
           "yardsAllowed": 177,
           "pointsAllowed": 7
         }
@@ -34745,7 +35163,8 @@
             "End of Game"
           ],
           "fieldGoals": [21],
-          "punts": [],
+          "punts": [32, 42, 37],
+          "punter": "J.Charlton",
           "yardsAllowed": 193,
           "pointsAllowed": 9
         },
@@ -34765,7 +35184,8 @@
             "Touchdown"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [49, 43, 44],
+          "punter": "J.Charlton",
           "yardsAllowed": 433,
           "pointsAllowed": 36
         },
@@ -34788,7 +35208,8 @@
             "Interception"
           ],
           "fieldGoals": [48, 43, 50],
-          "punts": [],
+          "punts": [42, 44, 30, 40, 33, 40],
+          "punter": "J.Charlton,Z.Gonzalez",
           "yardsAllowed": 273,
           "pointsAllowed": 21
         },
@@ -34811,7 +35232,8 @@
             "End of Half"
           ],
           "fieldGoals": [47, 23],
-          "punts": [],
+          "punts": [40, 41, 44, 39, 44, 36],
+          "punter": "R.Winslow",
           "yardsAllowed": 571,
           "pointsAllowed": 34
         },
@@ -34832,7 +35254,8 @@
             "Downs"
           ],
           "fieldGoals": [45],
-          "punts": [],
+          "punts": [28, 39, 46, 32, 40, 34, 39],
+          "punter": "R.Winslow",
           "yardsAllowed": 302,
           "pointsAllowed": 23
         },
@@ -34852,7 +35275,8 @@
             "End of Game"
           ],
           "fieldGoals": [29, 51, 57, 23],
-          "punts": [],
+          "punts": [49, 36, 46, 44],
+          "punter": "L.Edwards",
           "yardsAllowed": 213,
           "pointsAllowed": 13
         },
@@ -34872,7 +35296,8 @@
             "Downs"
           ],
           "fieldGoals": [39, 49],
-          "punts": [],
+          "punts": [57, 59, 46, 43],
+          "punter": "L.Edwards",
           "yardsAllowed": 273,
           "pointsAllowed": 18
         },
@@ -34893,7 +35318,8 @@
             "Punt"
           ],
           "fieldGoals": [44, 48, 49, 27],
-          "punts": [],
+          "punts": [44, 55, 54],
+          "punter": "L.Edwards",
           "yardsAllowed": 169,
           "pointsAllowed": 10
         },
@@ -34912,7 +35338,8 @@
             "Downs"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [48, 50, 32, 60],
+          "punter": "L.Edwards",
           "yardsAllowed": 369,
           "pointsAllowed": 27
         },
@@ -34933,7 +35360,8 @@
             "Downs"
           ],
           "fieldGoals": [41],
-          "punts": [],
+          "punts": [57, 55, 40, 51, 58],
+          "punter": "L.Edwards",
           "yardsAllowed": 315,
           "pointsAllowed": 33
         },
@@ -34952,7 +35380,8 @@
             "Touchdown"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [54, 33],
+          "punter": "L.Edwards",
           "yardsAllowed": 318,
           "pointsAllowed": 23
         },
@@ -34972,7 +35401,8 @@
             "Interception"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [47, 54, 41, 40],
+          "punter": "L.Edwards",
           "yardsAllowed": 312,
           "pointsAllowed": 31
         },
@@ -34992,7 +35422,8 @@
             "End of Game"
           ],
           "fieldGoals": [24, 29],
-          "punts": [],
+          "punts": [40, 50, 55, 48, 60],
+          "punter": "L.Edwards",
           "yardsAllowed": 391,
           "pointsAllowed": 32
         },
@@ -35011,7 +35442,8 @@
             "Interception"
           ],
           "fieldGoals": [32],
-          "punts": [],
+          "punts": [59, 62, 39, 37, 38],
+          "punter": "L.Edwards",
           "yardsAllowed": 280,
           "pointsAllowed": 18
         },
@@ -35032,7 +35464,8 @@
             "Downs"
           ],
           "fieldGoals": [35],
-          "punts": [],
+          "punts": [35, 50],
+          "punter": "L.Edwards",
           "yardsAllowed": 409,
           "pointsAllowed": 41
         }
@@ -35060,7 +35493,8 @@
             "FUMBLE"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [51, 55, 44, 47, 56, 36],
+          "punter": "L.Cooke",
           "yardsAllowed": 407,
           "pointsAllowed": 25
         },
@@ -35077,7 +35511,8 @@
             "Punt"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [43, 43, 57, 40],
+          "punter": "L.Cooke",
           "yardsAllowed": 420,
           "pointsAllowed": 24
         },
@@ -35097,7 +35532,8 @@
             "Interception"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [42, 38],
+          "punter": "L.Cooke",
           "yardsAllowed": 368,
           "pointsAllowed": 31
         },
@@ -35117,7 +35553,8 @@
             "Field Goal"
           ],
           "fieldGoals": [40, 54, 53],
-          "punts": [],
+          "punts": [45, 27, 37, 43],
+          "punter": "L.Cooke",
           "yardsAllowed": 431,
           "pointsAllowed": 20
         },
@@ -35137,7 +35574,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [49, 51, 54, 41],
+          "punter": "L.Cooke",
           "yardsAllowed": 229,
           "pointsAllowed": 31
         },
@@ -35156,7 +35594,8 @@
             "Punt"
           ],
           "fieldGoals": [39, 55, 21],
-          "punts": [],
+          "punts": [53, 48, 33, 46],
+          "punter": "L.Cooke",
           "yardsAllowed": 301,
           "pointsAllowed": 6
         },
@@ -35178,7 +35617,8 @@
             "Fumble"
           ],
           "fieldGoals": [56],
-          "punts": [],
+          "punts": [42, 48, 46, 42, 41, 54, 59],
+          "punter": "L.Cooke",
           "yardsAllowed": 295,
           "pointsAllowed": 23
         },
@@ -35194,7 +35634,8 @@
             "Touchdown"
           ],
           "fieldGoals": [30],
-          "punts": [],
+          "punts": [51, 52, 51, 39],
+          "punter": "L.Cooke",
           "yardsAllowed": 333,
           "pointsAllowed": 30
         },
@@ -35213,7 +35654,8 @@
             "Downs"
           ],
           "fieldGoals": [22, 34],
-          "punts": [],
+          "punts": [44, 42, 44],
+          "punter": "L.Cooke",
           "yardsAllowed": 332,
           "pointsAllowed": 21
         },
@@ -35233,7 +35675,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [68, 53, 31, 55, 40],
+          "punter": "L.Cooke",
           "yardsAllowed": 418,
           "pointsAllowed": 37
         },
@@ -35253,7 +35696,8 @@
             "Downs"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [49, 32, 47, 43, 54],
+          "punter": "L.Cooke",
           "yardsAllowed": 263,
           "pointsAllowed": 20
         },
@@ -35273,7 +35717,8 @@
             "End of Game"
           ],
           "fieldGoals": [22, 38, 35],
-          "punts": [],
+          "punts": [54, 40, 54, 40, 49],
+          "punter": "L.Cooke",
           "yardsAllowed": 281,
           "pointsAllowed": 30
         },
@@ -35291,7 +35736,8 @@
             "Downs"
           ],
           "fieldGoals": [21, 45, 40],
-          "punts": [],
+          "punts": [59],
+          "punter": "L.Cooke",
           "yardsAllowed": 373,
           "pointsAllowed": 26
         },
@@ -35310,7 +35756,8 @@
             "Touchdown"
           ],
           "fieldGoals": [29],
-          "punts": [],
+          "punts": [38, 34, 47, 40],
+          "punter": "J.Scott",
           "yardsAllowed": 471,
           "pointsAllowed": 50
         },
@@ -35329,7 +35776,8 @@
             "End of Game"
           ],
           "fieldGoals": [22, 20, 39, 31],
-          "punts": [],
+          "punts": [45, 50, 57],
+          "punter": "J.Charlton",
           "yardsAllowed": 233,
           "pointsAllowed": 11
         }
@@ -35355,7 +35803,8 @@
             "Field Goal"
           ],
           "fieldGoals": [39, 50, 32, 66],
-          "punts": [],
+          "punts": [54, 48, 35],
+          "punter": "S.Koch",
           "yardsAllowed": 285,
           "pointsAllowed": 17
         },
@@ -35377,7 +35826,8 @@
             "End of Game"
           ],
           "fieldGoals": [40, 46, 20],
-          "punts": [],
+          "punts": [34, 52, 55, 46, 49, 57, 42],
+          "punter": "S.Koch",
           "yardsAllowed": 254,
           "pointsAllowed": 7
         },
@@ -35396,7 +35846,8 @@
             "Touchdown"
           ],
           "fieldGoals": [23],
-          "punts": [],
+          "punts": [49, 53, 47, 49],
+          "punter": "S.Koch",
           "yardsAllowed": 513,
           "pointsAllowed": 25
         },
@@ -35416,7 +35867,8 @@
             "End of Game"
           ],
           "fieldGoals": [52, 39],
-          "punts": [],
+          "punts": [53, 33],
+          "punter": "S.Koch",
           "yardsAllowed": 208,
           "pointsAllowed": 6
         },
@@ -35439,7 +35891,8 @@
             "End of Game"
           ],
           "fieldGoals": [45],
-          "punts": [],
+          "punts": [48, 49, 40, 31, 50, 46],
+          "punter": "S.Koch",
           "yardsAllowed": 520,
           "pointsAllowed": 41
         },
@@ -35460,7 +35913,8 @@
             "Field Goal"
           ],
           "fieldGoals": [37, 36],
-          "punts": [],
+          "punts": [39, 35, 51],
+          "punter": "S.Koch",
           "yardsAllowed": 318,
           "pointsAllowed": 31
         },
@@ -35483,7 +35937,8 @@
             "Interception"
           ],
           "fieldGoals": [46],
-          "punts": [],
+          "punts": [45, 37, 53, 43, 24, 41, 39],
+          "punter": "S.Koch",
           "yardsAllowed": 350,
           "pointsAllowed": 16
         },
@@ -35503,7 +35958,8 @@
             "Touchdown"
           ],
           "fieldGoals": [35, 27, 46],
-          "punts": [],
+          "punts": [37, 42, 44, 35, 57, 45],
+          "punter": "S.Koch",
           "yardsAllowed": 353,
           "pointsAllowed": 13
         },
@@ -35525,7 +35981,8 @@
             "End of Game"
           ],
           "fieldGoals": [52, 25, 49],
-          "punts": [],
+          "punts": [53, 33, 50],
+          "punter": "S.Koch",
           "yardsAllowed": 262,
           "pointsAllowed": 10
         },
@@ -35544,7 +36001,8 @@
             "Touchdown"
           ],
           "fieldGoals": [35, 28],
-          "punts": [],
+          "punts": [55, 45, 46, 57],
+          "punter": "S.Koch",
           "yardsAllowed": 321,
           "pointsAllowed": 20
         },
@@ -35566,7 +36024,8 @@
             "Downs"
           ],
           "fieldGoals": [50, 42, 55],
-          "punts": [],
+          "punts": [36, 44, 60, 44, 44],
+          "punter": "S.Koch",
           "yardsAllowed": 290,
           "pointsAllowed": 18
         },
@@ -35584,7 +36043,8 @@
             "Touchdown"
           ],
           "fieldGoals": [38],
-          "punts": [],
+          "punts": [42],
+          "punter": "S.Koch",
           "yardsAllowed": 346,
           "pointsAllowed": 31
         },
@@ -35602,7 +36062,8 @@
             "Interception"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [47, 43, 43],
+          "punter": "S.Koch",
           "yardsAllowed": 575,
           "pointsAllowed": 41
         },
@@ -35620,7 +36081,8 @@
             "Fumble"
           ],
           "fieldGoals": [22, 46, 46, 34],
-          "punts": [],
+          "punts": [36, 42, 61],
+          "punter": "S.Koch",
           "yardsAllowed": 373,
           "pointsAllowed": 20
         },
@@ -35643,7 +36105,8 @@
             "Punt"
           ],
           "fieldGoals": [24, 46],
-          "punts": [],
+          "punts": [44, 40, 36, 23, 50, 39, 36],
+          "punter": "S.Koch",
           "yardsAllowed": 314,
           "pointsAllowed": 16
         }
@@ -35668,7 +36131,8 @@
             "Downs"
           ],
           "fieldGoals": [53],
-          "punts": [],
+          "punts": [53, 44, 47, 44, 35, 44],
+          "punter": "C.Johnston",
           "yardsAllowed": 407,
           "pointsAllowed": 24
         },
@@ -35689,7 +36153,8 @@
             "Interception"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [49, 51, 43, 61, 47],
+          "punter": "C.Johnston",
           "yardsAllowed": 450,
           "pointsAllowed": 40
         },
@@ -35708,7 +36173,8 @@
             "Fumble"
           ],
           "fieldGoals": [33],
-          "punts": [],
+          "punts": [0, 45, 54],
+          "punter": "C.Johnston",
           "yardsAllowed": 352,
           "pointsAllowed": 25
         },
@@ -35728,7 +36194,8 @@
             "End of Game"
           ],
           "fieldGoals": [31],
-          "punts": [],
+          "punts": [49, 42, 21, 55, 45],
+          "punter": "C.Johnston",
           "yardsAllowed": 388,
           "pointsAllowed": 31
         },
@@ -35749,7 +36216,8 @@
             "Downs"
           ],
           "fieldGoals": [53],
-          "punts": [],
+          "punts": [48, 44, 42, 54, 43, 44, 69],
+          "punter": "C.Johnston",
           "yardsAllowed": 397,
           "pointsAllowed": 31
         },
@@ -35771,7 +36239,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [30, 52, 50, 63, 58, 59, 59],
+          "punter": "C.Johnston",
           "yardsAllowed": 467,
           "pointsAllowed": 38
         },
@@ -35794,7 +36263,8 @@
             "End of Game"
           ],
           "fieldGoals": [31, 40, 20],
-          "punts": [],
+          "punts": [58, 45, 48, 48, 36],
+          "punter": "C.Johnston",
           "yardsAllowed": 262,
           "pointsAllowed": 17
         },
@@ -35815,7 +36285,8 @@
             "Punt"
           ],
           "fieldGoals": [43, 24, 37],
-          "punts": [],
+          "punts": [48, 30, 52, 50, 38, 50, 39],
+          "punter": "C.Johnston",
           "yardsAllowed": 420,
           "pointsAllowed": 13
         },
@@ -35835,7 +36306,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [56, 53, 32, 45, 50],
+          "punter": "C.Johnston",
           "yardsAllowed": 266,
           "pointsAllowed": 21
         },
@@ -35855,7 +36327,8 @@
             "Downs"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [50, 47, 53, 60, 41, 51],
+          "punter": "C.Johnston",
           "yardsAllowed": 389,
           "pointsAllowed": 31
         },
@@ -35875,7 +36348,8 @@
             "End of Game"
           ],
           "fieldGoals": [21, 61],
-          "punts": [],
+          "punts": [54, 47, 58, 35, 35],
+          "punter": "C.Johnston",
           "yardsAllowed": 453,
           "pointsAllowed": 33
         },
@@ -35895,7 +36369,8 @@
             "Touchdown"
           ],
           "fieldGoals": [52, 51, 25],
-          "punts": [],
+          "punts": [49, 55, 50, 38],
+          "punter": "C.Johnston",
           "yardsAllowed": 296,
           "pointsAllowed": 16
         },
@@ -35913,7 +36388,8 @@
             "End of Game"
           ],
           "fieldGoals": [51, 25],
-          "punts": [],
+          "punts": [53],
+          "punter": "C.Johnston",
           "yardsAllowed": 417,
           "pointsAllowed": 29
         },
@@ -35934,7 +36410,8 @@
             "End of Game"
           ],
           "fieldGoals": [],
-          "punts": [],
+          "punts": [53, 44, 39, 53, 49, 48, 41],
+          "punter": "C.Johnston",
           "yardsAllowed": 416,
           "pointsAllowed": 23
         },
@@ -35953,7 +36430,8 @@
             "Touchdown"
           ],
           "fieldGoals": [31],
-          "punts": [],
+          "punts": [39, 33, 42, 50, 47],
+          "punter": "C.Johnston",
           "yardsAllowed": 405,
           "pointsAllowed": 28
         }
@@ -35961,188 +36439,221 @@
     }
   },
   "fantasyCalc": {
-    "history": [],
     "players": {
-      "8439": 27.53,
-      "12483": 48.78,
-      "14880": 16.99,
-      "15795": 2.78,
-      "15818": 13.96,
-      "15847": 51.41,
-      "16460": 0.54,
-      "16731": 0.74,
-      "16737": 29.48,
-      "16800": 45.41,
-      "2468609": 0.11,
-      "2576414": 8.97,
-      "2577327": 1.81,
-      "2577417": 67.21,
-      "2976212": 26.11,
-      "2976499": 16.09,
-      "2977187": 38.41,
-      "3040151": 20.68,
-      "3042519": 10.76,
-      "3043078": 44.98,
-      "3045138": 0.91,
-      "3045147": 12.67,
-      "3046779": 52.15,
-      "3051392": 2.5,
-      "3051876": 9.25,
-      "3051926": 2.49,
-      "3052587": 24.99,
-      "3054850": 23.31,
-      "3068267": 5.43,
-      "3116165": 10.05,
-      "3116365": 29.77,
-      "3116385": 20.85,
-      "3116406": 86.52,
-      "3117251": 89.79,
-      "3117256": 1.51,
-      "3121023": 3.43,
-      "3121422": 12.66,
-      "3121427": 2.25,
-      "3122840": 24.18,
-      "3123076": 7.6,
-      "3126486": 33.2,
-      "3128429": 3.3,
-      "3128720": 7.54,
-      "3139477": 96.38,
-      "3895856": 11.77,
-      "3915416": 34.22,
-      "3915511": 77.73,
-      "3916148": 5.61,
-      "3916387": 97.54,
-      "3916433": 1.29,
-      "3917315": 75.21,
-      "3918298": 100.51,
-      "3925357": 11.03,
-      "3929630": 60.48,
-      "3932905": 5.71,
-      "4032473": 0.71,
-      "4035538": 11.46,
-      "4035676": 4.47,
-      "4035687": 28.91,
-      "4035886": 0.29,
-      "4036133": 5.27,
-      "4036378": 69.09,
-      "4038815": 0.51,
-      "4038941": 66.45,
-      "4040655": 0.41,
-      "4040715": 90.89,
-      "4040761": 4.31,
-      "4047365": 34.46,
-      "4047646": 69.51,
-      "4047650": 29.14,
-      "4239993": 18.76,
-      "4239996": 43.56,
-      "4241372": 3.25,
-      "4241389": 89.2,
-      "4241416": 1.37,
-      "4241457": 7.95,
-      "4241463": 1.11,
-      "4241474": 3.73,
-      "4241478": 26.28,
-      "4241479": 63.17,
-      "4241985": 0.98,
-      "4242335": 60.2,
-      "4242355": 5.09,
-      "4242431": 0.45,
-      "4242433": 1.23,
-      "4243331": 0.12,
-      "4243537": 1.06,
-      "4248528": 4.63,
-      "4258173": 29.5,
-      "4258595": 1.42,
-      "4259545": 8.68,
-      "4262921": 81.7,
-      "4360238": 0.07,
-      "4360248": 15.45,
-      "4360294": 0.21,
-      "4360310": 56.76,
-      "4360438": 33.62,
-      "4361307": 37.14,
-      "4361370": 40.08,
-      "4361409": 0.67,
-      "4361411": 1.44,
-      "4361418": 2.05,
-      "4361432": 1.9,
-      "4361529": 38.74,
-      "4361579": 4.01,
-      "4361741": 50.69,
-      "4361777": 6.48,
-      "4362238": 2.71,
-      "4362249": 7.02,
-      "4362628": 78.75,
-      "4362887": 2.87,
-      "4366031": 18.21,
-      "4372016": 34.72,
-      "4372019": 2.61,
-      "4373626": 0.56,
-      "4373678": 1.65,
-      "4374302": 84.11,
-      "4379399": 22.49,
-      "4385690": 30.21,
-      "4426338": 5.72,
-      "4426348": 54.79,
-      "4426354": 12.14,
-      "4426385": 0.84,
-      "4426388": 1.73,
-      "4426502": 29.84,
-      "4426515": 52.16,
-      "4427095": 0.36,
-      "4427366": 72.87,
-      "4428085": 0.38,
-      "4428209": 0.78,
-      "4428331": 9.03,
-      "4428557": 3.05,
-      "4428850": 0.87,
-      "4429023": 0.23,
-      "4429025": 0.24,
-      "4429084": 77.26,
-      "4429096": 1.6,
-      "4429160": 29.93,
-      "4429205": 5.89,
-      "4429275": 1.19,
-      "4429501": 0.17,
-      "4429615": 14.3,
-      "4429795": 54.89,
-      "4430027": 47.1,
-      "4430034": 0.59,
-      "4430637": 0.47,
-      "4430737": 46.8,
-      "4430807": 75.24,
-      "4430878": 4.09,
-      "4430968": 0.05,
-      "4431280": 0.18,
-      "4431299": 6.82,
-      "4431452": 2.33,
-      "4431492": 0.09,
-      "4431611": 64.79,
-      "4432577": 93.6,
-      "4432665": 2.17,
-      "4432708": 48.14,
-      "4432773": 3.56,
-      "4567048": 18.08,
-      "4569173": 8.44,
-      "4569587": 0.07,
-      "4569618": 62.22,
-      "4569987": 3.17,
-      "4595348": 21.68,
-      "4597500": 1.01,
-      "4599739": 0.32,
-      "4612826": 4.48,
-      "4613104": 0.03,
-      "4635008": 3.8,
-      "4678008": 2.01,
-      "4682745": 0.34,
-      "4683062": 4.92,
-      "4685247": 0.03,
-      "4685720": 7.97,
-      "4688813": 0.63,
-      "4690923": 0.26,
-      "4697815": 26.07,
-      "4722893": 0.15
+      "8439": 16.81,
+      "12483": 32.63,
+      "14880": 33.59,
+      "14881": 29.18,
+      "15795": 15.62,
+      "15818": 12.33,
+      "15835": 7.85,
+      "15847": 40.7,
+      "15864": 28.12,
+      "16460": 8.15,
+      "16731": 1.06,
+      "16737": 42.73,
+      "16757": 9.83,
+      "16800": 23.95,
+      "2576336": 1.51,
+      "2576414": 1.31,
+      "2577327": 2.99,
+      "2969939": 14.26,
+      "2972515": 1.4,
+      "2976499": 14.31,
+      "2976592": 0.32,
+      "2977187": 43.48,
+      "3040151": 41.47,
+      "3042519": 22.41,
+      "3043078": 58.95,
+      "3043116": 0.35,
+      "3045147": 25.3,
+      "3046439": 4.22,
+      "3046779": 45,
+      "3051738": 2.72,
+      "3051926": 5.78,
+      "3052587": 70.75,
+      "3054212": 16.05,
+      "3054850": 57.37,
+      "3059915": 7.32,
+      "3116164": 0.96,
+      "3116365": 17.07,
+      "3116385": 52.6,
+      "3116406": 42.98,
+      "3117256": 2.09,
+      "3121422": 39.65,
+      "3123076": 18.29,
+      "3126486": 18.66,
+      "3127292": 3.94,
+      "3128429": 30.96,
+      "3139477": 72.68,
+      "3728262": 0.52,
+      "3886598": 14.43,
+      "3912547": 31.46,
+      "3915416": 31.86,
+      "3915511": 91.1,
+      "3916148": 22.38,
+      "3916387": 105.71,
+      "3916433": 18.58,
+      "3917315": 65.16,
+      "3918298": 104.13,
+      "3925357": 17.82,
+      "3929630": 90.48,
+      "3929785": 3.55,
+      "3932905": 1.3,
+      "4035687": 14.12,
+      "4036133": 19.83,
+      "4036378": 62.4,
+      "4038441": 0.39,
+      "4038815": 9.3,
+      "4038941": 56.54,
+      "4040655": 14.22,
+      "4040715": 99.57,
+      "4040761": 0.71,
+      "4047365": 48.16,
+      "4047646": 60.37,
+      "4047650": 29.58,
+      "4048244": 2.82,
+      "4239993": 40.21,
+      "4239996": 10.01,
+      "4240021": 0.94,
+      "4240472": 0.2,
+      "4241389": 57.01,
+      "4241416": 20.74,
+      "4241457": 17.89,
+      "4241463": 17.06,
+      "4241464": 1.49,
+      "4241474": 21.05,
+      "4241478": 18.78,
+      "4241479": 36.73,
+      "4241985": 19.25,
+      "4242335": 31.92,
+      "4242355": 4.38,
+      "4243331": 12.65,
+      "4243389": 0.02,
+      "4248528": 4.91,
+      "4258173": 67.08,
+      "4258595": 2.24,
+      "4259545": 17.24,
+      "4260394": 1.31,
+      "4262921": 73.55,
+      "4360078": 0.89,
+      "4360248": 10.15,
+      "4360516": 15.51,
+      "4360939": 1.13,
+      "4361050": 0.46,
+      "4361307": 43.48,
+      "4361370": 6.1,
+      "4361411": 2.67,
+      "4361418": 6.64,
+      "4361432": 2.86,
+      "4361529": 21.62,
+      "4361579": 7.65,
+      "4361741": 53.98,
+      "4362238": 36.2,
+      "4362249": 20.81,
+      "4362628": 87.84,
+      "4369863": 6.97,
+      "4372016": 18.38,
+      "4372019": 2.53,
+      "4372096": 0.21,
+      "4372414": 2.16,
+      "4372561": 7.45,
+      "4373626": 1.74,
+      "4373678": 10.87,
+      "4374302": 69.89,
+      "4379399": 35.73,
+      "4385690": 5.85,
+      "4426338": 52.46,
+      "4426348": 78.49,
+      "4426354": 30.44,
+      "4426385": 7.81,
+      "4426386": 0.91,
+      "4426388": 11.51,
+      "4426502": 43.14,
+      "4426515": 53.71,
+      "4427095": 2.08,
+      "4427366": 39.46,
+      "4428209": 2.58,
+      "4428557": 2.02,
+      "4428718": 0.18,
+      "4428850": 0.32,
+      "4429013": 3.11,
+      "4429025": 5.66,
+      "4429084": 35.91,
+      "4429096": 0.97,
+      "4429160": 55.17,
+      "4429205": 9.74,
+      "4429275": 2.04,
+      "4429501": 0.77,
+      "4429615": 23.85,
+      "4429795": 55.29,
+      "4430027": 13.66,
+      "4430034": 4.04,
+      "4430539": 0.05,
+      "4430737": 44.42,
+      "4430807": 68.65,
+      "4430834": 0.67,
+      "4430878": 26.16,
+      "4430968": 0.4,
+      "4431299": 14.23,
+      "4431452": 29.18,
+      "4431611": 36.87,
+      "4432577": 61.62,
+      "4432665": 50.94,
+      "4432708": 27.16,
+      "4432773": 22.22,
+      "4567048": 30.93,
+      "4569173": 16.53,
+      "4569587": 3.15,
+      "4569618": 34.67,
+      "4569682": 1.11,
+      "4569987": 6.98,
+      "4572680": 7.79,
+      "4595348": 42.25,
+      "4596448": 27.09,
+      "4599739": 0.2,
+      "4612826": 24.27,
+      "4635008": 4.16,
+      "4683062": 6.08,
+      "4685247": 3.98,
+      "4685720": 4.36,
+      "4688813": 9.92,
+      "4697815": 13.59,
+      "4722893": 0.24,
+      "Devaughn Vele": 1.17
     },
-    "timestamp": 1724615346678
+    "timestamp": 1735452858869,
+    "history": [
+      {
+        "values": {
+          "1": 292.12,
+          "2": 173.9,
+          "3": 134.55,
+          "4": 255.99,
+          "5": 229.01,
+          "6": 177.67,
+          "7": 288.01,
+          "8": 118.31,
+          "9": 287.99,
+          "10": 159.28
+        },
+        "date": 1735450143715
+      },
+      {
+        "values": {
+          "1": 292.95,
+          "2": 174.49,
+          "3": 135.1,
+          "4": 256.58,
+          "5": 229.5,
+          "6": 177.78,
+          "7": 288.28,
+          "8": 118.58,
+          "9": 288.81,
+          "10": 160.05
+        },
+        "date": 1735452860700
+      }
+    ]
   }
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { printF } from "..";
-import { currentYear, selectedWrapped } from "../Wrapped";
+import { currentYear, groupByF, selectedWrapped } from "../Wrapped";
 
 // todo ignore current week
 export type NFLPlayerType = {
@@ -27,6 +27,7 @@ type NFLTeamType = {
           yardsAllowed: number;
           drives: (string | null)[];
           punts: number[];
+          punter?: string;
         }
       | undefined;
   };
@@ -80,7 +81,9 @@ export default function FetchWrapped() {
   }, [update]);
   return (
     <div>
-      <pre>{printF(getWrapped, `${currentYear}`)}</pre>
+      <pre style={{ whiteSpace: "pre-wrap", fontSize: "xx-small" }}>
+        {printF(getWrapped, `${currentYear}`)}
+      </pre>
       <pre style={{ whiteSpace: "pre-wrap" }}>{wrapped}</pre>
     </div>
   );
@@ -542,27 +545,33 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                                   )![1]
                                 ),
                               })),
-                          punts: resp.page.content.gamepackage.allPlys
-                            .filter((p) => p.headline === "Punt")
-                            .map((p) => ({
-                              teamId: Object.values(
-                                resp.page.content.gamepackage.pbp.tms
-                              ).find((t) => t.displayName === p.teamName)!.id,
-                              yards: parseInt(
-                                (p.plays || [])
+                          punts: groupByF(
+                            resp.page.content.gamepackage.allPlys
+                              .filter((p) => p.headline === "Punt")
+                              .map((p) => ({
+                                teamId: Object.values(
+                                  resp.page.content.gamepackage.pbp.tms
+                                ).find((t) => t.displayName === p.teamName)!.id,
+                                punt: (p.plays || [])
                                   .map(
                                     (p) =>
                                       p.description.match(
-                                        /punts (\d+) yard/
-                                      )?.[1]!
+                                        /(\S*) punts (\d+) yards?/
+                                      )
                                     // sometimes, like in
                                     // https://www.espn.com/nfl/playbyplay/_/gameId/401547427 @ (7:51 - 3rd)
                                     // espn mislabels a drive with the punt going to the other team
                                   )
-                                  .find((yards) => yards !== undefined)!
-                              ),
-                            }))
-                            .filter((p) => !isNaN(p.yards)),
+                                  .find((p) => p)!,
+                              }))
+                              .filter((p) => p.punt?.[0])
+                              .map((p) => ({
+                                ...p,
+                                punter: p.punt[1]!.toString(),
+                                distance: parseInt(p.punt[2]!.toString()),
+                              })),
+                            (p) => p.teamId
+                          ),
                           drives: Object.fromEntries(
                             Object.values(
                               resp.page.content.gamepackage.pbp.tms
@@ -678,9 +687,16 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                                   fieldGoals: gamesByGameId[gameId].fieldGoals
                                     .filter((play) => play.teamId === team.id)
                                     .map((play) => play.yards),
-                                  punts: gamesByGameId[gameId].punts
-                                    .filter((play) => play.teamId === team.id)
-                                    .map((play) => play.yards),
+                                  punts: (
+                                    gamesByGameId[gameId].punts[team.id] || []
+                                  ).flatMap((play) => play.distance),
+                                  punter: Object.keys(
+                                    groupByF(
+                                      gamesByGameId[gameId].punts[team.id] ||
+                                        [],
+                                      (p) => p.punter
+                                    )
+                                  ).join(","),
                                   ...defensesByScoringPeriod[scoringPeriod][
                                     team.id
                                   ],
