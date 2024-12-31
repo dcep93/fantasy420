@@ -556,7 +556,7 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                                   .map(
                                     (p) =>
                                       p.description.match(
-                                        /(\S*) punts (\d+) yards? to \S+ (\d+)/
+                                        /(\S*) punts (\d+) yards? to \S+ (\d+)?/
                                       )
                                     // sometimes, like in
                                     // https://www.espn.com/nfl/playbyplay/_/gameId/401547427 @ (7:51 - 3rd)
@@ -567,7 +567,7 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                               .filter((p) => p.punt?.[0])
                               .map((p) => ({
                                 ...p,
-                                landed: parseInt(p.punt[3]),
+                                landed: !p.punt[3] ? 0 : parseInt(p.punt[3]),
                                 punter: p.punt[1],
                                 distance: parseInt(p.punt[2]),
                               })),

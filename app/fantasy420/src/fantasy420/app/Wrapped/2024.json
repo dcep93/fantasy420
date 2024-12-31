@@ -24543,6 +24543,10 @@
             {
               "landed": 34,
               "distance": 39
+            },
+            {
+              "landed": 0,
+              "distance": 65
             }
           ],
           "punter": "B.Pinion",
@@ -24918,6 +24922,10 @@
           ],
           "punts": [
             {
+              "landed": 0,
+              "distance": 38
+            },
+            {
               "landed": 3,
               "distance": 40
             },
@@ -24932,6 +24940,10 @@
             {
               "landed": 9,
               "distance": 37
+            },
+            {
+              "landed": 0,
+              "distance": 45
             }
           ],
           "punter": "B.Pinion",
@@ -25067,6 +25079,10 @@
             {
               "landed": 11,
               "distance": 39
+            },
+            {
+              "landed": 0,
+              "distance": 65
             }
           ],
           "punter": "S.Martin",
@@ -25131,6 +25147,10 @@
             {
               "landed": 16,
               "distance": 59
+            },
+            {
+              "landed": 0,
+              "distance": 48
             },
             {
               "landed": 18,
@@ -25221,6 +25241,10 @@
           ],
           "punts": [
             {
+              "landed": 0,
+              "distance": 62
+            },
+            {
               "landed": 26,
               "distance": 40
             },
@@ -25264,6 +25288,10 @@
             {
               "landed": 27,
               "distance": 39
+            },
+            {
+              "landed": 0,
+              "distance": 44
             },
             {
               "landed": 40,
@@ -25518,6 +25546,10 @@
               "distance": 48
             },
             {
+              "landed": 0,
+              "distance": 56
+            },
+            {
               "landed": 10,
               "distance": 30
             },
@@ -25593,6 +25625,10 @@
             48
           ],
           "punts": [
+            {
+              "landed": 0,
+              "distance": 50
+            },
             {
               "landed": 11,
               "distance": 34
@@ -25727,6 +25763,10 @@
             {
               "landed": 9,
               "distance": 64
+            },
+            {
+              "landed": 0,
+              "distance": 61
             },
             {
               "landed": 8,
@@ -25926,6 +25966,10 @@
             {
               "landed": 34,
               "distance": 13
+            },
+            {
+              "landed": 0,
+              "distance": 39
             },
             {
               "landed": 12,
@@ -26213,6 +26257,14 @@
           ],
           "punts": [
             {
+              "landed": 0,
+              "distance": 57
+            },
+            {
+              "landed": 0,
+              "distance": 80
+            },
+            {
               "landed": 17,
               "distance": 51
             },
@@ -26394,6 +26446,10 @@
               "distance": 46
             },
             {
+              "landed": 0,
+              "distance": 57
+            },
+            {
               "landed": 11,
               "distance": 33
             }
@@ -26505,6 +26561,10 @@
             {
               "landed": 20,
               "distance": 52
+            },
+            {
+              "landed": 0,
+              "distance": 65
             },
             {
               "landed": 9,
@@ -26651,6 +26711,10 @@
             {
               "landed": 20,
               "distance": 46
+            },
+            {
+              "landed": 0,
+              "distance": 61
             },
             {
               "landed": 42,
@@ -26833,6 +26897,10 @@
           ],
           "punts": [
             {
+              "landed": 0,
+              "distance": 64
+            },
+            {
               "landed": 28,
               "distance": 31
             },
@@ -26930,6 +26998,14 @@
             {
               "landed": 10,
               "distance": 61
+            },
+            {
+              "landed": 0,
+              "distance": 74
+            },
+            {
+              "landed": 0,
+              "distance": 84
             }
           ],
           "punter": "C.Bojorquez",
@@ -27238,6 +27314,10 @@
             {
               "landed": 11,
               "distance": 41
+            },
+            {
+              "landed": 0,
+              "distance": 39
             }
           ],
           "punter": "C.Bojorquez",
@@ -27286,6 +27366,10 @@
             {
               "landed": 4,
               "distance": 48
+            },
+            {
+              "landed": 0,
+              "distance": 60
             }
           ],
           "punter": "C.Bojorquez",
@@ -27317,6 +27401,10 @@
             {
               "landed": 10,
               "distance": 31
+            },
+            {
+              "landed": 0,
+              "distance": 63
             },
             {
               "landed": 10,
@@ -27615,6 +27703,10 @@
             {
               "landed": 15,
               "distance": 50
+            },
+            {
+              "landed": 0,
+              "distance": 60
             },
             {
               "landed": 26,
@@ -27932,6 +28024,14 @@
             {
               "landed": 11,
               "distance": 40
+            },
+            {
+              "landed": 0,
+              "distance": 47
+            },
+            {
+              "landed": 0,
+              "distance": 45
             }
           ],
           "punter": "B.Anger",
@@ -28154,6 +28254,10 @@
               "distance": 42
             },
             {
+              "landed": 0,
+              "distance": 65
+            },
+            {
               "landed": 12,
               "distance": 49
             }
@@ -28329,12 +28433,20 @@
               "distance": 43
             },
             {
+              "landed": 0,
+              "distance": 35
+            },
+            {
               "landed": 13,
               "distance": 53
             },
             {
               "landed": 24,
               "distance": 49
+            },
+            {
+              "landed": 0,
+              "distance": 45
             },
             {
               "landed": 10,
@@ -28448,6 +28560,10 @@
             {
               "landed": 1,
               "distance": 40
+            },
+            {
+              "landed": 0,
+              "distance": 60
             },
             {
               "landed": 10,
@@ -28693,6 +28809,14 @@
             {
               "landed": 18,
               "distance": 44
+            },
+            {
+              "landed": 0,
+              "distance": 42
+            },
+            {
+              "landed": 0,
+              "distance": 49
             }
           ],
           "punter": "R.Dixon",
@@ -28810,6 +28934,14 @@
           ],
           "punts": [
             {
+              "landed": 0,
+              "distance": 67
+            },
+            {
+              "landed": 0,
+              "distance": 64
+            },
+            {
               "landed": 16,
               "distance": 45
             },
@@ -28873,6 +29005,10 @@
           ],
           "fieldGoals": [],
           "punts": [
+            {
+              "landed": 0,
+              "distance": 68
+            },
             {
               "landed": 2,
               "distance": 61
@@ -28974,6 +29110,10 @@
             44
           ],
           "punts": [
+            {
+              "landed": 0,
+              "distance": 63
+            },
             {
               "landed": 10,
               "distance": 55
@@ -29403,12 +29543,20 @@
           ],
           "punts": [
             {
+              "landed": 0,
+              "distance": 45
+            },
+            {
               "landed": 10,
               "distance": 53
             },
             {
               "landed": 10,
               "distance": 33
+            },
+            {
+              "landed": 0,
+              "distance": 63
             },
             {
               "landed": 27,
@@ -29602,6 +29750,10 @@
               "distance": 45
             },
             {
+              "landed": 0,
+              "distance": 43
+            },
+            {
               "landed": 7,
               "distance": 53
             },
@@ -29742,6 +29894,10 @@
             {
               "landed": 18,
               "distance": 35
+            },
+            {
+              "landed": 0,
+              "distance": 50
             }
           ],
           "punter": "D.Whelan",
@@ -29844,6 +30000,10 @@
             46
           ],
           "punts": [
+            {
+              "landed": 0,
+              "distance": 60
+            },
             {
               "landed": 8,
               "distance": 44
@@ -30053,6 +30213,10 @@
               "distance": 42
             },
             {
+              "landed": 0,
+              "distance": 46
+            },
+            {
               "landed": 26,
               "distance": 21
             },
@@ -30103,6 +30267,10 @@
             {
               "landed": 12,
               "distance": 58
+            },
+            {
+              "landed": 0,
+              "distance": 75
             }
           ],
           "punter": "R.Stonehouse",
@@ -30220,6 +30388,10 @@
           ],
           "punts": [
             {
+              "landed": 0,
+              "distance": 42
+            },
+            {
               "landed": 3,
               "distance": 53
             },
@@ -30311,6 +30483,10 @@
               "distance": 51
             },
             {
+              "landed": 0,
+              "distance": 62
+            },
+            {
               "landed": 27,
               "distance": 46
             }
@@ -30391,6 +30567,10 @@
             {
               "landed": 34,
               "distance": 50
+            },
+            {
+              "landed": 0,
+              "distance": 53
             },
             {
               "landed": 24,
@@ -30491,6 +30671,10 @@
               "distance": 60
             },
             {
+              "landed": 0,
+              "distance": 61
+            },
+            {
               "landed": 8,
               "distance": 46
             },
@@ -30523,6 +30707,10 @@
             {
               "landed": 4,
               "distance": 38
+            },
+            {
+              "landed": 0,
+              "distance": 61
             },
             {
               "landed": 17,
@@ -30597,6 +30785,10 @@
             {
               "landed": 15,
               "distance": 53
+            },
+            {
+              "landed": 0,
+              "distance": 59
             }
           ],
           "punter": "R.Sanchez",
@@ -30754,6 +30946,10 @@
               "distance": 49
             },
             {
+              "landed": 0,
+              "distance": 60
+            },
+            {
               "landed": 19,
               "distance": 51
             },
@@ -30804,6 +31000,10 @@
             {
               "landed": 27,
               "distance": 45
+            },
+            {
+              "landed": 0,
+              "distance": 55
             },
             {
               "landed": 38,
@@ -30899,6 +31099,10 @@
             {
               "landed": 25,
               "distance": 50
+            },
+            {
+              "landed": 0,
+              "distance": 44
             }
           ],
           "punter": "R.Sanchez",
@@ -31206,6 +31410,14 @@
           ],
           "punts": [
             {
+              "landed": 0,
+              "distance": 56
+            },
+            {
+              "landed": 0,
+              "distance": 40
+            },
+            {
               "landed": 10,
               "distance": 48
             }
@@ -31376,6 +31588,10 @@
             {
               "landed": 9,
               "distance": 64
+            },
+            {
+              "landed": 0,
+              "distance": 67
             }
           ],
           "punter": "M.Araiza",
@@ -31471,6 +31687,14 @@
             20
           ],
           "punts": [
+            {
+              "landed": 0,
+              "distance": 55
+            },
+            {
+              "landed": 0,
+              "distance": 53
+            },
             {
               "landed": 15,
               "distance": 64
@@ -31666,6 +31890,10 @@
               "distance": 38
             },
             {
+              "landed": 0,
+              "distance": 58
+            },
+            {
               "landed": 30,
               "distance": 41
             },
@@ -31752,6 +31980,14 @@
               "distance": 58
             },
             {
+              "landed": 0,
+              "distance": 40
+            },
+            {
+              "landed": 0,
+              "distance": 72
+            },
+            {
               "landed": 14,
               "distance": 44
             },
@@ -31803,6 +32039,10 @@
             {
               "landed": 2,
               "distance": 59
+            },
+            {
+              "landed": 0,
+              "distance": 62
             },
             {
               "landed": 8,
@@ -32002,6 +32242,14 @@
             {
               "landed": 26,
               "distance": 43
+            },
+            {
+              "landed": 0,
+              "distance": 61
+            },
+            {
+              "landed": 0,
+              "distance": 66
             }
           ],
           "punter": "A.Cole",
@@ -32042,6 +32290,10 @@
               "distance": 46
             },
             {
+              "landed": 0,
+              "distance": 48
+            },
+            {
               "landed": 32,
               "distance": 56
             }
@@ -32068,6 +32320,10 @@
             32
           ],
           "punts": [
+            {
+              "landed": 0,
+              "distance": 68
+            },
             {
               "landed": 9,
               "distance": 60
@@ -32255,6 +32511,10 @@
               "distance": 40
             },
             {
+              "landed": 0,
+              "distance": 44
+            },
+            {
               "landed": 21,
               "distance": 50
             }
@@ -32380,6 +32640,10 @@
             {
               "landed": 29,
               "distance": 56
+            },
+            {
+              "landed": 0,
+              "distance": 71
             },
             {
               "landed": 10,
@@ -32606,6 +32870,10 @@
             {
               "landed": 12,
               "distance": 52
+            },
+            {
+              "landed": 0,
+              "distance": 44
             },
             {
               "landed": 11,
@@ -32870,6 +33138,10 @@
             {
               "landed": 9,
               "distance": 53
+            },
+            {
+              "landed": 0,
+              "distance": 42
             }
           ],
           "punter": "E.Evans",
@@ -33109,6 +33381,10 @@
               "distance": 39
             },
             {
+              "landed": 0,
+              "distance": 39
+            },
+            {
               "landed": 13,
               "distance": 44
             },
@@ -33272,6 +33548,10 @@
             25
           ],
           "punts": [
+            {
+              "landed": 0,
+              "distance": 56
+            },
             {
               "landed": 11,
               "distance": 36
@@ -33469,6 +33749,10 @@
           ],
           "punts": [
             {
+              "landed": 0,
+              "distance": 48
+            },
+            {
               "landed": 17,
               "distance": 56
             },
@@ -33580,12 +33864,24 @@
               "distance": 35
             },
             {
+              "landed": 0,
+              "distance": 44
+            },
+            {
+              "landed": 0,
+              "distance": 53
+            },
+            {
               "landed": 33,
               "distance": 41
             },
             {
               "landed": 30,
               "distance": 40
+            },
+            {
+              "landed": 0,
+              "distance": 42
             },
             {
               "landed": 2,
@@ -33661,6 +33957,10 @@
             27
           ],
           "punts": [
+            {
+              "landed": 0,
+              "distance": 52
+            },
             {
               "landed": 34,
               "distance": 43
@@ -33745,6 +34045,10 @@
             {
               "landed": 16,
               "distance": 41
+            },
+            {
+              "landed": 0,
+              "distance": 44
             },
             {
               "landed": 11,
@@ -33894,6 +34198,10 @@
           "fieldGoals": [],
           "punts": [
             {
+              "landed": 0,
+              "distance": 44
+            },
+            {
               "landed": 9,
               "distance": 39
             }
@@ -33956,6 +34264,10 @@
             40
           ],
           "punts": [
+            {
+              "landed": 0,
+              "distance": 66
+            },
             {
               "landed": 2,
               "distance": 47
@@ -34073,6 +34385,10 @@
             {
               "landed": 7,
               "distance": 45
+            },
+            {
+              "landed": 0,
+              "distance": 57
             }
           ],
           "punter": "R.Wright",
@@ -34281,6 +34597,10 @@
               "distance": 56
             },
             {
+              "landed": 0,
+              "distance": 67
+            },
+            {
               "landed": 9,
               "distance": 54
             },
@@ -34401,12 +34721,24 @@
               "distance": 53
             },
             {
+              "landed": 0,
+              "distance": 69
+            },
+            {
               "landed": 44,
               "distance": 43
             },
             {
+              "landed": 0,
+              "distance": 53
+            },
+            {
               "landed": 14,
               "distance": 49
+            },
+            {
+              "landed": 0,
+              "distance": 43
             }
           ],
           "punter": "B.Baringer",
@@ -34611,6 +34943,10 @@
               "distance": 50
             },
             {
+              "landed": 0,
+              "distance": 61
+            },
+            {
               "landed": 16,
               "distance": 54
             },
@@ -34645,6 +34981,10 @@
             {
               "landed": 12,
               "distance": 32
+            },
+            {
+              "landed": 0,
+              "distance": 42
             }
           ],
           "punter": "B.Baringer",
@@ -34676,6 +35016,10 @@
             {
               "landed": 32,
               "distance": 53
+            },
+            {
+              "landed": 0,
+              "distance": 69
             },
             {
               "landed": 41,
@@ -35073,6 +35417,10 @@
           ],
           "punts": [
             {
+              "landed": 0,
+              "distance": 52
+            },
+            {
               "landed": 13,
               "distance": 42
             },
@@ -35120,6 +35468,10 @@
           ],
           "punts": [
             {
+              "landed": 0,
+              "distance": 47
+            },
+            {
               "landed": 12,
               "distance": 49
             },
@@ -35142,6 +35494,10 @@
             {
               "landed": 27,
               "distance": 59
+            },
+            {
+              "landed": 0,
+              "distance": 45
             },
             {
               "landed": 7,
@@ -35608,6 +35964,14 @@
             {
               "landed": 47,
               "distance": 43
+            },
+            {
+              "landed": 0,
+              "distance": 67
+            },
+            {
+              "landed": 0,
+              "distance": 40
             }
           ],
           "punter": "J.Gillan",
@@ -35824,6 +36188,10 @@
             {
               "landed": 16,
               "distance": 27
+            },
+            {
+              "landed": 0,
+              "distance": 66
             }
           ],
           "punter": "M.Haack",
@@ -35968,8 +36336,8 @@
               "distance": 46
             },
             {
-              "landed": 1,
-              "distance": 41
+              "landed": 0,
+              "distance": 47
             },
             {
               "landed": 34,
@@ -36263,6 +36631,10 @@
           ],
           "punts": [
             {
+              "landed": 0,
+              "distance": 43
+            },
+            {
               "landed": 12,
               "distance": 37
             },
@@ -36365,6 +36737,10 @@
               "distance": 56
             },
             {
+              "landed": 0,
+              "distance": 55
+            },
+            {
               "landed": 43,
               "distance": 39
             },
@@ -36398,6 +36774,10 @@
             {
               "landed": 20,
               "distance": 45
+            },
+            {
+              "landed": 0,
+              "distance": 51
             }
           ],
           "punter": "T.Morstead",
@@ -36466,6 +36846,10 @@
               "distance": 34
             },
             {
+              "landed": 0,
+              "distance": 40
+            },
+            {
               "landed": 12,
               "distance": 52
             },
@@ -36509,6 +36893,10 @@
             {
               "landed": 29,
               "distance": 38
+            },
+            {
+              "landed": 0,
+              "distance": 54
             }
           ],
           "punter": "T.Morstead",
@@ -36565,6 +36953,10 @@
           ],
           "punts": [
             {
+              "landed": 0,
+              "distance": 63
+            },
+            {
               "landed": 15,
               "distance": 54
             },
@@ -36610,6 +37002,10 @@
             {
               "landed": 15,
               "distance": 35
+            },
+            {
+              "landed": 0,
+              "distance": 42
             },
             {
               "landed": 29,
@@ -36862,6 +37258,10 @@
               "distance": 55
             },
             {
+              "landed": 0,
+              "distance": 70
+            },
+            {
               "landed": 28,
               "distance": 47
             },
@@ -36930,6 +37330,10 @@
           "fieldGoals": [],
           "punts": [
             {
+              "landed": 0,
+              "distance": 67
+            },
+            {
               "landed": 30,
               "distance": 45
             },
@@ -36979,8 +37383,13 @@
             49,
             47
           ],
-          "punts": [],
-          "punter": "",
+          "punts": [
+            {
+              "landed": 0,
+              "distance": 52
+            }
+          ],
+          "punter": "B.Mann",
           "yardsAllowed": 280,
           "pointsAllowed": 17
         },
@@ -37045,6 +37454,14 @@
             38
           ],
           "punts": [
+            {
+              "landed": 0,
+              "distance": 55
+            },
+            {
+              "landed": 0,
+              "distance": 55
+            },
             {
               "landed": 11,
               "distance": 51
@@ -37304,6 +37721,14 @@
             {
               "landed": 9,
               "distance": 52
+            },
+            {
+              "landed": 0,
+              "distance": 54
+            },
+            {
+              "landed": 0,
+              "distance": 42
             }
           ],
           "punter": "B.Mann",
@@ -37512,6 +37937,10 @@
             {
               "landed": 33,
               "distance": 58
+            },
+            {
+              "landed": 0,
+              "distance": 44
             },
             {
               "landed": 10,
@@ -37804,6 +38233,10 @@
           ],
           "punts": [
             {
+              "landed": 0,
+              "distance": 54
+            },
+            {
               "landed": 27,
               "distance": 43
             }
@@ -37961,6 +38394,14 @@
               "distance": 53
             },
             {
+              "landed": 0,
+              "distance": 51
+            },
+            {
+              "landed": 0,
+              "distance": 58
+            },
+            {
               "landed": 25,
               "distance": 49
             },
@@ -37971,6 +38412,10 @@
             {
               "landed": 29,
               "distance": 51
+            },
+            {
+              "landed": 0,
+              "distance": 56
             },
             {
               "landed": 10,
@@ -38082,6 +38527,10 @@
             {
               "landed": 15,
               "distance": 34
+            },
+            {
+              "landed": 0,
+              "distance": 47
             },
             {
               "landed": 14,
@@ -38290,6 +38739,10 @@
             {
               "landed": 18,
               "distance": 52
+            },
+            {
+              "landed": 0,
+              "distance": 71
             },
             {
               "landed": 9,
@@ -38581,8 +39034,16 @@
               "distance": 52
             },
             {
+              "landed": 0,
+              "distance": 55
+            },
+            {
               "landed": 27,
               "distance": 56
+            },
+            {
+              "landed": 0,
+              "distance": 49
             },
             {
               "landed": 27,
@@ -38617,6 +39078,10 @@
             {
               "landed": 13,
               "distance": 38
+            },
+            {
+              "landed": 0,
+              "distance": 44
             },
             {
               "landed": 6,
@@ -38970,6 +39435,10 @@
               "distance": 58
             },
             {
+              "landed": 0,
+              "distance": 32
+            },
+            {
               "landed": 14,
               "distance": 39
             },
@@ -39124,6 +39593,10 @@
             41
           ],
           "punts": [
+            {
+              "landed": 0,
+              "distance": 42
+            },
             {
               "landed": 7,
               "distance": 57
@@ -39329,6 +39802,10 @@
             41
           ],
           "punts": [
+            {
+              "landed": 0,
+              "distance": 42
+            },
             {
               "landed": 28,
               "distance": 44
@@ -39550,6 +40027,10 @@
             {
               "landed": 9,
               "distance": 38
+            },
+            {
+              "landed": 0,
+              "distance": 42
             }
           ],
           "punter": "P.O'Donnell",
@@ -39844,6 +40325,10 @@
             {
               "landed": 34,
               "distance": 40
+            },
+            {
+              "landed": 0,
+              "distance": 61
             }
           ],
           "punter": "M.Dickson",
@@ -39881,6 +40366,10 @@
             {
               "landed": 17,
               "distance": 47
+            },
+            {
+              "landed": 0,
+              "distance": 49
             }
           ],
           "punter": "M.Dickson",
@@ -39911,6 +40400,10 @@
             {
               "landed": 9,
               "distance": 36
+            },
+            {
+              "landed": 0,
+              "distance": 54
             }
           ],
           "punter": "M.Dickson",
@@ -39937,6 +40430,10 @@
             48
           ],
           "punts": [
+            {
+              "landed": 0,
+              "distance": 50
+            },
             {
               "landed": 21,
               "distance": 55
@@ -40144,6 +40641,10 @@
           ],
           "punts": [
             {
+              "landed": 0,
+              "distance": 53
+            },
+            {
               "landed": 12,
               "distance": 44
             }
@@ -40177,6 +40678,10 @@
             {
               "landed": 20,
               "distance": 52
+            },
+            {
+              "landed": 0,
+              "distance": 41
             },
             {
               "landed": 6,
@@ -40216,6 +40721,10 @@
               "distance": 46
             },
             {
+              "landed": 0,
+              "distance": 52
+            },
+            {
               "landed": 36,
               "distance": 43
             }
@@ -40252,6 +40761,10 @@
             {
               "landed": 5,
               "distance": 47
+            },
+            {
+              "landed": 0,
+              "distance": 61
             },
             {
               "landed": 8,
@@ -40351,6 +40864,10 @@
             {
               "landed": 16,
               "distance": 51
+            },
+            {
+              "landed": 0,
+              "distance": 59
             }
           ],
           "punter": "M.Dickson",
@@ -40539,6 +41056,10 @@
             {
               "landed": 20,
               "distance": 45
+            },
+            {
+              "landed": 0,
+              "distance": 42
             }
           ],
           "punter": "T.Gill",
@@ -40895,6 +41416,10 @@
               "distance": 41
             },
             {
+              "landed": 0,
+              "distance": 45
+            },
+            {
               "landed": 17,
               "distance": 39
             },
@@ -41078,6 +41603,10 @@
             {
               "landed": 36,
               "distance": 53
+            },
+            {
+              "landed": 0,
+              "distance": 47
             }
           ],
           "punter": "T.Way",
@@ -41257,6 +41786,10 @@
               "distance": 53
             },
             {
+              "landed": 0,
+              "distance": 74
+            },
+            {
               "landed": 7,
               "distance": 47
             },
@@ -41360,6 +41893,10 @@
             },
             {
               "landed": 13,
+              "distance": 39
+            },
+            {
+              "landed": 0,
               "distance": 39
             }
           ],
@@ -41701,7 +42238,15 @@
               "distance": 47
             },
             {
+              "landed": 0,
+              "distance": 65
+            },
+            {
               "landed": 19,
+              "distance": 47
+            },
+            {
+              "landed": 0,
               "distance": 47
             }
           ],
@@ -41852,8 +42397,8 @@
               "distance": 44
             },
             {
-              "landed": 8,
-              "distance": 37
+              "landed": 0,
+              "distance": 50
             },
             {
               "landed": 12,
@@ -42096,6 +42641,10 @@
           "punts": [
             {
               "landed": 32,
+              "distance": 43
+            },
+            {
+              "landed": 0,
               "distance": 43
             },
             {
@@ -42457,6 +43006,14 @@
               "distance": 40
             },
             {
+              "landed": 0,
+              "distance": 63
+            },
+            {
+              "landed": 0,
+              "distance": 62
+            },
+            {
               "landed": 11,
               "distance": 60
             }
@@ -42523,6 +43080,10 @@
           ],
           "fieldGoals": [],
           "punts": [
+            {
+              "landed": 0,
+              "distance": 68
+            },
             {
               "landed": 17,
               "distance": 52
@@ -42969,6 +43530,10 @@
               "distance": 36
             },
             {
+              "landed": 0,
+              "distance": 65
+            },
+            {
               "landed": 8,
               "distance": 67
             }
@@ -43024,6 +43589,10 @@
             52
           ],
           "punts": [
+            {
+              "landed": 0,
+              "distance": 57
+            },
             {
               "landed": 18,
               "distance": 30
@@ -43169,6 +43738,10 @@
             54
           ],
           "punts": [
+            {
+              "landed": 0,
+              "distance": 70
+            },
             {
               "landed": 16,
               "distance": 37
@@ -43354,6 +43927,10 @@
             {
               "landed": 22,
               "distance": 41
+            },
+            {
+              "landed": 0,
+              "distance": 50
             }
           ],
           "punter": "J.Stout",
@@ -43469,6 +44046,10 @@
             {
               "landed": 16,
               "distance": 52
+            },
+            {
+              "landed": 0,
+              "distance": 40
             },
             {
               "landed": 13,
@@ -43657,8 +44238,16 @@
               "distance": 52
             },
             {
+              "landed": 0,
+              "distance": 66
+            },
+            {
               "landed": 15,
               "distance": 38
+            },
+            {
+              "landed": 0,
+              "distance": 57
             }
           ],
           "punter": "T.Townsend",
@@ -43820,6 +44409,10 @@
           ],
           "punts": [
             {
+              "landed": 0,
+              "distance": 51
+            },
+            {
               "landed": 18,
               "distance": 52
             },
@@ -43913,6 +44506,10 @@
               "distance": 46
             },
             {
+              "landed": 0,
+              "distance": 63
+            },
+            {
               "landed": 11,
               "distance": 54
             }
@@ -43985,6 +44582,10 @@
           ],
           "punts": [
             {
+              "landed": 0,
+              "distance": 48
+            },
+            {
               "landed": 30,
               "distance": 57
             }
@@ -44021,6 +44622,10 @@
             {
               "landed": 7,
               "distance": 61
+            },
+            {
+              "landed": 0,
+              "distance": 43
             },
             {
               "landed": 33,
@@ -44222,7 +44827,7 @@
       "4722893": 0.24,
       "Devaughn Vele": 1.18
     },
-    "timestamp": 1735669303450,
+    "timestamp": 1735670212430,
     "history": [
       {
         "values": {
