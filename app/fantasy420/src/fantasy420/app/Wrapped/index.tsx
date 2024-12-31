@@ -1748,8 +1748,8 @@ function Performance() {
                                     }))
                               )
                                 .sort((a, b) => b.score - a.score)
-                                .map((p) => (
-                                  <div key={p.name}>
+                                .map((p, j) => (
+                                  <div key={j}>
                                     {p.score.toFixed(2)} {p.name}
                                   </div>
                                 ))}
@@ -1772,8 +1772,8 @@ function Performance() {
                                   score: p?.scores[weekNum] || 0,
                                 }))
                                 .sort((a, b) => b.score - a.score)
-                                .map((p) => (
-                                  <div key={p.name}>
+                                .map((p, j) => (
+                                  <div key={j}>
                                     {p.score.toFixed(2)} {p.name}
                                   </div>
                                 ))}
