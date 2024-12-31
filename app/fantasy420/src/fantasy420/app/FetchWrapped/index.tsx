@@ -26,7 +26,7 @@ type NFLTeamType = {
           pointsAllowed: number;
           yardsAllowed: number;
           drives: (string | null)[];
-          punts: number[];
+          punts: { landed: number; distance: number }[];
           punter: string;
         }
       | undefined;
@@ -556,7 +556,7 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                                   .map(
                                     (p) =>
                                       p.description.match(
-                                        /(\S*) punts (\d+) yards?/
+                                        /(\S*) punts (\d+) yards? to \S+ (\d+)/
                                       )
                                     // sometimes, like in
                                     // https://www.espn.com/nfl/playbyplay/_/gameId/401547427 @ (7:51 - 3rd)
@@ -567,8 +567,9 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                               .filter((p) => p.punt?.[0])
                               .map((p) => ({
                                 ...p,
-                                punter: p.punt[1]!.toString(),
-                                distance: parseInt(p.punt[2]!.toString()),
+                                landed: parseInt(p.punt[3]),
+                                punter: p.punt[1],
+                                distance: parseInt(p.punt[2]),
                               })),
                             (p) => p.teamId
                           ),
@@ -689,7 +690,10 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                                     .map((play) => play.yards),
                                   punts: (
                                     gamesByGameId[gameId].punts[team.id] || []
-                                  ).flatMap((play) => play.distance),
+                                  ).flatMap((play) => ({
+                                    landed: play.landed,
+                                    distance: play.distance,
+                                  })),
                                   punter: Object.keys(
                                     groupByF(
                                       gamesByGameId[gameId].punts[team.id] ||
@@ -764,7 +768,8 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
           ),
         ])
       );
-      wrapped.fantasyCalc.history = selectedWrapped().fantasyCalc.history;
+      wrapped.fantasyCalc.history =
+        selectedWrapped()?.fantasyCalc.history || [];
       if (
         JSON.stringify(values) !==
         JSON.stringify(
