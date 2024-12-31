@@ -39,8 +39,10 @@ export default function Plays() {
           d
             .map((p) => ({
               x: p.key,
-              y: 0, //p.obj.punts.reduce((a, b) => a + b, 0) / p.obj.punts.length,
-              label: "", //`${p.label} / ${p.obj.punter} / ${p.obj.punts}`,
+              y:
+                p.obj.punts.map((x) => x.distance).reduce((a, b) => a + b, 0) /
+                p.obj.punts.length,
+              label: `${p.label} / ${p.obj.punter} / ${p.obj.punts}`,
             }))
             .map((d) => ({ ...d, label: `${d.y.toFixed(2)} / ${d.label}` }))
         ),

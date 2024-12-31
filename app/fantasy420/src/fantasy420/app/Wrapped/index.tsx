@@ -417,6 +417,7 @@ function Injuries() {
             .flatMap((r) =>
               r.rostered
                 .map((playerId) => selectedWrapped().nflPlayers[playerId])
+                .filter((p) => p)
                 .map((o) => ({
                   weekNum: parseInt(r.weekNum),
                   rank:
@@ -1401,7 +1402,8 @@ function Benchwarmers() {
               score: team.rosters[weekNum].rostered
                 .filter(
                   (playerId) =>
-                    !team.rosters[weekNum].starting.includes(playerId)
+                    !team.rosters[weekNum].starting.includes(playerId) &&
+                    selectedWrapped().nflPlayers[playerId]
                 )
                 .map(
                   (playerId) =>
@@ -1425,7 +1427,8 @@ function Benchwarmers() {
               team.rosters[weekNum].rostered
                 .filter(
                   (playerId) =>
-                    !team.rosters[weekNum].starting.includes(playerId)
+                    !team.rosters[weekNum].starting.includes(playerId) &&
+                    selectedWrapped().nflPlayers[playerId]
                 )
                 .map((playerId) => ({
                   teamName: team.name,
@@ -1741,7 +1744,7 @@ function Performance() {
                                     )
                                     .map((p) => ({
                                       ...p,
-                                      score: p.scores[weekNum] || 0,
+                                      score: p?.scores[weekNum] || 0,
                                     }))
                               )
                                 .sort((a, b) => b.score - a.score)
@@ -1766,7 +1769,7 @@ function Performance() {
                                 )
                                 .map((p) => ({
                                   ...p,
-                                  score: p.scores[weekNum] || 0,
+                                  score: p?.scores[weekNum] || 0,
                                 }))
                                 .sort((a, b) => b.score - a.score)
                                 .map((p) => (
@@ -1816,8 +1819,9 @@ function PerformanceTotals() {
                   )
                   .map((obj) => ({
                     ...obj,
-                    score: obj.player.scores[obj.weekNum] || 0,
+                    score: obj.player?.scores[obj.weekNum] || 0,
                   }))
+                  .filter((p) => p.player)
                   .reduce((prev, curr) => {
                     if (!prev[curr.player.id]) {
                       prev[curr.player.id] = {
