@@ -32,7 +32,7 @@ export default function Simps() {
                             teamName:
                               allWrapped[teamNameYear].ffTeams[team.id].name,
 
-                            playerName: wrapped.nflPlayers[playerId].name,
+                            playerName: wrapped.nflPlayers[playerId]?.name,
                           }))
                         )
                     )
