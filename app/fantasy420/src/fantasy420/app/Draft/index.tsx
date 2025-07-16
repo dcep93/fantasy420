@@ -101,6 +101,7 @@ export default function Draft() {
   const [draftKingsData, updateDraftKingsData] = useState<DraftKingsType>(null);
   useEffect(() => {
     draftKingsData === null &&
+      false &&
       Promise.resolve()
         .then(() => draftKings(idToRankBySource))
         .then(updateDraftKingsData)
