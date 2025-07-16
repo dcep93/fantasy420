@@ -98,19 +98,15 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
   // 17110401 WS
 
   function ext(data: any): Promise<any> {
-    const extension_id = "kmpbdkipjlpbckfnpbfbncddjaneeklc";
+    const extension_id = "dikaanhdjgmmeajanfokkalonmnpfidm";
     return new Promise((resolve, reject) =>
       window.chrome.runtime.sendMessage(extension_id, data, (response: any) => {
         if (window.chrome.runtime.lastError) {
           return reject(
-            `chrome.runtime.lastError ${window.chrome.runtime.lastError}`
+            `chrome.runtime.lastError ${window.chrome.runtime.lastError.message}`
           );
         }
-        if (!response.ok) {
-          console.error(data, response);
-          return reject(`chrome: ${response.err}`);
-        }
-        resolve(response.data);
+        resolve(response);
       })
     );
   }
@@ -495,7 +491,6 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                         maxAgeMs: 1000 * 60 * 60 * 24 * 30,
                       },
                     })
-                      .then((resp) => resp.msg)
                       .then(
                         (resp) =>
                           resp.match(
@@ -723,7 +718,7 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
               url: `https://api.fantasycalc.com/values/current?isDynasty=false&numQbs=2&numTeams=10&ppr=1&includeAdp=false`,
             },
           })
-            .then((resp) => JSON.parse(resp.msg))
+            .then((resp) => JSON.parse(resp))
             .then(
               (
                 resp: {

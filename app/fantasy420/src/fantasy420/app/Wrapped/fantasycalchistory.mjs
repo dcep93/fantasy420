@@ -21,7 +21,7 @@ Promise.resolve()
   .then((log) =>
     promiseReduce(log, (commit) =>
       Promise.resolve()
-        .then(() => git.show([`${commit.hash}:./2024.json`]))
+        .then(() => git.show([`${commit.hash}:./2025.json`]))
         .then(JSON.parse)
         .then((obj) => ({
           values: Object.fromEntries(

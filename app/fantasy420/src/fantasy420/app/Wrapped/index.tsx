@@ -9,7 +9,7 @@ import PuntsStateful from "./Punts";
 import ScatterplotStateful from "./Scatterplot";
 import SimpsStateful from "./Simps";
 
-export const currentYear = "2024";
+export const currentYear = "2025";
 
 export var selectedYear = currentYear;
 export function selectedWrapped(): WrappedType {
