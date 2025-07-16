@@ -14,6 +14,7 @@ import {
 import allWrapped from "../Wrapped/allWrapped";
 import draft2023 from "./2023.json";
 import draft2024 from "./2024.json";
+import draft2025 from "./2025.json";
 
 export const bubbleStyle = {
   backgroundColor: "white",
@@ -36,6 +37,7 @@ const allDrafts: { [year: string]: DraftJsonType } = Object.fromEntries(
   Object.entries({
     2023: draft2023,
     2024: draft2024,
+    2025: draft2025,
   } as { [year: string]: DraftJsonType }).map(([year, rawDraft]) => {
     const normalizedNameToId =
       allWrapped[year] === undefined
@@ -782,7 +784,7 @@ function updateDraftRanking(
     );
     return;
   }
-  const year = 2024;
+  const year = 2025;
   const leagueId = 203836968;
   fetch(
     `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/${leagueId}?view=kona_player_info_edit_draft_strategy`,
