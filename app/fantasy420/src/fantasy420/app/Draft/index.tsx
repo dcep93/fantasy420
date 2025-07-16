@@ -277,7 +277,7 @@ function SubDraft(props: {
               espn
             </a>
           </div>
-          {/* <input readOnly value={JSON.stringify(getEspnLiveDraft())} /> */}
+          <input readOnly value={JSON.stringify(getEspnLiveDraft())} />
         </div>
         <div>
           <div>updateDraftRanking</div>
@@ -753,26 +753,22 @@ function fantasyplaybook() {
   );
 }
 
-// function getEspnLiveDraft() {
-//   return {
-//     espnpick: Object.fromEntries(
-//       Object.values(selectedWrapped().nflPlayers)
-//         .sort(
-//           (a, b) =>
-//             a.ownership.averageDraftPosition - b.ownership.averageDraftPosition
-//         )
-//         .map((p) => [p.name, p.ownership.averageDraftPosition])
-//     ),
-//     espnauction: Object.fromEntries(
-//       Object.values(selectedWrapped().nflPlayers)
-//         .sort(
-//           (a, b) =>
-//             b.ownership.auctionValueAverage - a.ownership.auctionValueAverage
-//         )
-//         .map((p) => [p.name, -p.ownership.auctionValueAverage])
-//     ),
-//   };
-// }
+function getEspnLiveDraft() {
+  return {
+    espnpick: Object.fromEntries(
+      Object.values(selectedWrapped().nflPlayers)
+        .map((o) => ({ o, v: o.ownership?.averageDraftPosition || 0 }))
+        .sort((a, b) => a.v - b.v)
+        .map(({ o, v }) => [o.name, v])
+    ),
+    espnauction: Object.fromEntries(
+      Object.values(selectedWrapped().nflPlayers)
+        .map((o) => ({ o, v: o.ownership?.auctionValueAverage || 0 }))
+        .sort((a, b) => a.v - b.v)
+        .map(({ o, v }) => [o.name, v])
+    ),
+  };
+}
 
 function updateDraftRanking(
   teamId: number,
