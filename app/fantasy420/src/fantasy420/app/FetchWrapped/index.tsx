@@ -12,6 +12,13 @@ export type NFLPlayerType = {
   total: number;
   average: number;
   injuryStatus?: string;
+  ownership?: Ownership;
+};
+
+type Ownership = {
+  averageDraftPosition: number;
+  auctionValueAverage: number;
+  percentOwned: number;
 };
 
 type NFLTeamType = {
@@ -172,11 +179,7 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                       appliedAverage: number;
                       appliedStats: { [key: string]: number };
                     }[];
-                    ownership: {
-                      averageDraftPosition: number;
-                      auctionValueAverage: number;
-                      percentOwned: number;
-                    };
+                    ownership: Ownership;
                     injuryStatus?: string;
                   };
                 }[];
@@ -241,7 +244,7 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
                       Object.values(player.scores).filter((s) => s !== 0)
                         .length > 0)
                 )
-                .map(({ ownership, ...player }) => ({
+                .map(({ ...player }) => ({
                   key: player.id,
                   value: player,
                 }))
