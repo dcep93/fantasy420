@@ -1,0 +1,6815 @@
+{
+  "year": "2025",
+  "nflPlayers": {
+    "8439": {
+      "id": "8439",
+      "nflTeamId": "23",
+      "name": "Aaron Rodgers",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "11252": {
+      "id": "11252",
+      "nflTeamId": "5",
+      "name": "Joe Flacco",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "12460": {
+      "id": "12460",
+      "nflTeamId": "19",
+      "name": "Graham Gano",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "12483": {
+      "id": "12483",
+      "nflTeamId": "14",
+      "name": "Matthew Stafford",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "14012": {
+      "id": "14012",
+      "nflTeamId": "29",
+      "name": "Andy Dalton",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "14163": {
+      "id": "14163",
+      "nflTeamId": "20",
+      "name": "Tyrod Taylor",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "14880": {
+      "id": "14880",
+      "nflTeamId": "1",
+      "name": "Kirk Cousins",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "14881": {
+      "id": "14881",
+      "nflTeamId": "19",
+      "name": "Russell Wilson",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "14993": {
+      "id": "14993",
+      "nflTeamId": "0",
+      "name": "Greg Zuerlein",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "15683": {
+      "id": "15683",
+      "nflTeamId": "0",
+      "name": "Justin Tucker",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "SUSPENSION"
+    },
+    "15795": {
+      "id": "15795",
+      "nflTeamId": "33",
+      "name": "DeAndre Hopkins",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "15807": {
+      "id": "15807",
+      "nflTeamId": "23",
+      "name": "Cordarrelle Patterson",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "15818": {
+      "id": "15818",
+      "nflTeamId": "0",
+      "name": "Keenan Allen",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "15835": {
+      "id": "15835",
+      "nflTeamId": "28",
+      "name": "Zach Ertz",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "15847": {
+      "id": "15847",
+      "nflTeamId": "12",
+      "name": "Travis Kelce",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "15864": {
+      "id": "15864",
+      "nflTeamId": "13",
+      "name": "Geno Smith",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "15880": {
+      "id": "15880",
+      "nflTeamId": "23",
+      "name": "Robert Woods",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "15965": {
+      "id": "15965",
+      "nflTeamId": "5",
+      "name": "Dustin Hopkins",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "16002": {
+      "id": "16002",
+      "nflTeamId": "25",
+      "name": "Kyle Juszczyk",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "16339": {
+      "id": "16339",
+      "nflTeamId": "9",
+      "name": "Brandon McManus",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "16460": {
+      "id": "16460",
+      "nflTeamId": "29",
+      "name": "Adam Thielen",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "16731": {
+      "id": "16731",
+      "nflTeamId": "18",
+      "name": "Brandin Cooks",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "16733": {
+      "id": "16733",
+      "nflTeamId": "0",
+      "name": "Odell Beckham Jr.",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "16737": {
+      "id": "16737",
+      "nflTeamId": "27",
+      "name": "Mike Evans",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "16757": {
+      "id": "16757",
+      "nflTeamId": "18",
+      "name": "Derek Carr",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "16760": {
+      "id": "16760",
+      "nflTeamId": "14",
+      "name": "Jimmy Garoppolo",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "16800": {
+      "id": "16800",
+      "nflTeamId": "14",
+      "name": "Davante Adams",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "17372": {
+      "id": "17372",
+      "nflTeamId": "23",
+      "name": "Chris Boswell",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "17427": {
+      "id": "17427",
+      "nflTeamId": "3",
+      "name": "Cairo Santos",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "2468609": {
+      "id": "2468609",
+      "nflTeamId": "18",
+      "name": "Taysom Hill",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "2473037": {
+      "id": "2473037",
+      "nflTeamId": "26",
+      "name": "Jason Myers",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "2573401": {
+      "id": "2573401",
+      "nflTeamId": "14",
+      "name": "Tyler Higbee",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "2576414": {
+      "id": "2576414",
+      "nflTeamId": "13",
+      "name": "Raheem Mostert",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "2576925": {
+      "id": "2576925",
+      "nflTeamId": "15",
+      "name": "Darren Waller",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "2576980": {
+      "id": "2576980",
+      "nflTeamId": "28",
+      "name": "Marcus Mariota",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "2577327": {
+      "id": "2577327",
+      "nflTeamId": "10",
+      "name": "Tyler Lockett",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "2577417": {
+      "id": "2577417",
+      "nflTeamId": "6",
+      "name": "Dak Prescott",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "2578570": {
+      "id": "2578570",
+      "nflTeamId": "22",
+      "name": "Jacoby Brissett",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "2969939": {
+      "id": "2969939",
+      "nflTeamId": "19",
+      "name": "Jameis Winston",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "2971573": {
+      "id": "2971573",
+      "nflTeamId": "34",
+      "name": "Ka'imi Fairbairn",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "2972515": {
+      "id": "2972515",
+      "nflTeamId": "33",
+      "name": "Cooper Rush",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "2973405": {
+      "id": "2973405",
+      "nflTeamId": "8",
+      "name": "Kalif Raymond",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "2976212": {
+      "id": "2976212",
+      "nflTeamId": "17",
+      "name": "Stefon Diggs",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "2976499": {
+      "id": "2976499",
+      "nflTeamId": "0",
+      "name": "Amari Cooper",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "2976592": {
+      "id": "2976592",
+      "nflTeamId": "27",
+      "name": "Sterling Shepard",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "2977187": {
+      "id": "2977187",
+      "nflTeamId": "26",
+      "name": "Cooper Kupp",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "2983509": {
+      "id": "2983509",
+      "nflTeamId": "34",
+      "name": "Dare Ogunbowale",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "2985659": {
+      "id": "2985659",
+      "nflTeamId": "7",
+      "name": "Wil Lutz",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "2991662": {
+      "id": "2991662",
+      "nflTeamId": "17",
+      "name": "Mack Hollins",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3039707": {
+      "id": "3039707",
+      "nflTeamId": "2",
+      "name": "Mitchell Trubisky",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3040151": {
+      "id": "3040151",
+      "nflTeamId": "25",
+      "name": "George Kittle",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3042519": {
+      "id": "3042519",
+      "nflTeamId": "16",
+      "name": "Aaron Jones Sr.",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3043078": {
+      "id": "3043078",
+      "nflTeamId": "33",
+      "name": "Derrick Henry",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3043116": {
+      "id": "3043116",
+      "nflTeamId": "25",
+      "name": "Demarcus Robinson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3043234": {
+      "id": "3043234",
+      "nflTeamId": "0",
+      "name": "Zane Gonzalez",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3043275": {
+      "id": "3043275",
+      "nflTeamId": "17",
+      "name": "Austin Hooper",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3044720": {
+      "id": "3044720",
+      "nflTeamId": "17",
+      "name": "Joshua Dobbs",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3045138": {
+      "id": "3045138",
+      "nflTeamId": "24",
+      "name": "Mike Williams",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "OUT"
+    },
+    "3045147": {
+      "id": "3045147",
+      "nflTeamId": "22",
+      "name": "James Conner",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3045523": {
+      "id": "3045523",
+      "nflTeamId": "17",
+      "name": "Kendrick Bourne",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3046439": {
+      "id": "3046439",
+      "nflTeamId": "17",
+      "name": "Hunter Henry",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3046779": {
+      "id": "3046779",
+      "nflTeamId": "8",
+      "name": "Jared Goff",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3049899": {
+      "id": "3049899",
+      "nflTeamId": "1",
+      "name": "Younghoe Koo",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3050478": {
+      "id": "3050478",
+      "nflTeamId": "21",
+      "name": "Jake Elliott",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3051392": {
+      "id": "3051392",
+      "nflTeamId": "0",
+      "name": "Ezekiel Elliott",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3051738": {
+      "id": "3051738",
+      "nflTeamId": "26",
+      "name": "Marquez Valdes-Scantling",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3051876": {
+      "id": "3051876",
+      "nflTeamId": "7",
+      "name": "Evan Engram",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3051909": {
+      "id": "3051909",
+      "nflTeamId": "13",
+      "name": "Daniel Carlson",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3051926": {
+      "id": "3051926",
+      "nflTeamId": "0",
+      "name": "Gus Edwards",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3052096": {
+      "id": "3052096",
+      "nflTeamId": "30",
+      "name": "Johnny Mundt",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3052587": {
+      "id": "3052587",
+      "nflTeamId": "27",
+      "name": "Baker Mayfield",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3054212": {
+      "id": "3054212",
+      "nflTeamId": "23",
+      "name": "Jonnu Smith",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3054850": {
+      "id": "3054850",
+      "nflTeamId": "18",
+      "name": "Alvin Kamara",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3055899": {
+      "id": "3055899",
+      "nflTeamId": "12",
+      "name": "Harrison Butker",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3059722": {
+      "id": "3059722",
+      "nflTeamId": "22",
+      "name": "Zay Jones",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3059915": {
+      "id": "3059915",
+      "nflTeamId": "12",
+      "name": "Kareem Hunt",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3068267": {
+      "id": "3068267",
+      "nflTeamId": "28",
+      "name": "Austin Ekeler",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3115306": {
+      "id": "3115306",
+      "nflTeamId": "20",
+      "name": "Josh Reynolds",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3116164": {
+      "id": "3116164",
+      "nflTeamId": "4",
+      "name": "Mike Gesicki",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3116165": {
+      "id": "3116165",
+      "nflTeamId": "27",
+      "name": "Chris Godwin",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "3116365": {
+      "id": "3116365",
+      "nflTeamId": "33",
+      "name": "Mark Andrews",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3116385": {
+      "id": "3116385",
+      "nflTeamId": "34",
+      "name": "Joe Mixon",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "3116389": {
+      "id": "3116389",
+      "nflTeamId": "4",
+      "name": "Samaje Perine",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3116406": {
+      "id": "3116406",
+      "nflTeamId": "15",
+      "name": "Tyreek Hill",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "3116407": {
+      "id": "3116407",
+      "nflTeamId": "23",
+      "name": "Mason Rudolph",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3116593": {
+      "id": "3116593",
+      "nflTeamId": "0",
+      "name": "Dalvin Cook",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3117251": {
+      "id": "3117251",
+      "nflTeamId": "25",
+      "name": "Christian McCaffrey",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3117256": {
+      "id": "3117256",
+      "nflTeamId": "34",
+      "name": "Dalton Schultz",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3118892": {
+      "id": "3118892",
+      "nflTeamId": "34",
+      "name": "Justin Watson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3120348": {
+      "id": "3120348",
+      "nflTeamId": "12",
+      "name": "JuJu Smith-Schuster",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3121023": {
+      "id": "3121023",
+      "nflTeamId": "21",
+      "name": "Dallas Goedert",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3121409": {
+      "id": "3121409",
+      "nflTeamId": "28",
+      "name": "Noah Brown",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "3121422": {
+      "id": "3121422",
+      "nflTeamId": "28",
+      "name": "Terry McLaurin",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3121427": {
+      "id": "3121427",
+      "nflTeamId": "2",
+      "name": "Curtis Samuel",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3122840": {
+      "id": "3122840",
+      "nflTeamId": "5",
+      "name": "Deshaun Watson",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "3123076": {
+      "id": "3123076",
+      "nflTeamId": "5",
+      "name": "David Njoku",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3124084": {
+      "id": "3124084",
+      "nflTeamId": "10",
+      "name": "Joey Slye",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3124679": {
+      "id": "3124679",
+      "nflTeamId": "15",
+      "name": "Jason Sanders",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3126486": {
+      "id": "3126486",
+      "nflTeamId": "28",
+      "name": "Deebo Samuel Sr.",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3127292": {
+      "id": "3127292",
+      "nflTeamId": "24",
+      "name": "Will Dissly",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3127310": {
+      "id": "3127310",
+      "nflTeamId": "4",
+      "name": "Drew Sample",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3127586": {
+      "id": "3127586",
+      "nflTeamId": "28",
+      "name": "Jeremy McNichols",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3128390": {
+      "id": "3128390",
+      "nflTeamId": "20",
+      "name": "Allen Lazard",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3128429": {
+      "id": "3128429",
+      "nflTeamId": "7",
+      "name": "Courtland Sutton",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3128444": {
+      "id": "3128444",
+      "nflTeamId": "29",
+      "name": "Matthew Wright",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3128720": {
+      "id": "3128720",
+      "nflTeamId": "34",
+      "name": "Nick Chubb",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3134353": {
+      "id": "3134353",
+      "nflTeamId": "8",
+      "name": "Tim Patrick",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3135321": {
+      "id": "3135321",
+      "nflTeamId": "29",
+      "name": "Hunter Renfrow",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3139477": {
+      "id": "3139477",
+      "nflTeamId": "12",
+      "name": "Patrick Mahomes",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3149687": {
+      "id": "3149687",
+      "nflTeamId": "9",
+      "name": "Chris Brooks",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3150744": {
+      "id": "3150744",
+      "nflTeamId": "27",
+      "name": "Chase McLaughlin",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3676833": {
+      "id": "3676833",
+      "nflTeamId": "6",
+      "name": "KaVontae Turpin",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3728262": {
+      "id": "3728262",
+      "nflTeamId": "1",
+      "name": "Ray-Ray McCloud III",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3843945": {
+      "id": "3843945",
+      "nflTeamId": "18",
+      "name": "Foster Moreau",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "3886598": {
+      "id": "3886598",
+      "nflTeamId": "25",
+      "name": "Jauan Jennings",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "3886812": {
+      "id": "3886812",
+      "nflTeamId": "4",
+      "name": "Jake Browning",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3892775": {
+      "id": "3892775",
+      "nflTeamId": "7",
+      "name": "Jarrett Stidham",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3895856": {
+      "id": "3895856",
+      "nflTeamId": "34",
+      "name": "Christian Kirk",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3911853": {
+      "id": "3911853",
+      "nflTeamId": "7",
+      "name": "Adam Trautman",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3912547": {
+      "id": "3912547",
+      "nflTeamId": "26",
+      "name": "Sam Darnold",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3915411": {
+      "id": "3915411",
+      "nflTeamId": "2",
+      "name": "Ty Johnson",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3915416": {
+      "id": "3915416",
+      "nflTeamId": "3",
+      "name": "DJ Moore",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3915486": {
+      "id": "3915486",
+      "nflTeamId": "24",
+      "name": "Tyler Conklin",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3915511": {
+      "id": "3915511",
+      "nflTeamId": "4",
+      "name": "Joe Burrow",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3916148": {
+      "id": "3916148",
+      "nflTeamId": "10",
+      "name": "Tony Pollard",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3916387": {
+      "id": "3916387",
+      "nflTeamId": "33",
+      "name": "Lamar Jackson",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3916433": {
+      "id": "3916433",
+      "nflTeamId": "13",
+      "name": "Jakobi Meyers",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3916945": {
+      "id": "3916945",
+      "nflTeamId": "19",
+      "name": "Darius Slayton",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3917232": {
+      "id": "3917232",
+      "nflTeamId": "2",
+      "name": "Tyler Bass",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3917315": {
+      "id": "3917315",
+      "nflTeamId": "22",
+      "name": "Kyler Murray",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3917668": {
+      "id": "3917668",
+      "nflTeamId": "15",
+      "name": "Alec Ingold",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3917792": {
+      "id": "3917792",
+      "nflTeamId": "11",
+      "name": "Daniel Jones",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3917914": {
+      "id": "3917914",
+      "nflTeamId": "3",
+      "name": "Olamide Zaccheaus",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3918298": {
+      "id": "3918298",
+      "nflTeamId": "2",
+      "name": "Josh Allen",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3921690": {
+      "id": "3921690",
+      "nflTeamId": "16",
+      "name": "Josh Oliver",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3924327": {
+      "id": "3924327",
+      "nflTeamId": "26",
+      "name": "Drew Lock",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3925357": {
+      "id": "3925357",
+      "nflTeamId": "10",
+      "name": "Calvin Ridley",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3929630": {
+      "id": "3929630",
+      "nflTeamId": "21",
+      "name": "Saquon Barkley",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3929645": {
+      "id": "3929645",
+      "nflTeamId": "18",
+      "name": "Juwan Johnson",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3929785": {
+      "id": "3929785",
+      "nflTeamId": "15",
+      "name": "Nick Westbrook-Ikhine",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "3930066": {
+      "id": "3930066",
+      "nflTeamId": "10",
+      "name": "Van Jefferson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3930086": {
+      "id": "3930086",
+      "nflTeamId": "2",
+      "name": "Dawson Knox",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3932905": {
+      "id": "3932905",
+      "nflTeamId": "5",
+      "name": "Diontae Johnson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "3953687": {
+      "id": "3953687",
+      "nflTeamId": "6",
+      "name": "Brandon Aubrey",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4012556": {
+      "id": "4012556",
+      "nflTeamId": "16",
+      "name": "C.J. Ham",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4032473": {
+      "id": "4032473",
+      "nflTeamId": "18",
+      "name": "Rashid Shaheed",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4034946": {
+      "id": "4034946",
+      "nflTeamId": "27",
+      "name": "Kyle Trask",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4035004": {
+      "id": "4035004",
+      "nflTeamId": "9",
+      "name": "Mecole Hardman",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4035538": {
+      "id": "4035538",
+      "nflTeamId": "8",
+      "name": "David Montgomery",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4035676": {
+      "id": "4035676",
+      "nflTeamId": "4",
+      "name": "Zack Moss",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4035687": {
+      "id": "4035687",
+      "nflTeamId": "11",
+      "name": "Michael Pittman Jr.",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4035886": {
+      "id": "4035886",
+      "nflTeamId": "11",
+      "name": "Khalil Herbert",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4036131": {
+      "id": "4036131",
+      "nflTeamId": "26",
+      "name": "Noah Fant",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4036133": {
+      "id": "4036133",
+      "nflTeamId": "16",
+      "name": "T.J. Hockenson",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4036348": {
+      "id": "4036348",
+      "nflTeamId": "28",
+      "name": "Michael Gallup",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4036378": {
+      "id": "4036378",
+      "nflTeamId": "9",
+      "name": "Jordan Love",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4037235": {
+      "id": "4037235",
+      "nflTeamId": "22",
+      "name": "Greg Dortch",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4037457": {
+      "id": "4037457",
+      "nflTeamId": "3",
+      "name": "Travis Homer",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4038441": {
+      "id": "4038441",
+      "nflTeamId": "33",
+      "name": "Justice Hill",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4038524": {
+      "id": "4038524",
+      "nflTeamId": "12",
+      "name": "Gardner Minshew",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4038815": {
+      "id": "4038815",
+      "nflTeamId": "29",
+      "name": "Rico Dowdle",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4038941": {
+      "id": "4038941",
+      "nflTeamId": "24",
+      "name": "Justin Herbert",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4039050": {
+      "id": "4039050",
+      "nflTeamId": "3",
+      "name": "Devin Duvernay",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4039358": {
+      "id": "4039358",
+      "nflTeamId": "25",
+      "name": "Patrick Taylor Jr.",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4040655": {
+      "id": "4040655",
+      "nflTeamId": "1",
+      "name": "Darnell Mooney",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4040715": {
+      "id": "4040715",
+      "nflTeamId": "21",
+      "name": "Jalen Hurts",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4040761": {
+      "id": "4040761",
+      "nflTeamId": "19",
+      "name": "Devin Singletary",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4045163": {
+      "id": "4045163",
+      "nflTeamId": "6",
+      "name": "Miles Sanders",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4047365": {
+      "id": "4047365",
+      "nflTeamId": "9",
+      "name": "Josh Jacobs",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4047646": {
+      "id": "4047646",
+      "nflTeamId": "21",
+      "name": "A.J. Brown",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4047650": {
+      "id": "4047650",
+      "nflTeamId": "23",
+      "name": "DK Metcalf",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4048244": {
+      "id": "4048244",
+      "nflTeamId": "15",
+      "name": "Alexander Mattison",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4051167": {
+      "id": "4051167",
+      "nflTeamId": "17",
+      "name": "John Parker Romo",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4212909": {
+      "id": "4212909",
+      "nflTeamId": "29",
+      "name": "David Moore",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4239934": {
+      "id": "4239934",
+      "nflTeamId": "21",
+      "name": "AJ Dillon",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4239993": {
+      "id": "4239993",
+      "nflTeamId": "4",
+      "name": "Tee Higgins",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4239996": {
+      "id": "4239996",
+      "nflTeamId": "30",
+      "name": "Travis Etienne Jr.",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4240021": {
+      "id": "4240021",
+      "nflTeamId": "18",
+      "name": "Cam Akers",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4240391": {
+      "id": "4240391",
+      "nflTeamId": "19",
+      "name": "Tommy DeVito",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4240472": {
+      "id": "4240472",
+      "nflTeamId": "12",
+      "name": "Noah Gray",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4240703": {
+      "id": "4240703",
+      "nflTeamId": "5",
+      "name": "Kenny Pickett",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4240858": {
+      "id": "4240858",
+      "nflTeamId": "8",
+      "name": "Hendon Hooker",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4241372": {
+      "id": "4241372",
+      "nflTeamId": "12",
+      "name": "Hollywood Brown",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4241374": {
+      "id": "4241374",
+      "nflTeamId": "21",
+      "name": "Grant Calcaterra",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4241389": {
+      "id": "4241389",
+      "nflTeamId": "6",
+      "name": "CeeDee Lamb",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4241416": {
+      "id": "4241416",
+      "nflTeamId": "29",
+      "name": "Chuba Hubbard",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4241457": {
+      "id": "4241457",
+      "nflTeamId": "24",
+      "name": "Najee Harris",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4241463": {
+      "id": "4241463",
+      "nflTeamId": "5",
+      "name": "Jerry Jeudy",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4241464": {
+      "id": "4241464",
+      "nflTeamId": "25",
+      "name": "Mac Jones",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4241474": {
+      "id": "4241474",
+      "nflTeamId": "28",
+      "name": "Brian Robinson Jr.",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4241478": {
+      "id": "4241478",
+      "nflTeamId": "21",
+      "name": "DeVonta Smith",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4241479": {
+      "id": "4241479",
+      "nflTeamId": "15",
+      "name": "Tua Tagovailoa",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4241555": {
+      "id": "4241555",
+      "nflTeamId": "12",
+      "name": "Elijah Mitchell",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4241985": {
+      "id": "4241985",
+      "nflTeamId": "7",
+      "name": "J.K. Dobbins",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4242214": {
+      "id": "4242214",
+      "nflTeamId": "18",
+      "name": "Clyde Edwards-Helaire",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4242335": {
+      "id": "4242335",
+      "nflTeamId": "11",
+      "name": "Jonathan Taylor",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4242355": {
+      "id": "4242355",
+      "nflTeamId": "6",
+      "name": "Jake Ferguson",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4242392": {
+      "id": "4242392",
+      "nflTeamId": "8",
+      "name": "Brock Wright",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4242431": {
+      "id": "4242431",
+      "nflTeamId": "16",
+      "name": "Ty Chandler",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4242433": {
+      "id": "4242433",
+      "nflTeamId": "2",
+      "name": "Joshua Palmer",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4242512": {
+      "id": "4242512",
+      "nflTeamId": "9",
+      "name": "Malik Willis",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4242519": {
+      "id": "4242519",
+      "nflTeamId": "0",
+      "name": "Anders Carlson",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4242557": {
+      "id": "4242557",
+      "nflTeamId": "14",
+      "name": "Colby Parkinson",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4243331": {
+      "id": "4243331",
+      "nflTeamId": "27",
+      "name": "Cade Otton",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4243389": {
+      "id": "4243389",
+      "nflTeamId": "23",
+      "name": "Calvin Austin III",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4243537": {
+      "id": "4243537",
+      "nflTeamId": "0",
+      "name": "Gabe Davis",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4248528": {
+      "id": "4248528",
+      "nflTeamId": "9",
+      "name": "Christian Watson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4249087": {
+      "id": "4249087",
+      "nflTeamId": "28",
+      "name": "Matt Gay",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4249417": {
+      "id": "4249417",
+      "nflTeamId": "6",
+      "name": "Jalen Tolbert",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4249836": {
+      "id": "4249836",
+      "nflTeamId": "5",
+      "name": "Pierre Strong Jr.",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4257188": {
+      "id": "4257188",
+      "nflTeamId": "4",
+      "name": "Charlie Jones",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4258173": {
+      "id": "4258173",
+      "nflTeamId": "34",
+      "name": "Nico Collins",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4258595": {
+      "id": "4258595",
+      "nflTeamId": "3",
+      "name": "Cole Kmet",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4259308": {
+      "id": "4259308",
+      "nflTeamId": "29",
+      "name": "Raheem Blackshear",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4259545": {
+      "id": "4259545",
+      "nflTeamId": "3",
+      "name": "D'Andre Swift",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4259619": {
+      "id": "4259619",
+      "nflTeamId": "18",
+      "name": "Blake Grupe",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4260394": {
+      "id": "4260394",
+      "nflTeamId": "13",
+      "name": "Aidan O'Connell",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4262921": {
+      "id": "4262921",
+      "nflTeamId": "16",
+      "name": "Justin Jefferson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4360078": {
+      "id": "4360078",
+      "nflTeamId": "11",
+      "name": "Alec Pierce",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4360234": {
+      "id": "4360234",
+      "nflTeamId": "4",
+      "name": "Evan McPherson",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4360238": {
+      "id": "4360238",
+      "nflTeamId": "34",
+      "name": "Dameon Pierce",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4360248": {
+      "id": "4360248",
+      "nflTeamId": "1",
+      "name": "Kyle Pitts",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4360294": {
+      "id": "4360294",
+      "nflTeamId": "17",
+      "name": "Antonio Gibson",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4360310": {
+      "id": "4360310",
+      "nflTeamId": "30",
+      "name": "Trevor Lawrence",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4360405": {
+      "id": "4360405",
+      "nflTeamId": "26",
+      "name": "Jake Bobo",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4360423": {
+      "id": "4360423",
+      "nflTeamId": "1",
+      "name": "Michael Penix Jr.",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4360438": {
+      "id": "4360438",
+      "nflTeamId": "25",
+      "name": "Brandon Aiyuk",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4360516": {
+      "id": "4360516",
+      "nflTeamId": "19",
+      "name": "Tyrone Tracy Jr.",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4360569": {
+      "id": "4360569",
+      "nflTeamId": "16",
+      "name": "Jordan Mason",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4360635": {
+      "id": "4360635",
+      "nflTeamId": "10",
+      "name": "Chig Okonkwo",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4360689": {
+      "id": "4360689",
+      "nflTeamId": "18",
+      "name": "Tyler Shough",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4360698": {
+      "id": "4360698",
+      "nflTeamId": "6",
+      "name": "Joe Milton III",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4360761": {
+      "id": "4360761",
+      "nflTeamId": "22",
+      "name": "Michael Wilson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4360797": {
+      "id": "4360797",
+      "nflTeamId": "14",
+      "name": "Tutu Atwell",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4360799": {
+      "id": "4360799",
+      "nflTeamId": "0",
+      "name": "Jordan Travis",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4360939": {
+      "id": "4360939",
+      "nflTeamId": "33",
+      "name": "Rashod Bateman",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4361050": {
+      "id": "4361050",
+      "nflTeamId": "33",
+      "name": "Isaiah Likely",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4361259": {
+      "id": "4361259",
+      "nflTeamId": "15",
+      "name": "Zach Wilson",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4361307": {
+      "id": "4361307",
+      "nflTeamId": "22",
+      "name": "Trey McBride",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4361370": {
+      "id": "4361370",
+      "nflTeamId": "18",
+      "name": "Chris Olave",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4361372": {
+      "id": "4361372",
+      "nflTeamId": "20",
+      "name": "Jeremy Ruckert",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4361409": {
+      "id": "4361409",
+      "nflTeamId": "21",
+      "name": "Jahan Dotson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4361411": {
+      "id": "4361411",
+      "nflTeamId": "23",
+      "name": "Pat Freiermuth",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4361418": {
+      "id": "4361418",
+      "nflTeamId": "10",
+      "name": "Will Levis",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4361432": {
+      "id": "4361432",
+      "nflTeamId": "9",
+      "name": "Romeo Doubs",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4361516": {
+      "id": "4361516",
+      "nflTeamId": "19",
+      "name": "Daniel Bellinger",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4361529": {
+      "id": "4361529",
+      "nflTeamId": "12",
+      "name": "Isiah Pacheco",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4361577": {
+      "id": "4361577",
+      "nflTeamId": "30",
+      "name": "Dyami Brown",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4361579": {
+      "id": "4361579",
+      "nflTeamId": "6",
+      "name": "Javonte Williams",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4361741": {
+      "id": "4361741",
+      "nflTeamId": "25",
+      "name": "Brock Purdy",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4361777": {
+      "id": "4361777",
+      "nflTeamId": "13",
+      "name": "Zamir White",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4362081": {
+      "id": "4362081",
+      "nflTeamId": "24",
+      "name": "Cameron Dicker",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4362238": {
+      "id": "4362238",
+      "nflTeamId": "4",
+      "name": "Chase Brown",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4362249": {
+      "id": "4362249",
+      "nflTeamId": "9",
+      "name": "Jayden Reed",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4362477": {
+      "id": "4362477",
+      "nflTeamId": "24",
+      "name": "Derius Davis",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4362478": {
+      "id": "4362478",
+      "nflTeamId": "22",
+      "name": "Emari Demercado",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4362628": {
+      "id": "4362628",
+      "nflTeamId": "4",
+      "name": "Ja'Marr Chase",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4362748": {
+      "id": "4362748",
+      "nflTeamId": "7",
+      "name": "Tyler Badie",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4362887": {
+      "id": "4362887",
+      "nflTeamId": "20",
+      "name": "Justin Fields",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4363538": {
+      "id": "4363538",
+      "nflTeamId": "22",
+      "name": "Chad Ryland",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4365395": {
+      "id": "4365395",
+      "nflTeamId": "15",
+      "name": "Julian Hill",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4366031": {
+      "id": "4366031",
+      "nflTeamId": "34",
+      "name": "Tank Dell",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4367567": {
+      "id": "4367567",
+      "nflTeamId": "10",
+      "name": "Julius Chestnut",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4368003": {
+      "id": "4368003",
+      "nflTeamId": "4",
+      "name": "Andrei Iosivas",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4369863": {
+      "id": "4369863",
+      "nflTeamId": "5",
+      "name": "Cedric Tillman",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4371733": {
+      "id": "4371733",
+      "nflTeamId": "23",
+      "name": "Kenneth Gainwell",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4372016": {
+      "id": "4372016",
+      "nflTeamId": "15",
+      "name": "Jaylen Waddle",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4372019": {
+      "id": "4372019",
+      "nflTeamId": "5",
+      "name": "Jerome Ford",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4372066": {
+      "id": "4372066",
+      "nflTeamId": "25",
+      "name": "Jake Moody",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4372096": {
+      "id": "4372096",
+      "nflTeamId": "6",
+      "name": "Luke Schoonmaker",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4372414": {
+      "id": "4372414",
+      "nflTeamId": "2",
+      "name": "Elijah Moore",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4372485": {
+      "id": "4372485",
+      "nflTeamId": "16",
+      "name": "Rondale Moore",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4372505": {
+      "id": "4372505",
+      "nflTeamId": "27",
+      "name": "Payne Durham",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4372561": {
+      "id": "4372561",
+      "nflTeamId": "25",
+      "name": "Isaac Guerendo",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4372780": {
+      "id": "4372780",
+      "nflTeamId": "29",
+      "name": "Tommy Tremble",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4373626": {
+      "id": "4373626",
+      "nflTeamId": "1",
+      "name": "Tyler Allgeier",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4373678": {
+      "id": "4373678",
+      "nflTeamId": "2",
+      "name": "Khalil Shakir",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4373684": {
+      "id": "4373684",
+      "nflTeamId": "24",
+      "name": "Scott Matlock",
+      "position": "9",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4374302": {
+      "id": "4374302",
+      "nflTeamId": "8",
+      "name": "Amon-Ra St. Brown",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4379399": {
+      "id": "4379399",
+      "nflTeamId": "2",
+      "name": "James Cook",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4382466": {
+      "id": "4382466",
+      "nflTeamId": "16",
+      "name": "Jalen Nailor",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4383396": {
+      "id": "4383396",
+      "nflTeamId": "6",
+      "name": "Hunter Luepke",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4385690": {
+      "id": "4385690",
+      "nflTeamId": "2",
+      "name": "Dalton Kincaid",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4421446": {
+      "id": "4421446",
+      "nflTeamId": "8",
+      "name": "Craig Reynolds",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4426338": {
+      "id": "4426338",
+      "nflTeamId": "7",
+      "name": "Bo Nix",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4426339": {
+      "id": "4426339",
+      "nflTeamId": "18",
+      "name": "Spencer Rattler",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4426348": {
+      "id": "4426348",
+      "nflTeamId": "28",
+      "name": "Jayden Daniels",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4426354": {
+      "id": "4426354",
+      "nflTeamId": "6",
+      "name": "George Pickens",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4426385": {
+      "id": "4426385",
+      "nflTeamId": "26",
+      "name": "Zach Charbonnet",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4426386": {
+      "id": "4426386",
+      "nflTeamId": "3",
+      "name": "Roschon Johnson",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4426388": {
+      "id": "4426388",
+      "nflTeamId": "8",
+      "name": "Jameson Williams",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4426407": {
+      "id": "4426407",
+      "nflTeamId": "27",
+      "name": "Trey Palmer",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4426485": {
+      "id": "4426485",
+      "nflTeamId": "6",
+      "name": "Jonathan Mingo",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4426496": {
+      "id": "4426496",
+      "nflTeamId": "34",
+      "name": "Cade Stover",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4426502": {
+      "id": "4426502",
+      "nflTeamId": "1",
+      "name": "Drake London",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4426515": {
+      "id": "4426515",
+      "nflTeamId": "14",
+      "name": "Puka Nacua",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4426844": {
+      "id": "4426844",
+      "nflTeamId": "22",
+      "name": "Elijah Higgins",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4426875": {
+      "id": "4426875",
+      "nflTeamId": "16",
+      "name": "Sam Howell",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4426948": {
+      "id": "4426948",
+      "nflTeamId": "28",
+      "name": "Luke McCaffrey",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4427095": {
+      "id": "4427095",
+      "nflTeamId": "17",
+      "name": "DeMario Douglas",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4427238": {
+      "id": "4427238",
+      "nflTeamId": "5",
+      "name": "Dillon Gabriel",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4427278": {
+      "id": "4427278",
+      "nflTeamId": "20",
+      "name": "Xavier Gipson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4427366": {
+      "id": "4427366",
+      "nflTeamId": "20",
+      "name": "Breece Hall",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4427391": {
+      "id": "4427391",
+      "nflTeamId": "26",
+      "name": "Kenny McIntosh",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4427834": {
+      "id": "4427834",
+      "nflTeamId": "4",
+      "name": "Erick All Jr.",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4427985": {
+      "id": "4427985",
+      "nflTeamId": "18",
+      "name": "Bub Means",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4428085": {
+      "id": "4428085",
+      "nflTeamId": "9",
+      "name": "Luke Musgrave",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4428209": {
+      "id": "4428209",
+      "nflTeamId": "25",
+      "name": "Ricky Pearsall",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4428331": {
+      "id": "4428331",
+      "nflTeamId": "12",
+      "name": "Rashee Rice",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4428532": {
+      "id": "4428532",
+      "nflTeamId": "21",
+      "name": "Ainias Smith",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4428557": {
+      "id": "4428557",
+      "nflTeamId": "10",
+      "name": "Tyjae Spears",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4428718": {
+      "id": "4428718",
+      "nflTeamId": "13",
+      "name": "Tre Tucker",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4428850": {
+      "id": "4428850",
+      "nflTeamId": "9",
+      "name": "Dontayvion Wicks",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4429001": {
+      "id": "4429001",
+      "nflTeamId": "0",
+      "name": "Jase McClellan",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4429013": {
+      "id": "4429013",
+      "nflTeamId": "30",
+      "name": "Tank Bigsby",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4429022": {
+      "id": "4429022",
+      "nflTeamId": "17",
+      "name": "Kayshon Boutte",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4429023": {
+      "id": "4429023",
+      "nflTeamId": "9",
+      "name": "MarShawn Lloyd",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4429025": {
+      "id": "4429025",
+      "nflTeamId": "24",
+      "name": "Quentin Johnston",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4429033": {
+      "id": "4429033",
+      "nflTeamId": "4",
+      "name": "Jermaine Burton",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4429059": {
+      "id": "4429059",
+      "nflTeamId": "34",
+      "name": "Woody Marks",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4429084": {
+      "id": "4429084",
+      "nflTeamId": "11",
+      "name": "Anthony Richardson Sr.",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4429086": {
+      "id": "4429086",
+      "nflTeamId": "13",
+      "name": "Michael Mayer",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4429096": {
+      "id": "4429096",
+      "nflTeamId": "14",
+      "name": "Blake Corum",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4429105": {
+      "id": "4429105",
+      "nflTeamId": "20",
+      "name": "Arian Smith",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4429121": {
+      "id": "4429121",
+      "nflTeamId": "10",
+      "name": "Kalel Mullings",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4429148": {
+      "id": "4429148",
+      "nflTeamId": "19",
+      "name": "Theo Johnson",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4429160": {
+      "id": "4429160",
+      "nflTeamId": "15",
+      "name": "De'Von Achane",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4429205": {
+      "id": "4429205",
+      "nflTeamId": "16",
+      "name": "Jordan Addison",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4429275": {
+      "id": "4429275",
+      "nflTeamId": "22",
+      "name": "Trey Benson",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4429299": {
+      "id": "4429299",
+      "nflTeamId": "4",
+      "name": "Tahj Brooks",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4429501": {
+      "id": "4429501",
+      "nflTeamId": "2",
+      "name": "Ray Davis",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4429615": {
+      "id": "4429615",
+      "nflTeamId": "33",
+      "name": "Zay Flowers",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4429676": {
+      "id": "4429676",
+      "nflTeamId": "11",
+      "name": "Tyler Goodson",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4429795": {
+      "id": "4429795",
+      "nflTeamId": "8",
+      "name": "Jahmyr Gibbs",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4429955": {
+      "id": "4429955",
+      "nflTeamId": "23",
+      "name": "Will Howard",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4430027": {
+      "id": "4430027",
+      "nflTeamId": "8",
+      "name": "Sam LaPorta",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4430034": {
+      "id": "4430034",
+      "nflTeamId": "29",
+      "name": "Xavier Legette",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4430104": {
+      "id": "4430104",
+      "nflTeamId": "13",
+      "name": "Sincere McCormick",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4430191": {
+      "id": "4430191",
+      "nflTeamId": "12",
+      "name": "Skyy Moore",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4430539": {
+      "id": "4430539",
+      "nflTeamId": "30",
+      "name": "Brenton Strange",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4430637": {
+      "id": "4430637",
+      "nflTeamId": "17",
+      "name": "Ja'Lynn Polk",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4430737": {
+      "id": "4430737",
+      "nflTeamId": "14",
+      "name": "Kyren Williams",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4430802": {
+      "id": "4430802",
+      "nflTeamId": "23",
+      "name": "Darnell Washington",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4430807": {
+      "id": "4430807",
+      "nflTeamId": "1",
+      "name": "Bijan Robinson",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4430834": {
+      "id": "4430834",
+      "nflTeamId": "27",
+      "name": "Jalen McMillan",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4430870": {
+      "id": "4430870",
+      "nflTeamId": "24",
+      "name": "KeAndre Lambert-Smith",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4430871": {
+      "id": "4430871",
+      "nflTeamId": "27",
+      "name": "Sean Tucker",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4430878": {
+      "id": "4430878",
+      "nflTeamId": "26",
+      "name": "Jaxon Smith-Njigba",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4430968": {
+      "id": "4430968",
+      "nflTeamId": "24",
+      "name": "Kimani Vidal",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4431268": {
+      "id": "4431268",
+      "nflTeamId": "10",
+      "name": "Chimere Dike",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4431280": {
+      "id": "4431280",
+      "nflTeamId": "7",
+      "name": "Troy Franklin",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4431299": {
+      "id": "4431299",
+      "nflTeamId": "3",
+      "name": "Rome Odunze",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4431353": {
+      "id": "4431353",
+      "nflTeamId": "10",
+      "name": "Xavier Restrepo",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4431452": {
+      "id": "4431452",
+      "nflTeamId": "17",
+      "name": "Drake Maye",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4431453": {
+      "id": "4431453",
+      "nflTeamId": "6",
+      "name": "Deuce Vaughn",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4431459": {
+      "id": "4431459",
+      "nflTeamId": "11",
+      "name": "Tyler Warren",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4431466": {
+      "id": "4431466",
+      "nflTeamId": "25",
+      "name": "Jordan Watkins",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4431487": {
+      "id": "4431487",
+      "nflTeamId": "9",
+      "name": "Savion Williams",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4431492": {
+      "id": "4431492",
+      "nflTeamId": "23",
+      "name": "Roman Wilson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4431545": {
+      "id": "4431545",
+      "nflTeamId": "21",
+      "name": "Will Shipley",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4431562": {
+      "id": "4431562",
+      "nflTeamId": "6",
+      "name": "Phil Mafah",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4431588": {
+      "id": "4431588",
+      "nflTeamId": "29",
+      "name": "Ja'Tavion Sanders",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4431611": {
+      "id": "4431611",
+      "nflTeamId": "3",
+      "name": "Caleb Williams",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4432577": {
+      "id": "4432577",
+      "nflTeamId": "34",
+      "name": "C.J. Stroud",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4432620": {
+      "id": "4432620",
+      "nflTeamId": "30",
+      "name": "Parker Washington",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4432665": {
+      "id": "4432665",
+      "nflTeamId": "13",
+      "name": "Brock Bowers",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4432708": {
+      "id": "4432708",
+      "nflTeamId": "22",
+      "name": "Marvin Harrison Jr.",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4432710": {
+      "id": "4432710",
+      "nflTeamId": "17",
+      "name": "TreVeyon Henderson",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4432734": {
+      "id": "4432734",
+      "nflTeamId": "26",
+      "name": "Jalen Milroe",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4432762": {
+      "id": "4432762",
+      "nflTeamId": "5",
+      "name": "Shedeur Sanders",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4432773": {
+      "id": "4432773",
+      "nflTeamId": "30",
+      "name": "Brian Thomas Jr.",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4432775": {
+      "id": "4432775",
+      "nflTeamId": "13",
+      "name": "Dont'e Thornton Jr.",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4433970": {
+      "id": "4433970",
+      "nflTeamId": "16",
+      "name": "J.J. McCarthy",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4434153": {
+      "id": "4434153",
+      "nflTeamId": "3",
+      "name": "Tyson Bagent",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4565185": {
+      "id": "4565185",
+      "nflTeamId": "16",
+      "name": "Tai Felton",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4566192": {
+      "id": "4566192",
+      "nflTeamId": "14",
+      "name": "Joshua Karty",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4567048": {
+      "id": "4567048",
+      "nflTeamId": "26",
+      "name": "Kenneth Walker III",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4567096": {
+      "id": "4567096",
+      "nflTeamId": "34",
+      "name": "John Metchie III",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4567104": {
+      "id": "4567104",
+      "nflTeamId": "16",
+      "name": "Will Reichard",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4567156": {
+      "id": "4567156",
+      "nflTeamId": "10",
+      "name": "Treylon Burks",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4567750": {
+      "id": "4567750",
+      "nflTeamId": "27",
+      "name": "Emeka Egbuka",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4568490": {
+      "id": "4568490",
+      "nflTeamId": "7",
+      "name": "RJ Harvey",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4569173": {
+      "id": "4569173",
+      "nflTeamId": "17",
+      "name": "Rhamondre Stevenson",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4569382": {
+      "id": "4569382",
+      "nflTeamId": "14",
+      "name": "Jordan Whittington",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4569559": {
+      "id": "4569559",
+      "nflTeamId": "7",
+      "name": "Devaughn Vele",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4569587": {
+      "id": "4569587",
+      "nflTeamId": "19",
+      "name": "Wan'Dale Robinson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4569603": {
+      "id": "4569603",
+      "nflTeamId": "15",
+      "name": "Malik Washington",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4569618": {
+      "id": "4569618",
+      "nflTeamId": "20",
+      "name": "Garrett Wilson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4569682": {
+      "id": "4569682",
+      "nflTeamId": "7",
+      "name": "Audric Estime",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4569923": {
+      "id": "4569923",
+      "nflTeamId": "17",
+      "name": "Andy Borregales",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4569987": {
+      "id": "4569987",
+      "nflTeamId": "23",
+      "name": "Jaylen Warren",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4570037": {
+      "id": "4570037",
+      "nflTeamId": "14",
+      "name": "Terrance Ferguson",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4570242": {
+      "id": "4570242",
+      "nflTeamId": "1",
+      "name": "Nick Nash",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4570561": {
+      "id": "4570561",
+      "nflTeamId": "19",
+      "name": "Eric Gray",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4570688": {
+      "id": "4570688",
+      "nflTeamId": "20",
+      "name": "Caden Davis",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4571557": {
+      "id": "4571557",
+      "nflTeamId": "11",
+      "name": "Spencer Shrader",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4572680": {
+      "id": "4572680",
+      "nflTeamId": "9",
+      "name": "Tucker Kraft",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4575131": {
+      "id": "4575131",
+      "nflTeamId": "28",
+      "name": "Jacory Croskey-Merritt",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4575665": {
+      "id": "4575665",
+      "nflTeamId": "25",
+      "name": "Jacob Cowing",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4576297": {
+      "id": "4576297",
+      "nflTeamId": "26",
+      "name": "AJ Barner",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4586312": {
+      "id": "4586312",
+      "nflTeamId": "34",
+      "name": "Jaylin Noel",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4595342": {
+      "id": "4595342",
+      "nflTeamId": "24",
+      "name": "Oronde Gadsden II",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4595348": {
+      "id": "4595348",
+      "nflTeamId": "19",
+      "name": "Malik Nabers",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4596334": {
+      "id": "4596334",
+      "nflTeamId": "33",
+      "name": "Keaton Mitchell",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4596448": {
+      "id": "4596448",
+      "nflTeamId": "27",
+      "name": "Bucky Irving",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4596602": {
+      "id": "4596602",
+      "nflTeamId": "12",
+      "name": "Brashard Smith",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4597500": {
+      "id": "4597500",
+      "nflTeamId": "11",
+      "name": "Adonai Mitchell",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4597703": {
+      "id": "4597703",
+      "nflTeamId": "26",
+      "name": "Tory Horton",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4599739": {
+      "id": "4599739",
+      "nflTeamId": "18",
+      "name": "Kendre Miller",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4600981": {
+      "id": "4600981",
+      "nflTeamId": "7",
+      "name": "Pat Bryant",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4602667": {
+      "id": "4602667",
+      "nflTeamId": "28",
+      "name": "Jaylin Lane",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4603186": {
+      "id": "4603186",
+      "nflTeamId": "13",
+      "name": "Jack Bech",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4608686": {
+      "id": "4608686",
+      "nflTeamId": "3",
+      "name": "Kyle Monangai",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4608810": {
+      "id": "4608810",
+      "nflTeamId": "27",
+      "name": "Tez Johnson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4612826": {
+      "id": "4612826",
+      "nflTeamId": "24",
+      "name": "Ladd McConkey",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4613104": {
+      "id": "4613104",
+      "nflTeamId": "20",
+      "name": "Malachi Corley",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4613202": {
+      "id": "4613202",
+      "nflTeamId": "17",
+      "name": "Kyle Williams",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4635008": {
+      "id": "4635008",
+      "nflTeamId": "2",
+      "name": "Keon Coleman",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4678006": {
+      "id": "4678006",
+      "nflTeamId": "26",
+      "name": "Elijah Arroyo",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4678008": {
+      "id": "4678008",
+      "nflTeamId": "29",
+      "name": "Jonathon Brooks",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "OUT"
+    },
+    "4682652": {
+      "id": "4682652",
+      "nflTeamId": "18",
+      "name": "Devin Neal",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4682745": {
+      "id": "4682745",
+      "nflTeamId": "15",
+      "name": "Jaylen Wright",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4683062": {
+      "id": "4683062",
+      "nflTeamId": "12",
+      "name": "Xavier Worthy",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4683243": {
+      "id": "4683243",
+      "nflTeamId": "29",
+      "name": "Mitchell Evans",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4683423": {
+      "id": "4683423",
+      "nflTeamId": "11",
+      "name": "Riley Leonard",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4685201": {
+      "id": "4685201",
+      "nflTeamId": "21",
+      "name": "Tanner McKee",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4685247": {
+      "id": "4685247",
+      "nflTeamId": "20",
+      "name": "Braelon Allen",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4685278": {
+      "id": "4685278",
+      "nflTeamId": "3",
+      "name": "Luther Burden III",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4685279": {
+      "id": "4685279",
+      "nflTeamId": "6",
+      "name": "Jaydon Blue",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4685350": {
+      "id": "4685350",
+      "nflTeamId": "29",
+      "name": "Trevor Etienne",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4685382": {
+      "id": "4685382",
+      "nflTeamId": "24",
+      "name": "Omarion Hampton",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4685397": {
+      "id": "4685397",
+      "nflTeamId": "25",
+      "name": "Jordan James",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4685415": {
+      "id": "4685415",
+      "nflTeamId": "30",
+      "name": "Travis Hunter",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4685472": {
+      "id": "4685472",
+      "nflTeamId": "29",
+      "name": "Tetairoa McMillan",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4685702": {
+      "id": "4685702",
+      "nflTeamId": "5",
+      "name": "Quinshon Judkins",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4685720": {
+      "id": "4685720",
+      "nflTeamId": "29",
+      "name": "Bryce Young",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4686104": {
+      "id": "4686104",
+      "nflTeamId": "21",
+      "name": "Johnny Wilson",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4686361": {
+      "id": "4686361",
+      "nflTeamId": "30",
+      "name": "Cam Little",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4686472": {
+      "id": "4686472",
+      "nflTeamId": "7",
+      "name": "Marvin Mims Jr.",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4686612": {
+      "id": "4686612",
+      "nflTeamId": "24",
+      "name": "Tre Harris",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4686728": {
+      "id": "4686728",
+      "nflTeamId": "10",
+      "name": "Gunnar Helm",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4688380": {
+      "id": "4688380",
+      "nflTeamId": "10",
+      "name": "Cameron Ward",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4688813": {
+      "id": "4688813",
+      "nflTeamId": "11",
+      "name": "Josh Downs",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4689114": {
+      "id": "4689114",
+      "nflTeamId": "19",
+      "name": "Jaxson Dart",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4689936": {
+      "id": "4689936",
+      "nflTeamId": "8",
+      "name": "Jake Bates",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4690013": {
+      "id": "4690013",
+      "nflTeamId": "33",
+      "name": "Rasheen Ali",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4690143": {
+      "id": "4690143",
+      "nflTeamId": "33",
+      "name": "LaJohntay Wester",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4690923": {
+      "id": "4690923",
+      "nflTeamId": "28",
+      "name": "Ben Sinnott",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4692022": {
+      "id": "4692022",
+      "nflTeamId": "17",
+      "name": "Javon Baker",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4692590": {
+      "id": "4692590",
+      "nflTeamId": "19",
+      "name": "Jalin Hyatt",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4695404": {
+      "id": "4695404",
+      "nflTeamId": "20",
+      "name": "Isaiah Davis",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4695883": {
+      "id": "4695883",
+      "nflTeamId": "29",
+      "name": "Jalen Coker",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4696882": {
+      "id": "4696882",
+      "nflTeamId": "33",
+      "name": "Devontez Walker",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4696981": {
+      "id": "4696981",
+      "nflTeamId": "19",
+      "name": "Cam Skattebo",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4697745": {
+      "id": "4697745",
+      "nflTeamId": "33",
+      "name": "Tyler Loop",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4697815": {
+      "id": "4697815",
+      "nflTeamId": "27",
+      "name": "Rachaad White",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4701936": {
+      "id": "4701936",
+      "nflTeamId": "9",
+      "name": "Matthew Golden",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4708486": {
+      "id": "4708486",
+      "nflTeamId": "29",
+      "name": "Jimmy Horn Jr.",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4710341": {
+      "id": "4710341",
+      "nflTeamId": "14",
+      "name": "Jarquez Hunter",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4711533": {
+      "id": "4711533",
+      "nflTeamId": "15",
+      "name": "Ollie Gordon II",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4714365": {
+      "id": "4714365",
+      "nflTeamId": "12",
+      "name": "Carson Steele",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4722893": {
+      "id": "4722893",
+      "nflTeamId": "7",
+      "name": "Jaleel McLaughlin",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4723086": {
+      "id": "4723086",
+      "nflTeamId": "3",
+      "name": "Colston Loveland",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "QUESTIONABLE"
+    },
+    "4775196": {
+      "id": "4775196",
+      "nflTeamId": "13",
+      "name": "Tommy Mellott",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4808766": {
+      "id": "4808766",
+      "nflTeamId": "20",
+      "name": "Mason Taylor",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4808830": {
+      "id": "4808830",
+      "nflTeamId": "26",
+      "name": "Damien Martinez",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4819231": {
+      "id": "4819231",
+      "nflTeamId": "23",
+      "name": "Kaleb Johnson",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4874509": {
+      "id": "4874509",
+      "nflTeamId": "11",
+      "name": "DJ Giddens",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4877706": {
+      "id": "4877706",
+      "nflTeamId": "34",
+      "name": "Jayden Higgins",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4882093": {
+      "id": "4882093",
+      "nflTeamId": "30",
+      "name": "Bhayshul Tuten",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4883647": {
+      "id": "4883647",
+      "nflTeamId": "10",
+      "name": "Elic Ayomanor",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4887558": {
+      "id": "4887558",
+      "nflTeamId": "9",
+      "name": "Emanuel Wilson",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4889929": {
+      "id": "4889929",
+      "nflTeamId": "15",
+      "name": "Quinn Ewers",
+      "position": "QB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4890973": {
+      "id": "4890973",
+      "nflTeamId": "13",
+      "name": "Ashton Jeanty",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "4911851": {
+      "id": "4911851",
+      "nflTeamId": "30",
+      "name": "LeQuint Allen Jr.",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "5081397": {
+      "id": "5081397",
+      "nflTeamId": "5",
+      "name": "Dylan Sampson",
+      "position": "RB",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "5082630": {
+      "id": "5082630",
+      "nflTeamId": "12",
+      "name": "Jalen Royals",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "5083076": {
+      "id": "5083076",
+      "nflTeamId": "5",
+      "name": "Harold Fannin Jr.",
+      "position": "TE",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "5092436": {
+      "id": "5092436",
+      "nflTeamId": "19",
+      "name": "Jude McAtamney",
+      "position": "K",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "5123663": {
+      "id": "5123663",
+      "nflTeamId": "8",
+      "name": "Isaac TeSlaa",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      },
+      "injuryStatus": "ACTIVE"
+    },
+    "-16001": {
+      "id": "-16001",
+      "nflTeamId": "1",
+      "name": "Falcons D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16002": {
+      "id": "-16002",
+      "nflTeamId": "2",
+      "name": "Bills D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16003": {
+      "id": "-16003",
+      "nflTeamId": "3",
+      "name": "Bears D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16004": {
+      "id": "-16004",
+      "nflTeamId": "4",
+      "name": "Bengals D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16005": {
+      "id": "-16005",
+      "nflTeamId": "5",
+      "name": "Browns D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16006": {
+      "id": "-16006",
+      "nflTeamId": "6",
+      "name": "Cowboys D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16007": {
+      "id": "-16007",
+      "nflTeamId": "7",
+      "name": "Broncos D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16008": {
+      "id": "-16008",
+      "nflTeamId": "8",
+      "name": "Lions D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16009": {
+      "id": "-16009",
+      "nflTeamId": "9",
+      "name": "Packers D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16010": {
+      "id": "-16010",
+      "nflTeamId": "10",
+      "name": "Titans D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16011": {
+      "id": "-16011",
+      "nflTeamId": "11",
+      "name": "Colts D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16012": {
+      "id": "-16012",
+      "nflTeamId": "12",
+      "name": "Chiefs D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16013": {
+      "id": "-16013",
+      "nflTeamId": "13",
+      "name": "Raiders D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16014": {
+      "id": "-16014",
+      "nflTeamId": "14",
+      "name": "Rams D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16015": {
+      "id": "-16015",
+      "nflTeamId": "15",
+      "name": "Dolphins D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16016": {
+      "id": "-16016",
+      "nflTeamId": "16",
+      "name": "Vikings D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16017": {
+      "id": "-16017",
+      "nflTeamId": "17",
+      "name": "Patriots D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16018": {
+      "id": "-16018",
+      "nflTeamId": "18",
+      "name": "Saints D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16019": {
+      "id": "-16019",
+      "nflTeamId": "19",
+      "name": "Giants D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16020": {
+      "id": "-16020",
+      "nflTeamId": "20",
+      "name": "Jets D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16021": {
+      "id": "-16021",
+      "nflTeamId": "21",
+      "name": "Eagles D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16022": {
+      "id": "-16022",
+      "nflTeamId": "22",
+      "name": "Cardinals D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16023": {
+      "id": "-16023",
+      "nflTeamId": "23",
+      "name": "Steelers D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16024": {
+      "id": "-16024",
+      "nflTeamId": "24",
+      "name": "Chargers D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16025": {
+      "id": "-16025",
+      "nflTeamId": "25",
+      "name": "49ers D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16026": {
+      "id": "-16026",
+      "nflTeamId": "26",
+      "name": "Seahawks D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16027": {
+      "id": "-16027",
+      "nflTeamId": "27",
+      "name": "Buccaneers D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16028": {
+      "id": "-16028",
+      "nflTeamId": "28",
+      "name": "Commanders D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16029": {
+      "id": "-16029",
+      "nflTeamId": "29",
+      "name": "Panthers D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16030": {
+      "id": "-16030",
+      "nflTeamId": "30",
+      "name": "Jaguars D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16033": {
+      "id": "-16033",
+      "nflTeamId": "33",
+      "name": "Ravens D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    },
+    "-16034": {
+      "id": "-16034",
+      "nflTeamId": "34",
+      "name": "Texans D/ST",
+      "position": "DST",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0
+      }
+    }
+  },
+  "ffTeams": {},
+  "ffMatchups": {
+    "1": [
+      [
+        "3",
+        "7"
+      ],
+      [
+        "5",
+        "9"
+      ],
+      [
+        "6",
+        "10"
+      ],
+      [
+        "1",
+        "8"
+      ],
+      [
+        "4",
+        "2"
+      ]
+    ],
+    "2": [
+      [
+        "9",
+        "10"
+      ],
+      [
+        "8",
+        "3"
+      ],
+      [
+        "2",
+        "7"
+      ],
+      [
+        "1",
+        "5"
+      ],
+      [
+        "4",
+        "6"
+      ]
+    ],
+    "3": [
+      [
+        "8",
+        "2"
+      ],
+      [
+        "9",
+        "1"
+      ],
+      [
+        "10",
+        "4"
+      ],
+      [
+        "3",
+        "5"
+      ],
+      [
+        "7",
+        "6"
+      ]
+    ],
+    "4": [
+      [
+        "1",
+        "4"
+      ],
+      [
+        "5",
+        "8"
+      ],
+      [
+        "6",
+        "2"
+      ],
+      [
+        "3",
+        "9"
+      ],
+      [
+        "7",
+        "10"
+      ]
+    ],
+    "5": [
+      [
+        "5",
+        "6"
+      ],
+      [
+        "1",
+        "3"
+      ],
+      [
+        "4",
+        "7"
+      ],
+      [
+        "8",
+        "9"
+      ],
+      [
+        "2",
+        "10"
+      ]
+    ],
+    "6": [
+      [
+        "7",
+        "9"
+      ],
+      [
+        "10",
+        "8"
+      ],
+      [
+        "2",
+        "1"
+      ],
+      [
+        "4",
+        "5"
+      ],
+      [
+        "6",
+        "3"
+      ]
+    ],
+    "7": [
+      [
+        "8",
+        "7"
+      ],
+      [
+        "1",
+        "10"
+      ],
+      [
+        "5",
+        "2"
+      ],
+      [
+        "3",
+        "4"
+      ],
+      [
+        "9",
+        "6"
+      ]
+    ],
+    "8": [
+      [
+        "7",
+        "1"
+      ],
+      [
+        "10",
+        "5"
+      ],
+      [
+        "2",
+        "3"
+      ],
+      [
+        "4",
+        "9"
+      ],
+      [
+        "6",
+        "8"
+      ]
+    ],
+    "9": [
+      [
+        "5",
+        "7"
+      ],
+      [
+        "3",
+        "1"
+      ],
+      [
+        "10",
+        "6"
+      ],
+      [
+        "9",
+        "8"
+      ],
+      [
+        "2",
+        "4"
+      ]
+    ],
+    "10": [
+      [
+        "3",
+        "10"
+      ],
+      [
+        "9",
+        "5"
+      ],
+      [
+        "7",
+        "2"
+      ],
+      [
+        "8",
+        "1"
+      ],
+      [
+        "6",
+        "4"
+      ]
+    ],
+    "11": [
+      [
+        "9",
+        "2"
+      ],
+      [
+        "3",
+        "8"
+      ],
+      [
+        "4",
+        "10"
+      ],
+      [
+        "5",
+        "1"
+      ],
+      [
+        "6",
+        "7"
+      ]
+    ],
+    "12": [
+      [
+        "8",
+        "4"
+      ],
+      [
+        "1",
+        "9"
+      ],
+      [
+        "2",
+        "6"
+      ],
+      [
+        "5",
+        "3"
+      ],
+      [
+        "10",
+        "7"
+      ]
+    ],
+    "13": [
+      [
+        "1",
+        "6"
+      ],
+      [
+        "8",
+        "5"
+      ],
+      [
+        "7",
+        "4"
+      ],
+      [
+        "9",
+        "3"
+      ],
+      [
+        "10",
+        "2"
+      ]
+    ]
+  },
+  "nflTeams": {
+    "0": {
+      "id": "0",
+      "name": "FA",
+      "byeWeek": 0,
+      "nflGamesByScoringPeriod": {}
+    },
+    "1": {
+      "id": "1",
+      "name": "Falcons",
+      "byeWeek": 5,
+      "nflGamesByScoringPeriod": {}
+    },
+    "2": {
+      "id": "2",
+      "name": "Bills",
+      "byeWeek": 7,
+      "nflGamesByScoringPeriod": {}
+    },
+    "3": {
+      "id": "3",
+      "name": "Bears",
+      "byeWeek": 5,
+      "nflGamesByScoringPeriod": {}
+    },
+    "4": {
+      "id": "4",
+      "name": "Bengals",
+      "byeWeek": 10,
+      "nflGamesByScoringPeriod": {}
+    },
+    "5": {
+      "id": "5",
+      "name": "Browns",
+      "byeWeek": 9,
+      "nflGamesByScoringPeriod": {}
+    },
+    "6": {
+      "id": "6",
+      "name": "Cowboys",
+      "byeWeek": 10,
+      "nflGamesByScoringPeriod": {}
+    },
+    "7": {
+      "id": "7",
+      "name": "Broncos",
+      "byeWeek": 12,
+      "nflGamesByScoringPeriod": {}
+    },
+    "8": {
+      "id": "8",
+      "name": "Lions",
+      "byeWeek": 8,
+      "nflGamesByScoringPeriod": {}
+    },
+    "9": {
+      "id": "9",
+      "name": "Packers",
+      "byeWeek": 5,
+      "nflGamesByScoringPeriod": {}
+    },
+    "10": {
+      "id": "10",
+      "name": "Titans",
+      "byeWeek": 10,
+      "nflGamesByScoringPeriod": {}
+    },
+    "11": {
+      "id": "11",
+      "name": "Colts",
+      "byeWeek": 11,
+      "nflGamesByScoringPeriod": {}
+    },
+    "12": {
+      "id": "12",
+      "name": "Chiefs",
+      "byeWeek": 10,
+      "nflGamesByScoringPeriod": {}
+    },
+    "13": {
+      "id": "13",
+      "name": "Raiders",
+      "byeWeek": 8,
+      "nflGamesByScoringPeriod": {}
+    },
+    "14": {
+      "id": "14",
+      "name": "Rams",
+      "byeWeek": 8,
+      "nflGamesByScoringPeriod": {}
+    },
+    "15": {
+      "id": "15",
+      "name": "Dolphins",
+      "byeWeek": 12,
+      "nflGamesByScoringPeriod": {}
+    },
+    "16": {
+      "id": "16",
+      "name": "Vikings",
+      "byeWeek": 6,
+      "nflGamesByScoringPeriod": {}
+    },
+    "17": {
+      "id": "17",
+      "name": "Patriots",
+      "byeWeek": 14,
+      "nflGamesByScoringPeriod": {}
+    },
+    "18": {
+      "id": "18",
+      "name": "Saints",
+      "byeWeek": 11,
+      "nflGamesByScoringPeriod": {}
+    },
+    "19": {
+      "id": "19",
+      "name": "Giants",
+      "byeWeek": 14,
+      "nflGamesByScoringPeriod": {}
+    },
+    "20": {
+      "id": "20",
+      "name": "Jets",
+      "byeWeek": 9,
+      "nflGamesByScoringPeriod": {}
+    },
+    "21": {
+      "id": "21",
+      "name": "Eagles",
+      "byeWeek": 9,
+      "nflGamesByScoringPeriod": {}
+    },
+    "22": {
+      "id": "22",
+      "name": "Cardinals",
+      "byeWeek": 8,
+      "nflGamesByScoringPeriod": {}
+    },
+    "23": {
+      "id": "23",
+      "name": "Steelers",
+      "byeWeek": 5,
+      "nflGamesByScoringPeriod": {}
+    },
+    "24": {
+      "id": "24",
+      "name": "Chargers",
+      "byeWeek": 12,
+      "nflGamesByScoringPeriod": {}
+    },
+    "25": {
+      "id": "25",
+      "name": "49ers",
+      "byeWeek": 14,
+      "nflGamesByScoringPeriod": {}
+    },
+    "26": {
+      "id": "26",
+      "name": "Seahawks",
+      "byeWeek": 8,
+      "nflGamesByScoringPeriod": {}
+    },
+    "27": {
+      "id": "27",
+      "name": "Buccaneers",
+      "byeWeek": 9,
+      "nflGamesByScoringPeriod": {}
+    },
+    "28": {
+      "id": "28",
+      "name": "Commanders",
+      "byeWeek": 12,
+      "nflGamesByScoringPeriod": {}
+    },
+    "29": {
+      "id": "29",
+      "name": "Panthers",
+      "byeWeek": 14,
+      "nflGamesByScoringPeriod": {}
+    },
+    "30": {
+      "id": "30",
+      "name": "Jaguars",
+      "byeWeek": 8,
+      "nflGamesByScoringPeriod": {}
+    },
+    "33": {
+      "id": "33",
+      "name": "Ravens",
+      "byeWeek": 7,
+      "nflGamesByScoringPeriod": {}
+    },
+    "34": {
+      "id": "34",
+      "name": "Texans",
+      "byeWeek": 6,
+      "nflGamesByScoringPeriod": {}
+    }
+  },
+  "fantasyCalc": {
+    "players": {
+      "8439": 18.17,
+      "11252": 3.35,
+      "12483": 31.68,
+      "14880": 3.67,
+      "14881": 14.25,
+      "15795": 0.89,
+      "15835": 3.28,
+      "15847": 22.68,
+      "15864": 28.2,
+      "16460": 1.13,
+      "16737": 22.07,
+      "16800": 27.03,
+      "74398": 20.32,
+      "2576925": 4.04,
+      "2577417": 56.12,
+      "2976212": 7.27,
+      "2977187": 8.52,
+      "3040151": 41.96,
+      "3042519": 13.73,
+      "3043078": 59.75,
+      "3045147": 18.58,
+      "3046439": 2.31,
+      "3046779": 51.64,
+      "3051876": 10.84,
+      "3052587": 69.61,
+      "3054212": 4.65,
+      "3054850": 26.16,
+      "3059915": 0.24,
+      "3068267": 1.96,
+      "3116164": 1.98,
+      "3116165": 11.91,
+      "3116365": 13.76,
+      "3116385": 21.24,
+      "3116406": 29.7,
+      "3117251": 55.48,
+      "3117256": 0.09,
+      "3121023": 4.22,
+      "3121422": 30.99,
+      "3123076": 12.21,
+      "3126486": 7.49,
+      "3128429": 14.86,
+      "3128720": 2.58,
+      "3139477": 86.62,
+      "3886598": 5.59,
+      "3895856": 1.04,
+      "3912547": 19.3,
+      "3915416": 18.81,
+      "3915511": 96.7,
+      "3916148": 7.86,
+      "3916387": 99.49,
+      "3916433": 7.68,
+      "3917315": 60.09,
+      "3917792": 5.61,
+      "3918298": 101.75,
+      "3925357": 7.46,
+      "3929630": 78.24,
+      "4032473": 1.66,
+      "4035538": 15.61,
+      "4035687": 6.38,
+      "4036133": 21.84,
+      "4036378": 57.95,
+      "4038815": 0.88,
+      "4038941": 71.68,
+      "4040655": 3.26,
+      "4040715": 90.66,
+      "4047365": 42.05,
+      "4047646": 49.34,
+      "4047650": 20.66,
+      "4239993": 33.54,
+      "4239996": 8.95,
+      "4241372": 1.13,
+      "4241389": 83.45,
+      "4241416": 20.69,
+      "4241457": 5.67,
+      "4241463": 9.3,
+      "4241474": 7.7,
+      "4241478": 21.55,
+      "4241479": 24.38,
+      "4241985": 4.7,
+      "4242335": 49.33,
+      "4242355": 2.41,
+      "4243331": 1.32,
+      "4258173": 61.64,
+      "4258595": 0.43,
+      "4259545": 10.55,
+      "4262921": 85.31,
+      "4360248": 3.12,
+      "4360310": 45.84,
+      "4360423": 37.01,
+      "4360438": 9.71,
+      "4360516": 4.87,
+      "4360569": 4.38,
+      "4360635": 0.33,
+      "4360689": 6.18,
+      "4360698": 1.29,
+      "4360939": 1.21,
+      "4361050": 3.7,
+      "4361307": 58.69,
+      "4361370": 11.18,
+      "4361411": 1.26,
+      "4361529": 9.29,
+      "4361579": 2.65,
+      "4361741": 49.7,
+      "4362238": 30.29,
+      "4362249": 4.07,
+      "4362628": 89.45,
+      "4362887": 24.58,
+      "4369863": 0.94,
+      "4372016": 15.55,
+      "4372019": 1.12,
+      "4372561": 1.73,
+      "4373626": 1.27,
+      "4373678": 4.53,
+      "4374302": 70.95,
+      "4379399": 32.46,
+      "4385690": 5.28,
+      "4426338": 68.97,
+      "4426348": 94.85,
+      "4426354": 10.94,
+      "4426385": 4.58,
+      "4426386": 0.64,
+      "4426388": 12.06,
+      "4426502": 47.02,
+      "4426515": 62.43,
+      "4427366": 35.47,
+      "4428209": 7.51,
+      "4428331": 32.19,
+      "4428557": 1.76,
+      "4429013": 0.66,
+      "4429023": 0.42,
+      "4429059": 0.03,
+      "4429084": 8.58,
+      "4429096": 0.65,
+      "4429160": 49.69,
+      "4429205": 7.83,
+      "4429275": 3.14,
+      "4429501": 1.94,
+      "4429615": 15.33,
+      "4429795": 80.29,
+      "4430027": 25.29,
+      "4430034": 0.92,
+      "4430539": 0.94,
+      "4430737": 34.99,
+      "4430807": 80.45,
+      "4430834": 0.61,
+      "4430878": 32.1,
+      "4431299": 15.16,
+      "4431452": 55.58,
+      "4431459": 12.44,
+      "4431611": 63.59,
+      "4432577": 53.85,
+      "4432665": 58.79,
+      "4432708": 37.35,
+      "4432710": 28.55,
+      "4432734": 4.13,
+      "4432762": 1.36,
+      "4432773": 54.82,
+      "4433970": 38.19,
+      "4567048": 22.72,
+      "4567750": 11.8,
+      "4568490": 19.25,
+      "4569173": 4.3,
+      "4569618": 35.28,
+      "4569987": 3.93,
+      "4570037": 0.28,
+      "4572680": 4.59,
+      "4586312": 0.25,
+      "4595348": 64.75,
+      "4596448": 36.57,
+      "4603186": 1.03,
+      "4612826": 38.37,
+      "4613202": 0.91,
+      "4635008": 1.54,
+      "4682745": 0.53,
+      "4683062": 8.67,
+      "4685247": 0.05,
+      "4685278": 2.27,
+      "4685279": 0.76,
+      "4685382": 39.61,
+      "4685472": 20.53,
+      "4685702": 13.86,
+      "4685720": 25.6,
+      "4686472": 0.4,
+      "4686612": 3.29,
+      "4688380": 37.07,
+      "4688813": 5.19,
+      "4689114": 12.85,
+      "4696981": 4.36,
+      "4697815": 2.7,
+      "4701936": 4.42,
+      "4710341": 0.1,
+      "4723086": 6.65,
+      "4808766": 0.38,
+      "4819231": 13.14,
+      "4877706": 3.02,
+      "4882093": 2.21,
+      "4890973": 63.31,
+      "5081397": 0.88
+    },
+    "timestamp": 1752652290263,
+    "history": [
+      {
+        "values": {},
+        "date": 1752652290760
+      }
+    ]
+  }
+}

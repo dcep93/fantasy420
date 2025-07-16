@@ -242,7 +242,7 @@
   }
 
   function loadPlayers() {
-    const currentYear = 2024;
+    const currentYear = 2025;
 
     const timestamp = new Date().getTime();
     // 6 hours
