@@ -15,6 +15,15 @@ import allWrapped from "../Wrapped/allWrapped";
 import draft2023 from "./2023.json";
 import draft2024 from "./2024.json";
 
+export const bubbleStyle = {
+  backgroundColor: "white",
+  display: "inline-block",
+  borderRadius: "1em",
+  border: "2px solid black",
+  padding: "0.7em",
+  margin: "0.5em",
+};
+
 function getNormalizedNameToId(wrapped: WrappedType): {
   [name: string]: string;
 } {
@@ -128,6 +137,8 @@ function SubDraft(props: {
 
   const results = getResults(props.idToRankBySource);
   const sources = Object.keys(results);
+  const [positionFilter, updatePositionFilter] = useState("");
+  const [byeWeekFilter, updateByeWeekFilter] = useState(-1);
   const [source, update] = useState(sources[0]);
   const sourcePlayers = Object.entries(results[source])
     .map(([playerId, value]) => ({
@@ -289,6 +300,55 @@ function SubDraft(props: {
         </div>
       </div>
       <div style={{ height: "100%", overflow: "scroll" }}>
+        <div>
+          <div>
+            <div>position filter</div>
+            <div>
+              {["QB", "RB", "WR", "TE", "K", "DST"].map((p) => (
+                <div
+                  key={p}
+                  style={{
+                    ...bubbleStyle,
+                    backgroundColor: positionFilter === p ? "grey" : undefined,
+                  }}
+                  onClick={() =>
+                    updatePositionFilter(positionFilter === p ? "" : p)
+                  }
+                >
+                  {p}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <div>bye week filter</div>
+            <div>
+              {Array.from(
+                new Set(
+                  Object.values(selectedWrapped().nflTeams).map(
+                    (team) => team.byeWeek
+                  )
+                )
+              )
+                .sort((a, b) => a - b)
+                .map((week) => (
+                  <div
+                    key={week}
+                    style={{
+                      ...bubbleStyle,
+                      backgroundColor:
+                        byeWeekFilter === week ? "grey" : undefined,
+                    }}
+                    onClick={() =>
+                      updateByeWeekFilter(byeWeekFilter === week ? -1 : week)
+                    }
+                  >
+                    {week}
+                  </div>
+                ))}
+            </div>
+          </div>
+        </div>
         <div style={{ height: "100%", flex: "1 1 auto", maxWidth: "1000px" }}>
           <table>
             <tbody>
@@ -302,7 +362,14 @@ function SubDraft(props: {
                       (prev, j) =>
                         prev.player.position === player.player.position
                     ).length,
+                  byeWeek:
+                    selectedWrapped().nflTeams[player.player.nflTeamId].byeWeek,
                 }))
+                .filter(
+                  (v) =>
+                    positionFilter === "" ||
+                    v.player.position === positionFilter
+                )
                 .map((v, i) => (
                   <tr
                     key={i}
@@ -310,8 +377,14 @@ function SubDraft(props: {
                       backgroundColor: v.seen ? "lightgray" : "",
                     }}
                   >
-                    <td>
-                      {v.i + 1}/{v.posRank + 1}/
+                    <td
+                      title={"index/posIndex/bye/teamIdVsBye"}
+                      style={{
+                        backgroundColor:
+                          v.byeWeek === byeWeekFilter ? "grey" : undefined,
+                      }}
+                    >
+                      {v.i + 1}/{v.posRank + 1}/{v.byeWeek}/
                       {
                         {
                           freeAgent: "FA",
@@ -325,10 +398,7 @@ function SubDraft(props: {
                           v.player.nflTeamId === "0"
                             ? "freeAgent"
                             : selectedWrapped()
-                                .ffMatchups[
-                                  selectedWrapped().nflTeams[v.player.nflTeamId]
-                                    .byeWeek
-                                ]?.find((teamIds) =>
+                                .ffMatchups[v.byeWeek]?.find((teamIds) =>
                                   teamIds.includes(MY_TEAM_ID)
                                 )!
                                 .find((teamId) => teamId !== MY_TEAM_ID) ||
