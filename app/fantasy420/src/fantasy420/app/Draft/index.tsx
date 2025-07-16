@@ -388,26 +388,13 @@ function SubDraft(props: {
                       }}
                     >
                       {v.i + 1}/{v.posRank + 1}/{v.byeWeek}/
-                      {
-                        {
-                          freeAgent: "FA",
-                          playoffs: "p",
-                          ...Object.fromEntries(
-                            Object.values(selectedWrapped().ffTeams).map(
-                              ({ id, pickOrder }) => [id, pickOrder! + 1]
-                            )
-                          ),
-                        }[
-                          v.player.nflTeamId === "0"
-                            ? "freeAgent"
-                            : selectedWrapped()
-                                .ffMatchups[v.byeWeek]?.find((teamIds) =>
-                                  teamIds.includes(MY_TEAM_ID)
-                                )!
-                                .find((teamId) => teamId !== MY_TEAM_ID) ||
-                              "playoffs"
-                        ]
-                      }
+                      {v.player.nflTeamId === "0"
+                        ? "FA"
+                        : selectedWrapped()
+                            .ffMatchups[v.byeWeek]?.find((teamIds) =>
+                              teamIds.includes(MY_TEAM_ID)
+                            )!
+                            .find((teamId) => teamId !== MY_TEAM_ID) || "p"}
                     </td>
                     <td>
                       {Math.floor(
