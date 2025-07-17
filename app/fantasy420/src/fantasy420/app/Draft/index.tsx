@@ -751,7 +751,7 @@ function getEspnLiveDraft() {
     ),
     espnauction: Object.fromEntries(
       Object.values(selectedWrapped().nflPlayers)
-        .map((o) => ({ o, v: o.ownership?.auctionValueAverage || 0 }))
+        .map((o) => ({ o, v: -1 * (o.ownership?.auctionValueAverage || 0) }))
         .sort((a, b) => a.v - b.v)
         .map(({ o, v }) => [o.name, v])
     ),
