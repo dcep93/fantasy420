@@ -108,6 +108,7 @@ function getData(
                 .map((p) => ({ ...p, x: parseFloat(p.x.toFixed(2)) }))
                 .map(({ x, y, ...o }, i) => ({
                   fill:
+                    selectedOwner &&
                     playerIdToOwner[o.playerId] === selectedOwner
                       ? "red"
                       : undefined,
@@ -171,12 +172,14 @@ export default function Scatterplot() {
   } as { [k: string]: {} };
   const [source, updateSource] = useState(Object.keys(sources)[0]);
   const owners = Object.keys(selectedWrapped().ffTeams);
-  const [selectedOwner, updateSelectedOwner] = useState(owners[0]);
+  const [selectedOwner, updateSelectedOwner] = useState<string | undefined>(
+    undefined
+  );
   sources.composite = getComposite(sources);
   const data = getData(
     sources[source],
     playerIdToOwner,
-    selectedOwner,
+    selectedOwner || owners[0],
     draft,
     top40
   );
