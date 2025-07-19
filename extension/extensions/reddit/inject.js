@@ -42,7 +42,7 @@
       .then((href) => {
         if (!href) return;
         const playerId = href.split("_/id/")[1].split("/")[0];
-        const innerHTML = Object.values((data.players || {})[playerId] || {})
+        const innerHTML = Object.values((data?.players || {})[playerId] || {})
           .filter(({ redditId }) => redditId)
           .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
           .map(
