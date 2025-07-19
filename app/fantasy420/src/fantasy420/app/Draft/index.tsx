@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { printF } from "..";
-import { fetchExtensionStorage } from "./Extension";
+import { fetchExtension, fetchExtensionStorage } from "./Extension";
 
 import { NFLPlayerType, WrappedType } from "../FetchWrapped";
 import {
@@ -101,9 +101,8 @@ export default function Draft() {
   const [draftKingsData, updateDraftKingsData] = useState<DraftKingsType>(null);
   useEffect(() => {
     draftKingsData === null &&
-      false &&
       Promise.resolve()
-        .then(() => draftKings(idToRankBySource))
+        .then(() => draftKingsF(idToRankBySource))
         .then(updateDraftKingsData)
         .catch(console.error);
   }, [draftKingsData, idToRankBySource]);
@@ -557,7 +556,7 @@ function jayzheng() {
   );
 }
 
-function draftKings(
+function draftKingsF(
   idToRankBySource: IdToRankBySource
 ): Promise<DraftKingsType> {
   const wrapped = selectedWrapped();
@@ -576,49 +575,45 @@ function draftKings(
       }).map(([key, { points, subcategory }]) =>
         Promise.resolve()
           .then(() =>
-            fetch(
-              `https://sportsbook-nash.draftkings.com/api/sportscontent/dkusny/v1/leagues/88808/categories/782/subcategories/${subcategory}`
+            fetchExtension({
+              url: `https://sportsbook-nash.draftkings.com/api/sportscontent/dkusny/v1/leagues/88808/categories/782/subcategories/${subcategory}`,
+              json: true,
+            }).then(
+              (resp: {
+                events: {
+                  id: string;
+                  participants: { id?: string; name: string }[];
+                }[];
+                markets: { id: string; eventId: string }[];
+                selections: { marketId: string; label: string }[];
+              }) =>
+                Object.fromEntries(
+                  resp.events
+                    .map((event) => ({
+                      event,
+                      name: event.participants.find((p) => p.id === undefined)!
+                        .name,
+                      market: resp.markets.find((m) => m.eventId === event.id)!,
+                    }))
+                    .map((d) => ({
+                      ...d,
+                      selection: resp.selections.find(
+                        (s) => s.marketId === d.market.id
+                      )!,
+                    }))
+                    .map((d) => ({
+                      ...d,
+                      value: parseFloat(
+                        d.selection.label.split(" ").reverse()[0]
+                      ),
+                    }))
+                    .sort((a, b) => b.value - a.value)
+                    .map((d) => [
+                      normalizedNameToId[normalize(d.name)],
+                      points * d.value,
+                    ])
+                )
             )
-              .then((resp) => resp.json())
-              .then(
-                (resp: {
-                  events: {
-                    id: string;
-                    participants: { id?: string; name: string }[];
-                  }[];
-                  markets: { id: string; eventId: string }[];
-                  selections: { marketId: string; label: string }[];
-                }) =>
-                  Object.fromEntries(
-                    resp.events
-                      .map((event) => ({
-                        event,
-                        name: event.participants.find(
-                          (p) => p.id === undefined
-                        )!.name,
-                        market: resp.markets.find(
-                          (m) => m.eventId === event.id
-                        )!,
-                      }))
-                      .map((d) => ({
-                        ...d,
-                        selection: resp.selections.find(
-                          (s) => s.marketId === d.market.id
-                        )!,
-                      }))
-                      .map((d) => ({
-                        ...d,
-                        value: parseFloat(
-                          d.selection.label.split(" ").reverse()[0]
-                        ),
-                      }))
-                      .sort((a, b) => b.value - a.value)
-                      .map((d) => [
-                        normalizedNameToId[normalize(d.name)],
-                        points * d.value,
-                      ])
-                  )
-              )
           )
           .then((p) => [key, p])
       )
@@ -840,18 +835,20 @@ function fetchLiveDraft(
 ) {
   const FETCH_LIVE_DRAFT_PERIOD_MS = 500;
   fetchExtensionStorage("draft")
-    .then((draft) =>
-      Promise.resolve(draft)
-        .then((draft) => {
-          if (draft.length === prev) return;
-          updateLiveDraft(draft);
-        })
-        .then(() =>
-          setTimeout(
-            () => fetchLiveDraft(updateLiveDraft, draft.length),
-            FETCH_LIVE_DRAFT_PERIOD_MS
+    .then(
+      (draft) =>
+        draft &&
+        Promise.resolve(draft)
+          .then((draft) => {
+            if (draft.length === prev) return;
+            updateLiveDraft(draft);
+          })
+          .then(() =>
+            setTimeout(
+              () => fetchLiveDraft(updateLiveDraft, draft.length),
+              FETCH_LIVE_DRAFT_PERIOD_MS
+            )
           )
-        )
     )
     .catch((err) => {
       console.error(err);
