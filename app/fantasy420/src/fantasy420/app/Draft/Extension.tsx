@@ -26,6 +26,13 @@ function extensionHelper(payload: any): Promise<any> {
   });
 }
 
+export function fetchExtension(request: {
+  url: string;
+  json: boolean;
+}): Promise<any> {
+  return extensionHelper({ fetch: request });
+}
+
 export function fetchExtensionStorage(key: string): Promise<any> {
   return extensionHelper({ storage: { action: "get", keys: [key] } }).then(
     (response) => {
