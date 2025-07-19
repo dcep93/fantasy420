@@ -1,4 +1,4 @@
-var extension_id = "codiminongikfnidmdkpmeigapidedgn";
+var extension_id = "dikaanhdjgmmeajanfokkalonmnpfidm";
 
 function do_send_message(payload) {
   return new Promise((resolve) =>

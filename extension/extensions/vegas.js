@@ -1,5 +1,5 @@
 (() => {
-  const extension_id = "codiminongikfnidmdkpmeigapidedgn";
+  const extension_id = "dikaanhdjgmmeajanfokkalonmnpfidm";
 
   const INTERVAL_MS = 1000;
   const MAX_FUTURE_GAME_MS = 7 * 24 * 60 * 60 * 1000;
@@ -270,7 +270,7 @@
     if (toSave === saved) return;
     saved = toSave;
 
-    const extension_id = "codiminongikfnidmdkpmeigapidedgn";
+    const extension_id = "dikaanhdjgmmeajanfokkalonmnpfidm";
 
     const now = new Date();
 
