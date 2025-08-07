@@ -670,14 +670,24 @@ function draftKingsF(
 }
 
 function draftsharks() {
-  return Object.fromEntries(
-    Array.from(document.getElementById("adp-table")!.getElementsByTagName("tr"))
-      .slice(1)
-      .map((tr, i) => [
-        (tr.getElementsByClassName("name")[0] as HTMLElement).innerText,
-        i + 1,
-      ])
-  );
+  return fetch("https://www.draftsharks.com/auction-values/fetch")
+    .then((resp) => resp.json())
+    .then(
+      (resp: {
+        projections: {
+          player: { first_name: string; last_name: string };
+          auctionDollarRedraftOnePprSuperflex: number;
+        }[];
+      }) =>
+        resp.projections
+          .filter((p) => p.auctionDollarRedraftOnePprSuperflex > 1)
+          .map((p) => [
+            `${p.player.first_name} ${p.player.last_name}`,
+            -p.auctionDollarRedraftOnePprSuperflex,
+          ])
+    )
+    .then(Object.fromEntries)
+    .then(console.log);
 }
 
 function fantasypros() {
