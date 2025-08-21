@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { bubbleStyle, groupByF, selectedWrapped } from "../Wrapped";
 
 type IdealDraftType = { numAnalyzed: number; draft: any[] };
+type Drafts = any[][];
 
 export default function IdealDraft() {
   const wrapped = selectedWrapped();
@@ -56,44 +57,31 @@ export default function IdealDraft() {
     ...playerIdToDraft[playerId],
     teamId,
   }));
-  const [idealDraft, updateIdealDraft] = useState({
-    numAnalyzed: 0,
-    draft: initialDraft.map(({ playerId, teamId }) => ({
-      ...playerIdToDraft[
-        positionToSeasonRank[wrapped.nflPlayers[playerId].position][
-          positionToDraftRank[playerIdToSeasonRank[playerId].position][playerId]
-        ]
-      ],
-      teamId,
-    })),
-  });
+  const [drafts, updateDrafts] = useState([[], initialDraft]);
   useEffect(() => {
-    Promise.resolve(idealDraft)
-      .then(idealDraftGeneration)
-      .then(
-        (nextIdealDraft) => nextIdealDraft && updateIdealDraft(nextIdealDraft)
-      );
-  }, [idealDraft]);
+    Promise.resolve()
+      .then(() => generate(drafts))
+      .then((nextDrafts) => nextDrafts && updateDrafts(nextDrafts));
+  }, [drafts]);
   return (
     <div>
       <div style={{ display: "flex", alignItems: "baseline" }}>
-        {Object.entries({
-          numAnalyzed: idealDraft.numAnalyzed,
-          ideal: idealDraft.draft,
-          initialDraft,
-        }).map(([k, v]) => (
-          <div key={k} style={bubbleStyle}>
-            <h1>{k}</h1>
-            <pre>{JSON.stringify(v, null, 2)}</pre>
-          </div>
-        ))}
+        {drafts
+          .slice()
+          .reverse()
+          .map((d, i) => (
+            <div key={i} style={bubbleStyle}>
+              <h1>
+                generation {i} ({d.length})
+              </h1>
+              <pre>{JSON.stringify(d, null, 2)}</pre>
+            </div>
+          ))}
       </div>
     </div>
   );
 }
 
-function idealDraftGeneration(
-  idealDraft: IdealDraftType
-): IdealDraftType | null {
+function generate(drafts: Drafts): Drafts | null {
   return null;
 }
