@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { bubbleStyle, groupByF, selectedWrapped } from "../Wrapped";
 
+const MAX_GENERATIONS = 4;
+
 export default function IdealDraft() {
   const wrapped = selectedWrapped();
   const rawInitialDraft = Object.values(wrapped.ffTeams)
@@ -20,6 +22,7 @@ export default function IdealDraft() {
       players.sort((a, b) => b.total - a.total).map(({ id }) => id),
     ])
   );
+  const positions = ["", "QB", "RB", "WR", "TE"];
   const playerIdToSeasonRank = Object.fromEntries(
     Object.entries(positionToSeasonRank).flatMap(([position, playerIds]) =>
       playerIds.map((playerId, i) => [playerId, { position, i }])
@@ -33,16 +36,12 @@ export default function IdealDraft() {
       }`,
       points: wrapped.nflPlayers[p.playerId].total,
       ...p,
-    })),
+    })) as DraftType,
     [],
   ]);
-  function generate() {
-    console.log({ drafts });
-    return null;
-  }
   useEffect(() => {
     Promise.resolve()
-      .then(generate)
+      .then(() => generate(drafts, positions, positionToSeasonRank))
       .then((nextDrafts) => nextDrafts && updateDrafts(nextDrafts));
   }, [drafts]);
   return (
@@ -59,4 +58,58 @@ export default function IdealDraft() {
       </div>
     </div>
   );
+}
+
+type DraftPlayerType = {
+  name: string;
+  season: string;
+  points: number;
+  teamId: string;
+  pickIndex: number;
+  playerId: number;
+};
+type DraftType = DraftPlayerType[];
+
+function generate(
+  drafts: DraftType[],
+  positions: string[],
+  positionToSeasonRank: { [position: string]: string[] }
+): DraftType[] | null {
+  console.log({ drafts, now: Date.now() });
+  if (drafts.length > MAX_GENERATIONS) {
+    console.log({ MAX_GENERATIONS });
+    return null;
+  }
+  const curr = drafts[drafts.length - 1];
+  const prev = drafts[drafts.length - 2];
+  const best = positions
+    .map((position) => ({ position, result: getResult(position, curr, prev) }))
+    .sort((a, b) => b.result.score - a.result.score)[0];
+  if (best.position === "") {
+    if (JSON.stringify(curr) === JSON.stringify(prev)) {
+      console.log("stabilized");
+      return null;
+    }
+    console.log("new generation", drafts.length);
+    return drafts.concat([[]]);
+  }
+  return drafts.slice(0, -1).concat(curr.concat(best.result.player));
+}
+
+function getResult(
+  position: string,
+  curr: DraftType,
+  prev: DraftType
+): { score: number; player: DraftPlayerType } {
+  return {
+    score: 0,
+    player: {
+      name: "",
+      season: "",
+      points: 0,
+      teamId: "",
+      pickIndex: 0,
+      playerId: 0,
+    },
+  };
 }
