@@ -43,7 +43,7 @@ export default function IdealDraft() {
     Promise.resolve()
       .then(() => generate(drafts, positions, positionToRankedIds))
       .then((nextDrafts) => nextDrafts && updateDrafts(nextDrafts));
-  }, [drafts]);
+  }, [generate, drafts, positions, positionToRankedIds]);
   return (
     <div>
       <div style={{ display: "flex", alignItems: "baseline" }}>
