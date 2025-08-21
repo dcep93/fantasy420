@@ -13,7 +13,9 @@ const pages = {
 
 export default function index() {
   return (
-    <BrowserRouter>
+    <BrowserRouter
+      future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+    >
       <Routes>
         <Route path="/" element={<Wrapped />} />
         {Object.entries(pages).map(([k, V]) => (

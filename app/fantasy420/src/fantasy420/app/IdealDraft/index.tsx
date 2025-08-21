@@ -1,31 +1,17 @@
 import { useEffect, useState } from "react";
 import { bubbleStyle, groupByF, selectedWrapped } from "../Wrapped";
 
-type IdealDraftType = { numAnalyzed: number; draft: any[] };
-type Drafts = any[][];
-
 export default function IdealDraft() {
   const wrapped = selectedWrapped();
   const rawInitialDraft = Object.values(wrapped.ffTeams)
+    .sort((a, b) => a.draft[0].pickIndex - b.draft[0].pickIndex)
     .flatMap((t, i) => t.draft.map((o) => ({ ...o, teamId: "ABCDEFGHIJ"[i] })))
     .map(({ playerId, pickIndex, teamId }) => ({
-      playerId,
-      pickIndex,
       teamId,
+      pickIndex,
+      playerId,
     }))
     .sort((a, b) => a.pickIndex - b.pickIndex);
-  const positionToDraftRank = Object.fromEntries(
-    Object.entries(
-      groupByF(rawInitialDraft, (p) => wrapped.nflPlayers[p.playerId].position)
-    ).map(([position, players]) => [
-      position,
-      Object.fromEntries(
-        players
-          .sort((a, b) => a.pickIndex - b.pickIndex)
-          .map(({ playerId }, i) => [playerId, i])
-      ),
-    ])
-  );
   const positionToSeasonRank = Object.fromEntries(
     Object.entries(
       groupByF(Object.values(wrapped.nflPlayers), (p) => p.position)
@@ -39,49 +25,38 @@ export default function IdealDraft() {
       playerIds.map((playerId, i) => [playerId, { position, i }])
     )
   );
-  const playerIdToDraft = Object.fromEntries(
-    rawInitialDraft.map((p) => [
-      p.playerId,
-      {
-        ...p,
-        points: wrapped.nflPlayers[p.playerId].total,
-        name: wrapped.nflPlayers[p.playerId].name,
-        season: `${wrapped.nflPlayers[p.playerId].position}${
-          playerIdToSeasonRank[p.playerId].i + 1
-        }`,
-        analyzed: false,
-      },
-    ])
-  );
-  const initialDraft = rawInitialDraft.map(({ playerId, teamId }) => ({
-    ...playerIdToDraft[playerId],
-    teamId,
-  }));
-  const [drafts, updateDrafts] = useState([[], initialDraft]);
+  const [drafts, updateDrafts] = useState([
+    rawInitialDraft.map((p) => ({
+      name: wrapped.nflPlayers[p.playerId].name,
+      season: `${wrapped.nflPlayers[p.playerId].position}${
+        playerIdToSeasonRank[p.playerId].i + 1
+      }`,
+      points: wrapped.nflPlayers[p.playerId].total,
+      ...p,
+    })),
+    [],
+  ]);
+  function generate() {
+    console.log({ drafts });
+    return null;
+  }
   useEffect(() => {
     Promise.resolve()
-      .then(() => generate(drafts))
+      .then(generate)
       .then((nextDrafts) => nextDrafts && updateDrafts(nextDrafts));
   }, [drafts]);
   return (
     <div>
       <div style={{ display: "flex", alignItems: "baseline" }}>
-        {drafts
-          .slice()
-          .reverse()
-          .map((d, i) => (
-            <div key={i} style={bubbleStyle}>
-              <h1>
-                generation {i} ({d.length})
-              </h1>
-              <pre>{JSON.stringify(d, null, 2)}</pre>
-            </div>
-          ))}
+        {drafts.map((d, i) => (
+          <div key={i} style={bubbleStyle}>
+            <h1>
+              generation {i} ({d.length})
+            </h1>
+            <pre>{JSON.stringify(d, null, 2)}</pre>
+          </div>
+        ))}
       </div>
     </div>
   );
-}
-
-function generate(drafts: Drafts): Drafts | null {
-  return null;
 }
