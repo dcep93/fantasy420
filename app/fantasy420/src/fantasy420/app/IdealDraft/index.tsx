@@ -14,7 +14,7 @@ export default function IdealDraft() {
       playerId,
     }))
     .sort((a, b) => a.pickIndex - b.pickIndex);
-  const positionToSeasonRank = Object.fromEntries(
+  const positionToRankedIds = Object.fromEntries(
     Object.entries(
       groupByF(Object.values(wrapped.nflPlayers), (p) => p.position)
     ).map(([position, players]) => [
@@ -23,16 +23,16 @@ export default function IdealDraft() {
     ])
   );
   const positions = ["", "QB", "RB", "WR", "TE"];
-  const playerIdToSeasonRank = Object.fromEntries(
-    Object.entries(positionToSeasonRank).flatMap(([position, playerIds]) =>
-      playerIds.map((playerId, i) => [playerId, { position, i }])
+  const playerIdToPositionSeasonRank = Object.fromEntries(
+    Object.values(positionToRankedIds).flatMap((playerIds) =>
+      playerIds.map((playerId, i) => [playerId, i])
     )
   );
   const [drafts, updateDrafts] = useState([
     rawInitialDraft.map((p) => ({
       name: wrapped.nflPlayers[p.playerId].name,
       season: `${wrapped.nflPlayers[p.playerId].position}${
-        playerIdToSeasonRank[p.playerId].i + 1
+        playerIdToPositionSeasonRank[p.playerId] + 1
       }`,
       points: wrapped.nflPlayers[p.playerId].total,
       ...p,
@@ -41,7 +41,7 @@ export default function IdealDraft() {
   ]);
   useEffect(() => {
     Promise.resolve()
-      .then(() => generate(drafts, positions, positionToSeasonRank))
+      .then(() => generate(drafts, positions, positionToRankedIds))
       .then((nextDrafts) => nextDrafts && updateDrafts(nextDrafts));
   }, [drafts]);
   return (
@@ -73,7 +73,7 @@ type DraftType = DraftPlayerType[];
 function generate(
   drafts: DraftType[],
   positions: string[],
-  positionToSeasonRank: { [position: string]: string[] }
+  positionToRankedIds: { [position: string]: string[] }
 ): DraftType[] | null {
   console.log({ drafts, now: Date.now() });
   if (drafts.length > MAX_GENERATIONS) {
@@ -83,7 +83,10 @@ function generate(
   const curr = drafts[drafts.length - 1];
   const prev = drafts[drafts.length - 2];
   const best = positions
-    .map((position) => ({ position, result: getResult(position, curr, prev) }))
+    .map((position) => ({
+      position,
+      result: getResult(position, curr, prev, positionToRankedIds),
+    }))
     .sort((a, b) => b.result.score - a.result.score)[0];
   if (best.position === "") {
     if (JSON.stringify(curr) === JSON.stringify(prev)) {
@@ -99,7 +102,8 @@ function generate(
 function getResult(
   position: string,
   curr: DraftType,
-  prev: DraftType
+  prev: DraftType,
+  positionToRankedIds: { [position: string]: string[] }
 ): { score: number; player: DraftPlayerType } {
   return {
     score: 0,
