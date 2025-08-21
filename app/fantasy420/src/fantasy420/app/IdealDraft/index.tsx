@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 import { bubbleStyle, groupByF, selectedWrapped } from "../Wrapped";
 
+type IdealDraftType = { numAnalyzed: number; draft: any[] };
+
 export default function IdealDraft() {
   const wrapped = selectedWrapped();
   const rawInitialDraft = Object.values(wrapped.ffTeams)
-    .flatMap((t) => t.draft)
-    .map(({ playerId, pickIndex: value }) => ({
+    .flatMap((t, i) => t.draft.map((o) => ({ ...o, teamId: "ABCDEFGHIJ"[i] })))
+    .map(({ playerId, pickIndex: value, teamId }) => ({
       playerId,
       value,
+      teamId,
     }))
     .sort((a, b) => a.value - b.value);
   const positionToDraftRank = Object.fromEntries(
@@ -42,28 +45,35 @@ export default function IdealDraft() {
         ...p,
         points: wrapped.nflPlayers[p.playerId].total,
         name: wrapped.nflPlayers[p.playerId].name,
+        positionRank: `${wrapped.nflPlayers[p.playerId].position}${
+          playerIdToSeasonRank[p.playerId].i + 1
+        }`,
         analyzed: false,
-        isOriginal: true,
       },
     ])
   );
-  const initialDraft = rawInitialDraft.map(
-    ({ playerId }) => playerIdToDraft[playerId]
-  );
+  const initialDraft = rawInitialDraft.map(({ playerId, teamId }) => ({
+    ...playerIdToDraft[playerId],
+    teamId,
+  }));
   const [idealDraft, updateIdealDraft] = useState({
     numAnalyzed: 0,
-    draft: rawInitialDraft.map(
-      ({ playerId }) =>
-        playerIdToDraft[
-          positionToSeasonRank[wrapped.nflPlayers[playerId].position][
-            positionToDraftRank[playerIdToSeasonRank[playerId].position][
-              playerId
-            ]
-          ]
+    draft: initialDraft.map(({ playerId, teamId }) => ({
+      ...playerIdToDraft[
+        positionToSeasonRank[wrapped.nflPlayers[playerId].position][
+          positionToDraftRank[playerIdToSeasonRank[playerId].position][playerId]
         ]
-    ),
+      ],
+      teamId,
+    })),
   });
-  useEffect(() => {}, [idealDraft]);
+  useEffect(() => {
+    Promise.resolve(idealDraft)
+      .then(idealDraftGeneration)
+      .then(
+        (nextIdealDraft) => nextIdealDraft && updateIdealDraft(nextIdealDraft)
+      );
+  }, [idealDraft]);
   return (
     <div>
       <div style={{ display: "flex", alignItems: "baseline" }}>
@@ -80,4 +90,10 @@ export default function IdealDraft() {
       </div>
     </div>
   );
+}
+
+function idealDraftGeneration(
+  idealDraft: IdealDraftType
+): IdealDraftType | null {
+  return null;
 }
