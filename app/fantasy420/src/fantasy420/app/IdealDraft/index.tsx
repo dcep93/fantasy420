@@ -69,11 +69,8 @@ export default function IdealDraft() {
       <div style={{ display: "flex", alignItems: "baseline" }}>
         {Object.entries({
           numAnalyzed: idealDraft.numAnalyzed,
-          positionToDraftRank,
-          positionToSeasonRank,
-          playerIdToSeasonRank,
-          initialDraft,
           ideal: idealDraft.draft,
+          initialDraft,
         }).map(([k, v]) => (
           <div key={k} style={bubbleStyle}>
             <h1>{k}</h1>
