@@ -3,38 +3,62 @@ import { bubbleStyle, groupByF, selectedWrapped } from "../Wrapped";
 
 export default function IdealDraft() {
   const wrapped = selectedWrapped();
-  const playerIdToPositionRank = Object.fromEntries(
-    Object.values(
-      groupByF(Object.values(wrapped.nflPlayers), (p) => p.position)
-    ).flatMap((players) =>
-      players
-        .sort((a, b) => b.total - a.total)
-        .map((p, i) => [p.id, `${p.position}${i + 1}`])
-    )
-  );
-  const initialDraft = Object.values(wrapped.ffTeams)
+  const rawInitialDraft = Object.values(wrapped.ffTeams)
     .flatMap((t) => t.draft)
     .map(({ playerId, pickIndex: value }) => ({
       playerId,
       value,
-      points: wrapped.nflPlayers[playerId].total,
-      name: wrapped.nflPlayers[playerId].name,
-      positionRank: playerIdToPositionRank[playerId],
-      analyzed: false,
-      isOriginal: true,
     }))
     .sort((a, b) => a.value - b.value);
+  const positionToDraftRank = Object.fromEntries(
+    Object.entries(
+      groupByF(rawInitialDraft, (p) => wrapped.nflPlayers[p.playerId].position)
+    ).map(([position, players]) => [
+      position,
+      Object.fromEntries(
+        players
+          .sort((a, b) => a.value - b.value)
+          .map(({ playerId }, i) => [playerId, i])
+      ),
+    ])
+  );
+  const positionToSeasonRank = Object.fromEntries(
+    Object.entries(
+      groupByF(Object.values(wrapped.nflPlayers), (p) => p.position)
+    ).map(([position, players]) => [
+      position,
+      Object.fromEntries(
+        players.sort((a, b) => b.total - a.total).map((p, i) => [p.id, i])
+      ),
+    ])
+  );
+  const playerIdToDraft = Object.fromEntries(
+    rawInitialDraft.map((p) => [
+      p.playerId,
+      {
+        ...p,
+        points: wrapped.nflPlayers[p.playerId].total,
+        name: wrapped.nflPlayers[p.playerId].name,
+        analyzed: false,
+        isOriginal: true,
+      },
+    ])
+  );
+  const initialDraft = rawInitialDraft.map(
+    ({ playerId }) => playerIdToDraft[playerId]
+  );
   const [idealDraft, updateIdealDraft] = useState({
     numAnalyzed: 0,
-    draft: initialDraft,
+    draft: rawInitialDraft.map(({ playerId }) => playerId),
   });
   useEffect(() => {}, [idealDraft]);
-  const x = idealDraft;
   return (
     <div>
       <div style={{ display: "flex", alignItems: "baseline" }}>
         {Object.entries({
           numAnalyzed: idealDraft.numAnalyzed,
+          positionToDraftRank,
+          positionToSeasonRank,
           initialDraft,
           ideal: idealDraft.draft,
         }).map(([k, v]) => (
