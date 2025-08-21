@@ -11,7 +11,7 @@ const READ_AND_POST_PERIOD_MS = 1000;
 var json_draft = null;
 
 function espndraft() {
-  console.log("ff_draft", location.href);
+  console.log("espndraft", location.href);
   save_to_storage({ draft: [] });
   readAndPostLoop();
 }
