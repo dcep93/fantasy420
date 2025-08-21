@@ -3,7 +3,7 @@ import { selectedWrapped } from "../Wrapped";
 
 export default function IdealDraft() {
   const wrapped = selectedWrapped();
-  const [idealDraft, updateIdealDraft] = useState({
+  const initialDraft = {
     numAnalyzed: 0,
     draft: Object.values(wrapped.ffTeams)
       .flatMap((t) => t.draft)
@@ -13,10 +13,21 @@ export default function IdealDraft() {
         points: wrapped.nflPlayers[playerId].total,
         name: wrapped.nflPlayers[playerId].name,
         analyzed: false,
+        isOriginal: true,
       }))
       .sort((a, b) => a.value - b.value),
-  });
+  };
+  const [idealDraft, updateIdealDraft] = useState(initialDraft);
   useEffect(() => {}, [idealDraft]);
   const x = idealDraft;
-  return <pre>{JSON.stringify(x, null, 2)}</pre>;
+  return (
+    <div style={{ display: "flex" }}>
+      {Object.entries({ initialDraft, idealDraft }).map(([k, v]) => (
+        <div key={k}>
+          <h1>{k}</h1>
+          <pre>{JSON.stringify(v, null, 2)}</pre>
+        </div>
+      ))}
+    </div>
+  );
 }
