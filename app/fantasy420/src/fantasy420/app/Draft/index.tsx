@@ -96,12 +96,17 @@ export default function Draft() {
   const [localDraft, updateLocalDraft] = useState<{ [key: string]: boolean }>(
     {}
   );
+  const wrapped = allWrapped[selectedYear];
+  const normalizedNameToId = getNormalizedNameToId(wrapped);
   useEffect(() => {
     fetchLiveDraft(updateLiveDraft, -1);
   }, []);
   return (
     <SubDraft
-      liveDraft={liveDraft}
+      liveDraft={liveDraft
+        .map(normalize)
+        .map((playerName) => normalizedNameToId[playerName])
+        .map((playerId) => wrapped.nflPlayers[playerId].name)}
       localDraft={localDraft}
       updateLocalDraft={updateLocalDraft}
       idToRankBySource={idToRankBySource}
