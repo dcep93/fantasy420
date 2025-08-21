@@ -96,7 +96,7 @@ function generate(
     console.log("new generation", drafts.length);
     return drafts.concat([[]]);
   }
-  return drafts.slice(0, -1).concat(curr.concat(best.result.player));
+  return drafts.slice(0, -1).concat([curr.concat([best.result.player])]);
 }
 
 function getResult(
@@ -106,7 +106,7 @@ function getResult(
   positionToRankedIds: { [position: string]: string[] }
 ): { score: number; player: DraftPlayerType } {
   return {
-    score: 0,
+    score: curr.length > 5 ? 0 : position === "" ? 0 : 1,
     player: {
       name: "",
       season: "",
