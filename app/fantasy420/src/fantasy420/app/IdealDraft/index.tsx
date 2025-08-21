@@ -7,12 +7,12 @@ export default function IdealDraft() {
   const wrapped = selectedWrapped();
   const rawInitialDraft = Object.values(wrapped.ffTeams)
     .flatMap((t, i) => t.draft.map((o) => ({ ...o, teamId: "ABCDEFGHIJ"[i] })))
-    .map(({ playerId, pickIndex: value, teamId }) => ({
+    .map(({ playerId, pickIndex, teamId }) => ({
       playerId,
-      value,
+      pickIndex,
       teamId,
     }))
-    .sort((a, b) => a.value - b.value);
+    .sort((a, b) => a.pickIndex - b.pickIndex);
   const positionToDraftRank = Object.fromEntries(
     Object.entries(
       groupByF(rawInitialDraft, (p) => wrapped.nflPlayers[p.playerId].position)
@@ -20,7 +20,7 @@ export default function IdealDraft() {
       position,
       Object.fromEntries(
         players
-          .sort((a, b) => a.value - b.value)
+          .sort((a, b) => a.pickIndex - b.pickIndex)
           .map(({ playerId }, i) => [playerId, i])
       ),
     ])
@@ -45,7 +45,7 @@ export default function IdealDraft() {
         ...p,
         points: wrapped.nflPlayers[p.playerId].total,
         name: wrapped.nflPlayers[p.playerId].name,
-        positionRank: `${wrapped.nflPlayers[p.playerId].position}${
+        season: `${wrapped.nflPlayers[p.playerId].position}${
           playerIdToSeasonRank[p.playerId].i + 1
         }`,
         analyzed: false,
