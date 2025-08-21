@@ -103,26 +103,17 @@ function getBest(
   return ["", "QB", "RB", "WR", "TE"]
     .map((position) => ({
       position,
-      result: getResult(position, curr, prev, positionToRankedIds),
+      result: {
+        score: curr.length > 5 ? 0 : position === "" ? 0 : 1,
+        player: {
+          name: "",
+          season: "",
+          points: 0,
+          teamId: "",
+          pickIndex: 0,
+          playerId: 0,
+        },
+      },
     }))
     .sort((a, b) => b.result.score - a.result.score)[0];
-}
-
-function getResult(
-  position: string,
-  curr: DraftType,
-  prev: DraftType,
-  positionToRankedIds: { [position: string]: string[] }
-): { score: number; player: DraftPlayerType } {
-  return {
-    score: curr.length > 5 ? 0 : position === "" ? 0 : 1,
-    player: {
-      name: "",
-      season: "",
-      points: 0,
-      teamId: "",
-      pickIndex: 0,
-      playerId: 0,
-    },
-  };
 }
