@@ -1,7 +1,7 @@
 const SLEEPERDRAFT_PERIOD_MS = 1000;
 var json_draft = null;
 function sleeperdraft() {
-  console.log("fetching sleeperdraft");
+  console.log("fetching sleeperdraft", { json_draft });
   fetch("https://sleeper.com/graphql", {
     headers: {
       "content-type": "application/json",
