@@ -11,7 +11,8 @@ import SimpsStateful from "./Simps";
 
 export const currentYear = "2025";
 
-export var selectedYear = currentYear;
+export var selectedYear =
+  new URLSearchParams(window.location.search).get("year") || currentYear;
 export function selectedWrapped(): WrappedType {
   return allWrapped[selectedYear];
 }
@@ -23,9 +24,7 @@ export const newManagers: { [teamId: string]: string } = {
 
 export default function Wrapped() {
   document.title = "Fantasy Wrapped";
-  const [yearKey, updateYear] = useState(
-    new URLSearchParams(window.location.search).get("year") || currentYear
-  );
+  const [yearKey, updateYear] = useState(selectedYear);
   selectedYear = yearKey;
   const toRender: { [key: string]: ReactNode } = Object.fromEntries(
     Object.entries({
@@ -1574,7 +1573,7 @@ function FantasyCalc() {
             .map((f) => ({
               ...f,
               name:
-                allWrapped[currentYear].nflPlayers[f.playerId]?.name ||
+                allWrapped[selectedYear].nflPlayers[f.playerId]?.name ||
                 f.playerId,
             }))
             .map((f) => (
@@ -2170,6 +2169,7 @@ function HeadToHead() {
               .find((teamId) => teamId !== t.id)!,
           }))
         )
+        .filter((m) => allWrapped[m.year].ffTeams[t.id])
         .filter((m) => !(m.year < newManagers[t.id]))
         .filter((m) => !(m.year < newManagers[m.opponent]))
         .map((obj) => ({

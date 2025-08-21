@@ -104,7 +104,6 @@ export default function DraftValue() {
 type PerformanceType = {
   [playerId: string]: {
     msg: string;
-    performance: number;
     pickIndex: number;
     player: NFLPlayerType;
   };
@@ -164,9 +163,6 @@ function getPerformance(): PerformanceType {
           }; scored ${player.player.total.toFixed(2)} = ${
             player.player.position
           }${player.totalRank + 1})`,
-          performance:
-            sortedByPick[player.player.position][player.totalRank].pickIndex +
-            1,
         },
       ])
   );
@@ -179,20 +175,8 @@ function getResults(numRounds: number): {
 }[] {
   const performance = getPerformance();
   const categories = Object.fromEntries(
-    [
-      [
-        "performance",
-        Object.fromEntries(
-          Object.entries(performance).map(([playerId, p]) => [
-            playerId,
-            p.performance,
-          ])
-        ),
-      ],
-    ].concat(
-      Object.entries(selectedDraft() || {}).filter(
-        ([key]) => key.replaceAll("_", "").length > 0
-      )
+    Object.entries(selectedDraft() || {}).filter(
+      ([key]) => key.replaceAll("_", "").length > 0
     )
   ) as DraftJsonType;
   const scored = Object.values(selectedWrapped().ffTeams)
