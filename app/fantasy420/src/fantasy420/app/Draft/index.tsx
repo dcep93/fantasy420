@@ -510,21 +510,37 @@ function jayzheng() {
 }
 
 function draftsharks() {
-  return fetch("https://www.draftsharks.com/auction-values/fetch")
-    .then((resp) => resp.json())
+  return fetch("https://www.draftsharks.com/adp/superflex/ppr/sleeper/10")
+    .then((resp) => resp.text())
+    .then((text) => text.match(/<script>var vueAppData = (.*?);\n/)![1])
+    .then((match) => JSON.parse(match))
+    .then((t) => {
+      console.log({ t });
+      return t;
+    })
     .then(
       (resp: {
         projections: {
-          player: { first_name: string; last_name: string };
-          auctionDollarRedraftOnePprSuperflex: number;
+          first_name: string;
+          last_name: string;
+          adps?: {
+            [key: string]: {
+              league_size: number;
+              format_id: number;
+              overall_pick_number: number;
+            };
+          };
         }[];
       }) =>
         resp.projections
-          .filter((p) => p.auctionDollarRedraftOnePprSuperflex > 1)
-          .map((p) => [
-            `${p.player.first_name} ${p.player.last_name}`,
-            -p.auctionDollarRedraftOnePprSuperflex,
-          ])
+          .map((p) => ({
+            p,
+            pick: Object.values(p.adps!).find(
+              (o) => o.league_size === 10 && o.format_id === 12
+            )?.overall_pick_number,
+          }))
+          .filter(({ pick }) => pick)
+          .map(({ p, pick }) => [`${p.first_name} ${p.last_name}`, pick])
     )
     .then(Object.fromEntries)
     .then(console.log);
