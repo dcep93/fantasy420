@@ -209,14 +209,6 @@ function SubDraft(props: {
         </div>
         <div>
           <div>
-            <a href="https://app.fantasyplaybook.ai/customrankings">
-              fantasyplaybook
-            </a>
-          </div>
-          <input readOnly value={printF(fantasyplaybook)} />
-        </div>
-        <div>
-          <div>
             <a href="https://www.harrisfootball.com/top-160-ranks-draft">
               harrisfootball
             </a>
@@ -225,9 +217,11 @@ function SubDraft(props: {
         </div>
         <div>
           <div>
-            <a href="https://www.thescore.com/news/2835319">justinboone</a>
+            <a href="https://subvertadown.com/tap-that-draft/d4905ade-ed76-4f26-b463-efe46cec9369">
+              tapthatdraft
+            </a>
           </div>
-          <input readOnly value={printF(justinboone)} />
+          <input readOnly value={printF(tapThatDraft)} />
         </div>
         <div>
           <div>
@@ -577,28 +571,15 @@ function harrisfootball() {
   );
 }
 
-function justinboone() {
+function tapThatDraft() {
   return Object.fromEntries(
-    Array.from(Array.from(document.getElementsByTagName("tr")))
-      .slice(1)
-      .map((tr) => tr.children[1] as HTMLElement)
-      .filter((td) => td)
-      .map((td, i) => [td.innerText, i + 1])
-  );
-}
-
-function fantasyplaybook() {
-  return Object.fromEntries(
-    Array.from(
-      Array.from(document.getElementsByClassName("text-card-foreground"))
-        .find(
-          (e) => (e.children[0] as HTMLElement)?.innerText === "All Players"
-        )
-        ?.children[1]?.children[1]?.getElementsByClassName("items-center") || []
-    ).map((e, i) => [
-      (e.children[1] as HTMLElement)?.firstChild?.nodeValue,
-      i + 1,
-    ])
+    Array.from(Array.from(document.getElementsByTagName("tbody")[0].children))
+      .map((tr) => Array.from(tr.children) as any as { innerText: string }[])
+      .map((tr) => [
+        tr[1].innerText.trim(),
+        -parseInt(tr[10].innerText.split("$").pop()!),
+      ])
+      .filter(([_, value]) => value !== 0)
   );
 }
 
