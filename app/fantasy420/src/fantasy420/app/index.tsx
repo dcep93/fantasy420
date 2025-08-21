@@ -2,17 +2,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Draft from "./Draft";
 import FetchWrapped from "./FetchWrapped";
-import HistoryGraph from "./HistoryGraph";
-import PlayoffPredictability from "./PlayoffPredictability";
-import Vegas from "./Vegas";
 import Wrapped from "./Wrapped";
 
 const pages = {
   FetchWrapped,
   Draft,
-  HistoryGraph,
-  PlayoffPredictability,
-  Vegas,
 };
 
 export default function index() {
