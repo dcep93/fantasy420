@@ -82,12 +82,7 @@ function generate(
   }
   const curr = drafts[drafts.length - 1];
   const prev = drafts[drafts.length - 2];
-  const best = positions
-    .map((position) => ({
-      position,
-      result: getResult(position, curr, prev, positionToRankedIds),
-    }))
-    .sort((a, b) => b.result.score - a.result.score)[0];
+  const best = getBest(curr, prev, positions, positionToRankedIds);
   if (best.position === "") {
     if (JSON.stringify(curr) === JSON.stringify(prev)) {
       console.log("stabilized");
@@ -97,6 +92,23 @@ function generate(
     return drafts.concat([[]]);
   }
   return drafts.slice(0, -1).concat([curr.concat([best.result.player])]);
+}
+
+function getBest(
+  curr: DraftType,
+  prev: DraftType,
+  positions: string[],
+  positionToRankedIds: { [position: string]: string[] }
+): {
+  position: string;
+  result: { score: number; player: DraftPlayerType };
+} {
+  return positions
+    .map((position) => ({
+      position,
+      result: getResult(position, curr, prev, positionToRankedIds),
+    }))
+    .sort((a, b) => b.result.score - a.result.score)[0];
 }
 
 function getResult(
