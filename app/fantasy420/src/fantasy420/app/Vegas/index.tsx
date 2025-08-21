@@ -164,66 +164,6 @@ function getVegas(): Promise<VegasType> {
               .then((players) => ({ source, players }))
           )
       ),
-      Promise.resolve("draftkings").then((source) =>
-        ext({
-          fetch: {
-            url: "https://sportsbook-nash.draftkings.com/api/sportscontent/navigation/dkusny/v1/nav/leagues/88808?format=json",
-            maxAgeMs: 12 * 60 * 60 * 1000,
-            json: true,
-          },
-        })
-          .then((resp: { msg: { events: { eventId: string }[] } }) => resp.msg)
-          .then(({ events }) =>
-            events.flatMap(({ eventId }) =>
-              Object.keys({
-                1000: "passing",
-                1001: "rushing",
-                1342: "receiving",
-              }).map((categoryId) =>
-                ext({
-                  fetch: {
-                    url: `https://sportsbook-nash.draftkings.com/api/sportscontent/dkusny/v1/events/${eventId}/categories/${categoryId}`,
-                    maxAgeMs: 12 * 60 * 60 * 1000,
-                    json: true,
-                  },
-                })
-              )
-            )
-          )
-          .then((promises) => Promise.all(promises))
-          .then(
-            (
-              resps: {
-                msg: {
-                  selections: {
-                    marketId: string;
-                    trueOdds: number;
-                    participants: { name: string }[];
-                  }[];
-                  markets: { id: string; name: string }[];
-                };
-              }[]
-            ) =>
-              resps
-                .map((resp) => resp.msg)
-                .filter(Boolean)
-                .flatMap(({ selections, markets }) =>
-                  (markets || [])
-                    .filter((m) => m.name === "Anytime TD Scorer")
-                    .flatMap((m) =>
-                      selections
-                        .filter((s) => s.marketId === m.id)
-                        .map((s) => ({
-                          name: s.participants?.find((p) => p)?.name!,
-                          odds: s.trueOdds,
-                          o: { m, s },
-                        }))
-                    )
-                )
-                .filter((p) => p.name)
-          )
-          .then((players) => ({ source, players }))
-      ),
     ])
     .then((ps) => Promise.all(ps.map((p) => p?.catch((err) => undefined))))
     .then(clog)
