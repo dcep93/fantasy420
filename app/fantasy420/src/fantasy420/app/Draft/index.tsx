@@ -1,16 +1,10 @@
 import { useEffect, useState } from "react";
 
 import { printF } from "..";
-import { fetchExtension, fetchExtensionStorage } from "./Extension";
+import { fetchExtensionStorage } from "./Extension";
 
 import { NFLPlayerType, WrappedType } from "../FetchWrapped";
-import {
-  clog,
-  groupByF,
-  mapDict,
-  selectedWrapped,
-  selectedYear,
-} from "../Wrapped";
+import { groupByF, mapDict, selectedWrapped, selectedYear } from "../Wrapped";
 import allWrapped from "../Wrapped/allWrapped";
 import draft2023 from "./2023.json";
 import draft2024 from "./2024.json";
@@ -98,34 +92,15 @@ export default function Draft() {
         )
       )
   );
-  const [draftKingsData, updateDraftKingsData] = useState<DraftKingsType>(null);
-  useEffect(() => {
-    draftKingsData === null &&
-      Promise.resolve()
-        .then(() => draftKingsF(idToRankBySource))
-        .then(updateDraftKingsData)
-        .catch(console.error);
-  }, [draftKingsData, idToRankBySource]);
   const [liveDraft, updateLiveDraft] = useState<string[]>([]);
   useEffect(() => {
     fetchLiveDraft(updateLiveDraft, -1);
   }, []);
-  return (
-    <SubDraft
-      liveDraft={liveDraft}
-      draftKingsData={draftKingsData}
-      idToRankBySource={idToRankBySource}
-    />
-  );
+  return <SubDraft liveDraft={liveDraft} idToRankBySource={idToRankBySource} />;
 }
-
-type DraftKingsType = {
-  [name: string]: { overallRank: number; points: number };
-} | null;
 
 function SubDraft(props: {
   liveDraft: string[];
-  draftKingsData: DraftKingsType;
   idToRankBySource: IdToRankBySource;
 }) {
   const playersByName = Object.fromEntries(
@@ -211,23 +186,6 @@ function SubDraft(props: {
         <div>
           <div>drafted</div>
           <input readOnly value={JSON.stringify(props.liveDraft)} />
-        </div>
-        <div>
-          <div>
-            <a href="https://sportsbook.draftkings.com/leagues/football/nfl?category=player-stats&subcategory=passing-yards">
-              draftKings
-            </a>
-          </div>
-          <input
-            readOnly
-            value={
-              props.draftKingsData === null
-                ? ""
-                : JSON.stringify(
-                    mapDict(props.draftKingsData, (p) => -p.points)
-                  )
-            }
-          />
         </div>
         <div>
           <div>
@@ -395,11 +353,6 @@ function SubDraft(props: {
                             )!
                             .find((teamId) => teamId !== MY_TEAM_ID) || "p"}
                     </td>
-                    <td>
-                      {Math.floor(
-                        props.draftKingsData?.[v.player.name]?.points || -1
-                      )}
-                    </td>
                     {[
                       { key: "", value: v.player.name },
                       { key: "", value: `${v.player.position} ${v.team}` },
@@ -554,119 +507,6 @@ function jayzheng() {
       .map((tr) => tr.children[3] as HTMLElement)
       .map((tr, i) => [tr.innerText, i + 1])
   );
-}
-
-function draftKingsF(
-  idToRankBySource: IdToRankBySource
-): Promise<DraftKingsType> {
-  const wrapped = selectedWrapped();
-  const normalizedNameToId = getNormalizedNameToId(wrapped);
-  return Promise.resolve()
-    .then(() =>
-      Object.entries({
-        passing_yards: { points: 0.04, subcategory: 7200 },
-        passing_tds: { points: 4, subcategory: 14770 },
-        receiving_yards: { points: 0.1, subcategory: 7276 },
-        receiving_touchdowns: { points: 6, subcategory: 7239 },
-        rushing_yards: { points: 0.1, subcategory: 7277 },
-        rushing_touchdowns: { points: 6, subcategory: 7694 },
-        receptions: { points: 1, subcategory: 782 },
-        interceptions: { points: -2, subcategory: 13350 },
-      }).map(([key, { points, subcategory }]) =>
-        Promise.resolve()
-          .then(() =>
-            fetchExtension({
-              url: `https://sportsbook-nash.draftkings.com/api/sportscontent/dkusny/v1/leagues/88808/categories/782/subcategories/${subcategory}`,
-              json: true,
-            }).then(
-              (resp: {
-                events: {
-                  id: string;
-                  participants: { id?: string; name: string }[];
-                }[];
-                markets: { id: string; eventId: string }[];
-                selections: { marketId: string; label: string }[];
-              }) =>
-                Object.fromEntries(
-                  resp.events
-                    .map((event) => ({
-                      event,
-                      name: event.participants.find((p) => p.id === undefined)!
-                        .name,
-                      market: resp.markets.find((m) => m.eventId === event.id)!,
-                    }))
-                    .map((d) => ({
-                      ...d,
-                      selection: resp.selections.find(
-                        (s) => s.marketId === d.market.id
-                      )!,
-                    }))
-                    .map((d) => ({
-                      ...d,
-                      value: parseFloat(
-                        d.selection.label.split(" ").reverse()[0]
-                      ),
-                    }))
-                    .sort((a, b) => b.value - a.value)
-                    .map((d) => [
-                      normalizedNameToId[normalize(d.name)],
-                      points * d.value,
-                    ])
-                )
-            )
-          )
-          .then((p) => [key, p])
-      )
-    )
-    .then((ps) => Promise.all(ps))
-    .then(Object.fromEntries)
-    .then((d: { [subcategory: string]: { [playerId: string]: number } }) =>
-      groupByF(
-        Object.values(wrapped.nflPlayers)
-          .map((p) => ({
-            p,
-            pointsMap: Object.fromEntries(
-              Object.entries(d)
-                .map(([subcategory, dd]) => ({
-                  subcategory,
-                  points: dd[p.id] || 0,
-                }))
-                .map((obj) => [obj.subcategory, obj.points])
-            ),
-          }))
-          .filter(({ pointsMap }) => Object.keys(pointsMap).length > 0)
-          .map(({ pointsMap, p }) => ({
-            p,
-            pointsMap,
-            points: Object.values(pointsMap).reduce((a, b) => a + b, 0),
-          }))
-          .sort((a, b) => b.points - a.points),
-        ({ p }) => p.position
-      )
-    )
-    .then((playersByPosition) =>
-      Object.entries(selectedDraft().draftsharks_super)
-        .map(([playerId, value]) => ({ playerId, value }))
-        .sort((a, b) => a.value - b.value)
-        .map(({ playerId }) => playerId)
-        .map((playerId) => idToRankBySource.draftsharks_super[playerId])
-        .map(({ p, rank }, overallRank) => ({
-          overallRank: overallRank + 1,
-          positionRank: rank,
-          draftKings: playersByPosition[p.position][rank],
-          ref: p.name,
-        }))
-        .filter((p) => p.draftKings !== undefined)
-        .map(({ draftKings, ...p }) => ({
-          ...p,
-          name: draftKings.p.name,
-          points: draftKings.points,
-          pointsMap: draftKings.pointsMap,
-        }))
-        .map((obj) => [obj.name, obj])
-    )
-    .then(Object.fromEntries)
-    .then(clog);
 }
 
 function draftsharks() {

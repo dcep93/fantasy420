@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Defense from "./Defense";
 import Draft from "./Draft";
 import FetchWrapped from "./FetchWrapped";
 import HistoryGraph from "./HistoryGraph";
@@ -12,7 +11,6 @@ const pages = {
   FetchWrapped,
   Draft,
   HistoryGraph,
-  Defense,
   PlayoffPredictability,
   Vegas,
 };
