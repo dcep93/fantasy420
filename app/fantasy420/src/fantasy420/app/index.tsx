@@ -14,6 +14,7 @@ const pages = {
 export default function index() {
   return (
     <BrowserRouter
+      // @ts-ignore
       future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
     >
       <Routes>
