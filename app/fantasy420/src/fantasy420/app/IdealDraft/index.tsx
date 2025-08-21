@@ -1,8 +1,17 @@
 import { useEffect, useState } from "react";
-import { selectedWrapped } from "../Wrapped";
+import { groupByF, selectedWrapped } from "../Wrapped";
 
 export default function IdealDraft() {
   const wrapped = selectedWrapped();
+  const playerIdToPositionRank = Object.fromEntries(
+    Object.values(
+      groupByF(Object.values(wrapped.nflPlayers), (p) => p.position)
+    ).flatMap((players) =>
+      players
+        .sort((a, b) => b.total - a.total)
+        .map((p, i) => [p.id, `${p.position}${i + 1}`])
+    )
+  );
   const initialDraft = {
     numAnalyzed: 0,
     draft: Object.values(wrapped.ffTeams)
@@ -12,6 +21,7 @@ export default function IdealDraft() {
         value,
         points: wrapped.nflPlayers[playerId].total,
         name: wrapped.nflPlayers[playerId].name,
+        positionRank: playerIdToPositionRank[playerId],
         analyzed: false,
         isOriginal: true,
       }))
