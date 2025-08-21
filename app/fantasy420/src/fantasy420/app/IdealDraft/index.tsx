@@ -22,7 +22,6 @@ export default function IdealDraft() {
       players.sort((a, b) => b.total - a.total).map(({ id }) => id),
     ])
   );
-  const positions = ["", "QB", "RB", "WR", "TE"];
   const playerIdToPositionSeasonRank = Object.fromEntries(
     Object.values(positionToRankedIds).flatMap((playerIds) =>
       playerIds.map((playerId, i) => [playerId, i])
@@ -41,9 +40,9 @@ export default function IdealDraft() {
   ]);
   useEffect(() => {
     Promise.resolve()
-      .then(() => generate(drafts, positions, positionToRankedIds))
+      .then(() => generate(drafts, positionToRankedIds))
       .then((nextDrafts) => nextDrafts && updateDrafts(nextDrafts));
-  }, [drafts, positions, positionToRankedIds]);
+  }, [drafts, positionToRankedIds]);
   return (
     <div>
       <div style={{ display: "flex", alignItems: "baseline" }}>
@@ -72,7 +71,6 @@ type DraftType = DraftPlayerType[];
 
 function generate(
   drafts: DraftType[],
-  positions: string[],
   positionToRankedIds: { [position: string]: string[] }
 ): DraftType[] | null {
   console.log({ drafts, now: Date.now() });
@@ -82,7 +80,7 @@ function generate(
   }
   const curr = drafts[drafts.length - 1];
   const prev = drafts[drafts.length - 2];
-  const best = getBest(curr, prev, positions, positionToRankedIds);
+  const best = getBest(curr, prev, positionToRankedIds);
   if (best.position === "") {
     if (JSON.stringify(curr) === JSON.stringify(prev)) {
       console.log("stabilized");
@@ -97,13 +95,12 @@ function generate(
 function getBest(
   curr: DraftType,
   prev: DraftType,
-  positions: string[],
   positionToRankedIds: { [position: string]: string[] }
 ): {
   position: string;
   result: { score: number; player: DraftPlayerType };
 } {
-  return positions
+  return ["", "QB", "RB", "WR", "TE"]
     .map((position) => ({
       position,
       result: getResult(position, curr, prev, positionToRankedIds),
