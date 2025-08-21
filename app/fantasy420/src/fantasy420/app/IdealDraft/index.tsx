@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { groupByF, selectedWrapped } from "../Wrapped";
+import { bubbleStyle, groupByF, selectedWrapped } from "../Wrapped";
 
 export default function IdealDraft() {
   const wrapped = selectedWrapped();
@@ -12,32 +12,38 @@ export default function IdealDraft() {
         .map((p, i) => [p.id, `${p.position}${i + 1}`])
     )
   );
-  const initialDraft = {
+  const initialDraft = Object.values(wrapped.ffTeams)
+    .flatMap((t) => t.draft)
+    .map(({ playerId, pickIndex: value }) => ({
+      playerId,
+      value,
+      points: wrapped.nflPlayers[playerId].total,
+      name: wrapped.nflPlayers[playerId].name,
+      positionRank: playerIdToPositionRank[playerId],
+      analyzed: false,
+      isOriginal: true,
+    }))
+    .sort((a, b) => a.value - b.value);
+  const [idealDraft, updateIdealDraft] = useState({
     numAnalyzed: 0,
-    draft: Object.values(wrapped.ffTeams)
-      .flatMap((t) => t.draft)
-      .map(({ playerId, pickIndex: value }) => ({
-        playerId,
-        value,
-        points: wrapped.nflPlayers[playerId].total,
-        name: wrapped.nflPlayers[playerId].name,
-        positionRank: playerIdToPositionRank[playerId],
-        analyzed: false,
-        isOriginal: true,
-      }))
-      .sort((a, b) => a.value - b.value),
-  };
-  const [idealDraft, updateIdealDraft] = useState(initialDraft);
+    draft: initialDraft,
+  });
   useEffect(() => {}, [idealDraft]);
   const x = idealDraft;
   return (
-    <div style={{ display: "flex" }}>
-      {Object.entries({ initialDraft, idealDraft }).map(([k, v]) => (
-        <div key={k}>
-          <h1>{k}</h1>
-          <pre>{JSON.stringify(v, null, 2)}</pre>
-        </div>
-      ))}
+    <div>
+      <div style={{ display: "flex", alignItems: "baseline" }}>
+        {Object.entries({
+          numAnalyzed: idealDraft.numAnalyzed,
+          initialDraft,
+          ideal: idealDraft.draft,
+        }).map(([k, v]) => (
+          <div key={k} style={bubbleStyle}>
+            <h1>{k}</h1>
+            <pre>{JSON.stringify(v, null, 2)}</pre>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
