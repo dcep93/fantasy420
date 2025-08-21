@@ -27,10 +27,13 @@ export default function IdealDraft() {
       groupByF(Object.values(wrapped.nflPlayers), (p) => p.position)
     ).map(([position, players]) => [
       position,
-      Object.fromEntries(
-        players.sort((a, b) => b.total - a.total).map((p, i) => [p.id, i])
-      ),
+      players.sort((a, b) => b.total - a.total).map(({ id }) => id),
     ])
+  );
+  const playerIdToSeasonRank = Object.fromEntries(
+    Object.entries(positionToSeasonRank).flatMap(([position, playerIds]) =>
+      playerIds.map((playerId, i) => [playerId, { position, i }])
+    )
   );
   const playerIdToDraft = Object.fromEntries(
     rawInitialDraft.map((p) => [
@@ -49,7 +52,16 @@ export default function IdealDraft() {
   );
   const [idealDraft, updateIdealDraft] = useState({
     numAnalyzed: 0,
-    draft: rawInitialDraft.map(({ playerId }) => playerId),
+    draft: rawInitialDraft.map(
+      ({ playerId }) =>
+        playerIdToDraft[
+          positionToSeasonRank[wrapped.nflPlayers[playerId].position][
+            positionToDraftRank[playerIdToSeasonRank[playerId].position][
+              playerId
+            ]
+          ]
+        ]
+    ),
   });
   useEffect(() => {}, [idealDraft]);
   return (
@@ -59,6 +71,7 @@ export default function IdealDraft() {
           numAnalyzed: idealDraft.numAnalyzed,
           positionToDraftRank,
           positionToSeasonRank,
+          playerIdToSeasonRank,
           initialDraft,
           ideal: idealDraft.draft,
         }).map(([k, v]) => (
