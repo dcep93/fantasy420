@@ -93,13 +93,25 @@ export default function Draft() {
       )
   );
   const [liveDraft, updateLiveDraft] = useState<string[]>([]);
+  const [localDraft, updateLocalDraft] = useState<{ [key: string]: boolean }>(
+    {}
+  );
   useEffect(() => {
     fetchLiveDraft(updateLiveDraft, -1);
   }, []);
-  return <SubDraft liveDraft={liveDraft} idToRankBySource={idToRankBySource} />;
+  return (
+    <SubDraft
+      liveDraft={liveDraft}
+      localDraft={localDraft}
+      updateLocalDraft={updateLocalDraft}
+      idToRankBySource={idToRankBySource}
+    />
+  );
 }
 
 function SubDraft(props: {
+  localDraft: { [key: string]: boolean };
+  updateLocalDraft: (ld: { [key: string]: boolean }) => void;
   liveDraft: string[];
   idToRankBySource: IdToRankBySource;
 }) {
@@ -324,12 +336,26 @@ function SubDraft(props: {
                     positionFilter === "" ||
                     v.player.position === positionFilter
                 )
+                .map((v) => ({
+                  ...v,
+                  seen:
+                    props.localDraft[v.player.name] === undefined
+                      ? v.seen
+                      : props.localDraft[v.player.name],
+                }))
                 .map((v, i) => (
                   <tr
                     key={i}
                     style={{
                       backgroundColor: v.seen ? "lightgray" : "",
                     }}
+                    onClick={() =>
+                      props.updateLocalDraft(
+                        Object.assign({}, props.localDraft, {
+                          [v.player.name]: !v.seen,
+                        })
+                      )
+                    }
                   >
                     <td
                       title={"index/posIndex/bye/teamIdVsBye"}
