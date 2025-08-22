@@ -67,7 +67,7 @@ export default function IdealDraft() {
     <div>
       <div style={{ display: "flex", alignItems: "baseline" }}>
         {drafts.map((d, i) => (
-          <div key={i} style={bubbleStyle}>
+          <div key={i} style={{ ...bubbleStyle, flexShrink: 0 }}>
             <h1>
               generation {i} ({d.draft.length})
             </h1>
