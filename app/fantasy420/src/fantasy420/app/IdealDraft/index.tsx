@@ -1,58 +1,17 @@
 import { useEffect, useState } from "react";
-import { bubbleStyle, groupByF, selectedWrapped } from "../Wrapped";
-import { generate, ROSTER } from "./search";
-
-const A_CODE = 65;
+import { bubbleStyle, selectedWrapped } from "../Wrapped";
+import { generate, getPositionToRankedDraftPlayers, getStart } from "./search";
 
 export default function IdealDraft() {
   const wrapped = selectedWrapped();
-  const initialDraft = Object.values(wrapped.ffTeams)
-    .sort((a, b) => a.draft[0].pickIndex - b.draft[0].pickIndex)
-    .flatMap((t, i) =>
-      t.draft
-        .map((o) => ({ o, p: wrapped.nflPlayers[o.playerId] }))
-        .map(({ o, p }) => ({
-          ...o,
-          score: p.total,
-          ffTeamId: String.fromCharCode(A_CODE + i),
-          position: p.position,
-        }))
-    )
-    .sort((a, b) => a.pickIndex - b.pickIndex)
-    .map(({ pickIndex, ...p }) => p);
-  const positionToRankedDraftPlayers = Object.fromEntries(
-    Object.entries(
-      groupByF(Object.values(wrapped.nflPlayers), (p) => p.position)
-    ).map(([position, players]) => [
-      position,
-      players
-        .sort((a, b) => b.total - a.total)
-        .map((p) => ({
-          score: p.total,
-          position: p.position,
-          playerId: parseInt(p.id),
-          ffTeamId: "",
-        })),
-    ])
+  const positionToRankedDraftPlayers = getPositionToRankedDraftPlayers(wrapped);
+  const [drafts, updateDrafts] = useState(
+    getStart(wrapped, positionToRankedDraftPlayers)
   );
   const playerIdToPositionSeasonRank = Object.fromEntries(
     Object.values(positionToRankedDraftPlayers).flatMap((ps) =>
       ps.map((p, i) => [p.playerId, i])
     )
-  );
-  const poppable = Object.fromEntries(
-    Object.entries(positionToRankedDraftPlayers).map(([k, v]) => [k, v.slice()])
-  );
-  const sortedDraft = initialDraft
-    .slice(0, ROSTER.length * Object.entries(wrapped.ffTeams).length)
-    .map((p) => poppable[p.position].shift()!);
-  const [drafts, updateDrafts] = useState(
-    [initialDraft, sortedDraft, []].map((draft) => ({
-      draft,
-      draftedIds: {},
-      picksByTeamId: {},
-      positionToCount: {},
-    }))
   );
   useEffect(() => {
     Promise.resolve()
