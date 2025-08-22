@@ -171,7 +171,6 @@ async function getScore(
   start: number,
   chosen: string[]
 ): Promise<number> {
-  console.log({ start, chosen, ffTeamId, curr });
   if (chosen.length > ROSTER.length) {
     throw new Error();
   }
@@ -254,7 +253,7 @@ function getStart(
   );
   const sortedDraft = initialDraft
     .slice(0, ROSTER.length * Object.entries(wrapped.ffTeams).length)
-    .map((p) => poppable[p.position].shift()!);
+    .map((p) => ({ ...poppable[p.position].shift()!, ffTeamId: p.ffTeamId }));
   return [initialDraft, sortedDraft, []].map((draft) => ({
     draft,
     draftedIds: {},
