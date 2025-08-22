@@ -1,7 +1,7 @@
 import { WrappedType } from "../FetchWrapped";
 import { clog, groupByF } from "../Wrapped";
 
-const MAX_GENERATIONS = 5;
+const MAX_GENERATIONS = 6;
 const A_CODE = 65;
 
 export type DraftPlayerType = {
@@ -49,7 +49,7 @@ function generate(
     .then((best) => {
       if (!best) {
         if (JSON.stringify(curr) === JSON.stringify(prev)) {
-          clog("stabilized");
+          alert("stabilized");
           return null;
         }
         if (drafts.length === MAX_GENERATIONS) {
@@ -72,14 +72,6 @@ function generate(
 
 function updateDraft(curr: DraftType, best: DraftPlayerType): DraftType {
   if (curr.draftedIds[best.playerId]) throw new Error();
-  if (
-    Object.values(curr.picksByTeamId)
-      .map((p) => p!.length - (curr.picksByTeamId[best.ffTeamId] || []).length)
-      .find((diff) => diff !== 0 && diff !== 1)
-  ) {
-    clog({ curr, best });
-    throw new Error();
-  }
   return {
     draft: curr.draft.concat([best]),
     draftedIds: Object.assign({}, curr.draftedIds, { [best.playerId]: best }),
@@ -113,7 +105,8 @@ function getBest(
     if (draftTeamId !== ffTeamId) {
       return {
         ...prev.draft.find((p) => !curr.draftedIds[p.playerId])!,
-        start,
+        ffTeamId: draftTeamId,
+        start: start + 10000,
       };
     }
     return Promise.resolve()
@@ -122,13 +115,6 @@ function getBest(
           hasSpace(position, curr.picksByTeamId[ffTeamId] || [])
         )
       )
-      .then((positions) => {
-        if (positions.length === 0) {
-          clog(curr);
-          throw new Error();
-        }
-        return positions;
-      })
       .then((positions) =>
         positions
           .map((position) => ({
@@ -136,7 +122,7 @@ function getBest(
               curr.positionToCount[position] || 0
             ],
             ffTeamId,
-            start,
+            start: start + 200000,
           }))
           .map((player) =>
             getScore(
@@ -179,8 +165,6 @@ async function getScore(
   start: number
 ): Promise<number> {
   let curr = _curr;
-  if ((curr.picksByTeamId[ffTeamId] || []).length > ROSTER.length)
-    throw new Error();
   while (true) {
     const best = await getBest(
       curr,
@@ -189,9 +173,7 @@ async function getScore(
       ffTeamId,
       start
     );
-    if (!best) {
-      return scoreTeam(curr.picksByTeamId[ffTeamId]!);
-    }
+    if (!best) return scoreTeam(curr.picksByTeamId[ffTeamId]!);
     curr = updateDraft(curr, best);
   }
 }
