@@ -171,7 +171,7 @@ async function getScore(
   start: number,
   chosen: string[]
 ): Promise<number> {
-  console.log({ start, chosen, ffTeamId });
+  console.log({ start, chosen, ffTeamId, curr });
   if (chosen.length > ROSTER.length) {
     throw new Error();
   }
