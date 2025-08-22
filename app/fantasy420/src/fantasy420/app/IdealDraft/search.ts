@@ -27,9 +27,9 @@ export const ROSTER = [
   ["WR"],
   ["WR"],
   ["TE"],
-  //   ["RB", "WR", "TE"],
-  //   ["RB", "WR", "TE"],
-  //   ["QB", "RB", "WR", "TE"],
+  ["RB", "WR", "TE"],
+  ["RB", "WR", "TE"],
+  ["QB", "RB", "WR", "TE"],
 ];
 
 function generate(
@@ -53,7 +53,7 @@ function generate(
           return null;
         }
         if (drafts.length === MAX_GENERATIONS) {
-          clog({ MAX_GENERATIONS });
+          alert("MAX_GENERATIONS");
           return null;
         }
         clog(`generation ${drafts.length}`);
@@ -71,7 +71,6 @@ function generate(
 }
 
 function updateDraft(curr: DraftType, best: DraftPlayerType): DraftType {
-  if (curr.draftedIds[best.playerId]) throw new Error();
   return {
     draft: curr.draft.concat([best]),
     draftedIds: Object.assign({}, curr.draftedIds, { [best.playerId]: best }),
