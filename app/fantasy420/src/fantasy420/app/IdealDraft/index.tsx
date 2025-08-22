@@ -110,7 +110,7 @@ type DraftType = {
     [k: string]: number;
   };
   positionPicksByTeamId: { [k: string]: string[] | undefined };
-  positionToCount: { [k: string]: number };
+  positionToCount: { [k: string]: number | undefined };
 };
 
 function generate(
@@ -152,7 +152,7 @@ function generate(
       ),
     }),
     positionToCount: Object.assign({}, curr.positionToCount, {
-      [best.position]: curr.positionToCount[best.position] + 1,
+      [best.position]: curr.positionToCount[best.position] || 0 + 1,
     }),
   };
   return drafts.slice(0, -1).concat([updatedDraft]);
@@ -166,7 +166,7 @@ function getBest(
   },
   ffTeamId: string
 ): DraftPlayerType | undefined {
-  const draftTeamId = prev.draft[curr.draft.length].ffTeamId;
+  const draftTeamId = prev.draft[curr.draft.length]?.ffTeamId;
   if (draftTeamId === undefined) return undefined;
   if (draftTeamId !== ffTeamId) {
     return prev.draft.find((p) => !curr.draftedIds[p.playerId])!;
@@ -175,7 +175,8 @@ function getBest(
     .map((position) => ({
       position,
       ffTeamId,
-      playerId: positionToRankedIds[position][curr.positionToCount[position]],
+      playerId:
+        positionToRankedIds[position][curr.positionToCount[position] || 0],
     }))
     .map((player) => ({
       player,
