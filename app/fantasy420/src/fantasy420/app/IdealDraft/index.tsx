@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { bubbleStyle, groupByF, selectedWrapped } from "../Wrapped";
+import { bubbleStyle, clog, groupByF, selectedWrapped } from "../Wrapped";
 
 const MAX_GENERATIONS = 5;
 const A_CODE = 65;
@@ -14,6 +14,8 @@ const ROSTER = [
   ["RB", "WR", "TE"],
   ["QB", "RB", "WR", "TE"],
 ];
+
+const start = Date.now();
 
 export default function IdealDraft() {
   const wrapped = selectedWrapped();
@@ -119,7 +121,7 @@ function generate(
     [k: string]: number[];
   }
 ): DraftType[] | null {
-  console.log({ drafts, now: Date.now() });
+  clog({ drafts, now: Date.now() });
   const curr = drafts[drafts.length - 1];
   const prev = drafts[drafts.length - 2];
   const ffTeamId = prev.draft[curr.draft.length]?.ffTeamId;
@@ -153,15 +155,23 @@ function updateDraft(
 ): DraftType {
   return {
     draft: curr.draft.concat([best]),
-    draftedIds: Object.assign({}, curr.draftedIds, { [best.playerId]: best }),
-    positionPicksByTeamId: Object.assign({}, curr.positionPicksByTeamId, {
-      [ffTeamId]: (curr.positionPicksByTeamId[ffTeamId] || []).concat(
-        best.position
-      ),
-    }),
-    positionToCount: Object.assign({}, curr.positionToCount, {
-      [best.position]: curr.positionToCount[best.position] || 0 + 1,
-    }),
+    draftedIds: Object.assign({}, { [best.playerId]: best }, curr.draftedIds),
+    positionPicksByTeamId: Object.assign(
+      {},
+      {
+        [ffTeamId]: (curr.positionPicksByTeamId[ffTeamId] || []).concat(
+          best.position
+        ),
+      },
+      curr.positionPicksByTeamId
+    ),
+    positionToCount: Object.assign(
+      {},
+      {
+        [best.position]: curr.positionToCount[best.position] || 0 + 1,
+      },
+      curr.positionToCount
+    ),
   };
 }
 
@@ -180,6 +190,7 @@ function getBest(
   if (draftTeamId !== ffTeamId) {
     return prev.draft.find((p) => !curr.draftedIds[p.playerId])!;
   }
+  console.log({ curr, ffTeamId });
   return ["QB", "RB", "WR", "TE"]
     .filter((position) =>
       hasSpace(position, curr.positionPicksByTeamId[ffTeamId] || [])
