@@ -23,10 +23,11 @@ export default function IdealDraft() {
       t.draft.map((o) => ({
         ...o,
         ffTeamId: String.fromCharCode(A_CODE + i),
+        position: wrapped.nflPlayers[o.playerId].position,
       }))
     )
     .sort((a, b) => a.pickIndex - b.pickIndex)
-    .map(({ pickIndex, ...p }) => p) as DraftType;
+    .map(({ pickIndex, ...p }) => p);
   const positionToRankedIds = Object.fromEntries(
     Object.entries(
       groupByF(Object.values(wrapped.nflPlayers), (p) => p.position)
@@ -47,12 +48,16 @@ export default function IdealDraft() {
     .slice(0, ROSTER.length * Object.entries(wrapped.ffTeams).length)
     .map((p) => ({
       ...p,
-      playerId:
-        poppablePositionToRankedIds[
-          wrapped.nflPlayers[p.playerId].position
-        ].shift()!,
+      playerId: poppablePositionToRankedIds[p.position].shift()!,
     }));
-  const [drafts, updateDrafts] = useState([initialDraft, sortedDraft, []]);
+  const [drafts, updateDrafts] = useState(
+    [initialDraft, sortedDraft, []].map((draft) => ({
+      draft,
+      draftedIds: {},
+      positionPicksByTeamId: {},
+      positionToCount: {},
+    }))
+  );
   useEffect(() => {
     Promise.resolve()
       .then(() => generate(drafts, positionToRankedIds))
@@ -64,10 +69,10 @@ export default function IdealDraft() {
         {drafts.map((d, i) => (
           <div key={i} style={bubbleStyle}>
             <h1>
-              generation {i} ({d.length})
+              generation {i} ({d.draft.length})
             </h1>
             <pre>
-              {d
+              {d.draft
                 .map((p) => ({
                   p,
                   wp: wrapped.nflPlayers[p.playerId],
@@ -95,10 +100,18 @@ export default function IdealDraft() {
 }
 
 type DraftPlayerType = {
+  position: string;
   ffTeamId: string;
   playerId: number;
 };
-type DraftType = DraftPlayerType[];
+type DraftType = {
+  draft: DraftPlayerType[];
+  draftedIds: {
+    [k: string]: number;
+  };
+  positionPicksByTeamId: { [k: string]: string[] | undefined };
+  positionToCount: { [k: string]: number };
+};
 
 function generate(
   drafts: DraftType[],
@@ -109,7 +122,9 @@ function generate(
   console.log({ drafts, now: Date.now() });
   const curr = drafts[drafts.length - 1];
   const prev = drafts[drafts.length - 2];
-  if (curr.length === prev.length) {
+  const ffTeamId = prev.draft[curr.draft.length]?.ffTeamId;
+  const best = getBest(curr, prev, positionToRankedIds, ffTeamId);
+  if (!best) {
     if (JSON.stringify(curr) === JSON.stringify(prev)) {
       console.log("stabilized");
       return null;
@@ -119,16 +134,28 @@ function generate(
       return null;
     }
     console.log("generation", drafts.length);
-    return drafts.concat([[]]);
-  }
-  return drafts.slice(0, -1).concat([
-    curr.concat([
+    return drafts.concat([
       {
-        ...getBest(curr, prev, positionToRankedIds, prev[curr.length].ffTeamId),
-        ffTeamId: prev[curr.length].ffTeamId,
+        draft: [],
+        draftedIds: {},
+        positionPicksByTeamId: {},
+        positionToCount: {},
       },
-    ]),
-  ]);
+    ]);
+  }
+  const updatedDraft = {
+    draft: curr.draft.concat([best]),
+    draftedIds: Object.assign({}, curr.draftedIds, { [best.playerId]: best }),
+    positionPicksByTeamId: Object.assign({}, curr.positionPicksByTeamId, {
+      [ffTeamId]: (curr.positionPicksByTeamId[ffTeamId] || []).concat(
+        best.position
+      ),
+    }),
+    positionToCount: Object.assign({}, curr.positionToCount, {
+      [best.position]: curr.positionToCount[best.position] + 1,
+    }),
+  };
+  return drafts.slice(0, -1).concat([updatedDraft]);
 }
 
 function getBest(
@@ -138,38 +165,43 @@ function getBest(
     [k: string]: number[];
   },
   ffTeamId: string
-): DraftPlayerType {
-  const draftedIds = Object.fromEntries(curr.map((p) => [p.playerId, p]));
-  const thisTeamId = prev[curr.length].ffTeamId;
-  if (thisTeamId !== ffTeamId) {
-    return prev.find((p) => !draftedIds[p.playerId])!;
+): DraftPlayerType | undefined {
+  const draftTeamId = prev.draft[curr.draft.length].ffTeamId;
+  if (draftTeamId === undefined) return undefined;
+  if (draftTeamId !== ffTeamId) {
+    return prev.draft.find((p) => !curr.draftedIds[p.playerId])!;
   }
-  const myPicks = curr
-    .filter((p) => p.ffTeamId === ffTeamId)
-    .map((p) => selectedWrapped().nflPlayers[p.playerId].position);
   return ["QB", "RB", "WR", "TE"]
     .map((position) => ({
       position,
       ffTeamId,
-      playerId:
-        positionToRankedIds[position][
-          curr.filter(
-            (p) =>
-              selectedWrapped().nflPlayers[p.playerId].position === position
-          ).length
-        ],
+      playerId: positionToRankedIds[position][curr.positionToCount[position]],
     }))
     .map((player) => ({
       player,
-      score: getScore(player.position, myPicks),
+      score: getScore(
+        player.position,
+        curr,
+        prev,
+        positionToRankedIds,
+        ffTeamId
+      ),
     }))
     .filter(({ score }) => score !== 0)
     .sort((a, b) => b.score - a.score)[0].player;
 }
 
-function getScore(position: string, myPicks: string[]): number {
+function getScore(
+  position: string,
+  curr: DraftType,
+  prev: DraftType,
+  positionToRankedIds: {
+    [k: string]: number[];
+  },
+  ffTeamId: string
+): number {
   const roster = ROSTER.slice();
-  myPicks.forEach((p) =>
+  (curr.positionPicksByTeamId[ffTeamId] || []).forEach((p) =>
     roster.splice(
       roster.findIndex((r) => r.includes(p)),
       1
