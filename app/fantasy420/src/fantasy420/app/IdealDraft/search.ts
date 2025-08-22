@@ -65,6 +65,7 @@ function generate(
           },
         ]);
       }
+      if (curr.draftedIds[best.playerId]) throw new Error();
       return drafts.slice(0, -1).concat([updateDraft(curr, best, ffTeamId)]);
     });
 }
@@ -171,9 +172,7 @@ async function getScore(
   start: number,
   chosen: string[]
 ): Promise<number> {
-  if (chosen.length > ROSTER.length) {
-    throw new Error();
-  }
+  if (chosen.length > ROSTER.length) throw new Error();
   let iterDraft = curr;
   while (true) {
     const best = await getBest(
@@ -185,10 +184,7 @@ async function getScore(
       chosen
     );
     if (!best) {
-      return curr.picksByTeamId[ffTeamId]!.map((p) => p.score).reduce(
-        (a, b) => a + b,
-        0
-      );
+      return scoreTeam(curr.picksByTeamId[ffTeamId]!);
     }
     iterDraft = updateDraft(
       iterDraft,
@@ -196,6 +192,10 @@ async function getScore(
       prev.draft[curr.draft.length]?.ffTeamId
     );
   }
+}
+
+function scoreTeam(picks: DraftPlayerType[]): number {
+  return picks.map((p) => p.score).reduce((a, b) => a + b, 0);
 }
 
 function getPositionToRankedDraftPlayers(wrapped: WrappedType): {
@@ -262,4 +262,4 @@ function getStart(
   }));
 }
 
-export { generate, getPositionToRankedDraftPlayers, getStart };
+export { generate, getPositionToRankedDraftPlayers, getStart, scoreTeam };
