@@ -27,42 +27,46 @@ export default function IdealDraft() {
       }))
     )
     .sort((a, b) => a.pickIndex - b.pickIndex)
-    .map(({ pickIndex, ...p }) => p);
-  const positionToRankedIds = Object.fromEntries(
+    .map(({ pickIndex, ...p }) => p) as DraftPlayerType[];
+  const positionToRankedDraftPlayers = Object.fromEntries(
     Object.entries(
       groupByF(Object.values(wrapped.nflPlayers), (p) => p.position)
     ).map(([position, players]) => [
       position,
-      players.sort((a, b) => b.total - a.total).map(({ id }) => parseInt(id)),
+      players
+        .sort((a, b) => b.total - a.total)
+        .map((p) => ({
+          score: p.total,
+          position: p.position,
+          playerId: parseInt(p.id),
+          ffTeamId: "",
+        })),
     ])
   );
   const playerIdToPositionSeasonRank = Object.fromEntries(
-    Object.values(positionToRankedIds).flatMap((playerIds) =>
-      playerIds.map((playerId, i) => [playerId, i])
+    Object.values(positionToRankedDraftPlayers).flatMap((ps) =>
+      ps.map((p, i) => [p.playerId, i])
     )
   );
-  const poppablePositionToRankedIds = Object.fromEntries(
-    Object.entries(positionToRankedIds).map(([k, v]) => [k, v.slice()])
+  const poppable = Object.fromEntries(
+    Object.entries(positionToRankedDraftPlayers).map(([k, v]) => [k, v.slice()])
   );
   const sortedDraft = initialDraft
     .slice(0, ROSTER.length * Object.entries(wrapped.ffTeams).length)
-    .map((p) => ({
-      ...p,
-      playerId: poppablePositionToRankedIds[p.position].shift()!,
-    }));
+    .map((p) => poppable[p.position].shift()!) as DraftPlayerType[];
   const [drafts, updateDrafts] = useState(
     [initialDraft, sortedDraft, []].map((draft) => ({
       draft,
       draftedIds: {},
-      positionPicksByTeamId: {},
+      picksByTeamId: {},
       positionToCount: {},
     }))
   );
   useEffect(() => {
     Promise.resolve()
-      .then(() => generate(drafts, positionToRankedIds))
+      .then(() => generate(drafts, positionToRankedDraftPlayers))
       .then((nextDrafts) => nextDrafts && updateDrafts(nextDrafts));
-  }, [drafts, positionToRankedIds, wrapped.ffTeams]);
+  }, [drafts, positionToRankedDraftPlayers, wrapped.ffTeams]);
   return (
     <div>
       <div style={{ display: "flex", alignItems: "baseline" }}>
@@ -116,15 +120,15 @@ type DraftType = {
 
 function generate(
   drafts: DraftType[],
-  positionToRankedIds: {
-    [k: string]: number[];
+  positionToRankedDraftPlayers: {
+    [k: string]: DraftPlayerType[];
   }
 ): DraftType[] | null {
   clog({ drafts, now: Date.now() });
   const curr = drafts[drafts.length - 1];
   const prev = drafts[drafts.length - 2];
   const ffTeamId = prev.draft[curr.draft.length]?.ffTeamId;
-  const best = getBest(curr, prev, positionToRankedIds, ffTeamId, 0);
+  const best = getBest(curr, prev, positionToRankedDraftPlayers, ffTeamId, 0);
   if (!best) {
     if (JSON.stringify(curr) === JSON.stringify(prev)) {
       console.log("stabilized");
@@ -175,8 +179,8 @@ function updateDraft(
 function getBest(
   curr: DraftType,
   prev: DraftType,
-  positionToRankedIds: {
-    [k: string]: number[];
+  positionToRankedDraftPlayers: {
+    [k: string]: DraftPlayerType[];
   },
   ffTeamId: string,
   depth: number
@@ -191,17 +195,17 @@ function getBest(
       hasSpace(position, curr.picksByTeamId[ffTeamId] || [])
     )
     .map((position) => ({
-      position,
+      ...positionToRankedDraftPlayers[position][
+        curr.positionToCount[position] || 0
+      ],
       ffTeamId,
-      playerId:
-        positionToRankedIds[position][curr.positionToCount[position] || 0],
     }))
     .map((player) => ({
       player,
       score: getScore(
         updateDraft(curr, player, ffTeamId),
         prev,
-        positionToRankedIds,
+        positionToRankedDraftPlayers,
         ffTeamId,
         depth
       ),
@@ -214,7 +218,7 @@ function hasSpace(position: string, myPicks: DraftPlayerType[]): boolean {
   const roster = ROSTER.slice();
   myPicks.forEach((p) =>
     roster.splice(
-      roster.findIndex((r) => r.includes(p)),
+      roster.findIndex((r) => r.includes(p.position)),
       1
     )
   );
@@ -224,8 +228,8 @@ function hasSpace(position: string, myPicks: DraftPlayerType[]): boolean {
 function getScore(
   curr: DraftType,
   prev: DraftType,
-  positionToRankedIds: {
-    [k: string]: number[];
+  positionToRankedDraftPlayers: {
+    [k: string]: DraftPlayerType[];
   },
   ffTeamId: string,
   depth: number
@@ -235,12 +239,15 @@ function getScore(
     const best = getBest(
       iterDraft,
       prev,
-      positionToRankedIds,
+      positionToRankedDraftPlayers,
       ffTeamId,
       depth + 1
     );
     if (!best) {
-      return Math.random();
+      return curr.picksByTeamId[ffTeamId]!.map((p) => p.score).reduce(
+        (a, b) => a + b,
+        0
+      );
     }
     iterDraft = updateDraft(
       iterDraft,
