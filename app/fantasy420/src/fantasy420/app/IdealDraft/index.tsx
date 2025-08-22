@@ -2,6 +2,17 @@ import { useEffect, useState } from "react";
 import { bubbleStyle, groupByF, selectedWrapped } from "../Wrapped";
 
 const MAX_GENERATIONS = 4;
+const ROSTER = [
+  ["QB"],
+  ["RB"],
+  ["RB"],
+  ["WR"],
+  ["WR"],
+  ["TE"],
+  ["QB", "RB", "WR", "TE"],
+  ["RB", "WR", "TE"],
+  ["RB", "WR", "TE"],
+];
 
 export default function IdealDraft() {
   const wrapped = selectedWrapped();
@@ -27,22 +38,41 @@ export default function IdealDraft() {
       playerIds.map((playerId, i) => [playerId, i])
     )
   );
-  const [drafts, updateDrafts] = useState([
-    rawInitialDraft.map((p) => ({
-      name: wrapped.nflPlayers[p.playerId].name,
-      season: `${wrapped.nflPlayers[p.playerId].position}${
-        playerIdToPositionSeasonRank[p.playerId] + 1
-      }`,
-      points: wrapped.nflPlayers[p.playerId].total,
-      ...p,
-    })) as DraftType,
-    [],
-  ]);
+  const playerIdToDraftPlayerType = (playerId: number) => ({
+    name: wrapped.nflPlayers[playerId].name,
+    position: wrapped.nflPlayers[playerId].position,
+    rank: playerIdToPositionSeasonRank[playerId] + 1,
+    points: wrapped.nflPlayers[playerId].total,
+  });
+  const initialDraft = rawInitialDraft.map((p) => ({
+    ...playerIdToDraftPlayerType(p.playerId),
+    ...p,
+  })) as DraftType;
+  const poppablePositionToRankedIds = Object.fromEntries(
+    Object.entries(positionToRankedIds).map(([k, v]) => [k, v.slice()])
+  );
+  const sortedDraft = initialDraft.map((p) => ({
+    ...p,
+    ...playerIdToDraftPlayerType(
+      parseInt(
+        poppablePositionToRankedIds[
+          wrapped.nflPlayers[p.playerId].position
+        ].shift()!
+      )
+    ),
+  }));
+  const [drafts, updateDrafts] = useState([initialDraft, sortedDraft, []]);
   useEffect(() => {
     Promise.resolve()
-      .then(() => generate(drafts, positionToRankedIds))
+      .then(() =>
+        generate(
+          drafts,
+          positionToRankedIds,
+          Object.values(wrapped.ffTeams).length
+        )
+      )
       .then((nextDrafts) => nextDrafts && updateDrafts(nextDrafts));
-  }, [drafts, positionToRankedIds]);
+  }, [drafts, positionToRankedIds, wrapped.ffTeams]);
   return (
     <div>
       <div style={{ display: "flex", alignItems: "baseline" }}>
@@ -61,7 +91,8 @@ export default function IdealDraft() {
 
 type DraftPlayerType = {
   name: string;
-  season: string;
+  position: string;
+  rank: number;
   points: number;
   teamId: string;
   pickIndex: number;
@@ -71,49 +102,76 @@ type DraftType = DraftPlayerType[];
 
 function generate(
   drafts: DraftType[],
-  positionToRankedIds: { [position: string]: string[] }
+  positionToRankedIds: { [position: string]: string[] },
+  numTeams: number
 ): DraftType[] | null {
   console.log({ drafts, now: Date.now() });
-  if (drafts.length > MAX_GENERATIONS) {
-    console.log({ MAX_GENERATIONS });
-    return null;
-  }
   const curr = drafts[drafts.length - 1];
   const prev = drafts[drafts.length - 2];
-  const best = getBest(curr, prev, positionToRankedIds);
-  if (best.position === "") {
+  const myTeamId = prev[curr.length].teamId;
+  const best = getBest(curr, prev, positionToRankedIds, numTeams, myTeamId);
+  if (!best) {
     if (JSON.stringify(curr) === JSON.stringify(prev)) {
       console.log("stabilized");
       return null;
     }
-    console.log("new generation", drafts.length);
+    if (drafts.length === MAX_GENERATIONS) {
+      console.log({ MAX_GENERATIONS });
+      return null;
+    }
+    console.log("generation", drafts.length);
     return drafts.concat([[]]);
   }
-  return drafts.slice(0, -1).concat([curr.concat([best.result.player])]);
+  return drafts.slice(0, -1).concat([
+    curr.concat([
+      {
+        ...best.player,
+        teamId: prev[curr.length].teamId,
+        pickIndex: curr.length,
+      },
+    ]),
+  ]);
 }
 
 function getBest(
   curr: DraftType,
   prev: DraftType,
-  positionToRankedIds: { [position: string]: string[] }
-): {
-  position: string;
-  result: { score: number; player: DraftPlayerType };
-} {
-  return ["", "QB", "RB", "WR", "TE"]
+  positionToRankedIds: { [position: string]: string[] },
+  numTeams: number,
+  myTeamId: string
+): { score: number; player: DraftPlayerType } | undefined {
+  if (curr.length === ROSTER.length * numTeams) return undefined;
+  const draftedIds = Object.fromEntries(curr.map((p) => [p.playerId, p]));
+  const thisTeamId = prev[curr.length].teamId;
+  if (thisTeamId !== myTeamId) {
+    return ((player) => ({ score: 0, player }))(
+      prev.find((p) => !draftedIds[p.playerId])!
+    );
+  }
+  const myPicks = curr
+    .filter((p) => p.teamId === myTeamId)
+    .map((p) => selectedWrapped().nflPlayers[p.playerId].position);
+  return ["QB", "RB", "WR", "TE"]
     .map((position) => ({
       position,
-      result: {
-        score: curr.length > 5 ? 0 : position === "" ? 0 : 1,
-        player: {
-          name: "",
-          season: "",
-          points: 0,
-          teamId: "",
-          pickIndex: 0,
-          playerId: 0,
-        },
-      },
+      player: prev.find(
+        (p) => !draftedIds[p.playerId] && p.position === position
+      )!,
     }))
-    .sort((a, b) => b.result.score - a.result.score)[0];
+    .filter(({ player }) => player)
+    .map((p) => ({ ...p, score: getScore(p.position, myPicks), myPicks }))
+    .filter(({ score }) => score !== 0)
+    .sort((a, b) => b.score - a.score)[0];
+}
+
+function getScore(position: string, myPicks: string[]): number {
+  const roster = ROSTER.slice();
+  myPicks.forEach((p) =>
+    roster.splice(
+      roster.findIndex((r) => r.includes(p)),
+      1
+    )
+  );
+  if (roster.find((r) => r.includes(position)) === undefined) return 0;
+  return Math.random();
 }
