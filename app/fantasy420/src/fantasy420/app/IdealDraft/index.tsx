@@ -15,8 +15,6 @@ const ROSTER = [
   ["QB", "RB", "WR", "TE"],
 ];
 
-const start = Date.now();
-
 export default function IdealDraft() {
   const wrapped = selectedWrapped();
   const initialDraft = Object.values(wrapped.ffTeams)
@@ -105,13 +103,14 @@ type DraftPlayerType = {
   position: string;
   ffTeamId: string;
   playerId: number;
+  score: number;
 };
 type DraftType = {
   draft: DraftPlayerType[];
   draftedIds: {
     [k: string]: number;
   };
-  positionPicksByTeamId: { [k: string]: string[] | undefined };
+  picksByTeamId: { [k: string]: DraftPlayerType[] | undefined };
   positionToCount: { [k: string]: number | undefined };
 };
 
@@ -140,7 +139,7 @@ function generate(
       {
         draft: [],
         draftedIds: {},
-        positionPicksByTeamId: {},
+        picksByTeamId: {},
         positionToCount: {},
       },
     ]);
@@ -156,14 +155,12 @@ function updateDraft(
   return {
     draft: curr.draft.concat([best]),
     draftedIds: Object.assign({}, { [best.playerId]: best }, curr.draftedIds),
-    positionPicksByTeamId: Object.assign(
+    picksByTeamId: Object.assign(
       {},
       {
-        [ffTeamId]: (curr.positionPicksByTeamId[ffTeamId] || []).concat(
-          best.position
-        ),
+        [ffTeamId]: (curr.picksByTeamId[ffTeamId] || []).concat(best),
       },
-      curr.positionPicksByTeamId
+      curr.picksByTeamId
     ),
     positionToCount: Object.assign(
       {},
@@ -185,15 +182,13 @@ function getBest(
   depth: number
 ): DraftPlayerType | undefined {
   const draftTeamId = prev.draft[curr.draft.length]?.ffTeamId;
-  console.log({ depth, draftTeamId, ffTeamId, curr });
   if (draftTeamId === undefined) return undefined;
   if (draftTeamId !== ffTeamId) {
     return prev.draft.find((p) => !curr.draftedIds[p.playerId])!;
   }
-  console.log({ curr, ffTeamId });
   return ["QB", "RB", "WR", "TE"]
     .filter((position) =>
-      hasSpace(position, curr.positionPicksByTeamId[ffTeamId] || [])
+      hasSpace(position, curr.picksByTeamId[ffTeamId] || [])
     )
     .map((position) => ({
       position,
@@ -215,7 +210,7 @@ function getBest(
     .sort((a, b) => b.score - a.score)[0].player;
 }
 
-function hasSpace(position: string, myPicks: string[]): boolean {
+function hasSpace(position: string, myPicks: DraftPlayerType[]): boolean {
   const roster = ROSTER.slice();
   myPicks.forEach((p) =>
     roster.splice(
