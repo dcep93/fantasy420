@@ -25,7 +25,7 @@ export default function IdealDraft() {
           ))}
         </select>
       </div>
-      <SubIdealDraft yearKey={yearKey} />
+      <SubIdealDraft key={yearKey} yearKey={yearKey} />
     </div>
   );
 }
