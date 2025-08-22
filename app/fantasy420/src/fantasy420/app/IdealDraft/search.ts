@@ -1,6 +1,8 @@
-import { clog } from "../Wrapped";
+import { WrappedType } from "../FetchWrapped";
+import { groupByF } from "../Wrapped";
 
 const MAX_GENERATIONS = 5;
+const A_CODE = 65;
 
 export type DraftPlayerType = {
   position: string;
@@ -24,9 +26,9 @@ export const ROSTER = [
   ["WR"],
   ["WR"],
   ["TE"],
-  ["RB", "WR", "TE"],
-  ["RB", "WR", "TE"],
-  ["QB", "RB", "WR", "TE"],
+  //   ["RB", "WR", "TE"],
+  //   ["RB", "WR", "TE"],
+  //   ["QB", "RB", "WR", "TE"],
 ];
 
 function generate(
@@ -35,7 +37,6 @@ function generate(
     [k: string]: DraftPlayerType[];
   }
 ): DraftType[] | null {
-  clog({ drafts, now: Date.now() });
   const curr = drafts[drafts.length - 1];
   const prev = drafts[drafts.length - 2];
   const start = curr.draft.length;
@@ -181,4 +182,68 @@ function getScore(
   }
 }
 
-export { generate };
+function getPositionToRankedDraftPlayers(wrapped: WrappedType): {
+  [k: string]: {
+    score: number;
+    position: string;
+    playerId: number;
+    ffTeamId: string;
+  }[];
+} {
+  return Object.fromEntries(
+    Object.entries(
+      groupByF(Object.values(wrapped.nflPlayers), (p) => p.position)
+    ).map(([position, players]) => [
+      position,
+      players
+        .sort((a, b) => b.total - a.total)
+        .map((p) => ({
+          score: p.total,
+          position: p.position,
+          playerId: parseInt(p.id),
+          ffTeamId: "",
+        })),
+    ])
+  );
+}
+
+function getStart(
+  wrapped: WrappedType,
+  positionToRankedDraftPlayers: {
+    [k: string]: {
+      score: number;
+      position: string;
+      playerId: number;
+      ffTeamId: string;
+    }[];
+  }
+): DraftType[] {
+  const initialDraft = Object.values(wrapped.ffTeams)
+    .sort((a, b) => a.draft[0].pickIndex - b.draft[0].pickIndex)
+    .flatMap((t, i) =>
+      t.draft
+        .map((o) => ({ o, p: wrapped.nflPlayers[o.playerId] }))
+        .map(({ o, p }) => ({
+          ...o,
+          score: p.total,
+          ffTeamId: String.fromCharCode(A_CODE + i),
+          position: p.position,
+        }))
+    )
+    .sort((a, b) => a.pickIndex - b.pickIndex)
+    .map(({ pickIndex, ...p }) => p);
+  const poppable = Object.fromEntries(
+    Object.entries(positionToRankedDraftPlayers).map(([k, v]) => [k, v.slice()])
+  );
+  const sortedDraft = initialDraft
+    .slice(0, ROSTER.length * Object.entries(wrapped.ffTeams).length)
+    .map((p) => poppable[p.position].shift()!);
+  return [initialDraft, sortedDraft, []].map((draft) => ({
+    draft,
+    draftedIds: {},
+    picksByTeamId: {},
+    positionToCount: {},
+  }));
+}
+
+export { generate, getPositionToRankedDraftPlayers, getStart };
