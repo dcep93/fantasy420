@@ -38,6 +38,7 @@ function generate(
     [k: string]: DraftPlayerType[];
   }
 ): Promise<DraftType[] | null> {
+  console.log(drafts.map((d) => d.draft.length));
   const curr = drafts[drafts.length - 1];
   const prev = drafts[drafts.length - 2];
   const start = curr.draft.length;
