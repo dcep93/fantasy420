@@ -49,11 +49,11 @@ function generate(
     .then((best) => {
       if (!best) {
         if (JSON.stringify(curr) === JSON.stringify(prev)) {
-          alert("stabilized");
+          clog("stabilized");
           return null;
         }
         if (drafts.length === MAX_GENERATIONS) {
-          alert("MAX_GENERATIONS");
+          clog({ MAX_GENERATIONS });
           return null;
         }
         clog(`generation ${drafts.length}`);
@@ -94,18 +94,12 @@ function getBest(
 ): Promise<DraftPlayerType | undefined> {
   return Promise.resolve().then(() => {
     const draftTeamId = prev.draft[curr.draft.length]?.ffTeamId;
-    // console.log({
-    //   start,
-    //   size: curr.draft.length,
-    //   draftTeamId,
-    //   ffTeamId,
-    // });
     if (draftTeamId === undefined) return undefined;
     if (draftTeamId !== ffTeamId) {
       return {
         ...prev.draft.find((p) => !curr.draftedIds[p.playerId])!,
         ffTeamId: draftTeamId,
-        start: start + 10000,
+        start,
       };
     }
     return Promise.resolve()
@@ -121,7 +115,7 @@ function getBest(
               curr.positionToCount[position] || 0
             ],
             ffTeamId,
-            start: start + 200000,
+            start,
           }))
           .map((player) =>
             getScore(
