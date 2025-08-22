@@ -65,7 +65,7 @@ function generate(
           },
         ]);
       }
-      if (curr.draftedIds[best.playerId]) throw new Error();
+      // if (curr.draftedIds[best.playerId]) throw new Error();
       return drafts.slice(0, -1).concat([updateDraft(curr, best, ffTeamId)]);
     });
 }

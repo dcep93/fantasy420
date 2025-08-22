@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { bubbleStyle, groupByF, selectedWrapped } from "../Wrapped";
+import { bubbleStyle, groupByF, selectedYear } from "../Wrapped";
+import allWrapped from "../Wrapped/allWrapped";
 import {
   generate,
   getPositionToRankedDraftPlayers,
@@ -8,7 +9,29 @@ import {
 } from "./search";
 
 export default function IdealDraft() {
-  const wrapped = selectedWrapped();
+  const [yearKey, updateYear] = useState(selectedYear);
+  return (
+    <div>
+      <div>
+        year:{" "}
+        <select
+          onChange={(e) => updateYear(e.target.value)}
+          defaultValue={yearKey}
+        >
+          {Object.keys(allWrapped).map((y) => (
+            <option key={y} value={y}>
+              {y}
+            </option>
+          ))}
+        </select>
+      </div>
+      <SubIdealDraft yearKey={yearKey} />
+    </div>
+  );
+}
+
+function SubIdealDraft(props: { yearKey: string }) {
+  const wrapped = allWrapped[props.yearKey];
   const positionToRankedDraftPlayers = getPositionToRankedDraftPlayers(wrapped);
   const [drafts, updateDrafts] = useState(
     getStart(wrapped, positionToRankedDraftPlayers)
