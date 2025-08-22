@@ -36,39 +36,37 @@ function generate(
   positionToRankedDraftPlayers: {
     [k: string]: DraftPlayerType[];
   }
-): DraftType[] | null {
+): Promise<DraftType[] | null> {
   const curr = drafts[drafts.length - 1];
   const prev = drafts[drafts.length - 2];
   const start = curr.draft.length;
   const ffTeamId = prev.draft[start]?.ffTeamId;
-  const best = getBest(
-    curr,
-    prev,
-    positionToRankedDraftPlayers,
-    ffTeamId,
-    start,
-    0
-  );
-  if (!best) {
-    if (JSON.stringify(curr) === JSON.stringify(prev)) {
-      console.log("stabilized");
-      return null;
-    }
-    if (drafts.length === MAX_GENERATIONS) {
-      console.log({ MAX_GENERATIONS });
-      return null;
-    }
-    console.log("generation", drafts.length);
-    return drafts.concat([
-      {
-        draft: [],
-        draftedIds: {},
-        picksByTeamId: {},
-        positionToCount: {},
-      },
-    ]);
-  }
-  return drafts.slice(0, -1).concat([updateDraft(curr, best, ffTeamId)]);
+  return Promise.resolve()
+    .then(() =>
+      getBest(curr, prev, positionToRankedDraftPlayers, ffTeamId, start, [])
+    )
+    .then((best) => {
+      if (!best) {
+        if (JSON.stringify(curr) === JSON.stringify(prev)) {
+          console.log("stabilized");
+          return null;
+        }
+        if (drafts.length === MAX_GENERATIONS) {
+          console.log({ MAX_GENERATIONS });
+          return null;
+        }
+        console.log("generation", drafts.length);
+        return drafts.concat([
+          {
+            draft: [],
+            draftedIds: {},
+            picksByTeamId: {},
+            positionToCount: {},
+          },
+        ]);
+      }
+      return drafts.slice(0, -1).concat([updateDraft(curr, best, ffTeamId)]);
+    });
 }
 
 function updateDraft(
@@ -104,37 +102,52 @@ function getBest(
   },
   ffTeamId: string,
   start: number,
-  depth: number
-): DraftPlayerType | undefined {
-  const draftTeamId = prev.draft[curr.draft.length]?.ffTeamId;
-  console.log({ depth, start, size: curr.draft.length, draftTeamId, ffTeamId });
-  if (draftTeamId === undefined) return undefined;
-  if (draftTeamId !== ffTeamId) {
-    return prev.draft.find((p) => !curr.draftedIds[p.playerId])!;
-  }
-  return ["QB", "RB", "WR", "TE"]
-    .filter((position) =>
-      hasSpace(position, curr.picksByTeamId[ffTeamId] || [])
-    )
-    .map((position) => ({
-      ...positionToRankedDraftPlayers[position][
-        curr.positionToCount[position] || 0
-      ],
+  chosen: string[]
+): Promise<DraftPlayerType | undefined> {
+  return Promise.resolve().then(() => {
+    const draftTeamId = prev.draft[curr.draft.length]?.ffTeamId;
+    console.log({
+      chosen,
+      start,
+      size: curr.draft.length,
+      draftTeamId,
       ffTeamId,
-    }))
-    .map((player) => ({
-      player,
-      score: getScore(
-        updateDraft(curr, player, ffTeamId),
-        prev,
-        positionToRankedDraftPlayers,
-        ffTeamId,
-        start,
-        depth
-      ),
-    }))
-    .filter(({ score }) => score !== 0)
-    .sort((a, b) => b.score - a.score)[0].player;
+    });
+    if (draftTeamId === undefined) return undefined;
+    if (draftTeamId !== ffTeamId) {
+      return prev.draft.find((p) => !curr.draftedIds[p.playerId])!;
+    }
+    return Promise.resolve()
+      .then(() =>
+        ["QB", "RB", "WR", "TE"]
+          .filter((position) =>
+            hasSpace(position, curr.picksByTeamId[ffTeamId] || [])
+          )
+          .map((position) => ({
+            ...positionToRankedDraftPlayers[position][
+              curr.positionToCount[position] || 0
+            ],
+            ffTeamId,
+          }))
+          .map((player) =>
+            getScore(
+              updateDraft(curr, player, ffTeamId),
+              prev,
+              positionToRankedDraftPlayers,
+              ffTeamId,
+              start,
+              chosen.concat(player.position)
+            ).then((score) => ({ score, player }))
+          )
+      )
+      .then((ps) => Promise.all(ps))
+      .then(
+        (os) =>
+          os
+            .filter(({ score }) => score !== 0)
+            .sort((a, b) => b.score - a.score)[0].player
+      );
+  });
 }
 
 function hasSpace(position: string, myPicks: DraftPlayerType[]): boolean {
@@ -148,7 +161,7 @@ function hasSpace(position: string, myPicks: DraftPlayerType[]): boolean {
   return roster.find((r) => r.includes(position)) !== undefined;
 }
 
-function getScore(
+async function getScore(
   curr: DraftType,
   prev: DraftType,
   positionToRankedDraftPlayers: {
@@ -156,17 +169,21 @@ function getScore(
   },
   ffTeamId: string,
   start: number,
-  depth: number
-): number {
+  chosen: string[]
+): Promise<number> {
+  console.log({ start, chosen, ffTeamId });
+  if (chosen.length > ROSTER.length) {
+    throw new Error();
+  }
   let iterDraft = curr;
   while (true) {
-    const best = getBest(
+    const best = await getBest(
       iterDraft,
       prev,
       positionToRankedDraftPlayers,
       ffTeamId,
       start,
-      depth + 1
+      chosen
     );
     if (!best) {
       return curr.picksByTeamId[ffTeamId]!.map((p) => p.score).reduce(
