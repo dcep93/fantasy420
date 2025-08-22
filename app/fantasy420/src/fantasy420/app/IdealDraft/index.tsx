@@ -10,9 +10,9 @@ const ROSTER = [
   ["WR"],
   ["WR"],
   ["TE"],
+  ["RB", "WR", "TE"],
+  ["RB", "WR", "TE"],
   ["QB", "RB", "WR", "TE"],
-  ["RB", "WR", "TE"],
-  ["RB", "WR", "TE"],
 ];
 
 export default function IdealDraft() {
@@ -175,12 +175,15 @@ function getBest(
   depth: number
 ): DraftPlayerType | undefined {
   const draftTeamId = prev.draft[curr.draft.length]?.ffTeamId;
-  console.log({ depth, draftTeamId, ffTeamId });
+  console.log({ depth, draftTeamId, ffTeamId, curr });
   if (draftTeamId === undefined) return undefined;
   if (draftTeamId !== ffTeamId) {
     return prev.draft.find((p) => !curr.draftedIds[p.playerId])!;
   }
   return ["QB", "RB", "WR", "TE"]
+    .filter((position) =>
+      hasSpace(position, curr.positionPicksByTeamId[ffTeamId] || [])
+    )
     .map((position) => ({
       position,
       ffTeamId,
@@ -190,8 +193,7 @@ function getBest(
     .map((player) => ({
       player,
       score: getScore(
-        player.position,
-        curr,
+        updateDraft(curr, player, ffTeamId),
         prev,
         positionToRankedIds,
         ffTeamId,
@@ -202,8 +204,18 @@ function getBest(
     .sort((a, b) => b.score - a.score)[0].player;
 }
 
+function hasSpace(position: string, myPicks: string[]): boolean {
+  const roster = ROSTER.slice();
+  myPicks.forEach((p) =>
+    roster.splice(
+      roster.findIndex((r) => r.includes(p)),
+      1
+    )
+  );
+  return roster.find((r) => r.includes(position)) !== undefined;
+}
+
 function getScore(
-  position: string,
   curr: DraftType,
   prev: DraftType,
   positionToRankedIds: {
@@ -212,14 +224,6 @@ function getScore(
   ffTeamId: string,
   depth: number
 ): number {
-  const roster = ROSTER.slice();
-  (curr.positionPicksByTeamId[ffTeamId] || []).forEach((p) =>
-    roster.splice(
-      roster.findIndex((r) => r.includes(p)),
-      1
-    )
-  );
-  if (roster.find((r) => r.includes(position)) === undefined) return 0;
   let iterDraft = curr;
   while (true) {
     const best = getBest(
