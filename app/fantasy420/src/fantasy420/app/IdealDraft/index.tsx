@@ -123,7 +123,7 @@ function generate(
   const curr = drafts[drafts.length - 1];
   const prev = drafts[drafts.length - 2];
   const ffTeamId = prev.draft[curr.draft.length]?.ffTeamId;
-  const best = getBest(curr, prev, positionToRankedIds, ffTeamId);
+  const best = getBest(curr, prev, positionToRankedIds, ffTeamId, 0);
   if (!best) {
     if (JSON.stringify(curr) === JSON.stringify(prev)) {
       console.log("stabilized");
@@ -143,7 +143,15 @@ function generate(
       },
     ]);
   }
-  const updatedDraft = {
+  return drafts.slice(0, -1).concat([updateDraft(curr, best, ffTeamId)]);
+}
+
+function updateDraft(
+  curr: DraftType,
+  best: DraftPlayerType,
+  ffTeamId: string
+): DraftType {
+  return {
     draft: curr.draft.concat([best]),
     draftedIds: Object.assign({}, curr.draftedIds, { [best.playerId]: best }),
     positionPicksByTeamId: Object.assign({}, curr.positionPicksByTeamId, {
@@ -155,7 +163,6 @@ function generate(
       [best.position]: curr.positionToCount[best.position] || 0 + 1,
     }),
   };
-  return drafts.slice(0, -1).concat([updatedDraft]);
 }
 
 function getBest(
@@ -164,9 +171,11 @@ function getBest(
   positionToRankedIds: {
     [k: string]: number[];
   },
-  ffTeamId: string
+  ffTeamId: string,
+  depth: number
 ): DraftPlayerType | undefined {
   const draftTeamId = prev.draft[curr.draft.length]?.ffTeamId;
+  console.log({ depth, draftTeamId, ffTeamId });
   if (draftTeamId === undefined) return undefined;
   if (draftTeamId !== ffTeamId) {
     return prev.draft.find((p) => !curr.draftedIds[p.playerId])!;
@@ -185,7 +194,8 @@ function getBest(
         curr,
         prev,
         positionToRankedIds,
-        ffTeamId
+        ffTeamId,
+        depth
       ),
     }))
     .filter(({ score }) => score !== 0)
@@ -199,7 +209,8 @@ function getScore(
   positionToRankedIds: {
     [k: string]: number[];
   },
-  ffTeamId: string
+  ffTeamId: string,
+  depth: number
 ): number {
   const roster = ROSTER.slice();
   (curr.positionPicksByTeamId[ffTeamId] || []).forEach((p) =>
@@ -209,5 +220,22 @@ function getScore(
     )
   );
   if (roster.find((r) => r.includes(position)) === undefined) return 0;
-  return Math.random();
+  let iterDraft = curr;
+  while (true) {
+    const best = getBest(
+      iterDraft,
+      prev,
+      positionToRankedIds,
+      ffTeamId,
+      depth + 1
+    );
+    if (!best) {
+      return Math.random();
+    }
+    iterDraft = updateDraft(
+      iterDraft,
+      best,
+      prev.draft[curr.draft.length]?.ffTeamId
+    );
+  }
 }
