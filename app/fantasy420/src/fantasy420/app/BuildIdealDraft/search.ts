@@ -1,14 +1,10 @@
 import { WrappedType } from "../FetchWrapped";
+import { clog, groupByF } from "../Wrapped";
 
 const MAX_GENERATIONS = 6;
 const A_CODE = 65;
 
 const startDateNow = Date.now();
-
-function clog<T>(t: T): T {
-  console.log(t);
-  return t;
-}
 
 export type DraftPlayerType = {
   position: string;
@@ -222,14 +218,6 @@ function scoreTeam(picks: DraftPlayerType[]): number {
 function getPositionToRankedDraftPlayers(wrapped: WrappedType): {
   [k: string]: DraftPlayerType[];
 } {
-  function groupByF<T>(ts: T[], f: (t: T) => string): { [key: string]: T[] } {
-    return ts.reduce((prev, curr) => {
-      const key = f(curr);
-      if (!prev[key]) prev[key] = [];
-      prev[key]!.push(curr);
-      return prev;
-    }, {} as { [key: string]: T[] });
-  }
   return Object.fromEntries(
     Object.entries(
       groupByF(Object.values(wrapped.nflPlayers), (p) => p.position)

@@ -1,5 +1,7 @@
 // npx ts-node ./exec.ts
 
+import { writeFile } from "fs/promises";
+import { clog } from "../Wrapped";
 import allWrapped from "../Wrapped/allWrapped";
 import {
   DraftPlayerType,
@@ -62,4 +64,7 @@ Promise.resolve()
   )
   .then((configs) => configs.map((config) => () => processCombination(config)))
   .then(runSequential)
-  .then(console.log);
+  .then(clog)
+  .then((toWrite) =>
+    writeFile("idealDraft.json", JSON.stringify(toWrite), "utf8")
+  );
