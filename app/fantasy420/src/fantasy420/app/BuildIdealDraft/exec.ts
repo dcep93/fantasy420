@@ -54,6 +54,7 @@ async function runSequential<T>(fns: (() => Promise<T>)[]): Promise<T[]> {
 }
 
 Promise.resolve()
+  .then(() => clog(Date.now()))
   .then(() => ({
     years: Object.keys(allWrapped),
     rosterEnums: Object.keys(RosterEnum)
