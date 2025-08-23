@@ -15,11 +15,11 @@ type ConfigType = { year: string; rosterEnum: RosterEnum };
 function processCombination(
   config: ConfigType
 ): Promise<{ config: ConfigType; draftPlayers: DraftPlayerType[][] }> {
+  console.log(config);
   function helper(drafts: DraftType[]): Promise<{
     config: ConfigType;
     draftPlayers: DraftPlayerType[][];
   }> {
-    console.log(config);
     return Promise.resolve()
       .then(() =>
         generate(drafts, positionToRankedDraftPlayers, config.rosterEnum)
