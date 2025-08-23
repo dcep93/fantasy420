@@ -2,7 +2,7 @@ import { WrappedType } from "../FetchWrapped";
 import { clog, groupByF } from "../Wrapped";
 
 const MAX_GENERATIONS = 6;
-const MAX_DEPTH = 3;
+export const MAX_DEPTH = 5;
 const A_CODE = 65;
 
 const startDateNow = Date.now();
