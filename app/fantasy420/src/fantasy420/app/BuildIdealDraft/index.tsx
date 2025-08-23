@@ -12,7 +12,9 @@ import {
 
 export default function BuildIdealDraft() {
   const [yearKey, updateYear] = useState(selectedYear);
-  const [rosterEnum, updateRosterEnum] = useState(RosterEnum[RosterEnum.flex]);
+  const [rosterEnum, updateRosterEnum] = useState(
+    RosterEnum[RosterEnum.doubleflex]
+  );
   return (
     <div>
       <div>

@@ -13,7 +13,9 @@ import allWrapped from "../Wrapped/allWrapped";
 
 export default function IdealDraft() {
   const [yearKey, updateYear] = useState(selectedYear);
-  const [rosterEnum, updateRosterEnum] = useState(RosterEnum[RosterEnum.flex]);
+  const [rosterEnum, updateRosterEnum] = useState(
+    RosterEnum[RosterEnum.doubleflex]
+  );
   console.log({ yearKey, rosterEnum });
   const wrapped = allWrapped[yearKey];
   const draftedPlayers = idealDraftJson.find(
