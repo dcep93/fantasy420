@@ -19,6 +19,7 @@ function processCombination(
     config: ConfigType;
     draftPlayers: DraftPlayerType[][];
   }> {
+    console.log(config);
     return Promise.resolve()
       .then(() =>
         generate(drafts, positionToRankedDraftPlayers, config.rosterEnum)
