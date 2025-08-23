@@ -38,8 +38,23 @@ function processCombination(
     .then(helper);
 }
 
+async function runSequential<T>(fns: (() => Promise<T>)[]): Promise<T[]> {
+  const results: T[] = [];
+  for (const fn of fns) {
+    const res = await fn();
+    results.push(res);
+  }
+  return results;
+}
+
 Promise.resolve()
-  .then(() =>
-    processCombination({ year: "2024", rosterEnum: RosterEnum.megaflex })
-  )
+  .then(() => ({
+    years: Object.keys(allWrapped).filter((year) => year === "2025"),
+    rosterEnums: Object.keys(RosterEnum).filter(
+      (rosterEnum) => !isNaN(parseInt(rosterEnum))
+    ),
+  }))
+  //   .then(() =>
+  //     processCombination({ year: "2024", rosterEnum: RosterEnum.megaflex })
+  //   )
   .then(console.log);
