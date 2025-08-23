@@ -7,7 +7,7 @@ import {
   RosterEnum,
   scoreTeam,
 } from "../BuildIdealDraft/search";
-import { bubbleStyle } from "../Draft";
+import { bubbleStyle, POSITION_COLORS } from "../Draft";
 import { WrappedType } from "../FetchWrapped";
 import { groupByF, selectedYear } from "../Wrapped";
 import allWrapped from "../Wrapped/allWrapped";
@@ -176,10 +176,11 @@ export function SubIdealDraft(props: {
                           <td>{ffTeamId} -</td>
                           <td>
                             QB@
-                            {d.findIndex(
-                              (p) =>
-                                p.position === "QB" && p.ffTeamId === ffTeamId
-                            ) + 1}
+                            {d
+                              .map((p, i) => ({ p, i }))
+                              .filter(({ p }) => p.position === "QB")
+                              .map(({ i }) => i + 1)
+                              .join(",")}
                           </td>
                           <td>- {score.toFixed(2)}</td>
                         </tr>
@@ -195,7 +196,12 @@ export function SubIdealDraft(props: {
                   }))
                   .map((o, j) => (
                     <div key={j}>
-                      <div style={bubbleStyle}>
+                      <div
+                        style={{
+                          ...bubbleStyle,
+                          backgroundColor: POSITION_COLORS[o.wp.position],
+                        }}
+                      >
                         <div>
                           #{j + 1} {o.wp.name}
                         </div>

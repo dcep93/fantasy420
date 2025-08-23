@@ -19,6 +19,15 @@ export const bubbleStyle = {
   margin: "0.5em",
 };
 
+export const POSITION_COLORS = {
+  RB: "lightblue",
+  WR: "lightseagreen",
+  TE: "lightcoral",
+  QB: "plum",
+  K: "tan",
+  "D/ST": "lightsalmon",
+} as { [k: string]: string };
+
 function getNormalizedNameToId(wrapped: WrappedType): {
   [name: string]: string;
 } {
@@ -408,14 +417,7 @@ function SubDraft(props: {
                         key={i}
                         style={{
                           padding: "0 0.5em",
-                          backgroundColor: {
-                            RB: "lightblue",
-                            WR: "lightseagreen",
-                            TE: "lightcoral",
-                            QB: "plum",
-                            K: "tan",
-                            "D/ST": "lightsalmon",
-                          }[v.player.position],
+                          backgroundColor: POSITION_COLORS[v.player.position],
                         }}
                       >
                         {t.value}
