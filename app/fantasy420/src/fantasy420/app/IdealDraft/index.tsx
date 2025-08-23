@@ -50,7 +50,7 @@ export default function IdealDraft() {
           rosterEnum:{" "}
           <select
             onChange={(e) => updateRosterEnum(e.target.value)}
-            defaultValue={yearKey}
+            defaultValue={rosterEnum}
           >
             {Array.from(new Set(idealDraftJson.map((d) => d.config.rosterEnum)))
               .map((k) => RosterEnum[k])
