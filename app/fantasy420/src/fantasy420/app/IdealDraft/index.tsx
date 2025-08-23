@@ -178,7 +178,10 @@ export function SubIdealDraft(props: {
                             QB@
                             {d
                               .map((p, i) => ({ p, i }))
-                              .filter(({ p }) => p.position === "QB")
+                              .filter(
+                                ({ p }) =>
+                                  p.ffTeamId === ffTeamId && p.position === "QB"
+                              )
                               .map(({ i }) => i + 1)
                               .join(",")}
                           </td>
