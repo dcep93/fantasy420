@@ -38,4 +38,8 @@ function processCombination(
     .then(helper);
 }
 
-console.log(generate, Object.keys(allWrapped));
+Promise.resolve()
+  .then(() =>
+    processCombination({ year: "2024", rosterEnum: RosterEnum.megaflex })
+  )
+  .then(console.log);
