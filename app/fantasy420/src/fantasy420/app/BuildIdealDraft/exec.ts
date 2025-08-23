@@ -50,11 +50,15 @@ async function runSequential<T>(fns: (() => Promise<T>)[]): Promise<T[]> {
 Promise.resolve()
   .then(() => ({
     years: Object.keys(allWrapped).filter((year) => year === "2025"),
-    rosterEnums: Object.keys(RosterEnum).filter(
-      (rosterEnum) => !isNaN(parseInt(rosterEnum))
-    ),
+    rosterEnums: Object.keys(RosterEnum)
+      .map((rosterEnum) => parseInt(rosterEnum))
+      .filter((rosterEnum) => !isNaN(rosterEnum)),
   }))
-  //   .then(() =>
-  //     processCombination({ year: "2024", rosterEnum: RosterEnum.megaflex })
-  //   )
+  .then(({ years, rosterEnums }) =>
+    years.flatMap((year) =>
+      rosterEnums.map((rosterEnum) => ({ year, rosterEnum }))
+    )
+  )
+  .then((configs) => configs.map((config) => () => processCombination(config)))
+  .then(runSequential)
   .then(console.log);
