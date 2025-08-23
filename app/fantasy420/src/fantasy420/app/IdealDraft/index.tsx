@@ -154,25 +154,39 @@ export function SubIdealDraft(props: {
               <h1>
                 generation {i} ({d.length})
               </h1>
-              <div>
-                {Object.entries(groupByF(d, (p) => p.ffTeamId))
-                  .map(([ffTeamId, ps]) => ({
-                    ffTeamId,
-                    score: scoreTeam(ps),
-                    ps,
-                  }))
-                  .sort((a, b) => b.score - a.score)
-                  .map(({ ffTeamId, score, ps }) => (
-                    <div
-                      key={ffTeamId}
-                      title={ps
-                        .map((p) => props.wrapped.nflPlayers[p.playerId].name)
-                        .join("\n")}
-                    >
-                      {ffTeamId}={score.toFixed(2)}
-                    </div>
-                  ))}
-              </div>
+              <pre>
+                <table>
+                  <tbody>
+                    {Object.entries(groupByF(d, (p) => p.ffTeamId))
+                      .map(([ffTeamId, ps]) => ({
+                        ffTeamId,
+                        score: scoreTeam(ps),
+                        ps,
+                      }))
+                      .sort((a, b) => b.score - a.score)
+                      .map(({ ffTeamId, score, ps }) => (
+                        <tr
+                          key={ffTeamId}
+                          title={ps
+                            .map(
+                              (p) => props.wrapped.nflPlayers[p.playerId].name
+                            )
+                            .join("\n")}
+                        >
+                          <td>{ffTeamId} -</td>
+                          <td>
+                            QB@
+                            {d.findIndex(
+                              (p) =>
+                                p.position === "QB" && p.ffTeamId === ffTeamId
+                            ) + 1}
+                          </td>
+                          <td>- {score.toFixed(2)}</td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+              </pre>
               <pre>
                 {d
                   .map((p) => ({
