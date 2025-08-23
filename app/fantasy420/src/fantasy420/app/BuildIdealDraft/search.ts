@@ -1,8 +1,12 @@
 import { WrappedType } from "../FetchWrapped";
-import { clog, groupByF } from "../Wrapped";
 
 const MAX_GENERATIONS = 6;
 const A_CODE = 65;
+
+function clog<T>(t: T): T {
+  console.log(t);
+  return t;
+}
 
 export type DraftPlayerType = {
   position: string;
@@ -20,23 +24,42 @@ export type DraftType = {
   positionToCount: { [k: string]: number | undefined };
 };
 
-export const ROSTER = [
-  ["QB"],
-  ["RB"],
-  ["RB"],
-  ["WR"],
-  ["WR"],
-  ["TE"],
-  ["RB", "WR", "TE"],
-  ["RB", "WR", "TE"],
-  ["QB", "RB", "WR", "TE"],
-];
+export enum RosterEnum {
+  flex,
+  megaflex,
+}
+
+const allRosters = {
+  [RosterEnum.flex]: [
+    ["QB"],
+    ["RB"],
+    ["RB"],
+    ["WR"],
+    ["WR"],
+    ["TE"],
+    ["RB", "WR", "TE"],
+    ["RB", "WR", "TE"],
+    ["QB", "RB", "WR", "TE"],
+  ],
+  [RosterEnum.megaflex]: [
+    ["QB"],
+    ["RB"],
+    ["RB"],
+    ["WR"],
+    ["WR"],
+    ["TE"],
+    ["RB", "WR", "TE"],
+    ["RB", "WR", "TE"],
+    ["QB", "RB", "WR", "TE"],
+  ],
+};
 
 function generate(
   drafts: DraftType[],
   positionToRankedDraftPlayers: {
     [k: string]: DraftPlayerType[];
-  }
+  },
+  rosterEnum: RosterEnum
 ): Promise<DraftType[] | null> {
   console.log(drafts.map((d) => d.draft.length));
   const curr = drafts[drafts.length - 1];
@@ -45,7 +68,14 @@ function generate(
   const ffTeamId = prev.draft[start]?.ffTeamId;
   return Promise.resolve()
     .then(() =>
-      getBest(curr, prev, positionToRankedDraftPlayers, ffTeamId, start)
+      getBest(
+        curr,
+        prev,
+        positionToRankedDraftPlayers,
+        ffTeamId,
+        start,
+        rosterEnum
+      )
     )
     .then((best) => {
       if (!best) {
@@ -91,7 +121,8 @@ function getBest(
     [k: string]: DraftPlayerType[];
   },
   ffTeamId: string,
-  start: number
+  start: number,
+  rosterEnum: RosterEnum
 ): Promise<DraftPlayerType | undefined> {
   return Promise.resolve().then(() => {
     const draftTeamId = prev.draft[curr.draft.length]?.ffTeamId;
@@ -106,7 +137,7 @@ function getBest(
     return Promise.resolve()
       .then(() =>
         ["QB", "RB", "WR", "TE"].filter((position) =>
-          hasSpace(position, curr.picksByTeamId[ffTeamId] || [])
+          hasSpace(position, curr.picksByTeamId[ffTeamId] || [], rosterEnum)
         )
       )
       .then((positions) =>
@@ -124,7 +155,8 @@ function getBest(
               prev,
               positionToRankedDraftPlayers,
               ffTeamId,
-              start
+              start,
+              rosterEnum
             ).then((score) => ({ score, player }))
           )
       )
@@ -138,8 +170,12 @@ function getBest(
   });
 }
 
-function hasSpace(position: string, myPicks: DraftPlayerType[]): boolean {
-  const roster = ROSTER.slice();
+function hasSpace(
+  position: string,
+  myPicks: DraftPlayerType[],
+  rosterEnum: RosterEnum
+): boolean {
+  const roster = allRosters[rosterEnum].slice();
   myPicks.forEach((p) =>
     roster.splice(
       roster.findIndex((r) => r.includes(p.position)),
@@ -156,7 +192,8 @@ async function getScore(
     [k: string]: DraftPlayerType[];
   },
   ffTeamId: string,
-  start: number
+  start: number,
+  rosterEnum: RosterEnum
 ): Promise<number> {
   let curr = _curr;
   while (true) {
@@ -165,7 +202,8 @@ async function getScore(
       prev,
       positionToRankedDraftPlayers,
       ffTeamId,
-      start
+      start,
+      rosterEnum
     );
     if (!best) return scoreTeam(curr.picksByTeamId[ffTeamId]!);
     curr = updateDraft(curr, best);
@@ -179,6 +217,14 @@ function scoreTeam(picks: DraftPlayerType[]): number {
 function getPositionToRankedDraftPlayers(wrapped: WrappedType): {
   [k: string]: DraftPlayerType[];
 } {
+  function groupByF<T>(ts: T[], f: (t: T) => string): { [key: string]: T[] } {
+    return ts.reduce((prev, curr) => {
+      const key = f(curr);
+      if (!prev[key]) prev[key] = [];
+      prev[key]!.push(curr);
+      return prev;
+    }, {} as { [key: string]: T[] });
+  }
   return Object.fromEntries(
     Object.entries(
       groupByF(Object.values(wrapped.nflPlayers), (p) => p.position)
@@ -206,7 +252,8 @@ function getStart(
       playerId: number;
       ffTeamId: string;
     }[];
-  }
+  },
+  rosterEnum: RosterEnum
 ): DraftType[] {
   const initialDraft = Object.values(wrapped.ffTeams)
     .sort((a, b) => a.draft[0].pickIndex - b.draft[0].pickIndex)
@@ -227,7 +274,10 @@ function getStart(
     Object.entries(positionToRankedDraftPlayers).map(([k, v]) => [k, v.slice()])
   );
   const sortedDraft = initialDraft
-    .slice(0, ROSTER.length * Object.entries(wrapped.ffTeams).length)
+    .slice(
+      0,
+      allRosters[rosterEnum].length * Object.entries(wrapped.ffTeams).length
+    )
     .map((p) => ({
       ...poppable[p.position].shift()!,
       ffTeamId: p.ffTeamId,

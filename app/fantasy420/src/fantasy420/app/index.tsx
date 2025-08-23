@@ -1,13 +1,17 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+import {
+  default as BuildIdealDraft,
+  default as IdealDraft,
+} from "./BuildIdealDraft";
 import Draft from "./Draft";
 import FetchWrapped from "./FetchWrapped";
-import IdealDraft from "./IdealDraft";
 import Wrapped from "./Wrapped";
 
 const pages = {
   FetchWrapped,
   Draft,
+  BuildIdealDraft,
   IdealDraft,
 };
 
