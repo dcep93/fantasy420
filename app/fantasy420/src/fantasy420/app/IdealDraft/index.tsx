@@ -3,6 +3,7 @@ import idealDraftJson from "../BuildIdealDraft/idealDraft.json";
 import {
   DraftPlayerType,
   getPositionToRankedDraftPlayers,
+  MAX_DEPTH,
   RosterEnum,
   scoreTeam,
 } from "../BuildIdealDraft/search";
@@ -76,6 +77,7 @@ export function SubIdealDraft(props: {
   wrapped: WrappedType;
   draftedPlayers: DraftPlayerType[][];
 }) {
+  const [help, updateHelp] = useState(false);
   const positionToRankedDraftPlayers = getPositionToRankedDraftPlayers(
     props.wrapped
   );
@@ -86,6 +88,63 @@ export function SubIdealDraft(props: {
   );
   return (
     <div>
+      <div>
+        <div style={bubbleStyle} onClick={() => updateHelp(!help)}>
+          help
+        </div>
+        {!help ? null : (
+          <ol>
+            <li>
+              this intends to prove that contrary to{" "}
+              <a href="https://subvertadown.com/tap-that-draft/6ba9a033-e1fa-4d4f-bec0-15b06f4a93f9">
+                TapThatDraft
+              </a>
+              , superflex drafters should take QBs first
+            </li>
+            <li>
+              interestingly, the findings seem to say that taking RB/WR first
+              isn't so crazy
+            </li>
+            <li>
+              credibility is reduced since there are many approximations and
+              assumptions made
+            </li>
+            <li>approximate that managers want to draft only starters</li>
+            <li>
+              compute value equal to the total season scores of all starters
+            </li>
+            <li>
+              ignore real-world tradeoffs like injury risk, boom/bust,
+              transparency, age, and the misery of cheering for a jets player
+            </li>
+            <li>
+              for many reasons, the start of the draft should reveal the most
+              interesting trends
+            </li>
+            <li>generation 0 is our real draft</li>
+            <li>
+              generation 1 is the first N draft places needed to fill a roster,
+              ordering by score but keeping positions the same
+            </li>
+            <li>
+              generation N &gt; 1 maximizes a manager's score by simulating the
+              rest of the draft, stopping after they have made {MAX_DEPTH} more
+              picks
+            </li>
+            <li>
+              this adds significant doubt on the results, but assume that the
+              other managers will blindly follow ADP from generation N-1 to
+              choose their picks
+            </li>
+            <li>doubleflex means 2 flexes</li>
+            <li>megaflex means 2 flexes and one superflex</li>
+            <li>
+              I didn't prune at all, so maybe results become a bit more
+              credible, but it also takes an hour to generate the results data
+            </li>
+          </ol>
+        )}
+      </div>
       <div style={{ display: "flex", alignItems: "baseline" }}>
         {props.draftedPlayers.map((d, i) => (
           <div key={i} style={{ ...bubbleStyle, flexShrink: 0 }}>
