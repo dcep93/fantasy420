@@ -49,7 +49,7 @@ async function runSequential<T>(fns: (() => Promise<T>)[]): Promise<T[]> {
 
 Promise.resolve()
   .then(() => ({
-    years: Object.keys(allWrapped).filter((year) => year === "2025"),
+    years: Object.keys(allWrapped),
     rosterEnums: Object.keys(RosterEnum)
       .map((rosterEnum) => parseInt(rosterEnum))
       .filter((rosterEnum) => !isNaN(rosterEnum)),
