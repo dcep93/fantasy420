@@ -15,7 +15,7 @@ import allWrapped from "../Wrapped/allWrapped";
 export default function IdealDraft() {
   const [yearKey, updateYear] = useState(selectedYear);
   const [rosterEnum, updateRosterEnum] = useState(
-    RosterEnum[RosterEnum.doubleflex]
+    RosterEnum[RosterEnum.megaflex]
   );
   console.log({ yearKey, rosterEnum });
   const wrapped = allWrapped[yearKey];
