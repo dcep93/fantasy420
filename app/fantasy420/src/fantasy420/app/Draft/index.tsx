@@ -220,9 +220,11 @@ function SubDraft(props: {
         </div>
         <div>
           <div>
-            <a href="https://jayzheng.com/ff/">jayzheng</a>
+            <a href="https://subvertadown.com/tap-that-draft/d4905ade-ed76-4f26-b463-efe46cec9369">
+              tapthatdraft
+            </a>
           </div>
-          <input readOnly value={printF(jayzheng)} />
+          <input readOnly value={printF(tapThatDraft)} />
         </div>
         <div>
           <div>
@@ -234,11 +236,9 @@ function SubDraft(props: {
         </div>
         <div>
           <div>
-            <a href="https://subvertadown.com/tap-that-draft/d4905ade-ed76-4f26-b463-efe46cec9369">
-              tapthatdraft
-            </a>
+            <a href="https://jayzheng.com/ff/">jayzheng</a>
           </div>
-          <input readOnly value={printF(tapThatDraft)} />
+          <input readOnly value={printF(jayzheng)} />
         </div>
         <div>
           <div>
@@ -608,7 +608,7 @@ function tapThatDraft() {
       .map((tr) => Array.from(tr.children) as any as { innerText: string }[])
       .map((tr) => [
         tr[1].innerText.trim(),
-        -parseInt(tr[10].innerText.split("$").pop()!),
+        -parseInt(tr[tr.length - 1].innerText.split("$").pop()!),
       ])
       .filter(([_, value]) => value !== 0)
   );
