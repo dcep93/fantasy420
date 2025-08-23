@@ -46,7 +46,7 @@ export default function BuildIdealDraft() {
         </div>
       </div>
       <SubBuildIdealDraft
-        key={yearKey}
+        key={`${yearKey}.${rosterEnum}`}
         yearKey={yearKey}
         rosterEnum={RosterEnum[rosterEnum as keyof typeof RosterEnum]}
       />

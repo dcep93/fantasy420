@@ -1,15 +1,72 @@
+import { useState } from "react";
+import idealDraftJson from "../BuildIdealDraft/idealDraft.json";
 import {
   DraftPlayerType,
   getPositionToRankedDraftPlayers,
+  RosterEnum,
   scoreTeam,
 } from "../BuildIdealDraft/search";
 import { bubbleStyle } from "../Draft";
 import { WrappedType } from "../FetchWrapped";
-import { groupByF } from "../Wrapped";
+import { groupByF, selectedYear } from "../Wrapped";
+import allWrapped from "../Wrapped/allWrapped";
 
 export default function IdealDraft() {
-  return <div>IdealDraft</div>;
-  //   return <SubIdealDraft />;
+  const [yearKey, updateYear] = useState(selectedYear);
+  const [rosterEnum, updateRosterEnum] = useState(RosterEnum[RosterEnum.flex]);
+  const wrapped = allWrapped[yearKey];
+  const draftedPlayers = idealDraftJson.find(
+    (d) =>
+      d.config.year === yearKey &&
+      RosterEnum[d.config.rosterEnum] === rosterEnum
+  )?.draftPlayers;
+  return (
+    <div>
+      <div>
+        <div>
+          year:{" "}
+          <select
+            onChange={(e) => updateYear(e.target.value)}
+            defaultValue={yearKey}
+          >
+            {Array.from(
+              new Set(
+                idealDraftJson
+                  .filter((d) => RosterEnum[d.config.rosterEnum] === rosterEnum)
+                  .map((d) => d.config.year)
+              )
+            ).map((y) => (
+              <option key={y} value={y}>
+                {y}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div>
+          rosterEnum:{" "}
+          <select
+            onChange={(e) => updateRosterEnum(e.target.value)}
+            defaultValue={yearKey}
+          >
+            {Array.from(
+              new Set(idealDraftJson.map((d) => d.config.rosterEnum))
+            ).map((k) => (
+              <option key={k} value={k}>
+                {RosterEnum[k]}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+      {draftedPlayers && (
+        <SubIdealDraft
+          key={`${yearKey}.${rosterEnum}`}
+          wrapped={wrapped}
+          draftedPlayers={draftedPlayers}
+        />
+      )}
+    </div>
+  );
 }
 
 export function SubIdealDraft(props: {
