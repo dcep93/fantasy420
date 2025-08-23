@@ -1,0 +1,8582 @@
+[
+  {
+    "config": {
+      "year": "2022",
+      "rosterEnum": 0
+    },
+    "draftPlayers": [
+      [
+        {
+          "playerId": 4242335,
+          "start": -1,
+          "score": 146.4,
+          "ffTeamId": "A",
+          "position": "RB"
+        },
+        {
+          "playerId": 3117251,
+          "start": -1,
+          "score": 356.36,
+          "ffTeamId": "B",
+          "position": "RB"
+        },
+        {
+          "playerId": 4262921,
+          "start": -1,
+          "score": 368.66,
+          "ffTeamId": "C",
+          "position": "WR"
+        },
+        {
+          "playerId": 3043078,
+          "start": -1,
+          "score": 302.76,
+          "ffTeamId": "D",
+          "position": "RB"
+        },
+        {
+          "playerId": 3068267,
+          "start": -1,
+          "score": 372.7,
+          "ffTeamId": "E",
+          "position": "RB"
+        },
+        {
+          "playerId": 2977187,
+          "start": -1,
+          "score": 201.4,
+          "ffTeamId": "F",
+          "position": "WR"
+        },
+        {
+          "playerId": 3116593,
+          "start": -1,
+          "score": 237.8,
+          "ffTeamId": "G",
+          "position": "RB"
+        },
+        {
+          "playerId": 3116385,
+          "start": -1,
+          "score": 239.5,
+          "ffTeamId": "H",
+          "position": "RB"
+        },
+        {
+          "playerId": 4241457,
+          "start": -1,
+          "score": 223.46,
+          "ffTeamId": "I",
+          "position": "RB"
+        },
+        {
+          "playerId": 3054850,
+          "start": -1,
+          "score": 211.7,
+          "ffTeamId": "J",
+          "position": "RB"
+        },
+        {
+          "playerId": 4259545,
+          "start": -1,
+          "score": 191.1,
+          "ffTeamId": "J",
+          "position": "RB"
+        },
+        {
+          "playerId": 4362628,
+          "start": -1,
+          "score": 242.4,
+          "ffTeamId": "I",
+          "position": "WR"
+        },
+        {
+          "playerId": 3115364,
+          "start": -1,
+          "score": 226.1,
+          "ffTeamId": "H",
+          "position": "RB"
+        },
+        {
+          "playerId": 16800,
+          "start": -1,
+          "score": 335.5,
+          "ffTeamId": "G",
+          "position": "WR"
+        },
+        {
+          "playerId": 15847,
+          "start": -1,
+          "score": 316.3,
+          "ffTeamId": "F",
+          "position": "TE"
+        },
+        {
+          "playerId": 2976212,
+          "start": -1,
+          "score": 316.6,
+          "ffTeamId": "E",
+          "position": "WR"
+        },
+        {
+          "playerId": 3042519,
+          "start": -1,
+          "score": 248.6,
+          "ffTeamId": "D",
+          "position": "RB"
+        },
+        {
+          "playerId": 4241389,
+          "start": -1,
+          "score": 301.6,
+          "ffTeamId": "C",
+          "position": "WR"
+        },
+        {
+          "playerId": 3116406,
+          "start": -1,
+          "score": 347.2,
+          "ffTeamId": "B",
+          "position": "WR"
+        },
+        {
+          "playerId": 15818,
+          "start": -1,
+          "score": 164,
+          "ffTeamId": "A",
+          "position": "WR"
+        },
+        {
+          "playerId": 3045147,
+          "start": -1,
+          "score": 200.2,
+          "ffTeamId": "J",
+          "position": "RB"
+        },
+        {
+          "playerId": 4035687,
+          "start": -1,
+          "score": 216.5,
+          "ffTeamId": "I",
+          "position": "WR"
+        },
+        {
+          "playerId": 3116365,
+          "start": -1,
+          "score": 190.5,
+          "ffTeamId": "H",
+          "position": "TE"
+        },
+        {
+          "playerId": 3929630,
+          "start": -1,
+          "score": 284,
+          "ffTeamId": "G",
+          "position": "RB"
+        },
+        {
+          "playerId": 16737,
+          "start": -1,
+          "score": 225.4,
+          "ffTeamId": "F",
+          "position": "WR"
+        },
+        {
+          "playerId": 3128720,
+          "start": -1,
+          "score": 281.4,
+          "ffTeamId": "E",
+          "position": "RB"
+        },
+        {
+          "playerId": 4361579,
+          "start": -1,
+          "score": 42,
+          "ffTeamId": "D",
+          "position": "RB"
+        },
+        {
+          "playerId": 3126486,
+          "start": -1,
+          "score": 168.4,
+          "ffTeamId": "C",
+          "position": "WR"
+        },
+        {
+          "playerId": 4047646,
+          "start": -1,
+          "score": 299.6,
+          "ffTeamId": "B",
+          "position": "WR"
+        },
+        {
+          "playerId": 4240021,
+          "start": -1,
+          "score": 141.3,
+          "ffTeamId": "A",
+          "position": "RB"
+        },
+        {
+          "playerId": 4360248,
+          "start": -1,
+          "score": 75.6,
+          "ffTeamId": "A",
+          "position": "TE"
+        },
+        {
+          "playerId": 16731,
+          "start": -1,
+          "score": 145.6,
+          "ffTeamId": "B",
+          "position": "WR"
+        },
+        {
+          "playerId": 4239996,
+          "start": -1,
+          "score": 205.1,
+          "ffTeamId": "C",
+          "position": "RB"
+        },
+        {
+          "playerId": 3051392,
+          "start": -1,
+          "score": 185.8,
+          "ffTeamId": "D",
+          "position": "RB"
+        },
+        {
+          "playerId": 4239993,
+          "start": -1,
+          "score": 220.9,
+          "ffTeamId": "E",
+          "position": "WR"
+        },
+        {
+          "playerId": 3932905,
+          "start": -1,
+          "score": 180.7,
+          "ffTeamId": "F",
+          "position": "WR"
+        },
+        {
+          "playerId": 3918298,
+          "start": -1,
+          "score": 395.52,
+          "ffTeamId": "G",
+          "position": "QB"
+        },
+        {
+          "playerId": 4035538,
+          "start": -1,
+          "score": 177.7,
+          "ffTeamId": "H",
+          "position": "RB"
+        },
+        {
+          "playerId": 3139477,
+          "start": -1,
+          "score": 417.4,
+          "ffTeamId": "I",
+          "position": "QB"
+        },
+        {
+          "playerId": 4372016,
+          "start": -1,
+          "score": 259.2,
+          "ffTeamId": "J",
+          "position": "WR"
+        },
+        {
+          "playerId": 4047650,
+          "start": -1,
+          "score": 226.8,
+          "ffTeamId": "J",
+          "position": "WR"
+        },
+        {
+          "playerId": 3121422,
+          "start": -1,
+          "score": 229,
+          "ffTeamId": "I",
+          "position": "WR"
+        },
+        {
+          "playerId": 3045138,
+          "start": -1,
+          "score": 176.5,
+          "ffTeamId": "H",
+          "position": "WR"
+        },
+        {
+          "playerId": 3915416,
+          "start": -1,
+          "score": 199.1,
+          "ffTeamId": "G",
+          "position": "WR"
+        },
+        {
+          "playerId": 4427366,
+          "start": -1,
+          "score": 115.1,
+          "ffTeamId": "F",
+          "position": "RB"
+        },
+        {
+          "playerId": 3128429,
+          "start": -1,
+          "score": 159.4,
+          "ffTeamId": "E",
+          "position": "WR"
+        },
+        {
+          "playerId": 3135321,
+          "start": -1,
+          "score": 79,
+          "ffTeamId": "D",
+          "position": "WR"
+        },
+        {
+          "playerId": 4038941,
+          "start": -1,
+          "score": 281.26,
+          "ffTeamId": "C",
+          "position": "QB"
+        },
+        {
+          "playerId": 3116165,
+          "start": -1,
+          "score": 222.8,
+          "ffTeamId": "B",
+          "position": "WR"
+        },
+        {
+          "playerId": 4241463,
+          "start": -1,
+          "score": 204.2,
+          "ffTeamId": "A",
+          "position": "WR"
+        },
+        {
+          "playerId": 4040715,
+          "start": -1,
+          "score": 378.04,
+          "ffTeamId": "A",
+          "position": "QB"
+        },
+        {
+          "playerId": 4047365,
+          "start": -1,
+          "score": 328.3,
+          "ffTeamId": "B",
+          "position": "RB"
+        },
+        {
+          "playerId": 4374302,
+          "start": -1,
+          "score": 267.6,
+          "ffTeamId": "C",
+          "position": "WR"
+        },
+        {
+          "playerId": 4241372,
+          "start": -1,
+          "score": 156,
+          "ffTeamId": "D",
+          "position": "WR"
+        },
+        {
+          "playerId": 3040151,
+          "start": -1,
+          "score": 200.5,
+          "ffTeamId": "E",
+          "position": "TE"
+        },
+        {
+          "playerId": 4239934,
+          "start": -1,
+          "score": 167.6,
+          "ffTeamId": "F",
+          "position": "RB"
+        },
+        {
+          "playerId": 16799,
+          "start": -1,
+          "score": 84.9,
+          "ffTeamId": "G",
+          "position": "WR"
+        },
+        {
+          "playerId": 4243537,
+          "start": -1,
+          "score": 171.6,
+          "ffTeamId": "H",
+          "position": "WR"
+        },
+        {
+          "playerId": 4241555,
+          "start": -1,
+          "score": 43.6,
+          "ffTeamId": "I",
+          "position": "RB"
+        },
+        {
+          "playerId": 3120348,
+          "start": -1,
+          "score": 185.3,
+          "ffTeamId": "J",
+          "position": "WR"
+        },
+        {
+          "playerId": 16460,
+          "start": -1,
+          "score": 180,
+          "ffTeamId": "J",
+          "position": "WR"
+        },
+        {
+          "playerId": 4040761,
+          "start": -1,
+          "score": 177.9,
+          "ffTeamId": "I",
+          "position": "RB"
+        },
+        {
+          "playerId": 4241985,
+          "start": -1,
+          "score": 81.2,
+          "ffTeamId": "H",
+          "position": "RB"
+        },
+        {
+          "playerId": 4360238,
+          "start": -1,
+          "score": 166.4,
+          "ffTeamId": "G",
+          "position": "RB"
+        },
+        {
+          "playerId": 3916387,
+          "start": -1,
+          "score": 236.08,
+          "ffTeamId": "F",
+          "position": "QB"
+        },
+        {
+          "playerId": 4360939,
+          "start": -1,
+          "score": 53.5,
+          "ffTeamId": "E",
+          "position": "WR"
+        },
+        {
+          "playerId": 4040655,
+          "start": -1,
+          "score": 101.5,
+          "ffTeamId": "D",
+          "position": "WR"
+        },
+        {
+          "playerId": 2576925,
+          "start": -1,
+          "score": 84.8,
+          "ffTeamId": "C",
+          "position": "TE"
+        },
+        {
+          "playerId": 2976316,
+          "start": -1,
+          "score": 51.1,
+          "ffTeamId": "B",
+          "position": "WR"
+        },
+        {
+          "playerId": 4241478,
+          "start": -1,
+          "score": 254.6,
+          "ffTeamId": "A",
+          "position": "WR"
+        },
+        {
+          "playerId": 4569173,
+          "start": -1,
+          "score": 249.1,
+          "ffTeamId": "A",
+          "position": "RB"
+        },
+        {
+          "playerId": 3117256,
+          "start": -1,
+          "score": 142.7,
+          "ffTeamId": "B",
+          "position": "TE"
+        },
+        {
+          "playerId": 3119195,
+          "start": -1,
+          "score": 74.2,
+          "ffTeamId": "C",
+          "position": "RB"
+        },
+        {
+          "playerId": 15807,
+          "start": -1,
+          "score": 154.7,
+          "ffTeamId": "D",
+          "position": "RB"
+        },
+        {
+          "playerId": 3917315,
+          "start": -1,
+          "score": 200.52,
+          "ffTeamId": "E",
+          "position": "QB"
+        },
+        {
+          "playerId": 4426502,
+          "start": -1,
+          "score": 178.6,
+          "ffTeamId": "F",
+          "position": "WR"
+        },
+        {
+          "playerId": 2976499,
+          "start": -1,
+          "score": 246,
+          "ffTeamId": "G",
+          "position": "WR"
+        },
+        {
+          "playerId": 2330,
+          "start": -1,
+          "score": 271.66,
+          "ffTeamId": "H",
+          "position": "QB"
+        },
+        {
+          "playerId": 4045163,
+          "start": -1,
+          "score": 216.7,
+          "ffTeamId": "I",
+          "position": "RB"
+        },
+        {
+          "playerId": 3915511,
+          "start": -1,
+          "score": 350.7,
+          "ffTeamId": "J",
+          "position": "QB"
+        },
+        {
+          "playerId": 4360294,
+          "start": -1,
+          "score": 165.9,
+          "ffTeamId": "J",
+          "position": "RB"
+        },
+        {
+          "playerId": 4036133,
+          "start": -1,
+          "score": 215.4,
+          "ffTeamId": "I",
+          "position": "TE"
+        },
+        {
+          "playerId": 3895856,
+          "start": -1,
+          "score": 241.9,
+          "ffTeamId": "H",
+          "position": "WR"
+        },
+        {
+          "playerId": 3916148,
+          "start": -1,
+          "score": 248.8,
+          "ffTeamId": "G",
+          "position": "RB"
+        },
+        {
+          "playerId": 3059915,
+          "start": -1,
+          "score": 126.8,
+          "ffTeamId": "F",
+          "position": "RB"
+        },
+        {
+          "playerId": 3128390,
+          "start": -1,
+          "score": 174.8,
+          "ffTeamId": "E",
+          "position": "WR"
+        },
+        {
+          "playerId": 8439,
+          "start": -1,
+          "score": 239.2,
+          "ffTeamId": "D",
+          "position": "QB"
+        },
+        {
+          "playerId": 4242214,
+          "start": -1,
+          "score": 98.3,
+          "ffTeamId": "C",
+          "position": "RB"
+        },
+        {
+          "playerId": 2577417,
+          "start": -1,
+          "score": 198.6,
+          "ffTeamId": "B",
+          "position": "QB"
+        },
+        {
+          "playerId": 4372414,
+          "start": -1,
+          "score": 88.1,
+          "ffTeamId": "A",
+          "position": "WR"
+        },
+        {
+          "playerId": 4360438,
+          "start": -1,
+          "score": 227.8,
+          "ffTeamId": "A",
+          "position": "WR"
+        },
+        {
+          "playerId": 3139925,
+          "start": -1,
+          "score": 52.2,
+          "ffTeamId": "B",
+          "position": "RB"
+        },
+        {
+          "playerId": 2577327,
+          "start": -1,
+          "score": 237.3,
+          "ffTeamId": "C",
+          "position": "WR"
+        },
+        {
+          "playerId": 3121023,
+          "start": -1,
+          "score": 141.2,
+          "ffTeamId": "D",
+          "position": "TE"
+        },
+        {
+          "playerId": 15795,
+          "start": -1,
+          "score": 151.7,
+          "ffTeamId": "E",
+          "position": "WR"
+        },
+        {
+          "playerId": 4240600,
+          "start": -1,
+          "score": 57.3,
+          "ffTeamId": "F",
+          "position": "WR"
+        },
+        {
+          "playerId": 3925347,
+          "start": -1,
+          "score": 90.9,
+          "ffTeamId": "G",
+          "position": "RB"
+        },
+        {
+          "playerId": 2576434,
+          "start": -1,
+          "score": 87.1,
+          "ffTeamId": "H",
+          "position": "RB"
+        },
+        {
+          "playerId": 4361370,
+          "start": -1,
+          "score": 198.2,
+          "ffTeamId": "I",
+          "position": "WR"
+        },
+        {
+          "playerId": 15880,
+          "start": -1,
+          "score": 115.7,
+          "ffTeamId": "J",
+          "position": "WR"
+        },
+        {
+          "playerId": 3916430,
+          "start": -1,
+          "score": 81.4,
+          "ffTeamId": "J",
+          "position": "RB"
+        },
+        {
+          "playerId": 4046692,
+          "start": -1,
+          "score": 105.04,
+          "ffTeamId": "I",
+          "position": "WR"
+        },
+        {
+          "playerId": 3930086,
+          "start": -1,
+          "score": 135.7,
+          "ffTeamId": "H",
+          "position": "TE"
+        },
+        {
+          "playerId": 4048244,
+          "start": -1,
+          "score": 88.4,
+          "ffTeamId": "G",
+          "position": "RB"
+        },
+        {
+          "playerId": 4039359,
+          "start": -1,
+          "score": 73.5,
+          "ffTeamId": "F",
+          "position": "RB"
+        },
+        {
+          "playerId": 4567156,
+          "start": -1,
+          "score": 94.1,
+          "ffTeamId": "E",
+          "position": "WR"
+        },
+        {
+          "playerId": 4052042,
+          "start": -1,
+          "score": 88.6,
+          "ffTeamId": "D",
+          "position": "RB"
+        },
+        {
+          "playerId": 4383351,
+          "start": -1,
+          "score": 12.46,
+          "ffTeamId": "C",
+          "position": "QB"
+        },
+        {
+          "playerId": 15835,
+          "start": -1,
+          "score": 115.6,
+          "ffTeamId": "B",
+          "position": "TE"
+        },
+        {
+          "playerId": 2980453,
+          "start": -1,
+          "score": 225.9,
+          "ffTeamId": "A",
+          "position": "RB"
+        },
+        {
+          "playerId": 3046439,
+          "start": -1,
+          "score": 103.9,
+          "ffTeamId": "A",
+          "position": "TE"
+        },
+        {
+          "playerId": 4379399,
+          "start": -1,
+          "score": 105.7,
+          "ffTeamId": "B",
+          "position": "RB"
+        },
+        {
+          "playerId": 4240657,
+          "start": -1,
+          "score": 126,
+          "ffTeamId": "C",
+          "position": "RB"
+        },
+        {
+          "playerId": 15072,
+          "start": -1,
+          "score": 116.9,
+          "ffTeamId": "D",
+          "position": "WR"
+        },
+        {
+          "playerId": 4241474,
+          "start": -1,
+          "score": 112.7,
+          "ffTeamId": "E",
+          "position": "RB"
+        },
+        {
+          "playerId": 3115378,
+          "start": -1,
+          "score": 123.6,
+          "ffTeamId": "F",
+          "position": "WR"
+        },
+        {
+          "playerId": 4430191,
+          "start": -1,
+          "score": 43.4,
+          "ffTeamId": "G",
+          "position": "WR"
+        },
+        {
+          "playerId": 3125116,
+          "start": -1,
+          "score": 131,
+          "ffTeamId": "H",
+          "position": "RB"
+        },
+        {
+          "playerId": 4569618,
+          "start": -1,
+          "score": 215.7,
+          "ffTeamId": "I",
+          "position": "WR"
+        },
+        {
+          "playerId": 4258595,
+          "start": -1,
+          "score": 147.3,
+          "ffTeamId": "J",
+          "position": "TE"
+        },
+        {
+          "playerId": 4567048,
+          "start": -1,
+          "score": 202.5,
+          "ffTeamId": "J",
+          "position": "RB"
+        },
+        {
+          "playerId": -16002,
+          "start": -1,
+          "score": 138,
+          "ffTeamId": "I",
+          "position": "DST"
+        },
+        {
+          "playerId": -16025,
+          "start": -1,
+          "score": 156,
+          "ffTeamId": "H",
+          "position": "DST"
+        },
+        {
+          "playerId": 4361050,
+          "start": -1,
+          "score": 91.3,
+          "ffTeamId": "G",
+          "position": "TE"
+        },
+        {
+          "playerId": 4361529,
+          "start": -1,
+          "score": 135,
+          "ffTeamId": "F",
+          "position": "RB"
+        },
+        {
+          "playerId": 3045144,
+          "start": -1,
+          "score": 167.12,
+          "ffTeamId": "E",
+          "position": "WR"
+        },
+        {
+          "playerId": -16009,
+          "start": -1,
+          "score": 105,
+          "ffTeamId": "D",
+          "position": "DST"
+        },
+        {
+          "playerId": 4361409,
+          "start": -1,
+          "score": 130.6,
+          "ffTeamId": "C",
+          "position": "WR"
+        },
+        {
+          "playerId": 4036348,
+          "start": -1,
+          "score": 105.4,
+          "ffTeamId": "B",
+          "position": "WR"
+        },
+        {
+          "playerId": 2572861,
+          "start": -1,
+          "score": 55.8,
+          "ffTeamId": "A",
+          "position": "RB"
+        },
+        {
+          "playerId": 14881,
+          "start": -1,
+          "score": 225.76,
+          "ffTeamId": "A",
+          "position": "QB"
+        },
+        {
+          "playerId": -16027,
+          "start": -1,
+          "score": 97,
+          "ffTeamId": "B",
+          "position": "DST"
+        },
+        {
+          "playerId": -16021,
+          "start": -1,
+          "score": 158,
+          "ffTeamId": "C",
+          "position": "DST"
+        },
+        {
+          "playerId": -16018,
+          "start": -1,
+          "score": 105,
+          "ffTeamId": "D",
+          "position": "DST"
+        },
+        {
+          "playerId": 15683,
+          "start": -1,
+          "score": 158,
+          "ffTeamId": "E",
+          "position": "K"
+        },
+        {
+          "playerId": -16017,
+          "start": -1,
+          "score": 173,
+          "ffTeamId": "F",
+          "position": "DST"
+        },
+        {
+          "playerId": 4426354,
+          "start": -1,
+          "score": 166.5,
+          "ffTeamId": "G",
+          "position": "WR"
+        },
+        {
+          "playerId": 3886598,
+          "start": -1,
+          "score": 82.6,
+          "ffTeamId": "H",
+          "position": "WR"
+        },
+        {
+          "playerId": 4361411,
+          "start": -1,
+          "score": 148.2,
+          "ffTeamId": "I",
+          "position": "TE"
+        },
+        {
+          "playerId": -16011,
+          "start": -1,
+          "score": 106,
+          "ffTeamId": "J",
+          "position": "DST"
+        },
+        {
+          "playerId": 4249087,
+          "start": -1,
+          "score": 131,
+          "ffTeamId": "J",
+          "position": "K"
+        },
+        {
+          "playerId": 3051738,
+          "start": -1,
+          "score": 122.4,
+          "ffTeamId": "I",
+          "position": "WR"
+        },
+        {
+          "playerId": 3915165,
+          "start": -1,
+          "score": 18,
+          "ffTeamId": "H",
+          "position": "K"
+        },
+        {
+          "playerId": -16007,
+          "start": -1,
+          "score": 102,
+          "ffTeamId": "G",
+          "position": "DST"
+        },
+        {
+          "playerId": 4372485,
+          "start": -1,
+          "score": 87.9,
+          "ffTeamId": "F",
+          "position": "WR"
+        },
+        {
+          "playerId": 13981,
+          "start": -1,
+          "score": 50.1,
+          "ffTeamId": "E",
+          "position": "RB"
+        },
+        {
+          "playerId": 3051909,
+          "start": -1,
+          "score": 159,
+          "ffTeamId": "D",
+          "position": "K"
+        },
+        {
+          "playerId": 3916566,
+          "start": -1,
+          "score": 155.6,
+          "ffTeamId": "C",
+          "position": "WR"
+        },
+        {
+          "playerId": 4241479,
+          "start": -1,
+          "score": 230.92,
+          "ffTeamId": "B",
+          "position": "QB"
+        },
+        {
+          "playerId": -16033,
+          "start": -1,
+          "score": 129,
+          "ffTeamId": "A",
+          "position": "DST"
+        },
+        {
+          "playerId": 3055899,
+          "start": -1,
+          "score": 97,
+          "ffTeamId": "A",
+          "position": "K"
+        },
+        {
+          "playerId": 10621,
+          "start": -1,
+          "score": 141,
+          "ffTeamId": "B",
+          "position": "K"
+        },
+        {
+          "playerId": 3975763,
+          "start": -1,
+          "score": 127,
+          "ffTeamId": "C",
+          "position": "K"
+        },
+        {
+          "playerId": 12483,
+          "start": -1,
+          "score": 108.38,
+          "ffTeamId": "D",
+          "position": "QB"
+        },
+        {
+          "playerId": -16024,
+          "start": -1,
+          "score": 87,
+          "ffTeamId": "E",
+          "position": "DST"
+        },
+        {
+          "playerId": 4360234,
+          "start": -1,
+          "score": 126,
+          "ffTeamId": "F",
+          "position": "K"
+        },
+        {
+          "playerId": 16339,
+          "start": -1,
+          "score": 127,
+          "ffTeamId": "G",
+          "position": "K"
+        },
+        {
+          "playerId": 4372071,
+          "start": -1,
+          "score": 26,
+          "ffTeamId": "H",
+          "position": "RB"
+        },
+        {
+          "playerId": 3917232,
+          "start": -1,
+          "score": 139,
+          "ffTeamId": "I",
+          "position": "K"
+        },
+        {
+          "playerId": 14880,
+          "start": -1,
+          "score": 291.58,
+          "ffTeamId": "J",
+          "position": "QB"
+        }
+      ],
+      [
+        {
+          "score": 372.7,
+          "position": "RB",
+          "playerId": 3068267,
+          "ffTeamId": "A",
+          "start": -2
+        },
+        {
+          "score": 356.36,
+          "position": "RB",
+          "playerId": 3117251,
+          "ffTeamId": "B",
+          "start": -2
+        },
+        {
+          "score": 368.66,
+          "position": "WR",
+          "playerId": 4262921,
+          "ffTeamId": "C",
+          "start": -2
+        },
+        {
+          "score": 328.3,
+          "position": "RB",
+          "playerId": 4047365,
+          "ffTeamId": "D",
+          "start": -2
+        },
+        {
+          "score": 302.76,
+          "position": "RB",
+          "playerId": 3043078,
+          "ffTeamId": "E",
+          "start": -2
+        },
+        {
+          "score": 347.2,
+          "position": "WR",
+          "playerId": 3116406,
+          "ffTeamId": "F",
+          "start": -2
+        },
+        {
+          "score": 284,
+          "position": "RB",
+          "playerId": 3929630,
+          "ffTeamId": "G",
+          "start": -2
+        },
+        {
+          "score": 281.4,
+          "position": "RB",
+          "playerId": 3128720,
+          "ffTeamId": "H",
+          "start": -2
+        },
+        {
+          "score": 249.1,
+          "position": "RB",
+          "playerId": 4569173,
+          "ffTeamId": "I",
+          "start": -2
+        },
+        {
+          "score": 248.8,
+          "position": "RB",
+          "playerId": 3916148,
+          "ffTeamId": "J",
+          "start": -2
+        },
+        {
+          "score": 248.6,
+          "position": "RB",
+          "playerId": 3042519,
+          "ffTeamId": "J",
+          "start": -2
+        },
+        {
+          "score": 335.5,
+          "position": "WR",
+          "playerId": 16800,
+          "ffTeamId": "I",
+          "start": -2
+        },
+        {
+          "score": 239.5,
+          "position": "RB",
+          "playerId": 3116385,
+          "ffTeamId": "H",
+          "start": -2
+        },
+        {
+          "score": 316.6,
+          "position": "WR",
+          "playerId": 2976212,
+          "ffTeamId": "G",
+          "start": -2
+        },
+        {
+          "score": 316.3,
+          "position": "TE",
+          "playerId": 15847,
+          "ffTeamId": "F",
+          "start": -2
+        },
+        {
+          "score": 301.6,
+          "position": "WR",
+          "playerId": 4241389,
+          "ffTeamId": "E",
+          "start": -2
+        },
+        {
+          "score": 237.8,
+          "position": "RB",
+          "playerId": 3116593,
+          "ffTeamId": "D",
+          "start": -2
+        },
+        {
+          "score": 299.6,
+          "position": "WR",
+          "playerId": 4047646,
+          "ffTeamId": "C",
+          "start": -2
+        },
+        {
+          "score": 267.6,
+          "position": "WR",
+          "playerId": 4374302,
+          "ffTeamId": "B",
+          "start": -2
+        },
+        {
+          "score": 259.2,
+          "position": "WR",
+          "playerId": 4372016,
+          "ffTeamId": "A",
+          "start": -2
+        },
+        {
+          "score": 226.1,
+          "position": "RB",
+          "playerId": 3115364,
+          "ffTeamId": "J",
+          "start": -2
+        },
+        {
+          "score": 254.6,
+          "position": "WR",
+          "playerId": 4241478,
+          "ffTeamId": "I",
+          "start": -2
+        },
+        {
+          "score": 215.4,
+          "position": "TE",
+          "playerId": 4036133,
+          "ffTeamId": "H",
+          "start": -2
+        },
+        {
+          "score": 225.9,
+          "position": "RB",
+          "playerId": 2980453,
+          "ffTeamId": "G",
+          "start": -2
+        },
+        {
+          "score": 246,
+          "position": "WR",
+          "playerId": 2976499,
+          "ffTeamId": "F",
+          "start": -2
+        },
+        {
+          "score": 223.46,
+          "position": "RB",
+          "playerId": 4241457,
+          "ffTeamId": "E",
+          "start": -2
+        },
+        {
+          "score": 216.7,
+          "position": "RB",
+          "playerId": 4045163,
+          "ffTeamId": "D",
+          "start": -2
+        },
+        {
+          "score": 242.4,
+          "position": "WR",
+          "playerId": 4362628,
+          "ffTeamId": "C",
+          "start": -2
+        },
+        {
+          "score": 241.9,
+          "position": "WR",
+          "playerId": 3895856,
+          "ffTeamId": "B",
+          "start": -2
+        },
+        {
+          "score": 211.7,
+          "position": "RB",
+          "playerId": 3054850,
+          "ffTeamId": "A",
+          "start": -2
+        },
+        {
+          "score": 200.5,
+          "position": "TE",
+          "playerId": 3040151,
+          "ffTeamId": "A",
+          "start": -2
+        },
+        {
+          "score": 237.3,
+          "position": "WR",
+          "playerId": 2577327,
+          "ffTeamId": "B",
+          "start": -2
+        },
+        {
+          "score": 205.1,
+          "position": "RB",
+          "playerId": 4239996,
+          "ffTeamId": "C",
+          "start": -2
+        },
+        {
+          "score": 202.5,
+          "position": "RB",
+          "playerId": 4567048,
+          "ffTeamId": "D",
+          "start": -2
+        },
+        {
+          "score": 229,
+          "position": "WR",
+          "playerId": 3121422,
+          "ffTeamId": "E",
+          "start": -2
+        },
+        {
+          "score": 227.8,
+          "position": "WR",
+          "playerId": 4360438,
+          "ffTeamId": "F",
+          "start": -2
+        },
+        {
+          "score": 417.4,
+          "position": "QB",
+          "playerId": 3139477,
+          "ffTeamId": "G",
+          "start": -2
+        },
+        {
+          "score": 200.2,
+          "position": "RB",
+          "playerId": 3045147,
+          "ffTeamId": "H",
+          "start": -2
+        },
+        {
+          "score": 395.52,
+          "position": "QB",
+          "playerId": 3918298,
+          "ffTeamId": "I",
+          "start": -2
+        },
+        {
+          "score": 226.8,
+          "position": "WR",
+          "playerId": 4047650,
+          "ffTeamId": "J",
+          "start": -2
+        },
+        {
+          "score": 225.4,
+          "position": "WR",
+          "playerId": 16737,
+          "ffTeamId": "J",
+          "start": -2
+        },
+        {
+          "score": 222.8,
+          "position": "WR",
+          "playerId": 3116165,
+          "ffTeamId": "I",
+          "start": -2
+        },
+        {
+          "score": 220.9,
+          "position": "WR",
+          "playerId": 4239993,
+          "ffTeamId": "H",
+          "start": -2
+        },
+        {
+          "score": 216.5,
+          "position": "WR",
+          "playerId": 4035687,
+          "ffTeamId": "G",
+          "start": -2
+        },
+        {
+          "score": 196.3,
+          "position": "RB",
+          "playerId": 16782,
+          "ffTeamId": "F",
+          "start": -2
+        },
+        {
+          "score": 215.7,
+          "position": "WR",
+          "playerId": 4569618,
+          "ffTeamId": "E",
+          "start": -2
+        },
+        {
+          "score": 204.2,
+          "position": "WR",
+          "playerId": 4241463,
+          "ffTeamId": "D",
+          "start": -2
+        },
+        {
+          "score": 378.04,
+          "position": "QB",
+          "playerId": 4040715,
+          "ffTeamId": "C",
+          "start": -2
+        },
+        {
+          "score": 201.4,
+          "position": "WR",
+          "playerId": 2977187,
+          "ffTeamId": "B",
+          "start": -2
+        },
+        {
+          "score": 199.1,
+          "position": "WR",
+          "playerId": 3915416,
+          "ffTeamId": "A",
+          "start": -2
+        },
+        {
+          "score": 350.7,
+          "position": "QB",
+          "playerId": 3915511,
+          "ffTeamId": "A",
+          "start": -2
+        },
+        {
+          "score": 191.1,
+          "position": "RB",
+          "playerId": 4259545,
+          "ffTeamId": "B",
+          "start": -2
+        },
+        {
+          "score": 198.2,
+          "position": "WR",
+          "playerId": 4361370,
+          "ffTeamId": "C",
+          "start": -2
+        },
+        {
+          "score": 198.1,
+          "position": "WR",
+          "playerId": 3059722,
+          "ffTeamId": "D",
+          "start": -2
+        },
+        {
+          "score": 190.5,
+          "position": "TE",
+          "playerId": 3116365,
+          "ffTeamId": "E",
+          "start": -2
+        },
+        {
+          "score": 185.8,
+          "position": "RB",
+          "playerId": 3051392,
+          "ffTeamId": "F",
+          "start": -2
+        },
+        {
+          "score": 185.3,
+          "position": "WR",
+          "playerId": 3120348,
+          "ffTeamId": "G",
+          "start": -2
+        },
+        {
+          "score": 180.7,
+          "position": "WR",
+          "playerId": 3932905,
+          "ffTeamId": "H",
+          "start": -2
+        },
+        {
+          "score": 177.9,
+          "position": "RB",
+          "playerId": 4040761,
+          "ffTeamId": "I",
+          "start": -2
+        },
+        {
+          "score": 180.3,
+          "position": "WR",
+          "playerId": 3916433,
+          "ffTeamId": "J",
+          "start": -2
+        },
+        {
+          "score": 180,
+          "position": "WR",
+          "playerId": 16460,
+          "ffTeamId": "J",
+          "start": -2
+        },
+        {
+          "score": 177.7,
+          "position": "RB",
+          "playerId": 4035538,
+          "ffTeamId": "I",
+          "start": -2
+        },
+        {
+          "score": 168.3,
+          "position": "RB",
+          "playerId": 2576414,
+          "ffTeamId": "H",
+          "start": -2
+        },
+        {
+          "score": 167.6,
+          "position": "RB",
+          "playerId": 4239934,
+          "ffTeamId": "G",
+          "start": -2
+        },
+        {
+          "score": 303.88,
+          "position": "QB",
+          "playerId": 15864,
+          "ffTeamId": "F",
+          "start": -2
+        },
+        {
+          "score": 178.6,
+          "position": "WR",
+          "playerId": 4426502,
+          "ffTeamId": "E",
+          "start": -2
+        },
+        {
+          "score": 176.5,
+          "position": "WR",
+          "playerId": 3045138,
+          "ffTeamId": "D",
+          "start": -2
+        },
+        {
+          "score": 176.9,
+          "position": "TE",
+          "playerId": 3051876,
+          "ffTeamId": "C",
+          "start": -2
+        },
+        {
+          "score": 176.3,
+          "position": "WR",
+          "playerId": 3121427,
+          "ffTeamId": "B",
+          "start": -2
+        },
+        {
+          "score": 174.8,
+          "position": "WR",
+          "playerId": 3128390,
+          "ffTeamId": "A",
+          "start": -2
+        },
+        {
+          "score": 166.4,
+          "position": "RB",
+          "playerId": 4360238,
+          "ffTeamId": "A",
+          "start": -2
+        },
+        {
+          "score": 152,
+          "position": "TE",
+          "playerId": 2573401,
+          "ffTeamId": "B",
+          "start": -2
+        },
+        {
+          "score": 165.9,
+          "position": "RB",
+          "playerId": 4360294,
+          "ffTeamId": "C",
+          "start": -2
+        },
+        {
+          "score": 159.4,
+          "position": "RB",
+          "playerId": 4373626,
+          "ffTeamId": "D",
+          "start": -2
+        },
+        {
+          "score": 295.98,
+          "position": "QB",
+          "playerId": 4362887,
+          "ffTeamId": "E",
+          "start": -2
+        },
+        {
+          "score": 171.6,
+          "position": "WR",
+          "playerId": 4243537,
+          "ffTeamId": "F",
+          "start": -2
+        },
+        {
+          "score": 169.3,
+          "position": "WR",
+          "playerId": 4242433,
+          "ffTeamId": "G",
+          "start": -2
+        },
+        {
+          "score": 295.62,
+          "position": "QB",
+          "playerId": 4360310,
+          "ffTeamId": "H",
+          "start": -2
+        },
+        {
+          "score": 158.5,
+          "position": "RB",
+          "playerId": 3122976,
+          "ffTeamId": "I",
+          "start": -2
+        },
+        {
+          "score": 291.58,
+          "position": "QB",
+          "playerId": 14880,
+          "ffTeamId": "J",
+          "start": -2
+        },
+        {
+          "score": 154.7,
+          "position": "RB",
+          "playerId": 15807,
+          "ffTeamId": "J",
+          "start": -2
+        },
+        {
+          "score": 148.2,
+          "position": "TE",
+          "playerId": 4361411,
+          "ffTeamId": "I",
+          "start": -2
+        },
+        {
+          "score": 168.4,
+          "position": "WR",
+          "playerId": 3126486,
+          "ffTeamId": "H",
+          "start": -2
+        },
+        {
+          "score": 154.2,
+          "position": "RB",
+          "playerId": 15920,
+          "ffTeamId": "G",
+          "start": -2
+        },
+        {
+          "score": 146.4,
+          "position": "RB",
+          "playerId": 4242335,
+          "ffTeamId": "F",
+          "start": -2
+        },
+        {
+          "score": 167.12,
+          "position": "WR",
+          "playerId": 3045144,
+          "ffTeamId": "E",
+          "start": -2
+        },
+        {
+          "score": 289,
+          "position": "QB",
+          "playerId": 3917792,
+          "ffTeamId": "D",
+          "start": -2
+        },
+        {
+          "score": 142.1,
+          "position": "RB",
+          "playerId": 3116389,
+          "ffTeamId": "C",
+          "start": -2
+        },
+        {
+          "score": 284.32,
+          "position": "QB",
+          "playerId": 3046779,
+          "ffTeamId": "B",
+          "start": -2
+        },
+        {
+          "score": 167.1,
+          "position": "WR",
+          "playerId": 4258195,
+          "ffTeamId": "A",
+          "start": -2
+        }
+      ],
+      [
+        {
+          "score": 372.7,
+          "position": "RB",
+          "playerId": 3068267,
+          "ffTeamId": "A",
+          "start": 0
+        },
+        {
+          "score": 356.36,
+          "position": "RB",
+          "playerId": 3117251,
+          "ffTeamId": "B",
+          "start": 1
+        },
+        {
+          "score": 368.66,
+          "position": "WR",
+          "playerId": 4262921,
+          "ffTeamId": "C",
+          "start": 2
+        },
+        {
+          "score": 347.2,
+          "position": "WR",
+          "playerId": 3116406,
+          "ffTeamId": "D",
+          "start": 3
+        },
+        {
+          "score": 328.3,
+          "position": "RB",
+          "playerId": 4047365,
+          "ffTeamId": "E",
+          "start": 4
+        },
+        {
+          "score": 335.5,
+          "position": "WR",
+          "playerId": 16800,
+          "ffTeamId": "F",
+          "start": 5
+        },
+        {
+          "score": 316.6,
+          "position": "WR",
+          "playerId": 2976212,
+          "ffTeamId": "G",
+          "start": 6
+        },
+        {
+          "score": 302.76,
+          "position": "RB",
+          "playerId": 3043078,
+          "ffTeamId": "H",
+          "start": 7
+        },
+        {
+          "score": 301.6,
+          "position": "WR",
+          "playerId": 4241389,
+          "ffTeamId": "I",
+          "start": 8
+        },
+        {
+          "score": 299.6,
+          "position": "WR",
+          "playerId": 4047646,
+          "ffTeamId": "J",
+          "start": 9
+        },
+        {
+          "score": 316.3,
+          "position": "TE",
+          "playerId": 15847,
+          "ffTeamId": "J",
+          "start": 10
+        },
+        {
+          "score": 284,
+          "position": "RB",
+          "playerId": 3929630,
+          "ffTeamId": "I",
+          "start": 11
+        },
+        {
+          "score": 281.4,
+          "position": "RB",
+          "playerId": 3128720,
+          "ffTeamId": "H",
+          "start": 12
+        },
+        {
+          "score": 267.6,
+          "position": "WR",
+          "playerId": 4374302,
+          "ffTeamId": "G",
+          "start": 13
+        },
+        {
+          "score": 249.1,
+          "position": "RB",
+          "playerId": 4569173,
+          "ffTeamId": "F",
+          "start": 14
+        },
+        {
+          "score": 259.2,
+          "position": "WR",
+          "playerId": 4372016,
+          "ffTeamId": "E",
+          "start": 15
+        },
+        {
+          "score": 248.8,
+          "position": "RB",
+          "playerId": 3916148,
+          "ffTeamId": "D",
+          "start": 16
+        },
+        {
+          "score": 248.6,
+          "position": "RB",
+          "playerId": 3042519,
+          "ffTeamId": "C",
+          "start": 17
+        },
+        {
+          "score": 254.6,
+          "position": "WR",
+          "playerId": 4241478,
+          "ffTeamId": "B",
+          "start": 18
+        },
+        {
+          "score": 239.5,
+          "position": "RB",
+          "playerId": 3116385,
+          "ffTeamId": "A",
+          "start": 19
+        },
+        {
+          "score": 417.4,
+          "position": "QB",
+          "playerId": 3139477,
+          "ffTeamId": "J",
+          "start": 20
+        },
+        {
+          "score": 246,
+          "position": "WR",
+          "playerId": 2976499,
+          "ffTeamId": "I",
+          "start": 21
+        },
+        {
+          "score": 242.4,
+          "position": "WR",
+          "playerId": 4362628,
+          "ffTeamId": "H",
+          "start": 22
+        },
+        {
+          "score": 237.8,
+          "position": "RB",
+          "playerId": 3116593,
+          "ffTeamId": "G",
+          "start": 23
+        },
+        {
+          "score": 241.9,
+          "position": "WR",
+          "playerId": 3895856,
+          "ffTeamId": "F",
+          "start": 24
+        },
+        {
+          "score": 237.3,
+          "position": "WR",
+          "playerId": 2577327,
+          "ffTeamId": "E",
+          "start": 25
+        },
+        {
+          "score": 226.1,
+          "position": "RB",
+          "playerId": 3115364,
+          "ffTeamId": "D",
+          "start": 26
+        },
+        {
+          "score": 225.9,
+          "position": "RB",
+          "playerId": 2980453,
+          "ffTeamId": "C",
+          "start": 27
+        },
+        {
+          "score": 223.46,
+          "position": "RB",
+          "playerId": 4241457,
+          "ffTeamId": "B",
+          "start": 28
+        },
+        {
+          "score": 395.52,
+          "position": "QB",
+          "playerId": 3918298,
+          "ffTeamId": "A",
+          "start": 29
+        },
+        {
+          "score": 229,
+          "position": "WR",
+          "playerId": 3121422,
+          "ffTeamId": "A",
+          "start": 30
+        },
+        {
+          "score": 378.04,
+          "position": "QB",
+          "playerId": 4040715,
+          "ffTeamId": "B",
+          "start": 31
+        },
+        {
+          "score": 227.8,
+          "position": "WR",
+          "playerId": 4360438,
+          "ffTeamId": "C",
+          "start": 32
+        },
+        {
+          "score": 226.8,
+          "position": "WR",
+          "playerId": 4047650,
+          "ffTeamId": "D",
+          "start": 33
+        },
+        {
+          "score": 225.4,
+          "position": "WR",
+          "playerId": 16737,
+          "ffTeamId": "E",
+          "start": 34
+        },
+        {
+          "score": 222.8,
+          "position": "WR",
+          "playerId": 3116165,
+          "ffTeamId": "F",
+          "start": 35
+        },
+        {
+          "score": 216.7,
+          "position": "RB",
+          "playerId": 4045163,
+          "ffTeamId": "G",
+          "start": 36
+        },
+        {
+          "score": 350.7,
+          "position": "QB",
+          "playerId": 3915511,
+          "ffTeamId": "H",
+          "start": 37
+        },
+        {
+          "score": 215.4,
+          "position": "TE",
+          "playerId": 4036133,
+          "ffTeamId": "I",
+          "start": 38
+        },
+        {
+          "score": 211.7,
+          "position": "RB",
+          "playerId": 3054850,
+          "ffTeamId": "J",
+          "start": 39
+        },
+        {
+          "score": 220.9,
+          "position": "WR",
+          "playerId": 4239993,
+          "ffTeamId": "J",
+          "start": 40
+        },
+        {
+          "score": 216.5,
+          "position": "WR",
+          "playerId": 4035687,
+          "ffTeamId": "I",
+          "start": 41
+        },
+        {
+          "score": 215.7,
+          "position": "WR",
+          "playerId": 4569618,
+          "ffTeamId": "H",
+          "start": 42
+        },
+        {
+          "score": 200.5,
+          "position": "TE",
+          "playerId": 3040151,
+          "ffTeamId": "G",
+          "start": 43
+        },
+        {
+          "score": 205.1,
+          "position": "RB",
+          "playerId": 4239996,
+          "ffTeamId": "F",
+          "start": 44
+        },
+        {
+          "score": 202.5,
+          "position": "RB",
+          "playerId": 4567048,
+          "ffTeamId": "E",
+          "start": 45
+        },
+        {
+          "score": 204.2,
+          "position": "WR",
+          "playerId": 4241463,
+          "ffTeamId": "D",
+          "start": 46
+        },
+        {
+          "score": 201.4,
+          "position": "WR",
+          "playerId": 2977187,
+          "ffTeamId": "C",
+          "start": 47
+        },
+        {
+          "score": 200.2,
+          "position": "RB",
+          "playerId": 3045147,
+          "ffTeamId": "B",
+          "start": 48
+        },
+        {
+          "score": 199.1,
+          "position": "WR",
+          "playerId": 3915416,
+          "ffTeamId": "A",
+          "start": 49
+        },
+        {
+          "score": 190.5,
+          "position": "TE",
+          "playerId": 3116365,
+          "ffTeamId": "A",
+          "start": 50
+        },
+        {
+          "score": 198.2,
+          "position": "WR",
+          "playerId": 4361370,
+          "ffTeamId": "B",
+          "start": 51
+        },
+        {
+          "score": 198.1,
+          "position": "WR",
+          "playerId": 3059722,
+          "ffTeamId": "C",
+          "start": 52
+        },
+        {
+          "score": 196.3,
+          "position": "RB",
+          "playerId": 16782,
+          "ffTeamId": "D",
+          "start": 53
+        },
+        {
+          "score": 191.1,
+          "position": "RB",
+          "playerId": 4259545,
+          "ffTeamId": "E",
+          "start": 54
+        },
+        {
+          "score": 185.8,
+          "position": "RB",
+          "playerId": 3051392,
+          "ffTeamId": "F",
+          "start": 55
+        },
+        {
+          "score": 185.3,
+          "position": "WR",
+          "playerId": 3120348,
+          "ffTeamId": "G",
+          "start": 56
+        },
+        {
+          "score": 180.7,
+          "position": "WR",
+          "playerId": 3932905,
+          "ffTeamId": "H",
+          "start": 57
+        },
+        {
+          "score": 177.9,
+          "position": "RB",
+          "playerId": 4040761,
+          "ffTeamId": "I",
+          "start": 58
+        },
+        {
+          "score": 177.7,
+          "position": "RB",
+          "playerId": 4035538,
+          "ffTeamId": "J",
+          "start": 59
+        },
+        {
+          "score": 180.3,
+          "position": "WR",
+          "playerId": 3916433,
+          "ffTeamId": "J",
+          "start": 60
+        },
+        {
+          "score": 303.88,
+          "position": "QB",
+          "playerId": 15864,
+          "ffTeamId": "I",
+          "start": 61
+        },
+        {
+          "score": 176.9,
+          "position": "TE",
+          "playerId": 3051876,
+          "ffTeamId": "H",
+          "start": 62
+        },
+        {
+          "score": 180,
+          "position": "WR",
+          "playerId": 16460,
+          "ffTeamId": "G",
+          "start": 63
+        },
+        {
+          "score": 295.98,
+          "position": "QB",
+          "playerId": 4362887,
+          "ffTeamId": "F",
+          "start": 64
+        },
+        {
+          "score": 152,
+          "position": "TE",
+          "playerId": 2573401,
+          "ffTeamId": "E",
+          "start": 65
+        },
+        {
+          "score": 295.62,
+          "position": "QB",
+          "playerId": 4360310,
+          "ffTeamId": "D",
+          "start": 66
+        },
+        {
+          "score": 291.58,
+          "position": "QB",
+          "playerId": 14880,
+          "ffTeamId": "C",
+          "start": 67
+        },
+        {
+          "score": 289,
+          "position": "QB",
+          "playerId": 3917792,
+          "ffTeamId": "B",
+          "start": 68
+        },
+        {
+          "score": 178.6,
+          "position": "WR",
+          "playerId": 4426502,
+          "ffTeamId": "A",
+          "start": 69
+        },
+        {
+          "score": 176.5,
+          "position": "WR",
+          "playerId": 3045138,
+          "ffTeamId": "A",
+          "start": 70
+        },
+        {
+          "score": 176.3,
+          "position": "WR",
+          "playerId": 3121427,
+          "ffTeamId": "B",
+          "start": 71
+        },
+        {
+          "score": 148.2,
+          "position": "TE",
+          "playerId": 4361411,
+          "ffTeamId": "C",
+          "start": 72
+        },
+        {
+          "score": 284.32,
+          "position": "QB",
+          "playerId": 3046779,
+          "ffTeamId": "D",
+          "start": 73
+        },
+        {
+          "score": 281.26,
+          "position": "QB",
+          "playerId": 4038941,
+          "ffTeamId": "E",
+          "start": 74
+        },
+        {
+          "score": 271.66,
+          "position": "QB",
+          "playerId": 2330,
+          "ffTeamId": "F",
+          "start": 75
+        },
+        {
+          "score": 239.2,
+          "position": "QB",
+          "playerId": 8439,
+          "ffTeamId": "G",
+          "start": 76
+        },
+        {
+          "score": 174.8,
+          "position": "WR",
+          "playerId": 3128390,
+          "ffTeamId": "H",
+          "start": 77
+        },
+        {
+          "score": 236.08,
+          "position": "QB",
+          "playerId": 3916387,
+          "ffTeamId": "I",
+          "start": 78
+        },
+        {
+          "score": 230.92,
+          "position": "QB",
+          "playerId": 4241479,
+          "ffTeamId": "J",
+          "start": 79
+        },
+        {
+          "score": 171.6,
+          "position": "WR",
+          "playerId": 4243537,
+          "ffTeamId": "J",
+          "start": 80
+        },
+        {
+          "score": 169.3,
+          "position": "WR",
+          "playerId": 4242433,
+          "ffTeamId": "I",
+          "start": 81
+        },
+        {
+          "score": 225.76,
+          "position": "QB",
+          "playerId": 14881,
+          "ffTeamId": "H",
+          "start": 82
+        },
+        {
+          "score": 219.08,
+          "position": "QB",
+          "playerId": 16757,
+          "ffTeamId": "G",
+          "start": 83
+        },
+        {
+          "score": 147.3,
+          "position": "TE",
+          "playerId": 4258595,
+          "ffTeamId": "F",
+          "start": 84
+        },
+        {
+          "score": 200.52,
+          "position": "QB",
+          "playerId": 3917315,
+          "ffTeamId": "E",
+          "start": 85
+        },
+        {
+          "score": 145.8,
+          "position": "TE",
+          "playerId": 2468609,
+          "ffTeamId": "D",
+          "start": 86
+        },
+        {
+          "score": 198.6,
+          "position": "QB",
+          "playerId": 2577417,
+          "ffTeamId": "C",
+          "start": 87
+        },
+        {
+          "score": 142.7,
+          "position": "TE",
+          "playerId": 3117256,
+          "ffTeamId": "B",
+          "start": 88
+        },
+        {
+          "score": 196.56,
+          "position": "QB",
+          "playerId": 2576980,
+          "ffTeamId": "A",
+          "start": 89
+        }
+      ],
+      [
+        {
+          "score": 372.7,
+          "position": "RB",
+          "playerId": 3068267,
+          "ffTeamId": "A",
+          "start": 0
+        },
+        {
+          "score": 356.36,
+          "position": "RB",
+          "playerId": 3117251,
+          "ffTeamId": "B",
+          "start": 1
+        },
+        {
+          "score": 368.66,
+          "position": "WR",
+          "playerId": 4262921,
+          "ffTeamId": "C",
+          "start": 2
+        },
+        {
+          "score": 347.2,
+          "position": "WR",
+          "playerId": 3116406,
+          "ffTeamId": "D",
+          "start": 3
+        },
+        {
+          "score": 335.5,
+          "position": "WR",
+          "playerId": 16800,
+          "ffTeamId": "E",
+          "start": 4
+        },
+        {
+          "score": 328.3,
+          "position": "RB",
+          "playerId": 4047365,
+          "ffTeamId": "F",
+          "start": 5
+        },
+        {
+          "score": 316.3,
+          "position": "TE",
+          "playerId": 15847,
+          "ffTeamId": "G",
+          "start": 6
+        },
+        {
+          "score": 316.6,
+          "position": "WR",
+          "playerId": 2976212,
+          "ffTeamId": "H",
+          "start": 7
+        },
+        {
+          "score": 302.76,
+          "position": "RB",
+          "playerId": 3043078,
+          "ffTeamId": "I",
+          "start": 8
+        },
+        {
+          "score": 301.6,
+          "position": "WR",
+          "playerId": 4241389,
+          "ffTeamId": "J",
+          "start": 9
+        },
+        {
+          "score": 299.6,
+          "position": "WR",
+          "playerId": 4047646,
+          "ffTeamId": "J",
+          "start": 10
+        },
+        {
+          "score": 417.4,
+          "position": "QB",
+          "playerId": 3139477,
+          "ffTeamId": "I",
+          "start": 11
+        },
+        {
+          "score": 284,
+          "position": "RB",
+          "playerId": 3929630,
+          "ffTeamId": "H",
+          "start": 12
+        },
+        {
+          "score": 281.4,
+          "position": "RB",
+          "playerId": 3128720,
+          "ffTeamId": "G",
+          "start": 13
+        },
+        {
+          "score": 267.6,
+          "position": "WR",
+          "playerId": 4374302,
+          "ffTeamId": "F",
+          "start": 14
+        },
+        {
+          "score": 259.2,
+          "position": "WR",
+          "playerId": 4372016,
+          "ffTeamId": "E",
+          "start": 15
+        },
+        {
+          "score": 395.52,
+          "position": "QB",
+          "playerId": 3918298,
+          "ffTeamId": "D",
+          "start": 16
+        },
+        {
+          "score": 254.6,
+          "position": "WR",
+          "playerId": 4241478,
+          "ffTeamId": "C",
+          "start": 17
+        },
+        {
+          "score": 249.1,
+          "position": "RB",
+          "playerId": 4569173,
+          "ffTeamId": "B",
+          "start": 18
+        },
+        {
+          "score": 248.8,
+          "position": "RB",
+          "playerId": 3916148,
+          "ffTeamId": "A",
+          "start": 19
+        },
+        {
+          "score": 378.04,
+          "position": "QB",
+          "playerId": 4040715,
+          "ffTeamId": "J",
+          "start": 20
+        },
+        {
+          "score": 248.6,
+          "position": "RB",
+          "playerId": 3042519,
+          "ffTeamId": "I",
+          "start": 21
+        },
+        {
+          "score": 246,
+          "position": "WR",
+          "playerId": 2976499,
+          "ffTeamId": "H",
+          "start": 22
+        },
+        {
+          "score": 242.4,
+          "position": "WR",
+          "playerId": 4362628,
+          "ffTeamId": "G",
+          "start": 23
+        },
+        {
+          "score": 241.9,
+          "position": "WR",
+          "playerId": 3895856,
+          "ffTeamId": "F",
+          "start": 24
+        },
+        {
+          "score": 239.5,
+          "position": "RB",
+          "playerId": 3116385,
+          "ffTeamId": "E",
+          "start": 25
+        },
+        {
+          "score": 237.8,
+          "position": "RB",
+          "playerId": 3116593,
+          "ffTeamId": "D",
+          "start": 26
+        },
+        {
+          "score": 237.3,
+          "position": "WR",
+          "playerId": 2577327,
+          "ffTeamId": "C",
+          "start": 27
+        },
+        {
+          "score": 350.7,
+          "position": "QB",
+          "playerId": 3915511,
+          "ffTeamId": "B",
+          "start": 28
+        },
+        {
+          "score": 229,
+          "position": "WR",
+          "playerId": 3121422,
+          "ffTeamId": "A",
+          "start": 29
+        },
+        {
+          "score": 227.8,
+          "position": "WR",
+          "playerId": 4360438,
+          "ffTeamId": "A",
+          "start": 30
+        },
+        {
+          "score": 226.8,
+          "position": "WR",
+          "playerId": 4047650,
+          "ffTeamId": "B",
+          "start": 31
+        },
+        {
+          "score": 226.1,
+          "position": "RB",
+          "playerId": 3115364,
+          "ffTeamId": "C",
+          "start": 32
+        },
+        {
+          "score": 215.4,
+          "position": "TE",
+          "playerId": 4036133,
+          "ffTeamId": "D",
+          "start": 33
+        },
+        {
+          "score": 225.9,
+          "position": "RB",
+          "playerId": 2980453,
+          "ffTeamId": "E",
+          "start": 34
+        },
+        {
+          "score": 225.4,
+          "position": "WR",
+          "playerId": 16737,
+          "ffTeamId": "F",
+          "start": 35
+        },
+        {
+          "score": 223.46,
+          "position": "RB",
+          "playerId": 4241457,
+          "ffTeamId": "G",
+          "start": 36
+        },
+        {
+          "score": 222.8,
+          "position": "WR",
+          "playerId": 3116165,
+          "ffTeamId": "H",
+          "start": 37
+        },
+        {
+          "score": 220.9,
+          "position": "WR",
+          "playerId": 4239993,
+          "ffTeamId": "I",
+          "start": 38
+        },
+        {
+          "score": 216.7,
+          "position": "RB",
+          "playerId": 4045163,
+          "ffTeamId": "J",
+          "start": 39
+        },
+        {
+          "score": 216.5,
+          "position": "WR",
+          "playerId": 4035687,
+          "ffTeamId": "J",
+          "start": 40
+        },
+        {
+          "score": 215.7,
+          "position": "WR",
+          "playerId": 4569618,
+          "ffTeamId": "I",
+          "start": 41
+        },
+        {
+          "score": 200.5,
+          "position": "TE",
+          "playerId": 3040151,
+          "ffTeamId": "H",
+          "start": 42
+        },
+        {
+          "score": 211.7,
+          "position": "RB",
+          "playerId": 3054850,
+          "ffTeamId": "G",
+          "start": 43
+        },
+        {
+          "score": 190.5,
+          "position": "TE",
+          "playerId": 3116365,
+          "ffTeamId": "F",
+          "start": 44
+        },
+        {
+          "score": 205.1,
+          "position": "RB",
+          "playerId": 4239996,
+          "ffTeamId": "E",
+          "start": 45
+        },
+        {
+          "score": 204.2,
+          "position": "WR",
+          "playerId": 4241463,
+          "ffTeamId": "D",
+          "start": 46
+        },
+        {
+          "score": 202.5,
+          "position": "RB",
+          "playerId": 4567048,
+          "ffTeamId": "C",
+          "start": 47
+        },
+        {
+          "score": 201.4,
+          "position": "WR",
+          "playerId": 2977187,
+          "ffTeamId": "B",
+          "start": 48
+        },
+        {
+          "score": 303.88,
+          "position": "QB",
+          "playerId": 15864,
+          "ffTeamId": "A",
+          "start": 49
+        },
+        {
+          "score": 176.9,
+          "position": "TE",
+          "playerId": 3051876,
+          "ffTeamId": "A",
+          "start": 50
+        },
+        {
+          "score": 200.2,
+          "position": "RB",
+          "playerId": 3045147,
+          "ffTeamId": "B",
+          "start": 51
+        },
+        {
+          "score": 199.1,
+          "position": "WR",
+          "playerId": 3915416,
+          "ffTeamId": "C",
+          "start": 52
+        },
+        {
+          "score": 198.2,
+          "position": "WR",
+          "playerId": 4361370,
+          "ffTeamId": "D",
+          "start": 53
+        },
+        {
+          "score": 198.1,
+          "position": "WR",
+          "playerId": 3059722,
+          "ffTeamId": "E",
+          "start": 54
+        },
+        {
+          "score": 295.98,
+          "position": "QB",
+          "playerId": 4362887,
+          "ffTeamId": "F",
+          "start": 55
+        },
+        {
+          "score": 295.62,
+          "position": "QB",
+          "playerId": 4360310,
+          "ffTeamId": "G",
+          "start": 56
+        },
+        {
+          "score": 291.58,
+          "position": "QB",
+          "playerId": 14880,
+          "ffTeamId": "H",
+          "start": 57
+        },
+        {
+          "score": 196.3,
+          "position": "RB",
+          "playerId": 16782,
+          "ffTeamId": "I",
+          "start": 58
+        },
+        {
+          "score": 289,
+          "position": "QB",
+          "playerId": 3917792,
+          "ffTeamId": "J",
+          "start": 59
+        },
+        {
+          "score": 191.1,
+          "position": "RB",
+          "playerId": 4259545,
+          "ffTeamId": "J",
+          "start": 60
+        },
+        {
+          "score": 284.32,
+          "position": "QB",
+          "playerId": 3046779,
+          "ffTeamId": "I",
+          "start": 61
+        },
+        {
+          "score": 281.26,
+          "position": "QB",
+          "playerId": 4038941,
+          "ffTeamId": "H",
+          "start": 62
+        },
+        {
+          "score": 271.66,
+          "position": "QB",
+          "playerId": 2330,
+          "ffTeamId": "G",
+          "start": 63
+        },
+        {
+          "score": 185.8,
+          "position": "RB",
+          "playerId": 3051392,
+          "ffTeamId": "F",
+          "start": 64
+        },
+        {
+          "score": 239.2,
+          "position": "QB",
+          "playerId": 8439,
+          "ffTeamId": "E",
+          "start": 65
+        },
+        {
+          "score": 185.3,
+          "position": "WR",
+          "playerId": 3120348,
+          "ffTeamId": "D",
+          "start": 66
+        },
+        {
+          "score": 236.08,
+          "position": "QB",
+          "playerId": 3916387,
+          "ffTeamId": "C",
+          "start": 67
+        },
+        {
+          "score": 180.7,
+          "position": "WR",
+          "playerId": 3932905,
+          "ffTeamId": "B",
+          "start": 68
+        },
+        {
+          "score": 230.92,
+          "position": "QB",
+          "playerId": 4241479,
+          "ffTeamId": "A",
+          "start": 69
+        },
+        {
+          "score": 180.3,
+          "position": "WR",
+          "playerId": 3916433,
+          "ffTeamId": "A",
+          "start": 70
+        },
+        {
+          "score": 225.76,
+          "position": "QB",
+          "playerId": 14881,
+          "ffTeamId": "B",
+          "start": 71
+        },
+        {
+          "score": 219.08,
+          "position": "QB",
+          "playerId": 16757,
+          "ffTeamId": "C",
+          "start": 72
+        },
+        {
+          "score": 177.9,
+          "position": "RB",
+          "playerId": 4040761,
+          "ffTeamId": "D",
+          "start": 73
+        },
+        {
+          "score": 152,
+          "position": "TE",
+          "playerId": 2573401,
+          "ffTeamId": "E",
+          "start": 74
+        },
+        {
+          "score": 180,
+          "position": "WR",
+          "playerId": 16460,
+          "ffTeamId": "F",
+          "start": 75
+        },
+        {
+          "score": 178.6,
+          "position": "WR",
+          "playerId": 4426502,
+          "ffTeamId": "G",
+          "start": 76
+        },
+        {
+          "score": 177.7,
+          "position": "RB",
+          "playerId": 4035538,
+          "ffTeamId": "H",
+          "start": 77
+        },
+        {
+          "score": 176.5,
+          "position": "WR",
+          "playerId": 3045138,
+          "ffTeamId": "I",
+          "start": 78
+        },
+        {
+          "score": 176.3,
+          "position": "WR",
+          "playerId": 3121427,
+          "ffTeamId": "J",
+          "start": 79
+        },
+        {
+          "score": 148.2,
+          "position": "TE",
+          "playerId": 4361411,
+          "ffTeamId": "J",
+          "start": 80
+        },
+        {
+          "score": 147.3,
+          "position": "TE",
+          "playerId": 4258595,
+          "ffTeamId": "I",
+          "start": 81
+        },
+        {
+          "score": 174.8,
+          "position": "WR",
+          "playerId": 3128390,
+          "ffTeamId": "H",
+          "start": 82
+        },
+        {
+          "score": 171.6,
+          "position": "WR",
+          "playerId": 4243537,
+          "ffTeamId": "G",
+          "start": 83
+        },
+        {
+          "score": 200.52,
+          "position": "QB",
+          "playerId": 3917315,
+          "ffTeamId": "F",
+          "start": 84
+        },
+        {
+          "score": 198.6,
+          "position": "QB",
+          "playerId": 2577417,
+          "ffTeamId": "E",
+          "start": 85
+        },
+        {
+          "score": 196.56,
+          "position": "QB",
+          "playerId": 2576980,
+          "ffTeamId": "D",
+          "start": 86
+        },
+        {
+          "score": 145.8,
+          "position": "TE",
+          "playerId": 2468609,
+          "ffTeamId": "C",
+          "start": 87
+        },
+        {
+          "score": 142.7,
+          "position": "TE",
+          "playerId": 3117256,
+          "ffTeamId": "B",
+          "start": 88
+        },
+        {
+          "score": 169.3,
+          "position": "WR",
+          "playerId": 4242433,
+          "ffTeamId": "A",
+          "start": 89
+        }
+      ],
+      [
+        {
+          "score": 372.7,
+          "position": "RB",
+          "playerId": 3068267,
+          "ffTeamId": "A",
+          "start": 0
+        },
+        {
+          "score": 368.66,
+          "position": "WR",
+          "playerId": 4262921,
+          "ffTeamId": "B",
+          "start": 1
+        },
+        {
+          "score": 356.36,
+          "position": "RB",
+          "playerId": 3117251,
+          "ffTeamId": "C",
+          "start": 2
+        },
+        {
+          "score": 347.2,
+          "position": "WR",
+          "playerId": 3116406,
+          "ffTeamId": "D",
+          "start": 3
+        },
+        {
+          "score": 316.3,
+          "position": "TE",
+          "playerId": 15847,
+          "ffTeamId": "E",
+          "start": 4
+        },
+        {
+          "score": 335.5,
+          "position": "WR",
+          "playerId": 16800,
+          "ffTeamId": "F",
+          "start": 5
+        },
+        {
+          "score": 328.3,
+          "position": "RB",
+          "playerId": 4047365,
+          "ffTeamId": "G",
+          "start": 6
+        },
+        {
+          "score": 316.6,
+          "position": "WR",
+          "playerId": 2976212,
+          "ffTeamId": "H",
+          "start": 7
+        },
+        {
+          "score": 302.76,
+          "position": "RB",
+          "playerId": 3043078,
+          "ffTeamId": "I",
+          "start": 8
+        },
+        {
+          "score": 417.4,
+          "position": "QB",
+          "playerId": 3139477,
+          "ffTeamId": "J",
+          "start": 9
+        },
+        {
+          "score": 301.6,
+          "position": "WR",
+          "playerId": 4241389,
+          "ffTeamId": "J",
+          "start": 10
+        },
+        {
+          "score": 299.6,
+          "position": "WR",
+          "playerId": 4047646,
+          "ffTeamId": "I",
+          "start": 11
+        },
+        {
+          "score": 395.52,
+          "position": "QB",
+          "playerId": 3918298,
+          "ffTeamId": "H",
+          "start": 12
+        },
+        {
+          "score": 284,
+          "position": "RB",
+          "playerId": 3929630,
+          "ffTeamId": "G",
+          "start": 13
+        },
+        {
+          "score": 281.4,
+          "position": "RB",
+          "playerId": 3128720,
+          "ffTeamId": "F",
+          "start": 14
+        },
+        {
+          "score": 378.04,
+          "position": "QB",
+          "playerId": 4040715,
+          "ffTeamId": "E",
+          "start": 15
+        },
+        {
+          "score": 267.6,
+          "position": "WR",
+          "playerId": 4374302,
+          "ffTeamId": "D",
+          "start": 16
+        },
+        {
+          "score": 259.2,
+          "position": "WR",
+          "playerId": 4372016,
+          "ffTeamId": "C",
+          "start": 17
+        },
+        {
+          "score": 254.6,
+          "position": "WR",
+          "playerId": 4241478,
+          "ffTeamId": "B",
+          "start": 18
+        },
+        {
+          "score": 350.7,
+          "position": "QB",
+          "playerId": 3915511,
+          "ffTeamId": "A",
+          "start": 19
+        },
+        {
+          "score": 249.1,
+          "position": "RB",
+          "playerId": 4569173,
+          "ffTeamId": "J",
+          "start": 20
+        },
+        {
+          "score": 248.8,
+          "position": "RB",
+          "playerId": 3916148,
+          "ffTeamId": "I",
+          "start": 21
+        },
+        {
+          "score": 248.6,
+          "position": "RB",
+          "playerId": 3042519,
+          "ffTeamId": "H",
+          "start": 22
+        },
+        {
+          "score": 246,
+          "position": "WR",
+          "playerId": 2976499,
+          "ffTeamId": "G",
+          "start": 23
+        },
+        {
+          "score": 242.4,
+          "position": "WR",
+          "playerId": 4362628,
+          "ffTeamId": "F",
+          "start": 24
+        },
+        {
+          "score": 241.9,
+          "position": "WR",
+          "playerId": 3895856,
+          "ffTeamId": "E",
+          "start": 25
+        },
+        {
+          "score": 239.5,
+          "position": "RB",
+          "playerId": 3116385,
+          "ffTeamId": "D",
+          "start": 26
+        },
+        {
+          "score": 237.8,
+          "position": "RB",
+          "playerId": 3116593,
+          "ffTeamId": "C",
+          "start": 27
+        },
+        {
+          "score": 237.3,
+          "position": "WR",
+          "playerId": 2577327,
+          "ffTeamId": "B",
+          "start": 28
+        },
+        {
+          "score": 229,
+          "position": "WR",
+          "playerId": 3121422,
+          "ffTeamId": "A",
+          "start": 29
+        },
+        {
+          "score": 215.4,
+          "position": "TE",
+          "playerId": 4036133,
+          "ffTeamId": "A",
+          "start": 30
+        },
+        {
+          "score": 226.1,
+          "position": "RB",
+          "playerId": 3115364,
+          "ffTeamId": "B",
+          "start": 31
+        },
+        {
+          "score": 227.8,
+          "position": "WR",
+          "playerId": 4360438,
+          "ffTeamId": "C",
+          "start": 32
+        },
+        {
+          "score": 225.9,
+          "position": "RB",
+          "playerId": 2980453,
+          "ffTeamId": "D",
+          "start": 33
+        },
+        {
+          "score": 226.8,
+          "position": "WR",
+          "playerId": 4047650,
+          "ffTeamId": "E",
+          "start": 34
+        },
+        {
+          "score": 225.4,
+          "position": "WR",
+          "playerId": 16737,
+          "ffTeamId": "F",
+          "start": 35
+        },
+        {
+          "score": 303.88,
+          "position": "QB",
+          "playerId": 15864,
+          "ffTeamId": "G",
+          "start": 36
+        },
+        {
+          "score": 223.46,
+          "position": "RB",
+          "playerId": 4241457,
+          "ffTeamId": "H",
+          "start": 37
+        },
+        {
+          "score": 222.8,
+          "position": "WR",
+          "playerId": 3116165,
+          "ffTeamId": "I",
+          "start": 38
+        },
+        {
+          "score": 220.9,
+          "position": "WR",
+          "playerId": 4239993,
+          "ffTeamId": "J",
+          "start": 39
+        },
+        {
+          "score": 200.5,
+          "position": "TE",
+          "playerId": 3040151,
+          "ffTeamId": "J",
+          "start": 40
+        },
+        {
+          "score": 190.5,
+          "position": "TE",
+          "playerId": 3116365,
+          "ffTeamId": "I",
+          "start": 41
+        },
+        {
+          "score": 216.5,
+          "position": "WR",
+          "playerId": 4035687,
+          "ffTeamId": "H",
+          "start": 42
+        },
+        {
+          "score": 216.7,
+          "position": "RB",
+          "playerId": 4045163,
+          "ffTeamId": "G",
+          "start": 43
+        },
+        {
+          "score": 295.98,
+          "position": "QB",
+          "playerId": 4362887,
+          "ffTeamId": "F",
+          "start": 44
+        },
+        {
+          "score": 215.7,
+          "position": "WR",
+          "playerId": 4569618,
+          "ffTeamId": "E",
+          "start": 45
+        },
+        {
+          "score": 295.62,
+          "position": "QB",
+          "playerId": 4360310,
+          "ffTeamId": "D",
+          "start": 46
+        },
+        {
+          "score": 291.58,
+          "position": "QB",
+          "playerId": 14880,
+          "ffTeamId": "C",
+          "start": 47
+        },
+        {
+          "score": 289,
+          "position": "QB",
+          "playerId": 3917792,
+          "ffTeamId": "B",
+          "start": 48
+        },
+        {
+          "score": 284.32,
+          "position": "QB",
+          "playerId": 3046779,
+          "ffTeamId": "A",
+          "start": 49
+        },
+        {
+          "score": 211.7,
+          "position": "RB",
+          "playerId": 3054850,
+          "ffTeamId": "A",
+          "start": 50
+        },
+        {
+          "score": 281.26,
+          "position": "QB",
+          "playerId": 4038941,
+          "ffTeamId": "B",
+          "start": 51
+        },
+        {
+          "score": 271.66,
+          "position": "QB",
+          "playerId": 2330,
+          "ffTeamId": "C",
+          "start": 52
+        },
+        {
+          "score": 205.1,
+          "position": "RB",
+          "playerId": 4239996,
+          "ffTeamId": "D",
+          "start": 53
+        },
+        {
+          "score": 202.5,
+          "position": "RB",
+          "playerId": 4567048,
+          "ffTeamId": "E",
+          "start": 54
+        },
+        {
+          "score": 204.2,
+          "position": "WR",
+          "playerId": 4241463,
+          "ffTeamId": "F",
+          "start": 55
+        },
+        {
+          "score": 176.9,
+          "position": "TE",
+          "playerId": 3051876,
+          "ffTeamId": "G",
+          "start": 56
+        },
+        {
+          "score": 201.4,
+          "position": "WR",
+          "playerId": 2977187,
+          "ffTeamId": "H",
+          "start": 57
+        },
+        {
+          "score": 239.2,
+          "position": "QB",
+          "playerId": 8439,
+          "ffTeamId": "I",
+          "start": 58
+        },
+        {
+          "score": 236.08,
+          "position": "QB",
+          "playerId": 3916387,
+          "ffTeamId": "J",
+          "start": 59
+        },
+        {
+          "score": 200.2,
+          "position": "RB",
+          "playerId": 3045147,
+          "ffTeamId": "J",
+          "start": 60
+        },
+        {
+          "score": 230.92,
+          "position": "QB",
+          "playerId": 4241479,
+          "ffTeamId": "I",
+          "start": 61
+        },
+        {
+          "score": 225.76,
+          "position": "QB",
+          "playerId": 14881,
+          "ffTeamId": "H",
+          "start": 62
+        },
+        {
+          "score": 199.1,
+          "position": "WR",
+          "playerId": 3915416,
+          "ffTeamId": "G",
+          "start": 63
+        },
+        {
+          "score": 196.3,
+          "position": "RB",
+          "playerId": 16782,
+          "ffTeamId": "F",
+          "start": 64
+        },
+        {
+          "score": 198.2,
+          "position": "WR",
+          "playerId": 4361370,
+          "ffTeamId": "E",
+          "start": 65
+        },
+        {
+          "score": 198.1,
+          "position": "WR",
+          "playerId": 3059722,
+          "ffTeamId": "D",
+          "start": 66
+        },
+        {
+          "score": 191.1,
+          "position": "RB",
+          "playerId": 4259545,
+          "ffTeamId": "C",
+          "start": 67
+        },
+        {
+          "score": 185.8,
+          "position": "RB",
+          "playerId": 3051392,
+          "ffTeamId": "B",
+          "start": 68
+        },
+        {
+          "score": 185.3,
+          "position": "WR",
+          "playerId": 3120348,
+          "ffTeamId": "A",
+          "start": 69
+        },
+        {
+          "score": 180.7,
+          "position": "WR",
+          "playerId": 3932905,
+          "ffTeamId": "A",
+          "start": 70
+        },
+        {
+          "score": 180.3,
+          "position": "WR",
+          "playerId": 3916433,
+          "ffTeamId": "B",
+          "start": 71
+        },
+        {
+          "score": 180,
+          "position": "WR",
+          "playerId": 16460,
+          "ffTeamId": "C",
+          "start": 72
+        },
+        {
+          "score": 219.08,
+          "position": "QB",
+          "playerId": 16757,
+          "ffTeamId": "D",
+          "start": 73
+        },
+        {
+          "score": 177.9,
+          "position": "RB",
+          "playerId": 4040761,
+          "ffTeamId": "E",
+          "start": 74
+        },
+        {
+          "score": 152,
+          "position": "TE",
+          "playerId": 2573401,
+          "ffTeamId": "F",
+          "start": 75
+        },
+        {
+          "score": 178.6,
+          "position": "WR",
+          "playerId": 4426502,
+          "ffTeamId": "G",
+          "start": 76
+        },
+        {
+          "score": 177.7,
+          "position": "RB",
+          "playerId": 4035538,
+          "ffTeamId": "H",
+          "start": 77
+        },
+        {
+          "score": 176.5,
+          "position": "WR",
+          "playerId": 3045138,
+          "ffTeamId": "I",
+          "start": 78
+        },
+        {
+          "score": 176.3,
+          "position": "WR",
+          "playerId": 3121427,
+          "ffTeamId": "J",
+          "start": 79
+        },
+        {
+          "score": 174.8,
+          "position": "WR",
+          "playerId": 3128390,
+          "ffTeamId": "J",
+          "start": 80
+        },
+        {
+          "score": 171.6,
+          "position": "WR",
+          "playerId": 4243537,
+          "ffTeamId": "I",
+          "start": 81
+        },
+        {
+          "score": 148.2,
+          "position": "TE",
+          "playerId": 4361411,
+          "ffTeamId": "H",
+          "start": 82
+        },
+        {
+          "score": 200.52,
+          "position": "QB",
+          "playerId": 3917315,
+          "ffTeamId": "G",
+          "start": 83
+        },
+        {
+          "score": 198.6,
+          "position": "QB",
+          "playerId": 2577417,
+          "ffTeamId": "F",
+          "start": 84
+        },
+        {
+          "score": 196.56,
+          "position": "QB",
+          "playerId": 2576980,
+          "ffTeamId": "E",
+          "start": 85
+        },
+        {
+          "score": 147.3,
+          "position": "TE",
+          "playerId": 4258595,
+          "ffTeamId": "D",
+          "start": 86
+        },
+        {
+          "score": 145.8,
+          "position": "TE",
+          "playerId": 2468609,
+          "ffTeamId": "C",
+          "start": 87
+        },
+        {
+          "score": 142.7,
+          "position": "TE",
+          "playerId": 3117256,
+          "ffTeamId": "B",
+          "start": 88
+        },
+        {
+          "score": 169.3,
+          "position": "WR",
+          "playerId": 4242433,
+          "ffTeamId": "A",
+          "start": 89
+        }
+      ],
+      [
+        {
+          "score": 372.7,
+          "position": "RB",
+          "playerId": 3068267,
+          "ffTeamId": "A",
+          "start": 0
+        },
+        {
+          "score": 368.66,
+          "position": "WR",
+          "playerId": 4262921,
+          "ffTeamId": "B",
+          "start": 1
+        },
+        {
+          "score": 356.36,
+          "position": "RB",
+          "playerId": 3117251,
+          "ffTeamId": "C",
+          "start": 2
+        },
+        {
+          "score": 347.2,
+          "position": "WR",
+          "playerId": 3116406,
+          "ffTeamId": "D",
+          "start": 3
+        },
+        {
+          "score": 316.3,
+          "position": "TE",
+          "playerId": 15847,
+          "ffTeamId": "E",
+          "start": 4
+        },
+        {
+          "score": 417.4,
+          "position": "QB",
+          "playerId": 3139477,
+          "ffTeamId": "F",
+          "start": 5
+        },
+        {
+          "score": 335.5,
+          "position": "WR",
+          "playerId": 16800,
+          "ffTeamId": "G",
+          "start": 6
+        },
+        {
+          "score": 328.3,
+          "position": "RB",
+          "playerId": 4047365,
+          "ffTeamId": "H",
+          "start": 7
+        },
+        {
+          "score": 316.6,
+          "position": "WR",
+          "playerId": 2976212,
+          "ffTeamId": "I",
+          "start": 8
+        },
+        {
+          "score": 395.52,
+          "position": "QB",
+          "playerId": 3918298,
+          "ffTeamId": "J",
+          "start": 9
+        },
+        {
+          "score": 378.04,
+          "position": "QB",
+          "playerId": 4040715,
+          "ffTeamId": "J",
+          "start": 10
+        },
+        {
+          "score": 302.76,
+          "position": "RB",
+          "playerId": 3043078,
+          "ffTeamId": "I",
+          "start": 11
+        },
+        {
+          "score": 301.6,
+          "position": "WR",
+          "playerId": 4241389,
+          "ffTeamId": "H",
+          "start": 12
+        },
+        {
+          "score": 299.6,
+          "position": "WR",
+          "playerId": 4047646,
+          "ffTeamId": "G",
+          "start": 13
+        },
+        {
+          "score": 284,
+          "position": "RB",
+          "playerId": 3929630,
+          "ffTeamId": "F",
+          "start": 14
+        },
+        {
+          "score": 281.4,
+          "position": "RB",
+          "playerId": 3128720,
+          "ffTeamId": "E",
+          "start": 15
+        },
+        {
+          "score": 350.7,
+          "position": "QB",
+          "playerId": 3915511,
+          "ffTeamId": "D",
+          "start": 16
+        },
+        {
+          "score": 267.6,
+          "position": "WR",
+          "playerId": 4374302,
+          "ffTeamId": "C",
+          "start": 17
+        },
+        {
+          "score": 259.2,
+          "position": "WR",
+          "playerId": 4372016,
+          "ffTeamId": "B",
+          "start": 18
+        },
+        {
+          "score": 254.6,
+          "position": "WR",
+          "playerId": 4241478,
+          "ffTeamId": "A",
+          "start": 19
+        },
+        {
+          "score": 249.1,
+          "position": "RB",
+          "playerId": 4569173,
+          "ffTeamId": "J",
+          "start": 20
+        },
+        {
+          "score": 248.8,
+          "position": "RB",
+          "playerId": 3916148,
+          "ffTeamId": "I",
+          "start": 21
+        },
+        {
+          "score": 248.6,
+          "position": "RB",
+          "playerId": 3042519,
+          "ffTeamId": "H",
+          "start": 22
+        },
+        {
+          "score": 246,
+          "position": "WR",
+          "playerId": 2976499,
+          "ffTeamId": "G",
+          "start": 23
+        },
+        {
+          "score": 242.4,
+          "position": "WR",
+          "playerId": 4362628,
+          "ffTeamId": "F",
+          "start": 24
+        },
+        {
+          "score": 241.9,
+          "position": "WR",
+          "playerId": 3895856,
+          "ffTeamId": "E",
+          "start": 25
+        },
+        {
+          "score": 239.5,
+          "position": "RB",
+          "playerId": 3116385,
+          "ffTeamId": "D",
+          "start": 26
+        },
+        {
+          "score": 215.4,
+          "position": "TE",
+          "playerId": 4036133,
+          "ffTeamId": "C",
+          "start": 27
+        },
+        {
+          "score": 237.8,
+          "position": "RB",
+          "playerId": 3116593,
+          "ffTeamId": "B",
+          "start": 28
+        },
+        {
+          "score": 303.88,
+          "position": "QB",
+          "playerId": 15864,
+          "ffTeamId": "A",
+          "start": 29
+        },
+        {
+          "score": 237.3,
+          "position": "WR",
+          "playerId": 2577327,
+          "ffTeamId": "A",
+          "start": 30
+        },
+        {
+          "score": 229,
+          "position": "WR",
+          "playerId": 3121422,
+          "ffTeamId": "B",
+          "start": 31
+        },
+        {
+          "score": 295.98,
+          "position": "QB",
+          "playerId": 4362887,
+          "ffTeamId": "C",
+          "start": 32
+        },
+        {
+          "score": 227.8,
+          "position": "WR",
+          "playerId": 4360438,
+          "ffTeamId": "D",
+          "start": 33
+        },
+        {
+          "score": 295.62,
+          "position": "QB",
+          "playerId": 4360310,
+          "ffTeamId": "E",
+          "start": 34
+        },
+        {
+          "score": 226.1,
+          "position": "RB",
+          "playerId": 3115364,
+          "ffTeamId": "F",
+          "start": 35
+        },
+        {
+          "score": 291.58,
+          "position": "QB",
+          "playerId": 14880,
+          "ffTeamId": "G",
+          "start": 36
+        },
+        {
+          "score": 289,
+          "position": "QB",
+          "playerId": 3917792,
+          "ffTeamId": "H",
+          "start": 37
+        },
+        {
+          "score": 284.32,
+          "position": "QB",
+          "playerId": 3046779,
+          "ffTeamId": "I",
+          "start": 38
+        },
+        {
+          "score": 226.8,
+          "position": "WR",
+          "playerId": 4047650,
+          "ffTeamId": "J",
+          "start": 39
+        },
+        {
+          "score": 200.5,
+          "position": "TE",
+          "playerId": 3040151,
+          "ffTeamId": "J",
+          "start": 40
+        },
+        {
+          "score": 281.26,
+          "position": "QB",
+          "playerId": 4038941,
+          "ffTeamId": "I",
+          "start": 41
+        },
+        {
+          "score": 271.66,
+          "position": "QB",
+          "playerId": 2330,
+          "ffTeamId": "H",
+          "start": 42
+        },
+        {
+          "score": 225.9,
+          "position": "RB",
+          "playerId": 2980453,
+          "ffTeamId": "G",
+          "start": 43
+        },
+        {
+          "score": 225.4,
+          "position": "WR",
+          "playerId": 16737,
+          "ffTeamId": "F",
+          "start": 44
+        },
+        {
+          "score": 223.46,
+          "position": "RB",
+          "playerId": 4241457,
+          "ffTeamId": "E",
+          "start": 45
+        },
+        {
+          "score": 222.8,
+          "position": "WR",
+          "playerId": 3116165,
+          "ffTeamId": "D",
+          "start": 46
+        },
+        {
+          "score": 220.9,
+          "position": "WR",
+          "playerId": 4239993,
+          "ffTeamId": "C",
+          "start": 47
+        },
+        {
+          "score": 190.5,
+          "position": "TE",
+          "playerId": 3116365,
+          "ffTeamId": "B",
+          "start": 48
+        },
+        {
+          "score": 216.7,
+          "position": "RB",
+          "playerId": 4045163,
+          "ffTeamId": "A",
+          "start": 49
+        },
+        {
+          "score": 216.5,
+          "position": "WR",
+          "playerId": 4035687,
+          "ffTeamId": "A",
+          "start": 50
+        },
+        {
+          "score": 239.2,
+          "position": "QB",
+          "playerId": 8439,
+          "ffTeamId": "B",
+          "start": 51
+        },
+        {
+          "score": 215.7,
+          "position": "WR",
+          "playerId": 4569618,
+          "ffTeamId": "C",
+          "start": 52
+        },
+        {
+          "score": 211.7,
+          "position": "RB",
+          "playerId": 3054850,
+          "ffTeamId": "D",
+          "start": 53
+        },
+        {
+          "score": 236.08,
+          "position": "QB",
+          "playerId": 3916387,
+          "ffTeamId": "E",
+          "start": 54
+        },
+        {
+          "score": 230.92,
+          "position": "QB",
+          "playerId": 4241479,
+          "ffTeamId": "F",
+          "start": 55
+        },
+        {
+          "score": 176.9,
+          "position": "TE",
+          "playerId": 3051876,
+          "ffTeamId": "G",
+          "start": 56
+        },
+        {
+          "score": 205.1,
+          "position": "RB",
+          "playerId": 4239996,
+          "ffTeamId": "H",
+          "start": 57
+        },
+        {
+          "score": 204.2,
+          "position": "WR",
+          "playerId": 4241463,
+          "ffTeamId": "I",
+          "start": 58
+        },
+        {
+          "score": 202.5,
+          "position": "RB",
+          "playerId": 4567048,
+          "ffTeamId": "J",
+          "start": 59
+        },
+        {
+          "score": 201.4,
+          "position": "WR",
+          "playerId": 2977187,
+          "ffTeamId": "J",
+          "start": 60
+        },
+        {
+          "score": 200.2,
+          "position": "RB",
+          "playerId": 3045147,
+          "ffTeamId": "I",
+          "start": 61
+        },
+        {
+          "score": 199.1,
+          "position": "WR",
+          "playerId": 3915416,
+          "ffTeamId": "H",
+          "start": 62
+        },
+        {
+          "score": 198.2,
+          "position": "WR",
+          "playerId": 4361370,
+          "ffTeamId": "G",
+          "start": 63
+        },
+        {
+          "score": 198.1,
+          "position": "WR",
+          "playerId": 3059722,
+          "ffTeamId": "F",
+          "start": 64
+        },
+        {
+          "score": 196.3,
+          "position": "RB",
+          "playerId": 16782,
+          "ffTeamId": "E",
+          "start": 65
+        },
+        {
+          "score": 191.1,
+          "position": "RB",
+          "playerId": 4259545,
+          "ffTeamId": "D",
+          "start": 66
+        },
+        {
+          "score": 185.8,
+          "position": "RB",
+          "playerId": 3051392,
+          "ffTeamId": "C",
+          "start": 67
+        },
+        {
+          "score": 225.76,
+          "position": "QB",
+          "playerId": 14881,
+          "ffTeamId": "B",
+          "start": 68
+        },
+        {
+          "score": 219.08,
+          "position": "QB",
+          "playerId": 16757,
+          "ffTeamId": "A",
+          "start": 69
+        },
+        {
+          "score": 185.3,
+          "position": "WR",
+          "playerId": 3120348,
+          "ffTeamId": "A",
+          "start": 70
+        },
+        {
+          "score": 180.7,
+          "position": "WR",
+          "playerId": 3932905,
+          "ffTeamId": "B",
+          "start": 71
+        },
+        {
+          "score": 200.52,
+          "position": "QB",
+          "playerId": 3917315,
+          "ffTeamId": "C",
+          "start": 72
+        },
+        {
+          "score": 198.6,
+          "position": "QB",
+          "playerId": 2577417,
+          "ffTeamId": "D",
+          "start": 73
+        },
+        {
+          "score": 180.3,
+          "position": "WR",
+          "playerId": 3916433,
+          "ffTeamId": "E",
+          "start": 74
+        },
+        {
+          "score": 180,
+          "position": "WR",
+          "playerId": 16460,
+          "ffTeamId": "F",
+          "start": 75
+        },
+        {
+          "score": 177.9,
+          "position": "RB",
+          "playerId": 4040761,
+          "ffTeamId": "G",
+          "start": 76
+        },
+        {
+          "score": 178.6,
+          "position": "WR",
+          "playerId": 4426502,
+          "ffTeamId": "H",
+          "start": 77
+        },
+        {
+          "score": 152,
+          "position": "TE",
+          "playerId": 2573401,
+          "ffTeamId": "I",
+          "start": 78
+        },
+        {
+          "score": 177.7,
+          "position": "RB",
+          "playerId": 4035538,
+          "ffTeamId": "J",
+          "start": 79
+        },
+        {
+          "score": 176.5,
+          "position": "WR",
+          "playerId": 3045138,
+          "ffTeamId": "J",
+          "start": 80
+        },
+        {
+          "score": 176.3,
+          "position": "WR",
+          "playerId": 3121427,
+          "ffTeamId": "I",
+          "start": 81
+        },
+        {
+          "score": 148.2,
+          "position": "TE",
+          "playerId": 4361411,
+          "ffTeamId": "H",
+          "start": 82
+        },
+        {
+          "score": 196.56,
+          "position": "QB",
+          "playerId": 2576980,
+          "ffTeamId": "G",
+          "start": 83
+        },
+        {
+          "score": 147.3,
+          "position": "TE",
+          "playerId": 4258595,
+          "ffTeamId": "F",
+          "start": 84
+        },
+        {
+          "score": 174.8,
+          "position": "WR",
+          "playerId": 3128390,
+          "ffTeamId": "E",
+          "start": 85
+        },
+        {
+          "score": 145.8,
+          "position": "TE",
+          "playerId": 2468609,
+          "ffTeamId": "D",
+          "start": 86
+        },
+        {
+          "score": 171.6,
+          "position": "WR",
+          "playerId": 4243537,
+          "ffTeamId": "C",
+          "start": 87
+        },
+        {
+          "score": 168.3,
+          "position": "RB",
+          "playerId": 2576414,
+          "ffTeamId": "B",
+          "start": 88
+        },
+        {
+          "score": 142.7,
+          "position": "TE",
+          "playerId": 3117256,
+          "ffTeamId": "A",
+          "start": 89
+        }
+      ]
+    ]
+  },
+  {
+    "config": {
+      "year": "2022",
+      "rosterEnum": 1
+    },
+    "draftPlayers": [
+      [
+        {
+          "playerId": 4242335,
+          "start": -1,
+          "score": 146.4,
+          "ffTeamId": "A",
+          "position": "RB"
+        },
+        {
+          "playerId": 3117251,
+          "start": -1,
+          "score": 356.36,
+          "ffTeamId": "B",
+          "position": "RB"
+        },
+        {
+          "playerId": 4262921,
+          "start": -1,
+          "score": 368.66,
+          "ffTeamId": "C",
+          "position": "WR"
+        },
+        {
+          "playerId": 3043078,
+          "start": -1,
+          "score": 302.76,
+          "ffTeamId": "D",
+          "position": "RB"
+        },
+        {
+          "playerId": 3068267,
+          "start": -1,
+          "score": 372.7,
+          "ffTeamId": "E",
+          "position": "RB"
+        },
+        {
+          "playerId": 2977187,
+          "start": -1,
+          "score": 201.4,
+          "ffTeamId": "F",
+          "position": "WR"
+        },
+        {
+          "playerId": 3116593,
+          "start": -1,
+          "score": 237.8,
+          "ffTeamId": "G",
+          "position": "RB"
+        },
+        {
+          "playerId": 3116385,
+          "start": -1,
+          "score": 239.5,
+          "ffTeamId": "H",
+          "position": "RB"
+        },
+        {
+          "playerId": 4241457,
+          "start": -1,
+          "score": 223.46,
+          "ffTeamId": "I",
+          "position": "RB"
+        },
+        {
+          "playerId": 3054850,
+          "start": -1,
+          "score": 211.7,
+          "ffTeamId": "J",
+          "position": "RB"
+        },
+        {
+          "playerId": 4259545,
+          "start": -1,
+          "score": 191.1,
+          "ffTeamId": "J",
+          "position": "RB"
+        },
+        {
+          "playerId": 4362628,
+          "start": -1,
+          "score": 242.4,
+          "ffTeamId": "I",
+          "position": "WR"
+        },
+        {
+          "playerId": 3115364,
+          "start": -1,
+          "score": 226.1,
+          "ffTeamId": "H",
+          "position": "RB"
+        },
+        {
+          "playerId": 16800,
+          "start": -1,
+          "score": 335.5,
+          "ffTeamId": "G",
+          "position": "WR"
+        },
+        {
+          "playerId": 15847,
+          "start": -1,
+          "score": 316.3,
+          "ffTeamId": "F",
+          "position": "TE"
+        },
+        {
+          "playerId": 2976212,
+          "start": -1,
+          "score": 316.6,
+          "ffTeamId": "E",
+          "position": "WR"
+        },
+        {
+          "playerId": 3042519,
+          "start": -1,
+          "score": 248.6,
+          "ffTeamId": "D",
+          "position": "RB"
+        },
+        {
+          "playerId": 4241389,
+          "start": -1,
+          "score": 301.6,
+          "ffTeamId": "C",
+          "position": "WR"
+        },
+        {
+          "playerId": 3116406,
+          "start": -1,
+          "score": 347.2,
+          "ffTeamId": "B",
+          "position": "WR"
+        },
+        {
+          "playerId": 15818,
+          "start": -1,
+          "score": 164,
+          "ffTeamId": "A",
+          "position": "WR"
+        },
+        {
+          "playerId": 3045147,
+          "start": -1,
+          "score": 200.2,
+          "ffTeamId": "J",
+          "position": "RB"
+        },
+        {
+          "playerId": 4035687,
+          "start": -1,
+          "score": 216.5,
+          "ffTeamId": "I",
+          "position": "WR"
+        },
+        {
+          "playerId": 3116365,
+          "start": -1,
+          "score": 190.5,
+          "ffTeamId": "H",
+          "position": "TE"
+        },
+        {
+          "playerId": 3929630,
+          "start": -1,
+          "score": 284,
+          "ffTeamId": "G",
+          "position": "RB"
+        },
+        {
+          "playerId": 16737,
+          "start": -1,
+          "score": 225.4,
+          "ffTeamId": "F",
+          "position": "WR"
+        },
+        {
+          "playerId": 3128720,
+          "start": -1,
+          "score": 281.4,
+          "ffTeamId": "E",
+          "position": "RB"
+        },
+        {
+          "playerId": 4361579,
+          "start": -1,
+          "score": 42,
+          "ffTeamId": "D",
+          "position": "RB"
+        },
+        {
+          "playerId": 3126486,
+          "start": -1,
+          "score": 168.4,
+          "ffTeamId": "C",
+          "position": "WR"
+        },
+        {
+          "playerId": 4047646,
+          "start": -1,
+          "score": 299.6,
+          "ffTeamId": "B",
+          "position": "WR"
+        },
+        {
+          "playerId": 4240021,
+          "start": -1,
+          "score": 141.3,
+          "ffTeamId": "A",
+          "position": "RB"
+        },
+        {
+          "playerId": 4360248,
+          "start": -1,
+          "score": 75.6,
+          "ffTeamId": "A",
+          "position": "TE"
+        },
+        {
+          "playerId": 16731,
+          "start": -1,
+          "score": 145.6,
+          "ffTeamId": "B",
+          "position": "WR"
+        },
+        {
+          "playerId": 4239996,
+          "start": -1,
+          "score": 205.1,
+          "ffTeamId": "C",
+          "position": "RB"
+        },
+        {
+          "playerId": 3051392,
+          "start": -1,
+          "score": 185.8,
+          "ffTeamId": "D",
+          "position": "RB"
+        },
+        {
+          "playerId": 4239993,
+          "start": -1,
+          "score": 220.9,
+          "ffTeamId": "E",
+          "position": "WR"
+        },
+        {
+          "playerId": 3932905,
+          "start": -1,
+          "score": 180.7,
+          "ffTeamId": "F",
+          "position": "WR"
+        },
+        {
+          "playerId": 3918298,
+          "start": -1,
+          "score": 395.52,
+          "ffTeamId": "G",
+          "position": "QB"
+        },
+        {
+          "playerId": 4035538,
+          "start": -1,
+          "score": 177.7,
+          "ffTeamId": "H",
+          "position": "RB"
+        },
+        {
+          "playerId": 3139477,
+          "start": -1,
+          "score": 417.4,
+          "ffTeamId": "I",
+          "position": "QB"
+        },
+        {
+          "playerId": 4372016,
+          "start": -1,
+          "score": 259.2,
+          "ffTeamId": "J",
+          "position": "WR"
+        },
+        {
+          "playerId": 4047650,
+          "start": -1,
+          "score": 226.8,
+          "ffTeamId": "J",
+          "position": "WR"
+        },
+        {
+          "playerId": 3121422,
+          "start": -1,
+          "score": 229,
+          "ffTeamId": "I",
+          "position": "WR"
+        },
+        {
+          "playerId": 3045138,
+          "start": -1,
+          "score": 176.5,
+          "ffTeamId": "H",
+          "position": "WR"
+        },
+        {
+          "playerId": 3915416,
+          "start": -1,
+          "score": 199.1,
+          "ffTeamId": "G",
+          "position": "WR"
+        },
+        {
+          "playerId": 4427366,
+          "start": -1,
+          "score": 115.1,
+          "ffTeamId": "F",
+          "position": "RB"
+        },
+        {
+          "playerId": 3128429,
+          "start": -1,
+          "score": 159.4,
+          "ffTeamId": "E",
+          "position": "WR"
+        },
+        {
+          "playerId": 3135321,
+          "start": -1,
+          "score": 79,
+          "ffTeamId": "D",
+          "position": "WR"
+        },
+        {
+          "playerId": 4038941,
+          "start": -1,
+          "score": 281.26,
+          "ffTeamId": "C",
+          "position": "QB"
+        },
+        {
+          "playerId": 3116165,
+          "start": -1,
+          "score": 222.8,
+          "ffTeamId": "B",
+          "position": "WR"
+        },
+        {
+          "playerId": 4241463,
+          "start": -1,
+          "score": 204.2,
+          "ffTeamId": "A",
+          "position": "WR"
+        },
+        {
+          "playerId": 4040715,
+          "start": -1,
+          "score": 378.04,
+          "ffTeamId": "A",
+          "position": "QB"
+        },
+        {
+          "playerId": 4047365,
+          "start": -1,
+          "score": 328.3,
+          "ffTeamId": "B",
+          "position": "RB"
+        },
+        {
+          "playerId": 4374302,
+          "start": -1,
+          "score": 267.6,
+          "ffTeamId": "C",
+          "position": "WR"
+        },
+        {
+          "playerId": 4241372,
+          "start": -1,
+          "score": 156,
+          "ffTeamId": "D",
+          "position": "WR"
+        },
+        {
+          "playerId": 3040151,
+          "start": -1,
+          "score": 200.5,
+          "ffTeamId": "E",
+          "position": "TE"
+        },
+        {
+          "playerId": 4239934,
+          "start": -1,
+          "score": 167.6,
+          "ffTeamId": "F",
+          "position": "RB"
+        },
+        {
+          "playerId": 16799,
+          "start": -1,
+          "score": 84.9,
+          "ffTeamId": "G",
+          "position": "WR"
+        },
+        {
+          "playerId": 4243537,
+          "start": -1,
+          "score": 171.6,
+          "ffTeamId": "H",
+          "position": "WR"
+        },
+        {
+          "playerId": 4241555,
+          "start": -1,
+          "score": 43.6,
+          "ffTeamId": "I",
+          "position": "RB"
+        },
+        {
+          "playerId": 3120348,
+          "start": -1,
+          "score": 185.3,
+          "ffTeamId": "J",
+          "position": "WR"
+        },
+        {
+          "playerId": 16460,
+          "start": -1,
+          "score": 180,
+          "ffTeamId": "J",
+          "position": "WR"
+        },
+        {
+          "playerId": 4040761,
+          "start": -1,
+          "score": 177.9,
+          "ffTeamId": "I",
+          "position": "RB"
+        },
+        {
+          "playerId": 4241985,
+          "start": -1,
+          "score": 81.2,
+          "ffTeamId": "H",
+          "position": "RB"
+        },
+        {
+          "playerId": 4360238,
+          "start": -1,
+          "score": 166.4,
+          "ffTeamId": "G",
+          "position": "RB"
+        },
+        {
+          "playerId": 3916387,
+          "start": -1,
+          "score": 236.08,
+          "ffTeamId": "F",
+          "position": "QB"
+        },
+        {
+          "playerId": 4360939,
+          "start": -1,
+          "score": 53.5,
+          "ffTeamId": "E",
+          "position": "WR"
+        },
+        {
+          "playerId": 4040655,
+          "start": -1,
+          "score": 101.5,
+          "ffTeamId": "D",
+          "position": "WR"
+        },
+        {
+          "playerId": 2576925,
+          "start": -1,
+          "score": 84.8,
+          "ffTeamId": "C",
+          "position": "TE"
+        },
+        {
+          "playerId": 2976316,
+          "start": -1,
+          "score": 51.1,
+          "ffTeamId": "B",
+          "position": "WR"
+        },
+        {
+          "playerId": 4241478,
+          "start": -1,
+          "score": 254.6,
+          "ffTeamId": "A",
+          "position": "WR"
+        },
+        {
+          "playerId": 4569173,
+          "start": -1,
+          "score": 249.1,
+          "ffTeamId": "A",
+          "position": "RB"
+        },
+        {
+          "playerId": 3117256,
+          "start": -1,
+          "score": 142.7,
+          "ffTeamId": "B",
+          "position": "TE"
+        },
+        {
+          "playerId": 3119195,
+          "start": -1,
+          "score": 74.2,
+          "ffTeamId": "C",
+          "position": "RB"
+        },
+        {
+          "playerId": 15807,
+          "start": -1,
+          "score": 154.7,
+          "ffTeamId": "D",
+          "position": "RB"
+        },
+        {
+          "playerId": 3917315,
+          "start": -1,
+          "score": 200.52,
+          "ffTeamId": "E",
+          "position": "QB"
+        },
+        {
+          "playerId": 4426502,
+          "start": -1,
+          "score": 178.6,
+          "ffTeamId": "F",
+          "position": "WR"
+        },
+        {
+          "playerId": 2976499,
+          "start": -1,
+          "score": 246,
+          "ffTeamId": "G",
+          "position": "WR"
+        },
+        {
+          "playerId": 2330,
+          "start": -1,
+          "score": 271.66,
+          "ffTeamId": "H",
+          "position": "QB"
+        },
+        {
+          "playerId": 4045163,
+          "start": -1,
+          "score": 216.7,
+          "ffTeamId": "I",
+          "position": "RB"
+        },
+        {
+          "playerId": 3915511,
+          "start": -1,
+          "score": 350.7,
+          "ffTeamId": "J",
+          "position": "QB"
+        },
+        {
+          "playerId": 4360294,
+          "start": -1,
+          "score": 165.9,
+          "ffTeamId": "J",
+          "position": "RB"
+        },
+        {
+          "playerId": 4036133,
+          "start": -1,
+          "score": 215.4,
+          "ffTeamId": "I",
+          "position": "TE"
+        },
+        {
+          "playerId": 3895856,
+          "start": -1,
+          "score": 241.9,
+          "ffTeamId": "H",
+          "position": "WR"
+        },
+        {
+          "playerId": 3916148,
+          "start": -1,
+          "score": 248.8,
+          "ffTeamId": "G",
+          "position": "RB"
+        },
+        {
+          "playerId": 3059915,
+          "start": -1,
+          "score": 126.8,
+          "ffTeamId": "F",
+          "position": "RB"
+        },
+        {
+          "playerId": 3128390,
+          "start": -1,
+          "score": 174.8,
+          "ffTeamId": "E",
+          "position": "WR"
+        },
+        {
+          "playerId": 8439,
+          "start": -1,
+          "score": 239.2,
+          "ffTeamId": "D",
+          "position": "QB"
+        },
+        {
+          "playerId": 4242214,
+          "start": -1,
+          "score": 98.3,
+          "ffTeamId": "C",
+          "position": "RB"
+        },
+        {
+          "playerId": 2577417,
+          "start": -1,
+          "score": 198.6,
+          "ffTeamId": "B",
+          "position": "QB"
+        },
+        {
+          "playerId": 4372414,
+          "start": -1,
+          "score": 88.1,
+          "ffTeamId": "A",
+          "position": "WR"
+        },
+        {
+          "playerId": 4360438,
+          "start": -1,
+          "score": 227.8,
+          "ffTeamId": "A",
+          "position": "WR"
+        },
+        {
+          "playerId": 3139925,
+          "start": -1,
+          "score": 52.2,
+          "ffTeamId": "B",
+          "position": "RB"
+        },
+        {
+          "playerId": 2577327,
+          "start": -1,
+          "score": 237.3,
+          "ffTeamId": "C",
+          "position": "WR"
+        },
+        {
+          "playerId": 3121023,
+          "start": -1,
+          "score": 141.2,
+          "ffTeamId": "D",
+          "position": "TE"
+        },
+        {
+          "playerId": 15795,
+          "start": -1,
+          "score": 151.7,
+          "ffTeamId": "E",
+          "position": "WR"
+        },
+        {
+          "playerId": 4240600,
+          "start": -1,
+          "score": 57.3,
+          "ffTeamId": "F",
+          "position": "WR"
+        },
+        {
+          "playerId": 3925347,
+          "start": -1,
+          "score": 90.9,
+          "ffTeamId": "G",
+          "position": "RB"
+        },
+        {
+          "playerId": 2576434,
+          "start": -1,
+          "score": 87.1,
+          "ffTeamId": "H",
+          "position": "RB"
+        },
+        {
+          "playerId": 4361370,
+          "start": -1,
+          "score": 198.2,
+          "ffTeamId": "I",
+          "position": "WR"
+        },
+        {
+          "playerId": 15880,
+          "start": -1,
+          "score": 115.7,
+          "ffTeamId": "J",
+          "position": "WR"
+        },
+        {
+          "playerId": 3916430,
+          "start": -1,
+          "score": 81.4,
+          "ffTeamId": "J",
+          "position": "RB"
+        },
+        {
+          "playerId": 4046692,
+          "start": -1,
+          "score": 105.04,
+          "ffTeamId": "I",
+          "position": "WR"
+        },
+        {
+          "playerId": 3930086,
+          "start": -1,
+          "score": 135.7,
+          "ffTeamId": "H",
+          "position": "TE"
+        },
+        {
+          "playerId": 4048244,
+          "start": -1,
+          "score": 88.4,
+          "ffTeamId": "G",
+          "position": "RB"
+        },
+        {
+          "playerId": 4039359,
+          "start": -1,
+          "score": 73.5,
+          "ffTeamId": "F",
+          "position": "RB"
+        },
+        {
+          "playerId": 4567156,
+          "start": -1,
+          "score": 94.1,
+          "ffTeamId": "E",
+          "position": "WR"
+        },
+        {
+          "playerId": 4052042,
+          "start": -1,
+          "score": 88.6,
+          "ffTeamId": "D",
+          "position": "RB"
+        },
+        {
+          "playerId": 4383351,
+          "start": -1,
+          "score": 12.46,
+          "ffTeamId": "C",
+          "position": "QB"
+        },
+        {
+          "playerId": 15835,
+          "start": -1,
+          "score": 115.6,
+          "ffTeamId": "B",
+          "position": "TE"
+        },
+        {
+          "playerId": 2980453,
+          "start": -1,
+          "score": 225.9,
+          "ffTeamId": "A",
+          "position": "RB"
+        },
+        {
+          "playerId": 3046439,
+          "start": -1,
+          "score": 103.9,
+          "ffTeamId": "A",
+          "position": "TE"
+        },
+        {
+          "playerId": 4379399,
+          "start": -1,
+          "score": 105.7,
+          "ffTeamId": "B",
+          "position": "RB"
+        },
+        {
+          "playerId": 4240657,
+          "start": -1,
+          "score": 126,
+          "ffTeamId": "C",
+          "position": "RB"
+        },
+        {
+          "playerId": 15072,
+          "start": -1,
+          "score": 116.9,
+          "ffTeamId": "D",
+          "position": "WR"
+        },
+        {
+          "playerId": 4241474,
+          "start": -1,
+          "score": 112.7,
+          "ffTeamId": "E",
+          "position": "RB"
+        },
+        {
+          "playerId": 3115378,
+          "start": -1,
+          "score": 123.6,
+          "ffTeamId": "F",
+          "position": "WR"
+        },
+        {
+          "playerId": 4430191,
+          "start": -1,
+          "score": 43.4,
+          "ffTeamId": "G",
+          "position": "WR"
+        },
+        {
+          "playerId": 3125116,
+          "start": -1,
+          "score": 131,
+          "ffTeamId": "H",
+          "position": "RB"
+        },
+        {
+          "playerId": 4569618,
+          "start": -1,
+          "score": 215.7,
+          "ffTeamId": "I",
+          "position": "WR"
+        },
+        {
+          "playerId": 4258595,
+          "start": -1,
+          "score": 147.3,
+          "ffTeamId": "J",
+          "position": "TE"
+        },
+        {
+          "playerId": 4567048,
+          "start": -1,
+          "score": 202.5,
+          "ffTeamId": "J",
+          "position": "RB"
+        },
+        {
+          "playerId": -16002,
+          "start": -1,
+          "score": 138,
+          "ffTeamId": "I",
+          "position": "DST"
+        },
+        {
+          "playerId": -16025,
+          "start": -1,
+          "score": 156,
+          "ffTeamId": "H",
+          "position": "DST"
+        },
+        {
+          "playerId": 4361050,
+          "start": -1,
+          "score": 91.3,
+          "ffTeamId": "G",
+          "position": "TE"
+        },
+        {
+          "playerId": 4361529,
+          "start": -1,
+          "score": 135,
+          "ffTeamId": "F",
+          "position": "RB"
+        },
+        {
+          "playerId": 3045144,
+          "start": -1,
+          "score": 167.12,
+          "ffTeamId": "E",
+          "position": "WR"
+        },
+        {
+          "playerId": -16009,
+          "start": -1,
+          "score": 105,
+          "ffTeamId": "D",
+          "position": "DST"
+        },
+        {
+          "playerId": 4361409,
+          "start": -1,
+          "score": 130.6,
+          "ffTeamId": "C",
+          "position": "WR"
+        },
+        {
+          "playerId": 4036348,
+          "start": -1,
+          "score": 105.4,
+          "ffTeamId": "B",
+          "position": "WR"
+        },
+        {
+          "playerId": 2572861,
+          "start": -1,
+          "score": 55.8,
+          "ffTeamId": "A",
+          "position": "RB"
+        },
+        {
+          "playerId": 14881,
+          "start": -1,
+          "score": 225.76,
+          "ffTeamId": "A",
+          "position": "QB"
+        },
+        {
+          "playerId": -16027,
+          "start": -1,
+          "score": 97,
+          "ffTeamId": "B",
+          "position": "DST"
+        },
+        {
+          "playerId": -16021,
+          "start": -1,
+          "score": 158,
+          "ffTeamId": "C",
+          "position": "DST"
+        },
+        {
+          "playerId": -16018,
+          "start": -1,
+          "score": 105,
+          "ffTeamId": "D",
+          "position": "DST"
+        },
+        {
+          "playerId": 15683,
+          "start": -1,
+          "score": 158,
+          "ffTeamId": "E",
+          "position": "K"
+        },
+        {
+          "playerId": -16017,
+          "start": -1,
+          "score": 173,
+          "ffTeamId": "F",
+          "position": "DST"
+        },
+        {
+          "playerId": 4426354,
+          "start": -1,
+          "score": 166.5,
+          "ffTeamId": "G",
+          "position": "WR"
+        },
+        {
+          "playerId": 3886598,
+          "start": -1,
+          "score": 82.6,
+          "ffTeamId": "H",
+          "position": "WR"
+        },
+        {
+          "playerId": 4361411,
+          "start": -1,
+          "score": 148.2,
+          "ffTeamId": "I",
+          "position": "TE"
+        },
+        {
+          "playerId": -16011,
+          "start": -1,
+          "score": 106,
+          "ffTeamId": "J",
+          "position": "DST"
+        },
+        {
+          "playerId": 4249087,
+          "start": -1,
+          "score": 131,
+          "ffTeamId": "J",
+          "position": "K"
+        },
+        {
+          "playerId": 3051738,
+          "start": -1,
+          "score": 122.4,
+          "ffTeamId": "I",
+          "position": "WR"
+        },
+        {
+          "playerId": 3915165,
+          "start": -1,
+          "score": 18,
+          "ffTeamId": "H",
+          "position": "K"
+        },
+        {
+          "playerId": -16007,
+          "start": -1,
+          "score": 102,
+          "ffTeamId": "G",
+          "position": "DST"
+        },
+        {
+          "playerId": 4372485,
+          "start": -1,
+          "score": 87.9,
+          "ffTeamId": "F",
+          "position": "WR"
+        },
+        {
+          "playerId": 13981,
+          "start": -1,
+          "score": 50.1,
+          "ffTeamId": "E",
+          "position": "RB"
+        },
+        {
+          "playerId": 3051909,
+          "start": -1,
+          "score": 159,
+          "ffTeamId": "D",
+          "position": "K"
+        },
+        {
+          "playerId": 3916566,
+          "start": -1,
+          "score": 155.6,
+          "ffTeamId": "C",
+          "position": "WR"
+        },
+        {
+          "playerId": 4241479,
+          "start": -1,
+          "score": 230.92,
+          "ffTeamId": "B",
+          "position": "QB"
+        },
+        {
+          "playerId": -16033,
+          "start": -1,
+          "score": 129,
+          "ffTeamId": "A",
+          "position": "DST"
+        },
+        {
+          "playerId": 3055899,
+          "start": -1,
+          "score": 97,
+          "ffTeamId": "A",
+          "position": "K"
+        },
+        {
+          "playerId": 10621,
+          "start": -1,
+          "score": 141,
+          "ffTeamId": "B",
+          "position": "K"
+        },
+        {
+          "playerId": 3975763,
+          "start": -1,
+          "score": 127,
+          "ffTeamId": "C",
+          "position": "K"
+        },
+        {
+          "playerId": 12483,
+          "start": -1,
+          "score": 108.38,
+          "ffTeamId": "D",
+          "position": "QB"
+        },
+        {
+          "playerId": -16024,
+          "start": -1,
+          "score": 87,
+          "ffTeamId": "E",
+          "position": "DST"
+        },
+        {
+          "playerId": 4360234,
+          "start": -1,
+          "score": 126,
+          "ffTeamId": "F",
+          "position": "K"
+        },
+        {
+          "playerId": 16339,
+          "start": -1,
+          "score": 127,
+          "ffTeamId": "G",
+          "position": "K"
+        },
+        {
+          "playerId": 4372071,
+          "start": -1,
+          "score": 26,
+          "ffTeamId": "H",
+          "position": "RB"
+        },
+        {
+          "playerId": 3917232,
+          "start": -1,
+          "score": 139,
+          "ffTeamId": "I",
+          "position": "K"
+        },
+        {
+          "playerId": 14880,
+          "start": -1,
+          "score": 291.58,
+          "ffTeamId": "J",
+          "position": "QB"
+        }
+      ],
+      [
+        {
+          "score": 372.7,
+          "position": "RB",
+          "playerId": 3068267,
+          "ffTeamId": "A",
+          "start": -2
+        },
+        {
+          "score": 356.36,
+          "position": "RB",
+          "playerId": 3117251,
+          "ffTeamId": "B",
+          "start": -2
+        },
+        {
+          "score": 368.66,
+          "position": "WR",
+          "playerId": 4262921,
+          "ffTeamId": "C",
+          "start": -2
+        },
+        {
+          "score": 328.3,
+          "position": "RB",
+          "playerId": 4047365,
+          "ffTeamId": "D",
+          "start": -2
+        },
+        {
+          "score": 302.76,
+          "position": "RB",
+          "playerId": 3043078,
+          "ffTeamId": "E",
+          "start": -2
+        },
+        {
+          "score": 347.2,
+          "position": "WR",
+          "playerId": 3116406,
+          "ffTeamId": "F",
+          "start": -2
+        },
+        {
+          "score": 284,
+          "position": "RB",
+          "playerId": 3929630,
+          "ffTeamId": "G",
+          "start": -2
+        },
+        {
+          "score": 281.4,
+          "position": "RB",
+          "playerId": 3128720,
+          "ffTeamId": "H",
+          "start": -2
+        },
+        {
+          "score": 249.1,
+          "position": "RB",
+          "playerId": 4569173,
+          "ffTeamId": "I",
+          "start": -2
+        },
+        {
+          "score": 248.8,
+          "position": "RB",
+          "playerId": 3916148,
+          "ffTeamId": "J",
+          "start": -2
+        },
+        {
+          "score": 248.6,
+          "position": "RB",
+          "playerId": 3042519,
+          "ffTeamId": "J",
+          "start": -2
+        },
+        {
+          "score": 335.5,
+          "position": "WR",
+          "playerId": 16800,
+          "ffTeamId": "I",
+          "start": -2
+        },
+        {
+          "score": 239.5,
+          "position": "RB",
+          "playerId": 3116385,
+          "ffTeamId": "H",
+          "start": -2
+        },
+        {
+          "score": 316.6,
+          "position": "WR",
+          "playerId": 2976212,
+          "ffTeamId": "G",
+          "start": -2
+        },
+        {
+          "score": 316.3,
+          "position": "TE",
+          "playerId": 15847,
+          "ffTeamId": "F",
+          "start": -2
+        },
+        {
+          "score": 301.6,
+          "position": "WR",
+          "playerId": 4241389,
+          "ffTeamId": "E",
+          "start": -2
+        },
+        {
+          "score": 237.8,
+          "position": "RB",
+          "playerId": 3116593,
+          "ffTeamId": "D",
+          "start": -2
+        },
+        {
+          "score": 299.6,
+          "position": "WR",
+          "playerId": 4047646,
+          "ffTeamId": "C",
+          "start": -2
+        },
+        {
+          "score": 267.6,
+          "position": "WR",
+          "playerId": 4374302,
+          "ffTeamId": "B",
+          "start": -2
+        },
+        {
+          "score": 259.2,
+          "position": "WR",
+          "playerId": 4372016,
+          "ffTeamId": "A",
+          "start": -2
+        },
+        {
+          "score": 226.1,
+          "position": "RB",
+          "playerId": 3115364,
+          "ffTeamId": "J",
+          "start": -2
+        },
+        {
+          "score": 254.6,
+          "position": "WR",
+          "playerId": 4241478,
+          "ffTeamId": "I",
+          "start": -2
+        },
+        {
+          "score": 215.4,
+          "position": "TE",
+          "playerId": 4036133,
+          "ffTeamId": "H",
+          "start": -2
+        },
+        {
+          "score": 225.9,
+          "position": "RB",
+          "playerId": 2980453,
+          "ffTeamId": "G",
+          "start": -2
+        },
+        {
+          "score": 246,
+          "position": "WR",
+          "playerId": 2976499,
+          "ffTeamId": "F",
+          "start": -2
+        },
+        {
+          "score": 223.46,
+          "position": "RB",
+          "playerId": 4241457,
+          "ffTeamId": "E",
+          "start": -2
+        },
+        {
+          "score": 216.7,
+          "position": "RB",
+          "playerId": 4045163,
+          "ffTeamId": "D",
+          "start": -2
+        },
+        {
+          "score": 242.4,
+          "position": "WR",
+          "playerId": 4362628,
+          "ffTeamId": "C",
+          "start": -2
+        },
+        {
+          "score": 241.9,
+          "position": "WR",
+          "playerId": 3895856,
+          "ffTeamId": "B",
+          "start": -2
+        },
+        {
+          "score": 211.7,
+          "position": "RB",
+          "playerId": 3054850,
+          "ffTeamId": "A",
+          "start": -2
+        },
+        {
+          "score": 200.5,
+          "position": "TE",
+          "playerId": 3040151,
+          "ffTeamId": "A",
+          "start": -2
+        },
+        {
+          "score": 237.3,
+          "position": "WR",
+          "playerId": 2577327,
+          "ffTeamId": "B",
+          "start": -2
+        },
+        {
+          "score": 205.1,
+          "position": "RB",
+          "playerId": 4239996,
+          "ffTeamId": "C",
+          "start": -2
+        },
+        {
+          "score": 202.5,
+          "position": "RB",
+          "playerId": 4567048,
+          "ffTeamId": "D",
+          "start": -2
+        },
+        {
+          "score": 229,
+          "position": "WR",
+          "playerId": 3121422,
+          "ffTeamId": "E",
+          "start": -2
+        },
+        {
+          "score": 227.8,
+          "position": "WR",
+          "playerId": 4360438,
+          "ffTeamId": "F",
+          "start": -2
+        },
+        {
+          "score": 417.4,
+          "position": "QB",
+          "playerId": 3139477,
+          "ffTeamId": "G",
+          "start": -2
+        },
+        {
+          "score": 200.2,
+          "position": "RB",
+          "playerId": 3045147,
+          "ffTeamId": "H",
+          "start": -2
+        },
+        {
+          "score": 395.52,
+          "position": "QB",
+          "playerId": 3918298,
+          "ffTeamId": "I",
+          "start": -2
+        },
+        {
+          "score": 226.8,
+          "position": "WR",
+          "playerId": 4047650,
+          "ffTeamId": "J",
+          "start": -2
+        },
+        {
+          "score": 225.4,
+          "position": "WR",
+          "playerId": 16737,
+          "ffTeamId": "J",
+          "start": -2
+        },
+        {
+          "score": 222.8,
+          "position": "WR",
+          "playerId": 3116165,
+          "ffTeamId": "I",
+          "start": -2
+        },
+        {
+          "score": 220.9,
+          "position": "WR",
+          "playerId": 4239993,
+          "ffTeamId": "H",
+          "start": -2
+        },
+        {
+          "score": 216.5,
+          "position": "WR",
+          "playerId": 4035687,
+          "ffTeamId": "G",
+          "start": -2
+        },
+        {
+          "score": 196.3,
+          "position": "RB",
+          "playerId": 16782,
+          "ffTeamId": "F",
+          "start": -2
+        },
+        {
+          "score": 215.7,
+          "position": "WR",
+          "playerId": 4569618,
+          "ffTeamId": "E",
+          "start": -2
+        },
+        {
+          "score": 204.2,
+          "position": "WR",
+          "playerId": 4241463,
+          "ffTeamId": "D",
+          "start": -2
+        },
+        {
+          "score": 378.04,
+          "position": "QB",
+          "playerId": 4040715,
+          "ffTeamId": "C",
+          "start": -2
+        },
+        {
+          "score": 201.4,
+          "position": "WR",
+          "playerId": 2977187,
+          "ffTeamId": "B",
+          "start": -2
+        },
+        {
+          "score": 199.1,
+          "position": "WR",
+          "playerId": 3915416,
+          "ffTeamId": "A",
+          "start": -2
+        },
+        {
+          "score": 350.7,
+          "position": "QB",
+          "playerId": 3915511,
+          "ffTeamId": "A",
+          "start": -2
+        },
+        {
+          "score": 191.1,
+          "position": "RB",
+          "playerId": 4259545,
+          "ffTeamId": "B",
+          "start": -2
+        },
+        {
+          "score": 198.2,
+          "position": "WR",
+          "playerId": 4361370,
+          "ffTeamId": "C",
+          "start": -2
+        },
+        {
+          "score": 198.1,
+          "position": "WR",
+          "playerId": 3059722,
+          "ffTeamId": "D",
+          "start": -2
+        },
+        {
+          "score": 190.5,
+          "position": "TE",
+          "playerId": 3116365,
+          "ffTeamId": "E",
+          "start": -2
+        },
+        {
+          "score": 185.8,
+          "position": "RB",
+          "playerId": 3051392,
+          "ffTeamId": "F",
+          "start": -2
+        },
+        {
+          "score": 185.3,
+          "position": "WR",
+          "playerId": 3120348,
+          "ffTeamId": "G",
+          "start": -2
+        },
+        {
+          "score": 180.7,
+          "position": "WR",
+          "playerId": 3932905,
+          "ffTeamId": "H",
+          "start": -2
+        },
+        {
+          "score": 177.9,
+          "position": "RB",
+          "playerId": 4040761,
+          "ffTeamId": "I",
+          "start": -2
+        },
+        {
+          "score": 180.3,
+          "position": "WR",
+          "playerId": 3916433,
+          "ffTeamId": "J",
+          "start": -2
+        },
+        {
+          "score": 180,
+          "position": "WR",
+          "playerId": 16460,
+          "ffTeamId": "J",
+          "start": -2
+        },
+        {
+          "score": 177.7,
+          "position": "RB",
+          "playerId": 4035538,
+          "ffTeamId": "I",
+          "start": -2
+        },
+        {
+          "score": 168.3,
+          "position": "RB",
+          "playerId": 2576414,
+          "ffTeamId": "H",
+          "start": -2
+        },
+        {
+          "score": 167.6,
+          "position": "RB",
+          "playerId": 4239934,
+          "ffTeamId": "G",
+          "start": -2
+        },
+        {
+          "score": 303.88,
+          "position": "QB",
+          "playerId": 15864,
+          "ffTeamId": "F",
+          "start": -2
+        },
+        {
+          "score": 178.6,
+          "position": "WR",
+          "playerId": 4426502,
+          "ffTeamId": "E",
+          "start": -2
+        },
+        {
+          "score": 176.5,
+          "position": "WR",
+          "playerId": 3045138,
+          "ffTeamId": "D",
+          "start": -2
+        },
+        {
+          "score": 176.9,
+          "position": "TE",
+          "playerId": 3051876,
+          "ffTeamId": "C",
+          "start": -2
+        },
+        {
+          "score": 176.3,
+          "position": "WR",
+          "playerId": 3121427,
+          "ffTeamId": "B",
+          "start": -2
+        },
+        {
+          "score": 174.8,
+          "position": "WR",
+          "playerId": 3128390,
+          "ffTeamId": "A",
+          "start": -2
+        },
+        {
+          "score": 166.4,
+          "position": "RB",
+          "playerId": 4360238,
+          "ffTeamId": "A",
+          "start": -2
+        },
+        {
+          "score": 152,
+          "position": "TE",
+          "playerId": 2573401,
+          "ffTeamId": "B",
+          "start": -2
+        },
+        {
+          "score": 165.9,
+          "position": "RB",
+          "playerId": 4360294,
+          "ffTeamId": "C",
+          "start": -2
+        },
+        {
+          "score": 159.4,
+          "position": "RB",
+          "playerId": 4373626,
+          "ffTeamId": "D",
+          "start": -2
+        },
+        {
+          "score": 295.98,
+          "position": "QB",
+          "playerId": 4362887,
+          "ffTeamId": "E",
+          "start": -2
+        },
+        {
+          "score": 171.6,
+          "position": "WR",
+          "playerId": 4243537,
+          "ffTeamId": "F",
+          "start": -2
+        },
+        {
+          "score": 169.3,
+          "position": "WR",
+          "playerId": 4242433,
+          "ffTeamId": "G",
+          "start": -2
+        },
+        {
+          "score": 295.62,
+          "position": "QB",
+          "playerId": 4360310,
+          "ffTeamId": "H",
+          "start": -2
+        },
+        {
+          "score": 158.5,
+          "position": "RB",
+          "playerId": 3122976,
+          "ffTeamId": "I",
+          "start": -2
+        },
+        {
+          "score": 291.58,
+          "position": "QB",
+          "playerId": 14880,
+          "ffTeamId": "J",
+          "start": -2
+        },
+        {
+          "score": 154.7,
+          "position": "RB",
+          "playerId": 15807,
+          "ffTeamId": "J",
+          "start": -2
+        },
+        {
+          "score": 148.2,
+          "position": "TE",
+          "playerId": 4361411,
+          "ffTeamId": "I",
+          "start": -2
+        },
+        {
+          "score": 168.4,
+          "position": "WR",
+          "playerId": 3126486,
+          "ffTeamId": "H",
+          "start": -2
+        },
+        {
+          "score": 154.2,
+          "position": "RB",
+          "playerId": 15920,
+          "ffTeamId": "G",
+          "start": -2
+        },
+        {
+          "score": 146.4,
+          "position": "RB",
+          "playerId": 4242335,
+          "ffTeamId": "F",
+          "start": -2
+        },
+        {
+          "score": 167.12,
+          "position": "WR",
+          "playerId": 3045144,
+          "ffTeamId": "E",
+          "start": -2
+        },
+        {
+          "score": 289,
+          "position": "QB",
+          "playerId": 3917792,
+          "ffTeamId": "D",
+          "start": -2
+        },
+        {
+          "score": 142.1,
+          "position": "RB",
+          "playerId": 3116389,
+          "ffTeamId": "C",
+          "start": -2
+        },
+        {
+          "score": 284.32,
+          "position": "QB",
+          "playerId": 3046779,
+          "ffTeamId": "B",
+          "start": -2
+        },
+        {
+          "score": 167.1,
+          "position": "WR",
+          "playerId": 4258195,
+          "ffTeamId": "A",
+          "start": -2
+        }
+      ],
+      [
+        {
+          "score": 372.7,
+          "position": "RB",
+          "playerId": 3068267,
+          "ffTeamId": "A",
+          "start": 0
+        },
+        {
+          "score": 356.36,
+          "position": "RB",
+          "playerId": 3117251,
+          "ffTeamId": "B",
+          "start": 1
+        },
+        {
+          "score": 368.66,
+          "position": "WR",
+          "playerId": 4262921,
+          "ffTeamId": "C",
+          "start": 2
+        },
+        {
+          "score": 347.2,
+          "position": "WR",
+          "playerId": 3116406,
+          "ffTeamId": "D",
+          "start": 3
+        },
+        {
+          "score": 328.3,
+          "position": "RB",
+          "playerId": 4047365,
+          "ffTeamId": "E",
+          "start": 4
+        },
+        {
+          "score": 335.5,
+          "position": "WR",
+          "playerId": 16800,
+          "ffTeamId": "F",
+          "start": 5
+        },
+        {
+          "score": 316.6,
+          "position": "WR",
+          "playerId": 2976212,
+          "ffTeamId": "G",
+          "start": 6
+        },
+        {
+          "score": 302.76,
+          "position": "RB",
+          "playerId": 3043078,
+          "ffTeamId": "H",
+          "start": 7
+        },
+        {
+          "score": 301.6,
+          "position": "WR",
+          "playerId": 4241389,
+          "ffTeamId": "I",
+          "start": 8
+        },
+        {
+          "score": 299.6,
+          "position": "WR",
+          "playerId": 4047646,
+          "ffTeamId": "J",
+          "start": 9
+        },
+        {
+          "score": 316.3,
+          "position": "TE",
+          "playerId": 15847,
+          "ffTeamId": "J",
+          "start": 10
+        },
+        {
+          "score": 284,
+          "position": "RB",
+          "playerId": 3929630,
+          "ffTeamId": "I",
+          "start": 11
+        },
+        {
+          "score": 281.4,
+          "position": "RB",
+          "playerId": 3128720,
+          "ffTeamId": "H",
+          "start": 12
+        },
+        {
+          "score": 267.6,
+          "position": "WR",
+          "playerId": 4374302,
+          "ffTeamId": "G",
+          "start": 13
+        },
+        {
+          "score": 249.1,
+          "position": "RB",
+          "playerId": 4569173,
+          "ffTeamId": "F",
+          "start": 14
+        },
+        {
+          "score": 259.2,
+          "position": "WR",
+          "playerId": 4372016,
+          "ffTeamId": "E",
+          "start": 15
+        },
+        {
+          "score": 248.8,
+          "position": "RB",
+          "playerId": 3916148,
+          "ffTeamId": "D",
+          "start": 16
+        },
+        {
+          "score": 248.6,
+          "position": "RB",
+          "playerId": 3042519,
+          "ffTeamId": "C",
+          "start": 17
+        },
+        {
+          "score": 254.6,
+          "position": "WR",
+          "playerId": 4241478,
+          "ffTeamId": "B",
+          "start": 18
+        },
+        {
+          "score": 239.5,
+          "position": "RB",
+          "playerId": 3116385,
+          "ffTeamId": "A",
+          "start": 19
+        },
+        {
+          "score": 417.4,
+          "position": "QB",
+          "playerId": 3139477,
+          "ffTeamId": "J",
+          "start": 20
+        },
+        {
+          "score": 246,
+          "position": "WR",
+          "playerId": 2976499,
+          "ffTeamId": "I",
+          "start": 21
+        },
+        {
+          "score": 242.4,
+          "position": "WR",
+          "playerId": 4362628,
+          "ffTeamId": "H",
+          "start": 22
+        },
+        {
+          "score": 237.8,
+          "position": "RB",
+          "playerId": 3116593,
+          "ffTeamId": "G",
+          "start": 23
+        },
+        {
+          "score": 241.9,
+          "position": "WR",
+          "playerId": 3895856,
+          "ffTeamId": "F",
+          "start": 24
+        },
+        {
+          "score": 237.3,
+          "position": "WR",
+          "playerId": 2577327,
+          "ffTeamId": "E",
+          "start": 25
+        },
+        {
+          "score": 226.1,
+          "position": "RB",
+          "playerId": 3115364,
+          "ffTeamId": "D",
+          "start": 26
+        },
+        {
+          "score": 225.9,
+          "position": "RB",
+          "playerId": 2980453,
+          "ffTeamId": "C",
+          "start": 27
+        },
+        {
+          "score": 223.46,
+          "position": "RB",
+          "playerId": 4241457,
+          "ffTeamId": "B",
+          "start": 28
+        },
+        {
+          "score": 395.52,
+          "position": "QB",
+          "playerId": 3918298,
+          "ffTeamId": "A",
+          "start": 29
+        },
+        {
+          "score": 229,
+          "position": "WR",
+          "playerId": 3121422,
+          "ffTeamId": "A",
+          "start": 30
+        },
+        {
+          "score": 378.04,
+          "position": "QB",
+          "playerId": 4040715,
+          "ffTeamId": "B",
+          "start": 31
+        },
+        {
+          "score": 227.8,
+          "position": "WR",
+          "playerId": 4360438,
+          "ffTeamId": "C",
+          "start": 32
+        },
+        {
+          "score": 226.8,
+          "position": "WR",
+          "playerId": 4047650,
+          "ffTeamId": "D",
+          "start": 33
+        },
+        {
+          "score": 225.4,
+          "position": "WR",
+          "playerId": 16737,
+          "ffTeamId": "E",
+          "start": 34
+        },
+        {
+          "score": 222.8,
+          "position": "WR",
+          "playerId": 3116165,
+          "ffTeamId": "F",
+          "start": 35
+        },
+        {
+          "score": 216.7,
+          "position": "RB",
+          "playerId": 4045163,
+          "ffTeamId": "G",
+          "start": 36
+        },
+        {
+          "score": 350.7,
+          "position": "QB",
+          "playerId": 3915511,
+          "ffTeamId": "H",
+          "start": 37
+        },
+        {
+          "score": 215.4,
+          "position": "TE",
+          "playerId": 4036133,
+          "ffTeamId": "I",
+          "start": 38
+        },
+        {
+          "score": 211.7,
+          "position": "RB",
+          "playerId": 3054850,
+          "ffTeamId": "J",
+          "start": 39
+        },
+        {
+          "score": 220.9,
+          "position": "WR",
+          "playerId": 4239993,
+          "ffTeamId": "J",
+          "start": 40
+        },
+        {
+          "score": 216.5,
+          "position": "WR",
+          "playerId": 4035687,
+          "ffTeamId": "I",
+          "start": 41
+        },
+        {
+          "score": 215.7,
+          "position": "WR",
+          "playerId": 4569618,
+          "ffTeamId": "H",
+          "start": 42
+        },
+        {
+          "score": 200.5,
+          "position": "TE",
+          "playerId": 3040151,
+          "ffTeamId": "G",
+          "start": 43
+        },
+        {
+          "score": 205.1,
+          "position": "RB",
+          "playerId": 4239996,
+          "ffTeamId": "F",
+          "start": 44
+        },
+        {
+          "score": 202.5,
+          "position": "RB",
+          "playerId": 4567048,
+          "ffTeamId": "E",
+          "start": 45
+        },
+        {
+          "score": 204.2,
+          "position": "WR",
+          "playerId": 4241463,
+          "ffTeamId": "D",
+          "start": 46
+        },
+        {
+          "score": 201.4,
+          "position": "WR",
+          "playerId": 2977187,
+          "ffTeamId": "C",
+          "start": 47
+        },
+        {
+          "score": 200.2,
+          "position": "RB",
+          "playerId": 3045147,
+          "ffTeamId": "B",
+          "start": 48
+        },
+        {
+          "score": 199.1,
+          "position": "WR",
+          "playerId": 3915416,
+          "ffTeamId": "A",
+          "start": 49
+        },
+        {
+          "score": 190.5,
+          "position": "TE",
+          "playerId": 3116365,
+          "ffTeamId": "A",
+          "start": 50
+        },
+        {
+          "score": 198.2,
+          "position": "WR",
+          "playerId": 4361370,
+          "ffTeamId": "B",
+          "start": 51
+        },
+        {
+          "score": 198.1,
+          "position": "WR",
+          "playerId": 3059722,
+          "ffTeamId": "C",
+          "start": 52
+        },
+        {
+          "score": 196.3,
+          "position": "RB",
+          "playerId": 16782,
+          "ffTeamId": "D",
+          "start": 53
+        },
+        {
+          "score": 191.1,
+          "position": "RB",
+          "playerId": 4259545,
+          "ffTeamId": "E",
+          "start": 54
+        },
+        {
+          "score": 185.8,
+          "position": "RB",
+          "playerId": 3051392,
+          "ffTeamId": "F",
+          "start": 55
+        },
+        {
+          "score": 185.3,
+          "position": "WR",
+          "playerId": 3120348,
+          "ffTeamId": "G",
+          "start": 56
+        },
+        {
+          "score": 180.7,
+          "position": "WR",
+          "playerId": 3932905,
+          "ffTeamId": "H",
+          "start": 57
+        },
+        {
+          "score": 177.9,
+          "position": "RB",
+          "playerId": 4040761,
+          "ffTeamId": "I",
+          "start": 58
+        },
+        {
+          "score": 177.7,
+          "position": "RB",
+          "playerId": 4035538,
+          "ffTeamId": "J",
+          "start": 59
+        },
+        {
+          "score": 180.3,
+          "position": "WR",
+          "playerId": 3916433,
+          "ffTeamId": "J",
+          "start": 60
+        },
+        {
+          "score": 303.88,
+          "position": "QB",
+          "playerId": 15864,
+          "ffTeamId": "I",
+          "start": 61
+        },
+        {
+          "score": 176.9,
+          "position": "TE",
+          "playerId": 3051876,
+          "ffTeamId": "H",
+          "start": 62
+        },
+        {
+          "score": 180,
+          "position": "WR",
+          "playerId": 16460,
+          "ffTeamId": "G",
+          "start": 63
+        },
+        {
+          "score": 295.98,
+          "position": "QB",
+          "playerId": 4362887,
+          "ffTeamId": "F",
+          "start": 64
+        },
+        {
+          "score": 152,
+          "position": "TE",
+          "playerId": 2573401,
+          "ffTeamId": "E",
+          "start": 65
+        },
+        {
+          "score": 295.62,
+          "position": "QB",
+          "playerId": 4360310,
+          "ffTeamId": "D",
+          "start": 66
+        },
+        {
+          "score": 291.58,
+          "position": "QB",
+          "playerId": 14880,
+          "ffTeamId": "C",
+          "start": 67
+        },
+        {
+          "score": 289,
+          "position": "QB",
+          "playerId": 3917792,
+          "ffTeamId": "B",
+          "start": 68
+        },
+        {
+          "score": 178.6,
+          "position": "WR",
+          "playerId": 4426502,
+          "ffTeamId": "A",
+          "start": 69
+        },
+        {
+          "score": 176.5,
+          "position": "WR",
+          "playerId": 3045138,
+          "ffTeamId": "A",
+          "start": 70
+        },
+        {
+          "score": 176.3,
+          "position": "WR",
+          "playerId": 3121427,
+          "ffTeamId": "B",
+          "start": 71
+        },
+        {
+          "score": 148.2,
+          "position": "TE",
+          "playerId": 4361411,
+          "ffTeamId": "C",
+          "start": 72
+        },
+        {
+          "score": 284.32,
+          "position": "QB",
+          "playerId": 3046779,
+          "ffTeamId": "D",
+          "start": 73
+        },
+        {
+          "score": 281.26,
+          "position": "QB",
+          "playerId": 4038941,
+          "ffTeamId": "E",
+          "start": 74
+        },
+        {
+          "score": 271.66,
+          "position": "QB",
+          "playerId": 2330,
+          "ffTeamId": "F",
+          "start": 75
+        },
+        {
+          "score": 239.2,
+          "position": "QB",
+          "playerId": 8439,
+          "ffTeamId": "G",
+          "start": 76
+        },
+        {
+          "score": 174.8,
+          "position": "WR",
+          "playerId": 3128390,
+          "ffTeamId": "H",
+          "start": 77
+        },
+        {
+          "score": 236.08,
+          "position": "QB",
+          "playerId": 3916387,
+          "ffTeamId": "I",
+          "start": 78
+        },
+        {
+          "score": 230.92,
+          "position": "QB",
+          "playerId": 4241479,
+          "ffTeamId": "J",
+          "start": 79
+        },
+        {
+          "score": 171.6,
+          "position": "WR",
+          "playerId": 4243537,
+          "ffTeamId": "J",
+          "start": 80
+        },
+        {
+          "score": 169.3,
+          "position": "WR",
+          "playerId": 4242433,
+          "ffTeamId": "I",
+          "start": 81
+        },
+        {
+          "score": 225.76,
+          "position": "QB",
+          "playerId": 14881,
+          "ffTeamId": "H",
+          "start": 82
+        },
+        {
+          "score": 219.08,
+          "position": "QB",
+          "playerId": 16757,
+          "ffTeamId": "G",
+          "start": 83
+        },
+        {
+          "score": 147.3,
+          "position": "TE",
+          "playerId": 4258595,
+          "ffTeamId": "F",
+          "start": 84
+        },
+        {
+          "score": 200.52,
+          "position": "QB",
+          "playerId": 3917315,
+          "ffTeamId": "E",
+          "start": 85
+        },
+        {
+          "score": 145.8,
+          "position": "TE",
+          "playerId": 2468609,
+          "ffTeamId": "D",
+          "start": 86
+        },
+        {
+          "score": 198.6,
+          "position": "QB",
+          "playerId": 2577417,
+          "ffTeamId": "C",
+          "start": 87
+        },
+        {
+          "score": 142.7,
+          "position": "TE",
+          "playerId": 3117256,
+          "ffTeamId": "B",
+          "start": 88
+        },
+        {
+          "score": 196.56,
+          "position": "QB",
+          "playerId": 2576980,
+          "ffTeamId": "A",
+          "start": 89
+        }
+      ],
+      [
+        {
+          "score": 372.7,
+          "position": "RB",
+          "playerId": 3068267,
+          "ffTeamId": "A",
+          "start": 0
+        },
+        {
+          "score": 356.36,
+          "position": "RB",
+          "playerId": 3117251,
+          "ffTeamId": "B",
+          "start": 1
+        },
+        {
+          "score": 368.66,
+          "position": "WR",
+          "playerId": 4262921,
+          "ffTeamId": "C",
+          "start": 2
+        },
+        {
+          "score": 347.2,
+          "position": "WR",
+          "playerId": 3116406,
+          "ffTeamId": "D",
+          "start": 3
+        },
+        {
+          "score": 335.5,
+          "position": "WR",
+          "playerId": 16800,
+          "ffTeamId": "E",
+          "start": 4
+        },
+        {
+          "score": 328.3,
+          "position": "RB",
+          "playerId": 4047365,
+          "ffTeamId": "F",
+          "start": 5
+        },
+        {
+          "score": 316.3,
+          "position": "TE",
+          "playerId": 15847,
+          "ffTeamId": "G",
+          "start": 6
+        },
+        {
+          "score": 316.6,
+          "position": "WR",
+          "playerId": 2976212,
+          "ffTeamId": "H",
+          "start": 7
+        },
+        {
+          "score": 302.76,
+          "position": "RB",
+          "playerId": 3043078,
+          "ffTeamId": "I",
+          "start": 8
+        },
+        {
+          "score": 301.6,
+          "position": "WR",
+          "playerId": 4241389,
+          "ffTeamId": "J",
+          "start": 9
+        },
+        {
+          "score": 299.6,
+          "position": "WR",
+          "playerId": 4047646,
+          "ffTeamId": "J",
+          "start": 10
+        },
+        {
+          "score": 417.4,
+          "position": "QB",
+          "playerId": 3139477,
+          "ffTeamId": "I",
+          "start": 11
+        },
+        {
+          "score": 284,
+          "position": "RB",
+          "playerId": 3929630,
+          "ffTeamId": "H",
+          "start": 12
+        },
+        {
+          "score": 281.4,
+          "position": "RB",
+          "playerId": 3128720,
+          "ffTeamId": "G",
+          "start": 13
+        },
+        {
+          "score": 267.6,
+          "position": "WR",
+          "playerId": 4374302,
+          "ffTeamId": "F",
+          "start": 14
+        },
+        {
+          "score": 259.2,
+          "position": "WR",
+          "playerId": 4372016,
+          "ffTeamId": "E",
+          "start": 15
+        },
+        {
+          "score": 395.52,
+          "position": "QB",
+          "playerId": 3918298,
+          "ffTeamId": "D",
+          "start": 16
+        },
+        {
+          "score": 254.6,
+          "position": "WR",
+          "playerId": 4241478,
+          "ffTeamId": "C",
+          "start": 17
+        },
+        {
+          "score": 249.1,
+          "position": "RB",
+          "playerId": 4569173,
+          "ffTeamId": "B",
+          "start": 18
+        },
+        {
+          "score": 248.8,
+          "position": "RB",
+          "playerId": 3916148,
+          "ffTeamId": "A",
+          "start": 19
+        },
+        {
+          "score": 378.04,
+          "position": "QB",
+          "playerId": 4040715,
+          "ffTeamId": "J",
+          "start": 20
+        },
+        {
+          "score": 248.6,
+          "position": "RB",
+          "playerId": 3042519,
+          "ffTeamId": "I",
+          "start": 21
+        },
+        {
+          "score": 246,
+          "position": "WR",
+          "playerId": 2976499,
+          "ffTeamId": "H",
+          "start": 22
+        },
+        {
+          "score": 242.4,
+          "position": "WR",
+          "playerId": 4362628,
+          "ffTeamId": "G",
+          "start": 23
+        },
+        {
+          "score": 241.9,
+          "position": "WR",
+          "playerId": 3895856,
+          "ffTeamId": "F",
+          "start": 24
+        },
+        {
+          "score": 239.5,
+          "position": "RB",
+          "playerId": 3116385,
+          "ffTeamId": "E",
+          "start": 25
+        },
+        {
+          "score": 237.8,
+          "position": "RB",
+          "playerId": 3116593,
+          "ffTeamId": "D",
+          "start": 26
+        },
+        {
+          "score": 237.3,
+          "position": "WR",
+          "playerId": 2577327,
+          "ffTeamId": "C",
+          "start": 27
+        },
+        {
+          "score": 350.7,
+          "position": "QB",
+          "playerId": 3915511,
+          "ffTeamId": "B",
+          "start": 28
+        },
+        {
+          "score": 229,
+          "position": "WR",
+          "playerId": 3121422,
+          "ffTeamId": "A",
+          "start": 29
+        },
+        {
+          "score": 227.8,
+          "position": "WR",
+          "playerId": 4360438,
+          "ffTeamId": "A",
+          "start": 30
+        },
+        {
+          "score": 226.8,
+          "position": "WR",
+          "playerId": 4047650,
+          "ffTeamId": "B",
+          "start": 31
+        },
+        {
+          "score": 226.1,
+          "position": "RB",
+          "playerId": 3115364,
+          "ffTeamId": "C",
+          "start": 32
+        },
+        {
+          "score": 215.4,
+          "position": "TE",
+          "playerId": 4036133,
+          "ffTeamId": "D",
+          "start": 33
+        },
+        {
+          "score": 225.9,
+          "position": "RB",
+          "playerId": 2980453,
+          "ffTeamId": "E",
+          "start": 34
+        },
+        {
+          "score": 225.4,
+          "position": "WR",
+          "playerId": 16737,
+          "ffTeamId": "F",
+          "start": 35
+        },
+        {
+          "score": 223.46,
+          "position": "RB",
+          "playerId": 4241457,
+          "ffTeamId": "G",
+          "start": 36
+        },
+        {
+          "score": 222.8,
+          "position": "WR",
+          "playerId": 3116165,
+          "ffTeamId": "H",
+          "start": 37
+        },
+        {
+          "score": 220.9,
+          "position": "WR",
+          "playerId": 4239993,
+          "ffTeamId": "I",
+          "start": 38
+        },
+        {
+          "score": 216.7,
+          "position": "RB",
+          "playerId": 4045163,
+          "ffTeamId": "J",
+          "start": 39
+        },
+        {
+          "score": 216.5,
+          "position": "WR",
+          "playerId": 4035687,
+          "ffTeamId": "J",
+          "start": 40
+        },
+        {
+          "score": 215.7,
+          "position": "WR",
+          "playerId": 4569618,
+          "ffTeamId": "I",
+          "start": 41
+        },
+        {
+          "score": 200.5,
+          "position": "TE",
+          "playerId": 3040151,
+          "ffTeamId": "H",
+          "start": 42
+        },
+        {
+          "score": 211.7,
+          "position": "RB",
+          "playerId": 3054850,
+          "ffTeamId": "G",
+          "start": 43
+        },
+        {
+          "score": 190.5,
+          "position": "TE",
+          "playerId": 3116365,
+          "ffTeamId": "F",
+          "start": 44
+        },
+        {
+          "score": 205.1,
+          "position": "RB",
+          "playerId": 4239996,
+          "ffTeamId": "E",
+          "start": 45
+        },
+        {
+          "score": 204.2,
+          "position": "WR",
+          "playerId": 4241463,
+          "ffTeamId": "D",
+          "start": 46
+        },
+        {
+          "score": 202.5,
+          "position": "RB",
+          "playerId": 4567048,
+          "ffTeamId": "C",
+          "start": 47
+        },
+        {
+          "score": 201.4,
+          "position": "WR",
+          "playerId": 2977187,
+          "ffTeamId": "B",
+          "start": 48
+        },
+        {
+          "score": 303.88,
+          "position": "QB",
+          "playerId": 15864,
+          "ffTeamId": "A",
+          "start": 49
+        },
+        {
+          "score": 176.9,
+          "position": "TE",
+          "playerId": 3051876,
+          "ffTeamId": "A",
+          "start": 50
+        },
+        {
+          "score": 200.2,
+          "position": "RB",
+          "playerId": 3045147,
+          "ffTeamId": "B",
+          "start": 51
+        },
+        {
+          "score": 199.1,
+          "position": "WR",
+          "playerId": 3915416,
+          "ffTeamId": "C",
+          "start": 52
+        },
+        {
+          "score": 198.2,
+          "position": "WR",
+          "playerId": 4361370,
+          "ffTeamId": "D",
+          "start": 53
+        },
+        {
+          "score": 198.1,
+          "position": "WR",
+          "playerId": 3059722,
+          "ffTeamId": "E",
+          "start": 54
+        },
+        {
+          "score": 295.98,
+          "position": "QB",
+          "playerId": 4362887,
+          "ffTeamId": "F",
+          "start": 55
+        },
+        {
+          "score": 295.62,
+          "position": "QB",
+          "playerId": 4360310,
+          "ffTeamId": "G",
+          "start": 56
+        },
+        {
+          "score": 291.58,
+          "position": "QB",
+          "playerId": 14880,
+          "ffTeamId": "H",
+          "start": 57
+        },
+        {
+          "score": 196.3,
+          "position": "RB",
+          "playerId": 16782,
+          "ffTeamId": "I",
+          "start": 58
+        },
+        {
+          "score": 289,
+          "position": "QB",
+          "playerId": 3917792,
+          "ffTeamId": "J",
+          "start": 59
+        },
+        {
+          "score": 191.1,
+          "position": "RB",
+          "playerId": 4259545,
+          "ffTeamId": "J",
+          "start": 60
+        },
+        {
+          "score": 284.32,
+          "position": "QB",
+          "playerId": 3046779,
+          "ffTeamId": "I",
+          "start": 61
+        },
+        {
+          "score": 281.26,
+          "position": "QB",
+          "playerId": 4038941,
+          "ffTeamId": "H",
+          "start": 62
+        },
+        {
+          "score": 271.66,
+          "position": "QB",
+          "playerId": 2330,
+          "ffTeamId": "G",
+          "start": 63
+        },
+        {
+          "score": 185.8,
+          "position": "RB",
+          "playerId": 3051392,
+          "ffTeamId": "F",
+          "start": 64
+        },
+        {
+          "score": 239.2,
+          "position": "QB",
+          "playerId": 8439,
+          "ffTeamId": "E",
+          "start": 65
+        },
+        {
+          "score": 185.3,
+          "position": "WR",
+          "playerId": 3120348,
+          "ffTeamId": "D",
+          "start": 66
+        },
+        {
+          "score": 236.08,
+          "position": "QB",
+          "playerId": 3916387,
+          "ffTeamId": "C",
+          "start": 67
+        },
+        {
+          "score": 180.7,
+          "position": "WR",
+          "playerId": 3932905,
+          "ffTeamId": "B",
+          "start": 68
+        },
+        {
+          "score": 230.92,
+          "position": "QB",
+          "playerId": 4241479,
+          "ffTeamId": "A",
+          "start": 69
+        },
+        {
+          "score": 180.3,
+          "position": "WR",
+          "playerId": 3916433,
+          "ffTeamId": "A",
+          "start": 70
+        },
+        {
+          "score": 225.76,
+          "position": "QB",
+          "playerId": 14881,
+          "ffTeamId": "B",
+          "start": 71
+        },
+        {
+          "score": 219.08,
+          "position": "QB",
+          "playerId": 16757,
+          "ffTeamId": "C",
+          "start": 72
+        },
+        {
+          "score": 177.9,
+          "position": "RB",
+          "playerId": 4040761,
+          "ffTeamId": "D",
+          "start": 73
+        },
+        {
+          "score": 152,
+          "position": "TE",
+          "playerId": 2573401,
+          "ffTeamId": "E",
+          "start": 74
+        },
+        {
+          "score": 180,
+          "position": "WR",
+          "playerId": 16460,
+          "ffTeamId": "F",
+          "start": 75
+        },
+        {
+          "score": 178.6,
+          "position": "WR",
+          "playerId": 4426502,
+          "ffTeamId": "G",
+          "start": 76
+        },
+        {
+          "score": 177.7,
+          "position": "RB",
+          "playerId": 4035538,
+          "ffTeamId": "H",
+          "start": 77
+        },
+        {
+          "score": 176.5,
+          "position": "WR",
+          "playerId": 3045138,
+          "ffTeamId": "I",
+          "start": 78
+        },
+        {
+          "score": 176.3,
+          "position": "WR",
+          "playerId": 3121427,
+          "ffTeamId": "J",
+          "start": 79
+        },
+        {
+          "score": 148.2,
+          "position": "TE",
+          "playerId": 4361411,
+          "ffTeamId": "J",
+          "start": 80
+        },
+        {
+          "score": 147.3,
+          "position": "TE",
+          "playerId": 4258595,
+          "ffTeamId": "I",
+          "start": 81
+        },
+        {
+          "score": 174.8,
+          "position": "WR",
+          "playerId": 3128390,
+          "ffTeamId": "H",
+          "start": 82
+        },
+        {
+          "score": 171.6,
+          "position": "WR",
+          "playerId": 4243537,
+          "ffTeamId": "G",
+          "start": 83
+        },
+        {
+          "score": 200.52,
+          "position": "QB",
+          "playerId": 3917315,
+          "ffTeamId": "F",
+          "start": 84
+        },
+        {
+          "score": 198.6,
+          "position": "QB",
+          "playerId": 2577417,
+          "ffTeamId": "E",
+          "start": 85
+        },
+        {
+          "score": 196.56,
+          "position": "QB",
+          "playerId": 2576980,
+          "ffTeamId": "D",
+          "start": 86
+        },
+        {
+          "score": 145.8,
+          "position": "TE",
+          "playerId": 2468609,
+          "ffTeamId": "C",
+          "start": 87
+        },
+        {
+          "score": 142.7,
+          "position": "TE",
+          "playerId": 3117256,
+          "ffTeamId": "B",
+          "start": 88
+        },
+        {
+          "score": 169.3,
+          "position": "WR",
+          "playerId": 4242433,
+          "ffTeamId": "A",
+          "start": 89
+        }
+      ],
+      [
+        {
+          "score": 372.7,
+          "position": "RB",
+          "playerId": 3068267,
+          "ffTeamId": "A",
+          "start": 0
+        },
+        {
+          "score": 368.66,
+          "position": "WR",
+          "playerId": 4262921,
+          "ffTeamId": "B",
+          "start": 1
+        },
+        {
+          "score": 356.36,
+          "position": "RB",
+          "playerId": 3117251,
+          "ffTeamId": "C",
+          "start": 2
+        },
+        {
+          "score": 347.2,
+          "position": "WR",
+          "playerId": 3116406,
+          "ffTeamId": "D",
+          "start": 3
+        },
+        {
+          "score": 316.3,
+          "position": "TE",
+          "playerId": 15847,
+          "ffTeamId": "E",
+          "start": 4
+        },
+        {
+          "score": 335.5,
+          "position": "WR",
+          "playerId": 16800,
+          "ffTeamId": "F",
+          "start": 5
+        },
+        {
+          "score": 328.3,
+          "position": "RB",
+          "playerId": 4047365,
+          "ffTeamId": "G",
+          "start": 6
+        },
+        {
+          "score": 316.6,
+          "position": "WR",
+          "playerId": 2976212,
+          "ffTeamId": "H",
+          "start": 7
+        },
+        {
+          "score": 302.76,
+          "position": "RB",
+          "playerId": 3043078,
+          "ffTeamId": "I",
+          "start": 8
+        },
+        {
+          "score": 417.4,
+          "position": "QB",
+          "playerId": 3139477,
+          "ffTeamId": "J",
+          "start": 9
+        },
+        {
+          "score": 301.6,
+          "position": "WR",
+          "playerId": 4241389,
+          "ffTeamId": "J",
+          "start": 10
+        },
+        {
+          "score": 299.6,
+          "position": "WR",
+          "playerId": 4047646,
+          "ffTeamId": "I",
+          "start": 11
+        },
+        {
+          "score": 395.52,
+          "position": "QB",
+          "playerId": 3918298,
+          "ffTeamId": "H",
+          "start": 12
+        },
+        {
+          "score": 284,
+          "position": "RB",
+          "playerId": 3929630,
+          "ffTeamId": "G",
+          "start": 13
+        },
+        {
+          "score": 281.4,
+          "position": "RB",
+          "playerId": 3128720,
+          "ffTeamId": "F",
+          "start": 14
+        },
+        {
+          "score": 378.04,
+          "position": "QB",
+          "playerId": 4040715,
+          "ffTeamId": "E",
+          "start": 15
+        },
+        {
+          "score": 267.6,
+          "position": "WR",
+          "playerId": 4374302,
+          "ffTeamId": "D",
+          "start": 16
+        },
+        {
+          "score": 259.2,
+          "position": "WR",
+          "playerId": 4372016,
+          "ffTeamId": "C",
+          "start": 17
+        },
+        {
+          "score": 254.6,
+          "position": "WR",
+          "playerId": 4241478,
+          "ffTeamId": "B",
+          "start": 18
+        },
+        {
+          "score": 350.7,
+          "position": "QB",
+          "playerId": 3915511,
+          "ffTeamId": "A",
+          "start": 19
+        },
+        {
+          "score": 249.1,
+          "position": "RB",
+          "playerId": 4569173,
+          "ffTeamId": "J",
+          "start": 20
+        },
+        {
+          "score": 248.8,
+          "position": "RB",
+          "playerId": 3916148,
+          "ffTeamId": "I",
+          "start": 21
+        },
+        {
+          "score": 248.6,
+          "position": "RB",
+          "playerId": 3042519,
+          "ffTeamId": "H",
+          "start": 22
+        },
+        {
+          "score": 246,
+          "position": "WR",
+          "playerId": 2976499,
+          "ffTeamId": "G",
+          "start": 23
+        },
+        {
+          "score": 242.4,
+          "position": "WR",
+          "playerId": 4362628,
+          "ffTeamId": "F",
+          "start": 24
+        },
+        {
+          "score": 241.9,
+          "position": "WR",
+          "playerId": 3895856,
+          "ffTeamId": "E",
+          "start": 25
+        },
+        {
+          "score": 239.5,
+          "position": "RB",
+          "playerId": 3116385,
+          "ffTeamId": "D",
+          "start": 26
+        },
+        {
+          "score": 237.8,
+          "position": "RB",
+          "playerId": 3116593,
+          "ffTeamId": "C",
+          "start": 27
+        },
+        {
+          "score": 237.3,
+          "position": "WR",
+          "playerId": 2577327,
+          "ffTeamId": "B",
+          "start": 28
+        },
+        {
+          "score": 229,
+          "position": "WR",
+          "playerId": 3121422,
+          "ffTeamId": "A",
+          "start": 29
+        },
+        {
+          "score": 215.4,
+          "position": "TE",
+          "playerId": 4036133,
+          "ffTeamId": "A",
+          "start": 30
+        },
+        {
+          "score": 226.1,
+          "position": "RB",
+          "playerId": 3115364,
+          "ffTeamId": "B",
+          "start": 31
+        },
+        {
+          "score": 227.8,
+          "position": "WR",
+          "playerId": 4360438,
+          "ffTeamId": "C",
+          "start": 32
+        },
+        {
+          "score": 225.9,
+          "position": "RB",
+          "playerId": 2980453,
+          "ffTeamId": "D",
+          "start": 33
+        },
+        {
+          "score": 226.8,
+          "position": "WR",
+          "playerId": 4047650,
+          "ffTeamId": "E",
+          "start": 34
+        },
+        {
+          "score": 225.4,
+          "position": "WR",
+          "playerId": 16737,
+          "ffTeamId": "F",
+          "start": 35
+        },
+        {
+          "score": 303.88,
+          "position": "QB",
+          "playerId": 15864,
+          "ffTeamId": "G",
+          "start": 36
+        },
+        {
+          "score": 223.46,
+          "position": "RB",
+          "playerId": 4241457,
+          "ffTeamId": "H",
+          "start": 37
+        },
+        {
+          "score": 222.8,
+          "position": "WR",
+          "playerId": 3116165,
+          "ffTeamId": "I",
+          "start": 38
+        },
+        {
+          "score": 220.9,
+          "position": "WR",
+          "playerId": 4239993,
+          "ffTeamId": "J",
+          "start": 39
+        },
+        {
+          "score": 200.5,
+          "position": "TE",
+          "playerId": 3040151,
+          "ffTeamId": "J",
+          "start": 40
+        },
+        {
+          "score": 190.5,
+          "position": "TE",
+          "playerId": 3116365,
+          "ffTeamId": "I",
+          "start": 41
+        },
+        {
+          "score": 216.5,
+          "position": "WR",
+          "playerId": 4035687,
+          "ffTeamId": "H",
+          "start": 42
+        },
+        {
+          "score": 216.7,
+          "position": "RB",
+          "playerId": 4045163,
+          "ffTeamId": "G",
+          "start": 43
+        },
+        {
+          "score": 295.98,
+          "position": "QB",
+          "playerId": 4362887,
+          "ffTeamId": "F",
+          "start": 44
+        },
+        {
+          "score": 215.7,
+          "position": "WR",
+          "playerId": 4569618,
+          "ffTeamId": "E",
+          "start": 45
+        },
+        {
+          "score": 295.62,
+          "position": "QB",
+          "playerId": 4360310,
+          "ffTeamId": "D",
+          "start": 46
+        },
+        {
+          "score": 291.58,
+          "position": "QB",
+          "playerId": 14880,
+          "ffTeamId": "C",
+          "start": 47
+        },
+        {
+          "score": 289,
+          "position": "QB",
+          "playerId": 3917792,
+          "ffTeamId": "B",
+          "start": 48
+        },
+        {
+          "score": 284.32,
+          "position": "QB",
+          "playerId": 3046779,
+          "ffTeamId": "A",
+          "start": 49
+        },
+        {
+          "score": 211.7,
+          "position": "RB",
+          "playerId": 3054850,
+          "ffTeamId": "A",
+          "start": 50
+        },
+        {
+          "score": 281.26,
+          "position": "QB",
+          "playerId": 4038941,
+          "ffTeamId": "B",
+          "start": 51
+        },
+        {
+          "score": 271.66,
+          "position": "QB",
+          "playerId": 2330,
+          "ffTeamId": "C",
+          "start": 52
+        },
+        {
+          "score": 205.1,
+          "position": "RB",
+          "playerId": 4239996,
+          "ffTeamId": "D",
+          "start": 53
+        },
+        {
+          "score": 202.5,
+          "position": "RB",
+          "playerId": 4567048,
+          "ffTeamId": "E",
+          "start": 54
+        },
+        {
+          "score": 204.2,
+          "position": "WR",
+          "playerId": 4241463,
+          "ffTeamId": "F",
+          "start": 55
+        },
+        {
+          "score": 176.9,
+          "position": "TE",
+          "playerId": 3051876,
+          "ffTeamId": "G",
+          "start": 56
+        },
+        {
+          "score": 201.4,
+          "position": "WR",
+          "playerId": 2977187,
+          "ffTeamId": "H",
+          "start": 57
+        },
+        {
+          "score": 239.2,
+          "position": "QB",
+          "playerId": 8439,
+          "ffTeamId": "I",
+          "start": 58
+        },
+        {
+          "score": 236.08,
+          "position": "QB",
+          "playerId": 3916387,
+          "ffTeamId": "J",
+          "start": 59
+        },
+        {
+          "score": 200.2,
+          "position": "RB",
+          "playerId": 3045147,
+          "ffTeamId": "J",
+          "start": 60
+        },
+        {
+          "score": 230.92,
+          "position": "QB",
+          "playerId": 4241479,
+          "ffTeamId": "I",
+          "start": 61
+        },
+        {
+          "score": 225.76,
+          "position": "QB",
+          "playerId": 14881,
+          "ffTeamId": "H",
+          "start": 62
+        },
+        {
+          "score": 199.1,
+          "position": "WR",
+          "playerId": 3915416,
+          "ffTeamId": "G",
+          "start": 63
+        },
+        {
+          "score": 196.3,
+          "position": "RB",
+          "playerId": 16782,
+          "ffTeamId": "F",
+          "start": 64
+        },
+        {
+          "score": 198.2,
+          "position": "WR",
+          "playerId": 4361370,
+          "ffTeamId": "E",
+          "start": 65
+        },
+        {
+          "score": 198.1,
+          "position": "WR",
+          "playerId": 3059722,
+          "ffTeamId": "D",
+          "start": 66
+        },
+        {
+          "score": 191.1,
+          "position": "RB",
+          "playerId": 4259545,
+          "ffTeamId": "C",
+          "start": 67
+        },
+        {
+          "score": 185.8,
+          "position": "RB",
+          "playerId": 3051392,
+          "ffTeamId": "B",
+          "start": 68
+        },
+        {
+          "score": 185.3,
+          "position": "WR",
+          "playerId": 3120348,
+          "ffTeamId": "A",
+          "start": 69
+        },
+        {
+          "score": 180.7,
+          "position": "WR",
+          "playerId": 3932905,
+          "ffTeamId": "A",
+          "start": 70
+        },
+        {
+          "score": 180.3,
+          "position": "WR",
+          "playerId": 3916433,
+          "ffTeamId": "B",
+          "start": 71
+        },
+        {
+          "score": 180,
+          "position": "WR",
+          "playerId": 16460,
+          "ffTeamId": "C",
+          "start": 72
+        },
+        {
+          "score": 219.08,
+          "position": "QB",
+          "playerId": 16757,
+          "ffTeamId": "D",
+          "start": 73
+        },
+        {
+          "score": 177.9,
+          "position": "RB",
+          "playerId": 4040761,
+          "ffTeamId": "E",
+          "start": 74
+        },
+        {
+          "score": 152,
+          "position": "TE",
+          "playerId": 2573401,
+          "ffTeamId": "F",
+          "start": 75
+        },
+        {
+          "score": 178.6,
+          "position": "WR",
+          "playerId": 4426502,
+          "ffTeamId": "G",
+          "start": 76
+        },
+        {
+          "score": 177.7,
+          "position": "RB",
+          "playerId": 4035538,
+          "ffTeamId": "H",
+          "start": 77
+        },
+        {
+          "score": 176.5,
+          "position": "WR",
+          "playerId": 3045138,
+          "ffTeamId": "I",
+          "start": 78
+        },
+        {
+          "score": 176.3,
+          "position": "WR",
+          "playerId": 3121427,
+          "ffTeamId": "J",
+          "start": 79
+        },
+        {
+          "score": 174.8,
+          "position": "WR",
+          "playerId": 3128390,
+          "ffTeamId": "J",
+          "start": 80
+        },
+        {
+          "score": 171.6,
+          "position": "WR",
+          "playerId": 4243537,
+          "ffTeamId": "I",
+          "start": 81
+        },
+        {
+          "score": 148.2,
+          "position": "TE",
+          "playerId": 4361411,
+          "ffTeamId": "H",
+          "start": 82
+        },
+        {
+          "score": 200.52,
+          "position": "QB",
+          "playerId": 3917315,
+          "ffTeamId": "G",
+          "start": 83
+        },
+        {
+          "score": 198.6,
+          "position": "QB",
+          "playerId": 2577417,
+          "ffTeamId": "F",
+          "start": 84
+        },
+        {
+          "score": 196.56,
+          "position": "QB",
+          "playerId": 2576980,
+          "ffTeamId": "E",
+          "start": 85
+        },
+        {
+          "score": 147.3,
+          "position": "TE",
+          "playerId": 4258595,
+          "ffTeamId": "D",
+          "start": 86
+        },
+        {
+          "score": 145.8,
+          "position": "TE",
+          "playerId": 2468609,
+          "ffTeamId": "C",
+          "start": 87
+        },
+        {
+          "score": 142.7,
+          "position": "TE",
+          "playerId": 3117256,
+          "ffTeamId": "B",
+          "start": 88
+        },
+        {
+          "score": 169.3,
+          "position": "WR",
+          "playerId": 4242433,
+          "ffTeamId": "A",
+          "start": 89
+        }
+      ],
+      [
+        {
+          "score": 372.7,
+          "position": "RB",
+          "playerId": 3068267,
+          "ffTeamId": "A",
+          "start": 0
+        },
+        {
+          "score": 368.66,
+          "position": "WR",
+          "playerId": 4262921,
+          "ffTeamId": "B",
+          "start": 1
+        },
+        {
+          "score": 356.36,
+          "position": "RB",
+          "playerId": 3117251,
+          "ffTeamId": "C",
+          "start": 2
+        },
+        {
+          "score": 347.2,
+          "position": "WR",
+          "playerId": 3116406,
+          "ffTeamId": "D",
+          "start": 3
+        },
+        {
+          "score": 316.3,
+          "position": "TE",
+          "playerId": 15847,
+          "ffTeamId": "E",
+          "start": 4
+        },
+        {
+          "score": 417.4,
+          "position": "QB",
+          "playerId": 3139477,
+          "ffTeamId": "F",
+          "start": 5
+        },
+        {
+          "score": 335.5,
+          "position": "WR",
+          "playerId": 16800,
+          "ffTeamId": "G",
+          "start": 6
+        },
+        {
+          "score": 328.3,
+          "position": "RB",
+          "playerId": 4047365,
+          "ffTeamId": "H",
+          "start": 7
+        },
+        {
+          "score": 316.6,
+          "position": "WR",
+          "playerId": 2976212,
+          "ffTeamId": "I",
+          "start": 8
+        },
+        {
+          "score": 395.52,
+          "position": "QB",
+          "playerId": 3918298,
+          "ffTeamId": "J",
+          "start": 9
+        },
+        {
+          "score": 378.04,
+          "position": "QB",
+          "playerId": 4040715,
+          "ffTeamId": "J",
+          "start": 10
+        },
+        {
+          "score": 302.76,
+          "position": "RB",
+          "playerId": 3043078,
+          "ffTeamId": "I",
+          "start": 11
+        },
+        {
+          "score": 301.6,
+          "position": "WR",
+          "playerId": 4241389,
+          "ffTeamId": "H",
+          "start": 12
+        },
+        {
+          "score": 299.6,
+          "position": "WR",
+          "playerId": 4047646,
+          "ffTeamId": "G",
+          "start": 13
+        },
+        {
+          "score": 284,
+          "position": "RB",
+          "playerId": 3929630,
+          "ffTeamId": "F",
+          "start": 14
+        },
+        {
+          "score": 281.4,
+          "position": "RB",
+          "playerId": 3128720,
+          "ffTeamId": "E",
+          "start": 15
+        },
+        {
+          "score": 350.7,
+          "position": "QB",
+          "playerId": 3915511,
+          "ffTeamId": "D",
+          "start": 16
+        },
+        {
+          "score": 267.6,
+          "position": "WR",
+          "playerId": 4374302,
+          "ffTeamId": "C",
+          "start": 17
+        },
+        {
+          "score": 259.2,
+          "position": "WR",
+          "playerId": 4372016,
+          "ffTeamId": "B",
+          "start": 18
+        },
+        {
+          "score": 254.6,
+          "position": "WR",
+          "playerId": 4241478,
+          "ffTeamId": "A",
+          "start": 19
+        },
+        {
+          "score": 249.1,
+          "position": "RB",
+          "playerId": 4569173,
+          "ffTeamId": "J",
+          "start": 20
+        },
+        {
+          "score": 248.8,
+          "position": "RB",
+          "playerId": 3916148,
+          "ffTeamId": "I",
+          "start": 21
+        },
+        {
+          "score": 248.6,
+          "position": "RB",
+          "playerId": 3042519,
+          "ffTeamId": "H",
+          "start": 22
+        },
+        {
+          "score": 246,
+          "position": "WR",
+          "playerId": 2976499,
+          "ffTeamId": "G",
+          "start": 23
+        },
+        {
+          "score": 242.4,
+          "position": "WR",
+          "playerId": 4362628,
+          "ffTeamId": "F",
+          "start": 24
+        },
+        {
+          "score": 241.9,
+          "position": "WR",
+          "playerId": 3895856,
+          "ffTeamId": "E",
+          "start": 25
+        },
+        {
+          "score": 239.5,
+          "position": "RB",
+          "playerId": 3116385,
+          "ffTeamId": "D",
+          "start": 26
+        },
+        {
+          "score": 215.4,
+          "position": "TE",
+          "playerId": 4036133,
+          "ffTeamId": "C",
+          "start": 27
+        },
+        {
+          "score": 237.8,
+          "position": "RB",
+          "playerId": 3116593,
+          "ffTeamId": "B",
+          "start": 28
+        },
+        {
+          "score": 303.88,
+          "position": "QB",
+          "playerId": 15864,
+          "ffTeamId": "A",
+          "start": 29
+        },
+        {
+          "score": 237.3,
+          "position": "WR",
+          "playerId": 2577327,
+          "ffTeamId": "A",
+          "start": 30
+        },
+        {
+          "score": 229,
+          "position": "WR",
+          "playerId": 3121422,
+          "ffTeamId": "B",
+          "start": 31
+        },
+        {
+          "score": 295.98,
+          "position": "QB",
+          "playerId": 4362887,
+          "ffTeamId": "C",
+          "start": 32
+        },
+        {
+          "score": 227.8,
+          "position": "WR",
+          "playerId": 4360438,
+          "ffTeamId": "D",
+          "start": 33
+        },
+        {
+          "score": 295.62,
+          "position": "QB",
+          "playerId": 4360310,
+          "ffTeamId": "E",
+          "start": 34
+        },
+        {
+          "score": 226.1,
+          "position": "RB",
+          "playerId": 3115364,
+          "ffTeamId": "F",
+          "start": 35
+        },
+        {
+          "score": 291.58,
+          "position": "QB",
+          "playerId": 14880,
+          "ffTeamId": "G",
+          "start": 36
+        },
+        {
+          "score": 289,
+          "position": "QB",
+          "playerId": 3917792,
+          "ffTeamId": "H",
+          "start": 37
+        },
+        {
+          "score": 284.32,
+          "position": "QB",
+          "playerId": 3046779,
+          "ffTeamId": "I",
+          "start": 38
+        },
+        {
+          "score": 226.8,
+          "position": "WR",
+          "playerId": 4047650,
+          "ffTeamId": "J",
+          "start": 39
+        },
+        {
+          "score": 200.5,
+          "position": "TE",
+          "playerId": 3040151,
+          "ffTeamId": "J",
+          "start": 40
+        },
+        {
+          "score": 281.26,
+          "position": "QB",
+          "playerId": 4038941,
+          "ffTeamId": "I",
+          "start": 41
+        },
+        {
+          "score": 271.66,
+          "position": "QB",
+          "playerId": 2330,
+          "ffTeamId": "H",
+          "start": 42
+        },
+        {
+          "score": 225.9,
+          "position": "RB",
+          "playerId": 2980453,
+          "ffTeamId": "G",
+          "start": 43
+        },
+        {
+          "score": 225.4,
+          "position": "WR",
+          "playerId": 16737,
+          "ffTeamId": "F",
+          "start": 44
+        },
+        {
+          "score": 223.46,
+          "position": "RB",
+          "playerId": 4241457,
+          "ffTeamId": "E",
+          "start": 45
+        },
+        {
+          "score": 222.8,
+          "position": "WR",
+          "playerId": 3116165,
+          "ffTeamId": "D",
+          "start": 46
+        },
+        {
+          "score": 220.9,
+          "position": "WR",
+          "playerId": 4239993,
+          "ffTeamId": "C",
+          "start": 47
+        },
+        {
+          "score": 190.5,
+          "position": "TE",
+          "playerId": 3116365,
+          "ffTeamId": "B",
+          "start": 48
+        },
+        {
+          "score": 216.7,
+          "position": "RB",
+          "playerId": 4045163,
+          "ffTeamId": "A",
+          "start": 49
+        },
+        {
+          "score": 216.5,
+          "position": "WR",
+          "playerId": 4035687,
+          "ffTeamId": "A",
+          "start": 50
+        },
+        {
+          "score": 239.2,
+          "position": "QB",
+          "playerId": 8439,
+          "ffTeamId": "B",
+          "start": 51
+        },
+        {
+          "score": 215.7,
+          "position": "WR",
+          "playerId": 4569618,
+          "ffTeamId": "C",
+          "start": 52
+        },
+        {
+          "score": 211.7,
+          "position": "RB",
+          "playerId": 3054850,
+          "ffTeamId": "D",
+          "start": 53
+        },
+        {
+          "score": 236.08,
+          "position": "QB",
+          "playerId": 3916387,
+          "ffTeamId": "E",
+          "start": 54
+        },
+        {
+          "score": 230.92,
+          "position": "QB",
+          "playerId": 4241479,
+          "ffTeamId": "F",
+          "start": 55
+        },
+        {
+          "score": 176.9,
+          "position": "TE",
+          "playerId": 3051876,
+          "ffTeamId": "G",
+          "start": 56
+        },
+        {
+          "score": 205.1,
+          "position": "RB",
+          "playerId": 4239996,
+          "ffTeamId": "H",
+          "start": 57
+        },
+        {
+          "score": 204.2,
+          "position": "WR",
+          "playerId": 4241463,
+          "ffTeamId": "I",
+          "start": 58
+        },
+        {
+          "score": 202.5,
+          "position": "RB",
+          "playerId": 4567048,
+          "ffTeamId": "J",
+          "start": 59
+        },
+        {
+          "score": 201.4,
+          "position": "WR",
+          "playerId": 2977187,
+          "ffTeamId": "J",
+          "start": 60
+        },
+        {
+          "score": 200.2,
+          "position": "RB",
+          "playerId": 3045147,
+          "ffTeamId": "I",
+          "start": 61
+        },
+        {
+          "score": 199.1,
+          "position": "WR",
+          "playerId": 3915416,
+          "ffTeamId": "H",
+          "start": 62
+        },
+        {
+          "score": 198.2,
+          "position": "WR",
+          "playerId": 4361370,
+          "ffTeamId": "G",
+          "start": 63
+        },
+        {
+          "score": 198.1,
+          "position": "WR",
+          "playerId": 3059722,
+          "ffTeamId": "F",
+          "start": 64
+        },
+        {
+          "score": 196.3,
+          "position": "RB",
+          "playerId": 16782,
+          "ffTeamId": "E",
+          "start": 65
+        },
+        {
+          "score": 191.1,
+          "position": "RB",
+          "playerId": 4259545,
+          "ffTeamId": "D",
+          "start": 66
+        },
+        {
+          "score": 185.8,
+          "position": "RB",
+          "playerId": 3051392,
+          "ffTeamId": "C",
+          "start": 67
+        },
+        {
+          "score": 225.76,
+          "position": "QB",
+          "playerId": 14881,
+          "ffTeamId": "B",
+          "start": 68
+        },
+        {
+          "score": 219.08,
+          "position": "QB",
+          "playerId": 16757,
+          "ffTeamId": "A",
+          "start": 69
+        },
+        {
+          "score": 185.3,
+          "position": "WR",
+          "playerId": 3120348,
+          "ffTeamId": "A",
+          "start": 70
+        },
+        {
+          "score": 180.7,
+          "position": "WR",
+          "playerId": 3932905,
+          "ffTeamId": "B",
+          "start": 71
+        },
+        {
+          "score": 200.52,
+          "position": "QB",
+          "playerId": 3917315,
+          "ffTeamId": "C",
+          "start": 72
+        },
+        {
+          "score": 198.6,
+          "position": "QB",
+          "playerId": 2577417,
+          "ffTeamId": "D",
+          "start": 73
+        },
+        {
+          "score": 180.3,
+          "position": "WR",
+          "playerId": 3916433,
+          "ffTeamId": "E",
+          "start": 74
+        },
+        {
+          "score": 180,
+          "position": "WR",
+          "playerId": 16460,
+          "ffTeamId": "F",
+          "start": 75
+        },
+        {
+          "score": 177.9,
+          "position": "RB",
+          "playerId": 4040761,
+          "ffTeamId": "G",
+          "start": 76
+        },
+        {
+          "score": 178.6,
+          "position": "WR",
+          "playerId": 4426502,
+          "ffTeamId": "H",
+          "start": 77
+        },
+        {
+          "score": 152,
+          "position": "TE",
+          "playerId": 2573401,
+          "ffTeamId": "I",
+          "start": 78
+        },
+        {
+          "score": 177.7,
+          "position": "RB",
+          "playerId": 4035538,
+          "ffTeamId": "J",
+          "start": 79
+        },
+        {
+          "score": 176.5,
+          "position": "WR",
+          "playerId": 3045138,
+          "ffTeamId": "J",
+          "start": 80
+        },
+        {
+          "score": 176.3,
+          "position": "WR",
+          "playerId": 3121427,
+          "ffTeamId": "I",
+          "start": 81
+        },
+        {
+          "score": 148.2,
+          "position": "TE",
+          "playerId": 4361411,
+          "ffTeamId": "H",
+          "start": 82
+        },
+        {
+          "score": 196.56,
+          "position": "QB",
+          "playerId": 2576980,
+          "ffTeamId": "G",
+          "start": 83
+        },
+        {
+          "score": 147.3,
+          "position": "TE",
+          "playerId": 4258595,
+          "ffTeamId": "F",
+          "start": 84
+        },
+        {
+          "score": 174.8,
+          "position": "WR",
+          "playerId": 3128390,
+          "ffTeamId": "E",
+          "start": 85
+        },
+        {
+          "score": 145.8,
+          "position": "TE",
+          "playerId": 2468609,
+          "ffTeamId": "D",
+          "start": 86
+        },
+        {
+          "score": 171.6,
+          "position": "WR",
+          "playerId": 4243537,
+          "ffTeamId": "C",
+          "start": 87
+        },
+        {
+          "score": 168.3,
+          "position": "RB",
+          "playerId": 2576414,
+          "ffTeamId": "B",
+          "start": 88
+        },
+        {
+          "score": 142.7,
+          "position": "TE",
+          "playerId": 3117256,
+          "ffTeamId": "A",
+          "start": 89
+        }
+      ]
+    ]
+  }
+]

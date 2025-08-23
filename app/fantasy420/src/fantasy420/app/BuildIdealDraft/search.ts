@@ -2,6 +2,7 @@ import { WrappedType } from "../FetchWrapped";
 import { clog, groupByF } from "../Wrapped";
 
 const MAX_GENERATIONS = 6;
+const MAX_DEPTH = 3;
 const A_CODE = 65;
 
 const startDateNow = Date.now();
@@ -11,7 +12,6 @@ export type DraftPlayerType = {
   ffTeamId: string;
   playerId: number;
   score: number;
-  start: number;
 };
 export type DraftType = {
   draft: DraftPlayerType[];
@@ -65,20 +65,11 @@ function generate(
   );
   const curr = drafts[drafts.length - 1];
   const prev = drafts[drafts.length - 2];
-  const start = curr.draft.length;
-  const ffTeamId = prev.draft[start]?.ffTeamId;
+  const ffTeamId = prev.draft[curr.draft.length]?.ffTeamId;
   return Promise.resolve()
     .then(() =>
-      getBest(
-        curr,
-        prev,
-        positionToRankedDraftPlayers,
-        ffTeamId,
-        start,
-        rosterEnum
-      )
+      getBest(curr, prev, positionToRankedDraftPlayers, ffTeamId, rosterEnum, 0)
     )
-    .then(clog)
     .then((best) => {
       if (!best) {
         if (JSON.stringify(curr) === JSON.stringify(prev)) {
@@ -123,8 +114,8 @@ function getBest(
     [k: string]: DraftPlayerType[];
   },
   ffTeamId: string,
-  start: number,
-  rosterEnum: RosterEnum
+  rosterEnum: RosterEnum,
+  depth: number
 ): Promise<DraftPlayerType | undefined> {
   return Promise.resolve().then(() => {
     const draftTeamId = prev.draft[curr.draft.length]?.ffTeamId;
@@ -133,7 +124,6 @@ function getBest(
       return {
         ...prev.draft.find((p) => !curr.draftedIds[p.playerId])!,
         ffTeamId: draftTeamId,
-        start,
       };
     }
     return Promise.resolve()
@@ -149,7 +139,6 @@ function getBest(
               curr.positionToCount[position] || 0
             ],
             ffTeamId,
-            start,
           }))
           .map((player) =>
             getScore(
@@ -157,8 +146,8 @@ function getBest(
               prev,
               positionToRankedDraftPlayers,
               ffTeamId,
-              start,
-              rosterEnum
+              rosterEnum,
+              depth + 1
             ).then((score) => ({ score, player }))
           )
       )
@@ -194,18 +183,19 @@ async function getScore(
     [k: string]: DraftPlayerType[];
   },
   ffTeamId: string,
-  start: number,
-  rosterEnum: RosterEnum
+  rosterEnum: RosterEnum,
+  depth: number
 ): Promise<number> {
   let curr = _curr;
+  if (depth > MAX_DEPTH) return scoreTeam(curr.picksByTeamId[ffTeamId]!);
   while (true) {
     const best = await getBest(
       curr,
       prev,
       positionToRankedDraftPlayers,
       ffTeamId,
-      start,
-      rosterEnum
+      rosterEnum,
+      depth
     );
     if (!best) return scoreTeam(curr.picksByTeamId[ffTeamId]!);
     curr = updateDraft(curr, best);
