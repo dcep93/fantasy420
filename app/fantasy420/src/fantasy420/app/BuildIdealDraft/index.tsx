@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { SubIdealDraft } from "../IdealDraft";
 import { selectedYear } from "../Wrapped";
 import allWrapped from "../Wrapped/allWrapped";
@@ -61,17 +61,20 @@ function SubBuildIdealDraft(props: {
   const wrapped = allWrapped[props.yearKey];
   const positionToRankedDraftPlayers = getPositionToRankedDraftPlayers(wrapped);
   const [drafts, updateDrafts] = useState<DraftType[] | null>(null);
-  useEffect(() => {
-    false &&
+  const generateInBrowser = useCallback(
+    () =>
       Promise.resolve()
         .then(() =>
           drafts === null
             ? getStart(wrapped, positionToRankedDraftPlayers, props.rosterEnum)
             : generate(drafts, positionToRankedDraftPlayers, props.rosterEnum)
         )
-        .then((nextDrafts) => nextDrafts && updateDrafts(nextDrafts));
-  }, [drafts, positionToRankedDraftPlayers, wrapped, props.rosterEnum]);
-
+        .then((nextDrafts) => nextDrafts && updateDrafts(nextDrafts)),
+    [drafts, positionToRankedDraftPlayers, wrapped, props.rosterEnum]
+  );
+  useEffect(() => {
+    false && generateInBrowser();
+  }, [generateInBrowser]);
   if (!drafts) return <div>loading...</div>;
   return (
     <SubIdealDraft
