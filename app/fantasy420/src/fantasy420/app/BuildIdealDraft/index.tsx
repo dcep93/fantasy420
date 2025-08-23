@@ -12,26 +12,43 @@ import {
 
 export default function BuildIdealDraft() {
   const [yearKey, updateYear] = useState(selectedYear);
-  const [rosterEnum, updateRosterEnum] = useState(RosterEnum.flex);
+  const [rosterEnum, updateRosterEnum] = useState(RosterEnum[RosterEnum.flex]);
   return (
     <div>
       <div>
-        year:{" "}
-        <select
-          onChange={(e) => updateYear(e.target.value)}
-          defaultValue={yearKey}
-        >
-          {Object.keys(allWrapped).map((y) => (
-            <option key={y} value={y}>
-              {y}
-            </option>
-          ))}
-        </select>
+        <div>
+          year:{" "}
+          <select
+            onChange={(e) => updateYear(e.target.value)}
+            defaultValue={yearKey}
+          >
+            {Object.keys(allWrapped).map((y) => (
+              <option key={y} value={y}>
+                {y}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div>
+          rosterEnum:{" "}
+          <select
+            onChange={(e) => updateRosterEnum(e.target.value)}
+            defaultValue={yearKey}
+          >
+            {Object.keys(RosterEnum)
+              .filter((k) => isNaN(parseInt(k)))
+              .map((k) => (
+                <option key={k} value={k}>
+                  {k}
+                </option>
+              ))}
+          </select>
+        </div>
       </div>
       <SubBuildIdealDraft
         key={yearKey}
         yearKey={yearKey}
-        rosterEnum={rosterEnum}
+        rosterEnum={RosterEnum[rosterEnum as keyof typeof RosterEnum]}
       />
     </div>
   );
@@ -43,23 +60,19 @@ function SubBuildIdealDraft(props: {
 }) {
   const wrapped = allWrapped[props.yearKey];
   const positionToRankedDraftPlayers = getPositionToRankedDraftPlayers(wrapped);
-  var drafts: DraftType[];
-  if (true) {
-    const [switchDrafts, updateDrafts] = useState(
-      getStart(wrapped, positionToRankedDraftPlayers, props.rosterEnum)
-    );
-    useEffect(() => {
-      false &&
-        Promise.resolve()
-          .then(() =>
-            generate(drafts, positionToRankedDraftPlayers, props.rosterEnum)
-          )
-          .then((nextDrafts) => nextDrafts && updateDrafts(nextDrafts));
-    }, [switchDrafts, positionToRankedDraftPlayers, wrapped.ffTeams]);
-    drafts = switchDrafts;
-  } else {
-    drafts = [];
-  }
+  const [drafts, updateDrafts] = useState<DraftType[] | null>(null);
+  useEffect(() => {
+    false &&
+      Promise.resolve()
+        .then(() =>
+          drafts === null
+            ? getStart(wrapped, positionToRankedDraftPlayers, props.rosterEnum)
+            : generate(drafts, positionToRankedDraftPlayers, props.rosterEnum)
+        )
+        .then((nextDrafts) => nextDrafts && updateDrafts(nextDrafts));
+  }, [drafts, positionToRankedDraftPlayers, wrapped, props.rosterEnum]);
+
+  if (!drafts) return <div>loading...</div>;
   return (
     <SubIdealDraft
       wrapped={wrapped}
