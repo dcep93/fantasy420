@@ -23,12 +23,12 @@ export type DraftType = {
 };
 
 export enum RosterEnum {
-  flex,
+  doubleflex,
   megaflex,
 }
 
 const allRosters = {
-  [RosterEnum.flex]: [
+  [RosterEnum.doubleflex]: [
     ["QB"],
     ["RB"],
     ["RB"],
@@ -37,7 +37,6 @@ const allRosters = {
     ["TE"],
     ["RB", "WR", "TE"],
     ["RB", "WR", "TE"],
-    ["QB", "RB", "WR", "TE"],
   ],
   [RosterEnum.megaflex]: [
     ["QB"],
