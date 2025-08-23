@@ -1,5 +1,8 @@
 // npx ts-node ./exec.ts
 
+if (typeof (globalThis as any).window === "undefined")
+  (globalThis as any).window = { location: {} };
+
 import { writeFile } from "fs/promises";
 import { clog } from "../Wrapped";
 import allWrapped from "../Wrapped/allWrapped";
