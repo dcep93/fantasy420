@@ -200,8 +200,8 @@ export function SubIdealDraft(props: {
                           #{j + 1} {o.wp.name}
                         </div>
                         <div>
-                          {o.wp.total} {o.wp.position}
-                          {playerIdToPositionSeasonRank[o.p.playerId] + 1}
+                          {o.wp.total} pts {o.wp.position}
+                          {playerIdToPositionSeasonRank[o.p.playerId] + 1}/
                         </div>
                         <div>team {o.p.ffTeamId}</div>
                       </div>
