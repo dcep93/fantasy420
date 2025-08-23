@@ -3,6 +3,8 @@ import { WrappedType } from "../FetchWrapped";
 const MAX_GENERATIONS = 6;
 const A_CODE = 65;
 
+const startDateNow = Date.now();
+
 function clog<T>(t: T): T {
   console.log(t);
   return t;
@@ -61,7 +63,10 @@ function generate(
   },
   rosterEnum: RosterEnum
 ): Promise<DraftType[] | null> {
-  console.log(drafts.map((d) => d.draft.length));
+  console.log(
+    Date.now() - startDateNow,
+    drafts.map((d) => d.draft.length)
+  );
   const curr = drafts[drafts.length - 1];
   const prev = drafts[drafts.length - 2];
   const start = curr.draft.length;
