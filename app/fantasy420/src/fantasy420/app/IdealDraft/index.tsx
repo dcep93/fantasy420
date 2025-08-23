@@ -14,6 +14,7 @@ import allWrapped from "../Wrapped/allWrapped";
 export default function IdealDraft() {
   const [yearKey, updateYear] = useState(selectedYear);
   const [rosterEnum, updateRosterEnum] = useState(RosterEnum[RosterEnum.flex]);
+  console.log({ yearKey, rosterEnum });
   const wrapped = allWrapped[yearKey];
   const draftedPlayers = idealDraftJson.find(
     (d) =>
@@ -48,13 +49,13 @@ export default function IdealDraft() {
             onChange={(e) => updateRosterEnum(e.target.value)}
             defaultValue={yearKey}
           >
-            {Array.from(
-              new Set(idealDraftJson.map((d) => d.config.rosterEnum))
-            ).map((k) => (
-              <option key={k} value={k}>
-                {RosterEnum[k]}
-              </option>
-            ))}
+            {Array.from(new Set(idealDraftJson.map((d) => d.config.rosterEnum)))
+              .map((k) => RosterEnum[k])
+              .map((k) => (
+                <option key={k} value={k}>
+                  {k}
+                </option>
+              ))}
           </select>
         </div>
       </div>
