@@ -78,6 +78,7 @@ function generate(
         rosterEnum
       )
     )
+    .then(clog)
     .then((best) => {
       if (!best) {
         if (JSON.stringify(curr) === JSON.stringify(prev)) {
