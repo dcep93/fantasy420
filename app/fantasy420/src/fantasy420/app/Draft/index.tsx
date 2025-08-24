@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { printF } from "..";
-import { fetchExtensionStorage } from "./Extension";
+import { fetchExtensionStorage, setExtensionStorage } from "./Extension";
 
 import { NFLPlayerType, WrappedType } from "../FetchWrapped";
 import { groupByF, mapDict, selectedWrapped, selectedYear } from "../Wrapped";
@@ -210,7 +210,9 @@ function SubDraft(props: {
           )}
         </pre>
         <div>
-          <div>drafted</div>
+          <div onClick={() => setExtensionStorage({ draft: "[]" })}>
+            drafted
+          </div>
           <input readOnly value={JSON.stringify(props.liveDraft)} />
         </div>
         <div>

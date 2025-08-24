@@ -40,3 +40,11 @@ export function fetchExtensionStorage(key: string): Promise<any> {
     }
   );
 }
+
+export function setExtensionStorage(save: {
+  [key: string]: any;
+}): Promise<any> {
+  return extensionHelper({ storage: { action: "save", save } }).then((resp) => {
+    console.log({ resp });
+  });
+}
