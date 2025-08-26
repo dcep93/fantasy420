@@ -721,6 +721,7 @@ function fetchLiveDraft(
       (draft) =>
         draft &&
         Promise.resolve(draft)
+          .then(JSON.parse)
           .then((draft) => {
             if (draft.length === prev) return;
             updateLiveDraft(draft);
