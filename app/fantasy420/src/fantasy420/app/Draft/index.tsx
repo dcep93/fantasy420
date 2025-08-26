@@ -113,7 +113,7 @@ function SubDraft(props: {
       .map((p, pickIndex) => [p.id, { pickIndex, ...p }])
   );
 
-  const results = useMemo(getResults, []);
+  const results = useMemo(getResults, [selectedYear]);
   const sources = Object.keys(results);
   const [positionFilter, updatePositionFilter] = useState("");
   const [byeWeekFilter, updateByeWeekFilter] = useState(-1);
@@ -427,21 +427,27 @@ function SubDraft(props: {
 // }
 
 function getResults(): DraftJsonType {
+  const playerIdToRanks = Object.values(selectedDraft()).map((d) => ({
+    size: Object.entries(d).length,
+    playerIdToRank: Object.fromEntries(
+      Object.entries(d)
+        .map(([playerId, value]) => ({ playerId, value }))
+        .sort((a, b) => a.value - b.value)
+        .map(({ playerId }, rank) => [playerId, rank])
+    ),
+  }));
   return Object.fromEntries(
     Object.entries({
       composite: Object.values(selectedWrapped().nflPlayers)
         .map((p) => ({
           ...p,
-          extra: Object.values(selectedDraft())
-            .map(
-              (d) =>
-                Object.entries(d)
-                  .map(([playerId, value]) => ({ playerId, value }))
-                  .sort((a, b) => a.value - b.value)
-                  .map(({ playerId }, rank) => ({ playerId, rank }))
-                  .find(({ playerId }) => playerId === p.id)?.rank
-            )
-            .filter((rank) => rank !== undefined) as number[],
+          extra: playerIdToRanks
+            .map(({ playerIdToRank, size }) => ({
+              size,
+              rank: playerIdToRank[p.id],
+            }))
+            .map(({ rank }) => rank)
+            .filter((rank) => rank !== undefined),
         }))
         .map(({ extra, ...p }) => ({
           ...p,
