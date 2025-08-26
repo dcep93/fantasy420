@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 import { printF } from "..";
 import { fetchExtensionStorage, setExtensionStorage } from "./Extension";
 
-import { NFLPlayerType, WrappedType } from "../FetchWrapped";
-import { groupByF, mapDict, selectedWrapped, selectedYear } from "../Wrapped";
+import { useMemo } from "react";
+import { WrappedType } from "../FetchWrapped";
+import { selectedWrapped, selectedYear } from "../Wrapped";
 import allWrapped from "../Wrapped/allWrapped";
 import draft2023 from "./2023.json";
 import draft2024 from "./2024.json";
@@ -73,34 +74,10 @@ export function selectedDraft(): DraftJsonType {
   return allDrafts[selectedYear];
 }
 
-type IdToRankBySource = {
-  [source: string]: { [playerId: string]: { p: NFLPlayerType; rank: number } };
-};
 export type PlayersType = { [playerId: string]: number };
 export type DraftJsonType = { [source: string]: PlayersType };
 
 export default function Draft() {
-  const idToRankBySource: IdToRankBySource = mapDict(
-    mapDict(
-      selectedDraft(),
-      (values) => (player: NFLPlayerType) => values[player.id]
-    ),
-    (f) =>
-      Object.fromEntries(
-        Object.values(
-          groupByF(
-            Object.values(selectedWrapped().nflPlayers),
-            (player) => player.position
-          )
-        ).flatMap((players) =>
-          players
-            .map((p) => ({ p, f: f(p) }))
-            .filter(({ f }) => f !== undefined)
-            .sort((a, b) => a.f - b.f)
-            .map(({ p }, rank) => [p.id, { p, rank: rank }])
-        )
-      )
-  );
   const [liveDraft, updateLiveDraft] = useState<string[]>([]);
   const [localDraft, updateLocalDraft] = useState<{ [key: string]: boolean }>(
     {}
@@ -118,7 +95,6 @@ export default function Draft() {
         .map((playerId) => wrapped.nflPlayers[playerId].name)}
       localDraft={localDraft}
       updateLocalDraft={updateLocalDraft}
-      idToRankBySource={idToRankBySource}
     />
   );
 }
@@ -127,7 +103,6 @@ function SubDraft(props: {
   localDraft: { [key: string]: boolean };
   updateLocalDraft: (ld: { [key: string]: boolean }) => void;
   liveDraft: string[];
-  idToRankBySource: IdToRankBySource;
 }) {
   const playersByName = Object.fromEntries(
     Object.values(selectedWrapped().nflPlayers).map((p) => [p.name, p])
@@ -138,7 +113,7 @@ function SubDraft(props: {
       .map((p, pickIndex) => [p.id, { pickIndex, ...p }])
   );
 
-  const results = getResults(props.idToRankBySource);
+  const results = useMemo(getResults, []);
   const sources = Object.keys(results);
   const [positionFilter, updatePositionFilter] = useState("");
   const [byeWeekFilter, updateByeWeekFilter] = useState(-1);
@@ -396,13 +371,10 @@ function SubDraft(props: {
                         .map(([key, value]) => ({ key, value }))
                         .map(({ key, value }) => ({
                           key,
-                          value: key.endsWith("[score]")
-                            ? props.idToRankBySource[key.split("[score]")[0]][
-                                v.playerId
-                              ]?.rank + 1 || null
-                            : key.replaceAll("_", "").length === 0
-                            ? null
-                            : parseFloat(value[v.playerId]?.toFixed(1)),
+                          value:
+                            key.replaceAll("_", "").length === 0
+                              ? null
+                              : parseFloat(value[v.playerId]?.toFixed(1)),
                         }))
                         .map(({ key, value }) => ({
                           key,
@@ -454,7 +426,7 @@ function SubDraft(props: {
 //   return (100 * (value - average)) / (1 + value + average);
 // }
 
-function getResults(idToRankBySource: IdToRankBySource): DraftJsonType {
+function getResults(): DraftJsonType {
   return Object.fromEntries(
     Object.entries({
       composite: Object.values(selectedWrapped().nflPlayers)
@@ -718,19 +690,22 @@ function fetchLiveDraft(
   const FETCH_LIVE_DRAFT_PERIOD_MS = 500;
   fetchExtensionStorage("draft")
     .then(
-      (draft) =>
-        draft &&
-        Promise.resolve(draft)
+      (draftStr) =>
+        draftStr &&
+        Promise.resolve(draftStr)
           .then(JSON.parse)
-          .then((draft) => {
-            if (draft.length === prev) return;
-            updateLiveDraft(draft);
-          })
-          .then(() =>
-            setTimeout(
-              () => fetchLiveDraft(updateLiveDraft, draft.length),
-              FETCH_LIVE_DRAFT_PERIOD_MS
-            )
+          .then((draft) =>
+            Promise.resolve()
+              .then(() => {
+                if (draft.length === prev) return;
+                updateLiveDraft(draft);
+              })
+              .then(() =>
+                setTimeout(
+                  () => fetchLiveDraft(updateLiveDraft, draft.length),
+                  FETCH_LIVE_DRAFT_PERIOD_MS
+                )
+              )
           )
     )
     .catch((err) => {
