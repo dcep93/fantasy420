@@ -10,6 +10,7 @@ import allWrapped from "../Wrapped/allWrapped";
 import draft2023 from "./2023.json";
 import draft2024 from "./2024.json";
 import draft2025 from "./2025.json";
+import draftKings from "./draftKings";
 
 export const bubbleStyle = {
   backgroundColor: "white",
@@ -243,6 +244,14 @@ function SubDraft(props: {
         </div>
         <div>
           <div>
+            <a href="https://sportsbook.draftkings.com/leagues/football/nfl?category=player-futures">
+              draftKings
+            </a>
+          </div>
+          <input readOnly value={printF(draftKings)} />
+        </div>
+        <div>
+          <div>
             <a href="https://fantasy.espn.com/football/livedraftresults">
               espn
             </a>
@@ -450,7 +459,7 @@ function SubDraft(props: {
 // }
 
 function getResults(): DraftJsonType {
-  const playerIdToRanks = Object.values(selectedDraft()).map((d) => ({
+  const playerIdToRanks = Object.entries(selectedDraft()).map(([k, d]) => ({
     size: Object.entries(d).length,
     playerIdToRank: Object.fromEntries(
       Object.entries(d)
