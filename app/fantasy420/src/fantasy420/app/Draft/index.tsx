@@ -29,6 +29,21 @@ export const POSITION_COLORS = {
   "D/ST": "lightsalmon",
 } as { [k: string]: string };
 
+// 1. Neil
+// 2. Heify
+// 3. Jon
+// 4. Chae
+// 5. Bu
+// 6. Ruifan
+// 7. Dan
+// 8. Dunc
+// 9. Arzeno
+// 10. Ahmed
+
+const TEAMID_TO_PICK = Object.fromEntries(
+  [3, 7, 6, 2, 5, 10, 1, 9, 8, 4].map((teamId, i) => [teamId, i + 1])
+);
+
 function getNormalizedNameToId(wrapped: WrappedType): {
   [name: string]: string;
 } {
@@ -349,7 +364,7 @@ function SubDraft(props: {
                     }
                   >
                     <td
-                      title={"index/posIndex/bye/teamIdVsBye"}
+                      title={"index/posIndex/bye/byePick"}
                       style={{
                         backgroundColor:
                           v.byeWeek === byeWeekFilter ? "grey" : undefined,
@@ -358,11 +373,16 @@ function SubDraft(props: {
                       {v.i + 1}/{v.posRank + 1}/{v.byeWeek}/
                       {v.player.nflTeamId === "0"
                         ? "FA"
-                        : selectedWrapped()
-                            .ffMatchups[v.byeWeek]?.find((teamIds) =>
-                              teamIds.includes(MY_TEAM_ID)
-                            )!
-                            .find((teamId) => teamId !== MY_TEAM_ID) || "p"}
+                        : ((teamIdVsBye) =>
+                            teamIdVsBye === undefined
+                              ? "p"
+                              : TEAMID_TO_PICK[teamIdVsBye])(
+                            selectedWrapped()
+                              .ffMatchups[v.byeWeek]?.find((teamIds) =>
+                                teamIds.includes(MY_TEAM_ID)
+                              )!
+                              .find((teamId) => teamId !== MY_TEAM_ID)
+                          )}
                     </td>
                     {[
                       { key: "", value: v.player.name },
@@ -391,7 +411,10 @@ function SubDraft(props: {
                         key={i}
                         style={{
                           padding: "0 0.5em",
-                          backgroundColor: POSITION_COLORS[v.player.position],
+                          backgroundColor:
+                            t.value.toString() === "NaN"
+                              ? "black"
+                              : POSITION_COLORS[v.player.position],
                         }}
                       >
                         {t.value}
