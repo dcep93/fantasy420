@@ -362,7 +362,7 @@ function SubDraft(props: {
                   <tr
                     key={i}
                     style={{
-                      backgroundColor: v.seen ? "lightgray" : "",
+                      backgroundColor: v.seen ? "gray" : "",
                     }}
                     onClick={() =>
                       props.updateLocalDraft(
@@ -421,7 +421,9 @@ function SubDraft(props: {
                         style={{
                           padding: "0 0.5em",
                           backgroundColor:
-                            t.value.toString() === "NaN"
+                            t.value.toString() === ""
+                              ? "unset"
+                              : t.value.toString() === "NaN"
                               ? "black"
                               : POSITION_COLORS[v.player.position],
                         }}
