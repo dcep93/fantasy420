@@ -626,7 +626,7 @@ function tapThatDraft() {
         tr[1].innerText.trim(),
         -parseInt(tr[tr.length - 1].innerText.split("$").pop()!),
       ])
-      .filter(([key, value]) => value !== 0)
+      .filter((o) => o[1] !== 0)
   );
 }
 
