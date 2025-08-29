@@ -12,6 +12,8 @@ import draft2024 from "./2024.json";
 import draft2025 from "./2025.json";
 import draftKings from "./draftKings";
 
+const isDev = !process.env.NODE_ENV || process.env.NODE_ENV === "development";
+
 export const bubbleStyle = {
   backgroundColor: "white",
   display: "inline-block",
@@ -98,13 +100,12 @@ export default function Draft() {
   const [localDraft, updateLocalDraft] = useState<{ [key: string]: boolean }>(
     {}
   );
-  const isDev = !process.env.NODE_ENV || process.env.NODE_ENV === "development";
-  if (!isDev) return <div>SECRET</div>;
   const wrapped = allWrapped[selectedYear];
   const normalizedNameToId = getNormalizedNameToId(wrapped);
   useEffect(() => {
     fetchLiveDraft(updateLiveDraft, -1);
   }, []);
+  if (!isDev) return <div>SECRET</div>;
   return (
     <SubDraft
       liveDraft={liveDraft
