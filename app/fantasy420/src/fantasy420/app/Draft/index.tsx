@@ -123,6 +123,7 @@ function SubDraft(props: {
   updateLocalDraft: (ld: { [key: string]: boolean }) => void;
   liveDraft: string[];
 }) {
+  const [regenSources, updateRegenSources] = useState(false);
   const playersByName = Object.fromEntries(
     Object.values(selectedWrapped().nflPlayers).map((p) => [p.name, p])
   );
@@ -181,107 +182,113 @@ function SubDraft(props: {
             ))}
           </ul>
         </div>
-        <div>
+        <div onClick={() => updateRegenSources(!regenSources)}>
           {source} ({props.liveDraft.length})
         </div>
-        <pre>
-          {JSON.stringify(
-            Object.fromEntries(
-              Object.entries(
-                Object.values(draftedById).reduce((prev, current) => {
-                  prev[current.position] = (
-                    prev[current.position] || []
-                  ).concat(current.name);
-                  return prev;
-                }, {} as { [position: string]: string[] })
-              ).map(([position, names]) => [
-                position,
-                position === "undefined" ? names : names.length,
-              ])
-            ),
-            null,
-            2
-          )}
-        </pre>
-        <div>
-          <div onClick={() => setExtensionStorage({ draft: "[]" })}>
-            drafted
-          </div>
-          <input readOnly value={JSON.stringify(props.liveDraft)} />
-        </div>
-        <div>
+        {!regenSources ? null : (
           <div>
-            <a href="https://www.draftsharks.com/adp/superflex">draftsharks</a>
-          </div>
-          <input readOnly value={printF(draftsharks)} />
-        </div>
-        <div>
-          <div>
-            <a href="https://www.fantasypros.com/nfl/rankings/ppr-superflex-cheatsheets.php">
-              fantasypros
-            </a>
-          </div>
-          <input readOnly value={printF(fantasypros)} />
-        </div>
-        <div>
-          <div>
-            <a href="https://subvertadown.com/tap-that-draft/d4905ade-ed76-4f26-b463-efe46cec9369">
-              tapthatdraft
-            </a>
-          </div>
-          <input readOnly value={printF(tapThatDraft)} />
-        </div>
-        <div>
-          <div>
-            <a href="https://www.harrisfootball.com/top-160-ranks-draft">
-              harrisfootball
-            </a>
-          </div>
-          <input readOnly value={printF(harrisfootball)} />
-        </div>
-        <div>
-          <div>
-            <a href="https://jayzheng.com/ff/">jayzheng</a>
-          </div>
-          <input readOnly value={printF(jayzheng)} />
-        </div>
-        <div>
-          <div>
-            <a href="https://sportsbook.draftkings.com/leagues/football/nfl?category=player-futures">
-              draftKings
-            </a>
-          </div>
-          <input readOnly value={printF(draftKings)} />
-        </div>
-        <div>
-          <div>
-            <a href="https://fantasy.espn.com/football/livedraftresults">
-              espn
-            </a>
-          </div>
-          <input readOnly value={JSON.stringify(getEspnLiveDraft())} />
-        </div>
-        <div>
-          <div>updateDraftRanking</div>
-          <div>
-            <input readOnly value={printF(updateDraftRanking)} />
-          </div>
-          <div>
-            <input
-              readOnly
-              value={`${
-                updateDraftRanking.name
-              }(${MY_TEAM_ID}, ${JSON.stringify(
+            <pre>
+              {JSON.stringify(
                 Object.fromEntries(
-                  sourcePlayers.map(({ player, sourceRank }) => [
-                    player.name,
-                    sourceRank,
+                  Object.entries(
+                    Object.values(draftedById).reduce((prev, current) => {
+                      prev[current.position] = (
+                        prev[current.position] || []
+                      ).concat(current.name);
+                      return prev;
+                    }, {} as { [position: string]: string[] })
+                  ).map(([position, names]) => [
+                    position,
+                    position === "undefined" ? names : names.length,
                   ])
-                )
-              )})`}
-            />
+                ),
+                null,
+                2
+              )}
+            </pre>
+            <div>
+              <div onClick={() => setExtensionStorage({ draft: "[]" })}>
+                drafted
+              </div>
+              <input readOnly value={JSON.stringify(props.liveDraft)} />
+            </div>
+            <div>
+              <div>
+                <a href="https://www.draftsharks.com/adp/superflex">
+                  draftsharks
+                </a>
+              </div>
+              <input readOnly value={printF(draftsharks)} />
+            </div>
+            <div>
+              <div>
+                <a href="https://www.fantasypros.com/nfl/rankings/ppr-superflex-cheatsheets.php">
+                  fantasypros
+                </a>
+              </div>
+              <input readOnly value={printF(fantasypros)} />
+            </div>
+            <div>
+              <div>
+                <a href="https://subvertadown.com/tap-that-draft/d4905ade-ed76-4f26-b463-efe46cec9369">
+                  tapthatdraft
+                </a>
+              </div>
+              <input readOnly value={printF(tapThatDraft)} />
+            </div>
+            <div>
+              <div>
+                <a href="https://www.harrisfootball.com/top-160-ranks-draft">
+                  harrisfootball
+                </a>
+              </div>
+              <input readOnly value={printF(harrisfootball)} />
+            </div>
+            <div>
+              <div>
+                <a href="https://jayzheng.com/ff/">jayzheng</a>
+              </div>
+              <input readOnly value={printF(jayzheng)} />
+            </div>
+            <div>
+              <div>
+                <a href="https://sportsbook.draftkings.com/leagues/football/nfl?category=player-futures">
+                  draftKings
+                </a>
+              </div>
+              <input readOnly value={printF(draftKings)} />
+            </div>
+            <div>
+              <div>
+                <a href="https://fantasy.espn.com/football/livedraftresults">
+                  espn
+                </a>
+              </div>
+              <input readOnly value={JSON.stringify(getEspnLiveDraft())} />
+            </div>
+            <div>
+              <div>updateDraftRanking</div>
+              <div>
+                <input readOnly value={printF(updateDraftRanking)} />
+              </div>
+              <div>
+                <input
+                  readOnly
+                  value={`${
+                    updateDraftRanking.name
+                  }(${MY_TEAM_ID}, ${JSON.stringify(
+                    Object.fromEntries(
+                      sourcePlayers.map(({ player, sourceRank }) => [
+                        player.name,
+                        sourceRank,
+                      ])
+                    )
+                  )})`}
+                />
+              </div>
+            </div>
           </div>
-        </div>
+        )}
       </div>
       <div style={{ height: "100%", overflow: "scroll" }}>
         <div>
@@ -665,6 +672,7 @@ function updateDraftRanking(
   fetch(
     `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/${leagueId}?view=kona_player_info_edit_draft_strategy`,
     {
+      credentials: "include",
       headers: {
         "x-fantasy-filter": `{"players":{"filterStatsForSplitTypeIds":{"value":[0]},"filterStatsForSourceIds":{"value":[1]},"filterStatsForExternalIds":{"value":[${year}]},"sortDraftRanks":{"sortPriority":2,"sortAsc":true,"value":"STANDARD"},"sortPercOwned":{"sortPriority":3,"sortAsc":false},"filterRanksForSlotIds":{"value":[0,2,4,6,17,16]},"filterStatsForTopScoringPeriodIds":{"value":2,"additionalValue":["002023","102023","002022","022023"]}}}`,
         "x-fantasy-platform":
