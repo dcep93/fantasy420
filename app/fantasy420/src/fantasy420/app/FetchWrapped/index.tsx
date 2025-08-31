@@ -141,7 +141,7 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
   return Promise.resolve()
     .then(() => [
       // year
-      Promise.resolve().then(() => currentYear),
+      Promise.resolve().then(() => currentYear.toString()),
       // nflPlayers
       Promise.resolve()
         .then(() =>
