@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { printF } from "..";
-import { currentYear, groupByF, selectedWrapped } from "../Wrapped";
+import { currentYear } from "../Wrapped";
 
 // todo ignore current week
 export type NFLPlayerType = {
@@ -103,6 +103,15 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
   // 203836968 ADP
   // 67201591; QZ
   // 17110401 WS
+
+  function groupByF<T>(ts: T[], f: (t: T) => string): { [key: string]: T[] } {
+    return ts.reduce((prev, curr) => {
+      const key = f(curr);
+      if (!prev[key]) prev[key] = [];
+      prev[key]!.push(curr);
+      return prev;
+    }, {} as { [key: string]: T[] });
+  }
 
   function ext(data: any): Promise<any> {
     const extension_id = "dikaanhdjgmmeajanfokkalonmnpfidm";
@@ -769,19 +778,20 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
           ),
         ])
       );
-      wrapped.fantasyCalc.history =
-        selectedWrapped()?.fantasyCalc.history || [];
-      if (
-        JSON.stringify(values) !==
-        JSON.stringify(
-          wrapped.fantasyCalc.history[wrapped.fantasyCalc.history.length - 1]
-            ?.values
-        )
-      )
-        wrapped.fantasyCalc.history.push({
-          values,
-          date: Date.now(),
-        });
+      alert("TODO fix 781");
+      // wrapped.fantasyCalc.history =
+      //   selectedWrapped()?.fantasyCalc.history || [];
+      // if (
+      //   JSON.stringify(values) !==
+      //   JSON.stringify(
+      //     wrapped.fantasyCalc.history[wrapped.fantasyCalc.history.length - 1]
+      //       ?.values
+      //   )
+      // )
+      //   wrapped.fantasyCalc.history.push({
+      //     values,
+      //     date: Date.now(),
+      //   });
       return wrapped;
     })
     .then(clog);
