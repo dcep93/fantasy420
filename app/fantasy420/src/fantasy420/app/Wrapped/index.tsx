@@ -2174,8 +2174,10 @@ function HeadToHead() {
           }))
         )
         .filter((m) => allWrapped[m.year].ffTeams[t.id])
-        // .filter((m) => !(m.year < newManagers[t.id]))
-        // .filter((m) => !(m.year < newManagers[m.opponent]))
+        .filter((m) => !(m.year < newManagers[t.id]?.slice().reverse()[0]))
+        .filter(
+          (m) => !(m.year < newManagers[m.opponent]?.slice().reverse()[0])
+        )
         .map((obj) => ({
           ...obj,
           myTotal: (
@@ -2198,7 +2200,8 @@ function HeadToHead() {
                 0
             )
             .reduce((a, b) => a + b, 0),
-        })),
+        }))
+        .filter(({ myTotal }) => myTotal > 0),
     }))
     .map((obj) => ({
       ...obj,

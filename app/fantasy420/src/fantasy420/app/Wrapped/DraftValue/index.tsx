@@ -114,12 +114,19 @@ export default function DraftValue() {
               .sort((a, b) => a.p.pickIndex - b.p.pickIndex),
             Object.values(selectedWrapped().ffTeams).length
           ).map((o, i) => (
-            <div key={i} style={{ display: "inline-flex" }}>
+            <div
+              key={i}
+              style={{
+                display: "inline-flex",
+                flexDirection: i % 2 === 0 ? "row" : "row-reverse",
+              }}
+            >
               {o.map((oo, j) => (
                 <div
                   key={j}
                   style={{
                     ...bubbleStyle,
+                    fontSize: "0.7em",
                     width: "10em",
                     backgroundColor: POSITION_COLORS[oo.p2.position],
                   }}
@@ -127,7 +134,7 @@ export default function DraftValue() {
                   <div>
                     {oo.p.pickIndex + 1}
                     {")"} {oo.p2.position}
-                    {oo.p3.draftRank + 1} {"->"} {oo.p3.totalRank + 1}
+                    {oo.p3.draftRank + 1} {"/"} {oo.p3.totalRank + 1}
                   </div>
                   <div style={{ fontWeight: "bold" }}>{oo.p2.name}</div>
                   <div>{oo.t.name}</div>
