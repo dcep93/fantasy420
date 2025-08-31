@@ -767,18 +767,18 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
         } as WrappedType)
     )
     .then((wrapped) => {
-      const values = Object.fromEntries(
-        Object.values(wrapped.ffTeams).map((team) => [
-          team.id,
-          parseFloat(
-            team.rosters["0"].rostered
-              .map((playerId) => wrapped.fantasyCalc.players[playerId] || 0)
-              .reduce((a, b) => a + b, 0)
-              .toFixed(2)
-          ),
-        ])
-      );
       alert("TODO fix 781");
+      // const values = Object.fromEntries(
+      //   Object.values(wrapped.ffTeams).map((team) => [
+      //     team.id,
+      //     parseFloat(
+      //       team.rosters["0"].rostered
+      //         .map((playerId) => wrapped.fantasyCalc.players[playerId] || 0)
+      //         .reduce((a, b) => a + b, 0)
+      //         .toFixed(2)
+      //     ),
+      //   ])
+      // );
       // wrapped.fantasyCalc.history =
       //   selectedWrapped()?.fantasyCalc.history || [];
       // if (
