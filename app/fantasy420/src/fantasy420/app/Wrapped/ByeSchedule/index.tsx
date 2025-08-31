@@ -57,78 +57,81 @@ export default function ByeSchedule() {
   }));
   return (
     <div>
-      {byTeam.map((team) => (
-        <div
-          key={team.id}
-          style={{
-            border: "2px solid black",
-            borderRadius: "20px",
-            margin: "20px",
-            padding: "20px",
-          }}
-        >
-          <div>team: {team.name}</div>
-          <div>
-            team value:{" "}
-            {
-              -Helpers.toFixed(
-                team.matchups
-                  .flatMap((matchup) =>
-                    matchup.byes[0].map((byePlayer) => byePlayer.value)
-                  )
-                  .reduce((a, b) => a + b)
+      {byTeam
+        .map((team) => ({
+          team,
+          gfo: Helpers.toFixed(
+            team.matchups
+              .filter((matchup) => matchup.byes[1])
+              .flatMap((matchup) =>
+                matchup.byes[1].map((byePlayer) => byePlayer.value)
               )
-            }
-          </div>
-          <div>
-            gifts from opps:{" "}
-            {Helpers.toFixed(
-              team.matchups
-                .filter((matchup) => matchup.byes[1])
-                .flatMap((matchup) =>
-                  matchup.byes[1].map((byePlayer) => byePlayer.value)
-                )
-                .reduce((a, b) => a + b)
-            )}
-          </div>
+              .reduce((a, b) => a + b)
+          ),
+        }))
+        .sort((a, b) => a.gfo - b.gfo)
+        .map(({ team, gfo }) => (
           <div
+            key={team.id}
             style={{
-              display: "flex",
-              flexWrap: "wrap",
-              alignItems: "flex-start",
+              border: "2px solid black",
+              borderRadius: "20px",
+              margin: "20px",
+              padding: "20px",
             }}
           >
-            {team.matchups.map((obj) => (
-              <div
-                key={obj.weekNum}
-                style={{
-                  border: "2px solid black",
-                  borderRadius: "20px",
-                  padding: "10px",
-                  margin: "10px",
-                }}
-              >
-                <h3>
-                  week {obj.weekNum} vs{" "}
-                  {selectedWrapped().ffTeams[obj.teamIds[1]!]?.name}
-                </h3>
-                {obj.byes.flatMap((ffTeam) =>
-                  ffTeam.map((byePlayer) => (
-                    <table key={byePlayer.name}>
-                      <tbody>
-                        <tr style={{ marginRight: "10em" }}>
-                          <td>{byePlayer.value.toFixed(2)}</td>
-                          <td>{byePlayer.name}</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  ))
-                )}
-              </div>
-            ))}
+            <div>team: {team.name}</div>
+            <div>
+              team value:{" "}
+              {
+                -Helpers.toFixed(
+                  team.matchups
+                    .flatMap((matchup) =>
+                      matchup.byes[0].map((byePlayer) => byePlayer.value)
+                    )
+                    .reduce((a, b) => a + b)
+                )
+              }
+            </div>
+            <div>gifts from opps: {gfo}</div>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                alignItems: "flex-start",
+              }}
+            >
+              {team.matchups.map((obj) => (
+                <div
+                  key={obj.weekNum}
+                  style={{
+                    border: "2px solid black",
+                    borderRadius: "20px",
+                    padding: "10px",
+                    margin: "10px",
+                  }}
+                >
+                  <h3>
+                    week {obj.weekNum} vs{" "}
+                    {selectedWrapped().ffTeams[obj.teamIds[1]!]?.name}
+                  </h3>
+                  {obj.byes.flatMap((ffTeam) =>
+                    ffTeam.map((byePlayer) => (
+                      <table key={byePlayer.name}>
+                        <tbody>
+                          <tr style={{ marginRight: "10em" }}>
+                            <td>{byePlayer.value.toFixed(2)}</td>
+                            <td>{byePlayer.name}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    ))
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
     </div>
   );
 }
