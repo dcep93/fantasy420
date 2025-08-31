@@ -436,7 +436,10 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
       Promise.resolve()
         .then(() =>
           fetch(
-            `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}?view=proTeamSchedules_wl`
+            `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}?view=proTeamSchedules_wl`,
+            {
+              credentials: "include",
+            }
           )
             .then((resp) => resp.json())
             .then(
