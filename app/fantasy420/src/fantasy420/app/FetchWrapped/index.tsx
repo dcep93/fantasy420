@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { printF } from "..";
-import { currentYear } from "../Wrapped";
+import { currentYear, selectedWrapped } from "../Wrapped";
 
 // todo ignore current week
 export type NFLPlayerType = {
@@ -767,31 +767,30 @@ function getWrapped(currentYear: string): Promise<WrappedType> {
         } as WrappedType)
     )
     .then((wrapped) => {
-      alert("TODO fix 781");
-      // const values = Object.fromEntries(
-      //   Object.values(wrapped.ffTeams).map((team) => [
-      //     team.id,
-      //     parseFloat(
-      //       team.rosters["0"].rostered
-      //         .map((playerId) => wrapped.fantasyCalc.players[playerId] || 0)
-      //         .reduce((a, b) => a + b, 0)
-      //         .toFixed(2)
-      //     ),
-      //   ])
-      // );
-      // wrapped.fantasyCalc.history =
-      //   selectedWrapped()?.fantasyCalc.history || [];
-      // if (
-      //   JSON.stringify(values) !==
-      //   JSON.stringify(
-      //     wrapped.fantasyCalc.history[wrapped.fantasyCalc.history.length - 1]
-      //       ?.values
-      //   )
-      // )
-      //   wrapped.fantasyCalc.history.push({
-      //     values,
-      //     date: Date.now(),
-      //   });
+      const values = Object.fromEntries(
+        Object.values(wrapped.ffTeams).map((team) => [
+          team.id,
+          parseFloat(
+            team.rosters["0"].rostered
+              .map((playerId) => wrapped.fantasyCalc.players[playerId] || 0)
+              .reduce((a, b) => a + b, 0)
+              .toFixed(2)
+          ),
+        ])
+      );
+      wrapped.fantasyCalc.history =
+        selectedWrapped()?.fantasyCalc.history || [];
+      if (
+        JSON.stringify(values) !==
+        JSON.stringify(
+          wrapped.fantasyCalc.history[wrapped.fantasyCalc.history.length - 1]
+            ?.values
+        )
+      )
+        wrapped.fantasyCalc.history.push({
+          values,
+          date: Date.now(),
+        });
       return wrapped;
     })
     .then(clog);
