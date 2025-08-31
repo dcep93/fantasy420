@@ -1,13 +1,15 @@
 import { useState } from "react";
 
-import { groupByF, selectedWrapped } from "..";
-import { DraftJsonType, selectedDraft } from "../../Draft";
+import { bubbleStyle, groupByF, selectedWrapped } from "..";
+import { DraftJsonType, POSITION_COLORS, selectedDraft } from "../../Draft";
 import { NFLPlayerType } from "../../FetchWrapped";
 
 export default function DraftValue() {
   const [numRounds, update] = useState(8);
 
-  const results = getResults(numRounds);
+  const performance = getPerformance();
+
+  const results = getResults(numRounds, performance);
   return (
     <div>
       <div>
@@ -97,8 +99,55 @@ export default function DraftValue() {
           </div>
         ))}
       </div>
+      <div>
+        <div>
+          {collect(
+            Object.values(selectedWrapped().ffTeams)
+              .flatMap((t) =>
+                t.draft.map((p) => ({
+                  p,
+                  t,
+                  p2: selectedWrapped().nflPlayers[p.playerId],
+                  p3: performance[p.playerId],
+                }))
+              )
+              .sort((a, b) => a.p.pickIndex - b.p.pickIndex),
+            Object.values(selectedWrapped().ffTeams).length
+          ).map((o, i) => (
+            <div key={i} style={{ display: "inline-flex" }}>
+              {o.map((oo, j) => (
+                <div
+                  key={j}
+                  style={{
+                    ...bubbleStyle,
+                    width: "10em",
+                    backgroundColor: POSITION_COLORS[oo.p2.position],
+                  }}
+                >
+                  <div>
+                    {oo.p.pickIndex + 1}
+                    {")"} {oo.p2.position}
+                    {oo.p3.draftRank + 1} {"->"} {oo.p3.totalRank + 1}
+                  </div>
+                  <div style={{ fontWeight: "bold" }}>{oo.p2.name}</div>
+                  <div>{oo.t.name}</div>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
+}
+
+function collect<T>(ts: T[], count: number): T[][] {
+  const collected = [];
+  for (let i = 0; true; i++) {
+    const sliced = ts.slice(count * i, count * (i + 1));
+    if (sliced.length === 0) return collected;
+    collected.push(sliced);
+  }
 }
 
 type PerformanceType = {
@@ -106,6 +155,8 @@ type PerformanceType = {
     msg: string;
     pickIndex: number;
     player: NFLPlayerType;
+    draftRank: number;
+    totalRank: number;
   };
 };
 
@@ -127,6 +178,7 @@ function getPerformance(): PerformanceType {
             ...p,
             total: selectedDraft()?.draftkings_super?.[p.player.id] || 0,
           }))
+          .filter((p) => p.player.total !== 0)
           .sort((a, b) => b.player.total - a.player.total)
           .map((player, rank) => [player.player.id, { rank, ...player }])
       ),
@@ -152,7 +204,7 @@ function getPerformance(): PerformanceType {
       .map((player) => ({
         ...player,
         draftRank: byPick[player.player.position][player.player.id].rank,
-        totalRank: byTotal[player.player.position][player.player.id].rank,
+        totalRank: byTotal[player.player.position][player.player.id]?.rank,
       }))
       .map((player) => [
         player.player.id,
@@ -168,12 +220,14 @@ function getPerformance(): PerformanceType {
   );
 }
 
-function getResults(numRounds: number): {
+function getResults(
+  numRounds: number,
+  performance: PerformanceType
+): {
   teamName: string;
   categories: { [key: string]: { score: number; rank: number } };
   players: { player: NFLPlayerType; msg: string; scores: number[] }[];
 }[] {
-  const performance = getPerformance();
   const categories = Object.fromEntries(
     Object.entries(selectedDraft() || {}).filter(
       ([key]) => key.replaceAll("_", "").length > 0

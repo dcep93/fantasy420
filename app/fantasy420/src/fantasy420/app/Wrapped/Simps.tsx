@@ -14,12 +14,18 @@ export default function Simps() {
                 .filter(({ year }) => year <= selectedYear)
                 .flatMap(({ year, wrapped }) =>
                   Object.values(wrapped.ffTeams)
-                    .flatMap((team) => ({
+                    .map((team) => ({
                       team,
+                      rawTeamNameYear: newManagers[team.id]?.find(
+                        (y) => y > year
+                      ),
+                    }))
+                    .map((o) => ({
+                      ...o,
                       teamNameYear:
-                        newManagers[team.id] > year
-                          ? (parseInt(newManagers[team.id]) - 1).toString()
-                          : selectedYear,
+                        o.rawTeamNameYear === undefined
+                          ? selectedYear
+                          : (parseInt(o.rawTeamNameYear) - 1).toString(),
                     }))
                     .flatMap(({ teamNameYear, team }) =>
                       Object.values(team.rosters)
