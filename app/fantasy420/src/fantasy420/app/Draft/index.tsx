@@ -743,21 +743,19 @@ function fetchLiveDraft(
     .then(
       (draftStr) =>
         draftStr &&
-        Promise.resolve(draftStr)
-          .then(JSON.parse)
-          .then((draft) =>
-            Promise.resolve()
-              .then(() => {
-                if (draft.length === prev) return;
-                updateLiveDraft(draft);
-              })
-              .then(() =>
-                setTimeout(
-                  () => fetchLiveDraft(updateLiveDraft, draft.length),
-                  FETCH_LIVE_DRAFT_PERIOD_MS
-                )
+        Promise.resolve(draftStr).then((draft) =>
+          Promise.resolve()
+            .then(() => {
+              if (draft.length === prev) return;
+              updateLiveDraft(draft);
+            })
+            .then(() =>
+              setTimeout(
+                () => fetchLiveDraft(updateLiveDraft, draft.length),
+                FETCH_LIVE_DRAFT_PERIOD_MS
               )
-          )
+            )
+        )
     )
     .catch((err) => {
       console.error(err);
