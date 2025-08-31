@@ -17,9 +17,9 @@ export function selectedWrapped(): WrappedType {
   return allWrapped[selectedYear];
 }
 
-export const newManagers: { [teamId: string]: string } = {
-  "4": "2022",
-  "2": "2024",
+export const newManagers: { [teamId: string]: string[] } = {
+  "4": ["2022"],
+  "2": ["2024", "2025"],
 };
 
 export default function Wrapped() {
@@ -1068,8 +1068,10 @@ function SecondLost() {
               }))
               .map((o) => (
                 <div key={o.weekNum} style={bubbleStyle}>
-                  {o.scores.find((s) => s.t.id === o.second)!.score >
-                  o.scores.find((s) => s.t.id === o.first)!.score ? null : (
+                  {!(
+                    o.scores.find((s) => s.t.id === o.second)!.score <
+                    o.scores.find((s) => s.t.id === o.first)!.score
+                  ) ? null : (
                     <div>
                       <div>week {o.weekNum}</div>
                       <div>
@@ -1124,8 +1126,10 @@ function SecondLost() {
             }))
             .map((o) => (
               <div key={o.weekNum} style={bubbleStyle}>
-                {o.scores.find((s) => s.t.id === o.ninth)!.score <
-                o.scores.find((s) => s.t.id === o.tenth)!.score ? null : (
+                {!(
+                  o.scores.find((s) => s.t.id === o.ninth)!.score >
+                  o.scores.find((s) => s.t.id === o.tenth)!.score
+                ) ? null : (
                   <div>
                     <div>week {o.weekNum}</div>
                     <div>
@@ -2170,8 +2174,8 @@ function HeadToHead() {
           }))
         )
         .filter((m) => allWrapped[m.year].ffTeams[t.id])
-        .filter((m) => !(m.year < newManagers[t.id]))
-        .filter((m) => !(m.year < newManagers[m.opponent]))
+        // .filter((m) => !(m.year < newManagers[t.id]))
+        // .filter((m) => !(m.year < newManagers[m.opponent]))
         .map((obj) => ({
           ...obj,
           myTotal: (
