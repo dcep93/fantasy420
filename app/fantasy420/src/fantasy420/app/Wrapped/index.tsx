@@ -8,10 +8,10 @@ import {
 import allWrapped from "./allWrapped";
 import ByeSchedule from "./ByeSchedule";
 import DraftValueStateful from "./DraftValue";
+import PlayerPlotStateful from "./PlayerPlot";
 import PointsAgainstStateful from "./PointsAgainst";
 import PointsForStateful from "./PointsFor";
 import PuntsStateful from "./Punts";
-import ScatterplotStateful from "./Scatterplot";
 import SimpsStateful from "./Simps";
 import Trades from "./Trades";
 
@@ -2450,7 +2450,7 @@ function Punts() {
 }
 
 function PlayerPlot() {
-  return <ScatterplotStateful />;
+  return <PlayerPlotStateful />;
 }
 
 function DraftValue() {
