@@ -134,6 +134,9 @@ function getCorrelation(data: ChartDataType): number {
 }
 
 export default function PlayerPlot() {
+  return <SubPlayerPlot />;
+}
+function SubPlayerPlot() {
   const [top40, updateTop40] = useState(false);
   const rawdraft = Object.fromEntries(
     Object.values(selectedWrapped().ffTeams)

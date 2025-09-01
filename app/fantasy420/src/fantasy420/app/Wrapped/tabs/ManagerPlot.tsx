@@ -22,7 +22,11 @@ const colors = Object.values({
   Pink: "#FFC0CB",
 });
 
-export default function PointsFor() {
+export default function ManagerPlot() {
+  return <SubManagerPlot />;
+}
+
+function SubManagerPlot() {
   const dataA = mapDict(selectedWrapped().ffTeams, (t) => ({
     t,
     weeks: mapDict(
