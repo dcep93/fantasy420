@@ -1,4 +1,4 @@
-import { ReactNode, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { getWrapped, NFLPlayerType, WrappedType } from "../FetchWrapped";
 import allWrapped from "./allWrapped";
 import AllTimeRecords from "./tabs/AllTimeRecords";
@@ -65,7 +65,7 @@ function SubWrapped() {
   document.title = "Fantasy Wrapped";
   const [yearKey, updateYear] = useState(selectedYear);
   selectedYear = yearKey;
-  const toRender: { [key: string]: ReactNode } = Object.fromEntries(
+  const toRender: { [key: string]: () => JSX.Element } = Object.fromEntries(
     Object.entries({
       FantasyCalc,
       PlayerPlot,
@@ -103,10 +103,10 @@ function SubWrapped() {
       json,
     }).map(([k, v]) => {
       try {
-        return [k, v()];
+        return [k, v];
       } catch (e) {
         if (process.env.NODE_ENV === "development") throw e;
-        return [k, <pre>{(e as Error).stack}</pre>];
+        return [k, () => <pre>{(e as Error).stack}</pre>];
       }
     })
   );
@@ -116,6 +116,7 @@ function SubWrapped() {
     hashKey = "";
   }
   const [toRenderKey, update] = useState(hashKey || Object.keys(toRender)[0]!);
+  const Tab = toRender[toRenderKey];
   return (
     <div style={{ fontFamily: "'Courier New', Courier, monospace" }}>
       <div
@@ -150,7 +151,9 @@ function SubWrapped() {
           </select>
         </div>
         <h1 style={bubbleStyle}>{toRenderKey}</h1>
-        <div>{toRender[toRenderKey]}</div>
+        <div>
+          <Tab />
+        </div>
       </div>
     </div>
   );
