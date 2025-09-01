@@ -1,16 +1,16 @@
 import { useState } from "react";
-import idealDraftJson from "../BuildIdealDraft/idealDraft.json";
+import { bubbleStyle, POSITION_COLORS } from "../Draft";
+import { WrappedType } from "../FetchWrapped";
+import { groupByF, selectedYear } from "../Wrapped";
+import allWrapped from "../Wrapped/allWrapped";
+import idealDraftJson from "./idealDraft.json";
 import {
   DraftPlayerType,
   getPositionToRankedDraftPlayers,
   MAX_DEPTH,
   RosterEnum,
   scoreTeam,
-} from "../BuildIdealDraft/search";
-import { bubbleStyle, POSITION_COLORS } from "../Draft";
-import { WrappedType } from "../FetchWrapped";
-import { groupByF, selectedYear } from "../Wrapped";
-import allWrapped from "../Wrapped/allWrapped";
+} from "./search";
 
 export default function IdealDraft() {
   const [yearKey, updateYear] = useState(selectedYear);
