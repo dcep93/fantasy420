@@ -18,6 +18,7 @@ import HeadToHead from "./tabs/HeadToHead";
 import Injuries from "./tabs/Injuries";
 import Negatives from "./tabs/Negatives";
 import OwnedTeams from "./tabs/OwnedTeams";
+import Performance from "./tabs/Performance";
 import PerformanceTotals from "./tabs/PerformanceTotals";
 import PlayerPlotStateful from "./tabs/PlayerPlot";
 import PointsAgainstStateful from "./tabs/PointsAgainst";
