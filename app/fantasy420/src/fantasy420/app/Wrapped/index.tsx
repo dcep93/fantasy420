@@ -49,10 +49,7 @@ export const newManagers: { [teamId: string]: string[] } = {
 };
 
 export default function Wrapped() {
-  document.title = "Fantasy Wrapped";
-  const [yearKey, updateYear] = useState(selectedYear);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [_, updateFetched] = useState(false);
+  const [fetched, updateFetched] = useState(false);
   useMemo(
     () =>
       Promise.resolve()
@@ -61,6 +58,12 @@ export default function Wrapped() {
         .then(() => updateFetched(true)),
     []
   );
+  return <SubWrapped key={fetched.toString()} />;
+}
+
+function SubWrapped() {
+  document.title = "Fantasy Wrapped";
+  const [yearKey, updateYear] = useState(selectedYear);
   selectedYear = yearKey;
   const toRender: { [key: string]: ReactNode } = Object.fromEntries(
     Object.entries({

@@ -8,6 +8,7 @@ chrome.runtime.onMessageExternal.addListener(function (
   sendResponse
 ) {
   console.log(request);
+  if (request.init) sendResponse();
   if (request.storage) {
     if (request.storage.action === "get") {
       chrome.storage.local.get(request.storage.keys, (result) => {
