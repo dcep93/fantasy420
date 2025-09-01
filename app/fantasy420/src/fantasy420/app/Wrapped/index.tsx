@@ -10,22 +10,22 @@ import ByeSchedule from "./tabs/ByeSchedule";
 import ChosenWrong from "./tabs/ChosenWrong";
 import ConsistentlyAverage from "./tabs/ConsistentlyAverage";
 import DeterminedByDiscreteScoring from "./tabs/DeterminedByDiscreteScoring";
-import DraftValueStateful from "./tabs/DraftValue";
+import DraftValue from "./tabs/DraftValue";
 import ExtremeStuds from "./tabs/ExtremeStuds";
 import FantasyCalc from "./tabs/FantasyCalc";
 import GooseEggs from "./tabs/GooseEggs";
 import HeadToHead from "./tabs/HeadToHead";
 import Injuries from "./tabs/Injuries";
+import ManagerPlot from "./tabs/ManagerPlot";
 import Negatives from "./tabs/Negatives";
 import OwnedTeams from "./tabs/OwnedTeams";
 import Performance from "./tabs/Performance";
 import PerformanceTotals from "./tabs/PerformanceTotals";
-import PlayerPlotStateful from "./tabs/PlayerPlot";
-import PointsAgainstStateful from "./tabs/PointsAgainst";
-import PointsForStateful from "./tabs/PointsFor";
-import PuntsStateful from "./tabs/Punts";
+import PlayerPlot from "./tabs/PlayerPlot";
+import PointsAgainst from "./tabs/PointsAgainst";
+import Punts from "./tabs/Punts";
 import SecondLost from "./tabs/SecondLost";
-import SimpsStateful from "./tabs/Simps";
+import Simps from "./tabs/Simps";
 import SqueezesAndStomps from "./tabs/SqueezesAndStomps";
 import Stacks from "./tabs/Stacks";
 import Trades from "./tabs/Trades";
@@ -291,28 +291,4 @@ export class Helpers {
       });
     return ideal;
   }
-}
-
-function PointsAgainst() {
-  return <PointsAgainstStateful />;
-}
-
-function Punts() {
-  return <PuntsStateful />;
-}
-
-function PlayerPlot() {
-  return <PlayerPlotStateful />;
-}
-
-function DraftValue() {
-  return <DraftValueStateful />;
-}
-
-function ManagerPlot() {
-  return <PointsForStateful />;
-}
-
-function Simps() {
-  return <SimpsStateful />;
 }
