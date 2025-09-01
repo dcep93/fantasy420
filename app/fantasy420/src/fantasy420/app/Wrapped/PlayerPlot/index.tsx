@@ -133,7 +133,7 @@ function getCorrelation(data: ChartDataType): number {
   return c;
 }
 
-export default function Scatterplot() {
+export default function PlayerPlot() {
   const [top40, updateTop40] = useState(false);
   const rawdraft = Object.fromEntries(
     Object.values(selectedWrapped().ffTeams)

@@ -3,13 +3,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Draft from "./Draft";
 import FetchWrapped from "./FetchWrapped";
 import IdealDraft from "./IdealDraft";
-import BuildIdealDraft from "./IdealDraft/buildIdealDraft";
 import Wrapped from "./Wrapped";
 
 const pages = {
   FetchWrapped,
   Draft,
-  BuildIdealDraft,
   IdealDraft,
 };
 
