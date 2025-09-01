@@ -83,13 +83,14 @@ export default function Wrapped() {
         {Object.keys(toRender).map((key, i) => (
           <div
             key={i}
-            style={bubbleStyle}
+            style={{ ...bubbleStyle, whiteSpace: "nowrap" }}
             onClick={() => {
               window.location.hash = key;
               update(key);
             }}
           >
-            {key}
+            {i + 1}
+            {")"} {key}
           </div>
         ))}
       </div>
