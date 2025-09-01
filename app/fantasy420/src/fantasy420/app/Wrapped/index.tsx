@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { getWrapped, NFLPlayerType, WrappedType } from "../FetchWrapped";
 import allWrapped from "./allWrapped";
+import ErrorBoundary from "./ErrorBoundary";
 import AllTimeRecords from "./tabs/AllTimeRecords";
 import Benchwarmers from "./tabs/Benchwarmers";
 import BestByPosition from "./tabs/BestByPosition";
@@ -65,51 +66,42 @@ function SubWrapped() {
   document.title = "Fantasy Wrapped";
   const [yearKey, updateYear] = useState(selectedYear);
   selectedYear = yearKey;
-  const toRender: { [key: string]: () => JSX.Element } = Object.fromEntries(
-    Object.entries({
-      FantasyCalc,
-      PlayerPlot,
-      ManagerPlot,
-      Trades,
-      WeekTopsAndBottoms,
-      SqueezesAndStomps,
-      GooseEggs,
-      Bopped,
-      ChosenWrong,
-      DraftValue,
-      DraftBoard,
-      Performance,
-      PerformanceTotals,
-      DeterminedByDiscreteScoring,
-      Stacks,
-      Negatives,
-      PointsAgainst,
-      UniquesStarted,
-      UniquesRostered,
-      BoomBust,
-      OwnedTeams,
-      Benchwarmers,
-      Injuries,
-      BestByPosition,
-      ExtremeStuds,
-      AllTimeRecords,
-      HeadToHead,
-      ByeSchedule,
-      SecondLost,
-      WhatIf,
-      ConsistentlyAverage,
-      Simps,
-      Punts,
-      json,
-    }).map(([k, v]) => {
-      try {
-        return [k, v];
-      } catch (e) {
-        if (process.env.NODE_ENV === "development") throw e;
-        return [k, () => <pre>{(e as Error).stack}</pre>];
-      }
-    })
-  );
+  const toRender: { [key: string]: () => JSX.Element } = {
+    FantasyCalc,
+    PlayerPlot,
+    ManagerPlot,
+    Trades,
+    WeekTopsAndBottoms,
+    SqueezesAndStomps,
+    GooseEggs,
+    Bopped,
+    ChosenWrong,
+    DraftValue,
+    DraftBoard,
+    Performance,
+    PerformanceTotals,
+    DeterminedByDiscreteScoring,
+    Stacks,
+    Negatives,
+    PointsAgainst,
+    UniquesStarted,
+    UniquesRostered,
+    BoomBust,
+    OwnedTeams,
+    Benchwarmers,
+    Injuries,
+    BestByPosition,
+    ExtremeStuds,
+    AllTimeRecords,
+    HeadToHead,
+    ByeSchedule,
+    SecondLost,
+    WhatIf,
+    ConsistentlyAverage,
+    Simps,
+    Punts,
+    json,
+  };
   var hashKey = window.location.hash.substring(1);
   if (!toRender[hashKey]) {
     window.location.hash = "";
@@ -152,7 +144,9 @@ function SubWrapped() {
         </div>
         <h1 style={bubbleStyle}>{toRenderKey}</h1>
         <div>
-          <Tab />
+          <ErrorBoundary>
+            <Tab />
+          </ErrorBoundary>
         </div>
       </div>
     </div>
