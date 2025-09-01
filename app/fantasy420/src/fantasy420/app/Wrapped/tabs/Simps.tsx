@@ -1,5 +1,5 @@
-import { bubbleStyle, groupByF, newManagers, selectedYear } from ".";
-import allWrapped from "./allWrapped";
+import { bubbleStyle, groupByF, newManagers, selectedYear } from "..";
+import allWrapped from "../allWrapped";
 
 export default function Simps() {
   return (

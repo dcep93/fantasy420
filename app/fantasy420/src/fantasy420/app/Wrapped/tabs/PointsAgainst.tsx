@@ -7,7 +7,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { bubbleStyle, Helpers, Position, selectedWrapped } from ".";
+import { bubbleStyle, Helpers, Position, selectedWrapped } from "..";
 
 export default function PointsAgainst() {
   const [position, updatePosition] = useState(Position[Position.DST] as string);

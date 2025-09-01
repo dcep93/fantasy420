@@ -6,14 +6,14 @@ import {
   WrappedType,
 } from "../FetchWrapped";
 import allWrapped from "./allWrapped";
-import ByeSchedule from "./ByeSchedule";
-import DraftValueStateful from "./DraftValue";
-import PlayerPlotStateful from "./PlayerPlot";
-import PointsAgainstStateful from "./PointsAgainst";
-import PointsForStateful from "./PointsFor";
-import PuntsStateful from "./Punts";
-import SimpsStateful from "./Simps";
-import Trades from "./Trades";
+import ByeSchedule from "./tabs/ByeSchedule";
+import DraftValueStateful from "./tabs/DraftValue";
+import PlayerPlotStateful from "./tabs/PlayerPlot";
+import PointsAgainstStateful from "./tabs/PointsAgainst";
+import PointsForStateful from "./tabs/PointsFor";
+import PuntsStateful from "./tabs/Punts";
+import SimpsStateful from "./tabs/Simps";
+import Trades from "./tabs/Trades";
 
 export const currentYear = "2025";
 

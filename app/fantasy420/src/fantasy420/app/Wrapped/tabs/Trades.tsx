@@ -1,4 +1,4 @@
-import { bubbleStyle, groupByF, selectedWrapped } from ".";
+import { bubbleStyle, groupByF, selectedWrapped } from "..";
 
 export default function Trades() {
   const playerIdToWeekNumToOwnerId: Record<string, Record<string, string>> = {};

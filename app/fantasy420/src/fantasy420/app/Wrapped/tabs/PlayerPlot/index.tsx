@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { mapDict, Position, selectedWrapped } from "..";
-import { DraftJsonType, PlayersType, selectedDraft } from "../../Draft";
+import { mapDict, Position, selectedWrapped } from "../..";
+import { DraftJsonType, PlayersType, selectedDraft } from "../../../Draft";
 import Chart, { ChartDataType } from "./Chart";
 import distanceCorrelation from "./correlation";
 
