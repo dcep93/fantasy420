@@ -102,7 +102,7 @@
             raw: getRaw(o.name, events),
             ...o,
           }))
-          .filter(({ aE, name, raw }) => {
+          .filter(({ aE, name, raw, posE }) => {
             if (raw.length > 0) return true;
             if (aE.innerText !== name) {
               posE.innerText = "";
