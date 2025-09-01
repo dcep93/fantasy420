@@ -12,7 +12,8 @@ import draft2024 from "./2024.json";
 import draft2025 from "./2025.json";
 import draftKings from "./draftKings";
 
-const isDev = !process.env.NODE_ENV || process.env.NODE_ENV === "development";
+export const isDev =
+  !process.env.NODE_ENV || process.env.NODE_ENV === "development";
 
 export const bubbleStyle = {
   backgroundColor: "white",
@@ -105,7 +106,6 @@ export default function Draft() {
   useEffect(() => {
     fetchLiveDraft(updateLiveDraft, -1);
   }, []);
-  if (!isDev) return <div>SECRET</div>;
   return (
     <SubDraft
       liveDraft={liveDraft
