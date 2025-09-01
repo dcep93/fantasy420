@@ -81,7 +81,7 @@ export default function FetchWrapped() {
   useEffect(() => {
     if (initialized) return;
     initialized = true;
-    getWrapped(currentYear)
+    getWrapped()
       .then((wrapped) => JSON.stringify(wrapped))
       .then(update)
       .catch((e: Error) => update(e.toString()));
@@ -89,14 +89,14 @@ export default function FetchWrapped() {
   return (
     <div>
       <pre style={{ whiteSpace: "pre-wrap", fontSize: "xx-small" }}>
-        {printF(getWrapped, `${currentYear}`)}
+        {printF(getWrapped)}
       </pre>
       <pre style={{ whiteSpace: "pre-wrap" }}>{wrapped}</pre>
     </div>
   );
 }
 
-function getWrapped(currentYear: string): Promise<WrappedType> {
+export function getWrapped(): Promise<WrappedType> {
   const leagueId =
     new URL(window.document.location.href).searchParams.get("leagueId") ||
     203836968;
