@@ -13,6 +13,7 @@ import PointsForStateful from "./PointsFor";
 import PuntsStateful from "./Punts";
 import ScatterplotStateful from "./Scatterplot";
 import SimpsStateful from "./Simps";
+import Trades from "./Trades";
 
 export const currentYear = "2025";
 
@@ -46,6 +47,7 @@ export default function Wrapped() {
       FantasyCalc,
       PlayerPlot,
       ManagerPlot,
+      Trades,
       WeekTopsAndBottoms,
       SqueezesAndStomps,
       GooseEggs,
