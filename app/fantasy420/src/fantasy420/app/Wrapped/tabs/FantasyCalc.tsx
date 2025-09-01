@@ -2,7 +2,7 @@ import { bubbleStyle, selectedWrapped, selectedYear } from "..";
 import allWrapped from "../allWrapped";
 
 export default function FantasyCalc() {
-  throw new Error("gotem");
+  if (true) throw new Error("gotem");
   const playerIdToDraftIndex = Object.fromEntries(
     Object.values(selectedWrapped().ffTeams)
       .flatMap((team) => team.draft)

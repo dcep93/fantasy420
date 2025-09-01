@@ -1,25 +1,28 @@
 import React from "react";
 
-class ErrorBoundary extends React.Component<
-  { children: React.ReactNode },
-  { error: Error; info: React.ErrorInfo }
+type ErrorBoundaryProps = {
+  /** Called to render UI when a child throws */
+  onErrorUI: (error: Error) => React.ReactNode;
+  children: React.ReactNode;
+};
+
+type ErrorBoundaryState = { error: Error | null };
+
+export class ErrorBoundary extends React.Component<
+  ErrorBoundaryProps,
+  ErrorBoundaryState
 > {
-  componentDidCatch(error: Error, info: React.ErrorInfo) {
-    this.setState({ error, info });
+  state: ErrorBoundaryState = { error: null };
+
+  static getDerivedStateFromError(error: Error) {
+    return { error };
   }
 
   render() {
-    if (this.state?.error) {
-      return (
-        <div>
-          <h2>Something went wrong</h2>
-          <pre>{this.state.error.stack}</pre>
-          <pre>{this.state.info.componentStack}</pre>
-        </div>
-      );
+    if (this.state.error) {
+      return this.props.onErrorUI(this.state.error);
     }
     return this.props.children;
   }
 }
-
 export default ErrorBoundary;

@@ -144,7 +144,14 @@ function SubWrapped() {
         </div>
         <h1 style={bubbleStyle}>{toRenderKey}</h1>
         <div>
-          <ErrorBoundary>
+          <ErrorBoundary
+            onErrorUI={(err) => (
+              <div>
+                <h2>Crash!</h2>
+                <pre>{err.stack}</pre>
+              </div>
+            )}
+          >
             <Tab />
           </ErrorBoundary>
         </div>
