@@ -1,5 +1,10 @@
-import { ReactNode, useState } from "react";
-import { FFTeamType, NFLPlayerType, WrappedType } from "../FetchWrapped";
+import { ReactNode, useMemo, useState } from "react";
+import {
+  FFTeamType,
+  getWrapped,
+  NFLPlayerType,
+  WrappedType,
+} from "../FetchWrapped";
 import allWrapped from "./allWrapped";
 import ByeSchedule from "./ByeSchedule";
 import DraftValueStateful from "./DraftValue";
@@ -25,6 +30,16 @@ export const newManagers: { [teamId: string]: string[] } = {
 export default function Wrapped() {
   document.title = "Fantasy Wrapped";
   const [yearKey, updateYear] = useState(selectedYear);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [_, updateFetched] = useState(false);
+  useMemo(
+    () =>
+      Promise.resolve()
+        .then(getWrapped)
+        .then((wrapped) => (allWrapped[currentYear] = wrapped))
+        .then(() => updateFetched(true)),
+    []
+  );
   selectedYear = yearKey;
   const toRender: { [key: string]: ReactNode } = Object.fromEntries(
     Object.entries({
