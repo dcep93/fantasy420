@@ -116,15 +116,17 @@ export function getWrapped(): Promise<WrappedType> {
 
   function hasExtensionF(): Promise<boolean> {
     return new Promise<boolean>((resolve, reject) => {
-      window.chrome.runtime.sendMessage(extension_id, {}, (response: any) => {
-        alert(120);
-        resolve(true);
-      });
+      window.chrome.runtime.sendMessage(
+        extension_id,
+        { init: true },
+        (response: any) => {
+          resolve(true);
+        }
+      );
     }).catch((err: Error) => {
       // eslint-disable-next-line @typescript-eslint/no-unused-expressions
       window.chrome.runtime.lastError;
       console.error(err);
-      alert(127);
       return false;
     });
   }
