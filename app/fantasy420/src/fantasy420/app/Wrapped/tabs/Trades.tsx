@@ -45,8 +45,12 @@ export default function Trades() {
                 title={Object.entries(
                   selectedWrapped().nflPlayers[o.playerId].scores
                 )
-                  .flatMap(([scoreWeekNum, score]) =>
-                    scoreWeekNum === weekNum ? ["TRADE", score] : [score]
+                  .map(([scoreWeekNum, score]) => ({
+                    scoreWeekNum,
+                    str: `${scoreWeekNum}: ${score}`,
+                  }))
+                  .flatMap(({ scoreWeekNum, str }) =>
+                    scoreWeekNum === weekNum ? ["TRADE", str] : [str]
                   )
                   .join("\n")}
               >
