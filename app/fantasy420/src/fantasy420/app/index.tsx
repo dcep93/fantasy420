@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import BuildIdealDraft from "./BuildIdealDraft";
 import Draft from "./Draft";
 import FetchWrapped from "./FetchWrapped";
 import IdealDraft from "./IdealDraft";
+import BuildIdealDraft from "./IdealDraft/buildIdealDraft";
 import Wrapped from "./Wrapped";
 
 const pages = {
