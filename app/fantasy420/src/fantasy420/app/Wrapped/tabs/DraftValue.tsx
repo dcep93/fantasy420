@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import { bubbleStyle, groupByF, selectedWrapped } from "..";
-import { DraftJsonType, POSITION_COLORS, selectedDraft } from "../../Draft";
+import { groupByF, selectedWrapped } from "..";
+import { DraftJsonType, selectedDraft } from "../../Draft";
 import { NFLPlayerType } from "../../FetchWrapped";
 
 export default function DraftValue() {
@@ -99,62 +99,8 @@ export default function DraftValue() {
           </div>
         ))}
       </div>
-      <div>
-        <div>
-          {collect(
-            Object.values(selectedWrapped().ffTeams)
-              .flatMap((t) =>
-                t.draft.map((p) => ({
-                  p,
-                  t,
-                  p2: selectedWrapped().nflPlayers[p.playerId],
-                  p3: performance[p.playerId],
-                }))
-              )
-              .sort((a, b) => a.p.pickIndex - b.p.pickIndex),
-            Object.values(selectedWrapped().ffTeams).length
-          ).map((o, i) => (
-            <div
-              key={i}
-              style={{
-                display: "inline-flex",
-                flexDirection: i % 2 === 0 ? "row" : "row-reverse",
-              }}
-            >
-              {o.map((oo, j) => (
-                <div
-                  key={j}
-                  style={{
-                    ...bubbleStyle,
-                    fontSize: "0.7em",
-                    width: "10em",
-                    backgroundColor: POSITION_COLORS[oo.p2.position],
-                  }}
-                >
-                  <div>
-                    {oo.p.pickIndex + 1}
-                    {")"} {oo.p2.position}
-                    {oo.p3.draftRank + 1} {"/"} {oo.p3.totalRank + 1}
-                  </div>
-                  <div style={{ fontWeight: "bold" }}>{oo.p2.name}</div>
-                  <div>{oo.t.name}</div>
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
     </div>
   );
-}
-
-function collect<T>(ts: T[], count: number): T[][] {
-  const collected = [];
-  for (let i = 0; true; i++) {
-    const sliced = ts.slice(count * i, count * (i + 1));
-    if (sliced.length === 0) return collected;
-    collected.push(sliced);
-  }
 }
 
 type PerformanceType = {
@@ -167,7 +113,7 @@ type PerformanceType = {
   };
 };
 
-function getPerformance(): PerformanceType {
+export function getPerformance(): PerformanceType {
   const drafted = Object.values(selectedWrapped().ffTeams)
     .flatMap((team) => team.draft)
     .map(({ playerId, pickIndex }) => ({

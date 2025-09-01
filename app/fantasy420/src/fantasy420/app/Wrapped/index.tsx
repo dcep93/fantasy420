@@ -10,6 +10,7 @@ import ByeSchedule from "./tabs/ByeSchedule";
 import ChosenWrong from "./tabs/ChosenWrong";
 import ConsistentlyAverage from "./tabs/ConsistentlyAverage";
 import DeterminedByDiscreteScoring from "./tabs/DeterminedByDiscreteScoring";
+import DraftBoard from "./tabs/DraftBoard";
 import DraftValue from "./tabs/DraftValue";
 import ExtremeStuds from "./tabs/ExtremeStuds";
 import FantasyCalc from "./tabs/FantasyCalc";
@@ -73,6 +74,7 @@ export default function Wrapped() {
       Bopped,
       ChosenWrong,
       DraftValue,
+      DraftBoard,
       Performance,
       PerformanceTotals,
       DeterminedByDiscreteScoring,
