@@ -7,7 +7,6 @@ import Benchwarmers from "./tabs/Benchwarmers";
 import BestByPosition from "./tabs/BestByPosition";
 import BoomBust from "./tabs/BoomBust";
 import Bopped from "./tabs/Bopped";
-import ByeSchedule from "./tabs/ByeSchedule";
 import ChosenWrong from "./tabs/ChosenWrong";
 import ConsistentlyAverage from "./tabs/ConsistentlyAverage";
 import DeterminedByDiscreteScoring from "./tabs/DeterminedByDiscreteScoring";
@@ -30,6 +29,7 @@ import SecondLost from "./tabs/SecondLost";
 import Simps from "./tabs/Simps";
 import SqueezesAndStomps from "./tabs/SqueezesAndStomps";
 import Stacks from "./tabs/Stacks";
+import StrengthOfSeason from "./tabs/StrengthOfSeason";
 import Trades from "./tabs/Trades";
 import UniquesRostered from "./tabs/UniquesRostered";
 import UniquesStarted from "./tabs/UniquesStarted";
@@ -67,6 +67,7 @@ function SubWrapped() {
   const [yearKey, updateYear] = useState(selectedYear);
   selectedYear = yearKey;
   const toRender: { [key: string]: () => JSX.Element } = {
+    StrengthOfSeason,
     FantasyCalc,
     PlayerPlot,
     ManagerPlot,
@@ -94,7 +95,6 @@ function SubWrapped() {
     ExtremeStuds,
     AllTimeRecords,
     HeadToHead,
-    ByeSchedule,
     SecondLost,
     WhatIf,
     ConsistentlyAverage,
