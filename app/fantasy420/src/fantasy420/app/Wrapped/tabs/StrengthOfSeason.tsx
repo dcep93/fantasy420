@@ -1,6 +1,6 @@
 import { Helpers, selectedWrapped } from "..";
 
-export default function ByeSchedule() {
+export default function StrengthOfSeason() {
   var value = Math.max(...Object.values(selectedWrapped().fantasyCalc.players));
   const auctionValues = Object.fromEntries(
     Object.values(selectedWrapped().ffTeams)
@@ -93,7 +93,7 @@ export default function ByeSchedule() {
                 )
               }
             </div>
-            <div>gifts from opps: {gfo}</div>
+            <div>bye gifts from opps: {gfo}</div>
             <div
               style={{
                 display: "flex",
