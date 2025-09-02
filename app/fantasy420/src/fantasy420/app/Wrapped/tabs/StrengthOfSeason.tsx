@@ -149,7 +149,7 @@ export default function StrengthOfSeason() {
                             weeklyZ: teamToTotal[teamId].weeklyZ[obj.weekNum],
                           }))
                           .map((o) =>
-                            o.weeklyZ !== undefined
+                            o.weeklyZ
                               ? o
                               : teamToTotal[o.teamId].weeklyB[obj.weekNum]
                           ),
