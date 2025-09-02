@@ -1,19 +1,6 @@
-import { Helpers, selectedWrapped } from "..";
+import { clog, Helpers, selectedWrapped } from "..";
 
 export default function StrengthOfSeason() {
-  var value = Math.max(...Object.values(selectedWrapped().fantasyCalc.players));
-  const auctionValues = Object.fromEntries(
-    Object.values(selectedWrapped().ffTeams)
-      .flatMap((team) => team.draft)
-      .sort((a, b) => a.pickIndex - b.pickIndex)
-      .map(({ playerId }) => selectedWrapped().nflPlayers[playerId])
-      .map((player) => {
-        if (player.position !== "QB") {
-          value = selectedWrapped().fantasyCalc.players[player.id];
-        }
-        return [player.id, value];
-      })
-  );
   const byTeam = Object.values(selectedWrapped().ffTeams).map((team) => ({
     ...team,
     matchups: Object.entries(selectedWrapped().ffMatchups)
@@ -45,22 +32,53 @@ export default function StrengthOfSeason() {
               )
               .map((byePlayer) => ({
                 name: byePlayer.name,
-                rawValue: auctionValues[byePlayer.id] || 0,
+                rawValue:
+                  selectedWrapped().fantasyCalc.players[byePlayer.id] || 0,
               }))
               .sort((a, b) => b.rawValue - a.rawValue)
               .map(({ rawValue, ...obj }) => ({
                 ...obj,
-                value: rawValue * (ffTeamIndex === 0 ? -1 : 1),
+                value: rawValue * (ffTeamIndex === 0 ? 1 : -1),
               }))
           ),
       })),
   }));
+  const teamToTotal = Object.fromEntries(
+    byTeam
+      .map((team) => ({
+        team,
+        weeklyA: Object.fromEntries(
+          team.matchups.map((matchup) => [
+            matchup.weekNum,
+            matchup.byes[0]
+              .map((byePlayer) => byePlayer.value)
+              .reduce((a, b) => a + b, 0),
+          ])
+        ),
+      }))
+      .map((o) => ({
+        ...o,
+        total: Helpers.toFixed(
+          Object.values(o.weeklyA).reduce((a, b) => a + b)
+        ),
+      }))
+      .map((o) => ({
+        ...o,
+        weeklyB: Object.fromEntries(
+          Object.entries(o.weeklyA).map(([weekNum, weeklyAA]) => [
+            weekNum,
+            Helpers.toFixed(o.total - weeklyAA),
+          ])
+        ),
+      }))
+      .map((o) => [o.team.id, o])
+  );
   return (
     <div>
       {byTeam
         .map((team) => ({
           team,
-          gfo: Helpers.toFixed(
+          gfo: -Helpers.toFixed(
             team.matchups
               .filter((matchup) => matchup.byes[1])
               .flatMap((matchup) =>
@@ -68,9 +86,20 @@ export default function StrengthOfSeason() {
               )
               .reduce((a, b) => a + b)
           ),
+          oppValue: Helpers.toFixed(
+            clog(
+              team.matchups
+                .filter((m) => m.teamIds[1] !== "")
+                .map(
+                  (m) =>
+                    teamToTotal[m.teamIds.find((id) => id !== team.id)!]
+                      ?.weeklyB[m.weekNum]
+                )
+            ).reduce((a, b) => a + b, 0)
+          ),
         }))
-        .sort((a, b) => a.gfo - b.gfo)
-        .map(({ team, gfo }) => (
+        .sort((a, b) => a.oppValue - b.oppValue)
+        .map(({ team, gfo, oppValue }, i) => (
           <div
             key={team.id}
             style={{
@@ -80,19 +109,12 @@ export default function StrengthOfSeason() {
               padding: "20px",
             }}
           >
-            <div>team: {team.name}</div>
             <div>
-              team value:{" "}
-              {
-                -Helpers.toFixed(
-                  team.matchups
-                    .flatMap((matchup) =>
-                      matchup.byes[0].map((byePlayer) => byePlayer.value)
-                    )
-                    .reduce((a, b) => a + b)
-                )
-              }
+              {i + 1}
+              {")"} team: {team.name}
             </div>
+            <div>team value: {teamToTotal[team.id].total}</div>
+            <div>opponent value: {oppValue}</div>
             <div>bye gifts from opps: {gfo}</div>
             <div
               style={{
@@ -112,7 +134,10 @@ export default function StrengthOfSeason() {
                   }}
                 >
                   <h3>
-                    week {obj.weekNum} vs{" "}
+                    <div>
+                      week {obj.weekNum} vs (
+                      {teamToTotal[obj.teamIds[1]!]?.weeklyB[obj.weekNum]})
+                    </div>
                     {selectedWrapped().ffTeams[obj.teamIds[1]!]?.name}
                   </h3>
                   {obj.byes.flatMap((ffTeam) =>
