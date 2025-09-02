@@ -1,4 +1,4 @@
-import { clog, Helpers, selectedWrapped } from "..";
+import { bubbleStyle, Helpers, selectedWrapped } from "..";
 
 export default function StrengthOfSeason() {
   const byTeam = Object.values(selectedWrapped().ffTeams).map((team) => ({
@@ -32,6 +32,7 @@ export default function StrengthOfSeason() {
               )
               .map((byePlayer) => ({
                 name: byePlayer.name,
+                score: byePlayer.scores[obj.weekNum],
                 rawValue:
                   selectedWrapped().fantasyCalc.players[byePlayer.id] || 0,
               }))
@@ -47,6 +48,19 @@ export default function StrengthOfSeason() {
     byTeam
       .map((team) => ({
         team,
+        weeklyZ: Object.fromEntries(
+          team.matchups.map((matchup) => [
+            matchup.weekNum,
+            selectedWrapped()
+              .ffTeams[matchup.teamIds[0]].rosters[
+                matchup.weekNum
+              ]?.starting.map(
+                (playerId) =>
+                  selectedWrapped().nflPlayers[playerId].scores[matchup.weekNum]
+              )
+              .reduce((a, b) => a + b, 0),
+          ])
+        ),
         weeklyA: Object.fromEntries(
           team.matchups.map((matchup) => [
             matchup.weekNum,
@@ -87,7 +101,7 @@ export default function StrengthOfSeason() {
               .reduce((a, b) => a + b)
           ),
           oppValue: Helpers.toFixed(
-            clog(
+            ((values) => values.reduce((a, b) => a + b, 0) / values.length)(
               team.matchups
                 .filter((m) => m.teamIds[1] !== "")
                 .map(
@@ -95,7 +109,7 @@ export default function StrengthOfSeason() {
                     teamToTotal[m.teamIds.find((id) => id !== team.id)!]
                       ?.weeklyB[m.weekNum]
                 )
-            ).reduce((a, b) => a + b, 0)
+            )
           ),
         }))
         .sort((a, b) => a.oppValue - b.oppValue)
@@ -123,37 +137,60 @@ export default function StrengthOfSeason() {
                 alignItems: "flex-start",
               }}
             >
-              {team.matchups.map((obj) => (
-                <div
-                  key={obj.weekNum}
-                  style={{
-                    border: "2px solid black",
-                    borderRadius: "20px",
-                    padding: "10px",
-                    margin: "10px",
-                  }}
-                >
-                  <h3>
-                    <div>
-                      week {obj.weekNum} vs (
-                      {teamToTotal[obj.teamIds[1]!]?.weeklyB[obj.weekNum]})
-                    </div>
-                    {selectedWrapped().ffTeams[obj.teamIds[1]!]?.name}
-                  </h3>
-                  {obj.byes.flatMap((ffTeam) =>
-                    ffTeam.map((byePlayer) => (
-                      <table key={byePlayer.name}>
-                        <tbody>
-                          <tr style={{ marginRight: "10em" }}>
-                            <td>{byePlayer.value.toFixed(2)}</td>
-                            <td>{byePlayer.name}</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    ))
-                  )}
-                </div>
-              ))}
+              {team.matchups
+                .map((obj) => ({
+                  ...obj,
+                  scores:
+                    obj.teamIds[1] === ""
+                      ? undefined
+                      : obj.teamIds
+                          .map((teamId) => ({
+                            teamId,
+                            weeklyZ: teamToTotal[teamId].weeklyZ[obj.weekNum],
+                          }))
+                          .map((o) =>
+                            o.weeklyZ !== undefined
+                              ? o
+                              : teamToTotal[o.teamId].weeklyB[obj.weekNum]
+                          ),
+                }))
+                .map((obj) => (
+                  <div
+                    key={obj.weekNum}
+                    style={{
+                      ...bubbleStyle,
+                      backgroundColor:
+                        obj.scores === undefined
+                          ? undefined
+                          : obj.scores[0] > obj.scores[1]
+                          ? "lightgreen"
+                          : "pink",
+                    }}
+                  >
+                    <h3>
+                      <div>week {obj.weekNum}</div>
+                      <div>
+                        {teamToTotal[team.id]?.weeklyB[obj.weekNum]} vs{" "}
+                        {teamToTotal[obj.teamIds[1]]?.weeklyB[obj.weekNum]}
+                      </div>
+                      <div>
+                        {selectedWrapped().ffTeams[obj.teamIds[1]!]?.name}
+                      </div>
+                    </h3>
+                    {obj.byes.flatMap((ffTeam) =>
+                      ffTeam.map((byePlayer) => (
+                        <table key={byePlayer.name}>
+                          <tbody>
+                            <tr style={{ marginRight: "10em" }}>
+                              <td>{byePlayer.value.toFixed(2)}</td>
+                              <td>{byePlayer.name}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      ))
+                    )}
+                  </div>
+                ))}
             </div>
           </div>
         ))}
