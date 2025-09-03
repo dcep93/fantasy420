@@ -1,7 +1,7 @@
 import { WrappedType } from "../FetchWrapped";
 import { clog, groupByF } from "../Wrapped";
 
-export const MAX_DEPTH = 5;
+export const MAX_DEPTH = parseInt(process.env.MAX_DEPTH || "") || 4;
 const A_CODE = 65;
 
 const startDateNow = Date.now();
