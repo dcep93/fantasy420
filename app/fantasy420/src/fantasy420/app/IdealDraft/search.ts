@@ -245,12 +245,7 @@ function getFFTeamId(pickIndex: number, numTeams: number): string {
 function getStart(
   wrapped: WrappedType,
   positionToRankedDraftPlayers: {
-    [k: string]: {
-      score: number;
-      position: string;
-      playerId: number;
-      ffTeamId: string;
-    }[];
+    [k: string]: DraftPlayerType[];
   },
   rosterEnum: RosterEnum
 ): DraftType[] {

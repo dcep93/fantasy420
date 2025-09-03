@@ -67,7 +67,8 @@ Promise.resolve()
     years: Object.keys(allWrapped).filter((year) => year !== "2025"),
     rosterEnums: Object.keys(RosterEnum)
       .map((rosterEnum) => parseInt(rosterEnum))
-      .filter((rosterEnum) => !isNaN(rosterEnum)),
+      .filter((rosterEnum) => !isNaN(rosterEnum))
+      .filter((rosterEnum) => rosterEnum !== RosterEnum.megaflex),
   }))
   .then(({ years, rosterEnums }) =>
     years.flatMap((year) =>
