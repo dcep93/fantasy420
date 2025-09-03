@@ -15,7 +15,7 @@ import {
 export default function IdealDraft() {
   const [yearKey, updateYear] = useState(selectedYear);
   const [rosterEnum, updateRosterEnum] = useState(
-    RosterEnum[RosterEnum.megaflex]
+    RosterEnum[RosterEnum.doubleflex]
   );
   console.log({ yearKey, rosterEnum });
   const wrapped = allWrapped[yearKey];
@@ -178,17 +178,21 @@ export function SubIdealDraft(props: {
                             .join("\n")}
                         >
                           <td>{ffTeamId} -</td>
-                          <td>
-                            QB@
-                            {d
-                              .map((p, i) => ({ p, i }))
-                              .filter(
-                                ({ p }) =>
-                                  p.ffTeamId === ffTeamId && p.position === "QB"
-                              )
-                              .map(({ i }) => i + 1)
-                              .join(",")}
-                          </td>
+                          {["QB", "TE"].map((position) => (
+                            <td key={position}>
+                              {position}@
+                              {d
+                                .map((p, i) => ({ p, i }))
+                                .filter(
+                                  ({ p }) =>
+                                    p.ffTeamId === ffTeamId &&
+                                    p.position === position
+                                )
+                                .map(({ i }) => i + 1)
+                                .join(",")}
+                            </td>
+                          ))}
+
                           <td>- {score.toFixed(2)}</td>
                         </tr>
                       ))}

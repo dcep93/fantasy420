@@ -64,7 +64,7 @@ async function runSequential<T>(fns: (() => Promise<T>)[]): Promise<T[]> {
 Promise.resolve()
   .then(() => clog(Date.now()))
   .then(() => ({
-    years: Object.keys(allWrapped),
+    years: Object.keys(allWrapped).filter((year) => year !== "2025"),
     rosterEnums: Object.keys(RosterEnum)
       .map((rosterEnum) => parseInt(rosterEnum))
       .filter((rosterEnum) => !isNaN(rosterEnum)),
