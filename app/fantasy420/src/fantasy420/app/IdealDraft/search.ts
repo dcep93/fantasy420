@@ -229,7 +229,7 @@ function getPositionToRankedDraftPlayers(wrapped: WrappedType): {
 function getFFTeamId(pickIndex: number, numTeams: number): string {
   const roundIndex = pickIndex % (2 * numTeams);
   const teamIndex =
-    roundIndex < numTeams ? roundIndex : 2 * numTeams - 1 - pickIndex;
+    roundIndex < numTeams ? roundIndex : 2 * numTeams - 1 - roundIndex;
   return String.fromCharCode(A_CODE + teamIndex);
 }
 
