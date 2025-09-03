@@ -148,11 +148,15 @@ export function SubIdealDraft(props: {
       <div style={{ display: "flex", alignItems: "baseline" }}>
         {props.draftedPlayers
           .map((d, i) => ({ d, i }))
-          .reverse()
           .map(({ d, i }) => (
             <div key={i} style={{ ...bubbleStyle, flexShrink: 0 }}>
               <h1>
-                generation {i} ({d.length})
+                generation {i} (
+                {d.findIndex(
+                  (dd, ii) =>
+                    props.draftedPlayers[i - 1]?.[ii].playerId !== dd.playerId
+                )}
+                /{d.length})
               </h1>
               <pre>
                 <table>
