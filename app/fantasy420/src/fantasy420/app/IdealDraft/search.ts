@@ -226,6 +226,13 @@ function getPositionToRankedDraftPlayers(wrapped: WrappedType): {
   );
 }
 
+function getFFTeamId(pickIndex: number, numTeams: number): string {
+  const roundIndex = pickIndex % (2 * numTeams);
+  const teamIndex =
+    roundIndex < numTeams ? roundIndex : 2 * numTeams - pickIndex;
+  return String.fromCharCode(A_CODE + teamIndex);
+}
+
 function getStart(
   wrapped: WrappedType,
   positionToRankedDraftPlayers: {
@@ -238,16 +245,16 @@ function getStart(
   },
   rosterEnum: RosterEnum
 ): DraftType[] {
+  const numTeams = 12; //Object.values(wrapped.ffTeams).length;
   const initialDraft = Object.values(wrapped.ffTeams)
-    .sort((a, b) => a.draft[0].pickIndex - b.draft[0].pickIndex)
-    .flatMap((t, i) =>
+    .flatMap((t, teamIndex) =>
       t.draft
         .map((o) => ({ o, p: wrapped.nflPlayers[o.playerId] }))
         .map(({ o, p }) => ({
           ...o,
           start: -1,
           score: p.total,
-          ffTeamId: String.fromCharCode(A_CODE + i),
+          ffTeamId: getFFTeamId(o.pickIndex, numTeams),
           position: p.position,
         }))
     )
@@ -257,10 +264,7 @@ function getStart(
     Object.entries(positionToRankedDraftPlayers).map(([k, v]) => [k, v.slice()])
   );
   const sortedDraft = initialDraft
-    .slice(
-      0,
-      allRosters[rosterEnum].length * Object.entries(wrapped.ffTeams).length
-    )
+    .slice(0, allRosters[rosterEnum].length * numTeams)
     .map((p) => ({
       ...poppable[p.position].shift()!,
       ffTeamId: p.ffTeamId,
