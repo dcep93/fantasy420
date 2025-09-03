@@ -15,6 +15,8 @@ import {
   RosterEnum,
 } from "./search";
 
+const MAX_GENERATIONS = 5;
+
 type ConfigType = { year: string; rosterEnum: RosterEnum };
 
 function processCombination(
@@ -27,7 +29,12 @@ function processCombination(
   }> {
     return Promise.resolve()
       .then(() =>
-        generate(drafts, positionToRankedDraftPlayers, config.rosterEnum)
+        generate(
+          drafts,
+          positionToRankedDraftPlayers,
+          config.rosterEnum,
+          MAX_GENERATIONS
+        )
       )
       .then((nextDrafts) =>
         nextDrafts === null
