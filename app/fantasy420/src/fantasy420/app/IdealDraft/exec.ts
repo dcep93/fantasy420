@@ -8,6 +8,7 @@ import path from "path";
 import { clog } from "../Wrapped";
 import allWrapped from "../Wrapped/allWrapped";
 import {
+  ConfigType,
   DraftPlayerType,
   DraftType,
   generate,
@@ -15,10 +16,6 @@ import {
   getStart,
   RosterEnum,
 } from "./search";
-
-const MAX_GENERATIONS = parseInt(process.env.MAX_GENERATIONS || "") || 4;
-
-type ConfigType = { year: string; rosterEnum: RosterEnum };
 
 function processCombination(
   config: ConfigType
@@ -29,14 +26,7 @@ function processCombination(
     draftPlayers: DraftPlayerType[][];
   }> {
     return Promise.resolve()
-      .then(() =>
-        generate(
-          drafts,
-          positionToRankedDraftPlayers,
-          config.rosterEnum,
-          MAX_GENERATIONS
-        )
-      )
+      .then(() => generate(drafts, positionToRankedDraftPlayers, config))
       .then((nextDrafts) =>
         nextDrafts === null
           ? { config, draftPlayers: drafts.map((d) => d.draft) }
@@ -71,7 +61,13 @@ Promise.resolve()
   }))
   .then(({ years, rosterEnums }) =>
     years.flatMap((year) =>
-      rosterEnums.map((rosterEnum) => ({ year, rosterEnum }))
+      rosterEnums.map((rosterEnum) => ({
+        year,
+        rosterEnum,
+        maxGenerations: parseInt(process.env.MAX_GENERATIONS || "") || 4,
+        numTeams: -1,
+        maxDepth: parseInt(process.env.MAX_DEPTH || "") || 4,
+      }))
     )
   )
   .then((configs) => configs.map((config) => () => processCombination(config)))

@@ -69,12 +69,13 @@ function SubBuildIdealDraft(props: {
         .then(() =>
           drafts === null
             ? getStart(wrapped, positionToRankedDraftPlayers, props.rosterEnum)
-            : generate(
-                drafts,
-                positionToRankedDraftPlayers,
-                props.rosterEnum,
-                1
-              )
+            : generate(drafts, positionToRankedDraftPlayers, {
+                year: selectedYear,
+                maxDepth: 1,
+                maxGenerations: 1,
+                numTeams: Object.keys(wrapped.ffTeams).length,
+                rosterEnum: props.rosterEnum,
+              })
         )
         .then((nextDrafts) => nextDrafts && updateDrafts(nextDrafts)),
     [drafts, positionToRankedDraftPlayers, wrapped, props.rosterEnum]

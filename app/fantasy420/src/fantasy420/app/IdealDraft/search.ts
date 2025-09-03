@@ -1,7 +1,6 @@
 import { WrappedType } from "../FetchWrapped";
-import { clog, groupByF } from "../Wrapped";
+import { groupByF } from "../Wrapped";
 
-export const MAX_DEPTH = parseInt(process.env.MAX_DEPTH || "") || 4;
 const A_CODE = 65;
 
 const startDateNow = Date.now();
@@ -50,13 +49,20 @@ const allRosters = {
   ],
 };
 
+export type ConfigType = {
+  year: string;
+  rosterEnum: RosterEnum;
+  maxDepth: number;
+  maxGenerations: number;
+  numTeams: number;
+};
+
 function generate(
   drafts: DraftType[],
   positionToRankedDraftPlayers: {
     [k: string]: DraftPlayerType[];
   },
-  rosterEnum: RosterEnum,
-  maxGenerations: number
+  config: ConfigType
 ): Promise<DraftType[] | null> {
   console.log(
     Date.now() - startDateNow,
@@ -67,19 +73,19 @@ function generate(
   const ffTeamId = prev.draft[curr.draft.length]?.ffTeamId;
   return Promise.resolve()
     .then(() =>
-      getBest(curr, prev, positionToRankedDraftPlayers, ffTeamId, rosterEnum, 0)
+      getBest(curr, prev, positionToRankedDraftPlayers, ffTeamId, config, 0)
     )
     .then((best) => {
       if (!best) {
         if (JSON.stringify(curr) === JSON.stringify(prev)) {
-          clog("stabilized");
+          console.log("stabilized");
           return null;
         }
-        if (drafts.length === maxGenerations) {
-          clog({ maxGenerations });
+        if (drafts.length === config.maxGenerations) {
+          console.log("maxGenerations");
           return null;
         }
-        clog(`generation ${drafts.length}`);
+        console.log(`${config} generation ${drafts.length}`);
         return drafts.concat([
           {
             draft: [],
@@ -113,7 +119,7 @@ function getBest(
     [k: string]: DraftPlayerType[];
   },
   ffTeamId: string,
-  rosterEnum: RosterEnum,
+  config: ConfigType,
   depth: number
 ): Promise<DraftPlayerType | undefined> {
   return Promise.resolve().then(() => {
@@ -125,12 +131,12 @@ function getBest(
         ffTeamId: draftTeamId,
       };
     }
-    if (depth > MAX_DEPTH) {
+    if (depth > config.maxDepth) {
       return {
         ...prev.draft.find(
           (p) =>
             !curr.draftedIds[p.playerId] &&
-            hasSpace(p.position, curr.picksByTeamId[ffTeamId] || [], rosterEnum)
+            hasSpace(p.position, curr.picksByTeamId[ffTeamId] || [], config)
         )!,
         ffTeamId,
       };
@@ -138,7 +144,7 @@ function getBest(
     return Promise.resolve()
       .then(() =>
         ["QB", "RB", "WR", "TE"].filter((position) =>
-          hasSpace(position, curr.picksByTeamId[ffTeamId] || [], rosterEnum)
+          hasSpace(position, curr.picksByTeamId[ffTeamId] || [], config)
         )
       )
       .then((positions) =>
@@ -155,7 +161,7 @@ function getBest(
               prev,
               positionToRankedDraftPlayers,
               ffTeamId,
-              rosterEnum,
+              config,
               depth + 1
             ).then((score) => ({ score, player }))
           )
@@ -173,9 +179,9 @@ function getBest(
 function hasSpace(
   position: string,
   myPicks: DraftPlayerType[],
-  rosterEnum: RosterEnum
+  config: ConfigType
 ): boolean {
-  const roster = allRosters[rosterEnum].slice();
+  const roster = allRosters[config.rosterEnum].slice();
   myPicks.forEach((p) =>
     roster.splice(
       roster.findIndex((r) => r.includes(p.position)),
@@ -192,7 +198,7 @@ async function getScore(
     [k: string]: DraftPlayerType[];
   },
   ffTeamId: string,
-  rosterEnum: RosterEnum,
+  config: ConfigType,
   depth: number
 ): Promise<number> {
   let curr = _curr;
@@ -202,7 +208,7 @@ async function getScore(
       prev,
       positionToRankedDraftPlayers,
       ffTeamId,
-      rosterEnum,
+      config,
       depth
     );
     if (!best) return scoreTeam(curr.picksByTeamId[ffTeamId]!);
