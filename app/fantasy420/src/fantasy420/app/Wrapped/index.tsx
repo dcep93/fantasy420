@@ -23,6 +23,7 @@ import OwnedTeams from "./tabs/OwnedTeams";
 import Performance from "./tabs/Performance";
 import PerformanceTotals from "./tabs/PerformanceTotals";
 import PlayerPlot from "./tabs/PlayerPlot";
+import PlayerStats from "./tabs/PlayerStats";
 import PointsAgainst from "./tabs/PointsAgainst";
 import Punts from "./tabs/Punts";
 import SecondLost from "./tabs/SecondLost";
@@ -70,6 +71,7 @@ function SubWrapped() {
     StrengthOfSeason,
     FantasyCalc,
     PlayerPlot,
+    PlayerStats,
     ManagerPlot,
     Trades,
     WeekTopsAndBottoms,
