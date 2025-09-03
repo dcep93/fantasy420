@@ -14,6 +14,7 @@ export default function PlayerStats() {
           onChange={(e) => updateNameFilter(e.currentTarget.value)}
         />
       </div>
+      <div>{JSON.stringify(data)}</div>
     </div>
   );
 }
