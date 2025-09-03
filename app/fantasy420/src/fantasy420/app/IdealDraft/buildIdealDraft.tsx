@@ -63,19 +63,20 @@ function SubBuildIdealDraft(props: {
   const wrapped = allWrapped[props.yearKey];
   const positionToRankedDraftPlayers = getPositionToRankedDraftPlayers(wrapped);
   const [drafts, updateDrafts] = useState<DraftType[] | null>(null);
+  const config = {
+    year: selectedYear,
+    maxDepth: 1,
+    maxGenerations: 1,
+    numTeams: Object.keys(wrapped.ffTeams).length,
+    rosterEnum: props.rosterEnum,
+  };
   const generateInBrowser = useCallback(
     () =>
       Promise.resolve()
         .then(() =>
           drafts === null
-            ? getStart(wrapped, positionToRankedDraftPlayers, props.rosterEnum)
-            : generate(drafts, positionToRankedDraftPlayers, {
-                year: selectedYear,
-                maxDepth: 1,
-                maxGenerations: 1,
-                numTeams: Object.keys(wrapped.ffTeams).length,
-                rosterEnum: props.rosterEnum,
-              })
+            ? getStart(wrapped, positionToRankedDraftPlayers, config)
+            : generate(drafts, positionToRankedDraftPlayers, config)
         )
         .then((nextDrafts) => nextDrafts && updateDrafts(nextDrafts)),
     [drafts, positionToRankedDraftPlayers, wrapped, props.rosterEnum]

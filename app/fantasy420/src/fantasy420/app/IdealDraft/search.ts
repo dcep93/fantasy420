@@ -253,11 +253,8 @@ function getStart(
   positionToRankedDraftPlayers: {
     [k: string]: DraftPlayerType[];
   },
-  rosterEnum: RosterEnum
+  config: ConfigType
 ): DraftType[] {
-  const numTeams =
-    parseInt(process.env.NUM_TEAMS || "") ||
-    Object.values(wrapped.ffTeams).length;
   const initialDraft = Object.values(wrapped.ffTeams)
     .flatMap((t) =>
       t.draft
@@ -266,7 +263,7 @@ function getStart(
           ...o,
           start: -1,
           score: p.total,
-          ffTeamId: getFFTeamId(o.pickIndex, numTeams),
+          ffTeamId: getFFTeamId(o.pickIndex, config.numTeams),
           position: p.position,
         }))
     )
@@ -276,7 +273,7 @@ function getStart(
     Object.entries(positionToRankedDraftPlayers).map(([k, v]) => [k, v.slice()])
   );
   const sortedDraft = initialDraft
-    .slice(0, allRosters[rosterEnum].length * numTeams)
+    .slice(0, allRosters[config.rosterEnum].length * config.numTeams)
     .map((p) => ({
       ...poppable[p.position].shift()!,
       ffTeamId: p.ffTeamId,
