@@ -68,7 +68,6 @@ function SubWrapped() {
   const [yearKey, updateYear] = useState(selectedYear);
   selectedYear = yearKey;
   const toRender: { [key: string]: () => JSX.Element } = {
-    StrengthOfSeason,
     FantasyCalc,
     PlayerPlot,
     PlayerStats,
@@ -81,6 +80,7 @@ function SubWrapped() {
     ChosenWrong,
     DraftValue,
     DraftBoard,
+    StrengthOfSeason,
     Performance,
     PerformanceTotals,
     DeterminedByDiscreteScoring,
