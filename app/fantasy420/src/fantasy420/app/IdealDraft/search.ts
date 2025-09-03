@@ -125,6 +125,16 @@ function getBest(
         ffTeamId: draftTeamId,
       };
     }
+    if (depth > MAX_DEPTH) {
+      return {
+        ...prev.draft.find(
+          (p) =>
+            !curr.draftedIds[p.playerId] &&
+            hasSpace(p.position, curr.picksByTeamId[ffTeamId] || [], rosterEnum)
+        )!,
+        ffTeamId,
+      };
+    }
     return Promise.resolve()
       .then(() =>
         ["QB", "RB", "WR", "TE"].filter((position) =>
@@ -186,7 +196,6 @@ async function getScore(
   depth: number
 ): Promise<number> {
   let curr = _curr;
-  if (depth > MAX_DEPTH) return scoreTeam(curr.picksByTeamId[ffTeamId]!);
   while (true) {
     const best = await getBest(
       curr,
