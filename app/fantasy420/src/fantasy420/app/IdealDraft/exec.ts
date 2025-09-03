@@ -4,6 +4,7 @@ if (typeof (globalThis as any).window === "undefined")
   (globalThis as any).window = { location: {} };
 
 import { writeFile } from "fs/promises";
+import path from "path";
 import { clog } from "../Wrapped";
 import allWrapped from "../Wrapped/allWrapped";
 import {
@@ -77,5 +78,8 @@ Promise.resolve()
   .then(runSequential)
   .then(clog)
   .then((toWrite) =>
-    writeFile("idealDraft.json", JSON.stringify(toWrite), "utf8")
+    (({ filePath }) =>
+      writeFile(clog(filePath), JSON.stringify(toWrite), "utf8"))({
+      filePath: path.join(__dirname, "idealDraft.json"),
+    })
   );
