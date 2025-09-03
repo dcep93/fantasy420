@@ -7,7 +7,6 @@ import idealDraftJson from "./idealDraft.json";
 import {
   DraftPlayerType,
   getPositionToRankedDraftPlayers,
-  MAX_DEPTH,
   RosterEnum,
   scoreTeam,
 } from "./search";
@@ -128,8 +127,12 @@ export function SubIdealDraft(props: {
             </li>
             <li>
               generation N &gt; 1 maximizes a manager's score by simulating the
-              rest of the draft, stopping after they have made {MAX_DEPTH} more
+              rest of the draft, stopping after they have made MAX_DEPTH more
               picks
+            </li>
+            <li>
+              after that, they fill their roster according to ADP, ignoring
+              other managers' picks
             </li>
             <li>
               this adds significant doubt on the results, but assume that the

@@ -36,9 +36,7 @@ function processCombination(
   const wrapped = allWrapped[config.year];
   const positionToRankedDraftPlayers = getPositionToRankedDraftPlayers(wrapped);
   return Promise.resolve()
-    .then(() =>
-      getStart(wrapped, positionToRankedDraftPlayers, config.rosterEnum)
-    )
+    .then(() => getStart(wrapped, positionToRankedDraftPlayers, config))
     .then(helper);
 }
 
@@ -65,7 +63,9 @@ Promise.resolve()
         year,
         rosterEnum,
         maxGenerations: parseInt(process.env.MAX_GENERATIONS || "") || 4,
-        numTeams: -1,
+        numTeams:
+          parseInt(process.env.NUM_TEAMS || "") ||
+          Object.values(allWrapped[year].ffTeams).length,
         maxDepth: parseInt(process.env.MAX_DEPTH || "") || 4,
       }))
     )
