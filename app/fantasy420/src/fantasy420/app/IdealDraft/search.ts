@@ -1,7 +1,6 @@
 import { WrappedType } from "../FetchWrapped";
 import { clog, groupByF } from "../Wrapped";
 
-const MAX_GENERATIONS = 6;
 export const MAX_DEPTH = 5;
 const A_CODE = 65;
 
@@ -56,7 +55,8 @@ function generate(
   positionToRankedDraftPlayers: {
     [k: string]: DraftPlayerType[];
   },
-  rosterEnum: RosterEnum
+  rosterEnum: RosterEnum,
+  maxGenerations: number
 ): Promise<DraftType[] | null> {
   console.log(
     Date.now() - startDateNow,
@@ -75,8 +75,8 @@ function generate(
           clog("stabilized");
           return null;
         }
-        if (drafts.length === MAX_GENERATIONS) {
-          clog({ MAX_GENERATIONS });
+        if (drafts.length === maxGenerations) {
+          clog({ maxGenerations });
           return null;
         }
         clog(`generation ${drafts.length}`);
