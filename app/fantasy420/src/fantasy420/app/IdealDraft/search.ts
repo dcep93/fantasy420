@@ -245,9 +245,11 @@ function getStart(
   },
   rosterEnum: RosterEnum
 ): DraftType[] {
-  const numTeams = 12; //Object.values(wrapped.ffTeams).length;
+  const numTeams =
+    parseInt(process.env.NUM_TEAMS || "") ||
+    Object.values(wrapped.ffTeams).length;
   const initialDraft = Object.values(wrapped.ffTeams)
-    .flatMap((t, teamIndex) =>
+    .flatMap((t) =>
       t.draft
         .map((o) => ({ o, p: wrapped.nflPlayers[o.playerId] }))
         .map(({ o, p }) => ({
