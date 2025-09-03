@@ -16,7 +16,7 @@ import {
   RosterEnum,
 } from "./search";
 
-const MAX_GENERATIONS = 5;
+const MAX_GENERATIONS = 16;
 
 type ConfigType = { year: string; rosterEnum: RosterEnum };
 
