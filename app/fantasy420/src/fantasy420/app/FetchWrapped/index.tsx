@@ -562,21 +562,23 @@ export function getWrapped(): Promise<WrappedType> {
                                 };
                               };
                             }) => ({
-                              fieldGoals:
-                                resp.page.content.gamepackage.scrSumm.scrPlayGrps
-                                  .flatMap((periodPlays) => periodPlays)
-                                  .filter((play) => play.text !== "Team Safety")
-                                  .filter(
-                                    (play) => play.typeAbbreviation === "FG"
-                                  )
-                                  .map((play) => ({
-                                    teamId: play.teamId,
-                                    yards: parseInt(
-                                      play.text.match(
-                                        /(\d+) (?:yard|yrd|yd) field goal/i
-                                      )![1]
-                                    ),
-                                  })),
+                              fieldGoals: (
+                                resp.page.content.gamepackage.scrSumm
+                                  .scrPlayGrps || []
+                              )
+                                .flatMap((periodPlays) => periodPlays)
+                                .filter((play) => play.text !== "Team Safety")
+                                .filter(
+                                  (play) => play.typeAbbreviation === "FG"
+                                )
+                                .map((play) => ({
+                                  teamId: play.teamId,
+                                  yards: parseInt(
+                                    play.text.match(
+                                      /(\d+) (?:yard|yrd|yd) field goal/i
+                                    )![1]
+                                  ),
+                                })),
                               punts: groupByF(
                                 resp.page.content.gamepackage.allPlys
                                   .filter((p) => p.headline === "Punt")
@@ -610,7 +612,7 @@ export function getWrapped(): Promise<WrappedType> {
                               ),
                               drives: Object.fromEntries(
                                 Object.values(
-                                  resp.page.content.gamepackage.pbp.tms
+                                  resp.page.content.gamepackage.pbp.tms || {}
                                 ).map(({ id, displayName }) => [
                                   id,
                                   resp.page.content.gamepackage.allPlys
