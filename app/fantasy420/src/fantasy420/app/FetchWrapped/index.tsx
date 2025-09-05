@@ -538,12 +538,10 @@ export function getWrapped(): Promise<WrappedType> {
                               page: {
                                 content: {
                                   gamepackage: {
-                                    pbp: {
-                                      tms: {
-                                        [key: string]: {
-                                          id: string;
-                                          displayName: string;
-                                        };
+                                    prsdTms: {
+                                      [key: string]: {
+                                        id: string;
+                                        displayName: string;
                                       };
                                     };
                                     scrSumm: {
@@ -554,9 +552,11 @@ export function getWrapped(): Promise<WrappedType> {
                                       }[];
                                     }[];
                                     allPlys: {
-                                      teamName: string;
-                                      headline: string;
-                                      plays: { description: string }[];
+                                      items: {
+                                        teamName: string;
+                                        headline: string;
+                                        plays: { description: string }[];
+                                      }[];
                                     }[];
                                   };
                                 };
@@ -577,10 +577,11 @@ export function getWrapped(): Promise<WrappedType> {
                                 })),
                               punts: groupByF(
                                 resp.page.content.gamepackage.allPlys
+                                  .flatMap(({ items }) => items)
                                   .filter((p) => p.headline === "Punt")
                                   .map((p) => ({
                                     teamId: Object.values(
-                                      resp.page.content.gamepackage.pbp.tms
+                                      resp.page.content.gamepackage.prsdTms
                                     ).find((t) => t.displayName === p.teamName)!
                                       .id,
                                     punt: (p.plays || [])
@@ -608,10 +609,11 @@ export function getWrapped(): Promise<WrappedType> {
                               ),
                               drives: Object.fromEntries(
                                 Object.values(
-                                  resp.page.content.gamepackage.pbp.tms || {}
+                                  resp.page.content.gamepackage.prsdTms
                                 ).map(({ id, displayName }) => [
                                   id,
                                   resp.page.content.gamepackage.allPlys
+                                    .flatMap(({ items }) => items)
                                     .filter((p) => p.teamName === displayName)
                                     .map((drive) => drive.headline),
                                 ])
@@ -626,7 +628,6 @@ export function getWrapped(): Promise<WrappedType> {
                     )
                     .then((ps) => Promise.all(ps))
                     .then((gamesByGameId) => fromEntries(gamesByGameId))
-                    .then(clog)
                     .then((gamesByGameId) =>
                       fetch(
                         `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=kona_playercard`,
