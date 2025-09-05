@@ -547,12 +547,12 @@ export function getWrapped(): Promise<WrappedType> {
                                       };
                                     };
                                     scrSumm: {
-                                      scrPlayGrps: {
+                                      items: {
                                         teamId: string;
                                         typeAbbreviation: string;
-                                        text: string;
-                                      }[][];
-                                    };
+                                        playText: string;
+                                      }[];
+                                    }[];
                                     allPlys: {
                                       teamName: string;
                                       headline: string;
@@ -562,19 +562,15 @@ export function getWrapped(): Promise<WrappedType> {
                                 };
                               };
                             }) => ({
-                              fieldGoals: (
-                                resp.page.content.gamepackage.scrSumm
-                                  .scrPlayGrps || []
-                              )
-                                .flatMap((periodPlays) => periodPlays)
-                                .filter((play) => play.text !== "Team Safety")
+                              fieldGoals: resp.page.content.gamepackage.scrSumm
+                                .flatMap(({ items }) => items)
                                 .filter(
-                                  (play) => play.typeAbbreviation === "FG"
+                                  (item) => item.typeAbbreviation === "FG"
                                 )
-                                .map((play) => ({
-                                  teamId: play.teamId,
+                                .map((item) => ({
+                                  teamId: item.teamId,
                                   yards: parseInt(
-                                    play.text.match(
+                                    item.playText.match(
                                       /(\d+) (?:yard|yrd|yd) field goal/i
                                     )![1]
                                   ),
@@ -630,6 +626,7 @@ export function getWrapped(): Promise<WrappedType> {
                     )
                     .then((ps) => Promise.all(ps))
                     .then((gamesByGameId) => fromEntries(gamesByGameId))
+                    .then(clog)
                     .then((gamesByGameId) =>
                       fetch(
                         `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=kona_playercard`,
