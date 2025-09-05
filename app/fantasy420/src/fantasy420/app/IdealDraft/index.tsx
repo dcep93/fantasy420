@@ -65,7 +65,7 @@ export default function IdealDraft() {
       </div>
       {draftedPlayers && (
         <SubIdealDraft
-          key={`${yearKey}.${rosterEnum}`}
+          // key={`${yearKey}.${rosterEnum}`}
           wrapped={wrapped}
           draftedPlayers={draftedPlayers}
         />
