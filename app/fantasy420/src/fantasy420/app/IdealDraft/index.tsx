@@ -150,7 +150,14 @@ export function SubIdealDraft(props: {
           </ol>
         )}
       </div>
-      <div style={{ display: "flex", alignItems: "baseline" }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row-reverse",
+          overflow: "scroll",
+          alignItems: "baseline",
+        }}
+      >
         {props.draftedPlayers
           .map((d, i) => ({ d, i }))
           .map(({ d, i }) => (
