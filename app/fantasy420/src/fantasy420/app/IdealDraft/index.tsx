@@ -153,8 +153,6 @@ export function SubIdealDraft(props: {
       <div
         style={{
           display: "flex",
-          flexDirection: "row-reverse",
-          overflow: "scroll",
           alignItems: "baseline",
         }}
       >
