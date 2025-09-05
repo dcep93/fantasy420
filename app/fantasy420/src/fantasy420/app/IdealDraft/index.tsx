@@ -152,6 +152,8 @@ export function SubIdealDraft(props: {
       </div>
       <div
         style={{
+          width: "100vW",
+          overflow: "scroll",
           display: "flex",
           alignItems: "baseline",
         }}
