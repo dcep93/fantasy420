@@ -11,6 +11,7 @@ const data: {
 
 const MAX_RESULTS = 100;
 
+// https://nflquery.web.app/fantasy
 export default function PlayerStats() {
   const [nameFilter, updateNameFilter] = useState("");
   return (
