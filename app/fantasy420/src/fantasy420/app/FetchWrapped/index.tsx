@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { printF } from "..";
 import { currentYear, selectedWrapped } from "../Wrapped";
 
@@ -56,6 +56,11 @@ export type FFTeamType = {
 
 type MatchupsType = string[][];
 
+export type FantasyCalcHistoryType = {
+  date: number;
+  values: { [teamId: string]: number };
+}[];
+
 export type WrappedType = {
   year: string;
   nflPlayers: {
@@ -70,7 +75,7 @@ export type WrappedType = {
   ffMatchups: { [weekNum: string]: MatchupsType };
   fantasyCalc: {
     timestamp: number;
-    history: { date: number; values: { [teamId: string]: number } }[];
+    history: FantasyCalcHistoryType;
     players: { [espnId: string]: number };
   };
 };
@@ -78,31 +83,41 @@ export type WrappedType = {
 var initialized = false;
 export default function FetchWrapped() {
   const [wrapped, update] = useState("fetching...");
+  const getWrappedArgs = useMemo(
+    () => ({
+      currentYear,
+      fantasyCalcHistory: selectedWrapped()?.fantasyCalc.history,
+    }),
+    []
+  );
   useEffect(() => {
     if (initialized) return;
     initialized = true;
-    getWrapped()
+    getWrapped(getWrappedArgs)
       .then((wrapped) => JSON.stringify(wrapped))
       .then(update)
       .catch((e: Error) => update(e.toString()));
-  }, [update]);
+  }, [update, getWrappedArgs]);
   return (
     <div>
       <pre style={{ whiteSpace: "pre-wrap", fontSize: "xx-small" }}>
-        {printF(getWrapped)}
+        {printF(getWrapped, JSON.stringify(getWrappedArgs))}
       </pre>
       <pre style={{ whiteSpace: "pre-wrap" }}>{wrapped}</pre>
     </div>
   );
 }
 
-export function getWrapped(): Promise<WrappedType> {
+export function getWrapped({
+  currentYear,
+  fantasyCalcHistory,
+}: {
+  currentYear: string;
+  fantasyCalcHistory: FantasyCalcHistoryType;
+}): Promise<WrappedType> {
   const leagueId =
     new URL(window.document.location.href).searchParams.get("leagueId") ||
     203836968;
-  // 203836968 ADP
-  // 67201591; QZ
-  // 17110401 WS
 
   function groupByF<T>(ts: T[], f: (t: T) => string): { [key: string]: T[] } {
     return ts.reduce((prev, curr) => {
@@ -808,8 +823,7 @@ export function getWrapped(): Promise<WrappedType> {
           ),
         ])
       );
-      wrapped.fantasyCalc.history =
-        selectedWrapped()?.fantasyCalc.history || [];
+      wrapped.fantasyCalc.history = fantasyCalcHistory || [];
       if (
         JSON.stringify(values) !==
         JSON.stringify(
