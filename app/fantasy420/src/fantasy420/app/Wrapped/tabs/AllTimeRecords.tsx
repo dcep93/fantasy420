@@ -2,6 +2,14 @@ import { bubbleStyle } from "..";
 import { WrappedType } from "../../FetchWrapped";
 import allWrapped from "../allWrapped";
 
+import rawStatsData from "./PlayerStats/data.json";
+
+const statsData: {
+  name: string;
+  total: number;
+  years: { year: number; scores: number[] }[];
+}[] = rawStatsData;
+
 export default function AllTimeRecords() {
   return (
     <div>
@@ -59,7 +67,7 @@ export default function AllTimeRecords() {
               name: p.name,
               value: p.scores["0"],
             })),
-        player_week_score: (year, wrapped) =>
+        player_week_score_recent: (year, wrapped) =>
           Object.values(wrapped.nflPlayers)
             .filter((p) => p.position !== "DST")
             .flatMap((p) =>
@@ -98,6 +106,34 @@ export default function AllTimeRecords() {
             .sort((a, b) => b.value - a.value)
             .map((o, i) => ({ ...o, i })),
         }))
+        .concat({
+          recordName: "player_week_score",
+          sorted: statsData
+            .flatMap((p) =>
+              p.years.flatMap((y) =>
+                y.scores.map((s, w) => ({
+                  year: y.year.toString(),
+                  weekNum: (w + 1).toString(),
+                  name: p.name,
+                  value: s,
+                }))
+              )
+            )
+            .sort((a, b) => b.value - a.value)
+            .map((o, i) => ({ ...o, i })),
+        })
+        .concat({
+          recordName: "player_season_score",
+          sorted: statsData
+            .flatMap((p) => ({
+              year: `${p.years[0].year}-${p.years[p.years.length - 1].year}`,
+              weekNum: "0",
+              name: p.name,
+              value: p.total,
+            }))
+            .sort((a, b) => b.value - a.value)
+            .map((o, i) => ({ ...o, i })),
+        })
         .map(({ recordName, sorted }) => (
           <div key={recordName} style={bubbleStyle}>
             <h1>{recordName}</h1>
