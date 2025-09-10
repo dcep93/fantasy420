@@ -7,8 +7,13 @@ import {
   YAxis,
 } from "recharts";
 import { bubbleStyle, groupByF } from "..";
-import { POSITION_COLORS } from "../../Draft";
 import { playerStatsData } from "./PlayerStats";
+
+const POSITION_COLORS: Record<string, string> = {
+  QB: "red",
+  WR: "green",
+  RB: "blue",
+};
 
 export default function PositionTrends() {
   return (
