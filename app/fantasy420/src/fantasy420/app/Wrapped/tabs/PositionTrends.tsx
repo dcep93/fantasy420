@@ -56,7 +56,7 @@ export default function PositionTrends() {
           <div key={o.year}>
             <div style={bubbleStyle}>
               <h1>{o.year}</h1>
-              <div style={{ width: "500px", height: "500px" }}>
+              <div style={{ width: "1500px", height: "500px" }}>
                 <ResponsiveContainer width="80%" height="80%">
                   <LineChart
                     data={o.weeks.map((oo) => ({ x: oo.x, ...oo.ys }))}
