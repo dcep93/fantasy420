@@ -42,16 +42,11 @@ export default function PositionTrends() {
           )
             .map(([w, os]) => ({
               x: parseInt(w),
-              ys: Object.fromEntries(
-                Object.entries(groupByF(os, (o) => o.position)).map(
-                  ([position, oos]) => [
-                    position,
-                    (({ scores }) =>
-                      scores.reduce((a, b) => a + b, 0) / scores.length)({
-                      scores: oos.map((ooo) => ooo.s!).filter(Boolean),
-                    }),
-                  ]
-                )
+              ys: Object.entries(groupByF(os, (o) => o.position)).map(
+                ([position, oos]) => ({
+                  position,
+                  scores: oos.map((ooo) => ooo.s!).filter(Boolean),
+                })
               ),
             }))
             .sort((a, b) => a.x - b.x),
@@ -61,32 +56,50 @@ export default function PositionTrends() {
           <div key={o.year}>
             <div style={bubbleStyle}>
               <h1>{o.year}</h1>
-              <div style={{ width: "1500px", height: "500px" }}>
-                <ResponsiveContainer width="80%" height="80%">
-                  <LineChart
-                    data={o.weeks.map((oo) => ({ x: oo.x, ...oo.ys }))}
-                  >
-                    <XAxis dataKey="x" />
-                    <YAxis />
-                    <Tooltip />
-                    {Array.from(
-                      new Set(o.weeks.flatMap((w) => Object.keys(w.ys)))
-                    )
-                      .map((position) => ({
-                        position,
-                        stroke: POSITION_COLORS[position],
-                      }))
-                      .filter(({ stroke }) => stroke)
-                      .map(({ position, stroke }) => (
-                        <Line
-                          key={position}
-                          type="linear"
-                          dataKey={position}
-                          stroke={stroke}
-                        />
-                      ))}
-                  </LineChart>
-                </ResponsiveContainer>
+              <div style={{ display: "flex" }}>
+                {[true, false].map((key, i) => (
+                  <div key={i} style={{ width: "700px", height: "500px" }}>
+                    <h2>{key ? "avg" : "count"}</h2>
+                    <ResponsiveContainer width="80%" height="80%">
+                      <LineChart
+                        data={o.weeks.map((oo) => ({
+                          x: oo.x,
+                          ...Object.fromEntries(
+                            oo.ys.map(({ position, scores }) => [
+                              position,
+                              key
+                                ? scores.reduce((a, b) => a + b, 0) /
+                                  scores.length
+                                : scores.length,
+                            ])
+                          ),
+                        }))}
+                      >
+                        <XAxis dataKey="x" />
+                        <YAxis />
+                        <Tooltip />
+                        {Array.from(
+                          new Set(
+                            o.weeks.flatMap((w) => w.ys.map((y) => y.position))
+                          )
+                        )
+                          .map((position) => ({
+                            position,
+                            stroke: POSITION_COLORS[position],
+                          }))
+                          .filter(({ stroke }) => stroke)
+                          .map(({ position, stroke }) => (
+                            <Line
+                              key={position}
+                              type="linear"
+                              dataKey={position}
+                              stroke={stroke}
+                            />
+                          ))}
+                      </LineChart>
+                    </ResponsiveContainer>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
