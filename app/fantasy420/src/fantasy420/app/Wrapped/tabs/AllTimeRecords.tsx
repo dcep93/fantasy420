@@ -1,14 +1,7 @@
 import { bubbleStyle } from "..";
 import { WrappedType } from "../../FetchWrapped";
 import allWrapped from "../allWrapped";
-
-import rawStatsData from "./PlayerStats/data.json";
-
-const statsData: {
-  name: string;
-  total: number;
-  years: { year: number; scores: number[] }[];
-}[] = rawStatsData;
+import { playerStatsData } from "./PlayerStats";
 
 export default function AllTimeRecords() {
   return (
@@ -108,14 +101,14 @@ export default function AllTimeRecords() {
         }))
         .concat({
           recordName: "player_week_score",
-          sorted: statsData
+          sorted: playerStatsData
             .flatMap((p) =>
               p.years.flatMap((y) =>
                 y.scores.map((s, w) => ({
                   year: y.year.toString(),
                   weekNum: (w + 1).toString(),
                   name: p.name,
-                  value: s,
+                  value: s || 0,
                 }))
               )
             )
@@ -124,7 +117,7 @@ export default function AllTimeRecords() {
         })
         .concat({
           recordName: "player_season_score",
-          sorted: statsData
+          sorted: playerStatsData
             .flatMap((p) => ({
               year: `${p.years[0].year}-${p.years[p.years.length - 1].year}`,
               weekNum: "0",

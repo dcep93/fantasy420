@@ -2,11 +2,11 @@ import { useState } from "react";
 import { bubbleStyle } from "../..";
 import rawData from "./data.json";
 
-const data: {
+export const playerStatsData: {
   position: string;
   total: number;
   name: string;
-  years: { year: number; scores: number[]; total: number }[];
+  years: { year: number; scores: (number | null)[]; total: number }[];
 }[] = rawData;
 
 const MAX_RESULTS = 100;
@@ -26,7 +26,7 @@ export default function PlayerStats() {
         />
       </div>
       <div style={{ display: "flex" }}>
-        {data
+        {playerStatsData
           .filter((d) => d.name.toLowerCase().includes(nameFilter))
           .sort((a, b) => b.total - a.total)
           .slice(0, MAX_RESULTS)
