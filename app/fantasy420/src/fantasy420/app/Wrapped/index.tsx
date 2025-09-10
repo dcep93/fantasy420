@@ -25,6 +25,7 @@ import PerformanceTotals from "./tabs/PerformanceTotals";
 import PlayerPlot from "./tabs/PlayerPlot";
 import PlayerStats from "./tabs/PlayerStats";
 import PointsAgainst from "./tabs/PointsAgainst";
+import PositionTrends from "./tabs/PositionTrends";
 import Punts from "./tabs/Punts";
 import SecondLost from "./tabs/SecondLost";
 import Simps from "./tabs/Simps";
@@ -72,6 +73,7 @@ function SubWrapped() {
     FantasyCalc,
     PlayerPlot,
     PlayerStats,
+    PositionTrends,
     ManagerPlot,
     Trades,
     WeekTopsAndBottoms,
