@@ -348,44 +348,23 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
         )
         .then((ffMatchups: { [weekNum: string]: MatchupsType }) => ffMatchups),
       // nflTeams
-      Promise.resolve()
-        .then(() =>
-          fetch(
-            `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}?view=proTeamSchedules_wl`,
-            {
-              credentials: "include",
-            }
-          )
-            .then((resp) => resp.json())
-            .then(
-              (resp: {
-                settings: {
-                  proTeams: {
-                    id: number;
-                    name: string;
-                    byeWeek: number;
-                    proGamesByScoringPeriod: {
-                      [scoringPeriodId: string]: {
-                        id: number;
-                        statsOfficial: boolean;
-                      }[];
-                    };
-                  }[];
-                };
-              }) =>
-                resp.settings.proTeams.map((p) => ({
-                  id: p.id.toString(),
-                  name: p.name,
-                  byeWeek: p.byeWeek,
-                  proGamesByScoringPeriod: fromEntries(
-                    Object.entries(p.proGamesByScoringPeriod)
-                      .filter(([_, o]) => o[0].statsOfficial)
-                      .map(([scoringPeriod, o]) => ({
-                        key: scoringPeriod,
-                        value: o[0].id,
-                      }))
-                  ),
-                }))
+      Promise.resolve(first2know.nflTeamsSource)
+        .then(({ main, playerCards }) =>
+          Promise.resolve()
+            .then(() =>
+              main.settings.proTeams.map((p) => ({
+                id: p.id.toString(),
+                name: p.name,
+                byeWeek: p.byeWeek,
+                proGamesByScoringPeriod: fromEntries(
+                  Object.entries(p.proGamesByScoringPeriod)
+                    .filter(([_, o]) => o[0].statsOfficial)
+                    .map(([scoringPeriod, o]) => ({
+                      key: scoringPeriod,
+                      value: o[0].id,
+                    }))
+                ),
+              }))
             )
             .then((nflTeams) =>
               Promise.resolve()
@@ -510,75 +489,42 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
                 .then((ps) => Promise.all(ps))
                 .then((gamesByGameId) => fromEntries(gamesByGameId))
                 .then((gamesByGameId) =>
-                  fetch(
-                    `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=kona_playercard`,
-                    {
-                      headers: {
-                        accept: "application/json",
-                        "x-fantasy-filter": JSON.stringify({
-                          players: {
-                            filterSlotIds: {
-                              value: [16],
-                            },
-                            filterStatsForTopScoringPeriodIds: {
-                              value: 17,
-                            },
-                          },
-                        }),
-                        "x-fantasy-platform":
-                          "kona-PROD-5b4759b3e340d25d9e1ae248daac086ea7c37db7",
-                        "x-fantasy-source": "kona",
-                      },
-                      credentials: "include",
-                    }
-                  )
-                    .then((resp) => resp.json())
-                    .then(
-                      (resp: {
-                        players: {
-                          player: {
-                            proTeamId: number;
-                            stats: {
-                              scoringPeriodId: number;
-                              stats: { [key: string]: number };
-                            }[];
-                          };
-                        }[];
-                      }) =>
-                        Object.keys(
-                          fromEntries(
-                            resp.players
-                              .flatMap((player) => player.player.stats)
-                              .map((s) => ({
-                                key: s.scoringPeriodId.toString(),
-                                value: true,
-                              }))
-                          )
-                        ).map((scoringPeriodId) => ({
-                          key: scoringPeriodId.toString(),
-                          value: fromEntries(
-                            resp.players
-                              .map((player) => ({
-                                teamId: player.player.proTeamId,
-                                stats: player.player.stats.find(
-                                  (s) =>
-                                    s.scoringPeriodId.toString() ===
-                                    scoringPeriodId
-                                )?.stats,
-                              }))
-                              .map(({ teamId, stats }) =>
-                                stats === undefined
-                                  ? undefined
-                                  : {
-                                      key: teamId.toString(),
-                                      value: {
-                                        yardsAllowed: stats["127"] || 0,
-                                        pointsAllowed: stats["187"] || 0,
-                                      },
-                                    }
-                              )
-                          ),
-                        }))
+                  Promise.resolve()
+                    .then(() =>
+                      Object.keys(
+                        fromEntries(
+                          playerCards.players
+                            .flatMap((player) => player.player.stats)
+                            .map((s) => ({
+                              key: s.scoringPeriodId.toString(),
+                              value: true,
+                            }))
+                        )
+                      ).map((scoringPeriodId) => ({
+                        key: scoringPeriodId.toString(),
+                        value: fromEntries(
+                          playerCards.players
+                            .map((player) => ({
+                              teamId: player.player.proTeamId,
+                              stats: player.player.stats.find(
+                                (s) =>
+                                  s.scoringPeriodId.toString() ===
+                                  scoringPeriodId
+                              )?.stats,
+                            }))
+                            .map(({ teamId, stats }) =>
+                              stats === undefined
+                                ? undefined
+                                : {
+                                    key: teamId.toString(),
+                                    value: {
+                                      yardsAllowed: stats["127"] || 0,
+                                      pointsAllowed: stats["187"] || 0,
+                                    },
+                                  }
+                            )
+                        ),
+                      }))
                     )
                     .then((defensesByScoringPeriod) =>
                       fromEntries(defensesByScoringPeriod)
