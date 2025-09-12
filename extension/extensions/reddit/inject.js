@@ -1,5 +1,5 @@
 (() => {
-  const INTERVAL_MS = 1000;
+  const INTERVAL_MS = 60 * 1000;
 
   var data = undefined;
   var written = undefined;

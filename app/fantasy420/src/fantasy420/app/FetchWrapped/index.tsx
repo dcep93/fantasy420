@@ -391,7 +391,7 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
       ([year, nflPlayers, ffTeams, ffMatchups, nflTeams, fantasyCalc]) =>
         ({
           year,
-          nflPlayers,
+          nflPlayers: nflPlayers,
           ffTeams,
           ffMatchups,
           nflTeams,
