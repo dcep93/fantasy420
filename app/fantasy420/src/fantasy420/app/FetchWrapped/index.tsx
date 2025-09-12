@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { printF } from "..";
 import { fetchExtension } from "../Draft/Extension";
-import { clog, currentYear, groupByF } from "../Wrapped";
+import { clog, currentYear, groupByF, selectedWrapped } from "../Wrapped";
 import first2knowF, { First2KnowSource } from "./first2knowF";
 
 // todo ignore current week
@@ -390,6 +390,33 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
           fantasyCalc,
         } as WrappedType)
     )
+    .then((wrapped) => {
+      const values = Object.fromEntries(
+        Object.values(wrapped.ffTeams).map((team) => [
+          team.id,
+          parseFloat(
+            team.rosters["0"].rostered
+              .map((playerId) => wrapped.fantasyCalc.players[playerId] || 0)
+              .reduce((a, b) => a + b, 0)
+              .toFixed(2)
+          ),
+        ])
+      );
+      wrapped.fantasyCalc.history =
+        selectedWrapped()?.fantasyCalc.history || [];
+      if (
+        JSON.stringify(values) !==
+        JSON.stringify(
+          wrapped.fantasyCalc.history[wrapped.fantasyCalc.history.length - 1]
+            ?.values
+        )
+      )
+        wrapped.fantasyCalc.history.push({
+          values,
+          date: Date.now(),
+        });
+      return wrapped;
+    })
     .then(clog);
 }
 
