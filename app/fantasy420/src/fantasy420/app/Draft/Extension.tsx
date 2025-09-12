@@ -29,6 +29,7 @@ function extensionHelper(payload: any): Promise<any> {
 export function fetchExtension(request: {
   url: string;
   json: boolean;
+  maxAgeMs: number;
 }): Promise<any> {
   return extensionHelper({ fetch: request });
 }
