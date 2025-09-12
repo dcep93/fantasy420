@@ -30,6 +30,7 @@ export function fetchExtension(request: {
   url: string;
   json: boolean;
   maxAgeMs: number;
+  options?: any;
 }): Promise<any> {
   return extensionHelper({ fetch: request });
 }
