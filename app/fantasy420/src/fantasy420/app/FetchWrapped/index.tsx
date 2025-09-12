@@ -114,38 +114,6 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
       return prev;
     }, {} as { [key: string]: T[] });
   }
-  const extension_id = "dikaanhdjgmmeajanfokkalonmnpfidm";
-
-  function hasExtensionF(): Promise<boolean> {
-    return new Promise<boolean>((resolve, reject) => {
-      window.chrome.runtime.sendMessage(
-        extension_id,
-        { init: true },
-        (response: any) => {
-          resolve(true);
-        }
-      );
-    }).catch((err: Error) => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-      window.chrome.runtime.lastError;
-      console.error(err);
-      return false;
-    });
-  }
-
-  function ext(data: any): Promise<any> {
-    return new Promise((resolve, reject) =>
-      window.chrome.runtime.sendMessage(extension_id, data, (response: any) => {
-        if (window.chrome.runtime.lastError) {
-          return reject(
-            `chrome.runtime.lastError ${window.chrome.runtime.lastError.message}`
-          );
-        }
-        resolve(response);
-      })
-    );
-  }
-
   function fromEntries<T>(arr: ({ key: string; value: T } | undefined)[]): {
     [key: string]: T;
   } {
@@ -158,10 +126,6 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
     return t;
   }
   return Promise.resolve()
-    .then(hasExtensionF)
-    .then((hasExtension) => {
-      if (!hasExtension) throw new Error("extension not detected");
-    })
     .then(() => [
       // year
       Promise.resolve().then(() => currentYear.toString()),
@@ -523,17 +487,15 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
                 )
                 .then((gameIds) =>
                   gameIds.map((gameId) =>
-                    ext({
-                      fetch: {
-                        url: `https://www.espn.com/nfl/playbyplay/_/gameId/${gameId}`,
-                        maxAgeMs: 1000 * 60 * 60 * 24 * 30,
-                      },
-                    })
+                    fetch(
+                      `https://www.espn.com/nfl/playbyplay/_/gameId/${gameId}`
+                    )
+                      .then((resp) => resp.text())
                       .then(
                         (resp) =>
                           resp.match(
                             /window\['__espnfitt__'\]=(.*?);<\/script>/
-                          )[1]
+                          )![1]
                       )
                       .then((resp) => JSON.parse(resp))
                       .then(
