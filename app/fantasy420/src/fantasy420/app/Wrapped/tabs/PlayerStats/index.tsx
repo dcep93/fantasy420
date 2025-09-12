@@ -2,12 +2,12 @@ import { useState } from "react";
 import { bubbleStyle } from "../..";
 import rawData from "./data.json";
 
-export const playerStatsData: {
+export const playerStatsData = rawData as {
   position: string;
   total: number;
   name: string;
   years: { year: number; scores: (number | null)[]; total: number }[];
-}[] = rawData;
+}[];
 
 const MAX_RESULTS = 100;
 
