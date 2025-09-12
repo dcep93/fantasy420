@@ -82,30 +82,32 @@ export type WrappedType = {
 
 type First2KnowSource = {
   nflPlayersSource: {
-    teams: {
-      roster: {
-        entries: { playerPoolEntry: { player: { stats: {}[] } } };
-      }[][];
-    };
-    players: {
-      player: {
-        id: number;
-        proTeamId: number;
-        onTeamId: number;
-        fullName: string;
-        defaultPositionId: number;
-        stats: {
-          seasonId: number;
-          statSourceId: number;
-          scoringPeriodId: number;
-          appliedTotal: number;
-          appliedAverage: number;
-          appliedStats: { [key: string]: number };
-        }[];
-        ownership: Ownership;
-        injuryStatus?: string;
+    main: {
+      teams: {
+        roster: {
+          entries: { playerPoolEntry: { player: { stats: {}[] } } };
+        }[][];
       };
-    }[];
+      players: {
+        player: {
+          id: number;
+          proTeamId: number;
+          onTeamId: number;
+          fullName: string;
+          defaultPositionId: number;
+          stats: {
+            seasonId: number;
+            statSourceId: number;
+            scoringPeriodId: number;
+            appliedTotal: number;
+            appliedAverage: number;
+            appliedStats: { [key: string]: number };
+          }[];
+          ownership: Ownership;
+          injuryStatus?: string;
+        };
+      }[];
+    };
   };
   ffTeamsSource: {
     main: {
@@ -146,6 +148,18 @@ type First2KnowSource = {
         }[];
       };
     }[];
+  };
+  ffMatchupsSource: {
+    main: {
+      settings: {
+        scheduleSettings: { matchupPeriodCount: number };
+      };
+      schedule: {
+        matchupPeriodId: number;
+        home: { teamId: number };
+        away: { teamId: number };
+      }[];
+    };
   };
 };
 
@@ -273,10 +287,10 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
       Promise.resolve().then(() => currentYear.toString()),
       // nflPlayers
       Promise.resolve(first2know.nflPlayersSource)
-        .then(({ players }) =>
+        .then(({ main }) =>
           Promise.resolve()
             .then(() =>
-              players
+              main.players
                 .map((player) => player.player)
                 .map((player) => ({
                   player,
@@ -429,38 +443,22 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
         )
         .then((teams: { [teamId: string]: FFTeamType }) => teams),
       // ffMatchups
-      Promise.resolve()
-        .then(() =>
-          fetch(
-            `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mMatchupScore&view=mSettings`,
-            {
-              credentials: "include",
-            }
-          )
-            .then((resp) => resp.json())
-            .then(
-              (resp: {
-                settings: {
-                  scheduleSettings: { matchupPeriodCount: number };
-                };
-                schedule: {
-                  matchupPeriodId: number;
-                  home: { teamId: number };
-                  away: { teamId: number };
-                }[];
-              }) =>
-                Array.from(
-                  new Array(resp.settings.scheduleSettings.matchupPeriodCount)
-                )
-                  .map((_, i) => i + 1)
-                  .map((matchupPeriodId) => ({
-                    key: matchupPeriodId.toString(),
-                    value: resp.schedule
-                      .filter((s) => s.matchupPeriodId === matchupPeriodId)
-                      .map((s) =>
-                        [s.home, s.away].map((t) => t?.teamId.toString())
-                      ),
-                  }))
+      Promise.resolve(first2know.ffMatchupsSource)
+        .then(({ main }) =>
+          Promise.resolve()
+            .then(() =>
+              Array.from(
+                new Array(main.settings.scheduleSettings.matchupPeriodCount)
+              )
+                .map((_, i) => i + 1)
+                .map((matchupPeriodId) => ({
+                  key: matchupPeriodId.toString(),
+                  value: main.schedule
+                    .filter((s) => s.matchupPeriodId === matchupPeriodId)
+                    .map((s) =>
+                      [s.home, s.away].map((t) => t?.teamId.toString())
+                    ),
+                }))
             )
             .then((matchups) => fromEntries(matchups))
         )
@@ -789,7 +787,7 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
     .then(clog);
 }
 
-function publicGetWrapped(currentYear: string): Promise<WrappedType> {
+export function publicGetWrapped(currentYear: string): Promise<WrappedType> {
   const leagueId =
     new URL(window.document.location.href).searchParams.get("leagueId") ||
     203836968;
