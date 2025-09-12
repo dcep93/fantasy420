@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { printF } from "..";
-import { currentYear, groupByF } from "../Wrapped";
+import { fetchExtension } from "../Draft/Extension";
+import { clog, currentYear, groupByF } from "../Wrapped";
 import first2knowF, { First2KnowSource } from "./first2knowF";
 
 // todo ignore current week
@@ -104,12 +105,6 @@ export default function FetchWrapped() {
 
 export function getWrapped(currentYear: string): Promise<WrappedType> {
   return Promise.resolve()
-    .then(hasExtensionF)
-    .then((hasExtension) => {
-      if (!hasExtension) {
-        throw new Error("no extension detected");
-      }
-    })
     .then(() =>
       fetch("https://chromatic-realm-466116-n0.appspot.com/fetch_wrapped")
     )
@@ -161,11 +156,10 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
                 )
                 .then((gameIds) =>
                   gameIds.map((gameId) =>
-                    ext({
-                      fetch: {
-                        url: `https://www.espn.com/nfl/playbyplay/_/gameId/${gameId}`,
-                        maxAgeMs: 1000 * 60 * 60 * 24 * 30,
-                      },
+                    fetchExtension({
+                      url: `https://www.espn.com/nfl/playbyplay/_/gameId/${gameId}`,
+                      json: false,
+                      maxAgeMs: 1000 * 60 * 60 * 24 * 30,
                     })
                       .then(
                         (resp) =>
@@ -399,45 +393,10 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
     .then(clog);
 }
 
-const extension_id = "dikaanhdjgmmeajanfokkalonmnpfidm";
-
-function hasExtensionF(): Promise<boolean> {
-  return new Promise<boolean>((resolve, reject) => {
-    window.chrome.runtime.sendMessage(
-      extension_id,
-      { init: true },
-      (response: any) => {
-        resolve(true);
-      }
-    );
-  }).catch((err: Error) => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    window.chrome.runtime.lastError;
-    console.error(err);
-    return false;
-  });
-}
-
-function ext(data: any): Promise<any> {
-  return new Promise((resolve, reject) =>
-    window.chrome.runtime.sendMessage(extension_id, data, (response: any) => {
-      if (window.chrome.runtime.lastError) {
-        return reject(
-          `chrome.runtime.lastError ${window.chrome.runtime.lastError.message}`
-        );
-      }
-      resolve(response);
-    })
-  );
-}
 function fromEntries<T>(arr: ({ key: string; value: T } | undefined)[]): {
   [key: string]: T;
 } {
   return Object.fromEntries(
     arr.filter((a) => a !== undefined).map((a) => [a!.key, a!.value])
   );
-}
-function clog<T>(t: T): T {
-  console.log(t);
-  return t;
 }
