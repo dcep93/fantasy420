@@ -1,264 +1,19 @@
-import { useEffect, useState } from "react";
-import { printF } from "..";
-import { currentYear } from "../Wrapped";
+import {
+  FFTeamType,
+  MatchupsType,
+  NFLPlayerType,
+  NFLTeamType,
+  Ownership,
+  WrappedType,
+} from ".";
 
-// todo ignore current week
-export type NFLPlayerType = {
-  id: string;
-  name: string;
-  nflTeamId: string;
-  position: string;
-  scores: { [weekNum: string]: number };
-  total: number;
-  average: number;
-  injuryStatus?: string;
-  ownership?: Ownership;
-};
-
-export type Ownership = {
-  averageDraftPosition: number;
-  auctionValueAverage: number;
-  percentOwned: number;
-};
-
-export type NFLTeamType = {
-  id: string;
-  name: string;
-  byeWeek: number;
-  nflGamesByScoringPeriod: {
-    [weekNum: string]:
-      | {
-          opp: string;
-          fieldGoals: (number | null)[];
-          pointsAllowed: number;
-          yardsAllowed: number;
-          drives: (string | null)[];
-          punts: { landed: number; distance: number }[];
-          punter: string;
-        }
-      | undefined;
-  };
-};
-
-export type FFTeamType = {
-  id: string;
-  name: string;
-  rosters: {
-    [weekNum: string]: {
-      weekNum: string;
-      starting: string[];
-      rostered: string[];
-    };
-  };
-  draft: { playerId: number; pickIndex: number }[];
-  pickOrder?: number;
-};
-
-export type MatchupsType = string[][];
-
-export type FantasyCalcHistoryType = {
-  date: number;
-  values: { [teamId: string]: number };
-}[];
-
-export type WrappedType = {
-  year: string;
-  nflPlayers: {
-    [id: string]: NFLPlayerType;
-  };
-  nflTeams: {
-    [id: string]: NFLTeamType;
-  };
-  ffTeams: {
-    [id: string]: FFTeamType;
-  };
-  ffMatchups: { [weekNum: string]: MatchupsType };
-  fantasyCalc: {
-    timestamp: number;
-    history: FantasyCalcHistoryType;
-    players: { [espnId: string]: number };
-  };
-};
-
-type First2KnowSource = {
-  nflPlayersSource: {
-    main: {
-      teams: {
-        roster: {
-          entries: { playerPoolEntry: { player: { stats: {}[] } } };
-        }[][];
-      };
-      players: {
-        player: {
-          id: number;
-          proTeamId: number;
-          onTeamId: number;
-          fullName: string;
-          defaultPositionId: number;
-          stats: {
-            seasonId: number;
-            statSourceId: number;
-            scoringPeriodId: number;
-            appliedTotal: number;
-            appliedAverage: number;
-            appliedStats: { [key: string]: number };
-          }[];
-          ownership: Ownership;
-          injuryStatus?: string;
-        };
-      }[];
-    };
-  };
-  ffTeamsSource: {
-    main: {
-      draftDetail: { picks: { playerId: number; teamId: number }[] };
-      teams: {
-        id: number;
-        roster: { entries: { playerId: number }[] };
-      }[];
-      status: { latestScoringPeriod: number };
-      settings: { draftSettings: { pickOrder: number[] } };
-    };
-    weeks: {
-      weekNum: number;
-      week: {
-        teams: {
-          id: number;
-          name: string;
-        }[];
-        schedule: {
-          home: {
-            rosterForCurrentScoringPeriod: {
-              entries: {
-                playerId: number;
-                lineupSlotId: number;
-              }[];
-            };
-            teamId: number;
-          };
-          away: {
-            rosterForCurrentScoringPeriod: {
-              entries: {
-                playerId: number;
-                lineupSlotId: number;
-              }[];
-            };
-            teamId: number;
-          };
-        }[];
-      };
-    }[];
-  };
-  ffMatchupsSource: {
-    main: {
-      settings: {
-        scheduleSettings: { matchupPeriodCount: number };
-      };
-      schedule: {
-        matchupPeriodId: number;
-        home: { teamId: number };
-        away: { teamId: number };
-      }[];
-    };
-  };
-};
-
-var initialized = false;
-export default function FetchWrapped() {
-  const [wrapped, update] = useState("fetching...");
-  useEffect(() => {
-    if (initialized) return;
-    initialized = true;
-    getWrapped(currentYear)
-      .then((wrapped) => JSON.stringify(wrapped))
-      .then(update)
-      .catch((e: Error) => update(e.toString()));
-  }, [update]);
-  return (
-    <div>
-      <pre style={{ whiteSpace: "pre-wrap", fontSize: "xx-small" }}>
-        {printF(first2knowF, [currentYear])}
-      </pre>
-      <pre style={{ whiteSpace: "pre-wrap" }}>{wrapped}</pre>
-    </div>
-  );
-}
-
-function first2knowF(currentYear: string): Promise<First2KnowSource> {
-  const leagueId = 203836968;
-  return Promise.resolve()
-    .then(() => [
-      Promise.resolve()
-        .then(() =>
-          fetch(
-            `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=kona_playercard`,
-            {
-              headers: {
-                accept: "application/json",
-                "x-fantasy-filter": JSON.stringify({
-                  players: {
-                    filterStatsForTopScoringPeriodIds: {
-                      value: 17,
-                      additionalValue: [`00${currentYear}`, `10${currentYear}`],
-                    },
-                  },
-                }),
-                "x-fantasy-platform":
-                  "kona-PROD-5b4759b3e340d25d9e1ae248daac086ea7c37db7",
-                "x-fantasy-source": "kona",
-              },
-              credentials: "include",
-            }
-          ).then((resp) => resp.json())
-        )
-        .then((v) => ["nflPlayersSource", v]),
-      Promise.resolve()
-        .then(() =>
-          fetch(
-            `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mDraftDetail&view=mRoster`,
-            { credentials: "include" }
-          )
-            .then((resp) => resp.json())
-            .then(
-              (main: {
-                draftDetail: { picks: { playerId: number; teamId: number }[] };
-                teams: {
-                  id: number;
-                  roster: { entries: { playerId: number }[] };
-                }[];
-                status: { latestScoringPeriod: number };
-                settings: { draftSettings: { pickOrder: number[] } };
-              }) =>
-                Promise.resolve()
-                  .then(() =>
-                    Array.from(new Array(main.status.latestScoringPeriod))
-                      .map((_, i) => i + 1)
-                      .map((weekNum) =>
-                        fetch(
-                          `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mScoreboard&scoringPeriodId=${weekNum}`,
-                          {
-                            credentials: "include",
-                          }
-                        )
-                          .then((resp) => resp.json())
-                          .then((week) => ({ weekNum, week }))
-                      )
-                  )
-
-                  .then((ps) => Promise.all(ps))
-                  .then((weeks) => ({ main, weeks }))
-            )
-        )
-        .then((v) => ["ffTeamsSource", v]),
-    ])
-    .then((ps) => Promise.all(ps))
-    .then(Object.fromEntries);
-}
-
-export function getWrapped(currentYear: string): Promise<WrappedType> {
+export default function publicGetWrapped(
+  currentYear: string
+): Promise<WrappedType> {
   const leagueId =
     new URL(window.document.location.href).searchParams.get("leagueId") ||
     203836968;
+
   const extension_id = "dikaanhdjgmmeajanfokkalonmnpfidm";
 
   function hasExtensionF(): Promise<boolean> {
@@ -310,6 +65,7 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
     console.log(t);
     return t;
   }
+
   return Promise.resolve()
     .then(hasExtensionF)
     .then((hasExtension) => {
@@ -317,17 +73,63 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
         throw new Error("no extension detected");
       }
     })
-    .then(() => fetch("first2know_url/fantasy420"))
-    .then((resp) => resp.json())
-    .then((first2know: First2KnowSource) => [
+    .then(() => [
       // year
       Promise.resolve().then(() => currentYear.toString()),
       // nflPlayers
-      Promise.resolve(first2know.nflPlayersSource)
-        .then(({ main }) =>
-          Promise.resolve()
-            .then(() =>
-              main.players
+      Promise.resolve()
+        .then(() =>
+          fetch(
+            `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=kona_playercard`,
+            {
+              headers: {
+                accept: "application/json",
+                "x-fantasy-filter": JSON.stringify({
+                  players: {
+                    filterStatsForTopScoringPeriodIds: {
+                      value: 17,
+                      additionalValue: [`00${currentYear}`, `10${currentYear}`],
+                    },
+                  },
+                }),
+                "x-fantasy-platform":
+                  "kona-PROD-5b4759b3e340d25d9e1ae248daac086ea7c37db7",
+                "x-fantasy-source": "kona",
+              },
+              credentials: "include",
+            }
+          )
+            .then((resp) => resp.json())
+            .then(
+              (resp: {
+                teams: {
+                  roster: {
+                    entries: { playerPoolEntry: { player: { stats: {}[] } } };
+                  }[][];
+                };
+                players: {
+                  player: {
+                    id: number;
+                    proTeamId: number;
+                    onTeamId: number;
+                    fullName: string;
+                    defaultPositionId: number;
+                    stats: {
+                      seasonId: number;
+                      statSourceId: number;
+                      scoringPeriodId: number;
+                      appliedTotal: number;
+                      appliedAverage: number;
+                      appliedStats: { [key: string]: number };
+                    }[];
+                    ownership: Ownership;
+                    injuryStatus?: string;
+                  };
+                }[];
+              }) => resp
+            )
+            .then((resp) =>
+              resp.players
                 .map((player) => player.player)
                 .map((player) => ({
                   player,
@@ -394,85 +196,142 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
         )
         .then((players: { [id: string]: NFLPlayerType }) => players),
       // ffTeams
-      Promise.resolve(first2know.ffTeamsSource)
-        .then(({ main, weeks }) =>
-          Promise.resolve()
-            .then(() =>
-              weeks.map(({ week, weekNum }) =>
+      Promise.resolve()
+        .then(() =>
+          fetch(
+            `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mDraftDetail&view=mRoster`,
+            { credentials: "include" }
+          )
+            .then((resp) => resp.json())
+            .then(
+              (resp: {
+                draftDetail: { picks: { playerId: number; teamId: number }[] };
+                teams: {
+                  id: number;
+                  roster: { entries: { playerId: number }[] };
+                }[];
+                status: { latestScoringPeriod: number };
+                settings: { draftSettings: { pickOrder: number[] } };
+              }) =>
                 Promise.resolve()
                   .then(() =>
-                    week.teams.map((team) => ({
-                      id: team.id.toString(),
-                      name: team.name,
-                      schedule: {
-                        weekNum,
-                        ...week.schedule
-                          .flatMap((matchup) => [matchup.home, matchup.away])
-                          .find(
-                            (s) =>
-                              s?.rosterForCurrentScoringPeriod &&
-                              s.teamId === team.id
-                          )!,
-                      },
-                    }))
-                  )
-                  .then((week) =>
-                    fromEntries(
-                      week.map((team) => ({
-                        key: team.id,
-                        value: team,
-                      }))
-                    )
-                  )
-              )
-            )
-            .then((ps) => Promise.all(ps))
-            .then((weeks) =>
-              Object.values(weeks[0] || {}).map((team) => ({
-                id: team.id,
-                name: team.name,
-                draft: main.draftDetail.picks
-                  .map((p, pickIndex) => ({ ...p, pickIndex }))
-                  .filter((p) => p.teamId === parseInt(team.id))
-                  .map(({ playerId, pickIndex }) => ({
-                    playerId,
-                    pickIndex,
-                  })),
-                pickOrder: main.settings.draftSettings.pickOrder.indexOf(
-                  parseInt(team.id)
-                ),
-                rosters: fromEntries(
-                  weeks
-                    .map((week) => week[team.id].schedule)
-                    .filter((s) => s.rosterForCurrentScoringPeriod)
-                    .map((s) => ({
-                      weekNum: s.weekNum.toString(),
-                      starting: s.rosterForCurrentScoringPeriod.entries
-                        .filter(
-                          (e) =>
-                            ![
-                              20, // bench
-                              21, // IR
-                            ].includes(e.lineupSlotId)
+                    Array.from(new Array(resp.status.latestScoringPeriod))
+                      .map((_, i) => i + 1)
+                      .map((weekNum) =>
+                        fetch(
+                          `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mScoreboard&scoringPeriodId=${weekNum}`,
+                          {
+                            credentials: "include",
+                          }
                         )
-                        .map((e) => e.playerId.toString()),
-                      rostered: s.rosterForCurrentScoringPeriod.entries.map(
-                        (e) => e.playerId.toString()
+                          .then((resp) => resp.json())
+                          .then(
+                            (resp: {
+                              teams: {
+                                id: number;
+                                name: string;
+                              }[];
+                              schedule: {
+                                home: {
+                                  rosterForCurrentScoringPeriod: {
+                                    entries: {
+                                      playerId: number;
+                                      lineupSlotId: number;
+                                    }[];
+                                  };
+                                  teamId: number;
+                                };
+                                away: {
+                                  rosterForCurrentScoringPeriod: {
+                                    entries: {
+                                      playerId: number;
+                                      lineupSlotId: number;
+                                    }[];
+                                  };
+                                  teamId: number;
+                                };
+                              }[];
+                            }) =>
+                              Promise.resolve()
+                                .then(() =>
+                                  resp.teams.map((team) => ({
+                                    id: team.id.toString(),
+                                    name: team.name,
+                                    schedule: {
+                                      weekNum,
+                                      ...resp.schedule
+                                        .flatMap((matchup) => [
+                                          matchup.home,
+                                          matchup.away,
+                                        ])
+                                        .find(
+                                          (s) =>
+                                            s?.rosterForCurrentScoringPeriod &&
+                                            s.teamId === team.id
+                                        )!,
+                                    },
+                                  }))
+                                )
+                                .then((week) =>
+                                  fromEntries(
+                                    week.map((team) => ({
+                                      key: team.id,
+                                      value: team,
+                                    }))
+                                  )
+                                )
+                          )
+                      )
+                  )
+                  .then((ps) => Promise.all(ps))
+                  .then((weeks) =>
+                    Object.values(weeks[0] || {}).map((team) => ({
+                      id: team.id,
+                      name: team.name,
+                      draft: resp.draftDetail.picks
+                        .map((p, pickIndex) => ({ ...p, pickIndex }))
+                        .filter((p) => p.teamId === parseInt(team.id))
+                        .map(({ playerId, pickIndex }) => ({
+                          playerId,
+                          pickIndex,
+                        })),
+                      pickOrder: resp.settings.draftSettings.pickOrder.indexOf(
+                        parseInt(team.id)
+                      ),
+                      rosters: fromEntries(
+                        weeks
+                          .map((week) => week[team.id].schedule)
+                          .filter((s) => s.rosterForCurrentScoringPeriod)
+                          .map((s) => ({
+                            weekNum: s.weekNum.toString(),
+                            starting: s.rosterForCurrentScoringPeriod.entries
+                              .filter(
+                                (e) =>
+                                  ![
+                                    20, // bench
+                                    21, // IR
+                                  ].includes(e.lineupSlotId)
+                              )
+                              .map((e) => e.playerId.toString()),
+                            rostered:
+                              s.rosterForCurrentScoringPeriod.entries.map((e) =>
+                                e.playerId.toString()
+                              ),
+                          }))
+                          .concat({
+                            weekNum: "0",
+                            starting: [],
+                            rostered: resp.teams
+                              .find((t) => t.id.toString() === team.id)!
+                              .roster.entries.map((e) => e.playerId.toString()),
+                          })
+                          .map((roster) => ({
+                            key: roster.weekNum,
+                            value: roster,
+                          }))
                       ),
                     }))
-                    .concat({
-                      weekNum: "0",
-                      starting: [],
-                      rostered: main.teams
-                        .find((t) => t.id.toString() === team.id)!
-                        .roster.entries.map((e) => e.playerId.toString()),
-                    })
-                    .map((roster) => ({
-                      key: roster.weekNum,
-                      value: roster,
-                    }))
-                ),
-              }))
+                  )
             )
             .then((teams) =>
               fromEntries(teams.map((team) => ({ key: team.id, value: team })))
@@ -480,22 +339,38 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
         )
         .then((teams: { [teamId: string]: FFTeamType }) => teams),
       // ffMatchups
-      Promise.resolve(first2know.ffMatchupsSource)
-        .then(({ main }) =>
-          Promise.resolve()
-            .then(() =>
-              Array.from(
-                new Array(main.settings.scheduleSettings.matchupPeriodCount)
-              )
-                .map((_, i) => i + 1)
-                .map((matchupPeriodId) => ({
-                  key: matchupPeriodId.toString(),
-                  value: main.schedule
-                    .filter((s) => s.matchupPeriodId === matchupPeriodId)
-                    .map((s) =>
-                      [s.home, s.away].map((t) => t?.teamId.toString())
-                    ),
-                }))
+      Promise.resolve()
+        .then(() =>
+          fetch(
+            `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mMatchupScore&view=mSettings`,
+            {
+              credentials: "include",
+            }
+          )
+            .then((resp) => resp.json())
+            .then(
+              (resp: {
+                settings: {
+                  scheduleSettings: { matchupPeriodCount: number };
+                };
+                schedule: {
+                  matchupPeriodId: number;
+                  home: { teamId: number };
+                  away: { teamId: number };
+                }[];
+              }) =>
+                Array.from(
+                  new Array(resp.settings.scheduleSettings.matchupPeriodCount)
+                )
+                  .map((_, i) => i + 1)
+                  .map((matchupPeriodId) => ({
+                    key: matchupPeriodId.toString(),
+                    value: resp.schedule
+                      .filter((s) => s.matchupPeriodId === matchupPeriodId)
+                      .map((s) =>
+                        [s.home, s.away].map((t) => t?.teamId.toString())
+                      ),
+                  }))
             )
             .then((matchups) => fromEntries(matchups))
         )
