@@ -260,6 +260,19 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
     new URL(window.document.location.href).searchParams.get("leagueId") ||
     203836968;
 
+  function ext(data: any): Promise<any> {
+    return new Promise((resolve, reject) =>
+      window.chrome.runtime.sendMessage(extension_id, data, (response: any) => {
+        if (window.chrome.runtime.lastError) {
+          return reject(
+            `chrome.runtime.lastError ${window.chrome.runtime.lastError.message}`
+          );
+        }
+        resolve(response);
+      })
+    );
+  }
+
   function groupByF<T>(ts: T[], f: (t: T) => string): { [key: string]: T[] } {
     return ts.reduce((prev, curr) => {
       const key = f(curr);
@@ -522,15 +535,17 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
                 )
                 .then((gameIds) =>
                   gameIds.map((gameId) =>
-                    fetch(
-                      `https://www.espn.com/nfl/playbyplay/_/gameId/${gameId}`
-                    )
-                      .then((resp) => resp.text())
+                    ext({
+                      fetch: {
+                        url: `https://www.espn.com/nfl/playbyplay/_/gameId/${gameId}`,
+                        maxAgeMs: 1000 * 60 * 60 * 24 * 30,
+                      },
+                    })
                       .then(
                         (resp) =>
                           resp.match(
                             /window\['__espnfitt__'\]=(.*?);<\/script>/
-                          )![1]
+                          )[1]
                       )
                       .then((resp) => JSON.parse(resp))
                       .then(
@@ -791,6 +806,19 @@ export function publicGetWrapped(currentYear: string): Promise<WrappedType> {
   const leagueId =
     new URL(window.document.location.href).searchParams.get("leagueId") ||
     203836968;
+
+  function ext(data: any): Promise<any> {
+    return new Promise((resolve, reject) =>
+      window.chrome.runtime.sendMessage(extension_id, data, (response: any) => {
+        if (window.chrome.runtime.lastError) {
+          return reject(
+            `chrome.runtime.lastError ${window.chrome.runtime.lastError.message}`
+          );
+        }
+        resolve(response);
+      })
+    );
+  }
 
   function groupByF<T>(ts: T[], f: (t: T) => string): { [key: string]: T[] } {
     return ts.reduce((prev, curr) => {
@@ -1173,15 +1201,17 @@ export function publicGetWrapped(currentYear: string): Promise<WrappedType> {
                 )
                 .then((gameIds) =>
                   gameIds.map((gameId) =>
-                    fetch(
-                      `https://www.espn.com/nfl/playbyplay/_/gameId/${gameId}`
-                    )
-                      .then((resp) => resp.text())
+                    ext({
+                      fetch: {
+                        url: `https://www.espn.com/nfl/playbyplay/_/gameId/${gameId}`,
+                        maxAgeMs: 1000 * 60 * 60 * 24 * 30,
+                      },
+                    })
                       .then(
                         (resp) =>
                           resp.match(
                             /window\['__espnfitt__'\]=(.*?);<\/script>/
-                          )![1]
+                          )[1]
                       )
                       .then((resp) => JSON.parse(resp))
                       .then(
