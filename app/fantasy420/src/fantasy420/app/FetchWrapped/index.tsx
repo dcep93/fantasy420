@@ -371,11 +371,7 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
                 )
             )
         )
-        .then((players) => ({ players, timestamp: Date.now() }))
-        .then((fantasyCalc) => {
-          // TODO history
-          return fantasyCalc;
-        }),
+        .then((players) => ({ players, timestamp: Date.now() })),
     ])
     .then((ps) => ps.map((p) => p.catch((e) => console.error(e))))
     .then((ps) => Promise.all(ps))
