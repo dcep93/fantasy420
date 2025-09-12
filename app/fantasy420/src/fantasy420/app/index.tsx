@@ -29,11 +29,11 @@ export default function index() {
 
 export function printF(
   f: (...args: any[]) => any,
-  argsStr: string = ""
+  argsArr: any[] = []
 ): string {
   return `${f
     .toString()
     .split("\n")
     .map((i) => i.replace(/\/\/$/, "").split("// ")[0].trim())
-    .join(" ")}; ${f.name}(${argsStr})`;
+    .join(" ")}; ${f.name}(${argsArr.map((a) => JSON.stringify(a)).join(",")})`;
 }
