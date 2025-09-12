@@ -103,9 +103,6 @@ export default function FetchWrapped() {
 }
 
 export function getWrapped(currentYear: string): Promise<WrappedType> {
-  const leagueId =
-    new URL(window.document.location.href).searchParams.get("leagueId") ||
-    203836968;
   const extension_id = "dikaanhdjgmmeajanfokkalonmnpfidm";
 
   function hasExtensionF(): Promise<boolean> {
@@ -164,7 +161,9 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
         throw new Error("no extension detected");
       }
     })
-    .then(() => fetch("first2know_url/fantasy420"))
+    .then(() =>
+      fetch("https://chromatic-realm-466116-n0.appspot.com/fetch_wrapped")
+    )
     .then((resp) => resp.json())
     .then((first2know: First2KnowSource) => [
       // year

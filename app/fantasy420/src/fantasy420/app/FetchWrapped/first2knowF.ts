@@ -3,6 +3,7 @@ import { Ownership } from ".";
 export default function first2knowF(
   currentYear: string
 ): Promise<First2KnowSource> {
+  // todo currentYear and leagueId arguments
   const leagueId = 203836968;
   return Promise.resolve()
     .then(() => [
