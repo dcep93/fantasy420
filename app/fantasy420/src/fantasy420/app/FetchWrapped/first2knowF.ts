@@ -1,4 +1,4 @@
-import { FFTeamType, NFLPlayerType, Ownership } from ".";
+import { FFTeamType, MatchupsType, NFLPlayerType, Ownership } from ".";
 
 export default function first2knowF(
   currentYear: string
@@ -6,14 +6,6 @@ export default function first2knowF(
   // todo currentYear and leagueId arguments
   const leagueId = 203836968;
 
-  function groupByF<T>(ts: T[], f: (t: T) => string): { [key: string]: T[] } {
-    return ts.reduce((prev, curr) => {
-      const key = f(curr);
-      if (!prev[key]) prev[key] = [];
-      prev[key]!.push(curr);
-      return prev;
-    }, {} as { [key: string]: T[] });
-  }
   function fromEntries<T>(arr: ({ key: string; value: T } | undefined)[]): {
     [key: string]: T;
   } {
@@ -335,7 +327,6 @@ export default function first2knowF(
             .then((matchups) => fromEntries(matchups))
         )
         .then((v) => ["ffMatchups", v]),
-      ,
       // nflTeamsSource
       Promise.resolve()
         .then(() =>
@@ -382,7 +373,7 @@ export default function first2knowF(
 export type First2KnowSource = {
   nflPlayers: { [id: string]: NFLPlayerType };
   ffTeams: { [id: string]: FFTeamType };
-  ffMatchups: { [id: string]: FFTeamType };
+  ffMatchups: { [weekNum: string]: MatchupsType };
   nflTeamsSource: {
     main: {
       settings: {

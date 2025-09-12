@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { printF } from "..";
-import { currentYear } from "../Wrapped";
+import { currentYear, groupByF } from "../Wrapped";
 import first2knowF, { First2KnowSource } from "./first2knowF";
 
 // todo ignore current week
@@ -377,7 +377,11 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
                 )
             )
         )
-        .then((players) => ({ players, timestamp: Date.now() })),
+        .then((players) => ({ players, timestamp: Date.now() }))
+        .then((fantasyCalc) => {
+          // TODO history
+          return fantasyCalc;
+        }),
     ])
     .then((ps) => ps.map((p) => p.catch((e) => console.error(e))))
     .then((ps) => Promise.all(ps))
@@ -425,14 +429,6 @@ function ext(data: any): Promise<any> {
       resolve(response);
     })
   );
-}
-function groupByF<T>(ts: T[], f: (t: T) => string): { [key: string]: T[] } {
-  return ts.reduce((prev, curr) => {
-    const key = f(curr);
-    if (!prev[key]) prev[key] = [];
-    prev[key]!.push(curr);
-    return prev;
-  }, {} as { [key: string]: T[] });
 }
 function fromEntries<T>(arr: ({ key: string; value: T } | undefined)[]): {
   [key: string]: T;
