@@ -104,23 +104,24 @@ export default function FetchWrapped() {
 }
 
 export function getWrapped(currentYear: string): Promise<WrappedType> {
-  return fetchExtension({
-    url: "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/203836968/segments/0/leagues/2025?view=mDraftDetail&view=mRoster",
-    maxAgeMs: 0,
-    json: true,
-    options: { Cookie: localStorage.getItem("cookie:espn_s2") },
-  }).then(clog);
   const leagueId = 203836968;
   return Promise.resolve()
     .then(() =>
-      helper(Number(currentYear), leagueId.toString(), (url, options) =>
-        fetchExtension({
-          url,
-          ...options,
-          json: false,
-          Cookie: localStorage.getItem("cookie:espn_s2"),
-        })
-      )
+      helper({
+        currentYear,
+        leagueId,
+        fetchF: (url, options) =>
+          fetchExtension(
+            clog({
+              url,
+              options: {
+                ...options,
+                Cookie: localStorage.getItem("cookie:espn_s2"),
+              },
+              ...options,
+            })
+          ),
+      })
     )
     .then((h: HelperType) => [
       // year

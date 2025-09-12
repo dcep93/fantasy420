@@ -1,10 +1,11 @@
 import { FFTeamType, MatchupsType, NFLPlayerType, Ownership } from ".";
 
-export default function helper(
-  leagueId: number,
-  currentYear: string,
-  fetchF: (url: string, options: any) => Promise<string>
-): Promise<HelperType> {
+export default function helper(params: {
+  leagueId: number;
+  currentYear: string;
+  fetchF: (url: string, options: any) => Promise<string>;
+}): Promise<HelperType> {
+  const { leagueId, currentYear, fetchF } = params;
   function fromEntries<T>(arr: ({ key: string; value: T } | undefined)[]): {
     [key: string]: T;
   } {
@@ -35,7 +36,7 @@ export default function helper(
                   "kona-PROD-5b4759b3e340d25d9e1ae248daac086ea7c37db7",
                 "x-fantasy-source": "kona",
               },
-              credentials: "include",
+              maxAgeMs: 60 * 1000,
             }
           )
             .then((resp) => JSON.parse(resp))
@@ -139,7 +140,9 @@ export default function helper(
         .then(() =>
           fetchF(
             `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mDraftDetail&view=mRoster`,
-            { credentials: "include" }
+            {
+              maxAgeMs: 5 * 60 * 1000,
+            }
           )
             .then((resp) => JSON.parse(resp))
             .then(
@@ -160,7 +163,7 @@ export default function helper(
                         fetchF(
                           `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mScoreboard&scoringPeriodId=${weekNum}`,
                           {
-                            credentials: "include",
+                            maxAgeMs: 24 * 60 * 60 * 1000,
                           }
                         )
                           .then((resp) => JSON.parse(resp))
@@ -295,7 +298,7 @@ export default function helper(
           fetchF(
             `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mMatchupScore&view=mSettings`,
             {
-              credentials: "include",
+              maxAgeMs: 24 * 60 * 60 * 1000,
             }
           )
             .then((resp) => JSON.parse(resp))
@@ -331,9 +334,7 @@ export default function helper(
         .then(() =>
           fetchF(
             `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}?view=proTeamSchedules_wl`,
-            {
-              credentials: "include",
-            }
+            {}
           )
             .then((resp) => JSON.parse(resp))
             .then((main) =>
@@ -356,7 +357,7 @@ export default function helper(
                       "kona-PROD-5b4759b3e340d25d9e1ae248daac086ea7c37db7",
                     "x-fantasy-source": "kona",
                   },
-                  credentials: "include",
+                  maxAgeMs: 60 * 1000,
                 }
               )
                 .then((resp) => JSON.parse(resp))
