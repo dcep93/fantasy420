@@ -103,57 +103,6 @@ export default function FetchWrapped() {
 }
 
 export function getWrapped(currentYear: string): Promise<WrappedType> {
-  const extension_id = "dikaanhdjgmmeajanfokkalonmnpfidm";
-
-  function hasExtensionF(): Promise<boolean> {
-    return new Promise<boolean>((resolve, reject) => {
-      window.chrome.runtime.sendMessage(
-        extension_id,
-        { init: true },
-        (response: any) => {
-          resolve(true);
-        }
-      );
-    }).catch((err: Error) => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-      window.chrome.runtime.lastError;
-      console.error(err);
-      return false;
-    });
-  }
-
-  function ext(data: any): Promise<any> {
-    return new Promise((resolve, reject) =>
-      window.chrome.runtime.sendMessage(extension_id, data, (response: any) => {
-        if (window.chrome.runtime.lastError) {
-          return reject(
-            `chrome.runtime.lastError ${window.chrome.runtime.lastError.message}`
-          );
-        }
-        resolve(response);
-      })
-    );
-  }
-
-  function groupByF<T>(ts: T[], f: (t: T) => string): { [key: string]: T[] } {
-    return ts.reduce((prev, curr) => {
-      const key = f(curr);
-      if (!prev[key]) prev[key] = [];
-      prev[key]!.push(curr);
-      return prev;
-    }, {} as { [key: string]: T[] });
-  }
-  function fromEntries<T>(arr: ({ key: string; value: T } | undefined)[]): {
-    [key: string]: T;
-  } {
-    return Object.fromEntries(
-      arr.filter((a) => a !== undefined).map((a) => [a!.key, a!.value])
-    );
-  }
-  function clog<T>(t: T): T {
-    console.log(t);
-    return t;
-  }
   return Promise.resolve()
     .then(hasExtensionF)
     .then((hasExtension) => {
@@ -169,76 +118,7 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
       // year
       Promise.resolve().then(() => currentYear.toString()),
       // nflPlayers
-      Promise.resolve(first2know.nflPlayersSource)
-        .then(({ main }) =>
-          Promise.resolve()
-            .then(() =>
-              main.players
-                .map((player) => player.player)
-                .map((player) => ({
-                  player,
-                  seasonStats: player.stats.find(
-                    (s) => s.scoringPeriodId === 0 && s.statSourceId === 0
-                  ),
-                }))
-                .map(({ player, seasonStats }) => ({
-                  id: player.id.toString(),
-                  nflTeamId: player.proTeamId.toString(),
-                  name: player.fullName,
-                  position:
-                    {
-                      1: "QB",
-                      2: "RB",
-                      3: "WR",
-                      4: "TE",
-                      5: "K",
-                      16: "DST",
-                    }[player.defaultPositionId] ||
-                    player.defaultPositionId.toString(),
-                  total: seasonStats?.appliedTotal || 0,
-                  average: seasonStats?.appliedAverage || 0,
-                  scores: fromEntries(
-                    player.stats
-                      .filter(
-                        (stat) =>
-                          stat.seasonId === parseInt(currentYear) &&
-                          stat.statSourceId === 0
-                      )
-                      .map((stat) => ({
-                        key: stat.scoringPeriodId.toString(),
-                        value: parseFloat((stat.appliedTotal || 0).toFixed(2)),
-                      }))
-                  ),
-                  ownership: Object.fromEntries(
-                    Object.entries(player.ownership || {}).filter(([k]) =>
-                      [
-                        "averageDraftPosition",
-                        "auctionValueAverage",
-                        "percentOwned",
-                      ].includes(k)
-                    )
-                  ) as {
-                    averageDraftPosition: number;
-                    auctionValueAverage: number;
-                    percentOwned: number;
-                  },
-                  injuryStatus: player.injuryStatus,
-                }))
-                .filter(
-                  (player) =>
-                    Object.keys(player.ownership).length > 0 &&
-                    (player.ownership?.percentOwned > 0.1 ||
-                      Object.values(player.scores).filter((s) => s !== 0)
-                        .length > 0)
-                )
-                .map(({ ...player }) => ({
-                  key: player.id,
-                  value: player,
-                }))
-            )
-            .then((playersArr) => fromEntries(playersArr))
-        )
-        .then((players: { [id: string]: NFLPlayerType }) => players),
+      Promise.resolve(first2know.nflPlayers),
       // ffTeams
       Promise.resolve(first2know.ffTeamsSource)
         .then(({ main, weeks }) =>
@@ -616,4 +496,55 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
         } as WrappedType)
     )
     .then(clog);
+}
+
+const extension_id = "dikaanhdjgmmeajanfokkalonmnpfidm";
+
+function hasExtensionF(): Promise<boolean> {
+  return new Promise<boolean>((resolve, reject) => {
+    window.chrome.runtime.sendMessage(
+      extension_id,
+      { init: true },
+      (response: any) => {
+        resolve(true);
+      }
+    );
+  }).catch((err: Error) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+    window.chrome.runtime.lastError;
+    console.error(err);
+    return false;
+  });
+}
+
+function ext(data: any): Promise<any> {
+  return new Promise((resolve, reject) =>
+    window.chrome.runtime.sendMessage(extension_id, data, (response: any) => {
+      if (window.chrome.runtime.lastError) {
+        return reject(
+          `chrome.runtime.lastError ${window.chrome.runtime.lastError.message}`
+        );
+      }
+      resolve(response);
+    })
+  );
+}
+function groupByF<T>(ts: T[], f: (t: T) => string): { [key: string]: T[] } {
+  return ts.reduce((prev, curr) => {
+    const key = f(curr);
+    if (!prev[key]) prev[key] = [];
+    prev[key]!.push(curr);
+    return prev;
+  }, {} as { [key: string]: T[] });
+}
+function fromEntries<T>(arr: ({ key: string; value: T } | undefined)[]): {
+  [key: string]: T;
+} {
+  return Object.fromEntries(
+    arr.filter((a) => a !== undefined).map((a) => [a!.key, a!.value])
+  );
+}
+function clog<T>(t: T): T {
+  console.log(t);
+  return t;
 }

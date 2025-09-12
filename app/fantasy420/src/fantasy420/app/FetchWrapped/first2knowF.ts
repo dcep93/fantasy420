@@ -1,12 +1,30 @@
-import { Ownership } from ".";
+import { NFLPlayerType, Ownership } from ".";
 
 export default function first2knowF(
   currentYear: string
 ): Promise<First2KnowSource> {
   // todo currentYear and leagueId arguments
   const leagueId = 203836968;
+
+  function groupByF<T>(ts: T[], f: (t: T) => string): { [key: string]: T[] } {
+    return ts.reduce((prev, curr) => {
+      const key = f(curr);
+      if (!prev[key]) prev[key] = [];
+      prev[key]!.push(curr);
+      return prev;
+    }, {} as { [key: string]: T[] });
+  }
+  function fromEntries<T>(arr: ({ key: string; value: T } | undefined)[]): {
+    [key: string]: T;
+  } {
+    return Object.fromEntries(
+      arr.filter((a) => a !== undefined).map((a) => [a!.key, a!.value])
+    );
+  }
+
   return Promise.resolve()
     .then(() => [
+      // nflPlayers
       Promise.resolve()
         .then(() =>
           fetch(
@@ -28,9 +46,103 @@ export default function first2knowF(
               },
               credentials: "include",
             }
-          ).then((resp) => resp.json())
+          )
+            .then((resp) => resp.json())
+            .then(
+              (resp: {
+                teams: {
+                  roster: {
+                    entries: { playerPoolEntry: { player: { stats: {}[] } } };
+                  }[][];
+                };
+                players: {
+                  player: {
+                    id: number;
+                    proTeamId: number;
+                    onTeamId: number;
+                    fullName: string;
+                    defaultPositionId: number;
+                    stats: {
+                      seasonId: number;
+                      statSourceId: number;
+                      scoringPeriodId: number;
+                      appliedTotal: number;
+                      appliedAverage: number;
+                      appliedStats: { [key: string]: number };
+                    }[];
+                    ownership: Ownership;
+                    injuryStatus?: string;
+                  };
+                }[];
+              }) =>
+                resp.players
+                  .map((player) => player.player)
+                  .map((player) => ({
+                    player,
+                    seasonStats: player.stats.find(
+                      (s) => s.scoringPeriodId === 0 && s.statSourceId === 0
+                    ),
+                  }))
+                  .map(({ player, seasonStats }) => ({
+                    id: player.id.toString(),
+                    nflTeamId: player.proTeamId.toString(),
+                    name: player.fullName,
+                    position:
+                      {
+                        1: "QB",
+                        2: "RB",
+                        3: "WR",
+                        4: "TE",
+                        5: "K",
+                        16: "DST",
+                      }[player.defaultPositionId] ||
+                      player.defaultPositionId.toString(),
+                    total: seasonStats?.appliedTotal || 0,
+                    average: seasonStats?.appliedAverage || 0,
+                    scores: fromEntries(
+                      player.stats
+                        .filter(
+                          (stat) =>
+                            stat.seasonId === parseInt(currentYear) &&
+                            stat.statSourceId === 0
+                        )
+                        .map((stat) => ({
+                          key: stat.scoringPeriodId.toString(),
+                          value: parseFloat(
+                            (stat.appliedTotal || 0).toFixed(2)
+                          ),
+                        }))
+                    ),
+                    ownership: Object.fromEntries(
+                      Object.entries(player.ownership || {}).filter(([k]) =>
+                        [
+                          "averageDraftPosition",
+                          "auctionValueAverage",
+                          "percentOwned",
+                        ].includes(k)
+                      )
+                    ) as {
+                      averageDraftPosition: number;
+                      auctionValueAverage: number;
+                      percentOwned: number;
+                    },
+                    injuryStatus: player.injuryStatus,
+                  }))
+                  .filter(
+                    (player) =>
+                      Object.keys(player.ownership).length > 0 &&
+                      (player.ownership?.percentOwned > 0.1 ||
+                        Object.values(player.scores).filter((s) => s !== 0)
+                          .length > 0)
+                  )
+                  .map(({ ...player }) => ({
+                    key: player.id,
+                    value: player,
+                  }))
+            )
+            .then((playersArr) => fromEntries(playersArr))
         )
-        .then((v) => ["nflPlayersSource", v]),
+        .then((v) => ["nflPlayers", v as { [id: string]: NFLPlayerType }]),
       Promise.resolve()
         .then(() =>
           fetch(
@@ -112,34 +224,7 @@ export default function first2knowF(
 }
 
 export type First2KnowSource = {
-  nflPlayersSource: {
-    main: {
-      teams: {
-        roster: {
-          entries: { playerPoolEntry: { player: { stats: {}[] } } };
-        }[][];
-      };
-      players: {
-        player: {
-          id: number;
-          proTeamId: number;
-          onTeamId: number;
-          fullName: string;
-          defaultPositionId: number;
-          stats: {
-            seasonId: number;
-            statSourceId: number;
-            scoringPeriodId: number;
-            appliedTotal: number;
-            appliedAverage: number;
-            appliedStats: { [key: string]: number };
-          }[];
-          ownership: Ownership;
-          injuryStatus?: string;
-        };
-      }[];
-    };
-  };
+  nflPlayers: { [id: string]: NFLPlayerType };
   ffTeamsSource: {
     main: {
       draftDetail: { picks: { playerId: number; teamId: number }[] };
