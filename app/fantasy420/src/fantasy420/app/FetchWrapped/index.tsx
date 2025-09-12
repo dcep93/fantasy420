@@ -259,6 +259,24 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
   const leagueId =
     new URL(window.document.location.href).searchParams.get("leagueId") ||
     203836968;
+  const extension_id = "dikaanhdjgmmeajanfokkalonmnpfidm";
+
+  function hasExtensionF(): Promise<boolean> {
+    return new Promise<boolean>((resolve, reject) => {
+      window.chrome.runtime.sendMessage(
+        extension_id,
+        { init: true },
+        (response: any) => {
+          resolve(true);
+        }
+      );
+    }).catch((err: Error) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+      window.chrome.runtime.lastError;
+      console.error(err);
+      return false;
+    });
+  }
 
   function ext(data: any): Promise<any> {
     return new Promise((resolve, reject) =>
@@ -293,6 +311,12 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
     return t;
   }
   return Promise.resolve()
+    .then(hasExtensionF)
+    .then((hasExtension) => {
+      if (!hasExtension) {
+        throw new Error("no extension detected");
+      }
+    })
     .then(() => fetch("first2know_url/fantasy420"))
     .then((resp) => resp.json())
     .then((first2know: First2KnowSource) => [
@@ -807,6 +831,25 @@ export function publicGetWrapped(currentYear: string): Promise<WrappedType> {
     new URL(window.document.location.href).searchParams.get("leagueId") ||
     203836968;
 
+  const extension_id = "dikaanhdjgmmeajanfokkalonmnpfidm";
+
+  function hasExtensionF(): Promise<boolean> {
+    return new Promise<boolean>((resolve, reject) => {
+      window.chrome.runtime.sendMessage(
+        extension_id,
+        { init: true },
+        (response: any) => {
+          resolve(true);
+        }
+      );
+    }).catch((err: Error) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+      window.chrome.runtime.lastError;
+      console.error(err);
+      return false;
+    });
+  }
+
   function ext(data: any): Promise<any> {
     return new Promise((resolve, reject) =>
       window.chrome.runtime.sendMessage(extension_id, data, (response: any) => {
@@ -840,6 +883,12 @@ export function publicGetWrapped(currentYear: string): Promise<WrappedType> {
     return t;
   }
   return Promise.resolve()
+    .then(hasExtensionF)
+    .then((hasExtension) => {
+      if (!hasExtension) {
+        throw new Error("no extension detected");
+      }
+    })
     .then(() => [
       // year
       Promise.resolve().then(() => currentYear.toString()),
