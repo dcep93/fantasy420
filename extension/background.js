@@ -24,12 +24,13 @@ chrome.runtime.onMessageExternal.addListener(function (
     const now = Date.now();
     if (now - cached?.timestamp < request.fetch.maxAgeMs)
       return sendResponse(cached.resp);
-    return fetch(request.fetch.url)
+    return fetch(request.fetch.url, request.fetch.options)
       .then((resp) => (request.fetch.json ? resp.json() : resp.text()))
       .then((resp) => {
         fetch_cache[request.fetch.url] = { timestamp: now, resp };
         return resp;
       })
-      .then(sendResponse);
+      .then(sendResponse)
+      .catch((err) => console.trace(err));
   }
 });

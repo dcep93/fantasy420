@@ -1,11 +1,10 @@
 import { FFTeamType, MatchupsType, NFLPlayerType, Ownership } from ".";
 
-export default function first2knowF(
-  currentYear: string
-): Promise<First2KnowSource> {
-  // todo currentYear and leagueId arguments
-  const leagueId = 203836968;
-
+export default function helper(
+  leagueId: number,
+  currentYear: string,
+  fetchF: (url: string, options: any) => Promise<string>
+): Promise<HelperType> {
   function fromEntries<T>(arr: ({ key: string; value: T } | undefined)[]): {
     [key: string]: T;
   } {
@@ -19,7 +18,7 @@ export default function first2knowF(
       // nflPlayers
       Promise.resolve()
         .then(() =>
-          fetch(
+          fetchF(
             `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=kona_playercard`,
             {
               headers: {
@@ -39,7 +38,7 @@ export default function first2knowF(
               credentials: "include",
             }
           )
-            .then((resp) => resp.json())
+            .then((resp) => JSON.parse(resp))
             .then(
               (resp: {
                 teams: {
@@ -138,11 +137,11 @@ export default function first2knowF(
       // ffTeams
       Promise.resolve()
         .then(() =>
-          fetch(
+          fetchF(
             `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mDraftDetail&view=mRoster`,
             { credentials: "include" }
           )
-            .then((resp) => resp.json())
+            .then((resp) => JSON.parse(resp))
             .then(
               (main: {
                 draftDetail: { picks: { playerId: number; teamId: number }[] };
@@ -158,13 +157,13 @@ export default function first2knowF(
                     Array.from(new Array(main.status.latestScoringPeriod))
                       .map((_, i) => i + 1)
                       .map((weekNum) =>
-                        fetch(
+                        fetchF(
                           `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mScoreboard&scoringPeriodId=${weekNum}`,
                           {
                             credentials: "include",
                           }
                         )
-                          .then((resp) => resp.json())
+                          .then((resp) => JSON.parse(resp))
                           .then(
                             (week: {
                               teams: {
@@ -293,13 +292,13 @@ export default function first2knowF(
       // ffMatchups
       Promise.resolve()
         .then(() =>
-          fetch(
+          fetchF(
             `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mMatchupScore&view=mSettings`,
             {
               credentials: "include",
             }
           )
-            .then((resp) => resp.json())
+            .then((resp) => JSON.parse(resp))
             .then(
               (resp: {
                 settings: {
@@ -330,15 +329,15 @@ export default function first2knowF(
       // nflTeamsSource
       Promise.resolve()
         .then(() =>
-          fetch(
+          fetchF(
             `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}?view=proTeamSchedules_wl`,
             {
               credentials: "include",
             }
           )
-            .then((resp) => resp.json())
+            .then((resp) => JSON.parse(resp))
             .then((main) =>
-              fetch(
+              fetchF(
                 `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=kona_playercard`,
                 {
                   headers: {
@@ -360,7 +359,7 @@ export default function first2knowF(
                   credentials: "include",
                 }
               )
-                .then((resp) => resp.json())
+                .then((resp) => JSON.parse(resp))
                 .then((playerCards) => ({ main, playerCards }))
             )
         )
@@ -370,7 +369,7 @@ export default function first2knowF(
     .then(Object.fromEntries);
 }
 
-export type First2KnowSource = {
+export type HelperType = {
   nflPlayers: { [id: string]: NFLPlayerType };
   ffTeams: { [id: string]: FFTeamType };
   ffMatchups: { [weekNum: string]: MatchupsType };

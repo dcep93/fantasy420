@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { printF } from "..";
 import { fetchExtension } from "../Draft/Extension";
 import { clog, currentYear, groupByF, selectedWrapped } from "../Wrapped";
-import first2knowF, { First2KnowSource } from "./first2knowF";
+import helper, { default as first2knowF, HelperType } from "./helper";
 
 // todo ignore current week
 export type NFLPlayerType = {
@@ -104,22 +104,35 @@ export default function FetchWrapped() {
 }
 
 export function getWrapped(currentYear: string): Promise<WrappedType> {
+  return fetchExtension({
+    url: "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/203836968/segments/0/leagues/2025?view=mDraftDetail&view=mRoster",
+    maxAgeMs: 0,
+    json: true,
+    options: { Cookie: localStorage.getItem("cookie:espn_s2") },
+  }).then(clog);
+  const leagueId = 203836968;
   return Promise.resolve()
     .then(() =>
-      fetch("https://chromatic-realm-466116-n0.appspot.com/fetch_wrapped")
+      helper(Number(currentYear), leagueId.toString(), (url, options) =>
+        fetchExtension({
+          url,
+          ...options,
+          json: false,
+          Cookie: localStorage.getItem("cookie:espn_s2"),
+        })
+      )
     )
-    .then((resp) => resp.json())
-    .then((first2know: First2KnowSource) => [
+    .then((h: HelperType) => [
       // year
-      Promise.resolve().then(() => currentYear.toString()),
+      Promise.resolve().then(() => currentYear),
       // nflPlayers
-      Promise.resolve(first2know.nflPlayers),
+      Promise.resolve(h.nflPlayers),
       // ffTeams
-      Promise.resolve(first2know.ffTeams),
+      Promise.resolve(h.ffTeams),
       // ffMatchups
-      Promise.resolve(first2know.ffMatchups),
+      Promise.resolve(h.ffMatchups),
       // nflTeams
-      Promise.resolve(first2know.nflTeamsSource)
+      Promise.resolve(h.nflTeamsSource)
         .then(({ main, playerCards }) =>
           Promise.resolve()
             .then(() =>
