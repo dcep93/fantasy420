@@ -107,6 +107,46 @@ type First2KnowSource = {
       };
     }[];
   };
+  ffTeamsSource: {
+    main: {
+      draftDetail: { picks: { playerId: number; teamId: number }[] };
+      teams: {
+        id: number;
+        roster: { entries: { playerId: number }[] };
+      }[];
+      status: { latestScoringPeriod: number };
+      settings: { draftSettings: { pickOrder: number[] } };
+    };
+    weeks: {
+      weekNum: number;
+      week: {
+        teams: {
+          id: number;
+          name: string;
+        }[];
+        schedule: {
+          home: {
+            rosterForCurrentScoringPeriod: {
+              entries: {
+                playerId: number;
+                lineupSlotId: number;
+              }[];
+            };
+            teamId: number;
+          };
+          away: {
+            rosterForCurrentScoringPeriod: {
+              entries: {
+                playerId: number;
+                lineupSlotId: number;
+              }[];
+            };
+            teamId: number;
+          };
+        }[];
+      };
+    }[];
+  };
 };
 
 var initialized = false;
@@ -166,7 +206,7 @@ function first2knowF(currentYear: string): Promise<First2KnowSource> {
           )
             .then((resp) => resp.json())
             .then(
-              (resp: {
+              (main: {
                 draftDetail: { picks: { playerId: number; teamId: number }[] };
                 teams: {
                   id: number;
@@ -175,18 +215,24 @@ function first2knowF(currentYear: string): Promise<First2KnowSource> {
                 status: { latestScoringPeriod: number };
                 settings: { draftSettings: { pickOrder: number[] } };
               }) =>
-                Promise.resolve().then(() =>
-                  Array.from(new Array(resp.status.latestScoringPeriod))
-                    .map((_, i) => i + 1)
-                    .map((weekNum) =>
-                      fetch(
-                        `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mScoreboard&scoringPeriodId=${weekNum}`,
-                        {
-                          credentials: "include",
-                        }
-                      ).then((resp) => resp.json())
-                    )
-                )
+                Promise.resolve()
+                  .then(() =>
+                    Array.from(new Array(main.status.latestScoringPeriod))
+                      .map((_, i) => i + 1)
+                      .map((weekNum) =>
+                        fetch(
+                          `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mScoreboard&scoringPeriodId=${weekNum}`,
+                          {
+                            credentials: "include",
+                          }
+                        )
+                          .then((resp) => resp.json())
+                          .then((week) => ({ weekNum, week }))
+                      )
+                  )
+
+                  .then((ps) => Promise.all(ps))
+                  .then((weeks) => ({ main, weeks }))
             )
         )
         .then((v) => ["ffTeamsSource", v]),
@@ -226,11 +272,11 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
       // year
       Promise.resolve().then(() => currentYear.toString()),
       // nflPlayers
-      Promise.resolve()
-        .then(() =>
+      Promise.resolve(first2know.nflPlayersSource)
+        .then(({ players }) =>
           Promise.resolve()
             .then(() =>
-              first2know.nflPlayersSource.players
+              players
                 .map((player) => player.player)
                 .map((player) => ({
                   player,
@@ -297,142 +343,85 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
         )
         .then((players: { [id: string]: NFLPlayerType }) => players),
       // ffTeams
-      Promise.resolve()
-        .then(() =>
-          fetch(
-            `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mDraftDetail&view=mRoster`,
-            { credentials: "include" }
-          )
-            .then((resp) => resp.json())
-            .then(
-              (resp: {
-                draftDetail: { picks: { playerId: number; teamId: number }[] };
-                teams: {
-                  id: number;
-                  roster: { entries: { playerId: number }[] };
-                }[];
-                status: { latestScoringPeriod: number };
-                settings: { draftSettings: { pickOrder: number[] } };
-              }) =>
+      Promise.resolve(first2know.ffTeamsSource)
+        .then(({ main, weeks }) =>
+          Promise.resolve()
+            .then(() =>
+              weeks.map(({ week, weekNum }) =>
                 Promise.resolve()
                   .then(() =>
-                    Array.from(new Array(resp.status.latestScoringPeriod))
-                      .map((_, i) => i + 1)
-                      .map((weekNum) =>
-                        fetch(
-                          `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mScoreboard&scoringPeriodId=${weekNum}`,
-                          {
-                            credentials: "include",
-                          }
-                        )
-                          .then((resp) => resp.json())
-                          .then(
-                            (resp: {
-                              teams: {
-                                id: number;
-                                name: string;
-                              }[];
-                              schedule: {
-                                home: {
-                                  rosterForCurrentScoringPeriod: {
-                                    entries: {
-                                      playerId: number;
-                                      lineupSlotId: number;
-                                    }[];
-                                  };
-                                  teamId: number;
-                                };
-                                away: {
-                                  rosterForCurrentScoringPeriod: {
-                                    entries: {
-                                      playerId: number;
-                                      lineupSlotId: number;
-                                    }[];
-                                  };
-                                  teamId: number;
-                                };
-                              }[];
-                            }) =>
-                              Promise.resolve()
-                                .then(() =>
-                                  resp.teams.map((team) => ({
-                                    id: team.id.toString(),
-                                    name: team.name,
-                                    schedule: {
-                                      weekNum,
-                                      ...resp.schedule
-                                        .flatMap((matchup) => [
-                                          matchup.home,
-                                          matchup.away,
-                                        ])
-                                        .find(
-                                          (s) =>
-                                            s?.rosterForCurrentScoringPeriod &&
-                                            s.teamId === team.id
-                                        )!,
-                                    },
-                                  }))
-                                )
-                                .then((week) =>
-                                  fromEntries(
-                                    week.map((team) => ({
-                                      key: team.id,
-                                      value: team,
-                                    }))
-                                  )
-                                )
-                          )
-                      )
-                  )
-                  .then((ps) => Promise.all(ps))
-                  .then((weeks) =>
-                    Object.values(weeks[0] || {}).map((team) => ({
-                      id: team.id,
+                    week.teams.map((team) => ({
+                      id: team.id.toString(),
                       name: team.name,
-                      draft: resp.draftDetail.picks
-                        .map((p, pickIndex) => ({ ...p, pickIndex }))
-                        .filter((p) => p.teamId === parseInt(team.id))
-                        .map(({ playerId, pickIndex }) => ({
-                          playerId,
-                          pickIndex,
-                        })),
-                      pickOrder: resp.settings.draftSettings.pickOrder.indexOf(
-                        parseInt(team.id)
-                      ),
-                      rosters: fromEntries(
-                        weeks
-                          .map((week) => week[team.id].schedule)
-                          .filter((s) => s.rosterForCurrentScoringPeriod)
-                          .map((s) => ({
-                            weekNum: s.weekNum.toString(),
-                            starting: s.rosterForCurrentScoringPeriod.entries
-                              .filter(
-                                (e) =>
-                                  ![
-                                    20, // bench
-                                    21, // IR
-                                  ].includes(e.lineupSlotId)
-                              )
-                              .map((e) => e.playerId.toString()),
-                            rostered:
-                              s.rosterForCurrentScoringPeriod.entries.map((e) =>
-                                e.playerId.toString()
-                              ),
-                          }))
-                          .concat({
-                            weekNum: "0",
-                            starting: [],
-                            rostered: resp.teams
-                              .find((t) => t.id.toString() === team.id)!
-                              .roster.entries.map((e) => e.playerId.toString()),
-                          })
-                          .map((roster) => ({
-                            key: roster.weekNum,
-                            value: roster,
-                          }))
-                      ),
+                      schedule: {
+                        weekNum,
+                        ...week.schedule
+                          .flatMap((matchup) => [matchup.home, matchup.away])
+                          .find(
+                            (s) =>
+                              s?.rosterForCurrentScoringPeriod &&
+                              s.teamId === team.id
+                          )!,
+                      },
                     }))
                   )
+                  .then((week) =>
+                    fromEntries(
+                      week.map((team) => ({
+                        key: team.id,
+                        value: team,
+                      }))
+                    )
+                  )
+              )
+            )
+            .then((ps) => Promise.all(ps))
+            .then((weeks) =>
+              Object.values(weeks[0] || {}).map((team) => ({
+                id: team.id,
+                name: team.name,
+                draft: main.draftDetail.picks
+                  .map((p, pickIndex) => ({ ...p, pickIndex }))
+                  .filter((p) => p.teamId === parseInt(team.id))
+                  .map(({ playerId, pickIndex }) => ({
+                    playerId,
+                    pickIndex,
+                  })),
+                pickOrder: main.settings.draftSettings.pickOrder.indexOf(
+                  parseInt(team.id)
+                ),
+                rosters: fromEntries(
+                  weeks
+                    .map((week) => week[team.id].schedule)
+                    .filter((s) => s.rosterForCurrentScoringPeriod)
+                    .map((s) => ({
+                      weekNum: s.weekNum.toString(),
+                      starting: s.rosterForCurrentScoringPeriod.entries
+                        .filter(
+                          (e) =>
+                            ![
+                              20, // bench
+                              21, // IR
+                            ].includes(e.lineupSlotId)
+                        )
+                        .map((e) => e.playerId.toString()),
+                      rostered: s.rosterForCurrentScoringPeriod.entries.map(
+                        (e) => e.playerId.toString()
+                      ),
+                    }))
+                    .concat({
+                      weekNum: "0",
+                      starting: [],
+                      rostered: main.teams
+                        .find((t) => t.id.toString() === team.id)!
+                        .roster.entries.map((e) => e.playerId.toString()),
+                    })
+                    .map((roster) => ({
+                      key: roster.weekNum,
+                      value: roster,
+                    }))
+                ),
+              }))
             )
             .then((teams) =>
               fromEntries(teams.map((team) => ({ key: team.id, value: team })))
