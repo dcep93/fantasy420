@@ -111,16 +111,14 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
         currentYear,
         leagueId,
         fetchF: (url, options) =>
-          fetchExtension(
-            clog({
-              url,
-              options: {
-                ...options,
-                Cookie: localStorage.getItem("cookie:espn_s2"),
-              },
+          fetchExtension({
+            url,
+            options: {
               ...options,
-            })
-          ),
+              // Cookie: localStorage.getItem("cookie:espn_s2"),
+            },
+            ...options,
+          }),
       })
     )
     .then((h: HelperType) => [
