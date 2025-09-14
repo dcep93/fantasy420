@@ -270,9 +270,13 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
                           ),
                         })
                       )
+                      .catch((err) => {
+                        console.log(`could not fetch gameId ${gameId}`);
+                        return undefined;
+                      })
                       .then((value) => ({
                         key: gameId.toString(),
-                        value,
+                        value: value!,
                       }))
                   )
                 )
@@ -334,21 +338,24 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
                                 key: scoringPeriod,
                                 value: {
                                   opp: Object.keys(
-                                    gamesByGameId[gameId].drives
+                                    gamesByGameId[gameId]?.drives || {}
                                   ).find((t) => t !== team.id)!,
-                                  drives: gamesByGameId[gameId].drives[team.id],
-                                  fieldGoals: gamesByGameId[gameId].fieldGoals
+                                  drives:
+                                    gamesByGameId[gameId]?.drives[team.id],
+                                  fieldGoals: (
+                                    gamesByGameId[gameId]?.fieldGoals || []
+                                  )
                                     .filter((play) => play.teamId === team.id)
                                     .map((play) => play.yards),
                                   punts: (
-                                    gamesByGameId[gameId].punts[team.id] || []
+                                    gamesByGameId[gameId]?.punts[team.id] || []
                                   ).flatMap((play) => ({
                                     landed: play.landed,
                                     distance: play.distance,
                                   })),
                                   punter: Object.keys(
                                     groupByF(
-                                      gamesByGameId[gameId].punts[team.id] ||
+                                      gamesByGameId[gameId]?.punts[team.id] ||
                                         [],
                                       (p) => p.punter
                                     )
