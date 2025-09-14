@@ -225,7 +225,26 @@ export default function helper(params: {
                                   injuryStatus?: string;
                                 };
                               }[];
-                            }) => ({ weekNum, week })
+                            }) => ({
+                              weekNum,
+                              week,
+                              projections: fromEntries(
+                                // TODO ensure exists
+                                (week.players || []).map((p) => ({
+                                  key: p.player.id.toString(),
+                                  value: parseFloat(
+                                    (
+                                      p.player.stats.find(
+                                        (stat) =>
+                                          stat.seasonId ===
+                                            parseInt(currentYear) &&
+                                          stat.statSourceId === 1
+                                      )?.appliedTotal || 0
+                                    ).toFixed(2)
+                                  ),
+                                }))
+                              ),
+                            })
                           )
                       )
                   )
@@ -234,9 +253,15 @@ export default function helper(params: {
                   .then((weeks) => ({
                     main,
                     weeks,
+                    projectionsByWeek: fromEntries(
+                      weeks.map((week) => ({
+                        key: week.weekNum.toString(),
+                        value: week.projections,
+                      }))
+                    ),
                   }))
             )
-            .then(({ main, weeks }) =>
+            .then(({ main, weeks, projectionsByWeek }) =>
               Promise.resolve()
                 .then(() =>
                   weeks.map(({ week, weekNum }) =>
@@ -307,7 +332,12 @@ export default function helper(params: {
                         // TODO
                         .map((o) => ({
                           ...o,
-                          projections: {},
+                          projections: fromEntries(
+                            o.rostered.map((r) => ({
+                              key: r,
+                              value: projectionsByWeek[o.weekNum][r],
+                            }))
+                          ),
                         }))
                         .concat({
                           weekNum: "0",
