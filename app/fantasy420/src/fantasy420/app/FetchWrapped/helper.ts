@@ -16,6 +16,8 @@ export default function helper(params: {
 
   return Promise.resolve()
     .then(() => [
+      // year
+      Promise.resolve().then(() => ["year", currentYear]),
       // nflPlayers
       Promise.resolve()
         .then(() =>
@@ -97,6 +99,20 @@ export default function helper(params: {
                           (stat) =>
                             stat.seasonId === parseInt(currentYear) &&
                             stat.statSourceId === 0
+                        )
+                        .map((stat) => ({
+                          key: stat.scoringPeriodId.toString(),
+                          value: parseFloat(
+                            (stat.appliedTotal || 0).toFixed(2)
+                          ),
+                        }))
+                    ),
+                    projections: fromEntries(
+                      player.stats
+                        .filter(
+                          (stat) =>
+                            stat.seasonId === parseInt(currentYear) &&
+                            stat.statSourceId === 1
                         )
                         .map((stat) => ({
                           key: stat.scoringPeriodId.toString(),
@@ -371,6 +387,7 @@ export default function helper(params: {
 }
 
 export type HelperType = {
+  year: string;
   nflPlayers: { [id: string]: NFLPlayerType };
   ffTeams: { [id: string]: FFTeamType };
   ffMatchups: { [weekNum: string]: MatchupsType };

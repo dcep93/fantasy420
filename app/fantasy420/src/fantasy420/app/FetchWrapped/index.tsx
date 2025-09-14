@@ -11,6 +11,7 @@ export type NFLPlayerType = {
   nflTeamId: string;
   position: string;
   scores: { [weekNum: string]: number };
+  projections?: { [weekNum: string]: number };
   total: number;
   average: number;
   injuryStatus?: string;
@@ -108,7 +109,7 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
   return Promise.resolve()
     .then(() =>
       helper({
-        currentYear,
+        currentYear: "2024",
         leagueId,
         fetchF: (url, options) =>
           fetchExtension({
@@ -123,7 +124,7 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
     )
     .then((h: HelperType) => [
       // year
-      Promise.resolve().then(() => currentYear),
+      Promise.resolve().then(() => h.year),
       // nflPlayers
       Promise.resolve(h.nflPlayers),
       // ffTeams
