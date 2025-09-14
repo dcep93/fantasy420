@@ -165,25 +165,6 @@ export default function helper(params: {
                   id: number;
                   roster: { entries: { playerId: number }[] };
                 }[];
-                players: {
-                  player: {
-                    id: number;
-                    proTeamId: number;
-                    onTeamId: number;
-                    fullName: string;
-                    defaultPositionId: number;
-                    stats: {
-                      seasonId: number;
-                      statSourceId: number;
-                      scoringPeriodId: number;
-                      appliedTotal: number;
-                      appliedAverage: number;
-                      appliedStats: { [key: string]: number };
-                    }[];
-                    ownership: Ownership;
-                    injuryStatus?: string;
-                  };
-                }[];
                 status: { latestScoringPeriod: number };
                 settings: { draftSettings: { pickOrder: number[] } };
               }) =>
@@ -193,7 +174,7 @@ export default function helper(params: {
                       .map((_, i) => i + 1)
                       .map((weekNum) =>
                         fetchF(
-                          `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mScoreboard&scoringPeriodId=${weekNum}`,
+                          `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mScoreboard&view=mBoxscore&scoringPeriodId=${weekNum}`,
                           {
                             maxAgeMs: 24 * 60 * 60 * 1000,
                           }
@@ -225,6 +206,25 @@ export default function helper(params: {
                                   teamId: number;
                                 };
                               }[];
+                              players: {
+                                player: {
+                                  id: number;
+                                  proTeamId: number;
+                                  onTeamId: number;
+                                  fullName: string;
+                                  defaultPositionId: number;
+                                  stats: {
+                                    seasonId: number;
+                                    statSourceId: number;
+                                    scoringPeriodId: number;
+                                    appliedTotal: number;
+                                    appliedAverage: number;
+                                    appliedStats: { [key: string]: number };
+                                  }[];
+                                  ownership: Ownership;
+                                  injuryStatus?: string;
+                                };
+                              }[];
                             }) => ({ weekNum, week })
                           )
                       )
@@ -234,28 +234,9 @@ export default function helper(params: {
                   .then((weeks) => ({
                     main,
                     weeks,
-                    statsByPlayer: fromEntries(
-                      main.players.map((p) => ({
-                        key: p.player.id.toString(),
-                        value: fromEntries(
-                          p.player.stats
-                            .filter(
-                              (stat) =>
-                                stat.seasonId === parseInt(currentYear) &&
-                                stat.statSourceId === 1
-                            )
-                            .map((stat) => ({
-                              key: stat.scoringPeriodId.toString(),
-                              value: parseFloat(
-                                (stat.appliedTotal || 0).toFixed(2)
-                              ),
-                            }))
-                        ),
-                      }))
-                    ),
                   }))
             )
-            .then(({ main, weeks, statsByPlayer }) =>
+            .then(({ main, weeks }) =>
               Promise.resolve()
                 .then(() =>
                   weeks.map(({ week, weekNum }) =>
@@ -326,12 +307,7 @@ export default function helper(params: {
                         // TODO
                         .map((o) => ({
                           ...o,
-                          projections: fromEntries(
-                            o.rostered.map((r) => ({
-                              key: r,
-                              value: statsByPlayer[r][o.weekNum],
-                            }))
-                          ),
+                          projections: {},
                         }))
                         .concat({
                           weekNum: "0",
