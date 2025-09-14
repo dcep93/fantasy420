@@ -115,7 +115,7 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
   return Promise.resolve()
     .then(() =>
       helper({
-        currentYear: "2023",
+        currentYear: "2021",
         leagueId,
         fetchF: (url, options) =>
           fetchExtension({
