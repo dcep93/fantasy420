@@ -11,8 +11,7 @@ export type NFLPlayerType = {
   nflTeamId: string;
   position: string;
   scores: { [weekNum: string]: number };
-  // TODO enforce
-  projection?: number;
+  projection: number;
   total: number;
   average: number;
   injuryStatus?: string;
@@ -52,8 +51,7 @@ export type FFTeamType = {
       weekNum: string;
       starting: string[];
       rostered: string[];
-      // TODO enforce
-      projections?: { [playerId: string]: number };
+      projections: { [playerId: string]: number };
     };
   };
   draft: { playerId: number; pickIndex: number }[];
@@ -115,7 +113,7 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
   return Promise.resolve()
     .then(() =>
       helper({
-        currentYear: "2021",
+        currentYear,
         leagueId,
         fetchF: (url, options) =>
           fetchExtension({
