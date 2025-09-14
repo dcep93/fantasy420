@@ -1,5 +1,4 @@
 import { FFTeamType, MatchupsType, NFLPlayerType, Ownership } from ".";
-import { clog } from "../Wrapped";
 
 export default function helper(params: {
   leagueId: number;
@@ -43,7 +42,6 @@ export default function helper(params: {
             }
           )
             .then((resp) => JSON.parse(resp))
-            .then(clog)
             .then(
               (resp: {
                 teams: {
@@ -174,7 +172,7 @@ export default function helper(params: {
                       .map((_, i) => i + 1)
                       .map((weekNum) =>
                         fetchF(
-                          `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mScoreboard&view=mBoxscore&scoringPeriodId=${weekNum}`,
+                          `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mScoreboard&view=mRoster&scoringPeriodId=${weekNum}`,
                           {
                             maxAgeMs: 24 * 60 * 60 * 1000,
                           }
@@ -185,6 +183,20 @@ export default function helper(params: {
                               teams: {
                                 id: number;
                                 name: string;
+                                roster: {
+                                  entries: {
+                                    playerId: number;
+                                    playerPoolEntry: {
+                                      player: {
+                                        stats: {
+                                          seasonId: number;
+                                          statSourceId: number;
+                                          appliedTotal: number;
+                                        }[];
+                                      };
+                                    };
+                                  }[];
+                                };
                               }[];
                               schedule: {
                                 home: {
@@ -206,45 +218,7 @@ export default function helper(params: {
                                   teamId: number;
                                 };
                               }[];
-                              players: {
-                                player: {
-                                  id: number;
-                                  proTeamId: number;
-                                  onTeamId: number;
-                                  fullName: string;
-                                  defaultPositionId: number;
-                                  stats: {
-                                    seasonId: number;
-                                    statSourceId: number;
-                                    scoringPeriodId: number;
-                                    appliedTotal: number;
-                                    appliedAverage: number;
-                                    appliedStats: { [key: string]: number };
-                                  }[];
-                                  ownership: Ownership;
-                                  injuryStatus?: string;
-                                };
-                              }[];
-                            }) => ({
-                              weekNum,
-                              week,
-                              projections: fromEntries(
-                                // TODO ensure exists
-                                (week.players || []).map((p) => ({
-                                  key: p.player.id.toString(),
-                                  value: parseFloat(
-                                    (
-                                      p.player.stats.find(
-                                        (stat) =>
-                                          stat.seasonId ===
-                                            parseInt(currentYear) &&
-                                          stat.statSourceId === 1
-                                      )?.appliedTotal || 0
-                                    ).toFixed(2)
-                                  ),
-                                }))
-                              ),
-                            })
+                            }) => ({ weekNum, week })
                           )
                       )
                   )
@@ -253,15 +227,9 @@ export default function helper(params: {
                   .then((weeks) => ({
                     main,
                     weeks,
-                    projectionsByWeek: fromEntries(
-                      weeks.map((week) => ({
-                        key: week.weekNum.toString(),
-                        value: week.projections,
-                      }))
-                    ),
                   }))
             )
-            .then(({ main, weeks, projectionsByWeek }) =>
+            .then(({ main, weeks }) =>
               Promise.resolve()
                 .then(() =>
                   weeks.map(({ week, weekNum }) =>
@@ -270,6 +238,20 @@ export default function helper(params: {
                         week.teams.map((team) => ({
                           id: team.id.toString(),
                           name: team.name,
+                          projections: fromEntries(
+                            team.roster.entries.map((value) => ({
+                              key: value.playerId.toString(),
+                              value: parseFloat(
+                                (
+                                  value.playerPoolEntry.player.stats.find(
+                                    (stat) =>
+                                      stat.seasonId === parseInt(currentYear) &&
+                                      stat.statSourceId === 1
+                                  )?.appliedTotal || 0
+                                ).toFixed(2)
+                              ),
+                            }))
+                          ),
                           schedule: {
                             weekNum,
                             ...week.schedule
@@ -312,33 +294,38 @@ export default function helper(params: {
                     ),
                     rosters: fromEntries(
                       weeks
-                        .map((week) => week[team.id].schedule)
-                        .filter((s) => s.rosterForCurrentScoringPeriod)
-                        .map((s) => ({
-                          weekNum: s.weekNum.toString(),
-                          starting: s.rosterForCurrentScoringPeriod.entries
-                            .filter(
-                              (e) =>
-                                ![
-                                  20, // bench
-                                  21, // IR
-                                ].includes(e.lineupSlotId)
-                            )
-                            .map((e) => e.playerId.toString()),
-                          rostered: s.rosterForCurrentScoringPeriod.entries.map(
-                            (e) => e.playerId.toString()
-                          ),
-                        }))
-                        // TODO
-                        .map((o) => ({
-                          ...o,
-                          projections: fromEntries(
-                            o.rostered.map((r) => ({
-                              key: r,
-                              value: projectionsByWeek[o.weekNum][r],
-                            }))
-                          ),
-                        }))
+                        .map((week) => week[team.id])
+                        .filter(
+                          ({ schedule }) =>
+                            schedule.rosterForCurrentScoringPeriod
+                        )
+                        .map(({ schedule, projections }) =>
+                          (({ rostered }) => ({
+                            weekNum: schedule.weekNum.toString(),
+                            starting:
+                              schedule.rosterForCurrentScoringPeriod.entries
+                                .filter(
+                                  (e) =>
+                                    ![
+                                      20, // bench
+                                      21, // IR
+                                    ].includes(e.lineupSlotId)
+                                )
+                                .map((e) => e.playerId.toString()),
+                            rostered,
+                            projections: fromEntries(
+                              rostered.map((r) => ({
+                                key: r,
+                                value: projections[r],
+                              }))
+                            ),
+                          }))({
+                            rostered:
+                              schedule.rosterForCurrentScoringPeriod.entries.map(
+                                (e) => e.playerId.toString()
+                              ),
+                          })
+                        )
                         .concat({
                           weekNum: "0",
                           starting: [],
