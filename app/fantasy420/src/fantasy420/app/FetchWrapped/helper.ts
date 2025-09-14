@@ -1,4 +1,5 @@
 import { FFTeamType, MatchupsType, NFLPlayerType, Ownership } from ".";
+import { clog } from "../Wrapped";
 
 export default function helper(params: {
   leagueId: number;
@@ -42,6 +43,7 @@ export default function helper(params: {
             }
           )
             .then((resp) => JSON.parse(resp))
+            .then(clog)
             .then(
               (resp: {
                 teams: {
@@ -107,19 +109,14 @@ export default function helper(params: {
                           ),
                         }))
                     ),
-                    projections: fromEntries(
-                      player.stats
-                        .filter(
+                    projection: parseFloat(
+                      (
+                        player.stats.find(
                           (stat) =>
                             stat.seasonId === parseInt(currentYear) &&
                             stat.statSourceId === 1
-                        )
-                        .map((stat) => ({
-                          key: stat.scoringPeriodId.toString(),
-                          value: parseFloat(
-                            (stat.appliedTotal || 0).toFixed(2)
-                          ),
-                        }))
+                        )?.appliedTotal || 0
+                      ).toFixed(2)
                     ),
                     ownership: Object.fromEntries(
                       Object.entries(player.ownership || {}).filter(([k]) =>
@@ -168,6 +165,25 @@ export default function helper(params: {
                   id: number;
                   roster: { entries: { playerId: number }[] };
                 }[];
+                players: {
+                  player: {
+                    id: number;
+                    proTeamId: number;
+                    onTeamId: number;
+                    fullName: string;
+                    defaultPositionId: number;
+                    stats: {
+                      seasonId: number;
+                      statSourceId: number;
+                      scoringPeriodId: number;
+                      appliedTotal: number;
+                      appliedAverage: number;
+                      appliedStats: { [key: string]: number };
+                    }[];
+                    ownership: Ownership;
+                    injuryStatus?: string;
+                  };
+                }[];
                 status: { latestScoringPeriod: number };
                 settings: { draftSettings: { pickOrder: number[] } };
               }) =>
@@ -215,9 +231,31 @@ export default function helper(params: {
                   )
 
                   .then((ps) => Promise.all(ps))
-                  .then((weeks) => ({ main, weeks }))
+                  .then((weeks) => ({
+                    main,
+                    weeks,
+                    statsByPlayer: fromEntries(
+                      main.players.map((p) => ({
+                        key: p.player.id.toString(),
+                        value: fromEntries(
+                          p.player.stats
+                            .filter(
+                              (stat) =>
+                                stat.seasonId === parseInt(currentYear) &&
+                                stat.statSourceId === 1
+                            )
+                            .map((stat) => ({
+                              key: stat.scoringPeriodId.toString(),
+                              value: parseFloat(
+                                (stat.appliedTotal || 0).toFixed(2)
+                              ),
+                            }))
+                        ),
+                      }))
+                    ),
+                  }))
             )
-            .then(({ main, weeks }) =>
+            .then(({ main, weeks, statsByPlayer }) =>
               Promise.resolve()
                 .then(() =>
                   weeks.map(({ week, weekNum }) =>
@@ -285,12 +323,23 @@ export default function helper(params: {
                             (e) => e.playerId.toString()
                           ),
                         }))
+                        // TODO
+                        .map((o) => ({
+                          ...o,
+                          projections: fromEntries(
+                            o.rostered.map((r) => ({
+                              key: r,
+                              value: statsByPlayer[r][o.weekNum],
+                            }))
+                          ),
+                        }))
                         .concat({
                           weekNum: "0",
                           starting: [],
                           rostered: main.teams
                             .find((t) => t.id.toString() === team.id)!
                             .roster.entries.map((e) => e.playerId.toString()),
+                          projections: {},
                         })
                         .map((roster) => ({
                           key: roster.weekNum,

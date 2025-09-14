@@ -11,7 +11,8 @@ export type NFLPlayerType = {
   nflTeamId: string;
   position: string;
   scores: { [weekNum: string]: number };
-  projections?: { [weekNum: string]: number };
+  // TODO enforce
+  projection?: number;
   total: number;
   average: number;
   injuryStatus?: string;
@@ -51,6 +52,8 @@ export type FFTeamType = {
       weekNum: string;
       starting: string[];
       rostered: string[];
+      // TODO enforce
+      projections?: { [playerId: string]: number };
     };
   };
   draft: { playerId: number; pickIndex: number }[];
@@ -92,7 +95,10 @@ export default function FetchWrapped() {
     getWrapped(currentYear)
       .then((wrapped) => JSON.stringify(wrapped))
       .then(update)
-      .catch((e: Error) => update(e.toString()));
+      .catch((e: Error) => {
+        console.error(e);
+        update(e.toString());
+      });
   }, [update]);
   return (
     <div>

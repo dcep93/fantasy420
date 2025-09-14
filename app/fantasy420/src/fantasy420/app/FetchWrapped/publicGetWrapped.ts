@@ -165,17 +165,14 @@ export default function publicGetWrapped(
                         value: parseFloat((stat.appliedTotal || 0).toFixed(2)),
                       }))
                   ),
-                  projections: fromEntries(
-                    player.stats
-                      .filter(
+                  projection: parseFloat(
+                    (
+                      player.stats.find(
                         (stat) =>
                           stat.seasonId === parseInt(currentYear) &&
                           stat.statSourceId === 1
-                      )
-                      .map((stat) => ({
-                        key: stat.scoringPeriodId.toString(),
-                        value: parseFloat((stat.appliedTotal || 0).toFixed(2)),
-                      }))
+                      )!.appliedTotal || 0
+                    ).toFixed(2)
                   ),
                   ownership: Object.fromEntries(
                     Object.entries(player.ownership || {}).filter(([k]) =>
@@ -330,12 +327,15 @@ export default function publicGetWrapped(
                                 e.playerId.toString()
                               ),
                           }))
+                          // TODO
+                          .map((o) => ({ ...o, projections: {} }))
                           .concat({
                             weekNum: "0",
                             starting: [],
                             rostered: resp.teams
                               .find((t) => t.id.toString() === team.id)!
                               .roster.entries.map((e) => e.playerId.toString()),
+                            projections: {},
                           })
                           .map((roster) => ({
                             key: roster.weekNum,
