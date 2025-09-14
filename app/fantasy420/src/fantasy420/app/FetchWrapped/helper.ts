@@ -191,6 +191,7 @@ export default function helper(params: {
                                         stats: {
                                           seasonId: number;
                                           statSourceId: number;
+                                          scoringPeriodId: number;
                                           appliedTotal: number;
                                         }[];
                                       };
@@ -246,7 +247,8 @@ export default function helper(params: {
                                   value.playerPoolEntry.player.stats.find(
                                     (stat) =>
                                       stat.seasonId === parseInt(currentYear) &&
-                                      stat.statSourceId === 1
+                                      stat.statSourceId === 1 &&
+                                      stat.scoringPeriodId === weekNum
                                   )?.appliedTotal || 0
                                 ).toFixed(2)
                               ),
