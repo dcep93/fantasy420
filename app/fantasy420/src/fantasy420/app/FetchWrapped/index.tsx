@@ -218,9 +218,10 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
                               yards: parseInt(
                                 item.playText.match(
                                   /(\d+) (?:yard|yrd|yd) field goal/i
-                                )![1]
+                                )?.[1]!
                               ),
-                            })),
+                            }))
+                            .filter(({ yards }) => yards),
                           punts: groupByF(
                             resp.page.content.gamepackage.allPlys
                               .flatMap(({ items }) => items)
