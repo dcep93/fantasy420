@@ -71,6 +71,7 @@ export default function helper(params: {
               }) =>
                 resp.players
                   .map((player) => player.player)
+                  .filter((p) => p.stats)
                   .map((player) => ({
                     player,
                     seasonStats: player.stats.find(
