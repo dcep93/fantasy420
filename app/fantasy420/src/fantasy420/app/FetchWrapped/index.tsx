@@ -286,6 +286,7 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
                       Object.keys(
                         fromEntries(
                           playerCards.players
+                            .filter((p) => p.player.stats)
                             .flatMap((player) => player.player.stats)
                             .map((s) => ({
                               key: s.scoringPeriodId.toString(),
@@ -296,6 +297,7 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
                         key: scoringPeriodId.toString(),
                         value: fromEntries(
                           playerCards.players
+                            .filter((p) => p.player.stats)
                             .map((player) => ({
                               teamId: player.player.proTeamId,
                               stats: player.player.stats.find(
