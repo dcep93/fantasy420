@@ -108,12 +108,12 @@ export default function FetchWrapped() {
   );
 }
 
-export function getWrapped(currentYear: string): Promise<WrappedType> {
+export function getWrapped(providedYear: string): Promise<WrappedType> {
   const leagueId = 203836968;
   return Promise.resolve()
     .then(() =>
       helper({
-        currentYear,
+        currentYear: providedYear,
         leagueId,
         fetchF: (url, options) =>
           fetchExtension({
@@ -146,7 +146,10 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
                 byeWeek: p.byeWeek,
                 proGamesByScoringPeriod: fromEntries(
                   Object.entries(p.proGamesByScoringPeriod)
-                    .filter(([_, o]) => o[0].statsOfficial)
+                    .filter(
+                      ([_, o]) =>
+                        providedYear < currentYear || o[0].statsOfficial
+                    )
                     .map(([scoringPeriod, o]) => ({
                       key: scoringPeriod,
                       value: o[0].id,
@@ -269,7 +272,7 @@ export function getWrapped(currentYear: string): Promise<WrappedType> {
                         })
                       )
                       .catch((err) => {
-                        console.log(`could not fetch gameId ${gameId}`);
+                        console.log(`could not fetch gameId ${gameId} ${err}`);
                         return undefined;
                       })
                       .then((value) => ({
