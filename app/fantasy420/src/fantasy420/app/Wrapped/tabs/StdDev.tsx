@@ -17,7 +17,7 @@ export default function StdDev() {
       )
       .map((o) => ({ ...o, diff: o.actual - o.projection }))
   );
-  const data = [18, 15, 12, -9, -6, -3]
+  const data = [18, 15, 12, 9, 6, -12, -9, -6, -3]
     .map((cutoff) => ({
       cutoff,
       differences: x
