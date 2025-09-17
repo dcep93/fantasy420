@@ -31,11 +31,11 @@ export type NFLTeamType = {
   nflGamesByScoringPeriod: {
     [weekNum: string]:
       | {
-          opp: string;
+          opp?: string;
           fieldGoals: (number | null)[];
           pointsAllowed: number;
           yardsAllowed: number;
-          drives: (string | null)[];
+          drives?: (string | null)[];
           punts: { landed: number; distance: number }[];
           punter: string;
         }
@@ -272,7 +272,8 @@ export function getWrapped(providedYear: string): Promise<WrappedType> {
                         })
                       )
                       .catch((err) => {
-                        console.log(`could not fetch gameId ${gameId} ${err}`);
+                        console.log(`could not fetch gameId ${gameId}`);
+                        console.error(err);
                         return undefined;
                       })
                       .then((value) => ({
