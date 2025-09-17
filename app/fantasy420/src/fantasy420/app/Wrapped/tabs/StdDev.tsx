@@ -12,7 +12,7 @@ export default function StdDev() {
       .flatMap(({ weekNum, projections }) =>
         Object.entries(projections).map(([playerId, projection]) => ({
           projection,
-          actual: w.nflPlayers[playerId]?.scores[weekNum],
+          actual: w.nflPlayers[playerId]?.scores[weekNum] ?? 0,
         }))
       )
       .map((o) => ({ ...o, diff: o.actual - o.projection }))
