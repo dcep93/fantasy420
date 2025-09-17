@@ -38,7 +38,7 @@ export default function helper(params: {
                   "kona-PROD-5b4759b3e340d25d9e1ae248daac086ea7c37db7",
                 "x-fantasy-source": "kona",
               },
-              maxAgeMs: 60 * 1000,
+              maxAgeMs: 3 * 1000,
             }
           )
             .then((resp) => JSON.parse(resp))

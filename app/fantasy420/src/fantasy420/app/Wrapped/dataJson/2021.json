@@ -33849,6 +33849,99 @@
       "name": "Falcons",
       "byeWeek": 6,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "21",
+          "drives": [
+            "Field Goal",
+            "Field Goal",
+            "Punt",
+            "Punt",
+            "End of Half",
+            "Punt",
+            "Punt",
+            "Punt",
+            "Punt",
+            "DOWNS",
+            "Downs",
+            "End of Game"
+          ],
+          "fieldGoals": [
+            21,
+            27
+          ],
+          "punts": [
+            {
+              "landed": 19,
+              "distance": 35
+            },
+            {
+              "landed": 36,
+              "distance": 52
+            },
+            {
+              "landed": 20,
+              "distance": 62
+            },
+            {
+              "landed": 0,
+              "distance": 31
+            },
+            {
+              "landed": 11,
+              "distance": 50
+            },
+            {
+              "landed": 21,
+              "distance": 49
+            }
+          ],
+          "punter": "C.Nizialek",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "27",
+          "drives": [
+            "Punt",
+            "Punt",
+            "Downs",
+            "Touchdown",
+            "Punt",
+            "Field Goal",
+            "Interception",
+            "Touchdown",
+            "Touchdown",
+            "Punt",
+            "Interception",
+            "Downs",
+            "Interception",
+            "Downs"
+          ],
+          "fieldGoals": [
+            36
+          ],
+          "punts": [
+            {
+              "landed": 36,
+              "distance": 30
+            },
+            {
+              "landed": 0,
+              "distance": 54
+            },
+            {
+              "landed": 15,
+              "distance": 40
+            },
+            {
+              "landed": 43,
+              "distance": 33
+            }
+          ],
+          "punter": "C.Nizialek",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "19",
           "drives": [
@@ -33893,15 +33986,15 @@
             }
           ],
           "punter": "C.Nizialek",
-          "yardsAllowed": 346,
-          "pointsAllowed": 14
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 412,
-          "pointsAllowed": 34
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "20",
@@ -33932,8 +34025,8 @@
             }
           ],
           "punter": "D.Colquitt",
-          "yardsAllowed": 230,
-          "pointsAllowed": 20
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "opp": "15",
@@ -33970,8 +34063,8 @@
             }
           ],
           "punter": "D.Colquitt",
-          "yardsAllowed": 413,
-          "pointsAllowed": 28
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "29",
@@ -34010,8 +34103,8 @@
             }
           ],
           "punter": "D.Colquitt",
-          "yardsAllowed": 332,
-          "pointsAllowed": 19
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "18",
@@ -34055,8 +34148,8 @@
             }
           ],
           "punter": "D.Colquitt",
-          "yardsAllowed": 376,
-          "pointsAllowed": 25
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "6",
@@ -34096,8 +34189,8 @@
             }
           ],
           "punter": "D.Colquitt",
-          "yardsAllowed": 431,
-          "pointsAllowed": 43
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "17",
@@ -34138,8 +34231,8 @@
             }
           ],
           "punter": "D.Colquitt",
-          "yardsAllowed": 308,
-          "pointsAllowed": 19
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "30",
@@ -34179,8 +34272,8 @@
             }
           ],
           "punter": "T.Morstead",
-          "yardsAllowed": 357,
-          "pointsAllowed": 14
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "27",
@@ -34221,8 +34314,8 @@
             }
           ],
           "punter": "T.Morstead",
-          "yardsAllowed": 425,
-          "pointsAllowed": 30
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "29",
@@ -34254,8 +34347,8 @@
             }
           ],
           "punter": "T.Morstead",
-          "yardsAllowed": 334,
-          "pointsAllowed": 21
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "25",
@@ -34287,8 +34380,8 @@
             }
           ],
           "punter": "T.Morstead",
-          "yardsAllowed": 397,
-          "pointsAllowed": 31
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "8",
@@ -34317,8 +34410,8 @@
             }
           ],
           "punter": "T.Morstead",
-          "yardsAllowed": 338,
-          "pointsAllowed": 16
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "2",
@@ -34352,8 +34445,8 @@
             }
           ],
           "punter": "T.Morstead",
-          "yardsAllowed": 351,
-          "pointsAllowed": 29
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "18",
@@ -34385,8 +34478,8 @@
             }
           ],
           "punter": "T.Morstead",
-          "yardsAllowed": 369,
-          "pointsAllowed": 30
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -34395,12 +34488,90 @@
       "name": "Bills",
       "byeWeek": 7,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "23",
+          "drives": [
+            "Field Goal",
+            "Punt",
+            "Punt",
+            "Punt",
+            "Fumble",
+            "Touchdown",
+            "Downs",
+            "Downs",
+            "Blocked Punt",
+            "Field Goal",
+            "Field Goal"
+          ],
+          "fieldGoals": [
+            37,
+            25,
+            42
+          ],
+          "punts": [
+            {
+              "landed": 0,
+              "distance": 55
+            },
+            {
+              "landed": 8,
+              "distance": 46
+            },
+            {
+              "landed": 7,
+              "distance": 36
+            }
+          ],
+          "punter": "M.Haack",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "15",
+          "drives": [
+            "Touchdown",
+            "Touchdown",
+            "Fumble",
+            "Punt",
+            "Interception",
+            "Punt",
+            "Punt",
+            "Missed FG",
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "Touchdown",
+            "End of Game"
+          ],
+          "fieldGoals": [],
+          "punts": [
+            {
+              "landed": 30,
+              "distance": 42
+            },
+            {
+              "landed": 35,
+              "distance": 41
+            },
+            {
+              "landed": 46,
+              "distance": 45
+            },
+            {
+              "landed": 0,
+              "distance": 54
+            }
+          ],
+          "punter": "M.Haack",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 290,
-          "pointsAllowed": 21
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "34",
@@ -34431,7 +34602,7 @@
             }
           ],
           "punter": "M.Haack",
-          "yardsAllowed": 109,
+          "yardsAllowed": 0,
           "pointsAllowed": 0
         },
         "5": {
@@ -34471,8 +34642,8 @@
             }
           ],
           "punter": "M.Haack",
-          "yardsAllowed": 392,
-          "pointsAllowed": 20
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "10",
@@ -34504,8 +34675,8 @@
             }
           ],
           "punter": "M.Haack",
-          "yardsAllowed": 362,
-          "pointsAllowed": 34
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "15",
@@ -34545,8 +34716,8 @@
             }
           ],
           "punter": "M.Haack",
-          "yardsAllowed": 262,
-          "pointsAllowed": 11
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "30",
@@ -34580,8 +34751,8 @@
             }
           ],
           "punter": "M.Haack",
-          "yardsAllowed": 218,
-          "pointsAllowed": 9
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "20",
@@ -34614,8 +34785,8 @@
             }
           ],
           "punter": "M.Haack",
-          "yardsAllowed": 366,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "11",
@@ -34639,8 +34810,8 @@
             }
           ],
           "punter": "M.Haack",
-          "yardsAllowed": 370,
-          "pointsAllowed": 41
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "18",
@@ -34674,8 +34845,8 @@
             }
           ],
           "punter": "M.Haack",
-          "yardsAllowed": 190,
-          "pointsAllowed": 6
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "17",
@@ -34717,8 +34888,8 @@
             }
           ],
           "punter": "M.Haack",
-          "yardsAllowed": 241,
-          "pointsAllowed": 14
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "27",
@@ -34768,8 +34939,8 @@
             }
           ],
           "punter": "M.Haack",
-          "yardsAllowed": 488,
-          "pointsAllowed": 33
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "29",
@@ -34813,8 +34984,8 @@
             }
           ],
           "punter": "M.Haack",
-          "yardsAllowed": 275,
-          "pointsAllowed": 14
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "17",
@@ -34835,8 +35006,8 @@
           ],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 288,
-          "pointsAllowed": 21
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "1",
@@ -34853,8 +35024,8 @@
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 265,
-          "pointsAllowed": 15
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "20",
@@ -34909,8 +35080,8 @@
             }
           ],
           "punter": "M.Haack",
-          "yardsAllowed": 53,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -34919,6 +35090,69 @@
       "name": "Bears",
       "byeWeek": 10,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "14",
+          "drives": [
+            "Interception",
+            "Downs",
+            "Fumble",
+            "Punt",
+            "Touchdown",
+            "Touchdown",
+            "Downs",
+            "Downs"
+          ],
+          "fieldGoals": [],
+          "punts": [
+            {
+              "landed": 11,
+              "distance": 36
+            }
+          ],
+          "punter": "P.O'Donnell",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "4",
+          "drives": [
+            "Touchdown",
+            "Downs",
+            "Punt",
+            "Punt",
+            "Punt",
+            "Field Goal",
+            "Punt",
+            "Field Goal",
+            "Interception",
+            "End of Game"
+          ],
+          "fieldGoals": [
+            28,
+            22
+          ],
+          "punts": [
+            {
+              "landed": 7,
+              "distance": 42
+            },
+            {
+              "landed": 8,
+              "distance": 40
+            },
+            {
+              "landed": 20,
+              "distance": 47
+            },
+            {
+              "landed": 0,
+              "distance": 40
+            }
+          ],
+          "punter": "P.O'Donnell",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "5",
           "drives": [
@@ -34969,8 +35203,8 @@
             }
           ],
           "punter": "P.O'Donnell",
-          "yardsAllowed": 418,
-          "pointsAllowed": 26
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "8",
@@ -35004,8 +35238,8 @@
             }
           ],
           "punter": "P.O'Donnell",
-          "yardsAllowed": 351,
-          "pointsAllowed": 14
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "13",
@@ -35048,8 +35282,8 @@
             }
           ],
           "punter": "P.O'Donnell",
-          "yardsAllowed": 259,
-          "pointsAllowed": 9
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "9",
@@ -35083,8 +35317,8 @@
             }
           ],
           "punter": "P.O'Donnell",
-          "yardsAllowed": 323,
-          "pointsAllowed": 24
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "opp": "27",
@@ -35125,8 +35359,8 @@
             }
           ],
           "punter": "P.O'Donnell",
-          "yardsAllowed": 408,
-          "pointsAllowed": 38
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "25",
@@ -35156,8 +35390,8 @@
             }
           ],
           "punter": "P.O'Donnell",
-          "yardsAllowed": 467,
-          "pointsAllowed": 33
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "23",
@@ -35198,8 +35432,8 @@
             }
           ],
           "punter": "P.O'Donnell",
-          "yardsAllowed": 280,
-          "pointsAllowed": 29
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "33",
@@ -35241,8 +35475,8 @@
             }
           ],
           "punter": "P.O'Donnell",
-          "yardsAllowed": 299,
-          "pointsAllowed": 16
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "8",
@@ -35282,8 +35516,8 @@
             }
           ],
           "punter": "P.O'Donnell",
-          "yardsAllowed": 239,
-          "pointsAllowed": 14
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "22",
@@ -35311,8 +35545,8 @@
             }
           ],
           "punter": "P.O'Donnell",
-          "yardsAllowed": 257,
-          "pointsAllowed": 33
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "9",
@@ -35354,8 +35588,8 @@
             }
           ],
           "punter": "P.O'Donnell",
-          "yardsAllowed": 439,
-          "pointsAllowed": 39
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "16",
@@ -35390,8 +35624,8 @@
             }
           ],
           "punter": "P.O'Donnell",
-          "yardsAllowed": 193,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "26",
@@ -35426,8 +35660,8 @@
             }
           ],
           "punter": "P.O'Donnell",
-          "yardsAllowed": 331,
-          "pointsAllowed": 24
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "19",
@@ -35472,8 +35706,8 @@
             }
           ],
           "punter": "P.O'Donnell",
-          "yardsAllowed": 155,
-          "pointsAllowed": 3
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "16",
@@ -35502,8 +35736,8 @@
             }
           ],
           "punter": "P.O'Donnell",
-          "yardsAllowed": 331,
-          "pointsAllowed": 25
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -35512,6 +35746,93 @@
       "name": "Bengals",
       "byeWeek": 10,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "16",
+          "drives": [
+            "Punt",
+            "Punt",
+            "Punt",
+            "Touchdown",
+            "Touchdown",
+            "Touchdown",
+            "Downs",
+            "Field Goal",
+            "Punt",
+            "Punt",
+            "Punt",
+            "Punt",
+            "Field Goal"
+          ],
+          "fieldGoals": [
+            53,
+            33
+          ],
+          "punts": [
+            {
+              "landed": 0,
+              "distance": 59
+            },
+            {
+              "landed": 10,
+              "distance": 47
+            },
+            {
+              "landed": 9,
+              "distance": 37
+            },
+            {
+              "landed": 32,
+              "distance": 43
+            },
+            {
+              "landed": 5,
+              "distance": 42
+            },
+            {
+              "landed": 21,
+              "distance": 43
+            },
+            {
+              "landed": 25,
+              "distance": 61
+            }
+          ],
+          "punter": "K.Huber",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "3",
+          "drives": [
+            "Punt",
+            "Downs",
+            "Punt",
+            "End of Half",
+            "Field Goal",
+            "Fumble",
+            "Interception",
+            "Interception",
+            "Interception",
+            "Touchdown",
+            "Touchdown"
+          ],
+          "fieldGoals": [
+            53
+          ],
+          "punts": [
+            {
+              "landed": 7,
+              "distance": 36
+            },
+            {
+              "landed": 34,
+              "distance": 39
+            }
+          ],
+          "punter": "K.Huber",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "23",
           "drives": [
@@ -35554,8 +35875,8 @@
             }
           ],
           "punter": "K.Huber",
-          "yardsAllowed": 342,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "30",
@@ -35588,8 +35909,8 @@
             }
           ],
           "punter": "K.Huber",
-          "yardsAllowed": 341,
-          "pointsAllowed": 21
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "9",
@@ -35631,8 +35952,8 @@
             }
           ],
           "punter": "K.Huber",
-          "yardsAllowed": 466,
-          "pointsAllowed": 25
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "8",
@@ -35668,8 +35989,8 @@
             }
           ],
           "punter": "K.Huber",
-          "yardsAllowed": 228,
-          "pointsAllowed": 11
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "opp": "33",
@@ -35711,8 +36032,8 @@
             }
           ],
           "punter": "K.Huber",
-          "yardsAllowed": 393,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "20",
@@ -35748,8 +36069,8 @@
             }
           ],
           "punter": "K.Huber",
-          "yardsAllowed": 511,
-          "pointsAllowed": 34
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "5",
@@ -35785,8 +36106,8 @@
             }
           ],
           "punter": "K.Huber",
-          "yardsAllowed": 361,
-          "pointsAllowed": 35
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "13",
@@ -35819,8 +36140,8 @@
             }
           ],
           "punter": "K.Huber",
-          "yardsAllowed": 278,
-          "pointsAllowed": 13
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "23",
@@ -35855,8 +36176,8 @@
             }
           ],
           "punter": "K.Huber",
-          "yardsAllowed": 301,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "24",
@@ -35899,8 +36220,8 @@
             }
           ],
           "punter": "K.Huber",
-          "yardsAllowed": 363,
-          "pointsAllowed": 35
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "25",
@@ -35941,8 +36262,8 @@
             }
           ],
           "punter": "K.Huber",
-          "yardsAllowed": 355,
-          "pointsAllowed": 26
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "7",
@@ -35996,8 +36317,8 @@
             }
           ],
           "punter": "K.Huber",
-          "yardsAllowed": 292,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "33",
@@ -36018,8 +36339,8 @@
           ],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 334,
-          "pointsAllowed": 21
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "12",
@@ -36053,8 +36374,8 @@
             }
           ],
           "punter": "K.Huber",
-          "yardsAllowed": 414,
-          "pointsAllowed": 31
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "5",
@@ -36103,8 +36424,8 @@
             }
           ],
           "punter": "K.Huber",
-          "yardsAllowed": 376,
-          "pointsAllowed": 21
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -36113,6 +36434,61 @@
       "name": "Browns",
       "byeWeek": 13,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "12",
+          "drives": [
+            "Touchdown",
+            "Touchdown",
+            "Touchdown",
+            "End of Half",
+            "Fumble",
+            "Touchdown",
+            "Downs",
+            "Punt",
+            "Interception"
+          ],
+          "fieldGoals": [],
+          "punts": [
+            {
+              "landed": 20,
+              "distance": 52
+            }
+          ],
+          "punter": "J.Gillan",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "34",
+          "drives": [
+            "Punt",
+            "Touchdown",
+            "Fumble",
+            "Interception",
+            "Touchdown",
+            "Touchdown",
+            "Field Goal",
+            "Touchdown",
+            "Punt",
+            "End of Game"
+          ],
+          "fieldGoals": [
+            30
+          ],
+          "punts": [
+            {
+              "landed": 28,
+              "distance": 37
+            },
+            {
+              "landed": 12,
+              "distance": 43
+            }
+          ],
+          "punter": "J.Gillan",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "3",
           "drives": [
@@ -36145,8 +36521,8 @@
             }
           ],
           "punter": "J.Gillan",
-          "yardsAllowed": 47,
-          "pointsAllowed": 6
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "16",
@@ -36198,8 +36574,8 @@
             }
           ],
           "punter": "J.Gillan",
-          "yardsAllowed": 255,
-          "pointsAllowed": 7
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "24",
@@ -36236,8 +36612,8 @@
             }
           ],
           "punter": "J.Gillan",
-          "yardsAllowed": 493,
-          "pointsAllowed": 47
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "22",
@@ -36265,8 +36641,8 @@
             }
           ],
           "punter": "J.Gillan",
-          "yardsAllowed": 352,
-          "pointsAllowed": 37
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "opp": "7",
@@ -36298,8 +36674,8 @@
             }
           ],
           "punter": "J.Gillan",
-          "yardsAllowed": 223,
-          "pointsAllowed": 14
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "23",
@@ -36336,8 +36712,8 @@
             }
           ],
           "punter": "J.Gillan",
-          "yardsAllowed": 370,
-          "pointsAllowed": 15
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "4",
@@ -36373,8 +36749,8 @@
             }
           ],
           "punter": "J.Gillan",
-          "yardsAllowed": 348,
-          "pointsAllowed": 16
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "17",
@@ -36409,8 +36785,8 @@
             }
           ],
           "punter": "J.Gillan",
-          "yardsAllowed": 452,
-          "pointsAllowed": 45
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "8",
@@ -36447,8 +36823,8 @@
             }
           ],
           "punter": "J.Gillan",
-          "yardsAllowed": 245,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "33",
@@ -36496,8 +36872,8 @@
             }
           ],
           "punter": "J.Gillan",
-          "yardsAllowed": 303,
-          "pointsAllowed": 16
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "33",
@@ -36541,8 +36917,8 @@
             }
           ],
           "punter": "D.Colquitt",
-          "yardsAllowed": 389,
-          "pointsAllowed": 22
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "13",
@@ -36590,8 +36966,8 @@
             }
           ],
           "punter": "D.Colquitt",
-          "yardsAllowed": 328,
-          "pointsAllowed": 16
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "9",
@@ -36617,8 +36993,8 @@
             }
           ],
           "punter": "D.Colquitt",
-          "yardsAllowed": 311,
-          "pointsAllowed": 24
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "23",
@@ -36673,8 +37049,8 @@
             }
           ],
           "punter": "D.Colquitt",
-          "yardsAllowed": 299,
-          "pointsAllowed": 26
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "4",
@@ -36711,8 +37087,8 @@
             }
           ],
           "punter": "D.Colquitt",
-          "yardsAllowed": 182,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -36721,6 +37097,72 @@
       "name": "Cowboys",
       "byeWeek": 7,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "27",
+          "drives": [
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Missed FG",
+            "Touchdown",
+            "Field Goal",
+            "Missed FG",
+            "Field Goal",
+            "Interception",
+            "Touchdown",
+            "Punt",
+            "Field Goal",
+            "End of Game"
+          ],
+          "fieldGoals": [
+            35,
+            21,
+            48
+          ],
+          "punts": [
+            {
+              "landed": 6,
+              "distance": 38
+            },
+            {
+              "landed": 46,
+              "distance": 47
+            },
+            {
+              "landed": 30,
+              "distance": 62
+            }
+          ],
+          "punter": "B.Anger",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "24",
+          "drives": [
+            "Touchdown",
+            "Interception",
+            "Touchdown",
+            "Downs",
+            "End of Half",
+            "Punt",
+            "Field Goal",
+            "Field Goal"
+          ],
+          "fieldGoals": [
+            34,
+            56
+          ],
+          "punts": [
+            {
+              "landed": 3,
+              "distance": 44
+            }
+          ],
+          "punter": "B.Anger",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "21",
           "drives": [
@@ -36758,8 +37200,8 @@
             }
           ],
           "punter": "B.Anger",
-          "yardsAllowed": 367,
-          "pointsAllowed": 15
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "29",
@@ -36798,8 +37240,8 @@
             }
           ],
           "punter": "B.Anger",
-          "yardsAllowed": 379,
-          "pointsAllowed": 28
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "19",
@@ -36827,8 +37269,8 @@
             }
           ],
           "punter": "B.Anger",
-          "yardsAllowed": 367,
-          "pointsAllowed": 20
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "17",
@@ -36857,8 +37299,8 @@
             }
           ],
           "punter": "B.Anger",
-          "yardsAllowed": 335,
-          "pointsAllowed": 29
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "16",
@@ -36898,8 +37340,8 @@
             }
           ],
           "punter": "B.Anger",
-          "yardsAllowed": 278,
-          "pointsAllowed": 16
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "7",
@@ -36935,8 +37377,8 @@
             }
           ],
           "punter": "B.Anger",
-          "yardsAllowed": 407,
-          "pointsAllowed": 30
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "1",
@@ -36973,8 +37415,8 @@
             }
           ],
           "punter": "B.Anger",
-          "yardsAllowed": 214,
-          "pointsAllowed": 3
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "12",
@@ -37024,8 +37466,8 @@
             }
           ],
           "punter": "B.Anger",
-          "yardsAllowed": 370,
-          "pointsAllowed": 19
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "13",
@@ -37080,8 +37522,8 @@
             }
           ],
           "punter": "B.Anger",
-          "yardsAllowed": 509,
-          "pointsAllowed": 36
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "18",
@@ -37136,15 +37578,15 @@
             }
           ],
           "punter": "B.Anger",
-          "yardsAllowed": 405,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 224,
-          "pointsAllowed": 14
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "19",
@@ -37185,15 +37627,15 @@
             }
           ],
           "punter": "B.Anger",
-          "yardsAllowed": 302,
-          "pointsAllowed": 6
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 257,
-          "pointsAllowed": 14
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "22",
@@ -37228,8 +37670,8 @@
             }
           ],
           "punter": "B.Anger",
-          "yardsAllowed": 399,
-          "pointsAllowed": 25
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "21",
@@ -37255,8 +37697,8 @@
             }
           ],
           "punter": "B.Anger",
-          "yardsAllowed": 315,
-          "pointsAllowed": 26
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -37265,6 +37707,78 @@
       "name": "Broncos",
       "byeWeek": 11,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "19",
+          "drives": [
+            "Punt",
+            "Field Goal",
+            "Fumble",
+            "Touchdown",
+            "Touchdown",
+            "Field Goal",
+            "Touchdown",
+            "Punt"
+          ],
+          "fieldGoals": [
+            23,
+            36
+          ],
+          "punts": [
+            {
+              "landed": 22,
+              "distance": 37
+            },
+            {
+              "landed": 34,
+              "distance": 41
+            }
+          ],
+          "punter": "S.Martin",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "30",
+          "drives": [
+            "Field Goal",
+            "Punt",
+            "Punt",
+            "Touchdown",
+            "End of Half",
+            "Touchdown",
+            "Punt",
+            "Field Goal",
+            "Punt",
+            "Field Goal",
+            "End of Game"
+          ],
+          "fieldGoals": [
+            32,
+            46,
+            40
+          ],
+          "punts": [
+            {
+              "landed": 13,
+              "distance": 41
+            },
+            {
+              "landed": 12,
+              "distance": 45
+            },
+            {
+              "landed": 17,
+              "distance": 48
+            },
+            {
+              "landed": 10,
+              "distance": 46
+            }
+          ],
+          "punter": "S.Martin",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "20",
           "drives": [
@@ -37301,7 +37815,7 @@
             }
           ],
           "punter": "S.Martin",
-          "yardsAllowed": 162,
+          "yardsAllowed": 0,
           "pointsAllowed": 0
         },
         "4": {
@@ -37364,8 +37878,8 @@
             }
           ],
           "punter": "S.Martin",
-          "yardsAllowed": 406,
-          "pointsAllowed": 23
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "23",
@@ -37403,8 +37917,8 @@
             }
           ],
           "punter": "S.Martin",
-          "yardsAllowed": 391,
-          "pointsAllowed": 27
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "13",
@@ -37445,8 +37959,8 @@
             }
           ],
           "punter": "S.Martin",
-          "yardsAllowed": 426,
-          "pointsAllowed": 34
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "opp": "5",
@@ -37480,15 +37994,15 @@
             }
           ],
           "punter": "S.Martin",
-          "yardsAllowed": 376,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 342,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "6",
@@ -37526,8 +38040,8 @@
             }
           ],
           "punter": "S.Martin",
-          "yardsAllowed": 290,
-          "pointsAllowed": 16
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "21",
@@ -37567,8 +38081,8 @@
             }
           ],
           "punter": "S.Martin",
-          "yardsAllowed": 386,
-          "pointsAllowed": 24
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "24",
@@ -37599,8 +38113,8 @@
             }
           ],
           "punter": "S.Martin",
-          "yardsAllowed": 357,
-          "pointsAllowed": 13
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "12",
@@ -37634,8 +38148,8 @@
             }
           ],
           "punter": "S.Martin",
-          "yardsAllowed": 267,
-          "pointsAllowed": 16
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "8",
@@ -37668,8 +38182,8 @@
             }
           ],
           "punter": "S.Martin",
-          "yardsAllowed": 316,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "4",
@@ -37716,8 +38230,8 @@
             }
           ],
           "punter": "S.Martin",
-          "yardsAllowed": 249,
-          "pointsAllowed": 15
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "13",
@@ -37759,8 +38273,8 @@
             }
           ],
           "punter": "S.Martin",
-          "yardsAllowed": 342,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "24",
@@ -37794,8 +38308,8 @@
             }
           ],
           "punter": "S.Martin",
-          "yardsAllowed": 341,
-          "pointsAllowed": 34
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "12",
@@ -37827,8 +38341,8 @@
             }
           ],
           "punter": "S.Martin",
-          "yardsAllowed": 390,
-          "pointsAllowed": 22
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -37837,6 +38351,71 @@
       "name": "Lions",
       "byeWeek": 9,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "25",
+          "drives": [
+            "Downs",
+            "Missed FG",
+            "Touchdown",
+            "Field Goal",
+            "Interception",
+            "PUNT",
+            "End of Half",
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Downs",
+            "Touchdown",
+            "Touchdown",
+            "Downs"
+          ],
+          "fieldGoals": [
+            49
+          ],
+          "punts": [
+            {
+              "landed": 9,
+              "distance": 38
+            },
+            {
+              "landed": 36,
+              "distance": 57
+            }
+          ],
+          "punter": "J.Fox",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "9",
+          "drives": [
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "Field Goal",
+            "Downs",
+            "Fumble",
+            "Punt",
+            "Interception",
+            "Downs"
+          ],
+          "fieldGoals": [
+            43
+          ],
+          "punts": [
+            {
+              "landed": 16,
+              "distance": 52
+            },
+            {
+              "landed": 15,
+              "distance": 55
+            }
+          ],
+          "punter": "J.Fox",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "33",
           "drives": [
@@ -37881,8 +38460,8 @@
             }
           ],
           "punter": "J.Fox",
-          "yardsAllowed": 387,
-          "pointsAllowed": 19
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "3",
@@ -37913,8 +38492,8 @@
             }
           ],
           "punter": "J.Fox",
-          "yardsAllowed": 373,
-          "pointsAllowed": 24
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "16",
@@ -37955,8 +38534,8 @@
             }
           ],
           "punter": "J.Fox",
-          "yardsAllowed": 384,
-          "pointsAllowed": 19
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "4",
@@ -38002,8 +38581,8 @@
             }
           ],
           "punter": "J.Fox",
-          "yardsAllowed": 398,
-          "pointsAllowed": 34
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "opp": "14",
@@ -38031,8 +38610,8 @@
             }
           ],
           "punter": "J.Fox",
-          "yardsAllowed": 374,
-          "pointsAllowed": 28
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "21",
@@ -38064,8 +38643,8 @@
             }
           ],
           "punter": "J.Fox",
-          "yardsAllowed": 350,
-          "pointsAllowed": 38
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "23",
@@ -38132,8 +38711,8 @@
             }
           ],
           "punter": "J.Fox",
-          "yardsAllowed": 387,
-          "pointsAllowed": 16
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "5",
@@ -38180,8 +38759,8 @@
             }
           ],
           "punter": "J.Fox",
-          "yardsAllowed": 349,
-          "pointsAllowed": 13
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "3",
@@ -38224,8 +38803,8 @@
             }
           ],
           "punter": "J.Fox",
-          "yardsAllowed": 378,
-          "pointsAllowed": 16
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "16",
@@ -38263,8 +38842,8 @@
             }
           ],
           "punter": "J.Fox",
-          "yardsAllowed": 426,
-          "pointsAllowed": 27
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "7",
@@ -38293,8 +38872,8 @@
             }
           ],
           "punter": "J.Fox",
-          "yardsAllowed": 358,
-          "pointsAllowed": 38
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "22",
@@ -38330,8 +38909,8 @@
             }
           ],
           "punter": "J.Fox",
-          "yardsAllowed": 398,
-          "pointsAllowed": 12
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "1",
@@ -38361,8 +38940,8 @@
             }
           ],
           "punter": "J.Fox",
-          "yardsAllowed": 254,
-          "pointsAllowed": 20
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "26",
@@ -38396,8 +38975,8 @@
             }
           ],
           "punter": "J.Fox",
-          "yardsAllowed": 497,
-          "pointsAllowed": 51
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "9",
@@ -38426,8 +39005,8 @@
             }
           ],
           "punter": "J.Fox",
-          "yardsAllowed": 378,
-          "pointsAllowed": 30
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -38436,6 +39015,77 @@
       "name": "Packers",
       "byeWeek": 13,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "18",
+          "drives": [
+            "Punt",
+            "Punt",
+            "Field Goal",
+            "Interception",
+            "Interception",
+            "Downs",
+            "Punt",
+            "Punt",
+            "Fumble"
+          ],
+          "fieldGoals": [
+            39
+          ],
+          "punts": [
+            {
+              "landed": 24,
+              "distance": 38
+            },
+            {
+              "landed": 20,
+              "distance": 47
+            },
+            {
+              "landed": 21,
+              "distance": 59
+            },
+            {
+              "landed": 16,
+              "distance": 32
+            }
+          ],
+          "punter": "C.Bojorquez",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "8",
+          "drives": [
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "End of Half",
+            "Touchdown",
+            "Touchdown",
+            "Touchdown",
+            "Punt",
+            "Punt",
+            "End of Game"
+          ],
+          "fieldGoals": [],
+          "punts": [
+            {
+              "landed": 39,
+              "distance": 46
+            },
+            {
+              "landed": 9,
+              "distance": 56
+            },
+            {
+              "landed": 9,
+              "distance": 38
+            }
+          ],
+          "punter": "C.Bojorquez",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "25",
           "drives": [
@@ -38470,8 +39120,8 @@
             }
           ],
           "punter": "C.Bojorquez",
-          "yardsAllowed": 298,
-          "pointsAllowed": 28
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "23",
@@ -38507,8 +39157,8 @@
             }
           ],
           "punter": "C.Bojorquez",
-          "yardsAllowed": 282,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "4",
@@ -38544,8 +39194,8 @@
             }
           ],
           "punter": "C.Bojorquez",
-          "yardsAllowed": 367,
-          "pointsAllowed": 22
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "3",
@@ -38578,15 +39228,15 @@
             }
           ],
           "punter": "C.Bojorquez",
-          "yardsAllowed": 277,
-          "pointsAllowed": 14
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 430,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "22",
@@ -38620,8 +39270,8 @@
             }
           ],
           "punter": "C.Bojorquez",
-          "yardsAllowed": 334,
-          "pointsAllowed": 21
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "12",
@@ -38657,8 +39307,8 @@
             }
           ],
           "punter": "C.Bojorquez",
-          "yardsAllowed": 237,
-          "pointsAllowed": 13
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "26",
@@ -38691,7 +39341,7 @@
             }
           ],
           "punter": "C.Bojorquez",
-          "yardsAllowed": 208,
+          "yardsAllowed": 0,
           "pointsAllowed": 0
         },
         "11": {
@@ -38721,8 +39371,8 @@
             }
           ],
           "punter": "C.Bojorquez",
-          "yardsAllowed": 408,
-          "pointsAllowed": 34
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "14",
@@ -38769,8 +39419,8 @@
             }
           ],
           "punter": "C.Bojorquez",
-          "yardsAllowed": 353,
-          "pointsAllowed": 28
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "3",
@@ -38805,8 +39455,8 @@
             }
           ],
           "punter": "C.Bojorquez",
-          "yardsAllowed": 347,
-          "pointsAllowed": 30
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "33",
@@ -38839,8 +39489,8 @@
             }
           ],
           "punter": "C.Bojorquez",
-          "yardsAllowed": 354,
-          "pointsAllowed": 30
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "5",
@@ -38882,8 +39532,8 @@
             }
           ],
           "punter": "C.Bojorquez",
-          "yardsAllowed": 408,
-          "pointsAllowed": 22
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "16",
@@ -38916,8 +39566,8 @@
             }
           ],
           "punter": "C.Bojorquez",
-          "yardsAllowed": 206,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "8",
@@ -38944,8 +39594,8 @@
             }
           ],
           "punter": "C.Bojorquez",
-          "yardsAllowed": 404,
-          "pointsAllowed": 37
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -38954,6 +39604,78 @@
       "name": "Titans",
       "byeWeek": 13,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "22",
+          "drives": [
+            "Punt",
+            "Fumble",
+            "Punt",
+            "Punt",
+            "Touchdown",
+            "Missed FG",
+            "Touchdown",
+            "Interception",
+            "Fumble",
+            "Downs",
+            "Downs",
+            "End of Game"
+          ],
+          "fieldGoals": [],
+          "punts": [
+            {
+              "landed": 28,
+              "distance": 47
+            },
+            {
+              "landed": 22,
+              "distance": 59
+            },
+            {
+              "landed": 30,
+              "distance": 45
+            }
+          ],
+          "punter": "B.Kern",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "26",
+          "drives": [
+            "Punt",
+            "Field Goal",
+            "Field Goal",
+            "Fumble",
+            "Field Goal",
+            "End of Half",
+            "Touchdown",
+            "Missed FG",
+            "Touchdown",
+            "Downs",
+            "Touchdown",
+            "Punt",
+            "Field Goal"
+          ],
+          "fieldGoals": [
+            33,
+            30,
+            24,
+            36
+          ],
+          "punts": [
+            {
+              "landed": 30,
+              "distance": 41
+            },
+            {
+              "landed": 13,
+              "distance": 53
+            }
+          ],
+          "punter": "B.Kern",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "11",
           "drives": [
@@ -38977,8 +39699,8 @@
             }
           ],
           "punter": "B.Kern",
-          "yardsAllowed": 265,
-          "pointsAllowed": 16
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "20",
@@ -39025,8 +39747,8 @@
             }
           ],
           "punter": "J.Townsend",
-          "yardsAllowed": 355,
-          "pointsAllowed": 27
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "30",
@@ -39063,8 +39785,8 @@
             }
           ],
           "punter": "J.Townsend",
-          "yardsAllowed": 454,
-          "pointsAllowed": 19
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "2",
@@ -39096,8 +39818,8 @@
             }
           ],
           "punter": "J.Townsend",
-          "yardsAllowed": 417,
-          "pointsAllowed": 31
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "opp": "12",
@@ -39127,8 +39849,8 @@
             }
           ],
           "punter": "B.Kern",
-          "yardsAllowed": 334,
-          "pointsAllowed": 3
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "11",
@@ -39169,8 +39891,8 @@
             }
           ],
           "punter": "B.Kern",
-          "yardsAllowed": 307,
-          "pointsAllowed": 31
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "14",
@@ -39211,8 +39933,8 @@
             }
           ],
           "punter": "B.Kern",
-          "yardsAllowed": 347,
-          "pointsAllowed": 16
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "18",
@@ -39257,8 +39979,8 @@
             }
           ],
           "punter": "B.Kern",
-          "yardsAllowed": 373,
-          "pointsAllowed": 21
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "34",
@@ -39288,8 +40010,8 @@
             }
           ],
           "punter": "B.Kern",
-          "yardsAllowed": 190,
-          "pointsAllowed": 22
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "17",
@@ -39318,8 +40040,8 @@
             }
           ],
           "punter": "B.Kern",
-          "yardsAllowed": 394,
-          "pointsAllowed": 36
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "30",
@@ -39363,7 +40085,7 @@
             }
           ],
           "punter": "B.Kern",
-          "yardsAllowed": 192,
+          "yardsAllowed": 0,
           "pointsAllowed": 0
         },
         "15": {
@@ -39400,8 +40122,8 @@
             }
           ],
           "punter": "B.Kern",
-          "yardsAllowed": 168,
-          "pointsAllowed": 19
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "25",
@@ -39443,8 +40165,8 @@
             }
           ],
           "punter": "B.Kern",
-          "yardsAllowed": 389,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "15",
@@ -39484,8 +40206,8 @@
             }
           ],
           "punter": "B.Kern",
-          "yardsAllowed": 256,
-          "pointsAllowed": 3
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "34",
@@ -39521,8 +40243,8 @@
             }
           ],
           "punter": "B.Kern",
-          "yardsAllowed": 353,
-          "pointsAllowed": 25
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -39531,6 +40253,79 @@
       "name": "Colts",
       "byeWeek": 14,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "26",
+          "drives": [
+            "Field Goal",
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Downs",
+            "Punt",
+            "Punt",
+            "Fumble",
+            "Downs",
+            "Touchdown",
+            "End of Game"
+          ],
+          "fieldGoals": [
+            21
+          ],
+          "punts": [
+            {
+              "landed": 33,
+              "distance": 46
+            },
+            {
+              "landed": 17,
+              "distance": 47
+            },
+            {
+              "landed": 29,
+              "distance": 52
+            },
+            {
+              "landed": 49,
+              "distance": 42
+            }
+          ],
+          "punter": "R.Sanchez",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "14",
+          "drives": [
+            "Downs",
+            "Field Goal",
+            "Interception",
+            "Field Goal",
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Field Goal",
+            "Interception",
+            "End of Game"
+          ],
+          "fieldGoals": [
+            48,
+            46,
+            35
+          ],
+          "punts": [
+            {
+              "landed": 39,
+              "distance": 45
+            },
+            {
+              "landed": 7,
+              "distance": 40
+            }
+          ],
+          "punter": "R.Sanchez",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "10",
           "drives": [
@@ -39568,8 +40363,8 @@
             }
           ],
           "punter": "R.Sanchez",
-          "yardsAllowed": 368,
-          "pointsAllowed": 25
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "15",
@@ -39608,8 +40403,8 @@
             }
           ],
           "punter": "R.Sanchez",
-          "yardsAllowed": 203,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "33",
@@ -39640,8 +40435,8 @@
             }
           ],
           "punter": "R.Sanchez",
-          "yardsAllowed": 523,
-          "pointsAllowed": 31
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "34",
@@ -39684,8 +40479,8 @@
             }
           ],
           "punter": "R.Sanchez",
-          "yardsAllowed": 353,
-          "pointsAllowed": 3
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "opp": "25",
@@ -39734,8 +40529,8 @@
             }
           ],
           "punter": "R.Sanchez",
-          "yardsAllowed": 280,
-          "pointsAllowed": 18
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "10",
@@ -39775,8 +40570,8 @@
             }
           ],
           "punter": "R.Sanchez",
-          "yardsAllowed": 340,
-          "pointsAllowed": 28
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "20",
@@ -39807,8 +40602,8 @@
             }
           ],
           "punter": "R.Sanchez",
-          "yardsAllowed": 486,
-          "pointsAllowed": 30
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "30",
@@ -39862,8 +40657,8 @@
             }
           ],
           "punter": "R.Sanchez",
-          "yardsAllowed": 331,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "2",
@@ -39889,8 +40684,8 @@
             }
           ],
           "punter": "R.Sanchez",
-          "yardsAllowed": 311,
-          "pointsAllowed": 15
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "27",
@@ -39926,8 +40721,8 @@
             }
           ],
           "punter": "R.Sanchez",
-          "yardsAllowed": 359,
-          "pointsAllowed": 38
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "34",
@@ -39963,7 +40758,7 @@
             }
           ],
           "punter": "R.Sanchez",
-          "yardsAllowed": 141,
+          "yardsAllowed": 0,
           "pointsAllowed": 0
         },
         "15": {
@@ -39995,8 +40790,8 @@
             }
           ],
           "punter": "R.Sanchez",
-          "yardsAllowed": 365,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "22",
@@ -40031,8 +40826,8 @@
             }
           ],
           "punter": "R.Sanchez",
-          "yardsAllowed": 378,
-          "pointsAllowed": 16
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "13",
@@ -40074,8 +40869,8 @@
             }
           ],
           "punter": "R.Sanchez",
-          "yardsAllowed": 326,
-          "pointsAllowed": 23
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "30",
@@ -40104,8 +40899,8 @@
             }
           ],
           "punter": "R.Sanchez",
-          "yardsAllowed": 318,
-          "pointsAllowed": 26
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -40114,6 +40909,70 @@
       "name": "Chiefs",
       "byeWeek": 12,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "5",
+          "drives": [
+            "Field Goal",
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "Field Goal",
+            "Touchdown",
+            "Touchdown",
+            "Punt",
+            "End of Game"
+          ],
+          "fieldGoals": [
+            28,
+            43
+          ],
+          "punts": [
+            {
+              "landed": 1,
+              "distance": 44
+            },
+            {
+              "landed": 13,
+              "distance": 47
+            }
+          ],
+          "punter": "T.Townsend",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "33",
+          "drives": [
+            "Touchdown",
+            "Punt",
+            "Punt",
+            "Touchdown",
+            "End of Half",
+            "Touchdown",
+            "Touchdown",
+            "Interception",
+            "Punt",
+            "Fumble"
+          ],
+          "fieldGoals": [],
+          "punts": [
+            {
+              "landed": 33,
+              "distance": 54
+            },
+            {
+              "landed": 12,
+              "distance": 49
+            },
+            {
+              "landed": 32,
+              "distance": 32
+            }
+          ],
+          "punter": "T.Townsend",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "24",
           "drives": [
@@ -40138,8 +40997,8 @@
             }
           ],
           "punter": "T.Townsend",
-          "yardsAllowed": 352,
-          "pointsAllowed": 30
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "21",
@@ -40156,8 +41015,8 @@
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 461,
-          "pointsAllowed": 30
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "2",
@@ -40189,15 +41048,15 @@
             }
           ],
           "punter": "T.Townsend",
-          "yardsAllowed": 436,
-          "pointsAllowed": 32
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 276,
-          "pointsAllowed": 13
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "opp": "10",
@@ -40226,8 +41085,8 @@
             }
           ],
           "punter": "T.Townsend",
-          "yardsAllowed": 369,
-          "pointsAllowed": 27
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "19",
@@ -40267,8 +41126,8 @@
             }
           ],
           "punter": "T.Townsend",
-          "yardsAllowed": 300,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "9",
@@ -40316,8 +41175,8 @@
             }
           ],
           "punter": "T.Townsend",
-          "yardsAllowed": 301,
-          "pointsAllowed": 7
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "13",
@@ -40344,8 +41203,8 @@
             }
           ],
           "punter": "T.Townsend",
-          "yardsAllowed": 299,
-          "pointsAllowed": 14
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "6",
@@ -40387,8 +41246,8 @@
             }
           ],
           "punter": "T.Townsend,H.Butker",
-          "yardsAllowed": 276,
-          "pointsAllowed": 9
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "7",
@@ -40428,8 +41287,8 @@
             }
           ],
           "punter": "T.Townsend",
-          "yardsAllowed": 404,
-          "pointsAllowed": 9
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "13",
@@ -40455,8 +41314,8 @@
             }
           ],
           "punter": "T.Townsend",
-          "yardsAllowed": 290,
-          "pointsAllowed": 9
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "24",
@@ -40484,8 +41343,8 @@
             }
           ],
           "punter": "T.Townsend",
-          "yardsAllowed": 428,
-          "pointsAllowed": 28
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "23",
@@ -40517,8 +41376,8 @@
             }
           ],
           "punter": "J.Townsend",
-          "yardsAllowed": 303,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "4",
@@ -40551,8 +41410,8 @@
             }
           ],
           "punter": "T.Townsend",
-          "yardsAllowed": 475,
-          "pointsAllowed": 34
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "7",
@@ -40581,8 +41440,8 @@
             }
           ],
           "punter": "T.Townsend",
-          "yardsAllowed": 364,
-          "pointsAllowed": 24
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -40591,6 +41450,100 @@
       "name": "Raiders",
       "byeWeek": 8,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "33",
+          "drives": [
+            "Punt",
+            "Punt",
+            "Punt",
+            "Punt",
+            "Touchdown",
+            "Field Goal",
+            "Punt",
+            "Downs",
+            "Punt",
+            "Touchdown",
+            "Touchdown",
+            "Field Goal",
+            "Interception",
+            "Touchdown"
+          ],
+          "fieldGoals": [
+            34,
+            55
+          ],
+          "punts": [
+            {
+              "landed": 8,
+              "distance": 35
+            },
+            {
+              "landed": 13,
+              "distance": 63
+            },
+            {
+              "landed": 5,
+              "distance": 67
+            },
+            {
+              "landed": 26,
+              "distance": 50
+            },
+            {
+              "landed": 32,
+              "distance": 64
+            },
+            {
+              "landed": 19,
+              "distance": 37
+            }
+          ],
+          "punter": "A.Cole",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "23",
+          "drives": [
+            "Punt",
+            "Field Goal",
+            "Field Goal",
+            "Field Goal",
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Field Goal"
+          ],
+          "fieldGoals": [
+            46,
+            33,
+            41,
+            45
+          ],
+          "punts": [
+            {
+              "landed": 10,
+              "distance": 55
+            },
+            {
+              "landed": 13,
+              "distance": 40
+            },
+            {
+              "landed": 0,
+              "distance": 50
+            },
+            {
+              "landed": 17,
+              "distance": 45
+            }
+          ],
+          "punter": "A.Cole",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "15",
           "drives": [
@@ -40632,8 +41585,8 @@
             }
           ],
           "punter": "A.Cole",
-          "yardsAllowed": 330,
-          "pointsAllowed": 22
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "24",
@@ -40671,8 +41624,8 @@
             }
           ],
           "punter": "A.Cole",
-          "yardsAllowed": 380,
-          "pointsAllowed": 28
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "3",
@@ -40710,8 +41663,8 @@
             }
           ],
           "punter": "A.Cole",
-          "yardsAllowed": 252,
-          "pointsAllowed": 20
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "7",
@@ -40752,8 +41705,8 @@
             }
           ],
           "punter": "A.Cole",
-          "yardsAllowed": 421,
-          "pointsAllowed": 24
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "opp": "21",
@@ -40784,8 +41737,8 @@
             }
           ],
           "punter": "A.Cole",
-          "yardsAllowed": 358,
-          "pointsAllowed": 22
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "19",
@@ -40817,8 +41770,8 @@
             }
           ],
           "punter": "A.Cole",
-          "yardsAllowed": 247,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "12",
@@ -40858,8 +41811,8 @@
             }
           ],
           "punter": "A.Cole",
-          "yardsAllowed": 516,
-          "pointsAllowed": 41
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "4",
@@ -40899,8 +41852,8 @@
             }
           ],
           "punter": "A.Cole",
-          "yardsAllowed": 288,
-          "pointsAllowed": 32
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "6",
@@ -40951,15 +41904,15 @@
             }
           ],
           "punter": "A.Cole",
-          "yardsAllowed": 437,
-          "pointsAllowed": 33
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 298,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "12",
@@ -40993,8 +41946,8 @@
             }
           ],
           "punter": "A.Cole",
-          "yardsAllowed": 372,
-          "pointsAllowed": 42
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "5",
@@ -41034,8 +41987,8 @@
             }
           ],
           "punter": "A.Cole",
-          "yardsAllowed": 236,
-          "pointsAllowed": 14
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "7",
@@ -41065,8 +42018,8 @@
             }
           ],
           "punter": "A.Cole",
-          "yardsAllowed": 158,
-          "pointsAllowed": 13
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "11",
@@ -41098,8 +42051,54 @@
             }
           ],
           "punter": "A.Cole",
-          "yardsAllowed": 262,
-          "pointsAllowed": 20
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "18": {
+          "opp": "24",
+          "drives": [
+            "Field Goal",
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "End of Half",
+            "Punt",
+            "Field Goal",
+            "Touchdown",
+            "Field Goal",
+            "Punt",
+            "Field Goal",
+            "Field Goal"
+          ],
+          "fieldGoals": [
+            24,
+            31,
+            52,
+            40,
+            47
+          ],
+          "punts": [
+            {
+              "landed": 18,
+              "distance": 46
+            },
+            {
+              "landed": 10,
+              "distance": 33
+            },
+            {
+              "landed": 9,
+              "distance": 48
+            },
+            {
+              "landed": 27,
+              "distance": 54
+            }
+          ],
+          "punter": "A.Cole",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -41108,6 +42107,69 @@
       "name": "Rams",
       "byeWeek": 11,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "3",
+          "drives": [
+            "Touchdown",
+            "Field Goal",
+            "Field Goal",
+            "Punt",
+            "End of Half",
+            "Touchdown",
+            "Touchdown",
+            "Touchdown",
+            "End of Game"
+          ],
+          "fieldGoals": [
+            53,
+            22
+          ],
+          "punts": [
+            {
+              "landed": 42,
+              "distance": 50
+            }
+          ],
+          "punter": "J.Hekker",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "11",
+          "drives": [
+            "Touchdown",
+            "Interception",
+            "Field Goal",
+            "Touchdown",
+            "Punt",
+            "Punt",
+            "Fumble Return Touchdown",
+            "Touchdown",
+            "Field Goal",
+            "Punt"
+          ],
+          "fieldGoals": [
+            34,
+            38
+          ],
+          "punts": [
+            {
+              "landed": 26,
+              "distance": 33
+            },
+            {
+              "landed": 37,
+              "distance": 46
+            },
+            {
+              "landed": 10,
+              "distance": 30
+            }
+          ],
+          "punter": "J.Hekker",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "27",
           "drives": [
@@ -41141,8 +42203,8 @@
             }
           ],
           "punter": "J.Hekker",
-          "yardsAllowed": 446,
-          "pointsAllowed": 24
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "22",
@@ -41169,8 +42231,8 @@
             }
           ],
           "punter": "J.Hekker",
-          "yardsAllowed": 465,
-          "pointsAllowed": 37
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "26",
@@ -41215,8 +42277,8 @@
             }
           ],
           "punter": "J.Hekker",
-          "yardsAllowed": 354,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "19",
@@ -41257,8 +42319,8 @@
             }
           ],
           "punter": "J.Hekker",
-          "yardsAllowed": 261,
-          "pointsAllowed": 11
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "opp": "8",
@@ -41284,8 +42346,8 @@
             }
           ],
           "punter": "J.Hekker",
-          "yardsAllowed": 415,
-          "pointsAllowed": 19
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "34",
@@ -41324,8 +42386,8 @@
             }
           ],
           "punter": "J.Hekker",
-          "yardsAllowed": 323,
-          "pointsAllowed": 22
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "10",
@@ -41366,8 +42428,8 @@
             }
           ],
           "punter": "J.Hekker",
-          "yardsAllowed": 194,
-          "pointsAllowed": 22
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "25",
@@ -41401,8 +42463,8 @@
             }
           ],
           "punter": "J.Hekker",
-          "yardsAllowed": 335,
-          "pointsAllowed": 25
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "9",
@@ -41449,8 +42511,8 @@
             }
           ],
           "punter": "J.Hekker",
-          "yardsAllowed": 399,
-          "pointsAllowed": 30
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "30",
@@ -41486,8 +42548,8 @@
             }
           ],
           "punter": "J.Hekker",
-          "yardsAllowed": 197,
-          "pointsAllowed": 7
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "22",
@@ -41522,8 +42584,8 @@
             }
           ],
           "punter": "J.Hekker",
-          "yardsAllowed": 447,
-          "pointsAllowed": 23
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "26",
@@ -41559,8 +42621,8 @@
             }
           ],
           "punter": "J.Hekker",
-          "yardsAllowed": 214,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "16",
@@ -41593,8 +42655,8 @@
             }
           ],
           "punter": "J.Hekker",
-          "yardsAllowed": 361,
-          "pointsAllowed": 23
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "33",
@@ -41622,8 +42684,8 @@
             }
           ],
           "punter": "J.Hekker",
-          "yardsAllowed": 327,
-          "pointsAllowed": 13
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "25",
@@ -41662,8 +42724,8 @@
             }
           ],
           "punter": "J.Hekker",
-          "yardsAllowed": 449,
-          "pointsAllowed": 27
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -41672,6 +42734,87 @@
       "name": "Dolphins",
       "byeWeek": 14,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "17",
+          "drives": [
+            "Touchdown",
+            "Punt",
+            "Punt",
+            "Punt",
+            "Field Goal",
+            "Touchdown",
+            "Punt",
+            "Interception",
+            "End of Game"
+          ],
+          "fieldGoals": [
+            48
+          ],
+          "punts": [
+            {
+              "landed": 19,
+              "distance": 40
+            },
+            {
+              "landed": 0,
+              "distance": 52
+            },
+            {
+              "landed": 38,
+              "distance": 37
+            },
+            {
+              "landed": 29,
+              "distance": 51
+            }
+          ],
+          "punter": "M.Palardy",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "2",
+          "drives": [
+            "Punt",
+            "Downs",
+            "Punt",
+            "Interception",
+            "Fumble",
+            "Downs",
+            "Punt",
+            "End of Half",
+            "Punt",
+            "Downs",
+            "Punt",
+            "Downs"
+          ],
+          "fieldGoals": [],
+          "punts": [
+            {
+              "landed": 34,
+              "distance": 48
+            },
+            {
+              "landed": 26,
+              "distance": 47
+            },
+            {
+              "landed": 8,
+              "distance": 30
+            },
+            {
+              "landed": 23,
+              "distance": 36
+            },
+            {
+              "landed": 25,
+              "distance": 61
+            }
+          ],
+          "punter": "M.Palardy",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "13",
           "drives": [
@@ -41710,8 +42853,8 @@
             }
           ],
           "punter": "M.Palardy",
-          "yardsAllowed": 497,
-          "pointsAllowed": 29
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "11",
@@ -41753,8 +42896,8 @@
             }
           ],
           "punter": "M.Palardy",
-          "yardsAllowed": 349,
-          "pointsAllowed": 27
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "27",
@@ -41791,8 +42934,8 @@
             }
           ],
           "punter": "M.Palardy",
-          "yardsAllowed": 558,
-          "pointsAllowed": 45
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "30",
@@ -41832,8 +42975,8 @@
             }
           ],
           "punter": "M.Palardy",
-          "yardsAllowed": 396,
-          "pointsAllowed": 23
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "opp": "1",
@@ -41866,8 +43009,8 @@
             }
           ],
           "punter": "M.Palardy",
-          "yardsAllowed": 397,
-          "pointsAllowed": 30
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "2",
@@ -41910,8 +43053,8 @@
             }
           ],
           "punter": "M.Palardy",
-          "yardsAllowed": 351,
-          "pointsAllowed": 26
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "34",
@@ -41955,8 +43098,8 @@
             }
           ],
           "punter": "M.Palardy",
-          "yardsAllowed": 272,
-          "pointsAllowed": 9
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "33",
@@ -42011,8 +43154,8 @@
             }
           ],
           "punter": "M.Palardy",
-          "yardsAllowed": 304,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "20",
@@ -42051,8 +43194,8 @@
             }
           ],
           "punter": "M.Palardy",
-          "yardsAllowed": 380,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "29",
@@ -42092,8 +43235,8 @@
             }
           ],
           "punter": "M.Palardy",
-          "yardsAllowed": 198,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "19",
@@ -42142,8 +43285,8 @@
             }
           ],
           "punter": "M.Palardy",
-          "yardsAllowed": 250,
-          "pointsAllowed": 9
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "20",
@@ -42180,8 +43323,8 @@
             }
           ],
           "punter": "M.Palardy",
-          "yardsAllowed": 228,
-          "pointsAllowed": 18
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "18",
@@ -42229,8 +43372,8 @@
             }
           ],
           "punter": "M.Palardy",
-          "yardsAllowed": 164,
-          "pointsAllowed": 3
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "10",
@@ -42269,8 +43412,8 @@
             }
           ],
           "punter": "M.Palardy",
-          "yardsAllowed": 308,
-          "pointsAllowed": 34
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "17",
@@ -42308,8 +43451,8 @@
             }
           ],
           "punter": "M.Palardy",
-          "yardsAllowed": 379,
-          "pointsAllowed": 24
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -42318,6 +43461,109 @@
       "name": "Vikings",
       "byeWeek": 7,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "4",
+          "drives": [
+            "Punt",
+            "Punt",
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Punt",
+            "Punt",
+            "Touchdown",
+            "Touchdown",
+            "Punt",
+            "Field Goal",
+            "Punt",
+            "Fumble"
+          ],
+          "fieldGoals": [
+            53
+          ],
+          "punts": [
+            {
+              "landed": 22,
+              "distance": 39
+            },
+            {
+              "landed": 30,
+              "distance": 46
+            },
+            {
+              "landed": 49,
+              "distance": 49
+            },
+            {
+              "landed": 13,
+              "distance": 61
+            },
+            {
+              "landed": 9,
+              "distance": 52
+            },
+            {
+              "landed": 18,
+              "distance": 41
+            },
+            {
+              "landed": 25,
+              "distance": 51
+            },
+            {
+              "landed": 10,
+              "distance": 63
+            }
+          ],
+          "punter": "J.Berry",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "22",
+          "drives": [
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "Touchdown",
+            "Punt",
+            "Field Goal",
+            "Punt",
+            "Field Goal",
+            "Punt",
+            "Punt",
+            "Missed FG"
+          ],
+          "fieldGoals": [
+            52,
+            52
+          ],
+          "punts": [
+            {
+              "landed": 21,
+              "distance": 46
+            },
+            {
+              "landed": 23,
+              "distance": 43
+            },
+            {
+              "landed": 10,
+              "distance": 50
+            },
+            {
+              "landed": 31,
+              "distance": 60
+            },
+            {
+              "landed": 39,
+              "distance": 32
+            }
+          ],
+          "punter": "J.Berry",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "26",
           "drives": [
@@ -42346,8 +43592,8 @@
             }
           ],
           "punter": "J.Berry",
-          "yardsAllowed": 389,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "5",
@@ -42393,8 +43639,8 @@
             }
           ],
           "punter": "J.Berry",
-          "yardsAllowed": 327,
-          "pointsAllowed": 14
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "8",
@@ -42433,8 +43679,8 @@
             }
           ],
           "punter": "J.Berry",
-          "yardsAllowed": 288,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "29",
@@ -42480,8 +43726,8 @@
             }
           ],
           "punter": "J.Berry",
-          "yardsAllowed": 306,
-          "pointsAllowed": 28
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "6",
@@ -42531,8 +43777,8 @@
             }
           ],
           "punter": "J.Berry",
-          "yardsAllowed": 419,
-          "pointsAllowed": 20
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "33",
@@ -42575,8 +43821,8 @@
             }
           ],
           "punter": "J.Berry",
-          "yardsAllowed": 500,
-          "pointsAllowed": 34
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "24",
@@ -42612,8 +43858,8 @@
             }
           ],
           "punter": "J.Berry",
-          "yardsAllowed": 253,
-          "pointsAllowed": 20
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "9",
@@ -42647,8 +43893,8 @@
             }
           ],
           "punter": "J.Berry",
-          "yardsAllowed": 467,
-          "pointsAllowed": 31
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "25",
@@ -42682,8 +43928,8 @@
             }
           ],
           "punter": "J.Berry",
-          "yardsAllowed": 423,
-          "pointsAllowed": 34
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "8",
@@ -42721,8 +43967,8 @@
             }
           ],
           "punter": "J.Berry",
-          "yardsAllowed": 372,
-          "pointsAllowed": 29
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "23",
@@ -42761,8 +44007,8 @@
             }
           ],
           "punter": "J.Berry",
-          "yardsAllowed": 375,
-          "pointsAllowed": 28
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "3",
@@ -42814,8 +44060,8 @@
             }
           ],
           "punter": "J.Berry",
-          "yardsAllowed": 370,
-          "pointsAllowed": 9
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "14",
@@ -42857,8 +44103,8 @@
             }
           ],
           "punter": "J.Berry",
-          "yardsAllowed": 356,
-          "pointsAllowed": 30
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "9",
@@ -42905,8 +44151,8 @@
             }
           ],
           "punter": "J.Berry",
-          "yardsAllowed": 481,
-          "pointsAllowed": 37
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "3",
@@ -42953,8 +44199,8 @@
             }
           ],
           "punter": "J.Berry",
-          "yardsAllowed": 356,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -42963,6 +44209,84 @@
       "name": "Patriots",
       "byeWeek": 14,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "15",
+          "drives": [
+            "Punt",
+            "Fumble",
+            "Field Goal",
+            "Punt",
+            "Touchdown",
+            "Field Goal",
+            "Field Goal",
+            "Fumble"
+          ],
+          "fieldGoals": [
+            27,
+            42,
+            33
+          ],
+          "punts": [
+            {
+              "landed": 0,
+              "distance": 37
+            },
+            {
+              "landed": 2,
+              "distance": 62
+            }
+          ],
+          "punter": "J.Bailey",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "20",
+          "drives": [
+            "Punt",
+            "Field Goal",
+            "Touchdown",
+            "Punt",
+            "Punt",
+            "Field Goal",
+            "Touchdown",
+            "Field Goal",
+            "Punt",
+            "Punt",
+            "Field Goal"
+          ],
+          "fieldGoals": [
+            46,
+            49,
+            32,
+            26
+          ],
+          "punts": [
+            {
+              "landed": 8,
+              "distance": 32
+            },
+            {
+              "landed": 43,
+              "distance": 48
+            },
+            {
+              "landed": 17,
+              "distance": 44
+            },
+            {
+              "landed": 17,
+              "distance": 35
+            },
+            {
+              "landed": 18,
+              "distance": 60
+            }
+          ],
+          "punter": "J.Bailey",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "18",
           "drives": [
@@ -43006,8 +44330,8 @@
             }
           ],
           "punter": "J.Bailey",
-          "yardsAllowed": 252,
-          "pointsAllowed": 22
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "27",
@@ -43046,8 +44370,8 @@
             }
           ],
           "punter": "J.Bailey",
-          "yardsAllowed": 381,
-          "pointsAllowed": 19
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "34",
@@ -43075,8 +44399,8 @@
             }
           ],
           "punter": "J.Bailey",
-          "yardsAllowed": 360,
-          "pointsAllowed": 22
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "6",
@@ -43115,8 +44439,8 @@
             }
           ],
           "punter": "J.Bailey",
-          "yardsAllowed": 567,
-          "pointsAllowed": 29
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "opp": "20",
@@ -43144,8 +44468,8 @@
             }
           ],
           "punter": "J.Bailey",
-          "yardsAllowed": 299,
-          "pointsAllowed": 13
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "24",
@@ -43183,8 +44507,8 @@
             }
           ],
           "punter": "J.Bailey",
-          "yardsAllowed": 369,
-          "pointsAllowed": 24
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "29",
@@ -43218,8 +44542,8 @@
             }
           ],
           "punter": "J.Bailey",
-          "yardsAllowed": 240,
-          "pointsAllowed": 6
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "5",
@@ -43244,8 +44568,8 @@
             }
           ],
           "punter": "J.Bailey",
-          "yardsAllowed": 217,
-          "pointsAllowed": 7
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "1",
@@ -43287,7 +44611,7 @@
             }
           ],
           "punter": "J.Bailey",
-          "yardsAllowed": 165,
+          "yardsAllowed": 0,
           "pointsAllowed": 0
         },
         "12": {
@@ -43319,8 +44643,8 @@
             }
           ],
           "punter": "J.Bailey",
-          "yardsAllowed": 355,
-          "pointsAllowed": 13
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "2",
@@ -43367,8 +44691,8 @@
             }
           ],
           "punter": "J.Bailey",
-          "yardsAllowed": 230,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "11",
@@ -43398,8 +44722,8 @@
             }
           ],
           "punter": "J.Bailey",
-          "yardsAllowed": 275,
-          "pointsAllowed": 27
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "2",
@@ -43429,8 +44753,8 @@
             }
           ],
           "punter": "J.Bailey",
-          "yardsAllowed": 428,
-          "pointsAllowed": 33
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "30",
@@ -43456,8 +44780,8 @@
             }
           ],
           "punter": "J.Bailey",
-          "yardsAllowed": 253,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "15",
@@ -43491,8 +44815,8 @@
             }
           ],
           "punter": "J.Bailey",
-          "yardsAllowed": 298,
-          "pointsAllowed": 21
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -43501,6 +44825,83 @@
       "name": "Saints",
       "byeWeek": 6,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "9",
+          "drives": [
+            "Field Goal",
+            "Touchdown",
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "Touchdown",
+            "Touchdown",
+            "Punt",
+            "End of Game"
+          ],
+          "fieldGoals": [
+            44
+          ],
+          "punts": [
+            {
+              "landed": 5,
+              "distance": 45
+            },
+            {
+              "landed": 39,
+              "distance": 44
+            }
+          ],
+          "punter": "B.Gillikin",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "29",
+          "drives": [
+            "Punt",
+            "Punt",
+            "Punt",
+            "Interception",
+            "Punt",
+            "Downs",
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Downs",
+            "Interception",
+            "End of Game"
+          ],
+          "fieldGoals": [],
+          "punts": [
+            {
+              "landed": 7,
+              "distance": 44
+            },
+            {
+              "landed": 24,
+              "distance": 60
+            },
+            {
+              "landed": 14,
+              "distance": 42
+            },
+            {
+              "landed": 23,
+              "distance": 52
+            },
+            {
+              "landed": 25,
+              "distance": 59
+            },
+            {
+              "landed": 47,
+              "distance": 37
+            }
+          ],
+          "punter": "B.Gillikin",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "17",
           "drives": [
@@ -43541,8 +44942,8 @@
             }
           ],
           "punter": "B.Gillikin",
-          "yardsAllowed": 300,
-          "pointsAllowed": 13
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "19",
@@ -43574,15 +44975,15 @@
             }
           ],
           "punter": "B.Gillikin",
-          "yardsAllowed": 485,
-          "pointsAllowed": 27
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 373,
-          "pointsAllowed": 22
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "opp": "26",
@@ -43630,8 +45031,8 @@
             }
           ],
           "punter": "B.Gillikin",
-          "yardsAllowed": 219,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "27",
@@ -43668,8 +45069,8 @@
             }
           ],
           "punter": "B.Gillikin",
-          "yardsAllowed": 421,
-          "pointsAllowed": 27
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "1",
@@ -43705,8 +45106,8 @@
             }
           ],
           "punter": "B.Gillikin",
-          "yardsAllowed": 366,
-          "pointsAllowed": 27
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "10",
@@ -43749,8 +45150,8 @@
             }
           ],
           "punter": "B.Gillikin",
-          "yardsAllowed": 264,
-          "pointsAllowed": 23
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "21",
@@ -43801,8 +45202,8 @@
             }
           ],
           "punter": "B.Gillikin",
-          "yardsAllowed": 380,
-          "pointsAllowed": 34
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "2",
@@ -43843,8 +45244,8 @@
             }
           ],
           "punter": "B.Gillikin",
-          "yardsAllowed": 361,
-          "pointsAllowed": 31
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "6",
@@ -43894,8 +45295,8 @@
             }
           ],
           "punter": "B.Gillikin",
-          "yardsAllowed": 377,
-          "pointsAllowed": 21
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "20",
@@ -43940,8 +45341,8 @@
             }
           ],
           "punter": "B.Gillikin",
-          "yardsAllowed": 256,
-          "pointsAllowed": 9
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "27",
@@ -44000,7 +45401,7 @@
             }
           ],
           "punter": "B.Gillikin",
-          "yardsAllowed": 302,
+          "yardsAllowed": 0,
           "pointsAllowed": 0
         },
         "16": {
@@ -44053,8 +45454,8 @@
             }
           ],
           "punter": "B.Gillikin",
-          "yardsAllowed": 259,
-          "pointsAllowed": 14
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "29",
@@ -44100,8 +45501,8 @@
             }
           ],
           "punter": "B.Gillikin",
-          "yardsAllowed": 178,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "1",
@@ -44134,8 +45535,8 @@
             }
           ],
           "punter": "B.Gillikin",
-          "yardsAllowed": 257,
-          "pointsAllowed": 20
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -44144,6 +45545,45 @@
       "name": "Giants",
       "byeWeek": 10,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "7",
+          "drives": [
+            "Punt",
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "End of Half",
+            "Fumble",
+            "Downs",
+            "Downs",
+            "Touchdown"
+          ],
+          "fieldGoals": [],
+          "punts": [
+            {
+              "landed": 0,
+              "distance": 43
+            },
+            {
+              "landed": 20,
+              "distance": 58
+            },
+            {
+              "landed": 32,
+              "distance": 61
+            }
+          ],
+          "punter": "R.Dixon",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "fieldGoals": [],
+          "punts": [],
+          "punter": "",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "1",
           "drives": [
@@ -44185,8 +45625,8 @@
             }
           ],
           "punter": "R.Dixon",
-          "yardsAllowed": 296,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "18",
@@ -44226,8 +45666,8 @@
             }
           ],
           "punter": "R.Dixon",
-          "yardsAllowed": 405,
-          "pointsAllowed": 21
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "6",
@@ -44260,8 +45700,8 @@
             }
           ],
           "punter": "R.Dixon",
-          "yardsAllowed": 515,
-          "pointsAllowed": 38
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "14",
@@ -44301,8 +45741,8 @@
             }
           ],
           "punter": "R.Dixon",
-          "yardsAllowed": 365,
-          "pointsAllowed": 38
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "opp": "29",
@@ -44349,8 +45789,8 @@
             }
           ],
           "punter": "R.Dixon",
-          "yardsAllowed": 173,
-          "pointsAllowed": 3
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "12",
@@ -44393,8 +45833,8 @@
             }
           ],
           "punter": "R.Dixon",
-          "yardsAllowed": 368,
-          "pointsAllowed": 20
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "13",
@@ -44430,8 +45870,8 @@
             }
           ],
           "punter": "R.Dixon",
-          "yardsAllowed": 403,
-          "pointsAllowed": 16
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "27",
@@ -44470,8 +45910,8 @@
             }
           ],
           "punter": "R.Dixon",
-          "yardsAllowed": 402,
-          "pointsAllowed": 30
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "21",
@@ -44514,8 +45954,8 @@
             }
           ],
           "punter": "R.Dixon",
-          "yardsAllowed": 332,
-          "pointsAllowed": 7
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "15",
@@ -44565,8 +46005,8 @@
             }
           ],
           "punter": "R.Dixon",
-          "yardsAllowed": 297,
-          "pointsAllowed": 20
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "24",
@@ -44608,8 +46048,8 @@
             }
           ],
           "punter": "R.Dixon",
-          "yardsAllowed": 423,
-          "pointsAllowed": 37
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "6",
@@ -44640,8 +46080,8 @@
             }
           ],
           "punter": "R.Dixon",
-          "yardsAllowed": 328,
-          "pointsAllowed": 21
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "21",
@@ -44698,8 +46138,8 @@
             }
           ],
           "punter": "R.Dixon",
-          "yardsAllowed": 324,
-          "pointsAllowed": 28
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "3",
@@ -44739,15 +46179,15 @@
             }
           ],
           "punter": "R.Dixon",
-          "yardsAllowed": 249,
-          "pointsAllowed": 27
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 325,
-          "pointsAllowed": 16
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -44756,6 +46196,87 @@
       "name": "Jets",
       "byeWeek": 6,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "29",
+          "drives": [
+            "Punt",
+            "Punt",
+            "Punt",
+            "Interception",
+            "Downs",
+            "Punt",
+            "End of Half",
+            "Punt",
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Touchdown"
+          ],
+          "fieldGoals": [],
+          "punts": [
+            {
+              "landed": 22,
+              "distance": 56
+            },
+            {
+              "landed": 29,
+              "distance": 52
+            },
+            {
+              "landed": 29,
+              "distance": 46
+            },
+            {
+              "landed": 38,
+              "distance": 40
+            },
+            {
+              "landed": 16,
+              "distance": 37
+            },
+            {
+              "landed": 14,
+              "distance": 57
+            },
+            {
+              "landed": 31,
+              "distance": 42
+            }
+          ],
+          "punter": "B.Mann,M.Ammendola",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "17",
+          "drives": [
+            "Interception",
+            "Interception",
+            "Field Goal",
+            "Interception",
+            "Punt",
+            "End of Half",
+            "Interception",
+            "Missed FG",
+            "Downs",
+            "Field Goal",
+            "Downs",
+            "End of Game"
+          ],
+          "fieldGoals": [
+            21,
+            35
+          ],
+          "punts": [
+            {
+              "landed": 31,
+              "distance": 45
+            }
+          ],
+          "punter": "T.Morstead",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "7",
           "drives": [
@@ -44799,8 +46320,8 @@
             }
           ],
           "punter": "T.Morstead",
-          "yardsAllowed": 343,
-          "pointsAllowed": 26
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "10",
@@ -44850,8 +46371,8 @@
             }
           ],
           "punter": "T.Morstead",
-          "yardsAllowed": 430,
-          "pointsAllowed": 24
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "1",
@@ -44889,8 +46410,8 @@
             }
           ],
           "punter": "T.Morstead",
-          "yardsAllowed": 450,
-          "pointsAllowed": 27
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "opp": "17",
@@ -44919,8 +46440,8 @@
             }
           ],
           "punter": "T.Morstead",
-          "yardsAllowed": 551,
-          "pointsAllowed": 54
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "4",
@@ -44949,8 +46470,8 @@
             }
           ],
           "punter": "T.Morstead",
-          "yardsAllowed": 318,
-          "pointsAllowed": 31
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "11",
@@ -44985,8 +46506,8 @@
             }
           ],
           "punter": "T.Morstead",
-          "yardsAllowed": 532,
-          "pointsAllowed": 45
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "2",
@@ -45022,8 +46543,8 @@
             }
           ],
           "punter": "B.Mann",
-          "yardsAllowed": 489,
-          "pointsAllowed": 45
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "15",
@@ -45061,8 +46582,8 @@
             }
           ],
           "punter": "B.Mann",
-          "yardsAllowed": 388,
-          "pointsAllowed": 24
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "34",
@@ -45102,8 +46623,8 @@
             }
           ],
           "punter": "B.Mann",
-          "yardsAllowed": 202,
-          "pointsAllowed": 14
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "21",
@@ -45130,8 +46651,8 @@
             }
           ],
           "punter": "B.Mann",
-          "yardsAllowed": 418,
-          "pointsAllowed": 33
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "18",
@@ -45181,8 +46702,8 @@
             }
           ],
           "punter": "B.Mann",
-          "yardsAllowed": 344,
-          "pointsAllowed": 30
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "15",
@@ -45229,8 +46750,8 @@
             }
           ],
           "punter": "B.Mann",
-          "yardsAllowed": 379,
-          "pointsAllowed": 31
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "30",
@@ -45256,8 +46777,8 @@
             }
           ],
           "punter": "B.Mann",
-          "yardsAllowed": 384,
-          "pointsAllowed": 21
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "27",
@@ -45295,8 +46816,8 @@
             }
           ],
           "punter": "B.Mann",
-          "yardsAllowed": 467,
-          "pointsAllowed": 28
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "2",
@@ -45361,8 +46882,8 @@
             }
           ],
           "punter": "B.Mann",
-          "yardsAllowed": 424,
-          "pointsAllowed": 27
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -45371,6 +46892,80 @@
       "name": "Eagles",
       "byeWeek": 14,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "1",
+          "drives": [
+            "Touchdown",
+            "Downs",
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Downs",
+            "Touchdown",
+            "Punt",
+            "PUNT",
+            "Touchdown",
+            "Field Goal"
+          ],
+          "fieldGoals": [
+            43
+          ],
+          "punts": [
+            {
+              "landed": 8,
+              "distance": 41
+            },
+            {
+              "landed": 7,
+              "distance": 48
+            },
+            {
+              "landed": 8,
+              "distance": 46
+            }
+          ],
+          "punter": "A.Siposs",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "25",
+          "drives": [
+            "Punt",
+            "Field Goal",
+            "Blocked FG, Downs",
+            "Downs",
+            "End of Half",
+            "Punt",
+            "Punt",
+            "Punt",
+            "Touchdown"
+          ],
+          "fieldGoals": [
+            45
+          ],
+          "punts": [
+            {
+              "landed": 0,
+              "distance": 50
+            },
+            {
+              "landed": 23,
+              "distance": 54
+            },
+            {
+              "landed": 8,
+              "distance": 32
+            },
+            {
+              "landed": 0,
+              "distance": 68
+            }
+          ],
+          "punter": "A.Siposs",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "6",
           "drives": [
@@ -45415,8 +47010,8 @@
             }
           ],
           "punter": "A.Siposs",
-          "yardsAllowed": 380,
-          "pointsAllowed": 35
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "12",
@@ -45437,8 +47032,8 @@
           ],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 471,
-          "pointsAllowed": 42
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "29",
@@ -45490,8 +47085,8 @@
             }
           ],
           "punter": "A.Siposs",
-          "yardsAllowed": 267,
-          "pointsAllowed": 16
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "27",
@@ -45531,8 +47126,8 @@
             }
           ],
           "punter": "A.Siposs",
-          "yardsAllowed": 399,
-          "pointsAllowed": 28
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "opp": "13",
@@ -45564,8 +47159,8 @@
             }
           ],
           "punter": "A.Siposs",
-          "yardsAllowed": 442,
-          "pointsAllowed": 33
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "8",
@@ -45592,8 +47187,8 @@
             }
           ],
           "punter": "A.Siposs",
-          "yardsAllowed": 228,
-          "pointsAllowed": 6
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "24",
@@ -45625,8 +47220,8 @@
             }
           ],
           "punter": "A.Siposs",
-          "yardsAllowed": 445,
-          "pointsAllowed": 27
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "7",
@@ -45662,8 +47257,8 @@
             }
           ],
           "punter": "A.Siposs",
-          "yardsAllowed": 308,
-          "pointsAllowed": 13
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "18",
@@ -45712,8 +47307,8 @@
             }
           ],
           "punter": "A.Siposs",
-          "yardsAllowed": 323,
-          "pointsAllowed": 29
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "19",
@@ -45745,8 +47340,8 @@
             }
           ],
           "punter": "A.Siposs",
-          "yardsAllowed": 264,
-          "pointsAllowed": 13
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "20",
@@ -45773,15 +47368,15 @@
             }
           ],
           "punter": "A.Siposs",
-          "yardsAllowed": 281,
-          "pointsAllowed": 18
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 237,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "19",
@@ -45822,15 +47417,15 @@
             }
           ],
           "punter": "A.Siposs",
-          "yardsAllowed": 192,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 312,
-          "pointsAllowed": 16
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "6",
@@ -45865,8 +47460,8 @@
             }
           ],
           "punter": "A.Siposs",
-          "yardsAllowed": 475,
-          "pointsAllowed": 51
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -45875,6 +47470,85 @@
       "name": "Cardinals",
       "byeWeek": 12,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "10",
+          "drives": [
+            "Field Goal",
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "Touchdown",
+            "End of Half",
+            "Interception",
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "Missed FG",
+            "Punt"
+          ],
+          "fieldGoals": [
+            34
+          ],
+          "punts": [
+            {
+              "landed": 0,
+              "distance": 58
+            },
+            {
+              "landed": 10,
+              "distance": 50
+            },
+            {
+              "landed": 5,
+              "distance": 36
+            }
+          ],
+          "punter": "A.Lee",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "16",
+          "drives": [
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "Touchdown",
+            "Field Goal",
+            "Interception",
+            "Touchdown",
+            "Interception",
+            "Punt",
+            "Field Goal",
+            "Punt"
+          ],
+          "fieldGoals": [
+            62,
+            27
+          ],
+          "punts": [
+            {
+              "landed": 15,
+              "distance": 58
+            },
+            {
+              "landed": 16,
+              "distance": 51
+            },
+            {
+              "landed": 6,
+              "distance": 60
+            },
+            {
+              "landed": 8,
+              "distance": 52
+            }
+          ],
+          "punter": "A.Lee",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "30",
           "drives": [
@@ -45916,8 +47590,8 @@
             }
           ],
           "punter": "A.Lee",
-          "yardsAllowed": 361,
-          "pointsAllowed": 19
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "14",
@@ -45949,8 +47623,8 @@
             }
           ],
           "punter": "A.Lee",
-          "yardsAllowed": 401,
-          "pointsAllowed": 20
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "25",
@@ -45988,8 +47662,8 @@
             }
           ],
           "punter": "A.Lee",
-          "yardsAllowed": 338,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "5",
@@ -46021,8 +47695,8 @@
             }
           ],
           "punter": "A.Lee",
-          "yardsAllowed": 290,
-          "pointsAllowed": 14
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "opp": "34",
@@ -46062,8 +47736,8 @@
             }
           ],
           "punter": "A.Lee",
-          "yardsAllowed": 160,
-          "pointsAllowed": 3
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "9",
@@ -46093,8 +47767,8 @@
             }
           ],
           "punter": "A.Lee",
-          "yardsAllowed": 335,
-          "pointsAllowed": 24
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "25",
@@ -46133,8 +47807,8 @@
             }
           ],
           "punter": "A.Lee",
-          "yardsAllowed": 337,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "29",
@@ -46174,8 +47848,8 @@
             }
           ],
           "punter": "A.Lee",
-          "yardsAllowed": 341,
-          "pointsAllowed": 34
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "26",
@@ -46213,8 +47887,8 @@
             }
           ],
           "punter": "A.Lee",
-          "yardsAllowed": 266,
-          "pointsAllowed": 13
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "3",
@@ -46245,8 +47919,8 @@
             }
           ],
           "punter": "A.Lee",
-          "yardsAllowed": 329,
-          "pointsAllowed": 22
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "14",
@@ -46275,8 +47949,8 @@
             }
           ],
           "punter": "A.Lee",
-          "yardsAllowed": 356,
-          "pointsAllowed": 30
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "8",
@@ -46312,8 +47986,8 @@
             }
           ],
           "punter": "A.Lee",
-          "yardsAllowed": 338,
-          "pointsAllowed": 30
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "11",
@@ -46339,8 +48013,8 @@
             }
           ],
           "punter": "R.Winslow",
-          "yardsAllowed": 346,
-          "pointsAllowed": 20
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "6",
@@ -46377,8 +48051,8 @@
             }
           ],
           "punter": "A.Lee",
-          "yardsAllowed": 301,
-          "pointsAllowed": 22
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "26",
@@ -46414,8 +48088,8 @@
             }
           ],
           "punter": "A.Lee",
-          "yardsAllowed": 431,
-          "pointsAllowed": 38
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -46424,6 +48098,92 @@
       "name": "Steelers",
       "byeWeek": 7,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "2",
+          "drives": [
+            "Punt",
+            "Punt",
+            "Punt",
+            "Punt",
+            "Punt",
+            "End of Half",
+            "Field Goal",
+            "Field Goal",
+            "Touchdown",
+            "Field Goal",
+            "End of Game"
+          ],
+          "fieldGoals": [
+            24,
+            20,
+            45
+          ],
+          "punts": [
+            {
+              "landed": 12,
+              "distance": 41
+            },
+            {
+              "landed": 36,
+              "distance": 51
+            },
+            {
+              "landed": 23,
+              "distance": 39
+            },
+            {
+              "landed": 35,
+              "distance": 30
+            },
+            {
+              "landed": 9,
+              "distance": 46
+            }
+          ],
+          "punter": "P.Harvin",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "13",
+          "drives": [
+            "Punt",
+            "Interception",
+            "Downs",
+            "Touchdown",
+            "End of Half",
+            "Punt",
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Field Goal",
+            "End of Game"
+          ],
+          "fieldGoals": [
+            56
+          ],
+          "punts": [
+            {
+              "landed": 16,
+              "distance": 38
+            },
+            {
+              "landed": 8,
+              "distance": 59
+            },
+            {
+              "landed": 3,
+              "distance": 42
+            },
+            {
+              "landed": 8,
+              "distance": 58
+            }
+          ],
+          "punter": "P.Harvin",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "4",
           "drives": [
@@ -46461,8 +48221,8 @@
             }
           ],
           "punter": "P.Harvin",
-          "yardsAllowed": 268,
-          "pointsAllowed": 24
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "9",
@@ -46497,8 +48257,8 @@
             }
           ],
           "punter": "P.Harvin",
-          "yardsAllowed": 367,
-          "pointsAllowed": 27
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "7",
@@ -46529,8 +48289,8 @@
             }
           ],
           "punter": "P.Harvin",
-          "yardsAllowed": 374,
-          "pointsAllowed": 19
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "26",
@@ -46585,8 +48345,8 @@
             }
           ],
           "punter": "P.Harvin",
-          "yardsAllowed": 309,
-          "pointsAllowed": 20
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "5",
@@ -46624,8 +48384,8 @@
             }
           ],
           "punter": "P.Harvin",
-          "yardsAllowed": 306,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "3",
@@ -46671,8 +48431,8 @@
             }
           ],
           "punter": "P.Harvin",
-          "yardsAllowed": 414,
-          "pointsAllowed": 21
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "8",
@@ -46724,8 +48484,8 @@
             }
           ],
           "punter": "P.Harvin",
-          "yardsAllowed": 306,
-          "pointsAllowed": 16
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "24",
@@ -46754,8 +48514,8 @@
             }
           ],
           "punter": "P.Harvin",
-          "yardsAllowed": 533,
-          "pointsAllowed": 41
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "4",
@@ -46799,8 +48559,8 @@
             }
           ],
           "punter": "P.Harvin",
-          "yardsAllowed": 370,
-          "pointsAllowed": 35
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "33",
@@ -46843,8 +48603,8 @@
             }
           ],
           "punter": "P.Harvin",
-          "yardsAllowed": 326,
-          "pointsAllowed": 19
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "16",
@@ -46892,8 +48652,8 @@
             }
           ],
           "punter": "P.Harvin",
-          "yardsAllowed": 458,
-          "pointsAllowed": 36
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "10",
@@ -46940,8 +48700,8 @@
             }
           ],
           "punter": "P.Harvin",
-          "yardsAllowed": 318,
-          "pointsAllowed": 13
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "12",
@@ -46972,8 +48732,8 @@
             }
           ],
           "punter": "C.Waitman",
-          "yardsAllowed": 381,
-          "pointsAllowed": 36
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "5",
@@ -47022,8 +48782,8 @@
             }
           ],
           "punter": "C.Waitman",
-          "yardsAllowed": 232,
-          "pointsAllowed": 14
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "33",
@@ -47084,8 +48844,8 @@
             }
           ],
           "punter": "P.Harvin",
-          "yardsAllowed": 381,
-          "pointsAllowed": 13
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -47094,6 +48854,34 @@
       "name": "Chargers",
       "byeWeek": 7,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "fieldGoals": [],
+          "punts": [],
+          "punter": "",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "6",
+          "drives": [
+            "Interception",
+            "Field Goal",
+            "Touchdown",
+            "Missed FG",
+            "Field Goal",
+            "Interception",
+            "Field Goal"
+          ],
+          "fieldGoals": [
+            46,
+            32,
+            29
+          ],
+          "punts": [],
+          "punter": "",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "12",
           "drives": [
@@ -47130,8 +48918,8 @@
             }
           ],
           "punter": "T.Long",
-          "yardsAllowed": 437,
-          "pointsAllowed": 24
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "13",
@@ -47177,8 +48965,8 @@
             }
           ],
           "punter": "T.Long,T.Vizcaino",
-          "yardsAllowed": 213,
-          "pointsAllowed": 14
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "5",
@@ -47212,8 +49000,8 @@
             }
           ],
           "punter": "T.Long",
-          "yardsAllowed": 531,
-          "pointsAllowed": 42
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "33",
@@ -47254,8 +49042,8 @@
             }
           ],
           "punter": "T.Long",
-          "yardsAllowed": 327,
-          "pointsAllowed": 34
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "17",
@@ -47299,8 +49087,8 @@
             }
           ],
           "punter": "T.Long",
-          "yardsAllowed": 352,
-          "pointsAllowed": 21
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "21",
@@ -47320,8 +49108,8 @@
           ],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 331,
-          "pointsAllowed": 24
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "16",
@@ -47364,8 +49152,8 @@
             }
           ],
           "punter": "T.Long",
-          "yardsAllowed": 381,
-          "pointsAllowed": 27
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "23",
@@ -47388,8 +49176,8 @@
           ],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 300,
-          "pointsAllowed": 37
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "7",
@@ -47420,8 +49208,8 @@
             }
           ],
           "punter": "T.Long",
-          "yardsAllowed": 302,
-          "pointsAllowed": 22
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "4",
@@ -47463,8 +49251,8 @@
             }
           ],
           "punter": "T.Long",
-          "yardsAllowed": 356,
-          "pointsAllowed": 22
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "19",
@@ -47501,8 +49289,8 @@
             }
           ],
           "punter": "T.Long",
-          "yardsAllowed": 316,
-          "pointsAllowed": 21
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "12",
@@ -47526,8 +49314,8 @@
             }
           ],
           "punter": "T.Long",
-          "yardsAllowed": 496,
-          "pointsAllowed": 34
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "34",
@@ -47550,8 +49338,8 @@
           ],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 437,
-          "pointsAllowed": 35
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "7",
@@ -47586,8 +49374,44 @@
             }
           ],
           "punter": "T.Long",
-          "yardsAllowed": 319,
-          "pointsAllowed": 13
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "18": {
+          "opp": "13",
+          "drives": [
+            "Punt",
+            "Touchdown",
+            "Touchdown",
+            "Punt",
+            "Missed FG",
+            "Downs",
+            "Punt",
+            "Interception",
+            "Touchdown",
+            "Touchdown",
+            "Field Goal"
+          ],
+          "fieldGoals": [
+            41
+          ],
+          "punts": [
+            {
+              "landed": 14,
+              "distance": 55
+            },
+            {
+              "landed": 27,
+              "distance": 51
+            },
+            {
+              "landed": 19,
+              "distance": 56
+            }
+          ],
+          "punter": "T.Long",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -47596,6 +49420,82 @@
       "name": "49ers",
       "byeWeek": 6,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "8",
+          "drives": [
+            "Fumble",
+            "Touchdown",
+            "Touchdown",
+            "Touchdown",
+            "FIELD GOAL",
+            "Missed FG",
+            "Touchdown",
+            "Punt",
+            "Field Goal",
+            "Punt",
+            "Fumble",
+            "End of Game"
+          ],
+          "fieldGoals": [
+            40,
+            52
+          ],
+          "punts": [
+            {
+              "landed": 12,
+              "distance": 43
+            },
+            {
+              "landed": 14,
+              "distance": 33
+            }
+          ],
+          "punter": "M.Wishnowsky",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "21",
+          "drives": [
+            "Punt",
+            "Punt",
+            "Punt",
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "Field Goal",
+            "End of Game"
+          ],
+          "fieldGoals": [
+            46
+          ],
+          "punts": [
+            {
+              "landed": 21,
+              "distance": 48
+            },
+            {
+              "landed": 29,
+              "distance": 52
+            },
+            {
+              "landed": 17,
+              "distance": 49
+            },
+            {
+              "landed": 3,
+              "distance": 35
+            },
+            {
+              "landed": 7,
+              "distance": 42
+            }
+          ],
+          "punter": "M.Wishnowsky",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "9",
           "drives": [
@@ -47630,8 +49530,8 @@
             }
           ],
           "punter": "M.Wishnowsky",
-          "yardsAllowed": 353,
-          "pointsAllowed": 30
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "26",
@@ -47678,8 +49578,8 @@
             }
           ],
           "punter": "M.Wishnowsky",
-          "yardsAllowed": 234,
-          "pointsAllowed": 28
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "22",
@@ -47708,8 +49608,8 @@
             }
           ],
           "punter": "M.Wishnowsky",
-          "yardsAllowed": 304,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "opp": "11",
@@ -47752,8 +49652,8 @@
             }
           ],
           "punter": "M.Wishnowsky",
-          "yardsAllowed": 295,
-          "pointsAllowed": 30
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "3",
@@ -47776,8 +49676,8 @@
           ],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 324,
-          "pointsAllowed": 22
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "22",
@@ -47816,8 +49716,8 @@
             }
           ],
           "punter": "M.Wishnowsky",
-          "yardsAllowed": 437,
-          "pointsAllowed": 31
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "14",
@@ -47850,8 +49750,8 @@
             }
           ],
           "punter": "M.Wishnowsky",
-          "yardsAllowed": 278,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "30",
@@ -47882,8 +49782,8 @@
             }
           ],
           "punter": "M.Wishnowsky",
-          "yardsAllowed": 200,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "16",
@@ -47920,8 +49820,8 @@
             }
           ],
           "punter": "M.Wishnowsky",
-          "yardsAllowed": 323,
-          "pointsAllowed": 26
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "26",
@@ -47958,8 +49858,8 @@
             }
           ],
           "punter": "M.Wishnowsky",
-          "yardsAllowed": 327,
-          "pointsAllowed": 28
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "4",
@@ -48013,8 +49913,8 @@
             }
           ],
           "punter": "M.Wishnowsky",
-          "yardsAllowed": 397,
-          "pointsAllowed": 23
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "1",
@@ -48052,8 +49952,8 @@
             }
           ],
           "punter": "M.Wishnowsky",
-          "yardsAllowed": 275,
-          "pointsAllowed": 13
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "10",
@@ -48083,8 +49983,8 @@
             }
           ],
           "punter": "M.Wishnowsky",
-          "yardsAllowed": 278,
-          "pointsAllowed": 20
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "34",
@@ -48126,8 +50026,8 @@
             }
           ],
           "punter": "M.Wishnowsky",
-          "yardsAllowed": 222,
-          "pointsAllowed": 7
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "14",
@@ -48167,8 +50067,8 @@
             }
           ],
           "punter": "M.Wishnowsky,R.Gould",
-          "yardsAllowed": 265,
-          "pointsAllowed": 24
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -48177,6 +50077,96 @@
       "name": "Seahawks",
       "byeWeek": 9,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "11",
+          "drives": [
+            "Touchdown",
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Punt",
+            "Fumble",
+            "Punt",
+            "Touchdown",
+            "Punt"
+          ],
+          "fieldGoals": [],
+          "punts": [
+            {
+              "landed": 28,
+              "distance": 25
+            },
+            {
+              "landed": 5,
+              "distance": 49
+            },
+            {
+              "landed": 15,
+              "distance": 40
+            },
+            {
+              "landed": 14,
+              "distance": 36
+            },
+            {
+              "landed": 10,
+              "distance": 35
+            }
+          ],
+          "punter": "M.Dickson",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "10",
+          "drives": [
+            "Punt",
+            "Field Goal",
+            "Punt",
+            "Touchdown",
+            "Touchdown",
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Punt",
+            "End of Half",
+            "Punt"
+          ],
+          "fieldGoals": [
+            31
+          ],
+          "punts": [
+            {
+              "landed": 0,
+              "distance": 66
+            },
+            {
+              "landed": 0,
+              "distance": 56
+            },
+            {
+              "landed": 8,
+              "distance": 40
+            },
+            {
+              "landed": 8,
+              "distance": 59
+            },
+            {
+              "landed": 19,
+              "distance": 46
+            },
+            {
+              "landed": 48,
+              "distance": 47
+            }
+          ],
+          "punter": "M.Dickson",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "16",
           "drives": [
@@ -48204,8 +50194,8 @@
             }
           ],
           "punter": "M.Dickson",
-          "yardsAllowed": 453,
-          "pointsAllowed": 30
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "25",
@@ -48257,8 +50247,8 @@
             }
           ],
           "punter": "M.Dickson",
-          "yardsAllowed": 457,
-          "pointsAllowed": 21
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "14",
@@ -48298,8 +50288,8 @@
             }
           ],
           "punter": "M.Dickson",
-          "yardsAllowed": 476,
-          "pointsAllowed": 26
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "23",
@@ -48358,8 +50348,8 @@
             }
           ],
           "punter": "M.Dickson",
-          "yardsAllowed": 345,
-          "pointsAllowed": 23
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "opp": "18",
@@ -48402,8 +50392,8 @@
             }
           ],
           "punter": "M.Dickson",
-          "yardsAllowed": 304,
-          "pointsAllowed": 13
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "30",
@@ -48445,8 +50435,8 @@
             }
           ],
           "punter": "M.Dickson",
-          "yardsAllowed": 309,
-          "pointsAllowed": 7
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "9",
@@ -48490,8 +50480,8 @@
             }
           ],
           "punter": "M.Dickson",
-          "yardsAllowed": 393,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "22",
@@ -48534,15 +50524,15 @@
             }
           ],
           "punter": "M.Dickson",
-          "yardsAllowed": 413,
-          "pointsAllowed": 23
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 371,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "25",
@@ -48581,8 +50571,8 @@
             }
           ],
           "punter": "M.Dickson",
-          "yardsAllowed": 365,
-          "pointsAllowed": 23
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "34",
@@ -48621,8 +50611,8 @@
             }
           ],
           "punter": "M.Dickson",
-          "yardsAllowed": 380,
-          "pointsAllowed": 13
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "14",
@@ -48668,8 +50658,8 @@
             }
           ],
           "punter": "M.Dickson",
-          "yardsAllowed": 332,
-          "pointsAllowed": 20
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "3",
@@ -48707,8 +50697,8 @@
             }
           ],
           "punter": "M.Dickson",
-          "yardsAllowed": 317,
-          "pointsAllowed": 25
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "8",
@@ -48737,8 +50727,8 @@
             }
           ],
           "punter": "M.Dickson",
-          "yardsAllowed": 357,
-          "pointsAllowed": 29
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "22",
@@ -48769,8 +50759,8 @@
             }
           ],
           "punter": "M.Dickson",
-          "yardsAllowed": 305,
-          "pointsAllowed": 24
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -48779,6 +50769,87 @@
       "name": "Buccaneers",
       "byeWeek": 9,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "6",
+          "drives": [
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "Fumble",
+            "Interception",
+            "Touchdown",
+            "Interception",
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Fumble",
+            "Field Goal"
+          ],
+          "fieldGoals": [
+            36
+          ],
+          "punts": [
+            {
+              "landed": 2,
+              "distance": 65
+            },
+            {
+              "landed": 2,
+              "distance": 38
+            },
+            {
+              "landed": 13,
+              "distance": 49
+            },
+            {
+              "landed": 6,
+              "distance": 41
+            }
+          ],
+          "punter": "B.Pinion",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "1",
+          "drives": [
+            "Touchdown",
+            "Fumble",
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "Touchdown",
+            "Punt",
+            "Punt",
+            "Touchdown",
+            "Downs",
+            "End of Game"
+          ],
+          "fieldGoals": [],
+          "punts": [
+            {
+              "landed": 30,
+              "distance": 48
+            },
+            {
+              "landed": 11,
+              "distance": 41
+            },
+            {
+              "landed": 49,
+              "distance": 43
+            },
+            {
+              "landed": 4,
+              "distance": 57
+            }
+          ],
+          "punter": "B.Pinion",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "14",
           "drives": [
@@ -48815,8 +50886,8 @@
             }
           ],
           "punter": "B.Pinion",
-          "yardsAllowed": 407,
-          "pointsAllowed": 34
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "17",
@@ -48858,8 +50929,8 @@
             }
           ],
           "punter": "B.Pinion",
-          "yardsAllowed": 294,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "15",
@@ -48885,8 +50956,8 @@
             }
           ],
           "punter": "B.Pinion",
-          "yardsAllowed": 301,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "21",
@@ -48919,8 +50990,8 @@
             }
           ],
           "punter": "B.Pinion",
-          "yardsAllowed": 213,
-          "pointsAllowed": 22
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "opp": "3",
@@ -48960,8 +51031,8 @@
             }
           ],
           "punter": "B.Pinion",
-          "yardsAllowed": 311,
-          "pointsAllowed": 3
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "18",
@@ -48995,15 +51066,15 @@
             }
           ],
           "punter": "B.Pinion",
-          "yardsAllowed": 361,
-          "pointsAllowed": 30
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 320,
-          "pointsAllowed": 29
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "19",
@@ -49040,8 +51111,8 @@
             }
           ],
           "punter": "B.Pinion",
-          "yardsAllowed": 215,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "11",
@@ -49082,8 +51153,8 @@
             }
           ],
           "punter": "B.Pinion",
-          "yardsAllowed": 392,
-          "pointsAllowed": 31
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "1",
@@ -49117,8 +51188,8 @@
             }
           ],
           "punter": "B.Pinion",
-          "yardsAllowed": 380,
-          "pointsAllowed": 11
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "2",
@@ -49165,8 +51236,8 @@
             }
           ],
           "punter": "B.Pinion",
-          "yardsAllowed": 466,
-          "pointsAllowed": 27
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "18",
@@ -49221,8 +51292,8 @@
             }
           ],
           "punter": "B.Pinion",
-          "yardsAllowed": 212,
-          "pointsAllowed": 9
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "29",
@@ -49260,8 +51331,8 @@
             }
           ],
           "punter": "S.Hofrichter",
-          "yardsAllowed": 273,
-          "pointsAllowed": 6
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "20",
@@ -49296,8 +51367,8 @@
             }
           ],
           "punter": "S.Hofrichter",
-          "yardsAllowed": 374,
-          "pointsAllowed": 24
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "29",
@@ -49334,8 +51405,8 @@
             }
           ],
           "punter": "B.Pinion",
-          "yardsAllowed": 317,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -49344,110 +51415,124 @@
       "name": "Commanders",
       "byeWeek": 9,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "fieldGoals": [],
+          "punts": [],
+          "punter": "",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "fieldGoals": [],
+          "punts": [],
+          "punter": "",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 481,
-          "pointsAllowed": 43
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 374,
-          "pointsAllowed": 30
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 369,
-          "pointsAllowed": 33
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 499,
-          "pointsAllowed": 31
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 304,
-          "pointsAllowed": 24
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 273,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 273,
-          "pointsAllowed": 19
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 297,
-          "pointsAllowed": 21
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 267,
-          "pointsAllowed": 15
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 310,
-          "pointsAllowed": 15
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 323,
-          "pointsAllowed": 21
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 519,
-          "pointsAllowed": 27
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 497,
-          "pointsAllowed": 50
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 330,
-          "pointsAllowed": 20
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 177,
-          "pointsAllowed": 7
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -49456,6 +51541,98 @@
       "name": "Panthers",
       "byeWeek": 13,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "20",
+          "drives": [
+            "Punt",
+            "Punt",
+            "Fumble",
+            "Field Goal",
+            "Touchdown",
+            "Touchdown",
+            "Punt",
+            "Punt",
+            "Punt",
+            "Field Goal",
+            "Punt",
+            "End of Game"
+          ],
+          "fieldGoals": [
+            22,
+            29
+          ],
+          "punts": [
+            {
+              "landed": 22,
+              "distance": 36
+            },
+            {
+              "landed": 15,
+              "distance": 18
+            },
+            {
+              "landed": 26,
+              "distance": 54
+            },
+            {
+              "landed": 27,
+              "distance": 35
+            },
+            {
+              "landed": 30,
+              "distance": 46
+            },
+            {
+              "landed": 7,
+              "distance": 36
+            }
+          ],
+          "punter": "J.Charlton",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "18",
+          "drives": [
+            "Touchdown",
+            "Punt",
+            "Field Goal",
+            "Touchdown",
+            "End of Half",
+            "Blocked FG",
+            "Punt",
+            "Interception",
+            "Punt",
+            "Touchdown",
+            "Field Goal",
+            "Punt"
+          ],
+          "fieldGoals": [
+            20,
+            42
+          ],
+          "punts": [
+            {
+              "landed": 10,
+              "distance": 33
+            },
+            {
+              "landed": 12,
+              "distance": 39
+            },
+            {
+              "landed": 10,
+              "distance": 51
+            },
+            {
+              "landed": 30,
+              "distance": 37
+            }
+          ],
+          "punter": "J.Charlton",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "34",
           "drives": [
@@ -49488,8 +51665,8 @@
             }
           ],
           "punter": "J.Charlton",
-          "yardsAllowed": 193,
-          "pointsAllowed": 9
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "6",
@@ -49522,8 +51699,8 @@
             }
           ],
           "punter": "J.Charlton",
-          "yardsAllowed": 433,
-          "pointsAllowed": 36
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "21",
@@ -49575,8 +51752,8 @@
             }
           ],
           "punter": "J.Charlton,Z.Gonzalez",
-          "yardsAllowed": 273,
-          "pointsAllowed": 21
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "16",
@@ -49627,8 +51804,8 @@
             }
           ],
           "punter": "R.Winslow",
-          "yardsAllowed": 571,
-          "pointsAllowed": 34
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "opp": "19",
@@ -49680,8 +51857,8 @@
             }
           ],
           "punter": "R.Winslow",
-          "yardsAllowed": 302,
-          "pointsAllowed": 23
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "1",
@@ -49723,8 +51900,8 @@
             }
           ],
           "punter": "L.Edwards",
-          "yardsAllowed": 213,
-          "pointsAllowed": 13
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "17",
@@ -49764,8 +51941,8 @@
             }
           ],
           "punter": "L.Edwards",
-          "yardsAllowed": 273,
-          "pointsAllowed": 18
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "22",
@@ -49804,15 +51981,15 @@
             }
           ],
           "punter": "L.Edwards",
-          "yardsAllowed": 169,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "fieldGoals": [],
           "punts": [],
           "punter": "",
-          "yardsAllowed": 369,
-          "pointsAllowed": 27
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "15",
@@ -49856,8 +52033,8 @@
             }
           ],
           "punter": "L.Edwards",
-          "yardsAllowed": 315,
-          "pointsAllowed": 33
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "1",
@@ -49885,8 +52062,8 @@
             }
           ],
           "punter": "L.Edwards",
-          "yardsAllowed": 318,
-          "pointsAllowed": 23
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "2",
@@ -49923,8 +52100,8 @@
             }
           ],
           "punter": "L.Edwards",
-          "yardsAllowed": 312,
-          "pointsAllowed": 31
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "27",
@@ -49968,8 +52145,8 @@
             }
           ],
           "punter": "L.Edwards",
-          "yardsAllowed": 391,
-          "pointsAllowed": 32
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "18",
@@ -50011,8 +52188,8 @@
             }
           ],
           "punter": "L.Edwards",
-          "yardsAllowed": 280,
-          "pointsAllowed": 18
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "27",
@@ -50044,8 +52221,8 @@
             }
           ],
           "punter": "L.Edwards",
-          "yardsAllowed": 409,
-          "pointsAllowed": 41
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -50054,6 +52231,92 @@
       "name": "Jaguars",
       "byeWeek": 7,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "34",
+          "drives": [
+            "Punt",
+            "Missed FG",
+            "Touchdown",
+            "Interception",
+            "Interception",
+            "Punt",
+            "End of Half",
+            "Punt",
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Interception",
+            "Punt",
+            "Touchdown"
+          ],
+          "fieldGoals": [],
+          "punts": [
+            {
+              "landed": 16,
+              "distance": 55
+            },
+            {
+              "landed": 23,
+              "distance": 52
+            },
+            {
+              "landed": 28,
+              "distance": 42
+            },
+            {
+              "landed": 32,
+              "distance": 49
+            },
+            {
+              "landed": 31,
+              "distance": 41
+            },
+            {
+              "landed": 11,
+              "distance": 58
+            }
+          ],
+          "punter": "L.Cooke",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "7",
+          "drives": [
+            "Touchdown",
+            "Punt",
+            "Missed FG",
+            "Punt",
+            "Missed FG",
+            "Punt",
+            "Interception",
+            "Punt",
+            "Interception",
+            "Touchdown"
+          ],
+          "fieldGoals": [],
+          "punts": [
+            {
+              "landed": 33,
+              "distance": 44
+            },
+            {
+              "landed": 16,
+              "distance": 63
+            },
+            {
+              "landed": 19,
+              "distance": 56
+            },
+            {
+              "landed": 10,
+              "distance": 64
+            }
+          ],
+          "punter": "L.Cooke",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "22",
           "drives": [
@@ -50098,8 +52361,8 @@
             }
           ],
           "punter": "L.Cooke",
-          "yardsAllowed": 407,
-          "pointsAllowed": 25
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "4",
@@ -50133,8 +52396,8 @@
             }
           ],
           "punter": "L.Cooke",
-          "yardsAllowed": 420,
-          "pointsAllowed": 24
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "10",
@@ -50163,8 +52426,8 @@
             }
           ],
           "punter": "L.Cooke",
-          "yardsAllowed": 368,
-          "pointsAllowed": 31
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "15",
@@ -50205,8 +52468,8 @@
             }
           ],
           "punter": "L.Cooke",
-          "yardsAllowed": 431,
-          "pointsAllowed": 20
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "26",
@@ -50243,8 +52506,8 @@
             }
           ],
           "punter": "L.Cooke",
-          "yardsAllowed": 229,
-          "pointsAllowed": 31
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "2",
@@ -50284,8 +52547,8 @@
             }
           ],
           "punter": "L.Cooke",
-          "yardsAllowed": 301,
-          "pointsAllowed": 6
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "11",
@@ -50338,8 +52601,8 @@
             }
           ],
           "punter": "L.Cooke",
-          "yardsAllowed": 295,
-          "pointsAllowed": 23
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "25",
@@ -50374,8 +52637,8 @@
             }
           ],
           "punter": "L.Cooke",
-          "yardsAllowed": 333,
-          "pointsAllowed": 30
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "1",
@@ -50410,8 +52673,8 @@
             }
           ],
           "punter": "L.Cooke",
-          "yardsAllowed": 332,
-          "pointsAllowed": 21
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "14",
@@ -50452,8 +52715,8 @@
             }
           ],
           "punter": "L.Cooke",
-          "yardsAllowed": 418,
-          "pointsAllowed": 37
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "10",
@@ -50494,8 +52757,8 @@
             }
           ],
           "punter": "L.Cooke",
-          "yardsAllowed": 263,
-          "pointsAllowed": 20
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "34",
@@ -50540,8 +52803,8 @@
             }
           ],
           "punter": "L.Cooke",
-          "yardsAllowed": 281,
-          "pointsAllowed": 30
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "20",
@@ -50568,8 +52831,8 @@
             }
           ],
           "punter": "L.Cooke",
-          "yardsAllowed": 373,
-          "pointsAllowed": 26
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "17",
@@ -50607,8 +52870,8 @@
             }
           ],
           "punter": "J.Scott",
-          "yardsAllowed": 471,
-          "pointsAllowed": 50
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "11",
@@ -50645,8 +52908,8 @@
             }
           ],
           "punter": "J.Charlton",
-          "yardsAllowed": 233,
-          "pointsAllowed": 11
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -50655,6 +52918,81 @@
       "name": "Ravens",
       "byeWeek": 8,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "13",
+          "drives": [
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "Downs",
+            "Punt",
+            "Field Goal",
+            "Punt",
+            "Fumble",
+            "Touchdown",
+            "Field Goal",
+            "End of Half",
+            "Fumble"
+          ],
+          "fieldGoals": [
+            40,
+            47
+          ],
+          "punts": [
+            {
+              "landed": 21,
+              "distance": 47
+            },
+            {
+              "landed": 35,
+              "distance": 42
+            },
+            {
+              "landed": 7,
+              "distance": 49
+            },
+            {
+              "landed": 34,
+              "distance": 41
+            }
+          ],
+          "punter": "S.Koch",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "12",
+          "drives": [
+            "Interception",
+            "Fumble Return Touchdown",
+            "Interception",
+            "Punt",
+            "Touchdown",
+            "Field Goal",
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "Touchdown",
+            "End of Game"
+          ],
+          "fieldGoals": [
+            43
+          ],
+          "punts": [
+            {
+              "landed": 11,
+              "distance": 49
+            },
+            {
+              "landed": 28,
+              "distance": 46
+            }
+          ],
+          "punter": "S.Koch",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "8",
           "drives": [
@@ -50690,8 +53028,8 @@
             }
           ],
           "punter": "S.Koch",
-          "yardsAllowed": 285,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "7",
@@ -50746,8 +53084,8 @@
             }
           ],
           "punter": "S.Koch",
-          "yardsAllowed": 254,
-          "pointsAllowed": 7
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "11",
@@ -50785,8 +53123,8 @@
             }
           ],
           "punter": "S.Koch",
-          "yardsAllowed": 513,
-          "pointsAllowed": 25
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "24",
@@ -50818,8 +53156,8 @@
             }
           ],
           "punter": "S.Koch",
-          "yardsAllowed": 208,
-          "pointsAllowed": 6
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "opp": "4",
@@ -50869,8 +53207,8 @@
             }
           ],
           "punter": "S.Koch",
-          "yardsAllowed": 520,
-          "pointsAllowed": 41
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "16",
@@ -50907,8 +53245,8 @@
             }
           ],
           "punter": "S.Koch",
-          "yardsAllowed": 318,
-          "pointsAllowed": 31
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "10": {
           "opp": "15",
@@ -50962,8 +53300,8 @@
             }
           ],
           "punter": "S.Koch",
-          "yardsAllowed": 350,
-          "pointsAllowed": 16
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "3",
@@ -51012,8 +53350,8 @@
             }
           ],
           "punter": "S.Koch",
-          "yardsAllowed": 353,
-          "pointsAllowed": 13
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "5",
@@ -51052,8 +53390,8 @@
             }
           ],
           "punter": "S.Koch",
-          "yardsAllowed": 262,
-          "pointsAllowed": 10
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "23",
@@ -51092,8 +53430,8 @@
             }
           ],
           "punter": "S.Koch",
-          "yardsAllowed": 321,
-          "pointsAllowed": 20
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "5",
@@ -51140,8 +53478,8 @@
             }
           ],
           "punter": "S.Koch",
-          "yardsAllowed": 290,
-          "pointsAllowed": 18
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "9",
@@ -51166,8 +53504,8 @@
             }
           ],
           "punter": "S.Koch",
-          "yardsAllowed": 346,
-          "pointsAllowed": 31
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "4",
@@ -51198,8 +53536,8 @@
             }
           ],
           "punter": "S.Koch",
-          "yardsAllowed": 575,
-          "pointsAllowed": 41
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "14",
@@ -51235,8 +53573,8 @@
             }
           ],
           "punter": "S.Koch",
-          "yardsAllowed": 373,
-          "pointsAllowed": 20
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "23",
@@ -51291,8 +53629,8 @@
             }
           ],
           "punter": "S.Koch",
-          "yardsAllowed": 314,
-          "pointsAllowed": 16
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     },
@@ -51301,6 +53639,95 @@
       "name": "Texans",
       "byeWeek": 10,
       "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "30",
+          "drives": [
+            "Punt",
+            "Touchdown",
+            "Touchdown",
+            "Field Goal",
+            "Punt",
+            "Field Goal",
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Field Goal",
+            "Punt",
+            "Punt",
+            "End of Game"
+          ],
+          "fieldGoals": [
+            40,
+            26,
+            25
+          ],
+          "punts": [
+            {
+              "landed": 21,
+              "distance": 48
+            },
+            {
+              "landed": 7,
+              "distance": 38
+            },
+            {
+              "landed": 11,
+              "distance": 39
+            },
+            {
+              "landed": 20,
+              "distance": 52
+            },
+            {
+              "landed": 24,
+              "distance": 43
+            },
+            {
+              "landed": 15,
+              "distance": 46
+            }
+          ],
+          "punter": "C.Johnston",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
+        "2": {
+          "opp": "5",
+          "drives": [
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "Punt",
+            "Punt",
+            "Interception",
+            "Touchdown",
+            "Punt",
+            "Missed FG"
+          ],
+          "fieldGoals": [],
+          "punts": [
+            {
+              "landed": 0,
+              "distance": 49
+            },
+            {
+              "landed": 11,
+              "distance": 54
+            },
+            {
+              "landed": 21,
+              "distance": 50
+            },
+            {
+              "landed": 22,
+              "distance": 56
+            }
+          ],
+          "punter": "C.Johnston",
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
+        },
         "3": {
           "opp": "29",
           "drives": [
@@ -51344,8 +53771,8 @@
             }
           ],
           "punter": "C.Johnston",
-          "yardsAllowed": 407,
-          "pointsAllowed": 24
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "4": {
           "opp": "2",
@@ -51387,8 +53814,8 @@
             }
           ],
           "punter": "C.Johnston",
-          "yardsAllowed": 450,
-          "pointsAllowed": 40
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "5": {
           "opp": "17",
@@ -51422,8 +53849,8 @@
             }
           ],
           "punter": "C.Johnston",
-          "yardsAllowed": 352,
-          "pointsAllowed": 25
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "6": {
           "opp": "11",
@@ -51466,8 +53893,8 @@
             }
           ],
           "punter": "C.Johnston",
-          "yardsAllowed": 388,
-          "pointsAllowed": 31
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "7": {
           "opp": "22",
@@ -51519,8 +53946,8 @@
             }
           ],
           "punter": "C.Johnston",
-          "yardsAllowed": 397,
-          "pointsAllowed": 31
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "8": {
           "opp": "14",
@@ -51571,8 +53998,8 @@
             }
           ],
           "punter": "C.Johnston",
-          "yardsAllowed": 467,
-          "pointsAllowed": 38
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "9": {
           "opp": "15",
@@ -51620,8 +54047,8 @@
             }
           ],
           "punter": "C.Johnston",
-          "yardsAllowed": 262,
-          "pointsAllowed": 17
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "11": {
           "opp": "10",
@@ -51675,8 +54102,8 @@
             }
           ],
           "punter": "C.Johnston",
-          "yardsAllowed": 420,
-          "pointsAllowed": 13
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "12": {
           "opp": "20",
@@ -51717,8 +54144,8 @@
             }
           ],
           "punter": "C.Johnston",
-          "yardsAllowed": 266,
-          "pointsAllowed": 21
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "13": {
           "opp": "11",
@@ -51763,8 +54190,8 @@
             }
           ],
           "punter": "C.Johnston",
-          "yardsAllowed": 389,
-          "pointsAllowed": 31
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "14": {
           "opp": "26",
@@ -51808,8 +54235,8 @@
             }
           ],
           "punter": "C.Johnston",
-          "yardsAllowed": 453,
-          "pointsAllowed": 33
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "15": {
           "opp": "30",
@@ -51850,8 +54277,8 @@
             }
           ],
           "punter": "C.Johnston",
-          "yardsAllowed": 296,
-          "pointsAllowed": 16
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "16": {
           "opp": "24",
@@ -51877,8 +54304,8 @@
             }
           ],
           "punter": "C.Johnston",
-          "yardsAllowed": 417,
-          "pointsAllowed": 29
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "17": {
           "opp": "25",
@@ -51928,8 +54355,8 @@
             }
           ],
           "punter": "C.Johnston",
-          "yardsAllowed": 416,
-          "pointsAllowed": 23
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         },
         "18": {
           "opp": "10",
@@ -51971,8 +54398,8 @@
             }
           ],
           "punter": "C.Johnston",
-          "yardsAllowed": 405,
-          "pointsAllowed": 28
+          "yardsAllowed": 0,
+          "pointsAllowed": 0
         }
       }
     }
@@ -52176,7 +54603,7 @@
       "5083076": 5.52,
       "5123663": 0.57
     },
-    "timestamp": 1758075825429,
+    "timestamp": 1758076754728,
     "history": [
       {
         "values": {
@@ -52506,7 +54933,7 @@
           "9": 47.22,
           "10": 187.66
         },
-        "date": 1758075826665
+        "date": 1758076755364
       }
     ]
   }
