@@ -24,7 +24,7 @@ export default function Punts() {
             .map((p) => ({
               ...p,
               label: `${p.key} / ${p.team.name} vs ${
-                wrapped.nflTeams[p.obj.opp].name
+                wrapped.nflTeams[p.obj.opp!]?.name
               }`,
             }))
         ),
