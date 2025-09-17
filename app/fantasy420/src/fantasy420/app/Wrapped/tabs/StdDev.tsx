@@ -1,22 +1,26 @@
+import { currentYear } from "..";
 import allWrapped from "../allWrapped";
 
 export default function StdDev() {
-  const x = Object.values(allWrapped).flatMap((w) =>
-    Object.values(w.ffTeams)
-      .flatMap((t) =>
-        Object.entries(t.rosters).map(([weekNum, { projections }]) => ({
-          weekNum,
-          projections,
-        }))
-      )
-      .flatMap(({ weekNum, projections }) =>
-        Object.entries(projections).map(([playerId, projection]) => ({
-          projection,
-          actual: w.nflPlayers[playerId]?.scores[weekNum] ?? 0,
-        }))
-      )
-      .map((o) => ({ ...o, diff: o.actual - o.projection }))
-  );
+  const x = Object.values(allWrapped)
+    .filter((w) => w.year !== currentYear)
+    .flatMap((w) =>
+      Object.values(w.ffTeams)
+        .flatMap((t) =>
+          Object.entries(t.rosters).map(([weekNum, { projections }]) => ({
+            weekNum,
+            projections,
+          }))
+        )
+        .flatMap(({ weekNum, projections }) =>
+          Object.entries(projections).map(([playerId, projection]) => ({
+            projection,
+            actual: w.nflPlayers[playerId]?.scores[weekNum] ?? 0,
+          }))
+        )
+        .filter((o) => o.projection > 0)
+        .map((o) => ({ ...o, diff: o.actual - o.projection }))
+    );
   const data = [18, 15, 12, 9, 6, -12, -9, -6, -3]
     .map((cutoff) => ({
       cutoff,
@@ -30,6 +34,7 @@ export default function StdDev() {
     }))
     .map((o) => ({
       mean: o.differences.reduce((a, b) => a + b, 0) / o.differences.length,
+      count: o.differences.length,
       ...o,
     }))
     .map((o) => ({
