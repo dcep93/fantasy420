@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { NFLPlayerType, WrappedType } from "../FetchWrapped";
+import { useMemo, useState } from "react";
+import { getWrapped, NFLPlayerType, WrappedType } from "../FetchWrapped";
 import allWrapped from "./allWrapped";
 import ErrorBoundary from "./ErrorBoundary";
 import AllTimeRecords from "./tabs/AllTimeRecords";
@@ -53,17 +53,16 @@ export const newManagers: { [teamId: string]: string[] } = {
 };
 
 export default function Wrapped() {
-  return <SubWrapped />;
-  // const [fetched, updateFetched] = useState(false);
-  // useMemo(
-  //   () =>
-  //     Promise.resolve()
-  //       .then(getWrapped)
-  //       .then((wrapped) => (allWrapped[currentYear] = wrapped))
-  //       .then(() => updateFetched(true)),
-  //   []
-  // );
-  // return <SubWrapped key={fetched.toString()} />;
+  const [fetched, updateFetched] = useState(false);
+  useMemo(
+    () =>
+      Promise.resolve(currentYear)
+        .then(getWrapped)
+        .then((wrapped) => (allWrapped[currentYear] = wrapped))
+        .then(() => updateFetched(true)),
+    []
+  );
+  return <SubWrapped key={fetched.toString()} />;
 }
 
 function SubWrapped() {
