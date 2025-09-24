@@ -59,7 +59,8 @@ export default function Wrapped() {
       Promise.resolve(currentYear)
         .then(getWrapped)
         .then((wrapped) => (allWrapped[currentYear] = wrapped))
-        .then(() => updateFetched(true)),
+        .then(() => updateFetched(true))
+        .catch((err) => console.error(err)),
     []
   );
   return <SubWrapped key={fetched.toString()} />;
