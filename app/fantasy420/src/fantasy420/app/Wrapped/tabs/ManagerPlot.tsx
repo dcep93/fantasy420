@@ -94,14 +94,6 @@ function SubManagerPlot() {
       ys: { average: number; data: { [teamId: string]: number } };
     }[];
   } = {
-    pointsFor: dataC.map((o) => ({
-      x: o.weekNum,
-      ys: o.pointsFor,
-    })),
-    pointsAgainst: dataC.map((o) => ({
-      x: o.weekNum,
-      ys: o.pointsAgainst,
-    })),
     ...(selectedWrapped().fantasyCalc.history.length === 0
       ? {}
       : {
@@ -115,6 +107,14 @@ function SubManagerPlot() {
             },
           })),
         }),
+    pointsFor: dataC.map((o) => ({
+      x: o.weekNum,
+      ys: o.pointsFor,
+    })),
+    pointsAgainst: dataC.map((o) => ({
+      x: o.weekNum,
+      ys: o.pointsAgainst,
+    })),
   };
   const [selectedTeamId, updateSelectedTeamId] = useState("");
   return (
@@ -129,8 +129,14 @@ function SubManagerPlot() {
           return (
             <div key={key}>
               <h1>{key}</h1>
-              <div style={{ width: "80em", height: "30em" }}>
-                <ResponsiveContainer width="80%" height="100%">
+              <div
+                style={{
+                  width: "80em",
+                  height: "30em",
+                  overflow: "hidden",
+                }}
+              >
+                <ResponsiveContainer width="100%" height="100%">
                   <LineChart
                     data={data.map((o) => ({
                       x: o.x,
@@ -248,6 +254,7 @@ function SubManagerPlot() {
                           type="linear"
                           dataKey={t.id}
                           stroke={colors[index]}
+                          isAnimationActive={false}
                           strokeWidth={t.id === selectedTeamId ? 10 : undefined}
                         />
                       )
