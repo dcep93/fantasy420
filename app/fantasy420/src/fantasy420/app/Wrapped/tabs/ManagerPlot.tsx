@@ -128,7 +128,9 @@ function SubManagerPlot() {
           };
           return (
             <div key={key}>
-              <h1>{key}</h1>
+              <h1>
+                {key} {data.length}
+              </h1>
               <div
                 style={{
                   width: "80em",
