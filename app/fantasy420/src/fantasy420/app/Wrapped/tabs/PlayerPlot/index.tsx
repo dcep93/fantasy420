@@ -75,7 +75,7 @@ function getData(
       Object.fromEntries(
         Object.entries({
           fantasycalc: (playerId: string) =>
-            selectedWrapped().fantasyCalc.players[playerId] || 0,
+            selectedWrapped().fantasyCalc?.players[playerId] || 0,
           season_points: (playerId: string) =>
             selectedWrapped().nflPlayers[playerId]?.total,
           average_points: (playerId: string) =>
@@ -150,7 +150,7 @@ function SubPlayerPlot() {
   const draft = {
     ...rawdraft,
     ...mapDict(
-      selectedWrapped().fantasyCalc.players,
+      selectedWrapped().fantasyCalc?.players || {},
       (p) => numdrafted + 30,
       (playerId, value) =>
         rawdraft[playerId] === undefined &&

@@ -77,7 +77,7 @@ export type WrappedType = {
     [id: string]: FFTeamType;
   };
   ffMatchups: { [weekNum: string]: MatchupsType };
-  fantasyCalc: {
+  fantasyCalc?: {
     timestamp: number;
     history: FantasyCalcHistoryType;
     players: { [espnId: string]: number };
@@ -430,22 +430,22 @@ export function getWrapped(providedYear: string): Promise<WrappedType> {
           team.id,
           parseFloat(
             team.rosters["0"].rostered
-              .map((playerId) => wrapped.fantasyCalc.players[playerId] || 0)
+              .map((playerId) => wrapped.fantasyCalc!.players[playerId] || 0)
               .reduce((a, b) => a + b, 0)
               .toFixed(2)
           ),
         ])
       );
-      wrapped.fantasyCalc.history =
-        selectedWrapped()?.fantasyCalc.history || [];
+      wrapped.fantasyCalc!.history =
+        selectedWrapped()?.fantasyCalc!.history || [];
       if (
         JSON.stringify(values) !==
         JSON.stringify(
-          wrapped.fantasyCalc.history[wrapped.fantasyCalc.history.length - 1]
+          wrapped.fantasyCalc?.history[wrapped.fantasyCalc.history.length - 1]
             ?.values
         )
       )
-        wrapped.fantasyCalc.history.push({
+        wrapped.fantasyCalc!.history.push({
           values,
           date: Date.now(),
         });
