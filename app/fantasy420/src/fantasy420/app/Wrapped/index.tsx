@@ -71,12 +71,10 @@ function SubWrapped() {
   const [yearKey, updateYear] = useState(selectedYear);
   selectedYear = yearKey;
   const toRender: { [key: string]: () => JSX.Element } = {
+    ManagerPlot,
     FantasyCalc,
     PlayerPlot,
     PlayerStats,
-    PositionTrends,
-    ManagerPlot,
-    Trades,
     WeekTopsAndBottoms,
     SqueezesAndStomps,
     GooseEggs,
@@ -104,9 +102,11 @@ function SubWrapped() {
     SecondLost,
     WhatIf,
     ConsistentlyAverage,
+    Trades,
     Simps,
     Punts,
     StdDev,
+    PositionTrends,
     json,
   };
   var hashKey = window.location.hash.substring(1);

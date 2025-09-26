@@ -13,7 +13,7 @@ export default function FantasyCalc() {
       .map((playerId) => [playerId, true])
   );
   const fantasyCalcPlayers: { [playerId: string]: number } = Object.fromEntries(
-    Object.entries(selectedWrapped().fantasyCalc.players).map(
+    Object.entries(selectedWrapped().fantasyCalc?.players || {}).map(
       ([playerId, value]) => [
         !isNaN(parseInt(playerId))
           ? playerId
@@ -27,7 +27,9 @@ export default function FantasyCalc() {
   return (
     <div>
       <div>https://fantasycalc.com/redraft-rankings</div>
-      <div>{new Date(selectedWrapped().fantasyCalc.timestamp).toString()}</div>
+      <div>
+        {new Date(selectedWrapped().fantasyCalc?.timestamp || -1).toString()}
+      </div>
       <div style={bubbleStyle}>
         <h1>UNOWNED</h1>
         <div>

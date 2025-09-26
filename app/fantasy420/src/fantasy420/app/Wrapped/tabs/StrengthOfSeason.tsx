@@ -34,7 +34,7 @@ export default function StrengthOfSeason() {
                 name: byePlayer.name,
                 score: byePlayer.scores[obj.weekNum],
                 rawValue:
-                  selectedWrapped().fantasyCalc.players[byePlayer.id] || 0,
+                  selectedWrapped().fantasyCalc?.players[byePlayer.id] || 0,
               }))
               .sort((a, b) => b.rawValue - a.rawValue)
               .map(({ rawValue, ...obj }) => ({

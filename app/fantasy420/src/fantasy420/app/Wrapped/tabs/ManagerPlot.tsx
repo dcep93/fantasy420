@@ -94,10 +94,10 @@ function SubManagerPlot() {
       ys: { average: number; data: { [teamId: string]: number } };
     }[];
   } = {
-    ...(selectedWrapped().fantasyCalc.history.length === 0
+    ...(!selectedWrapped().fantasyCalc?.history.length
       ? {}
       : {
-          fantasyCalc: selectedWrapped().fantasyCalc.history.map((obj) => ({
+          fantasyCalc: selectedWrapped().fantasyCalc?.history.map((obj) => ({
             x: obj.date,
             ys: {
               average:
@@ -133,7 +133,7 @@ function SubManagerPlot() {
               </h1>
               <div
                 style={{
-                  width: "80em",
+                  width: "80vW",
                   height: "30em",
                   overflow: "hidden",
                 }}
@@ -150,7 +150,9 @@ function SubManagerPlot() {
                         dataKey={"x"}
                         type={"number"}
                         scale={"time"}
-                        domain={[selectedWrapped().fantasyCalc.history[0].date]}
+                        domain={[
+                          selectedWrapped().fantasyCalc!.history[0].date,
+                        ]}
                         tickFormatter={(tick) =>
                           new Date(tick).toLocaleDateString()
                         }
@@ -197,8 +199,9 @@ function SubManagerPlot() {
                             dataKey,
                             value: Math.abs(value - cursorValue),
                           }))
+                          .filter((x) => x.value < 30)
                           .sort((a, b) => a.value - b.value)[0]
-                          .dataKey as string;
+                          ?.dataKey as string;
                         setTimeout(() => updateSelectedTeamId(closestTeamId));
                         const values = data.find((d) => d.x === label)!.ys.data;
                         return (
@@ -215,7 +218,7 @@ function SubManagerPlot() {
                               {key === "fantasyCalc"
                                 ? Helpers.toFixed(
                                     (label -
-                                      selectedWrapped().fantasyCalc.history[0]
+                                      selectedWrapped().fantasyCalc!.history[0]
                                         .date) /
                                       (1000 * 60 * 60 * 24 * 7),
                                     4
