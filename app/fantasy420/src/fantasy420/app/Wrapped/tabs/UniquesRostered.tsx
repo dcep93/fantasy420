@@ -1,4 +1,4 @@
-import { bubbleStyle, Helpers, Position, selectedWrapped } from "..";
+import { bubbleStyle, Position, selectedWrapped } from "..";
 
 export default function UniquesRostered() {
   return (
@@ -15,28 +15,18 @@ export default function UniquesRostered() {
                 {Object.values(selectedWrapped().ffTeams)
                   .map((ffTeam) => ({
                     teamName: ffTeam.name,
-                    started: Object.entries(
-                      Helpers.countStrings(
-                        Object.entries(ffTeam.rosters).flatMap(
-                          ([weekNum, roster]) =>
-                            weekNum === "0" ? [] : roster.rostered
-                        )
-                      )
-                    )
-                      .map(([playerId, c]) => ({
-                        player: selectedWrapped().nflPlayers[playerId],
-                        c,
-                      }))
-                      .filter(({ player }) => player?.position === Position[p])
-                      .map(({ player, c }) => `${player.name}: ${c}`),
+                    rostered: ffTeam.rosters["0"].rostered
+                      .map((playerId) => selectedWrapped().nflPlayers[playerId])
+                      .filter((player) => player?.position === Position[p])
+                      .map((player) => player.name),
                   }))
-                  .sort((a, b) => a.started.length - b.started.length)
-                  .map(({ teamName, started }, i) => (
+                  .sort((a, b) => a.rostered.length - b.rostered.length)
+                  .map(({ teamName, rostered }, i) => (
                     <div key={i}>
                       <b>
-                        {teamName}: ({started.length})
+                        {teamName}: ({rostered.length})
                       </b>{" "}
-                      - {started.join(" , ")}
+                      - {rostered.join(" , ")}
                     </div>
                   ))}
               </div>
