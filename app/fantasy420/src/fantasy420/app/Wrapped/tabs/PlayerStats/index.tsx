@@ -70,10 +70,20 @@ export default function PlayerStats() {
                         ...o.y,
                         scores: o.y.scores.map((score, i) =>
                           (({ owner }) =>
-                            owner ? { week: i + 1, owner, score } : score)({
+                            owner
+                              ? {
+                                  week: i + 1,
+                                  [owner.rosters[i + 1]?.starting.includes(
+                                    o.id!
+                                  )
+                                    ? "started"
+                                    : "benched"]: owner.name,
+                                  score,
+                                }
+                              : score)({
                             owner: Object.values(o.w?.ffTeams || {}).find((t) =>
                               t.rosters[i + 1]?.rostered.includes(o.id!)
-                            )?.name,
+                            ),
                           })
                         ),
                       })),
