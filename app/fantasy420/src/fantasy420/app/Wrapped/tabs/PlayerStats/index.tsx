@@ -49,7 +49,7 @@ export default function PlayerStats() {
                             : Object.values(
                                 Object.values(
                                   allWrapped[y.year].nflPlayers
-                                ).find((p) => p.name === d.name)!.scores
+                                ).find((p) => p.name === d.name)?.scores || []
                               ).slice(1),
                       }))
                       .map((y) => ({ y, w: allWrapped[y.year] }))
@@ -68,7 +68,7 @@ export default function PlayerStats() {
                       .map((o) => ({
                         owner: o.owner,
                         ...o.y,
-                        scores: o.y.scores.map((score, i) =>
+                        scores: o.y?.scores.map((score, i) =>
                           (({ owner }) =>
                             owner
                               ? {
