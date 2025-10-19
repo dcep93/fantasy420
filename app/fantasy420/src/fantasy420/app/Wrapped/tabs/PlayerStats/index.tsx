@@ -46,11 +46,10 @@ export default function PlayerStats() {
                         scores:
                           y.year.toString() !== currentYear
                             ? y.scores
-                            : Object.values(
-                                Object.values(
-                                  allWrapped[y.year].nflPlayers
-                                ).find((p) => p.name === d.name)!.scores
-                              ).slice(1),
+                            : getLatestScoresForPlayer(
+                                y.year,
+                                d.name
+                              ) ?? y.scores,
                       }))
                       .map((y) => ({ y, w: allWrapped[y.year] }))
                       .map((o) => ({
@@ -97,6 +96,19 @@ export default function PlayerStats() {
       </div>
     </div>
   );
+}
+
+function getLatestScoresForPlayer(
+  year: number,
+  playerName: string
+): (number | null)[] | undefined {
+  const wrapped = allWrapped[year.toString()];
+  if (!wrapped) return undefined;
+  const player = Object.values(wrapped.nflPlayers || {}).find(
+    (p) => p.name === playerName
+  );
+  if (!player?.scores) return undefined;
+  return Object.values(player.scores).slice(1);
 }
 
 function normalize(s: string) {
