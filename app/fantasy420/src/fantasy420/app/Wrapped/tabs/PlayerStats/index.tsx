@@ -62,7 +62,7 @@ export default function PlayerStats() {
                       .map((o) => ({
                         ...o,
                         owner: Object.values(o.w?.ffTeams || {}).find((t) =>
-                          t.rosters[0].rostered.includes(o.id!)
+                          t.rosters?.[0]?.rostered?.includes(o.id!)
                         )?.name,
                       }))
                       .map((o) => ({
@@ -73,7 +73,7 @@ export default function PlayerStats() {
                             owner
                               ? {
                                   week: i + 1,
-                                  [owner.rosters[i + 1]?.starting.includes(
+                                  [owner.rosters?.[i + 1]?.starting?.includes(
                                     o.id!
                                   )
                                     ? "started"
@@ -82,7 +82,7 @@ export default function PlayerStats() {
                                 }
                               : score)({
                             owner: Object.values(o.w?.ffTeams || {}).find((t) =>
-                              t.rosters[i + 1]?.rostered.includes(o.id!)
+                              t.rosters?.[i + 1]?.rostered?.includes(o.id!)
                             ),
                           })
                         ),
