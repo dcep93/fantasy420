@@ -39,54 +39,55 @@ export default function PlayerStats() {
                     years: d.years
                       .slice()
                       .reverse()
-                      .map((y) => ({
-                        ...y,
-                        // total for year and career
-                        // will be stale
-                        scores:
-                          y.year.toString() !== currentYear
-                            ? y.scores
-                            : Object.values(
-                                Object.values(
-                                  allWrapped[y.year].nflPlayers
-                                ).find((p) => p.name === d.name)!.scores
-                              ).slice(1),
-                      }))
-                      .map((y) => ({ y, w: allWrapped[y.year] }))
-                      .map((o) => ({
-                        ...o,
-                        id: Object.values(o.w?.nflPlayers || {}).find(
-                          (p) => p.name === d.name
-                        )?.id,
-                      }))
-                      .map((o) => ({
-                        ...o,
-                        owner: Object.values(o.w?.ffTeams || {}).find((t) =>
-                          t.rosters[0].rostered.includes(o.id!)
-                        )?.name,
-                      }))
-                      .map((o) => ({
-                        owner: o.owner,
-                        ...o.y,
-                        scores: o.y.scores.map((score, i) =>
-                          (({ owner }) =>
-                            owner
-                              ? {
-                                  week: i + 1,
-                                  [owner.rosters[i + 1]?.starting.includes(
-                                    o.id!
-                                  )
-                                    ? "started"
-                                    : "benched"]: owner.name,
-                                  score,
-                                }
-                              : score)({
-                            owner: Object.values(o.w?.ffTeams || {}).find((t) =>
-                              t.rosters[i + 1]?.rostered.includes(o.id!)
-                            ),
-                          })
-                        ),
-                      })),
+                      .map((y) => {
+                        const wrappedSeason = allWrapped[y.year];
+                        const ffTeams = Object.values(wrappedSeason?.ffTeams || {});
+                        const player = Object.values(
+                          wrappedSeason?.nflPlayers || {}
+                        ).find((p) => p.name === d.name);
+                        const playerId = player?.id;
+                        const owner =
+                          playerId != null
+                            ? ffTeams.find((t) =>
+                                t.rosters?.[0]?.rostered?.includes(playerId)
+                              )
+                            : undefined;
+
+                        const scores =
+                          y.year.toString() === currentYear && player?.scores
+                            ? Object.values(player.scores).slice(1)
+                            : y.scores;
+
+                        return {
+                          ...y,
+                          owner: owner?.name,
+                          scores: scores.map((score, index) => {
+                            if (!playerId) {
+                              return score;
+                            }
+
+                            const week = index + 1;
+                            const weekOwner = ffTeams.find((t) =>
+                              t.rosters?.[week]?.rostered?.includes(playerId)
+                            );
+
+                            if (!weekOwner) {
+                              return score;
+                            }
+
+                            const started =
+                              weekOwner.rosters?.[week]?.starting?.includes(
+                                playerId
+                              ) ?? false;
+
+                            return {
+                              week,
+                              [started ? "started" : "benched"]: weekOwner.name,
+                              score,
+                            };
+                          }),
+                        };
+                      }),
                   },
                   null,
                   2
