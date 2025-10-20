@@ -7,13 +7,12 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { bubbleStyle, clog, Helpers, Position, selectedWrapped } from "..";
+import { bubbleStyle, Helpers, Position, selectedWrapped } from "..";
 
 export default function PointsAgainst() {
   const [position, updatePosition] = useState(Position[Position.DST] as string);
   const data = Object.values(selectedWrapped().nflTeams)
     .filter((t) => t.name !== "FA")
-    .map(clog)
     .map((t) => ({
       t,
       weeks: Object.entries(t.nflGamesByScoringPeriod)
