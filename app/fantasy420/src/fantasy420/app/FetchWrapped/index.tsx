@@ -193,44 +193,44 @@ export function getWrapped(providedYear: string): Promise<WrappedType> {
                           page: {
                             content: {
                               gamepackage: {
+                                pbp: {
+                                  scoringPlaysData: {
+                                    teamId: string;
+                                    typeAbbreviation: string;
+                                    playText: string;
+                                  }[];
+                                  allPlaysData: {
+                                    items: {
+                                      teamName: string;
+                                      headline: string;
+                                      plays: { description: string }[];
+                                    }[];
+                                  }[];
+                                };
                                 prsdTms: {
                                   [key: string]: {
                                     id: string;
                                     displayName: string;
                                   };
                                 };
-                                scrSumm: {
-                                  items: {
-                                    teamId: string;
-                                    typeAbbreviation: string;
-                                    playText: string;
-                                  }[];
-                                }[];
-                                allPlys: {
-                                  items: {
-                                    teamName: string;
-                                    headline: string;
-                                    plays: { description: string }[];
-                                  }[];
-                                }[];
                               };
                             };
                           };
                         }) => ({
-                          fieldGoals: resp.page.content.gamepackage.scrSumm
-                            .flatMap(({ items }) => items)
-                            .filter((item) => item.typeAbbreviation === "FG")
-                            .map((item) => ({
-                              teamId: item.teamId,
-                              yards: parseInt(
-                                item.playText.match(
-                                  /(\d+) (?:yard|yrd|yd) field goal/i
-                                )?.[1]!
-                              ),
-                            }))
-                            .filter(({ yards }) => yards),
+                          fieldGoals:
+                            resp.page.content.gamepackage.pbp.scoringPlaysData
+                              .filter((item) => item.typeAbbreviation === "FG")
+                              .map((item) => ({
+                                teamId: item.teamId,
+                                yards: parseInt(
+                                  item.playText.match(
+                                    /(\d+) (?:yard|yrd|yd) field goal/i
+                                  )?.[1]!
+                                ),
+                              }))
+                              .filter(({ yards }) => yards),
                           punts: groupByF(
-                            resp.page.content.gamepackage.allPlys
+                            resp.page.content.gamepackage.pbp.allPlaysData
                               .flatMap(({ items }) => items)
                               .filter((p) => p.headline === "Punt")
                               .map((p) => ({
@@ -263,7 +263,7 @@ export function getWrapped(providedYear: string): Promise<WrappedType> {
                               resp.page.content.gamepackage.prsdTms
                             ).map(({ id, displayName }) => [
                               id,
-                              resp.page.content.gamepackage.allPlys
+                              resp.page.content.gamepackage.pbp.allPlaysData
                                 .flatMap(({ items }) => items)
                                 .filter((p) => p.teamName === displayName)
                                 .map((drive) => drive.headline),
