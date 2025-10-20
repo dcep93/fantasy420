@@ -56,8 +56,8 @@ export default function Wrapped() {
   const [fetched, updateFetched] = useState(false);
   useMemo(
     () =>
-      Promise.resolve()
-        .then(() => getWrapped({ currentYear, silent: true }))
+      Promise.resolve(currentYear)
+        .then(getWrapped)
         .then((wrapped) => (allWrapped[currentYear] = wrapped))
         .then(() => updateFetched(true))
         .catch((err) => console.error(err)),
