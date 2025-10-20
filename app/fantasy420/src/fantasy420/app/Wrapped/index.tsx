@@ -87,6 +87,7 @@ export default function Wrapped() {
   }
 
   function B() {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [_, updateFetched] = useState(false);
     useMemo(
       () =>
@@ -142,7 +143,6 @@ export enum Position {
   SUPERFLEX = -2,
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function clog<T>(t: T): T {
   console.log(t);
   return t;
