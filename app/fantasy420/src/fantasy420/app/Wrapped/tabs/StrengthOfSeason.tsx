@@ -150,7 +150,7 @@ export default function StrengthOfSeason() {
                           }))
                           .map((o) =>
                             o.weeklyZ
-                              ? o
+                              ? o.weeklyZ
                               : teamToTotal[o.teamId].weeklyB[obj.weekNum]
                           ),
                 }))
