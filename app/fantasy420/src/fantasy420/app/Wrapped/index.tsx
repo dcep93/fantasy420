@@ -53,73 +53,21 @@ export const newManagers: { [teamId: string]: string[] } = {
 };
 
 export default function Wrapped() {
-  const [fetched, updateFetched] = useState(false);
-  useMemo(
-    () =>
-      Promise.resolve(currentYear)
-        .then(getWrapped)
-        .then((wrapped) => (allWrapped[currentYear] = wrapped))
-        .then(() => updateFetched(true))
-        .catch((err) => console.error(err)),
-    []
-  );
-  return <SubWrapped key={fetched.toString()} />;
-}
-
-function SubWrapped() {
   document.title = "Fantasy Wrapped";
   const [yearKey, updateYear] = useState(selectedYear);
   selectedYear = yearKey;
-  const toRender: { [key: string]: () => JSX.Element } = {
-    ManagerPlot,
-    FantasyCalc,
-    PlayerPlot,
-    PlayerStats,
-    WeekTopsAndBottoms,
-    SqueezesAndStomps,
-    GooseEggs,
-    Bopped,
-    ChosenWrong,
-    DraftValue,
-    DraftBoard,
-    StrengthOfSeason,
-    Performance,
-    PerformanceTotals,
-    DeterminedByDiscreteScoring,
-    Stacks,
-    Negatives,
-    PointsAgainst,
-    UniquesStarted,
-    UniquesRostered,
-    BoomBust,
-    OwnedTeams,
-    Benchwarmers,
-    Injuries,
-    BestByPosition,
-    ExtremeStuds,
-    AllTimeRecords,
-    HeadToHead,
-    SecondLost,
-    WhatIf,
-    ConsistentlyAverage,
-    Trades,
-    Simps,
-    Punts,
-    StdDev,
-    PositionTrends,
-    json,
-  };
   var hashKey = window.location.hash.substring(1);
   if (!toRender[hashKey]) {
     window.location.hash = "";
     hashKey = "";
   }
   const [toRenderKey, update] = useState(hashKey || Object.keys(toRender)[0]!);
-  const Tab = toRender[toRenderKey];
-  return (
-    <div style={{ fontFamily: "'Courier New', Courier, monospace" }}>
+
+  function A() {
+    return (
       <div
         style={{ display: "flex", backgroundColor: "grey", overflow: "scroll" }}
+        key="keys"
       >
         {Object.keys(toRender).map((key, i) => (
           <div
@@ -135,6 +83,21 @@ function SubWrapped() {
           </div>
         ))}
       </div>
+    );
+  }
+
+  function B() {
+    const [_, updateFetched] = useState(false);
+    useMemo(
+      () =>
+        Promise.resolve(currentYear)
+          .then(getWrapped)
+          .then((wrapped) => (allWrapped[currentYear] = wrapped))
+          .then(() => updateFetched(true))
+          .catch((err) => console.error(err)),
+      []
+    );
+    return (
       <div style={{ overflow: "scroll" }}>
         <div>
           year:{" "}
@@ -156,6 +119,14 @@ function SubWrapped() {
           </ErrorBoundary>
         </div>
       </div>
+    );
+  }
+
+  const Tab = toRender[toRenderKey];
+  return (
+    <div style={{ fontFamily: "'Courier New', Courier, monospace" }}>
+      <A />
+      <B />
     </div>
   );
 }
@@ -301,3 +272,43 @@ export class Helpers {
     return ideal;
   }
 }
+
+const toRender: { [key: string]: () => JSX.Element } = {
+  ManagerPlot,
+  FantasyCalc,
+  PlayerPlot,
+  PlayerStats,
+  WeekTopsAndBottoms,
+  SqueezesAndStomps,
+  GooseEggs,
+  Bopped,
+  ChosenWrong,
+  DraftValue,
+  DraftBoard,
+  StrengthOfSeason,
+  Performance,
+  PerformanceTotals,
+  DeterminedByDiscreteScoring,
+  Stacks,
+  Negatives,
+  PointsAgainst,
+  UniquesStarted,
+  UniquesRostered,
+  BoomBust,
+  OwnedTeams,
+  Benchwarmers,
+  Injuries,
+  BestByPosition,
+  ExtremeStuds,
+  AllTimeRecords,
+  HeadToHead,
+  SecondLost,
+  WhatIf,
+  ConsistentlyAverage,
+  Trades,
+  Simps,
+  Punts,
+  StdDev,
+  PositionTrends,
+  json,
+};
