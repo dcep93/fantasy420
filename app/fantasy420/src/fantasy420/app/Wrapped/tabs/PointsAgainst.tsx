@@ -48,7 +48,7 @@ export default function PointsAgainst() {
         o.scores.reduce((a, b) => a + b, 0) / o.scores.length
       ),
     }))
-    .sort((a, b) => b.total - a.total);
+    .sort((a, b) => b.average - a.average);
   const dims = { width: 1000, height: 600 };
   return (
     <div>
