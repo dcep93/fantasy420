@@ -60,7 +60,7 @@ export default function PointsAgainst() {
           <Scatter
             data={data.map((d, i) => ({
               x: i + 1,
-              y: d.total,
+              y: d.average,
               label: `${d.t.name} ${d.average}`,
             }))}
           >
