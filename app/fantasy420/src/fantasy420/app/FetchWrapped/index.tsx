@@ -66,7 +66,7 @@ export type FantasyCalcHistoryType = {
 
 export type WrappedType = {
   year: string;
-  currentScoringPeriodId?: number;
+  latestScoringPeriod?: number;
   nflPlayers: {
     [id: string]: NFLPlayerType;
   };
@@ -129,6 +129,8 @@ export function getWrapped(providedYear: string): Promise<WrappedType> {
     .then((h: HelperType) => [
       // year
       Promise.resolve().then(() => h.year),
+      // latestScoringPeriod
+      Promise.resolve(h.latestScoringPeriod),
       // nflPlayers
       Promise.resolve(h.nflPlayers),
       // ffTeams
@@ -414,10 +416,19 @@ export function getWrapped(providedYear: string): Promise<WrappedType> {
     )
     .then((ps) => Promise.all(ps))
     .then(
-      ([year, nflPlayers, ffTeams, ffMatchups, nflTeams, fantasyCalc]) =>
+      ([
+        year,
+        latestScoringPeriod,
+        nflPlayers,
+        ffTeams,
+        ffMatchups,
+        nflTeams,
+        fantasyCalc,
+      ]) =>
         ({
           year,
-          nflPlayers: nflPlayers,
+          latestScoringPeriod,
+          nflPlayers,
           ffTeams,
           ffMatchups,
           nflTeams,
