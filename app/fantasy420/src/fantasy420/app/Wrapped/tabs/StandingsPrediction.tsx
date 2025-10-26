@@ -169,20 +169,19 @@ export default function StandingsPrediction() {
         <span>{elasticity.toFixed(2)}</span>
       </div>
       <div>
-        {dataC.map((o) => (
-          <div key={o.t.id}>
-            <div style={bubbleStyle}>
-              {o.t.name} {o.wins} -&gt; {Helpers.toFixed(o.prediction)}
-              <div>
-                <div style={bubbleStyle}>
-                  <div>future: </div>
-                  {o.future.map((oo, i) => (
-                    <div key={i}>
-                      {oo.myTotal} vs {oo.oppTotal} ({Helpers.toFixed(oo.odds)}){" "}
-                      {oo.oppName}
-                    </div>
-                  ))}
-                </div>
+        {dataC.map((o, rank) => (
+          <div style={bubbleStyle} key={o.t.id}>
+            {rank + 1}) {o.t.name} [{o.wins} -&gt;{" "}
+            {Helpers.toFixed(o.prediction)}]
+            <div>
+              <div style={bubbleStyle}>
+                <div>future: </div>
+                {o.future.map((oo, i) => (
+                  <div key={i}>
+                    {oo.myTotal} vs {oo.oppTotal} ({Helpers.toFixed(oo.odds)}){" "}
+                    {oo.oppName}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
