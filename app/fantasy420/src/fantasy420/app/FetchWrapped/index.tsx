@@ -4,7 +4,6 @@ import { fetchExtension } from "../Draft/Extension";
 import { clog, currentYear, groupByF, selectedWrapped } from "../Wrapped";
 import helper, { default as first2knowF, HelperType } from "./helper";
 
-// todo ignore current week
 export type NFLPlayerType = {
   id: string;
   name: string;
@@ -67,6 +66,7 @@ export type FantasyCalcHistoryType = {
 
 export type WrappedType = {
   year: string;
+  currentScoringPeriodId?: number;
   nflPlayers: {
     [id: string]: NFLPlayerType;
   };
