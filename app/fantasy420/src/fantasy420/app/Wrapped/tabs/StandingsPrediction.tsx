@@ -43,7 +43,7 @@ export default function StandingsPrediction() {
       .filter(
         ({ weekNum }) =>
           parseInt(weekNum) >=
-          (selectedWrapped().currentScoringPeriodId ?? latestWeek + 1)
+          (selectedWrapped().latestScoringPeriod ?? latestWeek + 1)
       )
       .map((obj) => ({
         ...obj,
@@ -121,8 +121,7 @@ export default function StandingsPrediction() {
         .filter(
           (oo) =>
             oo.weekNum <
-            (selectedWrapped().currentScoringPeriodId ||
-              Number.POSITIVE_INFINITY)
+            (selectedWrapped().latestScoringPeriod || Number.POSITIVE_INFINITY)
         )
         .map((w) => (w.total < w.oppTotal ? 0 : 1) as number)
         .reduce((a, b) => a + b, 0),
