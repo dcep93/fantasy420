@@ -191,9 +191,10 @@ export default function StandingsPrediction() {
   );
 }
 
-// Odds that X > Y with X~N(myTotal, σ_my^2), Y~N(oppTotal, σ_opp^2).
-// Calibrate at elasticity=0.5: σ = 0.25 * total. Then scale z by g(e)
-// so g(0.5)=1, g(1)=0 (⇒ odds=0.5), g(0)=2 (sharper edge).
+// X ~ N(myTotal,  σ_my^2), Y ~ N(oppTotal, σ_opp^2)
+// At e=0.5: σ = 0.25 * total (given)
+// Use z_ref from that calibration, then scale by g(e) so:
+//   g(0.5)=1, g(1)=0 (=> odds=0.5), g(0) large (=> near-deterministic)
 
 export function getOdds(
   myTotal: number,
@@ -205,20 +206,18 @@ export function getOdds(
 
   const diff = myTotal - oppTotal;
 
-  // Reference std devs at e_ref = 0.5 (your requirement)
+  // Reference σ at e=0.5 per spec
   const sigmaMyRef = 0.25 * Math.max(0, myTotal);
   const sigmaOppRef = 0.25 * Math.max(0, oppTotal);
-
   const varRef = sigmaMyRef * sigmaMyRef + sigmaOppRef * sigmaOppRef;
+
   if (varRef === 0) return diff > 0 ? 1 : diff < 0 ? 0 : 0.5;
 
-  // z at the reference elasticity
   const zRef = diff / Math.sqrt(varRef);
 
-  // Smooth elasticity scaling: g(0.5)=1, g(1)=0, g(0)=2
-  // You can tweak the exponent GAMMA (>=1) for curvature if needed.
-  const GAMMA = 1;
-  const g = Math.pow(2 * (1 - e), GAMMA); // e∈[0,1] ⇒ g∈[0,2]
+  // Smooth elasticity scaling: stronger γ => sharper at low e
+  const GAMMA = 4; // try 3–5 depending on how "extremely low" you want at e≈0
+  const g = Math.pow(2 * (1 - e), GAMMA); // e∈[0,1] → g∈[0, 2^γ], g(0.5)=1
 
   const z = zRef * g;
   return standardNormalCdf(z);
@@ -228,7 +227,7 @@ function standardNormalCdf(z: number): number {
   return 0.5 * (1 + erf(z / Math.SQRT2));
 }
 
-// Abramowitz–Stegun 7.1.26 approximation for erf
+// Abramowitz–Stegun 7.1.26 erf approximation
 function erf(x: number): number {
   const sign = x < 0 ? -1 : 1;
   x = Math.abs(x);
