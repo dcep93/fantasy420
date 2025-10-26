@@ -29,6 +29,7 @@ export default function StandingsPrediction() {
   const latestWeek = parseInt(
     Object.keys(Object.values(selectedWrapped().ffTeams)[0].rosters).at(-1)!
   );
+
   const byTeam = Object.values(selectedWrapped().ffTeams).map((team) => ({
     ...team,
     matchups: Object.entries(selectedWrapped().ffMatchups)
@@ -39,7 +40,11 @@ export default function StandingsPrediction() {
           .slice()
           .sort((a, b) => (a !== team.id ? 1 : -1)),
       }))
-      .filter(({ weekNum }) => parseInt(weekNum) > latestWeek)
+      .filter(
+        ({ weekNum }) =>
+          parseInt(weekNum) >=
+          (selectedWrapped().currentScoringPeriodId ?? latestWeek + 1)
+      )
       .map((obj) => ({
         ...obj,
         byes: obj.teamIds
@@ -113,6 +118,12 @@ export default function StandingsPrediction() {
     (o) => ({
       t: o.t,
       wins: Object.values(o.weeks)
+        .filter(
+          (oo) =>
+            oo.weekNum <
+            (selectedWrapped().currentScoringPeriodId ||
+              Number.POSITIVE_INFINITY)
+        )
         .map((w) => (w.total < w.oppTotal ? 0 : 1) as number)
         .reduce((a, b) => a + b, 0),
       future: Object.entries(teamToTotal[o.t.id].weeklyTotal)

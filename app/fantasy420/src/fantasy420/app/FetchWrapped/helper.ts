@@ -426,6 +426,8 @@ export default function helper(params: {
             )
         )
         .then((v) => ["nflTeamsSource", v]),
+      // currentScoringPeriodId
+      Promise.resolve().then(() => ["currentScoringPeriodId", 0]),
     ])
     .then((ps) => Promise.all(ps))
     .then(Object.fromEntries);
@@ -433,6 +435,7 @@ export default function helper(params: {
 
 export type HelperType = {
   year: string;
+  currentScoringPeriodId: number;
   nflPlayers: { [id: string]: NFLPlayerType };
   ffTeams: { [id: string]: FFTeamType };
   ffMatchups: { [weekNum: string]: MatchupsType };
