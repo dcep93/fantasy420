@@ -31,6 +31,7 @@ import SecondLost from "./tabs/SecondLost";
 import Simps from "./tabs/Simps";
 import SqueezesAndStomps from "./tabs/SqueezesAndStomps";
 import Stacks from "./tabs/Stacks";
+import StandingsPrediction from "./tabs/StandingsPrediction";
 import StdDev from "./tabs/StdDev";
 import StrengthOfSeason from "./tabs/StrengthOfSeason";
 import Trades from "./tabs/Trades";
@@ -310,5 +311,6 @@ const toRender: { [key: string]: () => JSX.Element } = {
   Punts,
   StdDev,
   PositionTrends,
+  StandingsPrediction,
   json,
 };
