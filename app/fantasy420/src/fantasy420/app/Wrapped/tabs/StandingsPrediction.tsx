@@ -161,7 +161,7 @@ export default function StandingsPrediction() {
         <input
           type="range"
           min="0"
-          max="0.99"
+          max="1"
           step="0.01"
           value={elasticity}
           onChange={(e) => updateElasticity(parseFloat(e.target.value))}
