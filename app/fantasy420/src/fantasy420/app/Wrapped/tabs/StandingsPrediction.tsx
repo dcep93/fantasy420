@@ -191,26 +191,55 @@ export default function StandingsPrediction() {
   );
 }
 
-function getOdds(
+// Odds that X > Y with X~N(myTotal, σ_my^2), Y~N(oppTotal, σ_opp^2).
+// Calibrate at elasticity=0.5: σ = 0.25 * total. Then scale z by g(e)
+// so g(0.5)=1, g(1)=0 (⇒ odds=0.5), g(0)=2 (sharper edge).
+
+export function getOdds(
   myTotal: number,
   oppTotal: number,
   elasticity: number
 ): number {
-  elasticity = Math.max(0, Math.min(1, elasticity));
+  const e = Math.max(0, Math.min(1, elasticity));
+  if (e === 1) return 0.5;
 
-  // Difference between expected totals
   const diff = myTotal - oppTotal;
 
-  // Deterministic odds if elasticity = 0
-  if (elasticity === 0) return diff > 0 ? 1 : diff < 0 ? 0 : 0.5;
+  // Reference std devs at e_ref = 0.5 (your requirement)
+  const sigmaMyRef = 0.25 * Math.max(0, myTotal);
+  const sigmaOppRef = 0.25 * Math.max(0, oppTotal);
 
-  // Compute base logistic odds ignoring elasticity
-  const base = 1 / (1 + Math.exp(-diff / 10)); // the "10" just sets slope scale
+  const varRef = sigmaMyRef * sigmaMyRef + sigmaOppRef * sigmaOppRef;
+  if (varRef === 0) return diff > 0 ? 1 : diff < 0 ? 0 : 0.5;
 
-  // Blend between deterministic (0 or 1) and pure random (0.5)
-  // As elasticity → 1, odds → 0.5
-  // As elasticity → 0, odds → base (effectively 0 or 1 for large diff)
-  const odds = 0.5 + (base - 0.5) * (1 - elasticity);
+  // z at the reference elasticity
+  const zRef = diff / Math.sqrt(varRef);
 
-  return odds;
+  // Smooth elasticity scaling: g(0.5)=1, g(1)=0, g(0)=2
+  // You can tweak the exponent GAMMA (>=1) for curvature if needed.
+  const GAMMA = 1;
+  const g = Math.pow(2 * (1 - e), GAMMA); // e∈[0,1] ⇒ g∈[0,2]
+
+  const z = zRef * g;
+  return standardNormalCdf(z);
+}
+
+function standardNormalCdf(z: number): number {
+  return 0.5 * (1 + erf(z / Math.SQRT2));
+}
+
+// Abramowitz–Stegun 7.1.26 approximation for erf
+function erf(x: number): number {
+  const sign = x < 0 ? -1 : 1;
+  x = Math.abs(x);
+  const a1 = 0.254829592,
+    a2 = -0.284496736,
+    a3 = 1.421413741;
+  const a4 = -1.453152027,
+    a5 = 1.061405429,
+    p = 0.3275911;
+  const t = 1 / (1 + p * x);
+  const y =
+    1 - ((((a5 * t + a4) * t + a3) * t + a2) * t + a1) * t * Math.exp(-x * x);
+  return sign * y;
 }
