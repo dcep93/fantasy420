@@ -197,9 +197,11 @@ export function getWrapped(providedYear: string): Promise<WrappedType> {
                               gamepackage: {
                                 pbp: {
                                   scoringPlaysData: {
-                                    teamId: string;
-                                    typeAbbreviation: string;
-                                    playText: string;
+                                    items: {
+                                      teamId: string;
+                                      playTitle: string;
+                                      playText: string;
+                                    }[];
                                   }[];
                                   allPlaysData: {
                                     items: {
@@ -221,7 +223,9 @@ export function getWrapped(providedYear: string): Promise<WrappedType> {
                         }) => ({
                           fieldGoals:
                             resp.page.content.gamepackage.pbp.scoringPlaysData
-                              .filter((item) => item.typeAbbreviation === "FG")
+                              .flatMap(({ items }) => items)
+                              .filter((item) => item.playTitle === "Field Goal")
+
                               .map((item) => ({
                                 teamId: item.teamId,
                                 yards: parseInt(
