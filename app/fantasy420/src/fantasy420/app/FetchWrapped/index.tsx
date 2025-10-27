@@ -307,6 +307,7 @@ export function getWrapped(providedYear: string): Promise<WrappedType> {
                         value: fromEntries(
                           playerCards.players
                             .filter((p) => p.player.stats)
+                            .filter((p) => p.player.id < 0)
                             .map((player) => ({
                               teamId: player.player.proTeamId,
                               stats: player.player.stats.find(
