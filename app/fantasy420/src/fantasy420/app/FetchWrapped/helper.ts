@@ -470,6 +470,7 @@ export type HelperType = {
     playerCards: {
       players: {
         player: {
+          id: number;
           proTeamId: number;
           stats: {
             scoringPeriodId: number;
