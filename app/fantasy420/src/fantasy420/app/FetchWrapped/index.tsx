@@ -225,7 +225,6 @@ export function getWrapped(providedYear: string): Promise<WrappedType> {
                             resp.page.content.gamepackage.pbp.scoringPlaysData
                               .flatMap(({ items }) => items)
                               .filter((item) => item.playTitle === "Field Goal")
-
                               .map((item) => ({
                                 teamId: item.teamId,
                                 yards: parseInt(
