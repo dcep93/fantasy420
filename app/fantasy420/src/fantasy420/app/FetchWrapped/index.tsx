@@ -126,7 +126,6 @@ export function getWrapped(providedYear: string): Promise<WrappedType> {
           }),
       })
     )
-    .then(clog)
     .then((h: HelperType) => [
       // year
       Promise.resolve().then(() => h.year),
