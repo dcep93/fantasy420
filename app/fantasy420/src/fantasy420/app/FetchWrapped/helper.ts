@@ -1,4 +1,5 @@
 import { FFTeamType, MatchupsType, NFLPlayerType, Ownership } from ".";
+import { clog } from "../Wrapped";
 
 export default function helper(params: {
   leagueId: number;
@@ -42,6 +43,7 @@ export default function helper(params: {
             }
           )
             .then((resp) => JSON.parse(resp))
+            .then(clog)
             .then(
               (resp: {
                 teams: {
