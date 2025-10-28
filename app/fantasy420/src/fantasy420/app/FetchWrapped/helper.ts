@@ -18,20 +18,6 @@ export default function helper(params: {
     .then(() => [
       // year
       Promise.resolve().then(() => ["year", currentYear]),
-      // latestScoringPeriod
-      Promise.resolve().then(() =>
-        fetchF(
-          `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/segments/0/leagues/${leagueId}?view=mDraftDetail&view=mRoster`,
-          {
-            maxAgeMs: 5 * 60 * 1000,
-          }
-        )
-          .then((resp) => JSON.parse(resp))
-          .then((main: { status: { latestScoringPeriod: number } }) => [
-            "latestScoringPeriod",
-            main.status.latestScoringPeriod,
-          ])
-      ),
       // nflPlayers
       Promise.resolve()
         .then(() =>
@@ -238,7 +224,6 @@ export default function helper(params: {
                           )
                       )
                   )
-
                   .then((ps) => Promise.all(ps))
                   .then((weeks) => ({
                     main,
@@ -447,7 +432,6 @@ export default function helper(params: {
 
 export type HelperType = {
   year: string;
-  latestScoringPeriod: number;
   nflPlayers: { [id: string]: NFLPlayerType };
   ffTeams: { [id: string]: FFTeamType };
   ffMatchups: { [weekNum: string]: MatchupsType };
