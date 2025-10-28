@@ -127,6 +127,7 @@ export default function StandingsPrediction() {
         .reduce((a, b) => a + b, 0),
       future: Object.entries(teamToTotal[o.t.id].weeklyTotal)
         .map(([weekNum, myTotal]) => ({
+          weekNum,
           myTotal,
           oppTotal:
             teamToTotal[
@@ -178,8 +179,8 @@ export default function StandingsPrediction() {
                 <div>future: </div>
                 {o.future.map((oo, i) => (
                   <div key={i}>
-                    {oo.myTotal} vs {oo.oppTotal} ({Helpers.toFixed(oo.odds)}){" "}
-                    {oo.oppName}
+                    w{oo.weekNum} {oo.myTotal} vs {oo.oppTotal} (
+                    {Helpers.toFixed(oo.odds)}) {oo.oppName}
                   </div>
                 ))}
               </div>

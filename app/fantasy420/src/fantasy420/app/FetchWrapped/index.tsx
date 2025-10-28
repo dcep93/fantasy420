@@ -130,7 +130,24 @@ export function getWrapped(providedYear: string): Promise<WrappedType> {
       // year
       Promise.resolve().then(() => h.year),
       // latestScoringPeriod
-      Promise.resolve(h.latestScoringPeriod),
+      Promise.resolve(h.nflTeamsSource)
+        .then(({ main }) => main.settings.proTeams)
+        .then((proTeams) =>
+          proTeams
+            .filter((team) => team.id !== 0)
+            .map(
+              (team) =>
+                Object.entries(team.proGamesByScoringPeriod)
+                  .map(([weekNum, entry]) => ({ weekNum, entry }))
+                  .find(({ entry }) => !entry[0].statsOfficial)!.weekNum
+            )
+            .map((weekNum) => parseInt(weekNum))
+        )
+        .then(
+          (weekNums) => weekNums.reduce((a, b) => a + b, 0) / weekNums.length
+        )
+        // greatest week completed 75%
+        .then((maxWeekNum) => Math.floor(maxWeekNum + 0.25)),
       // nflPlayers
       Promise.resolve(h.nflPlayers),
       // ffTeams
