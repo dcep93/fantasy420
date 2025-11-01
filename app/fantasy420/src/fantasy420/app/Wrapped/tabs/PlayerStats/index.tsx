@@ -11,7 +11,7 @@ export const playerStatsData = rawData as {
   years: { year: number; scores: (number | null)[]; total: number }[];
 }[];
 
-const MAX_RESULTS = 3;
+const MAX_RESULTS = 10;
 
 // https://nflquery.web.app/fantasy
 export default function PlayerStats() {
@@ -89,12 +89,12 @@ export default function PlayerStats() {
                       })
                     ),
                   }))
-                  .map((o) => (
+                  .map((o, j) => (
                     <div>
                       <pre>
                         {JSON.stringify({ ...o, scores: undefined }, null, 2)}
                       </pre>
-                      <Chart scores={o.scores} />
+                      <Chart delayMs={100 * (10 * i + j)} scores={o.scores} />
                     </div>
                   ))}
               </div>
