@@ -142,6 +142,7 @@ export default function Chart(props: { scores: ScorePoint[] }) {
             dot={false}
             connectNulls={false}
             isAnimationActive={false}
+            tooltipType="none"
           />
           <Scatter
             data={scatterData}
