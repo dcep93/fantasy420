@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   ComposedChart,
   Line,
@@ -105,13 +106,18 @@ const Marker = (props: {
   );
 };
 
-export default function Chart(props: { scores: ScorePoint[] }) {
+export default function Chart(props: {
+  delayMs: number;
+  scores: ScorePoint[];
+}) {
+  const [visible, setVisible] = useState(false);
+  setTimeout(() => setVisible(true), props.delayMs);
   const data = props.scores.map((entry) => ({
     ...entry,
     color: getOwnerColor(entry.owner),
   }));
   const scatterData = data.filter((d) => d.score !== null);
-  return (
+  return !visible ? null : (
     <div style={{ width: "24em", height: "12em" }}>
       <ResponsiveContainer width="100%" height="100%">
         <ComposedChart
