@@ -11,7 +11,7 @@ export const playerStatsData = rawData as {
   years: { year: number; scores: (number | null)[]; total: number }[];
 }[];
 
-const MAX_RESULTS = 100;
+const MAX_RESULTS = 3;
 
 // https://nflquery.web.app/fantasy
 export default function PlayerStats() {
