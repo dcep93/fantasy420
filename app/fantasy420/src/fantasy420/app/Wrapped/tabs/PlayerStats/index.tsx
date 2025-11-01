@@ -81,7 +81,7 @@ export default function PlayerStats() {
                           ? "started"
                           : "benched",
                         score,
-                        owner: owner?.name,
+                        owner,
                       }))({
                         owner: Object.values(o.w?.ffTeams || {}).find((t) =>
                           t.rosters[i + 1]?.rostered.includes(o.id!)
