@@ -90,7 +90,7 @@ export default function PlayerStats() {
                     ),
                   }))
                   .map((o, j) => (
-                    <div>
+                    <div key={j}>
                       <pre>
                         {JSON.stringify({ ...o, scores: undefined }, null, 2)}
                       </pre>
