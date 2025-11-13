@@ -64,8 +64,8 @@ export default function Wrapped() {
   }
   const [toRenderKey, update] = useState(hashKey || Object.keys(toRender)[0]!);
 
-  function A() {
-    return (
+  const tabHeadings = useMemo(
+    () => (
       <div
         style={{ display: "flex", backgroundColor: "grey", overflow: "scroll" }}
         key="keys"
@@ -84,8 +84,9 @@ export default function Wrapped() {
           </div>
         ))}
       </div>
-    );
-  }
+    ),
+    [update]
+  );
 
   function B() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -127,7 +128,7 @@ export default function Wrapped() {
   const Tab = toRender[toRenderKey];
   return (
     <div style={{ fontFamily: "'Courier New', Courier, monospace" }}>
-      <A />
+      {tabHeadings}
       <B />
     </div>
   );
