@@ -18,6 +18,7 @@ import GooseEggs from "./tabs/GooseEggs";
 import HeadToHead from "./tabs/HeadToHead";
 import Injuries from "./tabs/Injuries";
 import ManagerPlot from "./tabs/ManagerPlot";
+import MondayNight from "./tabs/MondayNight";
 import Negatives from "./tabs/Negatives";
 import OwnedTeams from "./tabs/OwnedTeams";
 import Performance from "./tabs/Performance";
@@ -280,6 +281,7 @@ const toRender: { [key: string]: () => JSX.Element } = {
   FantasyCalc,
   PlayerPlot,
   PlayerStats,
+  MondayNight,
   WeekTopsAndBottoms,
   SqueezesAndStomps,
   GooseEggs,
