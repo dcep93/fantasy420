@@ -22,7 +22,7 @@ type TeamMondayContext = {
 
 type MondayShowdown = {
   weekNum: string;
-  rating: number;
+  spiceScore: number;
   swing: number;
   expectedDiff: number;
   finalDiff: number;
@@ -136,7 +136,7 @@ export default function MondayNight() {
         .map((matchup) => analyzeMatchup(weekNum, matchup))
         .filter((matchup): matchup is MondayShowdown => matchup !== undefined)
     )
-    .sort((a, b) => b.rating - a.rating)
+    .sort((a, b) => b.spiceScore - a.spiceScore)
     .slice(0, 10);
 
   if (showdowns.length === 0) {
@@ -167,7 +167,7 @@ export default function MondayNight() {
                 {showdown.teams[1].name}
               </strong>
               <div style={{ fontSize: "0.85em", color: "#444" }}>
-                Stress score: {(showdown.rating * 100).toFixed(0)} / 100
+                Spice score: {showdown.spiceScore} / 999
               </div>
             </div>
             <div style={{ textAlign: "right", fontSize: "0.9em" }}>
@@ -328,17 +328,20 @@ const analyzeMatchup = (
   const swing = Math.abs(finalDiff - expectedDiff);
   const mondayVolume =
     teamA.mondayProjection + teamB.mondayProjection + teamA.mondayActual + teamB.mondayActual;
-  const comebackMultiplier =
-    Math.sign(expectedDiff) !== Math.sign(finalDiff) ? 1.5 : 1;
-  const rawRating = Math.tanh((swing + mondayVolume * 0.4) / 50) * comebackMultiplier;
-  const rating = Math.min(1, rawRating);
   const hero = [...teamA.mondayPlayers, ...teamB.mondayPlayers]
     .map((player) => ({ ...player, delta: player.actual - player.projection }))
     .sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta))[0];
+  const spiceScore = calculateSpiceScore({
+    swing,
+    mondayVolume,
+    expectedDiff,
+    finalDiff,
+    heroDelta: hero?.delta,
+  });
 
   return {
     weekNum,
-    rating,
+    spiceScore,
     swing,
     expectedDiff,
     finalDiff,
@@ -369,4 +372,45 @@ function describeSwing(expectedDiff: number, finalDiff: number) {
       : "Stayed neck and neck";
   }
   return flipped ? "Lead flipped under the lights" : "Lead held (but sweated)";
+}
+
+function calculateSpiceScore({
+  swing,
+  mondayVolume,
+  expectedDiff,
+  finalDiff,
+  heroDelta,
+}: {
+  swing: number;
+  mondayVolume: number;
+  expectedDiff: number;
+  finalDiff: number;
+  heroDelta?: number;
+}): number {
+  const comebackBonus = Math.sign(expectedDiff) !== Math.sign(finalDiff) ? 0.12 : 0;
+  const swingIntensity = normalizeForSpice(swing, 55);
+  const volumeIntensity = normalizeForSpice(mondayVolume, 140);
+  const expectedTightness = 1 - Math.tanh(Math.abs(expectedDiff) / 32);
+  const finishTightness = 1 - Math.tanh(Math.abs(finalDiff) / 24);
+  const heroImpact = heroDelta ? normalizeForSpice(Math.abs(heroDelta), 18) : 0;
+
+  const weightedScore =
+    swingIntensity * 0.45 +
+    volumeIntensity * 0.2 +
+    expectedTightness * 0.15 +
+    finishTightness * 0.08 +
+    heroImpact * 0.08 +
+    comebackBonus;
+
+  const microAdjust =
+    ((swing % 1) * 0.0005 + (mondayVolume % 1) * 0.0003 +
+      (heroDelta ? (Math.abs(heroDelta) % 1) * 0.0002 : 0));
+
+  const normalized = Math.min(0.999, Math.max(0, weightedScore + microAdjust));
+  return Math.round(normalized * 1000);
+}
+
+function normalizeForSpice(value: number, pivot: number): number {
+  if (value <= 0) return 0;
+  return Math.min(1, Math.log1p(value) / Math.log1p(pivot));
 }
