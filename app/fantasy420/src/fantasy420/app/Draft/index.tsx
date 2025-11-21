@@ -12,8 +12,7 @@ import draft2024 from "./2024.json";
 import draft2025 from "./2025.json";
 import draftKings from "./draftKings";
 
-export const isDev =
-  !process.env.NODE_ENV || process.env.NODE_ENV === "development";
+export const isDev = import.meta.env.DEV;
 
 export const bubbleStyle = {
   backgroundColor: "white",
