@@ -10,16 +10,16 @@ import {
 import { Helpers, mapDict, selectedWrapped, selectedYear } from "..";
 
 export const colors = Object.values({
-  Red: "#FF0000",
-  Green: "#008000",
-  Blue: "#0000FF",
+  Red: "#E53935",
+  Green: "#43A047",
+  Blue: "#1E88E5",
   Black: "#000000",
-  Cyan: "#00FFFF",
-  Magenta: "#FF00FF",
-  Orange: "#FFA500",
-  Purple: "#800080",
-  Yellow: "#FFFF00",
-  Pink: "#FF69B4",
+  Cyan: "#00ACC1",
+  Magenta: "#D81B60",
+  Orange: "#FB8C00",
+  Purple: "#8E24AA",
+  Lime: "#C0CA33",
+  Brown: "#6D4C41",
 });
 
 export default function ManagerPlot() {
