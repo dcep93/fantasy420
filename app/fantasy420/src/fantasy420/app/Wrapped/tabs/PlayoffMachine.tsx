@@ -161,7 +161,9 @@ export default function PlayoffMachine() {
       .map((w) => parseFloat(w))
       .sort((a, b) => b - a);
 
-    return sortedWins.flatMap((winsKey) => {
+    const tiebreakExplanations: string[] = [];
+
+    const entries = sortedWins.flatMap((winsKey) => {
       const group = groupedByWins[winsKey]!;
       const pairCounts = new Set<number>();
       group.forEach(({ team }) => {
@@ -173,6 +175,27 @@ export default function PlayoffMachine() {
       const useHeadToHead =
         pairCounts.size === 1 && Array.from(pairCounts.values())[0]! > 0;
 
+      const tiebreakWinsLabel = Number.isInteger(winsKey)
+        ? winsKey.toString()
+        : Helpers.toFixed(winsKey, 2);
+      if (group.length > 1) {
+        const groupNames = group.map(({ team }) => team.name).join(" and ");
+        const hasAnyMatchups = Array.from(pairCounts).some((count) => count > 0);
+        if (useHeadToHead) {
+          tiebreakExplanations.push(
+            `${groupNames} all have ${tiebreakWinsLabel} wins and have played each other an equal number of times, so head-to-head record is used before points for.`,
+          );
+        } else {
+          tiebreakExplanations.push(
+            `${groupNames} each have ${tiebreakWinsLabel} wins, but ${
+              hasAnyMatchups
+                ? "have not played an equal number of times"
+                : "have not played each other"
+            }, so points for is used.`,
+          );
+        }
+      }
+
       return group.sort((a, b) => {
         if (useHeadToHead) {
           const aRecord = getHeadToHeadRecord(a.team.id, group.map((g) => g.team.id));
@@ -183,6 +206,8 @@ export default function PlayoffMachine() {
         return a.team.name.localeCompare(b.team.name);
       });
     });
+
+    return { entries, tiebreakExplanations };
   }, [basePoints, manualPoints, wrapped.ffTeams, seasonResults]);
 
   function getScore(teamId: string, weekNum: string) {
@@ -222,7 +247,17 @@ export default function PlayoffMachine() {
     return (
       <div style={{ marginBottom: "1em" }}>
         <h2>Standings (with simulations)</h2>
-        {standings.map((entry, index) => (
+        {standings.tiebreakExplanations.length > 0 && (
+          <div style={{ ...bubbleStyle, marginBottom: "0.5em" }}>
+            <div style={{ fontWeight: 600 }}>Tiebreak explanations</div>
+            <ul style={{ margin: 0 }}>
+              {standings.tiebreakExplanations.map((note, i) => (
+                <li key={i}>{note}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {standings.entries.map((entry, index) => (
           <div style={bubbleStyle} key={entry.team.id}>
             <div>
               {index + 1}) {entry.team.name} – {Helpers.toFixed(entry.wins, 2)}
