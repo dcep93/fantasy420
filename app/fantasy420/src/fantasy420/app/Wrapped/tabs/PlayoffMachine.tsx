@@ -17,7 +17,21 @@ type ManualPoints = { [teamId: string]: number };
 
 export default function PlayoffMachine() {
   const wrapped = selectedWrapped();
-  const latestCompleteWeek = wrapped.latestScoringPeriod || 0;
+  const latestCompleteWeek = useMemo(() => {
+    const weeksWithScores = new Set<number>();
+
+    Object.values(wrapped.nflPlayers).forEach((player) => {
+      Object.entries(player.scores || {}).forEach(([weekNum, score]) => {
+        const week = parseInt(weekNum);
+        if (week > 0 && score !== undefined) {
+          weeksWithScores.add(week);
+        }
+      });
+    });
+
+    if (weeksWithScores.size === 0) return wrapped.latestScoringPeriod || 0;
+    return Math.max(...Array.from(weeksWithScores));
+  }, [wrapped.latestScoringPeriod, wrapped.nflPlayers]);
   const upcomingWeeks = useMemo(
     () =>
       Object.keys(wrapped.ffMatchups)
