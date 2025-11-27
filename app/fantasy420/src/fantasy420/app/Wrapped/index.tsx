@@ -27,6 +27,7 @@ import PlayerPlot from "./tabs/PlayerPlot";
 import PlayerStats from "./tabs/PlayerStats";
 import PointsAgainst from "./tabs/PointsAgainst";
 import PositionTrends from "./tabs/PositionTrends";
+import PlayoffMachine from "./tabs/PlayoffMachine";
 import Punts from "./tabs/Punts";
 import SecondLost from "./tabs/SecondLost";
 import Simps from "./tabs/Simps";
@@ -306,6 +307,7 @@ const toRender: { [key: string]: () => JSX.Element } = {
   ExtremeStuds,
   AllTimeRecords,
   HeadToHead,
+  PlayoffMachine,
   SecondLost,
   WhatIf,
   ConsistentlyAverage,
