@@ -17,21 +17,7 @@ type ManualPoints = { [teamId: string]: number };
 
 export default function PlayoffMachine() {
   const wrapped = selectedWrapped();
-  const latestCompleteWeek = useMemo(() => {
-    const weeksWithScores = new Set<number>();
-
-    Object.values(wrapped.nflPlayers).forEach((player) => {
-      Object.entries(player.scores || {}).forEach(([weekNum, score]) => {
-        const week = parseInt(weekNum);
-        if (week > 0 && score !== undefined) {
-          weeksWithScores.add(week);
-        }
-      });
-    });
-
-    if (weeksWithScores.size === 0) return wrapped.latestScoringPeriod || 0;
-    return Math.max(...Array.from(weeksWithScores));
-  }, [wrapped.latestScoringPeriod, wrapped.nflPlayers]);
+  const latestCompleteWeek = wrapped.latestScoringPeriod!;
   const upcomingWeeks = useMemo(
     () =>
       Object.keys(wrapped.ffMatchups)
@@ -46,10 +32,9 @@ export default function PlayoffMachine() {
       upcomingWeeks.map((weekNum) => [
         weekNum.toString(),
         Object.fromEntries(
-          wrapped.ffMatchups[weekNum.toString()].map((matchup, matchupIndex) => [
-            matchupIndex,
-            matchup[0],
-          ])
+          wrapped.ffMatchups[weekNum.toString()].map(
+            (matchup, matchupIndex) => [matchupIndex, matchup[0]]
+          )
         ),
       ])
     )
@@ -73,7 +58,8 @@ export default function PlayoffMachine() {
                 .reduce((a, b) => a + b, 0)
             )
             .reduce((a, b) => a + b, 0),
-        ])),
+        ])
+      ),
     [wrapped.ffTeams, wrapped.nflPlayers]
   );
 
@@ -123,13 +109,15 @@ export default function PlayoffMachine() {
       });
 
     upcomingWeeks.forEach((weekNum) => {
-      wrapped.ffMatchups[weekNum.toString()].forEach((matchup, matchupIndex) => {
-        const winnerId = selections[weekNum.toString()]?.[matchupIndex];
-        if (!winnerId) return;
-        const [teamA, teamB] = matchup;
-        const result = winnerId === teamA ? 1 : winnerId === teamB ? -1 : 0;
-        recordMatchup(teamA, teamB, result);
-      });
+      wrapped.ffMatchups[weekNum.toString()].forEach(
+        (matchup, matchupIndex) => {
+          const winnerId = selections[weekNum.toString()]?.[matchupIndex];
+          if (!winnerId) return;
+          const [teamA, teamB] = matchup;
+          const result = winnerId === teamA ? 1 : winnerId === teamB ? -1 : 0;
+          recordMatchup(teamA, teamB, result);
+        }
+      );
     });
 
     return { wins, headToHead };
@@ -143,19 +131,16 @@ export default function PlayoffMachine() {
       ])
     );
 
-    const groupedByWins = Object.values(wrapped.ffTeams).reduce(
-      (acc, team) => {
-        const wins = seasonResults.wins[team.id] || 0;
-        acc[wins] = acc[wins] || [];
-        acc[wins].push({
-          team,
-          wins,
-          pointsFor: pointsWithAdjustments[team.id] || 0,
-        });
-        return acc;
-      },
-      {} as { [wins: number]: { team: (typeof wrapped.ffTeams)[string]; wins: number; pointsFor: number }[] }
-    );
+    const groupedByWins = Object.values(wrapped.ffTeams).reduce((acc, team) => {
+      const wins = seasonResults.wins[team.id] || 0;
+      acc[wins] = acc[wins] || [];
+      acc[wins].push({
+        team,
+        wins,
+        pointsFor: pointsWithAdjustments[team.id] || 0,
+      });
+      return acc;
+    }, {} as { [wins: number]: { team: (typeof wrapped.ffTeams)[string]; wins: number; pointsFor: number }[] });
 
     const sortedWins = Object.keys(groupedByWins)
       .map((w) => parseFloat(w))
@@ -169,7 +154,9 @@ export default function PlayoffMachine() {
       group.forEach(({ team }) => {
         group.forEach(({ team: opp }) => {
           if (team.id === opp.id) return;
-          pairCounts.add(seasonResults.headToHead[team.id]?.[opp.id]?.games || 0);
+          pairCounts.add(
+            seasonResults.headToHead[team.id]?.[opp.id]?.games || 0
+          );
         });
       });
       const useHeadToHead =
@@ -180,10 +167,12 @@ export default function PlayoffMachine() {
         : Helpers.toFixed(winsKey, 2);
       if (group.length > 1) {
         const groupNames = group.map(({ team }) => team.name).join(" and ");
-        const hasAnyMatchups = Array.from(pairCounts).some((count) => count > 0);
+        const hasAnyMatchups = Array.from(pairCounts).some(
+          (count) => count > 0
+        );
         if (useHeadToHead) {
           tiebreakExplanations.push(
-            `${groupNames} all have ${tiebreakWinsLabel} wins and have played each other an equal number of times, so head-to-head record is used before points for.`,
+            `${groupNames} all have ${tiebreakWinsLabel} wins and have played each other an equal number of times, so head-to-head record is used before points for.`
           );
         } else {
           tiebreakExplanations.push(
@@ -191,15 +180,21 @@ export default function PlayoffMachine() {
               hasAnyMatchups
                 ? "have not played an equal number of times"
                 : "have not played each other"
-            }, so points for is used.`,
+            }, so points for is used.`
           );
         }
       }
 
       return group.sort((a, b) => {
         if (useHeadToHead) {
-          const aRecord = getHeadToHeadRecord(a.team.id, group.map((g) => g.team.id));
-          const bRecord = getHeadToHeadRecord(b.team.id, group.map((g) => g.team.id));
+          const aRecord = getHeadToHeadRecord(
+            a.team.id,
+            group.map((g) => g.team.id)
+          );
+          const bRecord = getHeadToHeadRecord(
+            b.team.id,
+            group.map((g) => g.team.id)
+          );
           if (aRecord !== bRecord) return bRecord - aRecord;
         }
         if (a.pointsFor !== b.pointsFor) return b.pointsFor - a.pointsFor;
@@ -260,8 +255,8 @@ export default function PlayoffMachine() {
         {standings.entries.map((entry, index) => (
           <div style={bubbleStyle} key={entry.team.id}>
             <div>
-              {index + 1}) {entry.team.name} – {Helpers.toFixed(entry.wins, 2)}
-              {" "}wins
+              {index + 1}) {entry.team.name} – {Helpers.toFixed(entry.wins, 2)}{" "}
+              wins
             </div>
             <div>Points For: {Helpers.toFixed(entry.pointsFor, 2)}</div>
             <div>
