@@ -139,7 +139,6 @@ export function getWrapped(providedYear: string): Promise<WrappedType> {
               (team) =>
                 Object.entries(team.proGamesByScoringPeriod)
                   .map(([weekNum, entry]) => ({ weekNum, entry }))
-                  .reverse()
                   .find(({ entry }) => !entry[0].statsOfficial)!.weekNum
             )
             .map((weekNum) => parseInt(weekNum))
