@@ -9,7 +9,7 @@ type HeadToHeadRecord = {
 
 type SimulatedSelections = {
   [weekNum: string]: {
-    [matchupIndex: number]: string;
+    [matchupIndex: string]: string;
   };
 };
 
@@ -26,19 +26,36 @@ export default function PlayoffMachine() {
         .sort((a, b) => a - b),
     [wrapped.ffMatchups, latestCompleteWeek]
   );
+  const [selections, updateSelections] = useState<SimulatedSelections>(() => {
+    const initial: SimulatedSelections = {};
 
-  const [selections, updateSelections] = useState<SimulatedSelections>(() =>
-    Object.fromEntries(
-      upcomingWeeks.map((weekNum) => [
-        weekNum.toString(),
-        Object.fromEntries(
-          wrapped.ffMatchups[weekNum.toString()].map(
-            (matchup, matchupIndex) => [matchupIndex, matchup[0]]
-          )
-        ),
-      ])
-    )
-  );
+    for (const weekNum of upcomingWeeks) {
+      const weekKey = weekNum.toString();
+      const matchups = wrapped.ffMatchups[weekKey] || [];
+
+      const weekSelections: { [matchupIndex: number]: string } = {};
+
+      matchups.forEach((matchup, matchupIndex) => {
+        if (!matchup || matchup.length === 0) {
+          // fallback: nothing? default to first index being itself (or you can skip entirely)
+          return;
+        }
+
+        const bestTeamId = matchup.reduce((bestSoFar, teamId) => {
+          const bestScore =
+            getScore(bestSoFar, weekKey) ?? Number.NEGATIVE_INFINITY;
+          const score = getScore(teamId, weekKey) ?? Number.NEGATIVE_INFINITY;
+          return score > bestScore ? teamId : bestSoFar;
+        }, matchup[0]);
+
+        weekSelections[matchupIndex] = bestTeamId;
+      });
+
+      initial[weekKey] = weekSelections;
+    }
+
+    return initial;
+  });
 
   const [manualPoints, updateManualPoints] = useState<ManualPoints>({});
 
