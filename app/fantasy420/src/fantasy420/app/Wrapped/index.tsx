@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { getWrapped, NFLPlayerType, WrappedType } from "../FetchWrapped";
 import allWrapped from "./allWrapped";
 import ErrorBoundary from "./ErrorBoundary";
@@ -93,15 +93,14 @@ export default function Wrapped() {
   function B() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [_, updateFetched] = useState(false);
-    useMemo(
-      () =>
-        Promise.resolve(currentYear)
-          .then(getWrapped)
-          .then((wrapped) => (allWrapped[currentYear] = wrapped))
-          .then(() => updateFetched(true))
-          .catch((err) => console.error(err)),
-      []
-    );
+    useEffect(() => {
+      if (yearKey !== currentYear) return;
+      Promise.resolve(yearKey)
+        .then(getWrapped)
+        .then((wrapped) => (allWrapped[yearKey] = wrapped))
+        .then(() => updateFetched(true))
+        .catch((err) => console.error(err));
+    }, [yearKey]);
     return (
       <div style={{ overflow: "scroll" }}>
         <div>
