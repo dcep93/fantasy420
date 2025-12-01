@@ -140,15 +140,11 @@ export function getWrapped(providedYear: string): Promise<WrappedType> {
                 Object.entries(team.proGamesByScoringPeriod)
                   .map(([weekNum, entry]) => ({ weekNum, entry }))
                   .reverse()
-                  .find(({ entry }) => entry[0].statsOfficial)!.weekNum
+                  .find(({ entry }) => !entry[0].statsOfficial)!.weekNum
             )
             .map((weekNum) => parseInt(weekNum))
         )
-        .then(
-          (weekNums) => weekNums.reduce((a, b) => a + b, 0) / weekNums.length
-        )
-        // greatest week completed 75%
-        .then((maxWeekNum) => Math.floor(maxWeekNum + 0.25)),
+        .then((weekNums) => Math.min(...weekNums) - 1),
       // nflPlayers
       Promise.resolve(h.nflPlayers),
       // ffTeams
