@@ -1,6 +1,6 @@
 {
   "year": "2025",
-  "latestScoringPeriod": 12,
+  "latestScoringPeriod": 13,
   "nflPlayers": {
     "8439": {
       "id": "8439",
@@ -26,9 +26,9 @@
       },
       "projection": 232.61,
       "ownership": {
-        "auctionValueAverage": 0.03,
-        "averageDraftPosition": 168.6,
-        "percentOwned": 26.76
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 168.68,
+        "percentOwned": 26.8
       },
       "injuryStatus": "ACTIVE"
     },
@@ -56,9 +56,9 @@
       },
       "projection": 137.3,
       "ownership": {
-        "auctionValueAverage": 0.07,
-        "averageDraftPosition": 168.31,
-        "percentOwned": 7.78
+        "auctionValueAverage": 0.06,
+        "averageDraftPosition": 168.48,
+        "percentOwned": 7.79
       },
       "injuryStatus": "ACTIVE"
     },
@@ -87,8 +87,8 @@
       "projection": 35.94,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.14,
-        "percentOwned": 54.72
+        "averageDraftPosition": 169.19,
+        "percentOwned": 54.76
       },
       "injuryStatus": "ACTIVE"
     },
@@ -117,8 +117,8 @@
       "projection": 103.64,
       "ownership": {
         "auctionValueAverage": 0.03,
-        "averageDraftPosition": 169.46,
-        "percentOwned": 19.27
+        "averageDraftPosition": 169.7,
+        "percentOwned": 19.3
       },
       "injuryStatus": "ACTIVE"
     },
@@ -142,12 +142,13 @@
         "9": 5,
         "10": 0,
         "11": 0,
-        "12": 0
+        "12": 0,
+        "13": 0
       },
       "projection": 123.93,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.81,
+        "averageDraftPosition": 169.83,
         "percentOwned": 0.34
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -176,9 +177,9 @@
       },
       "projection": 274.08,
       "ownership": {
-        "auctionValueAverage": 1.29,
-        "averageDraftPosition": 105.97,
-        "percentOwned": 90.44
+        "auctionValueAverage": 1.32,
+        "averageDraftPosition": 110,
+        "percentOwned": 90.54
       },
       "injuryStatus": "ACTIVE"
     },
@@ -208,7 +209,7 @@
       "projection": 2.36,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.91,
+        "averageDraftPosition": 169.93,
         "percentOwned": 0.29
       },
       "injuryStatus": "ACTIVE"
@@ -238,8 +239,8 @@
       "projection": 2.16,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.72,
-        "percentOwned": 4.64
+        "averageDraftPosition": 169.7,
+        "percentOwned": 4.65
       },
       "injuryStatus": "ACTIVE"
     },
@@ -267,8 +268,8 @@
       },
       "projection": 2.41,
       "ownership": {
-        "auctionValueAverage": 0,
-        "averageDraftPosition": 169.55,
+        "auctionValueAverage": 0.02,
+        "averageDraftPosition": 169.62,
         "percentOwned": 4.78
       },
       "injuryStatus": "ACTIVE"
@@ -293,15 +294,16 @@
         "9": 0,
         "10": 3,
         "11": 0,
-        "12": 0
+        "12": 0,
+        "13": 0
       },
       "projection": 120.01,
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.89,
+        "averageDraftPosition": 169.99,
         "percentOwned": 1.01
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "OUT"
     },
     "15683": {
       "id": "15683",
@@ -314,7 +316,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0.02,
-        "averageDraftPosition": 167.87,
+        "averageDraftPosition": 168.15,
         "percentOwned": 0.44
       },
       "injuryStatus": "ACTIVE"
@@ -343,9 +345,9 @@
       },
       "projection": 88.67,
       "ownership": {
-        "auctionValueAverage": 0.02,
-        "averageDraftPosition": 166.64,
-        "percentOwned": 3.84
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 167.04,
+        "percentOwned": 3.85
       },
       "injuryStatus": "ACTIVE"
     },
@@ -373,9 +375,9 @@
       },
       "projection": 212.6,
       "ownership": {
-        "auctionValueAverage": 0.98,
-        "averageDraftPosition": 133.45,
-        "percentOwned": 87.28
+        "auctionValueAverage": 0.96,
+        "averageDraftPosition": 134.45,
+        "percentOwned": 87.38
       },
       "injuryStatus": "ACTIVE"
     },
@@ -403,9 +405,9 @@
       },
       "projection": 141.79,
       "ownership": {
-        "auctionValueAverage": 0.03,
-        "averageDraftPosition": 164.17,
-        "percentOwned": 54.75
+        "auctionValueAverage": 0.04,
+        "averageDraftPosition": 164.51,
+        "percentOwned": 54.82
       },
       "injuryStatus": "ACTIVE"
     },
@@ -433,9 +435,9 @@
       },
       "projection": 181.08,
       "ownership": {
-        "auctionValueAverage": 3.33,
-        "averageDraftPosition": 69.68,
-        "percentOwned": 97.3
+        "auctionValueAverage": 3.49,
+        "averageDraftPosition": 71.89,
+        "percentOwned": 97.33
       },
       "injuryStatus": "ACTIVE"
     },
@@ -464,8 +466,8 @@
       "projection": 261.2,
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.38,
-        "percentOwned": 5.09
+        "averageDraftPosition": 169.57,
+        "percentOwned": 5.1
       },
       "injuryStatus": "ACTIVE"
     },
@@ -495,7 +497,7 @@
       "projection": 26.99,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.51,
+        "averageDraftPosition": 169.69,
         "percentOwned": 0.5
       },
       "injuryStatus": "QUESTIONABLE"
@@ -525,8 +527,8 @@
       "projection": 136.74,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 167.93,
-        "percentOwned": 10.58
+        "averageDraftPosition": 168.09,
+        "percentOwned": 10.59
       },
       "injuryStatus": "ACTIVE"
     },
@@ -555,10 +557,10 @@
       "projection": 106.93,
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.31,
-        "percentOwned": 6.3
+        "averageDraftPosition": 169.41,
+        "percentOwned": 6.31
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "16728": {
       "id": "16728",
@@ -614,7 +616,7 @@
       "projection": 91.22,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.91,
+        "averageDraftPosition": 169.96,
         "percentOwned": 1.44
       },
       "injuryStatus": "ACTIVE"
@@ -659,9 +661,9 @@
       },
       "projection": 235.07,
       "ownership": {
-        "auctionValueAverage": 9.14,
-        "averageDraftPosition": 89.09,
-        "percentOwned": 54.9
+        "auctionValueAverage": 9.09,
+        "averageDraftPosition": 86.53,
+        "percentOwned": 54.91
       },
       "injuryStatus": "INJURY_RESERVE"
     },
@@ -690,7 +692,7 @@
       "projection": 2.71,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.79,
+        "averageDraftPosition": 169.83,
         "percentOwned": 0.11
       },
       "injuryStatus": "ACTIVE"
@@ -719,8 +721,8 @@
       },
       "projection": 257.07,
       "ownership": {
-        "auctionValueAverage": 26.67,
-        "averageDraftPosition": 29.4,
+        "auctionValueAverage": 26.73,
+        "averageDraftPosition": 29.06,
         "percentOwned": 99.54
       },
       "injuryStatus": "ACTIVE"
@@ -749,9 +751,9 @@
       },
       "projection": 138.42,
       "ownership": {
-        "auctionValueAverage": 0.86,
-        "averageDraftPosition": 143.75,
-        "percentOwned": 90.64
+        "auctionValueAverage": 0.83,
+        "averageDraftPosition": 145.3,
+        "percentOwned": 90.71
       },
       "injuryStatus": "ACTIVE"
     },
@@ -779,9 +781,9 @@
       },
       "projection": 140.6,
       "ownership": {
-        "auctionValueAverage": 0.66,
-        "averageDraftPosition": 160.34,
-        "percentOwned": 53.78
+        "auctionValueAverage": 0.67,
+        "averageDraftPosition": 161.1,
+        "percentOwned": 53.86
       },
       "injuryStatus": "ACTIVE"
     },
@@ -840,8 +842,8 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.76,
-        "percentOwned": 3.81
+        "averageDraftPosition": 169.79,
+        "percentOwned": 3.82
       },
       "injuryStatus": "ACTIVE"
     },
@@ -869,9 +871,9 @@
       },
       "projection": 136.51,
       "ownership": {
-        "auctionValueAverage": 0.2,
-        "averageDraftPosition": 153.25,
-        "percentOwned": 73.02
+        "auctionValueAverage": 0.22,
+        "averageDraftPosition": 152.88,
+        "percentOwned": 73.14
       },
       "injuryStatus": "ACTIVE"
     },
@@ -881,7 +883,7 @@
       "name": "Chris Manhertz",
       "position": "TE",
       "total": 1.7,
-      "average": 0.1416666666666667,
+      "average": 0.13076923076923078,
       "scores": {
         "0": 1.7,
         "1": 0,
@@ -895,12 +897,13 @@
         "9": 0,
         "10": 0,
         "11": 0,
-        "12": 0
+        "12": 0,
+        "13": 0
       },
       "projection": 4.36,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.91,
+        "averageDraftPosition": 169.87,
         "percentOwned": 0.02
       },
       "injuryStatus": "ACTIVE"
@@ -930,7 +933,7 @@
       "projection": 2.69,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.96,
+        "averageDraftPosition": 169.91,
         "percentOwned": 1.12
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -960,8 +963,8 @@
       "projection": 124.11,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.42,
-        "percentOwned": 1.59
+        "averageDraftPosition": 169.58,
+        "percentOwned": 1.6
       },
       "injuryStatus": "INJURY_RESERVE"
     },
@@ -976,7 +979,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.96,
+        "averageDraftPosition": 169.98,
         "percentOwned": 0.02
       },
       "injuryStatus": "ACTIVE"
@@ -1002,7 +1005,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.74,
+        "averageDraftPosition": 169.8,
         "percentOwned": 0.25
       },
       "injuryStatus": "ACTIVE"
@@ -1032,7 +1035,7 @@
       "projection": 46.22,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.7,
+        "averageDraftPosition": 169.81,
         "percentOwned": 1.01
       },
       "injuryStatus": "ACTIVE"
@@ -1092,8 +1095,8 @@
       "projection": 131.55,
       "ownership": {
         "auctionValueAverage": 0.02,
-        "averageDraftPosition": 168.37,
-        "percentOwned": 19.89
+        "averageDraftPosition": 168.62,
+        "percentOwned": 19.93
       },
       "injuryStatus": "ACTIVE"
     },
@@ -1122,8 +1125,8 @@
       "projection": 2.69,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.83,
-        "percentOwned": 9.32
+        "averageDraftPosition": 169.78,
+        "percentOwned": 9.33
       },
       "injuryStatus": "ACTIVE"
     },
@@ -1152,7 +1155,7 @@
       "projection": 99.84,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.28,
+        "averageDraftPosition": 169.39,
         "percentOwned": 2.54
       },
       "injuryStatus": "ACTIVE"
@@ -1181,9 +1184,9 @@
       },
       "projection": 285.8,
       "ownership": {
-        "auctionValueAverage": 2.11,
-        "averageDraftPosition": 101.5,
-        "percentOwned": 91.14
+        "auctionValueAverage": 2.2,
+        "averageDraftPosition": 102.69,
+        "percentOwned": 91.22
       },
       "injuryStatus": "ACTIVE"
     },
@@ -1212,8 +1215,8 @@
       "projection": 2.24,
       "ownership": {
         "auctionValueAverage": 0.04,
-        "averageDraftPosition": 168.83,
-        "percentOwned": 50.18
+        "averageDraftPosition": 168.79,
+        "percentOwned": 50.26
       },
       "injuryStatus": "ACTIVE"
     },
@@ -1237,13 +1240,14 @@
         "9": 0,
         "10": 0,
         "11": 11.04,
-        "12": 32.24
+        "12": 32.24,
+        "13": 0
       },
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 168.31,
-        "percentOwned": 3.43
+        "averageDraftPosition": 168.54,
+        "percentOwned": 3.42
       },
       "injuryStatus": "ACTIVE"
     },
@@ -1271,9 +1275,9 @@
       },
       "projection": 135.89,
       "ownership": {
-        "auctionValueAverage": 0.25,
-        "averageDraftPosition": 157.16,
-        "percentOwned": 37.02
+        "auctionValueAverage": 0.22,
+        "averageDraftPosition": 158.21,
+        "percentOwned": 37.08
       },
       "injuryStatus": "ACTIVE"
     },
@@ -1302,10 +1306,10 @@
       "projection": 2.29,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.94,
+        "averageDraftPosition": 169.92,
         "percentOwned": 0.14
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "2973405": {
       "id": "2973405",
@@ -1332,7 +1336,7 @@
       "projection": 27.69,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.72,
+        "averageDraftPosition": 169.77,
         "percentOwned": 0.19
       },
       "injuryStatus": "OUT"
@@ -1362,7 +1366,7 @@
       "projection": 6.59,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170,
+        "averageDraftPosition": 169.99,
         "percentOwned": 0.05
       },
       "injuryStatus": "ACTIVE"
@@ -1392,7 +1396,7 @@
       "projection": 5.06,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.98,
+        "averageDraftPosition": 169.96,
         "percentOwned": 0.02
       },
       "injuryStatus": "ACTIVE"
@@ -1432,10 +1436,10 @@
       "nflTeamId": "17",
       "name": "Stefon Diggs",
       "position": "WR",
-      "total": 146.9,
-      "average": 12.241666666666667,
+      "total": 152.5,
+      "average": 11.73076923076923,
       "scores": {
-        "0": 146.9,
+        "0": 152.5,
         "1": 11.7,
         "2": 7.2,
         "3": 5.3,
@@ -1447,13 +1451,14 @@
         "9": 12.8,
         "10": 15.6,
         "11": 19.5,
-        "12": 4
+        "12": 4,
+        "13": 5.6
       },
       "projection": 160.77,
       "ownership": {
-        "auctionValueAverage": 1.63,
-        "averageDraftPosition": 94.07,
-        "percentOwned": 93.47
+        "auctionValueAverage": 1.52,
+        "averageDraftPosition": 96.16,
+        "percentOwned": 93.55
       },
       "injuryStatus": "ACTIVE"
     },
@@ -1482,7 +1487,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0.02,
-        "averageDraftPosition": 168.68,
+        "averageDraftPosition": 169.05,
         "percentOwned": 1.38
       },
       "injuryStatus": "ACTIVE"
@@ -1512,8 +1517,8 @@
       "projection": 29.35,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.92,
-        "percentOwned": 5.13
+        "averageDraftPosition": 169.9,
+        "percentOwned": 5.14
       },
       "injuryStatus": "ACTIVE"
     },
@@ -1541,9 +1546,9 @@
       },
       "projection": 202.37,
       "ownership": {
-        "auctionValueAverage": 0.9,
-        "averageDraftPosition": 124.18,
-        "percentOwned": 52.57
+        "auctionValueAverage": 0.88,
+        "averageDraftPosition": 125.53,
+        "percentOwned": 52.62
       },
       "injuryStatus": "ACTIVE"
     },
@@ -1572,7 +1577,7 @@
       "projection": 15.68,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170.06,
+        "averageDraftPosition": 170.12,
         "percentOwned": 0.11
       },
       "injuryStatus": "ACTIVE"
@@ -1601,9 +1606,9 @@
       },
       "projection": 135.38,
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 167.68,
-        "percentOwned": 15.81
+        "auctionValueAverage": 0.02,
+        "averageDraftPosition": 167.81,
+        "percentOwned": 15.84
       },
       "injuryStatus": "ACTIVE"
     },
@@ -1612,10 +1617,10 @@
       "nflTeamId": "17",
       "name": "Mack Hollins",
       "position": "WR",
-      "total": 86.1,
-      "average": 7.175,
+      "total": 91.4,
+      "average": 7.0307692307692315,
       "scores": {
-        "0": 86.1,
+        "0": 91.4,
         "1": 1.3,
         "2": 7.8,
         "3": 6.7,
@@ -1627,13 +1632,14 @@
         "9": 2.9,
         "10": 16.6,
         "11": 10.4,
-        "12": 5
+        "12": 5,
+        "13": 5.3
       },
       "projection": 53.82,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.62,
-        "percentOwned": 4.89
+        "averageDraftPosition": 169.68,
+        "percentOwned": 4.9
       },
       "injuryStatus": "ACTIVE"
     },
@@ -1662,7 +1668,7 @@
       "projection": 13.4,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.8,
+        "averageDraftPosition": 169.87,
         "percentOwned": 0.06
       },
       "injuryStatus": "ACTIVE"
@@ -1722,9 +1728,9 @@
       },
       "projection": 227.72,
       "ownership": {
-        "auctionValueAverage": 17.4,
-        "averageDraftPosition": 37.79,
-        "percentOwned": 99.24
+        "auctionValueAverage": 17.27,
+        "averageDraftPosition": 38.13,
+        "percentOwned": 99.25
       },
       "injuryStatus": "ACTIVE"
     },
@@ -1752,9 +1758,9 @@
       },
       "projection": 216.32,
       "ownership": {
-        "auctionValueAverage": 3.33,
-        "averageDraftPosition": 110.56,
-        "percentOwned": 86.37
+        "auctionValueAverage": 3.39,
+        "averageDraftPosition": 110.46,
+        "percentOwned": 86.47
       },
       "injuryStatus": "QUESTIONABLE"
     },
@@ -1782,8 +1788,8 @@
       },
       "projection": 281.74,
       "ownership": {
-        "auctionValueAverage": 33.9,
-        "averageDraftPosition": 24.25,
+        "auctionValueAverage": 33.57,
+        "averageDraftPosition": 23.79,
         "percentOwned": 99.65
       },
       "injuryStatus": "ACTIVE"
@@ -1830,7 +1836,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.78,
+        "averageDraftPosition": 169.79,
         "percentOwned": 2.13
       },
       "injuryStatus": "ACTIVE"
@@ -1841,7 +1847,7 @@
       "name": "Austin Hooper",
       "position": "TE",
       "total": 43.3,
-      "average": 3.936363636363636,
+      "average": 3.608333333333333,
       "scores": {
         "0": 43.3,
         "1": 2,
@@ -1855,13 +1861,14 @@
         "9": 3,
         "10": 0,
         "11": 0,
-        "12": 6.9
+        "12": 6.9,
+        "13": 0
       },
       "projection": 60.14,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.7,
-        "percentOwned": 0.18
+        "averageDraftPosition": 169.77,
+        "percentOwned": 0.19
       },
       "injuryStatus": "ACTIVE"
     },
@@ -1885,12 +1892,13 @@
         "9": 0,
         "10": 0,
         "11": 0,
-        "12": 0
+        "12": 0,
+        "13": 0
       },
       "projection": 2.18,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.89,
+        "averageDraftPosition": 169.91,
         "percentOwned": 0.09
       },
       "injuryStatus": "ACTIVE"
@@ -1919,9 +1927,9 @@
       },
       "projection": 250.16,
       "ownership": {
-        "auctionValueAverage": 14.82,
-        "averageDraftPosition": 77,
-        "percentOwned": 24.1
+        "auctionValueAverage": 14.66,
+        "averageDraftPosition": 74.64,
+        "percentOwned": 24.08
       },
       "injuryStatus": "INJURY_RESERVE"
     },
@@ -1950,8 +1958,8 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.89,
-        "percentOwned": 8.34
+        "averageDraftPosition": 169.91,
+        "percentOwned": 8.35
       },
       "injuryStatus": "ACTIVE"
     },
@@ -1960,10 +1968,10 @@
       "nflTeamId": "17",
       "name": "Hunter Henry",
       "position": "TE",
-      "total": 124.7,
-      "average": 10.391666666666667,
+      "total": 136,
+      "average": 10.461538461538462,
       "scores": {
-        "0": 124.7,
+        "0": 136,
         "1": 10.6,
         "2": 1.9,
         "3": 29,
@@ -1975,13 +1983,14 @@
         "9": 9.1,
         "10": 1.9,
         "11": 8.5,
-        "12": 24.5
+        "12": 24.5,
+        "13": 11.3
       },
       "projection": 148.14,
       "ownership": {
-        "auctionValueAverage": 0.47,
-        "averageDraftPosition": 144.91,
-        "percentOwned": 82.03
+        "auctionValueAverage": 0.43,
+        "averageDraftPosition": 147.13,
+        "percentOwned": 82.14
       },
       "injuryStatus": "ACTIVE"
     },
@@ -2009,9 +2018,9 @@
       },
       "projection": 260.45,
       "ownership": {
-        "auctionValueAverage": 0.32,
-        "averageDraftPosition": 146.84,
-        "percentOwned": 81.08
+        "auctionValueAverage": 0.35,
+        "averageDraftPosition": 149.04,
+        "percentOwned": 81.18
       },
       "injuryStatus": "ACTIVE"
     },
@@ -2040,10 +2049,10 @@
       "projection": 10.81,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170.03,
+        "averageDraftPosition": 170.02,
         "percentOwned": 0.22
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "3049698": {
       "id": "3049698",
@@ -2066,14 +2075,22 @@
       "nflTeamId": "19",
       "name": "Younghoe Koo",
       "position": "K",
-      "total": 28,
-      "average": 7,
-      "scores": { "0": 28, "1": 8, "2": 0, "10": 8, "11": 2, "12": 10 },
+      "total": 29,
+      "average": 5.8,
+      "scores": {
+        "0": 29,
+        "1": 8,
+        "2": 0,
+        "10": 8,
+        "11": 2,
+        "12": 10,
+        "13": 1
+      },
       "projection": 126.75,
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 168.92,
-        "percentOwned": 1.32
+        "averageDraftPosition": 169.01,
+        "percentOwned": 1.34
       },
       "injuryStatus": "ACTIVE"
     },
@@ -2102,8 +2119,8 @@
       "projection": 141.38,
       "ownership": {
         "auctionValueAverage": 0.87,
-        "averageDraftPosition": 144.94,
-        "percentOwned": 63.73
+        "averageDraftPosition": 146.03,
+        "percentOwned": 63.76
       },
       "injuryStatus": "ACTIVE"
     },
@@ -2132,7 +2149,7 @@
       "projection": 5.01,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.82,
+        "averageDraftPosition": 169.83,
         "percentOwned": 0.03
       },
       "injuryStatus": "ACTIVE"
@@ -2156,7 +2173,7 @@
       "projection": 8.23,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.98,
+        "averageDraftPosition": 170,
         "percentOwned": 0.07
       },
       "injuryStatus": "ACTIVE"
@@ -2185,9 +2202,9 @@
       },
       "projection": 168.69,
       "ownership": {
-        "auctionValueAverage": 1.73,
-        "averageDraftPosition": 116.24,
-        "percentOwned": 42.38
+        "auctionValueAverage": 1.74,
+        "averageDraftPosition": 117.06,
+        "percentOwned": 42.41
       },
       "injuryStatus": "ACTIVE"
     },
@@ -2216,7 +2233,7 @@
       "projection": 130.47,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.43,
+        "averageDraftPosition": 169.51,
         "percentOwned": 2.12
       },
       "injuryStatus": "ACTIVE"
@@ -2246,7 +2263,7 @@
       "projection": 22.3,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.99,
+        "averageDraftPosition": 170,
         "percentOwned": 0.03
       },
       "injuryStatus": "ACTIVE"
@@ -2275,9 +2292,9 @@
       },
       "projection": 310.96,
       "ownership": {
-        "auctionValueAverage": 5.7,
-        "averageDraftPosition": 85.44,
-        "percentOwned": 90.74
+        "auctionValueAverage": 5.58,
+        "averageDraftPosition": 87.89,
+        "percentOwned": 90.77
       },
       "injuryStatus": "ACTIVE"
     },
@@ -2306,7 +2323,7 @@
       "projection": 8.31,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.89,
+        "averageDraftPosition": 169.91,
         "percentOwned": 0.04
       },
       "injuryStatus": "ACTIVE"
@@ -2336,8 +2353,8 @@
       "projection": 135.09,
       "ownership": {
         "auctionValueAverage": 0.02,
-        "averageDraftPosition": 167.06,
-        "percentOwned": 14.11
+        "averageDraftPosition": 167.66,
+        "percentOwned": 14.13
       },
       "injuryStatus": "ACTIVE"
     },
@@ -2365,9 +2382,9 @@
       },
       "projection": 266.7,
       "ownership": {
-        "auctionValueAverage": 16.54,
-        "averageDraftPosition": 66.67,
-        "percentOwned": 89.46
+        "auctionValueAverage": 16.41,
+        "averageDraftPosition": 64.79,
+        "percentOwned": 89.49
       },
       "injuryStatus": "OUT"
     },
@@ -2395,9 +2412,9 @@
       },
       "projection": 138.62,
       "ownership": {
-        "auctionValueAverage": 0.71,
-        "averageDraftPosition": 148.45,
-        "percentOwned": 67.42
+        "auctionValueAverage": 0.7,
+        "averageDraftPosition": 150.19,
+        "percentOwned": 67.47
       },
       "injuryStatus": "ACTIVE"
     },
@@ -2456,8 +2473,8 @@
       "projection": 99.97,
       "ownership": {
         "auctionValueAverage": 0.02,
-        "averageDraftPosition": 159.16,
-        "percentOwned": 62.27
+        "averageDraftPosition": 160.1,
+        "percentOwned": 62.37
       },
       "injuryStatus": "ACTIVE"
     },
@@ -2486,7 +2503,7 @@
       "projection": 2.44,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.87,
+        "averageDraftPosition": 169.88,
         "percentOwned": 0.03
       },
       "injuryStatus": "ACTIVE"
@@ -2545,9 +2562,9 @@
       },
       "projection": 207.83,
       "ownership": {
-        "auctionValueAverage": 1.05,
-        "averageDraftPosition": 129.06,
-        "percentOwned": 18.14
+        "auctionValueAverage": 1.02,
+        "averageDraftPosition": 129.37,
+        "percentOwned": 18.16
       },
       "injuryStatus": "INJURY_RESERVE"
     },
@@ -2576,7 +2593,7 @@
       "projection": 1.89,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.84,
+        "averageDraftPosition": 169.85,
         "percentOwned": 0.06
       },
       "injuryStatus": "ACTIVE"
@@ -2605,8 +2622,8 @@
       },
       "projection": 103.94,
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.79,
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.88,
         "percentOwned": 2.29
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -2636,8 +2653,8 @@
       "projection": 115.76,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 168.81,
-        "percentOwned": 1.32
+        "averageDraftPosition": 168.94,
+        "percentOwned": 1.33
       },
       "injuryStatus": "ACTIVE"
     },
@@ -2665,9 +2682,9 @@
       },
       "projection": 187.56,
       "ownership": {
-        "auctionValueAverage": 0.83,
-        "averageDraftPosition": 137.36,
-        "percentOwned": 59.07
+        "auctionValueAverage": 0.82,
+        "averageDraftPosition": 137.44,
+        "percentOwned": 59.14
       },
       "injuryStatus": "ACTIVE"
     },
@@ -2695,9 +2712,9 @@
       },
       "projection": 173.38,
       "ownership": {
-        "auctionValueAverage": 2.06,
-        "averageDraftPosition": 101.28,
-        "percentOwned": 88.37
+        "auctionValueAverage": 2.09,
+        "averageDraftPosition": 103.72,
+        "percentOwned": 88.44
       },
       "injuryStatus": "ACTIVE"
     },
@@ -2725,9 +2742,9 @@
       },
       "projection": 118.07,
       "ownership": {
-        "auctionValueAverage": 0.02,
-        "averageDraftPosition": 167.93,
-        "percentOwned": 30.33
+        "auctionValueAverage": 0.03,
+        "averageDraftPosition": 167.7,
+        "percentOwned": 30.35
       },
       "injuryStatus": "OUT"
     },
@@ -2756,8 +2773,8 @@
       "projection": 62.7,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.47,
-        "percentOwned": 4.63
+        "averageDraftPosition": 169.51,
+        "percentOwned": 4.64
       },
       "injuryStatus": "ACTIVE"
     },
@@ -2785,9 +2802,9 @@
       },
       "projection": 263.71,
       "ownership": {
-        "auctionValueAverage": 26.26,
-        "averageDraftPosition": 50.81,
-        "percentOwned": 25.82
+        "auctionValueAverage": 26.22,
+        "averageDraftPosition": 49.15,
+        "percentOwned": 25.78
       },
       "injuryStatus": "INJURY_RESERVE"
     },
@@ -2816,7 +2833,7 @@
       "projection": 2.17,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.73,
+        "averageDraftPosition": 169.77,
         "percentOwned": 0.92
       },
       "injuryStatus": "ACTIVE"
@@ -2846,8 +2863,8 @@
       },
       "projection": 318.41,
       "ownership": {
-        "auctionValueAverage": 53.29,
-        "averageDraftPosition": 6.35,
+        "auctionValueAverage": 52.58,
+        "averageDraftPosition": 6.34,
         "percentOwned": 99.94
       },
       "injuryStatus": "ACTIVE"
@@ -2877,8 +2894,8 @@
       "projection": 126.05,
       "ownership": {
         "auctionValueAverage": 0.05,
-        "averageDraftPosition": 167.31,
-        "percentOwned": 51.61
+        "averageDraftPosition": 167.56,
+        "percentOwned": 51.69
       },
       "injuryStatus": "ACTIVE"
     },
@@ -2907,7 +2924,7 @@
       "projection": 6.64,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.93,
+        "averageDraftPosition": 169.95,
         "percentOwned": 0.02
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -2965,7 +2982,7 @@
       "projection": 70.34,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.32,
+        "averageDraftPosition": 169.35,
         "percentOwned": 2.66
       },
       "injuryStatus": "ACTIVE"
@@ -2994,9 +3011,9 @@
       },
       "projection": 156.88,
       "ownership": {
-        "auctionValueAverage": 0.91,
-        "averageDraftPosition": 128.61,
-        "percentOwned": 92.02
+        "auctionValueAverage": 0.88,
+        "averageDraftPosition": 131.79,
+        "percentOwned": 92.1
       },
       "injuryStatus": "ACTIVE"
     },
@@ -3025,7 +3042,7 @@
       "projection": 103.2,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.92,
+        "averageDraftPosition": 169.93,
         "percentOwned": 0.34
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -3054,9 +3071,9 @@
       },
       "projection": 247.66,
       "ownership": {
-        "auctionValueAverage": 18.89,
-        "averageDraftPosition": 59.96,
-        "percentOwned": 81.19
+        "auctionValueAverage": 18.73,
+        "averageDraftPosition": 57.05,
+        "percentOwned": 81.24
       },
       "injuryStatus": "ACTIVE"
     },
@@ -3085,7 +3102,7 @@
       "projection": 46.29,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.91,
+        "averageDraftPosition": 169.94,
         "percentOwned": 0.13
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -3143,7 +3160,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.85,
+        "averageDraftPosition": 169.83,
         "percentOwned": 0.14
       },
       "injuryStatus": "OUT"
@@ -3168,8 +3185,8 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.4,
-        "percentOwned": 34.39
+        "averageDraftPosition": 169.52,
+        "percentOwned": 34.41
       },
       "injuryStatus": "ACTIVE"
     },
@@ -3198,10 +3215,10 @@
       "projection": 1.78,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.94,
+        "averageDraftPosition": 169.96,
         "percentOwned": 0.06
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "3123076": {
       "id": "3123076",
@@ -3227,9 +3244,9 @@
       },
       "projection": 176.39,
       "ownership": {
-        "auctionValueAverage": 2.2,
-        "averageDraftPosition": 107.02,
-        "percentOwned": 56.51
+        "auctionValueAverage": 2.17,
+        "averageDraftPosition": 107.72,
+        "percentOwned": 56.54
       },
       "injuryStatus": "ACTIVE"
     },
@@ -3258,7 +3275,7 @@
       "projection": 124.58,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.68,
+        "averageDraftPosition": 169.69,
         "percentOwned": 1.07
       },
       "injuryStatus": "ACTIVE"
@@ -3288,8 +3305,8 @@
       "projection": 108.1,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.69,
-        "percentOwned": 7.92
+        "averageDraftPosition": 169.65,
+        "percentOwned": 7.91
       },
       "injuryStatus": "INJURY_RESERVE"
     },
@@ -3318,7 +3335,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.92,
+        "averageDraftPosition": 169.95,
         "percentOwned": 0.03
       },
       "injuryStatus": "ACTIVE"
@@ -3347,9 +3364,9 @@
       },
       "projection": 203.14,
       "ownership": {
-        "auctionValueAverage": 1.16,
-        "averageDraftPosition": 122.57,
-        "percentOwned": 90.93
+        "auctionValueAverage": 1.12,
+        "averageDraftPosition": 123.95,
+        "percentOwned": 91.02
       },
       "injuryStatus": "ACTIVE"
     },
@@ -3394,10 +3411,10 @@
       "projection": 84.32,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.78,
-        "percentOwned": 0.11
+        "averageDraftPosition": 169.8,
+        "percentOwned": 0.1
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "3127306": {
       "id": "3127306",
@@ -3410,7 +3427,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.93,
+        "averageDraftPosition": 169.95,
         "percentOwned": 0.01
       },
       "injuryStatus": "ACTIVE"
@@ -3470,7 +3487,7 @@
       "projection": 16.9,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.93,
+        "averageDraftPosition": 169.89,
         "percentOwned": 2.17
       },
       "injuryStatus": "ACTIVE"
@@ -3500,7 +3517,7 @@
       "projection": 65.94,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.81,
+        "averageDraftPosition": 169.88,
         "percentOwned": 0.32
       },
       "injuryStatus": "ACTIVE"
@@ -3529,9 +3546,9 @@
       },
       "projection": 227.59,
       "ownership": {
-        "auctionValueAverage": 6.07,
-        "averageDraftPosition": 89,
-        "percentOwned": 92.69
+        "auctionValueAverage": 5.98,
+        "averageDraftPosition": 86.36,
+        "percentOwned": 92.76
       },
       "injuryStatus": "ACTIVE"
     },
@@ -3546,7 +3563,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.9,
+        "averageDraftPosition": 169.93,
         "percentOwned": 0.14
       },
       "injuryStatus": "ACTIVE"
@@ -3575,9 +3592,9 @@
       },
       "projection": 119.72,
       "ownership": {
-        "auctionValueAverage": 0.85,
-        "averageDraftPosition": 148.54,
-        "percentOwned": 44.18
+        "auctionValueAverage": 0.81,
+        "averageDraftPosition": 149.08,
+        "percentOwned": 44.24
       },
       "injuryStatus": "ACTIVE"
     },
@@ -3606,7 +3623,7 @@
       "projection": 18.56,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.96,
+        "averageDraftPosition": 169.99,
         "percentOwned": 0.08
       },
       "injuryStatus": "ACTIVE"
@@ -3637,10 +3654,10 @@
       "projection": 61.82,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.96,
+        "averageDraftPosition": 169.95,
         "percentOwned": 0.37
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "3139477": {
       "id": "3139477",
@@ -3666,9 +3683,9 @@
       },
       "projection": 324.92,
       "ownership": {
-        "auctionValueAverage": 8.35,
-        "averageDraftPosition": 50.95,
-        "percentOwned": 99.27
+        "auctionValueAverage": 8.49,
+        "averageDraftPosition": 53.42,
+        "percentOwned": 99.28
       },
       "injuryStatus": "ACTIVE"
     },
@@ -3679,7 +3696,15 @@
       "position": "RB",
       "total": 0.7,
       "average": 0.17500000000000002,
-      "scores": { "0": 0.7, "7": 0, "9": 0, "10": 0.1, "11": 0.6, "12": 0 },
+      "scores": {
+        "0": 0.7,
+        "7": 0,
+        "9": 0,
+        "10": 0.1,
+        "11": 0.6,
+        "12": 0,
+        "13": 0
+      },
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
@@ -3713,7 +3738,7 @@
       "projection": 25.22,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.92,
+        "averageDraftPosition": 169.97,
         "percentOwned": 4.49
       },
       "injuryStatus": "ACTIVE"
@@ -3743,8 +3768,8 @@
       "projection": 147.01,
       "ownership": {
         "auctionValueAverage": 0.99,
-        "averageDraftPosition": 120.54,
-        "percentOwned": 76.12
+        "averageDraftPosition": 119.89,
+        "percentOwned": 76.13
       },
       "injuryStatus": "ACTIVE"
     },
@@ -3773,7 +3798,7 @@
       "projection": 104.21,
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 168.06,
+        "averageDraftPosition": 168.15,
         "percentOwned": 1.96
       },
       "injuryStatus": "ACTIVE"
@@ -3796,13 +3821,14 @@
         "9": 1.5,
         "10": 0,
         "11": 0,
-        "12": 0
+        "12": 0,
+        "13": 0
       },
       "projection": 110.96,
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.7,
-        "percentOwned": 0.71
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.83,
+        "percentOwned": 0.72
       },
       "injuryStatus": "ACTIVE"
     },
@@ -3831,7 +3857,7 @@
       "projection": 49.46,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.93,
+        "averageDraftPosition": 169.91,
         "percentOwned": 0.04
       },
       "injuryStatus": "ACTIVE"
@@ -3861,7 +3887,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.92,
+        "averageDraftPosition": 169.95,
         "percentOwned": 0.09
       },
       "injuryStatus": "ACTIVE"
@@ -3892,8 +3918,8 @@
       "projection": 192.74,
       "ownership": {
         "auctionValueAverage": 0.89,
-        "averageDraftPosition": 129.42,
-        "percentOwned": 84.34
+        "averageDraftPosition": 129.82,
+        "percentOwned": 84.45
       },
       "injuryStatus": "ACTIVE"
     },
@@ -3938,10 +3964,10 @@
       "projection": 2.91,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.92,
+        "averageDraftPosition": 169.91,
         "percentOwned": 0.48
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "3886818": {
       "id": "3886818",
@@ -3954,7 +3980,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.96,
+        "averageDraftPosition": 169.99,
         "percentOwned": 0.01
       },
       "injuryStatus": "ACTIVE"
@@ -3984,7 +4010,7 @@
       "projection": 2.45,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.81,
+        "averageDraftPosition": 169.79,
         "percentOwned": 0.06
       },
       "injuryStatus": "ACTIVE"
@@ -4013,9 +4039,9 @@
       },
       "projection": 129.19,
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 167.59,
-        "percentOwned": 10.71
+        "auctionValueAverage": 0.05,
+        "averageDraftPosition": 167.96,
+        "percentOwned": 10.72
       },
       "injuryStatus": "ACTIVE"
     },
@@ -4044,7 +4070,7 @@
       "projection": 34.35,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.88,
+        "averageDraftPosition": 169.87,
         "percentOwned": 0.09
       },
       "injuryStatus": "ACTIVE"
@@ -4073,11 +4099,11 @@
       },
       "projection": 241.69,
       "ownership": {
-        "auctionValueAverage": 0.02,
-        "averageDraftPosition": 161.48,
-        "percentOwned": 47.32
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 163.02,
+        "percentOwned": 47.4
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "3914151": {
       "id": "3914151",
@@ -4133,10 +4159,10 @@
       "projection": 4.04,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.93,
+        "averageDraftPosition": 169.96,
         "percentOwned": 0.06
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "3915411": {
       "id": "3915411",
@@ -4163,8 +4189,8 @@
       "projection": 54.61,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.69,
-        "percentOwned": 1.34
+        "averageDraftPosition": 169.74,
+        "percentOwned": 1.35
       },
       "injuryStatus": "ACTIVE"
     },
@@ -4192,9 +4218,9 @@
       },
       "projection": 237.95,
       "ownership": {
-        "auctionValueAverage": 8.35,
-        "averageDraftPosition": 82.97,
-        "percentOwned": 81.05
+        "auctionValueAverage": 8.26,
+        "averageDraftPosition": 81.29,
+        "percentOwned": 81.1
       },
       "injuryStatus": "ACTIVE"
     },
@@ -4223,7 +4249,7 @@
       "projection": 73.72,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.86,
+        "averageDraftPosition": 169.87,
         "percentOwned": 0.11
       },
       "injuryStatus": "ACTIVE"
@@ -4252,9 +4278,9 @@
       },
       "projection": 330.46,
       "ownership": {
-        "auctionValueAverage": 17.37,
-        "averageDraftPosition": 51.98,
-        "percentOwned": 87.08
+        "auctionValueAverage": 17.38,
+        "averageDraftPosition": 49.31,
+        "percentOwned": 87.14
       },
       "injuryStatus": "ACTIVE"
     },
@@ -4282,9 +4308,9 @@
       },
       "projection": 222.13,
       "ownership": {
-        "auctionValueAverage": 4.41,
-        "averageDraftPosition": 106.97,
-        "percentOwned": 73.11
+        "auctionValueAverage": 4.39,
+        "averageDraftPosition": 106.44,
+        "percentOwned": 73.18
       },
       "injuryStatus": "ACTIVE"
     },
@@ -4309,7 +4335,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.97,
+        "averageDraftPosition": 169.99,
         "percentOwned": 0.01
       },
       "injuryStatus": "ACTIVE"
@@ -4338,8 +4364,8 @@
       },
       "projection": 363.8,
       "ownership": {
-        "auctionValueAverage": 24.78,
-        "averageDraftPosition": 31.82,
+        "auctionValueAverage": 24.39,
+        "averageDraftPosition": 32.26,
         "percentOwned": 99.86
       },
       "injuryStatus": "ACTIVE"
@@ -4355,7 +4381,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.95,
+        "averageDraftPosition": 169.98,
         "percentOwned": 0.04
       },
       "injuryStatus": "ACTIVE"
@@ -4384,9 +4410,9 @@
       },
       "projection": 219.64,
       "ownership": {
-        "auctionValueAverage": 2.34,
-        "averageDraftPosition": 115.28,
-        "percentOwned": 71.12
+        "auctionValueAverage": 2.32,
+        "averageDraftPosition": 114.55,
+        "percentOwned": 71.2
       },
       "injuryStatus": "ACTIVE"
     },
@@ -4395,10 +4421,10 @@
       "nflTeamId": "19",
       "name": "Darius Slayton",
       "position": "WR",
-      "total": 58.6,
-      "average": 6.511111111111111,
+      "total": 72.7,
+      "average": 7.2700000000000005,
       "scores": {
-        "0": 58.6,
+        "0": 72.7,
         "1": 0,
         "2": 8.1,
         "3": 7,
@@ -4410,13 +4436,14 @@
         "9": 11.2,
         "10": 12.9,
         "11": 0,
-        "12": 3.3
+        "12": 3.3,
+        "13": 14.1
       },
       "projection": 115.24,
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 168.77,
-        "percentOwned": 23.32
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.01,
+        "percentOwned": 23.35
       },
       "injuryStatus": "ACTIVE"
     },
@@ -4444,8 +4471,8 @@
       },
       "projection": 108.24,
       "ownership": {
-        "auctionValueAverage": 0.84,
-        "averageDraftPosition": 154.75,
+        "auctionValueAverage": 0.83,
+        "averageDraftPosition": 154.17,
         "percentOwned": 19.99
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -4474,9 +4501,9 @@
       },
       "projection": 306.94,
       "ownership": {
-        "auctionValueAverage": 1.43,
-        "averageDraftPosition": 122.38,
-        "percentOwned": 34.7
+        "auctionValueAverage": 1.41,
+        "averageDraftPosition": 122.94,
+        "percentOwned": 34.72
       },
       "injuryStatus": "INJURY_RESERVE"
     },
@@ -4505,7 +4532,7 @@
       "projection": 22.36,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170.02,
+        "averageDraftPosition": 170.1,
         "percentOwned": 0.12
       },
       "injuryStatus": "QUESTIONABLE"
@@ -4534,9 +4561,9 @@
       },
       "projection": 212.97,
       "ownership": {
-        "auctionValueAverage": 0.12,
-        "averageDraftPosition": 152.56,
-        "percentOwned": 88.29
+        "auctionValueAverage": 0.1,
+        "averageDraftPosition": 155.44,
+        "percentOwned": 88.35
       },
       "injuryStatus": "ACTIVE"
     },
@@ -4565,7 +4592,7 @@
       "projection": 36.7,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.83,
+        "averageDraftPosition": 169.89,
         "percentOwned": 2.01
       },
       "injuryStatus": "ACTIVE"
@@ -4594,8 +4621,8 @@
       },
       "projection": 367.87,
       "ownership": {
-        "auctionValueAverage": 28.76,
-        "averageDraftPosition": 21.55,
+        "auctionValueAverage": 28.64,
+        "averageDraftPosition": 21.93,
         "percentOwned": 99.92
       },
       "injuryStatus": "ACTIVE"
@@ -4625,7 +4652,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.97,
+        "averageDraftPosition": 169.98,
         "percentOwned": 0.01
       },
       "injuryStatus": "ACTIVE"
@@ -4654,8 +4681,8 @@
       },
       "projection": 32.21,
       "ownership": {
-        "auctionValueAverage": 0,
-        "averageDraftPosition": 169.92,
+        "auctionValueAverage": 0.02,
+        "averageDraftPosition": 169.9,
         "percentOwned": 0.09
       },
       "injuryStatus": "ACTIVE"
@@ -4714,8 +4741,8 @@
       },
       "projection": 229.18,
       "ownership": {
-        "auctionValueAverage": 6.52,
-        "averageDraftPosition": 101.63,
+        "auctionValueAverage": 6.48,
+        "averageDraftPosition": 98.56,
         "percentOwned": 34.08
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -4744,9 +4771,9 @@
       },
       "projection": 325.99,
       "ownership": {
-        "auctionValueAverage": 50.82,
-        "averageDraftPosition": 9.25,
-        "percentOwned": 99.93
+        "auctionValueAverage": 50.52,
+        "averageDraftPosition": 9.04,
+        "percentOwned": 99.92
       },
       "injuryStatus": "ACTIVE"
     },
@@ -4774,9 +4801,9 @@
       },
       "projection": 117.35,
       "ownership": {
-        "auctionValueAverage": 0.07,
-        "averageDraftPosition": 165.79,
-        "percentOwned": 50.74
+        "auctionValueAverage": 0.05,
+        "averageDraftPosition": 166.19,
+        "percentOwned": 50.82
       },
       "injuryStatus": "ACTIVE"
     },
@@ -4804,8 +4831,8 @@
       },
       "projection": 109.55,
       "ownership": {
-        "auctionValueAverage": 0.02,
-        "averageDraftPosition": 169.45,
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 169.58,
         "percentOwned": 1.15
       },
       "injuryStatus": "ACTIVE"
@@ -4835,7 +4862,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.98,
+        "averageDraftPosition": 169.95,
         "percentOwned": 0.02
       },
       "injuryStatus": "ACTIVE"
@@ -4865,8 +4892,8 @@
       "projection": 53.47,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.87,
-        "percentOwned": 0.61
+        "averageDraftPosition": 169.95,
+        "percentOwned": 0.62
       },
       "injuryStatus": "ACTIVE"
     },
@@ -4895,8 +4922,8 @@
       "projection": 46.95,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.04,
-        "percentOwned": 2.27
+        "averageDraftPosition": 169.09,
+        "percentOwned": 2.28
       },
       "injuryStatus": "ACTIVE"
     },
@@ -4911,7 +4938,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.98,
+        "averageDraftPosition": 170,
         "percentOwned": 0.2
       },
       "injuryStatus": "ACTIVE"
@@ -4940,9 +4967,9 @@
       },
       "projection": 142.15,
       "ownership": {
-        "auctionValueAverage": 2.35,
-        "averageDraftPosition": 88.29,
-        "percentOwned": 98.23
+        "auctionValueAverage": 2.09,
+        "averageDraftPosition": 89.26,
+        "percentOwned": 98.25
       },
       "injuryStatus": "ACTIVE"
     },
@@ -5001,9 +5028,9 @@
       },
       "projection": 179.17,
       "ownership": {
-        "auctionValueAverage": 0.82,
-        "averageDraftPosition": 143.83,
-        "percentOwned": 60.69
+        "auctionValueAverage": 0.8,
+        "averageDraftPosition": 144.7,
+        "percentOwned": 60.77
       },
       "injuryStatus": "ACTIVE"
     },
@@ -5107,9 +5134,9 @@
       },
       "projection": 0,
       "ownership": {
-        "auctionValueAverage": 0.02,
-        "averageDraftPosition": 168.92,
-        "percentOwned": 18.22
+        "auctionValueAverage": 0.03,
+        "averageDraftPosition": 169.04,
+        "percentOwned": 18.24
       },
       "injuryStatus": "OUT"
     },
@@ -5124,7 +5151,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.97,
+        "averageDraftPosition": 169.98,
         "percentOwned": 0.06
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -5154,7 +5181,7 @@
       "projection": 16.67,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.96,
+        "averageDraftPosition": 170.01,
         "percentOwned": 0.04
       },
       "injuryStatus": "ACTIVE"
@@ -5197,7 +5224,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.92,
+        "averageDraftPosition": 169.94,
         "percentOwned": 0.03
       },
       "injuryStatus": "ACTIVE"
@@ -5256,9 +5283,9 @@
       },
       "projection": 213.4,
       "ownership": {
-        "auctionValueAverage": 3.89,
-        "averageDraftPosition": 92.93,
-        "percentOwned": 92.21
+        "auctionValueAverage": 3.86,
+        "averageDraftPosition": 93.66,
+        "percentOwned": 92.28
       },
       "injuryStatus": "ACTIVE"
     },
@@ -5313,7 +5340,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.94,
+        "averageDraftPosition": 169.95,
         "percentOwned": 0.16
       },
       "injuryStatus": "ACTIVE"
@@ -5342,9 +5369,9 @@
       },
       "projection": 201.11,
       "ownership": {
-        "auctionValueAverage": 1.81,
-        "averageDraftPosition": 93.36,
-        "percentOwned": 94.65
+        "auctionValueAverage": 1.76,
+        "averageDraftPosition": 95.73,
+        "percentOwned": 94.74
       },
       "injuryStatus": "ACTIVE"
     },
@@ -5359,7 +5386,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.99,
+        "averageDraftPosition": 170,
         "percentOwned": 0.06
       },
       "injuryStatus": "ACTIVE"
@@ -5389,7 +5416,7 @@
       "projection": 85.48,
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.61,
+        "averageDraftPosition": 169.67,
         "percentOwned": 3.07
       },
       "injuryStatus": "ACTIVE"
@@ -5418,9 +5445,9 @@
       },
       "projection": 184.54,
       "ownership": {
-        "auctionValueAverage": 4.22,
-        "averageDraftPosition": 83.68,
-        "percentOwned": 72.5
+        "auctionValueAverage": 4.24,
+        "averageDraftPosition": 85.17,
+        "percentOwned": 72.52
       },
       "injuryStatus": "ACTIVE"
     },
@@ -5474,9 +5501,9 @@
       },
       "projection": 264.55,
       "ownership": {
-        "auctionValueAverage": 1,
-        "averageDraftPosition": 139.65,
-        "percentOwned": 74.74
+        "auctionValueAverage": 1.01,
+        "averageDraftPosition": 139.88,
+        "percentOwned": 74.83
       },
       "injuryStatus": "ACTIVE"
     },
@@ -5505,8 +5532,8 @@
       "projection": 60.02,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.96,
-        "percentOwned": 5.83
+        "averageDraftPosition": 170.02,
+        "percentOwned": 5.84
       },
       "injuryStatus": "ACTIVE"
     },
@@ -5535,7 +5562,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.88,
+        "averageDraftPosition": 169.93,
         "percentOwned": 0.05
       },
       "injuryStatus": "ACTIVE"
@@ -5565,8 +5592,8 @@
       "projection": 108.21,
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.13,
-        "percentOwned": 10.41
+        "averageDraftPosition": 169.42,
+        "percentOwned": 10.42
       },
       "injuryStatus": "INJURY_RESERVE"
     },
@@ -5595,7 +5622,7 @@
       "projection": 2.68,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.84,
+        "averageDraftPosition": 169.86,
         "percentOwned": 0.09
       },
       "injuryStatus": "ACTIVE"
@@ -5625,9 +5652,9 @@
       },
       "projection": 83.95,
       "ownership": {
-        "auctionValueAverage": 1.95,
-        "averageDraftPosition": 104.96,
-        "percentOwned": 96.74
+        "auctionValueAverage": 1.61,
+        "averageDraftPosition": 112.01,
+        "percentOwned": 96.79
       },
       "injuryStatus": "ACTIVE"
     },
@@ -5655,9 +5682,9 @@
       },
       "projection": 284.48,
       "ownership": {
-        "auctionValueAverage": 1.04,
-        "averageDraftPosition": 111.94,
-        "percentOwned": 94.45
+        "auctionValueAverage": 0.97,
+        "averageDraftPosition": 115.44,
+        "percentOwned": 94.51
       },
       "injuryStatus": "QUESTIONABLE"
     },
@@ -5686,7 +5713,7 @@
       "projection": 7.49,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.92,
+        "averageDraftPosition": 169.95,
         "percentOwned": 0.14
       },
       "injuryStatus": "ACTIVE"
@@ -5711,7 +5738,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.93,
+        "averageDraftPosition": 169.92,
         "percentOwned": 0.14
       },
       "injuryStatus": "ACTIVE"
@@ -5741,7 +5768,7 @@
       "projection": 3.81,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.99,
+        "averageDraftPosition": 170.02,
         "percentOwned": 0.05
       },
       "injuryStatus": "ACTIVE"
@@ -5802,7 +5829,7 @@
       "projection": 8.92,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.8,
+        "averageDraftPosition": 169.79,
         "percentOwned": 0.06
       },
       "injuryStatus": "ACTIVE"
@@ -5831,9 +5858,9 @@
       },
       "projection": 160.79,
       "ownership": {
-        "auctionValueAverage": 0.82,
-        "averageDraftPosition": 143.37,
-        "percentOwned": 55.16
+        "auctionValueAverage": 0.8,
+        "averageDraftPosition": 144.3,
+        "percentOwned": 55.24
       },
       "injuryStatus": "ACTIVE"
     },
@@ -5861,8 +5888,8 @@
       },
       "projection": 365.49,
       "ownership": {
-        "auctionValueAverage": 23.55,
-        "averageDraftPosition": 33.98,
+        "auctionValueAverage": 23.49,
+        "averageDraftPosition": 34.33,
         "percentOwned": 99.88
       },
       "injuryStatus": "ACTIVE"
@@ -5872,10 +5899,10 @@
       "nflTeamId": "19",
       "name": "Devin Singletary",
       "position": "RB",
-      "total": 54,
-      "average": 4.5,
+      "total": 73.2,
+      "average": 5.630769230769231,
       "scores": {
-        "0": 54,
+        "0": 73.2,
         "1": 0.9,
         "2": 1,
         "3": 1.1,
@@ -5887,13 +5914,14 @@
         "9": 7.1,
         "10": 10.3,
         "11": 17.7,
-        "12": 4.7
+        "12": 4.7,
+        "13": 19.2
       },
       "projection": 19.96,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.75,
-        "percentOwned": 29.37
+        "averageDraftPosition": 169.74,
+        "percentOwned": 29.41
       },
       "injuryStatus": "ACTIVE"
     },
@@ -5981,7 +6009,7 @@
       "projection": 88.63,
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.51,
+        "averageDraftPosition": 169.68,
         "percentOwned": 0.83
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -6011,8 +6039,8 @@
       "projection": 9.12,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.89,
-        "percentOwned": 0.03
+        "averageDraftPosition": 169.93,
+        "percentOwned": 0.04
       },
       "injuryStatus": "ACTIVE"
     },
@@ -6040,9 +6068,9 @@
       },
       "projection": 282.87,
       "ownership": {
-        "auctionValueAverage": 33.09,
-        "averageDraftPosition": 24.67,
-        "percentOwned": 99.88
+        "auctionValueAverage": 32.85,
+        "averageDraftPosition": 23.33,
+        "percentOwned": 99.87
       },
       "injuryStatus": "ACTIVE"
     },
@@ -6097,9 +6125,9 @@
       },
       "projection": 275.63,
       "ownership": {
-        "auctionValueAverage": 37.5,
-        "averageDraftPosition": 23.41,
-        "percentOwned": 98.87
+        "auctionValueAverage": 37.3,
+        "averageDraftPosition": 22.59,
+        "percentOwned": 98.88
       },
       "injuryStatus": "ACTIVE"
     },
@@ -6127,9 +6155,9 @@
       },
       "projection": 240.51,
       "ownership": {
-        "auctionValueAverage": 12.44,
-        "averageDraftPosition": 61.06,
-        "percentOwned": 96.67
+        "auctionValueAverage": 12.24,
+        "averageDraftPosition": 61.52,
+        "percentOwned": 96.69
       },
       "injuryStatus": "ACTIVE"
     },
@@ -6158,7 +6186,7 @@
       "projection": 18.09,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.84,
+        "averageDraftPosition": 169.87,
         "percentOwned": 0.05
       },
       "injuryStatus": "ACTIVE"
@@ -6183,8 +6211,8 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.91,
-        "percentOwned": 0.41
+        "averageDraftPosition": 169.87,
+        "percentOwned": 0.4
       },
       "injuryStatus": "ACTIVE"
     },
@@ -6210,7 +6238,7 @@
         "averageDraftPosition": 169.99,
         "percentOwned": 0.01
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "4061956": {
       "id": "4061956",
@@ -6237,7 +6265,7 @@
       "projection": 3.98,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.88,
+        "averageDraftPosition": 169.91,
         "percentOwned": 0.04
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -6268,7 +6296,7 @@
       "projection": 36.32,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170.03,
+        "averageDraftPosition": 170.13,
         "percentOwned": 0.13
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -6298,10 +6326,10 @@
       "projection": 11.19,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.9,
+        "averageDraftPosition": 169.99,
         "percentOwned": 0.23
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "4239944": {
       "id": "4239944",
@@ -6331,7 +6359,7 @@
         "averageDraftPosition": 169.91,
         "percentOwned": 0.07
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "4239993": {
       "id": "4239993",
@@ -6357,9 +6385,9 @@
       },
       "projection": 265.41,
       "ownership": {
-        "auctionValueAverage": 28.13,
-        "averageDraftPosition": 44.64,
-        "percentOwned": 96.55
+        "auctionValueAverage": 28.04,
+        "averageDraftPosition": 43.72,
+        "percentOwned": 96.57
       },
       "injuryStatus": "OUT"
     },
@@ -6387,9 +6415,9 @@
       },
       "projection": 188.14,
       "ownership": {
-        "auctionValueAverage": 1.36,
-        "averageDraftPosition": 112.26,
-        "percentOwned": 91.83
+        "auctionValueAverage": 1.27,
+        "averageDraftPosition": 115.3,
+        "percentOwned": 91.94
       },
       "injuryStatus": "ACTIVE"
     },
@@ -6418,7 +6446,7 @@
         "averageDraftPosition": 169.98,
         "percentOwned": 0.09
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "4240472": {
       "id": "4240472",
@@ -6445,7 +6473,7 @@
       "projection": 71.13,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.57,
+        "averageDraftPosition": 169.67,
         "percentOwned": 0.35
       },
       "injuryStatus": "OUT"
@@ -6469,7 +6497,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.53,
+        "averageDraftPosition": 169.61,
         "percentOwned": 0.2
       },
       "injuryStatus": "ACTIVE"
@@ -6497,7 +6525,7 @@
       "ownership": {
         "auctionValueAverage": 0,
         "averageDraftPosition": 169.98,
-        "percentOwned": 9.96
+        "percentOwned": 9.98
       },
       "injuryStatus": "ACTIVE"
     },
@@ -6526,7 +6554,7 @@
       "projection": 2.22,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.83,
+        "averageDraftPosition": 169.88,
         "percentOwned": 0.11
       },
       "injuryStatus": "ACTIVE"
@@ -6556,7 +6584,7 @@
       "projection": 14.19,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170.02,
+        "averageDraftPosition": 170.03,
         "percentOwned": 0.06
       },
       "injuryStatus": "ACTIVE"
@@ -6585,9 +6613,9 @@
       },
       "projection": 174,
       "ownership": {
-        "auctionValueAverage": 0.4,
-        "averageDraftPosition": 163.08,
-        "percentOwned": 26.08
+        "auctionValueAverage": 0.41,
+        "averageDraftPosition": 162.65,
+        "percentOwned": 26.12
       },
       "injuryStatus": "ACTIVE"
     },
@@ -6616,7 +6644,7 @@
       "projection": 19.7,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.77,
+        "averageDraftPosition": 169.8,
         "percentOwned": 0.11
       },
       "injuryStatus": "ACTIVE"
@@ -6645,8 +6673,8 @@
       },
       "projection": 317.53,
       "ownership": {
-        "auctionValueAverage": 48.88,
-        "averageDraftPosition": 10.88,
+        "auctionValueAverage": 48.5,
+        "averageDraftPosition": 10.54,
         "percentOwned": 99.92
       },
       "injuryStatus": "ACTIVE"
@@ -6676,8 +6704,8 @@
       },
       "projection": 258.55,
       "ownership": {
-        "auctionValueAverage": 15.02,
-        "averageDraftPosition": 66.86,
+        "auctionValueAverage": 14.92,
+        "averageDraftPosition": 65.02,
         "percentOwned": 63.52
       },
       "injuryStatus": "ACTIVE"
@@ -6707,10 +6735,10 @@
       "projection": 4.75,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.93,
+        "averageDraftPosition": 169.95,
         "percentOwned": 0.06
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "4241457": {
       "id": "4241457",
@@ -6736,8 +6764,8 @@
       },
       "projection": 95.04,
       "ownership": {
-        "auctionValueAverage": 0.47,
-        "averageDraftPosition": 167.95,
+        "auctionValueAverage": 0.45,
+        "averageDraftPosition": 167.24,
         "percentOwned": 7.21
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -6766,9 +6794,9 @@
       },
       "projection": 231.44,
       "ownership": {
-        "auctionValueAverage": 4.62,
-        "averageDraftPosition": 103.91,
-        "percentOwned": 65.84
+        "auctionValueAverage": 4.68,
+        "averageDraftPosition": 103.6,
+        "percentOwned": 65.9
       },
       "injuryStatus": "ACTIVE"
     },
@@ -6797,8 +6825,8 @@
       },
       "projection": 2.1,
       "ownership": {
-        "auctionValueAverage": 0,
-        "averageDraftPosition": 169.62,
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 169.64,
         "percentOwned": 2.94
       },
       "injuryStatus": "ACTIVE"
@@ -6829,8 +6857,8 @@
       "projection": 76.35,
       "ownership": {
         "auctionValueAverage": 0.07,
-        "averageDraftPosition": 167.02,
-        "percentOwned": 21.28
+        "averageDraftPosition": 167.38,
+        "percentOwned": 21.31
       },
       "injuryStatus": "ACTIVE"
     },
@@ -6859,7 +6887,7 @@
       "projection": 4.29,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.99,
+        "averageDraftPosition": 170,
         "percentOwned": 0.4
       },
       "injuryStatus": "ACTIVE"
@@ -6888,9 +6916,9 @@
       },
       "projection": 222.99,
       "ownership": {
-        "auctionValueAverage": 6.37,
-        "averageDraftPosition": 82.3,
-        "percentOwned": 95.48
+        "auctionValueAverage": 6.43,
+        "averageDraftPosition": 83.76,
+        "percentOwned": 95.55
       },
       "injuryStatus": "ACTIVE"
     },
@@ -6918,9 +6946,9 @@
       },
       "projection": 275.91,
       "ownership": {
-        "auctionValueAverage": 0.05,
-        "averageDraftPosition": 167.38,
-        "percentOwned": 13.15
+        "auctionValueAverage": 0.06,
+        "averageDraftPosition": 167.26,
+        "percentOwned": 13.17
       },
       "injuryStatus": "ACTIVE"
     },
@@ -6949,10 +6977,10 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.93,
+        "averageDraftPosition": 169.99,
         "percentOwned": 0.3
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "4241961": {
       "id": "4241961",
@@ -7005,7 +7033,7 @@
       "projection": 5.12,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.95,
+        "averageDraftPosition": 169.99,
         "percentOwned": 0.03
       },
       "injuryStatus": "ACTIVE"
@@ -7034,9 +7062,9 @@
       },
       "projection": 171.37,
       "ownership": {
-        "auctionValueAverage": 1.01,
-        "averageDraftPosition": 129.68,
-        "percentOwned": 47.72
+        "auctionValueAverage": 0.98,
+        "averageDraftPosition": 129.82,
+        "percentOwned": 47.76
       },
       "injuryStatus": "INJURY_RESERVE"
     },
@@ -7080,8 +7108,8 @@
       },
       "projection": 288.77,
       "ownership": {
-        "auctionValueAverage": 43.98,
-        "averageDraftPosition": 9.27,
+        "auctionValueAverage": 43.02,
+        "averageDraftPosition": 10.13,
         "percentOwned": 99.91
       },
       "injuryStatus": "ACTIVE"
@@ -7111,8 +7139,8 @@
       "projection": 150.38,
       "ownership": {
         "auctionValueAverage": 1.57,
-        "averageDraftPosition": 106.06,
-        "percentOwned": 97.1
+        "averageDraftPosition": 109.29,
+        "percentOwned": 97.14
       },
       "injuryStatus": "ACTIVE"
     },
@@ -7141,8 +7169,8 @@
       "projection": 9.77,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.49,
-        "percentOwned": 5.41
+        "averageDraftPosition": 169.56,
+        "percentOwned": 5.42
       },
       "injuryStatus": "OUT"
     },
@@ -7171,8 +7199,8 @@
       "projection": 111.2,
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.16,
-        "percentOwned": 2.94
+        "averageDraftPosition": 169.37,
+        "percentOwned": 2.95
       },
       "injuryStatus": "OUT"
     },
@@ -7211,14 +7239,14 @@
       "nflTeamId": "19",
       "name": "Isaiah Hodgins",
       "position": "WR",
-      "total": 22.9,
-      "average": 11.45,
-      "scores": { "0": 22.9, "11": 10.7, "12": 12.2 },
+      "total": 24.3,
+      "average": 8.1,
+      "scores": { "0": 24.3, "11": 10.7, "12": 12.2, "13": 1.4 },
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.82,
-        "percentOwned": 4.6
+        "averageDraftPosition": 169.8,
+        "percentOwned": 4.67
       },
       "injuryStatus": "ACTIVE"
     },
@@ -7247,8 +7275,8 @@
       "projection": 2.27,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.85,
-        "percentOwned": 4.98
+        "averageDraftPosition": 169.86,
+        "percentOwned": 4.99
       },
       "injuryStatus": "ACTIVE"
     },
@@ -7277,8 +7305,8 @@
       "projection": 14.74,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.42,
-        "percentOwned": 2.41
+        "averageDraftPosition": 169.46,
+        "percentOwned": 2.42
       },
       "injuryStatus": "ACTIVE"
     },
@@ -7307,7 +7335,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.87,
+        "averageDraftPosition": 169.89,
         "percentOwned": 0.01
       },
       "injuryStatus": "ACTIVE"
@@ -7336,9 +7364,9 @@
       },
       "projection": 138.34,
       "ownership": {
-        "auctionValueAverage": 0.02,
-        "averageDraftPosition": 168.4,
-        "percentOwned": 42.89
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 168.81,
+        "percentOwned": 42.95
       },
       "injuryStatus": "ACTIVE"
     },
@@ -7367,7 +7395,7 @@
       "projection": 29.85,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.89,
+        "averageDraftPosition": 169.9,
         "percentOwned": 1.12
       },
       "injuryStatus": "ACTIVE"
@@ -7396,9 +7424,9 @@
       },
       "projection": 107.54,
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.16,
-        "percentOwned": 13.63
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.37,
+        "percentOwned": 13.65
       },
       "injuryStatus": "ACTIVE"
     },
@@ -7483,7 +7511,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.98,
+        "averageDraftPosition": 169.99,
         "percentOwned": 0.01
       },
       "injuryStatus": "ACTIVE"
@@ -7552,7 +7580,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.9,
+        "averageDraftPosition": 169.86,
         "percentOwned": 0.54
       },
       "injuryStatus": "ACTIVE"
@@ -7582,8 +7610,8 @@
       "projection": 50,
       "ownership": {
         "auctionValueAverage": 0.06,
-        "averageDraftPosition": 162.82,
-        "percentOwned": 51.94
+        "averageDraftPosition": 162.66,
+        "percentOwned": 52.03
       },
       "injuryStatus": "ACTIVE"
     },
@@ -7612,8 +7640,8 @@
       },
       "projection": 140.08,
       "ownership": {
-        "auctionValueAverage": 0.34,
-        "averageDraftPosition": 163.04,
+        "auctionValueAverage": 0.33,
+        "averageDraftPosition": 163.68,
         "percentOwned": 17.03
       },
       "injuryStatus": "ACTIVE"
@@ -7643,7 +7671,7 @@
       "projection": 71.48,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.44,
+        "averageDraftPosition": 169.57,
         "percentOwned": 0.78
       },
       "injuryStatus": "ACTIVE"
@@ -7667,7 +7695,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.98,
+        "averageDraftPosition": 170,
         "percentOwned": 0.01
       },
       "injuryStatus": "ACTIVE"
@@ -7726,7 +7754,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.82,
+        "averageDraftPosition": 169.87,
         "percentOwned": 0.22
       },
       "injuryStatus": "ACTIVE"
@@ -7755,9 +7783,9 @@
       },
       "projection": 289.12,
       "ownership": {
-        "auctionValueAverage": 39.23,
-        "averageDraftPosition": 22.8,
-        "percentOwned": 99.51
+        "auctionValueAverage": 39.07,
+        "averageDraftPosition": 22.06,
+        "percentOwned": 99.52
       },
       "injuryStatus": "ACTIVE"
     },
@@ -7786,7 +7814,7 @@
       "projection": 44.16,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.01,
+        "averageDraftPosition": 169.13,
         "percentOwned": 0.6
       },
       "injuryStatus": "ACTIVE"
@@ -7816,7 +7844,7 @@
       "projection": 119.91,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.63,
+        "averageDraftPosition": 169.62,
         "percentOwned": 0.35
       },
       "injuryStatus": "ACTIVE"
@@ -7847,7 +7875,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.83,
+        "averageDraftPosition": 169.82,
         "percentOwned": 1.18
       },
       "injuryStatus": "ACTIVE"
@@ -7906,9 +7934,9 @@
       },
       "projection": 226.78,
       "ownership": {
-        "auctionValueAverage": 8.03,
-        "averageDraftPosition": 78.45,
-        "percentOwned": 94.5
+        "auctionValueAverage": 8,
+        "averageDraftPosition": 76.09,
+        "percentOwned": 94.57
       },
       "injuryStatus": "ACTIVE"
     },
@@ -7937,7 +7965,7 @@
       "projection": 126.66,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.8,
+        "averageDraftPosition": 169.85,
         "percentOwned": 0.46
       },
       "injuryStatus": "ACTIVE"
@@ -7966,8 +7994,8 @@
       },
       "projection": 315.86,
       "ownership": {
-        "auctionValueAverage": 50.81,
-        "averageDraftPosition": 8.65,
+        "auctionValueAverage": 50.05,
+        "averageDraftPosition": 8.37,
         "percentOwned": 99.91
       },
       "injuryStatus": "ACTIVE"
@@ -7996,9 +8024,9 @@
       },
       "projection": 70.93,
       "ownership": {
-        "auctionValueAverage": 0,
-        "averageDraftPosition": 167.66,
-        "percentOwned": 53.73
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 167.83,
+        "percentOwned": 53.82
       },
       "injuryStatus": "ACTIVE"
     },
@@ -8043,7 +8071,7 @@
       "projection": 13.87,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.91,
+        "averageDraftPosition": 169.9,
         "percentOwned": 0.02
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -8072,9 +8100,9 @@
       },
       "projection": 132.57,
       "ownership": {
-        "auctionValueAverage": 0.09,
-        "averageDraftPosition": 162.5,
-        "percentOwned": 12.23
+        "auctionValueAverage": 0.12,
+        "averageDraftPosition": 162.59,
+        "percentOwned": 12.25
       },
       "injuryStatus": "ACTIVE"
     },
@@ -8100,8 +8128,8 @@
       },
       "projection": 51.52,
       "ownership": {
-        "auctionValueAverage": 0.02,
-        "averageDraftPosition": 169.26,
+        "auctionValueAverage": 0.03,
+        "averageDraftPosition": 169.56,
         "percentOwned": 1.31
       },
       "injuryStatus": "ACTIVE"
@@ -8131,8 +8159,8 @@
       "projection": 143.06,
       "ownership": {
         "auctionValueAverage": 0.17,
-        "averageDraftPosition": 159.53,
-        "percentOwned": 77.83
+        "averageDraftPosition": 159.99,
+        "percentOwned": 77.93
       },
       "injuryStatus": "ACTIVE"
     },
@@ -8156,7 +8184,8 @@
         "9": 0,
         "10": 0,
         "11": 0,
-        "12": 0
+        "12": 0,
+        "13": 0
       },
       "projection": 8.88,
       "ownership": {
@@ -8191,8 +8220,8 @@
       "projection": 279.32,
       "ownership": {
         "auctionValueAverage": 0.07,
-        "averageDraftPosition": 166.95,
-        "percentOwned": 33.89
+        "averageDraftPosition": 167.27,
+        "percentOwned": 33.94
       },
       "injuryStatus": "ACTIVE"
     },
@@ -8221,10 +8250,10 @@
       "projection": 31.59,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.89,
+        "averageDraftPosition": 169.93,
         "percentOwned": 0.11
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "4360423": {
       "id": "4360423",
@@ -8251,8 +8280,8 @@
       "projection": 251.13,
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.15,
-        "percentOwned": 6.53
+        "averageDraftPosition": 169.32,
+        "percentOwned": 6.54
       },
       "injuryStatus": "INJURY_RESERVE"
     },
@@ -8282,8 +8311,8 @@
       "projection": 112.45,
       "ownership": {
         "auctionValueAverage": 0.02,
-        "averageDraftPosition": 168.28,
-        "percentOwned": 22.71
+        "averageDraftPosition": 168.49,
+        "percentOwned": 22.74
       },
       "injuryStatus": "OUT"
     },
@@ -8292,10 +8321,10 @@
       "nflTeamId": "19",
       "name": "Tyrone Tracy Jr.",
       "position": "RB",
-      "total": 87.4,
-      "average": 8.74,
+      "total": 91.7,
+      "average": 8.336363636363636,
       "scores": {
-        "0": 87.4,
+        "0": 91.7,
         "1": 5.5,
         "2": 9.1,
         "3": 5.6,
@@ -8307,15 +8336,16 @@
         "9": 6.7,
         "10": 8.1,
         "11": 17.9,
-        "12": 16
+        "12": 16,
+        "13": 4.3
       },
       "projection": 206.87,
       "ownership": {
-        "auctionValueAverage": 1.76,
-        "averageDraftPosition": 117.3,
-        "percentOwned": 82.91
+        "auctionValueAverage": 1.75,
+        "averageDraftPosition": 117.25,
+        "percentOwned": 83.02
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4360569": {
       "id": "4360569",
@@ -8341,9 +8371,9 @@
       },
       "projection": 133.58,
       "ownership": {
-        "auctionValueAverage": 0.84,
-        "averageDraftPosition": 145,
-        "percentOwned": 53.01
+        "auctionValueAverage": 0.88,
+        "averageDraftPosition": 145.18,
+        "percentOwned": 53.08
       },
       "injuryStatus": "ACTIVE"
     },
@@ -8371,8 +8401,8 @@
       },
       "projection": 135.56,
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.41,
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.66,
         "percentOwned": 5.61
       },
       "injuryStatus": "ACTIVE"
@@ -8402,8 +8432,8 @@
       "projection": 99.94,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.86,
-        "percentOwned": 5.25
+        "averageDraftPosition": 169.91,
+        "percentOwned": 5.26
       },
       "injuryStatus": "ACTIVE"
     },
@@ -8432,7 +8462,7 @@
       "projection": 2.59,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.52,
+        "averageDraftPosition": 169.55,
         "percentOwned": 0.15
       },
       "injuryStatus": "ACTIVE"
@@ -8462,8 +8492,8 @@
       "projection": 115.81,
       "ownership": {
         "auctionValueAverage": 0.08,
-        "averageDraftPosition": 158.59,
-        "percentOwned": 70.55
+        "averageDraftPosition": 159.89,
+        "percentOwned": 70.66
       },
       "injuryStatus": "ACTIVE"
     },
@@ -8493,7 +8523,7 @@
       "projection": 10.27,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.97,
+        "averageDraftPosition": 170,
         "percentOwned": 0.03
       },
       "injuryStatus": "ACTIVE"
@@ -8522,8 +8552,8 @@
       },
       "projection": 114.27,
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.45,
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.54,
         "percentOwned": 0.98
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -8553,8 +8583,8 @@
       "projection": 135.98,
       "ownership": {
         "auctionValueAverage": 0.04,
-        "averageDraftPosition": 167.09,
-        "percentOwned": 10.7
+        "averageDraftPosition": 167.15,
+        "percentOwned": 10.72
       },
       "injuryStatus": "ACTIVE"
     },
@@ -8583,7 +8613,7 @@
       "projection": 10.06,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.83,
+        "averageDraftPosition": 169.85,
         "percentOwned": 0.04
       },
       "injuryStatus": "ACTIVE"
@@ -8643,8 +8673,8 @@
       "projection": 99.36,
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 168.39,
-        "percentOwned": 7.44
+        "averageDraftPosition": 168.49,
+        "percentOwned": 7.45
       },
       "injuryStatus": "ACTIVE"
     },
@@ -8673,7 +8703,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.93,
+        "averageDraftPosition": 169.95,
         "percentOwned": 0.02
       },
       "injuryStatus": "ACTIVE"
@@ -8689,7 +8719,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.64,
+        "averageDraftPosition": 169.69,
         "percentOwned": 0.01
       },
       "injuryStatus": "ACTIVE"
@@ -8719,7 +8749,7 @@
       "projection": 2.4,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.84,
+        "averageDraftPosition": 169.82,
         "percentOwned": 0.06
       },
       "injuryStatus": "ACTIVE"
@@ -8748,8 +8778,8 @@
       },
       "projection": 259.22,
       "ownership": {
-        "auctionValueAverage": 31.48,
-        "averageDraftPosition": 22.8,
+        "auctionValueAverage": 31.06,
+        "averageDraftPosition": 22.6,
         "percentOwned": 99.9
       },
       "injuryStatus": "ACTIVE"
@@ -8778,9 +8808,9 @@
       },
       "projection": 209.82,
       "ownership": {
-        "auctionValueAverage": 2.51,
-        "averageDraftPosition": 94.65,
-        "percentOwned": 94.94
+        "auctionValueAverage": 2.46,
+        "averageDraftPosition": 95.35,
+        "percentOwned": 95.02
       },
       "injuryStatus": "ACTIVE"
     },
@@ -8839,7 +8869,7 @@
       "projection": 32.81,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.47,
+        "averageDraftPosition": 169.5,
         "percentOwned": 0.48
       },
       "injuryStatus": "ACTIVE"
@@ -8868,9 +8898,9 @@
       },
       "projection": 133.94,
       "ownership": {
-        "auctionValueAverage": 0.03,
-        "averageDraftPosition": 168.49,
-        "percentOwned": 6.5
+        "auctionValueAverage": 0.02,
+        "averageDraftPosition": 168.86,
+        "percentOwned": 6.51
       },
       "injuryStatus": "ACTIVE"
     },
@@ -8898,9 +8928,9 @@
       },
       "projection": 126.52,
       "ownership": {
-        "auctionValueAverage": 0.09,
-        "averageDraftPosition": 160.58,
-        "percentOwned": 72.24
+        "auctionValueAverage": 0.08,
+        "averageDraftPosition": 161.19,
+        "percentOwned": 72.35
       },
       "injuryStatus": "ACTIVE"
     },
@@ -8910,7 +8940,7 @@
       "name": "Daniel Bellinger",
       "position": "TE",
       "total": 38.2,
-      "average": 3.472727272727273,
+      "average": 3.1833333333333336,
       "scores": {
         "0": 38.2,
         "1": 2.4,
@@ -8924,7 +8954,8 @@
         "9": 0,
         "10": 1.8,
         "11": 0,
-        "12": 0
+        "12": 0,
+        "13": 0
       },
       "projection": 16.7,
       "ownership": {
@@ -8958,9 +8989,9 @@
       },
       "projection": 213.79,
       "ownership": {
-        "auctionValueAverage": 3.01,
-        "averageDraftPosition": 107.89,
-        "percentOwned": 65.64
+        "auctionValueAverage": 2.97,
+        "averageDraftPosition": 107.22,
+        "percentOwned": 65.71
       },
       "injuryStatus": "ACTIVE"
     },
@@ -8989,10 +9020,10 @@
       "projection": 107.26,
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.74,
+        "averageDraftPosition": 169.89,
         "percentOwned": 1.13
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "4361579": {
       "id": "4361579",
@@ -9018,9 +9049,9 @@
       },
       "projection": 217.23,
       "ownership": {
-        "auctionValueAverage": 3.36,
-        "averageDraftPosition": 80.82,
-        "percentOwned": 97.81
+        "auctionValueAverage": 3.39,
+        "averageDraftPosition": 84.08,
+        "percentOwned": 97.86
       },
       "injuryStatus": "ACTIVE"
     },
@@ -9049,9 +9080,9 @@
       },
       "projection": 306.21,
       "ownership": {
-        "auctionValueAverage": 1.58,
-        "averageDraftPosition": 114.17,
-        "percentOwned": 75.28
+        "auctionValueAverage": 1.53,
+        "averageDraftPosition": 116.31,
+        "percentOwned": 75.35
       },
       "injuryStatus": "ACTIVE"
     },
@@ -9080,7 +9111,7 @@
       "projection": 64.69,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.96,
+        "averageDraftPosition": 170.01,
         "percentOwned": 0.17
       },
       "injuryStatus": "OUT"
@@ -9141,7 +9172,7 @@
       "projection": 8.79,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.85,
+        "averageDraftPosition": 169.83,
         "percentOwned": 0.02
       },
       "injuryStatus": "ACTIVE"
@@ -9170,9 +9201,9 @@
       },
       "projection": 143.93,
       "ownership": {
-        "auctionValueAverage": 1.46,
-        "averageDraftPosition": 102.97,
-        "percentOwned": 86.16
+        "auctionValueAverage": 1.38,
+        "averageDraftPosition": 103.39,
+        "percentOwned": 86.18
       },
       "injuryStatus": "ACTIVE"
     },
@@ -9200,9 +9231,9 @@
       },
       "projection": 281.22,
       "ownership": {
-        "auctionValueAverage": 26.76,
-        "averageDraftPosition": 36.2,
-        "percentOwned": 97.08
+        "auctionValueAverage": 26.48,
+        "averageDraftPosition": 35.3,
+        "percentOwned": 97.1
       },
       "injuryStatus": "ACTIVE"
     },
@@ -9230,9 +9261,9 @@
       },
       "projection": 177.77,
       "ownership": {
-        "auctionValueAverage": 0.82,
-        "averageDraftPosition": 142.13,
-        "percentOwned": 39.72
+        "auctionValueAverage": 0.8,
+        "averageDraftPosition": 142.22,
+        "percentOwned": 39.78
       },
       "injuryStatus": "INJURY_RESERVE"
     },
@@ -9277,7 +9308,7 @@
       "projection": 19.16,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.97,
+        "averageDraftPosition": 169.94,
         "percentOwned": 0.08
       },
       "injuryStatus": "ACTIVE"
@@ -9307,8 +9338,8 @@
       "projection": 30.62,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170.09,
-        "percentOwned": 11.07
+        "averageDraftPosition": 170.14,
+        "percentOwned": 11.08
       },
       "injuryStatus": "OUT"
     },
@@ -9363,7 +9394,7 @@
       "projection": 8.6,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.99,
+        "averageDraftPosition": 169.98,
         "percentOwned": 0.01
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -9393,8 +9424,8 @@
       "projection": 33.91,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.51,
-        "percentOwned": 12.35
+        "averageDraftPosition": 169.56,
+        "percentOwned": 12.37
       },
       "injuryStatus": "ACTIVE"
     },
@@ -9422,8 +9453,8 @@
       },
       "projection": 340.02,
       "ownership": {
-        "auctionValueAverage": 54.77,
-        "averageDraftPosition": 4,
+        "auctionValueAverage": 54.09,
+        "averageDraftPosition": 3.54,
         "percentOwned": 99.94
       },
       "injuryStatus": "ACTIVE"
@@ -9453,7 +9484,7 @@
       "projection": 20.86,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.81,
+        "averageDraftPosition": 169.83,
         "percentOwned": 0.39
       },
       "injuryStatus": "ACTIVE"
@@ -9482,9 +9513,9 @@
       },
       "projection": 299.32,
       "ownership": {
-        "auctionValueAverage": 0.79,
-        "averageDraftPosition": 153.76,
-        "percentOwned": 28.73
+        "auctionValueAverage": 0.77,
+        "averageDraftPosition": 153.89,
+        "percentOwned": 28.74
       },
       "injuryStatus": "ACTIVE"
     },
@@ -9513,7 +9544,7 @@
       "projection": 42.89,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.76,
+        "averageDraftPosition": 169.75,
         "percentOwned": 1.86
       },
       "injuryStatus": "ACTIVE"
@@ -9543,7 +9574,7 @@
       "projection": 128.2,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.81,
+        "averageDraftPosition": 169.84,
         "percentOwned": 3.28
       },
       "injuryStatus": "ACTIVE"
@@ -9627,8 +9658,8 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.81,
-        "percentOwned": 0.83
+        "averageDraftPosition": 169.85,
+        "percentOwned": 0.84
       },
       "injuryStatus": "OUT"
     },
@@ -9657,7 +9688,7 @@
       "projection": 1.03,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.89,
+        "averageDraftPosition": 169.9,
         "percentOwned": 0.05
       },
       "injuryStatus": "ACTIVE"
@@ -9710,7 +9741,7 @@
       "projection": 14.25,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170.04,
+        "averageDraftPosition": 170.09,
         "percentOwned": 0.1
       },
       "injuryStatus": "ACTIVE"
@@ -9740,8 +9771,8 @@
       "projection": 71.45,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 168.9,
-        "percentOwned": 10.59
+        "averageDraftPosition": 168.98,
+        "percentOwned": 10.61
       },
       "injuryStatus": "ACTIVE"
     },
@@ -9800,8 +9831,8 @@
       "projection": 166.03,
       "ownership": {
         "auctionValueAverage": 0.43,
-        "averageDraftPosition": 167.08,
-        "percentOwned": 10.21
+        "averageDraftPosition": 166.52,
+        "percentOwned": 10.22
       },
       "injuryStatus": "ACTIVE"
     },
@@ -9829,9 +9860,9 @@
       },
       "projection": 193.17,
       "ownership": {
-        "auctionValueAverage": 0.1,
-        "averageDraftPosition": 162.66,
-        "percentOwned": 70.62
+        "auctionValueAverage": 0.08,
+        "averageDraftPosition": 163.24,
+        "percentOwned": 70.74
       },
       "injuryStatus": "ACTIVE"
     },
@@ -9859,9 +9890,9 @@
       },
       "projection": 226.53,
       "ownership": {
-        "auctionValueAverage": 6.16,
-        "averageDraftPosition": 79.69,
-        "percentOwned": 94.91
+        "auctionValueAverage": 6.2,
+        "averageDraftPosition": 81.35,
+        "percentOwned": 94.98
       },
       "injuryStatus": "ACTIVE"
     },
@@ -9889,9 +9920,9 @@
       },
       "projection": 109.27,
       "ownership": {
-        "auctionValueAverage": 0.81,
-        "averageDraftPosition": 155.81,
-        "percentOwned": 13.39
+        "auctionValueAverage": 0.8,
+        "averageDraftPosition": 155.82,
+        "percentOwned": 13.41
       },
       "injuryStatus": "ACTIVE"
     },
@@ -9946,7 +9977,7 @@
       "projection": 7.56,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.96,
+        "averageDraftPosition": 169.99,
         "percentOwned": 2.29
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -9976,7 +10007,7 @@
       "projection": 29.2,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.56,
+        "averageDraftPosition": 169.6,
         "percentOwned": 0.14
       },
       "injuryStatus": "ACTIVE"
@@ -10006,7 +10037,7 @@
       "projection": 22.4,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.94,
+        "averageDraftPosition": 169.98,
         "percentOwned": 0.14
       },
       "injuryStatus": "ACTIVE"
@@ -10036,7 +10067,7 @@
       "projection": 16.55,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.95,
+        "averageDraftPosition": 169.97,
         "percentOwned": 0.04
       },
       "injuryStatus": "ACTIVE"
@@ -10067,7 +10098,7 @@
       "projection": 33.89,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.82,
+        "averageDraftPosition": 169.9,
         "percentOwned": 1.79
       },
       "injuryStatus": "ACTIVE"
@@ -10128,7 +10159,7 @@
       "projection": 51.5,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.83,
+        "averageDraftPosition": 169.85,
         "percentOwned": 0.18
       },
       "injuryStatus": "ACTIVE"
@@ -10158,7 +10189,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.96,
+        "averageDraftPosition": 169.97,
         "percentOwned": 0.01
       },
       "injuryStatus": "ACTIVE"
@@ -10187,9 +10218,9 @@
       },
       "projection": 104.78,
       "ownership": {
-        "auctionValueAverage": 0.63,
-        "averageDraftPosition": 165.09,
-        "percentOwned": 32.88
+        "auctionValueAverage": 0.6,
+        "averageDraftPosition": 164.63,
+        "percentOwned": 32.93
       },
       "injuryStatus": "ACTIVE"
     },
@@ -10217,9 +10248,9 @@
       },
       "projection": 196.36,
       "ownership": {
-        "auctionValueAverage": 0.93,
-        "averageDraftPosition": 128.16,
-        "percentOwned": 82.44
+        "auctionValueAverage": 0.89,
+        "averageDraftPosition": 129.64,
+        "percentOwned": 82.56
       },
       "injuryStatus": "ACTIVE"
     },
@@ -10247,8 +10278,8 @@
       },
       "projection": 4.06,
       "ownership": {
-        "auctionValueAverage": 0,
-        "averageDraftPosition": 169.56,
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 169.57,
         "percentOwned": 0.23
       },
       "injuryStatus": "ACTIVE"
@@ -10303,9 +10334,9 @@
       },
       "projection": 290.62,
       "ownership": {
-        "auctionValueAverage": 44.36,
-        "averageDraftPosition": 14.52,
-        "percentOwned": 99.94
+        "auctionValueAverage": 43.8,
+        "averageDraftPosition": 14.7,
+        "percentOwned": 99.93
       },
       "injuryStatus": "QUESTIONABLE"
     },
@@ -10333,8 +10364,8 @@
       },
       "projection": 269.9,
       "ownership": {
-        "auctionValueAverage": 22.67,
-        "averageDraftPosition": 28.29,
+        "auctionValueAverage": 22.42,
+        "averageDraftPosition": 28.87,
         "percentOwned": 99.84
       },
       "injuryStatus": "ACTIVE"
@@ -10364,7 +10395,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.91,
+        "averageDraftPosition": 169.9,
         "percentOwned": 0.05
       },
       "injuryStatus": "ACTIVE"
@@ -10393,7 +10424,7 @@
       },
       "projection": 23.88,
       "ownership": {
-        "auctionValueAverage": 0,
+        "auctionValueAverage": 0.06,
         "averageDraftPosition": 169.81,
         "percentOwned": 1.44
       },
@@ -10424,7 +10455,7 @@
       "projection": 2.5,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.92,
+        "averageDraftPosition": 169.95,
         "percentOwned": 0.05
       },
       "injuryStatus": "ACTIVE"
@@ -10454,7 +10485,7 @@
       "projection": 12.24,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.77,
+        "averageDraftPosition": 169.82,
         "percentOwned": 0.13
       },
       "injuryStatus": "ACTIVE"
@@ -10484,7 +10515,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.92,
+        "averageDraftPosition": 169.9,
         "percentOwned": 0.07
       },
       "injuryStatus": "ACTIVE"
@@ -10514,7 +10545,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.86,
+        "averageDraftPosition": 169.87,
         "percentOwned": 0.02
       },
       "injuryStatus": "OUT"
@@ -10543,9 +10574,9 @@
       },
       "projection": 146.83,
       "ownership": {
-        "auctionValueAverage": 0.69,
-        "averageDraftPosition": 155.54,
-        "percentOwned": 69.76
+        "auctionValueAverage": 0.65,
+        "averageDraftPosition": 155.65,
+        "percentOwned": 69.85
       },
       "injuryStatus": "OUT"
     },
@@ -10574,7 +10605,7 @@
       "projection": 3.06,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.86,
+        "averageDraftPosition": 169.88,
         "percentOwned": 0.06
       },
       "injuryStatus": "ACTIVE"
@@ -10604,7 +10635,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.98,
+        "averageDraftPosition": 169.99,
         "percentOwned": 0.03
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -10633,7 +10664,7 @@
       "projection": 7.83,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.91,
+        "averageDraftPosition": 169.93,
         "percentOwned": 0.08
       },
       "injuryStatus": "ACTIVE"
@@ -10643,10 +10674,10 @@
       "nflTeamId": "19",
       "name": "Gunner Olszewski",
       "position": "WR",
-      "total": 14.72,
-      "average": 1.2266666666666668,
+      "total": 12.72,
+      "average": 0.9784615384615385,
       "scores": {
-        "0": 14.72,
+        "0": 12.72,
         "1": 0,
         "2": 0,
         "3": 0,
@@ -10658,15 +10689,16 @@
         "9": 9.4,
         "10": 0,
         "11": 0,
-        "12": 5.32
+        "12": 5.32,
+        "13": -2
       },
       "projection": 2.41,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.9,
+        "averageDraftPosition": 169.89,
         "percentOwned": 0.08
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4426338": {
       "id": "4426338",
@@ -10692,9 +10724,9 @@
       },
       "projection": 301.89,
       "ownership": {
-        "auctionValueAverage": 1.99,
-        "averageDraftPosition": 95.39,
-        "percentOwned": 90.24
+        "auctionValueAverage": 1.98,
+        "averageDraftPosition": 97.7,
+        "percentOwned": 90.31
       },
       "injuryStatus": "ACTIVE"
     },
@@ -10723,7 +10755,7 @@
       "projection": 141.07,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170,
+        "averageDraftPosition": 170.03,
         "percentOwned": 0.77
       },
       "injuryStatus": "ACTIVE"
@@ -10752,8 +10784,8 @@
       },
       "projection": 371.59,
       "ownership": {
-        "auctionValueAverage": 22.55,
-        "averageDraftPosition": 50.72,
+        "auctionValueAverage": 22.39,
+        "averageDraftPosition": 49.27,
         "percentOwned": 71.05
       },
       "injuryStatus": "OUT"
@@ -10782,11 +10814,11 @@
       },
       "projection": 221.36,
       "ownership": {
-        "auctionValueAverage": 10.62,
-        "averageDraftPosition": 39.16,
-        "percentOwned": 98.55
+        "auctionValueAverage": 10.61,
+        "averageDraftPosition": 43,
+        "percentOwned": 98.59
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4426385": {
       "id": "4426385",
@@ -10812,9 +10844,9 @@
       },
       "projection": 137.02,
       "ownership": {
-        "auctionValueAverage": 0.82,
-        "averageDraftPosition": 146.92,
-        "percentOwned": 67.02
+        "auctionValueAverage": 0.8,
+        "averageDraftPosition": 147.83,
+        "percentOwned": 67.12
       },
       "injuryStatus": "ACTIVE"
     },
@@ -10843,7 +10875,7 @@
       "projection": 80.59,
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.73,
+        "averageDraftPosition": 169.79,
         "percentOwned": 1.05
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -10872,9 +10904,9 @@
       },
       "projection": 218.62,
       "ownership": {
-        "auctionValueAverage": 5.56,
-        "averageDraftPosition": 84.63,
-        "percentOwned": 89.8
+        "auctionValueAverage": 5.62,
+        "averageDraftPosition": 84.51,
+        "percentOwned": 89.89
       },
       "injuryStatus": "ACTIVE"
     },
@@ -10932,9 +10964,9 @@
       },
       "projection": 267.38,
       "ownership": {
-        "auctionValueAverage": 33.74,
-        "averageDraftPosition": 29.87,
-        "percentOwned": 98.76
+        "auctionValueAverage": 33.57,
+        "averageDraftPosition": 28.86,
+        "percentOwned": 98.77
       },
       "injuryStatus": "OUT"
     },
@@ -10962,8 +10994,8 @@
       },
       "projection": 298.63,
       "ownership": {
-        "auctionValueAverage": 48.59,
-        "averageDraftPosition": 10.99,
+        "auctionValueAverage": 48.61,
+        "averageDraftPosition": 10.94,
         "percentOwned": 99.92
       },
       "injuryStatus": "ACTIVE"
@@ -10993,7 +11025,7 @@
       "projection": 4.81,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.79,
+        "averageDraftPosition": 169.81,
         "percentOwned": 0.06
       },
       "injuryStatus": "ACTIVE"
@@ -11023,7 +11055,7 @@
       "projection": 35.83,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.91,
+        "averageDraftPosition": 169.9,
         "percentOwned": 0.09
       },
       "injuryStatus": "ACTIVE"
@@ -11053,7 +11085,7 @@
       "projection": 27.52,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.82,
+        "averageDraftPosition": 169.86,
         "percentOwned": 1.49
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -11063,10 +11095,10 @@
       "nflTeamId": "17",
       "name": "DeMario Douglas",
       "position": "WR",
-      "total": 80.5,
-      "average": 6.708333333333333,
+      "total": 86.8,
+      "average": 6.676923076923078,
       "scores": {
-        "0": 80.5,
+        "0": 86.8,
         "1": 8.2,
         "2": 1.8,
         "3": 2.7,
@@ -11078,13 +11110,14 @@
         "9": 20,
         "10": 5.4,
         "11": 6.1,
-        "12": 6.1
+        "12": 6.1,
+        "13": 6.3
       },
       "projection": 141.71,
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 167.59,
-        "percentOwned": 7.5
+        "auctionValueAverage": 0.02,
+        "averageDraftPosition": 167.72,
+        "percentOwned": 7.52
       },
       "injuryStatus": "ACTIVE"
     },
@@ -11113,7 +11146,7 @@
       "projection": 70.2,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.96,
+        "averageDraftPosition": 169.98,
         "percentOwned": 0.9
       },
       "injuryStatus": "ACTIVE"
@@ -11142,7 +11175,7 @@
       "projection": 4.27,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.93,
+        "averageDraftPosition": 169.98,
         "percentOwned": 0.04
       },
       "injuryStatus": "OUT"
@@ -11171,9 +11204,9 @@
       },
       "projection": 226.04,
       "ownership": {
-        "auctionValueAverage": 9.18,
-        "averageDraftPosition": 72.44,
-        "percentOwned": 96.87
+        "auctionValueAverage": 9.17,
+        "averageDraftPosition": 70.58,
+        "percentOwned": 96.91
       },
       "injuryStatus": "ACTIVE"
     },
@@ -11183,7 +11216,7 @@
       "name": "Terrell Jennings",
       "position": "RB",
       "total": 15.2,
-      "average": 2.5333333333333337,
+      "average": 2.1714285714285717,
       "scores": {
         "0": 15.2,
         "6": 0,
@@ -11192,15 +11225,16 @@
         "9": 11.4,
         "10": 0.5,
         "11": 0,
-        "12": 0
+        "12": 0,
+        "13": 0
       },
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.93,
-        "percentOwned": 3.68
+        "averageDraftPosition": 169.97,
+        "percentOwned": 3.69
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4427728": {
       "id": "4427728",
@@ -11226,9 +11260,9 @@
       },
       "projection": 6.63,
       "ownership": {
-        "auctionValueAverage": 0,
-        "averageDraftPosition": 169.86,
-        "percentOwned": 36.75
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 169.77,
+        "percentOwned": 36.82
       },
       "injuryStatus": "ACTIVE"
     },
@@ -11257,8 +11291,8 @@
       "projection": 34.24,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.48,
-        "percentOwned": 5.55
+        "averageDraftPosition": 169.5,
+        "percentOwned": 5.56
       },
       "injuryStatus": "ACTIVE"
     },
@@ -11287,9 +11321,9 @@
       },
       "projection": 198.38,
       "ownership": {
-        "auctionValueAverage": 1.6,
-        "averageDraftPosition": 118.9,
-        "percentOwned": 64.6
+        "auctionValueAverage": 1.59,
+        "averageDraftPosition": 118.55,
+        "percentOwned": 64.68
       },
       "injuryStatus": "ACTIVE"
     },
@@ -11317,9 +11351,9 @@
       },
       "projection": 163.06,
       "ownership": {
-        "auctionValueAverage": 8.67,
-        "averageDraftPosition": 53.32,
-        "percentOwned": 98.55
+        "auctionValueAverage": 9.39,
+        "averageDraftPosition": 54.93,
+        "percentOwned": 98.59
       },
       "injuryStatus": "ACTIVE"
     },
@@ -11333,8 +11367,8 @@
       "scores": { "0": -0.08, "10": 0, "11": 0, "12": -0.08, "13": 0 },
       "projection": 0,
       "ownership": {
-        "auctionValueAverage": 0,
-        "averageDraftPosition": 169.65,
+        "auctionValueAverage": 0.02,
+        "averageDraftPosition": 169.68,
         "percentOwned": 0.01
       },
       "injuryStatus": "ACTIVE"
@@ -11364,8 +11398,8 @@
       "projection": 119.18,
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.3,
-        "percentOwned": 35.9
+        "averageDraftPosition": 169.5,
+        "percentOwned": 35.96
       },
       "injuryStatus": "ACTIVE"
     },
@@ -11394,10 +11428,10 @@
       "projection": 35.13,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170.04,
+        "averageDraftPosition": 170.08,
         "percentOwned": 0.12
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "4428718": {
       "id": "4428718",
@@ -11424,8 +11458,8 @@
       "projection": 130.64,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.49,
-        "percentOwned": 41.85
+        "averageDraftPosition": 169.62,
+        "percentOwned": 41.91
       },
       "injuryStatus": "ACTIVE"
     },
@@ -11454,10 +11488,10 @@
       "projection": 29.5,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.92,
+        "averageDraftPosition": 169.91,
         "percentOwned": 0.03
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "4428811": {
       "id": "4428811",
@@ -11514,7 +11548,7 @@
       "projection": 20.52,
       "ownership": {
         "auctionValueAverage": 0.02,
-        "averageDraftPosition": 167.5,
+        "averageDraftPosition": 167.46,
         "percentOwned": 0.97
       },
       "injuryStatus": "ACTIVE"
@@ -11542,7 +11576,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.83,
+        "averageDraftPosition": 169.85,
         "percentOwned": 0.01
       },
       "injuryStatus": "ACTIVE"
@@ -11587,9 +11621,9 @@
       },
       "projection": 109.66,
       "ownership": {
-        "auctionValueAverage": 0.9,
-        "averageDraftPosition": 147.96,
-        "percentOwned": 20.07
+        "auctionValueAverage": 0.88,
+        "averageDraftPosition": 148.65,
+        "percentOwned": 20.09
       },
       "injuryStatus": "ACTIVE"
     },
@@ -11598,10 +11632,10 @@
       "nflTeamId": "17",
       "name": "Kayshon Boutte",
       "position": "WR",
-      "total": 99.6,
-      "average": 9.959999999999999,
+      "total": 113.1,
+      "average": 10.281818181818181,
       "scores": {
-        "0": 99.6,
+        "0": 113.1,
         "1": 16.3,
         "2": 8.6,
         "3": 4.8,
@@ -11613,13 +11647,14 @@
         "9": 0,
         "10": 0,
         "11": 0,
-        "12": 3.5
+        "12": 3.5,
+        "13": 13.5
       },
       "projection": 110,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 168.88,
-        "percentOwned": 30.65
+        "averageDraftPosition": 168.99,
+        "percentOwned": 30.69
       },
       "injuryStatus": "ACTIVE"
     },
@@ -11648,7 +11683,7 @@
       "projection": 53.65,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.84,
+        "averageDraftPosition": 169.86,
         "percentOwned": 1.5
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -11678,8 +11713,8 @@
       "projection": 163.92,
       "ownership": {
         "auctionValueAverage": 0.04,
-        "averageDraftPosition": 165.1,
-        "percentOwned": 78.97
+        "averageDraftPosition": 165.55,
+        "percentOwned": 79.02
       },
       "injuryStatus": "ACTIVE"
     },
@@ -11708,8 +11743,8 @@
       "projection": 73.35,
       "ownership": {
         "auctionValueAverage": 0.09,
-        "averageDraftPosition": 161.64,
-        "percentOwned": 76.47
+        "averageDraftPosition": 162.53,
+        "percentOwned": 76.59
       },
       "injuryStatus": "ACTIVE"
     },
@@ -11738,7 +11773,7 @@
       "projection": 70.37,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.83,
+        "averageDraftPosition": 169.89,
         "percentOwned": 0.64
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -11768,7 +11803,7 @@
       "projection": 73.01,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.9,
+        "averageDraftPosition": 170,
         "percentOwned": 4.31
       },
       "injuryStatus": "OUT"
@@ -11798,8 +11833,8 @@
       "projection": 74.41,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 168.74,
-        "percentOwned": 12.58
+        "averageDraftPosition": 168.85,
+        "percentOwned": 12.61
       },
       "injuryStatus": "ACTIVE"
     },
@@ -11831,17 +11866,17 @@
         "averageDraftPosition": 169.89,
         "percentOwned": 0.06
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "4429148": {
       "id": "4429148",
       "nflTeamId": "19",
       "name": "Theo Johnson",
       "position": "TE",
-      "total": 111.7,
-      "average": 9.308333333333334,
+      "total": 117.6,
+      "average": 9.046153846153846,
       "scores": {
-        "0": 111.7,
+        "0": 117.6,
         "1": 1.5,
         "2": 7.4,
         "3": 2,
@@ -11853,13 +11888,14 @@
         "9": 11.7,
         "10": 14.5,
         "11": 6.6,
-        "12": 10.7
+        "12": 10.7,
+        "13": 5.9
       },
       "projection": 122.05,
       "ownership": {
         "auctionValueAverage": 0.05,
-        "averageDraftPosition": 166.98,
-        "percentOwned": 54.12
+        "averageDraftPosition": 167.26,
+        "percentOwned": 54.2
       },
       "injuryStatus": "ACTIVE"
     },
@@ -11887,8 +11923,8 @@
       },
       "projection": 307.53,
       "ownership": {
-        "auctionValueAverage": 43.4,
-        "averageDraftPosition": 14.4,
+        "auctionValueAverage": 42.99,
+        "averageDraftPosition": 14.07,
         "percentOwned": 99.9
       },
       "injuryStatus": "ACTIVE"
@@ -11917,9 +11953,9 @@
       },
       "projection": 167.31,
       "ownership": {
-        "auctionValueAverage": 0.96,
-        "averageDraftPosition": 130.1,
-        "percentOwned": 82.01
+        "auctionValueAverage": 0.98,
+        "averageDraftPosition": 130.83,
+        "percentOwned": 82.11
       },
       "injuryStatus": "ACTIVE"
     },
@@ -11947,9 +11983,9 @@
       },
       "projection": 128.58,
       "ownership": {
-        "auctionValueAverage": 0.71,
-        "averageDraftPosition": 160.69,
-        "percentOwned": 57.55
+        "auctionValueAverage": 0.68,
+        "averageDraftPosition": 160.28,
+        "percentOwned": 57.64
       },
       "injuryStatus": "INJURY_RESERVE"
     },
@@ -11978,7 +12014,7 @@
       "projection": 19.55,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.99,
+        "averageDraftPosition": 170.01,
         "percentOwned": 0.33
       },
       "injuryStatus": "OUT"
@@ -12008,8 +12044,8 @@
       "projection": 81.61,
       "ownership": {
         "auctionValueAverage": 0.02,
-        "averageDraftPosition": 168.65,
-        "percentOwned": 5.09
+        "averageDraftPosition": 168.57,
+        "percentOwned": 5.1
       },
       "injuryStatus": "ACTIVE"
     },
@@ -12037,9 +12073,9 @@
       },
       "projection": 232.52,
       "ownership": {
-        "auctionValueAverage": 7.56,
-        "averageDraftPosition": 79.61,
-        "percentOwned": 96.29
+        "auctionValueAverage": 7.44,
+        "averageDraftPosition": 78.53,
+        "percentOwned": 96.33
       },
       "injuryStatus": "ACTIVE"
     },
@@ -12068,7 +12104,7 @@
       "projection": 10.06,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.8,
+        "averageDraftPosition": 169.88,
         "percentOwned": 0.09
       },
       "injuryStatus": "ACTIVE"
@@ -12098,7 +12134,7 @@
       "projection": 4.09,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.96,
+        "averageDraftPosition": 169.97,
         "percentOwned": 0.08
       },
       "injuryStatus": "ACTIVE"
@@ -12127,8 +12163,8 @@
       },
       "projection": 317.28,
       "ownership": {
-        "auctionValueAverage": 54.06,
-        "averageDraftPosition": 5.57,
+        "auctionValueAverage": 52.59,
+        "averageDraftPosition": 5.56,
         "percentOwned": 99.94
       },
       "injuryStatus": "ACTIVE"
@@ -12158,7 +12194,7 @@
       "projection": 8.94,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.92,
+        "averageDraftPosition": 169.93,
         "percentOwned": 0.09
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -12188,10 +12224,10 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.84,
+        "averageDraftPosition": 169.88,
         "percentOwned": 0.12
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "4430027": {
       "id": "4430027",
@@ -12217,9 +12253,9 @@
       },
       "projection": 191.77,
       "ownership": {
-        "auctionValueAverage": 6.31,
-        "averageDraftPosition": 73.33,
-        "percentOwned": 77.19
+        "auctionValueAverage": 6.41,
+        "averageDraftPosition": 71.86,
+        "percentOwned": 77.18
       },
       "injuryStatus": "INJURY_RESERVE"
     },
@@ -12248,9 +12284,9 @@
       },
       "projection": 165.97,
       "ownership": {
-        "auctionValueAverage": 0.82,
-        "averageDraftPosition": 146.7,
-        "percentOwned": 21.61
+        "auctionValueAverage": 0.79,
+        "averageDraftPosition": 147.37,
+        "percentOwned": 21.64
       },
       "injuryStatus": "ACTIVE"
     },
@@ -12280,7 +12316,7 @@
       "projection": 9.34,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.82,
+        "averageDraftPosition": 169.85,
         "percentOwned": 0.1
       },
       "injuryStatus": "ACTIVE"
@@ -12310,8 +12346,8 @@
       "projection": 139.46,
       "ownership": {
         "auctionValueAverage": 0.02,
-        "averageDraftPosition": 167.13,
-        "percentOwned": 21.96
+        "averageDraftPosition": 167.28,
+        "percentOwned": 22.01
       },
       "injuryStatus": "ACTIVE"
     },
@@ -12340,7 +12376,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.83,
+        "averageDraftPosition": 169.84,
         "percentOwned": 0.24
       },
       "injuryStatus": "ACTIVE"
@@ -12415,8 +12451,8 @@
       },
       "projection": 284.05,
       "ownership": {
-        "auctionValueAverage": 22.29,
-        "averageDraftPosition": 38.26,
+        "auctionValueAverage": 22.06,
+        "averageDraftPosition": 38.12,
         "percentOwned": 99.22
       },
       "injuryStatus": "ACTIVE"
@@ -12445,8 +12481,8 @@
       },
       "projection": 13.47,
       "ownership": {
-        "auctionValueAverage": 0.02,
-        "averageDraftPosition": 168.15,
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 168.4,
         "percentOwned": 1.22
       },
       "injuryStatus": "ACTIVE"
@@ -12475,8 +12511,8 @@
       },
       "projection": 339.37,
       "ownership": {
-        "auctionValueAverage": 51.81,
-        "averageDraftPosition": 5.63,
+        "auctionValueAverage": 51.38,
+        "averageDraftPosition": 5.39,
         "percentOwned": 99.93
       },
       "injuryStatus": "ACTIVE"
@@ -12506,7 +12542,7 @@
       "projection": 30.48,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170,
+        "averageDraftPosition": 170.06,
         "percentOwned": 1.55
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -12539,7 +12575,7 @@
         "averageDraftPosition": 169.88,
         "percentOwned": 0.08
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "4430871": {
       "id": "4430871",
@@ -12566,8 +12602,8 @@
       "projection": 28.28,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.07,
-        "percentOwned": 37.82
+        "averageDraftPosition": 169.44,
+        "percentOwned": 37.88
       },
       "injuryStatus": "ACTIVE"
     },
@@ -12595,8 +12631,8 @@
       },
       "projection": 240.91,
       "ownership": {
-        "auctionValueAverage": 34.85,
-        "averageDraftPosition": 12.46,
+        "auctionValueAverage": 33.93,
+        "averageDraftPosition": 14.22,
         "percentOwned": 99.86
       },
       "injuryStatus": "ACTIVE"
@@ -12622,9 +12658,9 @@
       },
       "projection": 0,
       "ownership": {
-        "auctionValueAverage": 0,
-        "averageDraftPosition": 169.45,
-        "percentOwned": 65.31
+        "auctionValueAverage": 0.03,
+        "averageDraftPosition": 169.29,
+        "percentOwned": 65.42
       },
       "injuryStatus": "ACTIVE"
     },
@@ -12648,7 +12684,8 @@
         "9": 0,
         "10": 0,
         "11": 0,
-        "12": 0
+        "12": 0,
+        "13": 0
       },
       "projection": 4.16,
       "ownership": {
@@ -12683,8 +12720,8 @@
       "projection": 37.72,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.42,
-        "percentOwned": 20.7
+        "averageDraftPosition": 169.49,
+        "percentOwned": 20.74
       },
       "injuryStatus": "ACTIVE"
     },
@@ -12712,9 +12749,9 @@
       },
       "projection": 79.69,
       "ownership": {
-        "auctionValueAverage": 0.03,
-        "averageDraftPosition": 163.74,
-        "percentOwned": 72.18
+        "auctionValueAverage": 0.02,
+        "averageDraftPosition": 164.37,
+        "percentOwned": 72.3
       },
       "injuryStatus": "ACTIVE"
     },
@@ -12743,8 +12780,8 @@
       "projection": 217.05,
       "ownership": {
         "auctionValueAverage": 3.58,
-        "averageDraftPosition": 97.01,
-        "percentOwned": 94.25
+        "averageDraftPosition": 97.7,
+        "percentOwned": 94.32
       },
       "injuryStatus": "ACTIVE"
     },
@@ -12759,7 +12796,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.85,
+        "averageDraftPosition": 169.89,
         "percentOwned": 0.1
       },
       "injuryStatus": "QUESTIONABLE"
@@ -12769,10 +12806,10 @@
       "nflTeamId": "17",
       "name": "Drake Maye",
       "position": "QB",
-      "total": 239.1,
-      "average": 19.925,
+      "total": 259.58,
+      "average": 19.967692307692307,
       "scores": {
-        "0": 239.1,
+        "0": 259.58,
         "1": 15.78,
         "2": 26.3,
         "3": 19.22,
@@ -12784,13 +12821,14 @@
         "9": 16.36,
         "10": 18.1,
         "11": 15.44,
-        "12": 15.96
+        "12": 15.96,
+        "13": 20.48
       },
       "projection": 285.26,
       "ownership": {
-        "auctionValueAverage": 4.26,
-        "averageDraftPosition": 60.96,
-        "percentOwned": 97.5
+        "auctionValueAverage": 4.27,
+        "averageDraftPosition": 67.46,
+        "percentOwned": 97.57
       },
       "injuryStatus": "ACTIVE"
     },
@@ -12818,9 +12856,9 @@
       },
       "projection": 166.07,
       "ownership": {
-        "auctionValueAverage": 2.65,
-        "averageDraftPosition": 78.96,
-        "percentOwned": 97.9
+        "auctionValueAverage": 2.67,
+        "averageDraftPosition": 83.52,
+        "percentOwned": 97.93
       },
       "injuryStatus": "ACTIVE"
     },
@@ -12850,10 +12888,10 @@
       "projection": 7.83,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.88,
+        "averageDraftPosition": 169.94,
         "percentOwned": 0.04
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "4431487": {
       "id": "4431487",
@@ -12880,7 +12918,7 @@
       "projection": 20.64,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.88,
+        "averageDraftPosition": 169.91,
         "percentOwned": 0.17
       },
       "injuryStatus": "OUT"
@@ -12910,7 +12948,7 @@
       "projection": 69.44,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.84,
+        "averageDraftPosition": 169.98,
         "percentOwned": 0.36
       },
       "injuryStatus": "ACTIVE"
@@ -12940,8 +12978,8 @@
       "projection": 57.86,
       "ownership": {
         "auctionValueAverage": 0.02,
-        "averageDraftPosition": 168.66,
-        "percentOwned": 2.79
+        "averageDraftPosition": 168.58,
+        "percentOwned": 2.8
       },
       "injuryStatus": "ACTIVE"
     },
@@ -12971,7 +13009,7 @@
       "projection": 102.41,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.49,
+        "averageDraftPosition": 169.61,
         "percentOwned": 0.84
       },
       "injuryStatus": "ACTIVE"
@@ -13001,8 +13039,8 @@
       "projection": 279.79,
       "ownership": {
         "auctionValueAverage": 1.05,
-        "averageDraftPosition": 122.53,
-        "percentOwned": 86.24
+        "averageDraftPosition": 123.94,
+        "percentOwned": 86.33
       },
       "injuryStatus": "ACTIVE"
     },
@@ -13030,9 +13068,9 @@
       },
       "projection": 280.36,
       "ownership": {
-        "auctionValueAverage": 0.88,
-        "averageDraftPosition": 156.93,
-        "percentOwned": 45.21
+        "auctionValueAverage": 0.85,
+        "averageDraftPosition": 156.45,
+        "percentOwned": 45.27
       },
       "injuryStatus": "ACTIVE"
     },
@@ -13061,8 +13099,8 @@
       "projection": 44.44,
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.32,
-        "percentOwned": 24.23
+        "averageDraftPosition": 169.42,
+        "percentOwned": 24.27
       },
       "injuryStatus": "QUESTIONABLE"
     },
@@ -13090,9 +13128,9 @@
       },
       "projection": 262.19,
       "ownership": {
-        "auctionValueAverage": 30.64,
-        "averageDraftPosition": 26.8,
-        "percentOwned": 99.37
+        "auctionValueAverage": 30.22,
+        "averageDraftPosition": 26.28,
+        "percentOwned": 99.38
       },
       "injuryStatus": "ACTIVE"
     },
@@ -13120,21 +13158,21 @@
       },
       "projection": 240,
       "ownership": {
-        "auctionValueAverage": 12.58,
-        "averageDraftPosition": 77.7,
-        "percentOwned": 92.92
+        "auctionValueAverage": 12.59,
+        "averageDraftPosition": 74.89,
+        "percentOwned": 92.97
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4432710": {
       "id": "4432710",
       "nflTeamId": "17",
       "name": "TreVeyon Henderson",
       "position": "RB",
-      "total": 136.8,
-      "average": 11.4,
+      "total": 148.4,
+      "average": 11.415384615384616,
       "scores": {
-        "0": 136.8,
+        "0": 148.4,
         "1": 11.1,
         "2": 6,
         "3": 7.7,
@@ -13146,13 +13184,14 @@
         "9": 12.7,
         "10": 28,
         "11": 32.3,
-        "12": 11.1
+        "12": 11.1,
+        "13": 11.6
       },
       "projection": 223.83,
       "ownership": {
-        "auctionValueAverage": 15.12,
-        "averageDraftPosition": 55.49,
-        "percentOwned": 95.65
+        "auctionValueAverage": 14.99,
+        "averageDraftPosition": 54.9,
+        "percentOwned": 95.72
       },
       "injuryStatus": "ACTIVE"
     },
@@ -13181,10 +13220,10 @@
       "projection": 5.15,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.9,
+        "averageDraftPosition": 169.96,
         "percentOwned": 0.25
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "4432762": {
       "id": "4432762",
@@ -13210,9 +13249,9 @@
       },
       "projection": 55.96,
       "ownership": {
-        "auctionValueAverage": 0.05,
-        "averageDraftPosition": 166.23,
-        "percentOwned": 6.44
+        "auctionValueAverage": 0.04,
+        "averageDraftPosition": 166.57,
+        "percentOwned": 6.45
       },
       "injuryStatus": "ACTIVE"
     },
@@ -13240,9 +13279,9 @@
       },
       "projection": 270.04,
       "ownership": {
-        "auctionValueAverage": 37.06,
-        "averageDraftPosition": 31.74,
-        "percentOwned": 90.5
+        "auctionValueAverage": 36.85,
+        "averageDraftPosition": 30.08,
+        "percentOwned": 90.53
       },
       "injuryStatus": "ACTIVE"
     },
@@ -13271,7 +13310,7 @@
       "projection": 70.38,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.89,
+        "averageDraftPosition": 169.9,
         "percentOwned": 0.95
       },
       "injuryStatus": "QUESTIONABLE"
@@ -13301,10 +13340,10 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.8,
+        "averageDraftPosition": 169.79,
         "percentOwned": 0.01
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "4433970": {
       "id": "4433970",
@@ -13330,9 +13369,9 @@
       },
       "projection": 282.57,
       "ownership": {
-        "auctionValueAverage": 0.79,
-        "averageDraftPosition": 157.11,
-        "percentOwned": 29.6
+        "auctionValueAverage": 0.85,
+        "averageDraftPosition": 157.27,
+        "percentOwned": 29.63
       },
       "injuryStatus": "OUT"
     },
@@ -13390,7 +13429,7 @@
       },
       "projection": 11.58,
       "ownership": {
-        "auctionValueAverage": 0,
+        "auctionValueAverage": 0.02,
         "averageDraftPosition": 169.97,
         "percentOwned": 0.06
       },
@@ -13419,9 +13458,9 @@
       },
       "projection": 137.33,
       "ownership": {
-        "auctionValueAverage": 0.1,
-        "averageDraftPosition": 167.72,
-        "percentOwned": 5.51
+        "auctionValueAverage": 0.09,
+        "averageDraftPosition": 168.12,
+        "percentOwned": 5.49
       },
       "injuryStatus": "ACTIVE"
     },
@@ -13449,9 +13488,9 @@
       },
       "projection": 238.79,
       "ownership": {
-        "auctionValueAverage": 13.08,
-        "averageDraftPosition": 70.62,
-        "percentOwned": 93.46
+        "auctionValueAverage": 12.89,
+        "averageDraftPosition": 69.16,
+        "percentOwned": 93.5
       },
       "injuryStatus": "ACTIVE"
     },
@@ -13480,8 +13519,8 @@
       "projection": 1.17,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.67,
-        "percentOwned": 10.09
+        "averageDraftPosition": 169.66,
+        "percentOwned": 10.11
       },
       "injuryStatus": "ACTIVE"
     },
@@ -13509,9 +13548,9 @@
       },
       "projection": 133.95,
       "ownership": {
-        "auctionValueAverage": 0,
-        "averageDraftPosition": 168.29,
-        "percentOwned": 18.61
+        "auctionValueAverage": 0.02,
+        "averageDraftPosition": 168.55,
+        "percentOwned": 18.64
       },
       "injuryStatus": "ACTIVE"
     },
@@ -13537,7 +13576,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.94,
+        "averageDraftPosition": 169.92,
         "percentOwned": 0.06
       },
       "injuryStatus": "ACTIVE"
@@ -13567,10 +13606,10 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.93,
+        "averageDraftPosition": 169.96,
         "percentOwned": 0.02
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "4567750": {
       "id": "4567750",
@@ -13596,9 +13635,9 @@
       },
       "projection": 176.01,
       "ownership": {
-        "auctionValueAverage": 3.76,
-        "averageDraftPosition": 69.95,
-        "percentOwned": 98.11
+        "auctionValueAverage": 3.43,
+        "averageDraftPosition": 73.85,
+        "percentOwned": 98.15
       },
       "injuryStatus": "ACTIVE"
     },
@@ -13627,7 +13666,7 @@
       "projection": 2.58,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.88,
+        "averageDraftPosition": 169.9,
         "percentOwned": 0.03
       },
       "injuryStatus": "SUSPENSION"
@@ -13658,8 +13697,8 @@
       "projection": 126.72,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.5,
-        "percentOwned": 5.12
+        "averageDraftPosition": 169.55,
+        "percentOwned": 5.13
       },
       "injuryStatus": "ACTIVE"
     },
@@ -13687,9 +13726,9 @@
       },
       "projection": 207.26,
       "ownership": {
-        "auctionValueAverage": 3.37,
-        "averageDraftPosition": 107.4,
-        "percentOwned": 85.88
+        "auctionValueAverage": 3.41,
+        "averageDraftPosition": 106.23,
+        "percentOwned": 85.99
       },
       "injuryStatus": "ACTIVE"
     },
@@ -13698,10 +13737,10 @@
       "nflTeamId": "17",
       "name": "Rhamondre Stevenson",
       "position": "RB",
-      "total": 76.8,
-      "average": 8.533333333333335,
+      "total": 87.8,
+      "average": 8.780000000000001,
       "scores": {
-        "0": 76.8,
+        "0": 87.8,
         "1": 4.7,
         "2": 21.2,
         "3": 4.6,
@@ -13713,13 +13752,14 @@
         "9": 0,
         "10": 0,
         "11": 0,
-        "12": 2
+        "12": 2,
+        "13": 11
       },
       "projection": 173.08,
       "ownership": {
-        "auctionValueAverage": 0.98,
-        "averageDraftPosition": 128.43,
-        "percentOwned": 78.78
+        "auctionValueAverage": 0.95,
+        "averageDraftPosition": 128.9,
+        "percentOwned": 78.87
       },
       "injuryStatus": "ACTIVE"
     },
@@ -13776,7 +13816,7 @@
       "projection": 58.81,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.65,
+        "averageDraftPosition": 169.77,
         "percentOwned": 0.22
       },
       "injuryStatus": "ACTIVE"
@@ -13806,7 +13846,7 @@
       "projection": 45.43,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.88,
+        "averageDraftPosition": 169.92,
         "percentOwned": 0.58
       },
       "injuryStatus": "ACTIVE"
@@ -13816,10 +13856,10 @@
       "nflTeamId": "19",
       "name": "Wan'Dale Robinson",
       "position": "WR",
-      "total": 163.6,
-      "average": 13.633333333333335,
+      "total": 174,
+      "average": 13.384615384615385,
       "scores": {
-        "0": 163.6,
+        "0": 174,
         "1": 11.5,
         "2": 28.2,
         "3": 3.6,
@@ -13831,13 +13871,14 @@
         "9": 13.6,
         "10": 12.2,
         "11": 7.6,
-        "12": 30.6
+        "12": 30.6,
+        "13": 10.4
       },
       "projection": 152.78,
       "ownership": {
-        "auctionValueAverage": 0.91,
-        "averageDraftPosition": 132.61,
-        "percentOwned": 87.97
+        "auctionValueAverage": 0.75,
+        "averageDraftPosition": 134.67,
+        "percentOwned": 88.1
       },
       "injuryStatus": "ACTIVE"
     },
@@ -13866,8 +13907,8 @@
       "projection": 55.99,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.83,
-        "percentOwned": 13.08
+        "averageDraftPosition": 169.85,
+        "percentOwned": 13.11
       },
       "injuryStatus": "ACTIVE"
     },
@@ -13911,9 +13952,9 @@
       },
       "projection": 241.4,
       "ownership": {
-        "auctionValueAverage": 17.17,
-        "averageDraftPosition": 67.05,
-        "percentOwned": 84.32
+        "auctionValueAverage": 17.01,
+        "averageDraftPosition": 64.77,
+        "percentOwned": 84.34
       },
       "injuryStatus": "INJURY_RESERVE"
     },
@@ -13938,10 +13979,10 @@
       "nflTeamId": "17",
       "name": "Andy Borregales",
       "position": "K",
-      "total": 99,
-      "average": 8.25,
+      "total": 113,
+      "average": 8.692307692307692,
       "scores": {
-        "0": 99,
+        "0": 113,
         "1": 7,
         "2": 9,
         "3": 2,
@@ -13953,13 +13994,14 @@
         "9": 6,
         "10": 4,
         "11": 9,
-        "12": 18
+        "12": 18,
+        "13": 14
       },
       "projection": 128.88,
       "ownership": {
         "auctionValueAverage": 0.03,
-        "averageDraftPosition": 165.49,
-        "percentOwned": 71.67
+        "averageDraftPosition": 165.82,
+        "percentOwned": 71.75
       },
       "injuryStatus": "ACTIVE"
     },
@@ -13987,9 +14029,9 @@
       },
       "projection": 250.22,
       "ownership": {
-        "auctionValueAverage": 2,
-        "averageDraftPosition": 106.97,
-        "percentOwned": 94.25
+        "auctionValueAverage": 1.98,
+        "averageDraftPosition": 108.01,
+        "percentOwned": 94.33
       },
       "injuryStatus": "ACTIVE"
     },
@@ -14018,7 +14060,7 @@
       "projection": 49.3,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 168.83,
+        "averageDraftPosition": 168.94,
         "percentOwned": 0.3
       },
       "injuryStatus": "ACTIVE"
@@ -14044,7 +14086,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.79,
+        "averageDraftPosition": 169.83,
         "percentOwned": 0.02
       },
       "injuryStatus": "ACTIVE"
@@ -14074,7 +14116,7 @@
       "projection": 132.5,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.65,
+        "averageDraftPosition": 169.69,
         "percentOwned": 2.47
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -14103,8 +14145,8 @@
       },
       "projection": 159.96,
       "ownership": {
-        "auctionValueAverage": 0.78,
-        "averageDraftPosition": 157.19,
+        "auctionValueAverage": 0.76,
+        "averageDraftPosition": 156.67,
         "percentOwned": 29.45
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -14131,9 +14173,9 @@
       },
       "projection": 0,
       "ownership": {
-        "auctionValueAverage": 0,
-        "averageDraftPosition": 169.45,
-        "percentOwned": 0.81
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 169.37,
+        "percentOwned": 0.82
       },
       "injuryStatus": "ACTIVE"
     },
@@ -14162,7 +14204,7 @@
       "projection": 9.82,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.94,
+        "averageDraftPosition": 169.93,
         "percentOwned": 0.05
       },
       "injuryStatus": "ACTIVE"
@@ -14192,7 +14234,7 @@
       "projection": 4.4,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.99,
+        "averageDraftPosition": 169.98,
         "percentOwned": 0.06
       },
       "injuryStatus": "ACTIVE"
@@ -14208,8 +14250,8 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 168.63,
-        "percentOwned": 25.18
+        "averageDraftPosition": 168.66,
+        "percentOwned": 25.21
       },
       "injuryStatus": "ACTIVE"
     },
@@ -14237,9 +14279,9 @@
       },
       "projection": 163.77,
       "ownership": {
-        "auctionValueAverage": 1.34,
-        "averageDraftPosition": 123.57,
-        "percentOwned": 55.1
+        "auctionValueAverage": 1.25,
+        "averageDraftPosition": 123.19,
+        "percentOwned": 55.16
       },
       "injuryStatus": "ACTIVE"
     },
@@ -14268,8 +14310,8 @@
       "projection": 81.84,
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.3,
-        "percentOwned": 14.07
+        "averageDraftPosition": 169.5,
+        "percentOwned": 14.1
       },
       "injuryStatus": "ACTIVE"
     },
@@ -14298,7 +14340,7 @@
       "projection": 37.47,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.86,
+        "averageDraftPosition": 169.9,
         "percentOwned": 1.87
       },
       "injuryStatus": "ACTIVE"
@@ -14328,8 +14370,8 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0.08,
-        "averageDraftPosition": 165.43,
-        "percentOwned": 78.36
+        "averageDraftPosition": 165.85,
+        "percentOwned": 78.46
       },
       "injuryStatus": "ACTIVE"
     },
@@ -14353,13 +14395,14 @@
         "9": 0,
         "10": 0,
         "11": 0,
-        "12": 0
+        "12": 0,
+        "13": 0
       },
       "projection": 301.35,
       "ownership": {
-        "auctionValueAverage": 46.3,
-        "averageDraftPosition": 23.42,
-        "percentOwned": 30.56
+        "auctionValueAverage": 45.86,
+        "averageDraftPosition": 22.19,
+        "percentOwned": 30.52
       },
       "injuryStatus": "INJURY_RESERVE"
     },
@@ -14388,7 +14431,7 @@
       "projection": 27.47,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.71,
+        "averageDraftPosition": 169.81,
         "percentOwned": 1.6
       },
       "injuryStatus": "ACTIVE"
@@ -14417,9 +14460,9 @@
       },
       "projection": 283.47,
       "ownership": {
-        "auctionValueAverage": 28.57,
-        "averageDraftPosition": 36.62,
-        "percentOwned": 96.23
+        "auctionValueAverage": 28.34,
+        "averageDraftPosition": 34.62,
+        "percentOwned": 96.26
       },
       "injuryStatus": "ACTIVE"
     },
@@ -14448,7 +14491,7 @@
       "projection": 49.79,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.83,
+        "averageDraftPosition": 169.97,
         "percentOwned": 3.29
       },
       "injuryStatus": "ACTIVE"
@@ -14478,8 +14521,8 @@
       },
       "projection": 84.4,
       "ownership": {
-        "auctionValueAverage": 0,
-        "averageDraftPosition": 169.72,
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 169.63,
         "percentOwned": 2.72
       },
       "injuryStatus": "ACTIVE"
@@ -14509,7 +14552,7 @@
       "projection": 56.69,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.86,
+        "averageDraftPosition": 169.85,
         "percentOwned": 3.01
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -14538,8 +14581,8 @@
       },
       "projection": 80.62,
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.7,
+        "auctionValueAverage": 0.02,
+        "averageDraftPosition": 169.95,
         "percentOwned": 2.27
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -14568,8 +14611,8 @@
       },
       "projection": 95.45,
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.39,
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.47,
         "percentOwned": 1.37
       },
       "injuryStatus": "ACTIVE"
@@ -14629,7 +14672,7 @@
       "projection": 21.68,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.93,
+        "averageDraftPosition": 169.92,
         "percentOwned": 0.75
       },
       "injuryStatus": "ACTIVE"
@@ -14659,8 +14702,8 @@
       "projection": 57.99,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.89,
-        "percentOwned": 2.92
+        "averageDraftPosition": 169.91,
+        "percentOwned": 2.93
       },
       "injuryStatus": "ACTIVE"
     },
@@ -14689,7 +14732,7 @@
       "projection": 9.66,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170.04,
+        "averageDraftPosition": 170.06,
         "percentOwned": 0.03
       },
       "injuryStatus": "ACTIVE"
@@ -14718,9 +14761,9 @@
       },
       "projection": 51.55,
       "ownership": {
-        "auctionValueAverage": 0.17,
-        "averageDraftPosition": 162.7,
-        "percentOwned": 55.95
+        "auctionValueAverage": 0.18,
+        "averageDraftPosition": 162.54,
+        "percentOwned": 56.04
       },
       "injuryStatus": "ACTIVE"
     },
@@ -14749,8 +14792,8 @@
       "projection": 3.06,
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.46,
-        "percentOwned": 23.98
+        "averageDraftPosition": 169.6,
+        "percentOwned": 24.01
       },
       "injuryStatus": "ACTIVE"
     },
@@ -14778,9 +14821,9 @@
       },
       "projection": 243.24,
       "ownership": {
-        "auctionValueAverage": 24.84,
-        "averageDraftPosition": 41.41,
-        "percentOwned": 97.75
+        "auctionValueAverage": 24.78,
+        "averageDraftPosition": 40.62,
+        "percentOwned": 97.77
       },
       "injuryStatus": "ACTIVE"
     },
@@ -14815,10 +14858,10 @@
       "nflTeamId": "17",
       "name": "Kyle Williams",
       "position": "WR",
-      "total": 20.8,
-      "average": 1.7333333333333334,
+      "total": 31.1,
+      "average": 2.3923076923076922,
       "scores": {
-        "0": 20.8,
+        "0": 31.1,
         "1": 2.2,
         "2": 0,
         "3": 1.8,
@@ -14830,12 +14873,13 @@
         "9": 0,
         "10": 14.2,
         "11": 0,
-        "12": 2.8
+        "12": 2.8,
+        "13": 10.3
       },
       "projection": 41.55,
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.84,
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.85,
         "percentOwned": 1.1
       },
       "injuryStatus": "ACTIVE"
@@ -14864,9 +14908,9 @@
       },
       "projection": 201.02,
       "ownership": {
-        "auctionValueAverage": 0.84,
-        "averageDraftPosition": 135.04,
-        "percentOwned": 48.69
+        "auctionValueAverage": 0.83,
+        "averageDraftPosition": 135.22,
+        "percentOwned": 48.74
       },
       "injuryStatus": "ACTIVE"
     },
@@ -14895,7 +14939,7 @@
       "projection": 114.96,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.59,
+        "averageDraftPosition": 169.67,
         "percentOwned": 0.76
       },
       "injuryStatus": "ACTIVE"
@@ -14926,7 +14970,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.95,
+        "averageDraftPosition": 169.98,
         "percentOwned": 0.18
       },
       "injuryStatus": "OUT"
@@ -14956,8 +15000,8 @@
       "projection": 52.1,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 168.77,
-        "percentOwned": 42.02
+        "averageDraftPosition": 168.83,
+        "percentOwned": 42.11
       },
       "injuryStatus": "ACTIVE"
     },
@@ -14986,7 +15030,7 @@
       "projection": 45.44,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.87,
+        "averageDraftPosition": 169.94,
         "percentOwned": 1.83
       },
       "injuryStatus": "ACTIVE"
@@ -15015,9 +15059,9 @@
       },
       "projection": 166.79,
       "ownership": {
-        "auctionValueAverage": 9.81,
-        "averageDraftPosition": 73.16,
-        "percentOwned": 88.07
+        "auctionValueAverage": 9.71,
+        "averageDraftPosition": 71.56,
+        "percentOwned": 88.11
       },
       "injuryStatus": "ACTIVE"
     },
@@ -15047,7 +15091,7 @@
       "projection": 4.56,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.8,
+        "averageDraftPosition": 169.83,
         "percentOwned": 0.06
       },
       "injuryStatus": "ACTIVE"
@@ -15077,7 +15121,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.86,
+        "averageDraftPosition": 169.89,
         "percentOwned": 0.07
       },
       "injuryStatus": "ACTIVE"
@@ -15107,7 +15151,7 @@
       "projection": 1.85,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.83,
+        "averageDraftPosition": 169.84,
         "percentOwned": 0.09
       },
       "injuryStatus": "ACTIVE"
@@ -15136,9 +15180,9 @@
       },
       "projection": 94.17,
       "ownership": {
-        "auctionValueAverage": 0.55,
-        "averageDraftPosition": 167.7,
-        "percentOwned": 7.01
+        "auctionValueAverage": 0.52,
+        "averageDraftPosition": 167.05,
+        "percentOwned": 7.02
       },
       "injuryStatus": "INJURY_RESERVE"
     },
@@ -15166,9 +15210,9 @@
       },
       "projection": 91.46,
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 168.4,
-        "percentOwned": 7.61
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 168.62,
+        "percentOwned": 7.62
       },
       "injuryStatus": "ACTIVE"
     },
@@ -15196,11 +15240,11 @@
       },
       "projection": 19.29,
       "ownership": {
-        "auctionValueAverage": 0.63,
-        "averageDraftPosition": 165.8,
-        "percentOwned": 8.9
+        "auctionValueAverage": 0.59,
+        "averageDraftPosition": 165.23,
+        "percentOwned": 8.91
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "4685350": {
       "id": "4685350",
@@ -15228,7 +15272,7 @@
       "projection": 23.65,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.67,
+        "averageDraftPosition": 169.79,
         "percentOwned": 0.62
       },
       "injuryStatus": "ACTIVE"
@@ -15257,9 +15301,9 @@
       },
       "projection": 259.42,
       "ownership": {
-        "auctionValueAverage": 17.93,
-        "averageDraftPosition": 61.87,
-        "percentOwned": 91.37
+        "auctionValueAverage": 17.84,
+        "averageDraftPosition": 59.92,
+        "percentOwned": 91.42
       },
       "injuryStatus": "INJURY_RESERVE"
     },
@@ -15287,8 +15331,8 @@
       },
       "projection": 212.54,
       "ownership": {
-        "auctionValueAverage": 3.52,
-        "averageDraftPosition": 105.11,
+        "auctionValueAverage": 3.43,
+        "averageDraftPosition": 105.33,
         "percentOwned": 37.66
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -15318,9 +15362,9 @@
       },
       "projection": 235.26,
       "ownership": {
-        "auctionValueAverage": 10.99,
-        "averageDraftPosition": 64.79,
-        "percentOwned": 94.13
+        "auctionValueAverage": 10.91,
+        "averageDraftPosition": 64.16,
+        "percentOwned": 94.2
       },
       "injuryStatus": "ACTIVE"
     },
@@ -15348,9 +15392,9 @@
       },
       "projection": 49.6,
       "ownership": {
-        "auctionValueAverage": 0.63,
-        "averageDraftPosition": 122.09,
-        "percentOwned": 92.29
+        "auctionValueAverage": 0.67,
+        "averageDraftPosition": 124.94,
+        "percentOwned": 92.38
       },
       "injuryStatus": "ACTIVE"
     },
@@ -15380,8 +15424,8 @@
       "projection": 267.9,
       "ownership": {
         "auctionValueAverage": 0.04,
-        "averageDraftPosition": 167.47,
-        "percentOwned": 11.69
+        "averageDraftPosition": 167.8,
+        "percentOwned": 11.71
       },
       "injuryStatus": "ACTIVE"
     },
@@ -15409,9 +15453,9 @@
       },
       "projection": 135.84,
       "ownership": {
-        "auctionValueAverage": 0.14,
-        "averageDraftPosition": 153.13,
-        "percentOwned": 38.2
+        "auctionValueAverage": 0.09,
+        "averageDraftPosition": 155.11,
+        "percentOwned": 38.23
       },
       "injuryStatus": "ACTIVE"
     },
@@ -15440,7 +15484,7 @@
       "projection": 45.34,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.93,
+        "averageDraftPosition": 169.98,
         "percentOwned": 0.77
       },
       "injuryStatus": "ACTIVE"
@@ -15470,8 +15514,8 @@
       "projection": 149.08,
       "ownership": {
         "auctionValueAverage": 0.19,
-        "averageDraftPosition": 166.76,
-        "percentOwned": 11.85
+        "averageDraftPosition": 166.24,
+        "percentOwned": 11.87
       },
       "injuryStatus": "ACTIVE"
     },
@@ -15500,7 +15544,7 @@
       "projection": 25.75,
       "ownership": {
         "auctionValueAverage": 0.02,
-        "averageDraftPosition": 169.55,
+        "averageDraftPosition": 169.69,
         "percentOwned": 2.89
       },
       "injuryStatus": "ACTIVE"
@@ -15559,8 +15603,8 @@
       },
       "projection": 257.24,
       "ownership": {
-        "auctionValueAverage": 0.19,
-        "averageDraftPosition": 167.82,
+        "auctionValueAverage": 0.18,
+        "averageDraftPosition": 168.32,
         "percentOwned": 6.55
       },
       "injuryStatus": "ACTIVE"
@@ -15576,7 +15620,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.84,
+        "averageDraftPosition": 169.86,
         "percentOwned": 0
       },
       "injuryStatus": "ACTIVE"
@@ -15605,9 +15649,9 @@
       },
       "projection": 179.09,
       "ownership": {
-        "auctionValueAverage": 0.82,
-        "averageDraftPosition": 139.56,
-        "percentOwned": 53.76
+        "auctionValueAverage": 0.79,
+        "averageDraftPosition": 140.06,
+        "percentOwned": 53.83
       },
       "injuryStatus": "ACTIVE"
     },
@@ -15616,10 +15660,10 @@
       "nflTeamId": "19",
       "name": "Jaxson Dart",
       "position": "QB",
-      "total": 160.38,
-      "average": 17.82,
+      "total": 173.94,
+      "average": 17.394,
       "scores": {
-        "0": 160.38,
+        "0": 173.94,
         "1": 0,
         "2": -0.3,
         "3": 0.3,
@@ -15631,13 +15675,14 @@
         "9": 27.24,
         "10": 26.28,
         "11": 0,
-        "12": 0
+        "12": 0,
+        "13": 13.56
       },
       "projection": 132.17,
       "ownership": {
-        "auctionValueAverage": 0.5,
-        "averageDraftPosition": 151.19,
-        "percentOwned": 82.43
+        "auctionValueAverage": 0.53,
+        "averageDraftPosition": 151.34,
+        "percentOwned": 82.54
       },
       "injuryStatus": "ACTIVE"
     },
@@ -15666,7 +15711,7 @@
       "projection": 4.18,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.95,
+        "averageDraftPosition": 169.97,
         "percentOwned": 0.06
       },
       "injuryStatus": "ACTIVE"
@@ -15695,9 +15740,9 @@
       },
       "projection": 146.36,
       "ownership": {
-        "auctionValueAverage": 1.21,
-        "averageDraftPosition": 103.8,
-        "percentOwned": 92.85
+        "auctionValueAverage": 1.17,
+        "averageDraftPosition": 104.44,
+        "percentOwned": 92.86
       },
       "injuryStatus": "ACTIVE"
     },
@@ -15726,7 +15771,7 @@
       "projection": 7.1,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170,
+        "averageDraftPosition": 169.98,
         "percentOwned": 0.07
       },
       "injuryStatus": "ACTIVE"
@@ -15786,7 +15831,7 @@
       "projection": 0.44,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.95,
+        "averageDraftPosition": 169.96,
         "percentOwned": 0.05
       },
       "injuryStatus": "ACTIVE"
@@ -15816,7 +15861,7 @@
       "projection": 45.74,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.95,
+        "averageDraftPosition": 169.98,
         "percentOwned": 0.14
       },
       "injuryStatus": "ACTIVE"
@@ -15841,15 +15886,16 @@
         "9": 0,
         "10": 0,
         "11": 3.8,
-        "12": 0
+        "12": 0,
+        "13": 0
       },
       "projection": 7.93,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.93,
+        "averageDraftPosition": 169.9,
         "percentOwned": 0.13
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "OUT"
     },
     "4695193": {
       "id": "4695193",
@@ -15871,12 +15917,13 @@
         "9": 0,
         "10": 0,
         "11": 0,
-        "12": 0
+        "12": 0,
+        "13": 0
       },
       "projection": 12.83,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.96,
+        "averageDraftPosition": 169.99,
         "percentOwned": 0.19
       },
       "injuryStatus": "ACTIVE"
@@ -15907,7 +15954,7 @@
       "ownership": {
         "auctionValueAverage": 0,
         "averageDraftPosition": 170,
-        "percentOwned": 4.7
+        "percentOwned": 4.71
       },
       "injuryStatus": "ACTIVE"
     },
@@ -15937,8 +15984,8 @@
       "projection": 108.61,
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.28,
-        "percentOwned": 2.72
+        "averageDraftPosition": 169.17,
+        "percentOwned": 2.73
       },
       "injuryStatus": "ACTIVE"
     },
@@ -15967,7 +16014,7 @@
       "projection": 8.93,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170,
+        "averageDraftPosition": 169.98,
         "percentOwned": 0.02
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -15997,7 +16044,7 @@
       "projection": 5.26,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170,
+        "averageDraftPosition": 170.01,
         "percentOwned": 0.07
       },
       "injuryStatus": "ACTIVE"
@@ -16022,13 +16069,14 @@
         "9": 0,
         "10": 0,
         "11": 0,
-        "12": 0
+        "12": 0,
+        "13": 0
       },
       "projection": 139.35,
       "ownership": {
-        "auctionValueAverage": 0.98,
-        "averageDraftPosition": 129.18,
-        "percentOwned": 33.53
+        "auctionValueAverage": 0.91,
+        "averageDraftPosition": 129.77,
+        "percentOwned": 33.52
       },
       "injuryStatus": "INJURY_RESERVE"
     },
@@ -16056,9 +16104,9 @@
       },
       "projection": 140.26,
       "ownership": {
-        "auctionValueAverage": 0.49,
-        "averageDraftPosition": 159.33,
-        "percentOwned": 74.51
+        "auctionValueAverage": 0.47,
+        "averageDraftPosition": 160.42,
+        "percentOwned": 74.6
       },
       "injuryStatus": "ACTIVE"
     },
@@ -16086,9 +16134,9 @@
       },
       "projection": 128.09,
       "ownership": {
-        "auctionValueAverage": 0.73,
-        "averageDraftPosition": 157.51,
-        "percentOwned": 72.01
+        "auctionValueAverage": 0.68,
+        "averageDraftPosition": 158.08,
+        "percentOwned": 72.07
       },
       "injuryStatus": "ACTIVE"
     },
@@ -16117,10 +16165,10 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.96,
+        "averageDraftPosition": 169.99,
         "percentOwned": 0.01
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "4701936": {
       "id": "4701936",
@@ -16146,9 +16194,9 @@
       },
       "projection": 203.32,
       "ownership": {
-        "auctionValueAverage": 2.18,
-        "averageDraftPosition": 118.29,
-        "percentOwned": 46.93
+        "auctionValueAverage": 2.12,
+        "averageDraftPosition": 117.47,
+        "percentOwned": 46.97
       },
       "injuryStatus": "OUT"
     },
@@ -16178,7 +16226,7 @@
       "projection": 0.38,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.85,
+        "averageDraftPosition": 169.88,
         "percentOwned": 0.15
       },
       "injuryStatus": "ACTIVE"
@@ -16208,10 +16256,10 @@
       "projection": 0.24,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.85,
+        "averageDraftPosition": 169.97,
         "percentOwned": 0.26
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "4710855": {
       "id": "4710855",
@@ -16238,7 +16286,7 @@
       "projection": 4.81,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.81,
+        "averageDraftPosition": 169.87,
         "percentOwned": 0.04
       },
       "injuryStatus": "ACTIVE"
@@ -16268,8 +16316,8 @@
       "projection": 84.34,
       "ownership": {
         "auctionValueAverage": 0.02,
-        "averageDraftPosition": 168.79,
-        "percentOwned": 7.45
+        "averageDraftPosition": 168.67,
+        "percentOwned": 7.46
       },
       "injuryStatus": "ACTIVE"
     },
@@ -16297,8 +16345,8 @@
       },
       "projection": 0,
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.81,
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.85,
         "percentOwned": 0.07
       },
       "injuryStatus": "ACTIVE"
@@ -16327,8 +16375,8 @@
       },
       "projection": 20.68,
       "ownership": {
-        "auctionValueAverage": 0,
-        "averageDraftPosition": 169.84,
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 169.96,
         "percentOwned": 1.58
       },
       "injuryStatus": "ACTIVE"
@@ -16358,7 +16406,7 @@
       "projection": 4.14,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.89,
+        "averageDraftPosition": 169.9,
         "percentOwned": 0.03
       },
       "injuryStatus": "ACTIVE"
@@ -16388,8 +16436,8 @@
       "projection": 155.19,
       "ownership": {
         "auctionValueAverage": 0.83,
-        "averageDraftPosition": 140.22,
-        "percentOwned": 36.27
+        "averageDraftPosition": 141.86,
+        "percentOwned": 36.31
       },
       "injuryStatus": "ACTIVE"
     },
@@ -16417,9 +16465,9 @@
       },
       "projection": 130.03,
       "ownership": {
-        "auctionValueAverage": 0.02,
-        "averageDraftPosition": 169.2,
-        "percentOwned": 13.37
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 169.4,
+        "percentOwned": 13.39
       },
       "injuryStatus": "ACTIVE"
     },
@@ -16448,7 +16496,7 @@
       "projection": 58.07,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.76,
+        "averageDraftPosition": 169.71,
         "percentOwned": 0.34
       },
       "injuryStatus": "ACTIVE"
@@ -16477,9 +16525,9 @@
       },
       "projection": 159.81,
       "ownership": {
-        "auctionValueAverage": 0.97,
-        "averageDraftPosition": 132.2,
-        "percentOwned": 18.64
+        "auctionValueAverage": 0.95,
+        "averageDraftPosition": 132.33,
+        "percentOwned": 18.65
       },
       "injuryStatus": "ACTIVE"
     },
@@ -16508,10 +16556,10 @@
       "projection": 20.89,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.58,
+        "averageDraftPosition": 169.67,
         "percentOwned": 0.61
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "4876006": {
       "id": "4876006",
@@ -16537,10 +16585,10 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.88,
+        "averageDraftPosition": 169.9,
         "percentOwned": 0.01
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "4877203": {
       "id": "4877203",
@@ -16564,7 +16612,7 @@
       "projection": 8.38,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.98,
+        "averageDraftPosition": 169.97,
         "percentOwned": 0.02
       },
       "injuryStatus": "ACTIVE"
@@ -16593,9 +16641,9 @@
       },
       "projection": 161.48,
       "ownership": {
-        "auctionValueAverage": 0.35,
-        "averageDraftPosition": 162.96,
-        "percentOwned": 36.28
+        "auctionValueAverage": 0.36,
+        "averageDraftPosition": 162.87,
+        "percentOwned": 36.34
       },
       "injuryStatus": "ACTIVE"
     },
@@ -16610,7 +16658,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.91,
+        "averageDraftPosition": 169.93,
         "percentOwned": 0
       },
       "injuryStatus": "ACTIVE"
@@ -16639,9 +16687,9 @@
       },
       "projection": 4.71,
       "ownership": {
-        "auctionValueAverage": 0.81,
-        "averageDraftPosition": 151.38,
-        "percentOwned": 26.96
+        "auctionValueAverage": 0.8,
+        "averageDraftPosition": 151.61,
+        "percentOwned": 27.01
       },
       "injuryStatus": "ACTIVE"
     },
@@ -16669,9 +16717,9 @@
       },
       "projection": 88.79,
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.6,
-        "percentOwned": 10.6
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.71,
+        "percentOwned": 10.61
       },
       "injuryStatus": "ACTIVE"
     },
@@ -16699,9 +16747,9 @@
       },
       "projection": 32.13,
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 166.89,
-        "percentOwned": 62.32
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 167.75,
+        "percentOwned": 62.41
       },
       "injuryStatus": "ACTIVE"
     },
@@ -16730,10 +16778,10 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.91,
+        "averageDraftPosition": 169.93,
         "percentOwned": 0.07
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "ACTIVE"
     },
     "4890973": {
       "id": "4890973",
@@ -16759,8 +16807,8 @@
       },
       "projection": 302.05,
       "ownership": {
-        "auctionValueAverage": 43.21,
-        "averageDraftPosition": 19.3,
+        "auctionValueAverage": 42.95,
+        "averageDraftPosition": 18.71,
         "percentOwned": 99.2
       },
       "injuryStatus": "ACTIVE"
@@ -16790,7 +16838,7 @@
       "projection": 49.55,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.86,
+        "averageDraftPosition": 169.91,
         "percentOwned": 0.11
       },
       "injuryStatus": "ACTIVE"
@@ -16820,10 +16868,10 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.93,
+        "averageDraftPosition": 169.9,
         "percentOwned": 0.04
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "5081397": {
       "id": "5081397",
@@ -16849,41 +16897,11 @@
       },
       "projection": 199.2,
       "ownership": {
-        "auctionValueAverage": 0.03,
-        "averageDraftPosition": 167.58,
-        "percentOwned": 9
+        "auctionValueAverage": 0.04,
+        "averageDraftPosition": 167.57,
+        "percentOwned": 9.01
       },
       "injuryStatus": "QUESTIONABLE"
-    },
-    "5082630": {
-      "id": "5082630",
-      "nflTeamId": "12",
-      "name": "Jalen Royals",
-      "position": "WR",
-      "total": 0,
-      "average": 0,
-      "scores": {
-        "0": 0,
-        "1": 0,
-        "2": 0,
-        "3": 0,
-        "4": 0,
-        "5": 0,
-        "6": 0,
-        "7": 0,
-        "8": 0,
-        "9": 0,
-        "11": 0,
-        "12": 0,
-        "13": 0
-      },
-      "projection": 24.44,
-      "ownership": {
-        "auctionValueAverage": 0,
-        "averageDraftPosition": 170.05,
-        "percentOwned": 0.11
-      },
-      "injuryStatus": "OUT"
     },
     "5083076": {
       "id": "5083076",
@@ -16910,8 +16928,8 @@
       "projection": 53.49,
       "ownership": {
         "auctionValueAverage": 0.02,
-        "averageDraftPosition": 168.75,
-        "percentOwned": 51.28
+        "averageDraftPosition": 168.7,
+        "percentOwned": 51.36
       },
       "injuryStatus": "ACTIVE"
     },
@@ -16926,7 +16944,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.89,
+        "averageDraftPosition": 169.88,
         "percentOwned": 0
       },
       "injuryStatus": "ACTIVE"
@@ -16956,8 +16974,8 @@
       "projection": 19.37,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.52,
-        "percentOwned": 0.34
+        "averageDraftPosition": 169.63,
+        "percentOwned": 0.33
       },
       "injuryStatus": "ACTIVE"
     },
@@ -16972,7 +16990,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.65,
+        "averageDraftPosition": 169.68,
         "percentOwned": 0.08
       },
       "injuryStatus": "ACTIVE"
@@ -17002,7 +17020,7 @@
       "projection": 0.1,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.9,
+        "averageDraftPosition": 169.89,
         "percentOwned": 0.21
       },
       "injuryStatus": "ACTIVE"
@@ -17032,8 +17050,8 @@
       "projection": 56.39,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169,
-        "percentOwned": 0.98
+        "averageDraftPosition": 169.09,
+        "percentOwned": 0.99
       },
       "injuryStatus": "ACTIVE"
     },
@@ -17059,7 +17077,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.83,
+        "averageDraftPosition": 169.86,
         "percentOwned": 0.01
       },
       "injuryStatus": "ACTIVE"
@@ -17074,8 +17092,8 @@
       "scores": { "0": 5, "13": 5 },
       "projection": 0,
       "ownership": {
-        "auctionValueAverage": 0,
-        "averageDraftPosition": 169.9,
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 169.82,
         "percentOwned": 0
       },
       "injuryStatus": "ACTIVE"
@@ -17105,8 +17123,8 @@
       "projection": 71.73,
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 168.84,
-        "percentOwned": 43.66
+        "averageDraftPosition": 169.02,
+        "percentOwned": 43.72
       }
     },
     "-16002": {
@@ -17133,9 +17151,9 @@
       },
       "projection": 100.27,
       "ownership": {
-        "auctionValueAverage": 0.38,
-        "averageDraftPosition": 157.89,
-        "percentOwned": 45.1
+        "auctionValueAverage": 0.35,
+        "averageDraftPosition": 158.75,
+        "percentOwned": 45.15
       }
     },
     "-16003": {
@@ -17162,9 +17180,9 @@
       },
       "projection": 90.62,
       "ownership": {
-        "auctionValueAverage": 0.08,
-        "averageDraftPosition": 166.65,
-        "percentOwned": 14.4
+        "auctionValueAverage": 0.09,
+        "averageDraftPosition": 166.87,
+        "percentOwned": 14.42
       }
     },
     "-16004": {
@@ -17191,8 +17209,8 @@
       },
       "projection": 61.73,
       "ownership": {
-        "auctionValueAverage": 0.07,
-        "averageDraftPosition": 167.35,
+        "auctionValueAverage": 0.05,
+        "averageDraftPosition": 167.41,
         "percentOwned": 2.09
       }
     },
@@ -17221,8 +17239,8 @@
       "projection": 68.61,
       "ownership": {
         "auctionValueAverage": 0.03,
-        "averageDraftPosition": 160.55,
-        "percentOwned": 68.16
+        "averageDraftPosition": 161.69,
+        "percentOwned": 68.22
       }
     },
     "-16006": {
@@ -17250,8 +17268,8 @@
       "projection": 60.15,
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 165.74,
-        "percentOwned": 12.94
+        "averageDraftPosition": 166.09,
+        "percentOwned": 12.95
       }
     },
     "-16007": {
@@ -17278,9 +17296,9 @@
       },
       "projection": 130.13,
       "ownership": {
-        "auctionValueAverage": 1.51,
-        "averageDraftPosition": 85.55,
-        "percentOwned": 93.73
+        "auctionValueAverage": 1.43,
+        "averageDraftPosition": 86.52,
+        "percentOwned": 93.77
       }
     },
     "-16008": {
@@ -17307,9 +17325,9 @@
       },
       "projection": 122.53,
       "ownership": {
-        "auctionValueAverage": 0.84,
-        "averageDraftPosition": 141.35,
-        "percentOwned": 74.84
+        "auctionValueAverage": 0.81,
+        "averageDraftPosition": 143.18,
+        "percentOwned": 74.87
       }
     },
     "-16009": {
@@ -17337,8 +17355,8 @@
       "projection": 100.77,
       "ownership": {
         "auctionValueAverage": 0.07,
-        "averageDraftPosition": 158.58,
-        "percentOwned": 68.67
+        "averageDraftPosition": 159.81,
+        "percentOwned": 68.7
       }
     },
     "-16010": {
@@ -17366,7 +17384,7 @@
       "projection": 77.9,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.27,
+        "averageDraftPosition": 169.26,
         "percentOwned": 1.02
       }
     },
@@ -17394,9 +17412,9 @@
       },
       "projection": 111.49,
       "ownership": {
-        "auctionValueAverage": 0.61,
-        "averageDraftPosition": 149.07,
-        "percentOwned": 46.73
+        "auctionValueAverage": 0.59,
+        "averageDraftPosition": 150.51,
+        "percentOwned": 46.78
       }
     },
     "-16012": {
@@ -17424,8 +17442,8 @@
       "projection": 96.97,
       "ownership": {
         "auctionValueAverage": 0.02,
-        "averageDraftPosition": 165.95,
-        "percentOwned": 21.24
+        "averageDraftPosition": 166.33,
+        "percentOwned": 21.25
       }
     },
     "-16013": {
@@ -17452,9 +17470,9 @@
       },
       "projection": 58.3,
       "ownership": {
-        "auctionValueAverage": 0,
-        "averageDraftPosition": 169.3,
-        "percentOwned": 20.68
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 169.35,
+        "percentOwned": 20.7
       }
     },
     "-16014": {
@@ -17481,9 +17499,9 @@
       },
       "projection": 87.74,
       "ownership": {
-        "auctionValueAverage": 0.09,
-        "averageDraftPosition": 152.93,
-        "percentOwned": 79.65
+        "auctionValueAverage": 0.08,
+        "averageDraftPosition": 153.8,
+        "percentOwned": 79.74
       }
     },
     "-16015": {
@@ -17511,8 +17529,8 @@
       "projection": 79.77,
       "ownership": {
         "auctionValueAverage": 0.02,
-        "averageDraftPosition": 169.05,
-        "percentOwned": 13.62
+        "averageDraftPosition": 169.1,
+        "percentOwned": 13.65
       }
     },
     "-16016": {
@@ -17520,10 +17538,10 @@
       "nflTeamId": "16",
       "name": "Vikings D/ST",
       "position": "DST",
-      "total": 73,
-      "average": 6.083333333333333,
+      "total": 71,
+      "average": 5.916666666666667,
       "scores": {
-        "0": 73,
+        "0": 71,
         "1": 4,
         "2": 5,
         "3": 32,
@@ -17535,13 +17553,13 @@
         "10": 1,
         "11": 2,
         "12": 3,
-        "13": 10
+        "13": 8
       },
       "projection": 120.67,
       "ownership": {
-        "auctionValueAverage": 0.93,
-        "averageDraftPosition": 147.42,
-        "percentOwned": 37.77
+        "auctionValueAverage": 0.94,
+        "averageDraftPosition": 147.1,
+        "percentOwned": 37.76
       }
     },
     "-16017": {
@@ -17549,10 +17567,10 @@
       "nflTeamId": "17",
       "name": "Patriots D/ST",
       "position": "DST",
-      "total": 96,
-      "average": 8,
+      "total": 109,
+      "average": 8.384615384615385,
       "scores": {
-        "0": 96,
+        "0": 109,
         "1": 5,
         "2": 12,
         "3": 4,
@@ -17564,13 +17582,14 @@
         "9": 3,
         "10": 1,
         "11": 7,
-        "12": 10
+        "12": 10,
+        "13": 13
       },
       "projection": 101.44,
       "ownership": {
-        "auctionValueAverage": 0.98,
-        "averageDraftPosition": 137.99,
-        "percentOwned": 79.78
+        "auctionValueAverage": 0.93,
+        "averageDraftPosition": 139.24,
+        "percentOwned": 79.85
       }
     },
     "-16018": {
@@ -17598,8 +17617,8 @@
       "projection": 62.14,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.42,
-        "percentOwned": 4.58
+        "averageDraftPosition": 169.45,
+        "percentOwned": 4.59
       }
     },
     "-16019": {
@@ -17607,10 +17626,10 @@
       "nflTeamId": "19",
       "name": "Giants D/ST",
       "position": "DST",
-      "total": 13,
-      "average": 1.0833333333333333,
+      "total": 14,
+      "average": 1.0769230769230769,
       "scores": {
-        "0": 13,
+        "0": 14,
         "1": 0,
         "2": -3,
         "3": 2,
@@ -17622,13 +17641,14 @@
         "9": 2,
         "10": -1,
         "11": 4,
-        "12": -1
+        "12": -1,
+        "13": 1
       },
       "projection": 104.39,
       "ownership": {
-        "auctionValueAverage": 0.03,
-        "averageDraftPosition": 167.94,
-        "percentOwned": 6.54
+        "auctionValueAverage": 0.04,
+        "averageDraftPosition": 168.11,
+        "percentOwned": 6.56
       }
     },
     "-16020": {
@@ -17655,9 +17675,9 @@
       },
       "projection": 99.84,
       "ownership": {
-        "auctionValueAverage": 0.23,
-        "averageDraftPosition": 164.71,
-        "percentOwned": 8.78
+        "auctionValueAverage": 0.22,
+        "averageDraftPosition": 165.31,
+        "percentOwned": 8.79
       }
     },
     "-16021": {
@@ -17684,9 +17704,9 @@
       },
       "projection": 97.75,
       "ownership": {
-        "auctionValueAverage": 0.59,
-        "averageDraftPosition": 143.1,
-        "percentOwned": 53.46
+        "auctionValueAverage": 0.6,
+        "averageDraftPosition": 146.33,
+        "percentOwned": 53.48
       }
     },
     "-16022": {
@@ -17713,9 +17733,9 @@
       },
       "projection": 97.74,
       "ownership": {
-        "auctionValueAverage": 0,
-        "averageDraftPosition": 169.48,
-        "percentOwned": 9.8
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 169.56,
+        "percentOwned": 9.81
       }
     },
     "-16023": {
@@ -17743,8 +17763,8 @@
       "projection": 132.67,
       "ownership": {
         "auctionValueAverage": 1.2,
-        "averageDraftPosition": 95.36,
-        "percentOwned": 60.11
+        "averageDraftPosition": 97.07,
+        "percentOwned": 60.09
       }
     },
     "-16024": {
@@ -17772,8 +17792,8 @@
       "projection": 72.66,
       "ownership": {
         "auctionValueAverage": 0.07,
-        "averageDraftPosition": 164.63,
-        "percentOwned": 77.81
+        "averageDraftPosition": 164.55,
+        "percentOwned": 77.93
       }
     },
     "-16025": {
@@ -17801,9 +17821,9 @@
       },
       "projection": 76.61,
       "ownership": {
-        "auctionValueAverage": 0.05,
-        "averageDraftPosition": 167.3,
-        "percentOwned": 41.65
+        "auctionValueAverage": 0.07,
+        "averageDraftPosition": 167.56,
+        "percentOwned": 41.72
       }
     },
     "-16026": {
@@ -17831,8 +17851,8 @@
       "projection": 121.19,
       "ownership": {
         "auctionValueAverage": 1.58,
-        "averageDraftPosition": 108.27,
-        "percentOwned": 94.09
+        "averageDraftPosition": 108.72,
+        "percentOwned": 94.19
       }
     },
     "-16027": {
@@ -17860,8 +17880,8 @@
       "projection": 106.06,
       "ownership": {
         "auctionValueAverage": 0.04,
-        "averageDraftPosition": 167.12,
-        "percentOwned": 23.02
+        "averageDraftPosition": 167.49,
+        "percentOwned": 23.06
       }
     },
     "-16028": {
@@ -17888,8 +17908,8 @@
       },
       "projection": 64.52,
       "ownership": {
-        "auctionValueAverage": 0,
-        "averageDraftPosition": 169.42,
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 169.44,
         "percentOwned": 2.72
       }
     },
@@ -17918,9 +17938,9 @@
       },
       "projection": 51.35,
       "ownership": {
-        "auctionValueAverage": 0,
-        "averageDraftPosition": 168.95,
-        "percentOwned": 4.67
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 168.89,
+        "percentOwned": 4.68
       }
     },
     "-16030": {
@@ -17948,8 +17968,8 @@
       "projection": 87.31,
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 168.12,
-        "percentOwned": 60.59
+        "averageDraftPosition": 168.09,
+        "percentOwned": 60.68
       }
     },
     "-16033": {
@@ -17976,9 +17996,9 @@
       },
       "projection": 122.95,
       "ownership": {
-        "auctionValueAverage": 1,
-        "averageDraftPosition": 128.78,
-        "percentOwned": 64.83
+        "auctionValueAverage": 0.97,
+        "averageDraftPosition": 127.59,
+        "percentOwned": 64.87
       }
     },
     "-16034": {
@@ -18005,9 +18025,9 @@
       },
       "projection": 128.82,
       "ownership": {
-        "auctionValueAverage": 1.52,
-        "averageDraftPosition": 88.59,
-        "percentOwned": 86.48
+        "auctionValueAverage": 1.41,
+        "averageDraftPosition": 89.72,
+        "percentOwned": 86.52
       }
     }
   },
@@ -19536,7 +19556,7 @@
     },
     "3": {
       "id": "3",
-      "name": "Josh Allen: The Team",
+      "name": "Thank You, Ahmed!",
       "draft": [
         { "playerId": 3918298, "pickIndex": 0 },
         { "playerId": 4432773, "pickIndex": 19 },
@@ -30947,6 +30967,29 @@
           "punter": "B.Baringer",
           "yardsAllowed": 307,
           "pointsAllowed": 14
+        },
+        "13": {
+          "opp": "19",
+          "drives": [
+            "Field Goal",
+            "Touchdown",
+            "Punt",
+            "Touchdown",
+            "Field Goal",
+            "Field Goal",
+            "Missed FG",
+            "Punt",
+            "Field Goal",
+            "End of Game"
+          ],
+          "fieldGoals": [22, 30, 28, 23],
+          "punts": [
+            { "landed": 44, "distance": 22 },
+            { "landed": 14, "distance": 32 }
+          ],
+          "punter": "B.Baringer",
+          "yardsAllowed": 239,
+          "pointsAllowed": 15
         }
       }
     },
@@ -31560,6 +31603,30 @@
           "punter": "J.Gillan",
           "yardsAllowed": 494,
           "pointsAllowed": 34
+        },
+        "13": {
+          "opp": "17",
+          "drives": [
+            "Punt",
+            "Punt",
+            "Touchdown",
+            "Downs",
+            "Fumble",
+            "Punt",
+            "Downs",
+            "Touchdown",
+            "Punt",
+            "Downs"
+          ],
+          "fieldGoals": [],
+          "punts": [
+            { "landed": 22, "distance": 54 },
+            { "landed": 23, "distance": 42 },
+            { "landed": 24, "distance": 49 }
+          ],
+          "punter": "J.Gillan",
+          "yardsAllowed": 395,
+          "pointsAllowed": 33
         }
       }
     },
@@ -35612,199 +35679,201 @@
   },
   "fantasyCalc": {
     "players": {
-      "8439": 6.72,
-      "11252": 5,
-      "12483": 48.37,
-      "14163": 2.49,
-      "14880": 4.37,
-      "15818": 7.97,
-      "15835": 2.37,
-      "15847": 25.36,
-      "15864": 3.8,
-      "16800": 45.15,
-      "2576925": 0.68,
-      "2576980": 2.58,
-      "2577327": 0.05,
-      "2577417": 55.12,
-      "2578570": 25.44,
-      "2969939": 0.42,
-      "2976212": 17.31,
+      "8439": 7.54,
+      "11252": 5.13,
+      "12483": 51.29,
+      "14163": 3.14,
+      "14880": 5.05,
+      "15818": 8.28,
+      "15835": 2.53,
+      "15847": 25.78,
+      "15864": 4.21,
+      "16800": 45.21,
+      "2576925": 0.97,
+      "2576980": 3.2,
+      "2577327": 0.06,
+      "2577417": 58.5,
+      "2578570": 27.13,
+      "2976212": 17.12,
       "2977187": 1.27,
-      "2991662": 0.32,
-      "3040151": 37.35,
-      "3042519": 10.83,
-      "3043078": 50.05,
-      "3046439": 6.95,
-      "3046779": 41.43,
-      "3052587": 48.8,
-      "3054850": 11.31,
-      "3059915": 6.72,
-      "3116165": 5.85,
-      "3116365": 10.3,
-      "3117251": 90.37,
-      "3117256": 3.07,
-      "3121023": 11.98,
-      "3121422": 10.59,
-      "3123076": 0.96,
-      "3126486": 14.36,
-      "3128429": 15.19,
-      "3128720": 0.45,
-      "3139477": 78.64,
-      "3886598": 6.46,
-      "3912547": 31.32,
-      "3915416": 8.32,
-      "3915511": 56.34,
-      "3916148": 3.99,
-      "3916387": 73.89,
-      "3916433": 7.75,
-      "3916945": 1.03,
-      "3917315": 1.8,
-      "3917792": 36.56,
-      "3918298": 102.32,
-      "3929630": 47.68,
-      "3929645": 8.38,
-      "4032473": 2.72,
-      "4035538": 12.64,
-      "4035687": 26.02,
-      "4036133": 1.96,
-      "4036378": 35.53,
-      "4037235": 0.44,
-      "4038815": 24.5,
-      "4038941": 50.17,
-      "4040655": 4.25,
-      "4040715": 77.66,
-      "4040761": 1.95,
-      "4047365": 50.05,
-      "4047646": 39.18,
-      "4047650": 15.32,
-      "4239993": 24.39,
-      "4239996": 25.54,
-      "4240657": 0.1,
-      "4241389": 66.02,
-      "4241416": 2.26,
-      "4241463": 2.74,
-      "4241474": 2.23,
-      "4241478": 29.29,
-      "4241479": 5.9,
-      "4242335": 87.95,
-      "4242355": 16.07,
-      "4243331": 2.94,
-      "4248528": 5.89,
-      "4258173": 46.11,
-      "4259545": 13.84,
-      "4262921": 46.12,
-      "4360078": 8.02,
+      "2991662": 0.29,
+      "3040151": 37.07,
+      "3042519": 11.11,
+      "3043078": 51.16,
+      "3046439": 7.29,
+      "3046779": 40.28,
+      "3052587": 49.58,
+      "3054850": 11.36,
+      "3059915": 7.37,
+      "3116165": 6.36,
+      "3116365": 10.56,
+      "3117251": 85.93,
+      "3117256": 4,
+      "3121023": 12.45,
+      "3121422": 12.9,
+      "3123076": 0.76,
+      "3126486": 14.92,
+      "3128429": 14.71,
+      "3128720": 0.34,
+      "3139477": 80.33,
+      "3886598": 6.53,
+      "3912547": 31.96,
+      "3915416": 8.63,
+      "3915511": 57.19,
+      "3916148": 3.51,
+      "3916387": 72.71,
+      "3916433": 8.47,
+      "3916945": 0.97,
+      "3917315": 2.68,
+      "3917792": 35.36,
+      "3918298": 102.69,
+      "3929630": 45.77,
+      "3929645": 9.03,
+      "4032473": 2.58,
+      "4035538": 12.16,
+      "4035687": 27.48,
+      "4036133": 2.05,
+      "4036378": 36.14,
+      "4037235": 0.46,
+      "4038815": 24.87,
+      "4038941": 50.27,
+      "4040655": 4.38,
+      "4040715": 77.79,
+      "4040761": 1.86,
+      "4047365": 52.51,
+      "4047646": 40.12,
+      "4047650": 16.38,
+      "4239993": 24.11,
+      "4239996": 25.09,
+      "4240657": 0.22,
+      "4241389": 67.48,
+      "4241416": 2.55,
+      "4241463": 2.55,
+      "4241474": 2.27,
+      "4241478": 28.74,
+      "4241479": 6.47,
+      "4242335": 88.55,
+      "4242355": 16.3,
+      "4243331": 2.97,
+      "4248528": 5.79,
+      "4258173": 50.5,
+      "4259545": 15.47,
+      "4262921": 42.17,
+      "4360078": 8.66,
       "4360248": 5,
-      "4360310": 24.64,
-      "4360438": 0.32,
-      "4360516": 6.91,
-      "4360569": 2.65,
-      "4360689": 2.48,
-      "4360761": 8.15,
-      "4361307": 69.39,
-      "4361370": 33.65,
-      "4361432": 5.59,
-      "4361529": 2.64,
-      "4361579": 35.92,
-      "4361741": 37.21,
-      "4362238": 35.73,
-      "4362249": 1.35,
-      "4362619": 2.81,
-      "4362628": 91.43,
-      "4368003": 0.82,
-      "4371733": 7.27,
-      "4372016": 33.27,
-      "4373626": 3.58,
-      "4373678": 8.13,
-      "4374302": 73.25,
+      "4360310": 25.23,
+      "4360438": 0.52,
+      "4360516": 7.42,
+      "4360569": 2.53,
+      "4360689": 2.31,
+      "4360761": 8.33,
+      "4361307": 72.09,
+      "4361370": 36.83,
+      "4361432": 5.99,
+      "4361529": 2.43,
+      "4361579": 37.23,
+      "4361741": 37.5,
+      "4362238": 35.43,
+      "4362249": 1.63,
+      "4362619": 3.04,
+      "4362628": 91.47,
+      "4368003": 0.85,
+      "4369863": 0.05,
+      "4371733": 6.93,
+      "4372016": 33.55,
+      "4373626": 3.43,
+      "4373678": 8.71,
+      "4374302": 74.32,
       "4379399": 56.12,
-      "4385690": 7.56,
-      "4426338": 37.62,
-      "4426348": 45.45,
-      "4426354": 64.5,
-      "4426385": 5.81,
-      "4426388": 16.09,
-      "4426502": 44.18,
-      "4426515": 85.61,
-      "4427366": 30.27,
-      "4427728": 1.58,
-      "4428209": 9.1,
-      "4428331": 57.03,
-      "4428557": 3.52,
-      "4428718": 3.49,
-      "4429013": 0.37,
-      "4429022": 3.77,
-      "4429025": 6.66,
-      "4429059": 9.23,
-      "4429096": 1.63,
-      "4429148": 4.1,
-      "4429160": 74.61,
-      "4429205": 7.83,
-      "4429275": 10.04,
-      "4429615": 22.02,
-      "4429795": 82.4,
-      "4430034": 0.21,
-      "4430539": 2.93,
-      "4430737": 41.96,
-      "4430807": 75.91,
-      "4430871": 4.75,
-      "4430878": 95.81,
-      "4430968": 3.41,
-      "4431268": 1.5,
-      "4431280": 7.75,
-      "4431299": 17.4,
-      "4431452": 73.87,
-      "4431459": 34.71,
-      "4431611": 35.12,
-      "4432577": 18.86,
-      "4432620": 3.12,
-      "4432665": 48.09,
-      "4432708": 20.5,
-      "4432710": 33.46,
-      "4432762": 3.78,
-      "4432773": 15.99,
-      "4433970": 8.49,
-      "4567048": 16.97,
-      "4567096": 1.3,
-      "4567750": 35.92,
-      "4568490": 17.3,
-      "4569173": 2.97,
-      "4569587": 10.73,
-      "4569603": 0.29,
-      "4569618": 18.73,
-      "4569987": 15.5,
-      "4575131": 2.32,
-      "4576297": 1.09,
-      "4595342": 9.15,
-      "4596448": 39.37,
-      "4608686": 5.61,
-      "4608810": 2.26,
-      "4612826": 28.59,
+      "4385690": 7.9,
+      "4426338": 37.82,
+      "4426348": 46.76,
+      "4426354": 65.14,
+      "4426385": 5.55,
+      "4426388": 18.08,
+      "4426502": 45.85,
+      "4426515": 86.47,
+      "4427366": 31.51,
+      "4427728": 1.71,
+      "4428209": 8.91,
+      "4428331": 60.2,
+      "4428557": 3.32,
+      "4428718": 3.44,
+      "4429013": 0.4,
+      "4429022": 3.92,
+      "4429025": 7.28,
+      "4429059": 9.26,
+      "4429096": 2.08,
+      "4429148": 4.06,
+      "4429160": 76.7,
+      "4429205": 7.84,
+      "4429275": 9.72,
+      "4429615": 20.14,
+      "4429795": 83.06,
+      "4430034": 0.2,
+      "4430539": 3.14,
+      "4430737": 40.17,
+      "4430807": 76.51,
+      "4430871": 4.7,
+      "4430878": 96.16,
+      "4430968": 4.11,
+      "4431268": 1.55,
+      "4431280": 7.66,
+      "4431299": 18.08,
+      "4431452": 75.22,
+      "4431459": 34.9,
+      "4431611": 35.35,
+      "4432577": 18.8,
+      "4432620": 3.27,
+      "4432665": 48.97,
+      "4432708": 20.89,
+      "4432710": 32.98,
+      "4432762": 3.8,
+      "4432773": 16.67,
+      "4433970": 9.09,
+      "4567048": 16.51,
+      "4567096": 1.47,
+      "4567750": 35.27,
+      "4568490": 14.9,
+      "4569173": 2.84,
+      "4569587": 11.62,
+      "4569603": 0.32,
+      "4569618": 20.65,
+      "4569987": 17.56,
+      "4575131": 2.35,
+      "4576297": 1.08,
+      "4595342": 8.71,
+      "4596448": 41.13,
+      "4597500": 0.12,
+      "4608686": 6.88,
+      "4608810": 2.06,
+      "4612826": 30.05,
       "4635008": 0.82,
-      "4682652": 2.84,
-      "4683062": 5.66,
-      "4685278": 1.15,
-      "4685382": 29.03,
-      "4685472": 30.73,
-      "4685702": 25.02,
-      "4685720": 11.53,
-      "4688380": 8.16,
-      "4688813": 2.41,
-      "4689114": 46.4,
-      "4695883": 0.17,
-      "4697815": 3.48,
-      "4701936": 0.82,
-      "4711533": 0.32,
-      "4723086": 7.52,
-      "4808766": 0.41,
-      "4877706": 2.03,
-      "4882093": 3.21,
-      "4887558": 4.2,
-      "4890973": 35.79,
-      "5081397": 0.14,
-      "5083076": 3.91
+      "4682652": 3.18,
+      "4683062": 5.56,
+      "4685278": 1.28,
+      "4685382": 30.01,
+      "4685472": 29.59,
+      "4685702": 27.53,
+      "4685720": 13.03,
+      "4688380": 6.54,
+      "4688813": 2.52,
+      "4689114": 49.05,
+      "4695404": 0.12,
+      "4695883": 0.11,
+      "4697815": 2.91,
+      "4701936": 0.69,
+      "4711533": 0.28,
+      "4723086": 8,
+      "4808766": 0.62,
+      "4877706": 2.47,
+      "4882093": 3.56,
+      "4887558": 4.18,
+      "4890973": 36.74,
+      "5081397": 0.25,
+      "5083076": 3.99
     },
-    "timestamp": 1764574657516,
+    "timestamp": 1764658957724,
     "history": [
       {
         "values": {
@@ -36660,6 +36729,21 @@
           "10": 373.12
         },
         "date": 1764574658410
+      },
+      {
+        "values": {
+          "1": 386.73,
+          "2": 397.34,
+          "3": 338.22,
+          "4": 426.31,
+          "5": 405.61,
+          "6": 245.11,
+          "7": 548.13,
+          "8": 381.3,
+          "9": 434.13,
+          "10": 378.01
+        },
+        "date": 1764658958646
       }
     ]
   }
