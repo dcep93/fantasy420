@@ -61,6 +61,10 @@ function clamp(value: number, min: number, max: number): number {
 type ScorePoint = {
   label: string;
   median: number;
+  topScore?: number;
+  topTeamName?: string;
+  bottomScore?: number;
+  bottomTeamName?: string;
   opponentName?: string;
   opponentScore?: number;
   score: number;
@@ -176,17 +180,53 @@ export default function ManagerTrend() {
   const historicalMean = useMemo(() => average(historyRatios), [historyRatios]);
   const historicalStd = useMemo(() => stddev(historyRatios), [historyRatios]);
 
+  const weeklyScores = useMemo(
+    () =>
+      Object.fromEntries(
+        weeks.map((week) => [
+          week.toString(),
+          teams.map((team) => ({
+            teamId: team.id,
+            teamName: team.name,
+            score: weeklyScore(wrapped, team, week.toString()),
+          })),
+        ])
+      ),
+    [teams, weeks, wrapped]
+  );
+
   const weeklyMedians = Object.fromEntries(
     weeks.map((week) => [
       week.toString(),
-      median(teams.map((team) => weeklyScore(wrapped, team, week.toString()))),
+      median((weeklyScores[week.toString()] ?? []).map((entry) => entry.score)),
     ])
+  );
+
+  const weeklyExtremes = Object.fromEntries(
+    weeks.map((week) => {
+      const weekKey = week.toString();
+      const scores = weeklyScores[weekKey] ?? [];
+      const sorted = [...scores].sort((a, b) => b.score - a.score);
+      const top = sorted[0];
+      const bottom = sorted[sorted.length - 1];
+      return [
+        weekKey,
+        {
+          topScore: top?.score,
+          topTeamName: top?.teamName,
+          bottomScore: bottom?.score,
+          bottomTeamName: bottom?.teamName,
+        },
+      ];
+    })
   );
 
   const rows = teams
     .map((team) => {
       const scores = weeks.map((weekNum) => {
         const weekKey = weekNum.toString();
+        const weekScores = weeklyScores[weekKey] ?? [];
+        const scoreRecord = weekScores.find((entry) => entry.teamId === team.id);
         const matchup = wrapped.ffMatchups[weekKey]?.find((matchup) =>
           matchup.includes(team.id)
         );
@@ -197,8 +237,12 @@ export default function ManagerTrend() {
           label: oppId
             ? opponent?.name || `Week ${weekNum}`
             : `Week ${weekNum}`,
-          score: weeklyScore(wrapped, team, weekKey),
+          score: scoreRecord?.score ?? weeklyScore(wrapped, team, weekKey),
           median: weeklyMedians[weekKey],
+          topScore: weeklyExtremes[weekKey]?.topScore,
+          topTeamName: weeklyExtremes[weekKey]?.topTeamName,
+          bottomScore: weeklyExtremes[weekKey]?.bottomScore,
+          bottomTeamName: weeklyExtremes[weekKey]?.bottomTeamName,
           opponentName: opponent?.name,
           opponentScore: opponent
             ? weeklyScore(wrapped, opponent, weekKey)
@@ -294,6 +338,20 @@ export default function ManagerTrend() {
                           <div>
                             {team.name}: {data.score.toFixed(2)}
                           </div>
+                          {typeof data.topScore === "number" && (
+                            <div>
+                              Top: {data.topScore.toFixed(2)} ({
+                                data.topTeamName ?? "Unknown"
+                              })
+                            </div>
+                          )}
+                          {typeof data.bottomScore === "number" && (
+                            <div>
+                              Bottom: {data.bottomScore.toFixed(2)} ({
+                                data.bottomTeamName ?? "Unknown"
+                              })
+                            </div>
+                          )}
                           {typeof data.opponentScore === "number" && (
                             <div>
                               {(data.opponentName || data.label) ?? "Opponent"}:{" "}
@@ -319,6 +377,24 @@ export default function ManagerTrend() {
                     name="Median"
                     stroke="#757575"
                     strokeDasharray="5 5"
+                    strokeWidth={2}
+                    dot={false}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="topScore"
+                    name="Top score"
+                    stroke="#43A047"
+                    strokeDasharray="4 4"
+                    strokeWidth={2}
+                    dot={false}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="bottomScore"
+                    name="Bottom score"
+                    stroke="#E53935"
+                    strokeDasharray="2 6"
                     strokeWidth={2}
                     dot={false}
                   />
