@@ -95,44 +95,46 @@ export default function ManagerTrend() {
     ])
   );
 
-  const rows = teams.map((team) => {
-    const scores = weeks.map((weekNum) => {
-      const weekKey = weekNum.toString();
-      const matchup = wrapped.ffMatchups[weekKey]?.find((matchup) =>
-        matchup.includes(team.id)
+  const rows = teams
+    .map((team) => {
+      const scores = weeks.map((weekNum) => {
+        const weekKey = weekNum.toString();
+        const matchup = wrapped.ffMatchups[weekKey]?.find((matchup) =>
+          matchup.includes(team.id)
+        );
+        const oppId = matchup?.find((id) => id !== team.id);
+        return {
+          week: weekNum,
+          label: oppId
+            ? wrapped.ffTeams[oppId]?.name || `Week ${weekNum}`
+            : `Week ${weekNum}`,
+          score: weeklyScore(wrapped, team, weekKey),
+          median: weeklyMedians[weekKey],
+        };
+      });
+      const scoresOnly = scores.map((entry) => entry.score);
+      const teamMedian = median(scoresOnly);
+      const teamStdDev = stddev(scoresOnly);
+      const baseRatio = teamMedian === 0 ? 0 : teamStdDev / teamMedian;
+      const boomBust = clamp(
+        0.5 +
+          (baseRatio - historicalMean) *
+            (historicalStd === 0 ? 0 : 0.25 / historicalStd),
+        0,
+        0.9999
       );
-      const oppId = matchup?.find((id) => id !== team.id);
-      return {
-        week: weekNum,
-        label: oppId
-          ? wrapped.ffTeams[oppId]?.name || `Week ${weekNum}`
-          : `Week ${weekNum}`,
-        score: weeklyScore(wrapped, team, weekKey),
-        median: weeklyMedians[weekKey],
-      };
-    });
-    const scoresOnly = scores.map((entry) => entry.score);
-    const teamMedian = median(scoresOnly);
-    const teamStdDev = stddev(scoresOnly);
-    const baseRatio = teamMedian === 0 ? 0 : teamStdDev / teamMedian;
-    const boomBust = clamp(
-      0.5 +
-        (baseRatio - historicalMean) *
-          (historicalStd === 0 ? 0 : 0.25 / historicalStd),
-      0,
-      0.9999
-    );
-    const beatMedianCount = scores.filter(
-      (entry) => entry.score > entry.median
-    ).length;
+      const beatMedianCount = scores.filter(
+        (entry) => entry.score > entry.median
+      ).length;
 
-    return {
-      team,
-      scores,
-      boomBust,
-      beatMedianCount,
-    };
-  });
+      return {
+        team,
+        scores,
+        boomBust,
+        beatMedianCount,
+      };
+    })
+    .sort((a, b) => b.boomBust - a.boomBust);
 
   return (
     <div
