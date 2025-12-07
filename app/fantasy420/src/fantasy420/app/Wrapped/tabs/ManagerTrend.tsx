@@ -340,6 +340,13 @@ export default function ManagerTrend() {
                           <div>
                             {team.name}: {data.score.toFixed(2)}
                           </div>
+                          {typeof data.opponentScore === "number" && (
+                            <div>
+                              {(data.opponentName || data.label) ?? "Opponent"}:{" "}
+                              {data.opponentScore.toFixed(2)}
+                            </div>
+                          )}
+                          <div>/-/-/-/-/</div>
                           {typeof data.topScore === "number" && (
                             <div>
                               Top: {data.topScore.toFixed(2)} (
@@ -350,12 +357,6 @@ export default function ManagerTrend() {
                             <div>
                               Bottom: {data.bottomScore.toFixed(2)} (
                               {data.bottomTeamName ?? "Unknown"})
-                            </div>
-                          )}
-                          {typeof data.opponentScore === "number" && (
-                            <div>
-                              {(data.opponentName || data.label) ?? "Opponent"}:{" "}
-                              {data.opponentScore.toFixed(2)}
                             </div>
                           )}
                         </div>
