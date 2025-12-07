@@ -95,55 +95,71 @@ export default function ManagerTrend() {
     ])
   );
 
-  const rows = teams
-    .map((team) => {
-      const scores = weeks.map((weekNum) => {
-        const weekKey = weekNum.toString();
-        const matchup = wrapped.ffMatchups[weekKey]?.find((matchup) =>
-          matchup.includes(team.id)
-        );
-        const oppId = matchup?.find((id) => id !== team.id);
-        return {
-          week: weekNum,
-          label: oppId
-            ? wrapped.ffTeams[oppId]?.name || `Week ${weekNum}`
-            : `Week ${weekNum}`,
-          score: weeklyScore(wrapped, team, weekKey),
-          median: weeklyMedians[weekKey],
-        };
-      });
-      const scoresOnly = scores.map((entry) => entry.score);
-      const teamMedian = median(scoresOnly);
-      const teamStdDev = stddev(scoresOnly);
-      const baseRatio = teamMedian === 0 ? 0 : teamStdDev / teamMedian;
-      const boomBust = clamp(
-        0.5 +
-          (baseRatio - historicalMean) *
-            (historicalStd === 0 ? 0 : 0.25 / historicalStd),
-        0,
-        0.9999
+  const rows = teams.map((team) => {
+    const scores = weeks.map((weekNum) => {
+      const weekKey = weekNum.toString();
+      const matchup = wrapped.ffMatchups[weekKey]?.find((matchup) =>
+        matchup.includes(team.id)
       );
-      const beatMedianCount = scores.filter(
-        (entry) => entry.score > entry.median
-      ).length;
-
+      const oppId = matchup?.find((id) => id !== team.id);
       return {
-        team,
-        scores,
-        boomBust,
-        beatMedianCount,
+        week: weekNum,
+        label: oppId
+          ? wrapped.ffTeams[oppId]?.name || `Week ${weekNum}`
+          : `Week ${weekNum}`,
+        score: weeklyScore(wrapped, team, weekKey),
+        median: weeklyMedians[weekKey],
       };
-    })
-    .sort((a, b) => a.team.name.localeCompare(b.team.name));
+    });
+    const scoresOnly = scores.map((entry) => entry.score);
+    const teamMedian = median(scoresOnly);
+    const teamStdDev = stddev(scoresOnly);
+    const baseRatio = teamMedian === 0 ? 0 : teamStdDev / teamMedian;
+    const boomBust = clamp(
+      0.5 +
+        (baseRatio - historicalMean) *
+          (historicalStd === 0 ? 0 : 0.25 / historicalStd),
+      0,
+      0.9999
+    );
+    const beatMedianCount = scores.filter(
+      (entry) => entry.score > entry.median
+    ).length;
+
+    return {
+      team,
+      scores,
+      boomBust,
+      beatMedianCount,
+    };
+  });
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "1em" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "1em",
+        width: "100vw",
+        boxSizing: "border-box",
+        padding: "0 0.5em",
+      }}
+    >
       {rows.map(({ team, scores, boomBust, beatMedianCount }) => {
         const labelByWeek = Object.fromEntries(
           scores.map(({ week, label }) => [week, label])
         );
         return (
-          <div key={team.id} style={{ ...bubbleStyle, width: "100%" }}>
+          <div
+            key={team.id}
+            style={{
+              ...bubbleStyle,
+              width: "100%",
+              boxSizing: "border-box",
+              margin: 0,
+              display: "block",
+            }}
+          >
             <div style={{ display: "flex", alignItems: "center", gap: "1em" }}>
               <h2 style={{ margin: 0 }}>{team.name}</h2>
               <div style={{ display: "flex", gap: "1em", flexWrap: "wrap" }}>
