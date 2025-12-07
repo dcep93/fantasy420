@@ -1,6 +1,4 @@
 import { useMemo } from "react";
-import { bubbleStyle, selectedWrapped, selectedYear } from "..";
-import allWrapped from "../allWrapped";
 import {
   CartesianGrid,
   Legend,
@@ -11,7 +9,9 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { bubbleStyle, selectedWrapped, selectedYear } from "..";
 import { FFTeamType, NFLPlayerType, WrappedType } from "../../FetchWrapped";
+import allWrapped from "../allWrapped";
 
 function weeklyScore(
   wrapped: WrappedType,
@@ -21,7 +21,9 @@ function weeklyScore(
   const roster = team.rosters[weekNum];
   if (!roster) return 0;
   return roster.starting
-    .map((playerId) => wrapped.nflPlayers[playerId] as NFLPlayerType | undefined)
+    .map(
+      (playerId) => wrapped.nflPlayers[playerId] as NFLPlayerType | undefined
+    )
     .filter((player): player is NFLPlayerType => Boolean(player))
     .map((player) => player.scores[weekNum] || 0)
     .reduce((a, b) => a + b, 0);
@@ -60,6 +62,10 @@ export default function ManagerTrend() {
   const weeks = Object.keys(teams[0].rosters)
     .filter((week) => week !== "0")
     .map((week) => parseInt(week))
+    .filter(
+      (week) =>
+        week <= (wrapped.latestScoringPeriod || Number.POSITIVE_INFINITY)
+    )
     .sort((a, b) => a - b);
 
   const historyRatios = useMemo(() => {
@@ -155,7 +161,9 @@ export default function ManagerTrend() {
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis
                     dataKey="week"
-                    tickFormatter={(week) => labelByWeek[week] || `Week ${week}`}
+                    tickFormatter={(week) =>
+                      labelByWeek[week] || `Week ${week}`
+                    }
                   />
                   <YAxis />
                   <Tooltip
@@ -190,8 +198,8 @@ export default function ManagerTrend() {
         );
       })}
       <div style={{ fontSize: "small" }}>
-        Historical scaling uses past boom/bust ratios to center around 0.5 with a
-        league-wide spread near 0.25. Year: {selectedYear}
+        Historical scaling uses past boom/bust ratios to center around 0.5 with
+        a league-wide spread near 0.25. Year: {selectedYear}
       </div>
     </div>
   );
