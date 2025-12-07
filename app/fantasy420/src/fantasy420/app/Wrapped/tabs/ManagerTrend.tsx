@@ -83,7 +83,14 @@ function ResultDot({ cx, cy, payload }: DotProps) {
 
   if (outcome === "beat") {
     return (
-      <circle cx={cx} cy={cy} r={5} fill="#1E88E5" stroke="#0D47A1" strokeWidth={2} />
+      <circle
+        cx={cx}
+        cy={cy}
+        r={5}
+        fill="#1E88E5"
+        stroke="#0D47A1"
+        strokeWidth={2}
+      />
     );
   }
 
@@ -122,7 +129,14 @@ function ResultDot({ cx, cy, payload }: DotProps) {
   }
 
   return (
-    <circle cx={cx} cy={cy} r={5} fill="#fff" stroke="#1E88E5" strokeWidth={2} />
+    <circle
+      cx={cx}
+      cy={cy}
+      r={5}
+      fill="#fff"
+      stroke="#1E88E5"
+      strokeWidth={2}
+    />
   );
 }
 
