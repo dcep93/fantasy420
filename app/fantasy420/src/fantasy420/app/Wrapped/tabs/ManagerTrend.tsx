@@ -226,7 +226,9 @@ export default function ManagerTrend() {
       const scores = weeks.map((weekNum) => {
         const weekKey = weekNum.toString();
         const weekScores = weeklyScores[weekKey] ?? [];
-        const scoreRecord = weekScores.find((entry) => entry.teamId === team.id);
+        const scoreRecord = weekScores.find(
+          (entry) => entry.teamId === team.id
+        );
         const matchup = wrapped.ffMatchups[weekKey]?.find((matchup) =>
           matchup.includes(team.id)
         );
@@ -340,16 +342,14 @@ export default function ManagerTrend() {
                           </div>
                           {typeof data.topScore === "number" && (
                             <div>
-                              Top: {data.topScore.toFixed(2)} ({
-                                data.topTeamName ?? "Unknown"
-                              })
+                              Top: {data.topScore.toFixed(2)} (
+                              {data.topTeamName ?? "Unknown"})
                             </div>
                           )}
                           {typeof data.bottomScore === "number" && (
                             <div>
-                              Bottom: {data.bottomScore.toFixed(2)} ({
-                                data.bottomTeamName ?? "Unknown"
-                              })
+                              Bottom: {data.bottomScore.toFixed(2)} (
+                              {data.bottomTeamName ?? "Unknown"})
                             </div>
                           )}
                           {typeof data.opponentScore === "number" && (
