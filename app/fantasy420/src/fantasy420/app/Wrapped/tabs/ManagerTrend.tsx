@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import type { TooltipProps } from "recharts";
 import {
   CartesianGrid,
   Legend,
@@ -103,13 +104,16 @@ export default function ManagerTrend() {
           matchup.includes(team.id)
         );
         const oppId = matchup?.find((id) => id !== team.id);
+        const opponent = oppId ? wrapped.ffTeams[oppId] : undefined;
         return {
           week: weekNum,
-          label: oppId
-            ? wrapped.ffTeams[oppId]?.name || `Week ${weekNum}`
-            : `Week ${weekNum}`,
+          label: oppId ? opponent?.name || `Week ${weekNum}` : `Week ${weekNum}`,
           score: weeklyScore(wrapped, team, weekKey),
           median: weeklyMedians[weekKey],
+          opponentName: opponent?.name,
+          opponentScore: opponent
+            ? weeklyScore(wrapped, opponent, weekKey)
+            : undefined,
         };
       });
       const scoresOnly = scores.map((entry) => entry.score);
@@ -185,11 +189,37 @@ export default function ManagerTrend() {
                   />
                   <YAxis />
                   <Tooltip
-                    formatter={(value: number, name) => [
-                      value.toFixed(2),
-                      name === "median" ? "Median" : "Started score",
-                    ]}
-                    labelFormatter={(week) => labelByWeek[week as number]}
+                    content={({ active, payload }: TooltipProps<number, string>) => {
+                      if (!active || !payload?.length) return null;
+                      const data = payload[0].payload as {
+                        median: number;
+                        score: number;
+                        label: string;
+                        opponentName?: string;
+                        opponentScore?: number;
+                      };
+                      return (
+                        <div
+                          style={{
+                            backgroundColor: "#fff",
+                            padding: "0.5em",
+                            border: "1px solid #ccc",
+                            borderRadius: "0.5em",
+                          }}
+                        >
+                          <div>Median: {data.median.toFixed(2)}</div>
+                          <div>
+                            {team.name}: {data.score.toFixed(2)}
+                          </div>
+                          {typeof data.opponentScore === "number" && (
+                            <div>
+                              {(data.opponentName || data.label) ?? "Opponent"}: {" "}
+                              {data.opponentScore.toFixed(2)}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    }}
                   />
                   <Legend />
                   <Line
