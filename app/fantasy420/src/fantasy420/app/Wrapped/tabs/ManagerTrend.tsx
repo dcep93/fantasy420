@@ -107,7 +107,9 @@ export default function ManagerTrend() {
         const opponent = oppId ? wrapped.ffTeams[oppId] : undefined;
         return {
           week: weekNum,
-          label: oppId ? opponent?.name || `Week ${weekNum}` : `Week ${weekNum}`,
+          label: oppId
+            ? opponent?.name || `Week ${weekNum}`
+            : `Week ${weekNum}`,
           score: weeklyScore(wrapped, team, weekKey),
           median: weeklyMedians[weekKey],
           opponentName: opponent?.name,
@@ -181,15 +183,13 @@ export default function ManagerTrend() {
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={scores} margin={{ left: 16, right: 16 }}>
                   <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis
-                    dataKey="week"
-                    tickFormatter={(week) =>
-                      labelByWeek[week] || `Week ${week}`
-                    }
-                  />
+                  <XAxis dataKey="week" tick={false} tickLine={false} />
                   <YAxis />
                   <Tooltip
-                    content={({ active, payload }: TooltipProps<number, string>) => {
+                    content={({
+                      active,
+                      payload,
+                    }: TooltipProps<number, string>) => {
                       if (!active || !payload?.length) return null;
                       const data = payload[0].payload as {
                         median: number;
@@ -213,7 +213,7 @@ export default function ManagerTrend() {
                           </div>
                           {typeof data.opponentScore === "number" && (
                             <div>
-                              {(data.opponentName || data.label) ?? "Opponent"}: {" "}
+                              {(data.opponentName || data.label) ?? "Opponent"}:{" "}
                               {data.opponentScore.toFixed(2)}
                             </div>
                           )}
