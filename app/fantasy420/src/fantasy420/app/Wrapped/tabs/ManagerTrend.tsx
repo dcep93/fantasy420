@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import type { TooltipProps } from "recharts";
 import {
   CartesianGrid,
+  DotProps,
   Legend,
   Line,
   LineChart,
@@ -55,6 +56,74 @@ function stddev(values: number[]): number {
 
 function clamp(value: number, min: number, max: number): number {
   return Math.min(max, Math.max(min, value));
+}
+
+type ScorePoint = {
+  label: string;
+  median: number;
+  opponentName?: string;
+  opponentScore?: number;
+  score: number;
+  week: number;
+};
+
+type OpponentOutcome = "beat" | "lost" | "noOpponent";
+
+function opponentOutcome(point: ScorePoint): OpponentOutcome {
+  if (typeof point.opponentScore !== "number") return "noOpponent";
+  if (point.score > point.opponentScore) return "beat";
+  if (point.score < point.opponentScore) return "lost";
+  return "noOpponent";
+}
+
+function ResultDot({ cx, cy, payload }: DotProps) {
+  if (typeof cx !== "number" || typeof cy !== "number" || !payload) return null;
+
+  const outcome = opponentOutcome(payload as ScorePoint);
+
+  if (outcome === "beat") {
+    return (
+      <circle cx={cx} cy={cy} r={5} fill="#1E88E5" stroke="#0D47A1" strokeWidth={2} />
+    );
+  }
+
+  if (outcome === "lost") {
+    return (
+      <g>
+        <rect
+          x={cx - 5}
+          y={cy - 5}
+          width={10}
+          height={10}
+          fill="#fff"
+          stroke="#E53935"
+          strokeWidth={2}
+          rx={1.5}
+          ry={1.5}
+        />
+        <line
+          x1={cx - 4}
+          y1={cy - 4}
+          x2={cx + 4}
+          y2={cy + 4}
+          stroke="#E53935"
+          strokeWidth={2}
+        />
+        <line
+          x1={cx + 4}
+          y1={cy - 4}
+          x2={cx - 4}
+          y2={cy + 4}
+          stroke="#E53935"
+          strokeWidth={2}
+        />
+      </g>
+    );
+  }
+
+  return (
+    <circle cx={cx} cy={cy} r={5} fill="#fff" stroke="#1E88E5" strokeWidth={2} />
+  );
 }
 
 export default function ManagerTrend() {
@@ -191,14 +260,7 @@ export default function ManagerTrend() {
                       payload,
                     }: TooltipProps<number, string>) => {
                       if (!active || !payload?.length) return null;
-                      const data = payload[0].payload as {
-                        median: number;
-                        score: number;
-                        label: string;
-                        opponentName?: string;
-                        opponentScore?: number;
-                        week: number;
-                      };
+                      const data = payload[0].payload as ScorePoint;
                       return (
                         <div
                           style={{
@@ -231,7 +293,7 @@ export default function ManagerTrend() {
                     name="Started score"
                     stroke="#1E88E5"
                     strokeWidth={2}
-                    dot={{ r: 3 }}
+                    dot={ResultDot}
                   />
                   <Line
                     type="monotone"
