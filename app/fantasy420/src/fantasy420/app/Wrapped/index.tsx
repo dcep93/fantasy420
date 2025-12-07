@@ -23,6 +23,7 @@ import Negatives from "./tabs/Negatives";
 import OwnedTeams from "./tabs/OwnedTeams";
 import Performance from "./tabs/Performance";
 import PerformanceTotals from "./tabs/PerformanceTotals";
+import ManagerTrend from "./tabs/ManagerTrend";
 import PlayerPlot from "./tabs/PlayerPlot";
 import PlayerStats from "./tabs/PlayerStats";
 import PointsAgainst from "./tabs/PointsAgainst";
@@ -292,6 +293,7 @@ const toRender: { [key: string]: () => JSX.Element } = {
   StrengthOfSeason,
   Performance,
   PerformanceTotals,
+  ManagerTrend,
   DeterminedByDiscreteScoring,
   Stacks,
   Negatives,
