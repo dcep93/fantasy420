@@ -197,6 +197,7 @@ export default function ManagerTrend() {
                         label: string;
                         opponentName?: string;
                         opponentScore?: number;
+                        week: number;
                       };
                       return (
                         <div
@@ -207,7 +208,9 @@ export default function ManagerTrend() {
                             borderRadius: "0.5em",
                           }}
                         >
-                          <div>Median: {data.median.toFixed(2)}</div>
+                          <div>
+                            Median w{data.week}: {data.median.toFixed(2)}
+                          </div>
                           <div>
                             {team.name}: {data.score.toFixed(2)}
                           </div>
