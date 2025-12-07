@@ -76,10 +76,14 @@ function opponentOutcome(point: ScorePoint): OpponentOutcome {
   return "noOpponent";
 }
 
-function ResultDot({ cx, cy, payload }: DotProps) {
-  if (typeof cx !== "number" || typeof cy !== "number" || !payload) return null;
+type ScoreDotProps = DotProps & { payload?: ScorePoint };
 
-  const outcome = opponentOutcome(payload as ScorePoint);
+function ResultDot({ cx, cy, payload }: ScoreDotProps) {
+  if (typeof cx !== "number" || typeof cy !== "number" || !payload) {
+    return <g />;
+  }
+
+  const outcome = opponentOutcome(payload);
 
   if (outcome === "beat") {
     return (
