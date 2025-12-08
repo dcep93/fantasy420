@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { currentYear } from "../..";
 import allWrapped from "../../allWrapped";
 import Chart from "./Chart";
@@ -16,6 +16,10 @@ const MAX_RESULTS = 100;
 // https://nflquery.web.app/fantasy
 export default function PlayerStats() {
   const [nameFilter, updateNameFilter] = useState("");
+  const positionRanks = useMemo(
+    () => calculatePositionRanks(playerStatsData),
+    []
+  );
   return (
     <div>
       <div>
@@ -72,6 +76,7 @@ export default function PlayerStats() {
                   .map((o) => ({
                     owner: o.owner,
                     ...o.y,
+                    ...positionRanks[o.y.year]?.[d.position]?.[d.name],
                     scores: o.y?.scores.map((score, i) =>
                       (({ owner }) => ({
                         week: i + 1,
@@ -107,4 +112,66 @@ export default function PlayerStats() {
 
 function normalize(s: string) {
   return s.toLowerCase().replaceAll(".", "");
+}
+
+type PositionRanks = {
+  [year: number]: {
+    [position: string]: {
+      [playerName: string]: { averageRank: number; totalRank: number };
+    };
+  };
+};
+
+function calculatePositionRanks(data: typeof playerStatsData): PositionRanks {
+  const ranks: PositionRanks = {};
+
+  data.forEach((player) => {
+    player.years.forEach((year) => {
+      ranks[year.year] ??= {};
+      ranks[year.year][player.position] ??= {};
+    });
+  });
+
+  Object.entries(ranks).forEach(([yearString, positions]) => {
+    const year = Number(yearString);
+    Object.keys(positions).forEach((position) => {
+      const players = data
+        .filter((p) => p.position === position)
+        .flatMap((p) =>
+          p.years
+            .filter((y) => y.year === year)
+            .map((y) => ({ name: p.name, scores: y.scores, total: y.total }))
+        );
+
+      const avgSorted = [...players].sort(
+        (a, b) => calculateAverage(b.scores) - calculateAverage(a.scores)
+      );
+      const totalSorted = [...players].sort((a, b) => b.total - a.total);
+
+      avgSorted.forEach((p, idx) => {
+        const existing = ranks[year][position][p.name] || {};
+        ranks[year][position][p.name] = {
+          ...existing,
+          averageRank: idx + 1,
+        };
+      });
+
+      totalSorted.forEach((p, idx) => {
+        const existing = ranks[year][position][p.name] || {};
+        ranks[year][position][p.name] = {
+          ...existing,
+          totalRank: idx + 1,
+        };
+      });
+    });
+  });
+
+  return ranks;
+}
+
+function calculateAverage(scores: (number | null)[]) {
+  const values = scores.filter((s): s is number => s !== null);
+  return values.length
+    ? values.reduce((sum, value) => sum + value, 0) / values.length
+    : 0;
 }
