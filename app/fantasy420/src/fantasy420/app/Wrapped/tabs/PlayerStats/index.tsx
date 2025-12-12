@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { currentYear } from "../..";
 import allWrapped from "../../allWrapped";
 import Chart from "./Chart";
 import rawData from "./data.json";
@@ -46,6 +47,29 @@ export default function PlayerStats() {
                 {d.years
                   .slice()
                   .reverse()
+                  .map((y) =>
+                    y.year.toString() !== currentYear
+                      ? y
+                      : (({ scores }) => {
+                          y.total = scores.reduce((a, b) => a + b, 0);
+                          d.total = d.years
+                            .map((y) => y.total)
+                            .reduce((a, b) => a + b, 0);
+
+                          return {
+                            ...y,
+                            // total career
+                            // will be stale
+                            scores,
+                          };
+                        })({
+                          scores: Object.values(
+                            Object.values(allWrapped[y.year].nflPlayers).find(
+                              (p) => p.name === d.name
+                            )?.scores || []
+                          ).slice(1),
+                        })
+                  )
                   .map((y) => ({ y, w: allWrapped[y.year] }))
                   .map((o) => ({
                     ...o,
