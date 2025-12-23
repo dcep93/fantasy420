@@ -68,6 +68,9 @@ function SubManagerPlot() {
         Object.values(o.weeks).map((w) => (w.total < w.oppTotal ? 0 : 1))
       ),
       pointsFor: cumSum(Object.values(o.weeks).map((w) => w.total)),
+      pointsForStartingW9: cumSum(
+        Object.values(o.weeks).map((w) => (w.weekNum < 9 ? 0 : w.total))
+      ),
       pointsAgainst: cumSum(
         Object.values(o.weeks).map((w) =>
           w.opp === undefined ? 0 : dataA[w.opp].weeks[w.weekNum].total
@@ -84,6 +87,9 @@ function SubManagerPlot() {
   const dataC = Object.values(dataB)[0].wins.map((_, weekIndex) => ({
     weekNum: weekIndex,
     pointsFor: appendAverage(mapDict(dataB, (o) => o.pointsFor[weekIndex])),
+    pointsForStartingW9: appendAverage(
+      mapDict(dataB, (o) => o.pointsForStartingW9[weekIndex])
+    ),
     pointsAgainst: appendAverage(
       mapDict(dataB, (o) => o.pointsAgainst[weekIndex])
     ),
@@ -115,7 +121,7 @@ function SubManagerPlot() {
       .filter((o) => o.weekNum >= 9)
       .map((o) => ({
         x: o.weekNum,
-        ys: o.pointsFor,
+        ys: o.pointsForStartingW9,
       })),
     pointsAgainst: dataC.map((o) => ({
       x: o.weekNum,
