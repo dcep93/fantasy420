@@ -12,6 +12,7 @@ export default function Injuries() {
               r.rostered
                 .map((playerId) => selectedWrapped().nflPlayers[playerId])
                 .filter((p) => p)
+                .filter((p) => p.position !== "DST")
                 .map((o) => ({
                   weekNum: parseInt(r.weekNum),
                   rank:
