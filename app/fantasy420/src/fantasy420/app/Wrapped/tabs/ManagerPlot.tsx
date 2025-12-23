@@ -111,6 +111,12 @@ function SubManagerPlot() {
       x: o.weekNum,
       ys: o.pointsFor,
     })),
+    pointsForStartingW9: dataC
+      .filter((o) => o.weekNum >= 9)
+      .map((o) => ({
+        x: o.weekNum,
+        ys: o.pointsFor,
+      })),
     pointsAgainst: dataC.map((o) => ({
       x: o.weekNum,
       ys: o.pointsAgainst,
