@@ -38,6 +38,7 @@ import StandingsPrediction from "./tabs/StandingsPrediction";
 import StdDev from "./tabs/StdDev";
 import StrengthOfSeason from "./tabs/StrengthOfSeason";
 import Trades from "./tabs/Trades";
+import SpiciestMatchups from "./tabs/SpiciestMatchups";
 import UniquesRostered from "./tabs/UniquesRostered";
 import UniquesStarted from "./tabs/UniquesStarted";
 import WeekTopsAndBottoms from "./tabs/WeekTopsAndBottoms";
@@ -318,5 +319,6 @@ const toRender: { [key: string]: () => JSX.Element } = {
   StdDev,
   PositionTrends,
   StandingsPrediction,
+  SpiciestMatchups,
   json,
 };
