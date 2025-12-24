@@ -55,7 +55,10 @@ export default function SpiciestMatchups() {
           .sort((a, b) => {
             const diff = b.score - a.score;
             if (diff !== 0) return diff;
-            return (b.lastLeadChangeMinute ?? -Infinity) - (a.lastLeadChangeMinute ?? -Infinity);
+            return (
+              (b.lastLeadChangeMinute ?? -Infinity) -
+              (a.lastLeadChangeMinute ?? -Infinity)
+            );
           })
           .slice(0, 10)
       )
@@ -79,7 +82,8 @@ export default function SpiciestMatchups() {
             </div>
             <div>Spice score: {matchup.score.toFixed(2)}</div>
             <div>
-              Lead changes: {matchup.leadChanges} (late: {matchup.lateLeadChanges})
+              Lead changes: {matchup.leadChanges} (late:{" "}
+              {matchup.lateLeadChanges})
             </div>
             <div>Final: {matchup.finalScore}</div>
             <div style={{ fontSize: "0.9em", marginTop: "0.2em" }}>
@@ -87,7 +91,8 @@ export default function SpiciestMatchups() {
             </div>
             {matchup.lastLeadChangeMinute !== null && (
               <div>
-                Last projected flip ~ minute {Math.round(matchup.lastLeadChangeMinute)}
+                Last projected flip ~ minute{" "}
+                {Math.round(matchup.lastLeadChangeMinute)}
               </div>
             )}
           </div>
@@ -100,10 +105,10 @@ export default function SpiciestMatchups() {
     <div>
       <h2 style={bubbleStyle}>Top spicy fantasy matchups of {numericYear}</h2>
       <p style={{ maxWidth: "60ch" }}>
-        Spiciness is driven by projected winner flips across the full fantasy week. Player
-        production is spread over their NFL game window using kickoff timestamps from
-        data_v6 (each quarter is 45 real minutes). Lead changes during the final sliver of
-        the week count extra.
+        Spiciness is driven by projected winner flips across the full fantasy
+        week. Player production is spread over their NFL game window using
+        kickoff timestamps from data_v6 (each quarter is 45 real minutes). Lead
+        changes during the final sliver of the week count extra.
       </p>
       {content}
     </div>
@@ -141,10 +146,17 @@ function computeSpiciestMatchups(
     if (!weekSchedule) return;
 
     matchups.forEach(([homeId, awayId]) => {
-      const timeline = buildMatchupTimeline(wrapped, week, homeId, awayId, weekSchedule);
+      const timeline = buildMatchupTimeline(
+        wrapped,
+        week,
+        homeId,
+        awayId,
+        weekSchedule
+      );
       if (!timeline.length) return;
 
-      const lateStart = (timeline[timeline.length - 1]?.minute ?? GAME_MINUTES) - 45;
+      const lateStart =
+        (timeline[timeline.length - 1]?.minute ?? GAME_MINUTES) - 45;
       let leader = getLeader(timeline[0].scores);
       let leadChanges = 0;
       let lateLeadChanges = 0;
@@ -152,7 +164,10 @@ function computeSpiciestMatchups(
 
       timeline.slice(1).forEach((entry) => {
         const nextLeader = getLeader(entry.scores);
-        if (nextLeader !== leader && !(leader === null && nextLeader === null)) {
+        if (
+          nextLeader !== leader &&
+          !(leader === null && nextLeader === null)
+        ) {
           leadChanges++;
           if (entry.minute >= lateStart) lateLeadChanges++;
           lastLeadChangeMinute = entry.minute;
@@ -169,12 +184,18 @@ function computeSpiciestMatchups(
         id: `${week}-${homeId}-${awayId}`,
         week,
         title: `${homeName} vs ${awayName}`,
-        finalScore: `${homeName}: ${homeFinal.toFixed(2)} — ${awayName}: ${awayFinal.toFixed(2)}`,
+        finalScore: `${homeName}: ${homeFinal.toFixed(
+          2
+        )} — ${awayName}: ${awayFinal.toFixed(2)}`,
         leadChanges,
         lateLeadChanges,
         score: leadChanges + lateLeadChanges * 0.5,
         lastLeadChangeMinute,
-        description: describeMatchup(leadChanges, lateLeadChanges, lastLeadChangeMinute),
+        description: describeMatchup(
+          leadChanges,
+          lateLeadChanges,
+          lastLeadChangeMinute
+        ),
       });
     });
   });
@@ -194,8 +215,20 @@ function buildMatchupTimeline(
   if (!homeRoster || !awayRoster) return [];
 
   const teamMinutes = new Set<number>([0]);
-  const homePlayers = buildPlayerWindows(wrapped, week, homeRoster.starting, weekSchedule, teamMinutes);
-  const awayPlayers = buildPlayerWindows(wrapped, week, awayRoster.starting, weekSchedule, teamMinutes);
+  const homePlayers = buildPlayerWindows(
+    wrapped,
+    week,
+    homeRoster.starting,
+    weekSchedule,
+    teamMinutes
+  );
+  const awayPlayers = buildPlayerWindows(
+    wrapped,
+    week,
+    awayRoster.starting,
+    weekSchedule,
+    teamMinutes
+  );
 
   if (!homePlayers.length || !awayPlayers.length) return [];
 
@@ -256,14 +289,11 @@ function sumPlayerProgress(
 function buildWeekSchedule(data: DataV6): Map<number, Map<string, number>> {
   const schedule = new Map<number, Map<string, number>>();
 
-  const gamesByWeek = data.games.reduce(
-    (acc, game) => {
-      if (!acc[game.week]) acc[game.week] = [];
-      acc[game.week]!.push(game);
-      return acc;
-    },
-    {} as { [week: number]: Game[] }
-  );
+  const gamesByWeek = data.games.reduce((acc, game) => {
+    if (!acc[game.week]) acc[game.week] = [];
+    acc[game.week]!.push(game);
+    return acc;
+  }, {} as { [week: number]: Game[] });
 
   Object.entries(gamesByWeek).forEach(([weekStr, games]) => {
     const week = parseInt(weekStr);
@@ -298,10 +328,9 @@ function describeMatchup(
       : "";
   const timingNote =
     lastLeadChangeMinute !== null
-      ? ` Last projected swing landed around minute ${Math.round(lastLeadChangeMinute)}.`
+      ? ` Last projected swing landed around minute ${Math.round(
+          lastLeadChangeMinute
+        )}.`
       : "";
   return `Projected leader flipped ${leadChanges} times.${lateNote}${timingNote}`;
 }
-
-// Example spicy matchup: Week 12, TacoCorp vs Vandelay Industries had five projected
-// swings with the final flip in the Sunday night window after both QBs wrapped up.
