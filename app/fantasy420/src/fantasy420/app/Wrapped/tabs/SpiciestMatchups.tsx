@@ -53,7 +53,11 @@ interface MatchupSpiciness {
 }
 
 type TimelinePoint = { minute: number; scores: [number, number] };
-type ProbabilityPoint = { minute: number; probability: number; timestamp: number };
+type ProbabilityPoint = {
+  minute: number;
+  probability: number;
+  timestamp: number;
+};
 type WeekSchedule = {
   kickoffMinutes: Map<string, number>;
   baseline: number;
@@ -104,8 +108,7 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
     .map((point, idx) => {
       const x =
         padding + ((point.timestamp - minTime) / timeRange) * usableWidth;
-      const y =
-        height - padding - point.probability * usableHeight;
+      const y = height - padding - point.probability * usableHeight;
       const command = idx === 0 ? "M" : "L";
       return `${command}${x},${y}`;
     })
@@ -497,7 +500,10 @@ function buildPlayerWindows(
 
       const finalMinute = kickoff + GAME_MINUTES;
       const finalTimestamp = weekSchedule.baseline + finalMinute * 60 * 1000;
-      if (!moments.length || moments[moments.length - 1]!.minute < finalMinute) {
+      if (
+        !moments.length ||
+        moments[moments.length - 1]!.minute < finalMinute
+      ) {
         minutes.add(finalMinute);
         moments.push({
           minute: finalMinute,
@@ -515,10 +521,7 @@ function buildPlayerWindows(
   return players;
 }
 
-function sumPlayerProgress(
-  players: PlayerWindow[],
-  minute: number
-): number {
+function sumPlayerProgress(players: PlayerWindow[], minute: number): number {
   return players
     .map((player) => scoredAtMinute(player, minute))
     .reduce((a, b) => a + b, 0);
@@ -526,7 +529,9 @@ function sumPlayerProgress(
 
 function sumRemainingPoints(players: PlayerWindow[], minute: number): number {
   return players
-    .map((player) => Math.max(0, player.finalPoints - scoredAtMinute(player, minute)))
+    .map((player) =>
+      Math.max(0, player.finalPoints - scoredAtMinute(player, minute))
+    )
     .reduce((a, b) => a + b, 0);
 }
 
