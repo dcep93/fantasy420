@@ -140,6 +140,12 @@ function lookupTeamAbbreviation(teamName?: string | null): string | null {
 function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
   if (!points.length) return null;
 
+  const [hovered, setHovered] = useState<{
+    x: number;
+    y: number;
+    label: string;
+  } | null>(null);
+
   const width = 1200;
   const height = 220;
   const paddingLeft = 96;
@@ -197,92 +203,151 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
     })
     .join(" ");
 
+  const formatTooltipTimestamp = (timestamp: number) => {
+    const parts = new Intl.DateTimeFormat(undefined, {
+      weekday: "long",
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+    }).formatToParts(new Date(timestamp));
+
+    const weekday = parts.find((p) => p.type === "weekday")?.value ?? "";
+    const hour = parts.find((p) => p.type === "hour")?.value ?? "";
+    const minute = parts.find((p) => p.type === "minute")?.value ?? "";
+    const dayPeriod = parts.find((p) => p.type === "dayPeriod")?.value ?? "";
+
+    return `${weekday} ${hour}:${minute}${dayPeriod.toLowerCase()}`;
+  };
+
   return (
-    <svg
-      width={width}
-      height={height}
-      role="img"
-      aria-label="Home win probability over time"
-      style={{ marginTop: "0.4em" }}
-    >
-      <line
-        x1={paddingLeft}
-        x2={paddingLeft}
-        y1={paddingTop}
-        y2={height - paddingBottom}
-        stroke="#ccc"
-      />
-      {[0, 0.25, 0.5, 0.75, 1].map((tick) => {
-        const y = height - paddingBottom - tick * usableHeight;
-        return (
-          <g key={tick}>
-            <line
-              x1={paddingLeft - 6}
-              x2={paddingLeft}
-              y1={y}
-              y2={y}
-              stroke="#999"
+    <div style={{ position: "relative", width }}>
+      <svg
+        width={width}
+        height={height}
+        role="img"
+        aria-label="Home win probability over time"
+        style={{ marginTop: "0.4em", overflow: "visible" }}
+      >
+        <line
+          x1={paddingLeft}
+          x2={paddingLeft}
+          y1={paddingTop}
+          y2={height - paddingBottom}
+          stroke="#ccc"
+        />
+        {[0, 0.25, 0.5, 0.75, 1].map((tick) => {
+          const y = height - paddingBottom - tick * usableHeight;
+          return (
+            <g key={tick}>
+              <line
+                x1={paddingLeft - 6}
+                x2={paddingLeft}
+                y1={y}
+                y2={y}
+                stroke="#999"
+              />
+              <text
+                x={paddingLeft - 10}
+                y={y + 4}
+                fontSize={10}
+                fill="#555"
+                textAnchor="end"
+              >
+                {Math.round(tick * 100)}%
+              </text>
+            </g>
+          );
+        })}
+        <line
+          x1={paddingLeft}
+          x2={width - paddingRight}
+          y1={height - paddingBottom}
+          y2={height - paddingBottom}
+          stroke="#ccc"
+        />
+        <line
+          x1={paddingLeft}
+          x2={width - paddingRight}
+          y1={height - paddingBottom - usableHeight / 2}
+          y2={height - paddingBottom - usableHeight / 2}
+          stroke="#e0e0e0"
+          strokeDasharray="4 4"
+        />
+        <path d={path} fill="none" stroke="#f1636b" strokeWidth={3} />
+        {points.map((point, idx) => {
+          const x = xForIndex(idx);
+          const y = height - paddingBottom - point.probability * usableHeight;
+          const label = formatTooltipTimestamp(point.timestamp);
+          return (
+            <circle
+              key={idx}
+              cx={x}
+              cy={y}
+              r={8}
+              fill="transparent"
+              stroke="transparent"
+              onMouseEnter={() => setHovered({ x, y, label })}
+              onMouseLeave={() => setHovered(null)}
             />
-            <text
-              x={paddingLeft - 10}
-              y={y + 4}
-              fontSize={10}
-              fill="#555"
-              textAnchor="end"
-            >
-              {Math.round(tick * 100)}%
-            </text>
-          </g>
-        );
-      })}
-      <line
-        x1={paddingLeft}
-        x2={width - paddingRight}
-        y1={height - paddingBottom}
-        y2={height - paddingBottom}
-        stroke="#ccc"
-      />
-      <line
-        x1={paddingLeft}
-        x2={width - paddingRight}
-        y1={height - paddingBottom - usableHeight / 2}
-        y2={height - paddingBottom - usableHeight / 2}
-        stroke="#e0e0e0"
-        strokeDasharray="4 4"
-      />
-      <path d={path} fill="none" stroke="#f1636b" strokeWidth={2} />
-      {points.map((point, idx) => {
-        const x = xForIndex(idx);
-        const y = height - paddingBottom - point.probability * usableHeight;
-        return <circle key={idx} cx={x} cy={y} r={2} fill="#f1636b" />;
-      })}
-      <text
-        x={paddingLeft}
-        y={height - paddingBottom + 18}
-        fontSize={10}
-        fill="#555"
-      >
-        {startLabel}
-      </text>
-      <text
-        x={width - paddingRight}
-        y={height - paddingBottom + 18}
-        fontSize={10}
-        fill="#555"
-        textAnchor="end"
-      >
-        {endLabel}
-      </text>
-      <text
-        x={paddingLeft - 16}
-        y={paddingTop - 8}
-        fontSize={10}
-        fill="#555"
-        textAnchor="end"
-      >
-        Home win probability
-      </text>
-    </svg>
+          );
+        })}
+        {hovered && (
+          <circle
+            cx={hovered.x}
+            cy={hovered.y}
+            r={5}
+            fill="#f1636b"
+            stroke="white"
+            strokeWidth={1.5}
+          />
+        )}
+        <text
+          x={paddingLeft}
+          y={height - paddingBottom + 18}
+          fontSize={10}
+          fill="#555"
+        >
+          {startLabel}
+        </text>
+        <text
+          x={width - paddingRight}
+          y={height - paddingBottom + 18}
+          fontSize={10}
+          fill="#555"
+          textAnchor="end"
+        >
+          {endLabel}
+        </text>
+        <text
+          x={paddingLeft - 16}
+          y={paddingTop - 8}
+          fontSize={10}
+          fill="#555"
+          textAnchor="end"
+        >
+          Home win probability
+        </text>
+      </svg>
+      {hovered && (
+        <div
+          style={{
+            position: "absolute",
+            left: hovered.x - 60,
+            top: hovered.y - 44,
+            padding: "6px 8px",
+            background: "rgba(0,0,0,0.85)",
+            color: "#fff",
+            borderRadius: 4,
+            fontSize: 12,
+            pointerEvents: "none",
+            whiteSpace: "nowrap",
+            boxShadow: "0 2px 6px rgba(0,0,0,0.25)",
+          }}
+        >
+          {hovered.label}
+        </div>
+      )}
+    </div>
   );
 }
 
