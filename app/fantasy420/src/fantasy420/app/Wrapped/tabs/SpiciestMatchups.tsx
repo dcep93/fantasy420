@@ -30,9 +30,107 @@ interface MatchupSpiciness {
   score: number;
   lastLeadChangeMinute: number | null;
   description: string;
+  probabilityLine: ProbabilityPoint[];
 }
 
 type TimelinePoint = { minute: number; scores: [number, number] };
+type ProbabilityPoint = { minute: number; probability: number; timestamp: number };
+type WeekSchedule = { kickoffMinutes: Map<string, number>; baseline: number };
+type PlayerWindow = { start: number; end: number; points: number };
+type TimelineBundle = {
+  timeline: TimelinePoint[];
+  homePlayers: PlayerWindow[];
+  awayPlayers: PlayerWindow[];
+};
+
+function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
+  if (!points.length) return null;
+
+  const width = 360;
+  const height = 180;
+  const padding = 36;
+  const minTime = Math.min(...points.map((p) => p.timestamp));
+  const maxTime = Math.max(...points.map((p) => p.timestamp));
+  const timeRange = Math.max(1, maxTime - minTime);
+  const usableWidth = width - padding * 2;
+  const usableHeight = height - padding * 1.5;
+
+  const startLabel = new Date(minTime).toLocaleString(undefined, {
+    weekday: "short",
+    hour: "numeric",
+    minute: "2-digit",
+  });
+  const endLabel = new Date(maxTime).toLocaleString(undefined, {
+    weekday: "short",
+    hour: "numeric",
+    minute: "2-digit",
+  });
+
+  const path = points
+    .map((point, idx) => {
+      const x =
+        padding + ((point.timestamp - minTime) / timeRange) * usableWidth;
+      const y =
+        height - padding - point.probability * usableHeight;
+      const command = idx === 0 ? "M" : "L";
+      return `${command}${x},${y}`;
+    })
+    .join(" ");
+
+  return (
+    <svg
+      width={width}
+      height={height}
+      role="img"
+      aria-label="Home win probability over time"
+      style={{ marginTop: "0.4em" }}
+    >
+      <line
+        x1={padding}
+        x2={width - padding}
+        y1={height - padding}
+        y2={height - padding}
+        stroke="#ccc"
+      />
+      <line
+        x1={padding}
+        x2={width - padding}
+        y1={height - padding - usableHeight / 2}
+        y2={height - padding - usableHeight / 2}
+        stroke="#e0e0e0"
+        strokeDasharray="4 4"
+      />
+      <path d={path} fill="none" stroke="#f1636b" strokeWidth={2} />
+      {points.map((point, idx) => {
+        const x =
+          padding + ((point.timestamp - minTime) / timeRange) * usableWidth;
+        const y = height - padding - point.probability * usableHeight;
+        return <circle key={idx} cx={x} cy={y} r={2} fill="#f1636b" />;
+      })}
+      <text x={padding} y={height - padding + 18} fontSize={10} fill="#555">
+        {startLabel}
+      </text>
+      <text
+        x={width - padding}
+        y={height - padding + 18}
+        fontSize={10}
+        fill="#555"
+        textAnchor="end"
+      >
+        {endLabel}
+      </text>
+      <text
+        x={padding - 10}
+        y={height - padding - usableHeight + 8}
+        fontSize={10}
+        fill="#555"
+        textAnchor="end"
+      >
+        Home win probability
+      </text>
+    </svg>
+  );
+}
 
 export default function SpiciestMatchups() {
   const [matchups, setMatchups] = useState<MatchupSpiciness[]>([]);
@@ -95,6 +193,7 @@ export default function SpiciestMatchups() {
                 {Math.round(matchup.lastLeadChangeMinute)}
               </div>
             )}
+            <ProbabilityChart points={matchup.probabilityLine} />
           </div>
         ))}
       </div>
@@ -146,7 +245,7 @@ function computeSpiciestMatchups(
     if (!weekSchedule) return;
 
     matchups.forEach(([homeId, awayId]) => {
-      const timeline = buildMatchupTimeline(
+      const { timeline, homePlayers, awayPlayers } = buildMatchupTimeline(
         wrapped,
         week,
         homeId,
@@ -154,6 +253,13 @@ function computeSpiciestMatchups(
         weekSchedule
       );
       if (!timeline.length) return;
+
+      const probabilityLine = buildProbabilityLine(
+        timeline,
+        weekSchedule.baseline,
+        homePlayers,
+        awayPlayers
+      );
 
       const lateStart =
         (timeline[timeline.length - 1]?.minute ?? GAME_MINUTES) - 45;
@@ -196,6 +302,7 @@ function computeSpiciestMatchups(
           lateLeadChanges,
           lastLeadChangeMinute
         ),
+        probabilityLine,
       });
     });
   });
@@ -208,29 +315,31 @@ function buildMatchupTimeline(
   week: number,
   homeId: string,
   awayId: string,
-  weekSchedule: Map<string, number>
-): TimelinePoint[] {
+  weekSchedule: WeekSchedule
+): TimelineBundle {
   const homeRoster = wrapped.ffTeams[homeId]?.rosters?.[week];
   const awayRoster = wrapped.ffTeams[awayId]?.rosters?.[week];
-  if (!homeRoster || !awayRoster) return [];
+  if (!homeRoster || !awayRoster)
+    return { timeline: [], homePlayers: [], awayPlayers: [] };
 
   const teamMinutes = new Set<number>([0]);
   const homePlayers = buildPlayerWindows(
     wrapped,
     week,
     homeRoster.starting,
-    weekSchedule,
+    weekSchedule.kickoffMinutes,
     teamMinutes
   );
   const awayPlayers = buildPlayerWindows(
     wrapped,
     week,
     awayRoster.starting,
-    weekSchedule,
+    weekSchedule.kickoffMinutes,
     teamMinutes
   );
 
-  if (!homePlayers.length || !awayPlayers.length) return [];
+  if (!homePlayers.length || !awayPlayers.length)
+    return { timeline: [], homePlayers: [], awayPlayers: [] };
 
   const sortedMinutes = Array.from(teamMinutes).sort((a, b) => a - b);
   const timeline: TimelinePoint[] = sortedMinutes.map((minute) => ({
@@ -241,7 +350,7 @@ function buildMatchupTimeline(
     ],
   }));
 
-  return timeline;
+  return { timeline, homePlayers, awayPlayers };
 }
 
 function buildPlayerWindows(
@@ -251,7 +360,7 @@ function buildPlayerWindows(
   weekSchedule: Map<string, number>,
   minutes: Set<number>
 ) {
-  const players: { start: number; end: number; points: number }[] = [];
+  const players: PlayerWindow[] = [];
 
   playerIds.forEach((playerId) => {
     const player = wrapped.nflPlayers[playerId];
@@ -273,7 +382,7 @@ function buildPlayerWindows(
 }
 
 function sumPlayerProgress(
-  players: { start: number; end: number; points: number }[],
+  players: PlayerWindow[],
   minute: number
 ): number {
   return players
@@ -286,8 +395,48 @@ function sumPlayerProgress(
     .reduce((a, b) => a + b, 0);
 }
 
-function buildWeekSchedule(data: DataV6): Map<number, Map<string, number>> {
-  const schedule = new Map<number, Map<string, number>>();
+function sumRemainingPoints(players: PlayerWindow[], minute: number): number {
+  return players
+    .map(({ start, end, points }) => {
+      if (minute >= end) return 0;
+      if (minute <= start) return points;
+      const progress = (minute - start) / (end - start);
+      return points * (1 - progress);
+    })
+    .reduce((a, b) => a + b, 0);
+}
+
+function buildProbabilityLine(
+  timeline: TimelinePoint[],
+  baseline: number,
+  homePlayers: PlayerWindow[],
+  awayPlayers: PlayerWindow[]
+): ProbabilityPoint[] {
+  return timeline.map((entry) => {
+    const [homeScore, awayScore] = entry.scores;
+    const remainingHome = sumRemainingPoints(homePlayers, entry.minute);
+    const remainingAway = sumRemainingPoints(awayPlayers, entry.minute);
+    const lead = homeScore - awayScore;
+    const remainingTotal = remainingHome + remainingAway;
+    const scale = Math.max(1, remainingTotal / 6);
+    const probability = clamp(1 / (1 + Math.exp(-lead / scale)), 0, 1);
+
+    const timestamp = baseline + entry.minute * 60 * 1000;
+
+    return {
+      minute: entry.minute,
+      probability,
+      timestamp,
+    };
+  });
+}
+
+function clamp(value: number, min: number, max: number): number {
+  return Math.max(min, Math.min(max, value));
+}
+
+function buildWeekSchedule(data: DataV6): Map<number, WeekSchedule> {
+  const schedule = new Map<number, WeekSchedule>();
 
   const gamesByWeek = data.games.reduce((acc, game) => {
     if (!acc[game.week]) acc[game.week] = [];
@@ -305,7 +454,7 @@ function buildWeekSchedule(data: DataV6): Map<number, Map<string, number>> {
         map.set(team.name, kickoffMinute);
       });
     });
-    schedule.set(week, map);
+    schedule.set(week, { kickoffMinutes: map, baseline });
   });
 
   return schedule;
