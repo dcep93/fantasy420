@@ -8,11 +8,30 @@ interface TeamSummary {
   name: string;
 }
 
+interface Play {
+  type: string;
+  down: number;
+  text: string;
+  clock: string;
+  distance: number;
+  startYardsToEndzone: number;
+}
+
+interface Drive {
+  team: string;
+  description: string;
+  result: string;
+  plays: Play[];
+  scores: [number, number];
+}
+
 interface Game {
   gameId: number;
   timestamp: number;
   week: number;
   teams: TeamSummary[];
+  drives: Drive[];
+  scores: [number, number];
 }
 
 interface DataV6 {
@@ -35,8 +54,23 @@ interface MatchupSpiciness {
 
 type TimelinePoint = { minute: number; scores: [number, number] };
 type ProbabilityPoint = { minute: number; probability: number; timestamp: number };
-type WeekSchedule = { kickoffMinutes: Map<string, number>; baseline: number };
-type PlayerWindow = { start: number; end: number; points: number };
+type WeekSchedule = {
+  kickoffMinutes: Map<string, number>;
+  baseline: number;
+  gamesByTeam: Map<string, Game>;
+};
+type PlayerMoment = {
+  minute: number;
+  timestamp: number;
+  projected: number;
+  scored: number;
+  injured: boolean;
+};
+type PlayerWindow = {
+  playerId: string;
+  moments: PlayerMoment[];
+  finalPoints: number;
+};
 type TimelineBundle = {
   timeline: TimelinePoint[];
   homePlayers: PlayerWindow[];
@@ -247,6 +281,7 @@ function computeSpiciestMatchups(
     matchups.forEach(([homeId, awayId]) => {
       const { timeline, homePlayers, awayPlayers } = buildMatchupTimeline(
         wrapped,
+        data,
         week,
         homeId,
         awayId,
@@ -312,6 +347,7 @@ function computeSpiciestMatchups(
 
 function buildMatchupTimeline(
   wrapped: ReturnType<typeof selectedWrapped>,
+  _data: DataV6,
   week: number,
   homeId: string,
   awayId: string,
@@ -325,16 +361,20 @@ function buildMatchupTimeline(
   const teamMinutes = new Set<number>([0]);
   const homePlayers = buildPlayerWindows(
     wrapped,
+    _data,
     week,
     homeRoster.starting,
-    weekSchedule.kickoffMinutes,
+    homeRoster.projections,
+    weekSchedule,
     teamMinutes
   );
   const awayPlayers = buildPlayerWindows(
     wrapped,
+    _data,
     week,
     awayRoster.starting,
-    weekSchedule.kickoffMinutes,
+    awayRoster.projections,
+    weekSchedule,
     teamMinutes
   );
 
@@ -355,9 +395,11 @@ function buildMatchupTimeline(
 
 function buildPlayerWindows(
   wrapped: ReturnType<typeof selectedWrapped>,
+  _data: DataV6,
   week: number,
   playerIds: string[],
-  weekSchedule: Map<string, number>,
+  projections: { [id: string]: number } | undefined,
+  weekSchedule: WeekSchedule,
   minutes: Set<number>
 ) {
   const players: PlayerWindow[] = [];
@@ -365,17 +407,109 @@ function buildPlayerWindows(
   playerIds.forEach((playerId) => {
     const player = wrapped.nflPlayers[playerId];
     if (!player) return;
-    const points = player.scores?.[week] ?? 0;
-    if (points === 0) return;
+    const finalPoints = player.scores?.[week] ?? 0;
+    const startingProjection =
+      projections?.[playerId] ?? player.projection ?? player.average ?? 0;
 
     const teamName = wrapped.nflTeams[player.nflTeamId]?.name;
-    const teamKickoff = teamName ? weekSchedule.get(teamName) : undefined;
+    const teamKickoff = teamName
+      ? weekSchedule.kickoffMinutes.get(teamName)
+      : undefined;
     const kickoff = typeof teamKickoff === "number" ? teamKickoff : 0;
-    const start = kickoff;
-    const end = kickoff + GAME_MINUTES;
-    minutes.add(start);
-    minutes.add(end);
-    players.push({ start, end, points });
+    const game = teamName ? weekSchedule.gamesByTeam.get(teamName) : null;
+
+    const plays = game
+      ? game.drives.flatMap((drive) => drive.plays)
+      : ([] as Play[]);
+    const distributionPlays = plays.length || 1;
+    const involvedPlays = plays.filter((play) =>
+      matchesPlayer(player.name, play.text)
+    ).length;
+    const scoringBuckets = involvedPlays || distributionPlays;
+
+    let scoredSoFar = 0;
+    let injured = false;
+    const moments: PlayerMoment[] = [];
+
+    if (!plays.length) {
+      const startTimestamp = weekSchedule.baseline + kickoff * 60 * 1000;
+      const endMinute = kickoff + GAME_MINUTES;
+      const endTimestamp = weekSchedule.baseline + endMinute * 60 * 1000;
+      minutes.add(kickoff);
+      minutes.add(endMinute);
+      moments.push({
+        minute: kickoff,
+        timestamp: startTimestamp,
+        projected: startingProjection,
+        scored: 0,
+        injured: false,
+      });
+      moments.push({
+        minute: endMinute,
+        timestamp: endTimestamp,
+        projected: finalPoints,
+        scored: finalPoints,
+        injured: false,
+      });
+    } else {
+      plays.forEach((play, idx) => {
+        const minuteIntoGame = clockToGameMinute(play.clock);
+        const minute = kickoff + minuteIntoGame;
+        const timestamp = weekSchedule.baseline + minute * 60 * 1000;
+        const text = play.text || "";
+        const nameMatch = matchesPlayer(player.name, text);
+        const injuryMention = nameMatch && /injur/i.test(text);
+        const returnMention = nameMatch && /return/i.test(text);
+        const timeRatio = Math.min(1, minuteIntoGame / GAME_MINUTES);
+
+        if (injuryMention) {
+          injured = true;
+        } else if (returnMention) {
+          injured = false;
+        }
+
+        if (scoringBuckets > 0 && (nameMatch || involvedPlays === 0)) {
+          scoredSoFar = Math.min(
+            finalPoints,
+            scoredSoFar + finalPoints / scoringBuckets
+          );
+        }
+
+        const projected = injured
+          ? scoredSoFar
+          : scoredSoFar +
+            Math.max(0, startingProjection - scoredSoFar) * (1 - timeRatio);
+
+        moments.push({
+          minute,
+          timestamp,
+          projected,
+          scored: scoredSoFar,
+          injured,
+        });
+        minutes.add(minute);
+
+        // ensure the final play hits the final fantasy score
+        if (idx === plays.length - 1 && scoredSoFar < finalPoints) {
+          scoredSoFar = finalPoints;
+        }
+      });
+
+      const finalMinute = kickoff + GAME_MINUTES;
+      const finalTimestamp = weekSchedule.baseline + finalMinute * 60 * 1000;
+      if (!moments.length || moments[moments.length - 1]!.minute < finalMinute) {
+        minutes.add(finalMinute);
+        moments.push({
+          minute: finalMinute,
+          timestamp: finalTimestamp,
+          projected: scoredSoFar,
+          scored: scoredSoFar,
+          injured,
+        });
+      }
+    }
+
+    players.push({ playerId, moments, finalPoints });
   });
 
   return players;
@@ -386,23 +520,13 @@ function sumPlayerProgress(
   minute: number
 ): number {
   return players
-    .map(({ start, end, points }) => {
-      if (minute <= start) return 0;
-      if (minute >= end) return points;
-      const progress = (minute - start) / (end - start);
-      return points * progress;
-    })
+    .map((player) => scoredAtMinute(player, minute))
     .reduce((a, b) => a + b, 0);
 }
 
 function sumRemainingPoints(players: PlayerWindow[], minute: number): number {
   return players
-    .map(({ start, end, points }) => {
-      if (minute >= end) return 0;
-      if (minute <= start) return points;
-      const progress = (minute - start) / (end - start);
-      return points * (1 - progress);
-    })
+    .map((player) => Math.max(0, player.finalPoints - scoredAtMinute(player, minute)))
     .reduce((a, b) => a + b, 0);
 }
 
@@ -435,6 +559,48 @@ function clamp(value: number, min: number, max: number): number {
   return Math.max(min, Math.min(max, value));
 }
 
+function scoredAtMinute(player: PlayerWindow, minute: number): number {
+  if (!player.moments.length) return 0;
+  let lastKnown = player.moments[0];
+  for (const moment of player.moments) {
+    if (moment.minute > minute) break;
+    lastKnown = moment;
+  }
+  return lastKnown.minute > minute ? 0 : lastKnown.scored;
+}
+
+function clockToGameMinute(clock: string): number {
+  const match = clock.match(/Q(\d)\s+(\d{1,2}):(\d{2})/);
+  if (!match) return 0;
+  const quarter = parseInt(match[1]);
+  const minutes = parseInt(match[2]);
+  const seconds = parseInt(match[3]);
+  const elapsedInQuarter = (900 - (minutes * 60 + seconds)) / 900;
+  const minuteOffset = (quarter - 1) * (GAME_MINUTES / 4);
+  return minuteOffset + elapsedInQuarter * (GAME_MINUTES / 4);
+}
+
+function matchesPlayer(playerName: string, playText: string): boolean {
+  const lastName = playerName.split(" ").slice(-1)[0];
+  const escapedLast = escapeRegExp(lastName);
+  const lastNameRegex = new RegExp(`\\b${escapedLast}\\b`, "i");
+  if (lastNameRegex.test(playText)) return true;
+
+  const [first] = playerName.split(" ");
+  if (first) {
+    const short = `${first[0]}.${lastName}`;
+    const escapedShort = escapeRegExp(short);
+    const shortRegex = new RegExp(escapedShort, "i");
+    if (shortRegex.test(playText)) return true;
+  }
+
+  return false;
+}
+
+function escapeRegExp(str: string): string {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 function buildWeekSchedule(data: DataV6): Map<number, WeekSchedule> {
   const schedule = new Map<number, WeekSchedule>();
 
@@ -448,13 +614,15 @@ function buildWeekSchedule(data: DataV6): Map<number, WeekSchedule> {
     const week = parseInt(weekStr);
     const baseline = Math.min(...games.map((g) => g.timestamp));
     const map = new Map<string, number>();
+    const gamesByTeam = new Map<string, Game>();
     games.forEach((game) => {
       const kickoffMinute = (game.timestamp - baseline) / (1000 * 60);
       game.teams.forEach((team) => {
         map.set(team.name, kickoffMinute);
+        gamesByTeam.set(team.name, game);
       });
     });
-    schedule.set(week, { kickoffMinutes: map, baseline });
+    schedule.set(week, { kickoffMinutes: map, baseline, gamesByTeam });
   });
 
   return schedule;
