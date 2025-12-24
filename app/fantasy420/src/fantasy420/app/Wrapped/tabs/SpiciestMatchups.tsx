@@ -4,6 +4,50 @@ import { bubbleStyle, selectedWrapped, selectedYear } from "..";
 const DATA_CACHE = "data_v6";
 const GAME_MINUTES = 180;
 
+const TEAM_NAME_TO_ABBR: Record<string, string> = {
+  Cardinals: "ARI",
+  Falcons: "ATL",
+  Ravens: "BAL",
+  Bills: "BUF",
+  Panthers: "CAR",
+  Bears: "CHI",
+  Bengals: "CIN",
+  Browns: "CLE",
+  Cowboys: "DAL",
+  Broncos: "DEN",
+  Lions: "DET",
+  Packers: "GB",
+  Texans: "HOU",
+  Colts: "IND",
+  Jaguars: "JAX",
+  Chiefs: "KC",
+  Raiders: "LV",
+  Chargers: "LAC",
+  Rams: "LAR",
+  Dolphins: "MIA",
+  Vikings: "MIN",
+  Patriots: "NE",
+  Saints: "NO",
+  Giants: "NYG",
+  Jets: "NYJ",
+  Eagles: "PHI",
+  Steelers: "PIT",
+  "49ers": "SF",
+  Seahawks: "SEA",
+  Buccaneers: "TB",
+  Titans: "TEN",
+  Commanders: "WSH",
+};
+
+const TEAM_ABBR_TO_NAMES = Object.entries(TEAM_NAME_TO_ABBR).reduce(
+  (acc, [name, abbr]) => {
+    if (!acc[abbr]) acc[abbr] = [];
+    acc[abbr]!.push(name);
+    return acc;
+  },
+  {} as Record<string, string[]>
+);
+
 interface TeamSummary {
   name: string;
 }
@@ -81,17 +125,57 @@ type TimelineBundle = {
   awayPlayers: PlayerWindow[];
 };
 
+function lookupTeamAbbreviation(teamName?: string | null): string | null {
+  if (!teamName) return null;
+  const trimmed = teamName.trim();
+  const mapped = TEAM_NAME_TO_ABBR[trimmed];
+  if (mapped) return mapped;
+
+  const upper = trimmed.toUpperCase();
+  if (TEAM_ABBR_TO_NAMES[upper]) return upper;
+
+  return null;
+}
+
 function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
   if (!points.length) return null;
 
-  const width = 360;
-  const height = 180;
-  const padding = 36;
+  const width = 3600;
+  const height = 220;
+  const paddingLeft = 96;
+  const paddingRight = 36;
+  const paddingBottom = 36;
+  const paddingTop = 24;
   const minTime = Math.min(...points.map((p) => p.timestamp));
   const maxTime = Math.max(...points.map((p) => p.timestamp));
-  const timeRange = Math.max(1, maxTime - minTime);
-  const usableWidth = width - padding * 2;
-  const usableHeight = height - padding * 1.5;
+  const usableWidth = width - paddingLeft - paddingRight;
+  const usableHeight = height - paddingTop - paddingBottom;
+  const flatGapCapMs = 30 * 60 * 1000;
+  const zeroTolerance = 0.0001;
+
+  const cumulativeSpan: number[] = [];
+  let totalSpan = 0;
+
+  points.forEach((point, idx) => {
+    if (idx === 0) {
+      cumulativeSpan.push(0);
+      return;
+    }
+
+    const prev = points[idx - 1]!;
+    const delta = point.timestamp - prev.timestamp;
+    const probabilityChange = Math.abs(point.probability - prev.probability);
+    const isFlat = probabilityChange < zeroTolerance;
+    const compressedDelta = isFlat ? Math.min(delta, flatGapCapMs) : delta;
+
+    totalSpan += Math.max(compressedDelta, 1);
+    cumulativeSpan.push(totalSpan);
+  });
+
+  const xForIndex = (idx: number) => {
+    if (totalSpan === 0) return paddingLeft;
+    return paddingLeft + (cumulativeSpan[idx]! / totalSpan) * usableWidth;
+  };
 
   const startLabel = new Date(minTime).toLocaleString(undefined, {
     weekday: "short",
@@ -106,9 +190,8 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
 
   const path = points
     .map((point, idx) => {
-      const x =
-        padding + ((point.timestamp - minTime) / timeRange) * usableWidth;
-      const y = height - padding - point.probability * usableHeight;
+      const x = xForIndex(idx);
+      const y = height - paddingBottom - point.probability * usableHeight;
       const command = idx === 0 ? "M" : "L";
       return `${command}${x},${y}`;
     })
@@ -123,33 +206,67 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
       style={{ marginTop: "0.4em" }}
     >
       <line
-        x1={padding}
-        x2={width - padding}
-        y1={height - padding}
-        y2={height - padding}
+        x1={paddingLeft}
+        x2={paddingLeft}
+        y1={paddingTop}
+        y2={height - paddingBottom}
+        stroke="#ccc"
+      />
+      {[0, 0.25, 0.5, 0.75, 1].map((tick) => {
+        const y = height - paddingBottom - tick * usableHeight;
+        return (
+          <g key={tick}>
+            <line
+              x1={paddingLeft - 6}
+              x2={paddingLeft}
+              y1={y}
+              y2={y}
+              stroke="#999"
+            />
+            <text
+              x={paddingLeft - 10}
+              y={y + 4}
+              fontSize={10}
+              fill="#555"
+              textAnchor="end"
+            >
+              {Math.round(tick * 100)}%
+            </text>
+          </g>
+        );
+      })}
+      <line
+        x1={paddingLeft}
+        x2={width - paddingRight}
+        y1={height - paddingBottom}
+        y2={height - paddingBottom}
         stroke="#ccc"
       />
       <line
-        x1={padding}
-        x2={width - padding}
-        y1={height - padding - usableHeight / 2}
-        y2={height - padding - usableHeight / 2}
+        x1={paddingLeft}
+        x2={width - paddingRight}
+        y1={height - paddingBottom - usableHeight / 2}
+        y2={height - paddingBottom - usableHeight / 2}
         stroke="#e0e0e0"
         strokeDasharray="4 4"
       />
       <path d={path} fill="none" stroke="#f1636b" strokeWidth={2} />
       {points.map((point, idx) => {
-        const x =
-          padding + ((point.timestamp - minTime) / timeRange) * usableWidth;
-        const y = height - padding - point.probability * usableHeight;
+        const x = xForIndex(idx);
+        const y = height - paddingBottom - point.probability * usableHeight;
         return <circle key={idx} cx={x} cy={y} r={2} fill="#f1636b" />;
       })}
-      <text x={padding} y={height - padding + 18} fontSize={10} fill="#555">
+      <text
+        x={paddingLeft}
+        y={height - paddingBottom + 18}
+        fontSize={10}
+        fill="#555"
+      >
         {startLabel}
       </text>
       <text
-        x={width - padding}
-        y={height - padding + 18}
+        x={width - paddingRight}
+        y={height - paddingBottom + 18}
         fontSize={10}
         fill="#555"
         textAnchor="end"
@@ -157,8 +274,8 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
         {endLabel}
       </text>
       <text
-        x={padding - 10}
-        y={height - padding - usableHeight + 8}
+        x={paddingLeft - 16}
+        y={paddingTop - 8}
         fontSize={10}
         fill="#555"
         textAnchor="end"
@@ -252,11 +369,11 @@ export default function SpiciestMatchups() {
 }
 
 async function fetchSeasonData(year: number): Promise<DataV6> {
-  const cache = await caches.open(DATA_CACHE);
+  const cache = typeof caches !== "undefined" ? await caches.open(DATA_CACHE) : null;
   const cacheKey = `data_v6_${year}`;
   const url = `https://dcep93.github.io/nflquery/data_v6/${year}.json`;
 
-  const cached = await cache.match(cacheKey);
+  const cached = cache ? await cache.match(cacheKey) : null;
   if (cached?.url === url) {
     return cached.json();
   }
@@ -265,7 +382,9 @@ async function fetchSeasonData(year: number): Promise<DataV6> {
   if (!response.ok) {
     throw new Error(`HTTP ${response.status} for ${year}`);
   }
-  await cache.put(cacheKey, response.clone());
+  if (cache) {
+    await cache.put(cacheKey, response.clone());
+  }
   return response.json();
 }
 
@@ -415,11 +534,12 @@ function buildPlayerWindows(
       projections?.[playerId] ?? player.projection ?? player.average ?? 0;
 
     const teamName = wrapped.nflTeams[player.nflTeamId]?.name;
-    const teamKickoff = teamName
-      ? weekSchedule.kickoffMinutes.get(teamName)
+    const teamLookup = lookupTeamAbbreviation(teamName);
+    const teamKickoff = teamLookup
+      ? weekSchedule.kickoffMinutes.get(teamLookup)
       : undefined;
     const kickoff = typeof teamKickoff === "number" ? teamKickoff : 0;
-    const game = teamName ? weekSchedule.gamesByTeam.get(teamName) : null;
+    const game = teamLookup ? weekSchedule.gamesByTeam.get(teamLookup) : null;
 
     const plays = game
       ? game.drives.flatMap((drive) => drive.plays)
@@ -623,8 +743,15 @@ function buildWeekSchedule(data: DataV6): Map<number, WeekSchedule> {
     games.forEach((game) => {
       const kickoffMinute = (game.timestamp - baseline) / (1000 * 60);
       game.teams.forEach((team) => {
-        map.set(team.name, kickoffMinute);
-        gamesByTeam.set(team.name, game);
+        const aliases = new Set<string>([team.name]);
+        (TEAM_ABBR_TO_NAMES[team.name] ?? []).forEach((alias) =>
+          aliases.add(alias)
+        );
+
+        aliases.forEach((alias) => {
+          map.set(alias, kickoffMinute);
+          gamesByTeam.set(alias, game);
+        });
       });
     });
     schedule.set(week, { kickoffMinutes: map, baseline, gamesByTeam });
@@ -656,3 +783,10 @@ function describeMatchup(
       : "";
   return `Projected leader flipped ${leadChanges} times.${lateNote}${timingNote}`;
 }
+
+export {
+  buildWeekSchedule,
+  computeSpiciestMatchups,
+  fetchSeasonData,
+  lookupTeamAbbreviation,
+};
