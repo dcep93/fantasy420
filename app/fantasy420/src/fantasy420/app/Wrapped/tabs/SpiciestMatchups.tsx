@@ -140,7 +140,7 @@ function lookupTeamAbbreviation(teamName?: string | null): string | null {
 function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
   if (!points.length) return null;
 
-  const width = 3600;
+  const width = 1200;
   const height = 220;
   const paddingLeft = 96;
   const paddingRight = 36;
@@ -151,7 +151,7 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
   const usableWidth = width - paddingLeft - paddingRight;
   const usableHeight = height - paddingTop - paddingBottom;
   const flatGapCapMs = 30 * 60 * 1000;
-  const zeroTolerance = 0.0001;
+  const lowChangeThreshold = 0.02;
 
   const cumulativeSpan: number[] = [];
   let totalSpan = 0;
@@ -165,8 +165,8 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
     const prev = points[idx - 1]!;
     const delta = point.timestamp - prev.timestamp;
     const probabilityChange = Math.abs(point.probability - prev.probability);
-    const isFlat = probabilityChange < zeroTolerance;
-    const compressedDelta = isFlat ? Math.min(delta, flatGapCapMs) : delta;
+    const isLowChange = probabilityChange <= lowChangeThreshold;
+    const compressedDelta = isLowChange ? Math.min(delta, flatGapCapMs) : delta;
 
     totalSpan += Math.max(compressedDelta, 1);
     cumulativeSpan.push(totalSpan);
@@ -369,7 +369,8 @@ export default function SpiciestMatchups() {
 }
 
 async function fetchSeasonData(year: number): Promise<DataV6> {
-  const cache = typeof caches !== "undefined" ? await caches.open(DATA_CACHE) : null;
+  const cache =
+    typeof caches !== "undefined" ? await caches.open(DATA_CACHE) : null;
   const cacheKey = `data_v6_${year}`;
   const url = `https://dcep93.github.io/nflquery/data_v6/${year}.json`;
 
