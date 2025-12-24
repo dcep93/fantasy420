@@ -97,10 +97,18 @@ interface MatchupSpiciness {
 }
 
 type TimelinePoint = { minute: number; scores: [number, number] };
+type ProbabilityImpact = {
+  player: string;
+  actual: number;
+  projected: number;
+  side: "home" | "away";
+};
+
 type ProbabilityPoint = {
   minute: number;
   probability: number;
   timestamp: number;
+  impact?: ProbabilityImpact;
 };
 type WeekSchedule = {
   kickoffMinutes: Map<string, number>;
@@ -118,6 +126,8 @@ type PlayerWindow = {
   playerId: string;
   moments: PlayerMoment[];
   finalPoints: number;
+  startingProjection: number;
+  playerName: string;
 };
 type TimelineBundle = {
   timeline: TimelinePoint[];
@@ -203,6 +213,12 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
     })
     .join(" ");
 
+  const coordinates = points.map((point, idx) => {
+    const x = xForIndex(idx);
+    const y = height - paddingBottom - point.probability * usableHeight;
+    return { point, x, y };
+  });
+
   const formatTooltipTimestamp = (timestamp: number) => {
     const parts = new Intl.DateTimeFormat(undefined, {
       weekday: "long",
@@ -274,9 +290,7 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
           strokeDasharray="4 4"
         />
         <path d={path} fill="none" stroke="#f1636b" strokeWidth={3} />
-        {points.map((point, idx) => {
-          const x = xForIndex(idx);
-          const y = height - paddingBottom - point.probability * usableHeight;
+        {coordinates.map(({ point, x, y }, idx) => {
           const label = formatTooltipTimestamp(point.timestamp);
           return (
             <circle
@@ -289,6 +303,46 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
               onMouseEnter={() => setHovered({ x, y, label })}
               onMouseLeave={() => setHovered(null)}
             />
+          );
+        })}
+        {coordinates.map(({ point, x, y }, idx) => {
+          if (idx === 0 || !point.impact) return null;
+          const previous = coordinates[idx - 1]!;
+          const midX = (previous.x + x) / 2;
+          const midY = (previous.y + y) / 2;
+          const label = `${point.impact.player} ${point.impact.actual.toFixed(
+            1
+          )} vs ${point.impact.projected.toFixed(1)}`;
+          const padding = 6;
+          const estimatedWidth = label.length * 6 + padding * 2;
+          const rectHeight = 18;
+          const verticalOffset = point.impact.side === "home" ? -26 : 26;
+          const labelY = midY + verticalOffset;
+
+          return (
+            <g key={`impact-${idx}`}>
+              <rect
+                x={midX - estimatedWidth / 2}
+                y={labelY - rectHeight + 4}
+                width={estimatedWidth}
+                height={rectHeight}
+                fill="rgba(255,255,255,0.92)"
+                stroke="#d2d2d2"
+                strokeWidth={1}
+                rx={4}
+                ry={4}
+              />
+              <text
+                x={midX}
+                y={labelY}
+                fontSize={11}
+                fill="#333"
+                textAnchor="middle"
+                fontWeight={600}
+              >
+                {label}
+              </text>
+            </g>
           );
         })}
         {hovered && (
@@ -701,7 +755,13 @@ function buildPlayerWindows(
       }
     }
 
-    players.push({ playerId, moments, finalPoints });
+    players.push({
+      playerId,
+      moments,
+      finalPoints,
+      startingProjection,
+      playerName: player.name,
+    });
   });
 
   return players;
@@ -721,13 +781,53 @@ function sumRemainingPoints(players: PlayerWindow[], minute: number): number {
     .reduce((a, b) => a + b, 0);
 }
 
+function findSegmentImpact(
+  homePlayers: PlayerWindow[],
+  awayPlayers: PlayerWindow[],
+  previousMinute: number,
+  minute: number
+): ProbabilityImpact | undefined {
+  const candidates = [
+    ...homePlayers.map((player) => ({ player, side: "home" as const })),
+    ...awayPlayers.map((player) => ({ player, side: "away" as const })),
+  ];
+
+  const evaluated = candidates.map(({ player, side }) => {
+    const previousActual = scoredAtMinute(player, previousMinute);
+    const currentActual = scoredAtMinute(player, minute);
+
+    const previousDeviation = previousActual - player.startingProjection;
+    const currentDeviation = currentActual - player.startingProjection;
+    const deviationChange = currentDeviation - previousDeviation;
+
+    return { player, side, deviationChange, currentActual };
+  });
+
+  const significant = evaluated
+    .filter((entry) => Math.abs(entry.deviationChange) > 0.25)
+    .sort((a, b) => Math.abs(b.deviationChange) - Math.abs(a.deviationChange));
+
+  const top = significant[0];
+  if (!top) return undefined;
+
+  return {
+    player: top.player.playerName,
+    actual: top.currentActual,
+    projected: top.player.startingProjection,
+    side: top.side,
+  };
+}
+
 function buildProbabilityLine(
   timeline: TimelinePoint[],
   baseline: number,
   homePlayers: PlayerWindow[],
   awayPlayers: PlayerWindow[]
 ): ProbabilityPoint[] {
-  return timeline.map((entry) => {
+  let previousProbability: number | null = null;
+  let previousMinute = timeline[0]?.minute ?? 0;
+
+  return timeline.map((entry, idx) => {
     const [homeScore, awayScore] = entry.scores;
     const remainingHome = sumRemainingPoints(homePlayers, entry.minute);
     const remainingAway = sumRemainingPoints(awayPlayers, entry.minute);
@@ -738,10 +838,28 @@ function buildProbabilityLine(
 
     const timestamp = baseline + entry.minute * 60 * 1000;
 
+    const probabilityChange =
+      previousProbability === null
+        ? 0
+        : Math.abs(probability - previousProbability);
+    const impact =
+      idx > 0 && probabilityChange > 0.04
+        ? findSegmentImpact(
+            homePlayers,
+            awayPlayers,
+            previousMinute,
+            entry.minute
+          )
+        : undefined;
+
+    previousProbability = probability;
+    previousMinute = entry.minute;
+
     return {
       minute: entry.minute,
       probability,
       timestamp,
+      impact,
     };
   });
 }
@@ -758,6 +876,18 @@ function scoredAtMinute(player: PlayerWindow, minute: number): number {
     lastKnown = moment;
   }
   return lastKnown.minute > minute ? 0 : lastKnown.scored;
+}
+
+function projectedAtMinute(player: PlayerWindow, minute: number): number {
+  if (!player.moments.length) return player.startingProjection;
+  let lastKnown = player.moments[0];
+  for (const moment of player.moments) {
+    if (moment.minute > minute) break;
+    lastKnown = moment;
+  }
+  return lastKnown.minute > minute
+    ? player.startingProjection
+    : lastKnown.projected;
 }
 
 function clockToGameMinute(clock: string): number {
