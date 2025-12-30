@@ -157,11 +157,11 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
   } | null>(null);
 
   const width = 1200;
-  const height = 220;
-  const paddingLeft = 96;
-  const paddingRight = 36;
-  const paddingBottom = 36;
-  const paddingTop = 24;
+  const height = 320;
+  const paddingLeft = 110;
+  const paddingRight = 48;
+  const paddingBottom = 52;
+  const paddingTop = 36;
   const minTime = Math.min(...points.map((p) => p.timestamp));
   const maxTime = Math.max(...points.map((p) => p.timestamp));
   const usableWidth = width - paddingLeft - paddingRight;
@@ -236,7 +236,17 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
   };
 
   return (
-    <div style={{ position: "relative", width }}>
+    <div
+      style={{
+        position: "relative",
+        width,
+        background: "#fafafa",
+        border: "1px solid #e5e5e5",
+        borderRadius: 12,
+        boxShadow: "0 8px 18px rgba(0,0,0,0.05)",
+        overflow: "visible",
+      }}
+    >
       <svg
         width={width}
         height={height}
@@ -244,6 +254,12 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
         aria-label="Home win probability over time"
         style={{ marginTop: "0.4em", overflow: "visible" }}
       >
+        <defs>
+          <linearGradient id="probabilityFill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#f1636b" stopOpacity="0.22" />
+            <stop offset="100%" stopColor="#f1636b" stopOpacity="0.04" />
+          </linearGradient>
+        </defs>
         <line
           x1={paddingLeft}
           x2={paddingLeft}
@@ -251,6 +267,20 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
           y2={height - paddingBottom}
           stroke="#ccc"
         />
+        {[0.25, 0.5, 0.75].map((tick) => {
+          const y = height - paddingBottom - tick * usableHeight;
+          return (
+            <line
+              key={`grid-${tick}`}
+              x1={paddingLeft}
+              x2={width - paddingRight}
+              y1={y}
+              y2={y}
+              stroke="#ececec"
+              strokeDasharray="6 6"
+            />
+          );
+        })}
         {[0, 0.25, 0.5, 0.75, 1].map((tick) => {
           const y = height - paddingBottom - tick * usableHeight;
           return (
@@ -265,8 +295,8 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
               <text
                 x={paddingLeft - 10}
                 y={y + 4}
-                fontSize={10}
-                fill="#555"
+                fontSize={12}
+                fill="#444"
                 textAnchor="end"
               >
                 {Math.round(tick * 100)}%
@@ -289,7 +319,17 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
           stroke="#e0e0e0"
           strokeDasharray="4 4"
         />
-        <path d={path} fill="none" stroke="#f1636b" strokeWidth={3} />
+        <path
+          d={`${path} L${width - paddingRight},${height - paddingBottom} L${paddingLeft},${height - paddingBottom} Z`}
+          fill="url(#probabilityFill)"
+        />
+        <path
+          d={path}
+          fill="none"
+          stroke="#f1636b"
+          strokeWidth={3}
+          strokeLinejoin="round"
+        />
         {coordinates.map(({ point, x, y }, idx) => {
           const label = formatTooltipTimestamp(point.timestamp);
           return (
@@ -335,8 +375,8 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
               <text
                 x={midX}
                 y={labelY}
-                fontSize={11}
-                fill="#333"
+                fontSize={12}
+                fill="#222"
                 textAnchor="middle"
                 fontWeight={600}
               >
@@ -357,26 +397,26 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
         )}
         <text
           x={paddingLeft}
-          y={height - paddingBottom + 18}
-          fontSize={10}
-          fill="#555"
+          y={height - paddingBottom + 26}
+          fontSize={12}
+          fill="#444"
         >
           {startLabel}
         </text>
         <text
           x={width - paddingRight}
-          y={height - paddingBottom + 18}
-          fontSize={10}
-          fill="#555"
+          y={height - paddingBottom + 26}
+          fontSize={12}
+          fill="#444"
           textAnchor="end"
         >
           {endLabel}
         </text>
         <text
           x={paddingLeft - 16}
-          y={paddingTop - 8}
-          fontSize={10}
-          fill="#555"
+          y={paddingTop - 10}
+          fontSize={12}
+          fill="#444"
           textAnchor="end"
         >
           Home win probability
@@ -386,16 +426,16 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
         <div
           style={{
             position: "absolute",
-            left: hovered.x - 60,
-            top: hovered.y - 44,
-            padding: "6px 8px",
+            left: hovered.x - 70,
+            top: hovered.y - 52,
+            padding: "8px 10px",
             background: "rgba(0,0,0,0.85)",
             color: "#fff",
             borderRadius: 4,
-            fontSize: 12,
+            fontSize: 13,
             pointerEvents: "none",
             whiteSpace: "nowrap",
-            boxShadow: "0 2px 6px rgba(0,0,0,0.25)",
+            boxShadow: "0 6px 14px rgba(0,0,0,0.3)",
           }}
         >
           {hovered.label}
@@ -447,25 +487,89 @@ export default function SpiciestMatchups() {
     return (
       <div style={bubbleStyle}>
         {matchups.map((matchup, idx) => (
-          <div key={matchup.id} style={{ marginBottom: "0.7em" }}>
-            <div>
-              {idx + 1}. Week {matchup.week}: {matchup.title}
-            </div>
-            <div>Spice score: {matchup.score.toFixed(2)}</div>
-            <div>
-              Lead changes: {matchup.leadChanges} (late:{" "}
-              {matchup.lateLeadChanges})
-            </div>
-            <div>Final: {matchup.finalScore}</div>
-            <div style={{ fontSize: "0.9em", marginTop: "0.2em" }}>
-              {matchup.description}
-            </div>
-            {matchup.lastLeadChangeMinute !== null && (
+          <div
+            key={matchup.id}
+            style={{
+              marginBottom: "1.1em",
+              padding: "1.1rem 1.2rem",
+              border: "1px solid #e6e6e6",
+              borderRadius: 14,
+              background: "linear-gradient(180deg, #ffffff, #fdfdfd)",
+              boxShadow: "0 10px 24px rgba(0,0,0,0.06)",
+            }}
+          >
+            <header
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "baseline",
+                gap: "1rem",
+                flexWrap: "wrap",
+              }}
+            >
               <div>
-                Last projected flip ~ minute{" "}
-                {Math.round(matchup.lastLeadChangeMinute)}
+                <div style={{ fontWeight: 700, fontSize: "1.1rem" }}>
+                  #{idx + 1} · Week {matchup.week}: {matchup.title}
+                </div>
+                <div style={{ color: "#4c4c4c", marginTop: 4 }}>
+                  {matchup.description}
+                </div>
               </div>
-            )}
+              <div
+                style={{
+                  display: "flex",
+                  gap: "0.5rem",
+                  alignItems: "center",
+                  flexWrap: "wrap",
+                  justifyContent: "flex-end",
+                }}
+              >
+                <span
+                  style={{
+                    background: "#fff2f2",
+                    color: "#c93945",
+                    padding: "0.25rem 0.6rem",
+                    borderRadius: 999,
+                    fontWeight: 700,
+                    fontSize: "0.95rem",
+                    border: "1px solid #ffd6d9",
+                  }}
+                >
+                  Spice {matchup.score.toFixed(2)}
+                </span>
+                <span style={{ color: "#444", fontWeight: 600 }}>
+                  Final: {matchup.finalScore}
+                </span>
+              </div>
+            </header>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+                gap: "0.6rem",
+                marginTop: "0.8rem",
+                marginBottom: "0.2rem",
+              }}
+            >
+              <div style={{ color: "#555" }}>
+                <div style={{ fontSize: "0.85rem", color: "#777" }}>
+                  Lead changes
+                </div>
+                <div style={{ fontWeight: 700 }}>
+                  {matchup.leadChanges} total · {matchup.lateLeadChanges} late
+                </div>
+              </div>
+              <div style={{ color: "#555" }}>
+                <div style={{ fontSize: "0.85rem", color: "#777" }}>
+                  Last projected flip
+                </div>
+                <div style={{ fontWeight: 700 }}>
+                  {matchup.lastLeadChangeMinute !== null
+                    ? `~ minute ${Math.round(matchup.lastLeadChangeMinute)}`
+                    : "None after kickoffs"}
+                </div>
+              </div>
+            </div>
             <ProbabilityChart points={matchup.probabilityLine} />
           </div>
         ))}
