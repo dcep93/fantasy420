@@ -12,6 +12,7 @@ import draft2024 from "./2024.json";
 import draft2025 from "./2025.json";
 import draft2026 from "./2026.json";
 import draftKings from "./draftKings";
+import getMidranks from "./midrank";
 
 export const isDev = import.meta.env.DEV;
 
@@ -463,12 +464,7 @@ function SubDraft(props: {
 function getResults(): DraftJsonType {
   const playerIdToRanks = Object.entries(selectedDraft()).map(([k, d]) => ({
     size: Object.entries(d).length,
-    playerIdToRank: Object.fromEntries(
-      Object.entries(d)
-        .map(([playerId, value]) => ({ playerId, value }))
-        .sort((a, b) => a.value - b.value)
-        .map(({ playerId }, rank) => [playerId, rank])
-    ),
+    playerIdToRank: getMidranks(d),
   }));
   return Object.fromEntries(
     Object.entries({

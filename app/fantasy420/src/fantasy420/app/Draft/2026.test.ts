@@ -1,10 +1,7 @@
 import rankings from "./2026.json";
 
 const minimumPlayersBySource = {
-  espn_10_ppr_super: 300,
   espn_10_ppr_super_auction: 300,
-  espn_10_ppr: 300,
-  espn_10_ppr_auction: 300,
   yafsb_10_ppr_super_auction: 350,
   fantasypros_halfppr_super: 150,
   rotoballer_super: 400,
