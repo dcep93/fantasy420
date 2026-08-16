@@ -5,7 +5,7 @@ if (typeof (globalThis as any).window === "undefined")
 
 import { writeFile } from "fs/promises";
 import path from "path";
-import { clog } from "../Wrapped";
+import { clog, currentYear } from "../Wrapped";
 import allWrapped from "../Wrapped/allWrapped";
 import {
   ConfigType,
@@ -52,7 +52,7 @@ async function runSequential<T>(fns: (() => Promise<T>)[]): Promise<T[]> {
 Promise.resolve()
   .then(() => clog(Date.now()))
   .then(() => ({
-    years: Object.keys(allWrapped).filter((year) => year !== "2025"),
+    years: Object.keys(allWrapped).filter((year) => year !== currentYear),
     rosterEnums: Object.keys(RosterEnum)
       .map((rosterEnum) => parseInt(rosterEnum))
       .filter((rosterEnum) => !isNaN(rosterEnum)),

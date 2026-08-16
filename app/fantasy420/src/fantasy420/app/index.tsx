@@ -1,13 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Draft from "./Draft";
+import DraftAccessGate from "./DraftAccessGate";
 import FetchWrapped from "./FetchWrapped";
 import IdealDraft from "./IdealDraft";
 import Wrapped from "./Wrapped";
 
 const pages = {
   FetchWrapped,
-  Draft,
   IdealDraft,
 };
 
@@ -19,6 +19,14 @@ export default function index() {
     >
       <Routes>
         <Route path="/" element={<Wrapped />} />
+        <Route
+          path="/Draft/*"
+          element={
+            <DraftAccessGate>
+              <Draft />
+            </DraftAccessGate>
+          }
+        />
         {Object.entries(pages).map(([k, V]) => (
           <Route key={k} path={`/${k}/*`} element={<V />} />
         ))}

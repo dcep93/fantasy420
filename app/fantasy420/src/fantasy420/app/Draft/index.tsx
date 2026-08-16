@@ -10,6 +10,7 @@ import allWrapped from "../Wrapped/allWrapped";
 import draft2023 from "./2023.json";
 import draft2024 from "./2024.json";
 import draft2025 from "./2025.json";
+import draft2026 from "./2026.json";
 import draftKings from "./draftKings";
 
 export const isDev = import.meta.env.DEV;
@@ -32,20 +33,12 @@ export const POSITION_COLORS = {
   "D/ST": "lightsalmon",
 } as { [k: string]: string };
 
-// 1. Neil
-// 2. Heify
-// 3. Jon
-// 4. Chae
-// 5. Bu
-// 6. Ruifan
-// 7. Dan
-// 8. Dunc
-// 9. Arzeno
-// 10. Ahmed
-
-const TEAMID_TO_PICK = Object.fromEntries(
-  [3, 7, 6, 2, 5, 10, 1, 9, 8, 4].map((teamId, i) => [teamId, i + 1])
-);
+function getDraftPick(teamId: string | undefined): number | "p" {
+  const pickOrder = teamId
+    ? selectedWrapped().ffTeams[teamId]?.pickOrder
+    : undefined;
+  return pickOrder === undefined ? "p" : pickOrder + 1;
+}
 
 function getNormalizedNameToId(wrapped: WrappedType): {
   [name: string]: string;
@@ -60,6 +53,7 @@ const allDrafts: { [year: string]: DraftJsonType } = Object.fromEntries(
     2023: draft2023,
     2024: draft2024,
     2025: draft2025,
+    2026: draft2026,
   } as { [year: string]: DraftJsonType }).map(([year, rawDraft]) => {
     const normalizedNameToId =
       allWrapped[year] === undefined
@@ -391,10 +385,7 @@ function SubDraft(props: {
                       {v.i + 1}/{v.posRank + 1}/{v.byeWeek}/
                       {v.player.nflTeamId === "0"
                         ? "FA"
-                        : ((teamIdVsBye) =>
-                            teamIdVsBye === undefined
-                              ? "p"
-                              : TEAMID_TO_PICK[teamIdVsBye])(
+                        : getDraftPick(
                             selectedWrapped()
                               .ffMatchups[v.byeWeek]?.find((teamIds) =>
                                 teamIds.includes(MY_TEAM_ID)
@@ -666,14 +657,14 @@ function updateDraftRanking(
     );
     return;
   }
-  const year = 2025;
+  const year = selectedYear;
   const leagueId = 203836968;
   fetch(
     `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/${leagueId}?view=kona_player_info_edit_draft_strategy`,
     {
       credentials: "include",
       headers: {
-        "x-fantasy-filter": `{"players":{"filterStatsForSplitTypeIds":{"value":[0]},"filterStatsForSourceIds":{"value":[1]},"filterStatsForExternalIds":{"value":[${year}]},"sortDraftRanks":{"sortPriority":2,"sortAsc":true,"value":"STANDARD"},"sortPercOwned":{"sortPriority":3,"sortAsc":false},"filterRanksForSlotIds":{"value":[0,2,4,6,17,16]},"filterStatsForTopScoringPeriodIds":{"value":2,"additionalValue":["002023","102023","002022","022023"]}}}`,
+        "x-fantasy-filter": `{"players":{"filterStatsForSplitTypeIds":{"value":[0]},"filterStatsForSourceIds":{"value":[1]},"filterStatsForExternalIds":{"value":[${year}]},"sortDraftRanks":{"sortPriority":2,"sortAsc":true,"value":"STANDARD"},"sortPercOwned":{"sortPriority":3,"sortAsc":false},"filterRanksForSlotIds":{"value":[0,2,4,6,17,16]},"filterStatsForTopScoringPeriodIds":{"value":2,"additionalValue":["00${year}","10${year}"]}}}`,
         "x-fantasy-platform":
           "kona-PROD-b8da8220a336fe39a7b677c0dc5fa27a6bbf87ae",
         "x-fantasy-source": "kona",

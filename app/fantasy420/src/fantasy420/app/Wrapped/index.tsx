@@ -44,7 +44,7 @@ import UniquesStarted from "./tabs/UniquesStarted";
 import WeekTopsAndBottoms from "./tabs/WeekTopsAndBottoms";
 import WhatIf from "./tabs/WhatIf";
 
-export const currentYear = "2025";
+export const currentYear = "2026";
 
 export var selectedYear =
   new URLSearchParams(window.location.search).get("year") || currentYear;

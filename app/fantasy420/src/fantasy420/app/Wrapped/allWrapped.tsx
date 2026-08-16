@@ -4,8 +4,10 @@ import wrapped2022 from "./dataJson/2022.json";
 import wrapped2023 from "./dataJson/2023.json";
 import wrapped2024 from "./dataJson/2024.json";
 import wrapped2025 from "./dataJson/2025.json";
+import wrapped2026 from "./dataJson/2026.json";
 
 const allWrapped: { [year: string]: WrappedType } = {
+  "2026": wrapped2026,
   "2025": wrapped2025,
   "2024": wrapped2024,
   "2023": wrapped2023,
