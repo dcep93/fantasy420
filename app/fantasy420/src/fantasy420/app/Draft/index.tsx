@@ -760,6 +760,11 @@ function normalize(name: string): string {
     .replaceAll(/gabriel davis$/gi, "gabe davis")
     .replaceAll(/hollywood brown$/gi, "marquise brown")
     .replaceAll(/nathaniel dell$/gi, "tank dell")
+    .replaceAll(/cameron skattebo$/gi, "cam skattebo")
+    .replaceAll(/cameron ward$/gi, "cam ward")
+    .replaceAll(/kenneth gainwell$/gi, "kenny gainwell")
+    .replaceAll(/chigoziem okonkwo$/gi, "chig okonkwo")
+    .replaceAll(/andres borregales$/gi, "andy borregales")
     .replaceAll(/ sr$/gi, "")
     .replaceAll(/ jr$/gi, "");
 }

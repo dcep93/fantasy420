@@ -12,6 +12,8 @@ const minimumPlayersBySource = {
   harrisfootball_ppr: 160,
   rotoworld: 199,
   reddit_kyon_ppr: 140,
+  draftsharks_ppr_super_auction: 250,
+  tapthatdraft_10_ppr_super_auction: 210,
 } as const;
 
 test("contains every complete 2026 ranking source in the legacy map format", () => {
