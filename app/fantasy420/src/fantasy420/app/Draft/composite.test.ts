@@ -22,16 +22,14 @@ function getSources(nonSuperQbs: Record<string, number>): RankingSources {
   };
 }
 
-test("classifies superflex sources by name and keeps separators inert", () => {
+test("classifies superflex sources by name and keeps source labels implicit", () => {
   expect(isSuperflexSource("fantasypros_ppr_SUPER")).toBe(true);
   expect(isSuperflexSource("harrisfootball_ppr")).toBe(false);
   expect(isSeparatorSource("")).toBe(true);
   expect(isSeparatorSource("___")).toBe(true);
   expect(isSuperflexSource("___super___")).toBe(true);
-  expect(getSourceLabel("analyst_ppr", new Set(["analyst_ppr"]))).toBe(
-    "analyst_ppr (SF-adjusted)"
-  );
-  expect(getSourceLabel("___", new Set())).toBe("");
+  expect(getSourceLabel("analyst_ppr")).toBe("analyst_ppr");
+  expect(getSourceLabel("___")).toBe("");
 });
 
 test("keeps the native superflex QB identities, order, and slots", () => {

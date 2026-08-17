@@ -17,14 +17,9 @@ export function isSuperflexSource(sourceName: string): boolean {
   return !isSeparatorSource(sourceName) && /super/i.test(sourceName);
 }
 
-export function getSourceLabel(
-  sourceName: string,
-  adjustedSources: Set<string>
-): string {
+export function getSourceLabel(sourceName: string): string {
   if (isSeparatorSource(sourceName)) return "";
-  return `${sourceName}${
-    adjustedSources.has(sourceName) ? " (SF-adjusted)" : ""
-  }`;
+  return sourceName;
 }
 
 function filterRankMap(

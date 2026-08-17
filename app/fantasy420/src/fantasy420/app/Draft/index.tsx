@@ -127,9 +127,7 @@ function SubDraft(props: {
       .map((p, pickIndex) => [p.id, { pickIndex, ...p }])
   );
 
-  const { rankings: results, adjustedSources } = useMemo(getResults, [
-    selectedYear,
-  ]);
+  const { rankings: results } = useMemo(getResults, [selectedYear]);
   const sources = Object.keys(results);
   const [positionFilter, updatePositionFilter] = useState("");
   const [byeWeekFilter, updateByeWeekFilter] = useState(-1);
@@ -172,14 +170,14 @@ function SubDraft(props: {
                   }}
                   onClick={() => update(s)}
                 >
-                  {getSourceLabel(s, adjustedSources)}
+                  {getSourceLabel(s)}
                 </span>
               </li>
             ))}
           </ul>
         </div>
         <div onClick={() => updateRegenSources(!regenSources)}>
-          {getSourceLabel(source, adjustedSources)} ({props.liveDraft.length})
+          {getSourceLabel(source)} ({props.liveDraft.length})
         </div>
         {!regenSources ? null : (
           <div>

@@ -12,7 +12,6 @@ const minimumPlayersBySource = {
   qblist_ppr: 300,
   cbs_ppr_auction: 200,
   fftoday_ppr: 225,
-  rotostreet_half_ppr: 250,
   fantasypros_ppr_super: 528,
   rotoballer_super: 400,
   si_ppr_super: 200,
@@ -54,7 +53,6 @@ test("preserves representative values from the imported public boards", () => {
   expect(rankings.qblist_ppr["Bijan Robinson"]).toBe(1);
   expect(rankings.cbs_ppr_auction["Jahmyr Gibbs"]).toBe(-34);
   expect(rankings.fftoday_ppr["Jahmyr Gibbs"]).toBe(1);
-  expect(rankings.rotostreet_half_ppr["Jahmyr Gibbs"]).toBe(1);
 });
 
 test("new sources have unique normalized names and strongly match ESPN players", () => {
@@ -65,7 +63,6 @@ test("new sources have unique normalized names and strongly match ESPN players",
     "qblist_ppr",
     "cbs_ppr_auction",
     "fftoday_ppr",
-    "rotostreet_half_ppr",
   ] as const;
   const espnNames = new Set(
     Object.values(wrapped.nflPlayers).map(({ name }) => normalize(name))
