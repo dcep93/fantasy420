@@ -11,8 +11,8 @@ import draft2023 from "./2023.json";
 import draft2024 from "./2024.json";
 import draft2025 from "./2025.json";
 import draft2026 from "./2026.json";
+import getFormatAwareRankings, { getSourceLabel } from "./composite";
 import draftKings from "./draftKings";
-import getMidranks from "./midrank";
 
 export const isDev = import.meta.env.DEV;
 
@@ -127,7 +127,9 @@ function SubDraft(props: {
       .map((p, pickIndex) => [p.id, { pickIndex, ...p }])
   );
 
-  const results = useMemo(getResults, [selectedYear]);
+  const { rankings: results, adjustedSources } = useMemo(getResults, [
+    selectedYear,
+  ]);
   const sources = Object.keys(results);
   const [positionFilter, updatePositionFilter] = useState("");
   const [byeWeekFilter, updateByeWeekFilter] = useState(-1);
@@ -170,14 +172,14 @@ function SubDraft(props: {
                   }}
                   onClick={() => update(s)}
                 >
-                  {s.replaceAll("_", "").length === 0 ? "" : s}
+                  {getSourceLabel(s, adjustedSources)}
                 </span>
               </li>
             ))}
           </ul>
         </div>
         <div onClick={() => updateRegenSources(!regenSources)}>
-          {source} ({props.liveDraft.length})
+          {getSourceLabel(source, adjustedSources)} ({props.liveDraft.length})
         </div>
         {!regenSources ? null : (
           <div>
@@ -461,43 +463,31 @@ function SubDraft(props: {
 //   return (100 * (value - average)) / (1 + value + average);
 // }
 
-function getResults(): DraftJsonType {
-  const playerIdToRanks = Object.entries(selectedDraft()).map(([k, d]) => ({
-    size: Object.entries(d).length,
-    playerIdToRank: getMidranks(d),
-  }));
-  return Object.fromEntries(
+function getResults(): {
+  rankings: DraftJsonType;
+  adjustedSources: Set<string>;
+} {
+  const players = Object.values(selectedWrapped().nflPlayers);
+  const formatAware = getFormatAwareRankings(
+    selectedDraft(),
+    players.map((player) => player.id),
+    Object.fromEntries(players.map((player) => [player.id, player.position]))
+  );
+  const rankings = Object.fromEntries(
     Object.entries({
-      composite: Object.values(selectedWrapped().nflPlayers)
-        .map((p) => ({
-          ...p,
-          extra: playerIdToRanks
-            .map(({ playerIdToRank, size }) => ({
-              size,
-              rank: playerIdToRank[p.id],
-            }))
-            .map(({ rank }) => rank)
-            .filter((rank) => rank !== undefined),
-        }))
-        .map(({ extra, ...p }) => ({
-          ...p,
-          value:
-            extra.length === 0
-              ? null
-              : extra.reduce((a, b) => a + b, extra.length) / extra.length,
-        }))
-        .filter(({ value }) => value !== null)
-        .sort((a, b) => a.value! - b.value!)
-        .map((p, rank) => ({ ...p, value: rank + 1 })),
+      composite: players.map((player) => ({
+        ...player,
+        value: formatAware.composite[player.id],
+      })),
       ...Object.fromEntries(
         Object.keys(selectedDraft()).map((source) => [
           source,
-          Object.values(selectedWrapped().nflPlayers).map((p) => ({
-            ...p,
+          players.map((player) => ({
+            ...player,
             value:
               source.replaceAll("_", "").length === 0
                 ? ""
-                : selectedDraft()[source][p.id],
+                : formatAware.sources[source][player.id],
           })),
         ])
       ),
@@ -532,6 +522,7 @@ function getResults(): DraftJsonType {
       ),
     ])
   );
+  return { rankings, adjustedSources: formatAware.adjustedSources };
 }
 
 function jayzheng() {
