@@ -1,4 +1,4 @@
-console.log("background 1.0.0");
+console.log("background 0.0.2");
 
 const fetch_cache = {};
 
@@ -8,7 +8,10 @@ chrome.runtime.onMessageExternal.addListener(function (
   sendResponse
 ) {
   console.log(request);
-  if (request.init) sendResponse();
+  if (request.init) {
+    sendResponse();
+    return false;
+  }
   if (request.storage) {
     if (request.storage.action === "get") {
       chrome.storage.local.get(request.storage.keys, (result) => {
@@ -18,19 +21,24 @@ chrome.runtime.onMessageExternal.addListener(function (
     if (request.storage.action === "save") {
       chrome.storage.local.set(request.storage.save, () => sendResponse(true));
     }
+    return true;
   }
   if (request.fetch) {
     const cached = fetch_cache[request.fetch.url];
     const now = Date.now();
-    if (now - cached?.timestamp < request.fetch.maxAgeMs)
-      return sendResponse(cached.resp);
-    return fetch(request.fetch.url, request.fetch.options)
-      .then((resp) => (request.fetch.json ? resp.json() : resp.text()))
-      .then((resp) => {
-        fetch_cache[request.fetch.url] = { timestamp: now, resp };
-        return resp;
-      })
-      .then(sendResponse)
-      .catch((err) => console.trace(err));
+    if (now - cached?.timestamp < request.fetch.maxAgeMs) {
+      sendResponse(cached.resp);
+    } else {
+      fetch(request.fetch.url, request.fetch.options)
+        .then((resp) => (request.fetch.json ? resp.json() : resp.text()))
+        .then((resp) => {
+          fetch_cache[request.fetch.url] = { timestamp: now, resp };
+          return resp;
+        })
+        .then(sendResponse)
+        .catch((err) => console.trace(err));
+    }
+    return true;
   }
+  return false;
 });

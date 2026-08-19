@@ -16,9 +16,8 @@ function extensionHelper(payload: any): Promise<any> {
       payload,
       (response: any) => {
         if (response === undefined) {
-          // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-          window.chrome.runtime.lastError;
-          return reject("empty response");
+          const runtimeError = window.chrome.runtime.lastError;
+          return reject(runtimeError?.message || "empty response");
         }
         resolve(response);
       }

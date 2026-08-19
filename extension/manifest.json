@@ -1,7 +1,7 @@
 {
   "name": "Fantasy420",
   "description": "Tools for fantasy football",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "content_scripts": [
     {
       "matches": [
@@ -32,6 +32,7 @@
       "*://localhost/*",
       "*://fantasy420.web.app/*",
       "https://sleeper.com/draft/nfl/*",
+      "https://draftwizard.fantasypros.com/*",
       "*://espn.com/",
       "*://fantasy.espn.com/football/*",
       "*://www.reddit.com/r/fantasyfootball/*"

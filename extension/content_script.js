@@ -9,6 +9,10 @@ async function execute() {
       jss: ["shared.js", "espndraft.js"],
     },
     {
+      p: /https:\/\/draftwizard\.fantasypros\.com\/football\/mock-draft-simulator\/live\/.*/,
+      jss: ["shared.js", "fantasyprosdraft.js"],
+    },
+    {
       p: /https:\/\/fantasy\.espn\.com\/football\/mockdraftlobby/,
       jss: ["mockdraftlobby.js"],
     },

@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { printF } from "..";
 import { fetchExtensionStorage, setExtensionStorage } from "./Extension";
 
-import { useMemo } from "react";
 import { WrappedType } from "../FetchWrapped";
 import { selectedWrapped, selectedYear } from "../Wrapped";
 import allWrapped from "../Wrapped/allWrapped";
@@ -91,21 +90,31 @@ export type PlayersType = { [playerId: string]: number };
 export type DraftJsonType = { [source: string]: PlayersType };
 
 export default function Draft() {
-  const [liveDraft, updateLiveDraft] = useState<string[]>([]);
+  const liveDraft = useLiveDraft();
   const [localDraft, updateLocalDraft] = useState<{ [key: string]: boolean }>(
     {}
   );
   const wrapped = allWrapped[selectedYear];
-  const normalizedNameToId = getNormalizedNameToId(wrapped);
-  useEffect(() => {
-    fetchLiveDraft(updateLiveDraft, -1);
-  }, []);
+  const normalizedNameToId = useMemo(
+    () => getNormalizedNameToId(wrapped),
+    [wrapped]
+  );
+  const matchedLiveDraft = useMemo(
+    () =>
+      liveDraft.flatMap((sourceName) => {
+        const playerId = normalizedNameToId[normalize(sourceName)];
+        const player = wrapped.nflPlayers[playerId];
+        if (!player) {
+          console.warn("Unmatched live draft player", sourceName);
+          return [];
+        }
+        return [player.name];
+      }),
+    [liveDraft, normalizedNameToId, wrapped]
+  );
   return (
     <SubDraft
-      liveDraft={liveDraft
-        .map(normalize)
-        .map((playerName) => normalizedNameToId[playerName])
-        .map((playerId) => wrapped.nflPlayers[playerId].name)}
+      liveDraft={matchedLiveDraft}
       localDraft={localDraft}
       updateLocalDraft={updateLocalDraft}
     />
@@ -709,32 +718,48 @@ function updateDraftRanking(
     .then((resp) => alert(resp.ok));
 }
 
-function fetchLiveDraft(
-  updateLiveDraft: (draft: string[]) => void,
-  prev: number
-) {
+function useLiveDraft(): string[] {
   const FETCH_LIVE_DRAFT_PERIOD_MS = 500;
-  fetchExtensionStorage("draft")
-    .then(
-      (draftStr) =>
-        draftStr &&
-        Promise.resolve(draftStr).then((draft) =>
-          Promise.resolve()
-            .then(() => {
-              if (draft.length === prev) return;
-              updateLiveDraft(draft);
-            })
-            .then(() =>
-              setTimeout(
-                () => fetchLiveDraft(updateLiveDraft, draft.length),
-                FETCH_LIVE_DRAFT_PERIOD_MS
-              )
-            )
-        )
-    )
-    .catch((err) => {
-      console.error(err);
-    });
+  const [liveDraft, updateLiveDraft] = useState<string[]>([]);
+
+  useEffect(() => {
+    let active = true;
+    let previousDraftJson: string | null = null;
+    let timeoutId: number | undefined;
+
+    async function pollLiveDraft() {
+      try {
+        const draft = await fetchExtensionStorage("draft");
+        if (!Array.isArray(draft)) return;
+
+        const validDraft = draft.filter(
+          (playerName): playerName is string => typeof playerName === "string"
+        );
+        const draftJson = JSON.stringify(validDraft);
+        if (active && draftJson !== previousDraftJson) {
+          previousDraftJson = draftJson;
+          updateLiveDraft(validDraft);
+        }
+      } catch (err) {
+        console.error(err);
+      } finally {
+        if (active) {
+          timeoutId = window.setTimeout(
+            pollLiveDraft,
+            FETCH_LIVE_DRAFT_PERIOD_MS
+          );
+        }
+      }
+    }
+
+    pollLiveDraft();
+    return () => {
+      active = false;
+      if (timeoutId !== undefined) window.clearTimeout(timeoutId);
+    };
+  }, []);
+
+  return liveDraft;
 }
 
 function normalize(name: string): string {
