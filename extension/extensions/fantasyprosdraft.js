@@ -12,12 +12,12 @@ function getFantasyProsOverallPick(pickNumber, teamCount) {
   if (!match || teamCount < 1) return null;
 
   const round = Number(match[1]);
-  const draftSlot = Number(match[2]);
-  if (round < 1 || draftSlot < 1 || draftSlot > teamCount) return null;
+  const pickWithinRound = Number(match[2]);
+  if (round < 1 || pickWithinRound < 1 || pickWithinRound > teamCount) {
+    return null;
+  }
 
-  const pickInRound =
-    round % 2 === 1 ? draftSlot : teamCount - draftSlot + 1;
-  return (round - 1) * teamCount + pickInRound;
+  return (round - 1) * teamCount + pickWithinRound;
 }
 
 function getFantasyProsDraft(root) {

@@ -6,11 +6,12 @@ const {
   getFantasyProsOverallPick,
 } = require("./fantasyprosdraft.js");
 
-test("converts snake-draft slots to chronological overall picks", () => {
+test("converts round.pickWithinRound labels to chronological overall picks", () => {
   assert.equal(getFantasyProsOverallPick("1.01", 10), 1);
   assert.equal(getFantasyProsOverallPick("1.10", 10), 10);
-  assert.equal(getFantasyProsOverallPick("2.10", 10), 11);
-  assert.equal(getFantasyProsOverallPick("2.01", 10), 20);
+  assert.equal(getFantasyProsOverallPick("2.01", 10), 11);
+  assert.equal(getFantasyProsOverallPick("2.02", 10), 12);
+  assert.equal(getFantasyProsOverallPick("2.10", 10), 20);
   assert.equal(getFantasyProsOverallPick("3.01", 10), 21);
 });
 
@@ -34,6 +35,20 @@ test("extracts full names and sorts completed cells by overall pick", () => {
     "Josh Allen",
     "Ja'Marr Chase",
     "James Cook III",
+  ]);
+});
+
+test("sorts reversed even-round DOM cells by chronological pick label", () => {
+  const root = fakeRoot(10, [
+    fakeCell("Puka Nacua", "2.02"),
+    fakeCell("Justin Herbert", "2.01"),
+    fakeCell("Caleb Williams", "1.10"),
+  ]);
+
+  assert.deepEqual(getFantasyProsDraft(root), [
+    "Caleb Williams",
+    "Justin Herbert",
+    "Puka Nacua",
   ]);
 });
 
