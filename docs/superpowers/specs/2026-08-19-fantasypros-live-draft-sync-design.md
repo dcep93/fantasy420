@@ -2,7 +2,7 @@
 
 ## Goal
 
-Keep the Fantasy420 `/draft` board synchronized with completed picks from the FantasyPros Draft Wizard live mock-draft simulator. Updates should appear within roughly one second and should remain correct after picks are edited, undone, or restarted.
+Keep the Fantasy420 `/draft` board synchronized with completed picks from every team in the FantasyPros Draft Wizard live mock-draft simulator. Updates should appear within roughly one second and should remain correct after picks are edited, undone, or restarted.
 
 ## Architecture
 
@@ -18,7 +18,7 @@ Once per second, the adapter will read completed cells from the rendered Fantasy
 - the displayed round-and-slot pick number;
 - the league size from the number of draft-board team headings.
 
-The adapter will convert each round-and-slot value to an overall pick index with snake-draft ordering, sort the completed picks by that index, and publish the ordered player names. It will write only when the serialized draft differs from the previously published value. Empty drafts are valid after a restart, but the adapter will not clear storage merely because it initialized before the FantasyPros board rendered.
+FantasyPros displays each pick as `round.pickWithinRound`. The pick-within-round value is already chronological even though the board reverses the visual cell order in even-numbered rounds. The adapter will convert each value to an overall pick index with `(round - 1) * teamCount + pickWithinRound`, sort the completed picks by that index, and publish every team's ordered player names. It will write only when the serialized draft differs from the previously published value. Empty drafts are valid after a restart, but the adapter will not clear storage merely because it initialized before the FantasyPros board rendered.
 
 ## Fantasy420 Consumer Resilience
 
@@ -36,4 +36,4 @@ Player-name normalization will continue to map source names onto the 2026 wrappe
 
 ## Verification
 
-Automated checks will cover snake-draft ordering and consumer handling where practical within the current test setup. The existing frontend test suite and production build must pass. Live browser verification will confirm that the adapter can extract the current FantasyPros picks and that Fantasy420 reflects them after the updated unpacked extension is active.
+Automated checks will cover chronological ordering across the first-to-second-round boundary, including `1.10`, `2.01`, and `2.02` in a 10-team league, plus consumer handling where practical within the current test setup. The existing frontend test suite and production build must pass. Live browser verification will confirm that the adapter can extract every team's current FantasyPros picks and that Fantasy420 reflects them after the updated unpacked extension is active.
