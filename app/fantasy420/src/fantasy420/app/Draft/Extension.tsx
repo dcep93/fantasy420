@@ -1,9 +1,11 @@
-const extension_id = "dikaanhdjgmmeajanfokkalonmnpfidm";
-
 declare global {
   interface Window {
     chrome: any;
   }
+}
+
+function getExtensionId(): string | null {
+  return document.documentElement.dataset.fantasy420ExtensionId || null;
 }
 
 function extensionHelper(payload: any): Promise<any> {
@@ -11,8 +13,12 @@ function extensionHelper(payload: any): Promise<any> {
     if (!window.chrome?.runtime) {
       return reject("no chrome runtime");
     }
+    const extensionId = getExtensionId();
+    if (!extensionId) {
+      return reject("Fantasy420 extension unavailable");
+    }
     window.chrome.runtime.sendMessage(
-      extension_id,
+      extensionId,
       payload,
       (response: any) => {
         if (response === undefined) {

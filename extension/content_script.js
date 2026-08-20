@@ -1,3 +1,5 @@
+document.documentElement.dataset.fantasy420ExtensionId = chrome.runtime.id;
+
 async function execute() {
   const paths = [
     {
