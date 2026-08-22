@@ -104,7 +104,9 @@ The active panel appears above all existing draft-page content. Use the approved
 - dense player bubbles with minimal surrounding copy;
 - no ornamental dashboard metrics, oversized hero text, explanatory legend, or unrelated restyling.
 
-Each bubble shows headshot or fallback, player name, rookie asterisk, position, pick label, total pick index, bye week, pick-time rank, and better/worse controls. Pick metadata is compactly formatted as `3.01/21 #3`, where `3.01` is the chronological pick within the round, `/21` is the one-based total pick index, and `#3` is the pick-time available-player rank. Bubbles receive a muted position-specific background color. The user's picks receive a restrained pink border.
+Each bubble shows headshot or fallback, player name, rookie asterisk, position, pick label, total pick index, bye week, pick-time rank, and better/worse controls. Pick metadata is compactly formatted as `3.01/21 #3`, where `3.01` is the chronological pick within the round, `/21` is the one-based total pick index, and `#3` is the pick-time available-player rank.
+
+Table cells and draft bubbles use one shared bright position palette so the visual meaning cannot drift between the two views: QB `plum`, RB `lightblue`, WR `lightseagreen`, TE `lightcoral`, DST/`D/ST` `lightsalmon`, and K `tan`. Bubbles use near-black primary and secondary text, dark position labels, and a stronger related border for legibility over these light or saturated fills. Rank controls use a dark-brown fill with light text so they remain readable on every position color. The user's picks retain a clearly visible pink border.
 
 The board always has one fixed column per fantasy team, with that team's picks stacked downward. Clicking a non-interactive part of the panel toggles every team column together between:
 
@@ -133,6 +135,7 @@ Do not derive a headshot for negative defense IDs. The UI supplies a styled fall
 - `mockDraftHash.ts`: versioned serialization, validation, parsing, and hash synchronization.
 - `MockDraftSetup.tsx`: compact controlled setup form and activation.
 - `MockDraftPanel.tsx` plus a focused stylesheet: board rendering, display-order toggle, image fallback, and history controls.
+- `positionColors.ts`: the shared position-to-color mapping consumed by both the existing table and mock-draft bubbles.
 - `Draft/index.tsx`: orchestration with the existing source, table, rookie set, and normal/live draft modes.
 - `MockDraft.tsx`: derives headshot URLs directly from ESPN player IDs.
 
@@ -163,6 +166,7 @@ Add focused tests for:
 - hash round-trip, malformed payload rejection, and restoration;
 - extension polling disabled throughout mock mode;
 - rookie asterisks, derived headshot/fallback rendering, position colors, compact metadata, disabled nudge bounds, board-wide per-column sort toggling, turn scrolling, and row-click drafting;
+- exact table/bubble palette parity for every supported position, including normalized DST/`D/ST`, plus readable bubble text and rank controls on each bright fill;
 - always-visible two-row settings with read-only active controls, a copyable seed, a title-adjacent always-enabled restart action that generates a fresh seed, and a non-wrapping horizontally scrolling roster row;
 - `round.index/total_pick_index` bubble metadata and total-pick tie-breaking within position groups.
 
