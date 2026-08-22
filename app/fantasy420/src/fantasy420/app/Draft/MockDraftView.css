@@ -185,9 +185,20 @@
 }
 
 .mock-draft-player-top {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: minmax(54px, max-content) minmax(0, 1fr);
+  align-items: start;
   gap: 7px;
+}
+
+.mock-draft-player-visual {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+}
+
+.mock-draft-player-copy {
+  min-width: 0;
 }
 
 .mock-draft-player-top img,
@@ -219,23 +230,20 @@
 
 .mock-draft-player-detail {
   margin-top: 4px;
-  color: rgba(23, 16, 13, 0.72);
+  color: #17100d;
   font-size: 0.62rem;
+  font-weight: 600;
 }
 
 .mock-draft-player-detail b {
-  color: #21150e;
-}
-
-.mock-draft-pick-facts {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 8px;
+  color: inherit;
+  font-weight: inherit;
 }
 
 .mock-draft-pick-number {
-  font: 400 1rem/1 "Comic Sans MS", "Comic Sans", cursive;
+  display: block;
+  margin-bottom: 4px;
+  font: 400 0.72rem/1 "Comic Sans MS", "Comic Sans", cursive;
 }
 
 .mock-draft-rank-controls {
@@ -247,14 +255,14 @@
 }
 
 .mock-draft-rank {
-  padding: 4px 6px;
+  padding: 3px 4px;
   color: #fff7ed;
   font-size: 0.58rem;
   font-weight: 700;
 }
 
 .mock-draft-rank-controls button {
-  width: 18px;
+  width: 15px;
   align-self: stretch;
   padding: 0;
   border: 0;

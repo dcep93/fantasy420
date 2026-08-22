@@ -415,21 +415,51 @@ function PickBubble(props: {
       data-mock-latest-round={props.latestRoundAnchor ? "true" : undefined}
     >
       <div className="mock-draft-player-top">
-        {headshot && !props.imageFailed ? (
-          <img
-            src={headshot}
-            alt={props.player.name}
-            onError={props.onImageError}
-          />
-        ) : (
-          <div
-            className="mock-draft-image-fallback"
-            aria-label={`${props.player.name} image fallback`}
-          >
-            {position}
-          </div>
-        )}
-        <div>
+        <div className="mock-draft-player-visual">
+          {headshot && !props.imageFailed ? (
+            <img
+              src={headshot}
+              alt={props.player.name}
+              onError={props.onImageError}
+            />
+          ) : (
+            <div
+              className="mock-draft-image-fallback"
+              aria-label={`${props.player.name} image fallback`}
+            >
+              {position}
+            </div>
+          )}
+          <span className="mock-draft-rank-controls">
+            <button
+              type="button"
+              aria-label={`make pick ${props.pick.label} better`}
+              disabled={!props.canNudgeBetter}
+              onClick={(event) => {
+                event.stopPropagation();
+                props.onNudge(props.pick.pickIndex, "better");
+              }}
+            >
+              ‹
+            </button>
+            <span className="mock-draft-rank">#{props.pick.rank}</span>
+            <button
+              type="button"
+              aria-label={`make pick ${props.pick.label} worse`}
+              disabled={!props.canNudgeWorse}
+              onClick={(event) => {
+                event.stopPropagation();
+                props.onNudge(props.pick.pickIndex, "worse");
+              }}
+            >
+              ›
+            </button>
+          </span>
+        </div>
+        <div className="mock-draft-player-copy">
+          <span className="mock-draft-pick-number">
+            {props.pick.label}/{props.pick.pickIndex + 1}
+          </span>
           <div className="mock-draft-player-name">
             {props.player.name}
             {props.player.rookie ? "*" : ""}
@@ -438,36 +468,6 @@ function PickBubble(props: {
             <b>{position}</b> · bye {props.player.byeWeek}
           </div>
         </div>
-      </div>
-      <div className="mock-draft-pick-facts">
-        <span className="mock-draft-pick-number">
-          {props.pick.label}/{props.pick.pickIndex + 1}
-        </span>
-        <span className="mock-draft-rank-controls">
-          <button
-            type="button"
-            aria-label={`make pick ${props.pick.label} better`}
-            disabled={!props.canNudgeBetter}
-            onClick={(event) => {
-              event.stopPropagation();
-              props.onNudge(props.pick.pickIndex, "better");
-            }}
-          >
-            ‹
-          </button>
-          <span className="mock-draft-rank">#{props.pick.rank}</span>
-          <button
-            type="button"
-            aria-label={`make pick ${props.pick.label} worse`}
-            disabled={!props.canNudgeWorse}
-            onClick={(event) => {
-              event.stopPropagation();
-              props.onNudge(props.pick.pickIndex, "worse");
-            }}
-          >
-            ›
-          </button>
-        </span>
       </div>
     </article>
   );

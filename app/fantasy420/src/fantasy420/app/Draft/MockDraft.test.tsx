@@ -145,9 +145,25 @@ test("renders derived headshots, rookie marks, fallback, and nudge controls", ()
   expect(screen.getByLabelText("make pick 1.01 better")).toBeDisabled();
   expect(screen.getByLabelText("make pick 1.02 worse")).toBeDisabled();
   expect(screen.getByText("1.01/1")).toBeInTheDocument();
-  expect(
-    screen.getByText("Jahmyr Gibbs*").closest(".mock-draft-pick")
-  ).toHaveClass("mock-draft-position-rb");
+  const gibbsBubble = screen
+    .getByText("Jahmyr Gibbs*")
+    .closest(".mock-draft-pick")!;
+  expect(gibbsBubble).toHaveClass("mock-draft-position-rb");
+  const visual = gibbsBubble.querySelector(".mock-draft-player-visual")!;
+  const copy = gibbsBubble.querySelector(".mock-draft-player-copy")!;
+  expect(visual).toContainElement(
+    screen.getByRole("img", { name: "Jahmyr Gibbs" })
+  );
+  expect(visual).toContainElement(
+    screen
+      .getByLabelText("make pick 1.01 better")
+      .closest(".mock-draft-rank-controls")
+  );
+  expect(Array.from(copy.children).map((child) => child.className)).toEqual([
+    "mock-draft-pick-number",
+    "mock-draft-player-name",
+    "mock-draft-player-detail",
+  ]);
 
   fireEvent.click(screen.getByLabelText("make pick 1.01 worse"));
   expect(onNudge).toHaveBeenCalledWith(0, "worse");
@@ -336,8 +352,18 @@ test("keeps bright bubbles and rank controls readable", () => {
     /\.mock-draft-rank-controls\s*{([^}]*)}/
   )?.[1];
   const rankRule = css.match(/\.mock-draft-rank\s*{([^}]*)}/)?.[1];
+  const playerTopRule = css.match(
+    /\.mock-draft-player-top\s*{([^}]*)}/
+  )?.[1];
+  const detailRule = css.match(
+    /\.mock-draft-player-detail\s*{([^}]*)}/
+  )?.[1];
 
   expect(filledBubbleRule).toMatch(/color:\s*#17100d/);
   expect(rankControlsRule).toMatch(/background:\s*#5a3523/);
   expect(rankRule).toMatch(/color:\s*#fff7ed/);
+  expect(playerTopRule).toMatch(/display:\s*grid/);
+  expect(playerTopRule).toMatch(/grid-template-columns:/);
+  expect(detailRule).toMatch(/color:\s*#17100d/);
+  expect(detailRule).toMatch(/font-weight:\s*600/);
 });
