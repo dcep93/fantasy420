@@ -71,3 +71,70 @@ test("drafts an existing table row and synchronizes ordered ids to the hash", ()
   rendered.unmount();
 });
 
+test("positions the newest round and best untaken row at every user turn", () => {
+  const originalScrollIntoView = HTMLElement.prototype.scrollIntoView;
+  const originalOffsetTop = Object.getOwnPropertyDescriptor(
+    HTMLElement.prototype,
+    "offsetTop"
+  );
+  const scrollIntoView = vi.fn();
+  HTMLElement.prototype.scrollIntoView = scrollIntoView;
+  Object.defineProperty(HTMLElement.prototype, "offsetTop", {
+    configurable: true,
+    get() {
+      return this.getAttribute("data-mock-available") === "true" ? 123 : 0;
+    },
+  });
+  window.history.replaceState(
+    null,
+    "",
+    `/draft${encodeMockDraftHash({
+      settings: {
+        ...DEFAULT_MOCK_DRAFT_SETTINGS,
+        teamCount: 2,
+        draftPosition: 1,
+        seed: "scrolling",
+        roster: {
+          QB: 2,
+          RB: 0,
+          WR: 0,
+          TE: 0,
+          FLEX: 0,
+          SUPERFLEX: 0,
+          DST: 0,
+          K: 0,
+          BENCH: 0,
+        },
+      },
+      picks: [],
+    })}`
+  );
+
+  const rendered = render(<Draft />);
+  const playerScroller = screen.getByTestId("mock-draft-player-scroller");
+  expect(scrollIntoView).toHaveBeenCalledWith({ block: "start" });
+  expect(playerScroller.scrollTop).toBe(123);
+  expect(screen.getByLabelText("draft position")).toBeDisabled();
+  expect(screen.getByLabelText("seed")).toHaveAttribute("readonly");
+
+  scrollIntoView.mockClear();
+  playerScroller.scrollTop = 0;
+  fireEvent.click(rendered.container.querySelector("tbody tr")!);
+
+  expect(scrollIntoView).toHaveBeenCalledWith({ block: "start" });
+  expect(playerScroller.scrollTop).toBe(123);
+
+  rendered.unmount();
+  if (originalScrollIntoView) {
+    HTMLElement.prototype.scrollIntoView = originalScrollIntoView;
+  } else {
+    delete (HTMLElement.prototype as Partial<HTMLElement>).scrollIntoView;
+  }
+  if (originalOffsetTop) {
+    Object.defineProperty(
+      HTMLElement.prototype,
+      "offsetTop",
+      originalOffsetTop
+    );
+  }
+});

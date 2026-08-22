@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 
 import { printF } from "..";
 import { fetchExtensionStorage, setExtensionStorage } from "./Extension";
@@ -15,6 +15,8 @@ import draftKings from "./draftKings";
 import { MockDraftPanel, MockDraftSetup } from "./MockDraftView";
 import {
   advanceToUserTurn,
+  getDraftLength,
+  getPickOwner,
   makeUserPick,
   MockDraftState,
   nudgeHistoricalPick,
@@ -115,6 +117,7 @@ function SubDraft() {
     {}
   );
   const wrapped = allWrapped[selectedYear];
+  const playerScrollRef = useRef<HTMLDivElement>(null);
   const [mockDraft, setMockDraft] = useState<MockDraftState | null>(() => {
     try {
       return readMockDraftHash();
@@ -262,8 +265,41 @@ function SubDraft() {
       team: selectedWrapped().nflTeams[p.player.nflTeamId].name,
     }));
 
+  useLayoutEffect(() => {
+    if (!mockDraft || mockDraft.picks.length >= getDraftLength(mockDraft.settings)) {
+      return;
+    }
+    const owner = getPickOwner(
+      mockDraft.picks.length,
+      mockDraft.settings.teamCount
+    );
+    if (owner.draftPosition !== mockDraft.settings.draftPosition) return;
+
+    document
+      .querySelector<HTMLElement>('[data-mock-latest-round="true"]')
+      ?.scrollIntoView?.({ block: "start" });
+    const firstAvailable = playerScrollRef.current?.querySelector<HTMLElement>(
+      'tr[data-mock-available="true"]'
+    );
+    if (firstAvailable && playerScrollRef.current) {
+      playerScrollRef.current.scrollTop = firstAvailable.offsetTop;
+    }
+  }, [mockDraft, positionFilter, rookiesOnly, source]);
+
   return (
     <>
+      <MockDraftSetup
+        activeSettings={mockDraft?.settings}
+        onStart={(settings) =>
+          saveMockDraft(
+            advanceToUserTurn(
+              { settings, picks: [] },
+              mockPlayersById,
+              orderedRanking
+            )
+          )
+        }
+      />
       {mockDraft ? (
         <MockDraftPanel
           state={mockDraft}
@@ -281,19 +317,7 @@ function SubDraft() {
             )
           }
         />
-      ) : (
-        <MockDraftSetup
-          onStart={(settings) =>
-            saveMockDraft(
-              advanceToUserTurn(
-                { settings, picks: [] },
-                mockPlayersById,
-                orderedRanking
-              )
-            )
-          }
-        />
-      )}
+      ) : null}
       {mockDraftError ? (
         <div className="mock-draft-load-error">{mockDraftError}</div>
       ) : null}
@@ -442,7 +466,11 @@ function SubDraft() {
           </div>
         )}
       </div>
-      <div style={{ height: "100%", overflow: "scroll" }}>
+      <div
+        ref={playerScrollRef}
+        data-testid="mock-draft-player-scroller"
+        style={{ height: "100%", overflow: "scroll" }}
+      >
         <div>
           <div>
             <div>position filter</div>
@@ -538,6 +566,7 @@ function SubDraft() {
                 .map((v, i) => (
                   <tr
                     key={i}
+                    data-mock-available={mockDraft ? String(!v.seen) : undefined}
                     style={{
                       backgroundColor: v.seen ? "gray" : "",
                     }}
