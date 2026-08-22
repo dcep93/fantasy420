@@ -5,6 +5,7 @@ import {
   DEFAULT_MOCK_DRAFT_SETTINGS,
   DraftPosition,
   getDraftView,
+  getHistoricalNudgeAvailability,
   getPickLabel,
   MockDraftPlayer,
   MockDraftSettings,
@@ -34,16 +35,20 @@ export type MockDraftDisplayPlayer = MockDraftPlayer & {
 };
 
 export function MockDraftSetup(props: {
-  onStart: (settings: MockDraftSettings) => void;
+  activeSettings?: MockDraftSettings;
+  onStart?: (settings: MockDraftSettings) => void;
 }) {
-  const [settings, setSettings] = useState<MockDraftSettings>(() => ({
+  const [editableSettings, setEditableSettings] = useState<MockDraftSettings>(() => ({
     ...DEFAULT_MOCK_DRAFT_SETTINGS,
     roster: { ...DEFAULT_MOCK_DRAFT_SETTINGS.roster },
   }));
   const [error, setError] = useState("");
+  const active = props.activeSettings !== undefined;
+  const settings = props.activeSettings || editableSettings;
 
   function submit(event: FormEvent) {
     event.preventDefault();
+    if (active || !props.onStart) return;
     const resolved = {
       ...settings,
       seed: settings.seed.trim() || createSeed(),
@@ -61,18 +66,22 @@ export function MockDraftSetup(props: {
     key: "draftPosition" | "teamCount" | "positionRisk" | "byeRisk" | "craziness",
     value: string
   ) {
-    setSettings((current) => ({ ...current, [key]: Number(value) }));
+    setEditableSettings((current) => ({ ...current, [key]: Number(value) }));
   }
 
   return (
     <form className="mock-draft-setup" onSubmit={submit}>
       <div className="mock-draft-setup-title">mock draft</div>
-      <div className="mock-draft-fields">
+      <div
+        className="mock-draft-fields mock-draft-primary-fields"
+        data-testid="mock-draft-primary-fields"
+      >
         <NumberField
           label="draft position"
           value={settings.draftPosition}
           min={1}
           step={1}
+          disabled={active}
           onChange={(value) => setNumber("draftPosition", value)}
         />
         <NumberField
@@ -80,6 +89,7 @@ export function MockDraftSetup(props: {
           value={settings.teamCount}
           min={2}
           step={1}
+          disabled={active}
           onChange={(value) => setNumber("teamCount", value)}
         />
         <NumberField
@@ -87,6 +97,7 @@ export function MockDraftSetup(props: {
           value={settings.positionRisk}
           min={0.0001}
           step="any"
+          disabled={active}
           onChange={(value) => setNumber("positionRisk", value)}
         />
         <NumberField
@@ -94,6 +105,7 @@ export function MockDraftSetup(props: {
           value={settings.byeRisk}
           min={0.0001}
           step="any"
+          disabled={active}
           onChange={(value) => setNumber("byeRisk", value)}
         />
         <NumberField
@@ -101,6 +113,7 @@ export function MockDraftSetup(props: {
           value={settings.craziness}
           min={0.0001}
           step="any"
+          disabled={active}
           onChange={(value) => setNumber("craziness", value)}
         />
         <label className="mock-draft-field">
@@ -109,14 +122,23 @@ export function MockDraftSetup(props: {
             aria-label="seed"
             value={settings.seed}
             placeholder="random"
+            readOnly={active}
+            onFocus={(event) => {
+              if (active) event.currentTarget.select();
+            }}
             onChange={(event) =>
-              setSettings((current) => ({
+              setEditableSettings((current) => ({
                 ...current,
                 seed: event.target.value,
               }))
             }
           />
         </label>
+      </div>
+      <div
+        className="mock-draft-fields mock-draft-roster-fields"
+        data-testid="mock-draft-roster-fields"
+      >
         {ROSTER_SLOTS.map((slot) => (
           <NumberField
             key={slot}
@@ -124,8 +146,9 @@ export function MockDraftSetup(props: {
             value={settings.roster[slot]}
             min={0}
             step={1}
+            disabled={active}
             onChange={(value) =>
-              setSettings((current) => ({
+              setEditableSettings((current) => ({
                 ...current,
                 roster: { ...current.roster, [slot]: Number(value) },
               }))
@@ -133,9 +156,11 @@ export function MockDraftSetup(props: {
           />
         ))}
       </div>
-      <button className="mock-draft-start" type="submit">
-        mock draft
-      </button>
+      {!active ? (
+        <button className="mock-draft-start" type="submit">
+          mock draft
+        </button>
+      ) : null}
       {error ? <div className="mock-draft-error">{error}</div> : null}
     </form>
   );
@@ -146,6 +171,7 @@ function NumberField(props: {
   value: number;
   min: number;
   step: number | "any";
+  disabled?: boolean;
   onChange: (value: string) => void;
 }) {
   return (
@@ -157,6 +183,7 @@ function NumberField(props: {
         value={props.value}
         min={props.min}
         step={props.step}
+        disabled={props.disabled}
         onChange={(event) => props.onChange(event.target.value)}
       />
     </label>
@@ -169,7 +196,7 @@ export function MockDraftPanel(props: {
   orderedRanking: string[];
   onNudge: (pickIndex: number, direction: "better" | "worse") => void;
 }) {
-  const [order, setOrder] = useState<"pick" | "position">("pick");
+  const [order, setOrder] = useState<"round" | "position">("round");
   const [failedImages, setFailedImages] = useState<Set<string>>(
     () => new Set()
   );
@@ -186,62 +213,36 @@ export function MockDraftPanel(props: {
       )}`
     : "drafting…";
 
-  const orderedPicks =
-    order === "position"
-      ? view.picks.slice().sort((a, b) => {
-          const aPlayer = props.playersById[a.playerId];
-          const bPlayer = props.playersById[b.playerId];
-          return (
-            POSITION_ORDER.indexOf(normalizePosition(aPlayer.position)) -
-              POSITION_ORDER.indexOf(normalizePosition(bPlayer.position)) ||
-            a.pickIndex - b.pickIndex
-          );
-        })
-      : view.picks;
-
   return (
     <section
       className={`mock-draft-panel mock-draft-panel-${order}`}
       data-testid="mock-draft-panel"
       data-order={order}
-      onClick={() => setOrder((current) => (current === "pick" ? "position" : "pick"))}
+      onClick={() =>
+        setOrder((current) => (current === "round" ? "position" : "round"))
+      }
     >
       <header className="mock-draft-header">
         <h2>mock draft</h2>
         <span>{currentLabel}</span>
       </header>
-      {order === "pick" ? (
-        <SnakeBoard
-          {...props}
-          picks={orderedPicks}
-          failedImages={failedImages}
-          onImageError={(playerId) =>
-            setFailedImages((current) => new Set(current).add(playerId))
-          }
-        />
-      ) : (
-        <div className="mock-draft-board mock-draft-board-position">
-          {orderedPicks.map((pick) => (
-            <PickBubble
-              key={pick.pickIndex}
-              pick={pick}
-              player={props.playersById[pick.playerId]}
-              imageFailed={failedImages.has(pick.playerId)}
-              onImageError={() =>
-                setFailedImages((current) => new Set(current).add(pick.playerId))
-              }
-              onNudge={props.onNudge}
-            />
-          ))}
-        </div>
-      )}
+      <TeamBoard
+        {...props}
+        picks={view.picks}
+        userOrder={order}
+        failedImages={failedImages}
+        onImageError={(playerId) =>
+          setFailedImages((current) => new Set(current).add(playerId))
+        }
+      />
     </section>
   );
 }
 
-function SnakeBoard(
+function TeamBoard(
   props: Parameters<typeof MockDraftPanel>[0] & {
     picks: ReturnType<typeof getDraftView>["picks"];
+    userOrder: "round" | "position";
     failedImages: Set<string>;
     onImageError: (playerId: string) => void;
   }
@@ -254,39 +255,8 @@ function SnakeBoard(
       Math.floor(props.state.picks.length / settings.teamCount) + 1
     )
   );
-  const picksByIndex = new Map(props.picks.map((pick) => [pick.pickIndex, pick]));
-  const cells = [];
-  for (let round = 1; round <= lastRound; round += 1) {
-    for (let draftPosition = 1; draftPosition <= settings.teamCount; draftPosition += 1) {
-      const pickIndex =
-        (round - 1) * settings.teamCount +
-        (round % 2 === 1
-          ? draftPosition - 1
-          : settings.teamCount - draftPosition);
-      const pick = picksByIndex.get(pickIndex);
-      cells.push(
-        pick ? (
-          <PickBubble
-            key={pickIndex}
-            pick={pick}
-            player={props.playersById[pick.playerId]}
-            imageFailed={props.failedImages.has(pick.playerId)}
-            onImageError={() => props.onImageError(pick.playerId)}
-            onNudge={props.onNudge}
-          />
-        ) : (
-          <div
-            key={pickIndex}
-            className={`mock-draft-pick mock-draft-empty ${
-              draftPosition === settings.draftPosition ? "mock-draft-mine" : ""
-            }`}
-          >
-            {getPickLabel(pickIndex, settings.teamCount)}
-          </div>
-        )
-      );
-    }
-  }
+  const latestRoundAnchorTeam = settings.draftPosition === 1 ? 2 : 1;
+
   return (
     <div
       className="mock-draft-board"
@@ -294,7 +264,96 @@ function SnakeBoard(
         gridTemplateColumns: `repeat(${settings.teamCount}, minmax(118px, 1fr))`,
       }}
     >
-      {cells}
+      {Array.from({ length: settings.teamCount }, (_, index) => index + 1).map(
+        (draftPosition) => {
+          const isUser = draftPosition === settings.draftPosition;
+          const roundCells = Array.from({ length: lastRound }, (_, roundIndex) => {
+            const round = roundIndex + 1;
+            const pickIndex =
+              roundIndex * settings.teamCount +
+              (round % 2 === 1
+                ? draftPosition - 1
+                : settings.teamCount - draftPosition);
+            return {
+              round,
+              pickIndex,
+              pick: props.picks.find((candidate) => candidate.pickIndex === pickIndex),
+            };
+          });
+          const orderedCells =
+            isUser && props.userOrder === "position"
+              ? [
+                  ...roundCells
+                    .filter((cell) => cell.pick)
+                    .sort((a, b) => {
+                      const aPlayer = props.playersById[a.pick!.playerId];
+                      const bPlayer = props.playersById[b.pick!.playerId];
+                      return (
+                        POSITION_ORDER.indexOf(
+                          normalizePosition(aPlayer.position)
+                        ) -
+                          POSITION_ORDER.indexOf(
+                            normalizePosition(bPlayer.position)
+                          ) ||
+                        a.pick!.pickIndex - b.pick!.pickIndex
+                      );
+                    }),
+                  ...roundCells.filter((cell) => !cell.pick),
+                ]
+              : roundCells;
+
+          return (
+            <div
+              key={draftPosition}
+              className={`mock-draft-team-column ${
+                isUser ? "mock-draft-team-mine" : ""
+              }`}
+              data-testid={`mock-draft-team-${draftPosition}`}
+              data-team-column={draftPosition}
+              data-order={isUser ? props.userOrder : "round"}
+            >
+              {orderedCells.map(({ round, pickIndex, pick }) => {
+                const latestRoundAnchor =
+                  draftPosition === latestRoundAnchorTeam && round === lastRound;
+                if (!pick) {
+                  return (
+                    <div
+                      key={pickIndex}
+                      className={`mock-draft-pick mock-draft-empty ${
+                        isUser ? "mock-draft-mine" : ""
+                      }`}
+                      data-mock-latest-round={
+                        latestRoundAnchor ? "true" : undefined
+                      }
+                    >
+                      {getPickLabel(pickIndex, settings.teamCount)}
+                    </div>
+                  );
+                }
+                const nudge = getHistoricalNudgeAvailability(
+                  props.state,
+                  pick.pickIndex,
+                  props.playersById,
+                  props.orderedRanking
+                );
+                return (
+                  <PickBubble
+                    key={pickIndex}
+                    pick={pick}
+                    player={props.playersById[pick.playerId]}
+                    imageFailed={props.failedImages.has(pick.playerId)}
+                    latestRoundAnchor={latestRoundAnchor}
+                    canNudgeBetter={nudge.better}
+                    canNudgeWorse={nudge.worse}
+                    onImageError={() => props.onImageError(pick.playerId)}
+                    onNudge={props.onNudge}
+                  />
+                );
+              })}
+            </div>
+          );
+        }
+      )}
     </div>
   );
 }
@@ -303,13 +362,20 @@ function PickBubble(props: {
   pick: ReturnType<typeof getDraftView>["picks"][number];
   player: MockDraftDisplayPlayer;
   imageFailed: boolean;
+  latestRoundAnchor?: boolean;
+  canNudgeBetter: boolean;
+  canNudgeWorse: boolean;
   onImageError: () => void;
   onNudge: (pickIndex: number, direction: "better" | "worse") => void;
 }) {
   const headshot = getEspnHeadshotUrl(props.player.id);
+  const position = normalizePosition(props.player.position);
   return (
     <article
-      className={`mock-draft-pick ${props.pick.isUser ? "mock-draft-mine" : ""}`}
+      className={`mock-draft-pick mock-draft-position-${position.toLowerCase()} ${
+        props.pick.isUser ? "mock-draft-mine" : ""
+      }`}
+      data-mock-latest-round={props.latestRoundAnchor ? "true" : undefined}
     >
       <div className="mock-draft-player-top">
         {headshot && !props.imageFailed ? (
@@ -323,7 +389,7 @@ function PickBubble(props: {
             className="mock-draft-image-fallback"
             aria-label={`${props.player.name} image fallback`}
           >
-            {normalizePosition(props.player.position)}
+            {position}
           </div>
         )}
         <div>
@@ -332,35 +398,39 @@ function PickBubble(props: {
             {props.player.rookie ? "*" : ""}
           </div>
           <div className="mock-draft-player-detail">
-            <b>{normalizePosition(props.player.position)}</b> · bye {props.player.byeWeek}
+            <b>{position}</b> · bye {props.player.byeWeek}
           </div>
         </div>
       </div>
       <div className="mock-draft-pick-facts">
-        <span className="mock-draft-pick-number">{props.pick.label}</span>
-        <span className="mock-draft-rank">#{props.pick.rank}</span>
-      </div>
-      <div className="mock-draft-nudge">
-        <button
-          type="button"
-          aria-label={`make pick ${props.pick.label} better`}
-          onClick={(event) => {
-            event.stopPropagation();
-            props.onNudge(props.pick.pickIndex, "better");
-          }}
-        >
-          ← better
-        </button>
-        <button
-          type="button"
-          aria-label={`make pick ${props.pick.label} worse`}
-          onClick={(event) => {
-            event.stopPropagation();
-            props.onNudge(props.pick.pickIndex, "worse");
-          }}
-        >
-          worse →
-        </button>
+        <span className="mock-draft-pick-number">
+          {props.pick.label}/{props.pick.draftPosition}
+        </span>
+        <span className="mock-draft-rank-controls">
+          <button
+            type="button"
+            aria-label={`make pick ${props.pick.label} better`}
+            disabled={!props.canNudgeBetter}
+            onClick={(event) => {
+              event.stopPropagation();
+              props.onNudge(props.pick.pickIndex, "better");
+            }}
+          >
+            ‹
+          </button>
+          <span className="mock-draft-rank">#{props.pick.rank}</span>
+          <button
+            type="button"
+            aria-label={`make pick ${props.pick.label} worse`}
+            disabled={!props.canNudgeWorse}
+            onClick={(event) => {
+              event.stopPropagation();
+              props.onNudge(props.pick.pickIndex, "worse");
+            }}
+          >
+            ›
+          </button>
+        </span>
       </div>
     </article>
   );

@@ -32,6 +32,26 @@ test("resolves a blank seed and starts with edited settings", () => {
   expect(onStart.mock.calls[0][0].seed).not.toBe("");
 });
 
+test("keeps active settings visible in two read-only rows with a copyable seed", () => {
+  render(
+    <MockDraftSetup
+      activeSettings={{
+        ...DEFAULT_MOCK_DRAFT_SETTINGS,
+        seed: "copy-me",
+      }}
+    />
+  );
+
+  expect(screen.getByLabelText("draft position")).toBeDisabled();
+  expect(screen.getByLabelText("QB slots")).toBeDisabled();
+  expect(screen.getByLabelText("seed")).toHaveAttribute("readonly");
+  expect(screen.getByLabelText("seed")).not.toBeDisabled();
+  expect(screen.getByLabelText("seed")).toHaveValue("copy-me");
+  expect(screen.getByTestId("mock-draft-primary-fields")).toBeInTheDocument();
+  expect(screen.getByTestId("mock-draft-roster-fields")).toBeInTheDocument();
+  expect(screen.queryByRole("button", { name: "mock draft" })).toBeNull();
+});
+
 test("renders derived headshots, rookie marks, fallback, and nudge controls", () => {
   const onNudge = vi.fn();
   render(
@@ -83,41 +103,59 @@ test("renders derived headshots, rookie marks, fallback, and nudge controls", ()
     "https://a.espncdn.com/i/headshots/nfl/players/full/4429795.png"
   );
   expect(screen.getByLabelText("Lions D/ST image fallback")).toBeInTheDocument();
-  expect(screen.getByText("1.01")).toBeInTheDocument();
   expect(screen.getAllByText("#1")).toHaveLength(2);
+  expect(screen.getByLabelText("make pick 1.01 better")).toBeDisabled();
+  expect(screen.getByLabelText("make pick 1.02 worse")).toBeDisabled();
+  expect(screen.getByText("1.01/1")).toBeInTheDocument();
+  expect(
+    screen.getByText("Jahmyr Gibbs*").closest(".mock-draft-pick")
+  ).toHaveClass("mock-draft-position-rb");
 
   fireEvent.click(screen.getByLabelText("make pick 1.01 worse"));
   expect(onNudge).toHaveBeenCalledWith(0, "worse");
 });
 
-test("toggles between pick and position order from the panel", () => {
+test("keeps team columns fixed and toggles only the user's column order", () => {
   render(
     <MockDraftPanel
       state={{
         settings: {
           ...DEFAULT_MOCK_DRAFT_SETTINGS,
-          teamCount: 2,
+          teamCount: 3,
           draftPosition: 2,
           seed: "board",
         },
-        picks: ["2", "1"],
+        picks: ["3", "2", "1", "6", "5", "4"],
       }}
       playersById={{
         "1": { id: "1", name: "Quarterback", position: "QB", byeWeek: 7, rookie: false },
         "2": { id: "2", name: "Runner", position: "RB", byeWeek: 8, rookie: false },
+        "3": { id: "3", name: "Receiver", position: "WR", byeWeek: 9, rookie: false },
+        "4": { id: "4", name: "Team One Tight End", position: "TE", byeWeek: 10, rookie: false },
+        "5": { id: "5", name: "User Quarterback", position: "QB", byeWeek: 11, rookie: false },
+        "6": { id: "6", name: "Team Three Tight End", position: "TE", byeWeek: 12, rookie: false },
       }}
-      orderedRanking={["1", "2"]}
+      orderedRanking={["1", "2", "3", "4", "5", "6"]}
       onNudge={vi.fn()}
     />
   );
 
-  expect(screen.getByTestId("mock-draft-panel")).toHaveAttribute(
-    "data-order",
-    "pick"
+  const userColumn = screen.getByTestId("mock-draft-team-2");
+  const opponentColumn = screen.getByTestId("mock-draft-team-1");
+  expect(userColumn).toHaveAttribute("data-order", "round");
+  expect(opponentColumn).toHaveAttribute("data-order", "round");
+  expect(userColumn.textContent!.indexOf("Runner")).toBeLessThan(
+    userColumn.textContent!.indexOf("User Quarterback")
   );
+
   fireEvent.click(screen.getByTestId("mock-draft-panel"));
-  expect(screen.getByTestId("mock-draft-panel")).toHaveAttribute(
+
+  expect(userColumn).toHaveAttribute("data-order", "position");
+  expect(opponentColumn).toHaveAttribute(
     "data-order",
-    "position"
+    "round"
+  );
+  expect(userColumn.textContent!.indexOf("User Quarterback")).toBeLessThan(
+    userColumn.textContent!.indexOf("Runner")
   );
 });

@@ -33,6 +33,12 @@
   gap: 7px;
 }
 
+.mock-draft-roster-fields {
+  margin-top: 7px;
+  padding-top: 7px;
+  border-top: 1px solid rgba(201, 156, 107, 0.12);
+}
+
 .mock-draft-field {
   display: flex;
   align-items: center;
@@ -53,6 +59,10 @@
   color: #fff;
   background: rgba(232, 206, 171, 0.06);
   font: inherit;
+}
+
+.mock-draft-field input:disabled {
+  opacity: 0.72;
 }
 
 .mock-draft-field:has(input[aria-label="seed"]) input {
@@ -106,22 +116,57 @@
 
 .mock-draft-board {
   display: grid;
+  align-items: start;
   gap: 7px;
   overflow-x: auto;
 }
 
-.mock-draft-board-position {
-  grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+.mock-draft-team-column {
+  display: grid;
+  gap: 7px;
+  min-width: 118px;
 }
 
 .mock-draft-pick {
+  --position-background: rgba(36, 28, 24, 0.78);
+  --position-border: rgba(201, 156, 107, 0.2);
   box-sizing: border-box;
   min-width: 118px;
-  min-height: 126px;
+  min-height: 105px;
   padding: 8px;
-  border: 1px solid rgba(201, 156, 107, 0.2);
+  border: 1px solid var(--position-border);
   border-radius: 16px;
-  background: rgba(36, 28, 24, 0.78);
+  background: var(--position-background);
+}
+
+.mock-draft-position-qb {
+  --position-background: rgba(105, 62, 117, 0.42);
+  --position-border: rgba(221, 151, 239, 0.34);
+}
+
+.mock-draft-position-rb {
+  --position-background: rgba(45, 91, 101, 0.46);
+  --position-border: rgba(116, 211, 226, 0.32);
+}
+
+.mock-draft-position-wr {
+  --position-background: rgba(35, 101, 83, 0.46);
+  --position-border: rgba(100, 219, 178, 0.3);
+}
+
+.mock-draft-position-te {
+  --position-background: rgba(112, 62, 64, 0.46);
+  --position-border: rgba(239, 143, 145, 0.3);
+}
+
+.mock-draft-position-dst {
+  --position-background: rgba(112, 76, 49, 0.48);
+  --position-border: rgba(237, 174, 112, 0.32);
+}
+
+.mock-draft-position-k {
+  --position-background: rgba(103, 87, 50, 0.48);
+  --position-border: rgba(223, 197, 119, 0.32);
 }
 
 .mock-draft-pick.mock-draft-mine {
@@ -176,36 +221,46 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 9px;
+  margin-top: 8px;
 }
 
 .mock-draft-pick-number {
   font: 400 1rem/1 "Comic Sans MS", "Comic Sans", cursive;
 }
 
+.mock-draft-rank-controls {
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #c99c6b;
+}
+
 .mock-draft-rank {
   padding: 4px 6px;
-  border-radius: 999px;
   color: #21150e;
-  background: #c99c6b;
   font-size: 0.58rem;
   font-weight: 700;
 }
 
-.mock-draft-nudge {
-  display: flex;
-  margin-top: 7px;
-  border-top: 1px solid rgba(201, 156, 107, 0.12);
-}
-
-.mock-draft-nudge button {
-  flex: 1;
-  padding: 5px 0 0;
+.mock-draft-rank-controls button {
+  width: 18px;
+  align-self: stretch;
+  padding: 0;
   border: 0;
-  color: rgba(255, 255, 255, 0.72);
+  color: #21150e;
   background: transparent;
   cursor: pointer;
-  font-size: 0.56rem;
+  font: 700 0.85rem/1 Arial, sans-serif;
+}
+
+.mock-draft-rank-controls button:not(:disabled):hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.mock-draft-rank-controls button:disabled {
+  cursor: default;
+  opacity: 0.2;
 }
 
 .mock-draft-empty {
