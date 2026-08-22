@@ -4,6 +4,7 @@ import { vi } from "vitest";
 
 import { MockDraftPanel, MockDraftSetup } from "./MockDraftView";
 import { DEFAULT_MOCK_DRAFT_SETTINGS } from "./mockDraft";
+import { POSITION_COLORS } from "./positionColors";
 
 test("renders the requested setup defaults and customizable roster", () => {
   render(<MockDraftSetup onStart={vi.fn()} />);
@@ -150,6 +151,61 @@ test("renders derived headshots, rookie marks, fallback, and nudge controls", ()
 
   fireEvent.click(screen.getByLabelText("make pick 1.01 worse"));
   expect(onNudge).toHaveBeenCalledWith(0, "worse");
+});
+
+test("uses the table's bright position palette for draft bubbles", () => {
+  render(
+    <MockDraftPanel
+      state={{
+        settings: {
+          ...DEFAULT_MOCK_DRAFT_SETTINGS,
+          teamCount: 3,
+          draftPosition: 2,
+          seed: "palette",
+        },
+        picks: ["1", "2", "-3"],
+      }}
+      playersById={{
+        "1": {
+          id: "1",
+          name: "Running Back",
+          position: "RB",
+          byeWeek: 7,
+          rookie: false,
+        },
+        "2": {
+          id: "2",
+          name: "Wide Receiver",
+          position: "WR",
+          byeWeek: 8,
+          rookie: false,
+        },
+        "-3": {
+          id: "-3",
+          name: "Defense",
+          position: "DST",
+          byeWeek: 9,
+          rookie: false,
+        },
+      }}
+      orderedRanking={["1", "2", "-3"]}
+      onNudge={vi.fn()}
+    />
+  );
+
+  expect(
+    (screen.getByText("Running Back").closest(".mock-draft-pick") as HTMLElement)
+      .style.backgroundColor
+  ).toBe(POSITION_COLORS.RB);
+  expect(
+    (screen.getByText("Wide Receiver").closest(".mock-draft-pick") as HTMLElement)
+      .style.backgroundColor
+  ).toBe(POSITION_COLORS.WR);
+  expect(
+    (screen.getByText("Defense").closest(".mock-draft-pick") as HTMLElement)
+      .style.backgroundColor
+  ).toBe(POSITION_COLORS.DST);
+  expect(POSITION_COLORS.DST).toBe(POSITION_COLORS["D/ST"]);
 });
 
 test("keeps team columns fixed and toggles every column together", () => {

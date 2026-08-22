@@ -25,7 +25,10 @@ import {
   readMockDraftHash,
   replaceMockDraftHash,
 } from "./mockDraftHash";
+import { POSITION_COLORS } from "./positionColors";
 import { getRookiePlayerIds, normalizeDraftPlayerName } from "./rookies";
+
+export { POSITION_COLORS } from "./positionColors";
 
 export const isDev = import.meta.env.DEV;
 
@@ -37,15 +40,6 @@ export const bubbleStyle = {
   padding: "0.7em",
   margin: "0.5em",
 };
-
-export const POSITION_COLORS = {
-  RB: "lightblue",
-  WR: "lightseagreen",
-  TE: "lightcoral",
-  QB: "plum",
-  K: "tan",
-  "D/ST": "lightsalmon",
-} as { [k: string]: string };
 
 function getDraftPick(teamId: string | undefined): number | "p" {
   const pickOrder = teamId

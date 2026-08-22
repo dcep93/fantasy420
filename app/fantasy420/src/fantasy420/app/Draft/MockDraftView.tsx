@@ -14,6 +14,7 @@ import {
   RosterSlot,
   validateMockDraftSettings,
 } from "./mockDraft";
+import { getPositionColor } from "./positionColors";
 import "./MockDraftView.css";
 
 const ROSTER_SLOTS: RosterSlot[] = [
@@ -410,6 +411,7 @@ function PickBubble(props: {
       className={`mock-draft-pick mock-draft-position-${position.toLowerCase()} ${
         props.pick.isUser ? "mock-draft-mine" : ""
       }`}
+      style={{ backgroundColor: getPositionColor(position) }}
       data-mock-latest-round={props.latestRoundAnchor ? "true" : undefined}
     >
       <div className="mock-draft-player-top">
