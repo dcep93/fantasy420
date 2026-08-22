@@ -323,3 +323,21 @@ test("keeps roster settings on one horizontally scrolling row", () => {
   expect(rosterRule).toMatch(/flex-wrap:\s*nowrap/);
   expect(rosterRule).toMatch(/overflow-x:\s*auto/);
 });
+
+test("keeps bright bubbles and rank controls readable", () => {
+  const css = readFileSync(
+    "src/fantasy420/app/Draft/MockDraftView.css",
+    "utf8"
+  );
+  const filledBubbleRule = css.match(
+    /\.mock-draft-pick:not\(\.mock-draft-empty\)\s*{([^}]*)}/
+  )?.[1];
+  const rankControlsRule = css.match(
+    /\.mock-draft-rank-controls\s*{([^}]*)}/
+  )?.[1];
+  const rankRule = css.match(/\.mock-draft-rank\s*{([^}]*)}/)?.[1];
+
+  expect(filledBubbleRule).toMatch(/color:\s*#17100d/);
+  expect(rankControlsRule).toMatch(/background:\s*#5a3523/);
+  expect(rankRule).toMatch(/color:\s*#fff7ed/);
+});

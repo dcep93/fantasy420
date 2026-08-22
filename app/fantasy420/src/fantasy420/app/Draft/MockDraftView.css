@@ -151,34 +151,32 @@
   background: var(--position-background);
 }
 
+.mock-draft-pick:not(.mock-draft-empty) {
+  color: #17100d;
+}
+
 .mock-draft-position-qb {
-  --position-background: rgba(105, 62, 117, 0.42);
-  --position-border: rgba(221, 151, 239, 0.34);
+  --position-border: #8d5194;
 }
 
 .mock-draft-position-rb {
-  --position-background: rgba(45, 91, 101, 0.46);
-  --position-border: rgba(116, 211, 226, 0.32);
+  --position-border: #3f8fa3;
 }
 
 .mock-draft-position-wr {
-  --position-background: rgba(35, 101, 83, 0.46);
-  --position-border: rgba(100, 219, 178, 0.3);
+  --position-border: #0d756f;
 }
 
 .mock-draft-position-te {
-  --position-background: rgba(112, 62, 64, 0.46);
-  --position-border: rgba(239, 143, 145, 0.3);
+  --position-border: #a34d4d;
 }
 
 .mock-draft-position-dst {
-  --position-background: rgba(112, 76, 49, 0.48);
-  --position-border: rgba(237, 174, 112, 0.32);
+  --position-border: #bd6543;
 }
 
 .mock-draft-position-k {
-  --position-background: rgba(103, 87, 50, 0.48);
-  --position-border: rgba(223, 197, 119, 0.32);
+  --position-border: #8b6a36;
 }
 
 .mock-draft-pick.mock-draft-mine {
@@ -209,7 +207,7 @@
 .mock-draft-image-fallback {
   display: grid;
   place-items: center;
-  color: #ff7bc3;
+  color: #21150e;
   font: 400 0.65rem "Comic Sans MS", "Comic Sans", cursive;
 }
 
@@ -221,12 +219,12 @@
 
 .mock-draft-player-detail {
   margin-top: 4px;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(23, 16, 13, 0.72);
   font-size: 0.62rem;
 }
 
 .mock-draft-player-detail b {
-  color: #ff7bc3;
+  color: #21150e;
 }
 
 .mock-draft-pick-facts {
@@ -245,12 +243,12 @@
   align-items: center;
   overflow: hidden;
   border-radius: 999px;
-  background: #c99c6b;
+  background: #5a3523;
 }
 
 .mock-draft-rank {
   padding: 4px 6px;
-  color: #21150e;
+  color: #fff7ed;
   font-size: 0.58rem;
   font-weight: 700;
 }
@@ -260,7 +258,7 @@
   align-self: stretch;
   padding: 0;
   border: 0;
-  color: #21150e;
+  color: #fff7ed;
   background: transparent;
   cursor: pointer;
   font: 700 0.85rem/1 Arial, sans-serif;
