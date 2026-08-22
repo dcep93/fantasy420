@@ -349,19 +349,21 @@ function SubDraft() {
                 2
               )}
             </pre>
-            <div>
-              <div onClick={() => setExtensionStorage({ draft: "[]" })}>
-                drafted
+            {!mockDraft ? (
+              <div>
+                <div onClick={() => setExtensionStorage({ draft: "[]" })}>
+                  drafted
+                </div>
+                <input
+                  readOnly
+                  value={JSON.stringify(
+                    activeDraftPlayerIds.map(
+                      (playerId) => wrapped.nflPlayers[playerId]?.name
+                    )
+                  )}
+                />
               </div>
-              <input
-                readOnly
-                value={JSON.stringify(
-                  activeDraftPlayerIds.map(
-                    (playerId) => wrapped.nflPlayers[playerId]?.name
-                  )
-                )}
-              />
-            </div>
+            ) : null}
             <div>
               <div>
                 <a href="https://www.draftsharks.com/adp/superflex">
