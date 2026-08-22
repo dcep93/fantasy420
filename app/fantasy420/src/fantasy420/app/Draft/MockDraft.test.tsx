@@ -1,0 +1,123 @@
+import { fireEvent, render, screen } from "@testing-library/react";
+import { vi } from "vitest";
+
+import { MockDraftPanel, MockDraftSetup } from "./MockDraftView";
+import { DEFAULT_MOCK_DRAFT_SETTINGS } from "./mockDraft";
+
+test("renders the requested setup defaults and customizable roster", () => {
+  render(<MockDraftSetup onStart={vi.fn()} />);
+
+  expect(screen.getByLabelText("draft position")).toHaveValue(8);
+  expect(screen.getByLabelText("number of teams")).toHaveValue(10);
+  expect(screen.getByLabelText("position riskiness")).toHaveValue(1);
+  expect(screen.getByLabelText("bye riskiness")).toHaveValue(1);
+  expect(screen.getByLabelText("craziness")).toHaveValue(1);
+  expect(screen.getByLabelText("seed")).toHaveValue("");
+  expect(screen.getByLabelText("QB slots")).toHaveValue(1);
+  expect(screen.getByLabelText("FLEX slots")).toHaveValue(2);
+  expect(screen.getByLabelText("SUPERFLEX slots")).toHaveValue(1);
+  expect(screen.getByLabelText("BENCH slots")).toHaveValue(5);
+});
+
+test("resolves a blank seed and starts with edited settings", () => {
+  const onStart = vi.fn();
+  render(<MockDraftSetup onStart={onStart} />);
+  fireEvent.change(screen.getByLabelText("number of teams"), {
+    target: { value: "12" },
+  });
+  fireEvent.click(screen.getByRole("button", { name: "mock draft" }));
+
+  expect(onStart).toHaveBeenCalledOnce();
+  expect(onStart.mock.calls[0][0].teamCount).toBe(12);
+  expect(onStart.mock.calls[0][0].seed).not.toBe("");
+});
+
+test("renders derived headshots, rookie marks, fallback, and nudge controls", () => {
+  const onNudge = vi.fn();
+  render(
+    <MockDraftPanel
+      state={{
+        settings: {
+          ...DEFAULT_MOCK_DRAFT_SETTINGS,
+          teamCount: 2,
+          draftPosition: 2,
+          seed: "board",
+          roster: {
+            QB: 1,
+            RB: 0,
+            WR: 0,
+            TE: 0,
+            FLEX: 0,
+            SUPERFLEX: 0,
+            DST: 0,
+            K: 0,
+            BENCH: 0,
+          },
+        },
+        picks: ["4429795", "-16008"],
+      }}
+      playersById={{
+        "4429795": {
+          id: "4429795",
+          name: "Jahmyr Gibbs",
+          position: "RB",
+          byeWeek: 8,
+          rookie: true,
+        },
+        "-16008": {
+          id: "-16008",
+          name: "Lions D/ST",
+          position: "DST",
+          byeWeek: 8,
+          rookie: false,
+        },
+      }}
+      orderedRanking={["4429795", "-16008"]}
+      onNudge={onNudge}
+    />
+  );
+
+  expect(screen.getByText("Jahmyr Gibbs*")).toBeInTheDocument();
+  expect(screen.getByRole("img", { name: "Jahmyr Gibbs" })).toHaveAttribute(
+    "src",
+    "https://a.espncdn.com/i/headshots/nfl/players/full/4429795.png"
+  );
+  expect(screen.getByLabelText("Lions D/ST image fallback")).toBeInTheDocument();
+  expect(screen.getByText("1.01")).toBeInTheDocument();
+  expect(screen.getAllByText("#1")).toHaveLength(2);
+
+  fireEvent.click(screen.getByLabelText("make pick 1.01 worse"));
+  expect(onNudge).toHaveBeenCalledWith(0, "worse");
+});
+
+test("toggles between pick and position order from the panel", () => {
+  render(
+    <MockDraftPanel
+      state={{
+        settings: {
+          ...DEFAULT_MOCK_DRAFT_SETTINGS,
+          teamCount: 2,
+          draftPosition: 2,
+          seed: "board",
+        },
+        picks: ["2", "1"],
+      }}
+      playersById={{
+        "1": { id: "1", name: "Quarterback", position: "QB", byeWeek: 7, rookie: false },
+        "2": { id: "2", name: "Runner", position: "RB", byeWeek: 8, rookie: false },
+      }}
+      orderedRanking={["1", "2"]}
+      onNudge={vi.fn()}
+    />
+  );
+
+  expect(screen.getByTestId("mock-draft-panel")).toHaveAttribute(
+    "data-order",
+    "pick"
+  );
+  fireEvent.click(screen.getByTestId("mock-draft-panel"));
+  expect(screen.getByTestId("mock-draft-panel")).toHaveAttribute(
+    "data-order",
+    "position"
+  );
+});

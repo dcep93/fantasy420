@@ -1,0 +1,225 @@
+.mock-draft-setup,
+.mock-draft-panel {
+  box-sizing: border-box;
+  width: 100%;
+  color: #fff;
+  background: linear-gradient(180deg, #1a1411 0%, #0c0907 100%);
+  font-family: Arial, sans-serif;
+}
+
+.mock-draft-setup {
+  padding: 12px;
+  border: 1px solid rgba(201, 156, 107, 0.2);
+  border-radius: 18px;
+}
+
+.mock-draft-setup-title,
+.mock-draft-header h2 {
+  margin: 0;
+  color: #ff7bc3;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+}
+
+.mock-draft-setup-title {
+  margin-bottom: 9px;
+  font-size: 1.4rem;
+}
+
+.mock-draft-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.mock-draft-field {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 7px;
+  border: 1px solid rgba(201, 156, 107, 0.15);
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.72);
+  background: rgba(36, 28, 24, 0.78);
+  font-size: 0.7rem;
+}
+
+.mock-draft-field input {
+  width: 4.4rem;
+  padding: 3px 5px;
+  border: 1px solid rgba(201, 156, 107, 0.2);
+  border-radius: 7px;
+  color: #fff;
+  background: rgba(232, 206, 171, 0.06);
+  font: inherit;
+}
+
+.mock-draft-field:has(input[aria-label="seed"]) input {
+  width: 7rem;
+}
+
+.mock-draft-start {
+  margin-top: 9px;
+  padding: 7px 13px;
+  border: 1px solid rgba(255, 191, 105, 0.5);
+  border-radius: 999px;
+  color: #21150e;
+  background: #c99c6b;
+  cursor: pointer;
+  font: 700 0.75rem Arial, sans-serif;
+}
+
+.mock-draft-error {
+  display: inline-block;
+  margin-left: 9px;
+  color: #ff9fb0;
+  font-size: 0.75rem;
+}
+
+.mock-draft-panel {
+  padding: 12px;
+  overflow: hidden;
+}
+
+.mock-draft-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  border: 1px solid rgba(201, 156, 107, 0.2);
+  border-radius: 18px;
+  background: rgba(20, 15, 12, 0.92);
+}
+
+.mock-draft-header h2 {
+  font-size: 1.7rem;
+  line-height: 1;
+}
+
+.mock-draft-header span {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.75rem;
+}
+
+.mock-draft-board {
+  display: grid;
+  gap: 7px;
+  overflow-x: auto;
+}
+
+.mock-draft-board-position {
+  grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+}
+
+.mock-draft-pick {
+  box-sizing: border-box;
+  min-width: 118px;
+  min-height: 126px;
+  padding: 8px;
+  border: 1px solid rgba(201, 156, 107, 0.2);
+  border-radius: 16px;
+  background: rgba(36, 28, 24, 0.78);
+}
+
+.mock-draft-pick.mock-draft-mine {
+  padding: 7px;
+  border: 2px solid #ff7bc3;
+}
+
+.mock-draft-player-top {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.mock-draft-player-top img,
+.mock-draft-image-fallback {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border-radius: 12px;
+  background: rgba(232, 206, 171, 0.08);
+}
+
+.mock-draft-player-top img {
+  object-fit: cover;
+  object-position: top;
+}
+
+.mock-draft-image-fallback {
+  display: grid;
+  place-items: center;
+  color: #ff7bc3;
+  font: 400 0.65rem "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.mock-draft-player-name {
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.mock-draft-player-detail {
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.62rem;
+}
+
+.mock-draft-player-detail b {
+  color: #ff7bc3;
+}
+
+.mock-draft-pick-facts {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 9px;
+}
+
+.mock-draft-pick-number {
+  font: 400 1rem/1 "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.mock-draft-rank {
+  padding: 4px 6px;
+  border-radius: 999px;
+  color: #21150e;
+  background: #c99c6b;
+  font-size: 0.58rem;
+  font-weight: 700;
+}
+
+.mock-draft-nudge {
+  display: flex;
+  margin-top: 7px;
+  border-top: 1px solid rgba(201, 156, 107, 0.12);
+}
+
+.mock-draft-nudge button {
+  flex: 1;
+  padding: 5px 0 0;
+  border: 0;
+  color: rgba(255, 255, 255, 0.72);
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.56rem;
+}
+
+.mock-draft-empty {
+  display: grid;
+  place-items: center;
+  border-style: dashed;
+  color: rgba(255, 255, 255, 0.25);
+  background: rgba(36, 28, 24, 0.35);
+  font: 400 0.85rem "Comic Sans MS", "Comic Sans", cursive;
+}
+
+@media (max-width: 800px) {
+  .mock-draft-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

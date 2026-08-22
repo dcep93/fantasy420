@@ -12,6 +12,17 @@ import draft2025 from "./2025.json";
 import draft2026 from "./2026.json";
 import getFormatAwareRankings, { getSourceLabel } from "./composite";
 import draftKings from "./draftKings";
+import { MockDraftPanel, MockDraftSetup } from "./MockDraftView";
+import {
+  advanceToUserTurn,
+  makeUserPick,
+  MockDraftState,
+  nudgeHistoricalPick,
+} from "./mockDraft";
+import {
+  readMockDraftHash,
+  replaceMockDraftHash,
+} from "./mockDraftHash";
 import { getRookiePlayerIds, normalizeDraftPlayerName } from "./rookies";
 
 export const isDev = import.meta.env.DEV;
@@ -96,11 +107,30 @@ export type PlayersType = { [playerId: string]: number };
 export type DraftJsonType = { [source: string]: PlayersType };
 
 export default function Draft() {
-  const liveDraft = useLiveDraft();
+  return <SubDraft />;
+}
+
+function SubDraft() {
   const [localDraft, updateLocalDraft] = useState<{ [key: string]: boolean }>(
     {}
   );
   const wrapped = allWrapped[selectedYear];
+  const [mockDraft, setMockDraft] = useState<MockDraftState | null>(() => {
+    try {
+      return readMockDraftHash();
+    } catch {
+      return null;
+    }
+  });
+  const [mockDraftError, setMockDraftError] = useState(() => {
+    try {
+      readMockDraftHash();
+      return "";
+    } catch (error) {
+      return error instanceof Error ? error.message : String(error);
+    }
+  });
+  const liveDraft = useLiveDraft(mockDraft === null);
   const normalizedNameToId = useMemo(
     () => getNormalizedNameToId(wrapped),
     [wrapped]
@@ -120,28 +150,9 @@ export default function Draft() {
       }),
     [liveDraft, normalizedNameToId, wrapped]
   );
-  return (
-    <SubDraft
-      liveDraft={matchedLiveDraft}
-      localDraft={localDraft}
-      updateLocalDraft={updateLocalDraft}
-    />
-  );
-}
-
-function SubDraft(props: {
-  localDraft: { [key: string]: boolean };
-  updateLocalDraft: (ld: { [key: string]: boolean }) => void;
-  liveDraft: string[];
-}) {
   const [regenSources, updateRegenSources] = useState(false);
   const playersByName = Object.fromEntries(
     Object.values(selectedWrapped().nflPlayers).map((p) => [p.name, p])
-  );
-  const draftedById = Object.fromEntries(
-    props.liveDraft
-      .map((playerName) => playersByName[playerName])
-      .map((p, pickIndex) => [p.id, { pickIndex, ...p }])
   );
 
   const { rankings: results } = useMemo(getResults, [selectedYear]);
@@ -158,6 +169,83 @@ function SubDraft(props: {
   const [rookiesOnly, updateRookiesOnly] = useState(false);
   const [byeWeekFilter, updateByeWeekFilter] = useState(-1);
   const [source, update] = useState(sources[0]);
+  const orderedRanking = useMemo(
+    () =>
+      Object.entries(results[source])
+        .filter(
+          ([playerId, value]) =>
+            value !== undefined && wrapped.nflPlayers[playerId] !== undefined
+        )
+        .sort((a, b) => a[1] - b[1] || a[0].localeCompare(b[0]))
+        .map(([playerId]) => playerId),
+    [results, source, wrapped]
+  );
+  const mockPlayersById = useMemo(
+    () =>
+      Object.fromEntries(
+        Object.values(wrapped.nflPlayers).map((player) => [
+          player.id,
+          {
+            id: player.id,
+            name: player.name,
+            position: player.position,
+            byeWeek: wrapped.nflTeams[player.nflTeamId]?.byeWeek ?? 0,
+            rookie: rookiePlayerIds.has(player.id),
+          },
+        ])
+      ),
+    [rookiePlayerIds, wrapped]
+  );
+  const activeDraftPlayerIds = mockDraft
+    ? mockDraft.picks
+    : matchedLiveDraft.flatMap((playerName) => {
+        const player = playersByName[playerName];
+        return player ? [player.id] : [];
+      });
+  const draftedById = Object.fromEntries(
+    activeDraftPlayerIds.flatMap((playerId, pickIndex) => {
+      const player = wrapped.nflPlayers[playerId];
+      return player ? [[playerId, { pickIndex, ...player }]] : [];
+    })
+  );
+
+  useEffect(() => {
+    function loadHash() {
+      try {
+        const loaded = readMockDraftHash();
+        if (
+          loaded &&
+          loaded.picks.some((playerId) => wrapped.nflPlayers[playerId] === undefined)
+        ) {
+          throw new Error("Mock draft URL contains an unknown ESPN player id");
+        }
+        setMockDraftError("");
+        setMockDraft(loaded);
+      } catch (error) {
+        setMockDraft(null);
+        setMockDraftError(error instanceof Error ? error.message : String(error));
+      }
+    }
+    window.addEventListener("hashchange", loadHash);
+    return () => window.removeEventListener("hashchange", loadHash);
+  }, [wrapped]);
+
+  useEffect(() => {
+    if (
+      mockDraft &&
+      mockDraft.picks.some((playerId) => wrapped.nflPlayers[playerId] === undefined)
+    ) {
+      setMockDraft(null);
+      setMockDraftError("Mock draft URL contains an unknown ESPN player id");
+    }
+  }, [mockDraft, wrapped]);
+
+  function saveMockDraft(next: MockDraftState) {
+    setMockDraft(next);
+    setMockDraftError("");
+    replaceMockDraftHash(next);
+  }
+
   const sourcePlayers = Object.entries(results[source])
     .map(([playerId, value]) => ({
       playerId,
@@ -175,7 +263,41 @@ function SubDraft(props: {
     }));
 
   return (
-    <pre
+    <>
+      {mockDraft ? (
+        <MockDraftPanel
+          state={mockDraft}
+          playersById={mockPlayersById}
+          orderedRanking={orderedRanking}
+          onNudge={(pickIndex, direction) =>
+            saveMockDraft(
+              nudgeHistoricalPick(
+                mockDraft,
+                pickIndex,
+                direction,
+                mockPlayersById,
+                orderedRanking
+              )
+            )
+          }
+        />
+      ) : (
+        <MockDraftSetup
+          onStart={(settings) =>
+            saveMockDraft(
+              advanceToUserTurn(
+                { settings, picks: [] },
+                mockPlayersById,
+                orderedRanking
+              )
+            )
+          }
+        />
+      )}
+      {mockDraftError ? (
+        <div className="mock-draft-load-error">{mockDraftError}</div>
+      ) : null}
+      <pre
       style={{
         display: "flex",
         flexWrap: "wrap",
@@ -204,7 +326,7 @@ function SubDraft(props: {
           </ul>
         </div>
         <div onClick={() => updateRegenSources(!regenSources)}>
-          {getSourceLabel(source)} ({props.liveDraft.length})
+          {getSourceLabel(source)} ({activeDraftPlayerIds.length})
         </div>
         {!regenSources ? null : (
           <div>
@@ -231,7 +353,14 @@ function SubDraft(props: {
               <div onClick={() => setExtensionStorage({ draft: "[]" })}>
                 drafted
               </div>
-              <input readOnly value={JSON.stringify(props.liveDraft)} />
+              <input
+                readOnly
+                value={JSON.stringify(
+                  activeDraftPlayerIds.map(
+                    (playerId) => wrapped.nflPlayers[playerId]?.name
+                  )
+                )}
+              />
             </div>
             <div>
               <div>
@@ -400,9 +529,9 @@ function SubDraft(props: {
                 .map((v) => ({
                   ...v,
                   seen:
-                    props.localDraft[v.player.name] === undefined
+                    localDraft[v.player.name] === undefined
                       ? v.seen
-                      : props.localDraft[v.player.name],
+                      : localDraft[v.player.name],
                 }))
                 .map((v, i) => (
                   <tr
@@ -410,13 +539,23 @@ function SubDraft(props: {
                     style={{
                       backgroundColor: v.seen ? "gray" : "",
                     }}
-                    onClick={() =>
-                      props.updateLocalDraft(
-                        Object.assign({}, props.localDraft, {
+                    onClick={() => {
+                      if (mockDraft) {
+                        const next = makeUserPick(
+                          mockDraft,
+                          v.playerId,
+                          mockPlayersById,
+                          orderedRanking
+                        );
+                        if (next !== mockDraft) saveMockDraft(next);
+                        return;
+                      }
+                      updateLocalDraft(
+                        Object.assign({}, localDraft, {
                           [v.player.name]: !v.seen,
                         })
-                      )
-                    }
+                      );
+                    }}
                   >
                     <td
                       title={"index/posIndex/bye/byePick"}
@@ -483,7 +622,8 @@ function SubDraft(props: {
           </table>
         </div>
       </div>
-    </pre>
+      </pre>
+    </>
   );
 }
 
@@ -754,11 +894,15 @@ function updateDraftRanking(
     .then((resp) => alert(resp.ok));
 }
 
-function useLiveDraft(): string[] {
+export function useLiveDraft(enabled = true): string[] {
   const FETCH_LIVE_DRAFT_PERIOD_MS = 500;
   const [liveDraft, updateLiveDraft] = useState<string[]>([]);
 
   useEffect(() => {
+    if (!enabled) {
+      updateLiveDraft([]);
+      return;
+    }
     let active = true;
     let previousDraftJson: string | null = null;
     let timeoutId: number | undefined;
@@ -793,7 +937,7 @@ function useLiveDraft(): string[] {
       active = false;
       if (timeoutId !== undefined) window.clearTimeout(timeoutId);
     };
-  }, []);
+  }, [enabled]);
 
   return liveDraft;
 }
