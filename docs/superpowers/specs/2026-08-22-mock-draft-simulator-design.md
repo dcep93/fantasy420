@@ -25,13 +25,13 @@ Place a compact mock-draft setup area at the top of the draft page. It contains:
 - craziness, default `1`;
 - optional seed, blank by default;
 - editable roster counts for QB, RB, WR, TE, FLEX, SUPERFLEX, DST, K, and BENCH;
-- a `mock draft` button.
+- a `mock draft` button beside the settings-panel title.
 
-The default roster counts are `1, 2, 2, 1, 2, 1, 1, 1, 5`. Their sum determines the number of draft rounds. Inputs are validated before activation: team and slot counts must be nonnegative integers where applicable, team count must be at least two, draft position must be within the team count, and risk factors must be finite positive numbers.
+The default roster counts are `1, 2, 2, 1, 2, 1, 1, 1, 5`. Their sum determines the number of draft rounds. Inputs are validated before activation: team and slot counts must be nonnegative integers where applicable, team count must be at least two, and draft position must be within the team count. For position riskiness, bye riskiness, and craziness, typed `0` normalizes to the practical minimum `0.0001`, while a blank input normalizes to the practical maximum `10000`. Other positive finite values are clamped to that inclusive range.
 
-If the seed input is blank, activation creates a readable random seed and records it in state. Once activated, the page exposes no stop, close, or reset control. Reloading or navigating to a URL without draft state is outside the in-panel interaction contract.
+If the seed input is blank, activation creates a readable random seed and records it in state. The `mock draft` button remains visible and enabled after activation. Clicking it during an active draft discards the current history and immediately starts a new draft with the displayed settings and a fresh random seed, regardless of the displayed seed. The page exposes no stop or close control. Reloading or navigating to a URL without draft state is outside the in-panel interaction contract.
 
-The settings area remains rendered after activation. Its draft/team/risk controls and roster counts become read-only, while the resolved seed remains a selectable read-only text input so it can be copied. General draft controls occupy the first field row. Roster-position counts occupy a dedicated single-line second row that scrolls horizontally instead of wrapping.
+The settings area remains rendered after activation. Its draft/team/risk controls and roster counts become read-only, while the resolved seed remains a selectable read-only text input so it can be copied. The title and always-enabled action share a compact header row. General draft controls occupy the first field row. Roster-position counts occupy a dedicated single-line second row that scrolls horizontally instead of wrapping.
 
 ## State model and URL hash
 
@@ -67,7 +67,7 @@ Position capacity is based on configured eligible starting slots. QB can use QB 
 
 Bye risk compares a candidate with already drafted teammates at the same position. Each matching bye adds a penalty scaled by the bye-risk factor, with the same near-zero, normal-at-one, and dominant-at-large behavior.
 
-Craziness controls seeded rank deviation through calibrated Gumbel sampling over the need-adjusted scores. Values near zero are nearly deterministic to the adjusted ranking, `1` normally produces roughly one double-digit reach during a ten-team first round and makes a rank near 14 plausible without guaranteeing it, and large values permit increasingly remote choices. Random values are derived from the seed plus the complete preceding pick sequence so the same seed and state replay identically, while changing an earlier pick changes later random choices.
+Craziness controls seeded rank deviation through calibrated Gumbel sampling over the need-adjusted scores. Values near zero are nearly deterministic to the adjusted ranking. At `1`, rank-14 first-round reaches are occasional rather than typical; the baseline temperature is reduced from `6` to approximately `3.5` to avoid opening sequences dominated by double-digit reaches. Large values still permit increasingly remote choices. Random values are derived from the seed plus the complete preceding pick sequence so the same seed and state replay identically, while changing an earlier pick changes later random choices.
 
 When a ranking omits a known player, that player sorts after ranked players. Opponents select only players present in the active table's ranked candidate pool so every simulated pick can be represented consistently.
 
@@ -104,14 +104,14 @@ The active panel appears above all existing draft-page content. Use the approved
 - dense player bubbles with minimal surrounding copy;
 - no ornamental dashboard metrics, oversized hero text, explanatory legend, or unrelated restyling.
 
-Each bubble shows headshot or fallback, player name, rookie asterisk, position, pick label, team seat, bye week, pick-time rank, and better/worse controls. Pick metadata is compactly formatted as `1.03/3 #3`, where `1.03` is the chronological pick within the round, `/3` is the owning team seat, and `#3` is the pick-time available-player rank. Bubbles receive a muted position-specific background color. The user's picks receive a restrained pink border.
+Each bubble shows headshot or fallback, player name, rookie asterisk, position, pick label, total pick index, bye week, pick-time rank, and better/worse controls. Pick metadata is compactly formatted as `3.01/21 #3`, where `3.01` is the chronological pick within the round, `/21` is the one-based total pick index, and `#3` is the pick-time available-player rank. Bubbles receive a muted position-specific background color. The user's picks receive a restrained pink border.
 
 The board always has one fixed column per fantasy team, with that team's picks stacked downward. Clicking a non-interactive part of the panel toggles every team column together between:
 
 - round order; and
 - position order: QB, RB, WR, TE, DST, K, with picks inside each position ordered by overall pick.
 
-In position mode, each team column independently groups its filled picks by position while preserving original pick order within a position; empty future slots remain below filled picks. The newest rendered round carries a scroll target used by the user-turn positioning behavior.
+In position mode, each team column independently groups its filled picks by position and uses the one-based total pick index as the tie-breaker within a position; empty future slots remain below filled picks. The newest rendered round carries a scroll target used by the user-turn positioning behavior.
 
 Buttons stop click propagation so historical edits do not also toggle the layout.
 
@@ -156,12 +156,14 @@ Add focused tests for:
 - deterministic seed behavior and state-dependent replay;
 - monotonic position-risk, bye-risk, and craziness behavior;
 - calibrated first-round reach frequency at default craziness over a deterministic seed cohort;
+- zero-to-minimum and blank-to-maximum factor normalization;
 - opponent auto-picks and user-turn pauses;
 - better/worse replacement using pick-time availability;
 - preservation and invalidation of later user picks;
 - hash round-trip, malformed payload rejection, and restoration;
 - extension polling disabled throughout mock mode;
 - rookie asterisks, derived headshot/fallback rendering, position colors, compact metadata, disabled nudge bounds, board-wide per-column sort toggling, turn scrolling, and row-click drafting;
-- always-visible two-row settings with read-only active controls, a copyable seed, and a non-wrapping horizontally scrolling roster row.
+- always-visible two-row settings with read-only active controls, a copyable seed, a title-adjacent always-enabled restart action that generates a fresh seed, and a non-wrapping horizontally scrolling roster row;
+- `round.index/total_pick_index` bubble metadata and total-pick tie-breaking within position groups.
 
 Run the focused Vitest files, the existing draft/extension tests, and a production build. Finally, inspect the rendered panel in the local app at desktop and narrow widths without changing the styling of the existing page beneath it.
