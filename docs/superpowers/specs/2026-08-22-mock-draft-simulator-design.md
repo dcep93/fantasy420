@@ -31,7 +31,7 @@ The default roster counts are `1, 2, 2, 1, 2, 1, 1, 1, 5`. Their sum determines 
 
 If the seed input is blank, activation creates a readable random seed and records it in state. Once activated, the page exposes no stop, close, or reset control. Reloading or navigating to a URL without draft state is outside the in-panel interaction contract.
 
-The settings area remains rendered after activation. Its draft/team/risk controls and roster counts become read-only, while the resolved seed remains a selectable read-only text input so it can be copied. General draft controls occupy the first field row and roster-position counts occupy a dedicated second row.
+The settings area remains rendered after activation. Its draft/team/risk controls and roster counts become read-only, while the resolved seed remains a selectable read-only text input so it can be copied. General draft controls occupy the first field row. Roster-position counts occupy a dedicated single-line second row that scrolls horizontally instead of wrapping.
 
 ## State model and URL hash
 
@@ -106,12 +106,12 @@ The active panel appears above all existing draft-page content. Use the approved
 
 Each bubble shows headshot or fallback, player name, rookie asterisk, position, pick label, team seat, bye week, pick-time rank, and better/worse controls. Pick metadata is compactly formatted as `1.03/3 #3`, where `1.03` is the chronological pick within the round, `/3` is the owning team seat, and `#3` is the pick-time available-player rank. Bubbles receive a muted position-specific background color. The user's picks receive a restrained pink border.
 
-The board always has one fixed column per fantasy team, with that team's picks stacked downward. Clicking a non-interactive part of the panel toggles only the user's emphasized column between:
+The board always has one fixed column per fantasy team, with that team's picks stacked downward. Clicking a non-interactive part of the panel toggles every team column together between:
 
 - round order; and
 - position order: QB, RB, WR, TE, DST, K, with picks inside each position ordered by overall pick.
 
-Opponent columns remain in round order in both modes. The newest rendered round carries a scroll target used by the user-turn positioning behavior.
+In position mode, each team column independently groups its filled picks by position while preserving original pick order within a position; empty future slots remain below filled picks. The newest rendered round carries a scroll target used by the user-turn positioning behavior.
 
 Buttons stop click propagation so historical edits do not also toggle the layout.
 
@@ -161,7 +161,7 @@ Add focused tests for:
 - preservation and invalidation of later user picks;
 - hash round-trip, malformed payload rejection, and restoration;
 - extension polling disabled throughout mock mode;
-- rookie asterisks, derived headshot/fallback rendering, position colors, compact metadata, disabled nudge bounds, user-column-only sort toggling, turn scrolling, and row-click drafting;
-- always-visible two-row settings with read-only active controls and a copyable seed.
+- rookie asterisks, derived headshot/fallback rendering, position colors, compact metadata, disabled nudge bounds, board-wide per-column sort toggling, turn scrolling, and row-click drafting;
+- always-visible two-row settings with read-only active controls, a copyable seed, and a non-wrapping horizontally scrolling roster row.
 
 Run the focused Vitest files, the existing draft/extension tests, and a production build. Finally, inspect the rendered panel in the local app at desktop and narrow widths without changing the styling of the existing page beneath it.
