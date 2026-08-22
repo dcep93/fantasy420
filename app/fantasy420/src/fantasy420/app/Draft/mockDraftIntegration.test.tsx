@@ -34,6 +34,48 @@ test("restores hash state without connecting to the Chrome extension", () => {
   rendered.unmount();
 });
 
+test("keeps pending setting edits out of the active draft and hash until restart", () => {
+  const initial = {
+    ...DEFAULT_MOCK_DRAFT_SETTINGS,
+    teamCount: 2,
+    draftPosition: 1,
+    seed: "active-seed",
+  };
+  window.history.replaceState(
+    null,
+    "",
+    `/draft${encodeMockDraftHash({ settings: initial, picks: [] })}`
+  );
+  const rendered = render(<Draft />);
+  const activeHash = window.location.hash;
+
+  fireEvent.change(screen.getByLabelText("craziness"), {
+    target: { value: "7" },
+  });
+  fireEvent.change(screen.getByLabelText("seed"), {
+    target: { value: "replacement-seed" },
+  });
+
+  expect(window.location.hash).toBe(activeHash);
+  expect(decodeMockDraftHash(window.location.hash)?.settings).toEqual(initial);
+
+  fireEvent.click(rendered.container.querySelector("tbody tr")!);
+  const progressed = decodeMockDraftHash(window.location.hash)!;
+  expect(progressed.settings).toEqual(initial);
+  expect(progressed.picks).toHaveLength(3);
+  expect(screen.getByLabelText("craziness")).toHaveValue(7);
+  expect(screen.getByLabelText("seed")).toHaveValue("replacement-seed");
+
+  fireEvent.click(screen.getByRole("button", { name: "mock draft" }));
+  const restarted = decodeMockDraftHash(window.location.hash)!;
+  expect(restarted.settings).toMatchObject({
+    craziness: 7,
+    seed: "replacement-seed",
+  });
+  expect(restarted.picks).toHaveLength(0);
+  rendered.unmount();
+});
+
 test("drafts an existing table row and synchronizes ordered ids to the hash", () => {
   window.history.replaceState(
     null,
@@ -114,8 +156,8 @@ test("positions the newest round and best untaken row at every user turn", () =>
   const playerScroller = screen.getByTestId("mock-draft-player-scroller");
   expect(scrollIntoView).toHaveBeenCalledWith({ block: "start" });
   expect(playerScroller.scrollTop).toBe(123);
-  expect(screen.getByLabelText("draft position")).toBeDisabled();
-  expect(screen.getByLabelText("seed")).toHaveAttribute("readonly");
+  expect(screen.getByLabelText("draft position")).toBeEnabled();
+  expect(screen.getByLabelText("seed")).not.toHaveAttribute("readonly");
 
   scrollIntoView.mockClear();
   playerScroller.scrollTop = 0;

@@ -56,7 +56,7 @@ test("normalizes factor input extremes when starting", () => {
   });
 });
 
-test("keeps active settings visible in two read-only rows with a copyable seed", () => {
+test("keeps pending settings editable without restarting until submit", () => {
   const onStart = vi.fn();
   const activeSettings = {
     ...DEFAULT_MOCK_DRAFT_SETTINGS,
@@ -69,10 +69,10 @@ test("keeps active settings visible in two read-only rows with a copyable seed",
     />
   );
 
-  expect(screen.getByLabelText("draft position")).toBeDisabled();
-  expect(screen.getByLabelText("QB slots")).toBeDisabled();
-  expect(screen.getByLabelText("seed")).toHaveAttribute("readonly");
-  expect(screen.getByLabelText("seed")).not.toBeDisabled();
+  expect(screen.getByLabelText("draft position")).toBeEnabled();
+  expect(screen.getByLabelText("QB slots")).toBeEnabled();
+  expect(screen.getByLabelText("seed")).toBeEnabled();
+  expect(screen.getByLabelText("seed")).not.toHaveAttribute("readonly");
   expect(screen.getByLabelText("seed")).toHaveValue("copy-me");
   expect(screen.getByTestId("mock-draft-primary-fields")).toBeInTheDocument();
   expect(screen.getByTestId("mock-draft-roster-fields")).toBeInTheDocument();
@@ -80,14 +80,46 @@ test("keeps active settings visible in two read-only rows with a copyable seed",
   expect(action).toBeEnabled();
   expect(screen.getByTestId("mock-draft-setup-header")).toContainElement(action);
 
+  fireEvent.change(screen.getByLabelText("draft position"), {
+    target: { value: "4" },
+  });
+  fireEvent.change(screen.getByLabelText("position riskiness"), {
+    target: { value: "2" },
+  });
+  fireEvent.change(screen.getByLabelText("seed"), {
+    target: { value: "next-seed" },
+  });
+  fireEvent.change(screen.getByLabelText("QB slots"), {
+    target: { value: "2" },
+  });
+
+  expect(onStart).not.toHaveBeenCalled();
   fireEvent.click(action);
 
   expect(onStart).toHaveBeenCalledOnce();
   expect(onStart.mock.calls[0][0]).toEqual({
     ...activeSettings,
-    seed: expect.any(String),
+    draftPosition: 4,
+    positionRisk: 2,
+    seed: "next-seed",
+    roster: { ...activeSettings.roster, QB: 2 },
   });
-  expect(onStart.mock.calls[0][0].seed).not.toBe("copy-me");
+});
+
+test("resets pending settings only when active settings change", () => {
+  const first = { ...DEFAULT_MOCK_DRAFT_SETTINGS, seed: "first" };
+  const rendered = render(<MockDraftSetup activeSettings={first} />);
+
+  fireEvent.change(screen.getByLabelText("craziness"), {
+    target: { value: "9" },
+  });
+  rendered.rerender(<MockDraftSetup activeSettings={first} />);
+  expect(screen.getByLabelText("craziness")).toHaveValue(9);
+
+  const navigated = { ...first, craziness: 3, seed: "navigated" };
+  rendered.rerender(<MockDraftSetup activeSettings={navigated} />);
+  expect(screen.getByLabelText("craziness")).toHaveValue(3);
+  expect(screen.getByLabelText("seed")).toHaveValue("navigated");
 });
 
 test("renders derived headshots, rookie marks, fallback, and nudge controls", () => {
