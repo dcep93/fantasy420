@@ -33,13 +33,38 @@ test("resolves a blank seed and starts with edited settings", () => {
   expect(onStart.mock.calls[0][0].seed).not.toBe("");
 });
 
+test("normalizes factor input extremes when starting", () => {
+  const onStart = vi.fn();
+  render(<MockDraftSetup onStart={onStart} />);
+
+  fireEvent.change(screen.getByLabelText("position riskiness"), {
+    target: { value: "0" },
+  });
+  fireEvent.change(screen.getByLabelText("bye riskiness"), {
+    target: { value: "" },
+  });
+  fireEvent.change(screen.getByLabelText("craziness"), {
+    target: { value: "20000" },
+  });
+  fireEvent.click(screen.getByRole("button", { name: "mock draft" }));
+
+  expect(onStart.mock.calls[0][0]).toMatchObject({
+    positionRisk: 0.0001,
+    byeRisk: 10000,
+    craziness: 10000,
+  });
+});
+
 test("keeps active settings visible in two read-only rows with a copyable seed", () => {
+  const onStart = vi.fn();
+  const activeSettings = {
+    ...DEFAULT_MOCK_DRAFT_SETTINGS,
+    seed: "copy-me",
+  };
   render(
     <MockDraftSetup
-      activeSettings={{
-        ...DEFAULT_MOCK_DRAFT_SETTINGS,
-        seed: "copy-me",
-      }}
+      activeSettings={activeSettings}
+      onStart={onStart}
     />
   );
 
@@ -50,7 +75,18 @@ test("keeps active settings visible in two read-only rows with a copyable seed",
   expect(screen.getByLabelText("seed")).toHaveValue("copy-me");
   expect(screen.getByTestId("mock-draft-primary-fields")).toBeInTheDocument();
   expect(screen.getByTestId("mock-draft-roster-fields")).toBeInTheDocument();
-  expect(screen.queryByRole("button", { name: "mock draft" })).toBeNull();
+  const action = screen.getByRole("button", { name: "mock draft" });
+  expect(action).toBeEnabled();
+  expect(screen.getByTestId("mock-draft-setup-header")).toContainElement(action);
+
+  fireEvent.click(action);
+
+  expect(onStart).toHaveBeenCalledOnce();
+  expect(onStart.mock.calls[0][0]).toEqual({
+    ...activeSettings,
+    seed: expect.any(String),
+  });
+  expect(onStart.mock.calls[0][0].seed).not.toBe("copy-me");
 });
 
 test("renders derived headshots, rookie marks, fallback, and nudge controls", () => {

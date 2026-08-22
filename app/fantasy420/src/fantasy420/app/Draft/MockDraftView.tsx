@@ -28,6 +28,17 @@ const ROSTER_SLOTS: RosterSlot[] = [
   "BENCH",
 ];
 const POSITION_ORDER: DraftPosition[] = ["QB", "RB", "WR", "TE", "DST", "K"];
+const MIN_RISK_FACTOR = 0.0001;
+const MAX_RISK_FACTOR = 10000;
+
+type RiskFactorKey = "positionRisk" | "byeRisk" | "craziness";
+
+function normalizeRiskFactor(value: string): number {
+  if (value.trim() === "") return MAX_RISK_FACTOR;
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed) || parsed < 0) return parsed;
+  return Math.min(MAX_RISK_FACTOR, Math.max(MIN_RISK_FACTOR, parsed));
+}
 
 export type MockDraftDisplayPlayer = MockDraftPlayer & {
   name: string;
@@ -42,16 +53,33 @@ export function MockDraftSetup(props: {
     ...DEFAULT_MOCK_DRAFT_SETTINGS,
     roster: { ...DEFAULT_MOCK_DRAFT_SETTINGS.roster },
   }));
+  const [riskInputs, setRiskInputs] = useState<Record<RiskFactorKey, string>>(
+    () => ({
+      positionRisk: String(DEFAULT_MOCK_DRAFT_SETTINGS.positionRisk),
+      byeRisk: String(DEFAULT_MOCK_DRAFT_SETTINGS.byeRisk),
+      craziness: String(DEFAULT_MOCK_DRAFT_SETTINGS.craziness),
+    })
+  );
   const [error, setError] = useState("");
   const active = props.activeSettings !== undefined;
   const settings = props.activeSettings || editableSettings;
 
   function submit(event: FormEvent) {
     event.preventDefault();
-    if (active || !props.onStart) return;
+    if (!props.onStart) return;
+    const normalizedSettings = active
+      ? settings
+      : {
+          ...editableSettings,
+          positionRisk: normalizeRiskFactor(riskInputs.positionRisk),
+          byeRisk: normalizeRiskFactor(riskInputs.byeRisk),
+          craziness: normalizeRiskFactor(riskInputs.craziness),
+        };
     const resolved = {
-      ...settings,
-      seed: settings.seed.trim() || createSeed(),
+      ...normalizedSettings,
+      seed: active
+        ? createSeed()
+        : normalizedSettings.seed.trim() || createSeed(),
     };
     try {
       validateMockDraftSettings(resolved);
@@ -63,15 +91,27 @@ export function MockDraftSetup(props: {
   }
 
   function setNumber(
-    key: "draftPosition" | "teamCount" | "positionRisk" | "byeRisk" | "craziness",
+    key: "draftPosition" | "teamCount",
     value: string
   ) {
     setEditableSettings((current) => ({ ...current, [key]: Number(value) }));
   }
 
+  function setRiskFactor(key: RiskFactorKey, value: string) {
+    setRiskInputs((current) => ({ ...current, [key]: value }));
+  }
+
   return (
     <form className="mock-draft-setup" onSubmit={submit}>
-      <div className="mock-draft-setup-title">mock draft</div>
+      <div
+        className="mock-draft-setup-header"
+        data-testid="mock-draft-setup-header"
+      >
+        <div className="mock-draft-setup-title">mock draft</div>
+        <button className="mock-draft-start" type="submit">
+          mock draft
+        </button>
+      </div>
       <div
         className="mock-draft-fields mock-draft-primary-fields"
         data-testid="mock-draft-primary-fields"
@@ -94,27 +134,27 @@ export function MockDraftSetup(props: {
         />
         <NumberField
           label="position riskiness"
-          value={settings.positionRisk}
-          min={0.0001}
+          value={active ? settings.positionRisk : riskInputs.positionRisk}
+          min={0}
           step="any"
           disabled={active}
-          onChange={(value) => setNumber("positionRisk", value)}
+          onChange={(value) => setRiskFactor("positionRisk", value)}
         />
         <NumberField
           label="bye riskiness"
-          value={settings.byeRisk}
-          min={0.0001}
+          value={active ? settings.byeRisk : riskInputs.byeRisk}
+          min={0}
           step="any"
           disabled={active}
-          onChange={(value) => setNumber("byeRisk", value)}
+          onChange={(value) => setRiskFactor("byeRisk", value)}
         />
         <NumberField
           label="craziness"
-          value={settings.craziness}
-          min={0.0001}
+          value={active ? settings.craziness : riskInputs.craziness}
+          min={0}
           step="any"
           disabled={active}
-          onChange={(value) => setNumber("craziness", value)}
+          onChange={(value) => setRiskFactor("craziness", value)}
         />
         <label className="mock-draft-field">
           <span>seed</span>
@@ -156,11 +196,6 @@ export function MockDraftSetup(props: {
           />
         ))}
       </div>
-      {!active ? (
-        <button className="mock-draft-start" type="submit">
-          mock draft
-        </button>
-      ) : null}
       {error ? <div className="mock-draft-error">{error}</div> : null}
     </form>
   );
@@ -168,7 +203,7 @@ export function MockDraftSetup(props: {
 
 function NumberField(props: {
   label: string;
-  value: number;
+  value: number | string;
   min: number;
   step: number | "any";
   disabled?: boolean;

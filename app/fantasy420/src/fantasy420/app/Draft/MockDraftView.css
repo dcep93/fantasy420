@@ -22,8 +22,14 @@
   letter-spacing: -0.05em;
 }
 
-.mock-draft-setup-title {
+.mock-draft-setup-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-bottom: 9px;
+}
+
+.mock-draft-setup-title {
   font-size: 1.4rem;
 }
 
@@ -77,7 +83,6 @@
 }
 
 .mock-draft-start {
-  margin-top: 9px;
   padding: 7px 13px;
   border: 1px solid rgba(255, 191, 105, 0.5);
   border-radius: 999px;
