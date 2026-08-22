@@ -289,7 +289,7 @@ test("craziness expands reaches while remaining seed deterministic", () => {
   expect(Math.max(...highRanks)).toBeGreaterThan(3);
 });
 
-test("default craziness usually produces a rank-fourteen first-round reach", () => {
+test("default craziness occasionally produces a rank-fourteen first-round reach", () => {
   const reachPlayers = Object.fromEntries(
     Array.from({ length: 60 }, (_, index) => {
       const id = String(index + 100);
@@ -334,6 +334,6 @@ test("default craziness usually produces a rank-fourteen first-round reach", () 
     }
   }
 
-  expect(draftsWithReach).toBeGreaterThan(50);
-  expect(draftsWithReach).toBeLessThan(90);
+  expect(draftsWithReach).toBeGreaterThan(5);
+  expect(draftsWithReach).toBeLessThan(40);
 });

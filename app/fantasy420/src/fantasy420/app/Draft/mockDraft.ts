@@ -344,7 +344,7 @@ function chooseOpponentPlayer(
         Math.max(Number.EPSILON, random)
       );
       const gumbel = -Math.log(-Math.log(boundedRandom));
-      const temperature = 6 * Math.sqrt(state.settings.craziness);
+      const temperature = 3.5 * Math.sqrt(state.settings.craziness);
       return {
         playerId,
         score:
