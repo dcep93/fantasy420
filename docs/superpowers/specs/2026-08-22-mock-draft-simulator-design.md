@@ -31,6 +31,8 @@ The default roster counts are `1, 2, 2, 1, 2, 1, 1, 1, 5`. Their sum determines 
 
 If the seed input is blank, activation creates a readable random seed and records it in state. Once activated, the page exposes no stop, close, or reset control. Reloading or navigating to a URL without draft state is outside the in-panel interaction contract.
 
+The settings area remains rendered after activation. Its draft/team/risk controls and roster counts become read-only, while the resolved seed remains a selectable read-only text input so it can be copied. General draft controls occupy the first field row and roster-position counts occupy a dedicated second row.
+
 ## State model and URL hash
 
 The canonical state is a versioned object containing:
@@ -65,7 +67,7 @@ Position capacity is based on configured eligible starting slots. QB can use QB 
 
 Bye risk compares a candidate with already drafted teammates at the same position. Each matching bye adds a penalty scaled by the bye-risk factor, with the same near-zero, normal-at-one, and dominant-at-large behavior.
 
-Craziness controls seeded rank deviation. Values near zero are nearly deterministic to the adjusted ranking, `1` allows modest reaches, and large values permit increasingly remote choices. Random values are derived from the seed plus the complete preceding pick sequence so the same seed and state replay identically, while changing an earlier pick changes later random choices.
+Craziness controls seeded rank deviation through calibrated Gumbel sampling over the need-adjusted scores. Values near zero are nearly deterministic to the adjusted ranking, `1` normally produces roughly one double-digit reach during a ten-team first round and makes a rank near 14 plausible without guaranteeing it, and large values permit increasingly remote choices. Random values are derived from the seed plus the complete preceding pick sequence so the same seed and state replay identically, while changing an earlier pick changes later random choices.
 
 When a ranking omits a known player, that player sorts after ranked players. Opponents select only players present in the active table's ranked candidate pool so every simulated pick can be represented consistently.
 
@@ -73,11 +75,13 @@ When a ranking omits a known player, that player sorts after ranked players. Opp
 
 Opponent turns simulate immediately until the next user turn. At a user turn the engine pauses. Clicking an available `<tr>` in the existing table drafts that player, updates the hash, simulates opponents, and pauses again at the user's next turn.
 
+Whenever state settles on a user turn—after activation, a table-row pick, a historical edit, or URL restoration—the page scrolls the newest draft-board round to the top of the viewport. Independently, the existing player-table scroll container places the highest-ranked currently displayed untaken player at its top. This positioning does not depend on the screen location of the row the user previously clicked.
+
 Clicks during opponent processing are ignored. Drafted rows remain visibly unavailable. The mock history, rather than extension storage or local toggles, becomes the source of drafted-player state while active.
 
 ## Historical editing and replay
 
-Every filled board bubble shows the selection's pick-time rank and adjacent `better` and `worse` controls. These controls replace the historical selection with the next better- or worse-ranked player that was available immediately before that pick, ignoring roster and bye preferences.
+Every filled board bubble shows the selection's pick-time rank and adjacent minimal previous/next chevron controls. These controls replace the historical selection with the next better- or worse-ranked player that was available immediately before that pick, ignoring roster and bye preferences. A direction is disabled when there is no adjacent available player in that direction.
 
 After replacement, rebuild the draft from that point through the prior end of history:
 
@@ -100,12 +104,14 @@ The active panel appears above all existing draft-page content. Use the approved
 - dense player bubbles with minimal surrounding copy;
 - no ornamental dashboard metrics, oversized hero text, explanatory legend, or unrelated restyling.
 
-Each bubble shows headshot or fallback, player name, rookie asterisk, position, pick label, bye week, pick-time rank, and better/worse controls. The user's picks receive a restrained pink border.
+Each bubble shows headshot or fallback, player name, rookie asterisk, position, pick label, team seat, bye week, pick-time rank, and better/worse controls. Pick metadata is compactly formatted as `1.03/3 #3`, where `1.03` is the chronological pick within the round, `/3` is the owning team seat, and `#3` is the pick-time available-player rank. Bubbles receive a muted position-specific background color. The user's picks receive a restrained pink border.
 
-Clicking a non-interactive part of the panel toggles between:
+The board always has one fixed column per fantasy team, with that team's picks stacked downward. Clicking a non-interactive part of the panel toggles only the user's emphasized column between:
 
-- snake-board order; and
+- round order; and
 - position order: QB, RB, WR, TE, DST, K, with picks inside each position ordered by overall pick.
+
+Opponent columns remain in round order in both modes. The newest rendered round carries a scroll target used by the user-turn positioning behavior.
 
 Buttons stop click propagation so historical edits do not also toggle the layout.
 
@@ -149,11 +155,13 @@ Add focused tests for:
 - default and customized roster-derived draft lengths;
 - deterministic seed behavior and state-dependent replay;
 - monotonic position-risk, bye-risk, and craziness behavior;
+- calibrated first-round reach frequency at default craziness over a deterministic seed cohort;
 - opponent auto-picks and user-turn pauses;
 - better/worse replacement using pick-time availability;
 - preservation and invalidation of later user picks;
 - hash round-trip, malformed payload rejection, and restoration;
 - extension polling disabled throughout mock mode;
-- rookie asterisks, derived headshot/fallback rendering, sort toggling, and row-click drafting.
+- rookie asterisks, derived headshot/fallback rendering, position colors, compact metadata, disabled nudge bounds, user-column-only sort toggling, turn scrolling, and row-click drafting;
+- always-visible two-row settings with read-only active controls and a copyable seed.
 
 Run the focused Vitest files, the existing draft/extension tests, and a production build. Finally, inspect the rendered panel in the local app at desktop and narrow widths without changing the styling of the existing page beneath it.
