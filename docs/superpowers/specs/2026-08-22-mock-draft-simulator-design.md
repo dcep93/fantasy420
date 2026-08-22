@@ -104,7 +104,7 @@ The active panel appears above all existing draft-page content. Use the approved
 - dense player bubbles with minimal surrounding copy;
 - no ornamental dashboard metrics, oversized hero text, explanatory legend, or unrelated restyling.
 
-Each bubble shows headshot or fallback, player name, rookie asterisk, position, pick label, total pick index, bye week, pick-time rank, and better/worse controls. Pick metadata is compactly formatted as `3.01/21 #3`, where `3.01` is the chronological pick within the round, `/21` is the one-based total pick index, and `#3` is the pick-time available-player rank.
+Each bubble shows headshot or fallback, player name, rookie asterisk, position, pick label, total pick index, bye week, pick-time rank, and better/worse controls. Pick metadata is compactly formatted as `3.01/21 #3`, where `3.01` is the chronological pick within the round, `/21` is the one-based total pick index, and `#3` is the pick-time available-player rank. Filled bubbles use a compact two-column hierarchy: the left stack contains the headshot with the better/rank/worse editor centered directly below it, while the right stack contains the `round.pick/total` label above the player name and the position/bye line below the name. Position and bye use the same solid near-black color and semibold weight; bye text is not rendered as dim secondary metadata.
 
 Table cells and draft bubbles use one shared bright position palette so the visual meaning cannot drift between the two views: QB `plum`, RB `lightblue`, WR `lightseagreen`, TE `lightcoral`, DST/`D/ST` `lightsalmon`, and K `tan`. Bubbles use near-black primary and secondary text, dark position labels, and a stronger related border for legibility over these light or saturated fills. Rank controls use a dark-brown fill with light text so they remain readable on every position color. The user's picks retain a clearly visible pink border.
 
@@ -167,6 +167,7 @@ Add focused tests for:
 - extension polling disabled throughout mock mode;
 - rookie asterisks, derived headshot/fallback rendering, position colors, compact metadata, disabled nudge bounds, board-wide per-column sort toggling, turn scrolling, and row-click drafting;
 - exact table/bubble palette parity for every supported position, including normalized DST/`D/ST`, plus readable bubble text and rank controls on each bright fill;
+- two-column filled-bubble hierarchy with the pick label above the name, rank editor below the image, and equally prominent position/bye metadata;
 - always-visible two-row settings with read-only active controls, a copyable seed, a title-adjacent always-enabled restart action that generates a fresh seed, and a non-wrapping horizontally scrolling roster row;
 - `round.index/total_pick_index` bubble metadata and total-pick tie-breaking within position groups.
 
