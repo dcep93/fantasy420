@@ -218,8 +218,11 @@ export function nudgeHistoricalPick(
 ): MockDraftState {
   if (pickIndex < 0 || pickIndex >= state.picks.length) return state;
   const prefix = state.picks.slice(0, pickIndex);
-  const available = uniqueRankedPlayers(orderedRanking, playersById).filter(
-    (playerId) => !prefix.includes(playerId)
+  const available = getAvailableBeforePick(
+    state,
+    pickIndex,
+    playersById,
+    orderedRanking
   );
   const currentIndex = available.indexOf(state.picks[pickIndex]);
   const targetIndex = currentIndex + (direction === "better" ? -1 : 1);
@@ -257,6 +260,40 @@ export function nudgeHistoricalPick(
     picks.push(opponentPick);
   }
   return { ...state, picks };
+}
+
+export function getHistoricalNudgeAvailability(
+  state: MockDraftState,
+  pickIndex: number,
+  playersById: Record<string, MockDraftPlayer>,
+  orderedRanking: string[]
+): { better: boolean; worse: boolean } {
+  if (pickIndex < 0 || pickIndex >= state.picks.length) {
+    return { better: false, worse: false };
+  }
+  const available = getAvailableBeforePick(
+    state,
+    pickIndex,
+    playersById,
+    orderedRanking
+  );
+  const currentIndex = available.indexOf(state.picks[pickIndex]);
+  return {
+    better: currentIndex > 0,
+    worse: currentIndex >= 0 && currentIndex < available.length - 1,
+  };
+}
+
+function getAvailableBeforePick(
+  state: MockDraftState,
+  pickIndex: number,
+  playersById: Record<string, MockDraftPlayer>,
+  orderedRanking: string[]
+): string[] {
+  const prefix = state.picks.slice(0, pickIndex);
+  return uniqueRankedPlayers(orderedRanking, playersById).filter(
+    (playerId) => !prefix.includes(playerId)
+  );
 }
 
 function chooseOpponentPlayer(
@@ -302,13 +339,16 @@ function chooseOpponentPlayer(
       const random = seededRandom(
         `${state.settings.seed}|${historyKey}|${draftPosition}|${playerId}`
       );
-      const randomPenalty =
-        -Math.log(Math.max(random, 0.0000001)) *
-        4 *
-        Math.sqrt(state.settings.craziness);
+      const boundedRandom = Math.min(
+        1 - Number.EPSILON,
+        Math.max(Number.EPSILON, random)
+      );
+      const gumbel = -Math.log(-Math.log(boundedRandom));
+      const temperature = 6 * Math.sqrt(state.settings.craziness);
       return {
         playerId,
-        score: rankIndex + positionPenalty + byePenalty + randomPenalty,
+        score:
+          rankIndex + positionPenalty + byePenalty - temperature * gumbel,
       };
     })
     .sort((a, b) => a.score - b.score || a.playerId.localeCompare(b.playerId))[0]
@@ -353,4 +393,3 @@ function seededRandom(input: string): number {
   value ^= value + Math.imul(value ^ (value >>> 7), value | 61);
   return ((value ^ (value >>> 14)) >>> 0) / 4294967296;
 }
-

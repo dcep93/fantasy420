@@ -3,6 +3,7 @@ import {
   DEFAULT_MOCK_DRAFT_SETTINGS,
   getDraftLength,
   getDraftView,
+  getHistoricalNudgeAvailability,
   getPickLabel,
   getPickOwner,
   makeUserPick,
@@ -152,6 +153,32 @@ test("historical replay stops when an edit takes a later user player", () => {
   expect(getPickOwner(changed.picks.length, 3).draftPosition).toBe(2);
 });
 
+test("historical nudge availability disables impossible directions", () => {
+  const settings = {
+    ...DEFAULT_MOCK_DRAFT_SETTINGS,
+    teamCount: 2,
+    draftPosition: 2,
+    seed: "bounds",
+  };
+
+  expect(
+    getHistoricalNudgeAvailability(
+      { settings, picks: ["1"] },
+      0,
+      players,
+      ranking
+    )
+  ).toEqual({ better: false, worse: true });
+  expect(
+    getHistoricalNudgeAvailability(
+      { settings, picks: ["20"] },
+      0,
+      players,
+      ranking
+    )
+  ).toEqual({ better: true, worse: false });
+});
+
 test("position risk discounts a saturated position", () => {
   const base = {
     ...DEFAULT_MOCK_DRAFT_SETTINGS,
@@ -260,4 +287,53 @@ test("craziness expands reaches while remaining seed deterministic", () => {
 
   expect(Math.max(...lowRanks)).toBe(1);
   expect(Math.max(...highRanks)).toBeGreaterThan(3);
+});
+
+test("default craziness usually produces a rank-fourteen first-round reach", () => {
+  const reachPlayers = Object.fromEntries(
+    Array.from({ length: 60 }, (_, index) => {
+      const id = String(index + 100);
+      return [id, { id, position: "WR", byeWeek: 8 } as MockDraftPlayer];
+    })
+  );
+  const reachRanking = Object.keys(reachPlayers);
+  const oneRound = {
+    QB: 1,
+    RB: 0,
+    WR: 0,
+    TE: 0,
+    FLEX: 0,
+    SUPERFLEX: 0,
+    DST: 0,
+    K: 0,
+    BENCH: 0,
+  };
+  let draftsWithReach = 0;
+
+  for (let index = 0; index < 100; index += 1) {
+    const state = advanceToUserTurn(
+      {
+        settings: {
+          ...DEFAULT_MOCK_DRAFT_SETTINGS,
+          teamCount: 10,
+          draftPosition: 10,
+          seed: `default-reach-${index}`,
+          roster: oneRound,
+        },
+        picks: [],
+      },
+      reachPlayers,
+      reachRanking
+    );
+    if (
+      getDraftView(state, reachPlayers, reachRanking).picks.some(
+        (pick) => pick.rank >= 14
+      )
+    ) {
+      draftsWithReach += 1;
+    }
+  }
+
+  expect(draftsWithReach).toBeGreaterThan(50);
+  expect(draftsWithReach).toBeLessThan(90);
 });
