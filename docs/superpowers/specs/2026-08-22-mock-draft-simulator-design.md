@@ -4,7 +4,7 @@
 
 Add a persistent, interactive snake-draft simulator to the top of the existing 2026 draft page. The simulator should use the page's currently selected ranking source, let the user make their own picks through the existing player table, simulate every opponent, support deterministic historical edits, and render a compact draft board using the brown, pink, Comic Sans visual language established by `multisport420`.
 
-The work also completes the prerequisite player-image change: wrapped player records may optionally contain an ESPN headshot URL, and the refreshed 2026 snapshot will contain those URLs for individual players. Older season snapshots remain valid without the field.
+The 2026 snapshot already contains the ESPN IDs needed for player images. The panel derives each individual player's CDN URL at render time, so no wrapped-data schema or snapshot refresh is required.
 
 ## Existing behavior to preserve
 
@@ -113,15 +113,13 @@ Buttons stop click propagation so historical edits do not also toggle the layout
 
 Change live-draft polling to accept an enabled flag. Normal mode keeps existing polling behavior. Mock mode does not call extension discovery, extension storage, or extension messaging at all. Entering mock mode cancels any pending polling timer. This prevents mock and live state from racing or contaminating each other.
 
-## Headshot schema and 2026 refresh
+## Derived headshots
 
-Add `headshot?: string` to `NFLPlayerType` and the corresponding wrapped-snapshot helper type. During the existing `FetchWrapped` player transformation, attach
+For positive ESPN player IDs, derive the image source at render time as:
 
 `https://a.espncdn.com/i/headshots/nfl/players/full/{id}.png`
 
-for positive ESPN player IDs. Do not attach a headshot to negative defense IDs. The UI supplies a styled fallback when the field is absent or the image fails to load.
-
-Run the existing fresh-data operation for 2026 after the schema change, using the Chrome extension/browser route only if the direct request path cannot obtain the league data. Commit the resulting 2026 wrapped snapshot with headshots. Do not rewrite older snapshots.
+Do not derive a headshot for negative defense IDs. The UI supplies a styled fallback for defenses and failed image requests. Do not add a player field, change `NFLPlayerType`, run the wrapped-data refresh, or rewrite any yearly snapshot.
 
 ## Component boundaries
 
@@ -130,7 +128,7 @@ Run the existing fresh-data operation for 2026 after the schema change, using th
 - `MockDraftSetup.tsx`: compact controlled setup form and activation.
 - `MockDraftPanel.tsx` plus a focused stylesheet: board rendering, display-order toggle, image fallback, and history controls.
 - `Draft/index.tsx`: orchestration with the existing source, table, rookie set, and normal/live draft modes.
-- `FetchWrapped/helper.ts` and shared player types: optional headshot generation.
+- `MockDraft.tsx`: derives headshot URLs directly from ESPN player IDs.
 
 The exact filenames may be combined where doing so improves local cohesion, but the pure engine, URL codec, and React presentation must remain independently testable.
 
@@ -140,7 +138,7 @@ The exact filenames may be combined where doing so improves local cohesion, but 
 - Ignore history IDs absent from the 2026 player map and report a concise load error.
 - Prevent duplicate player IDs in history.
 - Stop replay cleanly at an unavailable preserved user pick.
-- Render a fallback tile for absent or failed headshots.
+- Render a fallback tile for defenses and failed headshot requests.
 - If opponent selection has no candidates, stop rather than inventing an ID.
 
 ## Testing and verification
@@ -156,7 +154,6 @@ Add focused tests for:
 - preservation and invalidation of later user picks;
 - hash round-trip, malformed payload rejection, and restoration;
 - extension polling disabled throughout mock mode;
-- rookie asterisks, headshot/fallback rendering, sort toggling, and row-click drafting;
-- optional headshot schema compatibility and populated positive-ID headshots in 2026.
+- rookie asterisks, derived headshot/fallback rendering, sort toggling, and row-click drafting.
 
 Run the focused Vitest files, the existing draft/extension tests, and a production build. Finally, inspect the rendered panel in the local app at desktop and narrow widths without changing the styling of the existing page beneath it.
