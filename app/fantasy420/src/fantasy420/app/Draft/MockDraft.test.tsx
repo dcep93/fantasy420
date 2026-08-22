@@ -214,6 +214,49 @@ test("keeps team columns fixed and toggles every column together", () => {
   );
 });
 
+test("shows the total pick index and preserves it as the position tie-breaker", () => {
+  const playerIds = Array.from({ length: 21 }, (_, index) => String(index + 1));
+  const playersById = Object.fromEntries(
+    playerIds.map((id) => [
+      id,
+      {
+        id,
+        name: `Player ${id}`,
+        position: "QB",
+        byeWeek: 7,
+        rookie: false,
+      },
+    ])
+  );
+  render(
+    <MockDraftPanel
+      state={{
+        settings: {
+          ...DEFAULT_MOCK_DRAFT_SETTINGS,
+          teamCount: 10,
+          draftPosition: 8,
+          seed: "total-picks",
+        },
+        picks: playerIds,
+      }}
+      playersById={playersById}
+      orderedRanking={playerIds}
+      onNudge={vi.fn()}
+    />
+  );
+
+  expect(screen.getByText("3.01/21")).toBeInTheDocument();
+
+  const teamOne = screen.getByTestId("mock-draft-team-1");
+  fireEvent.click(screen.getByTestId("mock-draft-panel"));
+  expect(teamOne.textContent!.indexOf("Player 1")).toBeLessThan(
+    teamOne.textContent!.indexOf("Player 20")
+  );
+  expect(teamOne.textContent!.indexOf("Player 20")).toBeLessThan(
+    teamOne.textContent!.indexOf("Player 21")
+  );
+});
+
 test("keeps roster settings on one horizontally scrolling row", () => {
   const css = readFileSync(
     "src/fantasy420/app/Draft/MockDraftView.css",

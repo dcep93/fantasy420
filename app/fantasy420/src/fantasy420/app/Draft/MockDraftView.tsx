@@ -439,7 +439,7 @@ function PickBubble(props: {
       </div>
       <div className="mock-draft-pick-facts">
         <span className="mock-draft-pick-number">
-          {props.pick.label}/{props.pick.draftPosition}
+          {props.pick.label}/{props.pick.pickIndex + 1}
         </span>
         <span className="mock-draft-rank-controls">
           <button
