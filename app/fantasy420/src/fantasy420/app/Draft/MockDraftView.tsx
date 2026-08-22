@@ -229,7 +229,7 @@ export function MockDraftPanel(props: {
       <TeamBoard
         {...props}
         picks={view.picks}
-        userOrder={order}
+        order={order}
         failedImages={failedImages}
         onImageError={(playerId) =>
           setFailedImages((current) => new Set(current).add(playerId))
@@ -242,7 +242,7 @@ export function MockDraftPanel(props: {
 function TeamBoard(
   props: Parameters<typeof MockDraftPanel>[0] & {
     picks: ReturnType<typeof getDraftView>["picks"];
-    userOrder: "round" | "position";
+    order: "round" | "position";
     failedImages: Set<string>;
     onImageError: (playerId: string) => void;
   }
@@ -281,7 +281,7 @@ function TeamBoard(
             };
           });
           const orderedCells =
-            isUser && props.userOrder === "position"
+            props.order === "position"
               ? [
                   ...roundCells
                     .filter((cell) => cell.pick)
@@ -310,7 +310,7 @@ function TeamBoard(
               }`}
               data-testid={`mock-draft-team-${draftPosition}`}
               data-team-column={draftPosition}
-              data-order={isUser ? props.userOrder : "round"}
+              data-order={props.order}
             >
               {orderedCells.map(({ round, pickIndex, pick }) => {
                 const latestRoundAnchor =

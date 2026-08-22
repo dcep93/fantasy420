@@ -34,9 +34,16 @@
 }
 
 .mock-draft-roster-fields {
+  flex-wrap: nowrap;
+  overflow-x: auto;
   margin-top: 7px;
   padding-top: 7px;
   border-top: 1px solid rgba(201, 156, 107, 0.12);
+  scrollbar-width: thin;
+}
+
+.mock-draft-roster-fields .mock-draft-field {
+  flex: 0 0 auto;
 }
 
 .mock-draft-field {

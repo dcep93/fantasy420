@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
+import { readFileSync } from "node:fs";
 import { vi } from "vitest";
 
 import { MockDraftPanel, MockDraftSetup } from "./MockDraftView";
@@ -115,7 +116,7 @@ test("renders derived headshots, rookie marks, fallback, and nudge controls", ()
   expect(onNudge).toHaveBeenCalledWith(0, "worse");
 });
 
-test("keeps team columns fixed and toggles only the user's column order", () => {
+test("keeps team columns fixed and toggles every column together", () => {
   render(
     <MockDraftPanel
       state={{
@@ -125,7 +126,7 @@ test("keeps team columns fixed and toggles only the user's column order", () => 
           draftPosition: 2,
           seed: "board",
         },
-        picks: ["3", "2", "1", "6", "5", "4"],
+        picks: ["4", "2", "6", "1", "5", "3"],
       }}
       playersById={{
         "1": { id: "1", name: "Quarterback", position: "QB", byeWeek: 7, rookie: false },
@@ -140,22 +141,50 @@ test("keeps team columns fixed and toggles only the user's column order", () => 
     />
   );
 
-  const userColumn = screen.getByTestId("mock-draft-team-2");
-  const opponentColumn = screen.getByTestId("mock-draft-team-1");
-  expect(userColumn).toHaveAttribute("data-order", "round");
-  expect(opponentColumn).toHaveAttribute("data-order", "round");
+  const columns = [1, 2, 3].map((team) =>
+    screen.getByTestId(`mock-draft-team-${team}`)
+  );
+  const [teamOneColumn, userColumn, teamThreeColumn] = columns;
+  expect(columns.map((column) => column.dataset.order)).toEqual([
+    "round",
+    "round",
+    "round",
+  ]);
+  expect(teamOneColumn.textContent!.indexOf("Team One Tight End")).toBeLessThan(
+    teamOneColumn.textContent!.indexOf("Receiver")
+  );
   expect(userColumn.textContent!.indexOf("Runner")).toBeLessThan(
     userColumn.textContent!.indexOf("User Quarterback")
   );
+  expect(
+    teamThreeColumn.textContent!.indexOf("Team Three Tight End")
+  ).toBeLessThan(teamThreeColumn.textContent!.indexOf("Quarterback"));
 
   fireEvent.click(screen.getByTestId("mock-draft-panel"));
 
-  expect(userColumn).toHaveAttribute("data-order", "position");
-  expect(opponentColumn).toHaveAttribute(
-    "data-order",
-    "round"
+  expect(columns.map((column) => column.dataset.order)).toEqual([
+    "position",
+    "position",
+    "position",
+  ]);
+  expect(teamOneColumn.textContent!.indexOf("Receiver")).toBeLessThan(
+    teamOneColumn.textContent!.indexOf("Team One Tight End")
   );
   expect(userColumn.textContent!.indexOf("User Quarterback")).toBeLessThan(
     userColumn.textContent!.indexOf("Runner")
   );
+  expect(teamThreeColumn.textContent!.indexOf("Quarterback")).toBeLessThan(
+    teamThreeColumn.textContent!.indexOf("Team Three Tight End")
+  );
+});
+
+test("keeps roster settings on one horizontally scrolling row", () => {
+  const css = readFileSync(
+    "src/fantasy420/app/Draft/MockDraftView.css",
+    "utf8"
+  );
+  const rosterRule = css.match(/\.mock-draft-roster-fields\s*{([^}]*)}/)?.[1];
+
+  expect(rosterRule).toMatch(/flex-wrap:\s*nowrap/);
+  expect(rosterRule).toMatch(/overflow-x:\s*auto/);
 });
