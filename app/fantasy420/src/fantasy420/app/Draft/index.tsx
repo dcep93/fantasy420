@@ -12,6 +12,7 @@ import draft2025 from "./2025.json";
 import draft2026 from "./2026.json";
 import getFormatAwareRankings, { getSourceLabel } from "./composite";
 import draftKings from "./draftKings";
+import { getRookiePlayerIds, normalizeDraftPlayerName } from "./rookies";
 
 export const isDev = import.meta.env.DEV;
 
@@ -44,17 +45,22 @@ function getNormalizedNameToId(wrapped: WrappedType): {
   [name: string]: string;
 } {
   return Object.fromEntries(
-    Object.values(wrapped.nflPlayers).map((p) => [normalize(p.name), p.id])
+    Object.values(wrapped.nflPlayers).map((p) => [
+      normalizeDraftPlayerName(p.name),
+      p.id,
+    ])
   );
 }
 
+const rawDrafts: { [year: string]: DraftJsonType } = {
+  2023: draft2023,
+  2024: draft2024,
+  2025: draft2025,
+  2026: draft2026,
+};
+
 const allDrafts: { [year: string]: DraftJsonType } = Object.fromEntries(
-  Object.entries({
-    2023: draft2023,
-    2024: draft2024,
-    2025: draft2025,
-    2026: draft2026,
-  } as { [year: string]: DraftJsonType }).map(([year, rawDraft]) => {
+  Object.entries(rawDrafts).map(([year, rawDraft]) => {
     const normalizedNameToId =
       allWrapped[year] === undefined
         ? {}
@@ -67,7 +73,7 @@ const allDrafts: { [year: string]: DraftJsonType } = Object.fromEntries(
           Object.fromEntries(
             Object.entries(players)
               .map(([name, value]) => ({
-                playerId: normalizedNameToId[normalize(name)],
+                playerId: normalizedNameToId[normalizeDraftPlayerName(name)],
                 value,
               }))
               .filter(({ playerId }) => playerId)
@@ -102,7 +108,9 @@ export default function Draft() {
   const matchedLiveDraft = useMemo(
     () =>
       liveDraft.flatMap((sourceName) => {
-        const playerId = normalizedNameToId[normalize(sourceName)];
+        const playerId = normalizedNameToId[
+          normalizeDraftPlayerName(sourceName)
+        ];
         const player = wrapped.nflPlayers[playerId];
         if (!player) {
           console.warn("Unmatched live draft player", sourceName);
@@ -137,8 +145,17 @@ function SubDraft(props: {
   );
 
   const { rankings: results } = useMemo(getResults, [selectedYear]);
+  const rookiePlayerIds = useMemo(
+    () =>
+      getRookiePlayerIds(
+        selectedWrapped().nflPlayers,
+        rawDrafts[String(Number(selectedYear) - 1)]
+      ),
+    [selectedYear]
+  );
   const sources = Object.keys(results);
   const [positionFilter, updatePositionFilter] = useState("");
+  const [rookiesOnly, updateRookiesOnly] = useState(false);
   const [byeWeekFilter, updateByeWeekFilter] = useState(-1);
   const [source, update] = useState(sources[0]);
   const sourcePlayers = Object.entries(results[source])
@@ -147,6 +164,7 @@ function SubDraft(props: {
       player: selectedWrapped().nflPlayers[playerId],
       value,
       seen: draftedById[playerId] !== undefined,
+      rookie: rookiePlayerIds.has(playerId),
     }))
     .filter(({ value }) => value !== undefined)
     .sort((a, b) => a.value - b.value)
@@ -312,6 +330,20 @@ function SubDraft(props: {
                   {p}
                 </div>
               ))}
+              <div
+                title="rookies only"
+                aria-label="rookies only"
+                aria-pressed={rookiesOnly}
+                role="button"
+                style={{
+                  ...bubbleStyle,
+                  backgroundColor: rookiesOnly ? "grey" : undefined,
+                  cursor: "pointer",
+                }}
+                onClick={() => updateRookiesOnly(!rookiesOnly)}
+              >
+                *
+              </div>
             </div>
           </div>
           <div>
@@ -364,6 +396,7 @@ function SubDraft(props: {
                     positionFilter === "" ||
                     v.player.position === positionFilter
                 )
+                .filter((v) => !rookiesOnly || v.rookie)
                 .map((v) => ({
                   ...v,
                   seen:
@@ -404,7 +437,10 @@ function SubDraft(props: {
                           )}
                     </td>
                     {[
-                      { key: "", value: v.player.name },
+                      {
+                        key: "",
+                        value: `${v.rookie ? "*" : ""}${v.player.name}`,
+                      },
                       { key: "", value: `${v.player.position} ${v.team}` },
                       ...Object.entries(results)
                         .map(([key, value]) => ({ key, value }))
@@ -760,21 +796,4 @@ function useLiveDraft(): string[] {
   }, []);
 
   return liveDraft;
-}
-
-function normalize(name: string): string {
-  return name
-    .toLocaleLowerCase()
-    .replaceAll(/[^A-Za-z0-9 ]/g, "")
-    .replaceAll(/ i+$/g, "")
-    .replaceAll(/gabriel davis$/gi, "gabe davis")
-    .replaceAll(/hollywood brown$/gi, "marquise brown")
-    .replaceAll(/nathaniel dell$/gi, "tank dell")
-    .replaceAll(/cameron skattebo$/gi, "cam skattebo")
-    .replaceAll(/cameron ward$/gi, "cam ward")
-    .replaceAll(/kenneth gainwell$/gi, "kenny gainwell")
-    .replaceAll(/chigoziem okonkwo$/gi, "chig okonkwo")
-    .replaceAll(/andres borregales$/gi, "andy borregales")
-    .replaceAll(/ sr$/gi, "")
-    .replaceAll(/ jr$/gi, "");
 }
