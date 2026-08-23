@@ -63,9 +63,9 @@ export const DEFAULT_MOCK_DRAFT_SETTINGS: MockDraftSettings = {
     TE: 1,
     FLEX: 2,
     SUPERFLEX: 1,
-    DST: 1,
+    DST: 0,
     K: 0,
-    BENCH: 4,
+    BENCH: 5,
   },
 };
 

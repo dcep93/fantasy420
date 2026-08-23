@@ -55,9 +55,9 @@ test("uses the requested defaults and a fourteen-round draft", () => {
       TE: 1,
       FLEX: 2,
       SUPERFLEX: 1,
-      DST: 1,
+      DST: 0,
       K: 0,
-      BENCH: 4,
+      BENCH: 5,
     },
   });
   expect(getDraftLength(DEFAULT_MOCK_DRAFT_SETTINGS)).toBe(140);
@@ -157,6 +157,24 @@ test("kickers are unavailable to users, opponents, and historical nudges", () =>
       kickerFirstRanking
     )
   ).toEqual({ better: false, worse: true });
+});
+
+test("DST remains eligible when its default roster count is zero", () => {
+  const settings = {
+    ...DEFAULT_MOCK_DRAFT_SETTINGS,
+    teamCount: 2,
+    draftPosition: 1,
+    seed: "optional-dst",
+  };
+
+  const selected = makeUserPick(
+    { settings, picks: [] },
+    "9",
+    players,
+    ranking
+  );
+
+  expect(selected.picks[0]).toBe("9");
 });
 
 test("historical nudges preserve later user picks when they remain available", () => {

@@ -5,6 +5,7 @@ import {
 } from "./mockDraft";
 import {
   buildHistoricalCalibrationData,
+  HISTORICAL_CALIBRATION_ROSTER,
   runHistoricalCalibration,
 } from "./mockDraftCalibration";
 
@@ -32,6 +33,11 @@ test("replays complete first-fourteen-round historical calibration samples", () 
     },
   ]);
   expect(observations).toHaveLength(276);
+  expect(HISTORICAL_CALIBRATION_ROSTER).toMatchObject({
+    DST: 1,
+    K: 0,
+    BENCH: 5,
+  });
 });
 
 test("fits the checked-in baseline and improves historical likelihood", () => {

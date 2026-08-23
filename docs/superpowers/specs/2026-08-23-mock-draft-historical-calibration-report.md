@@ -20,7 +20,7 @@ The bye coefficient reached the nonnegative boundary. The optimizer's raw result
 | 2025 | 9 | 8 | 140 | 137 | 137 | 0 |
 | Total | 20 | 17 | 280 | 276 | 276 | 0 |
 
-The replay uses each season's format-aware composite ranking. Actual kicker selections remain in chronological and team history but are excluded as choice observations under the current no-kicker mock-draft rule.
+The replay uses each season's format-aware composite ranking and the historical roster's required DST capacity of one. That historical capacity is explicit and intentionally independent from the current no-DST default. Actual kicker selections remain in chronological and team history but are excluded as choice observations under the current no-kicker mock-draft rule.
 
 ## Likelihood
 

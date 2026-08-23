@@ -5,10 +5,10 @@ import draft2024Json from "./2024.json";
 import draft2025Json from "./2025.json";
 import getFormatAwareRankings, { RankingSources } from "./composite";
 import {
-  DEFAULT_MOCK_DRAFT_SETTINGS,
   getMockDraftChoiceFeatures,
   isMockDraftPlayerEligible,
   MockDraftPlayer,
+  RosterSettings,
 } from "./mockDraft";
 import { normalizeDraftPlayerName } from "./rookies";
 
@@ -64,6 +64,17 @@ type HistoricalSeason = {
 type ScaledWeights = [rank: number, saturation: number, bye: number];
 
 const ROUND_LIMIT = 14;
+export const HISTORICAL_CALIBRATION_ROSTER: RosterSettings = {
+  QB: 1,
+  RB: 2,
+  WR: 2,
+  TE: 1,
+  FLEX: 2,
+  SUPERFLEX: 1,
+  DST: 1,
+  K: 0,
+  BENCH: 5,
+};
 const LEGACY_COEFFICIENTS: RuntimeCoefficients = {
   positionPenalty: 16,
   byePenalty: 9,
@@ -179,7 +190,7 @@ function buildSeasonObservations(season: HistoricalSeason): {
               teamPlayerIds[pick.teamId],
               playerId,
               playersById,
-              DEFAULT_MOCK_DRAFT_SETTINGS.roster
+              HISTORICAL_CALIBRATION_ROSTER
             );
             return [rankIndex, features.saturation, features.byeMatches];
           }
