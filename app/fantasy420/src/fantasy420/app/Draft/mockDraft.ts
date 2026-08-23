@@ -45,6 +45,10 @@ export type MockDraftView = {
   complete: boolean;
 };
 
+export const MOCK_DRAFT_POSITION_PENALTY = 10.849574;
+export const MOCK_DRAFT_BYE_PENALTY = 0;
+export const MOCK_DRAFT_TEMPERATURE = 8.737719;
+
 export const DEFAULT_MOCK_DRAFT_SETTINGS: MockDraftSettings = {
   draftPosition: 8,
   teamCount: 10,
@@ -60,8 +64,8 @@ export const DEFAULT_MOCK_DRAFT_SETTINGS: MockDraftSettings = {
     FLEX: 2,
     SUPERFLEX: 1,
     DST: 1,
-    K: 1,
-    BENCH: 5,
+    K: 0,
+    BENCH: 4,
   },
 };
 
@@ -101,6 +105,9 @@ export function validateMockDraftSettings(settings: MockDraftSettings): void {
       }
     }
   );
+  if (settings.roster.K !== 0) {
+    throw new Error("K roster count must be zero");
+  }
   if (getRoundCount(settings) === 0) {
     throw new Error("Roster must contain at least one slot");
   }
@@ -196,6 +203,7 @@ export function makeUserPick(
   if (owner.draftPosition !== state.settings.draftPosition) return state;
   if (
     !playersById[playerId] ||
+    !isMockDraftPlayerEligible(playersById[playerId]) ||
     state.picks.includes(playerId) ||
     !orderedRanking.includes(playerId) ||
     state.picks.length >= getDraftLength(state.settings)
@@ -311,31 +319,20 @@ function chooseOpponentPlayer(
       getPickOwner(index, state.settings.teamCount).draftPosition ===
       draftPosition
   );
-  const capacities = getPositionCapacities(state.settings.roster);
   const historyKey = state.picks.join(",");
 
   return available
     .map((playerId, rankIndex) => {
-      const player = playersById[playerId];
-      const position = normalizePosition(player.position);
-      const samePositionPlayers = teamPlayerIds
-        .map((id) => playersById[id])
-        .filter(
-          (teammate): teammate is MockDraftPlayer =>
-            teammate !== undefined &&
-            normalizePosition(teammate.position) === position
-        );
-      const capacity = capacities[position] || 0;
-      const saturation =
-        capacity === 0
-          ? samePositionPlayers.length + 1
-          : samePositionPlayers.length / capacity;
+      const { saturation, byeMatches } = getMockDraftChoiceFeatures(
+        teamPlayerIds,
+        playerId,
+        playersById,
+        state.settings.roster
+      );
       const positionPenalty =
-        state.settings.positionRisk * saturation * (capacity === 0 ? 100 : 16);
-      const byeMatches = samePositionPlayers.filter(
-        (teammate) => teammate.byeWeek === player.byeWeek
-      ).length;
-      const byePenalty = state.settings.byeRisk * byeMatches * 9;
+        state.settings.positionRisk * saturation * MOCK_DRAFT_POSITION_PENALTY;
+      const byePenalty =
+        state.settings.byeRisk * byeMatches * MOCK_DRAFT_BYE_PENALTY;
       const random = seededRandom(
         `${state.settings.seed}|${historyKey}|${draftPosition}|${playerId}`
       );
@@ -344,7 +341,8 @@ function chooseOpponentPlayer(
         Math.max(Number.EPSILON, random)
       );
       const gumbel = -Math.log(-Math.log(boundedRandom));
-      const temperature = 3.5 * Math.sqrt(state.settings.craziness);
+      const temperature =
+        MOCK_DRAFT_TEMPERATURE * Math.sqrt(state.settings.craziness);
       return {
         playerId,
         score:
@@ -353,6 +351,34 @@ function chooseOpponentPlayer(
     })
     .sort((a, b) => a.score - b.score || a.playerId.localeCompare(b.playerId))[0]
     ?.playerId;
+}
+
+export function getMockDraftChoiceFeatures(
+  teamPlayerIds: string[],
+  candidatePlayerId: string,
+  playersById: Record<string, MockDraftPlayer>,
+  roster: RosterSettings
+): { saturation: number; byeMatches: number } {
+  const player = playersById[candidatePlayerId];
+  const position = normalizePosition(player.position);
+  const samePositionPlayers = teamPlayerIds
+    .map((id) => playersById[id])
+    .filter(
+      (teammate): teammate is MockDraftPlayer =>
+        teammate !== undefined &&
+        normalizePosition(teammate.position) === position
+    );
+  const capacity = getPositionCapacities(roster)[position] || 0;
+  return {
+    saturation:
+      capacity === 0
+        ? (samePositionPlayers.length + 1) *
+          (100 / MOCK_DRAFT_POSITION_PENALTY)
+        : samePositionPlayers.length / capacity,
+    byeMatches: samePositionPlayers.filter(
+      (teammate) => teammate.byeWeek === player.byeWeek
+    ).length,
+  };
 }
 
 function getPositionCapacities(
@@ -372,12 +398,22 @@ export function normalizePosition(position: string): DraftPosition {
   return position === "D/ST" ? "DST" : (position as DraftPosition);
 }
 
+export function isMockDraftPlayerEligible(
+  player: Pick<MockDraftPlayer, "position"> | undefined
+): boolean {
+  return player !== undefined && normalizePosition(player.position) !== "K";
+}
+
 function uniqueRankedPlayers(
   orderedRanking: string[],
   playersById: Record<string, MockDraftPlayer>
 ): string[] {
   return Array.from(
-    new Set(orderedRanking.filter((playerId) => playersById[playerId]))
+    new Set(
+      orderedRanking.filter((playerId) =>
+        isMockDraftPlayerEligible(playersById[playerId])
+      )
+    )
   );
 }
 

@@ -9,6 +9,7 @@ import {
   makeUserPick,
   MockDraftPlayer,
   nudgeHistoricalPick,
+  validateMockDraftSettings,
 } from "./mockDraft";
 
 const players = Object.fromEntries(
@@ -40,7 +41,7 @@ const players = Object.fromEntries(
 );
 const ranking = Object.keys(players);
 
-test("uses the requested defaults and a sixteen-round draft", () => {
+test("uses the requested defaults and a fourteen-round draft", () => {
   expect(DEFAULT_MOCK_DRAFT_SETTINGS).toMatchObject({
     draftPosition: 8,
     teamCount: 10,
@@ -55,11 +56,21 @@ test("uses the requested defaults and a sixteen-round draft", () => {
       FLEX: 2,
       SUPERFLEX: 1,
       DST: 1,
-      K: 1,
-      BENCH: 5,
+      K: 0,
+      BENCH: 4,
     },
   });
-  expect(getDraftLength(DEFAULT_MOCK_DRAFT_SETTINGS)).toBe(160);
+  expect(getDraftLength(DEFAULT_MOCK_DRAFT_SETTINGS)).toBe(140);
+});
+
+test("rejects configured kicker slots", () => {
+  expect(() =>
+    validateMockDraftSettings({
+      ...DEFAULT_MOCK_DRAFT_SETTINGS,
+      seed: "no-kickers",
+      roster: { ...DEFAULT_MOCK_DRAFT_SETTINGS.roster, K: 1 },
+    })
+  ).toThrow("K roster count must be zero");
 });
 
 test("snakes even rounds and formats chronological round pick labels", () => {
@@ -102,6 +113,50 @@ test("a user pick advances opponents to the next user turn", () => {
 
   expect(advanced.picks[2]).toBe(available);
   expect(getPickOwner(advanced.picks.length, 4).draftPosition).toBe(3);
+});
+
+test("kickers are unavailable to users, opponents, and historical nudges", () => {
+  const settings = {
+    ...DEFAULT_MOCK_DRAFT_SETTINGS,
+    teamCount: 2,
+    draftPosition: 2,
+    seed: "no-kickers",
+    roster: {
+      QB: 1,
+      RB: 0,
+      WR: 0,
+      TE: 0,
+      FLEX: 0,
+      SUPERFLEX: 0,
+      DST: 0,
+      K: 0,
+      BENCH: 0,
+    },
+  };
+  const kickerFirstRanking = ["10", "1", "2"];
+  const waiting = advanceToUserTurn(
+    { settings, picks: [] },
+    players,
+    kickerFirstRanking
+  );
+
+  expect(waiting.picks).toEqual(["1"]);
+  expect(
+    makeUserPick(
+      { settings: { ...settings, draftPosition: 1 }, picks: [] },
+      "10",
+      players,
+      kickerFirstRanking
+    ).picks
+  ).toEqual([]);
+  expect(
+    getHistoricalNudgeAvailability(
+      { settings, picks: ["1"] },
+      0,
+      players,
+      kickerFirstRanking
+    )
+  ).toEqual({ better: false, worse: true });
 });
 
 test("historical nudges preserve later user picks when they remain available", () => {
@@ -207,7 +262,7 @@ test("position risk discounts a saturated position", () => {
   expect(players[high.picks[2]].position).toBe("RB");
 });
 
-test("bye risk discounts matching byes at the same position", () => {
+test("historical baseline does not invent unsupported bye-week avoidance", () => {
   const base = {
     ...DEFAULT_MOCK_DRAFT_SETTINGS,
     teamCount: 2,
@@ -232,7 +287,7 @@ test("bye risk discounts matching byes at the same position", () => {
   );
 
   expect(low.picks.slice(1, 3)).toEqual(["1", "5"]);
-  expect(high.picks.slice(1, 3)).toEqual(["1", "11"]);
+  expect(high.picks.slice(1, 3)).toEqual(low.picks.slice(1, 3));
 });
 
 test("craziness expands reaches while remaining seed deterministic", () => {
@@ -289,7 +344,7 @@ test("craziness expands reaches while remaining seed deterministic", () => {
   expect(Math.max(...highRanks)).toBeGreaterThan(3);
 });
 
-test("default craziness occasionally produces a rank-fourteen first-round reach", () => {
+test("historical craziness commonly produces a first-round rank-fourteen reach", () => {
   const reachPlayers = Object.fromEntries(
     Array.from({ length: 60 }, (_, index) => {
       const id = String(index + 100);
@@ -334,6 +389,6 @@ test("default craziness occasionally produces a rank-fourteen first-round reach"
     }
   }
 
-  expect(draftsWithReach).toBeGreaterThan(5);
-  expect(draftsWithReach).toBeLessThan(40);
+  expect(draftsWithReach).toBeGreaterThan(80);
+  expect(draftsWithReach).toBeLessThan(100);
 });

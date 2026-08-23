@@ -40,6 +40,68 @@ test("restores hash state without connecting to the Chrome extension", () => {
   rendered.unmount();
 });
 
+test("rejects restored mock drafts containing kicker picks", async () => {
+  window.history.replaceState(
+    null,
+    "",
+    `/draft${encodeMockDraftHash({
+      settings: {
+        ...DEFAULT_MOCK_DRAFT_SETTINGS,
+        teamCount: 2,
+        draftPosition: 1,
+        seed: "restored-kicker",
+      },
+      picks: ["10621"],
+    })}`
+  );
+
+  render(<Draft />);
+
+  expect(
+    await screen.findByText("Mock draft URL contains an ineligible kicker")
+  ).toBeInTheDocument();
+  expect(screen.queryByTestId("mock-draft-panel")).not.toBeInTheDocument();
+});
+
+test("hides kickers only while mock-draft mode is active", () => {
+  window.history.replaceState(
+    null,
+    "",
+    `/draft${encodeMockDraftHash({
+      settings: {
+        ...DEFAULT_MOCK_DRAFT_SETTINGS,
+        teamCount: 2,
+        draftPosition: 1,
+        seed: "hide-kickers",
+      },
+      picks: [],
+    })}`
+  );
+
+  const active = render(<Draft />);
+  expect(
+    active.container.querySelector('[data-position-filter="K"]')
+  ).not.toBeInTheDocument();
+  expect(
+    Array.from(active.container.querySelectorAll("tbody tr")).some(
+      (row) => row.children[2]?.textContent?.startsWith("K ")
+    )
+  ).toBe(false);
+  active.unmount();
+
+  window.history.replaceState(null, "", "/draft");
+  const normal = render(<Draft />);
+  expect(
+    normal.container.querySelector('[data-position-filter="K"]')
+  ).toBeInTheDocument();
+  expect(
+    Array.from(normal.container.querySelectorAll("tbody tr")).some(
+      (row) => row.children[2]?.textContent?.startsWith("K ")
+    )
+  ).toBe(true);
+  normal.unmount();
+});
+
 test("keeps pending setting edits out of the active draft and hash until restart", () => {
   const initial = {
     ...DEFAULT_MOCK_DRAFT_SETTINGS,

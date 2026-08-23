@@ -22,7 +22,8 @@ test("renders the requested setup defaults and customizable roster", () => {
   expect(screen.getByLabelText("QB slots")).toHaveValue(1);
   expect(screen.getByLabelText("FLEX slots")).toHaveValue(2);
   expect(screen.getByLabelText("SUPERFLEX slots")).toHaveValue(1);
-  expect(screen.getByLabelText("BENCH slots")).toHaveValue(5);
+  expect(screen.queryByLabelText("K slots")).not.toBeInTheDocument();
+  expect(screen.getByLabelText("BENCH slots")).toHaveValue(4);
 });
 
 test("resolves a blank seed and starts with edited settings", () => {

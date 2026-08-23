@@ -24,7 +24,7 @@ The runtime formula remains:
 
 `rankIndex + positionCoefficient * positionRisk * saturation + byeCoefficient * byeRisk * byeMatches - temperature * sqrt(craziness) * gumbel`
 
-Thus `positionRisk = 1`, `byeRisk = 1`, and `craziness = 1` reproduce the fitted historical baseline. Values near zero and larger values retain their existing interpretation.
+Thus `positionRisk = 1`, `byeRisk = 1`, and `craziness = 1` reproduce the fitted historical baseline. Values near zero and larger values retain their existing interpretation when the fitted coefficient is positive. If a risk coefficient reaches the nonnegative boundary, that factor remains neutral rather than inventing an effect unsupported by the drafts.
 
 ## Reproducibility and Reporting
 

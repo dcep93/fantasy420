@@ -21,6 +21,7 @@ import {
   advanceToUserTurn,
   getDraftLength,
   getPickOwner,
+  isMockDraftPlayerEligible,
   makeUserPick,
   MockDraftState,
   nudgeHistoricalPick,
@@ -61,6 +62,22 @@ function getNormalizedNameToId(wrapped: WrappedType): {
       p.id,
     ])
   );
+}
+
+function validateMockDraftPicks(
+  state: MockDraftState | null,
+  wrapped: WrappedType
+): void {
+  if (!state) return;
+  state.picks.forEach((playerId) => {
+    const player = wrapped.nflPlayers[playerId];
+    if (!player) {
+      throw new Error("Mock draft URL contains an unknown ESPN player id");
+    }
+    if (!isMockDraftPlayerEligible(player)) {
+      throw new Error("Mock draft URL contains an ineligible kicker");
+    }
+  });
 }
 
 const rawDrafts: { [year: string]: DraftJsonType } = {
@@ -214,12 +231,7 @@ function SubDraft() {
     function loadHash() {
       try {
         const loaded = readMockDraftHash();
-        if (
-          loaded &&
-          loaded.picks.some((playerId) => wrapped.nflPlayers[playerId] === undefined)
-        ) {
-          throw new Error("Mock draft URL contains an unknown ESPN player id");
-        }
+        validateMockDraftPicks(loaded, wrapped);
         setMockDraftError("");
         setMockDraft(loaded);
       } catch (error) {
@@ -232,16 +244,16 @@ function SubDraft() {
   }, [wrapped]);
 
   useEffect(() => {
-    if (
-      mockDraft &&
-      mockDraft.picks.some((playerId) => wrapped.nflPlayers[playerId] === undefined)
-    ) {
+    try {
+      validateMockDraftPicks(mockDraft, wrapped);
+    } catch (error) {
       setMockDraft(null);
-      setMockDraftError("Mock draft URL contains an unknown ESPN player id");
+      setMockDraftError(error instanceof Error ? error.message : String(error));
     }
   }, [mockDraft, wrapped]);
 
   function saveMockDraft(next: MockDraftState) {
+    if (positionFilter === "K") updatePositionFilter("");
     setMockDraft(next);
     setMockDraftError("");
     replaceMockDraftHash(next);
@@ -272,6 +284,7 @@ function SubDraft() {
       rookie: rookiePlayerIds.has(playerId),
     }))
     .filter(({ value }) => value !== undefined)
+    .filter(({ player }) => !mockDraft || isMockDraftPlayerEligible(player))
     .sort((a, b) => a.value - b.value)
     .map((p, sourceRank) => ({
       ...p,
@@ -491,20 +504,24 @@ function SubDraft() {
           <div>
             <div>position filter</div>
             <div>
-              {["QB", "RB", "WR", "TE", "K", "DST"].map((p) => (
-                <div
-                  key={p}
-                  style={{
-                    ...bubbleStyle,
-                    backgroundColor: positionFilter === p ? "grey" : undefined,
-                  }}
-                  onClick={() =>
-                    updatePositionFilter(positionFilter === p ? "" : p)
-                  }
-                >
-                  {p}
-                </div>
-              ))}
+              {["QB", "RB", "WR", "TE", "K", "DST"]
+                .filter((p) => !mockDraft || p !== "K")
+                .map((p) => (
+                  <div
+                    key={p}
+                    data-position-filter={p}
+                    style={{
+                      ...bubbleStyle,
+                      backgroundColor:
+                        positionFilter === p ? "grey" : undefined,
+                    }}
+                    onClick={() =>
+                      updatePositionFilter(positionFilter === p ? "" : p)
+                    }
+                  >
+                    {p}
+                  </div>
+                ))}
               <div
                 title="rookies only"
                 aria-label="rookies only"

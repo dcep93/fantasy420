@@ -6,6 +6,7 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
+    "calibrate:mock-draft": "vite-node scripts/calibrateMockDraft.ts",
     "refresh:player-stats": "vite-node scripts/refreshPlayerStatsSnapshot.ts",
     "test": "vitest run"
   },

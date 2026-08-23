@@ -25,7 +25,6 @@ const ROSTER_SLOTS: RosterSlot[] = [
   "FLEX",
   "SUPERFLEX",
   "DST",
-  "K",
   "BENCH",
 ];
 const POSITION_ORDER: DraftPosition[] = ["QB", "RB", "WR", "TE", "DST", "K"];
