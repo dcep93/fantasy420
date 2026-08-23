@@ -300,7 +300,7 @@ function SubDraft() {
     }
   }, [mockDraft, positionFilter, rookiesOnly, source]);
 
-  return (
+  const draftHeader = (
     <>
       <MockDraftSetup
         activeSettings={mockDraft?.settings}
@@ -325,7 +325,9 @@ function SubDraft() {
       {mockDraftError ? (
         <div className="mock-draft-load-error">{mockDraftError}</div>
       ) : null}
-      <pre className="draft-rankings-layout">
+    </>
+  );
+  const sourceControls = (
       <div className="draft-rankings-controls">
         <div>
           <ul>
@@ -462,6 +464,12 @@ function SubDraft() {
           </div>
         )}
       </div>
+  );
+
+  return (
+    <>
+      {draftHeader}
+      <pre className="draft-rankings-layout">
       <div
         className="draft-rankings-workspace"
         data-testid="draft-rankings-workspace"
@@ -661,6 +669,7 @@ function SubDraft() {
           </div>
       </div>
       </div>
+      {sourceControls}
       </pre>
     </>
   );

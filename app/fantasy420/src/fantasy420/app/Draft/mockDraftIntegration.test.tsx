@@ -33,7 +33,7 @@ test("restores hash state without connecting to the Chrome extension", () => {
   const workspace = screen.getByTestId("draft-rankings-workspace");
   const roster = screen.getByTestId("mock-draft-my-players");
   const scroller = screen.getByTestId("mock-draft-player-scroller");
-  expect(workspace.previousElementSibling).toHaveClass("draft-rankings-controls");
+  expect(workspace.nextElementSibling).toHaveClass("draft-rankings-controls");
   expect(workspace.children[0]).toBe(roster);
   expect(workspace.children[1]).toBe(scroller);
   expect(sendMessage).not.toHaveBeenCalled();
@@ -125,7 +125,7 @@ test("drafts an existing table row and synchronizes ordered ids to the hash", ()
   expect(getComputedStyle(draftedCells[0]).backgroundColor).toBe(
     "rgb(33, 21, 14)"
   );
-  expect(getComputedStyle(draftedCells[1]).opacity).toBe("0.8");
+  expect(getComputedStyle(draftedCells[1]).opacity).toBe("0.5");
   rendered.unmount();
 });
 

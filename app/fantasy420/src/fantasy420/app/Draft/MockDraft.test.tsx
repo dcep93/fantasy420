@@ -443,6 +443,19 @@ test("keeps roster settings on one horizontally scrolling row", () => {
   expect(rosterRule).toMatch(/overflow-x:\s*auto/);
 });
 
+test("gives the rankings workspace a full viewport and scrolls the table internally", () => {
+  const css = readFileSync(
+    "src/fantasy420/app/Draft/MockDraftView.css",
+    "utf8"
+  );
+  const workspaceRule = css.match(/\.draft-rankings-workspace\s*{([^}]*)}/)?.[1];
+  const scrollerRule = css.match(/\.mock-draft-player-scroller\s*{([^}]*)}/)?.[1];
+
+  expect(workspaceRule).toMatch(/height:\s*100vh/);
+  expect(scrollerRule).toMatch(/height:\s*100%/);
+  expect(scrollerRule).toMatch(/overflow:\s*auto/);
+});
+
 test("keeps bright bubbles and rank controls readable", () => {
   const css = readFileSync(
     "src/fantasy420/app/Draft/MockDraftView.css",
