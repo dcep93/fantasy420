@@ -104,6 +104,55 @@
   overflow: hidden;
 }
 
+.draft-rankings-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100vh;
+  font-size: 1.5em;
+}
+
+.draft-rankings-controls {
+  flex: 0 0 auto;
+  max-height: 35vh;
+  overflow: auto;
+}
+
+.draft-rankings-workspace {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-height: 0;
+  flex: 1 1 auto;
+}
+
+.mock-draft-my-players {
+  display: flex;
+  flex: 0 0 118px;
+  flex-direction: column;
+  gap: 7px;
+  width: 118px;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.mock-draft-player-scroller {
+  min-width: 0;
+  height: 100%;
+  flex: 1 1 auto;
+  overflow: auto;
+}
+
+.draft-player-drafted > td:not(:first-child) {
+  opacity: 0.8;
+}
+
+.draft-player-drafted > td:first-child {
+  color: #fff7ed;
+  background: #21150e !important;
+  opacity: 1;
+}
+
 .mock-draft-header {
   display: flex;
   align-items: baseline;

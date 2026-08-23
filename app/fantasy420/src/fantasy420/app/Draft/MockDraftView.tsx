@@ -274,6 +274,65 @@ export function MockDraftPanel(props: {
   );
 }
 
+export function MockDraftRoster(props: {
+  state: MockDraftState;
+  playersById: Record<string, MockDraftDisplayPlayer>;
+  orderedRanking: string[];
+  onNudge: (pickIndex: number, direction: "better" | "worse") => void;
+}) {
+  const [failedImages, setFailedImages] = useState<Set<string>>(
+    () => new Set()
+  );
+  const picks = useMemo(
+    () =>
+      getDraftView(props.state, props.playersById, props.orderedRanking)
+        .picks.filter((pick) => pick.isUser)
+        .sort((a, b) => {
+          const aPlayer = props.playersById[a.playerId];
+          const bPlayer = props.playersById[b.playerId];
+          return (
+            POSITION_ORDER.indexOf(normalizePosition(aPlayer.position)) -
+              POSITION_ORDER.indexOf(normalizePosition(bPlayer.position)) ||
+            a.pickIndex - b.pickIndex
+          );
+        }),
+    [props.state, props.playersById, props.orderedRanking]
+  );
+
+  return (
+    <aside
+      className="mock-draft-my-players"
+      data-testid="mock-draft-my-players"
+      aria-label="my mock drafted players"
+    >
+      {picks.map((pick) => {
+        const nudge = getHistoricalNudgeAvailability(
+          props.state,
+          pick.pickIndex,
+          props.playersById,
+          props.orderedRanking
+        );
+        return (
+          <PickBubble
+            key={pick.pickIndex}
+            pick={pick}
+            player={props.playersById[pick.playerId]}
+            imageFailed={failedImages.has(pick.playerId)}
+            canNudgeBetter={nudge.better}
+            canNudgeWorse={nudge.worse}
+            onImageError={() =>
+              setFailedImages((current) =>
+                new Set(current).add(pick.playerId)
+              )
+            }
+            onNudge={props.onNudge}
+          />
+        );
+      })}
+    </aside>
+  );
+}
+
 function TeamBoard(
   props: Parameters<typeof MockDraftPanel>[0] & {
     picks: ReturnType<typeof getDraftView>["picks"];

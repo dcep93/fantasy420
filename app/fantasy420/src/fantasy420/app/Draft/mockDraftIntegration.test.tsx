@@ -30,6 +30,12 @@ test("restores hash state without connecting to the Chrome extension", () => {
   const rendered = render(<Draft />);
 
   expect(screen.getByTestId("mock-draft-panel")).toBeInTheDocument();
+  const workspace = screen.getByTestId("draft-rankings-workspace");
+  const roster = screen.getByTestId("mock-draft-my-players");
+  const scroller = screen.getByTestId("mock-draft-player-scroller");
+  expect(workspace.previousElementSibling).toHaveClass("draft-rankings-controls");
+  expect(workspace.children[0]).toBe(roster);
+  expect(workspace.children[1]).toBe(scroller);
   expect(sendMessage).not.toHaveBeenCalled();
   rendered.unmount();
 });
@@ -110,6 +116,16 @@ test("drafts an existing table row and synchronizes ordered ids to the hash", ()
   const saved = decodeMockDraftHash(window.location.hash)!;
   expect(saved.picks).toHaveLength(2);
   expect(saved.picks.every((id) => /^-?\d+$/.test(id))).toBe(true);
+  const draftedRow = rendered.container.querySelector<HTMLTableRowElement>(
+    'tbody tr[data-drafted="true"]'
+  );
+  expect(draftedRow).not.toBeNull();
+  const draftedCells = draftedRow!.querySelectorAll("td");
+  expect(getComputedStyle(draftedCells[0]).opacity).toBe("1");
+  expect(getComputedStyle(draftedCells[0]).backgroundColor).toBe(
+    "rgb(33, 21, 14)"
+  );
+  expect(getComputedStyle(draftedCells[1]).opacity).toBe("0.8");
   rendered.unmount();
 });
 

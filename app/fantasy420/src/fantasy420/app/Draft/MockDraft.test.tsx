@@ -2,7 +2,11 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { readFileSync } from "node:fs";
 import { vi } from "vitest";
 
-import { MockDraftPanel, MockDraftSetup } from "./MockDraftView";
+import {
+  MockDraftPanel,
+  MockDraftRoster,
+  MockDraftSetup,
+} from "./MockDraftView";
 import { DEFAULT_MOCK_DRAFT_SETTINGS } from "./mockDraft";
 import { POSITION_COLORS } from "./positionColors";
 
@@ -316,6 +320,73 @@ test("keeps team columns fixed and toggles every column together", () => {
   expect(teamThreeColumn.textContent!.indexOf("Quarterback")).toBeLessThan(
     teamThreeColumn.textContent!.indexOf("Team Three Tight End")
   );
+});
+
+test("shows only user picks in a full roster column ordered by position and pick", () => {
+  const positions = [
+    "TE",
+    "WR",
+    "K",
+    "DST",
+    "QB",
+    "RB",
+    "TE",
+    "WR",
+    "K",
+    "DST",
+    "RB",
+  ];
+  const playersById = Object.fromEntries(
+    positions.map((position, index) => [
+      String(index + 1),
+      {
+        id: String(index + 1),
+        name:
+          index === 1
+            ? "First Receiver"
+            : index === 4
+            ? "My Quarterback"
+            : index === 7
+            ? "Second Receiver"
+            : index === 10
+            ? "My Runner"
+            : `Opponent ${index + 1}`,
+        position,
+        byeWeek: 7,
+        rookie: false,
+      },
+    ])
+  );
+  const playerIds = Object.keys(playersById);
+
+  render(
+    <MockDraftRoster
+      state={{
+        settings: {
+          ...DEFAULT_MOCK_DRAFT_SETTINGS,
+          teamCount: 3,
+          draftPosition: 2,
+          seed: "my-roster",
+        },
+        picks: playerIds,
+      }}
+      playersById={playersById}
+      orderedRanking={playerIds}
+      onNudge={vi.fn()}
+    />
+  );
+
+  const roster = screen.getByTestId("mock-draft-my-players");
+  expect(Array.from(roster.children).map((card) => card.textContent)).toEqual([
+    expect.stringContaining("My Quarterback"),
+    expect.stringContaining("My Runner"),
+    expect.stringContaining("First Receiver"),
+    expect.stringContaining("Second Receiver"),
+  ]);
+  expect(roster).not.toHaveTextContent("Opponent");
+  expect(roster.querySelectorAll(":scope > .mock-draft-pick")).toHaveLength(4);
+  expect(roster.querySelectorAll(":scope > .mock-draft-mine")).toHaveLength(4);
+  expect(roster.querySelectorAll(".mock-draft-rank-controls")).toHaveLength(4);
 });
 
 test("shows the total pick index and preserves it as the position tie-breaker", () => {

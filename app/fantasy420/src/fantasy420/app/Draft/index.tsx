@@ -12,7 +12,11 @@ import draft2025 from "./2025.json";
 import draft2026 from "./2026.json";
 import getFormatAwareRankings, { getSourceLabel } from "./composite";
 import draftKings from "./draftKings";
-import { MockDraftPanel, MockDraftSetup } from "./MockDraftView";
+import {
+  MockDraftPanel,
+  MockDraftRoster,
+  MockDraftSetup,
+} from "./MockDraftView";
 import {
   advanceToUserTurn,
   getDraftLength,
@@ -243,6 +247,22 @@ function SubDraft() {
     replaceMockDraftHash(next);
   }
 
+  function nudgeMockPick(
+    pickIndex: number,
+    direction: "better" | "worse"
+  ) {
+    if (!mockDraft) return;
+    saveMockDraft(
+      nudgeHistoricalPick(
+        mockDraft,
+        pickIndex,
+        direction,
+        mockPlayersById,
+        orderedRanking
+      )
+    );
+  }
+
   const sourcePlayers = Object.entries(results[source])
     .map(([playerId, value]) => ({
       playerId,
@@ -299,32 +319,14 @@ function SubDraft() {
           state={mockDraft}
           playersById={mockPlayersById}
           orderedRanking={orderedRanking}
-          onNudge={(pickIndex, direction) =>
-            saveMockDraft(
-              nudgeHistoricalPick(
-                mockDraft,
-                pickIndex,
-                direction,
-                mockPlayersById,
-                orderedRanking
-              )
-            )
-          }
+          onNudge={nudgeMockPick}
         />
       ) : null}
       {mockDraftError ? (
         <div className="mock-draft-load-error">{mockDraftError}</div>
       ) : null}
-      <pre
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "space-around",
-        fontSize: "1.5em",
-        height: "100vH",
-      }}
-    >
-      <div style={{ height: "100%", overflow: "scroll" }}>
+      <pre className="draft-rankings-layout">
+      <div className="draft-rankings-controls">
         <div>
           <ul>
             {sources.map((s) => (
@@ -461,11 +463,23 @@ function SubDraft() {
         )}
       </div>
       <div
-        ref={playerScrollRef}
-        data-testid="mock-draft-player-scroller"
-        style={{ height: "100%", overflow: "scroll" }}
+        className="draft-rankings-workspace"
+        data-testid="draft-rankings-workspace"
       >
-        <div>
+        {mockDraft ? (
+          <MockDraftRoster
+            state={mockDraft}
+            playersById={mockPlayersById}
+            orderedRanking={orderedRanking}
+            onNudge={nudgeMockPick}
+          />
+        ) : null}
+        <div
+          ref={playerScrollRef}
+          data-testid="mock-draft-player-scroller"
+          className="mock-draft-player-scroller"
+        >
+          <div>
           <div>
             <div>position filter</div>
             <div>
@@ -561,9 +575,8 @@ function SubDraft() {
                   <tr
                     key={i}
                     data-mock-available={mockDraft ? String(!v.seen) : undefined}
-                    style={{
-                      backgroundColor: v.seen ? "gray" : "",
-                    }}
+                    data-drafted={String(v.seen)}
+                    className={v.seen ? "draft-player-drafted" : undefined}
                     onClick={() => {
                       if (mockDraft) {
                         const next = makeUserPick(
@@ -645,7 +658,8 @@ function SubDraft() {
                 ))}
             </tbody>
           </table>
-        </div>
+          </div>
+      </div>
       </div>
       </pre>
     </>
