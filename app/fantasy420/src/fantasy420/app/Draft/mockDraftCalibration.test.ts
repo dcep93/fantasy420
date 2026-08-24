@@ -65,8 +65,8 @@ test("fits the checked-in baseline and improves historical likelihood", () => {
   expect(report.roundAware.negativeLogLikelihood).toBeLessThan(
     report.previousPooled.summary.negativeLogLikelihood
   );
-  expect(report.rounds["1"].means.expectedRankIndex).toBeLessThan(2);
-  expect(report.rounds["14"].means.expectedRankIndex).toBeGreaterThan(
-    report.rounds["1"].means.expectedRankIndex * 5
+  expect(report.rounds["1"].means.expectedOverallRankIndex).toBeLessThan(5);
+  expect(report.rounds["14"].means.expectedOverallRankIndex).toBeGreaterThan(
+    report.rounds["1"].means.expectedOverallRankIndex * 20
   );
 });

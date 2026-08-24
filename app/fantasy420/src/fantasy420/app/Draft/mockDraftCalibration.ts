@@ -12,7 +12,11 @@ import {
 } from "./mockDraft";
 import { normalizeDraftPlayerName } from "./rookies";
 
-type FeatureVector = [rankIndex: number, saturation: number, byeMatches: number];
+type FeatureVector = [
+  overallRankIndex: number,
+  saturation: number,
+  byeMatches: number,
+];
 
 export type CalibrationObservation = {
   year: string;
@@ -41,8 +45,8 @@ export type RuntimeCoefficients = {
 };
 
 export type CalibrationMeans = {
-  actualRankIndex: number;
-  expectedRankIndex: number;
+  actualOverallRankIndex: number;
+  expectedOverallRankIndex: number;
   actualSaturation: number;
   expectedSaturation: number;
   actualByeMatches: number;
@@ -152,6 +156,15 @@ function buildSeasonObservations(season: HistoricalSeason): {
   const orderedRanking = Object.keys(composite).sort(
     (left, right) => composite[left] - composite[right] || left.localeCompare(right)
   );
+  const eligibleOverallRanking = orderedRanking.filter((playerId) =>
+    isMockDraftPlayerEligible(playersById[playerId])
+  );
+  const overallRankByPlayerId = Object.fromEntries(
+    eligibleOverallRanking.map((playerId, overallRankIndex) => [
+      playerId,
+      overallRankIndex,
+    ])
+  );
   const chronologicalPicks = Object.values(wrapped.ffTeams)
     .flatMap((team) =>
       team.draft.map((pick) => ({
@@ -189,24 +202,26 @@ function buildSeasonObservations(season: HistoricalSeason): {
     }
     if (isMockDraftPlayerEligible(player)) {
       eligiblePicks += 1;
-      const availablePlayerIds = orderedRanking.filter(
-        (playerId) =>
-          !selectedPlayerIds.has(playerId) &&
-          isMockDraftPlayerEligible(playersById[playerId])
+      const availablePlayerIds = eligibleOverallRanking.filter(
+        (playerId) => !selectedPlayerIds.has(playerId)
       );
       const actualIndex = availablePlayerIds.indexOf(pick.playerId);
       if (actualIndex === -1) {
         missingCompositeRanks += 1;
       } else {
         const candidates = availablePlayerIds.map<FeatureVector>(
-          (playerId, rankIndex) => {
+          (playerId) => {
             const features = getMockDraftChoiceFeatures(
               teamPlayerIds[pick.teamId],
               playerId,
               playersById,
               HISTORICAL_CALIBRATION_ROSTER
             );
-            return [rankIndex, features.saturation, features.byeMatches];
+            return [
+              overallRankByPlayerId[playerId],
+              features.saturation,
+              features.byeMatches,
+            ];
           }
         );
         observations.push({
@@ -330,8 +345,8 @@ export function summarizeCalibration(
 
   const count = observations.length;
   const means = {
-    actualRankIndex: actualTotals[0] / count,
-    expectedRankIndex: expectedTotals[0] / count,
+    actualOverallRankIndex: actualTotals[0] / count,
+    expectedOverallRankIndex: expectedTotals[0] / count,
     actualSaturation: actualTotals[1] / count,
     expectedSaturation: expectedTotals[1] / count,
     actualByeMatches: actualTotals[2] / count,

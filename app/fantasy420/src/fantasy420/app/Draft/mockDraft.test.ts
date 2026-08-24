@@ -363,6 +363,59 @@ test("craziness expands reaches while remaining seed deterministic", () => {
   expect(Math.max(...highRanks)).toBeGreaterThan(3);
 });
 
+test("overall rank gaps matter when only two players remain", () => {
+  const choicePlayers = Object.fromEntries(
+    Array.from({ length: 6 }, (_, index) => {
+      const id = String(index + 1);
+      return [id, { id, position: "WR", byeWeek: 8 } as MockDraftPlayer];
+    })
+  );
+  const choiceRanking = Object.keys(choicePlayers);
+  const settings = {
+    ...DEFAULT_MOCK_DRAFT_SETTINGS,
+    teamCount: 6,
+    draftPosition: 6,
+    roster: {
+      QB: 0,
+      RB: 0,
+      WR: 1,
+      TE: 0,
+      FLEX: 0,
+      SUPERFLEX: 0,
+      DST: 0,
+      K: 0,
+      BENCH: 0,
+    },
+  };
+  let rankOneWins = 0;
+  let rankTwoWins = 0;
+
+  for (let index = 0; index < 10_000; index += 1) {
+    const seed = `overall-rank-gap-${index}`;
+    const rankOneChoice = advanceToUserTurn(
+      {
+        settings: { ...settings, seed },
+        picks: ["2", "3", "4", "5"],
+      },
+      choicePlayers,
+      choiceRanking
+    ).picks[4];
+    const rankTwoChoice = advanceToUserTurn(
+      {
+        settings: { ...settings, seed },
+        picks: ["1", "3", "4", "5"],
+      },
+      choicePlayers,
+      choiceRanking
+    ).picks[4];
+
+    if (rankOneChoice === "1") rankOneWins += 1;
+    if (rankTwoChoice === "2") rankTwoWins += 1;
+  }
+
+  expect(rankOneWins).toBeGreaterThan(rankTwoWins + 200);
+});
+
 test("historical craziness stays tight early and expands in later rounds without a cap", () => {
   const reachPlayers = Object.fromEntries(
     Array.from({ length: 300 }, (_, index) => {

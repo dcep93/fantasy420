@@ -2,16 +2,18 @@
 
 ## Result
 
-The maximum-likelihood round-aware baseline for slider inputs of `1` is:
+The maximum-likelihood overall-rank, round-aware baseline for slider inputs of `1` is:
 
-| Coefficient | Legacy | Previous pooled fit | Round-aware fit |
+| Coefficient | Legacy | Previous pooled fit | Overall-rank round-aware fit |
 | --- | ---: | ---: | ---: |
-| Position saturation penalty | 16 | 10.849574 | 14.174711 |
+| Position saturation penalty | 16 | 10.849574 | 28.421761 |
 | Same-position bye penalty | 9 | 0 | 0 |
-| Round-one Gumbel temperature | 3.5 | 8.737719 | 1.639461 |
-| Round-growth exponent | 0 | 0 | 0.842035 |
+| Round-one Gumbel temperature | 3.5 | 8.737719 | 2.254317 |
+| Round-growth exponent | 0 | 0 | 0.920315 |
 
-The runtime temperature is `1.639461 * round^0.842035 * sqrt(craziness)`. It grows smoothly from `1.639461` in round one to `15.127982` in round fourteen and never limits the eligible candidate set. The bye coefficient again reached the nonnegative boundary; its optimizer result is recorded as zero in runtime code.
+The runtime temperature is `2.254317 * round^0.920315 * sqrt(craziness)`. It grows smoothly from `2.254317` in round one to `25.574892` in round fourteen and never limits the eligible candidate set. The bye coefficient again reached the nonnegative boundary, so runtime records it as zero.
+
+Opponent costs now use each candidate's original index in the complete eligible composite ranking. Removing already-drafted players no longer renumbers the remaining choices. Original rank gaps therefore continue to affect head-to-head selection probability throughout the draft.
 
 ## Data Coverage
 
@@ -21,40 +23,40 @@ The runtime temperature is `1.639461 * round^0.842035 * sqrt(craziness)`. It gro
 | 2025 | 9 | 8 | 140 | 137 | 137 | 0 |
 | Total | 20 | 17 | 280 | 276 | 276 | 0 |
 
-The replay uses each season's format-aware composite ranking and the historical roster's required DST capacity of one. That historical capacity is explicit and intentionally independent from the current no-DST default. Actual kicker selections remain in chronological and team history but are excluded as choice observations under the current no-kicker mock-draft rule.
+The replay uses each season's format-aware composite ranking and the historical roster's required DST capacity of one. That historical capacity remains independent from the current no-DST default. Actual kicker selections remain in chronological and team history but are excluded as choice observations under the current no-kicker mock-draft rule.
 
 ## Likelihood
 
 | Model | Total negative log likelihood | Mean per pick | Effective choices per pick |
 | --- | ---: | ---: | ---: |
-| Legacy `16 / 9 / 3.5 / 0` | 1187.886663 | 4.303937 | 73.9905 |
-| Previous pooled `10.849574 / 0 / 8.737719 / 0` | 877.755239 | 3.180273 | 24.0533 |
-| Round-aware `14.174711 / 0 / 1.639461 / 0.842035` | 827.536645 | 2.998321 | 20.0518 |
+| Legacy `16 / 9 / 3.5 / 0` | 1948.268356 | 7.058943 | 1163.2154 |
+| Previous pooled `10.849574 / 0 / 8.737719 / 0` | 1062.454842 | 3.849474 | 46.9684 |
+| Overall-rank round-aware `28.421761 / 0 / 2.254317 / 0.920315` | 851.732928 | 3.085989 | 21.8891 |
 
-Lower negative log likelihood is better. The round-aware model improves total negative log likelihood by `50.218594`, or approximately `5.7%`, over the previous pooled fit.
+Lower negative log likelihood is better. The refitted overall-rank model improves total negative log likelihood by `210.721915`, or approximately `19.8%`, over the previous pooled fit under the same overall-rank feature.
 
 ## Expected-vs-Actual Diagnostics
 
-The previous fit applied late-round variance to every pick. In the historical sample, first-round selections averaged available-player rank `2.5` and never exceeded rank `9`, while later selections reached as deep as rank `99`. The smooth curve reflects that changing spread without a hard reach ceiling.
+The ranking feature and diagnostics below are zero-based overall composite indices, not renumbered positions among available players. The expected mean tracks the historical mean across the full draft while the smooth temperature curve keeps early picks disciplined and permits wider overall-rank gaps later.
 
-| Round | Temperature | Actual available rank | Expected available rank |
+| Round | Temperature | Actual overall index | Expected overall index |
 | ---: | ---: | ---: | ---: |
-| 1 | 1.639461 | 2.500000 | 2.189978 |
-| 2 | 2.938860 | 3.700000 | 3.604993 |
-| 3 | 4.134794 | 6.450000 | 5.296648 |
-| 4 | 5.268132 | 6.850000 | 6.545792 |
-| 5 | 6.357089 | 6.050000 | 7.641099 |
-| 6 | 7.411936 | 9.650000 | 9.213132 |
-| 7 | 8.439238 | 7.800000 | 10.183051 |
-| 8 | 9.443532 | 8.100000 | 11.254371 |
-| 9 | 10.428136 | 10.250000 | 12.619318 |
-| 10 | 11.395571 | 11.950000 | 13.560812 |
-| 11 | 12.347817 | 16.550000 | 14.419882 |
-| 12 | 13.286466 | 26.000000 | 14.988529 |
-| 13 | 14.212824 | 13.150000 | 15.457346 |
-| 14 | 15.127982 | 13.444444 | 15.761841 |
+| 1 | 2.254317 | 4.950000 | 4.419886 |
+| 2 | 4.266359 | 15.500000 | 15.688381 |
+| 3 | 6.196077 | 26.550000 | 26.795320 |
+| 4 | 8.074206 | 36.150000 | 37.070042 |
+| 5 | 9.914882 | 46.000000 | 48.062424 |
+| 6 | 11.726253 | 59.550000 | 54.641546 |
+| 7 | 13.513610 | 64.050000 | 64.058094 |
+| 8 | 15.280665 | 74.550000 | 77.909442 |
+| 9 | 17.030158 | 86.000000 | 87.446495 |
+| 10 | 18.764197 | 98.900000 | 105.005689 |
+| 11 | 20.484449 | 113.550000 | 111.392783 |
+| 12 | 22.192267 | 132.444444 | 116.451480 |
+| 13 | 23.888769 | 118.950000 | 122.041904 |
+| 14 | 25.574892 | 125.555556 | 132.424604 |
 
-The curve is deliberately smooth and monotonic rather than fitting fourteen independent temperatures to only eighteen or twenty observations per round. Individual rounds can therefore sit above or below the curve, especially the unusually adventurous round twelve.
+The curve is deliberately smooth and monotonic rather than fitting fourteen independent temperatures to only eighteen or twenty observations per round. Individual rounds can sit above or below the curve, especially the unusually adventurous round twelve.
 
 ## Reproduction
 

@@ -45,10 +45,10 @@ export type MockDraftView = {
   complete: boolean;
 };
 
-export const MOCK_DRAFT_POSITION_PENALTY = 14.17471;
+export const MOCK_DRAFT_POSITION_PENALTY = 28.421761;
 export const MOCK_DRAFT_BYE_PENALTY = 0;
-export const MOCK_DRAFT_BASE_TEMPERATURE = 1.639461;
-export const MOCK_DRAFT_ROUND_GROWTH = 0.842035;
+export const MOCK_DRAFT_BASE_TEMPERATURE = 2.254317;
+export const MOCK_DRAFT_ROUND_GROWTH = 0.920315;
 
 export const DEFAULT_MOCK_DRAFT_SETTINGS: MockDraftSettings = {
   draftPosition: 8,
@@ -322,7 +322,14 @@ function chooseOpponentPlayer(
   playersById: Record<string, MockDraftPlayer>,
   orderedRanking: string[]
 ): string | undefined {
-  const available = uniqueRankedPlayers(orderedRanking, playersById).filter(
+  const overallRanking = uniqueRankedPlayers(orderedRanking, playersById);
+  const overallRankByPlayerId = Object.fromEntries(
+    overallRanking.map((playerId, overallRankIndex) => [
+      playerId,
+      overallRankIndex,
+    ])
+  );
+  const available = overallRanking.filter(
     (playerId) => !state.picks.includes(playerId)
   );
   if (available.length === 0) return undefined;
@@ -342,7 +349,7 @@ function chooseOpponentPlayer(
   );
 
   return available
-    .map((playerId, rankIndex) => {
+    .map((playerId) => {
       const { saturation, byeMatches } = getMockDraftChoiceFeatures(
         teamPlayerIds,
         playerId,
@@ -364,7 +371,10 @@ function chooseOpponentPlayer(
       return {
         playerId,
         score:
-          rankIndex + positionPenalty + byePenalty - temperature * gumbel,
+          overallRankByPlayerId[playerId] +
+          positionPenalty +
+          byePenalty -
+          temperature * gumbel,
       };
     })
     .sort((a, b) => a.score - b.score || a.playerId.localeCompare(b.playerId))[0]
