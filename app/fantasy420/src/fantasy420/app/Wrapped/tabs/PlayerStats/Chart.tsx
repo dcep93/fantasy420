@@ -9,6 +9,7 @@ import {
   YAxis,
 } from "recharts";
 import { FFTeamType } from "../../../FetchWrapped";
+import { ChartPointHitTarget } from "../ChartPointHitTarget";
 import { colors } from "../ManagerPlot";
 
 type ScorePoint = {
@@ -48,7 +49,7 @@ const Marker = (props: {
   const strokeWidth = 2;
   if (payload.state === "started") {
     return (
-      <g>
+      <ChartPointHitTarget cx={cx} cy={cy}>
         <line
           x1={cx - size}
           x2={cx + size}
@@ -67,12 +68,12 @@ const Marker = (props: {
           strokeWidth={strokeWidth}
           strokeLinecap="round"
         />
-      </g>
+      </ChartPointHitTarget>
     );
   }
   if (payload.state === "unowned") {
     return (
-      <g>
+      <ChartPointHitTarget cx={cx} cy={cy}>
         <line
           x1={cx - size}
           x2={cx + size}
@@ -91,18 +92,20 @@ const Marker = (props: {
           strokeWidth={strokeWidth}
           strokeLinecap="round"
         />
-      </g>
+      </ChartPointHitTarget>
     );
   }
   return (
-    <circle
-      cx={cx}
-      cy={cy}
-      r={size - 2}
-      fill="white"
-      stroke={color}
-      strokeWidth={strokeWidth}
-    />
+    <ChartPointHitTarget cx={cx} cy={cy}>
+      <circle
+        cx={cx}
+        cy={cy}
+        r={size - 2}
+        fill="white"
+        stroke={color}
+        strokeWidth={strokeWidth}
+      />
+    </ChartPointHitTarget>
   );
 };
 

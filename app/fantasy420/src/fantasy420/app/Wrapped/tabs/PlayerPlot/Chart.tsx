@@ -6,6 +6,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { ScatterPointHitTarget } from "../ChartPointHitTarget";
 
 export type ChartDataType = { x: number; y: number; label: string }[];
 
@@ -15,7 +16,7 @@ export default function Chart(props: { data: ChartDataType }) {
       <CartesianGrid />
       <XAxis type="number" dataKey="x" />
       <YAxis type="number" dataKey="y" />
-      <Scatter data={props.data} />
+      <Scatter data={props.data} shape={<ScatterPointHitTarget />} />
       <Tooltip
         content={(data) =>
           !data.active ? null : (

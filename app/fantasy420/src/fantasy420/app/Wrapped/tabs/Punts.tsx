@@ -8,6 +8,7 @@ import {
 } from "recharts";
 import { clog, groupByF } from "..";
 import allWrapped from "../allWrapped";
+import { ScatterPointHitTarget } from "./ChartPointHitTarget";
 
 export default function Punts() {
   const data = Object.values(allWrapped).flatMap((wrapped) =>
@@ -109,6 +110,7 @@ export default function Punts() {
               data={Object.values(groupByF(d, (d) => `${d.x}.${d.y}`)).flatMap(
                 (d) => ({ ...d[0], label: d.map((dd) => dd.label).join("\n") })
               )}
+              shape={<ScatterPointHitTarget />}
             />
             <Tooltip
               content={(data) =>

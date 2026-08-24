@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { bubbleStyle, selectedWrapped, selectedYear } from "..";
+import { ChartPointHitTarget } from "./ChartPointHitTarget";
 
 const DATA_CACHE = "data_v6";
 const GAME_MINUTES = 180;
@@ -333,15 +334,13 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
         {coordinates.map(({ point, x, y }, idx) => {
           const label = formatTooltipTimestamp(point.timestamp);
           return (
-            <circle
+            <ChartPointHitTarget
               key={idx}
               cx={x}
               cy={y}
-              r={8}
-              fill="transparent"
-              stroke="transparent"
               onMouseEnter={() => setHovered({ x, y, label })}
               onMouseLeave={() => setHovered(null)}
+              onPointerUp={() => setHovered({ x, y, label })}
             />
           );
         })}

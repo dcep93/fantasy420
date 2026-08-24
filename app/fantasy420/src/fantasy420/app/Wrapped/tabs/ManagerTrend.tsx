@@ -14,6 +14,7 @@ import {
 import { bubbleStyle, selectedWrapped, selectedYear } from "..";
 import { FFTeamType, NFLPlayerType, WrappedType } from "../../FetchWrapped";
 import allWrapped from "../allWrapped";
+import { ChartPointHitTarget } from "./ChartPointHitTarget";
 
 function weeklyScore(
   wrapped: WrappedType,
@@ -91,20 +92,22 @@ function ResultDot({ cx, cy, payload }: ScoreDotProps) {
 
   if (outcome === "beat") {
     return (
-      <circle
-        cx={cx}
-        cy={cy}
-        r={5}
-        fill="#1E88E5"
-        stroke="#0D47A1"
-        strokeWidth={2}
-      />
+      <ChartPointHitTarget cx={cx} cy={cy}>
+        <circle
+          cx={cx}
+          cy={cy}
+          r={5}
+          fill="#1E88E5"
+          stroke="#0D47A1"
+          strokeWidth={2}
+        />
+      </ChartPointHitTarget>
     );
   }
 
   if (outcome === "lost") {
     return (
-      <g>
+      <ChartPointHitTarget cx={cx} cy={cy}>
         <rect
           x={cx - 5}
           y={cy - 5}
@@ -132,19 +135,21 @@ function ResultDot({ cx, cy, payload }: ScoreDotProps) {
           stroke="#E53935"
           strokeWidth={2}
         />
-      </g>
+      </ChartPointHitTarget>
     );
   }
 
   return (
-    <circle
-      cx={cx}
-      cy={cy}
-      r={5}
-      fill="#fff"
-      stroke="#1E88E5"
-      strokeWidth={2}
-    />
+    <ChartPointHitTarget cx={cx} cy={cy}>
+      <circle
+        cx={cx}
+        cy={cy}
+        r={5}
+        fill="#fff"
+        stroke="#1E88E5"
+        strokeWidth={2}
+      />
+    </ChartPointHitTarget>
   );
 }
 
