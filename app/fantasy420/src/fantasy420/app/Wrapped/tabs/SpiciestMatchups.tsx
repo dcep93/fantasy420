@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { bubbleStyle, selectedWrapped, selectedYear } from "..";
+import { NIGHT_COLORS } from "../../theme";
 import { ChartPointHitTarget } from "./ChartPointHitTarget";
 
 const DATA_CACHE = "data_v6";
@@ -241,8 +242,9 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
       style={{
         position: "relative",
         width,
-        background: "#fafafa",
-        border: "1px solid #e5e5e5",
+        color: NIGHT_COLORS.text,
+        background: NIGHT_COLORS.chartCanvas,
+        border: `1px solid ${NIGHT_COLORS.border}`,
         borderRadius: 12,
         boxShadow: "0 8px 18px rgba(0,0,0,0.05)",
         overflow: "visible",
@@ -257,8 +259,8 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
       >
         <defs>
           <linearGradient id="probabilityFill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#f1636b" stopOpacity="0.22" />
-            <stop offset="100%" stopColor="#f1636b" stopOpacity="0.04" />
+            <stop offset="0%" stopColor={NIGHT_COLORS.loss} stopOpacity="0.32" />
+            <stop offset="100%" stopColor={NIGHT_COLORS.loss} stopOpacity="0.06" />
           </linearGradient>
         </defs>
         <line
@@ -266,7 +268,7 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
           x2={paddingLeft}
           y1={paddingTop}
           y2={height - paddingBottom}
-          stroke="#ccc"
+          stroke={NIGHT_COLORS.border}
         />
         {[0.25, 0.5, 0.75].map((tick) => {
           const y = height - paddingBottom - tick * usableHeight;
@@ -277,7 +279,7 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
               x2={width - paddingRight}
               y1={y}
               y2={y}
-              stroke="#ececec"
+              stroke={NIGHT_COLORS.chartGrid}
               strokeDasharray="6 6"
             />
           );
@@ -291,13 +293,13 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
                 x2={paddingLeft}
                 y1={y}
                 y2={y}
-                stroke="#999"
+                stroke={NIGHT_COLORS.mutedText}
               />
               <text
                 x={paddingLeft - 10}
                 y={y + 4}
                 fontSize={12}
-                fill="#444"
+                fill={NIGHT_COLORS.mutedText}
                 textAnchor="end"
               >
                 {Math.round(tick * 100)}%
@@ -310,14 +312,14 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
           x2={width - paddingRight}
           y1={height - paddingBottom}
           y2={height - paddingBottom}
-          stroke="#ccc"
+          stroke={NIGHT_COLORS.border}
         />
         <line
           x1={paddingLeft}
           x2={width - paddingRight}
           y1={height - paddingBottom - usableHeight / 2}
           y2={height - paddingBottom - usableHeight / 2}
-          stroke="#e0e0e0"
+          stroke={NIGHT_COLORS.chartGrid}
           strokeDasharray="4 4"
         />
         <path
@@ -327,7 +329,7 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
         <path
           d={path}
           fill="none"
-          stroke="#f1636b"
+          stroke={NIGHT_COLORS.loss}
           strokeWidth={3}
           strokeLinejoin="round"
         />
@@ -365,8 +367,8 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
                 y={labelY - rectHeight + 4}
                 width={estimatedWidth}
                 height={rectHeight}
-                fill="rgba(255,255,255,0.92)"
-                stroke="#d2d2d2"
+                fill={NIGHT_COLORS.surfaceAlt}
+                stroke={NIGHT_COLORS.border}
                 strokeWidth={1}
                 rx={4}
                 ry={4}
@@ -375,7 +377,7 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
                 x={midX}
                 y={labelY}
                 fontSize={12}
-                fill="#222"
+                fill={NIGHT_COLORS.text}
                 textAnchor="middle"
                 fontWeight={600}
               >
@@ -389,8 +391,8 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
             cx={hovered.x}
             cy={hovered.y}
             r={5}
-            fill="#f1636b"
-            stroke="white"
+            fill={NIGHT_COLORS.loss}
+            stroke={NIGHT_COLORS.chartCanvas}
             strokeWidth={1.5}
           />
         )}
@@ -398,7 +400,7 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
           x={paddingLeft}
           y={height - paddingBottom + 26}
           fontSize={12}
-          fill="#444"
+          fill={NIGHT_COLORS.mutedText}
         >
           {startLabel}
         </text>
@@ -406,7 +408,7 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
           x={width - paddingRight}
           y={height - paddingBottom + 26}
           fontSize={12}
-          fill="#444"
+          fill={NIGHT_COLORS.mutedText}
           textAnchor="end"
         >
           {endLabel}
@@ -415,7 +417,7 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
           x={paddingLeft - 16}
           y={paddingTop - 10}
           fontSize={12}
-          fill="#444"
+          fill={NIGHT_COLORS.mutedText}
           textAnchor="end"
         >
           Home win probability
@@ -428,8 +430,9 @@ function ProbabilityChart({ points }: { points: ProbabilityPoint[] }) {
             left: hovered.x - 70,
             top: hovered.y - 52,
             padding: "8px 10px",
-            background: "rgba(0,0,0,0.85)",
-            color: "#fff",
+            background: NIGHT_COLORS.tooltip,
+            color: NIGHT_COLORS.text,
+            border: `1px solid ${NIGHT_COLORS.border}`,
             borderRadius: 4,
             fontSize: 13,
             pointerEvents: "none",
@@ -491,9 +494,9 @@ export default function SpiciestMatchups() {
             style={{
               marginBottom: "1.1em",
               padding: "1.1rem 1.2rem",
-              border: "1px solid #e6e6e6",
+              border: `1px solid ${NIGHT_COLORS.border}`,
               borderRadius: 14,
-              background: "linear-gradient(180deg, #ffffff, #fdfdfd)",
+              background: `linear-gradient(180deg, ${NIGHT_COLORS.surfaceAlt}, ${NIGHT_COLORS.surface})`,
               boxShadow: "0 10px 24px rgba(0,0,0,0.06)",
             }}
           >
@@ -510,7 +513,7 @@ export default function SpiciestMatchups() {
                 <div style={{ fontWeight: 700, fontSize: "1.1rem" }}>
                   #{idx + 1} · Week {matchup.week}: {matchup.title}
                 </div>
-                <div style={{ color: "#4c4c4c", marginTop: 4 }}>
+                <div style={{ color: NIGHT_COLORS.mutedText, marginTop: 4 }}>
                   {matchup.description}
                 </div>
               </div>
@@ -525,18 +528,18 @@ export default function SpiciestMatchups() {
               >
                 <span
                   style={{
-                    background: "#fff2f2",
-                    color: "#c93945",
+                    background: "#3a1d25",
+                    color: NIGHT_COLORS.loss,
                     padding: "0.25rem 0.6rem",
                     borderRadius: 999,
                     fontWeight: 700,
                     fontSize: "0.95rem",
-                    border: "1px solid #ffd6d9",
+                    border: `1px solid ${NIGHT_COLORS.loss}`,
                   }}
                 >
                   Spice {matchup.score.toFixed(2)}
                 </span>
-                <span style={{ color: "#444", fontWeight: 600 }}>
+                <span style={{ color: NIGHT_COLORS.text, fontWeight: 600 }}>
                   Final: {matchup.finalScore}
                 </span>
               </div>
@@ -550,16 +553,16 @@ export default function SpiciestMatchups() {
                 marginBottom: "0.2rem",
               }}
             >
-              <div style={{ color: "#555" }}>
-                <div style={{ fontSize: "0.85rem", color: "#777" }}>
+              <div style={{ color: NIGHT_COLORS.mutedText }}>
+                <div style={{ fontSize: "0.85rem", color: NIGHT_COLORS.mutedText }}>
                   Lead changes
                 </div>
                 <div style={{ fontWeight: 700 }}>
                   {matchup.leadChanges} total · {matchup.lateLeadChanges} late
                 </div>
               </div>
-              <div style={{ color: "#555" }}>
-                <div style={{ fontSize: "0.85rem", color: "#777" }}>
+              <div style={{ color: NIGHT_COLORS.mutedText }}>
+                <div style={{ fontSize: "0.85rem", color: NIGHT_COLORS.mutedText }}>
                   Last projected flip
                 </div>
                 <div style={{ fontWeight: 700 }}>

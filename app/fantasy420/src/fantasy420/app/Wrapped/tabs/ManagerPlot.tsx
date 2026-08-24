@@ -8,19 +8,9 @@ import {
   YAxis,
 } from "recharts";
 import { Helpers, mapDict, selectedWrapped, selectedYear } from "..";
+import { NIGHT_CHART_COLORS, NIGHT_COLORS } from "../../theme";
 
-export const colors = Object.values({
-  Red: "#E53935",
-  Green: "#43A047",
-  Blue: "#1E88E5",
-  Black: "#000000",
-  Cyan: "#00ACC1",
-  Magenta: "#D81B60",
-  Orange: "#FB8C00",
-  Purple: "#8E24AA",
-  Lime: "#C0CA33",
-  Brown: "#6D4C41",
-});
+export const colors = [...NIGHT_CHART_COLORS];
 
 export default function ManagerPlot() {
   return <SubManagerPlot />;
@@ -219,8 +209,9 @@ function SubManagerPlot() {
                         return (
                           <div
                             style={{
-                              background: "white",
-                              border: "1px solid black",
+                              color: NIGHT_COLORS.text,
+                              background: NIGHT_COLORS.tooltip,
+                              border: `1px solid ${NIGHT_COLORS.border}`,
                               padding: "1em",
                               opacity: 0.8,
                             }}

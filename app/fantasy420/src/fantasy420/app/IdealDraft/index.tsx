@@ -223,6 +223,7 @@ export function SubIdealDraft(props: {
                         style={{
                           ...bubbleStyle,
                           backgroundColor: POSITION_COLORS[o.wp.position],
+                          color: "var(--night-position-text)",
                         }}
                       >
                         <div>

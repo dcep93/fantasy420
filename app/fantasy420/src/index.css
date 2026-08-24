@@ -1,10 +1,97 @@
+:root {
+  color-scheme: dark;
+  --night-page: #0b0f14;
+  --night-surface: #151b23;
+  --night-surface-alt: #1d2631;
+  --night-text: #f4f7fb;
+  --night-text-muted: #aeb8c5;
+  --night-border: #3b4756;
+  --night-link: #79c0ff;
+  --night-focus: #ff7bc3;
+  --night-input: #101720;
+  --night-chart: #10161e;
+  --night-grid: #334155;
+  --night-tooltip: #1b2430;
+  --night-position-text: #111827;
+  --night-win: #69db7c;
+  --night-loss: #ff7b86;
+}
+
+html {
+  min-height: 100%;
+  background: var(--night-page);
+}
+
 body {
+  min-height: 100vh;
   margin: 0;
+  color: var(--night-text);
+  background: var(--night-page);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+select,
+textarea {
+  color: var(--night-text);
+  background-color: var(--night-input);
+  border-color: var(--night-border);
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid var(--night-focus);
+  outline-offset: 2px;
+}
+
+a {
+  color: var(--night-link);
+}
+
+table {
+  border-color: var(--night-border);
+}
+
+th,
+td {
+  border-color: var(--night-border);
+}
+
+.recharts-cartesian-axis line,
+.recharts-cartesian-axis path {
+  stroke: var(--night-border);
+}
+
+.recharts-cartesian-axis-tick-value,
+.recharts-label,
+.recharts-text {
+  fill: var(--night-text-muted);
+}
+
+.recharts-cartesian-grid line {
+  stroke: var(--night-grid);
+}
+
+.recharts-legend-item-text {
+  color: var(--night-text) !important;
+}
+
+.recharts-default-tooltip {
+  color: var(--night-text) !important;
+  background-color: var(--night-tooltip) !important;
+  border-color: var(--night-border) !important;
+}
+
+.recharts-tooltip-cursor {
+  stroke: var(--night-text-muted);
 }
 
 code {

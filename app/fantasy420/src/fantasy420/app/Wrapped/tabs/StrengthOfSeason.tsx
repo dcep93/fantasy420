@@ -117,7 +117,7 @@ export default function StrengthOfSeason() {
           <div
             key={team.id}
             style={{
-              border: "2px solid black",
+              border: "2px solid var(--night-border)",
               borderRadius: "20px",
               margin: "20px",
               padding: "20px",
@@ -159,6 +159,10 @@ export default function StrengthOfSeason() {
                     key={obj.weekNum}
                     style={{
                       ...bubbleStyle,
+                      color:
+                        obj.scores === undefined
+                          ? undefined
+                          : "var(--night-position-text)",
                       backgroundColor:
                         obj.scores === undefined
                           ? undefined

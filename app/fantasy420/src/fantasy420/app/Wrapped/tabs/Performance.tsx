@@ -18,7 +18,10 @@ export default function Performance() {
               {matchups.map((matchup, i) => (
                 <div
                   key={i}
-                  style={{ ...bubbleStyle, backgroundColor: "grey" }}
+                  style={{
+                    ...bubbleStyle,
+                    backgroundColor: "var(--night-surface-alt)",
+                  }}
                 >
                   <div style={{ display: "flex", whiteSpace: "nowrap" }}>
                     {matchup

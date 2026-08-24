@@ -35,6 +35,7 @@ export default function DraftBoard() {
                     fontSize: "0.7em",
                     width: "10em",
                     height: "6em",
+                    color: "var(--night-position-text)",
                     backgroundColor: POSITION_COLORS[oo.p2.position],
                   }}
                 >

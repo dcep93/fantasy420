@@ -8,6 +8,7 @@ import {
   YAxis,
 } from "recharts";
 import { bubbleStyle, Helpers, Position, selectedWrapped } from "..";
+import { NIGHT_CHART_COLORS } from "../../theme";
 
 export default function PointsAgainst() {
   const [position, updatePosition] = useState(Position[Position.DST] as string);
@@ -83,7 +84,7 @@ export default function PointsAgainst() {
                         y: (1 - 1 * (1 - index / data.length)) * dims.height,
                       };
                 return (
-                  <text {...coords} fill="#8884d8">
+                  <text {...coords} fill={NIGHT_CHART_COLORS[7]}>
                     {props.value}
                   </text>
                 );

@@ -8,6 +8,7 @@ import {
 } from "recharts";
 import { clog, groupByF } from "..";
 import allWrapped from "../allWrapped";
+import { NIGHT_COLORS } from "../../theme";
 import { ScatterPointHitTarget } from "./ChartPointHitTarget";
 
 export default function Punts() {
@@ -115,7 +116,14 @@ export default function Punts() {
             <Tooltip
               content={(data) =>
                 !data.active ? null : (
-                  <pre style={{ backgroundColor: "white", padding: "5em" }}>
+                  <pre
+                    style={{
+                      color: NIGHT_COLORS.text,
+                      backgroundColor: NIGHT_COLORS.tooltip,
+                      border: `1px solid ${NIGHT_COLORS.border}`,
+                      padding: "5em",
+                    }}
+                  >
                     {data.payload![0].payload.label}
                   </pre>
                 )

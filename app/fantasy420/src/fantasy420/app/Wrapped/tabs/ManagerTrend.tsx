@@ -13,6 +13,7 @@ import {
 } from "recharts";
 import { bubbleStyle, selectedWrapped, selectedYear } from "..";
 import { FFTeamType, NFLPlayerType, WrappedType } from "../../FetchWrapped";
+import { NIGHT_CHART_COLORS, NIGHT_COLORS } from "../../theme";
 import allWrapped from "../allWrapped";
 import { ChartPointHitTarget } from "./ChartPointHitTarget";
 
@@ -97,8 +98,8 @@ function ResultDot({ cx, cy, payload }: ScoreDotProps) {
           cx={cx}
           cy={cy}
           r={5}
-          fill="#1E88E5"
-          stroke="#0D47A1"
+          fill={NIGHT_CHART_COLORS[2]}
+          stroke={NIGHT_CHART_COLORS[4]}
           strokeWidth={2}
         />
       </ChartPointHitTarget>
@@ -113,8 +114,8 @@ function ResultDot({ cx, cy, payload }: ScoreDotProps) {
           y={cy - 5}
           width={10}
           height={10}
-          fill="#fff"
-          stroke="#E53935"
+          fill={NIGHT_COLORS.chartCanvas}
+          stroke={NIGHT_CHART_COLORS[0]}
           strokeWidth={2}
           rx={1.5}
           ry={1.5}
@@ -124,7 +125,7 @@ function ResultDot({ cx, cy, payload }: ScoreDotProps) {
           y1={cy - 4}
           x2={cx + 4}
           y2={cy + 4}
-          stroke="#E53935"
+          stroke={NIGHT_CHART_COLORS[0]}
           strokeWidth={2}
         />
         <line
@@ -132,7 +133,7 @@ function ResultDot({ cx, cy, payload }: ScoreDotProps) {
           y1={cy - 4}
           x2={cx - 4}
           y2={cy + 4}
-          stroke="#E53935"
+          stroke={NIGHT_CHART_COLORS[0]}
           strokeWidth={2}
         />
       </ChartPointHitTarget>
@@ -145,8 +146,8 @@ function ResultDot({ cx, cy, payload }: ScoreDotProps) {
         cx={cx}
         cy={cy}
         r={5}
-        fill="#fff"
-        stroke="#1E88E5"
+        fill={NIGHT_COLORS.chartCanvas}
+        stroke={NIGHT_CHART_COLORS[2]}
         strokeWidth={2}
       />
     </ChartPointHitTarget>
@@ -333,9 +334,10 @@ export default function ManagerTrend() {
                       return (
                         <div
                           style={{
-                            backgroundColor: "#fff",
+                            color: NIGHT_COLORS.text,
+                            backgroundColor: NIGHT_COLORS.tooltip,
                             padding: "0.5em",
-                            border: "1px solid #ccc",
+                            border: `1px solid ${NIGHT_COLORS.border}`,
                             borderRadius: "0.5em",
                           }}
                         >
@@ -373,7 +375,7 @@ export default function ManagerTrend() {
                     type="monotone"
                     dataKey="score"
                     name="Started score"
-                    stroke="#1E88E5"
+                    stroke={NIGHT_CHART_COLORS[2]}
                     strokeWidth={2}
                     dot={ResultDot}
                   />
@@ -381,7 +383,7 @@ export default function ManagerTrend() {
                     type="monotone"
                     dataKey="median"
                     name="Median"
-                    stroke="#757575"
+                    stroke={NIGHT_COLORS.mutedText}
                     strokeDasharray="5 5"
                     strokeWidth={2}
                     dot={false}
@@ -390,7 +392,7 @@ export default function ManagerTrend() {
                     type="monotone"
                     dataKey="topScore"
                     name="Top score"
-                    stroke="#43A047"
+                    stroke={NIGHT_CHART_COLORS[1]}
                     strokeDasharray="4 4"
                     strokeWidth={2}
                     dot={false}
@@ -399,7 +401,7 @@ export default function ManagerTrend() {
                     type="monotone"
                     dataKey="bottomScore"
                     name="Bottom score"
-                    stroke="#E53935"
+                    stroke={NIGHT_CHART_COLORS[0]}
                     strokeDasharray="2 6"
                     strokeWidth={2}
                     dot={false}

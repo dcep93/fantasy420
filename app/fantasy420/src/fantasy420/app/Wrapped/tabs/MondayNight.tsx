@@ -166,7 +166,12 @@ export default function MondayNight() {
                 Week {showdown.weekNum}: {showdown.teams[0].name} vs {" "}
                 {showdown.teams[1].name}
               </strong>
-              <div style={{ fontSize: "0.85em", color: "#444" }}>
+              <div
+                style={{
+                  fontSize: "0.85em",
+                  color: "var(--night-text-muted)",
+                }}
+              >
                 Spice score: {showdown.spiceScore} / 999
               </div>
             </div>
@@ -208,7 +213,12 @@ export default function MondayNight() {
                 style={{ flex: "1 1 250px", minWidth: 220 }}
               >
                 <div style={{ fontWeight: 600 }}>{team.name}</div>
-                <div style={{ fontSize: "0.9em", color: "#333" }}>
+                <div
+                  style={{
+                    fontSize: "0.9em",
+                    color: "var(--night-text-muted)",
+                  }}
+                >
                   Monday starters: {team.mondayPlayers.length || "none"} ·
                   {" "}
                   {team.mondayActual.toFixed(2)} pts scored vs {" "}

@@ -71,7 +71,13 @@ export default function Wrapped() {
   const tabHeadings = useMemo(
     () => (
       <div
-        style={{ display: "flex", backgroundColor: "grey", overflow: "scroll" }}
+        style={{
+          display: "flex",
+          color: "var(--night-text)",
+          backgroundColor: "var(--night-surface-alt)",
+          borderBottom: "1px solid var(--night-border)",
+          overflow: "scroll",
+        }}
         key="keys"
       >
         {Object.keys(toRender).map((key, i) => (
@@ -104,7 +110,14 @@ export default function Wrapped() {
         .catch((err) => console.error(err));
     }, [yearKey]);
     return (
-      <div style={{ overflow: "scroll" }}>
+      <div
+        style={{
+          minHeight: "100vh",
+          color: "var(--night-text)",
+          background: "var(--night-page)",
+          overflow: "scroll",
+        }}
+      >
         <div>
           year:{" "}
           <select
@@ -130,7 +143,14 @@ export default function Wrapped() {
 
   const Tab = toRender[toRenderKey];
   return (
-    <div style={{ fontFamily: "'Courier New', Courier, monospace" }}>
+    <div
+      style={{
+        minHeight: "100vh",
+        color: "var(--night-text)",
+        background: "var(--night-page)",
+        fontFamily: "'Courier New', Courier, monospace",
+      }}
+    >
       {tabHeadings}
       <B />
     </div>
@@ -178,10 +198,11 @@ export function mapDict<T, U>(
 }
 
 export const bubbleStyle = {
-  backgroundColor: "white",
+  color: "var(--night-text)",
+  backgroundColor: "var(--night-surface)",
   display: "inline-block",
   borderRadius: "1em",
-  border: "2px solid black",
+  border: "2px solid var(--night-border)",
   padding: "0.7em",
   margin: "0.5em",
 };

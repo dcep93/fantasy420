@@ -38,10 +38,11 @@ export { POSITION_COLORS } from "./positionColors";
 export const isDev = import.meta.env.DEV;
 
 export const bubbleStyle = {
-  backgroundColor: "white",
+  color: "var(--night-text)",
+  backgroundColor: "var(--night-surface)",
   display: "inline-block",
   borderRadius: "1em",
-  border: "2px solid black",
+  border: "2px solid var(--night-border)",
   padding: "0.7em",
   margin: "0.5em",
 };
@@ -349,7 +350,7 @@ function SubDraft() {
                 <span
                   style={{
                     cursor: "pointer",
-                    color: "blue",
+                    color: "var(--night-link)",
                     textDecoration: "underline",
                   }}
                   onClick={() => update(s)}
@@ -513,7 +514,9 @@ function SubDraft() {
                     style={{
                       ...bubbleStyle,
                       backgroundColor:
-                        positionFilter === p ? "grey" : undefined,
+                        positionFilter === p
+                          ? "var(--night-surface-alt)"
+                          : undefined,
                     }}
                     onClick={() =>
                       updatePositionFilter(positionFilter === p ? "" : p)
@@ -529,7 +532,9 @@ function SubDraft() {
                 role="button"
                 style={{
                   ...bubbleStyle,
-                  backgroundColor: rookiesOnly ? "grey" : undefined,
+                  backgroundColor: rookiesOnly
+                    ? "var(--night-surface-alt)"
+                    : undefined,
                   cursor: "pointer",
                 }}
                 onClick={() => updateRookiesOnly(!rookiesOnly)}
@@ -555,7 +560,9 @@ function SubDraft() {
                     style={{
                       ...bubbleStyle,
                       backgroundColor:
-                        byeWeekFilter === week ? "grey" : undefined,
+                        byeWeekFilter === week
+                          ? "var(--night-surface-alt)"
+                          : undefined,
                     }}
                     onClick={() =>
                       updateByeWeekFilter(byeWeekFilter === week ? -1 : week)
@@ -624,7 +631,9 @@ function SubDraft() {
                       title={"index/posIndex/bye/byePick"}
                       style={{
                         backgroundColor:
-                          v.byeWeek === byeWeekFilter ? "grey" : undefined,
+                          v.byeWeek === byeWeekFilter
+                            ? "var(--night-surface-alt)"
+                            : undefined,
                       }}
                     >
                       {v.i + 1}/{v.posRank + 1}/{v.byeWeek}/
@@ -668,11 +677,16 @@ function SubDraft() {
                         key={i}
                         style={{
                           padding: "0 0.5em",
+                          color:
+                            t.value.toString() === "" ||
+                            t.value.toString() === "NaN"
+                              ? undefined
+                              : "var(--night-position-text)",
                           backgroundColor:
                             t.value.toString() === ""
                               ? "unset"
                               : t.value.toString() === "NaN"
-                              ? "black"
+                              ? "var(--night-input)"
                               : POSITION_COLORS[v.player.position],
                         }}
                       >

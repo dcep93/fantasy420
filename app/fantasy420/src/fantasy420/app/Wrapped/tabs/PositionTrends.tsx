@@ -8,11 +8,12 @@ import {
 } from "recharts";
 import { bubbleStyle, groupByF } from "..";
 import { playerStatsData } from "./PlayerStats";
+import { NIGHT_CHART_COLORS } from "../../theme";
 
 const POSITION_COLORS: Record<string, string> = {
-  QB: "red",
-  WR: "green",
-  RB: "blue",
+  QB: NIGHT_CHART_COLORS[0],
+  WR: NIGHT_CHART_COLORS[1],
+  RB: NIGHT_CHART_COLORS[2],
 };
 
 export default function PositionTrends() {

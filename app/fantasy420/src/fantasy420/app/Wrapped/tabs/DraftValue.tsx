@@ -33,7 +33,7 @@ export default function DraftValue() {
           <div
             key={i}
             style={{
-              border: "2px solid black",
+              border: "2px solid var(--night-border)",
               borderRadius: "5px",
               margin: "10px",
               padding: "10px",
@@ -77,7 +77,9 @@ export default function DraftValue() {
                     key={j}
                     style={{
                       borderTop:
-                        j === 0 || j === numRounds ? "2px solid black" : "",
+                        j === 0 || j === numRounds
+                          ? "2px solid var(--night-border)"
+                          : "",
                     }}
                   >
                     <td>

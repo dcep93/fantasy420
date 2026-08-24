@@ -9,6 +9,7 @@ import {
   YAxis,
 } from "recharts";
 import { FFTeamType } from "../../../FetchWrapped";
+import { NIGHT_COLORS } from "../../../theme";
 import { ChartPointHitTarget } from "../ChartPointHitTarget";
 import { colors } from "../ManagerPlot";
 
@@ -19,7 +20,7 @@ type ScorePoint = {
   owner: FFTeamType | undefined;
 };
 
-const DEFAULT_COLOR = "#666666";
+const DEFAULT_COLOR = NIGHT_COLORS.mutedText;
 
 const hashString = (value: string) => {
   let hash = 0;
@@ -101,7 +102,7 @@ const Marker = (props: {
         cx={cx}
         cy={cy}
         r={size - 2}
-        fill="white"
+        fill={NIGHT_COLORS.chartCanvas}
         stroke={color}
         strokeWidth={strokeWidth}
       />
@@ -146,7 +147,7 @@ export default function Chart(props: {
           <Line
             type="linear"
             dataKey="score"
-            stroke="#444"
+            stroke={NIGHT_COLORS.mutedText}
             strokeWidth={2}
             dot={false}
             connectNulls={false}
