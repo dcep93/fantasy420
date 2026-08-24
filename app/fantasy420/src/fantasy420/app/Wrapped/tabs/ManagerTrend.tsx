@@ -412,9 +412,17 @@ export default function ManagerTrend() {
           </div>
         );
       })}
-      <div style={{ fontSize: "small" }}>
-        Historical scaling uses past boom/bust ratios to center around 0.5 with
-        a league-wide spread near 0.25. Year: {selectedYear}
+      <div style={{ maxWidth: "75ch", lineHeight: 1.5 }}>
+        Each card tracks one manager&apos;s started score across the selected
+        season. The blue line is that team; the dashed gray line is the weekly
+        league median, while green and red mark the week&apos;s highest and
+        lowest scores. A blue circle means the opponent was beaten; a red ×
+        means a loss. Tap or hover a point to see the opponent and league
+        extremes. “Beat median” counts above-median weeks. Boom/bust compares
+        the standard deviation of weekly scores with the team median, then
+        normalizes that ratio against every recorded season: 0.5 is
+        historically typical, higher is more volatile, and lower is steadier.
+        It measures consistency, not overall quality. Selected season: {selectedYear}.
       </div>
     </div>
   );

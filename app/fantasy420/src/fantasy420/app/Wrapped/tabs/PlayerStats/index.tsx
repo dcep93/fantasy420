@@ -3,6 +3,7 @@ import { currentYear } from "../..";
 import allWrapped from "../../allWrapped";
 import Chart from "./Chart";
 import rawData from "./data.json";
+import { getPointsPerGame } from "./pointsPerGame";
 
 export const playerStatsData = rawData as {
   position: string;
@@ -86,6 +87,7 @@ export default function PlayerStats() {
                   .map((o) => ({
                     owner: o.owner,
                     ...o.y,
+                    ...getPointsPerGame(o.y.scores),
                     ...positionRanks[o.y.year]?.[d.position]?.[d.name],
                     scores: o.y?.scores.map((score, i) =>
                       (({ owner }) => ({
@@ -154,7 +156,9 @@ function calculatePositionRanks(data: typeof playerStatsData): PositionRanks {
         );
 
       const avgSorted = [...players].sort(
-        (a, b) => calculateAverage(b.scores) - calculateAverage(a.scores)
+        (a, b) =>
+          getPointsPerGame(b.scores).pointsPerGame -
+          getPointsPerGame(a.scores).pointsPerGame
       );
       const totalSorted = [...players].sort((a, b) => b.total - a.total);
 
@@ -177,11 +181,4 @@ function calculatePositionRanks(data: typeof playerStatsData): PositionRanks {
   });
 
   return ranks;
-}
-
-function calculateAverage(scores: (number | null)[]) {
-  const values = scores.filter((s): s is number => s !== null);
-  return values.length
-    ? values.reduce((sum, value) => sum + value, 0) / values.length
-    : 0;
 }

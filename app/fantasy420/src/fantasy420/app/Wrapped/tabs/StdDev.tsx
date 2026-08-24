@@ -47,10 +47,20 @@ export default function StdDev() {
     }))
     .map((o) => ({ stddev: Math.pow(o.v, 0.5), ...o }));
   return (
-    <div style={{ display: "flex" }}>
-      {data.map((d) => (
-        <pre>{JSON.stringify(d, null, 2)}</pre>
-      ))}
+    <div>
+      <p style={{ maxWidth: "75ch", lineHeight: 1.5 }}>
+        This table measures how far actual player scores stray from projections
+        across completed seasons. Positive cutoffs include projections above
+        that number; negative cutoffs include projections below the
+        cutoff&apos;s absolute value. Diff is actual minus projected points,
+        mean shows directional bias, stddev shows typical spread, and count is
+        the sample size.
+      </p>
+      <div style={{ display: "flex" }}>
+        {data.map((d) => (
+          <pre key={d.cutoff}>{JSON.stringify(d, null, 2)}</pre>
+        ))}
+      </div>
     </div>
   );
 }
