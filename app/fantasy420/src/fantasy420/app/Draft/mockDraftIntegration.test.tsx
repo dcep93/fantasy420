@@ -22,13 +22,18 @@ test("loads, saves, and clears personal scores without drafting the row", () => 
   );
   const rendered = render(<Draft />);
 
-  expect(screen.getByRole("columnheader", { name: "My score" })).toBeInTheDocument();
+  const scoreHeader = screen.getByRole("columnheader", { name: "My score" });
+  expect(scoreHeader).toBeInTheDocument();
+  expect(scoreHeader).toBe(
+    rendered.container.querySelector("thead th:first-child")
+  );
   expect(screen.getByLabelText("My score for Jahmyr Gibbs")).toHaveValue(7);
 
   const input = rendered.container.querySelector<HTMLInputElement>(
     'tbody input[aria-label^="My score for "]'
   )!;
   const row = input.closest("tr")!;
+  expect(input.closest("td")).toBe(row.querySelector("td:first-child"));
   expect(row).toHaveAttribute("data-drafted", "false");
 
   fireEvent.click(input);
@@ -219,7 +224,10 @@ test("hides kickers only while mock-draft mode is active", () => {
   ).not.toBeInTheDocument();
   expect(
     Array.from(active.container.querySelectorAll("tbody tr")).some(
-      (row) => row.children[2]?.textContent?.startsWith("K ")
+      (row) =>
+        Array.from(row.children).some((cell) =>
+          cell.textContent?.startsWith("K ")
+        )
     )
   ).toBe(false);
   active.unmount();
@@ -231,7 +239,10 @@ test("hides kickers only while mock-draft mode is active", () => {
   ).toBeInTheDocument();
   expect(
     Array.from(normal.container.querySelectorAll("tbody tr")).some(
-      (row) => row.children[2]?.textContent?.startsWith("K ")
+      (row) =>
+        Array.from(row.children).some((cell) =>
+          cell.textContent?.startsWith("K ")
+        )
     )
   ).toBe(true);
   normal.unmount();
@@ -318,11 +329,12 @@ test("drafts an existing table row and synchronizes ordered ids to the hash", ()
   );
   expect(draftedRow).not.toBeNull();
   const draftedCells = draftedRow!.querySelectorAll("td");
-  expect(getComputedStyle(draftedCells[0]).opacity).toBe("1");
-  expect(getComputedStyle(draftedCells[0]).backgroundColor).toBe(
+  expect(getComputedStyle(draftedCells[0]).opacity).toBe("0.5");
+  expect(getComputedStyle(draftedCells[1]).opacity).toBe("1");
+  expect(getComputedStyle(draftedCells[1]).backgroundColor).toBe(
     "rgb(33, 21, 14)"
   );
-  expect(getComputedStyle(draftedCells[1]).opacity).toBe("0.5");
+  expect(getComputedStyle(draftedCells[2]).opacity).toBe("0.5");
   rendered.unmount();
 });
 

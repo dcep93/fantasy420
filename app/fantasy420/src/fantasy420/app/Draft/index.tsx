@@ -635,7 +635,6 @@ function SubDraft() {
           <table>
             <thead>
               <tr>
-                <th colSpan={3 + Object.keys(results).length} />
                 <th
                   className="personal-score-header"
                   title="Double-click to sort by absolute score"
@@ -647,6 +646,7 @@ function SubDraft() {
                 >
                   My score
                 </th>
+                <th colSpan={3 + Object.keys(results).length} />
               </tr>
             </thead>
             <tbody>
@@ -700,7 +700,22 @@ function SubDraft() {
                       );
                     }}
                   >
+                    <td className="personal-score-cell">
+                      <input
+                        className="personal-score-input"
+                        type="number"
+                        step="1"
+                        aria-label={`My score for ${v.player.name}`}
+                        value={personalScores[v.playerId] ?? ""}
+                        onClick={(event) => event.stopPropagation()}
+                        onDoubleClick={(event) => event.stopPropagation()}
+                        onChange={(event) =>
+                          updatePersonalScore(v.playerId, event.target.value)
+                        }
+                      />
+                    </td>
                     <td
+                      className="draft-player-meta-cell"
                       title={"index/posIndex/bye/byePick"}
                       style={{
                         backgroundColor:
@@ -766,20 +781,6 @@ function SubDraft() {
                         {t.value}
                       </td>
                     ))}
-                    <td className="personal-score-cell">
-                      <input
-                        className="personal-score-input"
-                        type="number"
-                        step="1"
-                        aria-label={`My score for ${v.player.name}`}
-                        value={personalScores[v.playerId] ?? ""}
-                        onClick={(event) => event.stopPropagation()}
-                        onDoubleClick={(event) => event.stopPropagation()}
-                        onChange={(event) =>
-                          updatePersonalScore(v.playerId, event.target.value)
-                        }
-                      />
-                    </td>
                   </tr>
                 ))}
             </tbody>

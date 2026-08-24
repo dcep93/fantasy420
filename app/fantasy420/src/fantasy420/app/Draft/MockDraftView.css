@@ -143,11 +143,11 @@
   overflow: auto;
 }
 
-.draft-player-drafted > td:not(:first-child) {
+.draft-player-drafted > td:not(.draft-player-meta-cell) {
   opacity: 0.5;
 }
 
-.draft-player-drafted > td:first-child {
+.draft-player-drafted > .draft-player-meta-cell {
   color: #fff7ed;
   background: #21150e !important;
   opacity: 1;
