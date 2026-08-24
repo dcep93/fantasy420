@@ -338,6 +338,13 @@ function chooseOpponentPlayer(
       getPickOwner(index, state.settings.teamCount).draftPosition ===
       draftPosition
   );
+  const candidatePool = getMockDraftOpponentCandidatePool(
+    teamPlayerIds,
+    available,
+    playersById,
+    state.settings.roster
+  );
+  if (candidatePool.length === 0) return undefined;
   const historyKey = state.picks.join(",");
   const round = getPickOwner(
     state.picks.length,
@@ -348,7 +355,7 @@ function chooseOpponentPlayer(
     state.settings.craziness
   );
 
-  return available
+  return candidatePool
     .map((playerId) => {
       const { saturation, byeMatches } = getMockDraftChoiceFeatures(
         teamPlayerIds,
@@ -379,6 +386,97 @@ function chooseOpponentPlayer(
     })
     .sort((a, b) => a.score - b.score || a.playerId.localeCompare(b.playerId))[0]
     ?.playerId;
+}
+
+export function getMockDraftOpponentCandidatePool(
+  teamPlayerIds: string[],
+  availablePlayerIds: string[],
+  playersById: Record<string, MockDraftPlayer>,
+  roster: RosterSettings
+): string[] {
+  const nonTeStarterCount =
+    roster.QB +
+    roster.RB +
+    roster.WR +
+    roster.FLEX +
+    roster.SUPERFLEX +
+    roster.DST;
+  const filledNonTeStarters = getMaximumFilledStarterSlots(
+    teamPlayerIds,
+    playersById,
+    roster,
+    false
+  );
+  if (filledNonTeStarters >= nonTeStarterCount) {
+    return availablePlayerIds;
+  }
+
+  const filledStarters = getMaximumFilledStarterSlots(
+    teamPlayerIds,
+    playersById,
+    roster
+  );
+  return availablePlayerIds.filter(
+    (candidatePlayerId) =>
+      getMaximumFilledStarterSlots(
+        teamPlayerIds.concat(candidatePlayerId),
+        playersById,
+        roster
+      ) > filledStarters
+  );
+}
+
+export function getMaximumFilledStarterSlots(
+  teamPlayerIds: string[],
+  playersById: Record<string, MockDraftPlayer>,
+  roster: RosterSettings,
+  includeDedicatedTe = true
+): number {
+  const playerCounts: Record<DraftPosition, number> = {
+    QB: 0,
+    RB: 0,
+    WR: 0,
+    TE: 0,
+    DST: 0,
+    K: 0,
+  };
+  teamPlayerIds.forEach((playerId) => {
+    const player = playersById[playerId];
+    if (!isMockDraftPlayerEligible(player)) return;
+    playerCounts[normalizePosition(player.position)] += 1;
+  });
+
+  const dedicatedSlots: Record<DraftPosition, number> = {
+    QB: roster.QB,
+    RB: roster.RB,
+    WR: roster.WR,
+    TE: includeDedicatedTe ? roster.TE : 0,
+    DST: roster.DST,
+    K: 0,
+  };
+  let filled = 0;
+  (["QB", "RB", "WR", "TE", "DST"] as DraftPosition[]).forEach(
+    (position) => {
+      const dedicatedFilled = Math.min(
+        playerCounts[position],
+        dedicatedSlots[position]
+      );
+      playerCounts[position] -= dedicatedFilled;
+      filled += dedicatedFilled;
+    }
+  );
+
+  const superflexQbs = Math.min(playerCounts.QB, roster.SUPERFLEX);
+  filled += superflexQbs;
+  const openSuperflex = roster.SUPERFLEX - superflexQbs;
+  const remainingFlexPlayers = playerCounts.RB + playerCounts.WR + playerCounts.TE;
+  const flexFilled = Math.min(remainingFlexPlayers, roster.FLEX);
+  filled += flexFilled;
+  const remainingAfterFlex = remainingFlexPlayers - flexFilled;
+  const superflexSkillPlayers = Math.min(remainingAfterFlex, openSuperflex);
+  filled += superflexSkillPlayers;
+
+  return filled;
 }
 
 export function getMockDraftChoiceFeatures(

@@ -4,6 +4,7 @@ import {
   getDraftLength,
   getDraftView,
   getHistoricalNudgeAvailability,
+  getMockDraftOpponentCandidatePool,
   getMockDraftTemperature,
   getPickLabel,
   getPickOwner,
@@ -41,6 +42,40 @@ const players = Object.fromEntries(
   ])
 );
 const ranking = Object.keys(players);
+
+const lineupPlayers = Object.fromEntries(
+  [
+    ["qb-1", "QB"],
+    ["qb-2", "QB"],
+    ["qb-3", "QB"],
+    ["qb-4", "QB"],
+    ["rb-1", "RB"],
+    ["rb-2", "RB"],
+    ["rb-3", "RB"],
+    ["wr-1", "WR"],
+    ["wr-2", "WR"],
+    ["wr-3", "WR"],
+    ["wr-4", "WR"],
+    ["te-1", "TE"],
+    ["te-2", "TE"],
+    ["te-3", "TE"],
+    ["dst-1", "DST"],
+  ].map(([id, position]) => [
+    id,
+    { id, position, byeWeek: 8 } as MockDraftPlayer,
+  ])
+);
+
+function rosterWith(
+  slots: Partial<typeof DEFAULT_MOCK_DRAFT_SETTINGS.roster>
+) {
+  return {
+    ...Object.fromEntries(
+      Object.keys(DEFAULT_MOCK_DRAFT_SETTINGS.roster).map((slot) => [slot, 0])
+    ),
+    ...slots,
+  } as typeof DEFAULT_MOCK_DRAFT_SETTINGS.roster;
+}
 
 test("uses the requested defaults and a fourteen-round draft", () => {
   expect(DEFAULT_MOCK_DRAFT_SETTINGS).toMatchObject({
@@ -261,24 +296,175 @@ test("position risk discounts a saturated position", () => {
     seed: "position",
     craziness: 0.0001,
     byeRisk: 0.0001,
-    roster: { QB: 1, RB: 1, WR: 0, TE: 0, FLEX: 0, SUPERFLEX: 0, DST: 0, K: 0, BENCH: 0 },
+    roster: { QB: 1, RB: 1, WR: 0, TE: 0, FLEX: 0, SUPERFLEX: 0, DST: 0, K: 0, BENCH: 3 },
   };
   const positionRanking = ["1", "5", "11", "2", "6", "12", "20"];
-  const low = makeUserPick(
-    { settings: { ...base, positionRisk: 0.0001 }, picks: [] },
-    "20",
+  const picks = ["20", "1", "2", "8", "14", "5"];
+  const low = advanceToUserTurn(
+    { settings: { ...base, positionRisk: 0.0001 }, picks },
     players,
     positionRanking
   );
-  const high = makeUserPick(
-    { settings: { ...base, positionRisk: 10000 }, picks: [] },
-    "20",
+  const high = advanceToUserTurn(
+    { settings: { ...base, positionRisk: 10000 }, picks },
     players,
     positionRanking
   );
 
-  expect(players[low.picks[2]].position).toBe("QB");
-  expect(players[high.picks[2]].position).toBe("RB");
+  expect(players[low.picks[6]].position).toBe("QB");
+  expect(players[high.picks[6]].position).toBe("RB");
+});
+
+test.each([
+  {
+    label: "second RB",
+    roster: rosterWith({ QB: 1, RB: 2 }),
+    team: ["qb-1", "rb-1"],
+    available: ["qb-2", "wr-1", "rb-2"],
+    expected: ["rb-2"],
+  },
+  {
+    label: "second WR",
+    roster: rosterWith({ QB: 1, WR: 2 }),
+    team: ["qb-1", "wr-1"],
+    available: ["qb-2", "rb-1", "wr-2"],
+    expected: ["wr-2"],
+  },
+  {
+    label: "QB",
+    roster: rosterWith({ QB: 1, RB: 1 }),
+    team: ["rb-1"],
+    available: ["rb-2", "wr-1", "qb-1"],
+    expected: ["qb-1"],
+  },
+  {
+    label: "DST",
+    roster: rosterWith({ QB: 1, DST: 1 }),
+    team: ["qb-1"],
+    available: ["qb-2", "wr-1", "dst-1"],
+    expected: ["dst-1"],
+  },
+])("only keeps candidates that can fill the empty $label slot", ({
+  roster,
+  team,
+  available,
+  expected,
+}) => {
+  expect(
+    getMockDraftOpponentCandidatePool(
+      team,
+      available,
+      lineupPlayers,
+      roster
+    )
+  ).toEqual(expected);
+});
+
+test("reassigns FLEX and SUPERFLEX optimally before identifying bench picks", () => {
+  const roster = rosterWith({ QB: 1, RB: 2, FLEX: 1, SUPERFLEX: 1 });
+
+  expect(
+    getMockDraftOpponentCandidatePool(
+      ["qb-1", "qb-2", "rb-1", "rb-2"],
+      ["qb-3", "rb-3", "wr-1", "te-1"],
+      lineupPlayers,
+      roster
+    )
+  ).toEqual(["rb-3", "wr-1", "te-1"]);
+});
+
+test("the reported three-QB two-TE roster can only add an RB", () => {
+  expect(
+    getMockDraftOpponentCandidatePool(
+      [
+        "qb-1",
+        "qb-2",
+        "qb-3",
+        "rb-1",
+        "wr-1",
+        "wr-2",
+        "wr-3",
+        "te-1",
+        "te-2",
+      ],
+      ["qb-4", "rb-2", "rb-3", "wr-4", "te-3"],
+      lineupPlayers,
+      DEFAULT_MOCK_DRAFT_SETTINGS.roster
+    )
+  ).toEqual(["rb-2", "rb-3"]);
+});
+
+test("allows bench depth when dedicated TE is the only empty starter slot", () => {
+  const roster = rosterWith({ QB: 1, RB: 1, TE: 1, BENCH: 2 });
+  const available = ["qb-2", "rb-2", "wr-1", "te-1"];
+
+  expect(
+    getMockDraftOpponentCandidatePool(
+      ["qb-1", "rb-1"],
+      available,
+      lineupPlayers,
+      roster
+    )
+  ).toEqual(available);
+});
+
+test("opponent scoring cannot select bench depth while RB2 is empty", () => {
+  const settings = {
+    ...DEFAULT_MOCK_DRAFT_SETTINGS,
+    teamCount: 2,
+    draftPosition: 2,
+    seed: "fill-rb-before-bench",
+    craziness: 0.0001,
+    positionRisk: 0.0001,
+    byeRisk: 0.0001,
+    roster: rosterWith({ QB: 1, RB: 2, BENCH: 2 }),
+  };
+  const ranked = ["qb-1", "qb-2", "wr-1", "rb-1", "rb-2", "te-1"];
+  const state = {
+    settings,
+    picks: ["qb-1", "wr-1", "te-1"],
+  };
+
+  const advanced = advanceToUserTurn(state, lineupPlayers, ranked);
+
+  expect(advanced.picks[3]).toBe("rb-1");
+});
+
+test("historical replay applies the starter-slot rule to regenerated opponents", () => {
+  const settings = {
+    ...DEFAULT_MOCK_DRAFT_SETTINGS,
+    teamCount: 2,
+    draftPosition: 1,
+    seed: "replay-fills-rb",
+    craziness: 0.0001,
+    positionRisk: 0.0001,
+    byeRisk: 0.0001,
+    roster: rosterWith({ QB: 1, RB: 1, BENCH: 2 }),
+  };
+  const ranked = [
+    "te-1",
+    "qb-1",
+    "qb-2",
+    "rb-3",
+    "wr-1",
+    "wr-2",
+    "rb-1",
+  ];
+  const state = {
+    settings,
+    picks: ["te-1", "qb-1", "qb-2", "wr-1", "wr-2", "rb-1"],
+  };
+
+  const changed = nudgeHistoricalPick(
+    state,
+    3,
+    "better",
+    lineupPlayers,
+    ranked
+  );
+
+  expect(changed.picks[3]).toBe("rb-3");
+  expect(changed.picks[5]).toBe("rb-1");
 });
 
 test("historical baseline does not invent unsupported bye-week avoidance", () => {
@@ -425,9 +611,9 @@ test("historical craziness stays tight early and expands in later rounds without
   );
   const reachRanking = Object.keys(reachPlayers);
   const fifteenRounds = {
-    QB: 1,
+    QB: 0,
     RB: 0,
-    WR: 0,
+    WR: 1,
     TE: 0,
     FLEX: 0,
     SUPERFLEX: 0,
