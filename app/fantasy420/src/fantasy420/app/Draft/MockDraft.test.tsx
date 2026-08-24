@@ -202,6 +202,11 @@ test("renders derived headshots, rookie marks, fallback, and nudge controls", ()
     "mock-draft-player-name",
     "mock-draft-player-detail",
   ]);
+  const detail = gibbsBubble.querySelector(".mock-draft-player-detail")!;
+  expect(Array.from(detail.children).map((child) => child.textContent)).toEqual([
+    "RB",
+    "bye 8",
+  ]);
 
   fireEvent.click(screen.getByLabelText("make pick 1.01 worse"));
   expect(onNudge).toHaveBeenCalledWith(0, "worse");
@@ -482,6 +487,7 @@ test("keeps bright bubbles and rank controls readable", () => {
   expect(rankRule).toMatch(/color:\s*#fff7ed/);
   expect(playerTopRule).toMatch(/display:\s*grid/);
   expect(playerTopRule).toMatch(/grid-template-columns:/);
+  expect(detailRule).toMatch(/display:\s*grid/);
   expect(detailRule).toMatch(/color:\s*#17100d/);
   expect(detailRule).toMatch(/font-weight:\s*600/);
 });

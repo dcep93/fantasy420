@@ -522,7 +522,10 @@ function PickBubble(props: {
             {props.player.rookie ? "*" : ""}
           </div>
           <div className="mock-draft-player-detail">
-            <b>{position}</b> · bye {props.player.byeWeek}
+            <b className="mock-draft-player-position">{position}</b>
+            <span className="mock-draft-player-bye">
+              bye {props.player.byeWeek}
+            </span>
           </div>
         </div>
       </div>
