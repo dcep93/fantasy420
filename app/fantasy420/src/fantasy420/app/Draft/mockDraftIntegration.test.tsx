@@ -132,6 +132,49 @@ test("keeps the reported rank-forty-one seed disciplined in round one", () => {
   rendered.unmount();
 });
 
+test("keeps opponent picks on the raw composite when My score changes", () => {
+  function startDraft(): string[] {
+    fireEvent.change(screen.getByLabelText("draft position"), {
+      target: { value: "2" },
+    });
+    fireEvent.change(screen.getByLabelText("number of teams"), {
+      target: { value: "2" },
+    });
+    fireEvent.change(screen.getByLabelText("craziness"), {
+      target: { value: "0.000001" },
+    });
+    fireEvent.change(screen.getByLabelText("seed"), {
+      target: { value: "raw-composite-opponents" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: "mock draft" }));
+    return decodeMockDraftHash(window.location.hash)!.picks;
+  }
+
+  window.history.replaceState(null, "", "/draft");
+  const baseline = render(<Draft />);
+  const baselinePicks = startDraft();
+  expect(baselinePicks).toHaveLength(1);
+  baseline.unmount();
+
+  window.history.replaceState(null, "", "/draft");
+  const adjusted = render(<Draft />);
+  const originalFirstInput = adjusted.container.querySelector<HTMLInputElement>(
+    'tbody tr:first-child input[aria-label^="My score for "]'
+  )!;
+  const originalFirstLabel = originalFirstInput.getAttribute("aria-label");
+  fireEvent.change(originalFirstInput, { target: { value: "-100000" } });
+  expect(
+    adjusted.container
+      .querySelector<HTMLInputElement>(
+        'tbody tr:first-child input[aria-label^="My score for "]'
+      )
+      ?.getAttribute("aria-label")
+  ).not.toBe(originalFirstLabel);
+
+  expect(startDraft()).toEqual(baselinePicks);
+  adjusted.unmount();
+});
+
 test("rejects restored mock drafts containing kicker picks", async () => {
   window.history.replaceState(
     null,

@@ -186,7 +186,7 @@ function SubDraft() {
     Object.values(selectedWrapped().nflPlayers).map((p) => [p.name, p])
   );
 
-  const { rankings: results } = useMemo(
+  const { rankings: results, rawComposite } = useMemo(
     () => getResults(personalScores),
     [draftYear, personalScores]
   );
@@ -230,16 +230,16 @@ function SubDraft() {
       return next;
     });
   }
-  const orderedRanking = useMemo(
+  const mockDraftRanking = useMemo(
     () =>
-      Object.entries(results[source])
+      Object.entries(rawComposite)
         .filter(
           ([playerId, value]) =>
             value !== undefined && wrapped.nflPlayers[playerId] !== undefined
         )
         .sort((a, b) => a[1] - b[1] || a[0].localeCompare(b[0]))
         .map(([playerId]) => playerId),
-    [results, source, wrapped]
+    [rawComposite, wrapped]
   );
   const mockPlayersById = useMemo(
     () =>
@@ -313,7 +313,7 @@ function SubDraft() {
         pickIndex,
         direction,
         mockPlayersById,
-        orderedRanking
+        mockDraftRanking
       )
     );
   }
@@ -380,7 +380,7 @@ function SubDraft() {
             advanceToUserTurn(
               { settings, picks: [] },
               mockPlayersById,
-              orderedRanking
+              mockDraftRanking
             )
           )
         }
@@ -389,7 +389,7 @@ function SubDraft() {
         <MockDraftPanel
           state={mockDraft}
           playersById={mockPlayersById}
-          orderedRanking={orderedRanking}
+          orderedRanking={mockDraftRanking}
           onNudge={nudgeMockPick}
         />
       ) : null}
@@ -549,7 +549,7 @@ function SubDraft() {
           <MockDraftRoster
             state={mockDraft}
             playersById={mockPlayersById}
-            orderedRanking={orderedRanking}
+            orderedRanking={mockDraftRanking}
             onNudge={nudgeMockPick}
           />
         ) : null}
@@ -688,7 +688,7 @@ function SubDraft() {
                           mockDraft,
                           v.playerId,
                           mockPlayersById,
-                          orderedRanking
+                          mockDraftRanking
                         );
                         if (next !== mockDraft) saveMockDraft(next);
                         return;
@@ -815,6 +815,7 @@ function SubDraft() {
 function getResults(personalScores: PersonalScores): {
   rankings: DraftJsonType;
   adjustedSources: Set<string>;
+  rawComposite: PlayersType;
 } {
   const players = Object.values(selectedWrapped().nflPlayers);
   const formatAware = getFormatAwareRankings(
@@ -822,10 +823,8 @@ function getResults(personalScores: PersonalScores): {
     players.map((player) => player.id),
     Object.fromEntries(players.map((player) => [player.id, player.position]))
   );
-  const composite = applyPersonalScores(
-    formatAware.composite,
-    personalScores
-  );
+  const rawComposite = formatAware.composite;
+  const composite = applyPersonalScores(rawComposite, personalScores);
   const rankings = Object.fromEntries(
     Object.entries({
       composite: players.map((player) => ({
@@ -875,7 +874,11 @@ function getResults(personalScores: PersonalScores): {
       ),
     ])
   );
-  return { rankings, adjustedSources: formatAware.adjustedSources };
+  return {
+    rankings,
+    adjustedSources: formatAware.adjustedSources,
+    rawComposite,
+  };
 }
 
 function jayzheng() {
