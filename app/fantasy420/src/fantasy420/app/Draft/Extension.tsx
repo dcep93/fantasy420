@@ -8,27 +8,53 @@ function getExtensionId(): string | null {
   return document.documentElement.dataset.fantasy420ExtensionId || null;
 }
 
-function extensionHelper(payload: any): Promise<any> {
+const EXTENSION_ID_POLL_MS = 50;
+const EXTENSION_ID_TIMEOUT_MS = 3000;
+
+function waitForExtensionId(): Promise<string> {
+  const existingId = getExtensionId();
+  if (existingId) return Promise.resolve(existingId);
+
   return new Promise((resolve, reject) => {
-    if (!window.chrome?.runtime) {
-      return reject("no chrome runtime");
-    }
-    const extensionId = getExtensionId();
-    if (!extensionId) {
-      return reject("Fantasy420 extension unavailable");
-    }
-    window.chrome.runtime.sendMessage(
-      extensionId,
-      payload,
-      (response: any) => {
-        if (response === undefined) {
-          const runtimeError = window.chrome.runtime.lastError;
-          return reject(runtimeError?.message || "empty response");
-        }
-        resolve(response);
+    let elapsedMs = 0;
+    const interval = window.setInterval(() => {
+      const extensionId = getExtensionId();
+      if (extensionId) {
+        window.clearInterval(interval);
+        resolve(extensionId);
+        return;
       }
-    );
+
+      elapsedMs += EXTENSION_ID_POLL_MS;
+      if (elapsedMs >= EXTENSION_ID_TIMEOUT_MS) {
+        window.clearInterval(interval);
+        reject("Fantasy420 extension unavailable");
+      }
+    }, EXTENSION_ID_POLL_MS);
   });
+}
+
+function extensionHelper(payload: any): Promise<any> {
+  if (!window.chrome?.runtime) {
+    return Promise.reject("no chrome runtime");
+  }
+
+  return waitForExtensionId().then(
+    (extensionId) =>
+      new Promise((resolve, reject) => {
+        window.chrome.runtime.sendMessage(
+          extensionId,
+          payload,
+          (response: any) => {
+            if (response === undefined) {
+              const runtimeError = window.chrome.runtime.lastError;
+              return reject(runtimeError?.message || "empty response");
+            }
+            resolve(response);
+          }
+        );
+      })
+  );
 }
 
 export function fetchExtension(request: {
