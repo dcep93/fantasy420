@@ -17,6 +17,7 @@ type FeatureVector = [rankIndex: number, saturation: number, byeMatches: number]
 export type CalibrationObservation = {
   year: string;
   pickIndex: number;
+  round: number;
   playerId: string;
   actualIndex: number;
   candidates: FeatureVector[];
@@ -35,7 +36,8 @@ export type CalibrationCoverage = {
 export type RuntimeCoefficients = {
   positionPenalty: number;
   byePenalty: number;
-  temperature: number;
+  baseTemperature: number;
+  roundGrowth: number;
 };
 
 export type CalibrationMeans = {
@@ -61,7 +63,12 @@ type HistoricalSeason = {
   rawRankings: Record<string, Record<string, number>>;
 };
 
-type ScaledWeights = [rank: number, saturation: number, bye: number];
+type ScaledWeights = [
+  rank: number,
+  saturation: number,
+  bye: number,
+  roundGrowth: number,
+];
 
 const ROUND_LIMIT = 14;
 export const HISTORICAL_CALIBRATION_ROSTER: RosterSettings = {
@@ -78,7 +85,14 @@ export const HISTORICAL_CALIBRATION_ROSTER: RosterSettings = {
 const LEGACY_COEFFICIENTS: RuntimeCoefficients = {
   positionPenalty: 16,
   byePenalty: 9,
-  temperature: 3.5,
+  baseTemperature: 3.5,
+  roundGrowth: 0,
+};
+const PREVIOUS_POOLED_COEFFICIENTS: RuntimeCoefficients = {
+  positionPenalty: 10.849574,
+  byePenalty: 0,
+  baseTemperature: 8.737719,
+  roundGrowth: 0,
 };
 
 const HISTORICAL_SEASONS: HistoricalSeason[] = [
@@ -198,6 +212,9 @@ function buildSeasonObservations(season: HistoricalSeason): {
         observations.push({
           year: season.year,
           pickIndex: pick.pickIndex,
+          round:
+            Math.floor(pick.pickIndex / Object.keys(wrapped.ffTeams).length) +
+            1,
           playerId: pick.playerId,
           actualIndex,
           candidates,
@@ -256,10 +273,10 @@ export function fitHistoricalCoefficients(
     throw new Error("Cannot calibrate without historical observations");
   }
   const startingWeights = [
-    runtimeToScaledWeights(LEGACY_COEFFICIENTS),
-    [0.1, 1, 1] as ScaledWeights,
-    [0.5, 0.1, 0.1] as ScaledWeights,
-    [0.05, 5, 1] as ScaledWeights,
+    runtimeToScaledWeights({ ...LEGACY_COEFFICIENTS, roundGrowth: 0.5 }),
+    [0.2, 1, 1, 0.5] as ScaledWeights,
+    [0.5, 0.1, 0.1, 0.25] as ScaledWeights,
+    [0.05, 5, 1, 0.75] as ScaledWeights,
   ];
   const fits = startingWeights.map((weights) =>
     nelderMead(
@@ -290,7 +307,7 @@ export function summarizeCalibration(
 
   observations.forEach((observation) => {
     const costs = observation.candidates.map((features) =>
-      dot(weights, features)
+      scaledCost(weights, observation.round, features)
     );
     const minCost = Math.min(...costs);
     const unnormalized = costs.map((cost) =>
@@ -339,7 +356,14 @@ export function runHistoricalCalibration() {
       coefficients: LEGACY_COEFFICIENTS,
       summary: summarizeCalibration(data.observations, LEGACY_COEFFICIENTS),
     },
-    pooled: summarizeCalibration(data.observations, fitted),
+    previousPooled: {
+      coefficients: PREVIOUS_POOLED_COEFFICIENTS,
+      summary: summarizeCalibration(
+        data.observations,
+        PREVIOUS_POOLED_COEFFICIENTS
+      ),
+    },
+    roundAware: summarizeCalibration(data.observations, fitted),
     years: Object.fromEntries(
       HISTORICAL_SEASONS.map(({ year }) => [
         year,
@@ -349,6 +373,20 @@ export function runHistoricalCalibration() {
         ),
       ])
     ),
+    rounds: Object.fromEntries(
+      Array.from({ length: ROUND_LIMIT }, (_, index) => {
+        const round = index + 1;
+        return [
+          round,
+          summarizeCalibration(
+            data.observations.filter(
+              (observation) => observation.round === round
+            ),
+            fitted
+          ),
+        ];
+      })
+    ),
   };
 }
 
@@ -356,9 +394,10 @@ function runtimeToScaledWeights(
   coefficients: RuntimeCoefficients
 ): ScaledWeights {
   return [
-    1 / coefficients.temperature,
-    coefficients.positionPenalty / coefficients.temperature,
-    coefficients.byePenalty / coefficients.temperature,
+    1 / coefficients.baseTemperature,
+    coefficients.positionPenalty / coefficients.baseTemperature,
+    coefficients.byePenalty / coefficients.baseTemperature,
+    coefficients.roundGrowth,
   ];
 }
 
@@ -366,7 +405,8 @@ function scaledWeightsToRuntime(weights: ScaledWeights): RuntimeCoefficients {
   return {
     positionPenalty: weights[1] / weights[0],
     byePenalty: weights[2] / weights[0],
-    temperature: 1 / weights[0],
+    baseTemperature: 1 / weights[0],
+    roundGrowth: weights[3],
   };
 }
 
@@ -376,7 +416,7 @@ function negativeLogLikelihood(
 ): number {
   return observations.reduce((totalNll, observation) => {
     const costs = observation.candidates.map((features) =>
-      dot(weights, features)
+      scaledCost(weights, observation.round, features)
     );
     const minCost = Math.min(...costs);
     const logNormalizer =
@@ -389,6 +429,14 @@ function negativeLogLikelihood(
       );
     return totalNll + costs[observation.actualIndex] + logNormalizer;
   }, 0);
+}
+
+function scaledCost(
+  weights: ScaledWeights,
+  round: number,
+  features: FeatureVector
+): number {
+  return dot(weights, features) / Math.pow(round, weights[3]);
 }
 
 function dot(weights: ScaledWeights, features: FeatureVector): number {

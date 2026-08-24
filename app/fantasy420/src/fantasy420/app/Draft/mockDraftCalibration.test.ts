@@ -1,7 +1,8 @@
 import {
+  MOCK_DRAFT_BASE_TEMPERATURE,
   MOCK_DRAFT_BYE_PENALTY,
   MOCK_DRAFT_POSITION_PENALTY,
-  MOCK_DRAFT_TEMPERATURE,
+  MOCK_DRAFT_ROUND_GROWTH,
 } from "./mockDraft";
 import {
   buildHistoricalCalibrationData,
@@ -33,6 +34,8 @@ test("replays complete first-fourteen-round historical calibration samples", () 
     },
   ]);
   expect(observations).toHaveLength(276);
+  expect(observations[0].round).toBe(1);
+  expect(observations.at(-1)?.round).toBe(14);
   expect(HISTORICAL_CALIBRATION_ROSTER).toMatchObject({
     DST: 1,
     K: 0,
@@ -48,16 +51,22 @@ test("fits the checked-in baseline and improves historical likelihood", () => {
     5
   );
   expect(report.fitted.byePenalty).toBeCloseTo(MOCK_DRAFT_BYE_PENALTY, 5);
-  expect(report.fitted.temperature).toBeCloseTo(MOCK_DRAFT_TEMPERATURE, 5);
-  expect(report.pooled.negativeLogLikelihood).toBeLessThan(
+  expect(report.fitted.baseTemperature).toBeCloseTo(
+    MOCK_DRAFT_BASE_TEMPERATURE,
+    5
+  );
+  expect(report.fitted.roundGrowth).toBeCloseTo(
+    MOCK_DRAFT_ROUND_GROWTH,
+    5
+  );
+  expect(report.roundAware.negativeLogLikelihood).toBeLessThan(
     report.legacy.summary.negativeLogLikelihood
   );
-  expect(report.pooled.means.expectedRankIndex).toBeCloseTo(
-    report.pooled.means.actualRankIndex,
-    5
+  expect(report.roundAware.negativeLogLikelihood).toBeLessThan(
+    report.previousPooled.summary.negativeLogLikelihood
   );
-  expect(report.pooled.means.expectedSaturation).toBeCloseTo(
-    report.pooled.means.actualSaturation,
-    5
+  expect(report.rounds["1"].means.expectedRankIndex).toBeLessThan(2);
+  expect(report.rounds["14"].means.expectedRankIndex).toBeGreaterThan(
+    report.rounds["1"].means.expectedRankIndex * 5
   );
 });

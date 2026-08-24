@@ -45,9 +45,10 @@ export type MockDraftView = {
   complete: boolean;
 };
 
-export const MOCK_DRAFT_POSITION_PENALTY = 10.849574;
+export const MOCK_DRAFT_POSITION_PENALTY = 14.17471;
 export const MOCK_DRAFT_BYE_PENALTY = 0;
-export const MOCK_DRAFT_TEMPERATURE = 8.737719;
+export const MOCK_DRAFT_BASE_TEMPERATURE = 1.639461;
+export const MOCK_DRAFT_ROUND_GROWTH = 0.842035;
 
 export const DEFAULT_MOCK_DRAFT_SETTINGS: MockDraftSettings = {
   draftPosition: 8,
@@ -119,6 +120,17 @@ export function getRoundCount(settings: MockDraftSettings): number {
 
 export function getDraftLength(settings: MockDraftSettings): number {
   return settings.teamCount * getRoundCount(settings);
+}
+
+export function getMockDraftTemperature(
+  round: number,
+  craziness: number
+): number {
+  return (
+    MOCK_DRAFT_BASE_TEMPERATURE *
+    Math.pow(round, MOCK_DRAFT_ROUND_GROWTH) *
+    Math.sqrt(craziness)
+  );
 }
 
 export function getPickOwner(
@@ -320,6 +332,14 @@ function chooseOpponentPlayer(
       draftPosition
   );
   const historyKey = state.picks.join(",");
+  const round = getPickOwner(
+    state.picks.length,
+    state.settings.teamCount
+  ).round;
+  const temperature = getMockDraftTemperature(
+    round,
+    state.settings.craziness
+  );
 
   return available
     .map((playerId, rankIndex) => {
@@ -341,8 +361,6 @@ function chooseOpponentPlayer(
         Math.max(Number.EPSILON, random)
       );
       const gumbel = -Math.log(-Math.log(boundedRandom));
-      const temperature =
-        MOCK_DRAFT_TEMPERATURE * Math.sqrt(state.settings.craziness);
       return {
         playerId,
         score:

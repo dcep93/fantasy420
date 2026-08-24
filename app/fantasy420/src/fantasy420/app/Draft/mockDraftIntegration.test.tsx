@@ -40,6 +40,23 @@ test("restores hash state without connecting to the Chrome extension", () => {
   rendered.unmount();
 });
 
+test("keeps the reported rank-forty-one seed disciplined in round one", () => {
+  window.history.replaceState(null, "", "/draft");
+  const rendered = render(<Draft />);
+
+  fireEvent.change(screen.getByLabelText("seed"), {
+    target: { value: "1tq1jn01gkmamd" },
+  });
+  fireEvent.click(screen.getByRole("button", { name: "mock draft" }));
+
+  const ranks = Array.from(
+    rendered.container.querySelectorAll(".mock-draft-rank")
+  ).map((element) => Number(element.textContent?.slice(1)));
+  expect(ranks).toHaveLength(7);
+  expect(Math.max(...ranks)).toBeLessThan(10);
+  rendered.unmount();
+});
+
 test("rejects restored mock drafts containing kicker picks", async () => {
   window.history.replaceState(
     null,

@@ -4,6 +4,7 @@ import {
   getDraftLength,
   getDraftView,
   getHistoricalNudgeAvailability,
+  getMockDraftTemperature,
   getPickLabel,
   getPickOwner,
   makeUserPick,
@@ -362,15 +363,15 @@ test("craziness expands reaches while remaining seed deterministic", () => {
   expect(Math.max(...highRanks)).toBeGreaterThan(3);
 });
 
-test("historical craziness commonly produces a first-round rank-fourteen reach", () => {
+test("historical craziness stays tight early and expands in later rounds without a cap", () => {
   const reachPlayers = Object.fromEntries(
-    Array.from({ length: 60 }, (_, index) => {
+    Array.from({ length: 300 }, (_, index) => {
       const id = String(index + 100);
       return [id, { id, position: "WR", byeWeek: 8 } as MockDraftPlayer];
     })
   );
   const reachRanking = Object.keys(reachPlayers);
-  const oneRound = {
+  const fifteenRounds = {
     QB: 1,
     RB: 0,
     WR: 0,
@@ -379,34 +380,66 @@ test("historical craziness commonly produces a first-round rank-fourteen reach",
     SUPERFLEX: 0,
     DST: 0,
     K: 0,
-    BENCH: 0,
+    BENCH: 14,
   };
-  let draftsWithReach = 0;
+  const earlyRanks: number[] = [];
+  const lateRanks: number[] = [];
+  const uncappedRanks: number[] = [];
 
-  for (let index = 0; index < 100; index += 1) {
-    const state = advanceToUserTurn(
+  for (let index = 0; index < 200; index += 1) {
+    const early = advanceToUserTurn(
       {
         settings: {
           ...DEFAULT_MOCK_DRAFT_SETTINGS,
           teamCount: 10,
-          draftPosition: 10,
-          seed: `default-reach-${index}`,
-          roster: oneRound,
+          draftPosition: 2,
+          seed: `round-aware-${index}`,
+          roster: fifteenRounds,
         },
         picks: [],
       },
       reachPlayers,
       reachRanking
     );
-    if (
-      getDraftView(state, reachPlayers, reachRanking).picks.some(
-        (pick) => pick.rank >= 14
-      )
-    ) {
-      draftsWithReach += 1;
-    }
+    const latePrefix = reachRanking.slice(0, 130);
+    const late = advanceToUserTurn(
+      {
+        settings: {
+          ...early.settings,
+          draftPosition: 9,
+        },
+        picks: latePrefix,
+      },
+      reachPlayers,
+      reachRanking
+    );
+    const uncapped = advanceToUserTurn(
+      {
+        settings: {
+          ...early.settings,
+          craziness: 10000,
+          seed: `uncapped-${index}`,
+        },
+        picks: [],
+      },
+      reachPlayers,
+      reachRanking
+    );
+
+    earlyRanks.push(reachRanking.indexOf(early.picks[0]) + 1);
+    lateRanks.push(
+      reachRanking.slice(130).indexOf(late.picks[130]) + 1
+    );
+    uncappedRanks.push(reachRanking.indexOf(uncapped.picks[0]) + 1);
   }
 
-  expect(draftsWithReach).toBeGreaterThan(80);
-  expect(draftsWithReach).toBeLessThan(100);
+  const mean = (values: number[]) =>
+    values.reduce((sum, value) => sum + value, 0) / values.length;
+
+  expect(getMockDraftTemperature(14, 1)).toBeGreaterThan(
+    getMockDraftTemperature(1, 1)
+  );
+  expect(mean(earlyRanks)).toBeLessThan(3);
+  expect(mean(lateRanks)).toBeGreaterThan(mean(earlyRanks) * 4);
+  expect(Math.max(...uncappedRanks)).toBeGreaterThan(100);
 });
