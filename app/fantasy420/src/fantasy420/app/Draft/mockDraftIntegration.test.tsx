@@ -4,10 +4,85 @@ import { afterEach, expect, test, vi } from "vitest";
 import Draft from ".";
 import { DEFAULT_MOCK_DRAFT_SETTINGS } from "./mockDraft";
 import { decodeMockDraftHash, encodeMockDraftHash } from "./mockDraftHash";
+import {
+  getPersonalScoresStorageKey,
+  readPersonalScores,
+} from "./personalScores";
 
 afterEach(() => {
   window.history.replaceState(null, "", "/");
+  window.localStorage.clear();
   window.chrome = undefined;
+});
+
+test("loads, saves, and clears personal scores without drafting the row", () => {
+  window.localStorage.setItem(
+    getPersonalScoresStorageKey("2026"),
+    JSON.stringify({ "4429795": 7 })
+  );
+  const rendered = render(<Draft />);
+
+  expect(screen.getByRole("columnheader", { name: "My score" })).toBeInTheDocument();
+  expect(screen.getByLabelText("My score for Jahmyr Gibbs")).toHaveValue(7);
+
+  const input = rendered.container.querySelector<HTMLInputElement>(
+    'tbody input[aria-label^="My score for "]'
+  )!;
+  const row = input.closest("tr")!;
+  expect(row).toHaveAttribute("data-drafted", "false");
+
+  fireEvent.click(input);
+  fireEvent.change(input, { target: { value: "5" } });
+
+  expect(row).toHaveAttribute("data-drafted", "false");
+  const saved = JSON.parse(
+    window.localStorage.getItem(getPersonalScoresStorageKey("2026"))!
+  );
+  expect(Object.values(saved)).toContain(5);
+  const editedPlayerId = Object.entries(saved).find(([, score]) => score === 5)![0];
+
+  fireEvent.change(input, { target: { value: "" } });
+  expect(readPersonalScores("2026")[editedPlayerId]).toBeUndefined();
+  rendered.unmount();
+});
+
+test("inspects personal scores by absolute magnitude until a source is selected", () => {
+  const rendered = render(<Draft />);
+  const inputs = Array.from(
+    rendered.container.querySelectorAll<HTMLInputElement>(
+      'tbody input[aria-label^="My score for "]'
+    )
+  );
+  const positiveLabel = inputs[0].getAttribute("aria-label")!;
+  const negativeLabel = inputs[1].getAttribute("aria-label")!;
+
+  fireEvent.change(screen.getByLabelText(positiveLabel), {
+    target: { value: "5" },
+  });
+  fireEvent.change(screen.getByLabelText(negativeLabel), {
+    target: { value: "-10" },
+  });
+
+  const header = screen.getByRole("columnheader", { name: "My score" });
+  fireEvent.doubleClick(header);
+
+  expect(header).toHaveAttribute("aria-pressed", "true");
+  expect(
+    rendered.container
+      .querySelector<HTMLInputElement>(
+        'tbody tr:first-child input[aria-label^="My score for "]'
+      )
+      ?.getAttribute("aria-label")
+  ).toBe(negativeLabel);
+
+  const normalSource = Array.from(
+    rendered.container.querySelectorAll<HTMLElement>(
+      ".draft-rankings-controls li span"
+    )
+  ).find((item) => item.textContent && item.textContent !== "composite")!;
+  fireEvent.click(normalSource);
+  expect(header).toHaveAttribute("aria-pressed", "false");
+  rendered.unmount();
 });
 
 test("restores hash state without connecting to the Chrome extension", () => {

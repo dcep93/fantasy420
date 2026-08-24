@@ -30,6 +30,13 @@ import {
   readMockDraftHash,
   replaceMockDraftHash,
 } from "./mockDraftHash";
+import {
+  applyPersonalScores,
+  PersonalScores,
+  readPersonalScores,
+  savePersonalScores,
+  sortByPersonalScoreMagnitude,
+} from "./personalScores";
 import { POSITION_COLORS } from "./positionColors";
 import { getRookiePlayerIds, normalizeDraftPlayerName } from "./rookies";
 
@@ -129,9 +136,14 @@ export default function Draft() {
 }
 
 function SubDraft() {
+  const draftYear = selectedYear;
   const [localDraft, updateLocalDraft] = useState<{ [key: string]: boolean }>(
     {}
   );
+  const [personalScores, setPersonalScores] = useState<PersonalScores>(() =>
+    readPersonalScores(draftYear)
+  );
+  const [personalScoreSort, setPersonalScoreSort] = useState(false);
   const wrapped = allWrapped[selectedYear];
   const playerScrollRef = useRef<HTMLDivElement>(null);
   const [mockDraft, setMockDraft] = useState<MockDraftState | null>(() => {
@@ -174,7 +186,10 @@ function SubDraft() {
     Object.values(selectedWrapped().nflPlayers).map((p) => [p.name, p])
   );
 
-  const { rankings: results } = useMemo(getResults, [selectedYear]);
+  const { rankings: results } = useMemo(
+    () => getResults(personalScores),
+    [draftYear, personalScores]
+  );
   const rookiePlayerIds = useMemo(
     () =>
       getRookiePlayerIds(
@@ -188,6 +203,33 @@ function SubDraft() {
   const [rookiesOnly, updateRookiesOnly] = useState(false);
   const [byeWeekFilter, updateByeWeekFilter] = useState(-1);
   const [source, update] = useState(sources[0]);
+
+  useEffect(() => {
+    setPersonalScores(readPersonalScores(draftYear));
+    setPersonalScoreSort(false);
+  }, [draftYear]);
+
+  function selectSource(nextSource: string) {
+    setPersonalScoreSort(false);
+    update(nextSource);
+  }
+
+  function updatePersonalScore(playerId: string, inputValue: string) {
+    if (inputValue !== "" && !/^-?\d+$/.test(inputValue)) return;
+    const score = inputValue === "" ? undefined : Number(inputValue);
+    if (score !== undefined && !Number.isSafeInteger(score)) return;
+
+    setPersonalScores((current) => {
+      const next = { ...current };
+      if (score === undefined) {
+        delete next[playerId];
+      } else {
+        next[playerId] = score;
+      }
+      savePersonalScores(draftYear, next);
+      return next;
+    });
+  }
   const orderedRanking = useMemo(
     () =>
       Object.entries(results[source])
@@ -276,7 +318,17 @@ function SubDraft() {
     );
   }
 
-  const sourcePlayers = Object.entries(results[source])
+  const displayedRanking = results[personalScoreSort ? "composite" : source];
+  const personalScoreInspectionIndex = personalScoreSort
+    ? Object.fromEntries(
+        sortByPersonalScoreMagnitude(
+          Object.keys(displayedRanking),
+          personalScores,
+          results.composite
+        ).map((playerId, index) => [playerId, index])
+      )
+    : {};
+  const sourcePlayers = Object.entries(displayedRanking)
     .map(([playerId, value]) => ({
       playerId,
       player: selectedWrapped().nflPlayers[playerId],
@@ -286,7 +338,12 @@ function SubDraft() {
     }))
     .filter(({ value }) => value !== undefined)
     .filter(({ player }) => !mockDraft || isMockDraftPlayerEligible(player))
-    .sort((a, b) => a.value - b.value)
+    .sort((a, b) =>
+      personalScoreSort
+        ? personalScoreInspectionIndex[a.playerId] -
+          personalScoreInspectionIndex[b.playerId]
+        : a.value - b.value
+    )
     .map((p, sourceRank) => ({
       ...p,
       sourceRank,
@@ -353,7 +410,7 @@ function SubDraft() {
                     color: "var(--night-link)",
                     textDecoration: "underline",
                   }}
-                  onClick={() => update(s)}
+                  onClick={() => selectSource(s)}
                 >
                   {getSourceLabel(s)}
                 </span>
@@ -362,7 +419,7 @@ function SubDraft() {
           </ul>
         </div>
         <div onClick={() => updateRegenSources(!regenSources)}>
-          {getSourceLabel(source)} ({activeDraftPlayerIds.length})
+          {personalScoreSort ? "My score magnitude" : getSourceLabel(source)} ({activeDraftPlayerIds.length})
         </div>
         {!regenSources ? null : (
           <div>
@@ -576,6 +633,22 @@ function SubDraft() {
         </div>
         <div style={{ height: "100%", flex: "1 1 auto", maxWidth: "1000px" }}>
           <table>
+            <thead>
+              <tr>
+                <th colSpan={3 + Object.keys(results).length} />
+                <th
+                  className="personal-score-header"
+                  title="Double-click to sort by absolute score"
+                  aria-pressed={personalScoreSort}
+                  onDoubleClick={() => {
+                    update("composite");
+                    setPersonalScoreSort(true);
+                  }}
+                >
+                  My score
+                </th>
+              </tr>
+            </thead>
             <tbody>
               {sourcePlayers
                 .map((player, i) => ({
@@ -603,9 +676,9 @@ function SubDraft() {
                       ? v.seen
                       : localDraft[v.player.name],
                 }))
-                .map((v, i) => (
+                .map((v) => (
                   <tr
-                    key={i}
+                    key={v.playerId}
                     data-mock-available={mockDraft ? String(!v.seen) : undefined}
                     data-drafted={String(v.seen)}
                     className={v.seen ? "draft-player-drafted" : undefined}
@@ -693,6 +766,20 @@ function SubDraft() {
                         {t.value}
                       </td>
                     ))}
+                    <td className="personal-score-cell">
+                      <input
+                        className="personal-score-input"
+                        type="number"
+                        step="1"
+                        aria-label={`My score for ${v.player.name}`}
+                        value={personalScores[v.playerId] ?? ""}
+                        onClick={(event) => event.stopPropagation()}
+                        onDoubleClick={(event) => event.stopPropagation()}
+                        onChange={(event) =>
+                          updatePersonalScore(v.playerId, event.target.value)
+                        }
+                      />
+                    </td>
                   </tr>
                 ))}
             </tbody>
@@ -725,7 +812,7 @@ function SubDraft() {
 //   return (100 * (value - average)) / (1 + value + average);
 // }
 
-function getResults(): {
+function getResults(personalScores: PersonalScores): {
   rankings: DraftJsonType;
   adjustedSources: Set<string>;
 } {
@@ -735,11 +822,15 @@ function getResults(): {
     players.map((player) => player.id),
     Object.fromEntries(players.map((player) => [player.id, player.position]))
   );
+  const composite = applyPersonalScores(
+    formatAware.composite,
+    personalScores
+  );
   const rankings = Object.fromEntries(
     Object.entries({
       composite: players.map((player) => ({
         ...player,
-        value: formatAware.composite[player.id],
+        value: composite[player.id],
       })),
       ...Object.fromEntries(
         Object.keys(selectedDraft()).map((source) => [
