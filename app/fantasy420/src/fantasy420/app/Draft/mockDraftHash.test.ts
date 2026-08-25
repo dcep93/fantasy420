@@ -23,6 +23,23 @@ test("round trips versioned settings and ordered ESPN ids", () => {
   });
 });
 
+test("defaults omitted legacy appetites to neutral values", () => {
+  const { appetites: _appetites, ...legacySettings } = settings;
+  const legacy = encodePayload({
+    v: 1,
+    settings: legacySettings,
+    picks: ["4429795"],
+  });
+
+  expect(decodeMockDraftHash(`#draft=${legacy}`)).toEqual({
+    settings: {
+      ...settings,
+      appetites: { QB: 1, RB: 1, WR: 1, TE: 1 },
+    },
+    picks: ["4429795"],
+  });
+});
+
 test("returns null when no mock draft is present", () => {
   expect(decodeMockDraftHash("#other=value")).toBeNull();
   expect(decodeMockDraftHash("")).toBeNull();
@@ -65,4 +82,3 @@ function encodePayload(value: unknown): string {
     .replaceAll("/", "_")
     .replaceAll("=", "");
 }
-

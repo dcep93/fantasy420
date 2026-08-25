@@ -42,6 +42,7 @@ export type RuntimeCoefficients = {
   byePenalty: number;
   baseTemperature: number;
   roundGrowth: number;
+  rankExponent: number;
 };
 
 export type CalibrationMeans = {
@@ -72,6 +73,7 @@ type ScaledWeights = [
   saturation: number,
   bye: number,
   roundGrowth: number,
+  rankExponent: number,
 ];
 
 const ROUND_LIMIT = 14;
@@ -91,12 +93,14 @@ const LEGACY_COEFFICIENTS: RuntimeCoefficients = {
   byePenalty: 9,
   baseTemperature: 3.5,
   roundGrowth: 0,
+  rankExponent: 1,
 };
 const PREVIOUS_POOLED_COEFFICIENTS: RuntimeCoefficients = {
   positionPenalty: 10.849574,
   byePenalty: 0,
   baseTemperature: 8.737719,
   roundGrowth: 0,
+  rankExponent: 1,
 };
 
 const HISTORICAL_SEASONS: HistoricalSeason[] = [
@@ -288,18 +292,26 @@ export function fitHistoricalCoefficients(
     throw new Error("Cannot calibrate without historical observations");
   }
   const startingWeights = [
-    runtimeToScaledWeights({ ...LEGACY_COEFFICIENTS, roundGrowth: 0.5 }),
-    [0.2, 1, 1, 0.5] as ScaledWeights,
-    [0.5, 0.1, 0.1, 0.25] as ScaledWeights,
-    [0.05, 5, 1, 0.75] as ScaledWeights,
+    runtimeToScaledWeights({
+      ...LEGACY_COEFFICIENTS,
+      roundGrowth: 0.5,
+      rankExponent: 1.2,
+    }),
+    [0.2, 1, 1, 0.5, 1.2] as ScaledWeights,
+    [0.5, 0.1, 0.1, 0.25, 1.4] as ScaledWeights,
+    [0.05, 5, 1, 0.75, 1.1] as ScaledWeights,
   ];
   const fits = startingWeights.map((weights) =>
     nelderMead(
-      weights.map((weight) => Math.log(weight)),
+      weights.map((weight, index) =>
+        Math.log(index === 4 ? weight - 1 : weight)
+      ),
       (logWeights) =>
         negativeLogLikelihood(
           observations,
-          logWeights.map((weight) => Math.exp(weight)) as ScaledWeights
+          logWeights.map((weight, index) =>
+            index === 4 ? 1 + Math.exp(weight) : Math.exp(weight)
+          ) as ScaledWeights
         )
     )
   );
@@ -307,7 +319,9 @@ export function fitHistoricalCoefficients(
   if (!best.converged) {
     throw new Error("Historical coefficient optimizer did not converge");
   }
-  const scaled = best.point.map((weight) => Math.exp(weight)) as ScaledWeights;
+  const scaled = best.point.map((weight, index) =>
+    index === 4 ? 1 + Math.exp(weight) : Math.exp(weight)
+  ) as ScaledWeights;
   return scaledWeightsToRuntime(scaled);
 }
 
@@ -321,8 +335,16 @@ export function summarizeCalibration(
   let negativeLogLikelihoodTotal = 0;
 
   observations.forEach((observation) => {
+    const bestOverallRankIndex = Math.min(
+      ...observation.candidates.map((features) => features[0])
+    );
     const costs = observation.candidates.map((features) =>
-      scaledCost(weights, observation.round, features)
+      scaledCost(
+        weights,
+        observation.round,
+        features,
+        bestOverallRankIndex
+      )
     );
     const minCost = Math.min(...costs);
     const unnormalized = costs.map((cost) =>
@@ -413,6 +435,7 @@ function runtimeToScaledWeights(
     coefficients.positionPenalty / coefficients.baseTemperature,
     coefficients.byePenalty / coefficients.baseTemperature,
     coefficients.roundGrowth,
+    coefficients.rankExponent,
   ];
 }
 
@@ -422,6 +445,7 @@ function scaledWeightsToRuntime(weights: ScaledWeights): RuntimeCoefficients {
     byePenalty: weights[2] / weights[0],
     baseTemperature: 1 / weights[0],
     roundGrowth: weights[3],
+    rankExponent: weights[4],
   };
 }
 
@@ -430,8 +454,16 @@ function negativeLogLikelihood(
   weights: ScaledWeights
 ): number {
   return observations.reduce((totalNll, observation) => {
+    const bestOverallRankIndex = Math.min(
+      ...observation.candidates.map((features) => features[0])
+    );
     const costs = observation.candidates.map((features) =>
-      scaledCost(weights, observation.round, features)
+      scaledCost(
+        weights,
+        observation.round,
+        features,
+        bestOverallRankIndex
+      )
     );
     const minCost = Math.min(...costs);
     const logNormalizer =
@@ -449,16 +481,18 @@ function negativeLogLikelihood(
 function scaledCost(
   weights: ScaledWeights,
   round: number,
-  features: FeatureVector
+  features: FeatureVector,
+  bestOverallRankIndex: number
 ): number {
-  return dot(weights, features) / Math.pow(round, weights[3]);
-}
-
-function dot(weights: ScaledWeights, features: FeatureVector): number {
+  const rankCost = Math.pow(
+    features[0] - bestOverallRankIndex + 1,
+    weights[4]
+  );
   return (
-    weights[0] * features[0] +
-    weights[1] * features[1] +
-    weights[2] * features[2]
+    (weights[0] * rankCost +
+      weights[1] * features[1] +
+      weights[2] * features[2]) /
+    Math.pow(round, weights[3])
   );
 }
 

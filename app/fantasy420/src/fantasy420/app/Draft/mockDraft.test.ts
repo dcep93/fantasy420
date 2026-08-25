@@ -5,6 +5,7 @@ import {
   getDraftView,
   getHistoricalNudgeAvailability,
   getMockDraftOpponentCandidatePool,
+  getMockDraftRankCost,
   getMockDraftTemperature,
   getPickLabel,
   getPickOwner,
@@ -85,6 +86,12 @@ test("uses the requested defaults and an eleven-round draft", () => {
     positionRisk: 1,
     byeRisk: 1,
     craziness: 1,
+    appetites: {
+      QB: 1,
+      RB: 1,
+      WR: 1,
+      TE: 1,
+    },
     roster: {
       QB: 1,
       RB: 2,
@@ -108,6 +115,57 @@ test("rejects configured kicker slots", () => {
       roster: { ...DEFAULT_MOCK_DRAFT_SETTINGS.roster, K: 1 },
     })
   ).toThrow("K roster count must be zero");
+});
+
+test("uses convex original composite-rank gaps without a hard cutoff", () => {
+  expect(getMockDraftRankCost(0, 0)).toBe(1);
+  expect(getMockDraftRankCost(2, 0)).toBeGreaterThan(3);
+  expect(getMockDraftRankCost(20, 10)).toBe(
+    getMockDraftRankCost(10, 0)
+  );
+  expect(Number.isFinite(getMockDraftRankCost(10_000, 0))).toBe(true);
+});
+
+test("higher position appetite continuously increases that position's choices", () => {
+  const appetitePlayers = {
+    qb: { id: "qb", position: "QB", byeWeek: 8 },
+    rb: { id: "rb", position: "RB", byeWeek: 8 },
+  } satisfies Record<string, MockDraftPlayer>;
+  const settings = {
+    ...DEFAULT_MOCK_DRAFT_SETTINGS,
+    teamCount: 2,
+    draftPosition: 2,
+    roster: rosterWith({ QB: 1, RB: 1 }),
+  };
+  let neutralQbs = 0;
+  let hungryQbs = 0;
+
+  for (let index = 0; index < 2_000; index += 1) {
+    const seed = `appetite-${index}`;
+    const neutral = advanceToUserTurn(
+      { settings: { ...settings, seed }, picks: [] },
+      appetitePlayers,
+      ["qb", "rb"]
+    );
+    const hungry = advanceToUserTurn(
+      {
+        settings: {
+          ...settings,
+          seed,
+          appetites: { ...settings.appetites, QB: 4 },
+        },
+        picks: [],
+      },
+      appetitePlayers,
+      ["qb", "rb"]
+    );
+    if (neutral.picks[0] === "qb") neutralQbs += 1;
+    if (hungry.picks[0] === "qb") hungryQbs += 1;
+  }
+
+  expect(neutralQbs).toBeGreaterThan(1_000);
+  expect(hungryQbs).toBeGreaterThan(neutralQbs + 300);
+  expect(hungryQbs).toBeLessThan(2_000);
 });
 
 test("snakes even rounds and formats chronological round pick labels", () => {

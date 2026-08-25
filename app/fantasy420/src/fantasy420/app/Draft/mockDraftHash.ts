@@ -1,4 +1,5 @@
 import {
+  DEFAULT_MOCK_DRAFT_SETTINGS,
   MockDraftSettings,
   MockDraftState,
   validateMockDraftSettings,
@@ -33,10 +34,17 @@ export function decodeMockDraftHash(hash: string): MockDraftState | null {
     if (!parsed.settings || !Array.isArray(parsed.picks)) {
       throw new Error("Invalid mock draft URL");
     }
-    validateMockDraftSettings(parsed.settings);
+    const settings: MockDraftSettings = {
+      ...parsed.settings,
+      appetites: {
+        ...DEFAULT_MOCK_DRAFT_SETTINGS.appetites,
+        ...(parsed.settings as Partial<MockDraftSettings>).appetites,
+      },
+    } as MockDraftSettings;
+    validateMockDraftSettings(settings);
     validatePicks(parsed.picks);
     return {
-      settings: parsed.settings,
+      settings,
       picks: parsed.picks.slice(),
     };
   } catch (error) {
@@ -98,4 +106,3 @@ function decodeBase64Url(value: string): string {
     Uint8Array.from(binary, (character) => character.charCodeAt(0))
   );
 }
-

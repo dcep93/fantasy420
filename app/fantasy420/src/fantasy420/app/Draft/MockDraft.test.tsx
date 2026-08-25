@@ -18,6 +18,10 @@ test("renders the requested setup defaults and customizable roster", () => {
   expect(screen.getByLabelText("position riskiness")).toHaveValue(1);
   expect(screen.getByLabelText("bye riskiness")).toHaveValue(1);
   expect(screen.getByLabelText("craziness")).toHaveValue(1);
+  expect(screen.getByLabelText("QB appetite")).toHaveValue(1);
+  expect(screen.getByLabelText("RB appetite")).toHaveValue(1);
+  expect(screen.getByLabelText("WR appetite")).toHaveValue(1);
+  expect(screen.getByLabelText("TE appetite")).toHaveValue(1);
   expect(screen.getByLabelText("seed")).toHaveValue("");
   expect(screen.getByLabelText("QB slots")).toHaveValue(1);
   expect(screen.getByLabelText("FLEX slots")).toHaveValue(2);
@@ -53,12 +57,19 @@ test("normalizes factor input extremes when starting", () => {
   fireEvent.change(screen.getByLabelText("craziness"), {
     target: { value: "20000" },
   });
+  fireEvent.change(screen.getByLabelText("QB appetite"), {
+    target: { value: "0" },
+  });
+  fireEvent.change(screen.getByLabelText("TE appetite"), {
+    target: { value: "" },
+  });
   fireEvent.click(screen.getByRole("button", { name: "mock draft" }));
 
   expect(onStart.mock.calls[0][0]).toMatchObject({
     positionRisk: 0.0001,
     byeRisk: 10000,
     craziness: 10000,
+    appetites: { QB: 0.0001, RB: 1, WR: 1, TE: 10000 },
   });
 });
 
@@ -187,6 +198,8 @@ test("renders derived headshots, rookie marks, fallback, and nudge controls", ()
   expect(screen.queryByLabelText("rechoose pick 1.01")).not.toBeInTheDocument();
   expect(screen.getByLabelText("rechoose pick 1.02")).toHaveTextContent("#1");
   expect(screen.getByText("1.01/1")).toBeInTheDocument();
+  expect(screen.getByText("composite #1")).toBeInTheDocument();
+  expect(screen.getByText("composite #2")).toBeInTheDocument();
   const gibbsBubble = screen
     .getByText("Jahmyr Gibbs*")
     .closest(".mock-draft-pick")!;
@@ -203,6 +216,7 @@ test("renders derived headshots, rookie marks, fallback, and nudge controls", ()
   );
   expect(Array.from(copy.children).map((child) => child.className)).toEqual([
     "mock-draft-pick-number",
+    "mock-draft-composite-rank",
     "mock-draft-player-name",
     "mock-draft-player-detail",
   ]);

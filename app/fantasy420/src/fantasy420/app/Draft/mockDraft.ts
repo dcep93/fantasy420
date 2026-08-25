@@ -1,4 +1,9 @@
 export type DraftPosition = "QB" | "RB" | "WR" | "TE" | "DST" | "K";
+export type AppetitePosition = Extract<
+  DraftPosition,
+  "QB" | "RB" | "WR" | "TE"
+>;
+export type PositionAppetites = Record<AppetitePosition, number>;
 export type RosterSlot =
   | DraftPosition
   | "FLEX"
@@ -13,6 +18,7 @@ export type MockDraftSettings = {
   positionRisk: number;
   byeRisk: number;
   craziness: number;
+  appetites: PositionAppetites;
   seed: string;
   roster: RosterSettings;
 };
@@ -36,6 +42,7 @@ export type MockDraftPick = {
   roundIndex: number;
   label: string;
   rank: number;
+  compositeRank: number;
   isUser: boolean;
 };
 
@@ -45,10 +52,11 @@ export type MockDraftView = {
   complete: boolean;
 };
 
-export const MOCK_DRAFT_POSITION_PENALTY = 28.421761;
+export const MOCK_DRAFT_POSITION_PENALTY = 91.029702;
 export const MOCK_DRAFT_BYE_PENALTY = 0;
-export const MOCK_DRAFT_BASE_TEMPERATURE = 2.254317;
-export const MOCK_DRAFT_ROUND_GROWTH = 0.920315;
+export const MOCK_DRAFT_BASE_TEMPERATURE = 4.668528;
+export const MOCK_DRAFT_ROUND_GROWTH = 1.185162;
+export const MOCK_DRAFT_RANK_EXPONENT = 1.293441;
 
 export const DEFAULT_MOCK_DRAFT_SETTINGS: MockDraftSettings = {
   draftPosition: 8,
@@ -56,6 +64,12 @@ export const DEFAULT_MOCK_DRAFT_SETTINGS: MockDraftSettings = {
   positionRisk: 1,
   byeRisk: 1,
   craziness: 1,
+  appetites: {
+    QB: 1,
+    RB: 1,
+    WR: 1,
+    TE: 1,
+  },
   seed: "",
   roster: {
     QB: 1,
@@ -93,6 +107,12 @@ export function validateMockDraftSettings(settings: MockDraftSettings): void {
   (["positionRisk", "byeRisk", "craziness"] as const).forEach((key) => {
     if (!Number.isFinite(settings[key]) || settings[key] <= 0) {
       throw new Error(`${key} must be a positive finite number`);
+    }
+  });
+  (["QB", "RB", "WR", "TE"] as AppetitePosition[]).forEach((position) => {
+    const appetite = settings.appetites?.[position];
+    if (!Number.isFinite(appetite) || appetite <= 0) {
+      throw new Error(`${position} appetite must be a positive finite number`);
     }
   });
   if (typeof settings.seed !== "string" || settings.seed.length === 0) {
@@ -158,6 +178,9 @@ export function getDraftView(
   orderedRanking: string[]
 ): MockDraftView {
   const available = uniqueRankedPlayers(orderedRanking, playersById);
+  const compositeRankByPlayerId = Object.fromEntries(
+    available.map((playerId, rankIndex) => [playerId, rankIndex + 1])
+  );
   const picks = state.picks.map((playerId, pickIndex) => {
     const rankIndex = available.indexOf(playerId);
     const rank = rankIndex === -1 ? available.length + 1 : rankIndex + 1;
@@ -170,6 +193,9 @@ export function getDraftView(
       roundIndex: (pickIndex % state.settings.teamCount) + 1,
       label: getPickLabel(pickIndex, state.settings.teamCount),
       rank,
+      compositeRank:
+        compositeRankByPlayerId[playerId] ??
+        Object.keys(compositeRankByPlayerId).length + 1,
       isUser: owner.draftPosition === state.settings.draftPosition,
     };
   });
@@ -348,6 +374,9 @@ function chooseOpponentPlayer(
     round,
     state.settings.craziness
   );
+  const bestEligibleOverallRankIndex = Math.min(
+    ...candidatePool.map((playerId) => overallRankByPlayerId[playerId])
+  );
 
   return candidatePool
     .map((playerId) => {
@@ -369,17 +398,40 @@ function chooseOpponentPlayer(
         Math.max(Number.EPSILON, random)
       );
       const gumbel = -Math.log(-Math.log(boundedRandom));
+      const position = normalizePosition(playersById[playerId].position);
+      const appetite =
+        position === "QB" ||
+        position === "RB" ||
+        position === "WR" ||
+        position === "TE"
+          ? state.settings.appetites[position]
+          : 1;
       return {
         playerId,
         score:
-          overallRankByPlayerId[playerId] +
+          getMockDraftRankCost(
+            overallRankByPlayerId[playerId],
+            bestEligibleOverallRankIndex
+          ) +
           positionPenalty +
           byePenalty -
+          temperature * Math.log(appetite) -
           temperature * gumbel,
       };
     })
     .sort((a, b) => a.score - b.score || a.playerId.localeCompare(b.playerId))[0]
     ?.playerId;
+}
+
+export function getMockDraftRankCost(
+  overallRankIndex: number,
+  bestEligibleOverallRankIndex: number,
+  rankExponent = MOCK_DRAFT_RANK_EXPONENT
+): number {
+  return Math.pow(
+    overallRankIndex - bestEligibleOverallRankIndex + 1,
+    rankExponent
+  );
 }
 
 export function getMockDraftOpponentCandidatePool(

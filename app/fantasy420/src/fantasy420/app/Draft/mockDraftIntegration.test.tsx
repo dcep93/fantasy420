@@ -159,6 +159,29 @@ test("keeps the reported rank-forty-one seed disciplined in round one", () => {
   rendered.unmount();
 });
 
+test("keeps the reported Hurts-Lawrence seed disciplined in round one", () => {
+  window.history.replaceState(null, "", "/draft");
+  const rendered = render(<Draft />);
+
+  fireEvent.change(screen.getByLabelText("seed"), {
+    target: { value: "25azysawidzz" },
+  });
+  fireEvent.click(screen.getByRole("button", { name: "mock draft" }));
+
+  const compositeRanks = Array.from(
+    rendered.container.querySelectorAll(".mock-draft-composite-rank")
+  ).map((element) => Number(element.textContent?.replace("composite #", "")));
+  expect(compositeRanks).toEqual([4, 5, 2, 1, 7, 3, 6]);
+
+  fireEvent.click(
+    rendered.container.querySelector('tbody tr[data-mock-available="true"]')!
+  );
+  const afterUserPick = decodeMockDraftHash(window.location.hash)!;
+  expect(afterUserPick.picks).toHaveLength(12);
+  expect(afterUserPick.picks).not.toContain("4360310");
+  rendered.unmount();
+});
+
 test("keeps opponent picks on the raw composite when My score changes", () => {
   function startDraft(): string[] {
     fireEvent.change(screen.getByLabelText("draft position"), {

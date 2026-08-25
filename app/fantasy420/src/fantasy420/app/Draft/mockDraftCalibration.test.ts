@@ -2,6 +2,7 @@ import {
   MOCK_DRAFT_BASE_TEMPERATURE,
   MOCK_DRAFT_BYE_PENALTY,
   MOCK_DRAFT_POSITION_PENALTY,
+  MOCK_DRAFT_RANK_EXPONENT,
   MOCK_DRAFT_ROUND_GROWTH,
 } from "./mockDraft";
 import {
@@ -59,6 +60,11 @@ test("fits the checked-in baseline and improves historical likelihood", () => {
     MOCK_DRAFT_ROUND_GROWTH,
     5
   );
+  expect(report.fitted.rankExponent).toBeCloseTo(
+    MOCK_DRAFT_RANK_EXPONENT,
+    5
+  );
+  expect(report.fitted.rankExponent).toBeGreaterThan(1);
   expect(report.roundAware.negativeLogLikelihood).toBeLessThan(
     report.legacy.summary.negativeLogLikelihood
   );

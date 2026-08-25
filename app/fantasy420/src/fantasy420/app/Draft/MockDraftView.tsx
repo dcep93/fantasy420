@@ -3,6 +3,7 @@ import { FormEvent, useEffect, useMemo, useState } from "react";
 import {
   createSeed,
   DEFAULT_MOCK_DRAFT_SETTINGS,
+  AppetitePosition,
   DraftPosition,
   getDraftView,
   getHistoricalNudgeAvailability,
@@ -28,6 +29,7 @@ const ROSTER_SLOTS: RosterSlot[] = [
   "BENCH",
 ];
 const POSITION_ORDER: DraftPosition[] = ["QB", "RB", "WR", "TE", "DST", "K"];
+const APPETITE_POSITIONS: AppetitePosition[] = ["QB", "RB", "WR", "TE"];
 const MIN_RISK_FACTOR = 0.0001;
 const MAX_RISK_FACTOR = 10000;
 
@@ -41,7 +43,11 @@ function normalizeRiskFactor(value: string): number {
 }
 
 function copySettings(settings: MockDraftSettings): MockDraftSettings {
-  return { ...settings, roster: { ...settings.roster } };
+  return {
+    ...settings,
+    appetites: { ...settings.appetites },
+    roster: { ...settings.roster },
+  };
 }
 
 function getRiskInputs(
@@ -71,12 +77,31 @@ export function MockDraftSetup(props: {
   const [riskInputs, setRiskInputs] = useState<Record<RiskFactorKey, string>>(
     () => getRiskInputs(initialSettings)
   );
+  const [appetiteInputs, setAppetiteInputs] = useState<
+    Record<AppetitePosition, string>
+  >(() =>
+    Object.fromEntries(
+      APPETITE_POSITIONS.map((position) => [
+        position,
+        String(initialSettings.appetites[position]),
+      ])
+    ) as Record<AppetitePosition, string>
+  );
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (!props.activeSettings) return;
-    setEditableSettings(copySettings(props.activeSettings));
-    setRiskInputs(getRiskInputs(props.activeSettings));
+    const activeSettings = props.activeSettings;
+    if (!activeSettings) return;
+    setEditableSettings(copySettings(activeSettings));
+    setRiskInputs(getRiskInputs(activeSettings));
+    setAppetiteInputs(
+      Object.fromEntries(
+        APPETITE_POSITIONS.map((position) => [
+          position,
+          String(activeSettings.appetites[position]),
+        ])
+      ) as Record<AppetitePosition, string>
+    );
   }, [props.activeSettings]);
 
   function submit(event: FormEvent) {
@@ -87,6 +112,12 @@ export function MockDraftSetup(props: {
       positionRisk: normalizeRiskFactor(riskInputs.positionRisk),
       byeRisk: normalizeRiskFactor(riskInputs.byeRisk),
       craziness: normalizeRiskFactor(riskInputs.craziness),
+      appetites: Object.fromEntries(
+        APPETITE_POSITIONS.map((position) => [
+          position,
+          normalizeRiskFactor(appetiteInputs[position]),
+        ])
+      ) as MockDraftSettings["appetites"],
     };
     const resolved = {
       ...normalizedSettings,
@@ -162,6 +193,21 @@ export function MockDraftSetup(props: {
           step="any"
           onChange={(value) => setRiskFactor("craziness", value)}
         />
+        {APPETITE_POSITIONS.map((position) => (
+          <NumberField
+            key={position}
+            label={`${position} appetite`}
+            value={appetiteInputs[position]}
+            min={0}
+            step="any"
+            onChange={(value) =>
+              setAppetiteInputs((current) => ({
+                ...current,
+                [position]: value,
+              }))
+            }
+          />
+        ))}
         <label className="mock-draft-field">
           <span>seed</span>
           <input
@@ -535,6 +581,9 @@ function PickBubble(props: {
         <div className="mock-draft-player-copy">
           <span className="mock-draft-pick-number">
             {props.pick.label}/{props.pick.pickIndex + 1}
+          </span>
+          <span className="mock-draft-composite-rank">
+            composite #{props.pick.compositeRank}
           </span>
           <div className="mock-draft-player-name">
             {props.player.name}
