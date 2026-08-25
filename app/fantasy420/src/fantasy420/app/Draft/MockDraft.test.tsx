@@ -24,7 +24,7 @@ test("renders the requested setup defaults and customizable roster", () => {
   expect(screen.getByLabelText("SUPERFLEX slots")).toHaveValue(1);
   expect(screen.getByLabelText("DST slots")).toHaveValue(0);
   expect(screen.queryByLabelText("K slots")).not.toBeInTheDocument();
-  expect(screen.getByLabelText("BENCH slots")).toHaveValue(5);
+  expect(screen.getByLabelText("BENCH slots")).toHaveValue(2);
 });
 
 test("resolves a blank seed and starts with edited settings", () => {
@@ -130,6 +130,7 @@ test("resets pending settings only when active settings change", () => {
 
 test("renders derived headshots, rookie marks, fallback, and nudge controls", () => {
   const onNudge = vi.fn();
+  const onRechoose = vi.fn();
   render(
     <MockDraftPanel
       state={{
@@ -170,6 +171,7 @@ test("renders derived headshots, rookie marks, fallback, and nudge controls", ()
       }}
       orderedRanking={["4429795", "-16008"]}
       onNudge={onNudge}
+      onRechoose={onRechoose}
     />
   );
 
@@ -182,6 +184,8 @@ test("renders derived headshots, rookie marks, fallback, and nudge controls", ()
   expect(screen.getAllByText("#1")).toHaveLength(2);
   expect(screen.getByLabelText("make pick 1.01 better")).toBeDisabled();
   expect(screen.getByLabelText("make pick 1.02 worse")).toBeDisabled();
+  expect(screen.queryByLabelText("rechoose pick 1.01")).not.toBeInTheDocument();
+  expect(screen.getByLabelText("rechoose pick 1.02")).toHaveTextContent("#1");
   expect(screen.getByText("1.01/1")).toBeInTheDocument();
   const gibbsBubble = screen
     .getByText("Jahmyr Gibbs*")
@@ -210,6 +214,12 @@ test("renders derived headshots, rookie marks, fallback, and nudge controls", ()
 
   fireEvent.click(screen.getByLabelText("make pick 1.01 worse"));
   expect(onNudge).toHaveBeenCalledWith(0, "worse");
+  fireEvent.click(screen.getByLabelText("rechoose pick 1.02"));
+  expect(onRechoose).toHaveBeenCalledWith(1);
+  expect(screen.getByTestId("mock-draft-panel")).toHaveAttribute(
+    "data-order",
+    "round"
+  );
 });
 
 test("uses the table's bright position palette for draft bubbles", () => {
@@ -249,6 +259,7 @@ test("uses the table's bright position palette for draft bubbles", () => {
       }}
       orderedRanking={["1", "2", "-3"]}
       onNudge={vi.fn()}
+      onRechoose={vi.fn()}
     />
   );
 
@@ -289,6 +300,7 @@ test("keeps team columns fixed and toggles every column together", () => {
       }}
       orderedRanking={["1", "2", "3", "4", "5", "6"]}
       onNudge={vi.fn()}
+      onRechoose={vi.fn()}
     />
   );
 
@@ -380,6 +392,7 @@ test("shows only user picks in a full roster column ordered by position and pick
       playersById={playersById}
       orderedRanking={playerIds}
       onNudge={vi.fn()}
+      onRechoose={vi.fn()}
     />
   );
 
@@ -424,6 +437,7 @@ test("shows the total pick index and preserves it as the position tie-breaker", 
       playersById={playersById}
       orderedRanking={playerIds}
       onNudge={vi.fn()}
+      onRechoose={vi.fn()}
     />
   );
 

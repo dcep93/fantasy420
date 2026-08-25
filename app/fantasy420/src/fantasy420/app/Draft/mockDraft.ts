@@ -66,7 +66,7 @@ export const DEFAULT_MOCK_DRAFT_SETTINGS: MockDraftSettings = {
     SUPERFLEX: 1,
     DST: 0,
     K: 0,
-    BENCH: 5,
+    BENCH: 2,
   },
 };
 
@@ -254,32 +254,26 @@ export function nudgeHistoricalPick(
     return state;
   }
 
-  const originalPicks = state.picks;
-  let picks = prefix.concat(available[targetIndex]);
-  for (let index = pickIndex + 1; index < originalPicks.length; index += 1) {
-    const owner = getPickOwner(index, state.settings.teamCount);
-    if (owner.draftPosition === state.settings.draftPosition) {
-      const savedUserPick = originalPicks[index];
-      if (
-        picks.includes(savedUserPick) ||
-        !playersById[savedUserPick] ||
-        !orderedRanking.includes(savedUserPick)
-      ) {
-        break;
-      }
-      picks.push(savedUserPick);
-      continue;
-    }
-    const opponentPick = chooseOpponentPlayer(
-      { ...state, picks },
-      owner.draftPosition,
-      playersById,
-      orderedRanking
-    );
-    if (!opponentPick) break;
-    picks.push(opponentPick);
+  return advanceToUserTurn(
+    { ...state, picks: prefix.concat(available[targetIndex]) },
+    playersById,
+    orderedRanking
+  );
+}
+
+export function rewindToUserPick(
+  state: MockDraftState,
+  pickIndex: number
+): MockDraftState {
+  if (
+    pickIndex < 0 ||
+    pickIndex >= state.picks.length ||
+    getPickOwner(pickIndex, state.settings.teamCount).draftPosition !==
+      state.settings.draftPosition
+  ) {
+    return state;
   }
-  return { ...state, picks };
+  return { ...state, picks: state.picks.slice(0, pickIndex) };
 }
 
 export function getHistoricalNudgeAvailability(

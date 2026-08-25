@@ -120,6 +120,28 @@ test("restores hash state without connecting to the Chrome extension", () => {
   rendered.unmount();
 });
 
+test("clicking a user rank rewinds the draft and saved hash for rechoice", () => {
+  window.history.replaceState(
+    null,
+    "",
+    `/draft${encodeMockDraftHash({
+      settings: {
+        ...DEFAULT_MOCK_DRAFT_SETTINGS,
+        teamCount: 2,
+        draftPosition: 1,
+        seed: "rank-rechoose",
+      },
+      picks: ["4429795"],
+    })}`
+  );
+
+  render(<Draft />);
+  fireEvent.click(screen.getAllByLabelText("rechoose pick 1.01")[0]);
+
+  expect(decodeMockDraftHash(window.location.hash)?.picks).toEqual([]);
+  expect(screen.getByText("your pick 1.01")).toBeInTheDocument();
+});
+
 test("keeps the reported rank-forty-one seed disciplined in round one", () => {
   window.history.replaceState(null, "", "/draft");
   const rendered = render(<Draft />);

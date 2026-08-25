@@ -11,6 +11,7 @@ import {
   makeUserPick,
   MockDraftPlayer,
   nudgeHistoricalPick,
+  rewindToUserPick,
   validateMockDraftSettings,
 } from "./mockDraft";
 
@@ -77,7 +78,7 @@ function rosterWith(
   } as typeof DEFAULT_MOCK_DRAFT_SETTINGS.roster;
 }
 
-test("uses the requested defaults and a fourteen-round draft", () => {
+test("uses the requested defaults and an eleven-round draft", () => {
   expect(DEFAULT_MOCK_DRAFT_SETTINGS).toMatchObject({
     draftPosition: 8,
     teamCount: 10,
@@ -93,10 +94,10 @@ test("uses the requested defaults and a fourteen-round draft", () => {
       SUPERFLEX: 1,
       DST: 0,
       K: 0,
-      BENCH: 5,
+      BENCH: 2,
     },
   });
-  expect(getDraftLength(DEFAULT_MOCK_DRAFT_SETTINGS)).toBe(140);
+  expect(getDraftLength(DEFAULT_MOCK_DRAFT_SETTINGS)).toBe(110);
 });
 
 test("rejects configured kicker slots", () => {
@@ -213,7 +214,7 @@ test("DST remains eligible when its default roster count is zero", () => {
   expect(selected.picks[0]).toBe("9");
 });
 
-test("historical nudges preserve later user picks when they remain available", () => {
+test("opponent-history nudges stop before the next user pick", () => {
   const settings = {
     ...DEFAULT_MOCK_DRAFT_SETTINGS,
     teamCount: 3,
@@ -224,9 +225,6 @@ test("historical nudges preserve later user picks when they remain available", (
   let state = advanceToUserTurn({ settings, picks: [] }, players, ranking);
   state = makeUserPick(state, "4", players, ranking);
   state = makeUserPick(state, "8", players, ranking);
-  const originalUserPicks = state.picks.filter(
-    (_, index) => getPickOwner(index, settings.teamCount).draftPosition === 2
-  );
   const changed = nudgeHistoricalPick(
     state,
     0,
@@ -234,32 +232,72 @@ test("historical nudges preserve later user picks when they remain available", (
     players,
     ranking
   );
-  const changedUserPicks = changed.picks.filter(
-    (_, index) => getPickOwner(index, settings.teamCount).draftPosition === 2
-  );
 
   expect(changed.picks[0]).not.toBe(state.picks[0]);
-  expect(changedUserPicks).toEqual(originalUserPicks);
+  expect(changed.picks).toHaveLength(1);
+  expect(getPickOwner(changed.picks.length, 3).draftPosition).toBe(2);
   expect(getDraftView(changed, players, ranking).picks[0].rank).toBeGreaterThan(1);
 });
 
-test("historical replay stops when an edit takes a later user player", () => {
+test("user-history nudges replay opponents and stop before the following user pick", () => {
   const settings = {
     ...DEFAULT_MOCK_DRAFT_SETTINGS,
     teamCount: 3,
     draftPosition: 2,
-    seed: "collision",
+    seed: "user-history",
     roster: { QB: 1, RB: 1, WR: 0, TE: 0, FLEX: 0, SUPERFLEX: 0, DST: 0, K: 0, BENCH: 0 },
   };
-  const state = {
-    settings,
-    picks: ["1", "2", "3", "4", "5", "6"],
-  };
+  let state = advanceToUserTurn({ settings, picks: [] }, players, ranking);
+  state = makeUserPick(state, "4", players, ranking);
+  state = makeUserPick(state, "8", players, ranking);
 
-  const changed = nudgeHistoricalPick(state, 0, "worse", players, ranking);
+  const changed = nudgeHistoricalPick(state, 1, "better", players, ranking);
 
-  expect(changed.picks).toEqual(["2"]);
+  expect(changed.picks).toHaveLength(4);
+  expect(changed.picks[1]).not.toBe(state.picks[1]);
   expect(getPickOwner(changed.picks.length, 3).draftPosition).toBe(2);
+  expect(
+    changed.picks.filter(
+      (_, index) => getPickOwner(index, 3).draftPosition === 2
+    )
+  ).toHaveLength(1);
+});
+
+test("a user-history nudge stops at a back-to-back snake turn", () => {
+  const settings = {
+    ...DEFAULT_MOCK_DRAFT_SETTINGS,
+    teamCount: 3,
+    draftPosition: 3,
+    seed: "snake-user-history",
+    roster: { QB: 1, RB: 1, WR: 0, TE: 0, FLEX: 0, SUPERFLEX: 0, DST: 0, K: 0, BENCH: 0 },
+  };
+  const changed = nudgeHistoricalPick(
+    { settings, picks: ["1", "2", "4", "8", "5", "6"] },
+    2,
+    "better",
+    players,
+    ranking
+  );
+
+  expect(changed.picks).toHaveLength(3);
+  expect(changed.picks[2]).toBe("3");
+  expect(getPickOwner(changed.picks.length, 3).draftPosition).toBe(3);
+});
+
+test("rewinds only valid user-owned historical picks", () => {
+  const settings = {
+    ...DEFAULT_MOCK_DRAFT_SETTINGS,
+    teamCount: 3,
+    draftPosition: 2,
+    seed: "rewind-user",
+  };
+  const state = { settings, picks: ["1", "2", "3", "4", "5", "6"] };
+
+  expect(rewindToUserPick(state, 4).picks).toEqual(["1", "2", "3", "4"]);
+  expect(rewindToUserPick(state, 1).picks).toEqual(["1"]);
+  expect(rewindToUserPick(state, 0)).toBe(state);
+  expect(rewindToUserPick(state, -1)).toBe(state);
+  expect(rewindToUserPick(state, 6)).toBe(state);
 });
 
 test("historical nudge availability disables impossible directions", () => {
@@ -457,13 +495,13 @@ test("historical replay applies the starter-slot rule to regenerated opponents",
 
   const changed = nudgeHistoricalPick(
     state,
-    3,
+    4,
     "better",
     lineupPlayers,
     ranked
   );
 
-  expect(changed.picks[3]).toBe("rb-3");
+  expect(changed.picks[4]).toBe("rb-3");
   expect(changed.picks[5]).toBe("rb-1");
 });
 

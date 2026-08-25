@@ -25,6 +25,7 @@ import {
   makeUserPick,
   MockDraftState,
   nudgeHistoricalPick,
+  rewindToUserPick,
 } from "./mockDraft";
 import {
   readMockDraftHash,
@@ -318,6 +319,12 @@ function SubDraft() {
     );
   }
 
+  function rechooseMockPick(pickIndex: number) {
+    if (!mockDraft) return;
+    const next = rewindToUserPick(mockDraft, pickIndex);
+    if (next !== mockDraft) saveMockDraft(next);
+  }
+
   const displayedRanking = results[personalScoreSort ? "composite" : source];
   const personalScoreInspectionIndex = personalScoreSort
     ? Object.fromEntries(
@@ -391,6 +398,7 @@ function SubDraft() {
           playersById={mockPlayersById}
           orderedRanking={mockDraftRanking}
           onNudge={nudgeMockPick}
+          onRechoose={rechooseMockPick}
         />
       ) : null}
       {mockDraftError ? (
@@ -551,6 +559,7 @@ function SubDraft() {
             playersById={mockPlayersById}
             orderedRanking={mockDraftRanking}
             onNudge={nudgeMockPick}
+            onRechoose={rechooseMockPick}
           />
         ) : null}
         <div

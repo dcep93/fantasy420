@@ -343,6 +343,15 @@
   font: 700 0.85rem/1 Arial, sans-serif;
 }
 
+.mock-draft-rank-controls .mock-draft-rank-rechoose {
+  width: auto;
+  padding: 3px 4px;
+  font-family: inherit;
+  font-size: 0.58rem;
+  font-weight: 700;
+  line-height: normal;
+}
+
 .mock-draft-rank-controls button:not(:disabled):hover {
   background: rgba(255, 255, 255, 0.2);
 }

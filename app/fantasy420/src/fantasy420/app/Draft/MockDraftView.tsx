@@ -229,6 +229,7 @@ export function MockDraftPanel(props: {
   playersById: Record<string, MockDraftDisplayPlayer>;
   orderedRanking: string[];
   onNudge: (pickIndex: number, direction: "better" | "worse") => void;
+  onRechoose: (pickIndex: number) => void;
 }) {
   const [order, setOrder] = useState<"round" | "position">("round");
   const [failedImages, setFailedImages] = useState<Set<string>>(
@@ -278,6 +279,7 @@ export function MockDraftRoster(props: {
   playersById: Record<string, MockDraftDisplayPlayer>;
   orderedRanking: string[];
   onNudge: (pickIndex: number, direction: "better" | "worse") => void;
+  onRechoose: (pickIndex: number) => void;
 }) {
   const [failedImages, setFailedImages] = useState<Set<string>>(
     () => new Set()
@@ -325,6 +327,7 @@ export function MockDraftRoster(props: {
               )
             }
             onNudge={props.onNudge}
+            onRechoose={props.onRechoose}
           />
         );
       })}
@@ -440,6 +443,7 @@ function TeamBoard(
                     canNudgeWorse={nudge.worse}
                     onImageError={() => props.onImageError(pick.playerId)}
                     onNudge={props.onNudge}
+                    onRechoose={props.onRechoose}
                   />
                 );
               })}
@@ -460,6 +464,7 @@ function PickBubble(props: {
   canNudgeWorse: boolean;
   onImageError: () => void;
   onNudge: (pickIndex: number, direction: "better" | "worse") => void;
+  onRechoose: (pickIndex: number) => void;
 }) {
   const headshot = getEspnHeadshotUrl(props.player.id);
   const position = normalizePosition(props.player.position);
@@ -499,7 +504,21 @@ function PickBubble(props: {
             >
               ‹
             </button>
-            <span className="mock-draft-rank">#{props.pick.rank}</span>
+            {props.pick.isUser ? (
+              <button
+                type="button"
+                className="mock-draft-rank mock-draft-rank-rechoose"
+                aria-label={`rechoose pick ${props.pick.label}`}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  props.onRechoose(props.pick.pickIndex);
+                }}
+              >
+                #{props.pick.rank}
+              </button>
+            ) : (
+              <span className="mock-draft-rank">#{props.pick.rank}</span>
+            )}
             <button
               type="button"
               aria-label={`make pick ${props.pick.label} worse`}
