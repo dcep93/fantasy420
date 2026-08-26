@@ -583,7 +583,7 @@ function PickBubble(props: {
             {props.pick.label}/{props.pick.pickIndex + 1}
           </span>
           <span className="mock-draft-composite-rank">
-            composite #{props.pick.compositeRank}
+            {props.pick.compositeRank} ADP
           </span>
           <div className="mock-draft-player-name">
             {props.player.name}

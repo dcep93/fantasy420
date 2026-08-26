@@ -198,8 +198,8 @@ test("renders derived headshots, rookie marks, fallback, and nudge controls", ()
   expect(screen.queryByLabelText("rechoose pick 1.01")).not.toBeInTheDocument();
   expect(screen.getByLabelText("rechoose pick 1.02")).toHaveTextContent("#1");
   expect(screen.getByText("1.01/1")).toBeInTheDocument();
-  expect(screen.getByText("composite #1")).toBeInTheDocument();
-  expect(screen.getByText("composite #2")).toBeInTheDocument();
+  expect(screen.getByText("1 ADP")).toBeInTheDocument();
+  expect(screen.getByText("2 ADP")).toBeInTheDocument();
   const gibbsBubble = screen
     .getByText("Jahmyr Gibbs*")
     .closest(".mock-draft-pick")!;
