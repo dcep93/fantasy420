@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { groupByF, selectedWrapped } from "..";
 import { DraftJsonType, selectedDraft } from "../../Draft";
-import { NFLPlayerType } from "../../FetchWrapped";
+import { NFLPlayerType, WrappedType } from "../../FetchWrapped";
 
 export default function DraftValue() {
   const [numRounds, update] = useState(8);
@@ -105,22 +105,24 @@ export default function DraftValue() {
   );
 }
 
-type PerformanceType = {
+export type PerformanceType = {
   [playerId: string]: {
     msg: string;
     pickIndex: number;
     player: NFLPlayerType;
     draftRank: number;
-    totalRank: number;
+    totalRank?: number;
   };
 };
 
-export function getPerformance(): PerformanceType {
-  const drafted = Object.values(selectedWrapped().ffTeams)
+export function getPerformance(
+  wrapped: WrappedType = selectedWrapped()
+): PerformanceType {
+  const drafted = Object.values(wrapped.ffTeams)
     .flatMap((team) => team.draft)
     .map(({ playerId, pickIndex }) => ({
       pickIndex,
-      player: selectedWrapped().nflPlayers[playerId],
+      player: wrapped.nflPlayers[playerId],
     }));
   const grouped = groupByF(drafted, ({ player }) => player.position);
   const byTotal = Object.fromEntries(
@@ -129,10 +131,6 @@ export function getPerformance(): PerformanceType {
       Object.fromEntries(
         players
           .slice()
-          .map((p) => ({
-            ...p,
-            total: selectedDraft()?.draftkings_super?.[p.player.id] || 0,
-          }))
           .filter((p) => p.player.total !== 0)
           .sort((a, b) => b.player.total - a.player.total)
           .map((player, rank) => [player.player.id, { rank, ...player }])
@@ -169,7 +167,9 @@ export function getPerformance(): PerformanceType {
             player.draftRank + 1
           }; scored ${player.player.total.toFixed(2)} = ${
             player.player.position
-          }${player.totalRank + 1})`,
+          }${
+            player.totalRank === undefined ? "—" : player.totalRank + 1
+          })`,
         },
       ])
   );

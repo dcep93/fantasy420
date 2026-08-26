@@ -6,10 +6,6 @@ import { fetchExtensionStorage, setExtensionStorage } from "./Extension";
 import { WrappedType } from "../FetchWrapped";
 import { selectedWrapped, selectedYear } from "../Wrapped";
 import allWrapped from "../Wrapped/allWrapped";
-import draft2023 from "./2023.json";
-import draft2024 from "./2024.json";
-import draft2025 from "./2025.json";
-import draft2026 from "./2026.json";
 import getFormatAwareRankings, { getSourceLabel } from "./composite";
 import draftKings from "./draftKings";
 import {
@@ -40,8 +36,16 @@ import {
 } from "./personalScores";
 import { POSITION_COLORS } from "./positionColors";
 import { getRookiePlayerIds, normalizeDraftPlayerName } from "./rookies";
+import {
+  DraftJsonType,
+  getDraftForYear,
+  PlayersType,
+  rawDrafts,
+} from "./yearComposite";
 
 export { POSITION_COLORS } from "./positionColors";
+export { getCompositeForYear } from "./yearComposite";
+export type { DraftJsonType, PlayersType } from "./yearComposite";
 
 export const isDev = import.meta.env.DEV;
 
@@ -89,48 +93,11 @@ function validateMockDraftPicks(
   });
 }
 
-const rawDrafts: { [year: string]: DraftJsonType } = {
-  2023: draft2023,
-  2024: draft2024,
-  2025: draft2025,
-  2026: draft2026,
-};
-
-const allDrafts: { [year: string]: DraftJsonType } = Object.fromEntries(
-  Object.entries(rawDrafts).map(([year, rawDraft]) => {
-    const normalizedNameToId =
-      allWrapped[year] === undefined
-        ? {}
-        : getNormalizedNameToId(allWrapped[year]);
-    return [
-      year,
-      Object.fromEntries(
-        Object.entries(rawDraft).map(([name, players]) => [
-          name,
-          Object.fromEntries(
-            Object.entries(players)
-              .map(([name, value]) => ({
-                playerId: normalizedNameToId[normalizeDraftPlayerName(name)],
-                value,
-              }))
-              .filter(({ playerId }) => playerId)
-              .sort((a, b) => a.value - b.value)
-              .map(({ playerId, value }) => [playerId, value])
-          ),
-        ])
-      ),
-    ];
-  })
-);
-
 const MY_TEAM_ID = "1";
 
 export function selectedDraft(): DraftJsonType {
-  return allDrafts[selectedYear];
+  return getDraftForYear(selectedYear)!;
 }
-
-export type PlayersType = { [playerId: string]: number };
-export type DraftJsonType = { [source: string]: PlayersType };
 
 export default function Draft() {
   return <SubDraft />;
