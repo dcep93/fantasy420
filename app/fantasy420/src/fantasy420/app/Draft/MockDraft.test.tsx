@@ -467,15 +467,27 @@ test("shows the total pick index and preserves it as the position tie-breaker", 
   );
 });
 
-test("keeps roster settings on one horizontally scrolling row", () => {
+test("keeps setup settings in a capped responsive grid", () => {
   const css = readFileSync(
     "src/fantasy420/app/Draft/MockDraftView.css",
     "utf8"
   );
+  const setupRule = css.match(/\.mock-draft-setup\s*{([^}]*)}/)?.[1];
+  const fieldsRule = css.match(/\.mock-draft-fields\s*{([^}]*)}/)?.[1];
   const rosterRule = css.match(/\.mock-draft-roster-fields\s*{([^}]*)}/)?.[1];
 
-  expect(rosterRule).toMatch(/flex-wrap:\s*nowrap/);
-  expect(rosterRule).toMatch(/overflow-x:\s*auto/);
+  expect(setupRule).toMatch(/width:\s*min\(100%,\s*1000px\)/);
+  expect(fieldsRule).toMatch(/display:\s*grid/);
+  expect(fieldsRule).toMatch(
+    /grid-template-columns:\s*repeat\(4,\s*minmax\(0,\s*1fr\)\)/
+  );
+  expect(rosterRule).not.toMatch(/overflow-x/);
+  expect(css).toMatch(
+    /@media \(max-width:\s*800px\)[\s\S]*?grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\)/
+  );
+  expect(css).toMatch(
+    /@media \(max-width:\s*500px\)[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\)/
+  );
 });
 
 test("gives the rankings workspace a full viewport and scrolls the table internally", () => {
