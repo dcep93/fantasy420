@@ -24,9 +24,10 @@ import {
   rewindToUserPick,
 } from "./mockDraft";
 import {
-  readMockDraftHash,
-  replaceMockDraftHash,
-} from "./mockDraftHash";
+  clearMockDraftState,
+  readMockDraftState,
+  saveMockDraftState,
+} from "./mockDraftStorage";
 import {
   applyPersonalScores,
   PersonalScores,
@@ -85,12 +86,21 @@ function validateMockDraftPicks(
   state.picks.forEach((playerId) => {
     const player = wrapped.nflPlayers[playerId];
     if (!player) {
-      throw new Error("Mock draft URL contains an unknown ESPN player id");
+      throw new Error("Saved mock draft contains an unknown ESPN player id");
     }
     if (!isMockDraftPlayerEligible(player)) {
-      throw new Error("Mock draft URL contains an ineligible kicker");
+      throw new Error("Saved mock draft contains an ineligible kicker");
     }
   });
+}
+
+function removeDraftHash(): void {
+  if (!window.location.hash) return;
+  window.history.replaceState(
+    null,
+    "",
+    `${window.location.pathname}${window.location.search}`
+  );
 }
 
 const MY_TEAM_ID = "1";
@@ -114,21 +124,10 @@ function SubDraft() {
   const [personalScoreSort, setPersonalScoreSort] = useState(false);
   const wrapped = allWrapped[selectedYear];
   const playerScrollRef = useRef<HTMLDivElement>(null);
-  const [mockDraft, setMockDraft] = useState<MockDraftState | null>(() => {
-    try {
-      return readMockDraftHash();
-    } catch {
-      return null;
-    }
-  });
-  const [mockDraftError, setMockDraftError] = useState(() => {
-    try {
-      readMockDraftHash();
-      return "";
-    } catch (error) {
-      return error instanceof Error ? error.message : String(error);
-    }
-  });
+  const [mockDraft, setMockDraft] = useState<MockDraftState | null>(() =>
+    readMockDraftState()
+  );
+  const [mockDraftError, setMockDraftError] = useState("");
   const liveDraft = useLiveDraft(mockDraft === null);
   const normalizedNameToId = useMemo(
     () => getNormalizedNameToId(wrapped),
@@ -239,25 +238,16 @@ function SubDraft() {
   );
 
   useEffect(() => {
-    function loadHash() {
-      try {
-        const loaded = readMockDraftHash();
-        validateMockDraftPicks(loaded, wrapped);
-        setMockDraftError("");
-        setMockDraft(loaded);
-      } catch (error) {
-        setMockDraft(null);
-        setMockDraftError(error instanceof Error ? error.message : String(error));
-      }
-    }
-    window.addEventListener("hashchange", loadHash);
-    return () => window.removeEventListener("hashchange", loadHash);
-  }, [wrapped]);
+    removeDraftHash();
+    window.addEventListener("hashchange", removeDraftHash);
+    return () => window.removeEventListener("hashchange", removeDraftHash);
+  }, []);
 
   useEffect(() => {
     try {
       validateMockDraftPicks(mockDraft, wrapped);
     } catch (error) {
+      clearMockDraftState();
       setMockDraft(null);
       setMockDraftError(error instanceof Error ? error.message : String(error));
     }
@@ -267,7 +257,7 @@ function SubDraft() {
     if (positionFilter === "K") updatePositionFilter("");
     setMockDraft(next);
     setMockDraftError("");
-    replaceMockDraftHash(next);
+    saveMockDraftState(next);
   }
 
   function nudgeMockPick(
