@@ -6,16 +6,17 @@ Keep the mock-draft configuration visually compact on wide desktop screens witho
 
 ## Layout
 
-The setup card remains left-aligned and shrinks to the width of its contents, subject to the viewport width. Both settings groups use a two-column intrinsic grid at desktop sizes:
+The setup card remains left-aligned, shrinks to its contents, and is capped at 900 pixels. Both settings groups use wrapping flex rows at desktop sizes:
 
-- Primary settings flow into five complete rows of two controls.
-- Roster settings flow into four complete rows of two controls.
+- Each field is only as wide as its label and compact input require.
+- The browser fits as many fields on each row as the available width allows.
+- Primary and roster settings remain visually separated.
 
-Inputs return to compact fixed widths; the seed input remains slightly longer. Grid tracks size to their contents rather than expanding to fill a large arbitrary card width. The title and start button remain together in the existing header.
+Numeric inputs use a compact three-rem width; the seed input uses six rem. Fields never grow to consume leftover row space. The title and start button remain together in the existing header.
 
 ## Responsive behavior
 
-Below 500 pixels, each settings group uses one column. The setup card never exceeds the viewport width.
+Fields wrap naturally as the viewport narrows. The setup card never exceeds the viewport width; there are no fixed column breakpoints or horizontal settings scrollers.
 
 ## Scope
 
@@ -23,4 +24,4 @@ This change affects only the mock-draft setup form. The active mock-draft panel,
 
 ## Verification
 
-Update the layout assertions to require shrink-to-content sizing, two intrinsic desktop columns, compact inputs, wrapping roster controls, and the one-column phone breakpoint. Run the mock-draft component tests and production build, then inspect the form at wide and narrow browser widths.
+Update the layout assertions to require shrink-to-content sizing, the 900-pixel cap, wrapping flex rows, non-growing fields, and compact inputs. Run the mock-draft component tests and production build, then measure field widths and settings per row at wide and narrow browser widths.
