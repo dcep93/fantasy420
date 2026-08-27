@@ -481,13 +481,14 @@ test("keeps setup settings in a compact intrinsic grid", () => {
   )?.[1];
   const rosterRule = css.match(/\.mock-draft-roster-fields\s*{([^}]*)}/)?.[1];
 
-  expect(setupRule).toMatch(/width:\s*fit-content/);
-  expect(setupRule).toMatch(/max-width:\s*min\(100%,\s*900px\)/);
+  expect(setupRule).toMatch(/width:\s*100%/);
   expect(fieldsRule).toMatch(/display:\s*flex/);
   expect(fieldsRule).toMatch(/flex-wrap:\s*wrap/);
+  expect(fieldsRule).toMatch(/gap:\s*5px/);
   expect(fieldRule).toMatch(/flex:\s*0 0 auto/);
-  expect(inputRule).toMatch(/width:\s*3rem/);
-  expect(seedRule).toMatch(/width:\s*6rem/);
+  expect(fieldRule).toMatch(/padding:\s*4px 5px/);
+  expect(inputRule).toMatch(/width:\s*2rem/);
+  expect(seedRule).toMatch(/width:\s*5rem/);
   expect(rosterRule).not.toMatch(/overflow-x/);
 });
 
