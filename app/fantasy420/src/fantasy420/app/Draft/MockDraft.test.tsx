@@ -467,26 +467,30 @@ test("shows the total pick index and preserves it as the position tie-breaker", 
   );
 });
 
-test("keeps setup settings in a capped responsive grid", () => {
+test("keeps setup settings in a compact intrinsic grid", () => {
   const css = readFileSync(
     "src/fantasy420/app/Draft/MockDraftView.css",
     "utf8"
   );
   const setupRule = css.match(/\.mock-draft-setup\s*{([^}]*)}/)?.[1];
   const fieldsRule = css.match(/\.mock-draft-fields\s*{([^}]*)}/)?.[1];
+  const inputRule = css.match(/\.mock-draft-field input\s*{([^}]*)}/)?.[1];
+  const seedRule = css.match(
+    /\.mock-draft-field:has\(input\[aria-label="seed"\]\) input\s*{([^}]*)}/
+  )?.[1];
   const rosterRule = css.match(/\.mock-draft-roster-fields\s*{([^}]*)}/)?.[1];
 
-  expect(setupRule).toMatch(/width:\s*min\(100%,\s*1000px\)/);
+  expect(setupRule).toMatch(/width:\s*fit-content/);
+  expect(setupRule).toMatch(/max-width:\s*100%/);
   expect(fieldsRule).toMatch(/display:\s*grid/);
   expect(fieldsRule).toMatch(
-    /grid-template-columns:\s*repeat\(4,\s*minmax\(0,\s*1fr\)\)/
+    /grid-template-columns:\s*repeat\(2,\s*max-content\)/
   );
+  expect(inputRule).toMatch(/width:\s*4\.4rem/);
+  expect(seedRule).toMatch(/width:\s*7rem/);
   expect(rosterRule).not.toMatch(/overflow-x/);
   expect(css).toMatch(
-    /@media \(max-width:\s*800px\)[\s\S]*?grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\)/
-  );
-  expect(css).toMatch(
-    /@media \(max-width:\s*500px\)[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\)/
+    /@media \(max-width:\s*500px\)[\s\S]*?grid-template-columns:\s*max-content/
   );
 });
 

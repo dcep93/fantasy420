@@ -8,7 +8,8 @@
 }
 
 .mock-draft-setup {
-  width: min(100%, 1000px);
+  width: fit-content;
+  max-width: 100%;
   padding: 12px;
   border: 1px solid rgba(201, 156, 107, 0.2);
   border-radius: 18px;
@@ -36,7 +37,7 @@
 
 .mock-draft-fields {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, max-content);
   gap: 7px;
 }
 
@@ -60,9 +61,7 @@
 }
 
 .mock-draft-field input {
-  flex: 1 1 auto;
-  width: 0;
-  min-width: 0;
+  width: 4.4rem;
   padding: 3px 5px;
   border: 1px solid rgba(201, 156, 107, 0.2);
   border-radius: 7px;
@@ -73,6 +72,10 @@
 
 .mock-draft-field input:disabled {
   opacity: 0.72;
+}
+
+.mock-draft-field:has(input[aria-label="seed"]) input {
+  width: 7rem;
 }
 
 .mock-draft-start {
@@ -372,10 +375,6 @@
 }
 
 @media (max-width: 800px) {
-  .mock-draft-fields {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .mock-draft-header {
     align-items: flex-start;
     flex-direction: column;
@@ -384,6 +383,6 @@
 
 @media (max-width: 500px) {
   .mock-draft-fields {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: max-content;
   }
 }
