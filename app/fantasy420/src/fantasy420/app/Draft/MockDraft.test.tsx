@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { readFileSync } from "node:fs";
-import { vi } from "vitest";
+import { beforeEach, vi } from "vitest";
 
 import {
   MockDraftPanel,
@@ -8,7 +8,16 @@ import {
   MockDraftSetup,
 } from "./MockDraftView";
 import { DEFAULT_MOCK_DRAFT_SETTINGS } from "./mockDraft";
+import {
+  getMockDraftSetupPreferences,
+  MOCK_DRAFT_SETTINGS_STORAGE_KEY,
+  saveMockDraftSetupPreferences,
+} from "./mockDraftSettingsStorage";
 import { POSITION_COLORS } from "./positionColors";
+
+beforeEach(() => {
+  window.localStorage.clear();
+});
 
 test("renders the requested setup defaults and customizable roster", () => {
   render(<MockDraftSetup onStart={vi.fn()} />);
@@ -42,6 +51,99 @@ test("resolves a blank seed and starts with edited settings", () => {
   expect(onStart).toHaveBeenCalledOnce();
   expect(onStart.mock.calls[0][0].teamCount).toBe(12);
   expect(onStart.mock.calls[0][0].seed).not.toBe("");
+});
+
+test("immediately stores and restores every non-seed settings group", () => {
+  const first = render(<MockDraftSetup />);
+  fireEvent.change(screen.getByLabelText("draft position"), {
+    target: { value: "4" },
+  });
+  fireEvent.change(screen.getByLabelText("position riskiness"), {
+    target: { value: "" },
+  });
+  fireEvent.change(screen.getByLabelText("QB appetite"), {
+    target: { value: "3.5" },
+  });
+  fireEvent.change(screen.getByLabelText("BENCH slots"), {
+    target: { value: "6" },
+  });
+
+  expect(
+    JSON.parse(
+      window.localStorage.getItem(MOCK_DRAFT_SETTINGS_STORAGE_KEY)!
+    )
+  ).toMatchObject({
+    draftPosition: 4,
+    riskInputs: { positionRisk: "" },
+    appetiteInputs: { QB: "3.5" },
+    roster: { BENCH: 6 },
+  });
+
+  first.unmount();
+  render(<MockDraftSetup />);
+  expect(screen.getByLabelText("draft position")).toHaveValue(4);
+  expect(screen.getByLabelText("position riskiness")).toHaveValue(null);
+  expect(screen.getByLabelText("QB appetite")).toHaveValue(3.5);
+  expect(screen.getByLabelText("BENCH slots")).toHaveValue(6);
+  expect(screen.getByLabelText("seed")).toHaveValue("");
+});
+
+test("never writes seed changes to local storage", () => {
+  render(<MockDraftSetup />);
+  fireEvent.change(screen.getByLabelText("seed"), {
+    target: { value: "private-seed" },
+  });
+
+  expect(
+    window.localStorage.getItem(MOCK_DRAFT_SETTINGS_STORAGE_KEY)
+  ).toBeNull();
+
+  fireEvent.change(screen.getByLabelText("number of teams"), {
+    target: { value: "12" },
+  });
+  expect(
+    window.localStorage.getItem(MOCK_DRAFT_SETTINGS_STORAGE_KEY)
+  ).not.toContain("seed");
+  expect(
+    window.localStorage.getItem(MOCK_DRAFT_SETTINGS_STORAGE_KEY)
+  ).not.toContain("private-seed");
+});
+
+test("active draft settings override storage without replacing it on load", () => {
+  const saved = getMockDraftSetupPreferences({
+    ...DEFAULT_MOCK_DRAFT_SETTINGS,
+    draftPosition: 2,
+  });
+  saveMockDraftSetupPreferences(saved);
+  const activeSettings = {
+    ...DEFAULT_MOCK_DRAFT_SETTINGS,
+    draftPosition: 7,
+    teamCount: 12,
+    seed: "linked-draft",
+  };
+
+  render(<MockDraftSetup activeSettings={activeSettings} />);
+
+  expect(screen.getByLabelText("draft position")).toHaveValue(7);
+  expect(screen.getByLabelText("seed")).toHaveValue("linked-draft");
+  expect(
+    JSON.parse(
+      window.localStorage.getItem(MOCK_DRAFT_SETTINGS_STORAGE_KEY)!
+    ).draftPosition
+  ).toBe(2);
+
+  fireEvent.change(screen.getByLabelText("WR slots"), {
+    target: { value: "4" },
+  });
+  const updated = JSON.parse(
+    window.localStorage.getItem(MOCK_DRAFT_SETTINGS_STORAGE_KEY)!
+  );
+  expect(updated).toMatchObject({
+    draftPosition: 7,
+    teamCount: 12,
+    roster: { WR: 4 },
+  });
+  expect(updated).not.toHaveProperty("seed");
 });
 
 test("normalizes factor input extremes when starting", () => {

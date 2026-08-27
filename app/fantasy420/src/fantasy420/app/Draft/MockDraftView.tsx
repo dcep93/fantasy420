@@ -15,6 +15,13 @@ import {
   RosterSlot,
   validateMockDraftSettings,
 } from "./mockDraft";
+import {
+  getMockDraftSetupPreferences,
+  MockDraftAppetiteInputs,
+  MockDraftRiskInputs,
+  readMockDraftSetupPreferences,
+  saveMockDraftSetupPreferences,
+} from "./mockDraftSettingsStorage";
 import { getPositionColor } from "./positionColors";
 import "./MockDraftView.css";
 
@@ -33,7 +40,13 @@ const APPETITE_POSITIONS: AppetitePosition[] = ["QB", "RB", "WR", "TE"];
 const MIN_RISK_FACTOR = 0.0001;
 const MAX_RISK_FACTOR = 10000;
 
-type RiskFactorKey = "positionRisk" | "byeRisk" | "craziness";
+type RiskFactorKey = keyof MockDraftRiskInputs;
+
+type MockDraftSetupForm = {
+  editableSettings: MockDraftSettings;
+  riskInputs: MockDraftRiskInputs;
+  appetiteInputs: MockDraftAppetiteInputs;
+};
 
 function normalizeRiskFactor(value: string): number {
   if (value.trim() === "") return MAX_RISK_FACTOR;
@@ -52,11 +65,48 @@ function copySettings(settings: MockDraftSettings): MockDraftSettings {
 
 function getRiskInputs(
   settings: MockDraftSettings
-): Record<RiskFactorKey, string> {
+): MockDraftRiskInputs {
   return {
     positionRisk: String(settings.positionRisk),
     byeRisk: String(settings.byeRisk),
     craziness: String(settings.craziness),
+  };
+}
+
+function getAppetiteInputs(
+  settings: MockDraftSettings
+): MockDraftAppetiteInputs {
+  return Object.fromEntries(
+    APPETITE_POSITIONS.map((position) => [
+      position,
+      String(settings.appetites[position]),
+    ])
+  ) as MockDraftAppetiteInputs;
+}
+
+function getSetupForm(settings: MockDraftSettings): MockDraftSetupForm {
+  return {
+    editableSettings: copySettings(settings),
+    riskInputs: getRiskInputs(settings),
+    appetiteInputs: getAppetiteInputs(settings),
+  };
+}
+
+function getInitialSetupForm(
+  activeSettings?: MockDraftSettings
+): MockDraftSetupForm {
+  if (activeSettings) return getSetupForm(activeSettings);
+  const saved = readMockDraftSetupPreferences();
+  return {
+    editableSettings: {
+      ...copySettings(DEFAULT_MOCK_DRAFT_SETTINGS),
+      draftPosition: saved.draftPosition,
+      teamCount: saved.teamCount,
+      seed: "",
+      roster: { ...saved.roster },
+    },
+    riskInputs: { ...saved.riskInputs },
+    appetiteInputs: { ...saved.appetiteInputs },
   };
 }
 
@@ -69,40 +119,31 @@ export function MockDraftSetup(props: {
   activeSettings?: MockDraftSettings;
   onStart?: (settings: MockDraftSettings) => void;
 }) {
-  const initialSettings =
-    props.activeSettings ?? DEFAULT_MOCK_DRAFT_SETTINGS;
-  const [editableSettings, setEditableSettings] = useState<MockDraftSettings>(
-    () => copySettings(initialSettings)
-  );
-  const [riskInputs, setRiskInputs] = useState<Record<RiskFactorKey, string>>(
-    () => getRiskInputs(initialSettings)
-  );
-  const [appetiteInputs, setAppetiteInputs] = useState<
-    Record<AppetitePosition, string>
-  >(() =>
-    Object.fromEntries(
-      APPETITE_POSITIONS.map((position) => [
-        position,
-        String(initialSettings.appetites[position]),
-      ])
-    ) as Record<AppetitePosition, string>
+  const [form, setForm] = useState<MockDraftSetupForm>(() =>
+    getInitialSetupForm(props.activeSettings)
   );
   const [error, setError] = useState("");
+  const { editableSettings, riskInputs, appetiteInputs } = form;
 
   useEffect(() => {
     const activeSettings = props.activeSettings;
     if (!activeSettings) return;
-    setEditableSettings(copySettings(activeSettings));
-    setRiskInputs(getRiskInputs(activeSettings));
-    setAppetiteInputs(
-      Object.fromEntries(
-        APPETITE_POSITIONS.map((position) => [
-          position,
-          String(activeSettings.appetites[position]),
-        ])
-      ) as Record<AppetitePosition, string>
-    );
+    setForm(getSetupForm(activeSettings));
   }, [props.activeSettings]);
+
+  function updateAndSave(
+    update: (current: MockDraftSetupForm) => MockDraftSetupForm
+  ) {
+    const next = update(form);
+    setForm(next);
+    saveMockDraftSetupPreferences(
+      getMockDraftSetupPreferences(
+        next.editableSettings,
+        next.riskInputs,
+        next.appetiteInputs
+      )
+    );
+  }
 
   function submit(event: FormEvent) {
     event.preventDefault();
@@ -136,11 +177,20 @@ export function MockDraftSetup(props: {
     key: "draftPosition" | "teamCount",
     value: string
   ) {
-    setEditableSettings((current) => ({ ...current, [key]: Number(value) }));
+    updateAndSave((current) => ({
+      ...current,
+      editableSettings: {
+        ...current.editableSettings,
+        [key]: Number(value),
+      },
+    }));
   }
 
   function setRiskFactor(key: RiskFactorKey, value: string) {
-    setRiskInputs((current) => ({ ...current, [key]: value }));
+    updateAndSave((current) => ({
+      ...current,
+      riskInputs: { ...current.riskInputs, [key]: value },
+    }));
   }
 
   return (
@@ -201,9 +251,12 @@ export function MockDraftSetup(props: {
             min={0}
             step="any"
             onChange={(value) =>
-              setAppetiteInputs((current) => ({
+              updateAndSave((current) => ({
                 ...current,
-                [position]: value,
+                appetiteInputs: {
+                  ...current.appetiteInputs,
+                  [position]: value,
+                },
               }))
             }
           />
@@ -215,9 +268,12 @@ export function MockDraftSetup(props: {
             value={editableSettings.seed}
             placeholder="random"
             onChange={(event) =>
-              setEditableSettings((current) => ({
+              setForm((current) => ({
                 ...current,
-                seed: event.target.value,
+                editableSettings: {
+                  ...current.editableSettings,
+                  seed: event.target.value,
+                },
               }))
             }
           />
@@ -235,9 +291,15 @@ export function MockDraftSetup(props: {
             min={0}
             step={1}
             onChange={(value) =>
-              setEditableSettings((current) => ({
+              updateAndSave((current) => ({
                 ...current,
-                roster: { ...current.roster, [slot]: Number(value) },
+                editableSettings: {
+                  ...current.editableSettings,
+                  roster: {
+                    ...current.editableSettings.roster,
+                    [slot]: Number(value),
+                  },
+                },
               }))
             }
           />
