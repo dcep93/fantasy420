@@ -9,7 +9,7 @@
 
 .mock-draft-setup {
   width: fit-content;
-  max-width: 100%;
+  max-width: min(100%, 900px);
   padding: 12px;
   border: 1px solid rgba(201, 156, 107, 0.2);
   border-radius: 18px;
@@ -36,8 +36,8 @@
 }
 
 .mock-draft-fields {
-  display: grid;
-  grid-template-columns: repeat(2, max-content);
+  display: flex;
+  flex-wrap: wrap;
   gap: 7px;
 }
 
@@ -49,6 +49,7 @@
 
 .mock-draft-field {
   display: flex;
+  flex: 0 0 auto;
   align-items: center;
   min-width: 0;
   gap: 5px;
@@ -61,7 +62,7 @@
 }
 
 .mock-draft-field input {
-  width: 4.4rem;
+  width: 3rem;
   padding: 3px 5px;
   border: 1px solid rgba(201, 156, 107, 0.2);
   border-radius: 7px;
@@ -75,7 +76,7 @@
 }
 
 .mock-draft-field:has(input[aria-label="seed"]) input {
-  width: 7rem;
+  width: 6rem;
 }
 
 .mock-draft-start {
@@ -378,11 +379,5 @@
   .mock-draft-header {
     align-items: flex-start;
     flex-direction: column;
-  }
-}
-
-@media (max-width: 500px) {
-  .mock-draft-fields {
-    grid-template-columns: max-content;
   }
 }

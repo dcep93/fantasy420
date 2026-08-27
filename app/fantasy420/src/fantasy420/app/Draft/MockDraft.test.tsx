@@ -474,6 +474,7 @@ test("keeps setup settings in a compact intrinsic grid", () => {
   );
   const setupRule = css.match(/\.mock-draft-setup\s*{([^}]*)}/)?.[1];
   const fieldsRule = css.match(/\.mock-draft-fields\s*{([^}]*)}/)?.[1];
+  const fieldRule = css.match(/\.mock-draft-field\s*{([^}]*)}/)?.[1];
   const inputRule = css.match(/\.mock-draft-field input\s*{([^}]*)}/)?.[1];
   const seedRule = css.match(
     /\.mock-draft-field:has\(input\[aria-label="seed"\]\) input\s*{([^}]*)}/
@@ -481,17 +482,13 @@ test("keeps setup settings in a compact intrinsic grid", () => {
   const rosterRule = css.match(/\.mock-draft-roster-fields\s*{([^}]*)}/)?.[1];
 
   expect(setupRule).toMatch(/width:\s*fit-content/);
-  expect(setupRule).toMatch(/max-width:\s*100%/);
-  expect(fieldsRule).toMatch(/display:\s*grid/);
-  expect(fieldsRule).toMatch(
-    /grid-template-columns:\s*repeat\(2,\s*max-content\)/
-  );
-  expect(inputRule).toMatch(/width:\s*4\.4rem/);
-  expect(seedRule).toMatch(/width:\s*7rem/);
+  expect(setupRule).toMatch(/max-width:\s*min\(100%,\s*900px\)/);
+  expect(fieldsRule).toMatch(/display:\s*flex/);
+  expect(fieldsRule).toMatch(/flex-wrap:\s*wrap/);
+  expect(fieldRule).toMatch(/flex:\s*0 0 auto/);
+  expect(inputRule).toMatch(/width:\s*3rem/);
+  expect(seedRule).toMatch(/width:\s*6rem/);
   expect(rosterRule).not.toMatch(/overflow-x/);
-  expect(css).toMatch(
-    /@media \(max-width:\s*500px\)[\s\S]*?grid-template-columns:\s*max-content/
-  );
 });
 
 test("gives the rankings workspace a full viewport and scrolls the table internally", () => {
