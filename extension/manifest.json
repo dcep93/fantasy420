@@ -42,7 +42,8 @@
     "service_worker": "background.js"
   },
   "host_permissions": [
-    "https://sportsbook-us-ny.draftkings.com/*"
+    "https://sportsbook-us-ny.draftkings.com/*",
+    "https://lm-api-reads.fantasy.espn.com/*"
   ],
   "manifest_version": 3
 }

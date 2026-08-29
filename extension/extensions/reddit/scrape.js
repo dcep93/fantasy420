@@ -1,4 +1,48 @@
-(() => {
+const REDDIT_PLAYER_CACHE_MS = 6 * 60 * 60 * 1000;
+const REDDIT_PLAYER_FILTER = '{"filterActive":{"value":true}}';
+
+function getRedditPlayerUrl(date = new Date()) {
+  return `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${date.getFullYear()}/players?scoringPeriodId=0&view=players_wl`;
+}
+
+function toRedditPlayerBank(players) {
+  if (!Array.isArray(players)) {
+    throw new Error("ESPN player fetch returned an invalid response");
+  }
+
+  return Object.fromEntries(
+    players.map(({ fullName, id, ownership }) => [
+      id,
+      {
+        n: fullName,
+        id,
+        o: ownership?.percentOwned,
+      },
+    ])
+  );
+}
+
+function fetchRedditPlayerBank(sendMessage, date = new Date()) {
+  return sendMessage({
+    fetch: {
+      url: getRedditPlayerUrl(date),
+      options: {
+        headers: {
+          "x-fantasy-filter": REDDIT_PLAYER_FILTER,
+        },
+      },
+      json: true,
+      maxAgeMs: REDDIT_PLAYER_CACHE_MS,
+    },
+  }).then((response) => {
+    if (response?.error) {
+      throw new Error(`ESPN player fetch failed: ${response.error}`);
+    }
+    return toRedditPlayerBank(response);
+  });
+}
+
+function startRedditScraper() {
   const INTERVAL_MS = 1000;
 
   var data = undefined;
@@ -242,37 +286,29 @@
   }
 
   function loadPlayers() {
-    const currentYear = 2025;
-
-    const timestamp = new Date().getTime();
+    const now = new Date();
+    const timestamp = now.getTime();
     // 6 hours
-    if (data.fetched.timestamp > timestamp - 6 * 60 * 60 * 1000)
+    if (data.fetched.timestamp > timestamp - REDDIT_PLAYER_CACHE_MS)
       return Promise.resolve();
     console.log("fetching", data.fetched.timestamp);
-    return fetch(
-      `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${currentYear}/players?scoringPeriodId=0&view=players_wl`,
-      {
-        headers: {
-          "x-fantasy-filter": '{"filterActive":{"value":true}}',
-        },
-      }
-    )
-      .then((resp) => resp.json())
-      .then((resp) =>
-        resp.map(({ fullName, id, ownership }) => [
-          id,
-          {
-            n: fullName,
-            id,
-            o: ownership?.percentOwned,
-          },
-        ])
-      )
-      .then(Object.fromEntries)
+    return fetchRedditPlayerBank(do_send_message, now)
       .then((playerBank) => (data.fetched = { playerBank, timestamp }))
       .then(saveData);
   }
 
   // chrome.storage.local.clear(run);
   main();
-})();
+}
+
+if (typeof document !== "undefined") {
+  startRedditScraper();
+}
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = {
+    fetchRedditPlayerBank,
+    getRedditPlayerUrl,
+    toRedditPlayerBank,
+  };
+}

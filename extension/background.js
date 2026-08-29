@@ -30,13 +30,32 @@ chrome.runtime.onMessageExternal.addListener(function (
       sendResponse(cached.resp);
     } else {
       fetch(request.fetch.url, request.fetch.options)
-        .then((resp) => (request.fetch.json ? resp.json() : resp.text()))
+        .then((resp) => {
+          if (!resp.ok) {
+            return resp
+              .text()
+              .catch(() => "")
+              .then((body) => {
+                const status = [resp.status, resp.statusText]
+                  .filter(Boolean)
+                  .join(" ");
+                const details = body ? `: ${body.slice(0, 200)}` : "";
+                throw new Error(`HTTP ${status}${details}`);
+              });
+          }
+          return request.fetch.json ? resp.json() : resp.text();
+        })
         .then((resp) => {
           fetch_cache[request.fetch.url] = { timestamp: now, resp };
           return resp;
         })
         .then(sendResponse)
-        .catch((err) => console.trace(err));
+        .catch((err) => {
+          console.trace(err);
+          sendResponse({
+            error: err instanceof Error ? err.message : String(err),
+          });
+        });
     }
     return true;
   }
