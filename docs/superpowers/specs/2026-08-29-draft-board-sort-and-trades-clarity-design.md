@@ -22,7 +22,7 @@ Group moves first by week and then by an unordered manager pair. One grouped dea
 
 Each week section shows the week number plus compact deal and moved-player counts. Each deal shows its total player count. Player cards display name and position, with position color where available. Existing score history remains available through the player's title tooltip, including a clear marker at the transaction week. Weeks and deals are deterministically sorted, and player order follows stable player-name ordering for predictable output.
 
-If no ownership moves exist, render a concise season-level empty state. A one-way manager-pair group is still rendered honestly as a direct ownership move rather than inventing a reciprocal player.
+If no ownership moves exist, render a concise season-level empty state. A one-way manager-pair group is rendered as a compact `From → To` direct ownership move instead of showing an empty receiving panel or inventing a reciprocal player. Week summaries distinguish reciprocal exchanges from direct moves.
 
 ## Components and Data Flow
 
