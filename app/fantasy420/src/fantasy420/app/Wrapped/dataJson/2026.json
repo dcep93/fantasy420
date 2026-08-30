@@ -482,7 +482,7 @@
         }
       },
       "draft": [],
-      "pickOrder": 8
+      "pickOrder": 7
     },
     "2": {
       "id": "2",
@@ -496,7 +496,7 @@
         }
       },
       "draft": [],
-      "pickOrder": 1
+      "pickOrder": 6
     },
     "3": {
       "id": "3",
@@ -510,7 +510,7 @@
         }
       },
       "draft": [],
-      "pickOrder": 4
+      "pickOrder": 2
     },
     "4": {
       "id": "4",
@@ -524,7 +524,7 @@
         }
       },
       "draft": [],
-      "pickOrder": 2
+      "pickOrder": 3
     },
     "5": {
       "id": "5",
@@ -538,7 +538,7 @@
         }
       },
       "draft": [],
-      "pickOrder": 5
+      "pickOrder": 4
     },
     "6": {
       "id": "6",
@@ -552,7 +552,7 @@
         }
       },
       "draft": [],
-      "pickOrder": 0
+      "pickOrder": 1
     },
     "7": {
       "id": "7",
@@ -580,7 +580,7 @@
         }
       },
       "draft": [],
-      "pickOrder": 3
+      "pickOrder": 5
     },
     "9": {
       "id": "9",
@@ -594,7 +594,7 @@
         }
       },
       "draft": [],
-      "pickOrder": 6
+      "pickOrder": 0
     },
     "10": {
       "id": "10",
@@ -608,7 +608,7 @@
         }
       },
       "draft": [],
-      "pickOrder": 7
+      "pickOrder": 8
     }
   },
   "latestScoringPeriod": 0,
