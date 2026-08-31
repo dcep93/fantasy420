@@ -24,11 +24,6 @@ import {
   rewindToUserPick,
 } from "./mockDraft";
 import {
-  clearMockDraftState,
-  readMockDraftState,
-  saveMockDraftState,
-} from "./mockDraftStorage";
-import {
   applyPersonalScores,
   PersonalScores,
   readPersonalScores,
@@ -78,22 +73,6 @@ function getNormalizedNameToId(wrapped: WrappedType): {
   );
 }
 
-function validateMockDraftPicks(
-  state: MockDraftState | null,
-  wrapped: WrappedType
-): void {
-  if (!state) return;
-  state.picks.forEach((playerId) => {
-    const player = wrapped.nflPlayers[playerId];
-    if (!player) {
-      throw new Error("Saved mock draft contains an unknown ESPN player id");
-    }
-    if (!isMockDraftPlayerEligible(player)) {
-      throw new Error("Saved mock draft contains an ineligible kicker");
-    }
-  });
-}
-
 function removeDraftHash(): void {
   if (!window.location.hash) return;
   window.history.replaceState(
@@ -104,6 +83,8 @@ function removeDraftHash(): void {
 }
 
 const MY_TEAM_ID = "1";
+const LEGACY_ACTIVE_MOCK_DRAFT_STORAGE_KEY =
+  "fantasy420:draft:active-mock-draft";
 
 export function selectedDraft(): DraftJsonType {
   return getDraftForYear(selectedYear)!;
@@ -124,10 +105,7 @@ function SubDraft() {
   const [personalScoreSort, setPersonalScoreSort] = useState(false);
   const wrapped = allWrapped[selectedYear];
   const playerScrollRef = useRef<HTMLDivElement>(null);
-  const [mockDraft, setMockDraft] = useState<MockDraftState | null>(() =>
-    readMockDraftState()
-  );
-  const [mockDraftError, setMockDraftError] = useState("");
+  const [mockDraft, setMockDraft] = useState<MockDraftState | null>(null);
   const liveDraft = useLiveDraft(mockDraft === null);
   const normalizedNameToId = useMemo(
     () => getNormalizedNameToId(wrapped),
@@ -239,25 +217,18 @@ function SubDraft() {
 
   useEffect(() => {
     removeDraftHash();
+    try {
+      window.localStorage.removeItem(LEGACY_ACTIVE_MOCK_DRAFT_STORAGE_KEY);
+    } catch {
+      // Legacy cleanup is best effort when browser storage is unavailable.
+    }
     window.addEventListener("hashchange", removeDraftHash);
     return () => window.removeEventListener("hashchange", removeDraftHash);
   }, []);
 
-  useEffect(() => {
-    try {
-      validateMockDraftPicks(mockDraft, wrapped);
-    } catch (error) {
-      clearMockDraftState();
-      setMockDraft(null);
-      setMockDraftError(error instanceof Error ? error.message : String(error));
-    }
-  }, [mockDraft, wrapped]);
-
   function saveMockDraft(next: MockDraftState) {
     if (positionFilter === "K") updatePositionFilter("");
     setMockDraft(next);
-    setMockDraftError("");
-    saveMockDraftState(next);
   }
 
   function nudgeMockPick(
@@ -357,9 +328,6 @@ function SubDraft() {
           onNudge={nudgeMockPick}
           onRechoose={rechooseMockPick}
         />
-      ) : null}
-      {mockDraftError ? (
-        <div className="mock-draft-load-error">{mockDraftError}</div>
       ) : null}
     </>
   );

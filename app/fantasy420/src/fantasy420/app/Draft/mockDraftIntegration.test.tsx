@@ -2,17 +2,44 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, expect, test, vi } from "vitest";
 
 import Draft from ".";
-import { DEFAULT_MOCK_DRAFT_SETTINGS } from "./mockDraft";
-import {
-  ACTIVE_MOCK_DRAFT_STORAGE_KEY,
-  clearMockDraftState,
-  readMockDraftState,
-  saveMockDraftState,
-} from "./mockDraftStorage";
 import {
   getPersonalScoresStorageKey,
   readPersonalScores,
 } from "./personalScores";
+
+const LEGACY_ACTIVE_MOCK_DRAFT_STORAGE_KEY =
+  "fantasy420:draft:active-mock-draft";
+
+function changeSetting(label: string, value: string): void {
+  fireEvent.change(screen.getByLabelText(label), { target: { value } });
+}
+
+function startDraft(options?: {
+  draftPosition?: number;
+  teamCount?: number;
+  craziness?: string;
+  seed?: string;
+  roster?: Record<string, number>;
+}): void {
+  changeSetting("draft position", String(options?.draftPosition ?? 1));
+  changeSetting("number of teams", String(options?.teamCount ?? 2));
+  if (options?.craziness !== undefined) {
+    changeSetting("craziness", options.craziness);
+  }
+  if (options?.seed !== undefined) changeSetting("seed", options.seed);
+  Object.entries(options?.roster ?? {}).forEach(([slot, value]) => {
+    changeSetting(`${slot} slots`, String(value));
+  });
+  fireEvent.click(screen.getByRole("button", { name: "mock draft" }));
+}
+
+function boardPlayerNames(container: HTMLElement): string[] {
+  return Array.from(
+    container.querySelectorAll<HTMLElement>(
+      '[data-team-column] .mock-draft-player-name'
+    )
+  ).map((element) => element.textContent ?? "");
+}
 
 afterEach(() => {
   window.history.replaceState(null, "", "/");
@@ -95,33 +122,31 @@ test("inspects personal scores by absolute magnitude until a source is selected"
   rendered.unmount();
 });
 
-test("restores local draft state without connecting to the Chrome extension", () => {
+test("reload starts fresh and removes obsolete active-draft storage", () => {
   const sendMessage = vi.fn();
   window.chrome = { runtime: { sendMessage, lastError: null } };
   window.history.replaceState(null, "", "/draft");
-  saveMockDraftState({
-    settings: {
-      ...DEFAULT_MOCK_DRAFT_SETTINGS,
-      teamCount: 2,
-      draftPosition: 1,
-      seed: "restored",
-    },
-    picks: [],
-  });
+  window.localStorage.setItem(
+    LEGACY_ACTIVE_MOCK_DRAFT_STORAGE_KEY,
+    JSON.stringify({ stale: true })
+  );
 
-  const rendered = render(<Draft />);
+  const first = render(<Draft />);
+  startDraft({ seed: "ephemeral" });
 
   expect(screen.getByTestId("mock-draft-panel")).toBeInTheDocument();
-  const workspace = screen.getByTestId("draft-rankings-workspace");
-  const roster = screen.getByTestId("mock-draft-my-players");
-  const scroller = screen.getByTestId("mock-draft-player-scroller");
-  expect(workspace.nextElementSibling).toHaveClass("draft-rankings-controls");
-  expect(workspace.children[0]).toBe(roster);
-  expect(workspace.children[1]).toBe(scroller);
   expect(sendMessage).not.toHaveBeenCalled();
+  expect(
+    window.localStorage.getItem(LEGACY_ACTIVE_MOCK_DRAFT_STORAGE_KEY)
+  ).toBeNull();
   expect(window.location.pathname).toBe("/draft");
   expect(window.location.hash).toBe("");
-  rendered.unmount();
+  first.unmount();
+
+  render(<Draft />);
+  expect(screen.queryByTestId("mock-draft-panel")).not.toBeInTheDocument();
+  expect(screen.getByLabelText("number of teams")).toHaveValue(2);
+  expect(screen.getByLabelText("seed")).toHaveValue("");
 });
 
 test("removes a legacy draft hash without importing its state", () => {
@@ -132,26 +157,19 @@ test("removes a legacy draft hash without importing its state", () => {
   expect(window.location.pathname).toBe("/draft");
   expect(window.location.search).toBe("?year=2026");
   expect(window.location.hash).toBe("");
-  expect(readMockDraftState()).toBeNull();
   expect(screen.queryByTestId("mock-draft-panel")).not.toBeInTheDocument();
 });
 
-test("clicking a user rank rewinds the locally saved draft for rechoice", () => {
+test("clicking a user rank rewinds the in-memory draft for rechoice", () => {
   window.history.replaceState(null, "", "/draft");
-  saveMockDraftState({
-    settings: {
-      ...DEFAULT_MOCK_DRAFT_SETTINGS,
-      teamCount: 2,
-      draftPosition: 1,
-      seed: "rank-rechoose",
-    },
-    picks: ["4429795"],
-  });
-
-  render(<Draft />);
+  const rendered = render(<Draft />);
+  startDraft({ seed: "rank-rechoose" });
+  fireEvent.click(
+    rendered.container.querySelector('tbody tr[data-mock-available="true"]')!
+  );
   fireEvent.click(screen.getAllByLabelText("rechoose pick 1.01")[0]);
 
-  expect(readMockDraftState()?.picks).toEqual([]);
+  expect(boardPlayerNames(rendered.container)).toEqual([]);
   expect(window.location.hash).toBe("");
   expect(screen.getByText("your pick 1.01")).toBeInTheDocument();
 });
@@ -190,38 +208,29 @@ test("keeps the reported Hurts-Lawrence seed disciplined in round one", () => {
   fireEvent.click(
     rendered.container.querySelector('tbody tr[data-mock-available="true"]')!
   );
-  const afterUserPick = readMockDraftState()!;
-  expect(afterUserPick.picks).toHaveLength(12);
-  expect(afterUserPick.picks).not.toContain("4360310");
+  const afterUserPick = boardPlayerNames(rendered.container);
+  expect(afterUserPick).toHaveLength(12);
+  expect(afterUserPick).not.toContain("Trevor Lawrence");
   expect(window.location.hash).toBe("");
   rendered.unmount();
 });
 
 test("keeps opponent picks on the raw composite when My score changes", () => {
-  function startDraft(): string[] {
-    fireEvent.change(screen.getByLabelText("draft position"), {
-      target: { value: "2" },
+  function runDraft(container: HTMLElement): string[] {
+    startDraft({
+      draftPosition: 2,
+      craziness: "0.000001",
+      seed: "raw-composite-opponents",
     });
-    fireEvent.change(screen.getByLabelText("number of teams"), {
-      target: { value: "2" },
-    });
-    fireEvent.change(screen.getByLabelText("craziness"), {
-      target: { value: "0.000001" },
-    });
-    fireEvent.change(screen.getByLabelText("seed"), {
-      target: { value: "raw-composite-opponents" },
-    });
-    fireEvent.click(screen.getByRole("button", { name: "mock draft" }));
-    return readMockDraftState()!.picks;
+    return boardPlayerNames(container);
   }
 
   window.history.replaceState(null, "", "/draft");
   const baseline = render(<Draft />);
-  const baselinePicks = startDraft();
+  const baselinePicks = runDraft(baseline.container);
   expect(baselinePicks).toHaveLength(1);
   baseline.unmount();
 
-  clearMockDraftState();
   window.history.replaceState(null, "", "/draft");
   const adjusted = render(<Draft />);
   const originalFirstInput = adjusted.container.querySelector<HTMLInputElement>(
@@ -237,46 +246,14 @@ test("keeps opponent picks on the raw composite when My score changes", () => {
       ?.getAttribute("aria-label")
   ).not.toBe(originalFirstLabel);
 
-  expect(startDraft()).toEqual(baselinePicks);
+  expect(runDraft(adjusted.container)).toEqual(baselinePicks);
   adjusted.unmount();
-});
-
-test("rejects restored mock drafts containing kicker picks", async () => {
-  window.history.replaceState(null, "", "/draft");
-  saveMockDraftState({
-    settings: {
-      ...DEFAULT_MOCK_DRAFT_SETTINGS,
-      teamCount: 2,
-      draftPosition: 1,
-      seed: "restored-kicker",
-    },
-    picks: ["10621"],
-  });
-
-  render(<Draft />);
-
-  expect(
-    await screen.findByText("Saved mock draft contains an ineligible kicker")
-  ).toBeInTheDocument();
-  expect(screen.queryByTestId("mock-draft-panel")).not.toBeInTheDocument();
-  expect(
-    window.localStorage.getItem(ACTIVE_MOCK_DRAFT_STORAGE_KEY)
-  ).toBeNull();
 });
 
 test("hides kickers only while mock-draft mode is active", () => {
   window.history.replaceState(null, "", "/draft");
-  saveMockDraftState({
-    settings: {
-      ...DEFAULT_MOCK_DRAFT_SETTINGS,
-      teamCount: 2,
-      draftPosition: 1,
-      seed: "hide-kickers",
-    },
-    picks: [],
-  });
-
   const active = render(<Draft />);
+  startDraft({ seed: "hide-kickers" });
   expect(
     active.container.querySelector('[data-position-filter="K"]')
   ).not.toBeInTheDocument();
@@ -290,7 +267,6 @@ test("hides kickers only while mock-draft mode is active", () => {
   ).toBe(false);
   active.unmount();
 
-  window.localStorage.removeItem(ACTIVE_MOCK_DRAFT_STORAGE_KEY);
   window.history.replaceState(null, "", "/draft");
   const normal = render(<Draft />);
   expect(
@@ -307,76 +283,52 @@ test("hides kickers only while mock-draft mode is active", () => {
   normal.unmount();
 });
 
-test("keeps pending setting edits out of the saved draft until restart", () => {
-  const initial = {
-    ...DEFAULT_MOCK_DRAFT_SETTINGS,
-    teamCount: 2,
-    draftPosition: 1,
-    seed: "active-seed",
-  };
+test("keeps pending setting edits out of the active draft until restart", () => {
   window.history.replaceState(null, "", "/draft");
-  saveMockDraftState({ settings: initial, picks: [] });
   const rendered = render(<Draft />);
+  startDraft({ seed: "active-seed" });
 
-  fireEvent.change(screen.getByLabelText("craziness"), {
-    target: { value: "7" },
-  });
-  fireEvent.change(screen.getByLabelText("seed"), {
-    target: { value: "replacement-seed" },
-  });
+  changeSetting("craziness", "7");
+  changeSetting("seed", "replacement-seed");
 
   expect(window.location.hash).toBe("");
-  expect(readMockDraftState()?.settings).toEqual(initial);
+  expect(boardPlayerNames(rendered.container)).toEqual([]);
 
   fireEvent.click(rendered.container.querySelector("tbody tr")!);
-  const progressed = readMockDraftState()!;
-  expect(progressed.settings).toEqual(initial);
-  expect(progressed.picks).toHaveLength(3);
+  expect(boardPlayerNames(rendered.container)).toHaveLength(3);
   expect(screen.getByLabelText("craziness")).toHaveValue(7);
   expect(screen.getByLabelText("seed")).toHaveValue("replacement-seed");
 
   fireEvent.click(screen.getByRole("button", { name: "mock draft" }));
-  const restarted = readMockDraftState()!;
-  expect(restarted.settings).toMatchObject({
-    craziness: 7,
-    seed: "replacement-seed",
-  });
-  expect(restarted.picks).toHaveLength(0);
+  expect(boardPlayerNames(rendered.container)).toEqual([]);
   rendered.unmount();
 });
 
-test("drafts an existing table row and synchronizes ordered ids locally", () => {
+test("drafts an existing table row into ephemeral state", () => {
   window.history.replaceState(null, "", "/draft");
-  saveMockDraftState({
-    settings: {
-      ...DEFAULT_MOCK_DRAFT_SETTINGS,
-      teamCount: 2,
-      draftPosition: 1,
-      seed: "row-click",
-      roster: {
-        QB: 1,
-        RB: 0,
-        WR: 0,
-        TE: 0,
-        FLEX: 0,
-        SUPERFLEX: 0,
-        DST: 0,
-        K: 0,
-        BENCH: 0,
-      },
-    },
-    picks: [],
-  });
-
   const rendered = render(<Draft />);
+  startDraft({
+    seed: "row-click",
+    roster: {
+      QB: 1,
+      RB: 0,
+      WR: 0,
+      TE: 0,
+      FLEX: 0,
+      SUPERFLEX: 0,
+      DST: 0,
+      BENCH: 0,
+    },
+  });
   const firstRow = rendered.container.querySelector("tbody tr");
   expect(firstRow).not.toBeNull();
   fireEvent.click(firstRow!);
 
-  const saved = readMockDraftState()!;
-  expect(saved.picks).toHaveLength(2);
-  expect(saved.picks.every((id) => /^-?\d+$/.test(id))).toBe(true);
+  expect(boardPlayerNames(rendered.container)).toHaveLength(2);
   expect(window.location.hash).toBe("");
+  expect(
+    window.localStorage.getItem(LEGACY_ACTIVE_MOCK_DRAFT_STORAGE_KEY)
+  ).toBeNull();
   const draftedRow = rendered.container.querySelector<HTMLTableRowElement>(
     'tbody tr[data-drafted="true"]'
   );
@@ -406,28 +358,20 @@ test("positions the newest round and best untaken row at every user turn", () =>
     },
   });
   window.history.replaceState(null, "", "/draft");
-  saveMockDraftState({
-    settings: {
-      ...DEFAULT_MOCK_DRAFT_SETTINGS,
-      teamCount: 2,
-      draftPosition: 1,
-      seed: "scrolling",
-      roster: {
-        QB: 2,
-        RB: 0,
-        WR: 0,
-        TE: 0,
-        FLEX: 0,
-        SUPERFLEX: 0,
-        DST: 0,
-        K: 0,
-        BENCH: 0,
-      },
-    },
-    picks: [],
-  });
-
   const rendered = render(<Draft />);
+  startDraft({
+    seed: "scrolling",
+    roster: {
+      QB: 2,
+      RB: 0,
+      WR: 0,
+      TE: 0,
+      FLEX: 0,
+      SUPERFLEX: 0,
+      DST: 0,
+      BENCH: 0,
+    },
+  });
   const playerScroller = screen.getByTestId("mock-draft-player-scroller");
   expect(scrollIntoView).toHaveBeenCalledWith({ block: "start" });
   expect(playerScroller.scrollTop).toBe(123);
