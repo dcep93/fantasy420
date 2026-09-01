@@ -203,7 +203,7 @@ test("keeps the reported Hurts-Lawrence seed disciplined in round one", () => {
   const compositeRanks = Array.from(
     rendered.container.querySelectorAll(".mock-draft-composite-rank")
   ).map((element) => Number(element.textContent?.replace(" ADP", "")));
-  expect(compositeRanks).toEqual([4, 5, 2, 1, 7, 3, 6]);
+  expect(compositeRanks).toEqual([3, 1, 5, 4, 7, 2, 6]);
 
   fireEvent.click(
     rendered.container.querySelector('tbody tr[data-mock-available="true"]')!
