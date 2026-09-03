@@ -3,27 +3,22 @@ const assert = require("node:assert/strict");
 
 const {
   getFantasyProsDraft,
-  getFantasyProsOverallPick,
+  getFantasyProsPickOrder,
 } = require("./fantasyprosdraft.js");
 
-test("converts round.pickWithinRound labels to chronological overall picks", () => {
-  assert.equal(getFantasyProsOverallPick("1.01", 10), 1);
-  assert.equal(getFantasyProsOverallPick("1.10", 10), 10);
-  assert.equal(getFantasyProsOverallPick("2.01", 10), 11);
-  assert.equal(getFantasyProsOverallPick("2.02", 10), 12);
-  assert.equal(getFantasyProsOverallPick("2.10", 10), 20);
-  assert.equal(getFantasyProsOverallPick("3.01", 10), 21);
+test("orders round.pickWithinRound labels without needing team headings", () => {
+  assert.ok(getFantasyProsPickOrder("1.12") < getFantasyProsPickOrder("2.01"));
+  assert.ok(getFantasyProsPickOrder("2.01") < getFantasyProsPickOrder("2.12"));
 });
 
-test("rejects malformed and out-of-range pick labels", () => {
-  assert.equal(getFantasyProsOverallPick("current", 10), null);
-  assert.equal(getFantasyProsOverallPick("1.00", 10), null);
-  assert.equal(getFantasyProsOverallPick("1.11", 10), null);
-  assert.equal(getFantasyProsOverallPick("1.01", 0), null);
+test("rejects malformed pick labels", () => {
+  assert.equal(getFantasyProsPickOrder("current"), null);
+  assert.equal(getFantasyProsPickOrder("1.00"), null);
+  assert.equal(getFantasyProsPickOrder("0.01"), null);
 });
 
 test("extracts full names and sorts completed cells by overall pick", () => {
-  const root = fakeRoot(10, [
+  const root = fakeRoot([
     fakeCell("James Cook III", "2.10"),
     fakeCell("Ja'Marr Chase", "1.08"),
     fakeCell("Josh Allen", "1.01"),
@@ -39,7 +34,7 @@ test("extracts full names and sorts completed cells by overall pick", () => {
 });
 
 test("sorts reversed even-round DOM cells by chronological pick label", () => {
-  const root = fakeRoot(10, [
+  const root = fakeRoot([
     fakeCell("Puka Nacua", "2.02"),
     fakeCell("Justin Herbert", "2.01"),
     fakeCell("Caleb Williams", "1.10"),
@@ -53,17 +48,14 @@ test("sorts reversed even-round DOM cells by chronological pick label", () => {
 });
 
 test("distinguishes an unrendered board from a rendered empty draft", () => {
-  assert.equal(getFantasyProsDraft(fakeRoot(0, [])), null);
-  assert.deepEqual(getFantasyProsDraft(fakeRoot(10, [])), []);
+  assert.equal(getFantasyProsDraft(fakeRoot([])), null);
+  assert.deepEqual(getFantasyProsDraft(fakeRoot([fakeCell("", "1.01")])), []);
 });
 
-function fakeRoot(teamCount, cells) {
+function fakeRoot(cells) {
   return {
     querySelectorAll(selector) {
-      if (selector === ".vue-draft-board-team-heading") {
-        return Array.from({ length: teamCount }, () => ({}));
-      }
-      if (selector === ".vue-draft-board-player-cell-contents") return cells;
+      if (selector === ".vue-base-draft-log-cell") return cells;
       return [];
     },
   };
@@ -72,10 +64,10 @@ function fakeRoot(teamCount, cells) {
 function fakeCell(name, pickNumber) {
   return {
     querySelector(selector) {
-      if (selector === ".vue-draft-board-player-cell-contents__name") {
+      if (selector === ".vue-draft-log-cell__player-name") {
         return { getAttribute: () => name };
       }
-      if (selector === ".vue-draft-board-player-cell-contents__pick-number") {
+      if (selector === ".vue-base-draft-log-cell__pick-number") {
         return { textContent: pickNumber };
       }
       return null;

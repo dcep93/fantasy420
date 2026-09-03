@@ -149,6 +149,12 @@
   opacity: 1;
 }
 
+.draft-player-drafted
+  > .draft-player-meta-cell[data-bye-week-match="true"] {
+  color: var(--night-position-text) !important;
+  background: var(--night-focus) !important;
+}
+
 .personal-score-header {
   padding: 0 0.5em;
   white-space: nowrap;

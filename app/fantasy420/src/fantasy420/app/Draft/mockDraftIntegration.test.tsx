@@ -146,6 +146,11 @@ test("strongly highlights the selected bye week and matching bye cells", () => {
     expect(cell.style.color).toBe("var(--night-position-text)");
     expect(cell.style.fontWeight).toBe("700");
   });
+  const draftedMatch = matches[0];
+  fireEvent.click(draftedMatch);
+  expect(draftedMatch.closest("tr")).toHaveClass("draft-player-drafted");
+  expect(draftedMatch.style.backgroundColor).toBe("var(--night-focus)");
+  expect(draftedMatch.style.color).toBe("var(--night-position-text)");
   const nonmatch = rendered.container.querySelector<HTMLElement>(
     '[data-bye-week-match="false"]'
   )!;

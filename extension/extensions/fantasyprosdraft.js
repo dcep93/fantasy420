@@ -1,31 +1,27 @@
 const FANTASYPROS_DRAFT_PERIOD_MS = 1000;
-const FANTASYPROS_TEAM_SELECTOR = ".vue-draft-board-team-heading";
-const FANTASYPROS_PICK_SELECTOR =
-  ".vue-draft-board-player-cell-contents";
+const FANTASYPROS_PICK_SELECTOR = ".vue-base-draft-log-cell";
 const FANTASYPROS_PLAYER_NAME_SELECTOR =
-  ".vue-draft-board-player-cell-contents__name";
+  ".vue-draft-log-cell__player-name";
 const FANTASYPROS_PICK_NUMBER_SELECTOR =
-  ".vue-draft-board-player-cell-contents__pick-number";
+  ".vue-base-draft-log-cell__pick-number";
 
-function getFantasyProsOverallPick(pickNumber, teamCount) {
+function getFantasyProsPickOrder(pickNumber) {
   const match = /^(\d+)\.(\d+)$/.exec(pickNumber.trim());
-  if (!match || teamCount < 1) return null;
+  if (!match) return null;
 
   const round = Number(match[1]);
   const pickWithinRound = Number(match[2]);
-  if (round < 1 || pickWithinRound < 1 || pickWithinRound > teamCount) {
-    return null;
-  }
+  if (round < 1 || pickWithinRound < 1) return null;
 
-  return (round - 1) * teamCount + pickWithinRound;
+  return round * 1000 + pickWithinRound;
 }
 
 function getFantasyProsDraft(root) {
-  const teamCount = root.querySelectorAll(FANTASYPROS_TEAM_SELECTOR).length;
-  if (teamCount === 0) return null;
+  const cells = Array.from(root.querySelectorAll(FANTASYPROS_PICK_SELECTOR));
+  if (cells.length === 0) return null;
 
-  const picksByOverall = new Map();
-  Array.from(root.querySelectorAll(FANTASYPROS_PICK_SELECTOR)).forEach((cell) => {
+  const picksByOrder = new Map();
+  cells.forEach((cell) => {
     const name = cell
       .querySelector(FANTASYPROS_PLAYER_NAME_SELECTOR)
       ?.getAttribute("title")
@@ -33,16 +29,14 @@ function getFantasyProsDraft(root) {
     const pickNumber = cell
       .querySelector(FANTASYPROS_PICK_NUMBER_SELECTOR)
       ?.textContent?.trim();
-    const overallPick = pickNumber
-      ? getFantasyProsOverallPick(pickNumber, teamCount)
-      : null;
+    const pickOrder = pickNumber ? getFantasyProsPickOrder(pickNumber) : null;
 
-    if (name && overallPick !== null) {
-      picksByOverall.set(overallPick, name);
+    if (name && pickOrder !== null) {
+      picksByOrder.set(pickOrder, name);
     }
   });
 
-  return Array.from(picksByOverall.entries())
+  return Array.from(picksByOrder.entries())
     .sort(([a], [b]) => a - b)
     .map(([, name]) => name);
 }
@@ -72,7 +66,7 @@ function startFantasyProsDraftSync(root) {
 if (typeof module !== "undefined" && module.exports) {
   module.exports = {
     getFantasyProsDraft,
-    getFantasyProsOverallPick,
+    getFantasyProsPickOrder,
   };
 }
 

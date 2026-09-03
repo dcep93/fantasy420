@@ -607,6 +607,23 @@ test("gives the rankings workspace a full viewport and scrolls the table interna
   expect(scrollerRule).toMatch(/overflow:\s*auto/);
 });
 
+test("keeps a selected bye cell readable after its player is drafted", () => {
+  const css = readFileSync(
+    "src/fantasy420/app/Draft/MockDraftView.css",
+    "utf8"
+  );
+  const selectedDraftedByeRule = css.match(
+    /\.draft-player-drafted\s*>\s*\.draft-player-meta-cell\[data-bye-week-match="true"\]\s*{([^}]*)}/
+  )?.[1];
+
+  expect(selectedDraftedByeRule).toMatch(
+    /background:\s*var\(--night-focus\)\s*!important/
+  );
+  expect(selectedDraftedByeRule).toMatch(
+    /color:\s*var\(--night-position-text\)\s*!important/
+  );
+});
+
 test("keeps bright bubbles and rank controls readable", () => {
   const css = readFileSync(
     "src/fantasy420/app/Draft/MockDraftView.css",
