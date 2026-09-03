@@ -1,11 +1,15 @@
 .nfl-teams-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  align-items: start;
+  justify-content: start;
   gap: 10px;
   padding: 10px;
 }
 
 .nfl-team-bubble {
+  box-sizing: border-box;
+  width: 100%;
   min-width: 0;
 }
 
@@ -16,31 +20,84 @@
 
 .nfl-team-depth-chart {
   display: grid;
-  gap: 0.4rem;
+  gap: 0.45rem;
 }
 
 .nfl-team-position-group {
   display: grid;
-  grid-template-columns: 3rem minmax(0, 1fr);
+  grid-template-columns: 2.25rem minmax(0, 1fr);
   gap: 0.45rem;
 }
 
-.nfl-team-position-group > div {
+.nfl-team-player-grid {
   display: grid;
-  gap: 0.18rem;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.nfl-team-player {
+  min-width: 0;
+  padding: 0.28rem 0.38rem;
+  border-radius: 0.35rem;
+  background: color-mix(in srgb, var(--night-border) 26%, transparent);
+  font-size: 0.78rem;
+  line-height: 1.25;
 }
 
 .nfl-team-schedule {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.3rem;
   margin-top: 0.75rem;
   padding-top: 0.65rem;
+  padding-left: 0;
   border-top: 1px solid var(--night-border);
-  color: var(--night-text-muted);
-  font-size: 0.85rem;
+  list-style: none;
 }
 
-.nfl-team-schedule span {
-  white-space: nowrap;
+.nfl-team-schedule li {
+  display: grid;
+  gap: 0.1rem;
+  min-width: 0;
+  padding: 0.3rem 0.25rem;
+  border: 1px solid var(--night-border);
+  border-radius: 0.35rem;
+  text-align: center;
+}
+
+.nfl-team-schedule-week {
+  color: var(--night-text-muted);
+  font-size: 0.68rem;
+}
+
+.nfl-team-schedule-opponent {
+  overflow-wrap: anywhere;
+  font-size: 0.74rem;
+  line-height: 1.15;
+}
+
+.nfl-team-schedule-bye {
+  border-color: var(--night-focus);
+  background: color-mix(in srgb, var(--night-focus) 20%, transparent);
+}
+
+.nfl-team-schedule-bye .nfl-team-schedule-week,
+.nfl-team-schedule-bye .nfl-team-schedule-opponent {
+  color: var(--night-focus);
+  font-weight: bold;
+}
+
+@media (max-width: 650px) {
+  .nfl-teams-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nfl-team-player-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nfl-team-schedule {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }

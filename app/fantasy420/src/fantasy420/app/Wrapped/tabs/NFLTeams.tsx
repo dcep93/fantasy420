@@ -109,13 +109,21 @@ export function NFLTeamsForSeason({
             style={{ ...bubbleStyle, display: "block", margin: 0 }}
           >
             <h2>/{team.name}</h2>
-            <div className="nfl-team-depth-chart">
+            <div
+              className="nfl-team-depth-chart"
+              role="list"
+              aria-label={`${team.name} depth chart`}
+            >
               {positionGroups.map(([position, players]) => (
                 <div key={position} className="nfl-team-position-group">
                   <b>{position}</b>
-                  <div>
+                  <div className="nfl-team-player-grid">
                     {players.map((player) => (
-                      <div key={player.id}>
+                      <div
+                        key={player.id}
+                        role="listitem"
+                        className="nfl-team-player"
+                      >
                         {player.name} — {player.adp} ADP · {player.position}
                         {player.positionRank}
                       </div>
@@ -124,16 +132,24 @@ export function NFLTeamsForSeason({
                 </div>
               ))}
             </div>
-            <div
+            <ol
               className="nfl-team-schedule"
+              role="list"
               aria-label={`${team.name} schedule`}
             >
               {team.schedule.map(({ week, opponent }) => (
-                <span key={week}>
-                  W{week} {opponent}
-                </span>
+                <li
+                  key={week}
+                  role="listitem"
+                  className={
+                    opponent === "BYE" ? "nfl-team-schedule-bye" : undefined
+                  }
+                >
+                  <span className="nfl-team-schedule-week">W{week}</span>
+                  <span className="nfl-team-schedule-opponent">{opponent}</span>
+                </li>
               ))}
-            </div>
+            </ol>
           </section>
         );
       })}

@@ -76,7 +76,6 @@ test("renders slash-searchable team bubbles with ranked depth charts and schedul
     <NFLTeamsForSeason
       wrapped={wrapped}
       composite={{ qb1: 1, rb1: 2, qb2: 3 }}
-      regularSeasonWeeks={2}
     />
   );
 
@@ -84,8 +83,22 @@ test("renders slash-searchable team bubbles with ranked depth charts and schedul
   expect(within(bills).getByRole("heading", { name: "/Bills" })).toBeVisible();
   expect(within(bills).getByText("Josh Allen — 1 ADP · QB1")).toBeVisible();
   expect(within(bills).getByText("Backup Bill — 3 ADP · QB2")).toBeVisible();
-  expect(within(bills).getByText("W1 Jets")).toBeVisible();
-  expect(within(bills).getByText("W2 BYE")).toBeVisible();
+
+  const players = within(bills).getByRole("list", {
+    name: "Bills depth chart",
+  });
+  expect(within(players).getAllByRole("listitem")).toHaveLength(2);
+
+  const schedule = within(bills).getByRole("list", {
+    name: "Bills schedule",
+  });
+  const weeks = within(schedule).getAllByRole("listitem");
+  expect(weeks).toHaveLength(18);
+  expect(within(weeks[0]).getByText("W1")).toBeVisible();
+  expect(within(weeks[0]).getByText("Jets")).toBeVisible();
+  expect(within(weeks[1]).getByText("W2")).toBeVisible();
+  expect(within(weeks[1]).getByText("BYE")).toBeVisible();
+  expect(weeks[1]).toHaveClass("nfl-team-schedule-bye");
   expect(screen.queryByText("/FA")).not.toBeInTheDocument();
 });
 
