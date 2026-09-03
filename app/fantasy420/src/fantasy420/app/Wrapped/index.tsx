@@ -11,6 +11,7 @@ import ChosenWrong from "./tabs/ChosenWrong";
 import ConsistentlyAverage from "./tabs/ConsistentlyAverage";
 import DeterminedByDiscreteScoring from "./tabs/DeterminedByDiscreteScoring";
 import DraftBoard from "./tabs/DraftBoard";
+import DraftDayReachesAndSteals from "./tabs/DraftDayReachesAndSteals";
 import DraftValue from "./tabs/DraftValue";
 import ExtremeStuds from "./tabs/ExtremeStuds";
 import FantasyCalc from "./tabs/FantasyCalc";
@@ -91,7 +92,7 @@ export default function Wrapped() {
             }}
           >
             {i + 1}
-            {")"} {key}
+            {")"} {wrappedModuleLabels[key] ?? key}
           </div>
         ))}
       </div>
@@ -132,7 +133,9 @@ export default function Wrapped() {
             ))}
           </select>
         </div>
-        <h1 style={bubbleStyle}>{toRenderKey}</h1>
+        <h1 style={bubbleStyle}>
+          {wrappedModuleLabels[toRenderKey] ?? toRenderKey}
+        </h1>
         <div>
           <ErrorBoundary>
             <Tab />
@@ -344,6 +347,11 @@ export const wrappedModules: { [key: string]: () => JSX.Element } = {
   SpiciestMatchups,
   NFLTeams,
   json,
+  DraftDayReachesAndSteals,
+};
+
+export const wrappedModuleLabels: Record<string, string> = {
+  DraftDayReachesAndSteals: "Draft Day: Reaches & Steals",
 };
 
 const toRender = wrappedModules;

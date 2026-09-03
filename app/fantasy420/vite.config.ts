@@ -8,5 +8,12 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: "./src/setupTests.ts",
     css: true,
+    include: [
+      "src/fantasy420/app/Draft/composite.test.ts",
+      "src/fantasy420/app/Draft/midrank.test.ts",
+      "src/fantasy420/app/Draft/mockDraft.test.ts",
+      "src/fantasy420/app/Draft/rookies.test.ts",
+      "src/fantasy420/app/Wrapped/tabs/DraftDayReachesAndSteals.test.tsx",
+    ],
   },
 });
