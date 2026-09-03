@@ -1,5 +1,3 @@
-import { useMemo, useState } from "react";
-
 import { selectedWrapped, selectedYear } from "..";
 import { getCompositeForYear } from "../../Draft";
 import { POSITION_COLORS } from "../../Draft/positionColors";
@@ -16,7 +14,7 @@ export type DraftMarketEntry = {
   pickNumber: number;
   round: number;
   roundPick: number;
-  compositeAdp: number;
+  adp: number;
   gap: number;
   verdict: DraftMarketVerdict;
   draftPositionRank?: number;
@@ -25,17 +23,17 @@ export type DraftMarketEntry = {
   bestWeek?: { week: string; points: number };
 };
 
-export type UnmatchedDraftPick = {
-  playerName: string;
-  managerName: string;
-  pickNumber: number;
-};
-
 export type DraftMarketAnalysis = {
   entries: DraftMarketEntry[];
-  unmatched: UnmatchedDraftPick[];
+  unmatched: {
+    playerName: string;
+    managerName: string;
+    pickNumber: number;
+  }[];
   totalPicks: number;
 };
+
+const EXCLUDED_POSITIONS = new Set(["K", "DST", "D/ST"]);
 
 function getVerdict(gap: number): DraftMarketVerdict {
   if (gap < 0) return "reach";
@@ -55,7 +53,7 @@ function getBestWeek(player: NFLPlayerType) {
 
 export function getDraftMarketAnalysis(
   wrapped: WrappedType,
-  composite: Record<string, number>
+  adpByPlayerId: Record<string, number>
 ): DraftMarketAnalysis {
   const managers = Object.values(wrapped.ffTeams);
   const teamCount = managers.length;
@@ -73,25 +71,36 @@ export function getDraftMarketAnalysis(
       ])
     ),
   });
-  const unmatched: UnmatchedDraftPick[] = [];
+  const unmatched: DraftMarketAnalysis["unmatched"] = [];
 
   const entries = managers.flatMap((manager) =>
     manager.draft.flatMap((pick) => {
       const playerId = String(pick.playerId);
       const player = wrapped.nflPlayers[playerId];
       const pickNumber = pick.pickIndex + 1;
-      const compositeAdp = composite[playerId];
 
-      if (!player || compositeAdp === undefined) {
+      if (!player) {
         unmatched.push({
-          playerName: player?.name ?? `Player ${playerId}`,
+          playerName: `Player ${playerId}`,
           managerName: manager.name,
           pickNumber,
         });
         return [];
       }
 
-      const gap = pickNumber - compositeAdp;
+      if (EXCLUDED_POSITIONS.has(player.position.toUpperCase())) return [];
+
+      const adp = adpByPlayerId[playerId];
+      if (adp === undefined) {
+        unmatched.push({
+          playerName: player.name,
+          managerName: manager.name,
+          pickNumber,
+        });
+        return [];
+      }
+
+      const gap = pickNumber - adp;
       const playerPerformance = performance[playerId];
 
       return [
@@ -104,7 +113,7 @@ export function getDraftMarketAnalysis(
           round: teamCount === 0 ? 0 : Math.floor(pick.pickIndex / teamCount) + 1,
           roundPick:
             teamCount === 0 ? 0 : (pick.pickIndex % teamCount) + 1,
-          compositeAdp,
+          adp,
           gap,
           verdict: getVerdict(gap),
           draftPositionRank:
@@ -137,10 +146,10 @@ export function getDraftMarketAnalysis(
   };
 }
 
-function formatNumber(value: number, digits = 1): string {
+function formatNumber(value: number): string {
   return value.toLocaleString(undefined, {
-    minimumFractionDigits: digits,
-    maximumFractionDigits: digits,
+    minimumFractionDigits: 1,
+    maximumFractionDigits: 1,
   });
 }
 
@@ -150,13 +159,7 @@ function formatAdp(value: number): string {
 
 function formatGap(entry: Pick<DraftMarketEntry, "gap" | "verdict">) {
   const distance = formatAdp(Math.abs(entry.gap));
-  if (entry.verdict === "reach") return `${distance} early`;
-  if (entry.verdict === "steal") return `${distance} late`;
-  return "at ADP";
-}
-
-function formatDraftSlot(entry: DraftMarketEntry): string {
-  return `${entry.round}.${String(entry.roundPick).padStart(2, "0")}`;
+  return `${distance} ${entry.verdict === "reach" ? "early" : "late"}`;
 }
 
 export function sortByMarketGap(
@@ -177,39 +180,23 @@ function MarketTable({
   title,
   verdict,
   entries,
-  total,
 }: {
   title: string;
   verdict: Exclude<DraftMarketVerdict, "at-cost">;
   entries: DraftMarketEntry[];
-  total: number;
 }) {
   return (
-    <section
-      className={`draft-market-section draft-market-section--${verdict}`}
-      aria-labelledby={`draft-market-${verdict}-heading`}
-    >
-      <div className="draft-market-section__heading">
-        <div>
-          <span className={`draft-market-kicker draft-market-kicker--${verdict}`}>
-            {verdict === "reach" ? "Ahead of market" : "Past the market"}
-          </span>
-          <h3 id={`draft-market-${verdict}-heading`}>{title}</h3>
-        </div>
-        <div className="draft-market-section__count">
-          {entries.length === total ? entries.length : `${entries.length} / ${total}`}
-        </div>
-      </div>
+    <section className={`draft-market-section draft-market-section--${verdict}`}>
+      <h2>
+        {title} <span>{entries.length}</span>
+      </h2>
       {entries.length === 0 ? (
-        <div className="draft-market-empty draft-market-empty--compact">
-          No {verdict === "reach" ? "reaches" : "steals"} match these filters.
-        </div>
+        <p className="draft-market-empty">No {title.toLowerCase()}.</p>
       ) : (
         <div className="draft-market-table-shell">
           <table className="draft-market-table">
             <caption className="draft-market-visually-hidden">
-              {title}, ordered only by the difference between composite ADP and
-              actual draft selection
+              {title}, ordered by the difference between ADP and draft selection
             </caption>
             <thead>
               <tr>
@@ -217,23 +204,13 @@ function MarketTable({
                 <th scope="col">Player</th>
                 <th scope="col">Drafted by</th>
                 <th scope="col">Pick</th>
-                <th scope="col">Comp ADP</th>
-                <th scope="col">Market gap</th>
-                <th scope="col" className="draft-market-performance-column">
-                  Drafted-pos outcome
-                </th>
-                <th scope="col" className="draft-market-performance-column">
-                  FPTS
-                </th>
-                <th scope="col" className="draft-market-performance-column">
-                  PPG
-                </th>
-                <th scope="col" className="draft-market-performance-column">
-                  Starts
-                </th>
-                <th scope="col" className="draft-market-performance-column">
-                  Best week
-                </th>
+                <th scope="col">ADP</th>
+                <th scope="col">Gap</th>
+                <th scope="col">Pos outcome</th>
+                <th scope="col">FPTS</th>
+                <th scope="col">PPG</th>
+                <th scope="col">Starts</th>
+                <th scope="col">Best week</th>
               </tr>
             </thead>
             <tbody>
@@ -254,46 +231,32 @@ function MarketTable({
                       </span>
                       <span>
                         <strong>{entry.player.name}</strong>
-                        <small>
-                          {entry.nflTeamName}
-                          {entry.player.injuryStatus
-                            ? ` · ${entry.player.injuryStatus}`
-                            : ""}
-                        </small>
+                        <small>{entry.nflTeamName}</small>
                       </span>
                     </div>
                   </td>
                   <td>{entry.manager.name}</td>
                   <td>
                     <strong>{entry.pickNumber}</strong>
-                    <small className="draft-market-cell-note">
-                      {formatDraftSlot(entry)}
+                    <small>
+                      {entry.round}.{String(entry.roundPick).padStart(2, "0")}
                     </small>
                   </td>
-                  <td>{formatAdp(entry.compositeAdp)}</td>
+                  <td>{formatAdp(entry.adp)}</td>
                   <td>
                     <span className={`draft-market-gap draft-market-gap--${verdict}`}>
                       {formatGap(entry)}
                     </span>
                   </td>
-                  <td className="draft-market-performance-column">
+                  <td>
                     {entry.player.position}
-                    {entry.draftPositionRank ?? "—"}
-                    <span aria-hidden="true"> → </span>
-                    <span className="draft-market-visually-hidden"> to </span>
-                    {entry.player.position}
+                    {entry.draftPositionRank ?? "—"} → {entry.player.position}
                     {entry.finishPositionRank ?? "—"}
                   </td>
-                  <td className="draft-market-performance-column">
-                    {formatNumber(entry.player.total)}
-                  </td>
-                  <td className="draft-market-performance-column">
-                    {formatNumber(entry.player.average)}
-                  </td>
-                  <td className="draft-market-performance-column">
-                    {entry.starts}
-                  </td>
-                  <td className="draft-market-performance-column">
+                  <td>{formatNumber(entry.player.total)}</td>
+                  <td>{formatNumber(entry.player.average)}</td>
+                  <td>{entry.starts}</td>
+                  <td>
                     {entry.bestWeek
                       ? `W${entry.bestWeek.week} · ${formatNumber(
                           entry.bestWeek.points
@@ -319,194 +282,27 @@ export function DraftDayReachesAndStealsForSeason({
   wrapped: WrappedType;
   composite: Record<string, number> | undefined;
 }) {
-  const [query, setQuery] = useState("");
-  const [position, setPosition] = useState("all");
-  const [managerId, setManagerId] = useState("all");
-
-  const analysis = useMemo(
-    () => (composite ? getDraftMarketAnalysis(wrapped, composite) : undefined),
-    [composite, wrapped]
-  );
-
   if (!composite) {
-    return (
-      <div className="draft-market-empty" role="status">
-        <strong>Composite ADP is unavailable for {year}.</strong>
-        <span>
-          This ledger does not substitute ESPN ADP or use player performance to
-          classify a pick.
-        </span>
-      </div>
-    );
+    return <p className="draft-market-empty">ADP unavailable for {year}.</p>;
   }
 
-  if (!analysis || analysis.totalPicks === 0) {
-    return (
-      <div className="draft-market-empty" role="status">
-        <strong>No draft picks yet for {year}.</strong>
-        <span>
-          The ledger will classify picks as soon as the league draft is captured.
-        </span>
-      </div>
-    );
+  const analysis = getDraftMarketAnalysis(wrapped, composite);
+  if (analysis.totalPicks === 0) {
+    return <p className="draft-market-empty">No draft picks yet for {year}.</p>;
   }
-
-  const reaches = sortByMarketGap(analysis.entries, "reach");
-  const steals = sortByMarketGap(analysis.entries, "steal");
-  const atCost = analysis.entries.filter((entry) => entry.verdict === "at-cost");
-  const biggestReach = reaches[0];
-  const biggestSteal = steals[0];
-  const normalizedQuery = query.trim().toLowerCase();
-  const filtered = analysis.entries.filter(
-    (entry) =>
-      (position === "all" || entry.player.position === position) &&
-      (managerId === "all" || entry.manager.id === managerId) &&
-      (normalizedQuery.length === 0 ||
-        [entry.player.name, entry.manager.name, entry.nflTeamName]
-          .join(" ")
-          .toLowerCase()
-          .includes(normalizedQuery))
-  );
-  const filteredReaches = sortByMarketGap(filtered, "reach");
-  const filteredSteals = sortByMarketGap(filtered, "steal");
-  const positions = Array.from(
-    new Set(analysis.entries.map((entry) => entry.player.position))
-  ).sort();
-  const managers = Object.values(wrapped.ffTeams).sort((left, right) =>
-    left.name.localeCompare(right.name)
-  );
 
   return (
     <div className="draft-market-page">
-      <header className="draft-market-intro">
-        <div>
-          <span className="draft-market-eyebrow">Composite board audit · {year}</span>
-          <h2>The market call is locked at the draft.</h2>
-          <p>
-            Actual pick minus composite ADP sets every verdict. Negative is a
-            reach; positive is a steal. Performance is shown only as the result
-            that followed—it never changes the label or the order.
-          </p>
-        </div>
-        <div className="draft-market-formula" aria-label="Classification formula">
-          <span>actual pick</span>
-          <b>−</b>
-          <span>composite ADP</span>
-          <b>=</b>
-          <span>market gap</span>
-        </div>
-      </header>
-
-      <div className="draft-market-summary" aria-label="Draft market summary">
-        <article>
-          <span>Classified picks</span>
-          <strong>{analysis.entries.length}</strong>
-          <small>
-            {reaches.length} reaches · {steals.length} steals · {atCost.length} at ADP
-          </small>
-        </article>
-        <article className="draft-market-summary--reach">
-          <span>Biggest reach</span>
-          <strong>{biggestReach?.player.name ?? "—"}</strong>
-          <small>
-            {biggestReach
-              ? `${formatGap(biggestReach)} · ${biggestReach.manager.name}`
-              : "No reach on the board"}
-          </small>
-        </article>
-        <article className="draft-market-summary--steal">
-          <span>Biggest steal</span>
-          <strong>{biggestSteal?.player.name ?? "—"}</strong>
-          <small>
-            {biggestSteal
-              ? `${formatGap(biggestSteal)} · ${biggestSteal.manager.name}`
-              : "No steal on the board"}
-          </small>
-        </article>
-        <article>
-          <span>Performance snapshot</span>
-          <strong>
-            {wrapped.latestScoringPeriod
-              ? `Through W${wrapped.latestScoringPeriod}`
-              : "Season data"}
-          </strong>
-          <small>
-            FPTS · PPG · drafted-pos outcome · league starts · best week
-          </small>
-        </article>
-      </div>
-
-      <div className="draft-market-controls" aria-label="Filter the ledger">
-        <label>
-          <span>Find</span>
-          <input
-            type="search"
-            value={query}
-            onChange={(event) => setQuery(event.currentTarget.value)}
-            placeholder="Player, manager, NFL team"
-          />
-        </label>
-        <label>
-          <span>Position</span>
-          <select
-            value={position}
-            onChange={(event) => setPosition(event.currentTarget.value)}
-          >
-            <option value="all">All positions</option>
-            {positions.map((value) => (
-              <option key={value} value={value}>
-                {value}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label>
-          <span>Manager</span>
-          <select
-            value={managerId}
-            onChange={(event) => setManagerId(event.currentTarget.value)}
-          >
-            <option value="all">All managers</option>
-            {managers.map((manager) => (
-              <option key={manager.id} value={manager.id}>
-                {manager.name}
-              </option>
-            ))}
-          </select>
-        </label>
-        <div className="draft-market-filter-count" aria-live="polite">
-          {filteredReaches.length + filteredSteals.length} market calls shown
-        </div>
-      </div>
-
       <MarketTable
         title="Reaches"
         verdict="reach"
-        entries={filteredReaches}
-        total={reaches.length}
+        entries={sortByMarketGap(analysis.entries, "reach")}
       />
       <MarketTable
         title="Steals"
         verdict="steal"
-        entries={filteredSteals}
-        total={steals.length}
+        entries={sortByMarketGap(analysis.entries, "steal")}
       />
-
-      {analysis.unmatched.length > 0 && (
-        <details className="draft-market-unmatched">
-          <summary>
-            {analysis.unmatched.length} of {analysis.totalPicks} picks excluded—no
-            composite match
-          </summary>
-          <ul>
-            {analysis.unmatched.map((pick) => (
-              <li key={`${pick.managerName}-${pick.pickNumber}`}>
-                #{pick.pickNumber} {pick.playerName} · {pick.managerName}
-              </li>
-            ))}
-          </ul>
-        </details>
-      )}
     </div>
   );
 }

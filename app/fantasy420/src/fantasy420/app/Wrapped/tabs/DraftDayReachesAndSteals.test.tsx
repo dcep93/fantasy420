@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, within } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { vi } from "vitest";
 
 import { WrappedType } from "../../FetchWrapped";
@@ -181,7 +181,7 @@ test("keeps performance alongside each market verdict without changing it", () =
   expect(steal.player.total).toBe(40);
 });
 
-test("renders a dense, filterable ledger with explicit market methodology", () => {
+test("renders only the reach and steal tables with ADP and performance", () => {
   render(
     <DraftDayReachesAndStealsForSeason
       year="2099"
@@ -190,8 +190,8 @@ test("renders a dense, filterable ledger with explicit market methodology", () =
     />
   );
 
-  expect(screen.getByText(/actual pick minus composite ADP/i)).toBeVisible();
-  expect(screen.getByText(/performance is shown only as the result/i)).toBeVisible();
+  expect(screen.getAllByRole("columnheader", { name: "ADP" })).toHaveLength(2);
+  expect(screen.queryByRole("searchbox")).not.toBeInTheDocument();
 
   const reachRow = screen.getByText("Reach Star").closest("tr")!;
   expect(within(reachRow).getByText("10 early")).toBeVisible();
@@ -200,20 +200,48 @@ test("renders a dense, filterable ledger with explicit market methodology", () =
   expect(within(reachRow).getByText("W2 · 30.0")).toBeVisible();
 
   const stealsTable = screen.getByRole("table", {
-    name: /steals, ordered only by/i,
+    name: /steals, ordered by/i,
   });
   const stealRow = within(stealsTable).getByText("Steal Bust").closest("tr")!;
   expect(within(stealRow).getByText("14 late")).toBeVisible();
   expect(within(stealRow).getByText("40.0")).toBeVisible();
 
-  fireEvent.change(screen.getByRole("searchbox", { name: "Find" }), {
-    target: { value: "Reach Star" },
-  });
-  expect(screen.getByText("1 / 2")).toBeVisible();
-  expect(screen.getByText(/no steals match these filters/i)).toBeVisible();
 });
 
-test("distinguishes missing composite data from a draft that has not happened", () => {
+test("excludes kickers and defenses", () => {
+  const kicker = { ...player("107", "Kicker", 100, 8, 8, 9), position: "K" };
+  const defense = {
+    ...player("108", "Defense", 120, 9, 9, 10),
+    position: "DST",
+  };
+  const analysis = getDraftMarketAnalysis(
+    {
+      ...wrapped,
+      nflPlayers: { ...wrapped.nflPlayers, "107": kicker, "108": defense },
+      ffTeams: {
+        ...wrapped.ffTeams,
+        a: {
+          ...wrapped.ffTeams.a,
+          draft: [
+            ...wrapped.ffTeams.a.draft,
+            { playerId: 107, pickIndex: 19 },
+            { playerId: 108, pickIndex: 20 },
+          ],
+        },
+      },
+    },
+    { ...composite, "107": 100, "108": 101 }
+  );
+
+  expect(analysis.entries.map((entry) => entry.player.position)).not.toContain(
+    "K"
+  );
+  expect(analysis.entries.map((entry) => entry.player.position)).not.toContain(
+    "DST"
+  );
+});
+
+test("distinguishes unavailable ADP from a draft that has not happened", () => {
   const { rerender } = render(
     <DraftDayReachesAndStealsForSeason
       year="2022"
@@ -221,8 +249,7 @@ test("distinguishes missing composite data from a draft that has not happened", 
       composite={undefined}
     />
   );
-  expect(screen.getByText(/composite ADP is unavailable for 2022/i)).toBeVisible();
-  expect(screen.getByText(/does not substitute ESPN ADP/i)).toBeVisible();
+  expect(screen.getByText(/ADP unavailable for 2022/i)).toBeVisible();
 
   rerender(
     <DraftDayReachesAndStealsForSeason
