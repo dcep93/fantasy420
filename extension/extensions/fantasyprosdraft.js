@@ -5,7 +5,7 @@ const FANTASYPROS_PLAYER_NAME_SELECTOR =
 const FANTASYPROS_PICK_NUMBER_SELECTOR =
   ".vue-base-draft-log-cell__pick-number";
 
-function getFantasyProsPickOrder(pickNumber) {
+function getFantasyProsPick(pickNumber) {
   const match = /^(\d+)\.(\d+)$/.exec(pickNumber.trim());
   if (!match) return null;
 
@@ -13,14 +13,22 @@ function getFantasyProsPickOrder(pickNumber) {
   const pickWithinRound = Number(match[2]);
   if (round < 1 || pickWithinRound < 1) return null;
 
-  return round * 1000 + pickWithinRound;
+  return {
+    order: round * 1000 + pickWithinRound,
+    pickWithinRound,
+  };
 }
 
-function getFantasyProsDraft(root) {
+function getFantasyProsPickOrder(pickNumber) {
+  return getFantasyProsPick(pickNumber)?.order ?? null;
+}
+
+function getFantasyProsDraftSnapshot(root) {
   const cells = Array.from(root.querySelectorAll(FANTASYPROS_PICK_SELECTOR));
   if (cells.length === 0) return null;
 
   const picksByOrder = new Map();
+  let teamCount = 0;
   cells.forEach((cell) => {
     const name = cell
       .querySelector(FANTASYPROS_PLAYER_NAME_SELECTOR)
@@ -29,27 +37,38 @@ function getFantasyProsDraft(root) {
     const pickNumber = cell
       .querySelector(FANTASYPROS_PICK_NUMBER_SELECTOR)
       ?.textContent?.trim();
-    const pickOrder = pickNumber ? getFantasyProsPickOrder(pickNumber) : null;
+    const pick = pickNumber ? getFantasyProsPick(pickNumber) : null;
+    if (pick) teamCount = Math.max(teamCount, pick.pickWithinRound);
 
-    if (name && pickOrder !== null) {
-      picksByOrder.set(pickOrder, name);
+    if (name && pick) {
+      picksByOrder.set(pick.order, name);
     }
   });
 
-  return Array.from(picksByOrder.entries())
-    .sort(([a], [b]) => a - b)
-    .map(([, name]) => name);
+  return {
+    draft: Array.from(picksByOrder.entries())
+      .sort(([a], [b]) => a - b)
+      .map(([, name]) => name),
+    teamCount,
+  };
+}
+
+function getFantasyProsDraft(root) {
+  return getFantasyProsDraftSnapshot(root)?.draft ?? null;
 }
 
 function startFantasyProsDraftSync(root) {
   let previousDraftJson = null;
 
   function readAndPostLoop() {
-    const draft = getFantasyProsDraft(root);
-    if (draft !== null) {
-      const draftJson = JSON.stringify(draft);
+    const snapshot = getFantasyProsDraftSnapshot(root);
+    if (snapshot !== null) {
+      const draftJson = JSON.stringify(snapshot);
       if (draftJson !== previousDraftJson) {
-        save_to_storage({ draft })
+        save_to_storage({
+          draft: snapshot.draft,
+          draftTeamCount: snapshot.teamCount,
+        })
           .then((saved) => {
             if (saved === true) previousDraftJson = draftJson;
           })
@@ -66,6 +85,7 @@ function startFantasyProsDraftSync(root) {
 if (typeof module !== "undefined" && module.exports) {
   module.exports = {
     getFantasyProsDraft,
+    getFantasyProsDraftSnapshot,
     getFantasyProsPickOrder,
   };
 }

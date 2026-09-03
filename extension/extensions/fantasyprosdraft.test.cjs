@@ -3,6 +3,7 @@ const assert = require("node:assert/strict");
 
 const {
   getFantasyProsDraft,
+  getFantasyProsDraftSnapshot,
   getFantasyProsPickOrder,
 } = require("./fantasyprosdraft.js");
 
@@ -50,6 +51,23 @@ test("sorts reversed even-round DOM cells by chronological pick label", () => {
 test("distinguishes an unrendered board from a rendered empty draft", () => {
   assert.equal(getFantasyProsDraft(fakeRoot([])), null);
   assert.deepEqual(getFantasyProsDraft(fakeRoot([fakeCell("", "1.01")])), []);
+});
+
+test("detects team count from all cells while preserving completed pick order", () => {
+  assert.deepEqual(
+    getFantasyProsDraftSnapshot(
+      fakeRoot([
+        fakeCell("Third Pick", "1.03"),
+        fakeCell("", "1.12"),
+        fakeCell("First Pick", "1.01"),
+        fakeCell("Second Round Pick", "2.01"),
+      ])
+    ),
+    {
+      draft: ["First Pick", "Third Pick", "Second Round Pick"],
+      teamCount: 12,
+    }
+  );
 });
 
 function fakeRoot(cells) {

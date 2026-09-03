@@ -338,6 +338,64 @@ test("renders derived headshots, rookie marks, fallback, and nudge controls", ()
   );
 });
 
+test("renders a read-only live panel with second-round snake columns", () => {
+  const playersById = Object.fromEntries(
+    Array.from({ length: 6 }, (_, index) => {
+      const id = String(index + 1);
+      return [
+        id,
+        {
+          id,
+          name: `Player ${id}`,
+          position: "WR",
+          byeWeek: 8,
+          rookie: false,
+        },
+      ];
+    })
+  );
+  render(
+    <MockDraftPanel
+      mode="live"
+      state={{
+        settings: {
+          ...DEFAULT_MOCK_DRAFT_SETTINGS,
+          teamCount: 3,
+          draftPosition: 0,
+        },
+        picks: ["1", "2", "3", "4", "5", "6"],
+      }}
+      playersById={playersById}
+      orderedRanking={["1", "2", "3", "4", "5", "6"]}
+      onNudge={vi.fn()}
+      onRechoose={vi.fn()}
+    />
+  );
+
+  expect(screen.getByRole("heading", { name: "live draft" })).toBeVisible();
+  expect(screen.getByText("6 picks")).toBeVisible();
+  expect(screen.queryByRole("button")).not.toBeInTheDocument();
+  expect(screen.getByTestId("mock-draft-team-1")).toHaveTextContent(
+    "Player 1"
+  );
+  expect(screen.getByTestId("mock-draft-team-1")).toHaveTextContent(
+    "Player 6"
+  );
+  expect(screen.getByTestId("mock-draft-team-2")).toHaveTextContent(
+    "Player 2"
+  );
+  expect(screen.getByTestId("mock-draft-team-2")).toHaveTextContent(
+    "Player 5"
+  );
+  expect(screen.getByTestId("mock-draft-team-3")).toHaveTextContent(
+    "Player 3"
+  );
+  expect(screen.getByTestId("mock-draft-team-3")).toHaveTextContent(
+    "Player 4"
+  );
+  expect(document.querySelector(".mock-draft-team-mine")).toBeNull();
+});
+
 test("uses the table's bright position palette for draft bubbles", () => {
   render(
     <MockDraftPanel

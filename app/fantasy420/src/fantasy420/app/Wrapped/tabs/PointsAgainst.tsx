@@ -17,6 +17,11 @@ export default function PointsAgainst() {
     .map((t) => ({
       t,
       weeks: Object.entries(t.nflGamesByScoringPeriod)
+        .filter(
+          ([weekNum]) =>
+            Number(weekNum) <=
+            (selectedWrapped().latestScoringPeriod ?? Number.POSITIVE_INFINITY)
+        )
         .map(([weekNum, o]) => ({
           weekNum,
           o,

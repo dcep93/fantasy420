@@ -140,7 +140,7 @@ export function getWrapped(providedYear: string): Promise<WrappedType> {
                 Object.entries(team.proGamesByScoringPeriod)
                   .map(([weekNum, entry]) => ({ weekNum, entry }))
                   .reverse()
-                  .find(({ entry }) => entry[0].statsOfficial)!.weekNum
+                  .find(({ entry }) => entry[0].statsOfficial)?.weekNum ?? "0"
             )
             .map((weekNum) => parseInt(weekNum))
         )
@@ -162,13 +162,9 @@ export function getWrapped(providedYear: string): Promise<WrappedType> {
                 byeWeek: p.byeWeek,
                 proGamesByScoringPeriod: fromEntries(
                   Object.entries(p.proGamesByScoringPeriod)
-                    .filter(
-                      ([_, o]) =>
-                        providedYear < currentYear || o[0].statsOfficial
-                    )
                     .map(([scoringPeriod, o]) => ({
                       key: scoringPeriod,
-                      value: o[0].id,
+                      value: o[0],
                     }))
                 ),
               }))
@@ -178,6 +174,8 @@ export function getWrapped(providedYear: string): Promise<WrappedType> {
                 .then(() =>
                   nflTeams.flatMap((team) =>
                     Object.values(team.proGamesByScoringPeriod)
+                      .filter((game) => game.statsOfficial)
+                      .map((game) => game.id)
                   )
                 )
                 .then((gameIds) =>
@@ -353,42 +351,46 @@ export function getWrapped(providedYear: string): Promise<WrappedType> {
                           ...team,
                           nflGamesByScoringPeriod: fromEntries(
                             Object.entries(proGamesByScoringPeriod)
-                              .filter(
-                                ([scoringPeriod]) =>
-                                  defensesByScoringPeriod[scoringPeriod] !==
-                                  undefined
-                              )
-                              .map(([scoringPeriod, gameId]) => ({
-                                key: scoringPeriod,
-                                value: {
-                                  opp: Object.keys(
-                                    gamesByGameId[gameId]?.drives || {}
-                                  ).find((t) => t !== team.id)!,
-                                  drives:
-                                    gamesByGameId[gameId]?.drives[team.id],
-                                  fieldGoals: (
-                                    gamesByGameId[gameId]?.fieldGoals || []
-                                  )
-                                    .filter((play) => play.teamId === team.id)
-                                    .map((play) => play.yards),
-                                  punts: (
-                                    gamesByGameId[gameId]?.punts[team.id] || []
-                                  ).flatMap((play) => ({
-                                    landed: play.landed,
-                                    distance: play.distance,
-                                  })),
-                                  punter: Object.keys(
-                                    groupByF(
-                                      gamesByGameId[gameId]?.punts[team.id] ||
-                                        [],
-                                      (p) => p.punter
-                                    )
-                                  ).join(","),
-                                  ...defensesByScoringPeriod[scoringPeriod][
+                              .map(([scoringPeriod, game]) => {
+                                const gameId = game.id;
+                                const opponentId = String(
+                                  game.homeProTeamId === Number(team.id)
+                                    ? game.awayProTeamId
+                                    : game.homeProTeamId
+                                );
+                                const defense =
+                                  defensesByScoringPeriod[scoringPeriod]?.[
                                     team.id
-                                  ],
-                                },
-                              }))
+                                  ];
+                                return {
+                                  key: scoringPeriod,
+                                  value: {
+                                    opp: opponentId,
+                                    drives:
+                                      gamesByGameId[gameId]?.drives[team.id],
+                                    fieldGoals: (
+                                      gamesByGameId[gameId]?.fieldGoals || []
+                                    )
+                                      .filter((play) => play.teamId === team.id)
+                                      .map((play) => play.yards),
+                                    punts: (
+                                      gamesByGameId[gameId]?.punts[team.id] || []
+                                    ).flatMap((play) => ({
+                                      landed: play.landed,
+                                      distance: play.distance,
+                                    })),
+                                    punter: Object.keys(
+                                      groupByF(
+                                        gamesByGameId[gameId]?.punts[team.id] ||
+                                          [],
+                                        (p) => p.punter
+                                      )
+                                    ).join(","),
+                                    yardsAllowed: defense?.yardsAllowed ?? 0,
+                                    pointsAllowed: defense?.pointsAllowed ?? 0,
+                                  },
+                                };
+                              })
                           ),
                         }))
                         .map((team) => ({ key: team.id, value: team }))

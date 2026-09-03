@@ -1,7 +1,10 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 
 import { printF } from "..";
-import { fetchExtensionStorage, setExtensionStorage } from "./Extension";
+import {
+  fetchExtensionStorageValues,
+  setExtensionStorage,
+} from "./Extension";
 
 import { WrappedType } from "../FetchWrapped";
 import { selectedWrapped, selectedYear } from "../Wrapped";
@@ -15,6 +18,7 @@ import {
 } from "./MockDraftView";
 import {
   advanceToUserTurn,
+  DEFAULT_MOCK_DRAFT_SETTINGS,
   getDraftLength,
   getPickOwner,
   isMockDraftPlayerEligible,
@@ -111,9 +115,9 @@ function SubDraft() {
     () => getNormalizedNameToId(wrapped),
     [wrapped]
   );
-  const matchedLiveDraft = useMemo(
+  const matchedLiveDraftPlayerIds = useMemo(
     () =>
-      liveDraft.flatMap((sourceName) => {
+      liveDraft.playerNames.flatMap((sourceName) => {
         const playerId = normalizedNameToId[
           normalizeDraftPlayerName(sourceName)
         ];
@@ -122,15 +126,11 @@ function SubDraft() {
           console.warn("Unmatched live draft player", sourceName);
           return [];
         }
-        return [player.name];
+        return [player.id];
       }),
     [liveDraft, normalizedNameToId, wrapped]
   );
   const [regenSources, updateRegenSources] = useState(false);
-  const playersByName = Object.fromEntries(
-    Object.values(selectedWrapped().nflPlayers).map((p) => [p.name, p])
-  );
-
   const { rankings: results, rawComposite } = useMemo(
     () => getResults(personalScores),
     [draftYear, personalScores]
@@ -204,16 +204,26 @@ function SubDraft() {
   );
   const activeDraftPlayerIds = mockDraft
     ? mockDraft.picks
-    : matchedLiveDraft.flatMap((playerName) => {
-        const player = playersByName[playerName];
-        return player ? [player.id] : [];
-      });
+    : matchedLiveDraftPlayerIds;
   const draftedById = Object.fromEntries(
     activeDraftPlayerIds.flatMap((playerId, pickIndex) => {
       const player = wrapped.nflPlayers[playerId];
       return player ? [[playerId, { pickIndex, ...player }]] : [];
     })
   );
+  const liveDraftBoardState =
+    !mockDraft &&
+    liveDraft.teamCount !== null &&
+    matchedLiveDraftPlayerIds.length > 0
+      ? {
+          settings: {
+            ...DEFAULT_MOCK_DRAFT_SETTINGS,
+            draftPosition: 0,
+            teamCount: liveDraft.teamCount,
+          },
+          picks: matchedLiveDraftPlayerIds,
+        }
+      : null;
 
   useEffect(() => {
     removeDraftHash();
@@ -327,6 +337,15 @@ function SubDraft() {
           orderedRanking={mockDraftRanking}
           onNudge={nudgeMockPick}
           onRechoose={rechooseMockPick}
+        />
+      ) : liveDraftBoardState ? (
+        <MockDraftPanel
+          mode="live"
+          state={liveDraftBoardState}
+          playersById={mockPlayersById}
+          orderedRanking={mockDraftRanking}
+          onNudge={() => undefined}
+          onRechoose={() => undefined}
         />
       ) : null}
     </>
@@ -1024,13 +1043,21 @@ function updateDraftRanking(
     .then((resp) => alert(resp.ok));
 }
 
-export function useLiveDraft(enabled = true): string[] {
+export type LiveDraftSnapshot = {
+  playerNames: string[];
+  teamCount: number | null;
+};
+
+export function useLiveDraft(enabled = true): LiveDraftSnapshot {
   const FETCH_LIVE_DRAFT_PERIOD_MS = 500;
-  const [liveDraft, updateLiveDraft] = useState<string[]>([]);
+  const [liveDraft, updateLiveDraft] = useState<LiveDraftSnapshot>({
+    playerNames: [],
+    teamCount: null,
+  });
 
   useEffect(() => {
     if (!enabled) {
-      updateLiveDraft([]);
+      updateLiveDraft({ playerNames: [], teamCount: null });
       return;
     }
     let active = true;
@@ -1039,16 +1066,26 @@ export function useLiveDraft(enabled = true): string[] {
 
     async function pollLiveDraft() {
       try {
-        const draft = await fetchExtensionStorage("draft");
+        const storage = await fetchExtensionStorageValues([
+          "draft",
+          "draftTeamCount",
+        ]);
+        const draft = storage.draft;
         if (!Array.isArray(draft)) return;
 
         const validDraft = draft.filter(
           (playerName): playerName is string => typeof playerName === "string"
         );
-        const draftJson = JSON.stringify(validDraft);
+        const teamCount =
+          Number.isSafeInteger(storage.draftTeamCount) &&
+          storage.draftTeamCount >= 2
+            ? storage.draftTeamCount
+            : null;
+        const nextDraft = { playerNames: validDraft, teamCount };
+        const draftJson = JSON.stringify(nextDraft);
         if (active && draftJson !== previousDraftJson) {
           previousDraftJson = draftJson;
-          updateLiveDraft(validDraft);
+          updateLiveDraft(nextDraft);
         }
       } catch (err) {
         console.error(err);

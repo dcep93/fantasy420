@@ -21,6 +21,7 @@ import ManagerPlot from "./tabs/ManagerPlot";
 import ManagerTrend from "./tabs/ManagerTrend";
 import MondayNight from "./tabs/MondayNight";
 import Negatives from "./tabs/Negatives";
+import NFLTeams from "./tabs/NFLTeams";
 import OwnedTeams from "./tabs/OwnedTeams";
 import Performance from "./tabs/Performance";
 import PerformanceTotals from "./tabs/PerformanceTotals";
@@ -299,7 +300,7 @@ export class Helpers {
   }
 }
 
-const toRender: { [key: string]: () => JSX.Element } = {
+export const wrappedModules: { [key: string]: () => JSX.Element } = {
   ManagerPlot,
   FantasyCalc,
   PlayerPlot,
@@ -341,5 +342,8 @@ const toRender: { [key: string]: () => JSX.Element } = {
   PositionTrends,
   StandingsPrediction,
   SpiciestMatchups,
+  NFLTeams,
   json,
 };
+
+const toRender = wrappedModules;

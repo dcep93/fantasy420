@@ -107,6 +107,11 @@ export default function DeterminedByDiscreteScoring() {
   return (
     <div>
       {Object.entries(selectedWrapped().ffMatchups)
+        .filter(
+          ([periodId]) =>
+            Number(periodId) <=
+            (selectedWrapped().latestScoringPeriod ?? Number.POSITIVE_INFINITY)
+        )
         .flatMap(([periodId, matchup]) =>
           matchup.map((match) => ({
             periodId,

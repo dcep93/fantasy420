@@ -17,6 +17,11 @@ export default function Punts() {
       groupByF(
         Object.values(wrapped.nflTeams).flatMap((team) =>
           Object.entries(team.nflGamesByScoringPeriod)
+            .filter(
+              ([weekNum]) =>
+                Number(weekNum) <=
+                (wrapped.latestScoringPeriod ?? Number.POSITIVE_INFINITY)
+            )
             .map(([weekNum, obj]) => ({
               team,
               weekNum,

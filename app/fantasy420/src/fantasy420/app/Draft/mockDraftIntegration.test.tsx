@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, expect, test, vi } from "vitest";
 
 import Draft from ".";
@@ -45,6 +45,7 @@ afterEach(() => {
   window.history.replaceState(null, "", "/");
   window.localStorage.clear();
   window.chrome = undefined;
+  delete document.documentElement.dataset.fantasy420ExtensionId;
 });
 
 test("loads, saves, and clears personal scores without drafting the row", () => {
@@ -199,6 +200,50 @@ test("removes a legacy draft hash without importing its state", () => {
   expect(window.location.search).toBe("?year=2026");
   expect(window.location.hash).toBe("");
   expect(screen.queryByTestId("mock-draft-panel")).not.toBeInTheDocument();
+});
+
+test("renders extension picks as a live snake draft board", async () => {
+  document.documentElement.dataset.fantasy420ExtensionId = "test-extension";
+  const storage = {
+    draft: [
+      "Jahmyr Gibbs",
+      "Ja'Marr Chase",
+      "Bijan Robinson",
+      "Puka Nacua",
+      "Josh Allen",
+      "Lamar Jackson",
+    ],
+    draftTeamCount: 3,
+  };
+  window.chrome = {
+    runtime: {
+      lastError: null,
+      sendMessage: vi.fn(
+        (
+          _extensionId: string,
+          request: { storage: { keys: (keyof typeof storage)[] } },
+          callback: (response: Partial<typeof storage>) => void
+        ) =>
+          callback(
+            Object.fromEntries(
+              request.storage.keys.map((key) => [key, storage[key]])
+            )
+          )
+      ),
+    },
+  };
+
+  render(<Draft />);
+  await waitFor(() =>
+    expect(screen.getByRole("heading", { name: "live draft" })).toBeVisible()
+  );
+  expect(screen.getByText("6 picks")).toBeVisible();
+  expect(screen.getByTestId("mock-draft-team-1")).toHaveTextContent(
+    "Jahmyr Gibbs"
+  );
+  expect(screen.getByTestId("mock-draft-team-1")).toHaveTextContent(
+    "Lamar Jackson"
+  );
 });
 
 test("clicking a user rank rewinds the in-memory draft for rechoice", () => {

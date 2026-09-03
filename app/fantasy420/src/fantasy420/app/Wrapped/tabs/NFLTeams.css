@@ -1,0 +1,46 @@
+.nfl-teams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 10px;
+  padding: 10px;
+}
+
+.nfl-team-bubble {
+  min-width: 0;
+}
+
+.nfl-team-bubble h2 {
+  margin: 0 0 0.55rem;
+  color: var(--night-focus);
+}
+
+.nfl-team-depth-chart {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.nfl-team-position-group {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: 0.45rem;
+}
+
+.nfl-team-position-group > div {
+  display: grid;
+  gap: 0.18rem;
+}
+
+.nfl-team-schedule {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  margin-top: 0.75rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--night-border);
+  color: var(--night-text-muted);
+  font-size: 0.85rem;
+}
+
+.nfl-team-schedule span {
+  white-space: nowrap;
+}

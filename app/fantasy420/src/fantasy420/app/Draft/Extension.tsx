@@ -67,10 +67,16 @@ export function fetchExtension(request: {
 }
 
 export function fetchExtensionStorage(key: string): Promise<any> {
-  return extensionHelper({ storage: { action: "get", keys: [key] } }).then(
-    (response) => {
-      return response ? response[key] : null;
-    }
+  return fetchExtensionStorageValues([key]).then((response) =>
+    response ? response[key] : null
+  );
+}
+
+export function fetchExtensionStorageValues(
+  keys: string[]
+): Promise<Record<string, any>> {
+  return extensionHelper({ storage: { action: "get", keys } }).then(
+    (response) => response ?? {}
   );
 }
 

@@ -1,5 +1,8 @@
 import rankings from "./2026.json";
 import wrapped from "../Wrapped/dataJson/2026.json";
+import { WrappedType } from "../FetchWrapped";
+
+const wrapped2026 = wrapped as WrappedType;
 
 const minimumPlayersBySource = {
   espn_10_ppr_super_auction: 300,
@@ -86,6 +89,25 @@ test("new sources have unique normalized names and strongly match ESPN players",
 
     expect(new Set(normalizedNames).size).toBe(names.length);
     expect(matches.length / names.length).toBeGreaterThanOrEqual(0.85);
+  });
+});
+
+test("contains a complete symmetric NFL schedule in the existing game map", () => {
+  const teams = Object.values(wrapped2026.nflTeams).filter(
+    (team) => team.id !== "0"
+  );
+
+  expect(teams).toHaveLength(32);
+  teams.forEach((team) => {
+    expect(Object.keys(team.nflGamesByScoringPeriod)).toHaveLength(17);
+    expect(team.nflGamesByScoringPeriod[String(team.byeWeek)]).toBeUndefined();
+
+    Object.entries(team.nflGamesByScoringPeriod).forEach(([week, game]) => {
+      expect(game?.opp).toBeTruthy();
+      expect(
+        wrapped2026.nflTeams[game!.opp!].nflGamesByScoringPeriod[week]?.opp
+      ).toBe(team.id);
+    });
   });
 });
 

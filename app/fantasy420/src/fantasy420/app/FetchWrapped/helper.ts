@@ -444,6 +444,8 @@ export type HelperType = {
           byeWeek: number;
           proGamesByScoringPeriod: {
             [scoringPeriodId: string]: {
+              awayProTeamId: number;
+              homeProTeamId: number;
               id: number;
               statsOfficial: boolean;
             }[];

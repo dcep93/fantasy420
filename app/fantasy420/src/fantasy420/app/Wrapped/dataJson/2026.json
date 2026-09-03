@@ -7,6 +7,7 @@
       }
     ],
     "players": {
+      "8439": 1.97,
       "12483": 37.32,
       "15847": 9.09,
       "16737": 11.66,
@@ -176,8 +177,7 @@
       "5081397": 0.08,
       "5081432": 0.04,
       "5083076": 12.75,
-      "5083315": 1.21,
-      "8439": 1.97
+      "5083315": 1.21
     },
     "timestamp": 1786917751000
   },
@@ -613,6 +613,16 @@
   },
   "latestScoringPeriod": 0,
   "nflPlayers": {
+    "8439": {
+      "average": 0,
+      "id": "8439",
+      "name": "Aaron Rodgers",
+      "nflTeamId": "23",
+      "position": "QB",
+      "projection": 0,
+      "scores": {},
+      "total": 0
+    },
     "10621": {
       "average": 0,
       "id": "10621",
@@ -10472,16 +10482,6 @@
       "projection": 0,
       "scores": {},
       "total": 0
-    },
-    "8439": {
-      "average": 0,
-      "id": "8439",
-      "name": "Aaron Rodgers",
-      "nflTeamId": "23",
-      "position": "QB",
-      "projection": 0,
-      "scores": {},
-      "total": 0
     }
   },
   "nflTeams": {
@@ -10495,193 +10495,4577 @@
       "byeWeek": 11,
       "id": "1",
       "name": "Falcons",
-      "nflGamesByScoringPeriod": {}
-    },
-    "10": {
-      "byeWeek": 9,
-      "id": "10",
-      "name": "Titans",
-      "nflGamesByScoringPeriod": {}
-    },
-    "11": {
-      "byeWeek": 13,
-      "id": "11",
-      "name": "Colts",
-      "nflGamesByScoringPeriod": {}
-    },
-    "12": {
-      "byeWeek": 5,
-      "id": "12",
-      "name": "Chiefs",
-      "nflGamesByScoringPeriod": {}
-    },
-    "13": {
-      "byeWeek": 13,
-      "id": "13",
-      "name": "Raiders",
-      "nflGamesByScoringPeriod": {}
-    },
-    "14": {
-      "byeWeek": 11,
-      "id": "14",
-      "name": "Rams",
-      "nflGamesByScoringPeriod": {}
-    },
-    "15": {
-      "byeWeek": 6,
-      "id": "15",
-      "name": "Dolphins",
-      "nflGamesByScoringPeriod": {}
-    },
-    "16": {
-      "byeWeek": 6,
-      "id": "16",
-      "name": "Vikings",
-      "nflGamesByScoringPeriod": {}
-    },
-    "17": {
-      "byeWeek": 11,
-      "id": "17",
-      "name": "Patriots",
-      "nflGamesByScoringPeriod": {}
-    },
-    "18": {
-      "byeWeek": 8,
-      "id": "18",
-      "name": "Saints",
-      "nflGamesByScoringPeriod": {}
-    },
-    "19": {
-      "byeWeek": 8,
-      "id": "19",
-      "name": "Giants",
-      "nflGamesByScoringPeriod": {}
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "23",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "29",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "9",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "18",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "33",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "3",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "25",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "27",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "4",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "12",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "16",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "8",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "5",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "28",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "27",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "18",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "29",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
     },
     "2": {
       "byeWeek": 7,
       "id": "2",
       "name": "Bills",
-      "nflGamesByScoringPeriod": {}
-    },
-    "20": {
-      "byeWeek": 13,
-      "id": "20",
-      "name": "Jets",
-      "nflGamesByScoringPeriod": {}
-    },
-    "21": {
-      "byeWeek": 10,
-      "id": "21",
-      "name": "Eagles",
-      "nflGamesByScoringPeriod": {}
-    },
-    "22": {
-      "byeWeek": 14,
-      "id": "22",
-      "name": "Cardinals",
-      "nflGamesByScoringPeriod": {}
-    },
-    "23": {
-      "byeWeek": 9,
-      "id": "23",
-      "name": "Steelers",
-      "nflGamesByScoringPeriod": {}
-    },
-    "24": {
-      "byeWeek": 7,
-      "id": "24",
-      "name": "Chargers",
-      "nflGamesByScoringPeriod": {}
-    },
-    "25": {
-      "byeWeek": 8,
-      "id": "25",
-      "name": "49ers",
-      "nflGamesByScoringPeriod": {}
-    },
-    "26": {
-      "byeWeek": 11,
-      "id": "26",
-      "name": "Seahawks",
-      "nflGamesByScoringPeriod": {}
-    },
-    "27": {
-      "byeWeek": 10,
-      "id": "27",
-      "name": "Buccaneers",
-      "nflGamesByScoringPeriod": {}
-    },
-    "28": {
-      "byeWeek": 7,
-      "id": "28",
-      "name": "Commanders",
-      "nflGamesByScoringPeriod": {}
-    },
-    "29": {
-      "byeWeek": 5,
-      "id": "29",
-      "name": "Panthers",
-      "nflGamesByScoringPeriod": {}
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "34",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "8",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "24",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "17",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "14",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "13",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "33",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "16",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "20",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "15",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "12",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "17",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "9",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "3",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "7",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "15",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "20",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
     },
     "3": {
       "byeWeek": 10,
       "id": "3",
       "name": "Bears",
-      "nflGamesByScoringPeriod": {}
-    },
-    "30": {
-      "byeWeek": 7,
-      "id": "30",
-      "name": "Jaguars",
-      "nflGamesByScoringPeriod": {}
-    },
-    "33": {
-      "byeWeek": 13,
-      "id": "33",
-      "name": "Ravens",
-      "nflGamesByScoringPeriod": {}
-    },
-    "34": {
-      "byeWeek": 8,
-      "id": "34",
-      "name": "Texans",
-      "nflGamesByScoringPeriod": {}
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "29",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "16",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "21",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "20",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "9",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "1",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "17",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "26",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "27",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "18",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "8",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "30",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "15",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "2",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "9",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "8",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "16",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
     },
     "4": {
       "byeWeek": 6,
       "id": "4",
       "name": "Bengals",
-      "nflGamesByScoringPeriod": {}
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "27",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "34",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "23",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "30",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "15",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "33",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "10",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "1",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "23",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "28",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "18",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "5",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "12",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "29",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "11",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "33",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "5",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
     },
     "5": {
       "byeWeek": 11,
       "id": "5",
       "name": "Browns",
-      "nflGamesByScoringPeriod": {}
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "30",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "27",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "29",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "23",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "20",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "33",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "10",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "23",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "18",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "34",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "13",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "4",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "1",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "19",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "33",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "11",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "4",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
     },
     "6": {
       "byeWeek": 14,
       "id": "6",
       "name": "Cowboys",
-      "nflGamesByScoringPeriod": {}
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "19",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "28",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "33",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "34",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "27",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "9",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "21",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "22",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "11",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "25",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "10",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "21",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "26",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "14",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "30",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "19",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "28",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
     },
     "7": {
       "byeWeek": 10,
       "id": "7",
       "name": "Broncos",
-      "nflGamesByScoringPeriod": {}
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "12",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "30",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "14",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "25",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "24",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "26",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "22",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "12",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "29",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "13",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "23",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "15",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "20",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "13",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "2",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "17",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "24",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
     },
     "8": {
       "byeWeek": 6,
       "id": "8",
       "name": "Lions",
-      "nflGamesByScoringPeriod": {}
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "18",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "2",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "20",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "29",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "22",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "9",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "16",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "15",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "17",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "27",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "3",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "1",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "10",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "16",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "19",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "3",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "9",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
     },
     "9": {
       "byeWeek": 11,
       "id": "9",
       "name": "Packers",
-      "nflGamesByScoringPeriod": {}
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "16",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "20",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "1",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "27",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "3",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "6",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "8",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "29",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "17",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "16",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "14",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "18",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "2",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "15",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "3",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "34",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "8",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
+    },
+    "10": {
+      "byeWeek": 9,
+      "id": "10",
+      "name": "Titans",
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "20",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "21",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "19",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "33",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "34",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "11",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "5",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "4",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "30",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "6",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "30",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "28",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "8",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "11",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "13",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "23",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "34",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
+    },
+    "11": {
+      "byeWeek": 13,
+      "id": "11",
+      "name": "Colts",
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "33",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "12",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "34",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "28",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "23",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "10",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "16",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "30",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "6",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "15",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "34",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "19",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "21",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "10",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "4",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "5",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "30",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
+    },
+    "12": {
+      "byeWeek": 5,
+      "id": "12",
+      "name": "Chiefs",
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "7",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "11",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "15",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "13",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "24",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "26",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "7",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "20",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "1",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "22",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "2",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "14",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "4",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "17",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "25",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "24",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "13",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
+    },
+    "13": {
+      "byeWeek": 13,
+      "id": "13",
+      "name": "Raiders",
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "15",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "24",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "18",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "12",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "17",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "2",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "14",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "20",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "25",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "26",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "7",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "5",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "24",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "7",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "10",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "22",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "12",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
+    },
+    "14": {
+      "byeWeek": 11,
+      "id": "14",
+      "name": "Rams",
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "25",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "19",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "7",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "21",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "2",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "22",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "13",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "24",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "28",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "22",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "9",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "12",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "25",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "6",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "26",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "27",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "26",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
+    },
+    "15": {
+      "byeWeek": 6,
+      "id": "15",
+      "name": "Dolphins",
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "13",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "25",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "12",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "16",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "4",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "20",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "17",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "8",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "11",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "2",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "20",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "7",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "3",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "9",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "24",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "2",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "17",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
+    },
+    "16": {
+      "byeWeek": 6,
+      "id": "16",
+      "name": "Vikings",
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "9",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "3",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "27",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "15",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "18",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "11",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "8",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "2",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "9",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "25",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "1",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "29",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "17",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "8",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "28",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "20",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "3",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
+    },
+    "17": {
+      "byeWeek": 11,
+      "id": "17",
+      "name": "Patriots",
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "26",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "23",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "30",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "2",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "13",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "20",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "3",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "15",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "9",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "8",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "24",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "2",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "16",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "12",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "20",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "7",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "15",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
+    },
+    "18": {
+      "byeWeek": 8,
+      "id": "18",
+      "name": "Saints",
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "8",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "33",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "13",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "1",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "16",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "19",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "23",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "5",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "29",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "3",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "4",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "9",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "29",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "27",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "22",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "1",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "27",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
+    },
+    "19": {
+      "byeWeek": 8,
+      "id": "19",
+      "name": "Giants",
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "6",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "14",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "10",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "22",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "28",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "18",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "34",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "21",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "28",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "30",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "11",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "25",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "26",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "5",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "8",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "6",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "21",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
+    },
+    "20": {
+      "byeWeek": 13,
+      "id": "20",
+      "name": "Jets",
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "10",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "9",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "8",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "3",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "5",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "17",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "15",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "13",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "12",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "2",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "24",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "15",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "7",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "22",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "17",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "16",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "2",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
+    },
+    "21": {
+      "byeWeek": 10,
+      "id": "21",
+      "name": "Eagles",
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "28",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "10",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "3",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "14",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "30",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "29",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "6",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "28",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "19",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "23",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "6",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "22",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "11",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "26",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "34",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "25",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "19",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
+    },
+    "22": {
+      "byeWeek": 14,
+      "id": "22",
+      "name": "Cardinals",
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "24",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "26",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "25",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "19",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "8",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "14",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "7",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "6",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "26",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "14",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "12",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "28",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "21",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "20",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "18",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "13",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "25",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
+    },
+    "23": {
+      "byeWeek": 9,
+      "id": "23",
+      "name": "Steelers",
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "1",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "17",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "4",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "5",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "11",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "27",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "18",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "5",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "4",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "21",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "7",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "34",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "30",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "33",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "29",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "10",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "33",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
+    },
+    "24": {
+      "byeWeek": 7,
+      "id": "24",
+      "name": "Chargers",
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "22",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "13",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "2",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "26",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "7",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "12",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "14",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "34",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "33",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "20",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "17",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "27",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "13",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "25",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "15",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "12",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "7",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
+    },
+    "25": {
+      "byeWeek": 8,
+      "id": "25",
+      "name": "49ers",
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "14",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "15",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "22",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "7",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "26",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "28",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "1",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "13",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "6",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "16",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "26",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "19",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "14",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "24",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "12",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "21",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "22",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
+    },
+    "26": {
+      "byeWeek": 11,
+      "id": "26",
+      "name": "Seahawks",
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "17",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "22",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "28",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "24",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "25",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "7",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "12",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "3",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "22",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "13",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "25",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "6",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "19",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "21",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "14",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "29",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "14",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
+    },
+    "27": {
+      "byeWeek": 10,
+      "id": "27",
+      "name": "Buccaneers",
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "4",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "5",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "16",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "9",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "6",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "23",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "29",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "1",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "3",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "8",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "29",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "24",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "33",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "18",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "1",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "14",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "18",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
+    },
+    "28": {
+      "byeWeek": 7,
+      "id": "28",
+      "name": "Commanders",
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "21",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "6",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "26",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "11",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "19",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "25",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "21",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "14",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "19",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "4",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "22",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "10",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "34",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "1",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "16",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "30",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "6",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
+    },
+    "29": {
+      "byeWeek": 5,
+      "id": "29",
+      "name": "Panthers",
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "3",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "1",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "5",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "8",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "21",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "27",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "9",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "7",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "18",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "33",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "27",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "16",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "18",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "4",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "23",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "26",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "1",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
+    },
+    "30": {
+      "byeWeek": 7,
+      "id": "30",
+      "name": "Jaguars",
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "5",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "7",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "17",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "4",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "21",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "34",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "11",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "33",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "10",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "19",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "10",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "3",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "23",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "34",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "6",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "28",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "11",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
+    },
+    "33": {
+      "byeWeek": 13,
+      "id": "33",
+      "name": "Ravens",
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "11",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "18",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "6",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "10",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "1",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "5",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "4",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "8": {
+          "opp": "2",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "30",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "24",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "29",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "34",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "27",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "23",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "5",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "4",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "23",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
+    },
+    "34": {
+      "byeWeek": 8,
+      "id": "34",
+      "name": "Texans",
+      "nflGamesByScoringPeriod": {
+        "1": {
+          "opp": "2",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "2": {
+          "opp": "4",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "3": {
+          "opp": "11",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "4": {
+          "opp": "6",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "5": {
+          "opp": "10",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "6": {
+          "opp": "30",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "7": {
+          "opp": "19",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "9": {
+          "opp": "24",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "10": {
+          "opp": "5",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "11": {
+          "opp": "11",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "12": {
+          "opp": "33",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "13": {
+          "opp": "23",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "14": {
+          "opp": "28",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "15": {
+          "opp": "30",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "16": {
+          "opp": "21",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "17": {
+          "opp": "9",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        },
+        "18": {
+          "opp": "10",
+          "fieldGoals": [],
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "punts": [],
+          "punter": ""
+        }
+      }
     }
   },
   "year": "2026"
