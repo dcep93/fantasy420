@@ -548,12 +548,25 @@ function SubDraft() {
                 .map((week) => (
                   <div
                     key={week}
+                    role="button"
+                    aria-label={`filter bye week ${week}`}
+                    aria-pressed={byeWeekFilter === week}
                     style={{
                       ...bubbleStyle,
+                      cursor: "pointer",
                       backgroundColor:
                         byeWeekFilter === week
-                          ? "var(--night-surface-alt)"
+                          ? "var(--night-focus)"
                           : undefined,
+                      borderColor:
+                        byeWeekFilter === week
+                          ? "var(--night-focus)"
+                          : undefined,
+                      color:
+                        byeWeekFilter === week
+                          ? "var(--night-position-text)"
+                          : undefined,
+                      fontWeight: byeWeekFilter === week ? 700 : undefined,
                     }}
                     onClick={() =>
                       updateByeWeekFilter(byeWeekFilter === week ? -1 : week)
@@ -651,11 +664,20 @@ function SubDraft() {
                     <td
                       className="draft-player-meta-cell"
                       title={"index/posIndex/bye/byePick"}
+                      data-bye-week-match={String(
+                        v.byeWeek === byeWeekFilter
+                      )}
                       style={{
                         backgroundColor:
                           v.byeWeek === byeWeekFilter
-                            ? "var(--night-surface-alt)"
+                            ? "var(--night-focus)"
                             : undefined,
+                        color:
+                          v.byeWeek === byeWeekFilter
+                            ? "var(--night-position-text)"
+                            : undefined,
+                        fontWeight:
+                          v.byeWeek === byeWeekFilter ? 700 : undefined,
                       }}
                     >
                       {v.i + 1}/{v.posRank + 1}/{v.byeWeek}/

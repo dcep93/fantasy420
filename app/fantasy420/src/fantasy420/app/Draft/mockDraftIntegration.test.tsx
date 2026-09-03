@@ -122,6 +122,42 @@ test("inspects personal scores by absolute magnitude until a source is selected"
   rendered.unmount();
 });
 
+test("strongly highlights the selected bye week and matching bye cells", () => {
+  const rendered = render(<Draft />);
+  const week = screen.getByRole("button", { name: "filter bye week 11" });
+
+  expect(week).toHaveAttribute("aria-pressed", "false");
+  fireEvent.click(week);
+
+  expect(week).toHaveAttribute("aria-pressed", "true");
+  expect(week.style.backgroundColor).toBe("var(--night-focus)");
+  expect(week.style.borderColor).toBe("var(--night-focus)");
+  expect(week.style.color).toBe("var(--night-position-text)");
+  expect(week.style.fontWeight).toBe("700");
+  const matches = Array.from(
+    rendered.container.querySelectorAll<HTMLElement>(
+      '[data-bye-week-match="true"]'
+    )
+  );
+  expect(matches.length).toBeGreaterThan(0);
+  matches.forEach((cell) => {
+    expect(cell).toHaveTextContent(/\/11\//);
+    expect(cell.style.backgroundColor).toBe("var(--night-focus)");
+    expect(cell.style.color).toBe("var(--night-position-text)");
+    expect(cell.style.fontWeight).toBe("700");
+  });
+  const nonmatch = rendered.container.querySelector<HTMLElement>(
+    '[data-bye-week-match="false"]'
+  )!;
+  expect(nonmatch.style.backgroundColor).toBe("");
+
+  fireEvent.click(week);
+  expect(week).toHaveAttribute("aria-pressed", "false");
+  expect(
+    rendered.container.querySelector('[data-bye-week-match="true"]')
+  ).toBeNull();
+});
+
 test("reload starts fresh and removes obsolete active-draft storage", () => {
   const sendMessage = vi.fn();
   window.chrome = { runtime: { sendMessage, lastError: null } };
