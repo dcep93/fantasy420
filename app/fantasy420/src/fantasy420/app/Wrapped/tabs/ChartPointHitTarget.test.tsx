@@ -45,3 +45,21 @@ test("preserves the standard visible scatter marker", () => {
   expect(circles[1]).toHaveAttribute("r", "4");
   expect(circles[1]).toHaveAttribute("fill", "#123456");
 });
+
+test("can disable the expanded target without disabling the visible marker", () => {
+  const rendered = render(
+    <svg>
+      <ScatterPointHitTarget
+        cx={8}
+        cy={9}
+        fill="#123456"
+        expandedHitTarget={false}
+      />
+    </svg>
+  );
+  const circles = rendered.container.querySelectorAll("circle");
+
+  expect(circles[0]).toHaveAttribute("pointer-events", "none");
+  expect(circles[1]).not.toHaveAttribute("pointer-events", "none");
+  expect(circles[1]).toHaveAttribute("fill", "#123456");
+});

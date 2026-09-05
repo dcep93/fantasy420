@@ -7,9 +7,16 @@ export function ChartPointHitTarget(
     children?: ReactNode;
     cx?: number;
     cy?: number;
+    expandedHitTarget?: boolean;
   } & Omit<SVGProps<SVGGElement>, "children">
 ) {
-  const { children, cx, cy, ...groupProps } = props;
+  const {
+    children,
+    cx,
+    cy,
+    expandedHitTarget = true,
+    ...groupProps
+  } = props;
   if (typeof cx !== "number" || typeof cy !== "number") return null;
 
   return (
@@ -21,7 +28,7 @@ export function ChartPointHitTarget(
         r={CHART_POINT_HIT_RADIUS}
         fill="transparent"
         stroke="transparent"
-        pointerEvents="all"
+        pointerEvents={expandedHitTarget ? "all" : "none"}
         aria-hidden="true"
         focusable="false"
       />
@@ -34,12 +41,17 @@ export function ScatterPointHitTarget(props: {
   cx?: number;
   cy?: number;
   fill?: string;
+  expandedHitTarget?: boolean;
 }) {
-  const { cx, cy, fill = "#8884d8" } = props;
+  const { cx, cy, fill = "#8884d8", expandedHitTarget = true } = props;
   if (typeof cx !== "number" || typeof cy !== "number") return null;
 
   return (
-    <ChartPointHitTarget cx={cx} cy={cy}>
+    <ChartPointHitTarget
+      cx={cx}
+      cy={cy}
+      expandedHitTarget={expandedHitTarget}
+    >
       <circle cx={cx} cy={cy} r={4} fill={fill} />
     </ChartPointHitTarget>
   );
