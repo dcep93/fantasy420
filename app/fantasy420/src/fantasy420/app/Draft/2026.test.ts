@@ -8,14 +8,14 @@ const minimumPlayersBySource = {
   espn_10_ppr_super_auction: 300,
   draftsharks_ppr_super_auction: 250,
   tapthatdraft_10_ppr_super_auction: 210,
-  yafsb_10_ppr_super_auction: 340,
+  yafsb_10_ppr_super_auction: 370,
   ringer_ppr_super_auction: 400,
   pfn_ppr_super: 440,
   yahoo_boone_ppr: 300,
   qblist_ppr: 300,
   cbs_ppr_auction: 200,
   fftoday_ppr: 225,
-  fantasypros_ppr_super: 528,
+  fantasypros_ppr_super: 540,
   rotoballer_super: 340,
   si_ppr_super: 200,
   harrisfootball_ppr: 160,
@@ -43,15 +43,15 @@ test("stores auction prices as negative values so higher prices sort first", () 
 });
 
 test("stores YAFSB auction values as dollars for a $200 budget", () => {
-  expect(rankings.yafsb_10_ppr_super_auction["Josh Allen"]).toBe(-45.2);
+  expect(rankings.yafsb_10_ppr_super_auction["Josh Allen"]).toBe(-49);
   expect(rankings.yafsb_10_ppr_super_auction["Charlie Smyth"]).toBe(-0.6);
 });
 
 test("preserves representative values from the imported public boards", () => {
   expect(rankings.espn_10_ppr_super_auction["Josh Allen"]).toBe(-59);
-  expect(rankings.draftsharks_ppr_super_auction["Josh Allen"]).toBe(-61);
-  expect(rankings.tapthatdraft_10_ppr_super_auction["Ja'Marr Chase"]).toBe(-50);
-  expect(rankings.yafsb_10_ppr_super_auction["Jahmyr Gibbs"]).toBe(-50.4);
+  expect(rankings.draftsharks_ppr_super_auction["Josh Allen"]).toBe(-57);
+  expect(rankings.tapthatdraft_10_ppr_super_auction["Ja'Marr Chase"]).toBe(-51);
+  expect(rankings.yafsb_10_ppr_super_auction["Jahmyr Gibbs"]).toBe(-55);
   expect(rankings.ringer_ppr_super_auction["Jahmyr Gibbs"]).toBe(-63);
   expect(rankings.ringer_ppr_super_auction["Josh Allen"]).toBe(-65);
   expect(rankings.ringer_ppr_super_auction["Baker Mayfield"]).toBe(-23);
@@ -59,7 +59,7 @@ test("preserves representative values from the imported public boards", () => {
   expect(rankings.pfn_ppr_super["Baker Mayfield"]).toBe(99);
   expect(rankings.yahoo_boone_ppr["Baker Mayfield"]).toBe(173);
   expect(rankings.qblist_ppr["Bijan Robinson"]).toBe(1);
-  expect(rankings.cbs_ppr_auction["Jahmyr Gibbs"]).toBe(-34);
+  expect(rankings.cbs_ppr_auction["Jahmyr Gibbs"]).toBe(-35);
   expect(rankings.fftoday_ppr["Jahmyr Gibbs"]).toBe(1);
   expect(rankings.fantasypros_ppr_super["Josh Allen"]).toBe(1);
   expect(rankings.rotoballer_super["Josh Allen"]).toBe(1);
