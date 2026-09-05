@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { printF } from "..";
 import { fetchExtension } from "../Draft/Extension";
 import { clog, currentYear, groupByF, selectedWrapped } from "../Wrapped";
+import { defenseStatsForGame } from "./defenseStats";
 import helper, { default as first2knowF, HelperType } from "./helper";
 
 export type NFLPlayerType = {
@@ -362,6 +363,10 @@ export function getWrapped(providedYear: string): Promise<WrappedType> {
                                   defensesByScoringPeriod[scoringPeriod]?.[
                                     team.id
                                   ];
+                                const defenseStats = defenseStatsForGame(
+                                  game.statsOfficial,
+                                  defense
+                                );
                                 return {
                                   key: scoringPeriod,
                                   value: {
@@ -386,8 +391,7 @@ export function getWrapped(providedYear: string): Promise<WrappedType> {
                                         (p) => p.punter
                                       )
                                     ).join(","),
-                                    yardsAllowed: defense?.yardsAllowed ?? 0,
-                                    pointsAllowed: defense?.pointsAllowed ?? 0,
+                                    ...defenseStats,
                                   },
                                 };
                               })

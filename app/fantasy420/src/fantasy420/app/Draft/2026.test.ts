@@ -92,6 +92,12 @@ test("new sources have unique normalized names and strongly match ESPN players",
   });
 });
 
+test("normalizes ranking-source defense aliases to ESPN defense names", () => {
+  expect(normalize("Houston Texans")).toBe(normalize("Texans D/ST"));
+  expect(normalize("Denver")).toBe(normalize("Denver Broncos"));
+  expect(normalize("New England")).toBe(normalize("Patriots D/ST"));
+});
+
 test("contains a complete symmetric NFL schedule in the existing game map", () => {
   const teams = Object.values(wrapped2026.nflTeams).filter(
     (team) => team.id !== "0"
@@ -112,9 +118,10 @@ test("contains a complete symmetric NFL schedule in the existing game map", () =
 });
 
 function normalize(name: string): string {
-  return name
+  const normalized = name
     .toLocaleLowerCase()
     .replaceAll(/[^A-Za-z0-9 ]/g, "")
+    .replaceAll(/ dst$/g, "")
     .replaceAll(/ i+$/g, "")
     .replaceAll(/gabriel davis$/gi, "gabe davis")
     .replaceAll(/hollywood brown$/gi, "marquise brown")
@@ -126,4 +133,80 @@ function normalize(name: string): string {
     .replaceAll(/andres borregales$/gi, "andy borregales")
     .replaceAll(/ sr$/gi, "")
     .replaceAll(/ jr$/gi, "");
+
+  const defenseNickname = defenseNicknames.find(
+    (nickname) =>
+      normalized === nickname || normalized.endsWith(` ${nickname}`)
+  );
+  const cityNickname = defenseCities[normalized];
+
+  return defenseNickname || cityNickname
+    ? `defense ${defenseNickname || cityNickname}`
+    : normalized;
 }
+
+const defenseNicknames = [
+  "49ers",
+  "bears",
+  "bengals",
+  "bills",
+  "broncos",
+  "browns",
+  "buccaneers",
+  "cardinals",
+  "chargers",
+  "chiefs",
+  "colts",
+  "commanders",
+  "cowboys",
+  "dolphins",
+  "eagles",
+  "falcons",
+  "giants",
+  "jaguars",
+  "jets",
+  "lions",
+  "packers",
+  "panthers",
+  "patriots",
+  "raiders",
+  "rams",
+  "ravens",
+  "saints",
+  "seahawks",
+  "steelers",
+  "texans",
+  "titans",
+  "vikings",
+];
+
+const defenseCities: Record<string, string> = {
+  arizona: "cardinals",
+  atlanta: "falcons",
+  baltimore: "ravens",
+  buffalo: "bills",
+  carolina: "panthers",
+  chicago: "bears",
+  cincinnati: "bengals",
+  cleveland: "browns",
+  dallas: "cowboys",
+  denver: "broncos",
+  detroit: "lions",
+  "green bay": "packers",
+  houston: "texans",
+  indianapolis: "colts",
+  jacksonville: "jaguars",
+  "kansas city": "chiefs",
+  "las vegas": "raiders",
+  miami: "dolphins",
+  minnesota: "vikings",
+  "new england": "patriots",
+  "new orleans": "saints",
+  philadelphia: "eagles",
+  pittsburgh: "steelers",
+  "san francisco": "49ers",
+  seattle: "seahawks",
+  "tampa bay": "buccaneers",
+  tennessee: "titans",
+  washington: "commanders",
+};

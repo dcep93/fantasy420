@@ -14,6 +14,7 @@ export default defineConfig({
       "src/fantasy420/app/Draft/midrank.test.ts",
       "src/fantasy420/app/Draft/mockDraft.test.ts",
       "src/fantasy420/app/Draft/rookies.test.ts",
+      "src/fantasy420/app/FetchWrapped/defenseStats.test.ts",
       "src/fantasy420/app/Wrapped/tabs/DraftDayReachesAndSteals.test.tsx",
       "src/fantasy420/app/Wrapped/tabs/PlayerStats/Chart.test.tsx",
     ],
