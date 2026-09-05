@@ -136,6 +136,13 @@ export default function Chart(props: {
           />
           <YAxis width={40} allowDecimals={false} />
           <Tooltip
+            contentStyle={{
+              backgroundColor: NIGHT_COLORS.tooltip,
+              border: `1px solid ${NIGHT_COLORS.chartGrid}`,
+              color: NIGHT_COLORS.text,
+            }}
+            labelStyle={{ color: NIGHT_COLORS.text }}
+            itemStyle={{ color: NIGHT_COLORS.text }}
             formatter={(value: unknown, _name: string, payload: any) => {
               if (value === null || value === undefined) return "No score";
               const num = Number(value);
