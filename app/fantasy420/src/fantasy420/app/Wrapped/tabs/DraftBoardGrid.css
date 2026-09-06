@@ -1,5 +1,5 @@
 .draft-board-grid {
-  --draft-board-column-width: 11.5em;
+  --draft-board-column-width: 7em;
   --draft-board-header-height: 4.5em;
   --draft-board-row-height: 7em;
   display: grid;
