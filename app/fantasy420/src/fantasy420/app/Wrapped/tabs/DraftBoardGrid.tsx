@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 import { bubbleStyle } from "..";
 import { WrappedType } from "../../FetchWrapped";
 import { PerformanceType } from "./DraftValue";
@@ -61,11 +63,13 @@ export function DraftBoardGrid({
   getCardColor,
   getCardLabel,
   pickTestIdPrefix = "draft-pick",
+  renderCardContent,
 }: {
   columns: DraftBoardColumn[];
   getCardColor: (entry: DraftBoardEntry) => string | undefined;
   getCardLabel?: (entry: DraftBoardEntry) => string | undefined;
   pickTestIdPrefix?: string;
+  renderCardContent?: (entry: DraftBoardEntry) => ReactNode;
 }) {
   return (
     <div className="draft-board-grid" data-testid="draft-board-grid">
@@ -88,12 +92,17 @@ export function DraftBoardGrid({
               key={entry.pick.pickIndex}
               data-testid={`${pickTestIdPrefix}-${entry.pick.pickIndex}`}
               aria-label={getCardLabel?.(entry)}
+              role={getCardLabel ? "group" : undefined}
               style={{
                 ...bubbleStyle,
                 backgroundColor: getCardColor(entry),
               }}
             >
-              <DraftBoardCardContent entry={entry} />
+              {renderCardContent ? (
+                renderCardContent(entry)
+              ) : (
+                <DraftBoardCardContent entry={entry} />
+              )}
             </div>
           ))}
         </div>

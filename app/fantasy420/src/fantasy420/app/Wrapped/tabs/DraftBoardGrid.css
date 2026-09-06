@@ -46,6 +46,47 @@
   font-weight: bold;
 }
 
+.draft-board-grid__metadata {
+  margin-top: 0.2em;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.reach-steal-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: center;
+  margin: 0 0.75em 0.35em;
+  color: var(--night-text-muted);
+  font-size: 0.75em;
+}
+
+.reach-steal-legend__item {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.reach-steal-legend__scale {
+  width: 4.5rem;
+  height: 0.8rem;
+  border: 1px solid var(--night-border);
+  border-radius: 999px;
+}
+
+.reach-steal-legend__neutral {
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 1px solid var(--night-border);
+  border-radius: 50%;
+}
+
+.reach-steal-legend__note {
+  color: var(--night-text);
+}
+
 .draft-board-empty {
   margin: 0.75rem;
   padding: 0.8rem;
