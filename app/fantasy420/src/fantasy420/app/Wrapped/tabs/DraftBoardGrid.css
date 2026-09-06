@@ -1,0 +1,56 @@
+.draft-board-grid {
+  --draft-board-column-width: 15em;
+  --draft-board-header-height: 4.5em;
+  --draft-board-row-height: 7em;
+  display: grid;
+  grid-auto-columns: var(--draft-board-column-width);
+  grid-auto-flow: column;
+  align-items: start;
+  width: max-content;
+  min-width: 100%;
+}
+
+.draft-board-grid__column {
+  display: grid;
+  grid-template-rows: var(--draft-board-header-height);
+  grid-auto-rows: var(--draft-board-row-height);
+  min-width: 0;
+}
+
+.draft-board-grid__header,
+.draft-board-grid__card {
+  box-sizing: border-box;
+  width: auto;
+  min-width: 0;
+  height: auto;
+  overflow: hidden;
+}
+
+.draft-board-grid__header {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  margin-bottom: 0 !important;
+  font-size: 0.78em;
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+
+.draft-board-grid__card {
+  color: var(--night-position-text) !important;
+  font-size: 0.7em;
+  overflow-wrap: anywhere;
+}
+
+.draft-board-grid__player-name {
+  font-weight: bold;
+}
+
+.draft-board-empty {
+  margin: 0.75rem;
+  padding: 0.8rem;
+  color: var(--night-text-muted);
+  border: 1px dashed var(--night-border);
+  border-radius: 0.5rem;
+  background: var(--night-surface);
+}

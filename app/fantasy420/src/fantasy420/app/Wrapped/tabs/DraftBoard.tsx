@@ -1,47 +1,18 @@
 import { KeyboardEvent, useState } from "react";
-import { bubbleStyle, selectedWrapped, selectedYear } from "..";
+import { selectedWrapped, selectedYear } from "..";
 import { getCompositeForYear, POSITION_COLORS } from "../../Draft";
 import { WrappedType } from "../../FetchWrapped";
+import {
+  DraftBoardColumn,
+  DraftBoardGrid,
+} from "./DraftBoardGrid";
 import { getPerformance, PerformanceType } from "./DraftValue";
 
-export type DraftBoardEntry = {
-  compositeRank?: number;
-  performance?: PerformanceType[string];
-  pick: WrappedType["ffTeams"][string]["draft"][number];
-  player: WrappedType["nflPlayers"][string];
-  team: WrappedType["ffTeams"][string];
-};
-
-export type DraftBoardColumn = DraftBoardEntry[];
+export type { DraftBoardColumn, DraftBoardEntry } from "./DraftBoardGrid";
+export { formatDraftBoardSummary } from "./DraftBoardGrid";
 export type DraftBoardOrder = "round" | "position";
 
 const POSITION_ORDER = ["QB", "RB", "WR", "TE", "K", "DST"];
-
-function formatRank(rank: number | undefined, zeroBased = false): string {
-  if (rank === undefined) return "—";
-  return String(zeroBased ? rank + 1 : rank);
-}
-
-export function formatDraftBoardSummary({
-  pickIndex,
-  compositeRank,
-  position,
-  draftRank,
-  performanceRank,
-}: {
-  pickIndex: number;
-  compositeRank?: number;
-  position: string;
-  draftRank?: number;
-  performanceRank?: number;
-}): string {
-  return `${pickIndex + 1} / ${formatRank(
-    compositeRank
-  )}) ${position}${formatRank(draftRank, true)}/${position}${formatRank(
-    performanceRank,
-    true
-  )}`;
-}
 
 export function getDraftBoardColumns(
   wrapped: WrappedType,
@@ -156,59 +127,10 @@ export function DraftBoardForSeason({
         Sorted by {order === "round" ? "rounds" : "position"} · click board
         to switch
       </div>
-      <div style={{ display: "flex", alignItems: "flex-start" }}>
-        {columns.map((column) => (
-          <div
-            key={column[0].team.id}
-            data-testid={`draft-board-column-${column[0].team.id}`}
-            style={{
-              display: "inline-flex",
-              flexDirection: "column",
-            }}
-          >
-            <div
-              style={{
-                ...bubbleStyle,
-                boxSizing: "border-box",
-                fontSize: "0.78em",
-                fontWeight: "bold",
-                marginBottom: 0,
-                position: "sticky",
-                top: 0,
-                width: "15em",
-                zIndex: 1,
-              }}
-            >
-              {column[0].team.name}
-            </div>
-            {column.map((entry) => (
-              <div
-                key={entry.pick.pickIndex}
-                data-testid={`draft-pick-${entry.pick.pickIndex}`}
-                style={{
-                  ...bubbleStyle,
-                  fontSize: "0.7em",
-                  width: "15em",
-                  height: "6em",
-                  color: "var(--night-position-text)",
-                  backgroundColor: POSITION_COLORS[entry.player.position],
-                }}
-              >
-                <div>
-                  {formatDraftBoardSummary({
-                    pickIndex: entry.pick.pickIndex,
-                    compositeRank: entry.compositeRank,
-                    position: entry.player.position,
-                    draftRank: entry.performance?.draftRank,
-                    performanceRank: entry.performance?.totalRank,
-                  })}
-                </div>
-                <div style={{ fontWeight: "bold" }}>{entry.player.name}</div>
-              </div>
-            ))}
-          </div>
-        ))}
-      </div>
+      <DraftBoardGrid
+        columns={columns}
+        getCardColor={(entry) => POSITION_COLORS[entry.player.position]}
+      />
     </div>
   );
 }

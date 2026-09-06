@@ -32,8 +32,18 @@ test("formats pick, composite ADP, and both positional ranks", () => {
 });
 
 test("drops empty manager columns instead of reading a missing first pick", () => {
+  const wrappedWithoutPicks = {
+    ...allWrapped["2026"],
+    ffTeams: Object.fromEntries(
+      Object.entries(allWrapped["2026"].ffTeams).map(([id, team]) => [
+        id,
+        { ...team, draft: [] },
+      ])
+    ),
+  };
+
   expect(
-    getDraftBoardColumns(allWrapped["2026"], {}, getCompositeForYear("2026"))
+    getDraftBoardColumns(wrappedWithoutPicks, {}, getCompositeForYear("2026"))
   ).toEqual([]);
 });
 
@@ -126,6 +136,20 @@ test("toggles the whole board between round and position order", () => {
   expect(board).toHaveAccessibleName(/sorted by position/i);
 });
 
+test("uses fixed CSS grid tracks for headers and pick rows", () => {
+  render(<DraftBoardForSeason year="2025" wrapped={allWrapped["2025"]} />);
+
+  const grid = screen.getByTestId("draft-board-grid");
+  const firstColumn = screen.getByTestId("draft-board-column-1");
+  const header = firstColumn.firstElementChild;
+  const firstPick = within(firstColumn).getAllByTestId(/^draft-pick-/)[0];
+
+  expect(grid).toHaveClass("draft-board-grid");
+  expect(firstColumn).toHaveClass("draft-board-grid__column");
+  expect(header).toHaveClass("draft-board-grid__header");
+  expect(firstPick).toHaveClass("draft-board-grid__card");
+});
+
 test("switches seasons without substituting another year's composite", () => {
   const { rerender } = render(
     <DraftBoardForSeason year="2025" wrapped={allWrapped["2025"]} />
@@ -149,6 +173,19 @@ test("switches seasons without substituting another year's composite", () => {
   rerender(<DraftBoardForSeason year="2021" wrapped={allWrapped["2021"]} />);
   expect(screen.getAllByText(/^\d+ \/ —\) /).length).toBeGreaterThan(0);
 
-  rerender(<DraftBoardForSeason year="2026" wrapped={allWrapped["2026"]} />);
+  rerender(
+    <DraftBoardForSeason
+      year="2026"
+      wrapped={{
+        ...allWrapped["2026"],
+        ffTeams: Object.fromEntries(
+          Object.entries(allWrapped["2026"].ffTeams).map(([id, team]) => [
+            id,
+            { ...team, draft: [] },
+          ])
+        ),
+      }}
+    />
+  );
   expect(screen.getByText("No draft picks yet for 2026.")).toBeInTheDocument();
 });

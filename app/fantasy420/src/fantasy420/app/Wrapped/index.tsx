@@ -11,7 +11,6 @@ import ChosenWrong from "./tabs/ChosenWrong";
 import ConsistentlyAverage from "./tabs/ConsistentlyAverage";
 import DeterminedByDiscreteScoring from "./tabs/DeterminedByDiscreteScoring";
 import DraftBoard from "./tabs/DraftBoard";
-import DraftDayReachesAndSteals from "./tabs/DraftDayReachesAndSteals";
 import DraftValue from "./tabs/DraftValue";
 import ExtremeStuds from "./tabs/ExtremeStuds";
 import FantasyCalc from "./tabs/FantasyCalc";
@@ -32,6 +31,7 @@ import PlayoffMachine from "./tabs/PlayoffMachine";
 import PointsAgainst from "./tabs/PointsAgainst";
 import PositionTrends from "./tabs/PositionTrends";
 import Punts from "./tabs/Punts";
+import ReachesAndSteals from "./tabs/ReachesAndSteals";
 import SecondLost from "./tabs/SecondLost";
 import Simps from "./tabs/Simps";
 import SpiciestMatchups from "./tabs/SpiciestMatchups";
@@ -316,6 +316,7 @@ export const wrappedModules: { [key: string]: () => JSX.Element } = {
   ChosenWrong,
   DraftValue,
   DraftBoard,
+  ReachesAndSteals,
   StrengthOfSeason,
   Performance,
   PerformanceTotals,
@@ -347,11 +348,10 @@ export const wrappedModules: { [key: string]: () => JSX.Element } = {
   SpiciestMatchups,
   NFLTeams,
   json,
-  DraftDayReachesAndSteals,
 };
 
 export const wrappedModuleLabels: Record<string, string> = {
-  DraftDayReachesAndSteals: "Draft Day: Reaches & Steals",
+  ReachesAndSteals: "ReachesAndSteals",
 };
 
 const toRender = wrappedModules;
