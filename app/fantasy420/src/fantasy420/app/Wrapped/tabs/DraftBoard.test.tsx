@@ -145,6 +145,11 @@ test("uses fixed CSS grid tracks for headers and pick rows", () => {
   const firstPick = within(firstColumn).getAllByTestId(/^draft-pick-/)[0];
 
   expect(grid).toHaveClass("draft-board-grid");
+  expect(
+    getComputedStyle(grid)
+      .getPropertyValue("--draft-board-column-width")
+      .trim()
+  ).toBe("11.5em");
   expect(firstColumn).toHaveClass("draft-board-grid__column");
   expect(header).toHaveClass("draft-board-grid__header");
   expect(firstPick).toHaveClass("draft-board-grid__card");
