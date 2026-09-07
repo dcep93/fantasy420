@@ -1,6 +1,6 @@
 .nfl-teams-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
   align-items: start;
   justify-content: start;
   gap: 10px;
@@ -49,6 +49,7 @@
   background: color-mix(in srgb, var(--night-border) 26%, transparent);
   font-size: 0.78rem;
   line-height: 1.25;
+  white-space: nowrap;
 }
 
 .nfl-team-schedule {
@@ -56,7 +57,6 @@
   grid-template-columns: repeat(6, minmax(max-content, 1fr));
   gap: 0.3rem;
   margin-top: 0.75rem;
-  overflow-x: auto;
   padding-top: 0.65rem;
   padding-left: 0;
   border-top: 1px solid var(--night-border);
@@ -92,18 +92,4 @@
 .nfl-team-schedule-bye .nfl-team-schedule-opponent {
   color: var(--night-focus);
   font-weight: bold;
-}
-
-@media (max-width: 650px) {
-  .nfl-teams-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .nfl-team-player-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .nfl-team-schedule {
-    grid-template-columns: repeat(3, minmax(max-content, 1fr));
-  }
 }

@@ -89,6 +89,9 @@ test("renders slash-searchable team bubbles with ranked depth charts and schedul
   expect(within(bills).getByText("Josh Allen").parentElement).toHaveTextContent(
     "Josh Allen — 1 ADP · QB1"
   );
+  expect(within(bills).getByText("Josh Allen").parentElement).toHaveClass(
+    "nfl-team-player"
+  );
   expect(within(bills).getByText("Backup Bill").parentElement).toHaveTextContent(
     "Backup Bill — 3 ADP · QB2"
   );
