@@ -131,9 +131,11 @@ export function NFLTeamsForSeason({
                       >
                         <span className="nfl-team-player-name">
                           {player.name}
-                        </span>{" "}
-                        — {player.adp} ADP · {player.position}
-                        {player.positionRank}
+                        </span>
+                        <span className="nfl-team-player-meta">
+                          {player.adp} ADP · {player.position}
+                          {player.positionRank}
+                        </span>
                       </div>
                     ))}
                   </div>
