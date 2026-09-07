@@ -32824,7 +32824,8 @@
           ],
           "punter": "B.Pinion",
           "yardsAllowed": 385,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": false
         },
         "2": {
           "opp": "14",
@@ -32851,7 +32852,8 @@
           ],
           "punter": "B.Pinion",
           "yardsAllowed": 337,
-          "pointsAllowed": 31
+          "pointsAllowed": 31,
+          "isAway": true
         },
         "3": {
           "opp": "26",
@@ -32878,7 +32880,8 @@
           ],
           "punter": "B.Pinion",
           "yardsAllowed": 420,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": true
         },
         "4": {
           "opp": "5",
@@ -32916,7 +32919,8 @@
           ],
           "punter": "B.Pinion",
           "yardsAllowed": 403,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": false
         },
         "5": {
           "opp": "27",
@@ -32960,7 +32964,8 @@
           ],
           "punter": "B.Pinion",
           "yardsAllowed": 420,
-          "pointsAllowed": 21
+          "pointsAllowed": 21,
+          "isAway": true
         },
         "6": {
           "opp": "25",
@@ -32999,7 +33004,8 @@
           ],
           "punter": "B.Pinion",
           "yardsAllowed": 346,
-          "pointsAllowed": 14
+          "pointsAllowed": 14,
+          "isAway": false
         },
         "7": {
           "opp": "4",
@@ -33045,7 +33051,8 @@
           ],
           "punter": "B.Pinion",
           "yardsAllowed": 537,
-          "pointsAllowed": 35
+          "pointsAllowed": 35,
+          "isAway": true
         },
         "8": {
           "opp": "29",
@@ -33089,7 +33096,8 @@
           ],
           "punter": "B.Pinion",
           "yardsAllowed": 478,
-          "pointsAllowed": 34
+          "pointsAllowed": 34,
+          "isAway": false
         },
         "9": {
           "opp": "24",
@@ -33127,7 +33135,8 @@
           ],
           "punter": "B.Pinion",
           "yardsAllowed": 336,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": false
         },
         "10": {
           "opp": "29",
@@ -33172,7 +33181,8 @@
           ],
           "punter": "B.Pinion",
           "yardsAllowed": 333,
-          "pointsAllowed": 25
+          "pointsAllowed": 25,
+          "isAway": true
         },
         "11": {
           "opp": "3",
@@ -33208,7 +33218,8 @@
           ],
           "punter": "B.Pinion",
           "yardsAllowed": 288,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": false
         },
         "12": {
           "opp": "28",
@@ -33243,7 +33254,8 @@
           ],
           "punter": "B.Pinion",
           "yardsAllowed": 314,
-          "pointsAllowed": 19
+          "pointsAllowed": 19,
+          "isAway": true
         },
         "13": {
           "opp": "23",
@@ -33278,7 +33290,8 @@
           ],
           "punter": "B.Pinion",
           "yardsAllowed": 351,
-          "pointsAllowed": 19
+          "pointsAllowed": 19,
+          "isAway": false
         },
         "15": {
           "opp": "18",
@@ -33321,7 +33334,8 @@
           ],
           "punter": "B.Pinion",
           "yardsAllowed": 348,
-          "pointsAllowed": 21
+          "pointsAllowed": 21,
+          "isAway": true
         },
         "16": {
           "opp": "33",
@@ -33357,7 +33371,8 @@
           ],
           "punter": "B.Pinion",
           "yardsAllowed": 299,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": true
         },
         "17": {
           "opp": "22",
@@ -33393,7 +33408,8 @@
           ],
           "punter": "B.Pinion",
           "yardsAllowed": 339,
-          "pointsAllowed": 19
+          "pointsAllowed": 19,
+          "isAway": false
         },
         "18": {
           "opp": "27",
@@ -33431,7 +33447,8 @@
           ],
           "punter": "B.Pinion",
           "yardsAllowed": 222,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": false
         }
       }
     },
@@ -33460,7 +33477,8 @@
           "punts": [],
           "punter": "",
           "yardsAllowed": 243,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": true
         },
         "2": {
           "opp": "10",
@@ -33497,7 +33515,8 @@
           ],
           "punter": "S.Martin",
           "yardsAllowed": 187,
-          "pointsAllowed": 7
+          "pointsAllowed": 7,
+          "isAway": false
         },
         "3": {
           "opp": "15",
@@ -33523,7 +33542,8 @@
           ],
           "punter": "S.Martin",
           "yardsAllowed": 212,
-          "pointsAllowed": 21
+          "pointsAllowed": 21,
+          "isAway": true
         },
         "4": {
           "opp": "33",
@@ -33560,7 +33580,8 @@
           ],
           "punter": "S.Martin",
           "yardsAllowed": 296,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": true
         },
         "5": {
           "opp": "23",
@@ -33594,7 +33615,8 @@
           ],
           "punter": "S.Martin",
           "yardsAllowed": 364,
-          "pointsAllowed": 3
+          "pointsAllowed": 3,
+          "isAway": false
         },
         "6": {
           "opp": "12",
@@ -33625,7 +33647,8 @@
           ],
           "punter": "S.Martin",
           "yardsAllowed": 387,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": true
         },
         "8": {
           "opp": "9",
@@ -33657,7 +33680,8 @@
           ],
           "punter": "S.Martin",
           "yardsAllowed": 398,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": false
         },
         "9": {
           "opp": "20",
@@ -33687,7 +33711,8 @@
           ],
           "punter": "S.Martin",
           "yardsAllowed": 310,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": true
         },
         "10": {
           "opp": "16",
@@ -33727,7 +33752,8 @@
           ],
           "punter": "S.Martin",
           "yardsAllowed": 481,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": false
         },
         "11": {
           "opp": "5",
@@ -33764,7 +33790,8 @@
           ],
           "punter": "S.Martin",
           "yardsAllowed": 396,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": false
         },
         "12": {
           "opp": "8",
@@ -33804,7 +33831,8 @@
           ],
           "punter": "S.Martin",
           "yardsAllowed": 326,
-          "pointsAllowed": 25
+          "pointsAllowed": 25,
+          "isAway": true
         },
         "13": {
           "opp": "17",
@@ -33839,7 +33867,8 @@
           ],
           "punter": "S.Martin",
           "yardsAllowed": 242,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": true
         },
         "14": {
           "opp": "20",
@@ -33894,7 +33923,8 @@
           ],
           "punter": "S.Martin",
           "yardsAllowed": 309,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": false
         },
         "15": {
           "opp": "15",
@@ -33938,7 +33968,8 @@
           ],
           "punter": "S.Martin",
           "yardsAllowed": 405,
-          "pointsAllowed": 29
+          "pointsAllowed": 29,
+          "isAway": false
         },
         "16": {
           "opp": "3",
@@ -33973,7 +34004,8 @@
           ],
           "punter": "S.Martin",
           "yardsAllowed": 209,
-          "pointsAllowed": 13
+          "pointsAllowed": 13,
+          "isAway": true
         },
         "17": {
           "opp": "4",
@@ -33982,7 +34014,8 @@
           "punts": [],
           "punter": "",
           "yardsAllowed": 0,
-          "pointsAllowed": 0
+          "pointsAllowed": 0,
+          "isAway": true
         },
         "18": {
           "opp": "17",
@@ -34016,7 +34049,8 @@
           ],
           "punter": "S.Martin",
           "yardsAllowed": 341,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": false
         }
       }
     },
@@ -34069,7 +34103,8 @@
           ],
           "punter": "T.Gill",
           "yardsAllowed": 331,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": false
         },
         "2": {
           "opp": "9",
@@ -34107,7 +34142,8 @@
           ],
           "punter": "T.Gill",
           "yardsAllowed": 414,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": true
         },
         "3": {
           "opp": "34",
@@ -34150,7 +34186,8 @@
           ],
           "punter": "T.Gill",
           "yardsAllowed": 329,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": false
         },
         "4": {
           "opp": "19",
@@ -34198,7 +34235,8 @@
           ],
           "punter": "T.Gill",
           "yardsAllowed": 333,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": true
         },
         "5": {
           "opp": "16",
@@ -34229,7 +34267,8 @@
           ],
           "punter": "T.Gill",
           "yardsAllowed": 429,
-          "pointsAllowed": 29
+          "pointsAllowed": 29,
+          "isAway": true
         },
         "6": {
           "opp": "28",
@@ -34266,7 +34305,8 @@
           ],
           "punter": "T.Gill",
           "yardsAllowed": 214,
-          "pointsAllowed": 12
+          "pointsAllowed": 12,
+          "isAway": false
         },
         "7": {
           "opp": "17",
@@ -34301,7 +34341,8 @@
           ],
           "punter": "T.Gill",
           "yardsAllowed": 260,
-          "pointsAllowed": 14
+          "pointsAllowed": 14,
+          "isAway": true
         },
         "8": {
           "opp": "6",
@@ -34341,7 +34382,8 @@
           ],
           "punter": "T.Gill",
           "yardsAllowed": 442,
-          "pointsAllowed": 43
+          "pointsAllowed": 43,
+          "isAway": true
         },
         "9": {
           "opp": "15",
@@ -34372,7 +34414,8 @@
           ],
           "punter": "T.Gill",
           "yardsAllowed": 379,
-          "pointsAllowed": 35
+          "pointsAllowed": 35,
+          "isAway": false
         },
         "10": {
           "opp": "8",
@@ -34407,7 +34450,8 @@
           ],
           "punter": "T.Gill",
           "yardsAllowed": 323,
-          "pointsAllowed": 25
+          "pointsAllowed": 25,
+          "isAway": false
         },
         "11": {
           "opp": "1",
@@ -34446,7 +34490,8 @@
           ],
           "punter": "T.Gill",
           "yardsAllowed": 280,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": true
         },
         "12": {
           "opp": "20",
@@ -34489,7 +34534,8 @@
           ],
           "punter": "T.Gill",
           "yardsAllowed": 466,
-          "pointsAllowed": 31
+          "pointsAllowed": 31,
+          "isAway": true
         },
         "13": {
           "opp": "9",
@@ -34517,7 +34563,8 @@
           ],
           "punter": "T.Gill",
           "yardsAllowed": 357,
-          "pointsAllowed": 28
+          "pointsAllowed": 28,
+          "isAway": false
         },
         "15": {
           "opp": "21",
@@ -34564,7 +34611,8 @@
           ],
           "punter": "T.Gill",
           "yardsAllowed": 421,
-          "pointsAllowed": 25
+          "pointsAllowed": 25,
+          "isAway": false
         },
         "16": {
           "opp": "2",
@@ -34607,7 +34655,8 @@
           ],
           "punter": "T.Gill",
           "yardsAllowed": 426,
-          "pointsAllowed": 35
+          "pointsAllowed": 35,
+          "isAway": false
         },
         "17": {
           "opp": "8",
@@ -34660,7 +34709,8 @@
           ],
           "punter": "T.Gill",
           "yardsAllowed": 504,
-          "pointsAllowed": 41
+          "pointsAllowed": 41,
+          "isAway": true
         },
         "18": {
           "opp": "16",
@@ -34693,7 +34743,8 @@
           ],
           "punter": "T.Gill",
           "yardsAllowed": 482,
-          "pointsAllowed": 29
+          "pointsAllowed": 29,
+          "isAway": false
         }
       }
     },
@@ -34740,7 +34791,8 @@
           ],
           "punter": "K.Huber",
           "yardsAllowed": 267,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": false
         },
         "2": {
           "opp": "6",
@@ -34785,7 +34837,8 @@
           ],
           "punter": "K.Huber",
           "yardsAllowed": 337,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": true
         },
         "3": {
           "opp": "20",
@@ -34823,7 +34876,8 @@
           ],
           "punter": "K.Huber",
           "yardsAllowed": 328,
-          "pointsAllowed": 12
+          "pointsAllowed": 12,
+          "isAway": true
         },
         "4": {
           "opp": "15",
@@ -34865,7 +34919,8 @@
           ],
           "punter": "K.Huber",
           "yardsAllowed": 378,
-          "pointsAllowed": 15
+          "pointsAllowed": 15,
+          "isAway": false
         },
         "5": {
           "opp": "33",
@@ -34903,7 +34958,8 @@
           ],
           "punter": "K.Huber",
           "yardsAllowed": 325,
-          "pointsAllowed": 19
+          "pointsAllowed": 19,
+          "isAway": true
         },
         "6": {
           "opp": "18",
@@ -34938,7 +34994,8 @@
           ],
           "punter": "K.Huber",
           "yardsAllowed": 399,
-          "pointsAllowed": 26
+          "pointsAllowed": 26,
+          "isAway": true
         },
         "7": {
           "opp": "1",
@@ -34966,7 +35023,8 @@
           ],
           "punter": "K.Huber",
           "yardsAllowed": 214,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": false
         },
         "8": {
           "opp": "5",
@@ -35003,7 +35061,8 @@
           ],
           "punter": "K.Huber",
           "yardsAllowed": 440,
-          "pointsAllowed": 32
+          "pointsAllowed": 32,
+          "isAway": true
         },
         "9": {
           "opp": "29",
@@ -35037,7 +35096,8 @@
           ],
           "punter": "K.Huber",
           "yardsAllowed": 228,
-          "pointsAllowed": 21
+          "pointsAllowed": 21,
+          "isAway": false
         },
         "11": {
           "opp": "23",
@@ -35077,7 +35137,8 @@
           ],
           "punter": "D.Chrisman",
           "yardsAllowed": 351,
-          "pointsAllowed": 30
+          "pointsAllowed": 30,
+          "isAway": true
         },
         "12": {
           "opp": "10",
@@ -35123,7 +35184,8 @@
           ],
           "punter": "D.Chrisman",
           "yardsAllowed": 344,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": true
         },
         "13": {
           "opp": "12",
@@ -35149,7 +35211,8 @@
           ],
           "punter": "D.Chrisman",
           "yardsAllowed": 349,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": false
         },
         "14": {
           "opp": "5",
@@ -35193,7 +35256,8 @@
           ],
           "punter": "D.Chrisman",
           "yardsAllowed": 344,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": false
         },
         "15": {
           "opp": "27",
@@ -35235,7 +35299,8 @@
           ],
           "punter": "D.Chrisman",
           "yardsAllowed": 396,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": true
         },
         "16": {
           "opp": "17",
@@ -35272,7 +35337,8 @@
           ],
           "punter": "D.Chrisman",
           "yardsAllowed": 285,
-          "pointsAllowed": 12
+          "pointsAllowed": 12,
+          "isAway": true
         },
         "17": {
           "opp": "2",
@@ -35281,7 +35347,8 @@
           "punts": [],
           "punter": "",
           "yardsAllowed": 0,
-          "pointsAllowed": 0
+          "pointsAllowed": 0,
+          "isAway": false
         },
         "18": {
           "opp": "33",
@@ -35336,7 +35403,8 @@
           ],
           "punter": "D.Chrisman",
           "yardsAllowed": 386,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": false
         }
       }
     },
@@ -35386,7 +35454,8 @@
           ],
           "punter": "C.Bojorquez",
           "yardsAllowed": 261,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": true
         },
         "2": {
           "opp": "20",
@@ -35421,7 +35490,8 @@
           ],
           "punter": "C.Bojorquez",
           "yardsAllowed": 402,
-          "pointsAllowed": 31
+          "pointsAllowed": 31,
+          "isAway": false
         },
         "3": {
           "opp": "23",
@@ -35464,7 +35534,8 @@
           ],
           "punter": "C.Bojorquez",
           "yardsAllowed": 308,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": false
         },
         "4": {
           "opp": "1",
@@ -35500,7 +35571,8 @@
           ],
           "punter": "C.Bojorquez",
           "yardsAllowed": 333,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": true
         },
         "5": {
           "opp": "24",
@@ -35529,7 +35601,8 @@
           ],
           "punter": "C.Bojorquez",
           "yardsAllowed": 465,
-          "pointsAllowed": 30
+          "pointsAllowed": 30,
+          "isAway": false
         },
         "6": {
           "opp": "17",
@@ -35568,7 +35641,8 @@
           ],
           "punter": "C.Bojorquez",
           "yardsAllowed": 399,
-          "pointsAllowed": 38
+          "pointsAllowed": 38,
+          "isAway": false
         },
         "7": {
           "opp": "33",
@@ -35604,7 +35678,8 @@
           ],
           "punter": "C.Bojorquez",
           "yardsAllowed": 254,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": true
         },
         "8": {
           "opp": "4",
@@ -35636,7 +35711,8 @@
           ],
           "punter": "C.Bojorquez",
           "yardsAllowed": 229,
-          "pointsAllowed": 13
+          "pointsAllowed": 13,
+          "isAway": false
         },
         "10": {
           "opp": "15",
@@ -35662,7 +35738,8 @@
           ],
           "punter": "C.Bojorquez",
           "yardsAllowed": 491,
-          "pointsAllowed": 39
+          "pointsAllowed": 39,
+          "isAway": true
         },
         "11": {
           "opp": "2",
@@ -35698,7 +35775,8 @@
           ],
           "punter": "C.Bojorquez",
           "yardsAllowed": 357,
-          "pointsAllowed": 31
+          "pointsAllowed": 31,
+          "isAway": true
         },
         "12": {
           "opp": "27",
@@ -35748,7 +35826,8 @@
           ],
           "punter": "C.Bojorquez",
           "yardsAllowed": 325,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": false
         },
         "13": {
           "opp": "34",
@@ -35799,7 +35878,8 @@
           ],
           "punter": "C.Bojorquez",
           "yardsAllowed": 283,
-          "pointsAllowed": 12
+          "pointsAllowed": 12,
+          "isAway": true
         },
         "14": {
           "opp": "4",
@@ -35839,7 +35919,8 @@
           ],
           "punter": "C.Bojorquez",
           "yardsAllowed": 363,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": true
         },
         "15": {
           "opp": "33",
@@ -35874,7 +35955,8 @@
           ],
           "punter": "C.Bojorquez",
           "yardsAllowed": 324,
-          "pointsAllowed": 3
+          "pointsAllowed": 3,
+          "isAway": false
         },
         "16": {
           "opp": "18",
@@ -35917,7 +35999,8 @@
           ],
           "punter": "C.Bojorquez",
           "yardsAllowed": 244,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": false
         },
         "17": {
           "opp": "28",
@@ -35956,7 +36039,8 @@
           ],
           "punter": "C.Bojorquez",
           "yardsAllowed": 260,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": true
         },
         "18": {
           "opp": "23",
@@ -35989,7 +36073,8 @@
           ],
           "punter": "C.Bojorquez",
           "yardsAllowed": 333,
-          "pointsAllowed": 28
+          "pointsAllowed": 28,
+          "isAway": true
         }
       }
     },
@@ -36040,7 +36125,8 @@
           ],
           "punter": "B.Anger",
           "yardsAllowed": 347,
-          "pointsAllowed": 19
+          "pointsAllowed": 19,
+          "isAway": false
         },
         "2": {
           "opp": "4",
@@ -36084,7 +36170,8 @@
           ],
           "punter": "B.Anger",
           "yardsAllowed": 254,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": false
         },
         "3": {
           "opp": "19",
@@ -36126,7 +36213,8 @@
           ],
           "punter": "B.Anger",
           "yardsAllowed": 336,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": true
         },
         "4": {
           "opp": "28",
@@ -36179,7 +36267,8 @@
           ],
           "punter": "B.Anger",
           "yardsAllowed": 297,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": false
         },
         "5": {
           "opp": "14",
@@ -36230,7 +36319,8 @@
           ],
           "punter": "B.Anger",
           "yardsAllowed": 323,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": true
         },
         "6": {
           "opp": "21",
@@ -36261,7 +36351,8 @@
           ],
           "punter": "B.Anger",
           "yardsAllowed": 268,
-          "pointsAllowed": 26
+          "pointsAllowed": 26,
+          "isAway": true
         },
         "7": {
           "opp": "8",
@@ -36305,7 +36396,8 @@
           ],
           "punter": "B.Anger",
           "yardsAllowed": 312,
-          "pointsAllowed": 6
+          "pointsAllowed": 6,
+          "isAway": false
         },
         "8": {
           "opp": "3",
@@ -36334,7 +36426,8 @@
           ],
           "punter": "B.Anger",
           "yardsAllowed": 371,
-          "pointsAllowed": 29
+          "pointsAllowed": 29,
+          "isAway": false
         },
         "10": {
           "opp": "9",
@@ -36378,7 +36471,8 @@
           ],
           "punter": "B.Anger",
           "yardsAllowed": 415,
-          "pointsAllowed": 31
+          "pointsAllowed": 31,
+          "isAway": true
         },
         "11": {
           "opp": "16",
@@ -36412,7 +36506,8 @@
           ],
           "punter": "B.Anger",
           "yardsAllowed": 183,
-          "pointsAllowed": 3
+          "pointsAllowed": 3,
+          "isAway": true
         },
         "12": {
           "opp": "19",
@@ -36437,7 +36532,8 @@
           ],
           "punter": "B.Anger",
           "yardsAllowed": 300,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": false
         },
         "13": {
           "opp": "11",
@@ -36476,7 +36572,8 @@
           ],
           "punter": "B.Anger",
           "yardsAllowed": 309,
-          "pointsAllowed": 19
+          "pointsAllowed": 19,
+          "isAway": false
         },
         "14": {
           "opp": "34",
@@ -36514,7 +36611,8 @@
           ],
           "punter": "B.Anger",
           "yardsAllowed": 327,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": false
         },
         "15": {
           "opp": "30",
@@ -36556,7 +36654,8 @@
           ],
           "punter": "B.Anger",
           "yardsAllowed": 503,
-          "pointsAllowed": 34
+          "pointsAllowed": 34,
+          "isAway": true
         },
         "16": {
           "opp": "21",
@@ -36588,7 +36687,8 @@
           ],
           "punter": "B.Anger",
           "yardsAllowed": 442,
-          "pointsAllowed": 28
+          "pointsAllowed": 28,
+          "isAway": false
         },
         "17": {
           "opp": "10",
@@ -36625,7 +36725,8 @@
           ],
           "punter": "B.Anger",
           "yardsAllowed": 317,
-          "pointsAllowed": 13
+          "pointsAllowed": 13,
+          "isAway": true
         },
         "18": {
           "opp": "28",
@@ -36691,7 +36792,8 @@
           ],
           "punter": "B.Anger",
           "yardsAllowed": 309,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": true
         }
       }
     },
@@ -36725,7 +36827,8 @@
           ],
           "punter": "C.Waitman",
           "yardsAllowed": 253,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": true
         },
         "2": {
           "opp": "34",
@@ -36771,7 +36874,8 @@
           ],
           "punter": "C.Waitman",
           "yardsAllowed": 234,
-          "pointsAllowed": 9
+          "pointsAllowed": 9,
+          "isAway": false
         },
         "3": {
           "opp": "25",
@@ -36838,7 +36942,8 @@
           ],
           "punter": "C.Waitman",
           "yardsAllowed": 267,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": false
         },
         "4": {
           "opp": "13",
@@ -36882,7 +36987,8 @@
           ],
           "punter": "C.Waitman",
           "yardsAllowed": 385,
-          "pointsAllowed": 26
+          "pointsAllowed": 26,
+          "isAway": true
         },
         "5": {
           "opp": "11",
@@ -36931,7 +37037,8 @@
           ],
           "punter": "C.Waitman",
           "yardsAllowed": 306,
-          "pointsAllowed": 12
+          "pointsAllowed": 12,
+          "isAway": false
         },
         "6": {
           "opp": "24",
@@ -36985,7 +37092,8 @@
           ],
           "punter": "C.Waitman",
           "yardsAllowed": 297,
-          "pointsAllowed": 19
+          "pointsAllowed": 19,
+          "isAway": true
         },
         "7": {
           "opp": "20",
@@ -37034,7 +37142,8 @@
           ],
           "punter": "C.Waitman",
           "yardsAllowed": 260,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": false
         },
         "8": {
           "opp": "30",
@@ -37081,7 +37190,8 @@
           ],
           "punter": "C.Waitman",
           "yardsAllowed": 305,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": true
         },
         "10": {
           "opp": "10",
@@ -37143,7 +37253,8 @@
           ],
           "punter": "C.Waitman",
           "yardsAllowed": 307,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": true
         },
         "11": {
           "opp": "13",
@@ -37184,7 +37295,8 @@
           ],
           "punter": "C.Waitman",
           "yardsAllowed": 407,
-          "pointsAllowed": 22
+          "pointsAllowed": 22,
+          "isAway": false
         },
         "12": {
           "opp": "29",
@@ -37238,7 +37350,8 @@
           ],
           "punter": "C.Waitman",
           "yardsAllowed": 349,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": true
         },
         "13": {
           "opp": "33",
@@ -37292,7 +37405,8 @@
           ],
           "punter": "C.Waitman",
           "yardsAllowed": 285,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": true
         },
         "14": {
           "opp": "12",
@@ -37344,7 +37458,8 @@
           ],
           "punter": "C.Waitman",
           "yardsAllowed": 431,
-          "pointsAllowed": 28
+          "pointsAllowed": 28,
+          "isAway": false
         },
         "15": {
           "opp": "22",
@@ -37390,7 +37505,8 @@
           ],
           "punter": "C.Waitman",
           "yardsAllowed": 240,
-          "pointsAllowed": 15
+          "pointsAllowed": 15,
+          "isAway": false
         },
         "16": {
           "opp": "14",
@@ -37422,7 +37538,8 @@
           ],
           "punter": "C.Waitman",
           "yardsAllowed": 388,
-          "pointsAllowed": 45
+          "pointsAllowed": 45,
+          "isAway": true
         },
         "17": {
           "opp": "12",
@@ -37467,7 +37584,8 @@
           ],
           "punter": "C.Waitman",
           "yardsAllowed": 374,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": true
         },
         "18": {
           "opp": "24",
@@ -37512,7 +37630,8 @@
           ],
           "punter": "C.Waitman",
           "yardsAllowed": 352,
-          "pointsAllowed": 28
+          "pointsAllowed": 28,
+          "isAway": false
         }
       }
     },
@@ -37557,7 +37676,8 @@
           ],
           "punter": "J.Fox",
           "yardsAllowed": 455,
-          "pointsAllowed": 32
+          "pointsAllowed": 32,
+          "isAway": false
         },
         "2": {
           "opp": "28",
@@ -37605,7 +37725,8 @@
           ],
           "punter": "J.Fox",
           "yardsAllowed": 396,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": false
         },
         "3": {
           "opp": "16",
@@ -37642,7 +37763,8 @@
           ],
           "punter": "J.Fox",
           "yardsAllowed": 373,
-          "pointsAllowed": 28
+          "pointsAllowed": 28,
+          "isAway": true
         },
         "4": {
           "opp": "26",
@@ -37674,7 +37796,8 @@
           ],
           "punter": "J.Fox",
           "yardsAllowed": 555,
-          "pointsAllowed": 42
+          "pointsAllowed": 42,
+          "isAway": false
         },
         "5": {
           "opp": "17",
@@ -37703,7 +37826,8 @@
           ],
           "punter": "J.Fox",
           "yardsAllowed": 364,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": true
         },
         "7": {
           "opp": "6",
@@ -37740,7 +37864,8 @@
           ],
           "punter": "J.Fox",
           "yardsAllowed": 330,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": true
         },
         "8": {
           "opp": "15",
@@ -37770,7 +37895,8 @@
           ],
           "punter": "J.Fox",
           "yardsAllowed": 476,
-          "pointsAllowed": 31
+          "pointsAllowed": 31,
+          "isAway": false
         },
         "9": {
           "opp": "9",
@@ -37802,7 +37928,8 @@
           ],
           "punter": "J.Fox",
           "yardsAllowed": 389,
-          "pointsAllowed": 9
+          "pointsAllowed": 9,
+          "isAway": false
         },
         "10": {
           "opp": "3",
@@ -37841,7 +37968,8 @@
           ],
           "punter": "J.Fox",
           "yardsAllowed": 408,
-          "pointsAllowed": 30
+          "pointsAllowed": 30,
+          "isAway": true
         },
         "11": {
           "opp": "19",
@@ -37885,7 +38013,8 @@
           ],
           "punter": "J.Fox",
           "yardsAllowed": 413,
-          "pointsAllowed": 18
+          "pointsAllowed": 18,
+          "isAway": true
         },
         "12": {
           "opp": "2",
@@ -37916,7 +38045,8 @@
           ],
           "punter": "J.Fox",
           "yardsAllowed": 401,
-          "pointsAllowed": 26
+          "pointsAllowed": 26,
+          "isAway": false
         },
         "13": {
           "opp": "30",
@@ -37940,7 +38070,8 @@
           "punts": [],
           "punter": "",
           "yardsAllowed": 266,
-          "pointsAllowed": 14
+          "pointsAllowed": 14,
+          "isAway": false
         },
         "14": {
           "opp": "16",
@@ -37972,7 +38103,8 @@
           ],
           "punter": "J.Fox",
           "yardsAllowed": 416,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": false
         },
         "15": {
           "opp": "20",
@@ -38011,7 +38143,8 @@
           ],
           "punter": "J.Fox",
           "yardsAllowed": 337,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": true
         },
         "16": {
           "opp": "29",
@@ -38050,7 +38183,8 @@
           ],
           "punter": "J.Fox",
           "yardsAllowed": 570,
-          "pointsAllowed": 37
+          "pointsAllowed": 37,
+          "isAway": true
         },
         "17": {
           "opp": "3",
@@ -38088,7 +38222,8 @@
           ],
           "punter": "J.Fox",
           "yardsAllowed": 230,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": false
         },
         "18": {
           "opp": "9",
@@ -38128,7 +38263,8 @@
           ],
           "punter": "J.Fox",
           "yardsAllowed": 291,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": true
         }
       }
     },
@@ -38173,7 +38309,8 @@
           ],
           "punter": "P.O'Donnell",
           "yardsAllowed": 395,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": true
         },
         "2": {
           "opp": "3",
@@ -38204,7 +38341,8 @@
           ],
           "punter": "P.O'Donnell",
           "yardsAllowed": 228,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": false
         },
         "3": {
           "opp": "27",
@@ -38255,7 +38393,8 @@
           ],
           "punter": "P.O'Donnell",
           "yardsAllowed": 285,
-          "pointsAllowed": 12
+          "pointsAllowed": 12,
+          "isAway": true
         },
         "4": {
           "opp": "17",
@@ -38303,7 +38442,8 @@
           ],
           "punter": "P.O'Donnell",
           "yardsAllowed": 271,
-          "pointsAllowed": 18
+          "pointsAllowed": 18,
+          "isAway": false
         },
         "5": {
           "opp": "19",
@@ -38338,7 +38478,8 @@
           ],
           "punter": "P.O'Donnell",
           "yardsAllowed": 338,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": false
         },
         "6": {
           "opp": "20",
@@ -38384,7 +38525,8 @@
           ],
           "punter": "P.O'Donnell",
           "yardsAllowed": 278,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": false
         },
         "7": {
           "opp": "28",
@@ -38425,7 +38567,8 @@
           ],
           "punter": "P.O'Donnell",
           "yardsAllowed": 364,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": true
         },
         "8": {
           "opp": "2",
@@ -38455,7 +38598,8 @@
           ],
           "punter": "P.O'Donnell",
           "yardsAllowed": 369,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": true
         },
         "9": {
           "opp": "8",
@@ -38481,7 +38625,8 @@
           ],
           "punter": "P.O'Donnell",
           "yardsAllowed": 254,
-          "pointsAllowed": 15
+          "pointsAllowed": 15,
+          "isAway": true
         },
         "10": {
           "opp": "6",
@@ -38522,7 +38667,8 @@
           ],
           "punter": "P.O'Donnell",
           "yardsAllowed": 421,
-          "pointsAllowed": 28
+          "pointsAllowed": 28,
+          "isAway": false
         },
         "11": {
           "opp": "10",
@@ -38561,7 +38707,8 @@
           ],
           "punter": "P.O'Donnell",
           "yardsAllowed": 408,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": false
         },
         "12": {
           "opp": "21",
@@ -38594,7 +38741,8 @@
           ],
           "punter": "P.O'Donnell",
           "yardsAllowed": 500,
-          "pointsAllowed": 40
+          "pointsAllowed": 40,
+          "isAway": true
         },
         "13": {
           "opp": "3",
@@ -38630,7 +38778,8 @@
           ],
           "punter": "P.O'Donnell",
           "yardsAllowed": 409,
-          "pointsAllowed": 19
+          "pointsAllowed": 19,
+          "isAway": true
         },
         "15": {
           "opp": "14",
@@ -38656,7 +38805,8 @@
           ],
           "punter": "P.O'Donnell",
           "yardsAllowed": 156,
-          "pointsAllowed": 12
+          "pointsAllowed": 12,
+          "isAway": false
         },
         "16": {
           "opp": "15",
@@ -38687,7 +38837,8 @@
           ],
           "punter": "P.O'Donnell",
           "yardsAllowed": 376,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": true
         },
         "17": {
           "opp": "16",
@@ -38720,7 +38871,8 @@
           ],
           "punter": "P.O'Donnell",
           "yardsAllowed": 346,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": false
         },
         "18": {
           "opp": "8",
@@ -38748,7 +38900,8 @@
           ],
           "punter": "P.O'Donnell",
           "yardsAllowed": 323,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": false
         }
       }
     },
@@ -38804,7 +38957,8 @@
           ],
           "punter": "R.Stonehouse",
           "yardsAllowed": 394,
-          "pointsAllowed": 21
+          "pointsAllowed": 21,
+          "isAway": false
         },
         "2": {
           "opp": "2",
@@ -38850,7 +39004,8 @@
           ],
           "punter": "R.Stonehouse",
           "yardsAllowed": 414,
-          "pointsAllowed": 35
+          "pointsAllowed": 35,
+          "isAway": true
         },
         "3": {
           "opp": "13",
@@ -38885,7 +39040,8 @@
           ],
           "punter": "R.Stonehouse",
           "yardsAllowed": 396,
-          "pointsAllowed": 22
+          "pointsAllowed": 22,
+          "isAway": false
         },
         "4": {
           "opp": "11",
@@ -38924,7 +39080,8 @@
           ],
           "punter": "R.Stonehouse",
           "yardsAllowed": 365,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": true
         },
         "5": {
           "opp": "28",
@@ -38979,7 +39136,8 @@
           ],
           "punter": "R.Stonehouse",
           "yardsAllowed": 385,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": true
         },
         "7": {
           "opp": "11",
@@ -39017,7 +39175,8 @@
           ],
           "punter": "R.Stonehouse",
           "yardsAllowed": 292,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": false
         },
         "8": {
           "opp": "34",
@@ -39061,7 +39220,8 @@
           ],
           "punter": "R.Stonehouse",
           "yardsAllowed": 161,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": true
         },
         "9": {
           "opp": "12",
@@ -39119,7 +39279,8 @@
           ],
           "punter": "R.Stonehouse",
           "yardsAllowed": 499,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": true
         },
         "10": {
           "opp": "7",
@@ -39177,7 +39338,8 @@
           ],
           "punter": "R.Stonehouse",
           "yardsAllowed": 313,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": false
         },
         "11": {
           "opp": "9",
@@ -39210,7 +39372,8 @@
           ],
           "punter": "R.Stonehouse",
           "yardsAllowed": 271,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": true
         },
         "12": {
           "opp": "4",
@@ -39255,7 +39418,8 @@
           ],
           "punter": "R.Stonehouse",
           "yardsAllowed": 374,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": false
         },
         "13": {
           "opp": "21",
@@ -39307,7 +39471,8 @@
           ],
           "punter": "R.Stonehouse",
           "yardsAllowed": 453,
-          "pointsAllowed": 35
+          "pointsAllowed": 35,
+          "isAway": true
         },
         "14": {
           "opp": "30",
@@ -39342,7 +39507,8 @@
           ],
           "punter": "R.Stonehouse",
           "yardsAllowed": 428,
-          "pointsAllowed": 36
+          "pointsAllowed": 36,
+          "isAway": false
         },
         "15": {
           "opp": "24",
@@ -39394,7 +39560,8 @@
           ],
           "punter": "R.Stonehouse",
           "yardsAllowed": 365,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": true
         },
         "16": {
           "opp": "34",
@@ -39441,7 +39608,8 @@
           ],
           "punter": "R.Stonehouse",
           "yardsAllowed": 285,
-          "pointsAllowed": 19
+          "pointsAllowed": 19,
+          "isAway": false
         },
         "17": {
           "opp": "6",
@@ -39487,7 +39655,8 @@
           ],
           "punter": "R.Stonehouse",
           "yardsAllowed": 361,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": false
         },
         "18": {
           "opp": "30",
@@ -39524,7 +39693,8 @@
           ],
           "punter": "R.Stonehouse",
           "yardsAllowed": 222,
-          "pointsAllowed": 14
+          "pointsAllowed": 14,
+          "isAway": true
         }
       }
     },
@@ -39570,7 +39740,8 @@
           ],
           "punter": "M.Haack",
           "yardsAllowed": 299,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": true
         },
         "2": {
           "opp": "30",
@@ -39612,7 +39783,8 @@
           ],
           "punter": "M.Haack",
           "yardsAllowed": 331,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": true
         },
         "3": {
           "opp": "12",
@@ -39649,7 +39821,8 @@
           ],
           "punter": "M.Haack",
           "yardsAllowed": 315,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": false
         },
         "4": {
           "opp": "10",
@@ -39679,7 +39852,8 @@
           ],
           "punter": "M.Haack",
           "yardsAllowed": 243,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": false
         },
         "5": {
           "opp": "7",
@@ -39736,7 +39910,8 @@
           ],
           "punter": "M.Haack",
           "yardsAllowed": 375,
-          "pointsAllowed": 9
+          "pointsAllowed": 9,
+          "isAway": true
         },
         "6": {
           "opp": "30",
@@ -39771,7 +39946,8 @@
           ],
           "punter": "M.Haack",
           "yardsAllowed": 379,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": false
         },
         "7": {
           "opp": "10",
@@ -39814,7 +39990,8 @@
           ],
           "punter": "M.Haack",
           "yardsAllowed": 254,
-          "pointsAllowed": 13
+          "pointsAllowed": 13,
+          "isAway": true
         },
         "8": {
           "opp": "28",
@@ -39857,7 +40034,8 @@
           ],
           "punter": "M.Haack",
           "yardsAllowed": 362,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": false
         },
         "9": {
           "opp": "17",
@@ -39917,7 +40095,8 @@
           ],
           "punter": "M.Haack",
           "yardsAllowed": 203,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": true
         },
         "10": {
           "opp": "13",
@@ -39954,7 +40133,8 @@
           ],
           "punter": "M.Haack",
           "yardsAllowed": 309,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": true
         },
         "11": {
           "opp": "21",
@@ -39996,7 +40176,8 @@
           ],
           "punter": "M.Haack",
           "yardsAllowed": 314,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": false
         },
         "12": {
           "opp": "23",
@@ -40031,7 +40212,8 @@
           ],
           "punter": "M.Haack",
           "yardsAllowed": 323,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": false
         },
         "13": {
           "opp": "6",
@@ -40071,7 +40253,8 @@
           ],
           "punter": "M.Haack",
           "yardsAllowed": 385,
-          "pointsAllowed": 48
+          "pointsAllowed": 48,
+          "isAway": true
         },
         "15": {
           "opp": "16",
@@ -40132,7 +40315,8 @@
           ],
           "punter": "M.Haack",
           "yardsAllowed": 518,
-          "pointsAllowed": 39
+          "pointsAllowed": 39,
+          "isAway": true
         },
         "16": {
           "opp": "24",
@@ -40167,7 +40351,8 @@
           ],
           "punter": "M.Haack",
           "yardsAllowed": 314,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": false
         },
         "17": {
           "opp": "19",
@@ -40205,7 +40390,8 @@
           ],
           "punter": "M.Haack",
           "yardsAllowed": 394,
-          "pointsAllowed": 32
+          "pointsAllowed": 32,
+          "isAway": true
         },
         "18": {
           "opp": "34",
@@ -40238,7 +40424,8 @@
           ],
           "punter": "M.Haack",
           "yardsAllowed": 360,
-          "pointsAllowed": 26
+          "pointsAllowed": 26,
+          "isAway": false
         }
       }
     },
@@ -40276,7 +40463,8 @@
           ],
           "punter": "T.Townsend",
           "yardsAllowed": 282,
-          "pointsAllowed": 21
+          "pointsAllowed": 21,
+          "isAway": true
         },
         "2": {
           "opp": "24",
@@ -40325,7 +40513,8 @@
           ],
           "punter": "T.Townsend",
           "yardsAllowed": 401,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": false
         },
         "3": {
           "opp": "11",
@@ -40360,7 +40549,8 @@
           ],
           "punter": "T.Townsend",
           "yardsAllowed": 259,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": true
         },
         "4": {
           "opp": "27",
@@ -40389,7 +40579,8 @@
           ],
           "punter": "T.Townsend",
           "yardsAllowed": 376,
-          "pointsAllowed": 31
+          "pointsAllowed": 31,
+          "isAway": true
         },
         "5": {
           "opp": "13",
@@ -40424,7 +40615,8 @@
           ],
           "punter": "T.Townsend",
           "yardsAllowed": 378,
-          "pointsAllowed": 29
+          "pointsAllowed": 29,
+          "isAway": false
         },
         "6": {
           "opp": "2",
@@ -40460,7 +40652,8 @@
           ],
           "punter": "T.Townsend",
           "yardsAllowed": 443,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": false
         },
         "7": {
           "opp": "25",
@@ -40485,7 +40678,8 @@
           ],
           "punter": "T.Townsend",
           "yardsAllowed": 444,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": true
         },
         "9": {
           "opp": "10",
@@ -40536,7 +40730,8 @@
           ],
           "punter": "T.Townsend",
           "yardsAllowed": 229,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": false
         },
         "10": {
           "opp": "30",
@@ -40565,7 +40760,8 @@
           ],
           "punter": "T.Townsend",
           "yardsAllowed": 315,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": false
         },
         "11": {
           "opp": "24",
@@ -40599,7 +40795,8 @@
           ],
           "punter": "T.Townsend",
           "yardsAllowed": 365,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": true
         },
         "12": {
           "opp": "14",
@@ -40627,7 +40824,8 @@
           ],
           "punter": "T.Townsend",
           "yardsAllowed": 198,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": false
         },
         "13": {
           "opp": "4",
@@ -40652,7 +40850,8 @@
           ],
           "punter": "T.Townsend",
           "yardsAllowed": 431,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": true
         },
         "14": {
           "opp": "7",
@@ -40691,7 +40890,8 @@
           ],
           "punter": "T.Townsend",
           "yardsAllowed": 320,
-          "pointsAllowed": 28
+          "pointsAllowed": 28,
+          "isAway": true
         },
         "15": {
           "opp": "34",
@@ -40732,7 +40932,8 @@
           ],
           "punter": "T.Townsend",
           "yardsAllowed": 219,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": true
         },
         "16": {
           "opp": "26",
@@ -40780,7 +40981,8 @@
           ],
           "punter": "T.Townsend",
           "yardsAllowed": 333,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": false
         },
         "17": {
           "opp": "7",
@@ -40823,7 +41025,8 @@
           ],
           "punter": "T.Townsend",
           "yardsAllowed": 307,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": false
         },
         "18": {
           "opp": "13",
@@ -40862,7 +41065,8 @@
           ],
           "punter": "T.Townsend",
           "yardsAllowed": 279,
-          "pointsAllowed": 13
+          "pointsAllowed": 13,
+          "isAway": true
         }
       }
     },
@@ -40902,7 +41106,8 @@
           ],
           "punter": "A.Cole",
           "yardsAllowed": 355,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": true
         },
         "2": {
           "opp": "22",
@@ -40938,7 +41143,8 @@
           ],
           "punter": "A.Cole",
           "yardsAllowed": 413,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": false
         },
         "3": {
           "opp": "10",
@@ -40974,7 +41180,8 @@
           ],
           "punter": "A.Cole",
           "yardsAllowed": 361,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": true
         },
         "4": {
           "opp": "7",
@@ -41017,7 +41224,8 @@
           ],
           "punter": "A.Cole",
           "yardsAllowed": 299,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": false
         },
         "5": {
           "opp": "12",
@@ -41049,7 +41257,8 @@
           ],
           "punter": "A.Cole",
           "yardsAllowed": 368,
-          "pointsAllowed": 30
+          "pointsAllowed": 30,
+          "isAway": true
         },
         "7": {
           "opp": "34",
@@ -41078,7 +41287,8 @@
           ],
           "punter": "A.Cole",
           "yardsAllowed": 404,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": false
         },
         "8": {
           "opp": "18",
@@ -41118,7 +41328,8 @@
           ],
           "punter": "A.Cole",
           "yardsAllowed": 367,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": true
         },
         "9": {
           "opp": "30",
@@ -41158,7 +41369,8 @@
           ],
           "punter": "A.Cole",
           "yardsAllowed": 403,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": true
         },
         "10": {
           "opp": "11",
@@ -41199,7 +41411,8 @@
           ],
           "punter": "A.Cole",
           "yardsAllowed": 415,
-          "pointsAllowed": 25
+          "pointsAllowed": 25,
+          "isAway": false
         },
         "11": {
           "opp": "7",
@@ -41240,7 +41453,8 @@
           ],
           "punter": "A.Cole",
           "yardsAllowed": 320,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": true
         },
         "12": {
           "opp": "26",
@@ -41276,7 +41490,8 @@
           ],
           "punter": "A.Cole",
           "yardsAllowed": 372,
-          "pointsAllowed": 34
+          "pointsAllowed": 34,
+          "isAway": true
         },
         "13": {
           "opp": "24",
@@ -41318,7 +41533,8 @@
           ],
           "punter": "A.Cole",
           "yardsAllowed": 386,
-          "pointsAllowed": 14
+          "pointsAllowed": 14,
+          "isAway": false
         },
         "14": {
           "opp": "14",
@@ -41354,7 +41570,8 @@
           ],
           "punter": "A.Cole",
           "yardsAllowed": 282,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": true
         },
         "15": {
           "opp": "17",
@@ -41407,7 +41624,8 @@
           ],
           "punter": "A.Cole",
           "yardsAllowed": 318,
-          "pointsAllowed": 18
+          "pointsAllowed": 18,
+          "isAway": false
         },
         "16": {
           "opp": "23",
@@ -41450,7 +41668,8 @@
           ],
           "punter": "A.Cole",
           "yardsAllowed": 350,
-          "pointsAllowed": 13
+          "pointsAllowed": 13,
+          "isAway": true
         },
         "17": {
           "opp": "25",
@@ -41483,7 +41702,8 @@
           ],
           "punter": "A.Cole",
           "yardsAllowed": 454,
-          "pointsAllowed": 37
+          "pointsAllowed": 37,
+          "isAway": false
         },
         "18": {
           "opp": "12",
@@ -41514,7 +41734,8 @@
           ],
           "punter": "A.Cole",
           "yardsAllowed": 349,
-          "pointsAllowed": 31
+          "pointsAllowed": 31,
+          "isAway": false
         }
       }
     },
@@ -41560,7 +41781,8 @@
           ],
           "punter": "R.Dixon",
           "yardsAllowed": 413,
-          "pointsAllowed": 31
+          "pointsAllowed": 31,
+          "isAway": false
         },
         "2": {
           "opp": "1",
@@ -41582,7 +41804,8 @@
           "punts": [],
           "punter": "",
           "yardsAllowed": 261,
-          "pointsAllowed": 25
+          "pointsAllowed": 25,
+          "isAway": false
         },
         "3": {
           "opp": "22",
@@ -41618,7 +41841,8 @@
           ],
           "punter": "R.Dixon",
           "yardsAllowed": 365,
-          "pointsAllowed": 12
+          "pointsAllowed": 12,
+          "isAway": true
         },
         "4": {
           "opp": "25",
@@ -41659,7 +41883,8 @@
           ],
           "punter": "R.Dixon",
           "yardsAllowed": 327,
-          "pointsAllowed": 18
+          "pointsAllowed": 18,
+          "isAway": true
         },
         "5": {
           "opp": "6",
@@ -41704,7 +41929,8 @@
           ],
           "punter": "R.Dixon",
           "yardsAllowed": 239,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": false
         },
         "6": {
           "opp": "29",
@@ -41748,7 +41974,8 @@
           ],
           "punter": "R.Dixon",
           "yardsAllowed": 203,
-          "pointsAllowed": 4
+          "pointsAllowed": 4,
+          "isAway": false
         },
         "8": {
           "opp": "25",
@@ -41788,7 +42015,8 @@
           ],
           "punter": "R.Dixon",
           "yardsAllowed": 368,
-          "pointsAllowed": 31
+          "pointsAllowed": 31,
+          "isAway": false
         },
         "9": {
           "opp": "27",
@@ -41852,7 +42080,8 @@
           ],
           "punter": "R.Dixon",
           "yardsAllowed": 323,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": true
         },
         "10": {
           "opp": "22",
@@ -41896,7 +42125,8 @@
           ],
           "punter": "R.Dixon",
           "yardsAllowed": 298,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": false
         },
         "11": {
           "opp": "18",
@@ -41945,7 +42175,8 @@
           ],
           "punter": "R.Dixon",
           "yardsAllowed": 323,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": true
         },
         "12": {
           "opp": "12",
@@ -41984,7 +42215,8 @@
           ],
           "punter": "R.Dixon",
           "yardsAllowed": 437,
-          "pointsAllowed": 26
+          "pointsAllowed": 26,
+          "isAway": true
         },
         "13": {
           "opp": "26",
@@ -42021,7 +42253,8 @@
           ],
           "punter": "R.Dixon",
           "yardsAllowed": 438,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": false
         },
         "14": {
           "opp": "13",
@@ -42056,7 +42289,8 @@
           ],
           "punter": "R.Dixon",
           "yardsAllowed": 302,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": false
         },
         "15": {
           "opp": "9",
@@ -42094,7 +42328,8 @@
           ],
           "punter": "R.Dixon",
           "yardsAllowed": 345,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": true
         },
         "16": {
           "opp": "7",
@@ -42117,7 +42352,8 @@
           "punts": [],
           "punter": "",
           "yardsAllowed": 323,
-          "pointsAllowed": 14
+          "pointsAllowed": 14,
+          "isAway": false
         },
         "17": {
           "opp": "24",
@@ -42160,7 +42396,8 @@
           ],
           "punter": "R.Dixon",
           "yardsAllowed": 431,
-          "pointsAllowed": 31
+          "pointsAllowed": 31,
+          "isAway": true
         },
         "18": {
           "opp": "26",
@@ -42211,7 +42448,8 @@
           ],
           "punter": "R.Dixon",
           "yardsAllowed": 402,
-          "pointsAllowed": 19
+          "pointsAllowed": 19,
+          "isAway": true
         }
       }
     },
@@ -42256,7 +42494,8 @@
           ],
           "punter": "T.Morstead",
           "yardsAllowed": 271,
-          "pointsAllowed": 7
+          "pointsAllowed": 7,
+          "isAway": false
         },
         "2": {
           "opp": "33",
@@ -42286,7 +42525,8 @@
           ],
           "punter": "T.Morstead",
           "yardsAllowed": 473,
-          "pointsAllowed": 38
+          "pointsAllowed": 38,
+          "isAway": true
         },
         "3": {
           "opp": "2",
@@ -42321,7 +42561,8 @@
           ],
           "punter": "T.Morstead",
           "yardsAllowed": 497,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": false
         },
         "4": {
           "opp": "4",
@@ -42359,7 +42600,8 @@
           ],
           "punter": "T.Morstead",
           "yardsAllowed": 371,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": true
         },
         "5": {
           "opp": "20",
@@ -42396,7 +42638,8 @@
           ],
           "punter": "T.Morstead",
           "yardsAllowed": 322,
-          "pointsAllowed": 38
+          "pointsAllowed": 38,
+          "isAway": true
         },
         "6": {
           "opp": "16",
@@ -42447,7 +42690,8 @@
           ],
           "punter": "T.Morstead",
           "yardsAllowed": 234,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": false
         },
         "7": {
           "opp": "23",
@@ -42498,7 +42742,8 @@
           ],
           "punter": "T.Morstead",
           "yardsAllowed": 341,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": false
         },
         "8": {
           "opp": "8",
@@ -42523,7 +42768,8 @@
           ],
           "punter": "T.Morstead",
           "yardsAllowed": 393,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": true
         },
         "9": {
           "opp": "3",
@@ -42547,7 +42793,8 @@
           ],
           "punter": "T.Morstead",
           "yardsAllowed": 368,
-          "pointsAllowed": 32
+          "pointsAllowed": 32,
+          "isAway": true
         },
         "10": {
           "opp": "5",
@@ -42569,7 +42816,8 @@
           "punts": [],
           "punter": "",
           "yardsAllowed": 297,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": false
         },
         "12": {
           "opp": "34",
@@ -42621,7 +42869,8 @@
           ],
           "punter": "T.Morstead",
           "yardsAllowed": 210,
-          "pointsAllowed": 15
+          "pointsAllowed": 15,
+          "isAway": false
         },
         "13": {
           "opp": "25",
@@ -42663,7 +42912,8 @@
           ],
           "punter": "T.Morstead",
           "yardsAllowed": 351,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": true
         },
         "14": {
           "opp": "24",
@@ -42715,7 +42965,8 @@
           ],
           "punter": "T.Morstead",
           "yardsAllowed": 432,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": true
         },
         "15": {
           "opp": "2",
@@ -42756,7 +43007,8 @@
           ],
           "punter": "T.Morstead",
           "yardsAllowed": 446,
-          "pointsAllowed": 32
+          "pointsAllowed": 32,
+          "isAway": true
         },
         "16": {
           "opp": "9",
@@ -42785,7 +43037,8 @@
           ],
           "punter": "T.Morstead",
           "yardsAllowed": 301,
-          "pointsAllowed": 26
+          "pointsAllowed": 26,
+          "isAway": false
         },
         "17": {
           "opp": "17",
@@ -42823,7 +43076,8 @@
           ],
           "punter": "T.Morstead",
           "yardsAllowed": 249,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": true
         },
         "18": {
           "opp": "20",
@@ -42863,7 +43117,8 @@
           ],
           "punter": "T.Morstead",
           "yardsAllowed": 187,
-          "pointsAllowed": 6
+          "pointsAllowed": 6,
+          "isAway": false
         }
       }
     },
@@ -42915,7 +43170,8 @@
           ],
           "punter": "R.Wright",
           "yardsAllowed": 338,
-          "pointsAllowed": 7
+          "pointsAllowed": 7,
+          "isAway": false
         },
         "2": {
           "opp": "21",
@@ -42956,7 +43212,8 @@
           ],
           "punter": "R.Wright",
           "yardsAllowed": 486,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": true
         },
         "3": {
           "opp": "8",
@@ -42992,7 +43249,8 @@
           ],
           "punter": "R.Wright",
           "yardsAllowed": 416,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": false
         },
         "4": {
           "opp": "18",
@@ -43032,7 +43290,8 @@
           ],
           "punter": "R.Wright",
           "yardsAllowed": 338,
-          "pointsAllowed": 25
+          "pointsAllowed": 25,
+          "isAway": true
         },
         "5": {
           "opp": "3",
@@ -43056,7 +43315,8 @@
           ],
           "punter": "R.Wright",
           "yardsAllowed": 271,
-          "pointsAllowed": 22
+          "pointsAllowed": 22,
+          "isAway": false
         },
         "6": {
           "opp": "15",
@@ -43124,7 +43384,8 @@
           ],
           "punter": "R.Wright",
           "yardsAllowed": 458,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": true
         },
         "8": {
           "opp": "22",
@@ -43168,7 +43429,8 @@
           ],
           "punter": "R.Wright",
           "yardsAllowed": 375,
-          "pointsAllowed": 26
+          "pointsAllowed": 26,
+          "isAway": false
         },
         "9": {
           "opp": "28",
@@ -43217,7 +43479,8 @@
           ],
           "punter": "R.Wright",
           "yardsAllowed": 263,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": true
         },
         "10": {
           "opp": "2",
@@ -43256,7 +43519,8 @@
           ],
           "punter": "R.Wright",
           "yardsAllowed": 486,
-          "pointsAllowed": 30
+          "pointsAllowed": 30,
+          "isAway": true
         },
         "11": {
           "opp": "6",
@@ -43307,7 +43571,8 @@
           ],
           "punter": "R.Wright",
           "yardsAllowed": 458,
-          "pointsAllowed": 40
+          "pointsAllowed": 40,
+          "isAway": false
         },
         "12": {
           "opp": "17",
@@ -43344,7 +43609,8 @@
           ],
           "punter": "R.Wright",
           "yardsAllowed": 409,
-          "pointsAllowed": 26
+          "pointsAllowed": 26,
+          "isAway": false
         },
         "13": {
           "opp": "20",
@@ -43395,7 +43661,8 @@
           ],
           "punter": "R.Wright",
           "yardsAllowed": 486,
-          "pointsAllowed": 22
+          "pointsAllowed": 22,
+          "isAway": false
         },
         "14": {
           "opp": "8",
@@ -43431,7 +43698,8 @@
           ],
           "punter": "R.Wright",
           "yardsAllowed": 464,
-          "pointsAllowed": 34
+          "pointsAllowed": 34,
+          "isAway": true
         },
         "15": {
           "opp": "11",
@@ -43483,7 +43751,8 @@
           ],
           "punter": "R.Wright",
           "yardsAllowed": 341,
-          "pointsAllowed": 30
+          "pointsAllowed": 30,
+          "isAway": false
         },
         "16": {
           "opp": "19",
@@ -43529,7 +43798,8 @@
           ],
           "punter": "R.Wright",
           "yardsAllowed": 445,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": false
         },
         "17": {
           "opp": "9",
@@ -43561,7 +43831,8 @@
           ],
           "punter": "R.Wright",
           "yardsAllowed": 315,
-          "pointsAllowed": 35
+          "pointsAllowed": 35,
+          "isAway": true
         },
         "18": {
           "opp": "3",
@@ -43590,7 +43861,8 @@
           ],
           "punter": "R.Wright",
           "yardsAllowed": 259,
-          "pointsAllowed": 13
+          "pointsAllowed": 13,
+          "isAway": true
         }
       }
     },
@@ -43629,7 +43901,8 @@
           ],
           "punter": "J.Bailey",
           "yardsAllowed": 307,
-          "pointsAllowed": 14
+          "pointsAllowed": 14,
+          "isAway": true
         },
         "2": {
           "opp": "23",
@@ -43668,7 +43941,8 @@
           ],
           "punter": "J.Bailey",
           "yardsAllowed": 243,
-          "pointsAllowed": 14
+          "pointsAllowed": 14,
+          "isAway": true
         },
         "3": {
           "opp": "33",
@@ -43702,7 +43976,8 @@
           ],
           "punter": "J.Bailey",
           "yardsAllowed": 394,
-          "pointsAllowed": 37
+          "pointsAllowed": 37,
+          "isAway": false
         },
         "4": {
           "opp": "9",
@@ -43754,7 +44029,8 @@
           ],
           "punter": "J.Bailey",
           "yardsAllowed": 443,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": true
         },
         "5": {
           "opp": "8",
@@ -43788,7 +44064,8 @@
           ],
           "punter": "J.Bailey",
           "yardsAllowed": 312,
-          "pointsAllowed": 0
+          "pointsAllowed": 0,
+          "isAway": false
         },
         "6": {
           "opp": "5",
@@ -43831,7 +44108,8 @@
           ],
           "punter": "J.Bailey",
           "yardsAllowed": 328,
-          "pointsAllowed": 15
+          "pointsAllowed": 15,
+          "isAway": true
         },
         "7": {
           "opp": "3",
@@ -43869,7 +44147,8 @@
           ],
           "punter": "J.Bailey",
           "yardsAllowed": 390,
-          "pointsAllowed": 33
+          "pointsAllowed": 33,
+          "isAway": false
         },
         "8": {
           "opp": "20",
@@ -43915,7 +44194,8 @@
           ],
           "punter": "J.Bailey",
           "yardsAllowed": 387,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": true
         },
         "9": {
           "opp": "11",
@@ -43973,7 +44253,8 @@
           ],
           "punter": "J.Bailey",
           "yardsAllowed": 121,
-          "pointsAllowed": 3
+          "pointsAllowed": 3,
+          "isAway": false
         },
         "11": {
           "opp": "20",
@@ -44025,7 +44306,8 @@
           ],
           "punter": "M.Palardy",
           "yardsAllowed": 103,
-          "pointsAllowed": 3
+          "pointsAllowed": 3,
+          "isAway": false
         },
         "12": {
           "opp": "16",
@@ -44064,7 +44346,8 @@
           ],
           "punter": "M.Palardy",
           "yardsAllowed": 358,
-          "pointsAllowed": 33
+          "pointsAllowed": 33,
+          "isAway": true
         },
         "13": {
           "opp": "2",
@@ -44110,7 +44393,8 @@
           ],
           "punter": "M.Palardy",
           "yardsAllowed": 355,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": false
         },
         "14": {
           "opp": "22",
@@ -44160,7 +44444,8 @@
           ],
           "punter": "M.Palardy",
           "yardsAllowed": 323,
-          "pointsAllowed": 13
+          "pointsAllowed": 13,
+          "isAway": true
         },
         "15": {
           "opp": "13",
@@ -44207,7 +44492,8 @@
           ],
           "punter": "M.Palardy",
           "yardsAllowed": 308,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": true
         },
         "16": {
           "opp": "4",
@@ -44253,7 +44539,8 @@
           ],
           "punter": "M.Palardy",
           "yardsAllowed": 442,
-          "pointsAllowed": 22
+          "pointsAllowed": 22,
+          "isAway": false
         },
         "17": {
           "opp": "15",
@@ -44297,7 +44584,8 @@
           ],
           "punter": "M.Palardy",
           "yardsAllowed": 333,
-          "pointsAllowed": 21
+          "pointsAllowed": 21,
+          "isAway": false
         },
         "18": {
           "opp": "2",
@@ -44338,7 +44626,8 @@
           ],
           "punter": "M.Palardy",
           "yardsAllowed": 327,
-          "pointsAllowed": 35
+          "pointsAllowed": 35,
+          "isAway": true
         }
       }
     },
@@ -44391,7 +44680,8 @@
           ],
           "punter": "B.Gillikin",
           "yardsAllowed": 416,
-          "pointsAllowed": 26
+          "pointsAllowed": 26,
+          "isAway": true
         },
         "2": {
           "opp": "27",
@@ -44437,7 +44727,8 @@
           ],
           "punter": "B.Gillikin",
           "yardsAllowed": 260,
-          "pointsAllowed": 14
+          "pointsAllowed": 14,
+          "isAway": false
         },
         "3": {
           "opp": "29",
@@ -44485,7 +44776,8 @@
           ],
           "punter": "B.Gillikin",
           "yardsAllowed": 293,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": true
         },
         "4": {
           "opp": "16",
@@ -44524,7 +44816,8 @@
           ],
           "punter": "B.Gillikin",
           "yardsAllowed": 344,
-          "pointsAllowed": 28
+          "pointsAllowed": 28,
+          "isAway": false
         },
         "5": {
           "opp": "26",
@@ -44567,7 +44860,8 @@
           ],
           "punter": "B.Gillikin",
           "yardsAllowed": 396,
-          "pointsAllowed": 32
+          "pointsAllowed": 32,
+          "isAway": false
         },
         "6": {
           "opp": "4",
@@ -44605,7 +44899,8 @@
           ],
           "punter": "B.Gillikin",
           "yardsAllowed": 348,
-          "pointsAllowed": 30
+          "pointsAllowed": 30,
+          "isAway": false
         },
         "7": {
           "opp": "22",
@@ -44639,7 +44934,8 @@
           ],
           "punter": "B.Gillikin",
           "yardsAllowed": 326,
-          "pointsAllowed": 30
+          "pointsAllowed": 30,
+          "isAway": true
         },
         "8": {
           "opp": "13",
@@ -44668,7 +44964,8 @@
           ],
           "punter": "B.Gillikin",
           "yardsAllowed": 183,
-          "pointsAllowed": 0
+          "pointsAllowed": 0,
+          "isAway": false
         },
         "9": {
           "opp": "33",
@@ -44712,7 +45009,8 @@
           ],
           "punter": "B.Gillikin",
           "yardsAllowed": 319,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": false
         },
         "10": {
           "opp": "23",
@@ -44755,7 +45053,8 @@
           ],
           "punter": "B.Gillikin",
           "yardsAllowed": 379,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": true
         },
         "11": {
           "opp": "14",
@@ -44801,7 +45100,8 @@
           ],
           "punter": "B.Gillikin",
           "yardsAllowed": 336,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": false
         },
         "12": {
           "opp": "25",
@@ -44837,7 +45137,8 @@
           ],
           "punter": "B.Gillikin",
           "yardsAllowed": 317,
-          "pointsAllowed": 13
+          "pointsAllowed": 13,
+          "isAway": true
         },
         "13": {
           "opp": "27",
@@ -44887,7 +45188,8 @@
           ],
           "punter": "B.Gillikin",
           "yardsAllowed": 350,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": true
         },
         "15": {
           "opp": "1",
@@ -44924,7 +45226,8 @@
           ],
           "punter": "B.Gillikin",
           "yardsAllowed": 320,
-          "pointsAllowed": 18
+          "pointsAllowed": 18,
+          "isAway": false
         },
         "16": {
           "opp": "5",
@@ -44972,7 +45275,8 @@
           ],
           "punter": "B.Gillikin",
           "yardsAllowed": 249,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": true
         },
         "17": {
           "opp": "21",
@@ -45021,7 +45325,8 @@
           ],
           "punter": "B.Gillikin",
           "yardsAllowed": 313,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": true
         },
         "18": {
           "opp": "29",
@@ -45062,7 +45367,8 @@
           ],
           "punter": "B.Gillikin",
           "yardsAllowed": 203,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": false
         }
       }
     },
@@ -45116,7 +45422,8 @@
           ],
           "punter": "J.Gillan",
           "yardsAllowed": 359,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": true
         },
         "2": {
           "opp": "29",
@@ -45164,7 +45471,8 @@
           ],
           "punter": "J.Gillan",
           "yardsAllowed": 275,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": false
         },
         "3": {
           "opp": "6",
@@ -45201,7 +45509,8 @@
           ],
           "punter": "J.Gillan",
           "yardsAllowed": 391,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": false
         },
         "4": {
           "opp": "3",
@@ -45246,7 +45555,8 @@
           ],
           "punter": "J.Gillan",
           "yardsAllowed": 304,
-          "pointsAllowed": 12
+          "pointsAllowed": 12,
+          "isAway": false
         },
         "5": {
           "opp": "9",
@@ -45276,7 +45586,8 @@
           ],
           "punter": "J.Gillan",
           "yardsAllowed": 301,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": true
         },
         "6": {
           "opp": "33",
@@ -45315,7 +45626,8 @@
           ],
           "punter": "J.Gillan",
           "yardsAllowed": 406,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": false
         },
         "7": {
           "opp": "30",
@@ -45346,7 +45658,8 @@
           ],
           "punter": "J.Gillan",
           "yardsAllowed": 452,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": true
         },
         "8": {
           "opp": "26",
@@ -45395,7 +45708,8 @@
           ],
           "punter": "J.Gillan",
           "yardsAllowed": 277,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": true
         },
         "10": {
           "opp": "34",
@@ -45444,7 +45758,8 @@
           ],
           "punter": "J.Gillan",
           "yardsAllowed": 387,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": false
         },
         "11": {
           "opp": "8",
@@ -45482,7 +45797,8 @@
           ],
           "punter": "J.Gillan",
           "yardsAllowed": 325,
-          "pointsAllowed": 31
+          "pointsAllowed": 31,
+          "isAway": false
         },
         "12": {
           "opp": "6",
@@ -45522,7 +45838,8 @@
           ],
           "punter": "J.Gillan",
           "yardsAllowed": 430,
-          "pointsAllowed": 28
+          "pointsAllowed": 28,
+          "isAway": true
         },
         "13": {
           "opp": "28",
@@ -45578,7 +45895,8 @@
           ],
           "punter": "J.Gillan",
           "yardsAllowed": 411,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": false
         },
         "14": {
           "opp": "21",
@@ -45624,7 +45942,8 @@
           ],
           "punter": "J.Gillan",
           "yardsAllowed": 437,
-          "pointsAllowed": 48
+          "pointsAllowed": 48,
+          "isAway": false
         },
         "15": {
           "opp": "28",
@@ -45668,7 +45987,8 @@
           ],
           "punter": "J.Gillan",
           "yardsAllowed": 387,
-          "pointsAllowed": 12
+          "pointsAllowed": 12,
+          "isAway": true
         },
         "16": {
           "opp": "16",
@@ -45706,7 +46026,8 @@
           ],
           "punter": "J.Gillan",
           "yardsAllowed": 353,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": true
         },
         "17": {
           "opp": "11",
@@ -45731,7 +46052,8 @@
           ],
           "punter": "J.Gillan",
           "yardsAllowed": 252,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": false
         },
         "18": {
           "opp": "21",
@@ -45778,7 +46100,8 @@
           ],
           "punter": "J.Gillan",
           "yardsAllowed": 342,
-          "pointsAllowed": 22
+          "pointsAllowed": 22,
+          "isAway": true
         }
       }
     },
@@ -45834,7 +46157,8 @@
           ],
           "punter": "B.Mann",
           "yardsAllowed": 274,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": false
         },
         "2": {
           "opp": "5",
@@ -45874,7 +46198,8 @@
           ],
           "punter": "B.Mann",
           "yardsAllowed": 405,
-          "pointsAllowed": 30
+          "pointsAllowed": 30,
+          "isAway": true
         },
         "3": {
           "opp": "4",
@@ -45914,7 +46239,8 @@
           ],
           "punter": "B.Mann",
           "yardsAllowed": 330,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": false
         },
         "4": {
           "opp": "23",
@@ -45958,7 +46284,8 @@
           ],
           "punter": "B.Mann",
           "yardsAllowed": 297,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": true
         },
         "5": {
           "opp": "15",
@@ -46000,7 +46327,8 @@
           ],
           "punter": "B.Mann",
           "yardsAllowed": 295,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": false
         },
         "6": {
           "opp": "9",
@@ -46050,7 +46378,8 @@
           ],
           "punter": "B.Mann",
           "yardsAllowed": 278,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": true
         },
         "7": {
           "opp": "7",
@@ -46110,7 +46439,8 @@
           ],
           "punter": "B.Mann",
           "yardsAllowed": 324,
-          "pointsAllowed": 9
+          "pointsAllowed": 9,
+          "isAway": true
         },
         "8": {
           "opp": "17",
@@ -46151,7 +46481,8 @@
           ],
           "punter": "B.Mann",
           "yardsAllowed": 288,
-          "pointsAllowed": 22
+          "pointsAllowed": 22,
+          "isAway": false
         },
         "9": {
           "opp": "2",
@@ -46186,7 +46517,8 @@
           ],
           "punter": "B.Mann",
           "yardsAllowed": 317,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": false
         },
         "11": {
           "opp": "17",
@@ -46248,7 +46580,8 @@
           ],
           "punter": "B.Mann",
           "yardsAllowed": 297,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": true
         },
         "12": {
           "opp": "3",
@@ -46279,7 +46612,8 @@
           ],
           "punter": "B.Mann",
           "yardsAllowed": 292,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": false
         },
         "13": {
           "opp": "16",
@@ -46316,7 +46650,8 @@
           ],
           "punter": "B.Mann",
           "yardsAllowed": 287,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": true
         },
         "14": {
           "opp": "2",
@@ -46370,7 +46705,8 @@
           ],
           "punter": "B.Mann",
           "yardsAllowed": 232,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": true
         },
         "15": {
           "opp": "8",
@@ -46418,7 +46754,8 @@
           ],
           "punter": "B.Mann",
           "yardsAllowed": 359,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": false
         },
         "16": {
           "opp": "30",
@@ -46461,7 +46798,8 @@
           ],
           "punter": "B.Mann",
           "yardsAllowed": 365,
-          "pointsAllowed": 19
+          "pointsAllowed": 19,
+          "isAway": false
         },
         "17": {
           "opp": "26",
@@ -46499,7 +46837,8 @@
           ],
           "punter": "B.Mann",
           "yardsAllowed": 346,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": true
         },
         "18": {
           "opp": "15",
@@ -46542,7 +46881,8 @@
           ],
           "punter": "B.Mann",
           "yardsAllowed": 302,
-          "pointsAllowed": 9
+          "pointsAllowed": 9,
+          "isAway": true
         }
       }
     },
@@ -46584,7 +46924,8 @@
           ],
           "punter": "A.Siposs",
           "yardsAllowed": 386,
-          "pointsAllowed": 35
+          "pointsAllowed": 35,
+          "isAway": true
         },
         "2": {
           "opp": "16",
@@ -46623,7 +46964,8 @@
           ],
           "punter": "A.Siposs",
           "yardsAllowed": 264,
-          "pointsAllowed": 7
+          "pointsAllowed": 7,
+          "isAway": false
         },
         "3": {
           "opp": "28",
@@ -46673,7 +47015,8 @@
           ],
           "punter": "A.Siposs",
           "yardsAllowed": 240,
-          "pointsAllowed": 6
+          "pointsAllowed": 6,
+          "isAway": true
         },
         "4": {
           "opp": "30",
@@ -46710,7 +47053,8 @@
           ],
           "punter": "A.Siposs",
           "yardsAllowed": 219,
-          "pointsAllowed": 15
+          "pointsAllowed": 15,
+          "isAway": false
         },
         "5": {
           "opp": "22",
@@ -46749,7 +47093,8 @@
           ],
           "punter": "A.Siposs",
           "yardsAllowed": 363,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": true
         },
         "6": {
           "opp": "6",
@@ -46790,7 +47135,8 @@
           ],
           "punter": "A.Siposs",
           "yardsAllowed": 315,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": false
         },
         "8": {
           "opp": "23",
@@ -46827,7 +47173,8 @@
           ],
           "punter": "A.Siposs",
           "yardsAllowed": 302,
-          "pointsAllowed": 13
+          "pointsAllowed": 13,
+          "isAway": false
         },
         "9": {
           "opp": "34",
@@ -46860,7 +47207,8 @@
           ],
           "punter": "A.Siposs",
           "yardsAllowed": 303,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": true
         },
         "10": {
           "opp": "28",
@@ -46893,7 +47241,8 @@
           ],
           "punter": "A.Siposs",
           "yardsAllowed": 330,
-          "pointsAllowed": 26
+          "pointsAllowed": 26,
+          "isAway": false
         },
         "11": {
           "opp": "11",
@@ -46934,7 +47283,8 @@
           ],
           "punter": "A.Siposs",
           "yardsAllowed": 284,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": true
         },
         "12": {
           "opp": "9",
@@ -46963,7 +47313,8 @@
           ],
           "punter": "A.Siposs",
           "yardsAllowed": 342,
-          "pointsAllowed": 33
+          "pointsAllowed": 33,
+          "isAway": false
         },
         "13": {
           "opp": "10",
@@ -47005,7 +47356,8 @@
           ],
           "punter": "A.Siposs",
           "yardsAllowed": 209,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": false
         },
         "14": {
           "opp": "19",
@@ -47035,7 +47387,8 @@
           ],
           "punter": "J.Elliott",
           "yardsAllowed": 304,
-          "pointsAllowed": 22
+          "pointsAllowed": 22,
+          "isAway": true
         },
         "15": {
           "opp": "3",
@@ -47068,7 +47421,8 @@
           ],
           "punter": "B.Kern",
           "yardsAllowed": 248,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": true
         },
         "16": {
           "opp": "6",
@@ -47091,7 +47445,8 @@
           "punts": [],
           "punter": "",
           "yardsAllowed": 419,
-          "pointsAllowed": 40
+          "pointsAllowed": 40,
+          "isAway": true
         },
         "17": {
           "opp": "18",
@@ -47140,7 +47495,8 @@
           ],
           "punter": "B.Kern",
           "yardsAllowed": 313,
-          "pointsAllowed": 14
+          "pointsAllowed": 14,
+          "isAway": false
         },
         "18": {
           "opp": "19",
@@ -47176,7 +47532,8 @@
           ],
           "punter": "B.Kern",
           "yardsAllowed": 284,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": false
         }
       }
     },
@@ -47225,7 +47582,8 @@
           ],
           "punter": "A.Lee",
           "yardsAllowed": 488,
-          "pointsAllowed": 44
+          "pointsAllowed": 44,
+          "isAway": false
         },
         "2": {
           "opp": "13",
@@ -47257,7 +47615,8 @@
           ],
           "punter": "A.Lee",
           "yardsAllowed": 324,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": true
         },
         "3": {
           "opp": "14",
@@ -47298,7 +47657,8 @@
           ],
           "punter": "A.Lee",
           "yardsAllowed": 339,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": false
         },
         "4": {
           "opp": "29",
@@ -47336,7 +47696,8 @@
           ],
           "punter": "A.Lee",
           "yardsAllowed": 220,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": true
         },
         "5": {
           "opp": "21",
@@ -47374,7 +47735,8 @@
           ],
           "punter": "A.Lee",
           "yardsAllowed": 357,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": false
         },
         "6": {
           "opp": "26",
@@ -47414,7 +47776,8 @@
           ],
           "punter": "A.Lee",
           "yardsAllowed": 296,
-          "pointsAllowed": 19
+          "pointsAllowed": 19,
+          "isAway": true
         },
         "7": {
           "opp": "18",
@@ -47454,7 +47817,8 @@
           ],
           "punter": "A.Lee",
           "yardsAllowed": 494,
-          "pointsAllowed": 34
+          "pointsAllowed": 34,
+          "isAway": false
         },
         "8": {
           "opp": "16",
@@ -47492,7 +47856,8 @@
           ],
           "punter": "A.Lee",
           "yardsAllowed": 381,
-          "pointsAllowed": 34
+          "pointsAllowed": 34,
+          "isAway": true
         },
         "9": {
           "opp": "26",
@@ -47537,7 +47902,8 @@
           ],
           "punter": "A.Lee",
           "yardsAllowed": 421,
-          "pointsAllowed": 31
+          "pointsAllowed": 31,
+          "isAway": false
         },
         "10": {
           "opp": "14",
@@ -47582,7 +47948,8 @@
           ],
           "punter": "A.Lee",
           "yardsAllowed": 256,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": true
         },
         "11": {
           "opp": "25",
@@ -47622,7 +47989,8 @@
           ],
           "punter": "A.Lee",
           "yardsAllowed": 387,
-          "pointsAllowed": 38
+          "pointsAllowed": 38,
+          "isAway": false
         },
         "12": {
           "opp": "24",
@@ -47658,7 +48026,8 @@
           ],
           "punter": "A.Lee",
           "yardsAllowed": 311,
-          "pointsAllowed": 25
+          "pointsAllowed": 25,
+          "isAway": false
         },
         "14": {
           "opp": "17",
@@ -47692,7 +48061,8 @@
           ],
           "punter": "A.Lee",
           "yardsAllowed": 328,
-          "pointsAllowed": 21
+          "pointsAllowed": 21,
+          "isAway": false
         },
         "15": {
           "opp": "7",
@@ -47744,7 +48114,8 @@
           ],
           "punter": "A.Lee",
           "yardsAllowed": 324,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": true
         },
         "16": {
           "opp": "27",
@@ -47801,7 +48172,8 @@
           ],
           "punter": "A.Lee",
           "yardsAllowed": 396,
-          "pointsAllowed": 19
+          "pointsAllowed": 19,
+          "isAway": false
         },
         "17": {
           "opp": "1",
@@ -47830,7 +48202,8 @@
           ],
           "punter": "A.Lee",
           "yardsAllowed": 298,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": true
         },
         "18": {
           "opp": "25",
@@ -47866,7 +48239,8 @@
           ],
           "punter": "A.Lee",
           "yardsAllowed": 311,
-          "pointsAllowed": 38
+          "pointsAllowed": 38,
+          "isAway": true
         }
       }
     },
@@ -47935,7 +48309,8 @@
           ],
           "punter": "P.Harvin",
           "yardsAllowed": 432,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": true
         },
         "2": {
           "opp": "17",
@@ -47974,7 +48349,8 @@
           ],
           "punter": "P.Harvin",
           "yardsAllowed": 376,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": false
         },
         "3": {
           "opp": "5",
@@ -48018,7 +48394,8 @@
           ],
           "punter": "P.Harvin",
           "yardsAllowed": 376,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": true
         },
         "4": {
           "opp": "20",
@@ -48060,7 +48437,8 @@
           ],
           "punter": "P.Harvin",
           "yardsAllowed": 348,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": false
         },
         "5": {
           "opp": "2",
@@ -48100,7 +48478,8 @@
           ],
           "punter": "P.Harvin",
           "yardsAllowed": 552,
-          "pointsAllowed": 38
+          "pointsAllowed": 38,
+          "isAway": true
         },
         "6": {
           "opp": "27",
@@ -48144,7 +48523,8 @@
           ],
           "punter": "P.Harvin",
           "yardsAllowed": 304,
-          "pointsAllowed": 18
+          "pointsAllowed": 18,
+          "isAway": false
         },
         "7": {
           "opp": "15",
@@ -48193,7 +48573,8 @@
           ],
           "punter": "P.Harvin",
           "yardsAllowed": 372,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": true
         },
         "8": {
           "opp": "21",
@@ -48233,7 +48614,8 @@
           ],
           "punter": "P.Harvin",
           "yardsAllowed": 401,
-          "pointsAllowed": 35
+          "pointsAllowed": 35,
+          "isAway": true
         },
         "10": {
           "opp": "18",
@@ -48270,7 +48652,8 @@
           ],
           "punter": "P.Harvin",
           "yardsAllowed": 186,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": false
         },
         "11": {
           "opp": "4",
@@ -48322,7 +48705,8 @@
           ],
           "punter": "P.Harvin",
           "yardsAllowed": 408,
-          "pointsAllowed": 37
+          "pointsAllowed": 37,
+          "isAway": false
         },
         "12": {
           "opp": "11",
@@ -48363,7 +48747,8 @@
           ],
           "punter": "P.Harvin",
           "yardsAllowed": 290,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": true
         },
         "13": {
           "opp": "1",
@@ -48396,7 +48781,8 @@
           ],
           "punter": "P.Harvin",
           "yardsAllowed": 306,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": true
         },
         "14": {
           "opp": "33",
@@ -48428,7 +48814,8 @@
           ],
           "punter": "P.Harvin",
           "yardsAllowed": 309,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": false
         },
         "15": {
           "opp": "29",
@@ -48462,7 +48849,8 @@
           ],
           "punter": "P.Harvin",
           "yardsAllowed": 209,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": true
         },
         "16": {
           "opp": "13",
@@ -48499,7 +48887,8 @@
           ],
           "punter": "P.Harvin",
           "yardsAllowed": 201,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": false
         },
         "17": {
           "opp": "33",
@@ -48531,7 +48920,8 @@
           ],
           "punter": "P.Harvin",
           "yardsAllowed": 240,
-          "pointsAllowed": 13
+          "pointsAllowed": 13,
+          "isAway": true
         },
         "18": {
           "opp": "5",
@@ -48566,7 +48956,8 @@
           ],
           "punter": "P.Harvin",
           "yardsAllowed": 307,
-          "pointsAllowed": 14
+          "pointsAllowed": 14,
+          "isAway": false
         }
       }
     },
@@ -48613,7 +49004,8 @@
           ],
           "punter": "J.Scott",
           "yardsAllowed": 320,
-          "pointsAllowed": 19
+          "pointsAllowed": 19,
+          "isAway": false
         },
         "2": {
           "opp": "12",
@@ -48662,7 +49054,8 @@
           ],
           "punter": "J.Scott",
           "yardsAllowed": 319,
-          "pointsAllowed": 21
+          "pointsAllowed": 21,
+          "isAway": true
         },
         "3": {
           "opp": "30",
@@ -48701,7 +49094,8 @@
           ],
           "punter": "J.Scott",
           "yardsAllowed": 413,
-          "pointsAllowed": 38
+          "pointsAllowed": 38,
+          "isAway": false
         },
         "4": {
           "opp": "34",
@@ -48743,7 +49137,8 @@
           ],
           "punter": "J.Scott",
           "yardsAllowed": 346,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": true
         },
         "5": {
           "opp": "5",
@@ -48773,7 +49168,8 @@
           ],
           "punter": "J.Scott",
           "yardsAllowed": 443,
-          "pointsAllowed": 28
+          "pointsAllowed": 28,
+          "isAway": true
         },
         "6": {
           "opp": "7",
@@ -48817,7 +49213,8 @@
           ],
           "punter": "J.Scott",
           "yardsAllowed": 258,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": false
         },
         "7": {
           "opp": "26",
@@ -48860,7 +49257,8 @@
           ],
           "punter": "J.Scott",
           "yardsAllowed": 404,
-          "pointsAllowed": 37
+          "pointsAllowed": 37,
+          "isAway": false
         },
         "9": {
           "opp": "1",
@@ -48900,7 +49298,8 @@
           ],
           "punter": "J.Scott",
           "yardsAllowed": 315,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": true
         },
         "10": {
           "opp": "25",
@@ -48946,7 +49345,8 @@
           ],
           "punter": "J.Scott",
           "yardsAllowed": 387,
-          "pointsAllowed": 22
+          "pointsAllowed": 22,
+          "isAway": true
         },
         "11": {
           "opp": "12",
@@ -48982,7 +49382,8 @@
           ],
           "punter": "J.Scott",
           "yardsAllowed": 485,
-          "pointsAllowed": 30
+          "pointsAllowed": 30,
+          "isAway": false
         },
         "12": {
           "opp": "22",
@@ -49030,7 +49431,8 @@
           ],
           "punter": "J.Scott",
           "yardsAllowed": 366,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": true
         },
         "13": {
           "opp": "13",
@@ -49068,7 +49470,8 @@
           ],
           "punter": "J.Scott",
           "yardsAllowed": 404,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": true
         },
         "14": {
           "opp": "15",
@@ -49110,7 +49513,8 @@
           ],
           "punter": "J.Scott",
           "yardsAllowed": 219,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": false
         },
         "15": {
           "opp": "10",
@@ -49163,7 +49567,8 @@
           ],
           "punter": "J.Scott",
           "yardsAllowed": 284,
-          "pointsAllowed": 14
+          "pointsAllowed": 14,
+          "isAway": false
         },
         "16": {
           "opp": "11",
@@ -49204,7 +49609,8 @@
           ],
           "punter": "J.Scott",
           "yardsAllowed": 173,
-          "pointsAllowed": 3
+          "pointsAllowed": 3,
+          "isAway": true
         },
         "17": {
           "opp": "14",
@@ -49242,7 +49648,8 @@
           ],
           "punter": "J.Scott",
           "yardsAllowed": 277,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": false
         },
         "18": {
           "opp": "7",
@@ -49289,7 +49696,8 @@
           ],
           "punter": "J.Scott",
           "yardsAllowed": 471,
-          "pointsAllowed": 31
+          "pointsAllowed": 31,
+          "isAway": true
         }
       }
     },
@@ -49336,7 +49744,8 @@
           ],
           "punter": "M.Wishnowsky",
           "yardsAllowed": 204,
-          "pointsAllowed": 19
+          "pointsAllowed": 19,
+          "isAway": true
         },
         "2": {
           "opp": "26",
@@ -49372,7 +49781,8 @@
           ],
           "punter": "M.Wishnowsky",
           "yardsAllowed": 216,
-          "pointsAllowed": 7
+          "pointsAllowed": 7,
+          "isAway": false
         },
         "3": {
           "opp": "7",
@@ -49427,7 +49837,8 @@
           ],
           "punter": "M.Wishnowsky",
           "yardsAllowed": 261,
-          "pointsAllowed": 9
+          "pointsAllowed": 9,
+          "isAway": true
         },
         "4": {
           "opp": "14",
@@ -49465,7 +49876,8 @@
           ],
           "punter": "M.Wishnowsky",
           "yardsAllowed": 257,
-          "pointsAllowed": 9
+          "pointsAllowed": 9,
+          "isAway": false
         },
         "5": {
           "opp": "29",
@@ -49497,7 +49909,8 @@
           ],
           "punter": "M.Wishnowsky",
           "yardsAllowed": 308,
-          "pointsAllowed": 15
+          "pointsAllowed": 15,
+          "isAway": true
         },
         "6": {
           "opp": "1",
@@ -49530,7 +49943,8 @@
           ],
           "punter": "M.Wishnowsky",
           "yardsAllowed": 289,
-          "pointsAllowed": 22
+          "pointsAllowed": 22,
+          "isAway": true
         },
         "7": {
           "opp": "12",
@@ -49560,7 +49974,8 @@
           ],
           "punter": "M.Wishnowsky",
           "yardsAllowed": 529,
-          "pointsAllowed": 42
+          "pointsAllowed": 42,
+          "isAway": false
         },
         "8": {
           "opp": "14",
@@ -49593,7 +50008,8 @@
           ],
           "punter": "M.Wishnowsky",
           "yardsAllowed": 223,
-          "pointsAllowed": 14
+          "pointsAllowed": 14,
+          "isAway": true
         },
         "10": {
           "opp": "24",
@@ -49635,7 +50051,8 @@
           ],
           "punter": "M.Wishnowsky",
           "yardsAllowed": 238,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": false
         },
         "11": {
           "opp": "22",
@@ -49675,7 +50092,8 @@
           ],
           "punter": "M.Wishnowsky",
           "yardsAllowed": 314,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": true
         },
         "12": {
           "opp": "18",
@@ -49714,7 +50132,8 @@
           ],
           "punter": "M.Wishnowsky",
           "yardsAllowed": 260,
-          "pointsAllowed": 0
+          "pointsAllowed": 0,
+          "isAway": false
         },
         "13": {
           "opp": "15",
@@ -49758,7 +50177,8 @@
           ],
           "punter": "M.Wishnowsky",
           "yardsAllowed": 308,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": false
         },
         "14": {
           "opp": "27",
@@ -49792,7 +50212,8 @@
           ],
           "punter": "M.Wishnowsky",
           "yardsAllowed": 322,
-          "pointsAllowed": 7
+          "pointsAllowed": 7,
+          "isAway": false
         },
         "15": {
           "opp": "26",
@@ -49839,7 +50260,8 @@
           ],
           "punter": "M.Wishnowsky",
           "yardsAllowed": 277,
-          "pointsAllowed": 13
+          "pointsAllowed": 13,
+          "isAway": true
         },
         "16": {
           "opp": "28",
@@ -49874,7 +50296,8 @@
           ],
           "punter": "M.Wishnowsky",
           "yardsAllowed": 349,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": false
         },
         "17": {
           "opp": "13",
@@ -49909,7 +50332,8 @@
           ],
           "punter": "M.Wishnowsky",
           "yardsAllowed": 500,
-          "pointsAllowed": 34
+          "pointsAllowed": 34,
+          "isAway": true
         },
         "18": {
           "opp": "22",
@@ -49954,7 +50378,8 @@
           ],
           "punter": "M.Wishnowsky",
           "yardsAllowed": 255,
-          "pointsAllowed": 13
+          "pointsAllowed": 13,
+          "isAway": false
         }
       }
     },
@@ -49990,7 +50415,8 @@
           ],
           "punter": "M.Dickson",
           "yardsAllowed": 433,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": false
         },
         "2": {
           "opp": "25",
@@ -50030,7 +50456,8 @@
           ],
           "punter": "M.Dickson",
           "yardsAllowed": 373,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": true
         },
         "3": {
           "opp": "1",
@@ -50061,7 +50488,8 @@
           ],
           "punter": "M.Dickson",
           "yardsAllowed": 386,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": false
         },
         "4": {
           "opp": "8",
@@ -50083,7 +50511,8 @@
           "punts": [],
           "punter": "",
           "yardsAllowed": 520,
-          "pointsAllowed": 45
+          "pointsAllowed": 45,
+          "isAway": true
         },
         "5": {
           "opp": "18",
@@ -50130,7 +50559,8 @@
           ],
           "punter": "M.Dickson",
           "yardsAllowed": 438,
-          "pointsAllowed": 39
+          "pointsAllowed": 39,
+          "isAway": true
         },
         "6": {
           "opp": "22",
@@ -50182,7 +50612,8 @@
           ],
           "punter": "M.Dickson",
           "yardsAllowed": 315,
-          "pointsAllowed": 3
+          "pointsAllowed": 3,
+          "isAway": false
         },
         "7": {
           "opp": "24",
@@ -50214,7 +50645,8 @@
           ],
           "punter": "M.Dickson",
           "yardsAllowed": 329,
-          "pointsAllowed": 21
+          "pointsAllowed": 21,
+          "isAway": true
         },
         "8": {
           "opp": "19",
@@ -50265,7 +50697,8 @@
           ],
           "punter": "M.Dickson",
           "yardsAllowed": 225,
-          "pointsAllowed": 13
+          "pointsAllowed": 13,
+          "isAway": false
         },
         "9": {
           "opp": "22",
@@ -50302,7 +50735,8 @@
           ],
           "punter": "M.Dickson",
           "yardsAllowed": 262,
-          "pointsAllowed": 15
+          "pointsAllowed": 15,
+          "isAway": true
         },
         "10": {
           "opp": "27",
@@ -50344,7 +50778,8 @@
           ],
           "punter": "M.Dickson",
           "yardsAllowed": 419,
-          "pointsAllowed": 21
+          "pointsAllowed": 21,
+          "isAway": true
         },
         "12": {
           "opp": "13",
@@ -50387,7 +50822,8 @@
           ],
           "punter": "M.Dickson",
           "yardsAllowed": 576,
-          "pointsAllowed": 40
+          "pointsAllowed": 40,
+          "isAway": false
         },
         "13": {
           "opp": "14",
@@ -50420,7 +50856,8 @@
           ],
           "punter": "M.Dickson",
           "yardsAllowed": 319,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": true
         },
         "14": {
           "opp": "29",
@@ -50459,7 +50896,8 @@
           ],
           "punter": "M.Dickson",
           "yardsAllowed": 328,
-          "pointsAllowed": 30
+          "pointsAllowed": 30,
+          "isAway": false
         },
         "15": {
           "opp": "25",
@@ -50512,7 +50950,8 @@
           ],
           "punter": "M.Dickson",
           "yardsAllowed": 381,
-          "pointsAllowed": 21
+          "pointsAllowed": 21,
+          "isAway": false
         },
         "16": {
           "opp": "12",
@@ -50557,7 +50996,8 @@
           ],
           "punter": "M.Dickson",
           "yardsAllowed": 297,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": true
         },
         "17": {
           "opp": "20",
@@ -50599,7 +51039,8 @@
           ],
           "punter": "M.Dickson",
           "yardsAllowed": 279,
-          "pointsAllowed": 6
+          "pointsAllowed": 6,
+          "isAway": false
         },
         "18": {
           "opp": "14",
@@ -50648,7 +51089,8 @@
           ],
           "punter": "M.Dickson",
           "yardsAllowed": 269,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": false
         }
       }
     },
@@ -50694,7 +51136,8 @@
           ],
           "punter": "J.Camarda",
           "yardsAllowed": 244,
-          "pointsAllowed": 3
+          "pointsAllowed": 3,
+          "isAway": true
         },
         "2": {
           "opp": "18",
@@ -50741,7 +51184,8 @@
           ],
           "punter": "J.Camarda",
           "yardsAllowed": 308,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": true
         },
         "3": {
           "opp": "9",
@@ -50791,7 +51235,8 @@
           ],
           "punter": "J.Camarda",
           "yardsAllowed": 315,
-          "pointsAllowed": 14
+          "pointsAllowed": 14,
+          "isAway": false
         },
         "4": {
           "opp": "12",
@@ -50827,7 +51272,8 @@
           ],
           "punter": "J.Camarda",
           "yardsAllowed": 417,
-          "pointsAllowed": 41
+          "pointsAllowed": 41,
+          "isAway": false
         },
         "5": {
           "opp": "1",
@@ -50867,7 +51313,8 @@
           ],
           "punter": "J.Camarda",
           "yardsAllowed": 261,
-          "pointsAllowed": 15
+          "pointsAllowed": 15,
+          "isAway": false
         },
         "6": {
           "opp": "23",
@@ -50913,7 +51360,8 @@
           ],
           "punter": "J.Camarda",
           "yardsAllowed": 270,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": true
         },
         "7": {
           "opp": "29",
@@ -50961,7 +51409,8 @@
           ],
           "punter": "J.Camarda",
           "yardsAllowed": 343,
-          "pointsAllowed": 21
+          "pointsAllowed": 21,
+          "isAway": true
         },
         "8": {
           "opp": "33",
@@ -51006,7 +51455,8 @@
           ],
           "punter": "J.Camarda",
           "yardsAllowed": 453,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": false
         },
         "9": {
           "opp": "14",
@@ -51058,7 +51508,8 @@
           ],
           "punter": "J.Camarda",
           "yardsAllowed": 206,
-          "pointsAllowed": 13
+          "pointsAllowed": 13,
+          "isAway": false
         },
         "10": {
           "opp": "26",
@@ -51087,7 +51538,8 @@
           ],
           "punter": "J.Camarda",
           "yardsAllowed": 283,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": false
         },
         "12": {
           "opp": "5",
@@ -51149,7 +51601,8 @@
           ],
           "punter": "J.Camarda",
           "yardsAllowed": 367,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": true
         },
         "13": {
           "opp": "18",
@@ -51193,7 +51646,8 @@
           ],
           "punter": "J.Camarda",
           "yardsAllowed": 298,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": false
         },
         "14": {
           "opp": "25",
@@ -51227,7 +51681,8 @@
           ],
           "punter": "J.Camarda",
           "yardsAllowed": 404,
-          "pointsAllowed": 35
+          "pointsAllowed": 35,
+          "isAway": true
         },
         "15": {
           "opp": "4",
@@ -51255,7 +51710,8 @@
           ],
           "punter": "J.Camarda",
           "yardsAllowed": 237,
-          "pointsAllowed": 34
+          "pointsAllowed": 34,
+          "isAway": false
         },
         "16": {
           "opp": "22",
@@ -51305,7 +51761,8 @@
           ],
           "punter": "J.Camarda",
           "yardsAllowed": 325,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": true
         },
         "17": {
           "opp": "29",
@@ -51351,7 +51808,8 @@
           ],
           "punter": "J.Camarda",
           "yardsAllowed": 400,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": false
         },
         "18": {
           "opp": "1",
@@ -51395,7 +51853,8 @@
           ],
           "punter": "J.Camarda",
           "yardsAllowed": 382,
-          "pointsAllowed": 30
+          "pointsAllowed": 30,
+          "isAway": true
         }
       }
     },
@@ -51437,7 +51896,8 @@
           ],
           "punter": "T.Way",
           "yardsAllowed": 383,
-          "pointsAllowed": 22
+          "pointsAllowed": 22,
+          "isAway": false
         },
         "2": {
           "opp": "8",
@@ -51486,7 +51946,8 @@
           ],
           "punter": "T.Way",
           "yardsAllowed": 425,
-          "pointsAllowed": 34
+          "pointsAllowed": 34,
+          "isAway": true
         },
         "3": {
           "opp": "21",
@@ -51541,7 +52002,8 @@
           ],
           "punter": "T.Way",
           "yardsAllowed": 400,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": false
         },
         "4": {
           "opp": "6",
@@ -51591,7 +52053,8 @@
           ],
           "punter": "T.Way",
           "yardsAllowed": 279,
-          "pointsAllowed": 25
+          "pointsAllowed": 25,
+          "isAway": true
         },
         "5": {
           "opp": "10",
@@ -51640,7 +52103,8 @@
           ],
           "punter": "T.Way",
           "yardsAllowed": 241,
-          "pointsAllowed": 21
+          "pointsAllowed": 21,
+          "isAway": false
         },
         "6": {
           "opp": "3",
@@ -51689,7 +52153,8 @@
           ],
           "punter": "T.Way",
           "yardsAllowed": 391,
-          "pointsAllowed": 7
+          "pointsAllowed": 7,
+          "isAway": true
         },
         "7": {
           "opp": "9",
@@ -51731,7 +52196,8 @@
           ],
           "punter": "T.Way",
           "yardsAllowed": 232,
-          "pointsAllowed": 15
+          "pointsAllowed": 15,
+          "isAway": false
         },
         "8": {
           "opp": "11",
@@ -51779,7 +52245,8 @@
           ],
           "punter": "T.Way",
           "yardsAllowed": 324,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": true
         },
         "9": {
           "opp": "16",
@@ -51824,7 +52291,8 @@
           ],
           "punter": "T.Way",
           "yardsAllowed": 301,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": false
         },
         "10": {
           "opp": "21",
@@ -51858,7 +52326,8 @@
           ],
           "punter": "T.Way",
           "yardsAllowed": 264,
-          "pointsAllowed": 21
+          "pointsAllowed": 21,
+          "isAway": true
         },
         "11": {
           "opp": "34",
@@ -51903,7 +52372,8 @@
           ],
           "punter": "T.Way",
           "yardsAllowed": 148,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": true
         },
         "12": {
           "opp": "1",
@@ -51938,7 +52408,8 @@
           ],
           "punter": "T.Way",
           "yardsAllowed": 332,
-          "pointsAllowed": 13
+          "pointsAllowed": 13,
+          "isAway": false
         },
         "13": {
           "opp": "19",
@@ -51989,7 +52460,8 @@
           ],
           "punter": "T.Way",
           "yardsAllowed": 316,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": true
         },
         "15": {
           "opp": "19",
@@ -52029,7 +52501,8 @@
           ],
           "punter": "T.Way",
           "yardsAllowed": 288,
-          "pointsAllowed": 14
+          "pointsAllowed": 14,
+          "isAway": false
         },
         "16": {
           "opp": "25",
@@ -52068,7 +52541,8 @@
           ],
           "punter": "T.Way",
           "yardsAllowed": 371,
-          "pointsAllowed": 37
+          "pointsAllowed": 37,
+          "isAway": true
         },
         "17": {
           "opp": "5",
@@ -52099,7 +52573,8 @@
           ],
           "punter": "T.Way",
           "yardsAllowed": 301,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": false
         },
         "18": {
           "opp": "6",
@@ -52156,7 +52631,8 @@
           ],
           "punter": "T.Way",
           "yardsAllowed": 182,
-          "pointsAllowed": 6
+          "pointsAllowed": 6,
+          "isAway": false
         }
       }
     },
@@ -52208,7 +52684,8 @@
           ],
           "punter": "J.Hekker",
           "yardsAllowed": 355,
-          "pointsAllowed": 26
+          "pointsAllowed": 26,
+          "isAway": false
         },
         "2": {
           "opp": "19",
@@ -52254,7 +52731,8 @@
           ],
           "punter": "J.Hekker",
           "yardsAllowed": 265,
-          "pointsAllowed": 19
+          "pointsAllowed": 19,
+          "isAway": true
         },
         "3": {
           "opp": "18",
@@ -52306,7 +52784,8 @@
           ],
           "punter": "J.Hekker",
           "yardsAllowed": 426,
-          "pointsAllowed": 14
+          "pointsAllowed": 14,
+          "isAway": false
         },
         "4": {
           "opp": "22",
@@ -52346,7 +52825,8 @@
           ],
           "punter": "J.Hekker",
           "yardsAllowed": 338,
-          "pointsAllowed": 26
+          "pointsAllowed": 26,
+          "isAway": false
         },
         "5": {
           "opp": "25",
@@ -52384,7 +52864,8 @@
           ],
           "punter": "J.Hekker",
           "yardsAllowed": 397,
-          "pointsAllowed": 31
+          "pointsAllowed": 31,
+          "isAway": false
         },
         "6": {
           "opp": "14",
@@ -52435,7 +52916,8 @@
           ],
           "punter": "J.Hekker",
           "yardsAllowed": 360,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": true
         },
         "7": {
           "opp": "27",
@@ -52484,7 +52966,8 @@
           ],
           "punter": "J.Hekker",
           "yardsAllowed": 322,
-          "pointsAllowed": 3
+          "pointsAllowed": 3,
+          "isAway": false
         },
         "8": {
           "opp": "1",
@@ -52523,7 +53006,8 @@
           ],
           "punter": "J.Hekker",
           "yardsAllowed": 406,
-          "pointsAllowed": 31
+          "pointsAllowed": 31,
+          "isAway": true
         },
         "9": {
           "opp": "4",
@@ -52565,7 +53049,8 @@
           ],
           "punter": "J.Hekker",
           "yardsAllowed": 464,
-          "pointsAllowed": 42
+          "pointsAllowed": 42,
+          "isAway": true
         },
         "10": {
           "opp": "1",
@@ -52612,7 +53097,8 @@
           ],
           "punter": "J.Hekker",
           "yardsAllowed": 291,
-          "pointsAllowed": 15
+          "pointsAllowed": 15,
+          "isAway": false
         },
         "11": {
           "opp": "33",
@@ -52660,7 +53146,8 @@
           ],
           "punter": "J.Hekker",
           "yardsAllowed": 308,
-          "pointsAllowed": 13
+          "pointsAllowed": 13,
+          "isAway": true
         },
         "12": {
           "opp": "7",
@@ -52707,7 +53194,8 @@
           ],
           "punter": "J.Hekker",
           "yardsAllowed": 246,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": false
         },
         "14": {
           "opp": "26",
@@ -52741,7 +53229,8 @@
           ],
           "punter": "J.Hekker",
           "yardsAllowed": 287,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": true
         },
         "15": {
           "opp": "23",
@@ -52780,7 +53269,8 @@
           ],
           "punter": "J.Hekker",
           "yardsAllowed": 325,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": false
         },
         "16": {
           "opp": "8",
@@ -52818,7 +53308,8 @@
           ],
           "punter": "J.Hekker",
           "yardsAllowed": 381,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": false
         },
         "17": {
           "opp": "27",
@@ -52865,7 +53356,8 @@
           ],
           "punter": "J.Hekker",
           "yardsAllowed": 478,
-          "pointsAllowed": 30
+          "pointsAllowed": 30,
+          "isAway": true
         },
         "18": {
           "opp": "18",
@@ -52913,7 +53405,8 @@
           ],
           "punter": "J.Hekker",
           "yardsAllowed": 304,
-          "pointsAllowed": 7
+          "pointsAllowed": 7,
+          "isAway": true
         }
       }
     },
@@ -52958,7 +53451,8 @@
           ],
           "punter": "L.Cooke",
           "yardsAllowed": 390,
-          "pointsAllowed": 28
+          "pointsAllowed": 28,
+          "isAway": true
         },
         "2": {
           "opp": "11",
@@ -53002,7 +53496,8 @@
           ],
           "punter": "L.Cooke",
           "yardsAllowed": 218,
-          "pointsAllowed": 0
+          "pointsAllowed": 0,
+          "isAway": false
         },
         "3": {
           "opp": "24",
@@ -53032,7 +53527,8 @@
           ],
           "punter": "L.Cooke",
           "yardsAllowed": 312,
-          "pointsAllowed": 10
+          "pointsAllowed": 10,
+          "isAway": true
         },
         "4": {
           "opp": "21",
@@ -53066,7 +53562,8 @@
           ],
           "punter": "L.Cooke",
           "yardsAllowed": 401,
-          "pointsAllowed": 29
+          "pointsAllowed": 29,
+          "isAway": true
         },
         "5": {
           "opp": "34",
@@ -53102,7 +53599,8 @@
           ],
           "punter": "L.Cooke",
           "yardsAllowed": 248,
-          "pointsAllowed": 13
+          "pointsAllowed": 13,
+          "isAway": false
         },
         "6": {
           "opp": "11",
@@ -53135,7 +53633,8 @@
           ],
           "punter": "L.Cooke",
           "yardsAllowed": 434,
-          "pointsAllowed": 34
+          "pointsAllowed": 34,
+          "isAway": true
         },
         "7": {
           "opp": "19",
@@ -53165,7 +53664,8 @@
           ],
           "punter": "L.Cooke",
           "yardsAllowed": 436,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": false
         },
         "8": {
           "opp": "7",
@@ -53213,7 +53713,8 @@
           ],
           "punter": "L.Cooke",
           "yardsAllowed": 331,
-          "pointsAllowed": 21
+          "pointsAllowed": 21,
+          "isAway": false
         },
         "9": {
           "opp": "13",
@@ -53250,7 +53751,8 @@
           ],
           "punter": "L.Cooke",
           "yardsAllowed": 321,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": false
         },
         "10": {
           "opp": "12",
@@ -53298,7 +53800,8 @@
           ],
           "punter": "L.Cooke",
           "yardsAllowed": 486,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": true
         },
         "12": {
           "opp": "33",
@@ -53334,7 +53837,8 @@
           ],
           "punter": "L.Cooke",
           "yardsAllowed": 415,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": false
         },
         "13": {
           "opp": "8",
@@ -53369,7 +53873,8 @@
           ],
           "punter": "L.Cooke",
           "yardsAllowed": 437,
-          "pointsAllowed": 40
+          "pointsAllowed": 40,
+          "isAway": true
         },
         "14": {
           "opp": "10",
@@ -53408,7 +53913,8 @@
           ],
           "punter": "L.Cooke",
           "yardsAllowed": 364,
-          "pointsAllowed": 22
+          "pointsAllowed": 22,
+          "isAway": true
         },
         "15": {
           "opp": "6",
@@ -53447,7 +53953,8 @@
           ],
           "punter": "L.Cooke",
           "yardsAllowed": 397,
-          "pointsAllowed": 34
+          "pointsAllowed": 34,
+          "isAway": false
         },
         "16": {
           "opp": "20",
@@ -53481,7 +53988,8 @@
           ],
           "punter": "L.Cooke",
           "yardsAllowed": 227,
-          "pointsAllowed": 3
+          "pointsAllowed": 3,
+          "isAway": true
         },
         "17": {
           "opp": "34",
@@ -53526,7 +54034,8 @@
           ],
           "punter": "L.Cooke",
           "yardsAllowed": 277,
-          "pointsAllowed": 3
+          "pointsAllowed": 3,
+          "isAway": true
         },
         "18": {
           "opp": "10",
@@ -53565,7 +54074,8 @@
           ],
           "punter": "L.Cooke",
           "yardsAllowed": 312,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": false
         }
       }
     },
@@ -53622,7 +54132,8 @@
           ],
           "punter": "J.Stout",
           "yardsAllowed": 380,
-          "pointsAllowed": 9
+          "pointsAllowed": 9,
+          "isAway": true
         },
         "2": {
           "opp": "15",
@@ -53654,7 +54165,8 @@
           ],
           "punter": "J.Stout",
           "yardsAllowed": 547,
-          "pointsAllowed": 42
+          "pointsAllowed": 42,
+          "isAway": false
         },
         "3": {
           "opp": "17",
@@ -53691,7 +54203,8 @@
           ],
           "punter": "J.Stout",
           "yardsAllowed": 447,
-          "pointsAllowed": 26
+          "pointsAllowed": 26,
+          "isAway": true
         },
         "4": {
           "opp": "2",
@@ -53727,7 +54240,8 @@
           ],
           "punter": "J.Stout",
           "yardsAllowed": 326,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": false
         },
         "5": {
           "opp": "4",
@@ -53761,7 +54275,8 @@
           ],
           "punter": "J.Stout",
           "yardsAllowed": 291,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": false
         },
         "6": {
           "opp": "19",
@@ -53792,7 +54307,8 @@
           ],
           "punter": "J.Stout",
           "yardsAllowed": 238,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": true
         },
         "7": {
           "opp": "5",
@@ -53829,7 +54345,8 @@
           ],
           "punter": "J.Stout",
           "yardsAllowed": 336,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": false
         },
         "8": {
           "opp": "27",
@@ -53871,7 +54388,8 @@
           ],
           "punter": "J.Stout",
           "yardsAllowed": 349,
-          "pointsAllowed": 22
+          "pointsAllowed": 22,
+          "isAway": true
         },
         "9": {
           "opp": "18",
@@ -53910,7 +54428,8 @@
           ],
           "punter": "J.Stout",
           "yardsAllowed": 243,
-          "pointsAllowed": 13
+          "pointsAllowed": 13,
+          "isAway": true
         },
         "11": {
           "opp": "29",
@@ -53964,7 +54483,8 @@
           ],
           "punter": "J.Stout",
           "yardsAllowed": 205,
-          "pointsAllowed": 3
+          "pointsAllowed": 3,
+          "isAway": false
         },
         "12": {
           "opp": "30",
@@ -53995,7 +54515,8 @@
           ],
           "punter": "J.Stout",
           "yardsAllowed": 332,
-          "pointsAllowed": 28
+          "pointsAllowed": 28,
+          "isAway": true
         },
         "13": {
           "opp": "7",
@@ -54043,7 +54564,8 @@
           ],
           "punter": "J.Stout",
           "yardsAllowed": 272,
-          "pointsAllowed": 9
+          "pointsAllowed": 9,
+          "isAway": false
         },
         "14": {
           "opp": "23",
@@ -54080,7 +54602,8 @@
           ],
           "punter": "J.Stout",
           "yardsAllowed": 329,
-          "pointsAllowed": 14
+          "pointsAllowed": 14,
+          "isAway": true
         },
         "15": {
           "opp": "5",
@@ -54106,7 +54629,8 @@
           ],
           "punter": "J.Stout",
           "yardsAllowed": 283,
-          "pointsAllowed": 13
+          "pointsAllowed": 13,
+          "isAway": true
         },
         "16": {
           "opp": "1",
@@ -54142,7 +54666,8 @@
           ],
           "punter": "J.Stout",
           "yardsAllowed": 327,
-          "pointsAllowed": 9
+          "pointsAllowed": 9,
+          "isAway": false
         },
         "17": {
           "opp": "23",
@@ -54180,7 +54705,8 @@
           ],
           "punter": "J.Stout",
           "yardsAllowed": 351,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": false
         },
         "18": {
           "opp": "4",
@@ -54222,7 +54748,8 @@
           ],
           "punter": "J.Stout",
           "yardsAllowed": 257,
-          "pointsAllowed": 21
+          "pointsAllowed": 21,
+          "isAway": true
         }
       }
     },
@@ -54285,7 +54812,8 @@
           ],
           "punter": "C.Johnston,M.Haack",
           "yardsAllowed": 517,
-          "pointsAllowed": 20
+          "pointsAllowed": 20,
+          "isAway": false
         },
         "2": {
           "opp": "7",
@@ -54331,7 +54859,8 @@
           ],
           "punter": "C.Johnston",
           "yardsAllowed": 350,
-          "pointsAllowed": 16
+          "pointsAllowed": 16,
+          "isAway": true
         },
         "3": {
           "opp": "3",
@@ -54376,7 +54905,8 @@
           ],
           "punter": "C.Johnston",
           "yardsAllowed": 363,
-          "pointsAllowed": 23
+          "pointsAllowed": 23,
+          "isAway": true
         },
         "4": {
           "opp": "24",
@@ -54413,7 +54943,8 @@
           ],
           "punter": "C.Johnston",
           "yardsAllowed": 419,
-          "pointsAllowed": 34
+          "pointsAllowed": 34,
+          "isAway": false
         },
         "5": {
           "opp": "30",
@@ -54461,7 +54992,8 @@
           ],
           "punter": "C.Johnston",
           "yardsAllowed": 422,
-          "pointsAllowed": 6
+          "pointsAllowed": 6,
+          "isAway": true
         },
         "7": {
           "opp": "13",
@@ -54488,7 +55020,8 @@
           ],
           "punter": "C.Johnston",
           "yardsAllowed": 400,
-          "pointsAllowed": 32
+          "pointsAllowed": 32,
+          "isAway": true
         },
         "8": {
           "opp": "10",
@@ -54545,7 +55078,8 @@
           ],
           "punter": "C.Johnston",
           "yardsAllowed": 354,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": false
         },
         "9": {
           "opp": "21",
@@ -54583,7 +55117,8 @@
           ],
           "punter": "C.Johnston",
           "yardsAllowed": 360,
-          "pointsAllowed": 29
+          "pointsAllowed": 29,
+          "isAway": false
         },
         "10": {
           "opp": "19",
@@ -54629,7 +55164,8 @@
           ],
           "punter": "C.Johnston",
           "yardsAllowed": 367,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": true
         },
         "11": {
           "opp": "28",
@@ -54677,7 +55213,8 @@
           ],
           "punter": "C.Johnston",
           "yardsAllowed": 344,
-          "pointsAllowed": 17
+          "pointsAllowed": 17,
+          "isAway": false
         },
         "12": {
           "opp": "15",
@@ -54731,7 +55268,8 @@
           ],
           "punter": "C.Johnston",
           "yardsAllowed": 339,
-          "pointsAllowed": 24
+          "pointsAllowed": 24,
+          "isAway": true
         },
         "13": {
           "opp": "5",
@@ -54783,7 +55321,8 @@
           ],
           "punter": "C.Johnston",
           "yardsAllowed": 304,
-          "pointsAllowed": 15
+          "pointsAllowed": 15,
+          "isAway": false
         },
         "14": {
           "opp": "6",
@@ -54827,7 +55366,8 @@
           ],
           "punter": "C.Johnston",
           "yardsAllowed": 404,
-          "pointsAllowed": 27
+          "pointsAllowed": 27,
+          "isAway": true
         },
         "15": {
           "opp": "12",
@@ -54872,7 +55412,8 @@
           ],
           "punter": "C.Johnston",
           "yardsAllowed": 502,
-          "pointsAllowed": 30
+          "pointsAllowed": 30,
+          "isAway": false
         },
         "16": {
           "opp": "10",
@@ -54918,7 +55459,8 @@
           ],
           "punter": "C.Johnston",
           "yardsAllowed": 272,
-          "pointsAllowed": 14
+          "pointsAllowed": 14,
+          "isAway": true
         },
         "17": {
           "opp": "30",
@@ -54968,7 +55510,8 @@
           ],
           "punter": "C.Johnston",
           "yardsAllowed": 337,
-          "pointsAllowed": 25
+          "pointsAllowed": 25,
+          "isAway": false
         },
         "18": {
           "opp": "11",
@@ -55008,7 +55551,8 @@
           ],
           "punter": "C.Johnston",
           "yardsAllowed": 398,
-          "pointsAllowed": 25
+          "pointsAllowed": 25,
+          "isAway": true
         }
       }
     }

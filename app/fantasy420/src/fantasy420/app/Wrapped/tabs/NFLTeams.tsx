@@ -16,6 +16,7 @@ type RankedPlayer = {
 type ScheduleWeek = {
   week: number;
   opponent: string;
+  isAway: boolean;
 };
 
 export type NFLTeamCard = {
@@ -70,12 +71,14 @@ export function getNFLTeamCards(
       schedule: Array.from({ length: regularSeasonWeeks }, (_, index) => {
         const week = index + 1;
         const game = team.nflGamesByScoringPeriod[String(week)];
+        const opponent = wrapped.nflTeams[game?.opp ?? ""]?.name;
         return {
           week,
-          opponent:
-            week === team.byeWeek
-              ? "BYE"
-              : wrapped.nflTeams[game?.opp ?? ""]?.name ?? "—",
+          opponent: week === team.byeWeek ? "BYE" : opponent ?? "—",
+          isAway:
+            week !== team.byeWeek && opponent !== undefined
+              ? (game?.isAway ?? false)
+              : false,
         };
       }),
     }));
@@ -108,7 +111,9 @@ export function NFLTeamsForSeason({
             className="nfl-team-bubble"
             style={{ ...bubbleStyle, display: "block", margin: 0 }}
           >
-            <h2>/{team.name}</h2>
+            <h2>
+              <span className="nfl-team-name">/{team.name}</span>
+            </h2>
             <div
               className="nfl-team-depth-chart"
               role="list"
@@ -124,7 +129,10 @@ export function NFLTeamsForSeason({
                         role="listitem"
                         className="nfl-team-player"
                       >
-                        {player.name} — {player.adp} ADP · {player.position}
+                        <span className="nfl-team-player-name">
+                          {player.name}
+                        </span>{" "}
+                        — {player.adp} ADP · {player.position}
                         {player.positionRank}
                       </div>
                     ))}
@@ -137,7 +145,7 @@ export function NFLTeamsForSeason({
               role="list"
               aria-label={`${team.name} schedule`}
             >
-              {team.schedule.map(({ week, opponent }) => (
+              {team.schedule.map(({ week, opponent, isAway }) => (
                 <li
                   key={week}
                   role="listitem"
@@ -146,7 +154,9 @@ export function NFLTeamsForSeason({
                   }
                 >
                   <span className="nfl-team-schedule-week">W{week}</span>
-                  <span className="nfl-team-schedule-opponent">{opponent}</span>
+                  <span className="nfl-team-schedule-opponent">
+                    {isAway ? `@ ${opponent}` : opponent}
+                  </span>
                 </li>
               ))}
             </ol>

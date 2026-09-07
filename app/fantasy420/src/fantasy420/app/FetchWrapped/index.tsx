@@ -32,6 +32,7 @@ export type NFLTeamType = {
     [weekNum: string]:
       | {
           opp?: string;
+          isAway?: boolean;
           fieldGoals: (number | null)[];
           pointsAllowed: number;
           yardsAllowed: number;
@@ -371,6 +372,8 @@ export function getWrapped(providedYear: string): Promise<WrappedType> {
                                   key: scoringPeriod,
                                   value: {
                                     opp: opponentId,
+                                    isAway:
+                                      game.awayProTeamId === Number(team.id),
                                     drives:
                                       gamesByGameId[gameId]?.drives[team.id],
                                     fieldGoals: (

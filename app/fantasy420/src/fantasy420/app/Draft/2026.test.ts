@@ -110,9 +110,11 @@ test("contains a complete symmetric NFL schedule in the existing game map", () =
 
     Object.entries(team.nflGamesByScoringPeriod).forEach(([week, game]) => {
       expect(game?.opp).toBeTruthy();
-      expect(
-        wrapped2026.nflTeams[game!.opp!].nflGamesByScoringPeriod[week]?.opp
-      ).toBe(team.id);
+      expect(game?.isAway).toEqual(expect.any(Boolean));
+      const opponentGame =
+        wrapped2026.nflTeams[game!.opp!].nflGamesByScoringPeriod[week];
+      expect(opponentGame?.opp).toBe(team.id);
+      expect(opponentGame?.isAway).toBe(!game?.isAway);
     });
   });
 });

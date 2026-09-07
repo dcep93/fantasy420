@@ -55,7 +55,8 @@ const wrapped: WrappedType = {
       name: "Bills",
       byeWeek: 2,
       nflGamesByScoringPeriod: {
-        "1": { ...emptyGame, opp: "20" },
+        "1": { ...emptyGame, opp: "20", isAway: true },
+        "3": { ...emptyGame, opp: "missing", isAway: true },
       },
     },
     "20": {
@@ -63,7 +64,7 @@ const wrapped: WrappedType = {
       name: "Jets",
       byeWeek: 2,
       nflGamesByScoringPeriod: {
-        "1": { ...emptyGame, opp: "2" },
+        "1": { ...emptyGame, opp: "2", isAway: false },
       },
     },
   },
@@ -81,8 +82,16 @@ test("renders slash-searchable team bubbles with ranked depth charts and schedul
 
   const bills = screen.getByTestId("nfl-team-2");
   expect(within(bills).getByRole("heading", { name: "/Bills" })).toBeVisible();
-  expect(within(bills).getByText("Josh Allen — 1 ADP · QB1")).toBeVisible();
-  expect(within(bills).getByText("Backup Bill — 3 ADP · QB2")).toBeVisible();
+  expect(within(bills).getByText("/Bills")).toHaveClass("nfl-team-name");
+  expect(within(bills).getByText("Josh Allen")).toHaveClass(
+    "nfl-team-player-name"
+  );
+  expect(within(bills).getByText("Josh Allen").parentElement).toHaveTextContent(
+    "Josh Allen — 1 ADP · QB1"
+  );
+  expect(within(bills).getByText("Backup Bill").parentElement).toHaveTextContent(
+    "Backup Bill — 3 ADP · QB2"
+  );
 
   const players = within(bills).getByRole("list", {
     name: "Bills depth chart",
@@ -95,10 +104,21 @@ test("renders slash-searchable team bubbles with ranked depth charts and schedul
   const weeks = within(schedule).getAllByRole("listitem");
   expect(weeks).toHaveLength(18);
   expect(within(weeks[0]).getByText("W1")).toBeVisible();
-  expect(within(weeks[0]).getByText("Jets")).toBeVisible();
+  expect(within(weeks[0]).getByText("@ Jets")).toHaveClass(
+    "nfl-team-schedule-opponent"
+  );
   expect(within(weeks[1]).getByText("W2")).toBeVisible();
   expect(within(weeks[1]).getByText("BYE")).toBeVisible();
   expect(weeks[1]).toHaveClass("nfl-team-schedule-bye");
+  expect(within(weeks[2]).getByText("—")).toBeVisible();
+  expect(within(weeks[2]).queryByText("@ —")).not.toBeInTheDocument();
+
+  const jets = screen.getByTestId("nfl-team-20");
+  const jetsSchedule = within(jets).getByRole("list", {
+    name: "Jets schedule",
+  });
+  expect(within(jetsSchedule).getByText("Bills")).toBeVisible();
+  expect(within(jetsSchedule).queryByText("@ Bills")).not.toBeInTheDocument();
   expect(screen.queryByText("/FA")).not.toBeInTheDocument();
 });
 
