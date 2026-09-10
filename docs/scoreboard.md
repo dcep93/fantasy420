@@ -1,0 +1,106 @@
+# Fantasy420 scoreboard
+
+Open https://fantasy420.web.app/scoreboard in Chrome with Fantasy420 extension
+0.0.3 or later installed. Reload an existing unpacked extension at
+`chrome://extensions`, then reload your ESPN league tab and the scoreboard.
+Keep a signed-in ESPN Fantasy football league open in another tab.
+
+The extension picks an active/recent ESPN league tab. Pin a specific league and
+season with `/scoreboard?leagueId=123&year=2026`. Override the mode with
+`&mode=head-to-head` or `&mode=guillotine`; league 367176096 and native ESPN
+Knockout leagues default to Guillotine.
+The mode selector recalculates the current snapshot without fetching.
+
+One initial fetch occurs per mount, including React StrictMode. Refresh requests
+are coalesced while one is running. There is no automatic polling. “Fetches”
+counts ESPN requests acknowledged as started by the extension during this page
+load, including network/HTTP failures. Missing extension/tab failures count zero.
+The count updates when a request completes; a lost extension connection cannot
+report whether an in-flight request started. Normal fetch failures retain the
+last snapshot with a visible warning; a missing extension clears it.
+
+## Iframe refresh API
+
+```html
+<iframe id="fantasy-scoreboard"
+  src="https://fantasy420.web.app/scoreboard?leagueId=123&mode=head-to-head"
+  title="Fantasy football scoreboard"></iframe>
+<script>
+  const frame = document.getElementById("fantasy-scoreboard");
+  const scoreboardOrigin = "https://fantasy420.web.app";
+  window.addEventListener("message", (event) => {
+    if (event.origin !== scoreboardOrigin || event.source !== frame.contentWindow) return;
+    if (event.data?.type === "fantasy420:scoreboard:ready") {
+      // The page starts its initial fetch automatically. The refresh listener is ready.
+    }
+    if (event.data?.type === "fantasy420:scoreboard:refreshed") {
+      console.log(event.data.requestId, event.data.ok, event.data.fetchCount);
+    }
+  });
+  function refreshScoreboard() {
+    frame.contentWindow.postMessage({
+      type: "fantasy420:scoreboard:refresh",
+      requestId: crypto.randomUUID(),
+    }, scoreboardOrigin);
+  }
+</script>
+```
+
+The scoreboard accepts messages only from its immediate parent. It responds to
+the requesting origin with `{type, requestId, ok, fetchCount}` after the fetch
+and state update. Responses contain no league data. `requestId` is optional and
+may be a string or number. The ready notification uses the referrer origin when
+available, otherwise `*`. Opaque parent origins also require `*` for the reply.
+Avoid an opaque-origin sandbox on the scoreboard iframe: the extension needs
+to recognize the Fantasy420 origin. Multisport integration is a separate step.
+
+## Data and formulas
+
+The website makes no ESPN or proxy requests. It asks the extension to locate an
+ESPN tab; the content script fetches the original `lm-api-reads.fantasy.espn.com`
+league endpoint with ESPN credentials, no cache, and views `mMatchup`,
+`mMatchupScore`, `mRoster`, `mScoreboard`, `mSettings`, `mStatus`, `mTeam`,
+`modular`, and `mNav`. The endpoint is constructed inside the extension rather
+than accepted from the webpage. Requests time out and surface an actionable error.
+
+Use `totalPointsLive` for actual scores and `totalProjectedPointsLive` for
+projected final scores. Select `status.currentMatchupPeriod`, falling back to
+`scoringPeriodId`. Preserve zero scores and byes. Missing values display as
+unavailable, never infinity or an invented projection.
+
+Both the original home/away schedule and ESPN's native 2026 Knockout `teams`
+array are supported. Native Knockout teams eliminated in earlier matchup
+periods are excluded. These leagues have no head-to-head pairings, so that mode
+explains how to switch to Guillotine instead of inventing matchups.
+
+For each team, let `r = max(0, projected - actual)` and `u = r + min(r, 5)`.
+Head-to-head win probability for A is
+`Φ((projectedA - projectedB) / (8 * sqrt((uA + uB) / 12)))`.
+Zero uncertainty yields 100%, 0%, or 50% for a tie. Teams sort by projected final
+score; matchups sort by favorite probability. The clamp prevents invalid square
+roots when a live projection falls below the actual score.
+
+Guillotine uses independent normal final scores with means equal to projected
+final scores and `sigma = max(0.01, 8 * sqrt(u / 12))`. The probability of team i
+finishing last is the integral of its density times every other team's survival
+probability. The new deterministic quadrature implementation handles narrow
+0.01-sigma distributions and normalizes numerical integration error. It is not
+the recovered original `guillotine.ts`, which remains unavailable.
+
+As in NFLStream, Guillotine excludes nonpositive projections, sorts by increasing
+last-place risk, and enters THUNDERDOME when at most three teams exceed 1% risk,
+showing only those teams. Team IDs are deduplicated. If a competitor's score or
+projection is missing, all Guillotine probabilities are withheld.
+
+Formula provenance: the complete December 27, 2025 `Scoreboard.tsx` recovered
+from [the NFLStream web Codex task](https://chatgpt.com/codex/cloud/tasks/task_e_695054588e8c833197647e5b3e4ce2f8).
+The standard-normal approximation and constants match that source. These are
+the old custom model's estimates, not ESPN's own win probabilities.
+
+## Validation
+
+From `app/fantasy420`: `npm test` and `npm run build`.
+From the repository root: `node --test extension/*.test.cjs`.
+Tests cover probability reference values and numerical invariants, ESPN mapping,
+both display modes, extension gating, fetch accounting, coalescing, StrictMode,
+parent-message origin/source checks, and the real extension bridge scripts.

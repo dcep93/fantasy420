@@ -34,7 +34,7 @@ function waitForExtensionId(): Promise<string> {
   });
 }
 
-function extensionHelper(payload: any): Promise<any> {
+export function extensionHelper(payload: any): Promise<any> {
   if (!window.chrome?.runtime) {
     return Promise.reject("no chrome runtime");
   }

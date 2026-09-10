@@ -5,6 +5,7 @@ import DraftAccessGate from "./DraftAccessGate";
 import FetchWrapped from "./FetchWrapped";
 import IdealDraft from "./IdealDraft";
 import Wrapped from "./Wrapped";
+import Scoreboard from "./Scoreboard";
 
 const pages = {
   FetchWrapped,
@@ -19,6 +20,7 @@ export default function index() {
     >
       <Routes>
         <Route path="/" element={<Wrapped />} />
+        <Route path="/scoreboard" element={<Scoreboard />} />
         <Route
           path="/Draft/*"
           element={

@@ -1,8 +1,12 @@
 {
   "name": "Fantasy420",
   "description": "Tools for fantasy football",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "content_scripts": [
+    {
+      "matches": ["https://fantasy.espn.com/football/*"],
+      "js": ["scoreboard_content.js"]
+    },
     {
       "matches": [
         "<all_urls>"
@@ -42,6 +46,7 @@
     "service_worker": "background.js"
   },
   "host_permissions": [
+    "https://fantasy.espn.com/*",
     "https://sportsbook-us-ny.draftkings.com/*",
     "https://lm-api-reads.fantasy.espn.com/*"
   ],

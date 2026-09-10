@@ -2,6 +2,7 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 
 let listener;
+global.importScripts = () => {}; // The scoreboard listener is covered separately.
 global.chrome = {
   runtime: {
     onMessageExternal: {

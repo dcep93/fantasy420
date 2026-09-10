@@ -1,4 +1,6 @@
-console.log("background 0.0.2");
+importScripts("scoreboard.js");
+
+console.log("background 0.0.3");
 
 const fetch_cache = {};
 
