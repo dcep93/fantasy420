@@ -42,6 +42,18 @@ export function createScoreboardController(options: Options, transport: Transpor
         if (response.error) throw new Error(String(response.error));
         const snapshot = parseScoreboard(response.data, response.year, response.fetchedAt);
         update({ snapshot });
+        for (const team of new Map(snapshot.matchups.flat().map(team => [team.id, team])).values()) {
+          const lineup = team.projectedLineup;
+          if (!lineup) continue;
+          const context = { leagueId: snapshot.leagueId, teamId: team.id, week: snapshot.week };
+          if (lineup.warning) {
+            console.warn("[Fantasy420] Projected roster unchanged", { ...context, reason: lineup.warning });
+          } else {
+            console.log("[Fantasy420] Projected roster", lineup.players.map(player => `${player.slot}: ${player.name}`).join("; "), {
+              ...context, projected: team.projected, players: lineup.players, emptySlots: lineup.emptySlots,
+            });
+          }
+        }
         return { ok: true, fetchCount: state.fetchCount };
       } catch (error) {
         update({ error: error instanceof Error ? error.message : "Could not load the scoreboard. Try again." });

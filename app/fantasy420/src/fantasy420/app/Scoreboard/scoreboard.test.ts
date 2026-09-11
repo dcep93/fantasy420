@@ -139,3 +139,135 @@ describe("refresh lifecycle", () => {
     } finally { vi.useRealTimers(); }
   });
 });
+
+function optimizationLeague(knockout = false) {
+  const teamId = knockout ? 1 : 6;
+  const entry = (id: number, slot: number, projection: number, locked = false) => ({
+    playerId: id, lineupSlotId: slot, playerPoolEntry: { lineupLocked: locked, appliedStatTotal: locked ? 4 : 0,
+      player: { fullName: `Player ${id}`, eligibleSlots: [2, 23, 20, 21], stats: [
+        { seasonId: 2026, scoringPeriodId: 1, statSourceId: 1, statSplitTypeId: 1, appliedTotal: projection },
+      ] } },
+  });
+  const side = { teamId, totalPointsLive: 4, totalProjectedPointsLive: 14,
+    rosterForCurrentScoringPeriod: { entries: [entry(101, 23, 15, true), entry(102, 2, 10), entry(103, 20, 20)] } };
+  const opponent = { teamId: 2, totalPointsLive: 0, totalProjectedPointsLive: 25 };
+  return {
+    id: knockout ? 367176096 : 203836968, scoringPeriodId: 1, status: { currentMatchupPeriod: 1 },
+    settings: { name: 'Optimized league', rosterSettings: { lineupSlotCounts: { 2: 1, 23: 1, 20: 5, 21: 1 } } },
+    teams: [{ id: teamId, name: 'Target' }, { id: 2, name: 'Opponent' }],
+    schedule: [knockout ? { matchupPeriodId: 1, teams: [side, opponent] }
+      : { matchupPeriodId: 1, home: side, away: opponent }],
+  };
+}
+
+describe('optimized projected-roster integration', () => {
+  afterEach(() => { vi.restoreAllMocks(); });
+
+  it('reproduces the observed Week 1 team 6 lineup while keeping completed starters and Deebo locked', () => {
+    // Minimal data from the authenticated ESPN scoreboard on September 11, 2026.
+    const rows: [number, string, number, number[], number, boolean, number][] = [
+      [4429795, 'Jahmyr Gibbs', 20, [2, 23, 7], 22.43170392, false, 0],
+      [4426502, 'Drake London', 20, [4, 23, 7], 13.82377896, false, 0],
+      [4040715, 'Jalen Hurts', 0, [0, 7], 21.06553192, false, 0],
+      [4870808, 'Jeremiyah Love', 20, [2, 23, 7], 13.86436638, false, 0],
+      [2577417, 'Dak Prescott', 20, [0, 7], 16.74869081, false, 0],
+      [4239993, 'Tee Higgins', 4, [4, 23, 7], 12.96375007, false, 0],
+      [16800, 'Davante Adams', 23, [4, 23, 7], 13.82096676, true, 5.6],
+      [16737, 'Mike Evans', 4, [4, 23, 7], 10.64994671, true, 16.9],
+      [4038815, 'Rico Dowdle', 2, [2, 23, 7], 12.49457602, false, 0],
+      [4035687, 'Michael Pittman Jr.', 23, [4, 23, 7], 12.31315342, false, 0],
+      [3040151, 'George Kittle', 6, [6, 23, 7], 8.37113432, true, 3.2],
+      [4371733, 'Kenny Gainwell', 7, [2, 23, 7], 12.02627838, false, 0],
+      [4047365, 'Josh Jacobs', 2, [2, 23, 7], 0, false, 0],
+      [-16023, 'Steelers D/ST', 16, [16], 7.19670025, false, 0],
+      [2971573, "Ka'imi Fairbairn", 17, [17], 9.77014412, false, 0],
+      [3126486, 'Deebo Samuel Sr.', 20, [4, 23, 7], 8.91619953, true, 18],
+    ];
+    const data: any = optimizationLeague();
+    data.settings.rosterSettings.lineupSlotCounts = { 0: 1, 2: 2, 4: 2, 6: 1, 7: 1, 16: 1, 17: 1, 20: 5, 21: 1, 23: 2 };
+    Object.assign(data.schedule[0].home, {
+      totalPointsLive: 25.7, totalProjectedPointsLive: 113.53013418,
+      rosterForCurrentScoringPeriod: { entries: rows.map(([playerId, fullName, lineupSlotId, eligibleSlots, projection, lineupLocked, appliedStatTotal]) => ({
+        playerId, lineupSlotId, playerPoolEntry: { lineupLocked, appliedStatTotal,
+          player: { fullName, eligibleSlots: [...eligibleSlots, 20, 21], stats: [
+            { seasonId: 2026, scoringPeriodId: 1, statSourceId: 1, statSplitTypeId: 1, appliedTotal: projection },
+          ] } },
+      })) },
+    });
+    const team = parseScoreboard(data, 2026, 1000).matchups[0][0];
+    expect(team.projected).toBeCloseTo(143.56466643, 8);
+    expect(team.score).toBe(25.7);
+    const starters = team.projectedLineup!.players;
+    expect(starters.map(player => player.name).sort()).toEqual([
+      'Jahmyr Gibbs', 'Drake London', 'Jalen Hurts', 'Jeremiyah Love', 'Dak Prescott',
+      'Tee Higgins', 'Davante Adams', 'Mike Evans', 'George Kittle', 'Steelers D/ST', "Ka'imi Fairbairn",
+    ].sort());
+    expect(starters.find(player => player.name === 'Davante Adams')).toMatchObject({ slotId: 23, locked: true });
+    expect(starters.find(player => player.name === 'Mike Evans')).toMatchObject({ slotId: 4, locked: true });
+    expect(starters.find(player => player.name === 'George Kittle')).toMatchObject({ slotId: 6, locked: true });
+    expect(starters.filter(player => [0, 7].includes(player.slotId)).map(player => player.name).sort())
+      .toEqual(['Dak Prescott', 'Jalen Hurts']);
+    expect(starters.find(player => player.name === 'Jalen Hurts')).toMatchObject({ slotId: 0 });
+    expect(starters.find(player => player.name === 'Dak Prescott')).toMatchObject({ slotId: 7 });
+    expect(starters.find(player => player.name === 'Drake London')).toMatchObject({ slotId: 4 });
+  });
+
+  it.each([false, true])('corrects only the target and feeds the projected total into probabilities (knockout=%s)', knockout => {
+    const data = optimizationLeague(knockout);
+    const snapshot = parseScoreboard(data, 2026, 1000);
+    const [target, opponent] = snapshot.matchups[0];
+    expect(target.score).toBe(4);
+    expect(target.projected).toBe(24);
+    expect(target.projectedLineup?.players.map(player => player.name).sort()).toEqual(['Player 101', 'Player 103']);
+    expect(opponent).toEqual({ id: 2, name: 'Opponent', score: 0, projected: 25 });
+    if (knockout) {
+      const targetRisk = guillotine(snapshot).teams.find(row => row.team.id === 1)!.probability;
+      expect(targetRisk).toBeCloseTo(probNormalMinAll([24, 25], [guillotineSigma(4, 24), guillotineSigma(0, 25)])[0], 8);
+    } else {
+      expect(headToHead(snapshot)[0].probability).toBeCloseTo(headToHeadProbability(opponent as any, target as any), 8);
+    }
+  });
+
+  it('publishes the updated snapshot before logging each selected player once per coalesced fetch', async () => {
+    const data = optimizationLeague();
+    data.schedule.push(data.schedule[0]);
+    const controller = createScoreboardController({}, vi.fn().mockResolvedValue({ data, year: 2026, fetchedAt: 1000, fetched: 1 }));
+    const log = vi.spyOn(console, 'log').mockImplementation(() => {
+      expect(controller.getSnapshot().snapshot!.matchups[0][0].projected).toBe(24);
+    });
+    const a = controller.refresh(), b = controller.refresh();
+    expect(a).toBe(b);
+    await a;
+    expect(log).toHaveBeenCalledTimes(1);
+    expect(log).toHaveBeenCalledWith('[Fantasy420] Projected roster', expect.stringContaining('RB: Player 103'), expect.objectContaining({
+      leagueId: '203836968', teamId: 6, week: 1, projected: 24,
+      players: expect.arrayContaining([
+        expect.objectContaining({ name: 'Player 101', slotId: 23, locked: true }),
+        expect.objectContaining({ name: 'Player 103', slotId: 2, locked: false }),
+      ]),
+    }));
+    await controller.refresh();
+    expect(log).toHaveBeenCalledTimes(2);
+  });
+
+  it('retains ESPN projection and explains missing optimization metadata without claiming a selected lineup', async () => {
+    const data: any = optimizationLeague();
+    delete data.settings.rosterSettings;
+    const log = vi.spyOn(console, 'log').mockImplementation(() => {});
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const controller = createScoreboardController({}, vi.fn().mockResolvedValue({ data, year: 2026, fetchedAt: 1000, fetched: 1 }));
+    expect((await controller.refresh()).ok).toBe(true);
+    expect(controller.getSnapshot().snapshot!.matchups[0][0].projected).toBe(14);
+    expect(log).not.toHaveBeenCalled();
+    expect(warn).toHaveBeenCalledWith('[Fantasy420] Projected roster unchanged', expect.objectContaining({ teamId: 6, reason: expect.any(String) }));
+  });
+
+  it('does not log selected players for untargeted leagues or failed fetches', async () => {
+    const log = vi.spyOn(console, 'log').mockImplementation(() => {});
+    const controller = createScoreboardController({}, vi.fn().mockResolvedValueOnce(response())
+      .mockResolvedValueOnce({ error: 'Fetch failed', fetched: 1 }));
+    await controller.refresh();
+    await controller.refresh();
+    expect(log).not.toHaveBeenCalled();
+  });
+});

@@ -68,6 +68,43 @@ projected final scores. Select `status.currentMatchupPeriod`, falling back to
 `scoringPeriodId`. Preserve zero scores and byes. Missing values display as
 unavailable, never infinity or an invented projection.
 
+### Optimized projected lineups
+
+For league **203836968 / team 6** and league **367176096 / team 1**, Fantasy420
+rebuilds the unlocked starting lineup on each successful fetch. It uses only
+players on that team's current roster, ESPN's weekly league-scored projections,
+the league's configured starting slots, and each player's eligible slots. All
+other teams continue to use ESPN's projected total directly.
+
+Locked starters stay in their exact slot type, including FLEX and OP/Superflex.
+Locked bench players stay benched, and IR players are excluded. Unlocked
+starter/bench selections do not influence the result. The optimizer fills as
+many starting positions as possible, then maximizes their total projection
+across all legal assignments, including overlapping FLEX and OP eligibility.
+Valid zero and negative projections are retained; a questionable designation
+alone does not exclude a projected player. Equivalent assignments put higher
+projections in the earlier dedicated slots, then use stable player-ID/slot
+ordering; the existing scoreboard feed does not supply kickoff
+times for a later-kickoff FLEX tie-break.
+
+The corrected total is ESPN's live projection plus the selected unlocked
+starters' projections minus the original unlocked starters' projections. This
+preserves locked players' live/final contributions and any other baseline score
+adjustments. Actual team points remain ESPN's live score. No lineup is submitted
+to ESPN. Win and elimination probabilities use the corrected projection.
+
+After publishing each refreshed snapshot, the browser console logs
+`[Fantasy420] Projected roster` with the league, team, week, corrected total,
+and every selected starter's name, slot, weekly projection, actual points, and
+lock status. A locked player's logged weekly projection is its pregame estimate;
+its live contribution remains in ESPN's baseline. Empty slots are listed when
+the roster cannot fill every position. Coalesced refreshes log once per team.
+
+If the roster, locks, eligibility, projections, or slot settings are incomplete
+or invalid, Fantasy420 retains ESPN's total and logs
+`[Fantasy420] Projected roster unchanged` with the reason instead of claiming
+an optimized lineup. Refresh again after the source data is available.
+
 Both the original home/away schedule and ESPN's native 2026 Knockout `teams`
 array are supported. Native Knockout teams eliminated in earlier matchup
 periods are excluded. These leagues have no head-to-head pairings, so that mode

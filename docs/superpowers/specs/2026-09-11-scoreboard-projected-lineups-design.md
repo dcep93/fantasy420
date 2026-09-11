@@ -19,6 +19,8 @@ a sequential greedy slot fill is insufficient. Among equal-scoring assignments,
 prefer later kickoffs in flexible slots when kickoff data is available, with a
 stable deterministic final tie-break. Questionable status alone does not exclude
 a player with a valid projection. Preserve valid zero and negative projections.
+When kickoff times are absent, equivalent lineups prioritize higher projections
+in dedicated slots before OP/FLEX, then use player IDs for deterministic ties.
 
 Use the current scoring period's roster and player projections. Keep locked
 players' live/final contributions by applying the optimized unlocked-projection
