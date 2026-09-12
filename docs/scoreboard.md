@@ -12,8 +12,11 @@ Knockout leagues default to Guillotine.
 The mode selector recalculates the current snapshot without fetching.
 
 Matchups fill a 100vh horizontal strip, with opponents side by side and no team
-or matchup wrapping. Actual scores, projected finals, and win chances align for
-comparison; the actual score gap appears once per matchup. Guillotine shows
+or matchup wrapping. Each team shows its name, actual score with projected final
+in parentheses, and win chance. This follows the recovered NFLStream scoreboard's
+compact score notation. Font sizes and spacing scale with the frame height, so
+all three lines fit in Multisport's 110px strip. Matchups size to their contents;
+there is no fixed minimum card width or redundant score-gap heading. Guillotine shows
 individual teams with their elimination risk in the same horizontal strip.
 League/week, mode, refresh, updated time, and scrolling controls sit below the
 strip, accessible by scrolling the page down.

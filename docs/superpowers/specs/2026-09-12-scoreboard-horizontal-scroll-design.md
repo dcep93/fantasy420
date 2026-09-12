@@ -9,7 +9,11 @@ Each matchup fills that height and keeps its teams adjacent in two columns,
 including narrow screens and embedded panels. Team names remain on one line;
 cards grow horizontally when needed. Overflow belongs to the strip, not the page.
 Actual score, projected final score, and win probability align across the teams.
-Show the actual score gap once per matchup, or a bye/missing-data status as needed.
+After inspecting the user's 1176×110 Multisport frame, the user's September 12
+correction supersedes the original score-gap heading: remove it entirely and
+use the old NFLStream notation `actual (projected)`. Each team has three compact
+lines: name, score/projection, and probability (or Bye). Sizes depend on viewport
+height and card widths follow content, without fixed 720px/230px minimums.
 Remove repeated favorite labels, branding, fetch counts, and explanatory captions.
 Preserve missing values as dashes rather than zeroes.
 
@@ -40,4 +44,5 @@ desktop and narrow-screen geometry in a browser, run the scoreboard tests and
 production build, and commit/push task-owned changes on main.
 
 Self-review: all user constraints covered; loop direction and timing are explicit;
-no data-model changes or extra roster features are required.
+no data-model changes or extra roster features are required. Short-panel checks
+must include 110px and 80px heights, not only the original 360px panel test.

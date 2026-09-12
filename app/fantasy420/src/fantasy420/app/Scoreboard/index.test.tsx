@@ -64,8 +64,9 @@ it("keeps matchup statistics together, with controls after the strip", async () 
   const first = await screen.findByRole("heading", { name: "Alpha" });
   const second = screen.getByRole("heading", { name: "Bravo" });
   expect(first.closest("article")).toBe(second.closest("article"));
-  expect(screen.getByText("Alpha +5.00")).toBeInTheDocument();
-  expect(screen.getAllByText("Projected final")).toHaveLength(2);
+  expect(screen.queryByText("Alpha +5.00")).not.toBeInTheDocument();
+  expect(screen.getAllByTitle("Projected final")).toHaveLength(2);
+  expect(screen.getByText("(120.00)")).toBeInTheDocument();
   expect(screen.getByText("68.07%")).toBeInTheDocument();
   expect(screen.getByText("31.93%")).toBeInTheDocument();
   expect(screen.queryByText(/Fetches:/)).not.toBeInTheDocument();
@@ -89,9 +90,10 @@ it("preserves zero scores, missing projections, and byes", async () => {
   send.mockResolvedValue(data);
   render(<Scoreboard />);
   await screen.findByRole("heading", { name: "Charlie" });
-  expect(screen.getByText("Tied")).toBeInTheDocument();
+  expect(screen.queryByText("Tied")).not.toBeInTheDocument();
   expect(screen.getByText("Bye")).toBeInTheDocument();
   expect(screen.getAllByText("0.00")).toHaveLength(3);
-  expect(screen.getAllByText("—")).toHaveLength(3);
+  expect(screen.getAllByText("—")).toHaveLength(2);
+  expect(screen.getByText("(—)")).toBeInTheDocument();
   expect(screen.getByRole("heading", { name: "Charlie" }).closest("article")!.querySelectorAll(".scoreboard-team")).toHaveLength(1);
 });

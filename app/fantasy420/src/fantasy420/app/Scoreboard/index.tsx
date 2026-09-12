@@ -8,26 +8,20 @@ const prefix = "fantasy420:scoreboard:";
 const points = (value: number | null) => value === null ? "—" : value.toFixed(2);
 const percent = (value: number) => `${(value * 100).toFixed(2)}%`;
 
-function TeamScore({ team, probability, risk = false }: { team: Team; probability?: number | null; risk?: boolean }) {
+function TeamScore({ team, probability, risk = false, bye = false }: { team: Team; probability?: number | null; risk?: boolean; bye?: boolean }) {
   return <section className="scoreboard-team" aria-label={team.name}>
     <h2 className="scoreboard-team-name">{team.name}</h2>
-    <dl className="scoreboard-numbers">
-      <div className="scoreboard-actual"><dt>Score</dt><dd>{points(team.score)}</dd></div>
-      <div><dt>Projected final</dt><dd>{points(team.projected)}</dd></div>
-      {probability !== undefined && <div className={risk ? "scoreboard-risk" : "scoreboard-win"}>
-        <dt>{risk ? "Elimination risk" : "Win chance"}</dt>
-        <dd>{probability === null ? "—" : percent(probability)}</dd>
-      </div>}
-    </dl>
+    <p className="scoreboard-points">
+      <strong><span className="scoreboard-sr-only">Score: </span>{points(team.score)}</strong>
+      <span className="scoreboard-projection" title="Projected final">
+        <span className="scoreboard-sr-only">Projected final: </span>({points(team.projected)})
+      </span>
+    </p>
+    {probability !== undefined && <p className={risk ? "scoreboard-probability scoreboard-risk" : "scoreboard-probability scoreboard-win"}>
+      {probability === null ? "—" : percent(probability)}<span className="scoreboard-probability-label"> {risk ? "elimination" : "win"}</span>
+    </p>}
+    {bye && <p className="scoreboard-probability">Bye</p>}
   </section>;
-}
-
-function matchupStatus(teams: Team[]) {
-  if (teams.length === 1) return "Bye";
-  const [first, second] = teams;
-  if (first.score === null || second.score === null) return "Score unavailable";
-  const gap = first.score - second.score;
-  return gap === 0 ? "Tied" : `${gap > 0 ? first.name : second.name} +${points(Math.abs(gap))}`;
 }
 
 export default function Scoreboard() {
@@ -70,9 +64,8 @@ export default function Scoreboard() {
       <Autoscroller paused={scrollPaused} resetKey={`${mode}:${state.snapshot.fetchedAt}`}>
         {mode === "head-to-head" ? matchups.map(({ teams, probability, key }) =>
           <article className="scoreboard-card" key={key} aria-label={teams.map(team => team.name).join(" versus ")}>
-            <div className="scoreboard-card-status">{matchupStatus(teams)}</div>
             <div className={`scoreboard-teams${teams.length === 1 ? " scoreboard-single" : ""}`}>
-              {teams.map((team, i) => <TeamScore key={team.id} team={team}
+              {teams.map((team, i) => <TeamScore key={team.id} team={team} bye={teams.length === 1}
                 probability={teams.length === 1 ? undefined : probability === null ? null : i === 0 ? probability : 1 - probability} />)}
             </div>
           </article>) : elimination?.teams.map(({ team, probability }) =>
