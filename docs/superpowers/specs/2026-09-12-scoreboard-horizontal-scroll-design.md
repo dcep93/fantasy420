@@ -22,6 +22,8 @@ sit below the 100vh strip. Keep actionable loading, failure, and stale-data stat
 Guillotine uses the same horizontal presentation for its individual teams and
 retains elimination risk, incomplete-data warnings, and Thunderdome filtering.
 Elimination teams sort by highest risk first, including the filtered Thunderdome.
+Head-to-head matchups sort by probability closest to 50% first, with unavailable
+probabilities last.
 No scoring, projection, extension, or parent-message logic changes.
 
 ## Scrolling

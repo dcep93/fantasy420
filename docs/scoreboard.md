@@ -132,7 +132,8 @@ For each team, let `r = max(0, projected - actual)` and `u = r + min(r, 5)`.
 Head-to-head win probability for A is
 `Φ((projectedA - projectedB) / (8 * sqrt((uA + uB) / 12)))`.
 Zero uncertainty yields 100%, 0%, or 50% for a tie. Teams sort by projected final
-score; matchups sort by favorite probability. The clamp prevents invalid square
+score; matchups sort by probability closest to 50% first, with unavailable
+probabilities last. The clamp prevents invalid square
 roots when a live projection falls below the actual score.
 
 Guillotine uses independent normal final scores with means equal to projected

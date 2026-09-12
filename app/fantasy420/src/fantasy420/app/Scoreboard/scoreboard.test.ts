@@ -85,6 +85,15 @@ describe("ESPN mapping", () => {
     expect(guillotine(snapshot).incomplete).toBe(true);
     expect(guillotine(snapshot).teams.every(team => team.probability === null)).toBe(true);
   });
+  it("shows head-to-head matchups closest to 50% first and unavailable probabilities last", () => {
+    const matchups = [[120, 60], [120, 118], [null, 100], [100, 100]].map((pair, i) =>
+      pair.map((projected, j) => ({ id: i * 2 + j, name: `Team ${i * 2 + j}`, score: 30, projected })));
+    const result = headToHead({ leagueId: "123", leagueName: "League", year: 2026,
+      week: 1, matchups, knockout: false, fetchedAt: 1000 });
+    expect(result.map(matchup => matchup.key)).toEqual([3, 1, 0, 2]);
+    expect(result[0].probability).toBeCloseTo(0.5);
+    expect(result[3].probability).toBeNull();
+  });
   it("deduplicates teams and applies the original zero-projection/THUNDERDOME rules", () => {
     const data = league();
     data.schedule.push(data.schedule[1]);

@@ -43,7 +43,9 @@ export function headToHead(snapshot: Snapshot) {
     const probability = teams.length === 2 && teams.every(isScored)
       ? headToHeadProbability(teams[0] as ScoredTeam, teams[1] as ScoredTeam) : null;
     return { teams, probability, key: index };
-  }).sort((a, b) => (b.probability ?? -1) - (a.probability ?? -1));
+  }).sort((a, b) =>
+    (a.probability === null ? Infinity : Math.abs(a.probability - 0.5)) -
+    (b.probability === null ? Infinity : Math.abs(b.probability - 0.5)));
 }
 
 export function guillotine(snapshot: Snapshot) {
