@@ -155,14 +155,12 @@
     if (player_name.endsWith("D/ST")) {
       return [];
     }
+    const normalizedName = normalizePlayerName(player_name);
+    if (!normalizedName) return [];
     return events
       .filter(({ outcomeType }) => outcomeType !== "Under")
       .filter(({ participant }) =>
-        participant
-          ?.replace("Gabriel Davis", "Gabe Davis")
-          .replace("D.J. Moore", "DJ Moore")
-          .replace(/ \(.*\)$/, "")
-          .includes(player_name)
+        normalizePlayerName(participant) === normalizedName
       );
   }
 

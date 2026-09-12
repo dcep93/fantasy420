@@ -1,3 +1,17 @@
+function normalizePlayerName(name) {
+  if (typeof name !== "string") return "";
+  const normalized = name
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/\s*\([^)]*\)\s*$/, "")
+    .replace(/[^a-z0-9\s]/g, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/\s+(?:jr|sr|ii|iii|iv|v)$/, "");
+  return normalized === "gabriel davis" ? "gabe davis" : normalized;
+}
+
 function get_fantasy420_extension_id() {
   return document.documentElement?.dataset?.fantasy420ExtensionId || null;
 }
@@ -37,5 +51,9 @@ function _do_storage(storage) {
 }
 
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { do_send_message, get_fantasy420_extension_id };
+  module.exports = {
+    do_send_message,
+    get_fantasy420_extension_id,
+    normalizePlayerName,
+  };
 }
