@@ -26,7 +26,13 @@ chrome.runtime.onMessageExternal.addListener(function (
     return true;
   }
   if (request.fetch) {
-    const cached = fetch_cache[request.fetch.url];
+    // ESPN uses the same URL for different player sets selected by headers.
+    // Headers normalizes names and ordering so equivalent requests still hit.
+    const cacheKey = JSON.stringify([
+      request.fetch.url,
+      [...new Headers(request.fetch.options?.headers).entries()],
+    ]);
+    const cached = fetch_cache[cacheKey];
     const now = Date.now();
     if (now - cached?.timestamp < request.fetch.maxAgeMs) {
       sendResponse(cached.resp);
@@ -48,7 +54,7 @@ chrome.runtime.onMessageExternal.addListener(function (
           return request.fetch.json ? resp.json() : resp.text();
         })
         .then((resp) => {
-          fetch_cache[request.fetch.url] = { timestamp: now, resp };
+          fetch_cache[cacheKey] = { timestamp: now, resp };
           return resp;
         })
         .then(sendResponse)
