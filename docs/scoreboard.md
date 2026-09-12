@@ -11,11 +11,25 @@ season with `/scoreboard?leagueId=123&year=2026`. Override the mode with
 Knockout leagues default to Guillotine.
 The mode selector recalculates the current snapshot without fetching.
 
+Matchups fill a 100vh horizontal strip, with opponents side by side and no team
+or matchup wrapping. Actual scores, projected finals, and win chances align for
+comparison; the actual score gap appears once per matchup. Guillotine shows
+individual teams with their elimination risk in the same horizontal strip.
+League/week, mode, refresh, updated time, and scrolling controls sit below the
+strip, accessible by scrolling the page down.
+
+Overflow automatically scrolls from beginning to end at 10% of the scrollable
+distance per second. It pauses for 2.5 seconds at each end, jumps immediately
+back to the beginning, then repeats. Hovering, keyboard focus, and manual input
+pause motion; a Pause/Resume scrolling button provides persistent control.
+Reduced-motion preferences disable automatic motion. A new snapshot or mode
+restarts the strip at the beginning. No overflow means no automatic movement.
+
 One initial fetch occurs per mount, including React StrictMode. Refresh requests
-are coalesced while one is running. There is no automatic polling. “Fetches”
-counts ESPN requests acknowledged as started by the extension during this page
+are coalesced while one is running. There is no automatic polling. The API's
+`fetchCount` counts ESPN requests acknowledged as started by the extension during this page
 load, including network/HTTP failures. Missing extension/tab failures count zero.
-The count updates when a request completes; a lost extension connection cannot
+The count is not shown in the scoreboard toolbar. It updates when a request completes; a lost extension connection cannot
 report whether an in-flight request started. Normal fetch failures retain the
 last snapshot with a visible warning; a missing extension clears it.
 

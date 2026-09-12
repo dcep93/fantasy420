@@ -15,21 +15,26 @@ afterEach(() => { cleanup(); Object.defineProperty(window, "parent", { configura
 
 it("fetches once in StrictMode and switches modes without fetching", async () => {
   render(<StrictMode><Scoreboard /></StrictMode>);
-  await screen.findByText("Fetches: 1");
+  await screen.findByRole("heading", { name: "Alpha" });
   expect(send).toHaveBeenCalledTimes(1);
-  expect(screen.getByText("THUNDERDOME")).toBeInTheDocument();
+  expect(screen.getByText(/THUNDERDOME/)).toBeInTheDocument();
   fireEvent.change(screen.getByLabelText("Mode"), { target: { value: "head-to-head" } });
-  expect(screen.getByText("68.07% win")).toBeInTheDocument();
+  expect(screen.getByText("68.07%")).toBeInTheDocument();
   expect(send).toHaveBeenCalledTimes(1);
+  const refreshed = response();
+  refreshed.data.schedule[0].home.totalPointsLive = 82;
+  send.mockResolvedValueOnce(refreshed);
   fireEvent.click(screen.getByRole("button", { name: "Refresh" }));
-  await screen.findByText("Fetches: 2");
+  await screen.findByText("82.00");
+  await waitFor(() => expect(send).toHaveBeenCalledTimes(2));
+  await waitFor(() => expect(screen.getByRole("button", { name: "Refresh" })).toBeEnabled());
 });
 
 it("accepts only parent refresh messages and echoes completion to that origin", async () => {
   const parent = { postMessage: vi.fn() };
   Object.defineProperty(window, "parent", { configurable: true, value: parent });
   render(<Scoreboard />);
-  await screen.findByText("Fetches: 1");
+  await screen.findByRole("heading", { name: "Alpha" });
   expect(parent.postMessage).toHaveBeenCalledWith({ type: "fantasy420:scoreboard:ready" }, expect.any(String));
   await act(async () => { window.dispatchEvent(new MessageEvent("message", {
     source: window, origin: "https://unrelated.example", data: { type: "fantasy420:scoreboard:refresh" },
@@ -48,7 +53,45 @@ it("honors URL options and displays actionable extension failures with zero fetc
   send.mockRejectedValue("no chrome runtime");
   render(<Scoreboard />);
   expect(await screen.findByRole("alert")).toHaveTextContent("Install or reload the Fantasy420 Chrome extension");
-  expect(screen.getByText("Fetches: 0")).toBeInTheDocument();
+  expect(screen.queryByText(/Fetches:/)).not.toBeInTheDocument();
   expect(send).toHaveBeenCalledWith({ scoreboard: { action: "fetch", leagueId: "123", year: 2025 } });
   expect(screen.queryByText("Alpha")).not.toBeInTheDocument();
+});
+
+it("keeps matchup statistics together, with controls after the strip", async () => {
+  window.history.replaceState({}, "", "/scoreboard?mode=head-to-head");
+  render(<Scoreboard />);
+  const first = await screen.findByRole("heading", { name: "Alpha" });
+  const second = screen.getByRole("heading", { name: "Bravo" });
+  expect(first.closest("article")).toBe(second.closest("article"));
+  expect(screen.getByText("Alpha +5.00")).toBeInTheDocument();
+  expect(screen.getAllByText("Projected final")).toHaveLength(2);
+  expect(screen.getByText("68.07%")).toBeInTheDocument();
+  expect(screen.getByText("31.93%")).toBeInTheDocument();
+  expect(screen.queryByText(/Fetches:/)).not.toBeInTheDocument();
+  const strip = screen.getByRole("region", { name: "Scoreboard matchups" });
+  const footer = screen.getByRole("contentinfo");
+  expect(strip.compareDocumentPosition(footer) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+  fireEvent.click(screen.getByRole("button", { name: "Pause scrolling" }));
+  expect(screen.getByRole("button", { name: "Resume scrolling" })).toHaveAttribute("aria-pressed", "true");
+  expect(send).toHaveBeenCalledTimes(1);
+});
+
+it("preserves zero scores, missing projections, and byes", async () => {
+  window.history.replaceState({}, "", "/scoreboard?mode=head-to-head");
+  const data = response();
+  data.data.schedule[0].home.totalPointsLive = 0;
+  data.data.schedule[0].away.totalPointsLive = 0;
+  // ESPN can omit live projections and the away side of a bye.
+  delete (data.data.schedule[0].home as any).totalProjectedPointsLive;
+  data.data.teams.push({ id: 3, name: "Charlie" });
+  data.data.schedule.push({ matchupPeriodId: 1, home: { teamId: 3, totalPointsLive: 0, totalProjectedPointsLive: 90 } } as any);
+  send.mockResolvedValue(data);
+  render(<Scoreboard />);
+  await screen.findByRole("heading", { name: "Charlie" });
+  expect(screen.getByText("Tied")).toBeInTheDocument();
+  expect(screen.getByText("Bye")).toBeInTheDocument();
+  expect(screen.getAllByText("0.00")).toHaveLength(3);
+  expect(screen.getAllByText("—")).toHaveLength(3);
+  expect(screen.getByRole("heading", { name: "Charlie" }).closest("article")!.querySelectorAll(".scoreboard-team")).toHaveLength(1);
 });
