@@ -16,8 +16,8 @@ or matchup wrapping. Each team shows its name, actual score with projected final
 in parentheses, and win chance. This follows the recovered NFLStream scoreboard's
 compact score notation. Font sizes and spacing scale with the frame height, so
 all three lines fit in Multisport's 110px strip. Matchups size to their contents;
-there is no fixed minimum card width or redundant score-gap heading. A 16px gap
-separates matchups. Guillotine shows
+there is no fixed minimum card width or redundant score-gap heading. An 8px gutter
+separates uniformly colored matchups, with subtle rounded corners and no outer border. Guillotine shows
 individual teams with their elimination risk in the same horizontal strip.
 League/week, mode, refresh, updated time, and scrolling controls sit below the
 strip, accessible by scrolling the page down.
