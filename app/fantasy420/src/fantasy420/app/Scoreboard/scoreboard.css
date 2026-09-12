@@ -1,6 +1,6 @@
 .scoreboard-page { min-height: 100vh; color: var(--night-text, #f4f7fb); background: var(--night-page, #0b0f14); font-family: system-ui, sans-serif; }
 .scoreboard-page * { box-sizing: border-box; }
-.scoreboard-strip { display: flex; flex-wrap: nowrap; gap: 8px; width: 100%; height: 100vh; overflow-x: auto; overflow-y: hidden; scroll-behavior: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
+.scoreboard-strip { display: flex; flex-wrap: nowrap; gap: 50px; width: 100%; height: 100vh; overflow-x: auto; overflow-y: hidden; scroll-behavior: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
 .scoreboard-strip::-webkit-scrollbar { display: none; }
 .scoreboard-strip:focus-visible { outline: 2px solid var(--night-focus, #ff7bc3); outline-offset: -2px; }
 .scoreboard-card { flex: 0 0 auto; display: flex; width: max-content; height: 100vh; padding: clamp(2px, 4vh, 16px) 0; border-radius: 6px; background: var(--night-surface, #151b23); }

@@ -7,7 +7,7 @@ Approved with `yesi` on September 12, 2026.
 The first viewport is a horizontal, nonwrapping strip of matchups, 100vh tall.
 Each matchup fills that height and keeps its teams adjacent in two columns,
 including narrow screens and embedded panels. Team names remain on one line;
-cards grow horizontally when needed. An 8px gutter separates uniformly colored matchups, with subtle rounded corners and no outer border. Overflow belongs to the strip, not the page.
+cards grow horizontally when needed. A 50px gutter separates uniformly colored matchups, with subtle rounded corners and no outer border. Overflow belongs to the strip, not the page.
 Actual score, projected final score, and win probability align across the teams.
 After inspecting the user's 1176×110 Multisport frame, the user's September 12
 correction supersedes the original score-gap heading: remove it entirely and
