@@ -36,10 +36,12 @@ function mount(paused = false) {
   return { ...result, strip: screen.getByRole("region", { name: "Scoreboard matchups" }) };
 }
 
-it("holds at each end, jumps to the start, and repeats at ten percent per second", () => {
+it("holds five seconds at the start and 2.5 seconds at the end, then jumps and repeats", () => {
   const { strip } = mount();
   expect(strip).toHaveAttribute("tabindex", "0");
-  advance(2500);
+  advance(4980);
+  expect(strip.scrollLeft).toBe(0);
+  advance(20);
   expect(strip.scrollLeft).toBe(0);
   advance(5000);
   expect(strip.scrollLeft).toBeCloseTo(500);
@@ -49,7 +51,7 @@ it("holds at each end, jumps to the start, and repeats at ten percent per second
   expect(strip.scrollLeft).toBe(1000);
   advance(20);
   expect(strip.scrollLeft).toBe(0);
-  advance(2500);
+  advance(5000);
   expect(strip.scrollLeft).toBe(0);
   advance(1000);
   expect(strip.scrollLeft).toBeCloseTo(100);
@@ -57,12 +59,12 @@ it("holds at each end, jumps to the start, and repeats at ten percent per second
 
 it("resets position and the initial hold only when resetKey changes", () => {
   const { strip, rerender } = mount();
-  advance(7500);
+  advance(10000);
   rerender(<Autoscroller paused={false} resetKey="first"><span>Updated score</span></Autoscroller>);
   expect(strip.scrollLeft).toBeCloseTo(500);
   rerender(<Autoscroller paused={false} resetKey="second">{contents}</Autoscroller>);
   expect(strip.scrollLeft).toBe(0);
-  advance(2500);
+  advance(5000);
   expect(strip.scrollLeft).toBe(0);
   advance(1000);
   expect(strip.scrollLeft).toBeCloseTo(100);
@@ -74,7 +76,7 @@ it("does not move without overflow and detects newly overflowing content", () =>
   advance(20000);
   expect(strip.scrollLeft).toBe(0);
   width = 1200;
-  advance(3500);
+  advance(6000);
   expect(strip.scrollLeft).toBeCloseTo(100);
 });
 
@@ -84,7 +86,7 @@ it("pauses and resumes the same position and remaining hold through the prop", (
   rerender(<Autoscroller paused resetKey="first">{contents}</Autoscroller>);
   advance(10000);
   rerender(<Autoscroller paused={false} resetKey="first">{contents}</Autoscroller>);
-  advance(1500);
+  advance(4000);
   expect(strip.scrollLeft).toBe(0);
   advance(1000);
   expect(strip.scrollLeft).toBeCloseTo(100);
@@ -98,7 +100,7 @@ it("pauses and resumes the same position and remaining hold through the prop", (
 
 it("pauses for hover and focus, then leaves time to read before resuming", () => {
   const { strip } = mount();
-  advance(3500);
+  advance(6000);
   fireEvent.mouseEnter(strip);
   advance(10000);
   expect(strip.scrollLeft).toBeCloseTo(100);
@@ -116,7 +118,7 @@ it("pauses for hover and focus, then leaves time to read before resuming", () =>
 
 it.each(["wheel", "keydown", "touchmove", "scroll"])("respects manual %s with a fresh reading hold", (eventName) => {
   const { strip } = mount();
-  advance(3500);
+  advance(6000);
   strip.scrollLeft = 600;
   fireEvent(strip, new Event(eventName, { bubbles: true }));
   advance(2500);
@@ -127,7 +129,7 @@ it.each(["wheel", "keydown", "touchmove", "scroll"])("respects manual %s with a 
 
 it("pauses throughout a pointer drag and resumes after release outside the strip", () => {
   const { strip } = mount();
-  advance(3500);
+  advance(6000);
   fireEvent.pointerDown(strip);
   strip.scrollLeft = 500;
   advance(10000);
@@ -139,7 +141,7 @@ it("pauses throughout a pointer drag and resumes after release outside the strip
 
 it("updates speed and clamps position when the available width changes", () => {
   const { strip } = mount();
-  advance(7500);
+  advance(10000);
   width = 2200;
   fireEvent.resize(window);
   advance(1000);
@@ -159,7 +161,7 @@ it("keeps fractional progress when the browser rounds native scroll offsets", ()
     get: () => nativePosition,
     set: (value: number) => { nativePosition = Math.round(Math.min(1, Math.max(0, value))); },
   });
-  advance(12500);
+  advance(15000);
   expect(strip.scrollLeft).toBe(1);
   advance(2500);
   expect(strip.scrollLeft).toBe(0);
@@ -171,7 +173,7 @@ it("honors reduced motion on mount and when the preference changes", () => {
   advance(20000);
   expect(strip.scrollLeft).toBe(0);
   act(() => motionListeners.forEach(listener => listener({ matches: false } as MediaQueryListEvent)));
-  advance(3500);
+  advance(6000);
   expect(strip.scrollLeft).toBeCloseTo(100);
   act(() => motionListeners.forEach(listener => listener({ matches: true } as MediaQueryListEvent)));
   advance(20000);

@@ -7,7 +7,7 @@ Approved with `yesi` on September 12, 2026.
 The first viewport is a horizontal, nonwrapping strip of matchups, 100vh tall.
 Each matchup fills that height and keeps its teams adjacent in two columns,
 including narrow screens and embedded panels. Team names remain on one line;
-cards grow horizontally when needed. Overflow belongs to the strip, not the page.
+cards grow horizontally when needed. A 16px gap separates matchups. Overflow belongs to the strip, not the page.
 Actual score, projected final score, and win probability align across the teams.
 After inspecting the user's 1176×110 Multisport frame, the user's September 12
 correction supersedes the original score-gap heading: remove it entirely and
@@ -21,13 +21,14 @@ League name, season/week, mode, refresh, update time, and scrolling pause contro
 sit below the 100vh strip. Keep actionable loading, failure, and stale-data states.
 Guillotine uses the same horizontal presentation for its individual teams and
 retains elimination risk, incomplete-data warnings, and Thunderdome filtering.
-No scoring, projection, ranking, extension, or parent-message logic changes.
+Elimination teams sort by highest risk first, including the filtered Thunderdome.
+No scoring, projection, extension, or parent-message logic changes.
 
 ## Scrolling
 
 Adapt Multisport420's Autoscroller behavior to the horizontal axis: begin at
-zero, pause 2.5 seconds, move to the end, pause 2.5 seconds, jump immediately to
-zero, and repeat. Match its speed of 10% of the scrollable distance per second.
+zero, pause 5 seconds, move to the end, pause 2.5 seconds, jump immediately to
+zero, and repeat with the same 5-second starting hold. Keep the speed of 10% of the scrollable distance per second.
 Only move when content overflows. Recompute the distance after resizing and
 restart at the beginning for a new snapshot or display mode.
 Pause during hover, keyboard focus, or manual interaction; allow manual scrolling

@@ -1,5 +1,6 @@
 import { ReactNode, useLayoutEffect, useRef } from "react";
 
+const START_HOLD_MS = 5000;
 const HOLD_MS = 2500;
 const TICK_MS = 20;
 
@@ -21,7 +22,7 @@ export default function Autoscroller({ children, paused, resetKey }: {
     let dragging = false;
     let position = 0;
     let lastWritten = 0;
-    let hold = HOLD_MS;
+    let hold = START_HOLD_MS;
     let atEnd = false;
     let previousTime = Date.now();
 
@@ -36,7 +37,7 @@ export default function Autoscroller({ children, paused, resetKey }: {
     const interact = () => {
       position = strip.scrollLeft;
       lastWritten = position;
-      hold = HOLD_MS;
+      hold = position === 0 ? START_HOLD_MS : HOLD_MS;
       atEnd = false;
     };
     const onScroll = () => {
@@ -81,7 +82,7 @@ export default function Autoscroller({ children, paused, resetKey }: {
         if (atEnd) {
           writePosition(0);
           atEnd = false;
-          hold = HOLD_MS;
+          hold = START_HOLD_MS;
           return;
         }
       }

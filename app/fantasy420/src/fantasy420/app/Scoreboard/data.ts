@@ -54,7 +54,7 @@ export function guillotine(snapshot: Snapshot) {
   const risks = incomplete ? teams.map(() => null) : probNormalMinAll(
     teams.map(team => team.projected!), teams.map(team => guillotineSigma(team.score!, team.projected!)));
   const all = teams.map((team, i) => ({ team, probability: risks[i] }))
-    .sort((a, b) => (a.probability ?? 0) - (b.probability ?? 0));
+    .sort((a, b) => (b.probability ?? 0) - (a.probability ?? 0));
   const atRisk = all.filter(team => team.probability !== null && team.probability > 0.01);
   const thunderdome = !incomplete && atRisk.length > 0 && atRisk.length <= 3;
   return { teams: thunderdome ? atRisk : all, thunderdome, incomplete, hidden: thunderdome ? all.length - atRisk.length : 0 };

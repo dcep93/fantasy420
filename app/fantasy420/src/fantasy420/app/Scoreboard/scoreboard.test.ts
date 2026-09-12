@@ -95,6 +95,15 @@ describe("ESPN mapping", () => {
     data.schedule[2].home.totalProjectedPointsLive = 0;
     expect(guillotine(parseScoreboard(data, 2026, 1000)).teams).toHaveLength(2);
   });
+  it.each([3, 4])("shows highest elimination risk first with %i competing teams", (count) => {
+    const teams = [110, 95, 105, 100].slice(0, count).map((projected, i) => ({
+      id: i + 1, name: `Team ${i + 1}`, score: 50, projected,
+    }));
+    const result = guillotine({ leagueId: "123", leagueName: "League", year: 2026,
+      week: 1, matchups: [teams], knockout: true, fetchedAt: 1000 });
+    expect(result.thunderdome).toBe(count === 3);
+    expect(result.teams.map(row => row.team.id)).toEqual(count === 3 ? [2, 3, 1] : [2, 4, 3, 1]);
+  });
 });
 
 describe("refresh lifecycle", () => {

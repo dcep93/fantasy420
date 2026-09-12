@@ -16,14 +16,15 @@ or matchup wrapping. Each team shows its name, actual score with projected final
 in parentheses, and win chance. This follows the recovered NFLStream scoreboard's
 compact score notation. Font sizes and spacing scale with the frame height, so
 all three lines fit in Multisport's 110px strip. Matchups size to their contents;
-there is no fixed minimum card width or redundant score-gap heading. Guillotine shows
+there is no fixed minimum card width or redundant score-gap heading. A 16px gap
+separates matchups. Guillotine shows
 individual teams with their elimination risk in the same horizontal strip.
 League/week, mode, refresh, updated time, and scrolling controls sit below the
 strip, accessible by scrolling the page down.
 
 Overflow automatically scrolls from beginning to end at 10% of the scrollable
-distance per second. It pauses for 2.5 seconds at each end, jumps immediately
-back to the beginning, then repeats. Hovering, keyboard focus, and manual input
+distance per second. It pauses for 5 seconds at the beginning and 2.5 seconds
+at the end, jumps immediately back to the beginning, then repeats. Hovering, keyboard focus, and manual input
 pause motion; a Pause/Resume scrolling button provides persistent control.
 Reduced-motion preferences disable automatic motion. A new snapshot or mode
 restarts the strip at the beginning. No overflow means no automatic movement.
@@ -141,8 +142,8 @@ probability. The new deterministic quadrature implementation handles narrow
 0.01-sigma distributions and normalizes numerical integration error. It is not
 the recovered original `guillotine.ts`, which remains unavailable.
 
-As in NFLStream, Guillotine excludes nonpositive projections, sorts by increasing
-last-place risk, and enters THUNDERDOME when at most three teams exceed 1% risk,
+Guillotine excludes nonpositive projections, sorts by decreasing last-place
+risk, and enters THUNDERDOME when at most three teams exceed 1% risk,
 showing only those teams. Team IDs are deduplicated. If a competitor's score or
 projection is missing, all Guillotine probabilities are withheld.
 
