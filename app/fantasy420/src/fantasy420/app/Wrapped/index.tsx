@@ -304,8 +304,8 @@ export class Helpers {
 }
 
 export const wrappedModules: { [key: string]: () => JSX.Element } = {
-  ManagerPlot,
   FantasyCalc,
+  ManagerPlot,
   PlayerPlot,
   PlayerStats,
   MondayNight,
