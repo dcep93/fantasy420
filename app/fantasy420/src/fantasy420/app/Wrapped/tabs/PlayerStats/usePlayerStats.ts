@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { currentYear } from "../..";
 import allWrapped from "../../allWrapped";
-import { fetchPlayerSeason, FIRST_YEAR, mergeSeasons, PlayerSeason } from "./nflquery";
+import { fetchPlayerSeason, FIRST_YEAR, mergeSeasons, PlayerSeason, readCachedHistory } from "./nflquery";
 
 export function usePlayerStats() {
   const year = Number(currentYear);
@@ -13,26 +13,38 @@ export function usePlayerStats() {
     let active = true;
     setLoading(true);
     setFailedYears([]);
-    // Keep successfully fetched history on retries; refresh the current year.
-    setSeasons((previous) => previous.filter((season) => season.year !== year));
+    const loaded: PlayerSeason[] = [];
+    const failed: number[] = [];
     const load = async (seasonYear: number) => {
       try {
         const data = await fetchPlayerSeason(seasonYear, year);
-        if (active) setSeasons((previous) => [
-          ...previous.filter((season) => season.year !== seasonYear), data,
-        ]);
+        loaded.push(data);
       } catch {
-        if (active) setFailedYears((previous) => [...previous, seasonYear]);
+        failed.push(seasonYear);
       }
     };
     void (async () => {
-      await load(year);
-      const years = Array.from({ length: year - FIRST_YEAR }, (_, i) => year - i - 1);
-      // Bound downloads of the large play-by-play files on the first visit.
-      await Promise.all(Array.from({ length: 3 }, async () => {
+      // Read all cached history while the current season refreshes.
+      const current = load(year);
+      const cached = await readCachedHistory(year);
+      if (!active) return;
+      loaded.push(...cached);
+      // Show the complete cached set once, never one render per cached year.
+      if (cached.length) setSeasons(cached);
+      const cachedSet = new Set(cached.map((season) => season.year));
+      const years = Array.from({ length: year - FIRST_YEAR }, (_, i) => year - i - 1)
+        .filter((seasonYear) => !cachedSet.has(seasonYear));
+      // Only missing seasons enter the network queue.
+      await Promise.all([current, ...Array.from({ length: 3 }, async () => {
         while (active && years.length) await load(years.shift()!);
-      }));
-      if (active) setLoading(false);
+      })]);
+      if (active) {
+        // Publish all remote results together. Extension ownership updates do
+        // not restart this effect or fetch NFL stats again.
+        setSeasons(loaded);
+        setFailedYears(failed);
+        setLoading(false);
+      }
     })();
     return () => { active = false; };
   }, [year, attempt]);
@@ -48,8 +60,7 @@ export function usePlayerStats() {
     }));
   }, [seasons, currentWrapped]);
   return {
-    data, loading, failedYears, loadedYears: seasons.length,
-    totalYears: year - FIRST_YEAR + 1,
+    data, loading, failedYears,
     retry: () => setAttempt((value) => value + 1),
   };
 }

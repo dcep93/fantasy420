@@ -86,6 +86,43 @@ export function mergeSeasons(seasons: PlayerSeason[]): PlayerStatsRecord[] {
 const history = new Map<number, PlayerSeason>();
 const pending = new Map<string, Promise<PlayerSeason>>();
 
+async function openHistoryCache(): Promise<Cache | undefined> {
+  try {
+    return await caches.open(CACHE_NAME);
+  } catch {
+    return undefined;
+  }
+}
+
+async function readCachedSeason(year: number, cache?: Cache): Promise<PlayerSeason | undefined> {
+  const loaded = history.get(year);
+  if (loaded) return loaded;
+  try {
+    const cached = await cache?.match(seasonUrl(year));
+    if (cached) {
+      const data = await cached.json() as PlayerSeason;
+      if (data.year === year && Array.isArray(data.players)) {
+        history.set(year, data);
+        return data;
+      }
+    }
+  } catch { /* A bad cache entry must not prevent a network refresh. */ }
+  return undefined;
+}
+
+export async function readCachedHistory(currentYear: number): Promise<PlayerSeason[]> {
+  const cache = await openHistoryCache();
+  const seasons = await Promise.all(
+    Array.from({ length: currentYear - FIRST_YEAR }, (_, i) =>
+      readCachedSeason(FIRST_YEAR + i, cache))
+  );
+  return seasons.filter((season): season is PlayerSeason => season !== undefined);
+}
+
+function seasonUrl(year: number) {
+  return `https://dcep93.github.io/nflquery/data_v6/${year}.json`;
+}
+
 export async function fetchPlayerSeason(year: number, currentYear: number): Promise<PlayerSeason> {
   if (year < currentYear && history.has(year)) return history.get(year)!;
   const key = `${year}:${currentYear}`;
@@ -103,18 +140,13 @@ export async function fetchPlayerSeason(year: number, currentYear: number): Prom
 }
 
 async function fetchSeason(year: number, currentYear: number): Promise<PlayerSeason> {
-  const url = `https://dcep93.github.io/nflquery/data_v6/${year}.json`;
+  const url = seasonUrl(year);
   let cache: Cache | undefined;
   // Storage restrictions/quota must not prevent loading scores from the network.
   if (year < currentYear) {
-    try {
-      cache = await caches.open(CACHE_NAME);
-      const cached = await cache.match(url);
-      if (cached) {
-        const data = await cached.json() as PlayerSeason;
-        if (data.year === year && Array.isArray(data.players)) return data;
-      }
-    } catch { /* Fetch normally when browser caching is unavailable. */ }
+    cache = await openHistoryCache();
+    const cached = await readCachedSeason(year, cache);
+    if (cached) return cached;
   }
   const response = await fetch(url, { cache: "no-cache" });
   if (!response.ok) throw new Error(`${year}: HTTP ${response.status}`);
