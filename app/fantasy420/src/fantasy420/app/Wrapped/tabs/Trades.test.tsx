@@ -1,4 +1,5 @@
 import { render, screen, within } from "@testing-library/react";
+import { vi } from "vitest";
 
 import { WrappedType } from "../../FetchWrapped";
 import {
@@ -6,6 +7,9 @@ import {
   groupOwnershipMoves,
   TradesForSeason,
 } from "./Trades";
+
+vi.mock("..", () => ({ selectedWrapped: vi.fn() }));
+vi.mock("../../Draft", () => ({ POSITION_COLORS: {} }));
 
 function makeWrapped(): WrappedType {
   const roster = (weekNum: string, rostered: string[]) => ({
@@ -129,20 +133,41 @@ test("renders weekly deal summaries and explicit receiving sides", () => {
   ).toHaveTextContent("OneWR");
 });
 
-test("renders one-way ownership changes as a compact from-to move", () => {
+test("shows only exchanges and counts only their players", () => {
   render(<TradesForSeason wrapped={makeWrapped()} />);
 
   const weekThree = screen.getByTestId("trade-week-3");
   expect(
-    within(weekThree).getByText(
-      "1 exchange · 1 direct move · 3 players moved"
-    )
+    within(weekThree).getByText("1 exchange · 2 players moved")
   ).toBeInTheDocument();
-  const alphaToBravo = within(weekThree).getByTestId("trade-deal-3:a:b");
-  expect(alphaToBravo).toHaveTextContent(
-    "Direct move · 1 player movedFromAlpha→ToBravoFourRB"
-  );
-  expect(alphaToBravo).not.toHaveTextContent("No players received");
+  expect(within(weekThree).queryByTestId("trade-deal-3:a:b")).toBeNull();
+  expect(within(weekThree).getByTestId("trade-deal-3:a:c"))
+    .toHaveTextContent("Exchange · 2 players moved");
+  expect(within(weekThree).queryByText("Four")).toBeNull();
+  expect(screen.queryByText(/direct move/i)).toBeNull();
+});
+
+test("omits weeks containing only one-way moves", () => {
+  const wrapped = makeWrapped();
+  wrapped.ffTeams.a.rosters["3"].rostered = ["two"];
+
+  render(<TradesForSeason wrapped={wrapped} />);
+
+  expect(screen.getByTestId("trade-week-2")).toBeInTheDocument();
+  expect(screen.queryByTestId("trade-week-3")).toBeNull();
+});
+
+test("renders an empty state when there are only one-way moves", () => {
+  const wrapped = makeWrapped();
+  Object.values(wrapped.ffTeams).forEach((team) => {
+    delete team.rosters["3"];
+  });
+  wrapped.ffTeams.b.rosters["2"].rostered = [];
+
+  render(<TradesForSeason wrapped={wrapped} />);
+
+  expect(screen.getByText("No exchanges found for 2025.")).toBeInTheDocument();
+  expect(screen.queryByTestId("trade-week-2")).toBeNull();
 });
 
 test("renders an empty state when ownership does not change", () => {
@@ -154,6 +179,6 @@ test("renders an empty state when ownership does not change", () => {
   render(<TradesForSeason wrapped={wrapped} />);
 
   expect(
-    screen.getByText("No direct ownership moves found for 2025.")
+    screen.getByText("No exchanges found for 2025.")
   ).toBeInTheDocument();
 });

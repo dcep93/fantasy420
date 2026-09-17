@@ -288,91 +288,6 @@ function DealSide({
 }
 
 function Deal({ deal, wrapped }: { deal: TradeDeal; wrapped: WrappedType }) {
-  if (deal.kind === "direct-move") {
-    const receivingSide = deal.sides.find((side) => side.received.length > 0)!;
-    const move = receivingSide.received[0];
-    const fromTeam = wrapped.ffTeams[move.fromTeamId];
-    const toTeam = wrapped.ffTeams[move.toTeamId];
-    return (
-      <article
-        data-testid={`trade-deal-${deal.id}`}
-        style={{
-          alignItems: "stretch",
-          background: "var(--night-surface-alt)",
-          border: "1px solid var(--night-border)",
-          borderRadius: "1rem",
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "0.85rem",
-          padding: "0.85rem",
-        }}
-      >
-        <div
-          style={{
-            color: "var(--night-text-muted)",
-            flexBasis: "100%",
-            fontSize: "0.75rem",
-          }}
-        >
-          Direct move · {pluralize(deal.moves.length, "player")} moved
-        </div>
-        <div
-          style={{
-            alignItems: "center",
-            display: "flex",
-            flex: "1 1 20rem",
-            gap: "0.75rem",
-            minWidth: 0,
-          }}
-        >
-          <div style={{ flex: 1, minWidth: 0 }}>
-            <div
-              style={{
-                color: "var(--night-text-muted)",
-                fontSize: "0.68rem",
-                textTransform: "uppercase",
-              }}
-            >
-              From
-            </div>
-            <strong>{fromTeam.name}</strong>
-          </div>
-          <span aria-hidden="true" style={{ color: "var(--night-text-muted)" }}>
-            →
-          </span>
-          <div style={{ flex: 1, minWidth: 0 }}>
-            <div
-              style={{
-                color: "var(--night-text-muted)",
-                fontSize: "0.68rem",
-                textTransform: "uppercase",
-              }}
-            >
-              To
-            </div>
-            <strong>{toTeam.name}</strong>
-          </div>
-        </div>
-        <div
-          aria-label={`${toTeam.name} receives`}
-          style={{
-            display: "grid",
-            flex: "1 1 22rem",
-            gap: "0.5rem",
-          }}
-        >
-          {receivingSide.received.map((receivedMove) => (
-            <PlayerMove
-              key={receivedMove.playerId}
-              move={receivedMove}
-              wrapped={wrapped}
-            />
-          ))}
-        </div>
-      </article>
-    );
-  }
-
   return (
     <article
       data-testid={`trade-deal-${deal.id}`}
@@ -402,16 +317,25 @@ function Deal({ deal, wrapped }: { deal: TradeDeal; wrapped: WrappedType }) {
 }
 
 export function TradesForSeason({ wrapped }: { wrapped: WrappedType }) {
-  const weeks = groupOwnershipMoves(wrapped);
+  const weeks = groupOwnershipMoves(wrapped)
+    .map((week) => {
+      const deals = week.deals.filter((deal) => deal.kind === "exchange");
+      return {
+        ...week,
+        deals,
+        moveCount: deals.reduce((sum, deal) => sum + deal.moves.length, 0),
+      };
+    })
+    .filter((week) => week.deals.length > 0);
 
   if (weeks.length === 0) {
-    return <div>No direct ownership moves found for {wrapped.year}.</div>;
+    return <div>No exchanges found for {wrapped.year}.</div>;
   }
 
   return (
     <div style={{ maxWidth: "72rem", padding: "0 0.75rem 2rem" }}>
       <p style={{ color: "var(--night-text-muted)", marginTop: 0 }}>
-        Weekly roster-to-roster moves inferred from consecutive roster snapshots.
+        Weekly exchanges inferred from consecutive roster snapshots.
       </p>
       <div style={{ display: "grid", gap: "1rem" }}>
         {weeks.map((week) => (
@@ -442,12 +366,7 @@ export function TradesForSeason({ wrapped }: { wrapped: WrappedType }) {
                   fontSize: "0.78rem",
                 }}
               >
-                {week.exchangeCount > 0
-                  ? `${pluralize(week.exchangeCount, "exchange")} · `
-                  : ""}
-                {week.directMoveCount > 0
-                  ? `${pluralize(week.directMoveCount, "direct move")} · `
-                  : ""}
+                {pluralize(week.exchangeCount, "exchange")} ·{" "}
                 {pluralize(week.moveCount, "player")} moved
               </span>
             </header>

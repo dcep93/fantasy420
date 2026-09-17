@@ -19,6 +19,7 @@ export default defineConfig({
       "src/fantasy420/app/Wrapped/index.test.ts",
       "src/fantasy420/app/Wrapped/tabs/ChartPointHitTarget.test.tsx",
       "src/fantasy420/app/Wrapped/tabs/DraftBoard.test.tsx",
+      "src/fantasy420/app/Wrapped/tabs/Trades.test.tsx",
       "src/fantasy420/app/Wrapped/tabs/NFLTeams.test.tsx",
       "src/fantasy420/app/Wrapped/tabs/ReachesAndSteals.test.tsx",
       "src/fantasy420/app/Wrapped/tabs/PlayerStats/*.test.{ts,tsx}",
