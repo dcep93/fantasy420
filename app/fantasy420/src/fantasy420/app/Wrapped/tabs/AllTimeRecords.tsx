@@ -1,11 +1,15 @@
 import { bubbleStyle } from "..";
 import { WrappedType } from "../../FetchWrapped";
 import allWrapped from "../allWrapped";
-import { playerStatsData } from "./PlayerStats";
+import { usePlayerStats } from "./PlayerStats/usePlayerStats";
+import LoadStatus from "./PlayerStats/LoadStatus";
 
 export default function AllTimeRecords() {
+  const stats = usePlayerStats();
+  const playerStatsData = stats.data;
   return (
     <div>
+      <LoadStatus {...stats} />
       {Object.entries({
         // interceptions: (year, wrapped) =>
         //   Object.values(wrapped.nflTeams).flatMap((t) =>

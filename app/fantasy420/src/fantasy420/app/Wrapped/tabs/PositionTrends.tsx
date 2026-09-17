@@ -7,7 +7,8 @@ import {
   YAxis,
 } from "recharts";
 import { bubbleStyle, groupByF } from "..";
-import { playerStatsData } from "./PlayerStats";
+import { usePlayerStats } from "./PlayerStats/usePlayerStats";
+import LoadStatus from "./PlayerStats/LoadStatus";
 import { NIGHT_CHART_COLORS } from "../../theme";
 
 const POSITION_COLORS: Record<string, string> = {
@@ -17,8 +18,11 @@ const POSITION_COLORS: Record<string, string> = {
 };
 
 export default function PositionTrends() {
+  const stats = usePlayerStats();
+  const playerStatsData = stats.data;
   return (
-    <pre>
+    <div>
+      <LoadStatus {...stats} />
       {Object.entries(
         groupByF(
           playerStatsData.flatMap((p) => p.years.map((y) => ({ p, y }))),
@@ -105,6 +109,6 @@ export default function PositionTrends() {
             </div>
           </div>
         ))}
-    </pre>
+    </div>
   );
 }

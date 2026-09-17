@@ -1,28 +1,25 @@
 import { useMemo, useState } from "react";
-import { currentYear } from "../..";
 import allWrapped from "../../allWrapped";
 import Chart from "./Chart";
-import rawData from "./data.json";
+import type { PlayerStatsRecord } from "./refreshSnapshot";
+import { usePlayerStats } from "./usePlayerStats";
+import LoadStatus from "./LoadStatus";
 import { getPointsPerGame } from "./pointsPerGame";
-
-export const playerStatsData = rawData as {
-  position: string;
-  total: number;
-  name: string;
-  years: { year: number; scores: (number | null)[]; total: number }[];
-}[];
 
 const MAX_RESULTS = 100;
 
 // https://nflquery.web.app/fantasy
 export default function PlayerStats() {
   const [nameFilter, updateNameFilter] = useState("");
+  const stats = usePlayerStats();
+  const playerStatsData = stats.data;
   const positionRanks = useMemo(
     () => calculatePositionRanks(playerStatsData),
-    []
+    [playerStatsData]
   );
   return (
     <div>
+      <LoadStatus {...stats} />
       <div>
         nameFilter:{" "}
         <input
@@ -48,29 +45,6 @@ export default function PlayerStats() {
                 {d.years
                   .slice()
                   .reverse()
-                  .map((y) =>
-                    y.year.toString() !== currentYear
-                      ? y
-                      : (({ scores }) => {
-                          y.total = scores.reduce((a, b) => a + b, 0);
-                          d.total = d.years
-                            .map((y) => y.total)
-                            .reduce((a, b) => a + b, 0);
-
-                          return {
-                            ...y,
-                            // total career
-                            // will be stale
-                            scores,
-                          };
-                        })({
-                          scores: Object.values(
-                            Object.values(allWrapped[y.year].nflPlayers).find(
-                              (p) => p.name === d.name
-                            )?.scores || []
-                          ).slice(1),
-                        })
-                  )
                   .map((y) => ({ y, w: allWrapped[y.year] }))
                   .map((o) => ({
                     ...o,
@@ -81,7 +55,7 @@ export default function PlayerStats() {
                   .map((o) => ({
                     ...o,
                     owner: Object.values(o.w?.ffTeams || {}).find((t) =>
-                      t.rosters[0].rostered.includes(o.id!)
+                      t.rosters[0]?.rostered.includes(o.id!)
                     )?.name,
                   }))
                   .map((o) => ({
@@ -134,7 +108,7 @@ type PositionRanks = {
   };
 };
 
-function calculatePositionRanks(data: typeof playerStatsData): PositionRanks {
+function calculatePositionRanks(data: PlayerStatsRecord[]): PositionRanks {
   const ranks: PositionRanks = {};
 
   data.forEach((player) => {
