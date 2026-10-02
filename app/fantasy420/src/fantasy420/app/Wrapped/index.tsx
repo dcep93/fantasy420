@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { getWrapped, NFLPlayerType, WrappedType } from "../FetchWrapped";
 import allWrapped from "./allWrapped";
+import { parseWrappedHash, useWrappedHash } from "./hashRoute";
 import ErrorBoundary from "./ErrorBoundary";
 import AllTimeRecords from "./tabs/AllTimeRecords";
 import Benchwarmers from "./tabs/Benchwarmers";
@@ -63,12 +64,8 @@ export default function Wrapped() {
   document.title = "Fantasy Wrapped";
   const [yearKey, updateYear] = useState(selectedYear);
   selectedYear = yearKey;
-  var hashKey = window.location.hash.substring(1);
-  if (!toRender[hashKey]) {
-    window.location.hash = "";
-    hashKey = "";
-  }
-  const [toRenderKey, update] = useState(hashKey || Object.keys(toRender)[0]!);
+  const { tab: hashKey } = parseWrappedHash(useWrappedHash());
+  const toRenderKey = toRender[hashKey] ? hashKey : Object.keys(toRender)[0]!;
 
   const tabHeadings = useMemo(
     () => (
@@ -88,7 +85,6 @@ export default function Wrapped() {
             style={{ ...bubbleStyle, whiteSpace: "nowrap" }}
             onClick={() => {
               window.location.hash = key;
-              update(key);
             }}
           >
             {i + 1}
@@ -97,7 +93,7 @@ export default function Wrapped() {
         ))}
       </div>
     ),
-    [update]
+    []
   );
 
   function B() {

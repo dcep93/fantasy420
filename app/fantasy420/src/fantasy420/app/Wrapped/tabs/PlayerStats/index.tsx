@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import allWrapped from "../../allWrapped";
 import Chart from "./Chart";
 import type { PlayerStatsRecord } from "./refreshSnapshot";
@@ -6,13 +6,22 @@ import { usePlayerStats } from "./usePlayerStats";
 import LoadStatus from "./LoadStatus";
 import { getPointsPerGame } from "./pointsPerGame";
 
+import { parseWrappedHash, useWrappedHash } from "../../hashRoute";
+import { normalizePlayerName } from "./nameFilter";
+
 const MAX_RESULTS = 100;
 
 // https://nflquery.web.app/fantasy
 export default function PlayerStats() {
-  const [nameFilter, updateNameFilter] = useState("");
+  const { params } = parseWrappedHash(useWrappedHash());
+  const linkedName = (params.get("nameFilter") ?? "").replaceAll("_", " ");
+  const [nameFilter, updateNameFilter] = useState(linkedName);
+  useEffect(() => updateNameFilter(linkedName), [linkedName]);
   const stats = usePlayerStats();
   const playerStatsData = stats.data;
+  const matches = playerStatsData
+    .filter(player => normalizePlayerName(player.name).includes(normalizePlayerName(nameFilter)))
+    .sort((a, b) => b.total - a.total).slice(0, MAX_RESULTS);
   const positionRanks = useMemo(
     () => calculatePositionRanks(playerStatsData),
     [playerStatsData]
@@ -23,15 +32,14 @@ export default function PlayerStats() {
       <div>
         nameFilter:{" "}
         <input
+          aria-label="Player name"
           value={nameFilter}
-          onChange={(e) => updateNameFilter(normalize(e.currentTarget.value))}
+          onChange={(e) => updateNameFilter(e.currentTarget.value)}
         />
       </div>
       <div>
-        {playerStatsData
-          .filter((d) => normalize(d.name).includes(nameFilter))
-          .sort((a, b) => b.total - a.total)
-          .slice(0, MAX_RESULTS)
+        {!stats.loading && !matches.length && <p>No player stats found for “{nameFilter}”.</p>}
+        {matches
           .map((d, i) => (
             <div key={i} style={{ display: "flex" }}>
               <pre>
@@ -94,10 +102,6 @@ export default function PlayerStats() {
       </div>
     </div>
   );
-}
-
-function normalize(s: string) {
-  return s.toLowerCase().replaceAll(".", "");
 }
 
 type PositionRanks = {
