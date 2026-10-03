@@ -2,6 +2,7 @@ import { useState } from "react";
 import {
   Line,
   LineChart,
+  ReferenceLine,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -9,6 +10,7 @@ import {
 } from "recharts";
 import { Helpers, mapDict, selectedWrapped, selectedYear } from "..";
 import { NIGHT_CHART_COLORS, NIGHT_COLORS } from "../../theme";
+import { getManagerWins } from "./managerWins";
 
 export const colors = [...NIGHT_CHART_COLORS];
 
@@ -17,6 +19,7 @@ export default function ManagerPlot() {
 }
 
 function SubManagerPlot() {
+  const winData = getManagerWins(selectedWrapped());
   const dataA = mapDict(selectedWrapped().ffTeams, (t) => ({
     t,
     weeks: mapDict(
@@ -30,7 +33,7 @@ function SubManagerPlot() {
           total: w.starting
             .map(
               (playerId) =>
-                selectedWrapped().nflPlayers[playerId].scores[w.weekNum] || 0
+                selectedWrapped().nflPlayers[playerId]?.scores[w.weekNum] || 0
             )
             .reduce((a, b) => a + b, 0),
         }),
@@ -49,19 +52,15 @@ function SubManagerPlot() {
       ...o,
       weeks: mapDict(o.weeks, (w) => ({
         ...w,
-        oppTotal: w.opp === undefined ? 0 : dataA[w.opp].weeks[w.weekNum].total,
+        oppTotal:
+          w.opp === undefined ? 0 : dataA[w.opp]?.weeks[w.weekNum]?.total ?? 0,
       })),
     })),
     (o) => ({
       t: o.t,
-      wins: cumSum(
-        Object.values(o.weeks).map((w) => (w.total < w.oppTotal ? 0 : 1))
-      ),
       pointsFor: cumSum(Object.values(o.weeks).map((w) => w.total)),
       pointsAgainst: cumSum(
-        Object.values(o.weeks).map((w) =>
-          w.opp === undefined ? 0 : dataA[w.opp].weeks[w.weekNum].total
-        )
+        Object.values(o.weeks).map((w) => w.oppTotal)
       ),
     })
   );
@@ -71,7 +70,7 @@ function SubManagerPlot() {
       Object.values(data).reduce((a, b) => a + b, 0) /
       Object.values(data).length,
   });
-  const dataC = Object.values(dataB)[0].wins.map((_, weekIndex) => ({
+  const dataC = (Object.values(dataB)[0]?.pointsFor ?? []).map((_, weekIndex) => ({
     weekNum: weekIndex,
     pointsFor: appendAverage(mapDict(dataB, (o) => o.pointsFor[weekIndex])),
     pointsAgainst: appendAverage(
@@ -84,6 +83,8 @@ function SubManagerPlot() {
       ys: { average: number; data: { [teamId: string]: number } };
     }[];
   } = {
+    wins: winData.map((point) => ({ x: point.weekNum, ys: point })),
+    winsAboveAverage: winData.map((point) => ({ x: point.weekNum, ys: point })),
     ...(!selectedWrapped().fantasyCalc?.history.length
       ? {}
       : {
@@ -111,16 +112,27 @@ function SubManagerPlot() {
     <div>
       <div>
         {Object.entries(dataD).map(([key, data]) => {
+          const isWins = key === "wins" || key === "winsAboveAverage";
+          const title =
+            key === "wins"
+              ? "Total wins by week"
+              : key === "winsAboveAverage"
+                ? "Wins above/below league average"
+                : `${key} ${data.length}`;
           var domainData = {
             year: "",
             min: 0,
             range: 0,
           };
           return (
-            <div key={key}>
-              <h1>
-                {key} {data.length}
-              </h1>
+            <section key={key} aria-label={title}>
+              <h1>{title}</h1>
+              {isWins && (
+                <p>
+                  Completed weeks with recorded matchups only. Ties and byes
+                  do not count as wins.
+                </p>
+              )}
               <div
                 style={{
                   width: "80vW",
@@ -132,7 +144,9 @@ function SubManagerPlot() {
                   <LineChart
                     data={data.map((o) => ({
                       x: o.x,
-                      ...mapDict(o.ys.data, (v) => v - o.ys.average),
+                      ...mapDict(o.ys.data, (v) =>
+                        key === "wins" ? v : v - o.ys.average
+                      ),
                     }))}
                   >
                     {key === "fantasyCalc" ? (
@@ -161,14 +175,22 @@ function SubManagerPlot() {
                         }
                         return domain;
                       }}
-                      hide
+                      hide={!isWins}
+                      allowDecimals={key !== "wins"}
                     />
+                    {key === "winsAboveAverage" && (
+                      <ReferenceLine
+                        y={0}
+                        stroke={NIGHT_COLORS.mutedText}
+                        strokeDasharray="4 4"
+                      />
+                    )}
                     <Tooltip
                       content={({ label, payload, coordinate, viewBox }) => {
                         if (
                           domainData.year !== selectedYear ||
                           label === undefined ||
-                          payload!.length === 0
+                          !payload?.length
                         )
                           return null;
                         const mappedPayload = payload!
@@ -189,7 +211,11 @@ function SubManagerPlot() {
                             dataKey,
                             value: Math.abs(value - cursorValue),
                           }))
-                          .filter((x) => x.value < 30)
+                          .filter(
+                            (x) => x.value <= (isWins
+                              ? Math.max(domainData.range * 0.08, 0.1)
+                              : 30)
+                          )
                           .sort((a, b) => a.value - b.value)[0]
                           ?.dataKey as string;
                         setTimeout(() => updateSelectedTeamId(closestTeamId));
@@ -227,12 +253,19 @@ function SubManagerPlot() {
                                         : undefined,
                                   }}
                                 >
-                                  {key === "fantasyCalc" ? (
+                                  {isWins ? (
+                                    <>
+                                      {values[p.dataKey]} {values[p.dataKey] === 1 ? "win" : "wins"}
+                                      {key === "winsAboveAverage" && (
+                                        <> ({p.value >= 0 ? "+" : ""}{p.value.toFixed(2)} vs average)</>
+                                      )}
+                                    </>
+                                  ) : key === "fantasyCalc" ? (
                                     values[p.dataKey].toFixed(2)
                                   ) : (
                                     <>
                                       {values[p.dataKey].toFixed(2)}: (
-                                      {dataB[p.dataKey].wins[label]})
+                                      {winData.filter((point) => point.weekNum <= Number(label)).at(-1)?.data[p.dataKey] ?? 0})
                                     </>
                                   )}{" "}
                                   {selectedWrapped().ffTeams[p.name].name}
@@ -258,7 +291,7 @@ function SubManagerPlot() {
                   </LineChart>
                 </ResponsiveContainer>
               </div>
-            </div>
+            </section>
           );
         })}
       </div>

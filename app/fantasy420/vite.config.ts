@@ -17,6 +17,8 @@ export default defineConfig({
       "src/fantasy420/app/Draft/rookies.test.ts",
       "src/fantasy420/app/FetchWrapped/defenseStats.test.ts",
       "src/fantasy420/app/Wrapped/index.test.ts",
+      "src/fantasy420/app/Wrapped/tabs/managerWins.test.ts",
+      "src/fantasy420/app/Wrapped/tabs/ManagerPlot.test.tsx",
       "src/fantasy420/app/Wrapped/tabs/ChartPointHitTarget.test.tsx",
       "src/fantasy420/app/Wrapped/tabs/DraftBoard.test.tsx",
       "src/fantasy420/app/Wrapped/tabs/Trades.test.tsx",
