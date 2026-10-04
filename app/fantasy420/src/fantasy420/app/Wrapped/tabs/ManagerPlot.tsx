@@ -83,8 +83,6 @@ function SubManagerPlot() {
       ys: { average: number; data: { [teamId: string]: number } };
     }[];
   } = {
-    wins: winData.map((point) => ({ x: point.weekNum, ys: point })),
-    winsAboveAverage: winData.map((point) => ({ x: point.weekNum, ys: point })),
     ...(!selectedWrapped().fantasyCalc?.history.length
       ? {}
       : {
@@ -106,6 +104,8 @@ function SubManagerPlot() {
       x: o.weekNum,
       ys: o.pointsAgainst,
     })),
+    wins: winData.map((point) => ({ x: point.weekNum, ys: point })),
+    winsAboveAverage: winData.map((point) => ({ x: point.weekNum, ys: point })),
   };
   const [selectedTeamId, updateSelectedTeamId] = useState("");
   return (
