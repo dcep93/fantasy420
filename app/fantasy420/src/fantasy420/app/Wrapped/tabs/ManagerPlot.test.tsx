@@ -1,4 +1,4 @@
-import { render, screen, within } from "@testing-library/react";
+import { act, fireEvent, render, screen, within } from "@testing-library/react";
 import type { WrappedType } from "../../FetchWrapped";
 import { selectedWrapped } from "..";
 import ManagerPlot from "./ManagerPlot";
@@ -23,7 +23,7 @@ vi.mock("recharts", async () => {
         <pre data-testid="series">{JSON.stringify(data)}</pre>{children}
       </Data.Provider>
     ),
-    Line: () => null,
+    Line: ({ strokeWidth }: any) => <span data-testid="manager-line" data-width={strokeWidth} />,
     XAxis: () => null,
     YAxis: ({ domain }: any) => { domain([-1, 1]); return null; },
     ReferenceLine: () => null,
@@ -58,6 +58,25 @@ beforeEach(() => {
 });
 
 afterEach(() => { vi.clearAllTimers(); vi.useRealTimers(); });
+
+test("click clears focus even when a tooltip update is pending; movement enables focus again", () => {
+  vi.mocked(selectedWrapped).mockReturnValue({ ...selectedWrapped(), latestScoringPeriod: 0 });
+  const { container, rerender } = render(<ManagerPlot />);
+  const hasFocus = () => screen.getAllByTestId("manager-line")
+    .some((line) => line.getAttribute("data-width") === "4");
+  act(() => { vi.runOnlyPendingTimers(); });
+  expect(hasFocus()).toBe(true);
+  fireEvent.click(screen.getByRole("region", { name: "pointsFor 2" }));
+  act(() => { vi.runOnlyPendingTimers(); });
+  expect(hasFocus()).toBe(false);
+  rerender(<ManagerPlot />);
+  act(() => { vi.runOnlyPendingTimers(); });
+  expect(hasFocus()).toBe(false);
+  fireEvent.mouseMove(container.querySelector(".manager-plot-chart")!);
+  rerender(<ManagerPlot />);
+  act(() => { vi.runOnlyPendingTimers(); });
+  expect(hasFocus()).toBe(true);
+});
 
 test("shows cumulative wins and league-relative wins for the selected season", () => {
   render(<ManagerPlot />);

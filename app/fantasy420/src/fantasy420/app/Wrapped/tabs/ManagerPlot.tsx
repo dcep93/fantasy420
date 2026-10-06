@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import "./ManagerPlot.css";
 import {
   Line,
   LineChart,
@@ -108,8 +109,14 @@ function SubManagerPlot() {
     winsAboveAverage: winData.map((point) => ({ x: point.weekNum, ys: point })),
   };
   const [selectedTeamId, updateSelectedTeamId] = useState("");
+  const focusDismissed = useRef(false);
   return (
-    <div>
+    <div
+      onClick={() => {
+        focusDismissed.current = true;
+        updateSelectedTeamId("");
+      }}
+    >
       <div>
         {Object.entries(dataD).map(([key, data]) => {
           const isWins = key === "wins" || key === "winsAboveAverage";
@@ -134,14 +141,13 @@ function SubManagerPlot() {
                 </p>
               )}
               <div
-                style={{
-                  width: "80vW",
-                  height: "30em",
-                  overflow: "hidden",
-                }}
+                className="manager-plot-chart"
+                onMouseMoveCapture={() => { focusDismissed.current = false; }}
+                onTouchMoveCapture={() => { focusDismissed.current = false; }}
               >
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart
+                    margin={{ top: 5, right: 18, bottom: 5, left: 5 }}
                     data={data.map((o) => ({
                       x: o.x,
                       ...mapDict(o.ys.data, (v) =>
@@ -154,11 +160,13 @@ function SubManagerPlot() {
                         dataKey={"x"}
                         type={"number"}
                         scale={"time"}
+                        minTickGap={24}
+                        interval="preserveStartEnd"
                         domain={[
                           selectedWrapped().fantasyCalc!.history[0].date,
                         ]}
                         tickFormatter={(tick) =>
-                          new Date(tick).toLocaleDateString()
+                          new Date(tick).toLocaleDateString(undefined, { month: "numeric", day: "numeric" })
                         }
                       />
                     ) : (
@@ -178,11 +186,12 @@ function SubManagerPlot() {
                       hide={!isWins}
                       allowDecimals={key !== "wins"}
                     />
-                    {key === "winsAboveAverage" && (
+                    {key !== "wins" && (
                       <ReferenceLine
                         y={0}
                         stroke={NIGHT_COLORS.mutedText}
-                        strokeDasharray="4 4"
+                        strokeDasharray="4 6"
+                        strokeOpacity={0.25}
                       />
                     )}
                     <Tooltip
@@ -218,7 +227,13 @@ function SubManagerPlot() {
                           )
                           .sort((a, b) => a.value - b.value)[0]
                           ?.dataKey as string;
-                        setTimeout(() => updateSelectedTeamId(closestTeamId));
+                        if (!focusDismissed.current) {
+                          setTimeout(() => {
+                            if (!focusDismissed.current) {
+                              updateSelectedTeamId(closestTeamId);
+                            }
+                          });
+                        }
                         const values = data.find((d) => d.x === label)!.ys.data;
                         return (
                           <div
@@ -248,7 +263,7 @@ function SubManagerPlot() {
                                   key={p.dataKey}
                                   style={{
                                     fontWeight:
-                                      p.dataKey === closestTeamId
+                                      p.dataKey === selectedTeamId
                                         ? "bold"
                                         : undefined,
                                   }}
@@ -284,7 +299,9 @@ function SubManagerPlot() {
                           dataKey={t.id}
                           stroke={colors[index]}
                           isAnimationActive={false}
-                          strokeWidth={t.id === selectedTeamId ? 10 : undefined}
+                          dot={{ r: 2, strokeWidth: 1 }}
+                          activeDot={{ r: 4 }}
+                          strokeWidth={t.id === selectedTeamId ? 4 : undefined}
                         />
                       )
                     )}

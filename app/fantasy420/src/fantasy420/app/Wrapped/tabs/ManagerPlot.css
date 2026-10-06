@@ -1,0 +1,12 @@
+.manager-plot-chart {
+  width: 80vw;
+  height: 30em;
+  overflow: hidden;
+}
+@media (max-width: 600px) {
+  .manager-plot-chart {
+    width: calc(100vw - 16px);
+    height: 25em;
+    margin-inline: 8px;
+  }
+}
