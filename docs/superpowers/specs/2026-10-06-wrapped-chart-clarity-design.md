@@ -51,3 +51,12 @@ meaningful tests. Test ties, repeated leads, late-change weighting, week limits,
 and reconstructed final totals. Run the affected tests and production build;
 inspect all three tabs in a browser, including narrow-screen presentation and
 tooltips. Commit task-owned changes and push main, preserving unrelated work.
+
+## Verification completed
+
+21 focused tests and the production build pass. Browser checks cover the three
+tabs, tooltips and expandable details, current and historical matchup seasons,
+and narrow/wide layouts. The matchup tooltip announces keyboard updates with
+a polite live region. Independent code review also checked all 340 matchups
+across saved 2021–2026 data for finite scores, chronological timestamps, and
+final-score agreement.
