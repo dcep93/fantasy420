@@ -59,23 +59,38 @@ beforeEach(() => {
 
 afterEach(() => { vi.clearAllTimers(); vi.useRealTimers(); });
 
-test("click clears focus even when a tooltip update is pending; movement enables focus again", () => {
+test.each(["mouseMove", "touchMove"] as const)("first click hides the popup, second clears focus, and %s resumes hover", (movement) => {
   vi.mocked(selectedWrapped).mockReturnValue({ ...selectedWrapped(), latestScoringPeriod: 0 });
   const { container, rerender } = render(<ManagerPlot />);
   const hasFocus = () => screen.getAllByTestId("manager-line")
-    .some((line) => line.getAttribute("data-width") === "4");
+    .some((line) => line.getAttribute("data-width") === "7");
+  const chart = container.querySelector(".manager-plot-chart")!;
+  const points = screen.getByRole("region", { name: "pointsFor 2" });
+  const popup = () => within(points).queryByText("20.00: (0) Alpha");
   act(() => { vi.runOnlyPendingTimers(); });
   expect(hasFocus()).toBe(true);
-  fireEvent.click(screen.getByRole("region", { name: "pointsFor 2" }));
+  expect(popup()).toBeInTheDocument();
+  fireEvent.click(chart);
+  act(() => { vi.runOnlyPendingTimers(); });
+  expect(hasFocus()).toBe(true);
+  expect(popup()).not.toBeInTheDocument();
+  fireEvent[movement](chart);
+  rerender(<ManagerPlot />);
+  act(() => { vi.runOnlyPendingTimers(); });
+  expect(hasFocus()).toBe(true);
+  expect(popup()).not.toBeInTheDocument();
+  fireEvent.click(chart);
   act(() => { vi.runOnlyPendingTimers(); });
   expect(hasFocus()).toBe(false);
+  expect(popup()).not.toBeInTheDocument();
   rerender(<ManagerPlot />);
   act(() => { vi.runOnlyPendingTimers(); });
   expect(hasFocus()).toBe(false);
-  fireEvent.mouseMove(container.querySelector(".manager-plot-chart")!);
+  fireEvent[movement](chart);
   rerender(<ManagerPlot />);
   act(() => { vi.runOnlyPendingTimers(); });
   expect(hasFocus()).toBe(true);
+  expect(popup()).toBeInTheDocument();
 });
 
 test("shows cumulative wins and league-relative wins for the selected season", () => {

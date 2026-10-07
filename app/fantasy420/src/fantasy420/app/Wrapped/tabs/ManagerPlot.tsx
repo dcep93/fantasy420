@@ -109,12 +109,27 @@ function SubManagerPlot() {
     winsAboveAverage: winData.map((point) => ({ x: point.weekNum, ys: point })),
   };
   const [selectedTeamId, updateSelectedTeamId] = useState("");
-  const focusDismissed = useRef(false);
+  type InteractionMode = "hover" | "popupHidden" | "dismissed";
+  const [interactionMode, setInteractionMode] = useState<InteractionMode>("hover");
+  const interactionModeRef = useRef<InteractionMode>("hover");
+  const changeInteractionMode = (mode: InteractionMode) => {
+    interactionModeRef.current = mode;
+    setInteractionMode(mode);
+  };
+  const resumeHover = () => {
+    if (interactionModeRef.current === "dismissed") {
+      changeInteractionMode("hover");
+    }
+  };
   return (
     <div
       onClick={() => {
-        focusDismissed.current = true;
-        updateSelectedTeamId("");
+        if (interactionModeRef.current === "hover") {
+          changeInteractionMode("popupHidden");
+        } else if (interactionModeRef.current === "popupHidden") {
+          changeInteractionMode("dismissed");
+          updateSelectedTeamId("");
+        }
       }}
     >
       <div>
@@ -142,8 +157,8 @@ function SubManagerPlot() {
               )}
               <div
                 className="manager-plot-chart"
-                onMouseMoveCapture={() => { focusDismissed.current = false; }}
-                onTouchMoveCapture={() => { focusDismissed.current = false; }}
+                onMouseMoveCapture={resumeHover}
+                onTouchMoveCapture={resumeHover}
               >
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart
@@ -195,8 +210,11 @@ function SubManagerPlot() {
                       />
                     )}
                     <Tooltip
+                      active={interactionMode === "hover" ? undefined : false}
+                      cursor={interactionMode === "hover" ? undefined : false}
                       content={({ label, payload, coordinate, viewBox }) => {
                         if (
+                          interactionMode !== "hover" ||
                           domainData.year !== selectedYear ||
                           label === undefined ||
                           !payload?.length
@@ -227,9 +245,9 @@ function SubManagerPlot() {
                           )
                           .sort((a, b) => a.value - b.value)[0]
                           ?.dataKey as string;
-                        if (!focusDismissed.current) {
+                        if (interactionModeRef.current === "hover") {
                           setTimeout(() => {
-                            if (!focusDismissed.current) {
+                            if (interactionModeRef.current === "hover") {
                               updateSelectedTeamId(closestTeamId);
                             }
                           });
@@ -301,7 +319,7 @@ function SubManagerPlot() {
                           isAnimationActive={false}
                           dot={{ r: 2, strokeWidth: 1 }}
                           activeDot={{ r: 4 }}
-                          strokeWidth={t.id === selectedTeamId ? 4 : undefined}
+                          strokeWidth={t.id === selectedTeamId ? 7 : undefined}
                         />
                       )
                     )}
