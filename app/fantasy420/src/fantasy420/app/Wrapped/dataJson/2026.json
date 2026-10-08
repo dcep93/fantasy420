@@ -330,208 +330,223 @@
           "10": 425.11
         },
         "date": 1791394499229
+      },
+      {
+        "values": {
+          "1": 362.5,
+          "2": 333.95,
+          "3": 400.46,
+          "4": 374.13,
+          "5": 345.24,
+          "6": 404,
+          "7": 398.48,
+          "8": 355.7,
+          "9": 352.79,
+          "10": 410.28
+        },
+        "date": 1791484418829
       }
     ],
     "players": {
-      "8439": 2.31,
-      "12483": 31.05,
-      "14880": 24.83,
-      "15818": 1.48,
-      "15847": 15.29,
-      "15864": 9.34,
-      "16737": 14.43,
-      "16800": 26.35,
-      "2573401": 0.2,
-      "2576925": 3.07,
-      "2577417": 44.43,
-      "2578570": 13.43,
-      "2969939": 2.65,
-      "2973405": 3.39,
-      "2976212": 8.93,
-      "2977187": 0.13,
-      "2991662": 0.29,
-      "3040151": 31.69,
-      "3042519": 13.57,
-      "3043078": 62.05,
-      "3046439": 0.58,
-      "3046779": 39.1,
-      "3052587": 6.25,
-      "3054850": 7.1,
-      "3116164": 0.78,
-      "3116165": 4.32,
-      "3116365": 5.62,
-      "3116385": 2.11,
-      "3116406": 7.81,
-      "3117251": 72.99,
-      "3117256": 3.68,
-      "3121023": 3.55,
-      "3121422": 10.92,
-      "3122840": 11.11,
-      "3126486": 10.78,
-      "3128429": 3.78,
-      "3139477": 54.28,
-      "3886598": 0.12,
-      "3912547": 27.77,
-      "3915416": 14.26,
-      "3915511": 62.16,
-      "3916148": 9.38,
-      "3916387": 79.43,
-      "3916433": 5.54,
-      "3917315": 15.69,
-      "3917792": 5.7,
-      "3918298": 108.41,
-      "3929630": 27.62,
-      "3929645": 11.51,
-      "4032473": 0.32,
-      "4035538": 12.48,
-      "4035687": 1.59,
-      "4036133": 2.06,
-      "4036378": 25.94,
-      "4038815": 3.89,
-      "4038941": 30.39,
-      "4040715": 39.55,
-      "4047365": 8.34,
-      "4047646": 27.67,
-      "4047650": 11.23,
-      "4239993": 31.14,
-      "4239996": 10.47,
-      "4241389": 85.61,
-      "4241416": 32.18,
-      "4241474": 5.01,
-      "4241478": 25.37,
-      "4241985": 4.61,
-      "4242335": 78.59,
-      "4242355": 4.67,
-      "4242512": 5.07,
-      "4248528": 29.27,
-      "4258173": 49.13,
-      "4259545": 25.71,
-      "4262921": 57.87,
-      "4360078": 1.84,
-      "4360248": 4.31,
-      "4360310": 43.77,
-      "4360423": 13.01,
-      "4360569": 4.98,
-      "4360689": 36.18,
-      "4360761": 25.13,
-      "4360939": 0.75,
-      "4361050": 10.19,
-      "4361307": 62.37,
-      "4361370": 58.67,
-      "4361411": 0.31,
-      "4361432": 5.49,
-      "4361579": 45.5,
-      "4361741": 64.45,
-      "4362238": 46.47,
-      "4362619": 0.68,
-      "4362628": 82.29,
-      "4366031": 0.35,
-      "4371733": 1.99,
-      "4372016": 17.61,
-      "4373626": 3.93,
-      "4373678": 2.54,
-      "4374302": 80.51,
-      "4379399": 61.39,
-      "4385690": 16.06,
-      "4426338": 28,
-      "4426348": 26.74,
-      "4426354": 30.59,
-      "4426385": 8.47,
-      "4426388": 11.91,
-      "4426502": 49.1,
-      "4426515": 80.88,
-      "4427366": 27.08,
-      "4428331": 24.36,
-      "4428557": 0.46,
-      "4428718": 2.2,
-      "4428850": 3.57,
-      "4429013": 0.55,
-      "4429023": 2.39,
-      "4429025": 1.33,
-      "4429059": 4.38,
-      "4429086": 0.59,
-      "4429096": 5.38,
-      "4429205": 6.26,
-      "4429615": 49.44,
-      "4429795": 103.69,
-      "4430027": 16.09,
-      "4430539": 1.24,
-      "4430737": 45.55,
-      "4430807": 101.17,
-      "4430878": 101.18,
-      "4431299": 9.63,
-      "4431452": 41.97,
-      "4431459": 23.68,
-      "4431492": 0.82,
-      "4431545": 0.8,
-      "4431611": 51.08,
-      "4432577": 20.88,
-      "4432620": 26.35,
-      "4432665": 64.86,
-      "4432708": 5.8,
-      "4432710": 11.35,
-      "4432773": 4.9,
-      "4434153": 0.28,
-      "4567048": 87.61,
-      "4567750": 11.55,
-      "4568490": 10.08,
-      "4569173": 11.59,
-      "4569559": 6.31,
-      "4569587": 4.17,
-      "4569603": 3.6,
-      "4569618": 39.29,
-      "4569987": 23.31,
-      "4572680": 13.78,
-      "4575131": 5.54,
-      "4576297": 0.45,
-      "4595348": 35.91,
-      "4596334": 3.12,
-      "4596448": 20.79,
-      "4596472": 0.98,
-      "4597500": 1.65,
-      "4599739": 0.58,
-      "4600981": 0.4,
-      "4608686": 11.43,
-      "4612826": 12.53,
-      "4635008": 1.44,
-      "4682745": 1.33,
-      "4683062": 4.36,
-      "4685247": 3.76,
-      "4685278": 14.61,
-      "4685382": 21.31,
-      "4685472": 35.89,
-      "4685512": 6.21,
-      "4685702": 19.26,
-      "4685720": 36.3,
-      "4686612": 0.65,
-      "4686658": 1.18,
-      "4688380": 9.9,
-      "4688813": 7.01,
-      "4695883": 11.25,
-      "4696044": 2.29,
-      "4696981": 19.75,
-      "4697815": 3.09,
-      "4701936": 15.37,
-      "4711533": 7.12,
-      "4723086": 13.77,
-      "4832800": 10.09,
-      "4832955": 1.57,
-      "4869645": 0.26,
-      "4869961": 0.4,
-      "4870653": 6.21,
-      "4870795": 2.73,
-      "4870808": 32.83,
-      "4870847": 0.13,
-      "4871023": 14.16,
-      "4880281": 9.22,
-      "4882093": 27.57,
-      "4887558": 5.8,
-      "4890973": 50.97,
-      "5081432": 0.29,
-      "5083076": 12.05,
-      "5083315": 5.4
+      "8439": 3.29,
+      "12483": 32.93,
+      "14880": 23.34,
+      "15818": 1.03,
+      "15847": 14.81,
+      "15864": 1.87,
+      "16737": 14.85,
+      "16800": 26.51,
+      "2573401": 0.35,
+      "2576925": 1.41,
+      "2577417": 47.02,
+      "2578570": 13.67,
+      "2969939": 1.96,
+      "2973405": 2.32,
+      "2976212": 7.4,
+      "2977187": 0.09,
+      "2991662": 0.26,
+      "3040151": 26.54,
+      "3042519": 14.07,
+      "3043078": 61.93,
+      "3046439": 0.77,
+      "3046779": 40.56,
+      "3052587": 6.62,
+      "3054850": 6.27,
+      "3116164": 1.4,
+      "3116165": 4.3,
+      "3116365": 4.92,
+      "3116385": 0.07,
+      "3116406": 3.08,
+      "3117251": 68.04,
+      "3117256": 2.07,
+      "3121023": 2.71,
+      "3121422": 10.21,
+      "3122840": 8.84,
+      "3126486": 9.79,
+      "3128429": 2.42,
+      "3139477": 53.55,
+      "3912547": 26.62,
+      "3915416": 13.56,
+      "3915511": 59.22,
+      "3916148": 9.21,
+      "3916387": 77.52,
+      "3916433": 2.9,
+      "3917315": 13.36,
+      "3917792": 3.28,
+      "3918298": 109.46,
+      "3929630": 25.95,
+      "3929645": 10.54,
+      "4032473": 0.18,
+      "4035538": 11.16,
+      "4035687": 1.07,
+      "4036133": 3.2,
+      "4036378": 23.54,
+      "4038815": 4.03,
+      "4038941": 27.13,
+      "4040715": 37.53,
+      "4047365": 4.82,
+      "4047646": 29.94,
+      "4047650": 10.64,
+      "4239993": 28,
+      "4239996": 10.15,
+      "4241389": 86.92,
+      "4241416": 33.24,
+      "4241457": 0.07,
+      "4241474": 5.45,
+      "4241478": 23.72,
+      "4241985": 4.26,
+      "4242335": 73.86,
+      "4242355": 3.75,
+      "4242512": 3.18,
+      "4248528": 29.38,
+      "4258173": 51.96,
+      "4259545": 25.76,
+      "4262921": 53.97,
+      "4360078": 1.47,
+      "4360248": 3.74,
+      "4360310": 39.91,
+      "4360423": 13.21,
+      "4360569": 4.37,
+      "4360689": 38.13,
+      "4360761": 25.46,
+      "4360939": 0.47,
+      "4361050": 9.19,
+      "4361307": 61.94,
+      "4361370": 57.21,
+      "4361411": 0.14,
+      "4361432": 5.31,
+      "4361579": 46.42,
+      "4361741": 59.17,
+      "4362238": 46.37,
+      "4362619": 0.52,
+      "4362628": 81.94,
+      "4366031": 0.79,
+      "4371733": 2.11,
+      "4372016": 17.13,
+      "4373626": 3.92,
+      "4373678": 2.48,
+      "4374302": 84.47,
+      "4379399": 58.77,
+      "4385690": 13.03,
+      "4426338": 28.47,
+      "4426348": 34.32,
+      "4426354": 29.98,
+      "4426385": 6.33,
+      "4426388": 10.7,
+      "4426502": 49.87,
+      "4426515": 81.15,
+      "4427366": 25.7,
+      "4428331": 19.7,
+      "4428557": 0.3,
+      "4428718": 1.87,
+      "4428850": 2.5,
+      "4429023": 1.88,
+      "4429025": 0.81,
+      "4429059": 4.14,
+      "4429086": 0.82,
+      "4429096": 4.55,
+      "4429205": 4.94,
+      "4429615": 50.49,
+      "4429795": 104.06,
+      "4430027": 17.56,
+      "4430539": 1.14,
+      "4430737": 51.2,
+      "4430807": 103.17,
+      "4430878": 96.41,
+      "4431299": 8.23,
+      "4431452": 43.78,
+      "4431459": 21.52,
+      "4431492": 2.33,
+      "4431545": 2.81,
+      "4431611": 47.86,
+      "4432577": 17.94,
+      "4432620": 24.51,
+      "4432665": 65.93,
+      "4432708": 5.29,
+      "4432710": 11.61,
+      "4432773": 4.16,
+      "4434153": 0.19,
+      "4567048": 85.7,
+      "4567750": 11.43,
+      "4568490": 10.82,
+      "4569173": 11.45,
+      "4569559": 6.04,
+      "4569587": 3.66,
+      "4569603": 3.56,
+      "4569618": 37.3,
+      "4569987": 22.38,
+      "4572680": 15.36,
+      "4575131": 4.52,
+      "4576297": 0.28,
+      "4595342": 0.27,
+      "4595348": 34.6,
+      "4596334": 3.61,
+      "4596448": 19.26,
+      "4596472": 0.3,
+      "4597500": 1.08,
+      "4599739": 0.53,
+      "4608686": 9.33,
+      "4612826": 13.06,
+      "4635008": 3.71,
+      "4682745": 0.66,
+      "4683062": 4.19,
+      "4685247": 3.85,
+      "4685278": 15.27,
+      "4685382": 18.07,
+      "4685472": 35.44,
+      "4685512": 3.65,
+      "4685702": 17.73,
+      "4685720": 34.61,
+      "4686612": 1.18,
+      "4686658": 1.05,
+      "4688380": 3.09,
+      "4688813": 6.53,
+      "4695883": 12.26,
+      "4696044": 1.76,
+      "4696981": 17.53,
+      "4697815": 2.28,
+      "4701936": 14.87,
+      "4702555": 0.72,
+      "4711533": 5.99,
+      "4723086": 13.19,
+      "4832800": 9.76,
+      "4832955": 1.35,
+      "4869645": 0.37,
+      "4869961": 0.29,
+      "4870653": 5.56,
+      "4870795": 2.13,
+      "4870808": 30.11,
+      "4871023": 13.61,
+      "4880281": 7.35,
+      "4882093": 22.41,
+      "4887558": 5.27,
+      "4890973": 52.61,
+      "5081432": 0.25,
+      "5083076": 12.4,
+      "5083315": 4.88,
+      "Dohnte Meyers": 1.07
     },
-    "timestamp": 1791394491038
+    "timestamp": 1791484409903
   },
   "ffMatchups": {
     "1": [
@@ -1137,13 +1152,13 @@
             "4379399",
             "4430737",
             "4723086",
-            "4360689",
             "4882093",
             "4242512",
             "3042519",
             "2473037",
             "4869961",
-            "-16006"
+            "-16006",
+            "4434153"
           ],
           "rostered": [
             "4426515",
@@ -1156,13 +1171,13 @@
             "4882093",
             "4432708",
             "4242512",
-            "-16026",
             "4870795",
             "3042519",
             "2473037",
             "4429205",
             "4869961",
-            "-16006"
+            "-16006",
+            "4434153"
           ],
           "projections": {
             "2473037": 8.8,
@@ -1175,13 +1190,13 @@
             "4429205": 11.33,
             "4430737": 17.79,
             "4431611": 0,
-            "4432708": 6.7,
+            "4432708": 6.69,
+            "4434153": 15.52,
             "4723086": 9.65,
-            "4869961": 7.09,
-            "4870795": 10.36,
+            "4869961": 9.03,
+            "4870795": 10.07,
             "4882093": 13.93,
-            "-16026": 3.86,
-            "-16006": 7.37
+            "-16006": 7.42
           }
         }
       }
@@ -1499,6 +1514,7 @@
         "5": {
           "weekNum": "5",
           "starting": [
+            "4426348",
             "4241389",
             "4890973",
             "4258173",
@@ -1506,10 +1522,9 @@
             "3953687",
             "-16007",
             "3916433",
-            "4373678",
             "3116365",
-            "2576980",
-            "4429835"
+            "4431545",
+            "4361432"
           ],
           "rostered": [
             "4426348",
@@ -1527,13 +1542,13 @@
             "4373678",
             "4242355",
             "3116365",
-            "2576980",
-            "4429835"
+            "4429835",
+            "4431545",
+            "4361432"
           ],
           "projections": {
             "12483": 18.17,
-            "2576980": 0,
-            "3116365": 9.54,
+            "3116365": 9.53,
             "3121422": 13.17,
             "3916433": 10.7,
             "3953687": 10.8,
@@ -1541,9 +1556,11 @@
             "4242355": 6.87,
             "4258173": 16.45,
             "4360248": 7.11,
+            "4361432": 12.19,
             "4373678": 9.45,
             "4426348": 20.48,
             "4429835": 7.51,
+            "4431545": 10.23,
             "4685472": 0,
             "4685512": 0,
             "4890973": 17.83,
@@ -1869,10 +1886,10 @@
             "4430807",
             "4360310",
             "4426354",
-            "3917315",
             "4696981",
             "4596448",
             "4431299",
+            "2578570",
             "4360761",
             "4567104",
             "3929645",
@@ -1892,18 +1909,19 @@
             "15847",
             "4880281",
             "4569559",
-            "4832955",
             "4567104",
             "3929645",
-            "-16023"
+            "-16023",
+            "4241474"
           ],
           "projections": {
             "15847": 0,
             "2578570": 18.83,
             "3917315": 17.86,
             "3929645": 10.07,
+            "4241474": 8.1,
             "4360310": 19.02,
-            "4360761": 16.79,
+            "4360761": 16.78,
             "4426354": 13.22,
             "4430807": 22.18,
             "4431299": 10.91,
@@ -1912,7 +1930,6 @@
             "4569559": 10.19,
             "4596448": 15.22,
             "4696981": 13.2,
-            "4832955": 0,
             "4880281": 0,
             "-16023": 6.76
           }
@@ -2230,7 +2247,7 @@
         "5": {
           "weekNum": "5",
           "starting": [
-            "3916387",
+            "4262921",
             "4361741",
             "4429615",
             "4259545",
@@ -2238,9 +2255,9 @@
             "4685278",
             "4430027",
             "4362081",
-            "4241985",
             "4711533",
-            "-16003"
+            "-16003",
+            "4360423"
           ],
           "rostered": [
             "3916387",
@@ -2252,32 +2269,34 @@
             "4685278",
             "4432710",
             "4430027",
-            "4429023",
             "4688380",
             "4362081",
             "4702555",
             "4696044",
             "4241985",
             "4711533",
-            "-16003"
+            "-16003",
+            "4360569",
+            "4360423"
           ],
           "projections": {
             "3916387": 0,
             "4241985": 10.61,
-            "4248528": 13.8,
+            "4248528": 13.77,
             "4259545": 14.12,
             "4262921": 18.49,
+            "4360423": 14.56,
+            "4360569": 0,
             "4361741": 17.9,
             "4362081": 8.85,
-            "4429023": 8.02,
-            "4429615": 13.99,
+            "4429615": 13.96,
             "4430027": 13.09,
-            "4432710": 10.52,
+            "4432710": 10.54,
             "4685278": 12.27,
             "4688380": 13.16,
             "4696044": 5.19,
             "4702555": 0,
-            "4711533": 10.88,
+            "4711533": 10.9,
             "-16003": 5.46
           }
         }
@@ -2600,15 +2619,14 @@
           "starting": [
             "4362628",
             "3043078",
-            "4038941",
             "4426338",
             "4035538",
             "4426388",
             "4572680",
             "4832800",
             "4688813",
-            "3150744",
-            "-16002"
+            "-16030",
+            "8439"
           ],
           "rostered": [
             "4362628",
@@ -2625,28 +2643,30 @@
             "4575131",
             "4832800",
             "4688813",
-            "5083315",
-            "3150744",
-            "-16002"
+            "-16030",
+            "4366031",
+            "8439",
+            "4635008"
           ],
           "projections": {
+            "8439": 15.9,
             "3043078": 16.77,
-            "3150744": 8,
             "3929630": 0,
             "4035538": 11.87,
             "4038941": 13.93,
             "4362628": 21.82,
+            "4366031": 0,
             "4426338": 16.2,
             "4426385": 0,
             "4426388": 10.93,
-            "4572680": 10.46,
+            "4572680": 10.44,
             "4575131": 8.95,
             "4612826": 10.5,
+            "4635008": 7.71,
             "4685720": 0,
             "4688813": 12.04,
             "4832800": 11.91,
-            "5083315": 8.82,
-            "-16002": 3.3
+            "-16030": 7.21
           }
         }
       }
@@ -2964,7 +2984,7 @@
         "5": {
           "weekNum": "5",
           "starting": [
-            "4040715",
+            "2577417",
             "4239993",
             "16737",
             "4038815",
@@ -2972,8 +2992,9 @@
             "4047365",
             "3126486",
             "4697745",
-            "-16033",
-            "4429059"
+            "4373626",
+            "-16004",
+            "4596334"
           ],
           "rostered": [
             "4429795",
@@ -2991,8 +3012,9 @@
             "4695883",
             "4597500",
             "4697745",
-            "-16033",
-            "4429059"
+            "4373626",
+            "-16004",
+            "4596334"
           ],
           "projections": {
             "16737": 12.78,
@@ -3004,14 +3026,15 @@
             "4040715": 16.1,
             "4047365": 0,
             "4239993": 14.24,
+            "4373626": 8.78,
             "4426502": 15.97,
-            "4429059": 7.64,
             "4429795": 27,
-            "4597500": 10.13,
+            "4596334": 7.79,
+            "4597500": 0,
             "4695883": 0,
             "4697745": 7.95,
-            "4870808": 15.03,
-            "-16033": 2.66
+            "4870808": 15.02,
+            "-16004": 6.8
           }
         }
       }
@@ -3105,7 +3128,8 @@
             "4360234",
             "3054850",
             "2973405",
-            "4361050"
+            "4361050",
+            "4431492"
           ],
           "starting": [],
           "weekNum": "0"
@@ -3356,9 +3380,9 @@
             "-16034",
             "4360234",
             "3054850",
-            "4682745",
             "2973405",
-            "4361050"
+            "4361050",
+            "4431492"
           ],
           "projections": {
             "2973405": 7.94,
@@ -3371,12 +3395,12 @@
             "4372016": 11.33,
             "4374302": 19.99,
             "4431452": 18.46,
+            "4431492": 9.2,
             "4432577": 15.36,
             "4432665": 16.28,
             "4568490": 11.26,
-            "4569173": 13.23,
+            "4569173": 13.27,
             "4569987": 14.49,
-            "4682745": 7.64,
             "-16034": 6.69
           }
         }
@@ -3695,13 +3719,14 @@
             "4430878",
             "3915511",
             "4361307",
-            "4567750",
             "4685702",
             "4701936",
+            "4428850",
             "4685247",
             "3122840",
-            "-16012",
-            "4887558"
+            "4887558",
+            "4686361",
+            "-16028"
           ],
           "rostered": [
             "4430878",
@@ -3719,8 +3744,9 @@
             "4685247",
             "3122840",
             "3116406",
-            "-16012",
-            "4887558"
+            "4887558",
+            "4686361",
+            "-16028"
           ],
           "projections": {
             "3055899": 0,
@@ -3730,16 +3756,17 @@
             "4239996": 0,
             "4241416": 0,
             "4360078": 0,
-            "4361307": 18.72,
-            "4427366": 16.36,
-            "4428850": 10.37,
+            "4361307": 18.71,
+            "4427366": 0,
+            "4428850": 10.07,
             "4430878": 20.47,
             "4567750": 9.76,
-            "4685247": 6.81,
+            "4685247": 14.13,
             "4685702": 14.62,
-            "4701936": 12.74,
+            "4686361": 9.72,
+            "4701936": 12.72,
             "4887558": 13.58,
-            "-16012": 0
+            "-16028": 7.3
           }
         }
       }
@@ -4056,11 +4083,11 @@
           "starting": [
             "3918298",
             "4362238",
+            "4685382",
             "4361579",
             "4431459",
             "4871023",
             "4432620",
-            "2976212",
             "4608686",
             "4571557",
             "14880",
@@ -4087,9 +4114,9 @@
           ],
           "projections": {
             "14880": 14.16,
-            "15864": 14.75,
+            "15864": 14.74,
             "2976212": 10.75,
-            "3116165": 6.8,
+            "3116165": 6.81,
             "3915416": 12.6,
             "3918298": 19.9,
             "4361579": 17.5,
@@ -4102,7 +4129,7 @@
             "4685382": 11.56,
             "4689114": 0,
             "4871023": 13.51,
-            "-16016": 6.66
+            "-16016": 6.75
           }
         }
       }
@@ -4463,7 +4490,7 @@
             "4047650": 12.01,
             "4242335": 18.95,
             "4429096": 8.37,
-            "4569618": 14.54,
+            "4569618": 14.74,
             "4595348": 13.54,
             "4870653": 10.51,
             "5083076": 11.97,
@@ -4483,7 +4510,7 @@
       "nflTeamId": "11",
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.3,
+        "averageDraftPosition": 169.31,
         "percentOwned": 0.17
       },
       "position": "QB",
@@ -4504,9 +4531,9 @@
       "name": "Aaron Rodgers",
       "nflTeamId": "23",
       "ownership": {
-        "auctionValueAverage": 0.11,
-        "averageDraftPosition": 167.43,
-        "percentOwned": 13.1
+        "auctionValueAverage": 0.05,
+        "averageDraftPosition": 167.36,
+        "percentOwned": 15.81
       },
       "position": "QB",
       "projection": 193.98,
@@ -4527,8 +4554,8 @@
       "nflTeamId": "1",
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.1,
-        "percentOwned": 3.98
+        "averageDraftPosition": 169.04,
+        "percentOwned": 4.27
       },
       "position": "K",
       "projection": 111.99,
@@ -4550,7 +4577,7 @@
       "ownership": {
         "auctionValueAverage": 0,
         "averageDraftPosition": 169.73,
-        "percentOwned": 0.25
+        "percentOwned": 0.24
       },
       "position": "QB",
       "projection": 0,
@@ -4571,8 +4598,8 @@
       "nflTeamId": "14",
       "ownership": {
         "auctionValueAverage": 1.89,
-        "averageDraftPosition": 115.53,
-        "percentOwned": 89.58
+        "averageDraftPosition": 116.74,
+        "percentOwned": 89.92
       },
       "position": "QB",
       "projection": 221.03,
@@ -4614,9 +4641,9 @@
       "name": "Kirk Cousins",
       "nflTeamId": "13",
       "ownership": {
-        "auctionValueAverage": 0.23,
-        "averageDraftPosition": 162.78,
-        "percentOwned": 30.22
+        "auctionValueAverage": 0.2,
+        "averageDraftPosition": 162.05,
+        "percentOwned": 33.8
       },
       "position": "QB",
       "projection": 73.67,
@@ -4646,8 +4673,8 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.32,
-        "percentOwned": 1.75
+        "averageDraftPosition": 169.45,
+        "percentOwned": 1.42
       },
       "injuryStatus": "ACTIVE"
     },
@@ -4659,7 +4686,7 @@
       "nflTeamId": "33",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 168.54,
+        "averageDraftPosition": 168.56,
         "percentOwned": 0.23
       },
       "position": "K",
@@ -4678,8 +4705,8 @@
       "nflTeamId": "11",
       "ownership": {
         "auctionValueAverage": 0.11,
-        "averageDraftPosition": 167.01,
-        "percentOwned": 39.54
+        "averageDraftPosition": 167.96,
+        "percentOwned": 38.4
       },
       "position": "WR",
       "projection": 114.14,
@@ -4704,11 +4731,11 @@
         "3": 1.9,
         "4": 3.3
       },
-      "projection": 6.75,
+      "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.66,
-        "percentOwned": 1.78
+        "averageDraftPosition": 169.68,
+        "percentOwned": 1.61
       },
       "injuryStatus": "ACTIVE"
     },
@@ -4719,9 +4746,9 @@
       "name": "Travis Kelce",
       "nflTeamId": "12",
       "ownership": {
-        "auctionValueAverage": 3.32,
-        "averageDraftPosition": 84.47,
-        "percentOwned": 94.59
+        "auctionValueAverage": 3.02,
+        "averageDraftPosition": 86.51,
+        "percentOwned": 94.31
       },
       "position": "TE",
       "projection": 143.33,
@@ -4742,11 +4769,11 @@
       "nflTeamId": "20",
       "ownership": {
         "auctionValueAverage": 0.07,
-        "averageDraftPosition": 169.12,
-        "percentOwned": 7.76
+        "averageDraftPosition": 169.35,
+        "percentOwned": 7.45
       },
       "position": "QB",
-      "projection": 194.78,
+      "projection": 194.77,
       "scores": {
         "0": 59.68,
         "1": 9.3,
@@ -4759,13 +4786,13 @@
     "16002": {
       "average": 3.875,
       "id": "16002",
-      "injuryStatus": "DOUBTFUL",
+      "injuryStatus": "OUT",
       "name": "Kyle Juszczyk",
       "nflTeamId": "25",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.6,
-        "percentOwned": 0.42
+        "averageDraftPosition": 169.62,
+        "percentOwned": 0.4
       },
       "position": "RB",
       "projection": 30.28,
@@ -4792,8 +4819,8 @@
       "projection": 30.95,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.93,
-        "percentOwned": 0.33
+        "averageDraftPosition": 169.91,
+        "percentOwned": 0.29
       },
       "injuryStatus": "ACTIVE"
     },
@@ -4805,8 +4832,8 @@
       "nflTeamId": "19",
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.07,
-        "percentOwned": 1.68
+        "averageDraftPosition": 168.99,
+        "percentOwned": 2.06
       },
       "position": "WR",
       "projection": 0,
@@ -4822,13 +4849,13 @@
     "16737": {
       "average": 12.575,
       "id": "16737",
-      "injuryStatus": "ACTIVE",
+      "injuryStatus": "QUESTIONABLE",
       "name": "Mike Evans",
       "nflTeamId": "25",
       "ownership": {
         "auctionValueAverage": 4.31,
-        "averageDraftPosition": 98.8,
-        "percentOwned": 91.59
+        "averageDraftPosition": 98.51,
+        "percentOwned": 91.53
       },
       "position": "WR",
       "projection": 173.54,
@@ -4848,9 +4875,9 @@
       "name": "Davante Adams",
       "nflTeamId": "14",
       "ownership": {
-        "auctionValueAverage": 14.74,
-        "averageDraftPosition": 43.26,
-        "percentOwned": 99.05
+        "auctionValueAverage": 14.51,
+        "averageDraftPosition": 43.89,
+        "percentOwned": 99.07
       },
       "position": "WR",
       "projection": 195.18,
@@ -4870,9 +4897,9 @@
       "name": "Chris Boswell",
       "nflTeamId": "23",
       "ownership": {
-        "auctionValueAverage": 0.15,
-        "averageDraftPosition": 165.92,
-        "percentOwned": 28.67
+        "auctionValueAverage": 0.14,
+        "averageDraftPosition": 166.17,
+        "percentOwned": 28.07
       },
       "position": "K",
       "projection": 105.6,
@@ -4893,8 +4920,8 @@
       "nflTeamId": "3",
       "ownership": {
         "auctionValueAverage": 0.12,
-        "averageDraftPosition": 166.13,
-        "percentOwned": 28.74
+        "averageDraftPosition": 166.17,
+        "percentOwned": 28.72
       },
       "position": "K",
       "projection": 109.02,
@@ -4914,9 +4941,9 @@
       "name": "Jason Myers",
       "nflTeamId": "26",
       "ownership": {
-        "auctionValueAverage": 1.23,
-        "averageDraftPosition": 115.19,
-        "percentOwned": 89.92
+        "auctionValueAverage": 1.22,
+        "averageDraftPosition": 117.78,
+        "percentOwned": 88.44
       },
       "position": "K",
       "projection": 114.8,
@@ -4947,7 +4974,7 @@
       "ownership": {
         "auctionValueAverage": 0,
         "averageDraftPosition": 169.81,
-        "percentOwned": 1.24
+        "percentOwned": 1.14
       },
       "injuryStatus": "ACTIVE"
     },
@@ -4959,8 +4986,8 @@
       "nflTeamId": "14",
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.45,
-        "percentOwned": 3.13
+        "averageDraftPosition": 169.41,
+        "percentOwned": 3.28
       },
       "position": "TE",
       "projection": 26.55,
@@ -4990,7 +5017,7 @@
       "projection": 16.71,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170.04,
+        "averageDraftPosition": 170,
         "percentOwned": 0.1
       },
       "injuryStatus": "ACTIVE"
@@ -5009,11 +5036,11 @@
         "3": 7.4,
         "4": 0
       },
-      "projection": 61.61,
+      "projection": 61.52,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.83,
-        "percentOwned": 0.29
+        "averageDraftPosition": 169.86,
+        "percentOwned": 0.28
       },
       "injuryStatus": "QUESTIONABLE"
     },
@@ -5024,9 +5051,9 @@
       "name": "Darren Waller",
       "nflTeamId": "29",
       "ownership": {
-        "auctionValueAverage": 0.11,
-        "averageDraftPosition": 168.05,
-        "percentOwned": 26.38
+        "auctionValueAverage": 0.12,
+        "averageDraftPosition": 168.21,
+        "percentOwned": 23.84
       },
       "position": "TE",
       "projection": 91.97,
@@ -5056,8 +5083,8 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.82,
-        "percentOwned": 10.92
+        "averageDraftPosition": 169.85,
+        "percentOwned": 8.22
       },
       "injuryStatus": "DOUBTFUL"
     },
@@ -5068,9 +5095,9 @@
       "name": "Dak Prescott",
       "nflTeamId": "6",
       "ownership": {
-        "auctionValueAverage": 4.3,
-        "averageDraftPosition": 80.24,
-        "percentOwned": 94.01
+        "auctionValueAverage": 4.28,
+        "averageDraftPosition": 79.3,
+        "percentOwned": 94.14
       },
       "position": "QB",
       "projection": 236.14,
@@ -5090,9 +5117,9 @@
       "name": "Jacoby Brissett",
       "nflTeamId": "22",
       "ownership": {
-        "auctionValueAverage": 0.09,
-        "averageDraftPosition": 168.97,
-        "percentOwned": 29.99
+        "auctionValueAverage": 0.08,
+        "averageDraftPosition": 168.65,
+        "percentOwned": 38.83
       },
       "position": "QB",
       "projection": 207.44,
@@ -5112,9 +5139,9 @@
       "name": "Jameis Winston",
       "nflTeamId": "19",
       "ownership": {
-        "auctionValueAverage": 0.03,
-        "averageDraftPosition": 169.49,
-        "percentOwned": 3.51
+        "auctionValueAverage": 0.02,
+        "averageDraftPosition": 169.46,
+        "percentOwned": 3.77
       },
       "position": "QB",
       "projection": 40,
@@ -5134,9 +5161,9 @@
       "name": "Ka'imi Fairbairn",
       "nflTeamId": "34",
       "ownership": {
-        "auctionValueAverage": 0.93,
-        "averageDraftPosition": 141.6,
-        "percentOwned": 87.23
+        "auctionValueAverage": 0.92,
+        "averageDraftPosition": 141.64,
+        "percentOwned": 87.33
       },
       "position": "K",
       "projection": 119.44,
@@ -5178,9 +5205,9 @@
       "name": "Kalif Raymond",
       "nflTeamId": "3",
       "ownership": {
-        "auctionValueAverage": 0.15,
-        "averageDraftPosition": 166.54,
-        "percentOwned": 41.31
+        "auctionValueAverage": 0.07,
+        "averageDraftPosition": 167.43,
+        "percentOwned": 38.2
       },
       "position": "WR",
       "projection": 99.29,
@@ -5232,7 +5259,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.99,
+        "averageDraftPosition": 170,
         "percentOwned": 0.02
       },
       "injuryStatus": "ACTIVE"
@@ -5254,7 +5281,7 @@
       "projection": 19.77,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.97,
+        "averageDraftPosition": 169.96,
         "percentOwned": 0.04
       },
       "injuryStatus": "ACTIVE"
@@ -5262,13 +5289,13 @@
     "2976212": {
       "average": 13.25,
       "id": "2976212",
-      "injuryStatus": "ACTIVE",
+      "injuryStatus": "QUESTIONABLE",
       "name": "Stefon Diggs",
       "nflTeamId": "28",
       "ownership": {
-        "auctionValueAverage": 1.79,
-        "averageDraftPosition": 115.57,
-        "percentOwned": 85.71
+        "auctionValueAverage": 1.68,
+        "averageDraftPosition": 116.99,
+        "percentOwned": 85.1
       },
       "position": "WR",
       "projection": 140.42,
@@ -5293,10 +5320,10 @@
         "3": 3.3,
         "4": 0
       },
-      "projection": 0,
+      "projection": 5.36,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.99,
+        "averageDraftPosition": 170.01,
         "percentOwned": 0.03
       },
       "injuryStatus": "ACTIVE"
@@ -5308,9 +5335,9 @@
       "name": "Cooper Kupp",
       "nflTeamId": "26",
       "ownership": {
-        "auctionValueAverage": 0.02,
-        "averageDraftPosition": 166.76,
-        "percentOwned": 11.46
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 166.87,
+        "percentOwned": 10.95
       },
       "position": "WR",
       "projection": 77.4,
@@ -5330,9 +5357,9 @@
       "name": "Wil Lutz",
       "nflTeamId": "7",
       "ownership": {
-        "auctionValueAverage": 0.02,
-        "averageDraftPosition": 169.33,
-        "percentOwned": 4.34
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 169.36,
+        "percentOwned": 4.26
       },
       "position": "K",
       "projection": 98.52,
@@ -5353,11 +5380,11 @@
       "nflTeamId": "17",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.95,
-        "percentOwned": 11.19
+        "averageDraftPosition": 169.92,
+        "percentOwned": 10.03
       },
       "position": "WR",
-      "projection": 74.21,
+      "projection": 65.73,
       "scores": {
         "0": 35.9,
         "1": 9.1,
@@ -5384,7 +5411,7 @@
       "projection": 6.65,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.98,
+        "averageDraftPosition": 169.97,
         "percentOwned": 0.05
       },
       "injuryStatus": "ACTIVE"
@@ -5396,9 +5423,9 @@
       "name": "George Kittle",
       "nflTeamId": "25",
       "ownership": {
-        "auctionValueAverage": 7.23,
-        "averageDraftPosition": 55.56,
-        "percentOwned": 97.39
+        "auctionValueAverage": 7.15,
+        "averageDraftPosition": 55.01,
+        "percentOwned": 97.58
       },
       "position": "TE",
       "projection": 183.58,
@@ -5418,9 +5445,9 @@
       "name": "Aaron Jones Sr.",
       "nflTeamId": "16",
       "ownership": {
-        "auctionValueAverage": 2.66,
-        "averageDraftPosition": 114.58,
-        "percentOwned": 93.53
+        "auctionValueAverage": 2.85,
+        "averageDraftPosition": 113,
+        "percentOwned": 94.13
       },
       "position": "RB",
       "projection": 157.2,
@@ -5440,12 +5467,12 @@
       "name": "Derrick Henry",
       "nflTeamId": "33",
       "ownership": {
-        "auctionValueAverage": 40.93,
-        "averageDraftPosition": 15.22,
+        "auctionValueAverage": 41.21,
+        "averageDraftPosition": 15.24,
         "percentOwned": 99.87
       },
       "position": "RB",
-      "projection": 256.41,
+      "projection": 256.35,
       "scores": {
         "0": 90.8,
         "1": 35.3,
@@ -5463,8 +5490,8 @@
       "nflTeamId": "25",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.88,
-        "percentOwned": 1.25
+        "averageDraftPosition": 169.89,
+        "percentOwned": 1.21
       },
       "position": "WR",
       "projection": 0,
@@ -5494,8 +5521,8 @@
       "projection": 38.95,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.87,
-        "percentOwned": 0.13
+        "averageDraftPosition": 169.86,
+        "percentOwned": 0.12
       },
       "injuryStatus": "ACTIVE"
     },
@@ -5507,8 +5534,8 @@
       "nflTeamId": "22",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.96,
-        "percentOwned": 3.11
+        "averageDraftPosition": 169.92,
+        "percentOwned": 3.1
       },
       "position": "RB",
       "projection": 0,
@@ -5529,11 +5556,11 @@
       "nflTeamId": "22",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.94,
-        "percentOwned": 1.06
+        "averageDraftPosition": 169.91,
+        "percentOwned": 0.96
       },
       "position": "WR",
-      "projection": 64.14,
+      "projection": 64.07,
       "scores": {
         "0": 22.8,
         "1": 15.5,
@@ -5551,11 +5578,11 @@
       "nflTeamId": "17",
       "ownership": {
         "auctionValueAverage": 0.13,
-        "averageDraftPosition": 163.56,
-        "percentOwned": 42.27
+        "averageDraftPosition": 163.44,
+        "percentOwned": 41.52
       },
       "position": "TE",
-      "projection": 99.34,
+      "projection": 99.38,
       "scores": {
         "0": 25.3,
         "1": 5.6,
@@ -5572,9 +5599,9 @@
       "name": "Jared Goff",
       "nflTeamId": "8",
       "ownership": {
-        "auctionValueAverage": 1.3,
-        "averageDraftPosition": 129.23,
-        "percentOwned": 87.39
+        "auctionValueAverage": 1.39,
+        "averageDraftPosition": 127.23,
+        "percentOwned": 89.42
       },
       "position": "QB",
       "projection": 230.28,
@@ -5616,7 +5643,7 @@
       "nflTeamId": "0",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.58,
+        "averageDraftPosition": 169.59,
         "percentOwned": 0.16
       },
       "position": "K",
@@ -5634,8 +5661,8 @@
       "nflTeamId": "21",
       "ownership": {
         "auctionValueAverage": 0.02,
-        "averageDraftPosition": 168.18,
-        "percentOwned": 6.83
+        "averageDraftPosition": 168.24,
+        "percentOwned": 6.71
       },
       "position": "K",
       "projection": 102.69,
@@ -5665,7 +5692,7 @@
       "projection": 31.31,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.98,
+        "averageDraftPosition": 169.97,
         "percentOwned": 0.01
       },
       "injuryStatus": "ACTIVE"
@@ -5677,9 +5704,9 @@
       "name": "Evan Engram",
       "nflTeamId": "7",
       "ownership": {
-        "auctionValueAverage": 0.04,
-        "averageDraftPosition": 169.68,
-        "percentOwned": 3.25
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 169.62,
+        "percentOwned": 3.09
       },
       "position": "TE",
       "projection": 66.36,
@@ -5709,7 +5736,7 @@
       "projection": 24.47,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.98,
+        "averageDraftPosition": 169.97,
         "percentOwned": 0.15
       },
       "injuryStatus": "ACTIVE"
@@ -5722,8 +5749,8 @@
       "nflTeamId": "18",
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.43,
-        "percentOwned": 3.67
+        "averageDraftPosition": 169.46,
+        "percentOwned": 3.36
       },
       "position": "K",
       "projection": 108.04,
@@ -5750,7 +5777,7 @@
         "3": 1.4,
         "4": 0
       },
-      "projection": 20.22,
+      "projection": 18.23,
       "ownership": {
         "auctionValueAverage": 0,
         "averageDraftPosition": 169.95,
@@ -5765,9 +5792,9 @@
       "name": "Baker Mayfield",
       "nflTeamId": "27",
       "ownership": {
-        "auctionValueAverage": 0.23,
-        "averageDraftPosition": 166.75,
-        "percentOwned": 32.3
+        "auctionValueAverage": 0.21,
+        "averageDraftPosition": 166.98,
+        "percentOwned": 30.84
       },
       "position": "QB",
       "projection": 139.33,
@@ -5794,13 +5821,13 @@
         "3": 0,
         "4": 0
       },
-      "projection": 11.89,
+      "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
         "averageDraftPosition": 169.93,
         "percentOwned": 0.05
       },
-      "injuryStatus": "OUT"
+      "injuryStatus": "INJURY_RESERVE"
     },
     "3054212": {
       "average": 3.375,
@@ -5810,11 +5837,11 @@
       "nflTeamId": "9",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.91,
-        "percentOwned": 0.15
+        "averageDraftPosition": 169.89,
+        "percentOwned": 0.14
       },
       "position": "TE",
-      "projection": 38.34,
+      "projection": 38.33,
       "scores": {
         "0": 13.5,
         "1": 7,
@@ -5827,13 +5854,13 @@
     "3054850": {
       "average": 11.700000000000001,
       "id": "3054850",
-      "injuryStatus": "ACTIVE",
+      "injuryStatus": "QUESTIONABLE",
       "name": "Alvin Kamara",
       "nflTeamId": "18",
       "ownership": {
-        "auctionValueAverage": 0.27,
-        "averageDraftPosition": 157.34,
-        "percentOwned": 67.99
+        "auctionValueAverage": 0.28,
+        "averageDraftPosition": 156.67,
+        "percentOwned": 68.62
       },
       "position": "RB",
       "projection": 113.08,
@@ -5853,9 +5880,9 @@
       "name": "Harrison Butker",
       "nflTeamId": "12",
       "ownership": {
-        "auctionValueAverage": 0.87,
-        "averageDraftPosition": 148.46,
-        "percentOwned": 65.63
+        "auctionValueAverage": 0.89,
+        "averageDraftPosition": 149.41,
+        "percentOwned": 58.9
       },
       "position": "K",
       "projection": 118.31,
@@ -5876,8 +5903,8 @@
       "nflTeamId": "0",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.94,
-        "percentOwned": 0.13
+        "averageDraftPosition": 169.95,
+        "percentOwned": 0.12
       },
       "position": "RB",
       "projection": 0,
@@ -5903,7 +5930,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170.02,
+        "averageDraftPosition": 170.03,
         "percentOwned": 0.02
       },
       "injuryStatus": "ACTIVE"
@@ -5923,7 +5950,7 @@
       "ownership": {
         "auctionValueAverage": 0,
         "averageDraftPosition": 169.91,
-        "percentOwned": 3.02
+        "percentOwned": 3.42
       },
       "injuryStatus": "ACTIVE"
     },
@@ -5935,8 +5962,8 @@
       "nflTeamId": "4",
       "ownership": {
         "auctionValueAverage": 0.05,
-        "averageDraftPosition": 168.45,
-        "percentOwned": 17.44
+        "averageDraftPosition": 168.19,
+        "percentOwned": 21.36
       },
       "position": "TE",
       "projection": 83.17,
@@ -5956,9 +5983,9 @@
       "name": "Chris Godwin Jr.",
       "nflTeamId": "27",
       "ownership": {
-        "auctionValueAverage": 1.04,
-        "averageDraftPosition": 143.49,
-        "percentOwned": 56.42
+        "auctionValueAverage": 0.94,
+        "averageDraftPosition": 143.18,
+        "percentOwned": 54.82
       },
       "position": "WR",
       "projection": 89.91,
@@ -5978,12 +6005,12 @@
       "name": "Mark Andrews",
       "nflTeamId": "33",
       "ownership": {
-        "auctionValueAverage": 1,
-        "averageDraftPosition": 139.39,
-        "percentOwned": 78.78
+        "auctionValueAverage": 0.93,
+        "averageDraftPosition": 139.11,
+        "percentOwned": 78.46
       },
       "position": "TE",
-      "projection": 137.79,
+      "projection": 137.61,
       "scores": {
         "0": 38.9,
         "1": 8.9,
@@ -6006,8 +6033,8 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.16,
-        "percentOwned": 11.48
+        "averageDraftPosition": 169.13,
+        "percentOwned": 9.11
       },
       "injuryStatus": "QUESTIONABLE"
     },
@@ -6019,8 +6046,8 @@
       "nflTeamId": "4",
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.49,
-        "percentOwned": 7.14
+        "averageDraftPosition": 169.5,
+        "percentOwned": 6.91
       },
       "position": "RB",
       "projection": 72.52,
@@ -6040,9 +6067,9 @@
       "name": "Tyreek Hill",
       "nflTeamId": "0",
       "ownership": {
-        "auctionValueAverage": 0.1,
-        "averageDraftPosition": 166.72,
-        "percentOwned": 44.47
+        "auctionValueAverage": 0.11,
+        "averageDraftPosition": 166.32,
+        "percentOwned": 46.46
       },
       "position": "WR",
       "projection": 0,
@@ -6080,9 +6107,9 @@
       "name": "Christian McCaffrey",
       "nflTeamId": "25",
       "ownership": {
-        "auctionValueAverage": 49.51,
-        "averageDraftPosition": 9.15,
-        "percentOwned": 99.91
+        "auctionValueAverage": 50.02,
+        "averageDraftPosition": 9.24,
+        "percentOwned": 99.92
       },
       "position": "RB",
       "projection": 264.61,
@@ -6102,9 +6129,9 @@
       "name": "Dalton Schultz",
       "nflTeamId": "34",
       "ownership": {
-        "auctionValueAverage": 0.15,
-        "averageDraftPosition": 164.88,
-        "percentOwned": 48.62
+        "auctionValueAverage": 0.13,
+        "averageDraftPosition": 165.22,
+        "percentOwned": 45.6
       },
       "position": "TE",
       "projection": 104.98,
@@ -6120,16 +6147,16 @@
     "3121023": {
       "average": 12.55,
       "id": "3121023",
-      "injuryStatus": "DOUBTFUL",
+      "injuryStatus": "QUESTIONABLE",
       "name": "Dallas Goedert",
       "nflTeamId": "21",
       "ownership": {
-        "auctionValueAverage": 1.18,
-        "averageDraftPosition": 137.38,
-        "percentOwned": 76.64
+        "auctionValueAverage": 1.16,
+        "averageDraftPosition": 136.92,
+        "percentOwned": 76.93
       },
       "position": "TE",
-      "projection": 129.92,
+      "projection": 140.77,
       "scores": {
         "0": 25.1,
         "1": 23.7,
@@ -6146,9 +6173,9 @@
       "name": "Terry McLaurin",
       "nflTeamId": "28",
       "ownership": {
-        "auctionValueAverage": 7.66,
-        "averageDraftPosition": 90.88,
-        "percentOwned": 92.1
+        "auctionValueAverage": 7.51,
+        "averageDraftPosition": 92.11,
+        "percentOwned": 91.97
       },
       "position": "WR",
       "projection": 171.53,
@@ -6168,9 +6195,9 @@
       "name": "Deshaun Watson",
       "nflTeamId": "5",
       "ownership": {
-        "auctionValueAverage": 0.07,
-        "averageDraftPosition": 166.1,
-        "percentOwned": 13.68
+        "auctionValueAverage": 0.06,
+        "averageDraftPosition": 165.71,
+        "percentOwned": 16.19
       },
       "position": "QB",
       "projection": 221.65,
@@ -6191,8 +6218,8 @@
       "nflTeamId": "24",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.88,
-        "percentOwned": 2.26
+        "averageDraftPosition": 169.86,
+        "percentOwned": 2.18
       },
       "position": "TE",
       "projection": 0,
@@ -6214,7 +6241,7 @@
       "ownership": {
         "auctionValueAverage": 0,
         "averageDraftPosition": 169.79,
-        "percentOwned": 0.46
+        "percentOwned": 0.45
       },
       "position": "K",
       "projection": 94.59,
@@ -6235,7 +6262,7 @@
       "nflTeamId": "20",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.63,
+        "averageDraftPosition": 169.65,
         "percentOwned": 0.38
       },
       "position": "K",
@@ -6256,9 +6283,9 @@
       "name": "Deebo Samuel Sr.",
       "nflTeamId": "25",
       "ownership": {
-        "auctionValueAverage": 1.36,
-        "averageDraftPosition": 129.43,
-        "percentOwned": 85.31
+        "auctionValueAverage": 1.4,
+        "averageDraftPosition": 127.83,
+        "percentOwned": 85.56
       },
       "position": "WR",
       "projection": 152.3,
@@ -6288,7 +6315,7 @@
       "projection": 23.44,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.9,
+        "averageDraftPosition": 169.89,
         "percentOwned": 0.08
       },
       "injuryStatus": "ACTIVE"
@@ -6300,9 +6327,9 @@
       "name": "Courtland Sutton",
       "nflTeamId": "7",
       "ownership": {
-        "auctionValueAverage": 1.94,
-        "averageDraftPosition": 120.43,
-        "percentOwned": 78.33
+        "auctionValueAverage": 1.71,
+        "averageDraftPosition": 120.73,
+        "percentOwned": 77.12
       },
       "position": "WR",
       "projection": 130.05,
@@ -6323,8 +6350,8 @@
       "nflTeamId": "0",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.74,
-        "percentOwned": 0.12
+        "averageDraftPosition": 169.72,
+        "percentOwned": 0.11
       },
       "position": "RB",
       "projection": 0,
@@ -6340,9 +6367,9 @@
       "name": "Patrick Mahomes",
       "nflTeamId": "12",
       "ownership": {
-        "auctionValueAverage": 4.53,
-        "averageDraftPosition": 74.76,
-        "percentOwned": 95.2
+        "auctionValueAverage": 4.34,
+        "averageDraftPosition": 75.14,
+        "percentOwned": 94.98
       },
       "position": "QB",
       "projection": 241.76,
@@ -6364,10 +6391,10 @@
       "ownership": {
         "auctionValueAverage": 0,
         "averageDraftPosition": 169.88,
-        "percentOwned": 7.37
+        "percentOwned": 6.76
       },
       "position": "RB",
-      "projection": 33.05,
+      "projection": 29.28,
       "scores": {
         "0": 12.4,
         "1": 2.9,
@@ -6384,9 +6411,9 @@
       "name": "Chase McLaughlin",
       "nflTeamId": "27",
       "ownership": {
-        "auctionValueAverage": 0.23,
-        "averageDraftPosition": 163.47,
-        "percentOwned": 21.91
+        "auctionValueAverage": 0.22,
+        "averageDraftPosition": 164.4,
+        "percentOwned": 20.57
       },
       "position": "K",
       "projection": 103.11,
@@ -6406,9 +6433,9 @@
       "name": "KaVontae Turpin",
       "nflTeamId": "6",
       "ownership": {
-        "auctionValueAverage": 0,
-        "averageDraftPosition": 169.29,
-        "percentOwned": 1.45
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 169.19,
+        "percentOwned": 1.43
       },
       "position": "WR",
       "projection": 24.03,
@@ -6451,8 +6478,8 @@
       "nflTeamId": "16",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.48,
-        "percentOwned": 6.16
+        "averageDraftPosition": 169.41,
+        "percentOwned": 5.55
       },
       "position": "WR",
       "projection": 30.21,
@@ -6473,8 +6500,8 @@
       "nflTeamId": "25",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.79,
-        "percentOwned": 1.21
+        "averageDraftPosition": 169.81,
+        "percentOwned": 1.2
       },
       "position": "WR",
       "projection": 0,
@@ -6504,10 +6531,10 @@
       "projection": 28.28,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.94,
+        "averageDraftPosition": 169.93,
         "percentOwned": 0.07
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "3912547": {
       "average": 13.833333333333334,
@@ -6516,9 +6543,9 @@
       "name": "Sam Darnold",
       "nflTeamId": "26",
       "ownership": {
-        "auctionValueAverage": 0.33,
-        "averageDraftPosition": 156.32,
-        "percentOwned": 50.5
+        "auctionValueAverage": 0.31,
+        "averageDraftPosition": 157.42,
+        "percentOwned": 49.5
       },
       "position": "QB",
       "projection": 206.73,
@@ -6539,8 +6566,8 @@
       "nflTeamId": "2",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.47,
-        "percentOwned": 1.54
+        "averageDraftPosition": 169.37,
+        "percentOwned": 1.5
       },
       "position": "RB",
       "projection": 60.03,
@@ -6560,9 +6587,9 @@
       "name": "DJ Moore",
       "nflTeamId": "2",
       "ownership": {
-        "auctionValueAverage": 8.16,
-        "averageDraftPosition": 81.5,
-        "percentOwned": 94.17
+        "auctionValueAverage": 8.03,
+        "averageDraftPosition": 82.9,
+        "percentOwned": 93.92
       },
       "position": "WR",
       "projection": 171.15,
@@ -6582,9 +6609,9 @@
       "name": "Joe Burrow",
       "nflTeamId": "4",
       "ownership": {
-        "auctionValueAverage": 8.5,
-        "averageDraftPosition": 55.98,
-        "percentOwned": 97.85
+        "auctionValueAverage": 8.78,
+        "averageDraftPosition": 56.03,
+        "percentOwned": 98.15
       },
       "position": "QB",
       "projection": 247.4,
@@ -6600,13 +6627,13 @@
     "3916148": {
       "average": 9.625,
       "id": "3916148",
-      "injuryStatus": "ACTIVE",
+      "injuryStatus": "QUESTIONABLE",
       "name": "Tony Pollard",
       "nflTeamId": "10",
       "ownership": {
-        "auctionValueAverage": 2.33,
-        "averageDraftPosition": 115.19,
-        "percentOwned": 86.07
+        "auctionValueAverage": 2.3,
+        "averageDraftPosition": 114.86,
+        "percentOwned": 85.94
       },
       "position": "RB",
       "projection": 173.62,
@@ -6626,9 +6653,9 @@
       "name": "Lamar Jackson",
       "nflTeamId": "33",
       "ownership": {
-        "auctionValueAverage": 19.86,
-        "averageDraftPosition": 30,
-        "percentOwned": 99.82
+        "auctionValueAverage": 19.77,
+        "averageDraftPosition": 30.78,
+        "percentOwned": 99.68
       },
       "position": "QB",
       "projection": 240.98,
@@ -6648,9 +6675,9 @@
       "name": "Jakobi Meyers",
       "nflTeamId": "30",
       "ownership": {
-        "auctionValueAverage": 1.09,
-        "averageDraftPosition": 133.98,
-        "percentOwned": 74.38
+        "auctionValueAverage": 1.04,
+        "averageDraftPosition": 133.72,
+        "percentOwned": 74.16
       },
       "position": "WR",
       "projection": 140.57,
@@ -6672,7 +6699,7 @@
       "ownership": {
         "auctionValueAverage": 0,
         "averageDraftPosition": 169.95,
-        "percentOwned": 0.45
+        "percentOwned": 0.43
       },
       "position": "WR",
       "projection": 0,
@@ -6691,8 +6718,8 @@
       "nflTeamId": "2",
       "ownership": {
         "auctionValueAverage": 0.04,
-        "averageDraftPosition": 168.03,
-        "percentOwned": 9.32
+        "averageDraftPosition": 168.11,
+        "percentOwned": 9.04
       },
       "position": "K",
       "projection": 108.7,
@@ -6712,9 +6739,9 @@
       "name": "Kyler Murray",
       "nflTeamId": "16",
       "ownership": {
-        "auctionValueAverage": 0.88,
-        "averageDraftPosition": 150.12,
-        "percentOwned": 60.68
+        "auctionValueAverage": 0.93,
+        "averageDraftPosition": 150.87,
+        "percentOwned": 59.63
       },
       "position": "QB",
       "projection": 217.34,
@@ -6744,10 +6771,10 @@
       "projection": 16.97,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.92,
+        "averageDraftPosition": 169.93,
         "percentOwned": 0.04
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "3917792": {
       "average": 9.065,
@@ -6756,9 +6783,9 @@
       "name": "Daniel Jones",
       "nflTeamId": "11",
       "ownership": {
-        "auctionValueAverage": 0.16,
-        "averageDraftPosition": 167.27,
-        "percentOwned": 21.1
+        "auctionValueAverage": 0.17,
+        "averageDraftPosition": 167.48,
+        "percentOwned": 20.16
       },
       "position": "QB",
       "projection": 169.04,
@@ -6788,7 +6815,7 @@
       "projection": 41.07,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.89,
+        "averageDraftPosition": 169.87,
         "percentOwned": 0.08
       },
       "injuryStatus": "ACTIVE"
@@ -6800,8 +6827,8 @@
       "name": "Josh Allen",
       "nflTeamId": "2",
       "ownership": {
-        "auctionValueAverage": 39.45,
-        "averageDraftPosition": 13.22,
+        "auctionValueAverage": 39.44,
+        "averageDraftPosition": 13.24,
         "percentOwned": 99.92
       },
       "position": "QB",
@@ -6832,7 +6859,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.92,
+        "averageDraftPosition": 169.91,
         "percentOwned": 0.08
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -6845,8 +6872,8 @@
       "nflTeamId": "26",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.79,
-        "percentOwned": 1.03
+        "averageDraftPosition": 169.8,
+        "percentOwned": 0.93
       },
       "position": "QB",
       "projection": 0,
@@ -6866,9 +6893,9 @@
       "name": "Calvin Ridley",
       "nflTeamId": "10",
       "ownership": {
-        "auctionValueAverage": 0.02,
-        "averageDraftPosition": 169.61,
-        "percentOwned": 10.86
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 169.59,
+        "percentOwned": 10.34
       },
       "position": "WR",
       "projection": 36.48,
@@ -6888,9 +6915,9 @@
       "name": "Saquon Barkley",
       "nflTeamId": "21",
       "ownership": {
-        "auctionValueAverage": 34.08,
-        "averageDraftPosition": 26.92,
-        "percentOwned": 98.97
+        "auctionValueAverage": 33.76,
+        "averageDraftPosition": 28.45,
+        "percentOwned": 98.75
       },
       "position": "RB",
       "projection": 176.65,
@@ -6911,8 +6938,8 @@
       "nflTeamId": "18",
       "ownership": {
         "auctionValueAverage": 1.03,
-        "averageDraftPosition": 132.75,
-        "percentOwned": 76.48
+        "averageDraftPosition": 131.85,
+        "percentOwned": 77.29
       },
       "position": "TE",
       "projection": 133.44,
@@ -6942,7 +6969,7 @@
       "projection": 6.05,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.92,
+        "averageDraftPosition": 169.94,
         "percentOwned": 0.03
       },
       "injuryStatus": "ACTIVE"
@@ -6955,8 +6982,8 @@
       "nflTeamId": "2",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.26,
-        "percentOwned": 0.82
+        "averageDraftPosition": 169.21,
+        "percentOwned": 0.79
       },
       "position": "TE",
       "projection": 36.03,
@@ -6976,9 +7003,9 @@
       "name": "Brandon Aubrey",
       "nflTeamId": "6",
       "ownership": {
-        "auctionValueAverage": 2.62,
-        "averageDraftPosition": 75.92,
-        "percentOwned": 99.39
+        "auctionValueAverage": 2.78,
+        "averageDraftPosition": 76.22,
+        "percentOwned": 99.4
       },
       "position": "K",
       "projection": 139.98,
@@ -6998,9 +7025,9 @@
       "name": "Rashid Shaheed",
       "nflTeamId": "26",
       "ownership": {
-        "auctionValueAverage": 0.12,
-        "averageDraftPosition": 166.37,
-        "percentOwned": 33.55
+        "auctionValueAverage": 0.11,
+        "averageDraftPosition": 166.43,
+        "percentOwned": 33.35
       },
       "position": "WR",
       "projection": 115,
@@ -7021,8 +7048,8 @@
       "nflTeamId": "25",
       "ownership": {
         "auctionValueAverage": 0.94,
-        "averageDraftPosition": 149.99,
-        "percentOwned": 74.64
+        "averageDraftPosition": 150.74,
+        "percentOwned": 73.07
       },
       "position": "K",
       "projection": 119.36,
@@ -7043,7 +7070,7 @@
       "nflTeamId": "20",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170,
+        "averageDraftPosition": 169.97,
         "percentOwned": 0.12
       },
       "position": "RB",
@@ -7064,9 +7091,9 @@
       "name": "David Montgomery",
       "nflTeamId": "34",
       "ownership": {
-        "auctionValueAverage": 6.58,
-        "averageDraftPosition": 88.8,
-        "percentOwned": 93.69
+        "auctionValueAverage": 6.57,
+        "averageDraftPosition": 89.34,
+        "percentOwned": 93.44
       },
       "position": "RB",
       "projection": 156.6,
@@ -7096,7 +7123,7 @@
       "projection": 20.43,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.94,
+        "averageDraftPosition": 169.95,
         "percentOwned": 0.05
       },
       "injuryStatus": "ACTIVE"
@@ -7119,20 +7146,20 @@
       "ownership": {
         "auctionValueAverage": 0,
         "averageDraftPosition": 169.79,
-        "percentOwned": 0.74
+        "percentOwned": 1.03
       },
       "injuryStatus": "ACTIVE"
     },
     "4035687": {
       "average": 5.3,
       "id": "4035687",
-      "injuryStatus": "ACTIVE",
+      "injuryStatus": "OUT",
       "name": "Michael Pittman Jr.",
       "nflTeamId": "23",
       "ownership": {
-        "auctionValueAverage": 2.06,
-        "averageDraftPosition": 119.23,
-        "percentOwned": 72.63
+        "auctionValueAverage": 1.88,
+        "averageDraftPosition": 120.07,
+        "percentOwned": 69.47
       },
       "position": "WR",
       "projection": 107.89,
@@ -7162,8 +7189,8 @@
       "projection": 55.13,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.83,
-        "percentOwned": 1.13
+        "averageDraftPosition": 169.85,
+        "percentOwned": 1.04
       },
       "injuryStatus": "QUESTIONABLE"
     },
@@ -7175,8 +7202,8 @@
       "nflTeamId": "16",
       "ownership": {
         "auctionValueAverage": 0.17,
-        "averageDraftPosition": 159.72,
-        "percentOwned": 64.51
+        "averageDraftPosition": 157.51,
+        "percentOwned": 67.87
       },
       "position": "TE",
       "projection": 129.89,
@@ -7196,9 +7223,9 @@
       "name": "Jordan Love",
       "nflTeamId": "9",
       "ownership": {
-        "auctionValueAverage": 0.23,
-        "averageDraftPosition": 159.65,
-        "percentOwned": 49.47
+        "auctionValueAverage": 0.19,
+        "averageDraftPosition": 159.89,
+        "percentOwned": 48.79
       },
       "position": "QB",
       "projection": 207.87,
@@ -7228,7 +7255,7 @@
       "ownership": {
         "auctionValueAverage": 0,
         "averageDraftPosition": 169.93,
-        "percentOwned": 0.06
+        "percentOwned": 0.05
       },
       "injuryStatus": "ACTIVE"
     },
@@ -7239,12 +7266,12 @@
       "name": "Justice Hill",
       "nflTeamId": "33",
       "ownership": {
-        "auctionValueAverage": 0.02,
-        "averageDraftPosition": 169.03,
-        "percentOwned": 10.96
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.06,
+        "percentOwned": 10.44
       },
       "position": "RB",
-      "projection": 60.64,
+      "projection": 60.6,
       "scores": {
         "0": 15.4,
         "1": 3.8,
@@ -7261,9 +7288,9 @@
       "name": "Rico Dowdle",
       "nflTeamId": "23",
       "ownership": {
-        "auctionValueAverage": 1.21,
-        "averageDraftPosition": 134.99,
-        "percentOwned": 68.27
+        "auctionValueAverage": 1.16,
+        "averageDraftPosition": 134.84,
+        "percentOwned": 66.87
       },
       "position": "RB",
       "projection": 98.45,
@@ -7283,9 +7310,9 @@
       "name": "Justin Herbert",
       "nflTeamId": "24",
       "ownership": {
-        "auctionValueAverage": 1.72,
-        "averageDraftPosition": 124.01,
-        "percentOwned": 66.29
+        "auctionValueAverage": 1.66,
+        "averageDraftPosition": 124.7,
+        "percentOwned": 63.75
       },
       "position": "QB",
       "projection": 180.51,
@@ -7312,13 +7339,13 @@
         "3": 0,
         "4": 0
       },
-      "projection": 5.7,
+      "projection": 5.71,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.98,
+        "averageDraftPosition": 169.99,
         "percentOwned": 0.06
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4040612": {
       "average": 0.9750000000000001,
@@ -7328,7 +7355,7 @@
       "nflTeamId": "25",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.87,
+        "averageDraftPosition": 169.86,
         "percentOwned": 0.05
       },
       "position": "TE",
@@ -7350,8 +7377,8 @@
       "nflTeamId": "19",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.91,
-        "percentOwned": 1.24
+        "averageDraftPosition": 169.86,
+        "percentOwned": 1.19
       },
       "position": "WR",
       "projection": 68.71,
@@ -7371,9 +7398,9 @@
       "name": "Jalen Hurts",
       "nflTeamId": "21",
       "ownership": {
-        "auctionValueAverage": 7.29,
-        "averageDraftPosition": 74.49,
-        "percentOwned": 97.41
+        "auctionValueAverage": 7.17,
+        "averageDraftPosition": 75.66,
+        "percentOwned": 96.87
       },
       "position": "QB",
       "projection": 232.93,
@@ -7394,8 +7421,8 @@
       "nflTeamId": "19",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.94,
-        "percentOwned": 3.69
+        "averageDraftPosition": 169.92,
+        "percentOwned": 3.28
       },
       "position": "RB",
       "projection": 0,
@@ -7438,8 +7465,8 @@
       "nflTeamId": "9",
       "ownership": {
         "auctionValueAverage": 1.49,
-        "averageDraftPosition": 123.65,
-        "percentOwned": 80.73
+        "averageDraftPosition": 124.14,
+        "percentOwned": 80.07
       },
       "position": "RB",
       "projection": 124.15,
@@ -7459,9 +7486,9 @@
       "name": "A.J. Brown",
       "nflTeamId": "17",
       "ownership": {
-        "auctionValueAverage": 25.35,
-        "averageDraftPosition": 46.3,
-        "percentOwned": 94.96
+        "auctionValueAverage": 25.15,
+        "averageDraftPosition": 46.99,
+        "percentOwned": 94.85
       },
       "position": "WR",
       "projection": 142.82,
@@ -7481,9 +7508,9 @@
       "name": "DK Metcalf",
       "nflTeamId": "23",
       "ownership": {
-        "auctionValueAverage": 3.03,
-        "averageDraftPosition": 105.13,
-        "percentOwned": 89.12
+        "auctionValueAverage": 2.76,
+        "averageDraftPosition": 104.43,
+        "percentOwned": 89.34
       },
       "position": "WR",
       "projection": 153.24,
@@ -7513,15 +7540,15 @@
       "projection": 13.5,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.96,
-        "percentOwned": 0.04
+        "averageDraftPosition": 169.95,
+        "percentOwned": 0.03
       },
       "injuryStatus": "ACTIVE"
     },
     "4061956": {
       "average": 2.95,
       "id": "4061956",
-      "injuryStatus": "ACTIVE",
+      "injuryStatus": "QUESTIONABLE",
       "name": "Ashton Dulin",
       "nflTeamId": "11",
       "ownership": {
@@ -7557,8 +7584,8 @@
       "projection": 60.73,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.8,
-        "percentOwned": 0.71
+        "averageDraftPosition": 169.79,
+        "percentOwned": 0.64
       },
       "injuryStatus": "ACTIVE"
     },
@@ -7576,10 +7603,10 @@
         "3": 1.5,
         "4": 2
       },
-      "projection": 14.33,
+      "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.97,
+        "averageDraftPosition": 169.98,
         "percentOwned": 0.02
       },
       "injuryStatus": "INJURY_RESERVE"
@@ -7591,9 +7618,9 @@
       "name": "Tee Higgins",
       "nflTeamId": "4",
       "ownership": {
-        "auctionValueAverage": 13.89,
-        "averageDraftPosition": 56.83,
-        "percentOwned": 96.95
+        "auctionValueAverage": 14.01,
+        "averageDraftPosition": 57.03,
+        "percentOwned": 96.98
       },
       "position": "WR",
       "projection": 179.28,
@@ -7613,9 +7640,9 @@
       "name": "Travis Etienne Jr.",
       "nflTeamId": "18",
       "ownership": {
-        "auctionValueAverage": 15.32,
-        "averageDraftPosition": 71.67,
-        "percentOwned": 87.93
+        "auctionValueAverage": 15.3,
+        "averageDraftPosition": 72.74,
+        "percentOwned": 87.14
       },
       "position": "RB",
       "projection": 122.53,
@@ -7636,7 +7663,7 @@
       "nflTeamId": "17",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.86,
+        "averageDraftPosition": 169.8,
         "percentOwned": 0.12
       },
       "position": "QB",
@@ -7658,8 +7685,8 @@
       "nflTeamId": "12",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.7,
-        "percentOwned": 0.23
+        "averageDraftPosition": 169.68,
+        "percentOwned": 0.22
       },
       "position": "TE",
       "projection": 53.54,
@@ -7680,8 +7707,8 @@
       "nflTeamId": "6",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.83,
-        "percentOwned": 0.75
+        "averageDraftPosition": 169.8,
+        "percentOwned": 0.73
       },
       "position": "RB",
       "projection": 0,
@@ -7711,8 +7738,8 @@
       "projection": 2.32,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.89,
-        "percentOwned": 0.17
+        "averageDraftPosition": 169.91,
+        "percentOwned": 0.16
       },
       "injuryStatus": "ACTIVE"
     },
@@ -7733,8 +7760,8 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.9,
-        "percentOwned": 0.07
+        "averageDraftPosition": 169.82,
+        "percentOwned": 0.06
       },
       "injuryStatus": "ACTIVE"
     },
@@ -7746,7 +7773,7 @@
       "nflTeamId": "24",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170.01,
+        "averageDraftPosition": 169.98,
         "percentOwned": 0.06
       },
       "position": "TE",
@@ -7768,11 +7795,11 @@
       "nflTeamId": "21",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.83,
-        "percentOwned": 0.26
+        "averageDraftPosition": 169.85,
+        "percentOwned": 0.25
       },
       "position": "WR",
-      "projection": 2.93,
+      "projection": 1.89,
       "scores": {
         "0": 1.2,
         "1": 0,
@@ -7789,8 +7816,8 @@
       "name": "CeeDee Lamb",
       "nflTeamId": "6",
       "ownership": {
-        "auctionValueAverage": 48.82,
-        "averageDraftPosition": 10.99,
+        "auctionValueAverage": 50.54,
+        "averageDraftPosition": 10.6,
         "percentOwned": 99.92
       },
       "position": "WR",
@@ -7833,9 +7860,9 @@
       "name": "Chuba Hubbard",
       "nflTeamId": "29",
       "ownership": {
-        "auctionValueAverage": 8.03,
-        "averageDraftPosition": 85.78,
-        "percentOwned": 93.86
+        "auctionValueAverage": 8.04,
+        "averageDraftPosition": 83.7,
+        "percentOwned": 93.84
       },
       "position": "RB",
       "projection": 188.01,
@@ -7856,8 +7883,8 @@
       "nflTeamId": "19",
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.09,
-        "percentOwned": 7.28
+        "averageDraftPosition": 169.03,
+        "percentOwned": 7.12
       },
       "position": "RB",
       "projection": 63.75,
@@ -7877,9 +7904,9 @@
       "name": "Jerry Jeudy",
       "nflTeamId": "5",
       "ownership": {
-        "auctionValueAverage": 0.03,
-        "averageDraftPosition": 168.59,
-        "percentOwned": 14.11
+        "auctionValueAverage": 0.02,
+        "averageDraftPosition": 168.6,
+        "percentOwned": 13.55
       },
       "position": "WR",
       "projection": 60.5,
@@ -7900,7 +7927,7 @@
       "nflTeamId": "25",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.67,
+        "averageDraftPosition": 169.68,
         "percentOwned": 0.21
       },
       "position": "QB",
@@ -7921,9 +7948,9 @@
       "name": "Brian Robinson Jr.",
       "nflTeamId": "1",
       "ownership": {
-        "auctionValueAverage": 1.76,
-        "averageDraftPosition": 162.44,
-        "percentOwned": 39.44
+        "auctionValueAverage": 1.56,
+        "averageDraftPosition": 160.24,
+        "percentOwned": 44.89
       },
       "position": "RB",
       "projection": 103.93,
@@ -7943,9 +7970,9 @@
       "name": "DeVonta Smith",
       "nflTeamId": "21",
       "ownership": {
-        "auctionValueAverage": 18.12,
-        "averageDraftPosition": 49.82,
-        "percentOwned": 98.51
+        "auctionValueAverage": 17.95,
+        "averageDraftPosition": 51.46,
+        "percentOwned": 98.37
       },
       "position": "WR",
       "projection": 177.39,
@@ -7966,8 +7993,8 @@
       "nflTeamId": "1",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.78,
-        "percentOwned": 0.7
+        "averageDraftPosition": 169.76,
+        "percentOwned": 0.67
       },
       "position": "QB",
       "projection": 0,
@@ -8019,10 +8046,10 @@
       "projection": 49.08,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.89,
+        "averageDraftPosition": 169.9,
         "percentOwned": 0.28
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4241985": {
       "average": 5.175000000000001,
@@ -8031,9 +8058,9 @@
       "name": "J.K. Dobbins",
       "nflTeamId": "7",
       "ownership": {
-        "auctionValueAverage": 0.93,
-        "averageDraftPosition": 135.06,
-        "percentOwned": 76.28
+        "auctionValueAverage": 0.9,
+        "averageDraftPosition": 135.27,
+        "percentOwned": 75.88
       },
       "position": "RB",
       "projection": 140.51,
@@ -8053,8 +8080,8 @@
       "name": "Jonathan Taylor",
       "nflTeamId": "11",
       "ownership": {
-        "auctionValueAverage": 52.98,
-        "averageDraftPosition": 8.35,
+        "auctionValueAverage": 53.58,
+        "averageDraftPosition": 8.27,
         "percentOwned": 99.9
       },
       "position": "RB",
@@ -8075,9 +8102,9 @@
       "name": "Jake Ferguson",
       "nflTeamId": "6",
       "ownership": {
-        "auctionValueAverage": 0.97,
-        "averageDraftPosition": 137.26,
-        "percentOwned": 75.66
+        "auctionValueAverage": 0.89,
+        "averageDraftPosition": 138.01,
+        "percentOwned": 74.25
       },
       "position": "TE",
       "projection": 91.31,
@@ -8097,8 +8124,8 @@
       "name": "Brock Wright",
       "nflTeamId": "8",
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.73,
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.72,
         "percentOwned": 0.11
       },
       "position": "TE",
@@ -8121,7 +8148,7 @@
       "ownership": {
         "auctionValueAverage": 0,
         "averageDraftPosition": 169.7,
-        "percentOwned": 1.3
+        "percentOwned": 1.17
       },
       "position": "WR",
       "projection": 33.14,
@@ -8142,8 +8169,8 @@
       "nflTeamId": "15",
       "ownership": {
         "auctionValueAverage": 0.1,
-        "averageDraftPosition": 169.04,
-        "percentOwned": 9.82
+        "averageDraftPosition": 169.12,
+        "percentOwned": 9.37
       },
       "position": "QB",
       "projection": 175.77,
@@ -8164,7 +8191,7 @@
       "nflTeamId": "14",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.86,
+        "averageDraftPosition": 169.79,
         "percentOwned": 0.76
       },
       "position": "TE",
@@ -8208,7 +8235,7 @@
       "nflTeamId": "26",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.96,
+        "averageDraftPosition": 169.95,
         "percentOwned": 0.03
       },
       "position": "RB",
@@ -8229,9 +8256,9 @@
       "name": "Cade Otton",
       "nflTeamId": "27",
       "ownership": {
-        "auctionValueAverage": 0.08,
-        "averageDraftPosition": 170.01,
-        "percentOwned": 3.27
+        "auctionValueAverage": 0.04,
+        "averageDraftPosition": 169.93,
+        "percentOwned": 3.44
       },
       "position": "TE",
       "projection": 102.18,
@@ -8283,7 +8310,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170,
+        "averageDraftPosition": 170.01,
         "percentOwned": 0.01
       },
       "injuryStatus": "ACTIVE"
@@ -8295,12 +8322,12 @@
       "name": "Christian Watson",
       "nflTeamId": "9",
       "ownership": {
-        "auctionValueAverage": 8.72,
-        "averageDraftPosition": 77.97,
-        "percentOwned": 94.6
+        "auctionValueAverage": 8.16,
+        "averageDraftPosition": 78.01,
+        "percentOwned": 94.63
       },
       "position": "WR",
-      "projection": 185.88,
+      "projection": 185.85,
       "scores": {
         "0": 77.1,
         "1": 32.7,
@@ -8317,9 +8344,9 @@
       "name": "Matt Gay",
       "nflTeamId": "13",
       "ownership": {
-        "auctionValueAverage": 0.07,
-        "averageDraftPosition": 167.76,
-        "percentOwned": 5.29
+        "auctionValueAverage": 0.08,
+        "averageDraftPosition": 167.46,
+        "percentOwned": 6.65
       },
       "position": "K",
       "projection": 106.34,
@@ -8340,11 +8367,11 @@
       "nflTeamId": "15",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170,
-        "percentOwned": 0.46
+        "averageDraftPosition": 169.93,
+        "percentOwned": 0.45
       },
       "position": "WR",
-      "projection": 0,
+      "projection": 2.42,
       "scores": {
         "0": 0,
         "1": 0,
@@ -8361,9 +8388,9 @@
       "name": "Nico Collins",
       "nflTeamId": "34",
       "ownership": {
-        "auctionValueAverage": 27.88,
-        "averageDraftPosition": 30.08,
-        "percentOwned": 99.24
+        "auctionValueAverage": 28.36,
+        "averageDraftPosition": 28.52,
+        "percentOwned": 99.32
       },
       "position": "WR",
       "projection": 215.07,
@@ -8384,8 +8411,8 @@
       "nflTeamId": "3",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.43,
-        "percentOwned": 0.89
+        "averageDraftPosition": 169.41,
+        "percentOwned": 0.86
       },
       "position": "TE",
       "projection": 32.53,
@@ -8406,8 +8433,8 @@
       "nflTeamId": "5",
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 168.88,
-        "percentOwned": 0.69
+        "averageDraftPosition": 168.83,
+        "percentOwned": 0.74
       },
       "position": "K",
       "projection": 104.71,
@@ -8428,8 +8455,8 @@
       "nflTeamId": "25",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.92,
-        "percentOwned": 0.34
+        "averageDraftPosition": 169.89,
+        "percentOwned": 0.33
       },
       "position": "TE",
       "projection": 0,
@@ -8459,7 +8486,7 @@
       "projection": 20.61,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.93,
+        "averageDraftPosition": 169.95,
         "percentOwned": 0.08
       },
       "injuryStatus": "ACTIVE"
@@ -8467,13 +8494,13 @@
     "4259545": {
       "average": 15.875,
       "id": "4259545",
-      "injuryStatus": "ACTIVE",
+      "injuryStatus": "QUESTIONABLE",
       "name": "D'Andre Swift",
       "nflTeamId": "3",
       "ownership": {
-        "auctionValueAverage": 12.48,
-        "averageDraftPosition": 59.37,
-        "percentOwned": 96.45
+        "auctionValueAverage": 12.21,
+        "averageDraftPosition": 61.36,
+        "percentOwned": 96.36
       },
       "position": "RB",
       "projection": 172.58,
@@ -8494,7 +8521,7 @@
       "nflTeamId": "14",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.91,
+        "averageDraftPosition": 169.9,
         "percentOwned": 0.06
       },
       "position": "QB",
@@ -8516,7 +8543,7 @@
       "nflTeamId": "0",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.94,
+        "averageDraftPosition": 169.92,
         "percentOwned": 0.17
       },
       "position": "K",
@@ -8536,9 +8563,9 @@
       "name": "Justin Jefferson",
       "nflTeamId": "16",
       "ownership": {
-        "auctionValueAverage": 41.54,
-        "averageDraftPosition": 17.11,
-        "percentOwned": 99.86
+        "auctionValueAverage": 41.75,
+        "averageDraftPosition": 17.37,
+        "percentOwned": 99.87
       },
       "position": "WR",
       "projection": 232.65,
@@ -8558,9 +8585,9 @@
       "name": "Alec Pierce",
       "nflTeamId": "11",
       "ownership": {
-        "auctionValueAverage": 1.09,
-        "averageDraftPosition": 137.87,
-        "percentOwned": 61.49
+        "auctionValueAverage": 0.98,
+        "averageDraftPosition": 138.23,
+        "percentOwned": 60.62
       },
       "position": "WR",
       "projection": 108.53,
@@ -8580,9 +8607,9 @@
       "name": "Evan McPherson",
       "nflTeamId": "4",
       "ownership": {
-        "auctionValueAverage": 0.68,
-        "averageDraftPosition": 151.48,
-        "percentOwned": 47.84
+        "auctionValueAverage": 0.59,
+        "averageDraftPosition": 153.12,
+        "percentOwned": 47.89
       },
       "position": "K",
       "projection": 111.66,
@@ -8597,7 +8624,7 @@
     },
     "4360238": {
       "id": "4360238",
-      "nflTeamId": "0",
+      "nflTeamId": "21",
       "name": "Dameon Pierce",
       "position": "RB",
       "total": 0,
@@ -8605,11 +8632,11 @@
       "scores": {
         "0": 0
       },
-      "projection": 5.55,
+      "projection": 5.49,
       "ownership": {
         "auctionValueAverage": 0,
         "averageDraftPosition": 169.97,
-        "percentOwned": 0.56
+        "percentOwned": 1.43
       },
       "injuryStatus": "ACTIVE"
     },
@@ -8620,9 +8647,9 @@
       "name": "Kyle Pitts Sr.",
       "nflTeamId": "1",
       "ownership": {
-        "auctionValueAverage": 3.35,
-        "averageDraftPosition": 102.08,
-        "percentOwned": 73.3
+        "auctionValueAverage": 3.14,
+        "averageDraftPosition": 102.57,
+        "percentOwned": 71.73
       },
       "position": "TE",
       "projection": 92.06,
@@ -8642,9 +8669,9 @@
       "name": "Trevor Lawrence",
       "nflTeamId": "30",
       "ownership": {
-        "auctionValueAverage": 3.19,
-        "averageDraftPosition": 101.26,
-        "percentOwned": 89.1
+        "auctionValueAverage": 3.22,
+        "averageDraftPosition": 101.06,
+        "percentOwned": 89.59
       },
       "position": "QB",
       "projection": 249.76,
@@ -8664,9 +8691,9 @@
       "name": "Michael Penix Jr.",
       "nflTeamId": "1",
       "ownership": {
-        "auctionValueAverage": 0.06,
-        "averageDraftPosition": 168.67,
-        "percentOwned": 6.86
+        "auctionValueAverage": 0.05,
+        "averageDraftPosition": 168.51,
+        "percentOwned": 7.38
       },
       "position": "QB",
       "projection": 185.12,
@@ -8687,8 +8714,8 @@
       "nflTeamId": "25",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.88,
-        "percentOwned": 0.39
+        "averageDraftPosition": 169.87,
+        "percentOwned": 0.38
       },
       "position": "WR",
       "projection": 0,
@@ -8709,8 +8736,8 @@
       "nflTeamId": "19",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.76,
-        "percentOwned": 2.09
+        "averageDraftPosition": 169.72,
+        "percentOwned": 2.01
       },
       "position": "RB",
       "projection": 23.05,
@@ -8731,8 +8758,8 @@
       "nflTeamId": "16",
       "ownership": {
         "auctionValueAverage": 0.64,
-        "averageDraftPosition": 163.02,
-        "percentOwned": 52.95
+        "averageDraftPosition": 163.11,
+        "percentOwned": 52.54
       },
       "position": "RB",
       "projection": 123.41,
@@ -8748,13 +8775,13 @@
     "4360635": {
       "average": 3.05,
       "id": "4360635",
-      "injuryStatus": "ACTIVE",
+      "injuryStatus": "QUESTIONABLE",
       "name": "Chig Okonkwo",
       "nflTeamId": "28",
       "ownership": {
         "auctionValueAverage": 0.08,
-        "averageDraftPosition": 169.7,
-        "percentOwned": 3.35
+        "averageDraftPosition": 169.66,
+        "percentOwned": 3.21
       },
       "position": "TE",
       "projection": 75.28,
@@ -8770,13 +8797,13 @@
     "4360689": {
       "average": 21.330000000000002,
       "id": "4360689",
-      "injuryStatus": "ACTIVE",
+      "injuryStatus": "QUESTIONABLE",
       "name": "Tyler Shough",
       "nflTeamId": "18",
       "ownership": {
-        "auctionValueAverage": 2.55,
-        "averageDraftPosition": 109.09,
-        "percentOwned": 85.68
+        "auctionValueAverage": 2.5,
+        "averageDraftPosition": 111.42,
+        "percentOwned": 84.71
       },
       "position": "QB",
       "projection": 240.99,
@@ -8796,12 +8823,12 @@
       "name": "Michael Wilson",
       "nflTeamId": "22",
       "ownership": {
-        "auctionValueAverage": 2.74,
-        "averageDraftPosition": 106.26,
-        "percentOwned": 89.28
+        "auctionValueAverage": 3,
+        "averageDraftPosition": 102.95,
+        "percentOwned": 90.79
       },
       "position": "WR",
-      "projection": 198.56,
+      "projection": 198.33,
       "scores": {
         "0": 56.8,
         "1": 10.6,
@@ -8829,7 +8856,7 @@
       "ownership": {
         "auctionValueAverage": 0,
         "averageDraftPosition": 169.89,
-        "percentOwned": 1.1
+        "percentOwned": 0.89
       },
       "injuryStatus": "ACTIVE"
     },
@@ -8858,16 +8885,16 @@
     "4360939": {
       "average": 8.525,
       "id": "4360939",
-      "injuryStatus": "ACTIVE",
+      "injuryStatus": "QUESTIONABLE",
       "name": "Rashod Bateman",
       "nflTeamId": "33",
       "ownership": {
-        "auctionValueAverage": 0.11,
-        "averageDraftPosition": 168.79,
-        "percentOwned": 20.61
+        "auctionValueAverage": 0.08,
+        "averageDraftPosition": 169.01,
+        "percentOwned": 19.1
       },
       "position": "WR",
-      "projection": 88.06,
+      "projection": 87.93,
       "scores": {
         "0": 34.1,
         "1": 0,
@@ -8894,7 +8921,7 @@
       "projection": 22.11,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.81,
+        "averageDraftPosition": 169.8,
         "percentOwned": 0.08
       },
       "injuryStatus": "ACTIVE"
@@ -8902,13 +8929,13 @@
     "4361050": {
       "average": 13.25,
       "id": "4361050",
-      "injuryStatus": "ACTIVE",
+      "injuryStatus": "QUESTIONABLE",
       "name": "Isaiah Likely",
       "nflTeamId": "19",
       "ownership": {
-        "auctionValueAverage": 1.47,
-        "averageDraftPosition": 119.25,
-        "percentOwned": 89.82
+        "auctionValueAverage": 1.51,
+        "averageDraftPosition": 118.06,
+        "percentOwned": 89.9
       },
       "position": "TE",
       "projection": 163.51,
@@ -8938,7 +8965,7 @@
       "projection": 6.6,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.95,
+        "averageDraftPosition": 169.97,
         "percentOwned": 0.03
       },
       "injuryStatus": "ACTIVE"
@@ -8950,12 +8977,12 @@
       "name": "Trey McBride",
       "nflTeamId": "22",
       "ownership": {
-        "auctionValueAverage": 31.78,
-        "averageDraftPosition": 21.06,
+        "auctionValueAverage": 31.67,
+        "averageDraftPosition": 21.16,
         "percentOwned": 99.89
       },
       "position": "TE",
-      "projection": 224.22,
+      "projection": 223.98,
       "scores": {
         "0": 69.2,
         "1": 24.5,
@@ -8972,9 +8999,9 @@
       "name": "Chris Olave",
       "nflTeamId": "18",
       "ownership": {
-        "auctionValueAverage": 31.48,
-        "averageDraftPosition": 23.96,
-        "percentOwned": 99.67
+        "auctionValueAverage": 31.81,
+        "averageDraftPosition": 23.74,
+        "percentOwned": 99.69
       },
       "position": "WR",
       "projection": 224.41,
@@ -9001,11 +9028,11 @@
         "3": 14.9,
         "4": 0
       },
-      "projection": 33.84,
+      "projection": 34.38,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.95,
-        "percentOwned": 0.06
+        "averageDraftPosition": 169.96,
+        "percentOwned": 0.05
       },
       "injuryStatus": "ACTIVE"
     },
@@ -9017,8 +9044,8 @@
       "nflTeamId": "1",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.87,
-        "percentOwned": 0.81
+        "averageDraftPosition": 169.79,
+        "percentOwned": 0.82
       },
       "position": "WR",
       "projection": 83.27,
@@ -9038,9 +9065,9 @@
       "name": "Pat Freiermuth",
       "nflTeamId": "23",
       "ownership": {
-        "auctionValueAverage": 0.12,
-        "averageDraftPosition": 168.33,
-        "percentOwned": 20.14
+        "auctionValueAverage": 0.09,
+        "averageDraftPosition": 168.37,
+        "percentOwned": 20.39
       },
       "position": "TE",
       "projection": 108.61,
@@ -9060,12 +9087,12 @@
       "name": "Romeo Doubs",
       "nflTeamId": "17",
       "ownership": {
-        "auctionValueAverage": 0.83,
-        "averageDraftPosition": 153.85,
-        "percentOwned": 64.62
+        "auctionValueAverage": 0.78,
+        "averageDraftPosition": 152.41,
+        "percentOwned": 68.2
       },
       "position": "WR",
-      "projection": 117.1,
+      "projection": 118.35,
       "scores": {
         "0": 44.3,
         "1": 0,
@@ -9104,9 +9131,9 @@
       "name": "Isiah Pacheco",
       "nflTeamId": "8",
       "ownership": {
-        "auctionValueAverage": 0.2,
-        "averageDraftPosition": 166.83,
-        "percentOwned": 21.55
+        "auctionValueAverage": 0.18,
+        "averageDraftPosition": 166.81,
+        "percentOwned": 21.11
       },
       "position": "RB",
       "projection": 0,
@@ -9136,7 +9163,7 @@
       "projection": 28.83,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.99,
+        "averageDraftPosition": 169.98,
         "percentOwned": 0.09
       },
       "injuryStatus": "ACTIVE"
@@ -9148,9 +9175,9 @@
       "name": "Javonte Williams",
       "nflTeamId": "6",
       "ownership": {
-        "auctionValueAverage": 23.09,
-        "averageDraftPosition": 34.97,
-        "percentOwned": 99.09
+        "auctionValueAverage": 23.59,
+        "averageDraftPosition": 33.97,
+        "percentOwned": 99.17
       },
       "position": "RB",
       "projection": 226.97,
@@ -9170,9 +9197,9 @@
       "name": "Brock Purdy",
       "nflTeamId": "25",
       "ownership": {
-        "auctionValueAverage": 7.57,
-        "averageDraftPosition": 61.32,
-        "percentOwned": 96.71
+        "auctionValueAverage": 8.06,
+        "averageDraftPosition": 60.35,
+        "percentOwned": 96.78
       },
       "position": "QB",
       "projection": 259.31,
@@ -9202,7 +9229,7 @@
       "projection": 20.46,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.93,
+        "averageDraftPosition": 169.92,
         "percentOwned": 0.04
       },
       "injuryStatus": "ACTIVE"
@@ -9214,9 +9241,9 @@
       "name": "Cameron Dicker",
       "nflTeamId": "24",
       "ownership": {
-        "auctionValueAverage": 1.1,
-        "averageDraftPosition": 118.62,
-        "percentOwned": 77.75
+        "auctionValueAverage": 1.08,
+        "averageDraftPosition": 119.17,
+        "percentOwned": 77.16
       },
       "position": "K",
       "projection": 113.17,
@@ -9236,9 +9263,9 @@
       "name": "Chase Brown",
       "nflTeamId": "4",
       "ownership": {
-        "auctionValueAverage": 35.32,
-        "averageDraftPosition": 24.05,
-        "percentOwned": 99.45
+        "auctionValueAverage": 35.49,
+        "averageDraftPosition": 24.01,
+        "percentOwned": 99.48
       },
       "position": "RB",
       "projection": 216.58,
@@ -9258,9 +9285,9 @@
       "name": "Jayden Reed",
       "nflTeamId": "9",
       "ownership": {
-        "auctionValueAverage": 0.75,
-        "averageDraftPosition": 156.59,
-        "percentOwned": 34.48
+        "auctionValueAverage": 0.71,
+        "averageDraftPosition": 157.07,
+        "percentOwned": 32.87
       },
       "position": "WR",
       "projection": 0,
@@ -9303,8 +9330,8 @@
       "nflTeamId": "6",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.76,
-        "percentOwned": 0.66
+        "averageDraftPosition": 169.7,
+        "percentOwned": 0.61
       },
       "position": "RB",
       "projection": 0,
@@ -9346,9 +9373,9 @@
       "name": "Chris Rodriguez Jr.",
       "nflTeamId": "30",
       "ownership": {
-        "auctionValueAverage": 0.11,
-        "averageDraftPosition": 168.48,
-        "percentOwned": 16.97
+        "auctionValueAverage": 0.1,
+        "averageDraftPosition": 168.47,
+        "percentOwned": 16.8
       },
       "position": "RB",
       "projection": 68.33,
@@ -9368,8 +9395,8 @@
       "name": "Ja'Marr Chase",
       "nflTeamId": "4",
       "ownership": {
-        "auctionValueAverage": 54.23,
-        "averageDraftPosition": 6.46,
+        "auctionValueAverage": 53.71,
+        "averageDraftPosition": 6.77,
         "percentOwned": 99.91
       },
       "position": "WR",
@@ -9391,7 +9418,7 @@
       "nflTeamId": "7",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.97,
+        "averageDraftPosition": 169.95,
         "percentOwned": 0.2
       },
       "position": "RB",
@@ -9413,8 +9440,8 @@
       "nflTeamId": "12",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.78,
-        "percentOwned": 0.27
+        "averageDraftPosition": 169.74,
+        "percentOwned": 0.26
       },
       "position": "QB",
       "projection": 0,
@@ -9434,9 +9461,9 @@
       "name": "Tyquan Thornton",
       "nflTeamId": "12",
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.59,
-        "percentOwned": 0.94
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.52,
+        "percentOwned": 0.84
       },
       "position": "WR",
       "projection": 0,
@@ -9457,8 +9484,8 @@
       "nflTeamId": "22",
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.65,
-        "percentOwned": 3.16
+        "averageDraftPosition": 169.61,
+        "percentOwned": 5.15
       },
       "position": "K",
       "projection": 107.09,
@@ -9478,9 +9505,9 @@
       "name": "Tank Dell",
       "nflTeamId": "34",
       "ownership": {
-        "auctionValueAverage": 0.39,
-        "averageDraftPosition": 165.26,
-        "percentOwned": 28.07
+        "auctionValueAverage": 0.4,
+        "averageDraftPosition": 164.93,
+        "percentOwned": 29.39
       },
       "position": "WR",
       "projection": 0,
@@ -9501,8 +9528,8 @@
       "nflTeamId": "13",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170,
-        "percentOwned": 0.17
+        "averageDraftPosition": 169.95,
+        "percentOwned": 0.16
       },
       "position": "RB",
       "projection": 0.43,
@@ -9523,11 +9550,11 @@
       "nflTeamId": "15",
       "ownership": {
         "auctionValueAverage": 0.08,
-        "averageDraftPosition": 170.38,
-        "percentOwned": 1.53
+        "averageDraftPosition": 170.39,
+        "percentOwned": 1.48
       },
       "position": "TE",
-      "projection": 73.3,
+      "projection": 73.34,
       "scores": {
         "0": 18,
         "1": 3.8,
@@ -9545,8 +9572,8 @@
       "nflTeamId": "4",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.99,
-        "percentOwned": 0.32
+        "averageDraftPosition": 169.93,
+        "percentOwned": 0.31
       },
       "position": "WR",
       "projection": 0,
@@ -9573,10 +9600,10 @@
         "3": 3.5,
         "4": 0
       },
-      "projection": 21.76,
+      "projection": 22.2,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.99,
+        "averageDraftPosition": 169.98,
         "percentOwned": 0.03
       },
       "injuryStatus": "ACTIVE"
@@ -9598,7 +9625,7 @@
       "projection": 5.75,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.97,
+        "averageDraftPosition": 169.95,
         "percentOwned": 0.02
       },
       "injuryStatus": "ACTIVE"
@@ -9610,9 +9637,9 @@
       "name": "Kenny Gainwell",
       "nflTeamId": "27",
       "ownership": {
-        "auctionValueAverage": 1.2,
-        "averageDraftPosition": 127.28,
-        "percentOwned": 63.99
+        "auctionValueAverage": 1.14,
+        "averageDraftPosition": 127.89,
+        "percentOwned": 62.66
       },
       "position": "RB",
       "projection": 94.88,
@@ -9632,9 +9659,9 @@
       "name": "Jaylen Waddle",
       "nflTeamId": "7",
       "ownership": {
-        "auctionValueAverage": 9.1,
-        "averageDraftPosition": 78.8,
-        "percentOwned": 94.37
+        "auctionValueAverage": 8.96,
+        "averageDraftPosition": 78.5,
+        "percentOwned": 94.22
       },
       "position": "WR",
       "projection": 150.34,
@@ -9655,7 +9682,7 @@
       "nflTeamId": "6",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.77,
+        "averageDraftPosition": 169.74,
         "percentOwned": 0.12
       },
       "position": "TE",
@@ -9699,8 +9726,8 @@
       "nflTeamId": "29",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.8,
-        "percentOwned": 0.19
+        "averageDraftPosition": 169.74,
+        "percentOwned": 0.18
       },
       "position": "TE",
       "projection": 65.31,
@@ -9720,12 +9747,12 @@
       "name": "Tyler Allgeier",
       "nflTeamId": "22",
       "ownership": {
-        "auctionValueAverage": 0.11,
-        "averageDraftPosition": 167.95,
-        "percentOwned": 33.66
+        "auctionValueAverage": 0.1,
+        "averageDraftPosition": 167.61,
+        "percentOwned": 35.63
       },
       "position": "RB",
-      "projection": 103.45,
+      "projection": 103.39,
       "scores": {
         "0": 30.7,
         "1": 9,
@@ -9742,9 +9769,9 @@
       "name": "Khalil Shakir",
       "nflTeamId": "2",
       "ownership": {
-        "auctionValueAverage": 0.85,
-        "averageDraftPosition": 144.02,
-        "percentOwned": 61.36
+        "auctionValueAverage": 0.83,
+        "averageDraftPosition": 143.96,
+        "percentOwned": 61.07
       },
       "position": "WR",
       "projection": 128.06,
@@ -9764,9 +9791,9 @@
       "name": "Amon-Ra St. Brown",
       "nflTeamId": "8",
       "ownership": {
-        "auctionValueAverage": 52.24,
-        "averageDraftPosition": 9.22,
-        "percentOwned": 99.92
+        "auctionValueAverage": 52.25,
+        "averageDraftPosition": 9.35,
+        "percentOwned": 99.93
       },
       "position": "WR",
       "projection": 246.05,
@@ -9786,9 +9813,9 @@
       "name": "James Cook III",
       "nflTeamId": "2",
       "ownership": {
-        "auctionValueAverage": 45.14,
-        "averageDraftPosition": 13.24,
-        "percentOwned": 99.89
+        "auctionValueAverage": 45.17,
+        "averageDraftPosition": 13.32,
+        "percentOwned": 99.9
       },
       "position": "RB",
       "projection": 228.37,
@@ -9808,9 +9835,9 @@
       "name": "Jalen Nailor",
       "nflTeamId": "13",
       "ownership": {
-        "auctionValueAverage": 0.03,
-        "averageDraftPosition": 169.75,
-        "percentOwned": 6.04
+        "auctionValueAverage": 0.02,
+        "averageDraftPosition": 169.7,
+        "percentOwned": 5.75
       },
       "position": "WR",
       "projection": 72.24,
@@ -9831,8 +9858,8 @@
       "nflTeamId": "6",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.82,
-        "percentOwned": 0.11
+        "averageDraftPosition": 169.81,
+        "percentOwned": 0.1
       },
       "position": "RB",
       "projection": 12.9,
@@ -9853,8 +9880,8 @@
       "nflTeamId": "8",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.93,
-        "percentOwned": 0.65
+        "averageDraftPosition": 169.88,
+        "percentOwned": 0.63
       },
       "position": "RB",
       "projection": 0.43,
@@ -9884,7 +9911,7 @@
       "projection": 21.99,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.93,
+        "averageDraftPosition": 169.96,
         "percentOwned": 0.05
       },
       "injuryStatus": "ACTIVE"
@@ -9897,8 +9924,8 @@
       "nflTeamId": "4",
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.76,
-        "percentOwned": 6.38
+        "averageDraftPosition": 169.75,
+        "percentOwned": 8.85
       },
       "position": "WR",
       "projection": 86.01,
@@ -9918,9 +9945,9 @@
       "name": "Dalton Kincaid",
       "nflTeamId": "2",
       "ownership": {
-        "auctionValueAverage": 2.11,
-        "averageDraftPosition": 120.67,
-        "percentOwned": 89.31
+        "auctionValueAverage": 1.99,
+        "averageDraftPosition": 123.6,
+        "percentOwned": 88.51
       },
       "position": "TE",
       "projection": 119.39,
@@ -9950,7 +9977,7 @@
       "projection": 14.07,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.99,
+        "averageDraftPosition": 169.97,
         "percentOwned": 0.03
       },
       "injuryStatus": "ACTIVE"
@@ -9981,9 +10008,9 @@
       "name": "Bo Nix",
       "nflTeamId": "7",
       "ownership": {
-        "auctionValueAverage": 1.6,
-        "averageDraftPosition": 131.44,
-        "percentOwned": 74.77
+        "auctionValueAverage": 1.56,
+        "averageDraftPosition": 132.2,
+        "percentOwned": 74.25
       },
       "position": "QB",
       "projection": 214.42,
@@ -9999,13 +10026,13 @@
     "4426348": {
       "average": 16.2,
       "id": "4426348",
-      "injuryStatus": "QUESTIONABLE",
+      "injuryStatus": "ACTIVE",
       "name": "Jayden Daniels",
       "nflTeamId": "28",
       "ownership": {
-        "auctionValueAverage": 7.66,
-        "averageDraftPosition": 71.22,
-        "percentOwned": 86.46
+        "auctionValueAverage": 7.61,
+        "averageDraftPosition": 70.36,
+        "percentOwned": 88.98
       },
       "position": "QB",
       "projection": 258.15,
@@ -10025,9 +10052,9 @@
       "name": "George Pickens",
       "nflTeamId": "6",
       "ownership": {
-        "auctionValueAverage": 23.9,
-        "averageDraftPosition": 34.89,
-        "percentOwned": 99.1
+        "auctionValueAverage": 23.53,
+        "averageDraftPosition": 35.04,
+        "percentOwned": 99.05
       },
       "position": "WR",
       "projection": 176.02,
@@ -10047,9 +10074,9 @@
       "name": "Zach Charbonnet",
       "nflTeamId": "26",
       "ownership": {
-        "auctionValueAverage": 0.7,
-        "averageDraftPosition": 154.83,
-        "percentOwned": 58.06
+        "auctionValueAverage": 0.69,
+        "averageDraftPosition": 153.87,
+        "percentOwned": 58.08
       },
       "position": "RB",
       "projection": 149.14,
@@ -10071,7 +10098,7 @@
       "ownership": {
         "auctionValueAverage": 0,
         "averageDraftPosition": 169.93,
-        "percentOwned": 0.16
+        "percentOwned": 0.32
       },
       "position": "RB",
       "projection": 0,
@@ -10091,9 +10118,9 @@
       "name": "Jameson Williams",
       "nflTeamId": "8",
       "ownership": {
-        "auctionValueAverage": 6.31,
-        "averageDraftPosition": 91.27,
-        "percentOwned": 90.65
+        "auctionValueAverage": 6.16,
+        "averageDraftPosition": 90.78,
+        "percentOwned": 90.75
       },
       "position": "WR",
       "projection": 135.01,
@@ -10126,7 +10153,7 @@
         "averageDraftPosition": 169.84,
         "percentOwned": 0.08
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4426496": {
       "id": "4426496",
@@ -10145,7 +10172,7 @@
       "projection": 6.44,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170.03,
+        "averageDraftPosition": 170.01,
         "percentOwned": 0.05
       },
       "injuryStatus": "ACTIVE"
@@ -10157,9 +10184,9 @@
       "name": "Drake London",
       "nflTeamId": "1",
       "ownership": {
-        "auctionValueAverage": 32.01,
-        "averageDraftPosition": 22.46,
-        "percentOwned": 99.6
+        "auctionValueAverage": 32.09,
+        "averageDraftPosition": 22.59,
+        "percentOwned": 99.63
       },
       "position": "WR",
       "projection": 206.74,
@@ -10179,9 +10206,9 @@
       "name": "Puka Nacua",
       "nflTeamId": "14",
       "ownership": {
-        "auctionValueAverage": 52.93,
-        "averageDraftPosition": 7.28,
-        "percentOwned": 99.91
+        "auctionValueAverage": 54.13,
+        "averageDraftPosition": 7.02,
+        "percentOwned": 99.92
       },
       "position": "WR",
       "projection": 272.5,
@@ -10230,10 +10257,10 @@
         "3": 5,
         "4": 9.9
       },
-      "projection": 22.53,
+      "projection": 37.62,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.91,
+        "averageDraftPosition": 169.88,
         "percentOwned": 0.09
       },
       "injuryStatus": "ACTIVE"
@@ -10246,7 +10273,7 @@
       "nflTeamId": "28",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.9,
+        "averageDraftPosition": 169.87,
         "percentOwned": 0.16
       },
       "position": "WR",
@@ -10268,11 +10295,11 @@
       "nflTeamId": "17",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.96,
-        "percentOwned": 2.22
+        "averageDraftPosition": 169.86,
+        "percentOwned": 2.16
       },
       "position": "WR",
-      "projection": 76.55,
+      "projection": 77.15,
       "scores": {
         "0": 17.2,
         "1": 7,
@@ -10289,12 +10316,12 @@
       "name": "Breece Hall",
       "nflTeamId": "20",
       "ownership": {
-        "auctionValueAverage": 21.08,
-        "averageDraftPosition": 50.89,
-        "percentOwned": 97.62
+        "auctionValueAverage": 21.07,
+        "averageDraftPosition": 51.36,
+        "percentOwned": 97.36
       },
       "position": "RB",
-      "projection": 210.94,
+      "projection": 194.58,
       "scores": {
         "0": 42.5,
         "1": 19.8,
@@ -10312,7 +10339,7 @@
       "nflTeamId": "22",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170.02,
+        "averageDraftPosition": 169.97,
         "percentOwned": 0.13
       },
       "position": "RB",
@@ -10334,8 +10361,8 @@
       "nflTeamId": "4",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.95,
-        "percentOwned": 0.15
+        "averageDraftPosition": 169.91,
+        "percentOwned": 0.14
       },
       "position": "TE",
       "projection": 15.65,
@@ -10357,7 +10384,7 @@
       "ownership": {
         "auctionValueAverage": 0,
         "averageDraftPosition": 169.91,
-        "percentOwned": 2.21
+        "percentOwned": 2.19
       },
       "position": "WR",
       "projection": 0,
@@ -10377,9 +10404,9 @@
       "name": "Rashee Rice",
       "nflTeamId": "12",
       "ownership": {
-        "auctionValueAverage": 23.61,
-        "averageDraftPosition": 40.91,
-        "percentOwned": 98.06
+        "auctionValueAverage": 23.54,
+        "averageDraftPosition": 42.58,
+        "percentOwned": 97.71
       },
       "position": "WR",
       "projection": 190.51,
@@ -10399,9 +10426,9 @@
       "name": "Tyjae Spears",
       "nflTeamId": "10",
       "ownership": {
-        "auctionValueAverage": 0.67,
-        "averageDraftPosition": 162.9,
-        "percentOwned": 37.59
+        "auctionValueAverage": 0.68,
+        "averageDraftPosition": 163.01,
+        "percentOwned": 36.11
       },
       "position": "RB",
       "projection": 85.64,
@@ -10421,9 +10448,9 @@
       "name": "Tre Tucker",
       "nflTeamId": "13",
       "ownership": {
-        "auctionValueAverage": 0.14,
-        "averageDraftPosition": 166.28,
-        "percentOwned": 34.34
+        "auctionValueAverage": 0.13,
+        "averageDraftPosition": 166.43,
+        "percentOwned": 33.4
       },
       "position": "WR",
       "projection": 115.89,
@@ -10443,12 +10470,12 @@
       "name": "Dontayvion Wicks",
       "nflTeamId": "21",
       "ownership": {
-        "auctionValueAverage": 0.2,
-        "averageDraftPosition": 165.83,
-        "percentOwned": 49.1
+        "auctionValueAverage": 0.19,
+        "averageDraftPosition": 165.88,
+        "percentOwned": 47.3
       },
       "position": "WR",
-      "projection": 113.27,
+      "projection": 112.97,
       "scores": {
         "0": 37.7,
         "1": 15.3,
@@ -10465,9 +10492,9 @@
       "name": "Tank Bigsby",
       "nflTeamId": "21",
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 168.94,
-        "percentOwned": 12.16
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.02,
+        "percentOwned": 10.91
       },
       "position": "RB",
       "projection": 0,
@@ -10488,8 +10515,8 @@
       "nflTeamId": "34",
       "ownership": {
         "auctionValueAverage": 0.06,
-        "averageDraftPosition": 170.32,
-        "percentOwned": 7.78
+        "averageDraftPosition": 170.26,
+        "percentOwned": 7.29
       },
       "position": "WR",
       "projection": 63.23,
@@ -10509,12 +10536,12 @@
       "name": "MarShawn Lloyd",
       "nflTeamId": "9",
       "ownership": {
-        "auctionValueAverage": 1.02,
-        "averageDraftPosition": 135.15,
-        "percentOwned": 46.51
+        "auctionValueAverage": 0.94,
+        "averageDraftPosition": 135.79,
+        "percentOwned": 47.07
       },
       "position": "RB",
-      "projection": 50.95,
+      "projection": 52.7,
       "scores": {
         "0": 26,
         "1": 3.7,
@@ -10527,13 +10554,13 @@
     "4429025": {
       "average": 4.525,
       "id": "4429025",
-      "injuryStatus": "ACTIVE",
+      "injuryStatus": "QUESTIONABLE",
       "name": "Quentin Johnston",
       "nflTeamId": "24",
       "ownership": {
-        "auctionValueAverage": 0.84,
-        "averageDraftPosition": 153.04,
-        "percentOwned": 47.44
+        "auctionValueAverage": 0.8,
+        "averageDraftPosition": 153.37,
+        "percentOwned": 45.33
       },
       "position": "WR",
       "projection": 93.1,
@@ -10554,8 +10581,8 @@
       "nflTeamId": "34",
       "ownership": {
         "auctionValueAverage": 0.69,
-        "averageDraftPosition": 160.74,
-        "percentOwned": 49.97
+        "averageDraftPosition": 160.93,
+        "percentOwned": 49.23
       },
       "position": "RB",
       "projection": 100.27,
@@ -10576,7 +10603,7 @@
       "nflTeamId": "11",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.96,
+        "averageDraftPosition": 169.92,
         "percentOwned": 0.12
       },
       "position": "QB",
@@ -10598,8 +10625,8 @@
       "nflTeamId": "13",
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 168.81,
-        "percentOwned": 15.66
+        "averageDraftPosition": 168.59,
+        "percentOwned": 17.23
       },
       "position": "TE",
       "projection": 103.75,
@@ -10620,8 +10647,8 @@
       "nflTeamId": "14",
       "ownership": {
         "auctionValueAverage": 0.83,
-        "averageDraftPosition": 144.87,
-        "percentOwned": 67.93
+        "averageDraftPosition": 145.12,
+        "percentOwned": 66.77
       },
       "position": "RB",
       "projection": 104.95,
@@ -10642,7 +10669,7 @@
       "nflTeamId": "19",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.82,
+        "averageDraftPosition": 169.78,
         "percentOwned": 0.26
       },
       "position": "TE",
@@ -10663,9 +10690,9 @@
       "name": "De'Von Achane",
       "nflTeamId": "15",
       "ownership": {
-        "auctionValueAverage": 32.72,
-        "averageDraftPosition": 41.24,
-        "percentOwned": 46.26
+        "auctionValueAverage": 32.56,
+        "averageDraftPosition": 43.28,
+        "percentOwned": 44.56
       },
       "position": "RB",
       "projection": 0,
@@ -10681,13 +10708,13 @@
     "4429205": {
       "average": 8.3,
       "id": "4429205",
-      "injuryStatus": "ACTIVE",
+      "injuryStatus": "QUESTIONABLE",
       "name": "Jordan Addison",
       "nflTeamId": "16",
       "ownership": {
-        "auctionValueAverage": 1.13,
-        "averageDraftPosition": 133.21,
-        "percentOwned": 82.05
+        "auctionValueAverage": 1.02,
+        "averageDraftPosition": 134.26,
+        "percentOwned": 81.08
       },
       "position": "WR",
       "projection": 142.13,
@@ -10709,7 +10736,7 @@
       "ownership": {
         "auctionValueAverage": 0,
         "averageDraftPosition": 169.97,
-        "percentOwned": 0.13
+        "percentOwned": 0.12
       },
       "position": "RB",
       "projection": 0,
@@ -10730,7 +10757,7 @@
       "nflTeamId": "4",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170.03,
+        "averageDraftPosition": 170,
         "percentOwned": 0.2
       },
       "position": "RB",
@@ -10752,8 +10779,8 @@
       "nflTeamId": "2",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.23,
-        "percentOwned": 4.84
+        "averageDraftPosition": 169.17,
+        "percentOwned": 4.64
       },
       "position": "RB",
       "projection": 15.23,
@@ -10769,16 +10796,16 @@
     "4429615": {
       "average": 22.400000000000002,
       "id": "4429615",
-      "injuryStatus": "ACTIVE",
+      "injuryStatus": "QUESTIONABLE",
       "name": "Zay Flowers",
       "nflTeamId": "33",
       "ownership": {
         "auctionValueAverage": 20.36,
-        "averageDraftPosition": 37.05,
+        "averageDraftPosition": 36.36,
         "percentOwned": 98.9
       },
       "position": "WR",
-      "projection": 211.66,
+      "projection": 211.36,
       "scores": {
         "0": 67.2,
         "1": 26,
@@ -10804,8 +10831,8 @@
       "projection": 50.31,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.77,
-        "percentOwned": 0.26
+        "averageDraftPosition": 169.74,
+        "percentOwned": 0.29
       },
       "injuryStatus": "ACTIVE"
     },
@@ -10816,7 +10843,7 @@
       "name": "Jahmyr Gibbs",
       "nflTeamId": "8",
       "ownership": {
-        "auctionValueAverage": 72.63,
+        "auctionValueAverage": 73.74,
         "averageDraftPosition": 1.75,
         "percentOwned": 99.94
       },
@@ -10848,7 +10875,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.94,
+        "averageDraftPosition": 169.92,
         "percentOwned": 0.04
       },
       "injuryStatus": "ACTIVE"
@@ -10856,13 +10883,13 @@
     "4429835": {
       "average": 4.8,
       "id": "4429835",
-      "injuryStatus": "ACTIVE",
+      "injuryStatus": "QUESTIONABLE",
       "name": "George Holani",
       "nflTeamId": "26",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.92,
-        "percentOwned": 12.22
+        "averageDraftPosition": 169.85,
+        "percentOwned": 10.94
       },
       "position": "RB",
       "projection": 14.08,
@@ -10882,9 +10909,9 @@
       "name": "Sam LaPorta",
       "nflTeamId": "8",
       "ownership": {
-        "auctionValueAverage": 3.14,
-        "averageDraftPosition": 84.98,
-        "percentOwned": 96.33
+        "auctionValueAverage": 3.1,
+        "averageDraftPosition": 82.87,
+        "percentOwned": 96.58
       },
       "position": "TE",
       "projection": 161.99,
@@ -10904,9 +10931,9 @@
       "name": "Xavier Legette",
       "nflTeamId": "29",
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.87,
-        "percentOwned": 1.14
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.81,
+        "percentOwned": 1.1
       },
       "position": "WR",
       "projection": 0,
@@ -10937,7 +10964,7 @@
       "ownership": {
         "auctionValueAverage": 0,
         "averageDraftPosition": 169.86,
-        "percentOwned": 0.66
+        "percentOwned": 0.61
       },
       "injuryStatus": "ACTIVE"
     },
@@ -10949,8 +10976,8 @@
       "nflTeamId": "30",
       "ownership": {
         "auctionValueAverage": 0.1,
-        "averageDraftPosition": 167.01,
-        "percentOwned": 22.57
+        "averageDraftPosition": 166.35,
+        "percentOwned": 25.18
       },
       "position": "TE",
       "projection": 127.52,
@@ -10971,8 +10998,8 @@
       "nflTeamId": "16",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.84,
-        "percentOwned": 0.51
+        "averageDraftPosition": 169.83,
+        "percentOwned": 0.52
       },
       "position": "WR",
       "projection": 9.49,
@@ -11002,7 +11029,7 @@
       "projection": 19.36,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170.01,
+        "averageDraftPosition": 170,
         "percentOwned": 0.04
       },
       "injuryStatus": "ACTIVE"
@@ -11014,9 +11041,9 @@
       "name": "Kyren Williams",
       "nflTeamId": "14",
       "ownership": {
-        "auctionValueAverage": 22.28,
-        "averageDraftPosition": 36.88,
-        "percentOwned": 98.87
+        "auctionValueAverage": 22.89,
+        "averageDraftPosition": 35.34,
+        "percentOwned": 99.02
       },
       "position": "RB",
       "projection": 223.14,
@@ -11037,8 +11064,8 @@
       "nflTeamId": "23",
       "ownership": {
         "auctionValueAverage": 0.03,
-        "averageDraftPosition": 168.14,
-        "percentOwned": 1.53
+        "averageDraftPosition": 168.1,
+        "percentOwned": 1.58
       },
       "position": "TE",
       "projection": 70.08,
@@ -11058,8 +11085,8 @@
       "name": "Bijan Robinson",
       "nflTeamId": "1",
       "ownership": {
-        "auctionValueAverage": 65.11,
-        "averageDraftPosition": 3.28,
+        "auctionValueAverage": 65.81,
+        "averageDraftPosition": 3.22,
         "percentOwned": 99.92
       },
       "position": "RB",
@@ -11080,9 +11107,9 @@
       "name": "Jalen McMillan",
       "nflTeamId": "27",
       "ownership": {
-        "auctionValueAverage": 0.47,
-        "averageDraftPosition": 167.06,
-        "percentOwned": 15.25
+        "auctionValueAverage": 0.45,
+        "averageDraftPosition": 167.05,
+        "percentOwned": 14.67
       },
       "position": "WR",
       "projection": 0,
@@ -11103,7 +11130,7 @@
       "nflTeamId": "22",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.94,
+        "averageDraftPosition": 169.9,
         "percentOwned": 0.39
       },
       "position": "QB",
@@ -11125,7 +11152,7 @@
       "nflTeamId": "27",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.99,
+        "averageDraftPosition": 169.94,
         "percentOwned": 0.47
       },
       "position": "RB",
@@ -11146,8 +11173,8 @@
       "name": "Jaxon Smith-Njigba",
       "nflTeamId": "26",
       "ownership": {
-        "auctionValueAverage": 67.81,
-        "averageDraftPosition": 4.6,
+        "auctionValueAverage": 68.65,
+        "averageDraftPosition": 4.68,
         "percentOwned": 99.93
       },
       "position": "WR",
@@ -11169,8 +11196,8 @@
       "nflTeamId": "24",
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.96,
-        "percentOwned": 1.69
+        "averageDraftPosition": 169.89,
+        "percentOwned": 1.82
       },
       "position": "RB",
       "projection": 60.19,
@@ -11200,7 +11227,7 @@
       "projection": 6.85,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.83,
+        "averageDraftPosition": 169.86,
         "percentOwned": 0.01
       },
       "injuryStatus": "ACTIVE"
@@ -11213,7 +11240,7 @@
       "nflTeamId": "10",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.84,
+        "averageDraftPosition": 169.83,
         "percentOwned": 0.72
       },
       "position": "WR",
@@ -11234,8 +11261,8 @@
       "name": "Troy Franklin",
       "nflTeamId": "7",
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.87,
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.88,
         "percentOwned": 0.55
       },
       "position": "WR",
@@ -11256,9 +11283,9 @@
       "name": "Rome Odunze",
       "nflTeamId": "3",
       "ownership": {
-        "auctionValueAverage": 5.41,
-        "averageDraftPosition": 98.65,
-        "percentOwned": 88.44
+        "auctionValueAverage": 5.27,
+        "averageDraftPosition": 98.55,
+        "percentOwned": 88.54
       },
       "position": "WR",
       "projection": 137.15,
@@ -11288,7 +11315,7 @@
       "projection": 14.51,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.76,
+        "averageDraftPosition": 169.73,
         "percentOwned": 0.01
       },
       "injuryStatus": "ACTIVE"
@@ -11301,7 +11328,7 @@
       "nflTeamId": "17",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.99,
+        "averageDraftPosition": 169.97,
         "percentOwned": 0.1
       },
       "position": "RB",
@@ -11322,9 +11349,9 @@
       "name": "Drake Maye",
       "nflTeamId": "17",
       "ownership": {
-        "auctionValueAverage": 7.64,
+        "auctionValueAverage": 7.43,
         "averageDraftPosition": 72.11,
-        "percentOwned": 90.75
+        "percentOwned": 91.53
       },
       "position": "QB",
       "projection": 228,
@@ -11344,9 +11371,9 @@
       "name": "Tyler Warren",
       "nflTeamId": "11",
       "ownership": {
-        "auctionValueAverage": 10.01,
-        "averageDraftPosition": 54.95,
-        "percentOwned": 98.72
+        "auctionValueAverage": 9.97,
+        "averageDraftPosition": 55.48,
+        "percentOwned": 98.66
       },
       "position": "TE",
       "projection": 152.97,
@@ -11376,8 +11403,8 @@
       "projection": 31.09,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.86,
-        "percentOwned": 0.1
+        "averageDraftPosition": 169.85,
+        "percentOwned": 0.09
       },
       "injuryStatus": "ACTIVE"
     },
@@ -11389,11 +11416,11 @@
       "nflTeamId": "9",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.92,
-        "percentOwned": 0.17
+        "averageDraftPosition": 169.93,
+        "percentOwned": 0.18
       },
       "position": "WR",
-      "projection": 48.53,
+      "projection": 48.52,
       "scores": {
         "0": 0,
         "1": 0,
@@ -11411,8 +11438,8 @@
       "nflTeamId": "23",
       "ownership": {
         "auctionValueAverage": 0.09,
-        "averageDraftPosition": 168.63,
-        "percentOwned": 16.49
+        "averageDraftPosition": 168.39,
+        "percentOwned": 21.3
       },
       "position": "WR",
       "projection": 117.48,
@@ -11433,11 +11460,11 @@
       "nflTeamId": "21",
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.54,
-        "percentOwned": 30.65
+        "averageDraftPosition": 169.24,
+        "percentOwned": 38.56
       },
       "position": "RB",
-      "projection": 80.75,
+      "projection": 80.62,
       "scores": {
         "0": 11.5,
         "1": 2.2,
@@ -11455,7 +11482,7 @@
       "nflTeamId": "21",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.94,
+        "averageDraftPosition": 169.91,
         "percentOwned": 0.31
       },
       "position": "TE",
@@ -11477,8 +11504,8 @@
       "nflTeamId": "29",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.9,
-        "percentOwned": 0.13
+        "averageDraftPosition": 169.84,
+        "percentOwned": 0.12
       },
       "position": "TE",
       "projection": 0,
@@ -11498,9 +11525,9 @@
       "name": "Caleb Williams",
       "nflTeamId": "3",
       "ownership": {
-        "auctionValueAverage": 2.24,
+        "auctionValueAverage": 2.17,
         "averageDraftPosition": 116.95,
-        "percentOwned": 87.78
+        "percentOwned": 87.34
       },
       "position": "QB",
       "projection": 201.59,
@@ -11527,10 +11554,10 @@
         "3": 10.3,
         "4": 5.4
       },
-      "projection": 46.92,
+      "projection": 46.85,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.89,
+        "averageDraftPosition": 169.9,
         "percentOwned": 0.07
       },
       "injuryStatus": "ACTIVE"
@@ -11543,8 +11570,8 @@
       "nflTeamId": "34",
       "ownership": {
         "auctionValueAverage": 0.17,
-        "averageDraftPosition": 163.29,
-        "percentOwned": 40.32
+        "averageDraftPosition": 162.2,
+        "percentOwned": 41.16
       },
       "position": "QB",
       "projection": 203.18,
@@ -11564,9 +11591,9 @@
       "name": "Parker Washington",
       "nflTeamId": "30",
       "ownership": {
-        "auctionValueAverage": 8.03,
-        "averageDraftPosition": 80.77,
-        "percentOwned": 94.54
+        "auctionValueAverage": 7.87,
+        "averageDraftPosition": 81.9,
+        "percentOwned": 94.49
       },
       "position": "WR",
       "projection": 185.21,
@@ -11582,12 +11609,12 @@
     "4432665": {
       "average": 24.1,
       "id": "4432665",
-      "injuryStatus": "ACTIVE",
+      "injuryStatus": "QUESTIONABLE",
       "name": "Brock Bowers",
       "nflTeamId": "13",
       "ownership": {
-        "auctionValueAverage": 30.14,
-        "averageDraftPosition": 22.74,
+        "auctionValueAverage": 30.01,
+        "averageDraftPosition": 22.95,
         "percentOwned": 99.85
       },
       "position": "TE",
@@ -11608,12 +11635,12 @@
       "name": "Marvin Harrison Jr.",
       "nflTeamId": "22",
       "ownership": {
-        "auctionValueAverage": 2.6,
-        "averageDraftPosition": 117.13,
-        "percentOwned": 70.32
+        "auctionValueAverage": 2.53,
+        "averageDraftPosition": 117.8,
+        "percentOwned": 69.39
       },
       "position": "WR",
-      "projection": 79.08,
+      "projection": 79,
       "scores": {
         "0": 19.5,
         "1": 4.3,
@@ -11630,12 +11657,12 @@
       "name": "TreVeyon Henderson",
       "nflTeamId": "17",
       "ownership": {
-        "auctionValueAverage": 3.91,
-        "averageDraftPosition": 107.66,
-        "percentOwned": 87.9
+        "auctionValueAverage": 3.97,
+        "averageDraftPosition": 107.57,
+        "percentOwned": 87.64
       },
       "position": "RB",
-      "projection": 127.02,
+      "projection": 127.04,
       "scores": {
         "0": 21.7,
         "1": 0,
@@ -11662,8 +11689,8 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.94,
-        "percentOwned": 0.05
+        "averageDraftPosition": 169.92,
+        "percentOwned": 0.06
       },
       "injuryStatus": "ACTIVE"
     },
@@ -11675,8 +11702,8 @@
       "nflTeamId": "5",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.36,
-        "percentOwned": 1.28
+        "averageDraftPosition": 169.34,
+        "percentOwned": 1.22
       },
       "position": "QB",
       "projection": 0,
@@ -11696,9 +11723,9 @@
       "name": "Brian Thomas Jr.",
       "nflTeamId": "30",
       "ownership": {
-        "auctionValueAverage": 0.95,
-        "averageDraftPosition": 138.62,
-        "percentOwned": 63.98
+        "auctionValueAverage": 0.89,
+        "averageDraftPosition": 138.75,
+        "percentOwned": 62.67
       },
       "position": "WR",
       "projection": 99.23,
@@ -11711,6 +11738,28 @@
       },
       "total": 25.5
     },
+    "4432775": {
+      "id": "4432775",
+      "nflTeamId": "13",
+      "name": "Dont'e Thornton Jr.",
+      "position": "WR",
+      "total": 0,
+      "average": 0,
+      "scores": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0
+      },
+      "projection": 0,
+      "ownership": {
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.97,
+        "percentOwned": 0.16
+      },
+      "injuryStatus": "INJURY_RESERVE"
+    },
     "4433970": {
       "average": 0,
       "id": "4433970",
@@ -11718,9 +11767,9 @@
       "name": "J.J. McCarthy",
       "nflTeamId": "19",
       "ownership": {
-        "auctionValueAverage": 0.03,
-        "averageDraftPosition": 168.36,
-        "percentOwned": 1.29
+        "auctionValueAverage": 0.02,
+        "averageDraftPosition": 168.49,
+        "percentOwned": 1.21
       },
       "position": "QB",
       "projection": 136.21,
@@ -11741,8 +11790,8 @@
       "nflTeamId": "3",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.76,
-        "percentOwned": 1.97
+        "averageDraftPosition": 169.69,
+        "percentOwned": 2.4
       },
       "position": "QB",
       "projection": 15.52,
@@ -11772,8 +11821,8 @@
       "projection": 17.97,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.92,
-        "percentOwned": 0.09
+        "averageDraftPosition": 169.93,
+        "percentOwned": 0.08
       },
       "injuryStatus": "ACTIVE"
     },
@@ -11785,7 +11834,7 @@
       "nflTeamId": "19",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.17,
+        "averageDraftPosition": 169.19,
         "percentOwned": 0.14
       },
       "position": "K",
@@ -11806,9 +11855,9 @@
       "name": "Kenneth Walker III",
       "nflTeamId": "12",
       "ownership": {
-        "auctionValueAverage": 46.63,
-        "averageDraftPosition": 15.14,
-        "percentOwned": 99.81
+        "auctionValueAverage": 47.02,
+        "averageDraftPosition": 14.74,
+        "percentOwned": 99.79
       },
       "position": "RB",
       "projection": 283.54,
@@ -11839,7 +11888,7 @@
       "ownership": {
         "auctionValueAverage": 0,
         "averageDraftPosition": 169.85,
-        "percentOwned": 0.09
+        "percentOwned": 0.08
       },
       "injuryStatus": "ACTIVE"
     },
@@ -11850,9 +11899,9 @@
       "name": "Will Reichard",
       "nflTeamId": "16",
       "ownership": {
-        "auctionValueAverage": 0.45,
-        "averageDraftPosition": 151.23,
-        "percentOwned": 58.16
+        "auctionValueAverage": 0.5,
+        "averageDraftPosition": 146.92,
+        "percentOwned": 65.14
       },
       "position": "K",
       "projection": 123.31,
@@ -11882,8 +11931,8 @@
       "projection": 55.85,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.98,
-        "percentOwned": 0.1
+        "averageDraftPosition": 169.97,
+        "percentOwned": 0.11
       },
       "injuryStatus": "ACTIVE"
     },
@@ -11894,12 +11943,12 @@
       "name": "Emeka Egbuka",
       "nflTeamId": "27",
       "ownership": {
-        "auctionValueAverage": 13.93,
-        "averageDraftPosition": 65.77,
-        "percentOwned": 95.23
+        "auctionValueAverage": 14.01,
+        "averageDraftPosition": 66.29,
+        "percentOwned": 94.64
       },
       "position": "WR",
-      "projection": 128.21,
+      "projection": 128.22,
       "scores": {
         "0": 36.1,
         "1": 11.3,
@@ -11918,7 +11967,7 @@
       "ownership": {
         "auctionValueAverage": 0.07,
         "averageDraftPosition": 169.08,
-        "percentOwned": 1.81
+        "percentOwned": 1.5
       },
       "position": "K",
       "projection": 111.03,
@@ -11938,9 +11987,9 @@
       "name": "RJ Harvey",
       "nflTeamId": "7",
       "ownership": {
-        "auctionValueAverage": 0.95,
-        "averageDraftPosition": 139.31,
-        "percentOwned": 73.99
+        "auctionValueAverage": 0.94,
+        "averageDraftPosition": 137.98,
+        "percentOwned": 75.32
       },
       "position": "RB",
       "projection": 148.5,
@@ -11960,12 +12009,12 @@
       "name": "Rhamondre Stevenson",
       "nflTeamId": "17",
       "ownership": {
-        "auctionValueAverage": 3.21,
-        "averageDraftPosition": 110.97,
-        "percentOwned": 89.85
+        "auctionValueAverage": 3.34,
+        "averageDraftPosition": 110.87,
+        "percentOwned": 89.71
       },
       "position": "RB",
-      "projection": 162.68,
+      "projection": 162.72,
       "scores": {
         "0": 43.3,
         "1": 14.5,
@@ -11983,11 +12032,11 @@
       "nflTeamId": "20",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.88,
-        "percentOwned": 1.38
+        "averageDraftPosition": 169.89,
+        "percentOwned": 1.44
       },
       "position": "WR",
-      "projection": 64.76,
+      "projection": 67.5,
       "scores": {
         "0": 30.9,
         "1": 1.7,
@@ -12005,7 +12054,7 @@
       "nflTeamId": "14",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.85,
+        "averageDraftPosition": 169.83,
         "percentOwned": 0.12
       },
       "position": "WR",
@@ -12026,9 +12075,9 @@
       "name": "Devaughn Vele",
       "nflTeamId": "18",
       "ownership": {
-        "auctionValueAverage": 0.23,
-        "averageDraftPosition": 164.72,
-        "percentOwned": 65.46
+        "auctionValueAverage": 0.22,
+        "averageDraftPosition": 163.57,
+        "percentOwned": 66.06
       },
       "position": "WR",
       "projection": 104.84,
@@ -12048,9 +12097,9 @@
       "name": "Wan'Dale Robinson",
       "nflTeamId": "10",
       "ownership": {
-        "auctionValueAverage": 1.26,
-        "averageDraftPosition": 128.95,
-        "percentOwned": 63.76
+        "auctionValueAverage": 1.16,
+        "averageDraftPosition": 129,
+        "percentOwned": 63.27
       },
       "position": "WR",
       "projection": 118.6,
@@ -12071,11 +12120,11 @@
       "nflTeamId": "15",
       "ownership": {
         "auctionValueAverage": 0.13,
-        "averageDraftPosition": 166.13,
-        "percentOwned": 30.24
+        "averageDraftPosition": 166,
+        "percentOwned": 33.12
       },
       "position": "WR",
-      "projection": 136.81,
+      "projection": 137.35,
       "scores": {
         "0": 38.1,
         "1": 6.3,
@@ -12092,12 +12141,12 @@
       "name": "Garrett Wilson",
       "nflTeamId": "20",
       "ownership": {
-        "auctionValueAverage": 23.29,
-        "averageDraftPosition": 36.49,
-        "percentOwned": 99.04
+        "auctionValueAverage": 23.05,
+        "averageDraftPosition": 37,
+        "percentOwned": 99.03
       },
       "position": "WR",
-      "projection": 193.98,
+      "projection": 194.18,
       "scores": {
         "0": 63,
         "1": 13.9,
@@ -12114,9 +12163,9 @@
       "name": "Andy Borregales",
       "nflTeamId": "17",
       "ownership": {
-        "auctionValueAverage": 0.03,
-        "averageDraftPosition": 169.63,
-        "percentOwned": 1.73
+        "auctionValueAverage": 0.02,
+        "averageDraftPosition": 169.57,
+        "percentOwned": 1.7
       },
       "position": "K",
       "projection": 94.92,
@@ -12136,9 +12185,9 @@
       "name": "Jaylen Warren",
       "nflTeamId": "23",
       "ownership": {
-        "auctionValueAverage": 5.11,
-        "averageDraftPosition": 94.19,
-        "percentOwned": 92.01
+        "auctionValueAverage": 5.08,
+        "averageDraftPosition": 92.98,
+        "percentOwned": 92.31
       },
       "position": "RB",
       "projection": 181.04,
@@ -12159,8 +12208,8 @@
       "nflTeamId": "14",
       "ownership": {
         "auctionValueAverage": 0.11,
-        "averageDraftPosition": 168.81,
-        "percentOwned": 17.56
+        "averageDraftPosition": 168.98,
+        "percentOwned": 16.61
       },
       "position": "TE",
       "projection": 59.45,
@@ -12201,9 +12250,9 @@
       "name": "Spencer Shrader",
       "nflTeamId": "11",
       "ownership": {
-        "auctionValueAverage": 0.47,
-        "averageDraftPosition": 157.07,
-        "percentOwned": 43.76
+        "auctionValueAverage": 0.53,
+        "averageDraftPosition": 153.86,
+        "percentOwned": 49.05
       },
       "position": "K",
       "projection": 118.29,
@@ -12223,12 +12272,12 @@
       "name": "Tucker Kraft",
       "nflTeamId": "9",
       "ownership": {
-        "auctionValueAverage": 1.93,
-        "averageDraftPosition": 116.43,
-        "percentOwned": 86.25
+        "auctionValueAverage": 1.85,
+        "averageDraftPosition": 115.37,
+        "percentOwned": 86.59
       },
       "position": "TE",
-      "projection": 140.57,
+      "projection": 140.56,
       "scores": {
         "0": 36.1,
         "1": 9.5,
@@ -12245,9 +12294,9 @@
       "name": "Harrison Mevis",
       "nflTeamId": "14",
       "ownership": {
-        "auctionValueAverage": 0.95,
-        "averageDraftPosition": 142.56,
-        "percentOwned": 70.8
+        "auctionValueAverage": 0.93,
+        "averageDraftPosition": 143.48,
+        "percentOwned": 71.54
       },
       "position": "K",
       "projection": 117.19,
@@ -12263,13 +12312,13 @@
     "4575131": {
       "average": 7.675000000000001,
       "id": "4575131",
-      "injuryStatus": "ACTIVE",
+      "injuryStatus": "QUESTIONABLE",
       "name": "Jacory Croskey-Merritt",
       "nflTeamId": "28",
       "ownership": {
         "auctionValueAverage": 0.9,
-        "averageDraftPosition": 148.23,
-        "percentOwned": 68.79
+        "averageDraftPosition": 148.47,
+        "percentOwned": 67.27
       },
       "position": "RB",
       "projection": 105.51,
@@ -12299,7 +12348,7 @@
       "projection": 31.02,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.9,
+        "averageDraftPosition": 169.88,
         "percentOwned": 0.06
       },
       "injuryStatus": "ACTIVE"
@@ -12311,9 +12360,9 @@
       "name": "AJ Barner",
       "nflTeamId": "26",
       "ownership": {
-        "auctionValueAverage": 0.1,
-        "averageDraftPosition": 167.93,
-        "percentOwned": 7.32
+        "auctionValueAverage": 0.09,
+        "averageDraftPosition": 167.84,
+        "percentOwned": 7.01
       },
       "position": "TE",
       "projection": 104.8,
@@ -12334,8 +12383,8 @@
       "nflTeamId": "34",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.79,
-        "percentOwned": 4.64
+        "averageDraftPosition": 169.73,
+        "percentOwned": 4.56
       },
       "position": "WR",
       "projection": 70.35,
@@ -12355,9 +12404,9 @@
       "name": "Oronde Gadsden",
       "nflTeamId": "24",
       "ownership": {
-        "auctionValueAverage": 0.06,
-        "averageDraftPosition": 170.38,
-        "percentOwned": 5.6
+        "auctionValueAverage": 0.07,
+        "averageDraftPosition": 170.45,
+        "percentOwned": 5.17
       },
       "position": "TE",
       "projection": 76.71,
@@ -12373,13 +12422,13 @@
     "4595348": {
       "average": 11.2,
       "id": "4595348",
-      "injuryStatus": "ACTIVE",
+      "injuryStatus": "QUESTIONABLE",
       "name": "Malik Nabers",
       "nflTeamId": "19",
       "ownership": {
-        "auctionValueAverage": 18.82,
-        "averageDraftPosition": 44.9,
-        "percentOwned": 98.4
+        "auctionValueAverage": 19.09,
+        "averageDraftPosition": 44.68,
+        "percentOwned": 98.38
       },
       "position": "WR",
       "projection": 171.98,
@@ -12399,9 +12448,9 @@
       "name": "Keaton Mitchell",
       "nflTeamId": "24",
       "ownership": {
-        "auctionValueAverage": 0.06,
-        "averageDraftPosition": 168.83,
-        "percentOwned": 21.82
+        "auctionValueAverage": 0.05,
+        "averageDraftPosition": 168.62,
+        "percentOwned": 23.71
       },
       "position": "RB",
       "projection": 99.86,
@@ -12421,9 +12470,9 @@
       "name": "Bucky Irving",
       "nflTeamId": "27",
       "ownership": {
-        "auctionValueAverage": 10.05,
-        "averageDraftPosition": 66.79,
-        "percentOwned": 96.48
+        "auctionValueAverage": 9.85,
+        "averageDraftPosition": 66.87,
+        "percentOwned": 96.5
       },
       "position": "RB",
       "projection": 196.96,
@@ -12450,11 +12499,11 @@
         "3": -1.1,
         "4": 11.42
       },
-      "projection": 24.68,
+      "projection": 24.69,
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.79,
-        "percentOwned": 1.4
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.8,
+        "percentOwned": 1.41
       },
       "injuryStatus": "ACTIVE"
     },
@@ -12466,8 +12515,8 @@
       "nflTeamId": "12",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.86,
-        "percentOwned": 0.53
+        "averageDraftPosition": 169.83,
+        "percentOwned": 0.51
       },
       "position": "RB",
       "projection": 6.37,
@@ -12487,12 +12536,12 @@
       "name": "Adonai Mitchell",
       "nflTeamId": "20",
       "ownership": {
-        "auctionValueAverage": 0.1,
-        "averageDraftPosition": 168.56,
-        "percentOwned": 25.47
+        "auctionValueAverage": 0.09,
+        "averageDraftPosition": 168.46,
+        "percentOwned": 24.1
       },
       "position": "WR",
-      "projection": 134.86,
+      "projection": 124.74,
       "scores": {
         "0": 21.3,
         "1": 9,
@@ -12510,8 +12559,8 @@
       "nflTeamId": "26",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170.01,
-        "percentOwned": 0.41
+        "averageDraftPosition": 169.95,
+        "percentOwned": 0.4
       },
       "position": "WR",
       "projection": 35.73,
@@ -12532,8 +12581,8 @@
       "nflTeamId": "18",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.92,
-        "percentOwned": 12.38
+        "averageDraftPosition": 169.91,
+        "percentOwned": 11.75
       },
       "position": "RB",
       "projection": 41.86,
@@ -12553,9 +12602,9 @@
       "name": "Pat Bryant",
       "nflTeamId": "7",
       "ownership": {
-        "auctionValueAverage": 0.09,
-        "averageDraftPosition": 170.29,
-        "percentOwned": 2.41
+        "auctionValueAverage": 0.08,
+        "averageDraftPosition": 170.43,
+        "percentOwned": 2.24
       },
       "position": "WR",
       "projection": 59.87,
@@ -12585,8 +12634,8 @@
       "projection": 66.48,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.75,
-        "percentOwned": 1.2
+        "averageDraftPosition": 169.73,
+        "percentOwned": 1.17
       },
       "injuryStatus": "ACTIVE"
     },
@@ -12607,8 +12656,8 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.99,
-        "percentOwned": 0.1
+        "averageDraftPosition": 169.98,
+        "percentOwned": 0.09
       },
       "injuryStatus": "INJURY_RESERVE"
     },
@@ -12629,7 +12678,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.97,
+        "averageDraftPosition": 169.98,
         "percentOwned": 0.02
       },
       "injuryStatus": "ACTIVE"
@@ -12642,8 +12691,8 @@
       "nflTeamId": "13",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170.03,
-        "percentOwned": 0.5
+        "averageDraftPosition": 169.96,
+        "percentOwned": 0.49
       },
       "position": "WR",
       "projection": 0,
@@ -12663,9 +12712,9 @@
       "name": "Kyle Monangai",
       "nflTeamId": "3",
       "ownership": {
-        "auctionValueAverage": 1.2,
-        "averageDraftPosition": 131.29,
-        "percentOwned": 79.84
+        "auctionValueAverage": 1.18,
+        "averageDraftPosition": 128.83,
+        "percentOwned": 80.57
       },
       "position": "RB",
       "projection": 129.34,
@@ -12686,11 +12735,11 @@
       "nflTeamId": "27",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.94,
+        "averageDraftPosition": 169.93,
         "percentOwned": 0.11
       },
       "position": "WR",
-      "projection": 53.08,
+      "projection": 53.09,
       "scores": {
         "0": 12,
         "1": -0.4,
@@ -12707,9 +12756,9 @@
       "name": "Ladd McConkey",
       "nflTeamId": "24",
       "ownership": {
-        "auctionValueAverage": 13.19,
-        "averageDraftPosition": 76.97,
-        "percentOwned": 94.73
+        "auctionValueAverage": 13.11,
+        "averageDraftPosition": 77.82,
+        "percentOwned": 94.22
       },
       "position": "WR",
       "projection": 139.53,
@@ -12752,11 +12801,11 @@
       "nflTeamId": "17",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.96,
-        "percentOwned": 0.4
+        "averageDraftPosition": 169.93,
+        "percentOwned": 0.41
       },
       "position": "WR",
-      "projection": 35.25,
+      "projection": 36.9,
       "scores": {
         "0": 6.4,
         "1": 0,
@@ -12773,9 +12822,9 @@
       "name": "Keon Coleman",
       "nflTeamId": "2",
       "ownership": {
-        "auctionValueAverage": 0.03,
-        "averageDraftPosition": 167.47,
-        "percentOwned": 26.98
+        "auctionValueAverage": 0.04,
+        "averageDraftPosition": 166.68,
+        "percentOwned": 32.94
       },
       "position": "WR",
       "projection": 104.55,
@@ -12805,7 +12854,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.92,
+        "averageDraftPosition": 169.91,
         "percentOwned": 0.03
       },
       "injuryStatus": "ACTIVE"
@@ -12818,8 +12867,8 @@
       "nflTeamId": "26",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.89,
-        "percentOwned": 0.25
+        "averageDraftPosition": 169.87,
+        "percentOwned": 0.24
       },
       "position": "TE",
       "projection": 6.66,
@@ -12839,9 +12888,9 @@
       "name": "Jonathon Brooks",
       "nflTeamId": "29",
       "ownership": {
-        "auctionValueAverage": 1,
-        "averageDraftPosition": 133.63,
-        "percentOwned": 46.82
+        "auctionValueAverage": 0.98,
+        "averageDraftPosition": 134.29,
+        "percentOwned": 45.78
       },
       "position": "RB",
       "projection": 0,
@@ -12862,8 +12911,8 @@
       "nflTeamId": "19",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.59,
-        "percentOwned": 7.28
+        "averageDraftPosition": 169.53,
+        "percentOwned": 7.24
       },
       "position": "WR",
       "projection": 98.47,
@@ -12884,11 +12933,11 @@
       "nflTeamId": "15",
       "ownership": {
         "auctionValueAverage": 0.03,
-        "averageDraftPosition": 168.54,
-        "percentOwned": 17.57
+        "averageDraftPosition": 168.53,
+        "percentOwned": 15.82
       },
       "position": "RB",
-      "projection": 99.65,
+      "projection": 99.67,
       "scores": {
         "0": 1.7,
         "1": -0.1,
@@ -12905,9 +12954,9 @@
       "name": "Xavier Worthy",
       "nflTeamId": "12",
       "ownership": {
-        "auctionValueAverage": 0.85,
-        "averageDraftPosition": 143.91,
-        "percentOwned": 70.3
+        "auctionValueAverage": 0.83,
+        "averageDraftPosition": 143.17,
+        "percentOwned": 69.61
       },
       "position": "WR",
       "projection": 128.04,
@@ -12950,8 +12999,8 @@
       "nflTeamId": "2",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.85,
-        "percentOwned": 0.32
+        "averageDraftPosition": 169.83,
+        "percentOwned": 0.31
       },
       "position": "WR",
       "projection": 0,
@@ -13003,7 +13052,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.83,
+        "averageDraftPosition": 169.82,
         "percentOwned": 0.01
       },
       "injuryStatus": "ACTIVE"
@@ -13016,8 +13065,8 @@
       "nflTeamId": "28",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170.07,
-        "percentOwned": 0.57
+        "averageDraftPosition": 170.04,
+        "percentOwned": 0.54
       },
       "position": "RB",
       "projection": 0,
@@ -13037,12 +13086,12 @@
       "name": "Braelon Allen",
       "nflTeamId": "20",
       "ownership": {
-        "auctionValueAverage": 0.29,
-        "averageDraftPosition": 163.91,
-        "percentOwned": 64.23
+        "auctionValueAverage": 0.26,
+        "averageDraftPosition": 164.45,
+        "percentOwned": 67.85
       },
       "position": "RB",
-      "projection": 87.87,
+      "projection": 95.19,
       "scores": {
         "0": 25.9,
         "1": 4,
@@ -13059,9 +13108,9 @@
       "name": "Germie Bernard",
       "nflTeamId": "23",
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.76,
-        "percentOwned": 3.06
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.71,
+        "percentOwned": 2.95
       },
       "position": "WR",
       "projection": 21.23,
@@ -13081,9 +13130,9 @@
       "name": "Luther Burden III",
       "nflTeamId": "3",
       "ownership": {
-        "auctionValueAverage": 5.1,
-        "averageDraftPosition": 98.59,
-        "percentOwned": 90.4
+        "auctionValueAverage": 4.93,
+        "averageDraftPosition": 98.77,
+        "percentOwned": 90.45
       },
       "position": "WR",
       "projection": 153.44,
@@ -13104,11 +13153,11 @@
       "nflTeamId": "0",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.95,
-        "percentOwned": 0.26
+        "averageDraftPosition": 169.97,
+        "percentOwned": 0.25
       },
       "position": "RB",
-      "projection": 1.97,
+      "projection": 1.95,
       "scores": {
         "0": 0
       },
@@ -13122,11 +13171,11 @@
       "nflTeamId": "15",
       "ownership": {
         "auctionValueAverage": 0.02,
-        "averageDraftPosition": 169.99,
+        "averageDraftPosition": 169.91,
         "percentOwned": 0.18
       },
       "position": "WR",
-      "projection": 52.26,
+      "projection": 54.83,
       "scores": {
         "0": 2.6,
         "1": 0,
@@ -13144,7 +13193,7 @@
       "nflTeamId": "29",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.98,
+        "averageDraftPosition": 169.99,
         "percentOwned": 0.28
       },
       "position": "RB",
@@ -13165,9 +13214,9 @@
       "name": "Omarion Hampton",
       "nflTeamId": "24",
       "ownership": {
-        "auctionValueAverage": 34.11,
-        "averageDraftPosition": 32.09,
-        "percentOwned": 98.16
+        "auctionValueAverage": 33.98,
+        "averageDraftPosition": 32.6,
+        "percentOwned": 98.03
       },
       "position": "RB",
       "projection": 145.53,
@@ -13188,8 +13237,8 @@
       "nflTeamId": "25",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.82,
-        "percentOwned": 0.9
+        "averageDraftPosition": 169.8,
+        "percentOwned": 0.87
       },
       "position": "RB",
       "projection": 0,
@@ -13209,9 +13258,9 @@
       "name": "Travis Hunter",
       "nflTeamId": "30",
       "ownership": {
-        "auctionValueAverage": 0.86,
-        "averageDraftPosition": 156.42,
-        "percentOwned": 35.96
+        "auctionValueAverage": 0.85,
+        "averageDraftPosition": 156.33,
+        "percentOwned": 34.65
       },
       "position": "WR",
       "projection": 0.74,
@@ -13231,9 +13280,9 @@
       "name": "Tetairoa McMillan",
       "nflTeamId": "29",
       "ownership": {
-        "auctionValueAverage": 17.23,
-        "averageDraftPosition": 49.75,
-        "percentOwned": 98.22
+        "auctionValueAverage": 17.63,
+        "averageDraftPosition": 46.82,
+        "percentOwned": 98.23
       },
       "position": "WR",
       "projection": 208.49,
@@ -13275,9 +13324,9 @@
       "name": "Jadarian Price",
       "nflTeamId": "26",
       "ownership": {
-        "auctionValueAverage": 4.09,
-        "averageDraftPosition": 111.16,
-        "percentOwned": 77.76
+        "auctionValueAverage": 4.03,
+        "averageDraftPosition": 112.95,
+        "percentOwned": 75.9
       },
       "position": "RB",
       "projection": 104.58,
@@ -13298,7 +13347,7 @@
       "nflTeamId": "14",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.8,
+        "averageDraftPosition": 169.81,
         "percentOwned": 0.25
       },
       "position": "QB",
@@ -13319,9 +13368,9 @@
       "name": "Adam Randall",
       "nflTeamId": "33",
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 170.08,
-        "percentOwned": 0.35
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 170.04,
+        "percentOwned": 0.34
       },
       "position": "RB",
       "projection": 0,
@@ -13342,7 +13391,7 @@
       "nflTeamId": "24",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.98,
+        "averageDraftPosition": 169.99,
         "percentOwned": 0.08
       },
       "position": "WR",
@@ -13364,8 +13413,8 @@
       "nflTeamId": "10",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170.03,
-        "percentOwned": 0.74
+        "averageDraftPosition": 169.97,
+        "percentOwned": 0.72
       },
       "position": "RB",
       "projection": 21.71,
@@ -13385,9 +13434,9 @@
       "name": "Quinshon Judkins",
       "nflTeamId": "5",
       "ownership": {
-        "auctionValueAverage": 14.43,
-        "averageDraftPosition": 62.97,
-        "percentOwned": 95.36
+        "auctionValueAverage": 14.46,
+        "averageDraftPosition": 61.09,
+        "percentOwned": 95.57
       },
       "position": "RB",
       "projection": 190.97,
@@ -13407,9 +13456,9 @@
       "name": "Bryce Young",
       "nflTeamId": "29",
       "ownership": {
-        "auctionValueAverage": 1.07,
-        "averageDraftPosition": 131.08,
-        "percentOwned": 83.49
+        "auctionValueAverage": 1.08,
+        "averageDraftPosition": 127.31,
+        "percentOwned": 82.98
       },
       "position": "QB",
       "projection": 236.82,
@@ -13439,7 +13488,7 @@
       "projection": 36.41,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.95,
+        "averageDraftPosition": 169.94,
         "percentOwned": 0.04
       },
       "injuryStatus": "ACTIVE"
@@ -13451,9 +13500,9 @@
       "name": "Cam Little",
       "nflTeamId": "30",
       "ownership": {
-        "auctionValueAverage": 0.95,
-        "averageDraftPosition": 136.23,
-        "percentOwned": 83.04
+        "auctionValueAverage": 0.96,
+        "averageDraftPosition": 134.39,
+        "percentOwned": 84.31
       },
       "position": "K",
       "projection": 126.12,
@@ -13474,8 +13523,8 @@
       "nflTeamId": "34",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.99,
-        "percentOwned": 4.14
+        "averageDraftPosition": 169.91,
+        "percentOwned": 3.97
       },
       "position": "WR",
       "projection": 106.62,
@@ -13496,8 +13545,8 @@
       "nflTeamId": "11",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170,
-        "percentOwned": 0.99
+        "averageDraftPosition": 169.93,
+        "percentOwned": 1.04
       },
       "position": "RB",
       "projection": 43.33,
@@ -13518,8 +13567,8 @@
       "nflTeamId": "7",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.98,
-        "percentOwned": 0.51
+        "averageDraftPosition": 169.93,
+        "percentOwned": 0.5
       },
       "position": "WR",
       "projection": 45.66,
@@ -13541,7 +13590,7 @@
       "ownership": {
         "auctionValueAverage": 0.07,
         "averageDraftPosition": 170.37,
-        "percentOwned": 5.89
+        "percentOwned": 5.98
       },
       "position": "WR",
       "projection": 90.85,
@@ -13562,8 +13611,8 @@
       "nflTeamId": "13",
       "ownership": {
         "auctionValueAverage": 0.02,
-        "averageDraftPosition": 168.24,
-        "percentOwned": 19.93
+        "averageDraftPosition": 168.32,
+        "percentOwned": 19.4
       },
       "position": "RB",
       "projection": 62.24,
@@ -13583,9 +13632,9 @@
       "name": "Gunnar Helm",
       "nflTeamId": "10",
       "ownership": {
-        "auctionValueAverage": 0.08,
-        "averageDraftPosition": 170.25,
-        "percentOwned": 3.16
+        "auctionValueAverage": 0.07,
+        "averageDraftPosition": 170.33,
+        "percentOwned": 3.05
       },
       "position": "TE",
       "projection": 77.07,
@@ -13606,8 +13655,8 @@
       "nflTeamId": "10",
       "ownership": {
         "auctionValueAverage": 0.02,
-        "averageDraftPosition": 168.86,
-        "percentOwned": 5.86
+        "averageDraftPosition": 168.78,
+        "percentOwned": 5.74
       },
       "position": "QB",
       "projection": 173.53,
@@ -13627,9 +13676,9 @@
       "name": "Josh Downs",
       "nflTeamId": "11",
       "ownership": {
-        "auctionValueAverage": 1.44,
-        "averageDraftPosition": 132.26,
-        "percentOwned": 82.05
+        "auctionValueAverage": 1.39,
+        "averageDraftPosition": 133.34,
+        "percentOwned": 81.6
       },
       "position": "WR",
       "projection": 134.35,
@@ -13649,9 +13698,9 @@
       "name": "Jaxson Dart",
       "nflTeamId": "19",
       "ownership": {
-        "auctionValueAverage": 2.41,
-        "averageDraftPosition": 119.23,
-        "percentOwned": 33.03
+        "auctionValueAverage": 2.45,
+        "averageDraftPosition": 120.01,
+        "percentOwned": 31.94
       },
       "position": "QB",
       "projection": 0,
@@ -13671,9 +13720,9 @@
       "name": "Jake Bates",
       "nflTeamId": "8",
       "ownership": {
-        "auctionValueAverage": 0.6,
-        "averageDraftPosition": 159.48,
-        "percentOwned": 63.88
+        "auctionValueAverage": 0.63,
+        "averageDraftPosition": 159.05,
+        "percentOwned": 65.88
       },
       "position": "K",
       "projection": 114.91,
@@ -13694,7 +13743,7 @@
       "nflTeamId": "33",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.94,
+        "averageDraftPosition": 169.95,
         "percentOwned": 0.15
       },
       "position": "RB",
@@ -13722,8 +13771,8 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.94,
-        "percentOwned": 0.06
+        "averageDraftPosition": 169.96,
+        "percentOwned": 0.08
       },
       "injuryStatus": "ACTIVE"
     },
@@ -13741,10 +13790,10 @@
         "3": 0,
         "4": 0
       },
-      "projection": 13.89,
+      "projection": 13.87,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.9,
+        "averageDraftPosition": 169.91,
         "percentOwned": 0.07
       },
       "injuryStatus": "ACTIVE"
@@ -13769,7 +13818,7 @@
         "averageDraftPosition": 169.97,
         "percentOwned": 0.05
       },
-      "injuryStatus": "ACTIVE"
+      "injuryStatus": "QUESTIONABLE"
     },
     "4695193": {
       "average": 4.913333333333334,
@@ -13779,11 +13828,11 @@
       "nflTeamId": "17",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.82,
-        "percentOwned": 0.26
+        "averageDraftPosition": 169.8,
+        "percentOwned": 0.41
       },
       "position": "WR",
-      "projection": 9.35,
+      "projection": 13.09,
       "scores": {
         "0": 14.74,
         "1": 0,
@@ -13801,11 +13850,11 @@
       "nflTeamId": "20",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.93,
-        "percentOwned": 5.14
+        "averageDraftPosition": 169.87,
+        "percentOwned": 4.54
       },
       "position": "RB",
-      "projection": 0,
+      "projection": 7.77,
       "scores": {
         "0": 0,
         "1": 0,
@@ -13832,7 +13881,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170,
+        "averageDraftPosition": 170.01,
         "percentOwned": 0.05
       },
       "injuryStatus": "ACTIVE"
@@ -13844,9 +13893,9 @@
       "name": "Jalen Coker",
       "nflTeamId": "29",
       "ownership": {
-        "auctionValueAverage": 2.22,
-        "averageDraftPosition": 130.39,
-        "percentOwned": 85.06
+        "auctionValueAverage": 2.21,
+        "averageDraftPosition": 129.78,
+        "percentOwned": 84.58
       },
       "position": "WR",
       "projection": 180.83,
@@ -13862,13 +13911,13 @@
     "4696044": {
       "average": 3.375,
       "id": "4696044",
-      "injuryStatus": "ACTIVE",
+      "injuryStatus": "QUESTIONABLE",
       "name": "Kaelon Black",
       "nflTeamId": "25",
       "ownership": {
         "auctionValueAverage": 0.02,
-        "averageDraftPosition": 168.63,
-        "percentOwned": 30.36
+        "averageDraftPosition": 168.66,
+        "percentOwned": 28.78
       },
       "position": "RB",
       "projection": 64.5,
@@ -13895,10 +13944,10 @@
         "3": 0,
         "4": 2.9
       },
-      "projection": 33.28,
+      "projection": 33.23,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.77,
+        "averageDraftPosition": 169.81,
         "percentOwned": 0.11
       },
       "injuryStatus": "ACTIVE"
@@ -13906,13 +13955,13 @@
     "4696981": {
       "average": 11.05,
       "id": "4696981",
-      "injuryStatus": "ACTIVE",
+      "injuryStatus": "QUESTIONABLE",
       "name": "Cam Skattebo",
       "nflTeamId": "19",
       "ownership": {
-        "auctionValueAverage": 12.68,
-        "averageDraftPosition": 55.8,
-        "percentOwned": 97.78
+        "auctionValueAverage": 12.66,
+        "averageDraftPosition": 57.69,
+        "percentOwned": 97.53
       },
       "position": "RB",
       "projection": 161.73,
@@ -13932,9 +13981,9 @@
       "name": "Tyler Loop",
       "nflTeamId": "33",
       "ownership": {
-        "auctionValueAverage": 0.6,
-        "averageDraftPosition": 152.31,
-        "percentOwned": 59.45
+        "auctionValueAverage": 0.59,
+        "averageDraftPosition": 153.19,
+        "percentOwned": 57.7
       },
       "position": "K",
       "projection": 115.03,
@@ -13955,8 +14004,8 @@
       "nflTeamId": "28",
       "ownership": {
         "auctionValueAverage": 0.83,
-        "averageDraftPosition": 142.22,
-        "percentOwned": 61.9
+        "averageDraftPosition": 142.89,
+        "percentOwned": 60.91
       },
       "position": "RB",
       "projection": 99.58,
@@ -13977,7 +14026,7 @@
       "nflTeamId": "17",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.96,
+        "averageDraftPosition": 169.97,
         "percentOwned": 0.02
       },
       "position": "RB",
@@ -13994,12 +14043,12 @@
     "4698597": {
       "average": -0.06666666666666667,
       "id": "4698597",
-      "injuryStatus": "ACTIVE",
+      "injuryStatus": "QUESTIONABLE",
       "name": "Barion Brown",
       "nflTeamId": "18",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.94,
+        "averageDraftPosition": 169.95,
         "percentOwned": 0.11
       },
       "position": "WR",
@@ -14020,12 +14069,12 @@
       "name": "Matthew Golden",
       "nflTeamId": "9",
       "ownership": {
-        "auctionValueAverage": 2.53,
-        "averageDraftPosition": 110.96,
-        "percentOwned": 87.71
+        "auctionValueAverage": 2.48,
+        "averageDraftPosition": 110.92,
+        "percentOwned": 87.93
       },
       "position": "WR",
-      "projection": 171.91,
+      "projection": 171.89,
       "scores": {
         "0": 58,
         "1": 15.5,
@@ -14042,9 +14091,9 @@
       "name": "Jonah Coleman",
       "nflTeamId": "7",
       "ownership": {
-        "auctionValueAverage": 0.1,
+        "auctionValueAverage": 0.09,
         "averageDraftPosition": 168.81,
-        "percentOwned": 22.72
+        "percentOwned": 22.11
       },
       "position": "RB",
       "projection": 0,
@@ -14075,7 +14124,7 @@
       "ownership": {
         "auctionValueAverage": 0,
         "averageDraftPosition": 169.91,
-        "percentOwned": 0.08
+        "percentOwned": 0.07
       },
       "injuryStatus": "ACTIVE"
     },
@@ -14096,7 +14145,7 @@
       "projection": 12.76,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.93,
+        "averageDraftPosition": 169.92,
         "percentOwned": 0.03
       },
       "injuryStatus": "ACTIVE"
@@ -14109,8 +14158,8 @@
       "nflTeamId": "0",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.96,
-        "percentOwned": 0.05
+        "averageDraftPosition": 169.97,
+        "percentOwned": 0.04
       },
       "position": "WR",
       "projection": 0,
@@ -14127,9 +14176,9 @@
       "name": "De'Zhaun Stribling",
       "nflTeamId": "25",
       "ownership": {
-        "auctionValueAverage": 0.82,
-        "averageDraftPosition": 156.82,
-        "percentOwned": 27.05
+        "auctionValueAverage": 0.84,
+        "averageDraftPosition": 156.72,
+        "percentOwned": 26.45
       },
       "position": "WR",
       "projection": 0,
@@ -14159,8 +14208,8 @@
       "projection": 21.22,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.88,
-        "percentOwned": 0.61
+        "averageDraftPosition": 169.87,
+        "percentOwned": 0.53
       },
       "injuryStatus": "QUESTIONABLE"
     },
@@ -14171,12 +14220,12 @@
       "name": "Ollie Gordon II",
       "nflTeamId": "15",
       "ownership": {
-        "auctionValueAverage": 0.58,
-        "averageDraftPosition": 153.53,
-        "percentOwned": 68.63
+        "auctionValueAverage": 0.65,
+        "averageDraftPosition": 152.06,
+        "percentOwned": 70.86
       },
       "position": "RB",
-      "projection": 142.4,
+      "projection": 142.42,
       "scores": {
         "0": 33.2,
         "1": 0,
@@ -14194,8 +14243,8 @@
       "nflTeamId": "23",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.95,
-        "percentOwned": 0.18
+        "averageDraftPosition": 169.91,
+        "percentOwned": 0.17
       },
       "position": "QB",
       "projection": 0,
@@ -14222,11 +14271,11 @@
         "3": 0,
         "4": 18.3
       },
-      "projection": 27.54,
+      "projection": 27.26,
       "ownership": {
-        "auctionValueAverage": 0,
+        "auctionValueAverage": 0.01,
         "averageDraftPosition": 169.71,
-        "percentOwned": 4.29
+        "percentOwned": 6.5
       },
       "injuryStatus": "ACTIVE"
     },
@@ -14246,7 +14295,7 @@
       "projection": 12.98,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.87,
+        "averageDraftPosition": 169.86,
         "percentOwned": 0.12
       },
       "injuryStatus": "ACTIVE"
@@ -14258,9 +14307,9 @@
       "name": "Colston Loveland",
       "nflTeamId": "3",
       "ownership": {
-        "auctionValueAverage": 14.03,
-        "averageDraftPosition": 57.98,
-        "percentOwned": 91.32
+        "auctionValueAverage": 13.56,
+        "averageDraftPosition": 58.65,
+        "percentOwned": 91.23
       },
       "position": "TE",
       "projection": 120.95,
@@ -14281,8 +14330,8 @@
       "nflTeamId": "20",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.8,
-        "percentOwned": 2.94
+        "averageDraftPosition": 169.74,
+        "percentOwned": 2.89
       },
       "position": "WR",
       "projection": 0,
@@ -14298,16 +14347,16 @@
     "4808766": {
       "average": 0.9,
       "id": "4808766",
-      "injuryStatus": "QUESTIONABLE",
+      "injuryStatus": "ACTIVE",
       "name": "Mason Taylor",
       "nflTeamId": "20",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.87,
+        "averageDraftPosition": 169.84,
         "percentOwned": 0.24
       },
       "position": "TE",
-      "projection": 50.23,
+      "projection": 50.75,
       "scores": {
         "0": 1.8,
         "1": 1.8,
@@ -14347,11 +14396,11 @@
       "nflTeamId": "9",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.86,
-        "percentOwned": 5.05
+        "averageDraftPosition": 169.81,
+        "percentOwned": 4.92
       },
       "position": "RB",
-      "projection": 16.4,
+      "projection": 18.41,
       "scores": {
         "0": 8,
         "1": 0,
@@ -14364,16 +14413,16 @@
     "4831959": {
       "average": 4.466666666666667,
       "id": "4831959",
-      "injuryStatus": "QUESTIONABLE",
+      "injuryStatus": "ACTIVE",
       "name": "Eli Raridon",
       "nflTeamId": "17",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.97,
-        "percentOwned": 0.26
+        "averageDraftPosition": 169.93,
+        "percentOwned": 0.25
       },
       "position": "TE",
-      "projection": 28.31,
+      "projection": 29.43,
       "scores": {
         "0": 13.4,
         "1": 7.2,
@@ -14390,9 +14439,9 @@
       "name": "Denzel Boston",
       "nflTeamId": "5",
       "ownership": {
-        "auctionValueAverage": 0.69,
-        "averageDraftPosition": 146.54,
-        "percentOwned": 73.45
+        "auctionValueAverage": 0.7,
+        "averageDraftPosition": 144.38,
+        "percentOwned": 74.7
       },
       "position": "WR",
       "projection": 154.57,
@@ -14413,8 +14462,8 @@
       "nflTeamId": "16",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170,
-        "percentOwned": 0.62
+        "averageDraftPosition": 169.96,
+        "percentOwned": 0.59
       },
       "position": "RB",
       "projection": 2.48,
@@ -14435,8 +14484,8 @@
       "nflTeamId": "12",
       "ownership": {
         "auctionValueAverage": 0.03,
-        "averageDraftPosition": 169.02,
-        "percentOwned": 17.51
+        "averageDraftPosition": 168.98,
+        "percentOwned": 16.66
       },
       "position": "RB",
       "projection": 65.11,
@@ -14456,9 +14505,9 @@
       "name": "Fernando Mendoza",
       "nflTeamId": "13",
       "ownership": {
-        "auctionValueAverage": 0.04,
-        "averageDraftPosition": 168.95,
-        "percentOwned": 4.09
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 168.93,
+        "percentOwned": 3.94
       },
       "position": "QB",
       "projection": 130.76,
@@ -14479,8 +14528,8 @@
       "nflTeamId": "9",
       "ownership": {
         "auctionValueAverage": 0.04,
-        "averageDraftPosition": 168.37,
-        "percentOwned": 16.06
+        "averageDraftPosition": 168.47,
+        "percentOwned": 15.35
       },
       "position": "K",
       "projection": 110.63,
@@ -14501,11 +14550,11 @@
       "nflTeamId": "15",
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.65,
-        "percentOwned": 16.36
+        "averageDraftPosition": 169.59,
+        "percentOwned": 15.49
       },
       "position": "WR",
-      "projection": 103.76,
+      "projection": 95.74,
       "scores": {
         "0": 18.3,
         "1": 14.4,
@@ -14524,7 +14573,7 @@
       "ownership": {
         "auctionValueAverage": 0,
         "averageDraftPosition": 169.83,
-        "percentOwned": 0.42
+        "percentOwned": 0.41
       },
       "position": "WR",
       "projection": 7.26,
@@ -14540,16 +14589,16 @@
     "4869961": {
       "average": 3.5500000000000003,
       "id": "4869961",
-      "injuryStatus": "ACTIVE",
+      "injuryStatus": "QUESTIONABLE",
       "name": "Chris Bell",
       "nflTeamId": "15",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.95,
-        "percentOwned": 4.08
+        "averageDraftPosition": 169.89,
+        "percentOwned": 3.86
       },
       "position": "WR",
-      "projection": 91.77,
+      "projection": 93.71,
       "scores": {
         "0": 14.2,
         "1": 3.5,
@@ -14568,7 +14617,7 @@
       "ownership": {
         "auctionValueAverage": 0,
         "averageDraftPosition": 169.72,
-        "percentOwned": 2.13
+        "percentOwned": 2.06
       },
       "position": "WR",
       "projection": 39.68,
@@ -14588,9 +14637,9 @@
       "name": "KC Concepcion",
       "nflTeamId": "5",
       "ownership": {
-        "auctionValueAverage": 0.6,
-        "averageDraftPosition": 158.92,
-        "percentOwned": 52.82
+        "auctionValueAverage": 0.59,
+        "averageDraftPosition": 158.2,
+        "percentOwned": 53.69
       },
       "position": "WR",
       "projection": 136.5,
@@ -14610,12 +14659,12 @@
       "name": "Makai Lemon",
       "nflTeamId": "21",
       "ownership": {
-        "auctionValueAverage": 0.77,
-        "averageDraftPosition": 151.44,
-        "percentOwned": 50.92
+        "auctionValueAverage": 0.75,
+        "averageDraftPosition": 152.03,
+        "percentOwned": 50.26
       },
       "position": "WR",
-      "projection": 93.67,
+      "projection": 93.37,
       "scores": {
         "0": 16,
         "1": 2.5,
@@ -14632,12 +14681,12 @@
       "name": "Jeremiyah Love",
       "nflTeamId": "22",
       "ownership": {
-        "auctionValueAverage": 28.67,
-        "averageDraftPosition": 32.42,
-        "percentOwned": 98.59
+        "auctionValueAverage": 28.57,
+        "averageDraftPosition": 33.85,
+        "percentOwned": 98.52
       },
       "position": "RB",
-      "projection": 177.08,
+      "projection": 177.01,
       "scores": {
         "0": 48.9,
         "1": 13,
@@ -14654,9 +14703,9 @@
       "name": "Ja'Kobi Lane",
       "nflTeamId": "33",
       "ownership": {
-        "auctionValueAverage": 0.02,
-        "averageDraftPosition": 169.03,
-        "percentOwned": 8.32
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 169.06,
+        "percentOwned": 8.14
       },
       "position": "WR",
       "projection": 0,
@@ -14676,9 +14725,9 @@
       "name": "Carnell Tate",
       "nflTeamId": "10",
       "ownership": {
-        "auctionValueAverage": 4.2,
-        "averageDraftPosition": 105.85,
-        "percentOwned": 87.94
+        "auctionValueAverage": 4.28,
+        "averageDraftPosition": 103.95,
+        "percentOwned": 88.77
       },
       "position": "WR",
       "projection": 177.97,
@@ -14699,8 +14748,8 @@
       "nflTeamId": "11",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 170.02,
-        "percentOwned": 0.23
+        "averageDraftPosition": 170.01,
+        "percentOwned": 0.22
       },
       "position": "RB",
       "projection": 0,
@@ -14727,10 +14776,10 @@
         "3": 2.4,
         "4": 0
       },
-      "projection": 0,
+      "projection": 12.81,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.95,
+        "averageDraftPosition": 169.96,
         "percentOwned": 0.03
       },
       "injuryStatus": "ACTIVE"
@@ -14743,8 +14792,8 @@
       "nflTeamId": "34",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.9,
-        "percentOwned": 2.29
+        "averageDraftPosition": 169.92,
+        "percentOwned": 2.25
       },
       "position": "WR",
       "projection": 0,
@@ -14774,8 +14823,8 @@
       "projection": 72.13,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.95,
-        "percentOwned": 0.15
+        "averageDraftPosition": 169.94,
+        "percentOwned": 0.17
       },
       "injuryStatus": "ACTIVE"
     },
@@ -14787,7 +14836,7 @@
       "nflTeamId": "18",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.87,
+        "averageDraftPosition": 169.88,
         "percentOwned": 0.15
       },
       "position": "WR",
@@ -14815,10 +14864,10 @@
         "3": 0,
         "4": 2.5
       },
-      "projection": 22.3,
+      "projection": 22.32,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.98,
+        "averageDraftPosition": 169.94,
         "percentOwned": 0.05
       },
       "injuryStatus": "ACTIVE"
@@ -14830,9 +14879,9 @@
       "name": "Jordyn Tyson",
       "nflTeamId": "18",
       "ownership": {
-        "auctionValueAverage": 0.08,
-        "averageDraftPosition": 167.86,
-        "percentOwned": 33.68
+        "auctionValueAverage": 0.07,
+        "averageDraftPosition": 167.81,
+        "percentOwned": 33.59
       },
       "position": "WR",
       "projection": 101.03,
@@ -14852,9 +14901,9 @@
       "name": "Bhayshul Tuten",
       "nflTeamId": "30",
       "ownership": {
-        "auctionValueAverage": 10.6,
-        "averageDraftPosition": 75.48,
-        "percentOwned": 92.86
+        "auctionValueAverage": 10.47,
+        "averageDraftPosition": 74.85,
+        "percentOwned": 92.98
       },
       "position": "RB",
       "projection": 183.66,
@@ -14876,7 +14925,7 @@
       "ownership": {
         "auctionValueAverage": 0,
         "averageDraftPosition": 169.98,
-        "percentOwned": 0.21
+        "percentOwned": 0.2
       },
       "position": "WR",
       "projection": 54.3,
@@ -14896,9 +14945,9 @@
       "name": "Emanuel Wilson",
       "nflTeamId": "26",
       "ownership": {
-        "auctionValueAverage": 0.2,
-        "averageDraftPosition": 165.58,
-        "percentOwned": 72.88
+        "auctionValueAverage": 0.25,
+        "averageDraftPosition": 163.5,
+        "percentOwned": 77.63
       },
       "position": "RB",
       "projection": 26.42,
@@ -14918,9 +14967,9 @@
       "name": "Ashton Jeanty",
       "nflTeamId": "13",
       "ownership": {
-        "auctionValueAverage": 33.29,
-        "averageDraftPosition": 22.09,
-        "percentOwned": 99.75
+        "auctionValueAverage": 33.3,
+        "averageDraftPosition": 22.11,
+        "percentOwned": 99.76
       },
       "position": "RB",
       "projection": 226.62,
@@ -14941,8 +14990,8 @@
       "nflTeamId": "30",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.96,
-        "percentOwned": 0.38
+        "averageDraftPosition": 169.93,
+        "percentOwned": 0.37
       },
       "position": "RB",
       "projection": 14.16,
@@ -14963,7 +15012,7 @@
       "nflTeamId": "12",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.92,
+        "averageDraftPosition": 169.88,
         "percentOwned": 1.13
       },
       "position": "WR",
@@ -14985,8 +15034,8 @@
       "nflTeamId": "8",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.82,
-        "percentOwned": 0.82
+        "averageDraftPosition": 169.78,
+        "percentOwned": 0.8
       },
       "position": "RB",
       "projection": 53.49,
@@ -15007,7 +15056,7 @@
       "nflTeamId": "28",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.81,
+        "averageDraftPosition": 169.8,
         "percentOwned": 0.58
       },
       "position": "K",
@@ -15029,8 +15078,8 @@
       "nflTeamId": "23",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.95,
-        "percentOwned": 0.14
+        "averageDraftPosition": 169.92,
+        "percentOwned": 0.15
       },
       "position": "WR",
       "projection": 2.09,
@@ -15050,9 +15099,9 @@
       "name": "Dylan Sampson",
       "nflTeamId": "5",
       "ownership": {
-        "auctionValueAverage": 0.02,
-        "averageDraftPosition": 169.62,
-        "percentOwned": 9.35
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 169.59,
+        "percentOwned": 9.08
       },
       "position": "RB",
       "projection": 0,
@@ -15073,8 +15122,8 @@
       "nflTeamId": "28",
       "ownership": {
         "auctionValueAverage": 0.06,
-        "averageDraftPosition": 169.7,
-        "percentOwned": 5.93
+        "averageDraftPosition": 169.62,
+        "percentOwned": 5.94
       },
       "position": "WR",
       "projection": 78.34,
@@ -15095,8 +15144,8 @@
       "nflTeamId": "23",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.98,
-        "percentOwned": 1.35
+        "averageDraftPosition": 169.95,
+        "percentOwned": 1.17
       },
       "position": "RB",
       "projection": 0,
@@ -15126,8 +15175,8 @@
       "projection": 18.06,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.85,
-        "percentOwned": 0.07
+        "averageDraftPosition": 169.84,
+        "percentOwned": 0.08
       },
       "injuryStatus": "ACTIVE"
     },
@@ -15139,8 +15188,8 @@
       "nflTeamId": "19",
       "ownership": {
         "auctionValueAverage": 0.05,
-        "averageDraftPosition": 168.79,
-        "percentOwned": 3.29
+        "averageDraftPosition": 168.69,
+        "percentOwned": 3.69
       },
       "position": "K",
       "projection": 104.56,
@@ -15171,7 +15220,7 @@
       "ownership": {
         "auctionValueAverage": 0,
         "averageDraftPosition": 169.87,
-        "percentOwned": 0.16
+        "percentOwned": 0.17
       },
       "injuryStatus": "ACTIVE"
     },
@@ -15182,9 +15231,9 @@
       "name": "Harold Fannin Jr.",
       "nflTeamId": "5",
       "ownership": {
-        "auctionValueAverage": 4.67,
-        "averageDraftPosition": 84.29,
-        "percentOwned": 92.41
+        "auctionValueAverage": 4.5,
+        "averageDraftPosition": 84.46,
+        "percentOwned": 92.77
       },
       "position": "TE",
       "projection": 155.2,
@@ -15204,12 +15253,12 @@
       "name": "Kenyon Sadiq",
       "nflTeamId": "20",
       "ownership": {
-        "auctionValueAverage": 0.23,
-        "averageDraftPosition": 158.79,
-        "percentOwned": 52.51
+        "auctionValueAverage": 0.2,
+        "averageDraftPosition": 160.67,
+        "percentOwned": 51.3
       },
       "position": "TE",
-      "projection": 117.46,
+      "projection": 118.14,
       "scores": {
         "0": 38.6,
         "1": 11.4,
@@ -15226,9 +15275,9 @@
       "name": "Ryan Flournoy",
       "nflTeamId": "6",
       "ownership": {
-        "auctionValueAverage": 0.04,
-        "averageDraftPosition": 169.34,
-        "percentOwned": 4.4
+        "auctionValueAverage": 0.03,
+        "averageDraftPosition": 169.24,
+        "percentOwned": 4.32
       },
       "position": "WR",
       "projection": 112.04,
@@ -15249,7 +15298,7 @@
       "nflTeamId": "33",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.9,
+        "averageDraftPosition": 169.92,
         "percentOwned": 0.15
       },
       "position": "WR",
@@ -15302,8 +15351,8 @@
       "projection": 10.81,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.98,
-        "percentOwned": 0.05
+        "averageDraftPosition": 169.99,
+        "percentOwned": 0.04
       },
       "injuryStatus": "ACTIVE"
     },
@@ -15314,9 +15363,9 @@
       "name": "Isaac TeSlaa",
       "nflTeamId": "8",
       "ownership": {
-        "auctionValueAverage": 0,
-        "averageDraftPosition": 169.24,
-        "percentOwned": 2.48
+        "auctionValueAverage": 0.01,
+        "averageDraftPosition": 169.15,
+        "percentOwned": 2.87
       },
       "position": "WR",
       "projection": 93.59,
@@ -15337,8 +15386,8 @@
       "nflTeamId": "13",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.96,
-        "percentOwned": 0.09
+        "averageDraftPosition": 169.94,
+        "percentOwned": 0.08
       },
       "position": "WR",
       "projection": 7.91,
@@ -15381,7 +15430,7 @@
       "nflTeamId": "0",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.6,
+        "averageDraftPosition": 169.58,
         "percentOwned": 0.13
       },
       "position": "K",
@@ -15398,12 +15447,12 @@
       "name": "Ted Hurst III",
       "nflTeamId": "27",
       "ownership": {
-        "auctionValueAverage": 0.06,
-        "averageDraftPosition": 169.7,
-        "percentOwned": 1.07
+        "auctionValueAverage": 0.05,
+        "averageDraftPosition": 169.68,
+        "percentOwned": 0.99
       },
       "position": "WR",
-      "projection": 77.36,
+      "projection": 77.37,
       "scores": {
         "0": 26.8,
         "1": 6.6,
@@ -15430,7 +15479,7 @@
       "projection": 0,
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.96,
+        "averageDraftPosition": 169.95,
         "percentOwned": 0.04
       },
       "injuryStatus": "ACTIVE"
@@ -15442,8 +15491,8 @@
       "nflTeamId": "1",
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 168.8,
-        "percentOwned": 2.48
+        "averageDraftPosition": 168.58,
+        "percentOwned": 3.46
       },
       "position": "DST",
       "projection": 88.59,
@@ -15463,8 +15512,8 @@
       "nflTeamId": "2",
       "ownership": {
         "auctionValueAverage": 0.07,
-        "averageDraftPosition": 166.05,
-        "percentOwned": 28.9
+        "averageDraftPosition": 166.32,
+        "percentOwned": 22.4
       },
       "position": "DST",
       "projection": 59.22,
@@ -15484,8 +15533,8 @@
       "nflTeamId": "3",
       "ownership": {
         "auctionValueAverage": 0.08,
-        "averageDraftPosition": 165.89,
-        "percentOwned": 34.86
+        "averageDraftPosition": 165.67,
+        "percentOwned": 33.65
       },
       "position": "DST",
       "projection": 66.78,
@@ -15504,9 +15553,9 @@
       "name": "Bengals D/ST",
       "nflTeamId": "4",
       "ownership": {
-        "auctionValueAverage": 0.04,
-        "averageDraftPosition": 167.06,
-        "percentOwned": 39
+        "auctionValueAverage": 0.05,
+        "averageDraftPosition": 166.61,
+        "percentOwned": 46.14
       },
       "position": "DST",
       "projection": 70.23,
@@ -15526,8 +15575,8 @@
       "nflTeamId": "5",
       "ownership": {
         "auctionValueAverage": 0.75,
-        "averageDraftPosition": 157.12,
-        "percentOwned": 40.42
+        "averageDraftPosition": 157.13,
+        "percentOwned": 40.02
       },
       "position": "DST",
       "projection": 71.51,
@@ -15546,12 +15595,12 @@
       "name": "Cowboys D/ST",
       "nflTeamId": "6",
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 167.39,
-        "percentOwned": 30.23
+        "auctionValueAverage": 0.02,
+        "averageDraftPosition": 166.93,
+        "percentOwned": 42.85
       },
       "position": "DST",
-      "projection": 48.34,
+      "projection": 48.31,
       "scores": {
         "0": 1,
         "1": 2,
@@ -15567,9 +15616,9 @@
       "name": "Broncos D/ST",
       "nflTeamId": "7",
       "ownership": {
-        "auctionValueAverage": 1.1,
-        "averageDraftPosition": 107.93,
-        "percentOwned": 79.77
+        "auctionValueAverage": 1.11,
+        "averageDraftPosition": 109.01,
+        "percentOwned": 81.13
       },
       "position": "DST",
       "projection": 76.35,
@@ -15588,9 +15637,9 @@
       "name": "Lions D/ST",
       "nflTeamId": "8",
       "ownership": {
-        "auctionValueAverage": 0.57,
-        "averageDraftPosition": 162.17,
-        "percentOwned": 37.45
+        "auctionValueAverage": 0.52,
+        "averageDraftPosition": 162.34,
+        "percentOwned": 36.12
       },
       "position": "DST",
       "projection": 56.52,
@@ -15609,9 +15658,9 @@
       "name": "Packers D/ST",
       "nflTeamId": "9",
       "ownership": {
-        "auctionValueAverage": 0.07,
-        "averageDraftPosition": 168.72,
-        "percentOwned": 19.78
+        "auctionValueAverage": 0.06,
+        "averageDraftPosition": 168.69,
+        "percentOwned": 16.49
       },
       "position": "DST",
       "projection": 38.52,
@@ -15631,8 +15680,8 @@
       "nflTeamId": "10",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.54,
-        "percentOwned": 1.57
+        "averageDraftPosition": 169.55,
+        "percentOwned": 1.49
       },
       "position": "DST",
       "projection": 62.86,
@@ -15652,8 +15701,8 @@
       "nflTeamId": "11",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.67,
-        "percentOwned": 1.89
+        "averageDraftPosition": 169.61,
+        "percentOwned": 2.15
       },
       "position": "DST",
       "projection": 66.48,
@@ -15672,9 +15721,9 @@
       "name": "Chiefs D/ST",
       "nflTeamId": "12",
       "ownership": {
-        "auctionValueAverage": 0.23,
-        "averageDraftPosition": 153.46,
-        "percentOwned": 47.81
+        "auctionValueAverage": 0.21,
+        "averageDraftPosition": 153.83,
+        "percentOwned": 41.55
       },
       "position": "DST",
       "projection": 86.92,
@@ -15693,9 +15742,9 @@
       "name": "Raiders D/ST",
       "nflTeamId": "13",
       "ownership": {
-        "auctionValueAverage": 0.19,
-        "averageDraftPosition": 162.35,
-        "percentOwned": 14.55
+        "auctionValueAverage": 0.17,
+        "averageDraftPosition": 162.53,
+        "percentOwned": 16.27
       },
       "position": "DST",
       "projection": 53.16,
@@ -15714,9 +15763,9 @@
       "name": "Rams D/ST",
       "nflTeamId": "14",
       "ownership": {
-        "auctionValueAverage": 1.11,
-        "averageDraftPosition": 119.52,
-        "percentOwned": 81.38
+        "auctionValueAverage": 1.1,
+        "averageDraftPosition": 118.01,
+        "percentOwned": 79.48
       },
       "position": "DST",
       "projection": 96.08,
@@ -15736,7 +15785,7 @@
       "nflTeamId": "15",
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 168.36,
+        "averageDraftPosition": 168.34,
         "percentOwned": 0.56
       },
       "position": "DST",
@@ -15756,9 +15805,9 @@
       "name": "Vikings D/ST",
       "nflTeamId": "16",
       "ownership": {
-        "auctionValueAverage": 1.96,
-        "averageDraftPosition": 115.42,
-        "percentOwned": 87.07
+        "auctionValueAverage": 1.84,
+        "averageDraftPosition": 115.55,
+        "percentOwned": 86.64
       },
       "position": "DST",
       "projection": 92.09,
@@ -15777,9 +15826,9 @@
       "name": "Patriots D/ST",
       "nflTeamId": "17",
       "ownership": {
-        "auctionValueAverage": 0.68,
-        "averageDraftPosition": 156.46,
-        "percentOwned": 49.35
+        "auctionValueAverage": 0.69,
+        "averageDraftPosition": 155.77,
+        "percentOwned": 49.87
       },
       "position": "DST",
       "projection": 81.15,
@@ -15799,8 +15848,8 @@
       "nflTeamId": "18",
       "ownership": {
         "auctionValueAverage": 0.02,
-        "averageDraftPosition": 169.46,
-        "percentOwned": 3.3
+        "averageDraftPosition": 169.45,
+        "percentOwned": 3.07
       },
       "position": "DST",
       "projection": 40.06,
@@ -15820,8 +15869,8 @@
       "nflTeamId": "19",
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 168.51,
-        "percentOwned": 7.51
+        "averageDraftPosition": 168.4,
+        "percentOwned": 7.08
       },
       "position": "DST",
       "projection": 58.15,
@@ -15841,8 +15890,8 @@
       "nflTeamId": "20",
       "ownership": {
         "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169,
-        "percentOwned": 19.64
+        "averageDraftPosition": 169.04,
+        "percentOwned": 25.35
       },
       "position": "DST",
       "projection": 74.12,
@@ -15861,9 +15910,9 @@
       "name": "Eagles D/ST",
       "nflTeamId": "21",
       "ownership": {
-        "auctionValueAverage": 0.82,
-        "averageDraftPosition": 149.61,
-        "percentOwned": 59.24
+        "auctionValueAverage": 0.84,
+        "averageDraftPosition": 149.78,
+        "percentOwned": 56.45
       },
       "position": "DST",
       "projection": 69.09,
@@ -15883,8 +15932,8 @@
       "nflTeamId": "22",
       "ownership": {
         "auctionValueAverage": 0,
-        "averageDraftPosition": 169.15,
-        "percentOwned": 1.56
+        "averageDraftPosition": 169.08,
+        "percentOwned": 1.17
       },
       "position": "DST",
       "projection": 35.04,
@@ -15903,9 +15952,9 @@
       "name": "Steelers D/ST",
       "nflTeamId": "23",
       "ownership": {
-        "auctionValueAverage": 1.15,
-        "averageDraftPosition": 117.92,
-        "percentOwned": 92.82
+        "auctionValueAverage": 1.07,
+        "averageDraftPosition": 119.42,
+        "percentOwned": 92.07
       },
       "position": "DST",
       "projection": 71.29,
@@ -15925,11 +15974,11 @@
       "nflTeamId": "24",
       "ownership": {
         "auctionValueAverage": 0.1,
-        "averageDraftPosition": 167.37,
-        "percentOwned": 17.49
+        "averageDraftPosition": 167.45,
+        "percentOwned": 17.07
       },
       "position": "DST",
-      "projection": 51.96,
+      "projection": 52,
       "scores": {
         "0": 23,
         "1": 0,
@@ -15945,9 +15994,9 @@
       "name": "49ers D/ST",
       "nflTeamId": "25",
       "ownership": {
-        "auctionValueAverage": 0.19,
-        "averageDraftPosition": 159.53,
-        "percentOwned": 42.38
+        "auctionValueAverage": 0.2,
+        "averageDraftPosition": 159.16,
+        "percentOwned": 39.78
       },
       "position": "DST",
       "projection": 87.76,
@@ -15967,8 +16016,8 @@
       "nflTeamId": "26",
       "ownership": {
         "auctionValueAverage": 2.29,
-        "averageDraftPosition": 82.87,
-        "percentOwned": 96.48
+        "averageDraftPosition": 83.11,
+        "percentOwned": 95.23
       },
       "position": "DST",
       "projection": 94.56,
@@ -15988,11 +16037,11 @@
       "nflTeamId": "27",
       "ownership": {
         "auctionValueAverage": 0.02,
-        "averageDraftPosition": 169.02,
-        "percentOwned": 17.55
+        "averageDraftPosition": 168.96,
+        "percentOwned": 15.89
       },
       "position": "DST",
-      "projection": 60.11,
+      "projection": 60.12,
       "scores": {
         "0": 26,
         "1": 8,
@@ -16008,9 +16057,9 @@
       "name": "Commanders D/ST",
       "nflTeamId": "28",
       "ownership": {
-        "auctionValueAverage": 0.01,
-        "averageDraftPosition": 169.51,
-        "percentOwned": 10.12
+        "auctionValueAverage": 0,
+        "averageDraftPosition": 169.44,
+        "percentOwned": 14.34
       },
       "position": "DST",
       "projection": 62.06,
@@ -16029,9 +16078,9 @@
       "name": "Panthers D/ST",
       "nflTeamId": "29",
       "ownership": {
-        "auctionValueAverage": 0.05,
-        "averageDraftPosition": 169.13,
-        "percentOwned": 8.78
+        "auctionValueAverage": 0.04,
+        "averageDraftPosition": 169.08,
+        "percentOwned": 7.44
       },
       "position": "DST",
       "projection": 61.21,
@@ -16050,9 +16099,9 @@
       "name": "Jaguars D/ST",
       "nflTeamId": "30",
       "ownership": {
-        "auctionValueAverage": 0.22,
-        "averageDraftPosition": 155.1,
-        "percentOwned": 48.17
+        "auctionValueAverage": 0.23,
+        "averageDraftPosition": 152.83,
+        "percentOwned": 55.98
       },
       "position": "DST",
       "projection": 96.08,
@@ -16072,8 +16121,8 @@
       "nflTeamId": "33",
       "ownership": {
         "auctionValueAverage": 0.88,
-        "averageDraftPosition": 138.77,
-        "percentOwned": 77.69
+        "averageDraftPosition": 139.74,
+        "percentOwned": 72.71
       },
       "position": "DST",
       "projection": 79.37,
@@ -16092,9 +16141,9 @@
       "name": "Texans D/ST",
       "nflTeamId": "34",
       "ownership": {
-        "auctionValueAverage": 1.36,
-        "averageDraftPosition": 91.82,
-        "percentOwned": 88.75
+        "auctionValueAverage": 1.61,
+        "averageDraftPosition": 92.65,
+        "percentOwned": 89.34
       },
       "position": "DST",
       "projection": 88.05,
