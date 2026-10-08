@@ -11,11 +11,25 @@
   margin: 0.5em 0;
 }
 
-.playoff-standings-grid,
-.playoff-weeks-grid {
+.playoff-standings-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
   gap: 0.75em;
+}
+
+.playoff-weeks-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(340px, 90vw);
+  align-items: start;
+  gap: 0.75em;
+  overflow-x: auto;
+  padding-bottom: 0.75em;
+}
+
+.playoff-weeks-grid:focus-visible {
+  outline: 2px solid var(--night-focus);
+  outline-offset: 2px;
 }
 
 .playoff-machine .playoff-team {
@@ -105,9 +119,8 @@
   border-top: 1px solid var(--night-border);
 }
 
-.playoff-matchup-label {
-  margin-bottom: 0.35em;
-  font-size: 0.8em;
+.playoff-strength-guide {
+  font-size: 0.85em;
   color: var(--night-text-muted);
 }
 
@@ -140,4 +153,18 @@
   flex-shrink: 0;
   margin: 0;
   accent-color: var(--night-link);
+}
+
+.playoff-choice-name {
+  flex: 1;
+  min-width: 0;
+}
+
+.playoff-strength {
+  flex-shrink: 0;
+  min-width: 2.5em;
+  text-align: right;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--night-link);
 }

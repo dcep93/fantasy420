@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 
 import { bubbleStyle, Helpers, selectedWrapped } from "..";
 import "./PlayoffMachine.css";
+import { getWeeklyStrength } from "./playoffStrength";
 
 type HeadToHeadRecord = {
   games: number;
@@ -60,6 +61,12 @@ export default function PlayoffMachine() {
   });
 
   const [manualPoints, updateManualPoints] = useState<ManualPoints>({});
+  const weeklyStrength = useMemo(
+    () => Object.fromEntries(upcomingWeeks.map((week) => [
+      week, getWeeklyStrength(wrapped, week),
+    ])),
+    [wrapped, upcomingWeeks]
+  );
 
   const basePoints = useMemo(
     () =>
@@ -310,7 +317,6 @@ export default function PlayoffMachine() {
           const selected = selections[weekNum.toString()]?.[matchupIndex];
           return (
             <div className="playoff-matchup" key={matchupIndex}>
-              <div className="playoff-matchup-label">Matchup {matchupIndex + 1}</div>
               <div className="playoff-choices">
                 {matchup.map((teamId) => (
                   <label
@@ -331,7 +337,17 @@ export default function PlayoffMachine() {
                         }))
                       }
                     />
-                    {wrapped.ffTeams[teamId]?.name || "TBD"}
+                    <span className="playoff-choice-name">
+                      {wrapped.ffTeams[teamId]?.name || "TBD"}
+                    </span>
+                    <span
+                      className="playoff-strength"
+                      title={weeklyStrength[weekNum]?.[teamId] == null
+                        ? "Weekly strength unavailable: no roster values"
+                        : "Weekly strength: 100 is the league average; excludes players on bye"}
+                    >
+                      {weeklyStrength[weekNum]?.[teamId] ?? "—"}
+                    </span>
                   </label>
                 ))}
               </div>
@@ -345,7 +361,19 @@ export default function PlayoffMachine() {
   return (
     <div className="playoff-machine">
       {renderStandings()}
-      <div className="playoff-weeks-grid">
+      {upcomingWeeks.length > 0 && (
+        <p className="playoff-strength-guide" id="playoff-strength-guide">
+          <strong>Weekly strength</strong> · 100 = league average. FantasyCalc roster
+          values excluding byes; includes bench players. Higher is stronger.
+        </p>
+      )}
+      <div
+        className="playoff-weeks-grid"
+        role="region"
+        aria-label="Remaining weekly matchups"
+        aria-describedby={upcomingWeeks.length > 0 ? "playoff-strength-guide" : undefined}
+        tabIndex={0}
+      >
         {upcomingWeeks.length === 0 && (
           <div style={bubbleStyle}>All weeks have finalized scoring.</div>
         )}
