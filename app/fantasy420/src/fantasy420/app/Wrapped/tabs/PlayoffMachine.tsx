@@ -2,18 +2,14 @@ import { useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type Re
 
 import { bubbleStyle, Helpers, selectedWrapped } from "..";
 import "./PlayoffMachine.css";
-import { getDefaultMatchupWinner, getWeeklyStrength, sortMatchupsByStrengthGap } from "./playoffStrength";
+import { getWeeklyStrength, sortMatchupsByStrengthGap } from "./playoffStrength";
+import { getPlayoffSelections, serializePlayoffPicks } from "./playoffSelections";
+import { parseWrappedHash, useWrappedHash } from "../hashRoute";
 import { NIGHT_CHART_COLORS } from "../../theme";
 
 type HeadToHeadRecord = {
   games: number;
   wins: number;
-};
-
-type SimulatedSelections = {
-  [weekNum: string]: {
-    [matchupIndex: string]: string;
-  };
 };
 
 type ManualPoints = { [teamId: string]: number };
@@ -44,27 +40,12 @@ export default function PlayoffMachine() {
     ])),
     [wrapped, upcomingWeeks]
   );
-  const [selections, updateSelections] = useState<SimulatedSelections>(() => {
-    const initial: SimulatedSelections = {};
-
-    for (const weekNum of upcomingWeeks) {
-      const weekKey = weekNum.toString();
-      const matchups = wrapped.ffMatchups[weekKey] || [];
-
-      const weekSelections: { [matchupIndex: number]: string } = {};
-
-      matchups.forEach((matchup, matchupIndex) => {
-        const winner = getDefaultMatchupWinner(matchup, weeklyStrength[weekNum]);
-        if (winner !== undefined) {
-          weekSelections[matchupIndex] = winner;
-        }
-      });
-
-      initial[weekKey] = weekSelections;
-    }
-
-    return initial;
-  });
+  const hash = useWrappedHash();
+  const encodedPicks = parseWrappedHash(hash).params.get("picks");
+  const { selections, chalk } = useMemo(
+    () => getPlayoffSelections(wrapped.ffMatchups, weeklyStrength, upcomingWeeks, encodedPicks),
+    [wrapped.ffMatchups, weeklyStrength, upcomingWeeks, encodedPicks]
+  );
 
   const [manualPoints, updateManualPoints] = useState<ManualPoints>({});
   const pendingScrollAnchor = useRef<{ element: HTMLInputElement; top: number } | null>(null);
@@ -282,6 +263,22 @@ export default function PlayoffMachine() {
     }));
   }
 
+  function selectWinner(weekNum: number, matchupIndex: number, teamId: string) {
+    const picks = serializePlayoffPicks({
+      ...selections,
+      [weekNum]: { ...selections[weekNum], [matchupIndex]: teamId },
+    }, chalk);
+    const url = new URL(window.location.href);
+    const { params } = parseWrappedHash(url.hash);
+    if (picks === null) params.delete("picks");
+    else params.set("picks", picks);
+    const query = params.toString();
+    url.hash = `PlayoffMachine${query ? `?${query}` : ""}`;
+    // Native hash assignment can scroll; notify the hash store synchronously instead.
+    window.history.pushState(window.history.state, "", url);
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
+  }
+
   function renderStandings() {
     return (
       <div className="playoff-standings">
@@ -360,13 +357,7 @@ export default function PlayoffMachine() {
                           element: event.currentTarget,
                           top: event.currentTarget.getBoundingClientRect().top,
                         };
-                        updateSelections((prev) => ({
-                          ...prev,
-                          [weekNum]: {
-                            ...prev[weekNum],
-                            [matchupIndex]: teamId,
-                          },
-                        }));
+                        selectWinner(weekNum, matchupIndex, teamId);
                       }}
                     />
                     <span className="playoff-choice-name playoff-team-name">
