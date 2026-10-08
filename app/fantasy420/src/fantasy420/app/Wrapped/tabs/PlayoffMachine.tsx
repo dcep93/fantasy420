@@ -326,10 +326,14 @@ export default function PlayoffMachine() {
         <h3>Week {weekNum}</h3>
         {matchups.map((matchup, matchupIndex) => {
           const selected = selections[weekNum.toString()]?.[matchupIndex];
+          const teamsByStrength = [...matchup].sort((a, b) =>
+            (weeklyStrength[weekNum]?.[b] ?? -1) -
+            (weeklyStrength[weekNum]?.[a] ?? -1)
+          );
           return (
             <div className="playoff-matchup" key={matchupIndex}>
               <div className="playoff-choices">
-                {matchup.map((teamId) => (
+                {teamsByStrength.map((teamId) => (
                   <label
                     key={teamId}
                     style={teamStyles[teamId]}
