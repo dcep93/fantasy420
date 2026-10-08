@@ -2,7 +2,7 @@ import { useMemo, useState, type CSSProperties, type ReactNode } from "react";
 
 import { bubbleStyle, Helpers, selectedWrapped } from "..";
 import "./PlayoffMachine.css";
-import { getWeeklyStrength } from "./playoffStrength";
+import { getDefaultMatchupWinner, getWeeklyStrength } from "./playoffStrength";
 import { NIGHT_CHART_COLORS } from "../../theme";
 
 type HeadToHeadRecord = {
@@ -38,6 +38,12 @@ export default function PlayoffMachine() {
         .sort((a, b) => a - b),
     [wrapped.ffMatchups, latestCompleteWeek]
   );
+  const weeklyStrength = useMemo(
+    () => Object.fromEntries(upcomingWeeks.map((week) => [
+      week, getWeeklyStrength(wrapped, week),
+    ])),
+    [wrapped, upcomingWeeks]
+  );
   const [selections, updateSelections] = useState<SimulatedSelections>(() => {
     const initial: SimulatedSelections = {};
 
@@ -48,19 +54,10 @@ export default function PlayoffMachine() {
       const weekSelections: { [matchupIndex: number]: string } = {};
 
       matchups.forEach((matchup, matchupIndex) => {
-        if (!matchup || matchup.length === 0) {
-          // fallback: nothing? default to first index being itself (or you can skip entirely)
-          return;
+        const winner = getDefaultMatchupWinner(matchup, weeklyStrength[weekNum]);
+        if (winner !== undefined) {
+          weekSelections[matchupIndex] = winner;
         }
-
-        const bestTeamId = matchup.reduce((bestSoFar, teamId) => {
-          const bestScore =
-            getScore(bestSoFar, weekKey) ?? Number.NEGATIVE_INFINITY;
-          const score = getScore(teamId, weekKey) ?? Number.NEGATIVE_INFINITY;
-          return score > bestScore ? teamId : bestSoFar;
-        }, matchup[0]);
-
-        weekSelections[matchupIndex] = bestTeamId;
       });
 
       initial[weekKey] = weekSelections;
@@ -70,12 +67,6 @@ export default function PlayoffMachine() {
   });
 
   const [manualPoints, updateManualPoints] = useState<ManualPoints>({});
-  const weeklyStrength = useMemo(
-    () => Object.fromEntries(upcomingWeeks.map((week) => [
-      week, getWeeklyStrength(wrapped, week),
-    ])),
-    [wrapped, upcomingWeeks]
-  );
 
   const basePoints = useMemo(
     () =>
@@ -385,7 +376,8 @@ export default function PlayoffMachine() {
       {upcomingWeeks.length > 0 && (
         <p className="playoff-strength-guide" id="playoff-strength-guide">
           <strong>Weekly strength</strong> · 100 = league average. FantasyCalc roster
-          values excluding byes; includes bench players. Higher is stronger.
+          values excluding byes; includes bench players. Higher is stronger and
+          selected by default.
         </p>
       )}
       <div

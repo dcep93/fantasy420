@@ -1,5 +1,22 @@
 import type { WrappedType } from "../../FetchWrapped";
 
+/** Keep the first team when strengths tie or neither team's strength is known. */
+export function getDefaultMatchupWinner(
+  matchup: string[],
+  strengths: Record<string, number | null>
+): string | undefined {
+  let winner: string | undefined;
+  let bestStrength = -Infinity;
+  for (const teamId of matchup) {
+    const strength = strengths[teamId] ?? -Infinity;
+    if (winner === undefined || strength > bestStrength) {
+      winner = teamId;
+      bestStrength = strength;
+    }
+  }
+  return winner;
+}
+
 /** Relative available roster value: 100 is the league average for this week. */
 export function getWeeklyStrength(
   wrapped: WrappedType,

@@ -1,5 +1,5 @@
 import type { WrappedType } from "../../FetchWrapped";
-import { getWeeklyStrength } from "./playoffStrength";
+import { getDefaultMatchupWinner, getWeeklyStrength } from "./playoffStrength";
 
 function season(): WrappedType {
   return {
@@ -24,6 +24,21 @@ test("normalizes roster strength to a league average of 100 and adjusts by week 
   expect(getWeeklyStrength(wrapped, 5)).toEqual({ a: 150, b: 50 });
   expect(getWeeklyStrength(wrapped, 6)).toEqual({ a: 0, b: 200 });
   expect(getWeeklyStrength(wrapped, 7)).toEqual({ a: 150, b: 50 });
+});
+
+test("defaults to the stronger team regardless of matchup order and changes with byes", () => {
+  const wrapped = season();
+  expect(getDefaultMatchupWinner(["b", "a"], getWeeklyStrength(wrapped, 5))).toBe("a");
+  expect(getDefaultMatchupWinner(["a", "b"], getWeeklyStrength(wrapped, 5))).toBe("a");
+  expect(getDefaultMatchupWinner(["a", "b"], getWeeklyStrength(wrapped, 6))).toBe("b");
+});
+
+test("handles ties, missing strength, zero strength and empty matchups deterministically", () => {
+  expect(getDefaultMatchupWinner(["a", "b"], { a: 100, b: 100 })).toBe("a");
+  expect(getDefaultMatchupWinner(["a", "b"], { a: null, b: null })).toBe("a");
+  expect(getDefaultMatchupWinner(["a", "b"], { a: null, b: 0 })).toBe("b");
+  expect(getDefaultMatchupWinner(["a", "b"], { a: 0, b: null })).toBe("a");
+  expect(getDefaultMatchupWinner([], {})).toBeUndefined();
 });
 
 test("uses the saved weekly roster when available, including bench players", () => {
