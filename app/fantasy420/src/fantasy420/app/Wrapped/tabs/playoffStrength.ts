@@ -1,5 +1,20 @@
 import type { WrappedType } from "../../FetchWrapped";
 
+/** Retain schedule indices so reordering never changes which game a pick belongs to. */
+export function sortMatchupsByStrengthGap(
+  matchups: string[][],
+  strengths: Record<string, number | null>
+) {
+  return matchups.map((matchup, matchupIndex) => {
+    const a = strengths[matchup[0]];
+    const b = strengths[matchup[1]];
+    const gap = a == null || b == null || !Number.isFinite(a) || !Number.isFinite(b)
+      ? Infinity
+      : Math.abs(a - b);
+    return { matchup, matchupIndex, gap };
+  }).sort((a, b) => (a.gap - b.gap) || (a.matchupIndex - b.matchupIndex));
+}
+
 /** Keep the first team when strengths tie or neither team's strength is known. */
 export function getDefaultMatchupWinner(
   matchup: string[],

@@ -2,7 +2,7 @@ import { useMemo, useState, type CSSProperties, type ReactNode } from "react";
 
 import { bubbleStyle, Helpers, selectedWrapped } from "..";
 import "./PlayoffMachine.css";
-import { getDefaultMatchupWinner, getWeeklyStrength } from "./playoffStrength";
+import { getDefaultMatchupWinner, getWeeklyStrength, sortMatchupsByStrengthGap } from "./playoffStrength";
 import { NIGHT_CHART_COLORS } from "../../theme";
 
 type HeadToHeadRecord = {
@@ -321,10 +321,11 @@ export default function PlayoffMachine() {
 
   function renderWeek(weekNum: number) {
     const matchups = wrapped.ffMatchups[weekNum.toString()] || [];
+    const matchupsByCloseness = sortMatchupsByStrengthGap(matchups, weeklyStrength[weekNum]);
     return (
       <div className="playoff-week" style={cardStyle} key={weekNum}>
         <h3>Week {weekNum}</h3>
-        {matchups.map((matchup, matchupIndex) => {
+        {matchupsByCloseness.map(({ matchup, matchupIndex }) => {
           const selected = selections[weekNum.toString()]?.[matchupIndex];
           const teamsByStrength = [...matchup].sort((a, b) =>
             (weeklyStrength[weekNum]?.[b] ?? -1) -
@@ -381,7 +382,7 @@ export default function PlayoffMachine() {
         <p className="playoff-strength-guide" id="playoff-strength-guide">
           <strong>Weekly strength</strong> · 100 = league average. FantasyCalc roster
           values excluding byes; includes bench players. Higher is stronger and
-          selected by default.
+          selected by default. Closest matchups first.
         </p>
       )}
       <div

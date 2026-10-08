@@ -1,5 +1,5 @@
 import type { WrappedType } from "../../FetchWrapped";
-import { getDefaultMatchupWinner, getWeeklyStrength } from "./playoffStrength";
+import { getDefaultMatchupWinner, getWeeklyStrength, sortMatchupsByStrengthGap } from "./playoffStrength";
 
 function season(): WrappedType {
   return {
@@ -18,6 +18,27 @@ function season(): WrappedType {
     fantasyCalc: { timestamp: 0, history: [], players: { a: 300, b: 100 } },
   };
 }
+
+test("sorts closest matchups first while retaining original selection indices and schedule order", () => {
+  const matchups = [["a", "b"], ["c", "d"], ["e", "f"], ["g", "h"]];
+  const strengths = { a: 130, b: 80, c: 95, d: 100, e: 90, f: 90, g: 105, h: 100 };
+  const sorted = sortMatchupsByStrengthGap(matchups, strengths);
+  expect(sorted.map(({ matchupIndex, gap }) => [matchupIndex, gap])).toEqual([
+    [2, 0], [1, 5], [3, 5], [0, 50],
+  ]);
+  const picks = ["b", "d", "f", "h"];
+  expect(sorted.map(({ matchupIndex }) => picks[matchupIndex])).toEqual(["f", "d", "h", "b"]);
+  expect(matchups).toEqual([["a", "b"], ["c", "d"], ["e", "f"], ["g", "h"]]);
+});
+
+test("puts unknown strength gaps last without treating zero strength as missing", () => {
+  const sorted = sortMatchupsByStrengthGap(
+    [["a", "b"], ["c", "d"], ["e", "f"], ["g", "h"]],
+    { a: null, b: 100, c: 0, d: 10, e: 50, f: NaN }
+  );
+  expect(sorted.map(({ matchupIndex }) => matchupIndex)).toEqual([1, 0, 2, 3]);
+  expect(sortMatchupsByStrengthGap([], {})).toEqual([]);
+});
 
 test("normalizes roster strength to a league average of 100 and adjusts by week for byes", () => {
   const wrapped = season();
