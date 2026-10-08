@@ -1,4 +1,4 @@
-import { useMemo, useState, type CSSProperties, type ReactNode } from "react";
+import { useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from "react";
 
 import { bubbleStyle, Helpers, selectedWrapped } from "..";
 import "./PlayoffMachine.css";
@@ -67,6 +67,17 @@ export default function PlayoffMachine() {
   });
 
   const [manualPoints, updateManualPoints] = useState<ManualPoints>({});
+  const pendingScrollAnchor = useRef<{ element: HTMLInputElement; top: number } | null>(null);
+
+  useLayoutEffect(() => {
+    const anchor = pendingScrollAnchor.current;
+    pendingScrollAnchor.current = null;
+    if (!anchor?.element.isConnected) return;
+
+    // Keep the clicked matchup in place when the standings above change height.
+    const shift = anchor.element.getBoundingClientRect().top - anchor.top;
+    if (shift !== 0) window.scrollBy(0, shift);
+  }, [selections]);
 
   const basePoints = useMemo(
     () =>
@@ -344,15 +355,19 @@ export default function PlayoffMachine() {
                       type="radio"
                       name={`week-${weekNum}-matchup-${matchupIndex}`}
                       checked={selected === teamId}
-                      onChange={() =>
+                      onChange={(event) => {
+                        pendingScrollAnchor.current = {
+                          element: event.currentTarget,
+                          top: event.currentTarget.getBoundingClientRect().top,
+                        };
                         updateSelections((prev) => ({
                           ...prev,
                           [weekNum]: {
                             ...prev[weekNum],
                             [matchupIndex]: teamId,
                           },
-                        }))
-                      }
+                        }));
+                      }}
                     />
                     <span className="playoff-choice-name playoff-team-name">
                       {wrapped.ffTeams[teamId]?.name || "TBD"}

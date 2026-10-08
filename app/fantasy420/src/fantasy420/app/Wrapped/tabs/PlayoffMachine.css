@@ -1,6 +1,8 @@
 .playoff-machine {
   padding: 0 0.5em 1em;
   line-height: 1.45;
+  /* Winner changes preserve their own viewport anchor before paint. */
+  overflow-anchor: none;
 }
 
 .playoff-standings {
