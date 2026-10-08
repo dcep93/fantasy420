@@ -1,8 +1,9 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, type CSSProperties, type ReactNode } from "react";
 
 import { bubbleStyle, Helpers, selectedWrapped } from "..";
 import "./PlayoffMachine.css";
 import { getWeeklyStrength } from "./playoffStrength";
+import { NIGHT_CHART_COLORS } from "../../theme";
 
 type HeadToHeadRecord = {
   games: number;
@@ -20,6 +21,14 @@ type ManualPoints = { [teamId: string]: number };
 export default function PlayoffMachine() {
   const cardStyle = { ...bubbleStyle, margin: 0 };
   const wrapped = selectedWrapped();
+  // Match ManagerPlot's original team order, independent of simulated standings.
+  const teamStyles = useMemo<Record<string, CSSProperties>>(
+    () => Object.fromEntries(Object.values(wrapped.ffTeams).map((team, index) => [
+      team.id,
+      { "--playoff-team-color": NIGHT_CHART_COLORS[index] } as CSSProperties,
+    ])),
+    [wrapped.ffTeams]
+  );
   const latestCompleteWeek = wrapped.latestScoringPeriod!;
   const upcomingWeeks = useMemo(
     () =>
@@ -172,7 +181,7 @@ export default function PlayoffMachine() {
       .map((w) => parseFloat(w))
       .sort((a, b) => b - a);
 
-    const tiebreakExplanations: string[] = [];
+    const tiebreakExplanations: ReactNode[] = [];
 
     const entries = sortedWins.flatMap((winsKey) => {
       const group = groupedByWins[winsKey]!;
@@ -192,21 +201,28 @@ export default function PlayoffMachine() {
         ? winsKey.toString()
         : Helpers.toFixed(winsKey, 2);
       if (group.length > 1) {
-        const groupNames = group.map(({ team }) => team.name).join(" and ");
+        const groupNames = group.map(({ team }, index) => (
+          <span key={team.id}>
+            {index > 0 && " and "}
+            <span className="playoff-team-name" style={teamStyles[team.id]}>
+              {team.name}
+            </span>
+          </span>
+        ));
         const hasAnyMatchups = Array.from(pairCounts).some(
           (count) => count > 0
         );
         if (useHeadToHead) {
           tiebreakExplanations.push(
-            `${groupNames} all have ${tiebreakWinsLabel} wins and have played each other an equal number of times, so head-to-head record is used before points for.`
+            <>{groupNames} all have {tiebreakWinsLabel} wins and have played each other an equal number of times, so head-to-head record is used before points for.</>
           );
         } else {
           tiebreakExplanations.push(
-            `${groupNames} each have ${tiebreakWinsLabel} wins, but ${
+            <>{groupNames} each have {tiebreakWinsLabel} wins, but {
               hasAnyMatchups
                 ? "have not played an equal number of times"
                 : "have not played each other"
-            }, so points for is used.`
+            }, so points for is used.</>
           );
         }
       }
@@ -229,7 +245,7 @@ export default function PlayoffMachine() {
     });
 
     return { entries, tiebreakExplanations };
-  }, [basePoints, manualPoints, wrapped.ffTeams, seasonResults]);
+  }, [basePoints, manualPoints, wrapped.ffTeams, seasonResults, teamStyles]);
 
   function getScore(teamId: string, weekNum: string) {
     const roster = wrapped.ffTeams[teamId]?.rosters[weekNum];
@@ -280,10 +296,14 @@ export default function PlayoffMachine() {
         )}
         <div className="playoff-standings-grid">
           {standings.entries.map((entry, index) => (
-            <div className="playoff-team" style={cardStyle} key={entry.team.id}>
+            <div
+              className="playoff-team"
+              style={{ ...cardStyle, ...teamStyles[entry.team.id] }}
+              key={entry.team.id}
+            >
               <div className="playoff-team-heading">
                 <span className="playoff-rank">{index + 1}</span>
-                <strong>{entry.team.name}</strong>
+                <strong className="playoff-team-name">{entry.team.name}</strong>
               </div>
               <div className="playoff-stats">
                 <span>
@@ -321,6 +341,7 @@ export default function PlayoffMachine() {
                 {matchup.map((teamId) => (
                   <label
                     key={teamId}
+                    style={teamStyles[teamId]}
                     className={`playoff-choice${selected === teamId ? " playoff-choice-selected" : ""}`}
                   >
                     <input
@@ -337,7 +358,7 @@ export default function PlayoffMachine() {
                         }))
                       }
                     />
-                    <span className="playoff-choice-name">
+                    <span className="playoff-choice-name playoff-team-name">
                       {wrapped.ffTeams[teamId]?.name || "TBD"}
                     </span>
                     <span
