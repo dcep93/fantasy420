@@ -1,0 +1,143 @@
+.playoff-machine {
+  padding: 0 0.5em 1em;
+  line-height: 1.45;
+}
+
+.playoff-standings {
+  margin-bottom: 1.5em;
+}
+
+.playoff-machine h2 {
+  margin: 0.5em 0;
+}
+
+.playoff-standings-grid,
+.playoff-weeks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 0.75em;
+}
+
+.playoff-machine .playoff-team {
+  background-image: linear-gradient(#79c0ff0d, #79c0ff0d);
+  min-width: 0;
+}
+
+.playoff-team-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  overflow-wrap: anywhere;
+}
+
+.playoff-rank {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 2em;
+  height: 2em;
+  border-radius: 50%;
+  background: #79c0ff1a;
+  color: var(--night-link);
+  font-weight: 700;
+}
+
+.playoff-stats {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.25em 0.75em;
+  margin: 0.65em 0;
+  color: var(--night-text-muted);
+  font-size: 0.9em;
+  font-variant-numeric: tabular-nums;
+}
+
+.playoff-stats strong {
+  color: var(--night-text);
+}
+
+.playoff-points-controls {
+  display: flex;
+  gap: 0.5em;
+}
+
+.playoff-points-controls button {
+  border: 1px solid var(--night-border);
+  border-radius: 0.5em;
+  padding: 0.35em 0.65em;
+  cursor: pointer;
+}
+
+.playoff-points-controls button:hover {
+  background: var(--night-surface-alt);
+}
+
+.playoff-machine .playoff-tiebreaks {
+  box-sizing: border-box;
+  width: 100%;
+  background-image: linear-gradient(#f5c8780a, #f5c8780a);
+  font-size: 0.9em;
+}
+
+.playoff-tiebreaks ul {
+  margin: 0.4em 0 0;
+  padding-left: 1.25em;
+  color: var(--night-text-muted);
+}
+
+.playoff-tiebreaks li + li {
+  margin-top: 0.35em;
+}
+
+.playoff-machine .playoff-week {
+  background-image: linear-gradient(#b9a0ff0d, #b9a0ff0d);
+  min-width: 0;
+}
+
+.playoff-week h3 {
+  margin: 0 0 0.6em;
+  color: #d4c5ff;
+}
+
+.playoff-matchup + .playoff-matchup {
+  margin-top: 0.75em;
+  padding-top: 0.75em;
+  border-top: 1px solid var(--night-border);
+}
+
+.playoff-matchup-label {
+  margin-bottom: 0.35em;
+  font-size: 0.8em;
+  color: var(--night-text-muted);
+}
+
+.playoff-choices {
+  display: grid;
+  gap: 0.35em;
+}
+
+.playoff-choice {
+  display: flex;
+  align-items: center;
+  gap: 0.45em;
+  padding: 0.4em 0.5em;
+  border: 1px solid transparent;
+  border-radius: 0.5em;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+.playoff-choice:hover {
+  background: var(--night-surface-alt);
+}
+
+.playoff-choice-selected {
+  background: #79c0ff14;
+  border-color: #79c0ff66;
+}
+
+.playoff-choice input {
+  flex-shrink: 0;
+  margin: 0;
+  accent-color: var(--night-link);
+}

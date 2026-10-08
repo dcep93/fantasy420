@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 
 import { bubbleStyle, Helpers, selectedWrapped } from "..";
+import "./PlayoffMachine.css";
 
 type HeadToHeadRecord = {
   games: number;
@@ -16,6 +17,7 @@ type SimulatedSelections = {
 type ManualPoints = { [teamId: string]: number };
 
 export default function PlayoffMachine() {
+  const cardStyle = { ...bubbleStyle, margin: 0 };
   const wrapped = selectedWrapped();
   const latestCompleteWeek = wrapped.latestScoringPeriod!;
   const upcomingWeeks = useMemo(
@@ -257,35 +259,44 @@ export default function PlayoffMachine() {
 
   function renderStandings() {
     return (
-      <div style={{ marginBottom: "1em" }}>
+      <div className="playoff-standings">
         <h2>Standings (with simulations)</h2>
         {standings.tiebreakExplanations.length > 0 && (
-          <div style={{ ...bubbleStyle, marginBottom: "0.5em" }}>
+          <div className="playoff-tiebreaks" style={{ ...cardStyle, marginBottom: "0.75em" }}>
             <div style={{ fontWeight: 600 }}>Tiebreak explanations</div>
-            <ul style={{ margin: 0 }}>
+            <ul>
               {standings.tiebreakExplanations.map((note, i) => (
                 <li key={i}>{note}</li>
               ))}
             </ul>
           </div>
         )}
-        {standings.entries.map((entry, index) => (
-          <div style={bubbleStyle} key={entry.team.id}>
-            <div>
-              {index + 1}) {entry.team.name} – {Helpers.toFixed(entry.wins, 2)}{" "}
-              wins
+        <div className="playoff-standings-grid">
+          {standings.entries.map((entry, index) => (
+            <div className="playoff-team" style={cardStyle} key={entry.team.id}>
+              <div className="playoff-team-heading">
+                <span className="playoff-rank">{index + 1}</span>
+                <strong>{entry.team.name}</strong>
+              </div>
+              <div className="playoff-stats">
+                <span>
+                  <strong>{Helpers.toFixed(entry.wins, 2)}</strong> wins
+                </span>
+                <span>
+                  Points For: <strong>{Helpers.toFixed(entry.pointsFor, 2)}</strong>
+                </span>
+              </div>
+              <div className="playoff-points-controls">
+                <button onClick={() => adjustPoints(entry.team.id, 1000)}>
+                  +1000 PF
+                </button>
+                <button onClick={() => adjustPoints(entry.team.id, -1000)}>
+                  -1000 PF
+                </button>
+              </div>
             </div>
-            <div>Points For: {Helpers.toFixed(entry.pointsFor, 2)}</div>
-            <div>
-              <button onClick={() => adjustPoints(entry.team.id, 1000)}>
-                +1000 PF
-              </button>
-              <button onClick={() => adjustPoints(entry.team.id, -1000)}>
-                -1000 PF
-              </button>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     );
   }
@@ -293,16 +304,19 @@ export default function PlayoffMachine() {
   function renderWeek(weekNum: number) {
     const matchups = wrapped.ffMatchups[weekNum.toString()] || [];
     return (
-      <div style={bubbleStyle} key={weekNum}>
+      <div className="playoff-week" style={cardStyle} key={weekNum}>
         <h3>Week {weekNum}</h3>
         {matchups.map((matchup, matchupIndex) => {
           const selected = selections[weekNum.toString()]?.[matchupIndex];
           return (
-            <div key={matchupIndex} style={{ marginBottom: "0.5em" }}>
-              <div>Matchup {matchupIndex + 1}</div>
-              <div style={{ display: "flex", gap: "0.5em", flexWrap: "wrap" }}>
+            <div className="playoff-matchup" key={matchupIndex}>
+              <div className="playoff-matchup-label">Matchup {matchupIndex + 1}</div>
+              <div className="playoff-choices">
                 {matchup.map((teamId) => (
-                  <label key={teamId} style={{ cursor: "pointer" }}>
+                  <label
+                    key={teamId}
+                    className={`playoff-choice${selected === teamId ? " playoff-choice-selected" : ""}`}
+                  >
                     <input
                       type="radio"
                       name={`week-${weekNum}-matchup-${matchupIndex}`}
@@ -329,9 +343,9 @@ export default function PlayoffMachine() {
   }
 
   return (
-    <div>
+    <div className="playoff-machine">
       {renderStandings()}
-      <div>
+      <div className="playoff-weeks-grid">
         {upcomingWeeks.length === 0 && (
           <div style={bubbleStyle}>All weeks have finalized scoring.</div>
         )}
