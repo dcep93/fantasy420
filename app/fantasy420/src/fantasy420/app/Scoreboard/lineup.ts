@@ -62,8 +62,8 @@ function selected(player: Candidate, slot: number): ProjectedPlayer {
 }
 
 /** Compute a local projection only; ESPN lineups and actual scores are untouched. */
-export function optimizeProjectedLineup(data: any, side: any, year: number): ProjectedLineup | null {
-  if (!((String(data?.id) === "203836968" && String(side?.teamId) === "6")
+export function optimizeProjectedLineup(data: any, side: any, year: number, scope: "targeted" | "all" = "targeted"): ProjectedLineup | null {
+  if (scope !== "all" && !((String(data?.id) === "203836968" && String(side?.teamId) === "6")
     || (String(data?.id) === "367176096" && String(side?.teamId) === "1"))) return null;
 
   const baseline = finite(side.totalProjectedPointsLive) ? side.totalProjectedPointsLive : null;

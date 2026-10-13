@@ -6,6 +6,7 @@ export const managerChanges: Record<string, string[]> = {
   "2": ["2024", "2025"],
 };
 export const seasonOnlyViews: Record<string, string> = {
+  Scoreboard: "Live matchups belong to the current season and week.",
   FantasyCalc: "Market values describe a roster at one point in time.",
   DraftBoard: "Each draft has its own pick order and roster.",
   StrengthOfSeason:

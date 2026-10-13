@@ -8,12 +8,19 @@ export type Mode = "head-to-head" | "guillotine";
 const finite = (value: unknown): number | null => typeof value === "number" && Number.isFinite(value) ? value : null;
 export const isScored = (team: Team): team is ScoredTeam => team.score !== null && team.projected !== null;
 
-export function parseScoreboard(data: any, year: number, fetchedAt: number): Snapshot {
+export function parseScoreboard(data: any, year: number, fetchedAt: number, options: { optimizeAll?: boolean; week?: number } = {}): Snapshot {
   if (!data || !Array.isArray(data.teams) || !Array.isArray(data.schedule) ||
       !/^\d+$/.test(String(data.id)) || finite(data.scoringPeriodId) === null) {
     throw new Error("ESPN returned incomplete scoreboard data. Refresh your league tab and try again.");
   }
-  const period = data.status?.currentMatchupPeriod ?? data.scoringPeriodId;
+  if (options.week !== undefined && data.scoringPeriodId !== options.week) {
+    throw new Error(`Requested Week ${options.week}, but ESPN returned Week ${data.scoringPeriodId}. Try refreshing shortly.`);
+  }
+  const periods = data.settings?.scheduleSettings?.matchupPeriods;
+  const mappedPeriod = options.week === undefined ? undefined : Object.entries(periods ?? {})
+    .find(([, weeks]) => Array.isArray(weeks) && weeks.includes(options.week))?.[0];
+  const period = options.week === undefined ? data.status?.currentMatchupPeriod ?? data.scoringPeriodId
+    : mappedPeriod === undefined ? options.week : Number(mappedPeriod);
   const names = new Map<number, string>(data.teams.map((team: any) => [team.id,
     team.name || [team.location, team.nickname].filter(Boolean).join(" ") || `Team ${team.id}`]));
   const current = data.schedule.filter((matchup: any) => matchup.matchupPeriodId === period);
@@ -25,10 +32,11 @@ export function parseScoreboard(data: any, year: number, fetchedAt: number): Sna
       .filter((team: any) => team && finite(team.teamId) !== null &&
         !(team.eliminationMatchupPeriod > 0 && team.eliminationMatchupPeriod < period))
       .map((team: any) => {
-        const projectedLineup = optimizeProjectedLineup(data, team, year);
+        const projectedLineup = optimizeProjectedLineup(data, team, year, options.optimizeAll ? "all" : "targeted");
         return { id: team.teamId, name: names.get(team.teamId) || `Team ${team.teamId}`,
           score: finite(team.totalPointsLive),
-          projected: projectedLineup ? projectedLineup.projected : finite(team.totalProjectedPointsLive),
+          projected: options.optimizeAll && projectedLineup?.warning ? null
+            : projectedLineup ? projectedLineup.projected : finite(team.totalProjectedPointsLive),
           ...(projectedLineup ? { projectedLineup } : {}) };
       }))
     .filter((teams: Team[]) => teams.length > 0);

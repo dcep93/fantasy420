@@ -36,6 +36,7 @@ import PositionTrends from "./tabs/PositionTrends";
 import ReachesAndSteals from "./tabs/ReachesAndSteals";
 import SecondLost from "./tabs/SecondLost";
 import Simps from "./tabs/Simps";
+import Scoreboard from "../Scoreboard/LiveScoreboard";
 import SpiciestMatchups from "./tabs/SpiciestMatchups";
 import SqueezesAndStomps from "./tabs/SqueezesAndStomps";
 import Stacks from "./tabs/Stacks";
@@ -78,7 +79,7 @@ export default function Wrapped() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [_, updateFetched] = useState(false);
     useEffect(() => {
-      if (yearKey !== currentYear) return;
+      if (yearKey !== currentYear || toRenderKey === "Scoreboard") return;
       Promise.resolve(yearKey)
         .then(getWrapped)
         .then((wrapped) => (allWrapped[yearKey] = wrapped))
@@ -114,7 +115,10 @@ export default function Wrapped() {
         </h1>
         <div>
           <ErrorBoundary>
-            {yearKey === ALL_YEARS && seasonOnlyViews[toRenderKey] ? <div style={bubbleStyle}>
+            {toRenderKey === "Scoreboard" && yearKey !== currentYear ? <div style={bubbleStyle}>
+              <p>Scoreboard shows the live current week of {currentYear}.</p>
+              <button onClick={() => chooseYear(currentYear)}>View {currentYear}</button>
+            </div> : yearKey === ALL_YEARS && seasonOnlyViews[toRenderKey] ? <div style={bubbleStyle}>
               <p>{seasonOnlyViews[toRenderKey]} Select a year to view {toRenderKey}.</p>
               <button onClick={() => chooseYear(currentYear)}>View {currentYear}</button>
             </div> : yearKey === ALL_YEARS && !["PlayerStats", "PositionTrends", "SpiciestMatchups", "json"].includes(toRenderKey)
@@ -325,6 +329,7 @@ export const wrappedModules: { [key: string]: () => JSX.Element } = {
   Simps,
   PositionTrends,
   SpiciestMatchups,
+  Scoreboard,
   NFLTeams,
   json,
 };
