@@ -47,12 +47,12 @@ export default function SpiciestMatchups() {
       <div style={{ background: NIGHT_COLORS.surfaceAlt, borderLeft: `3px solid ${NIGHT_COLORS.link}`,
         borderRadius: 6, padding: "0.8rem 1rem", marginBottom: 20, lineHeight: 1.5 }}>
         <b>How to read the chart</b>
-        <div>The line shows estimated projected finish differential in points. Above zero favors the first team; below zero favors the second.</div>
+        <div>The line shows the first team’s estimated chance to win, from 0% to 100%. Above 50% favors the first team; below 50% favors the second.</div>
         <div style={{ color: NIGHT_COLORS.mutedText, marginTop: 6 }}>
           Projected finish = estimated points earned + weekly projection × fraction of the player’s game remaining.
-          This is a reconstruction from final player totals, saved weekly projections, and NFL timing, not recorded live ESPN projections or win odds.
+          Win probability uses the same model as Multisport: projected final-score difference with uncertainty based on both teams’ projected points remaining. These are reconstructed estimates, not recorded live odds.
           The graph is split into pre Sunday, Sunday pre final slot, Sunday final slot, and post Sunday.
-          Slots use Eastern kickoff times; hover or tap for estimated points earned, projected finishes, and local times.
+          Slots use Eastern kickoff times; hover or tap for both teams’ probabilities, estimated points earned, projected finishes, and local times.
         </div>
         <details style={{ marginTop: 8 }}>
           <summary style={{ cursor: "pointer" }}>How the estimate works</summary>
@@ -62,6 +62,9 @@ export default function SpiciestMatchups() {
             Missing kickoff data uses the week’s first kickoff. This can change when leads appear to switch, so use spice as a rough comparison.
             Each starter begins with their saved projection for that week and ends at their recorded final score.
             Projections decrease with estimated game time remaining, including overtime, independently of points earned.
+            The probability model treats the projected final-score difference as a normal distribution whose uncertainty shrinks with projected points remaining.
+            When no projected points remain, it resolves to 100% or 0% (a final tie is displayed at 50%).
+            Spice is still based on competitive point-margin swings and final-slot favorite changes, not early probability wiggles.
             Swings run between peaks and troughs; reversals under {MIN_SWING_POINTS} points don’t split a swing.
             A comeback ending within {COMPETITIVE_MARGIN} points of a tie earns its size × (1 − remaining margin / {COMPETITIVE_MARGIN}).
             Crossing zero earns the recovered deficit plus up to {COMPETITIVE_MARGIN} points of the new lead.

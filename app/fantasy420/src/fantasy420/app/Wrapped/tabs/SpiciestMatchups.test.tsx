@@ -233,7 +233,7 @@ test("renders named chart, actual finals and transparent ranking formula", async
   expect(await screen.findByText("Alpha versus Bravo chart")).toBeVisible();
   expect(screen.getByText("15.00 competitive swing pts + 2 final-slot bonus = 17.00 spice")).toBeVisible();
   expect(screen.getByText(/Competitive swing credits: 15.00/)).toBeVisible();
-  expect(screen.getByText(/estimated projected finish differential/i)).toBeVisible();
+  expect(screen.getByText(/first team’s estimated chance to win/i)).toBeVisible();
   expect(screen.getByText(/Alpha 12.00 · Bravo 15.00/)).toBeVisible();
 });
 
@@ -383,4 +383,35 @@ test("all-years ranking pools seasons, keeps distinct IDs and names failed years
   expect(new Set(result.matchups.map(m=>m.id)).size).toBe(2);
   const quiet={...data,games:data.games.map(g=>({...g,drives:[]}))};
   expect((await loadMatchupSeasons({2026:wrapped},async()=>quiet)).matchups).toEqual([]);
+});
+
+test("a Wednesday opener precedes Sunday, while the following Wednesday is post Sunday", () => {
+  const opener=gameWindow("2026-09-10T00:20:00Z");
+  const thursday=gameWindow("2026-09-11T00:35:00Z");
+  const sunday=gameWindow("2026-09-13T17:00:00Z");
+  const sundayNight=gameWindow("2026-09-14T00:20:00Z");
+  const monday=gameWindow("2026-09-15T00:15:00Z");
+  const followingWednesday=gameWindow("2026-09-17T00:20:00Z");
+  const chunks=buildMatchupChunks([monday,sunday,followingWednesday,opener,sundayNight,thursday]);
+  expect(chunks.map(chunk=>chunk.windows)).toEqual([[opener,thursday],[sunday],[sundayNight],[monday,followingWednesday]]);
+  expect(chunks.flatMap(chunk=>chunk.windows).every(window=>window.end>=window.start)).toBe(true);
+});
+
+test("Wednesday Week 1 opener does not push Sunday scoring into the Monday section", () => {
+  const {wrapped,data}=fixture();
+  const sunday=data.games[0].timestamp;
+  data.games.push(
+    {week:1,timestamp:Date.parse("2026-09-10T00:20:00Z"),teams:[{name:"NE"},{name:"SEA"}],drives:[]},
+    {week:1,timestamp:Date.parse("2026-09-14T00:20:00Z"),teams:[{name:"DAL"},{name:"NYG"}],drives:[]},
+    {week:1,timestamp:Date.parse("2026-09-15T00:15:00Z"),teams:[{name:"DEN"},{name:"KC"}],drives:[]},
+  );
+  const [matchup]=computeSpiciestMatchups(wrapped,data);
+  const chart=chunkMatchupPoints(matchup.points,matchup.chunks);
+  for(const point of matchup.points.filter(p=>p.timestamp>=sunday&&p.timestamp<sunday+180*60_000)) {
+    const plotted=chart.find(p=>p.timestamp===point.timestamp&&p.scores[0]===point.scores[0]&&p.scores[1]===point.scores[1]);
+    expect(plotted?.position).toBeGreaterThanOrEqual(1);
+    expect(plotted?.position).toBeLessThan(2);
+  }
+  expect(new Set(chart.filter(p=>p.position>1&&p.position<2).map(p=>p.lead)).size).toBeGreaterThan(2);
+  expect(chart.every((point,index)=>!index||point.position>=chart[index-1].position)).toBe(true);
 });

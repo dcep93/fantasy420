@@ -14,10 +14,15 @@ const easternWeekday = new Intl.DateTimeFormat("en-US", {
 
 export function buildMatchupChunks(games: GameWindow[]): MatchupChunk[] {
   const dated = games.map(game => ({ ...game, weekday: easternWeekday.format(game.start) }));
-  const finalSunday = Math.max(...dated.filter(game => game.weekday === "Sun").map(game => game.start));
+  const sundays = dated.filter(game => game.weekday === "Sun");
+  const firstSunday = Math.min(...sundays.map(game => game.start));
+  const finalSunday = Math.max(...sundays.map(game => game.start));
   const chunks: MatchupChunk[] = MATCHUP_CHUNK_LABELS.map(label => ({ label, windows: [] }));
   for (const game of dated) {
+    // Calendar position matters: a Wednesday opener is before THIS Sunday,
+    // while a rescheduled game on the following Wednesday is after it.
     const index = game.weekday === "Sun" ? (game.start === finalSunday ? 2 : 1) :
+      sundays.length ? (game.start < firstSunday ? 0 : 3) :
       ["Mon", "Tue", "Wed"].includes(game.weekday) ? 3 : 0;
     chunks[index].windows.push({ start: game.start, end: game.end });
   }

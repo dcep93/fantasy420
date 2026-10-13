@@ -1,4 +1,5 @@
 import { useId } from "react";
+import { headToHeadProbability } from "../../Scoreboard/probability";
 import { CartesianGrid, Line, LineChart, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { NIGHT_CHART_COLORS, NIGHT_COLORS } from "../../theme";
 import type { LeadPoint } from "./spiciestMatchupsData";
@@ -21,14 +22,18 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
   awayName: string;
 }) {
   const gradientId = useId();
-  const data = chunkMatchupPoints(points, chunks);
-  const extent = Math.max(10, Math.ceil(Math.max(...data.map(point => Math.abs(point.lead)), 0) / 10) * 10);
+  const data = chunkMatchupPoints(points, chunks).map(point => ({ ...point,
+    winProbability: 100 * headToHeadProbability(
+      { score: point.scores[0], projected: point.projectedScores[0] },
+      { score: point.scores[1], projected: point.projectedScores[1] }
+    ),
+  }));
   return (
-    <section aria-label={`Estimated projected finish: ${homeName} versus ${awayName}`}>
+    <section aria-label={`Estimated win probability: ${homeName} versus ${awayName}`}>
       <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem 1.5rem", marginBottom: 12, fontSize: 14 }}>
-        <span style={{ color: NIGHT_CHART_COLORS[2] }}>Above 0: <b>{homeName}</b> projected to win</span>
-        <span style={{ color: NIGHT_CHART_COLORS[6] }}>Below 0: <b>{awayName}</b> projected to win</span>
-        <span style={{ color: NIGHT_COLORS.mutedText }}>0 = projected tie</span>
+        <span style={{ color: NIGHT_CHART_COLORS[2] }}>Above 50%: <b>{homeName}</b> favored</span>
+        <span style={{ color: NIGHT_CHART_COLORS[6] }}>Below 50%: <b>{awayName}</b> favored</span>
+        <span style={{ color: NIGHT_COLORS.mutedText }}>50% = neither team favored</span>
       </div>
       <div style={{ width: "100%", height: CHART_HEIGHT, background: NIGHT_COLORS.chartCanvas, borderRadius: 10 }}>
         <ResponsiveContainer width="100%" height="100%">
@@ -53,38 +58,41 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
                   {lines.map((line, index) => <tspan key={index} x={x} dy={index ? 12 : 0}>{line}</tspan>)}
                 </text>;
               }} />
-            <YAxis domain={[-extent, extent]} ticks={[-extent, -extent / 2, 0, extent / 2, extent]} width={50}
-              tickFormatter={value => value > 0 ? `+${value}` : String(value)} />
-            <ReferenceLine y={0} stroke={NIGHT_COLORS.text} strokeWidth={1.5} />
+            <YAxis domain={[0, 100]} ticks={[0, 25, 50, 75, 100]} width={50}
+              tickFormatter={value => `${value}%`} />
+            <ReferenceLine y={50} stroke={NIGHT_COLORS.text} strokeWidth={1.5} />
             {[1, 2, 3].map(position => <ReferenceLine key={position} x={position}
               stroke={NIGHT_COLORS.mutedText} strokeDasharray="4 4" />)}
             <Tooltip content={({ active, payload }) => {
-              const point = payload?.[0]?.payload as (LeadPoint & { lead: number }) | undefined;
+              const point = payload?.[0]?.payload as (LeadPoint & { lead: number; winProbability: number }) | undefined;
               if (!active || !point) return null;
-              const lead = Math.round(point.lead * 100) / 100;
+              const homeProbability = point.winProbability;
+              const finalTie = point.scores[0] === point.scores[1] &&
+                point.projectedScores.every((score, index) => score === point.scores[index]);
               return (
                 <div role="status" aria-live="polite" aria-atomic="true"
                   style={{ background: NIGHT_COLORS.tooltip, border: `1px solid ${NIGHT_COLORS.border}`,
                   borderRadius: 8, padding: 12, maxWidth: 260, color: NIGHT_COLORS.text }}>
                   <b>{formatMatchupTime(point.timestamp)}</b>
                   <div style={{ marginTop: 6 }}><b>{homeName}</b></div>
+                  {!finalTie && <div>{homeProbability.toFixed(1)}% chance to win</div>}
                   <div>{point.scores[0].toFixed(2)} earned · {point.projectedScores[0].toFixed(2)} projected finish</div>
                   <div style={{ marginTop: 6 }}><b>{awayName}</b></div>
+                  {!finalTie && <div>{(100 - homeProbability).toFixed(1)}% chance to win</div>}
                   <div>{point.scores[1].toFixed(2)} earned · {point.projectedScores[1].toFixed(2)} projected finish</div>
-                  <div style={{ marginTop: 6, fontWeight: 700 }}>{lead === 0 ? "Projected tie" :
-                    `${lead > 0 ? homeName : awayName} projected to win by ${Math.abs(lead).toFixed(2)} pts`}</div>
-                  <small style={{ color: NIGHT_COLORS.mutedText }}>Estimated scores and projected finishes</small>
+                  {finalTie && <div style={{ marginTop: 6 }}>Final tie · shown at 50%</div>}
+                  <small style={{ color: NIGHT_COLORS.mutedText }}>Estimated probability · Multisport model with reconstructed scores</small>
                 </div>
               );
             }} />
-            <Line dataKey="lead" name="Estimated projected finish differential" type="linear" stroke={`url(#${gradientId})`}
+            <Line dataKey="winProbability" name={`${homeName} win probability`} type="linear" stroke={`url(#${gradientId})`}
               strokeWidth={2.5} dot={false} activeDot={{ r: 5 }} isAnimationActive={false} />
           </LineChart>
         </ResponsiveContainer>
       </div>
       <p style={{ color: NIGHT_COLORS.mutedText, fontSize: 12, lineHeight: 1.5, margin: "8px 0 0" }}>
         Four equal-width chunks; idle gaps are compressed. Slots use Eastern kickoff dates and the week’s
-        final Sunday kickoff. Hover or tap for estimated points earned, projected finishes, and local times.
+        final Sunday kickoff. The line is the first team’s estimated win probability. Hover or tap for both teams’ probabilities, points, and local times.
       </p>
     </section>
   );
