@@ -20,7 +20,7 @@ function Lineup({ team }: { team: Team }) {
       </tr>)}</tbody>
     </table>
     {lineup.emptySlots.length > 0 && <p>{lineup.emptySlots.length} starting slots could not be filled from the eligible roster.</p>}
-    <small>Player projections are pregame. Team projected finishes include live results.</small>
+    <small>Player projections are pregame; absent weekly forecasts count as 0. Team projected finishes include live results.</small>
   </details>;
 }
 
@@ -57,7 +57,7 @@ export default function LiveScoreboard({ load = fetchLiveScoreboard }: { load?: 
   return <section className="live-scoreboard" aria-label="Current week scoreboard">
     <div className="live-scoreboard-header">
       <div><h2>{snapshot ? `Week ${snapshot.week}` : "Current week"} · Live scoreboard</h2>
-        <p>Closest to 50% first. Every team’s eligible lineup is maximized by projection; locked starters stay in place.</p></div>
+        <p>Closest to 50% first. Every team’s eligible lineup is maximized by projection; locked starters stay in place. Equal totals keep existing starters.</p></div>
       <button onClick={() => refreshRef.current()} disabled={loading}>{loading ? "Refreshing…" : "Refresh"}</button>
     </div>
     <p className="live-scoreboard-meta">Estimated fantasy win probabilities use the same model as SpiciestMatchups and Multisport. Refreshes every minute while visible.</p>

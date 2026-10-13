@@ -166,10 +166,36 @@ describe("projected lineup optimization", () => {
     const f = fixture([player(2, 10, [2, 23], 2), player(1, 10, [2, 23], 23), player(3, 10, [2, 23])], { 23: 1, 2: 1 });
     const expected = optimize(f);
     f.side.rosterForCurrentScoringPeriod.entries.reverse();
-    f.side.rosterForCurrentScoringPeriod.entries[0].lineupSlotId = 2;
-    f.side.rosterForCurrentScoringPeriod.entries[2].lineupSlotId = 20;
+    f.side.rosterForCurrentScoringPeriod.entries.find((p: any) => p.playerId === 1).lineupSlotId = 2;
+    f.side.rosterForCurrentScoringPeriod.entries.find((p: any) => p.playerId === 2).lineupSlotId = 23;
     expect(optimize(f)).toEqual(expected);
     expect(assignments(f)).toEqual([[2, 1], [23, 2]]);
+  });
+
+  it("uses zero for absent weekly forecasts without borrowing another week's projection", () => {
+    const p = player(1, 30, [0], 0);
+    p.playerPoolEntry.player.stats[0].scoringPeriodId = 2;
+    expect(optimize(fixture([p]))).toMatchObject({ players: [{ projection: 0 }] });
+    p.playerPoolEntry.player.stats = [];
+    expect(optimize(fixture([p])).warning).toBeUndefined();
+    expect(optimize(fixture([p])).players[0].projection).toBe(0);
+  });
+
+  it("retains a zero-projection starter over a tied bench player without sacrificing improvements", () => {
+    const bagent = player(50, 0, [0, 7], 0);
+    bagent.playerPoolEntry.player.fullName = "Tyson Bagent";
+    const shough = player(40, 16.82, [0, 7], 7);
+    const tuten = player(20, 13.17, [2, 7, 23], 2);
+    const jones = player(1, 0, [2, 7, 23]);
+    jones.playerPoolEntry.player.fullName = "Aaron Jones Sr.";
+    const f = fixture([bagent, shough, tuten, jones], { 0: 1, 2: 1, 7: 1 });
+    expect(optimize(f).players.map(p => p.id).sort((a, b) => a - b)).toEqual([20, 40, 50]);
+    expect(assignments(f)).toEqual([[0, 40], [2, 20], [7, 50]]);
+    f.side.rosterForCurrentScoringPeriod.entries.reverse();
+    expect(assignments(f)).toEqual([[0, 40], [2, 20], [7, 50]]);
+    jones.playerPoolEntry.player.stats[0].appliedTotal = 1;
+    expect(optimize(f).players.map(p => p.id).sort((a, b) => a - b)).toEqual([1, 20, 40]);
+    expect(optimize(f).projected).toBe(101);
   });
 
   it("does not mutate the source or write console output", () => {
@@ -183,7 +209,7 @@ describe("projected lineup optimization", () => {
     ["unknown locks", (f: any) => { delete f.side.rosterForCurrentScoringPeriod.entries[0].playerPoolEntry.lineupLocked; }],
     ["unknown eligibility", (f: any) => { delete f.side.rosterForCurrentScoringPeriod.entries[0].playerPoolEntry.player.eligibleSlots; }],
     ["empty eligibility", (f: any) => { f.side.rosterForCurrentScoringPeriod.entries[0].playerPoolEntry.player.eligibleSlots = []; }],
-    ["missing projections", (f: any) => { f.side.rosterForCurrentScoringPeriod.entries[0].playerPoolEntry.player.stats = []; }],
+    ["missing stats", (f: any) => { delete f.side.rosterForCurrentScoringPeriod.entries[0].playerPoolEntry.player.stats; }],
     ["nonfinite projections", (f: any) => { f.side.rosterForCurrentScoringPeriod.entries[0].playerPoolEntry.player.stats[0].appliedTotal = Infinity; }],
     ["missing roster", (f: any) => { delete f.side.rosterForCurrentScoringPeriod; }],
     ["missing counts", (f: any) => { delete f.data.settings.rosterSettings; }],

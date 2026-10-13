@@ -28,20 +28,25 @@ const finite = (value: unknown): value is number => typeof value === "number" &&
 const slotId = (value: unknown): value is number => Number.isInteger(value) && (value as number) >= 0;
 
 type Candidate = Omit<ProjectedPlayer, "slotId" | "slot"> & { currentSlot: number; eligible: number[] };
-type State = { score: number; filled: number; picks: Array<Candidate | undefined> };
+type State = { score: number; filled: number; retainedStarters: number; picks: Array<Candidate | undefined> };
 
 function projectionFor(player: any, year: number, week: number): number | null {
   if (!Array.isArray(player?.stats)) return null;
   const matches = player.stats.filter((stat: any) => stat?.seasonId === year && stat.scoringPeriodId === week
     && stat.statSourceId === 1 && stat.statSplitTypeId === 1);
+  // ESPN can omit a weekly forecast entirely (for example, inactive players).
+  // Treat that absence as zero, but retain errors for malformed/conflicting rows.
+  if (!matches.length) return 0;
   // Conflicting duplicate rows are ambiguous; identical repeated rows are safe.
-  if (!matches.length || !matches.every((stat: any) => finite(stat.appliedTotal) && stat.appliedTotal === matches[0].appliedTotal)) return null;
+  if (!matches.every((stat: any) => finite(stat.appliedTotal) && stat.appliedTotal === matches[0].appliedTotal)) return null;
   return matches[0].appliedTotal;
 }
 
 function better(a: State, b: State): boolean {
   if (a.filled !== b.filled) return a.filled > b.filled;
   if (a.score !== b.score) return a.score > b.score;
+  // Do not replace a current starter with a tied bench player for no gain.
+  if (a.retainedStarters !== b.retainedStarters) return a.retainedStarters > b.retainedStarters;
   // Among equally good complete lineups, put higher projections in earlier
   // dedicated slots before OP/FLEX. Compare all projections before player IDs;
   // neither entry order nor current unlocked placements affect the tie-break.
@@ -136,7 +141,7 @@ export function optimizeProjectedLineup(data: any, side: any, year: number, scop
     frozen[index] = player;
   }
   const available = slots.map((slot, index) => ({ slot, index })).filter(({ index }) => !frozen[index]);
-  const initial: State = { score: 0, filled: 0, picks: Array(available.length).fill(undefined) };
+  const initial: State = { score: 0, filled: 0, retainedStarters: 0, picks: Array(available.length).fill(undefined) };
   let states = new Map<number, State>([[0, initial]]);
   for (const player of candidates) {
     const next = new Map(states);
@@ -145,7 +150,8 @@ export function optimizeProjectedLineup(data: any, side: any, year: number, scop
       for (let i = 0; i < available.length; i++) {
         if ((mask & (1 << i)) || !player.eligible.includes(available[i].slot)) continue;
         const picks = state.picks.slice(); picks[i] = player;
-        const proposal = { score: state.score + player.projection!, filled: state.filled + 1, picks };
+        const proposal = { score: state.score + player.projection!, filled: state.filled + 1,
+          retainedStarters: state.retainedStarters + Number(player.currentSlot !== BENCH), picks };
         const newMask = mask | (1 << i), incumbent = next.get(newMask);
         if (!incumbent || better(proposal, incumbent)) next.set(newMask, proposal);
       }

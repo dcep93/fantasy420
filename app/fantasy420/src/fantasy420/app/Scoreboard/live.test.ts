@@ -38,12 +38,22 @@ it("requests Week 6 with fresh authenticated data, optimizes everyone, and ranks
   expect(ranked[0].teams.map(t => t.id)).toEqual([4, 3]);
   expect(Math.abs(ranked[0].probability! - .5)).toBeLessThan(Math.abs(ranked[1].probability! - .5));
 });
-it("does not manufacture probability from missing projections", () => {
-  const data = prepared(); data.schedule[1].home.rosterForCurrentScoringPeriod.entries[1].playerPoolEntry.player.stats = [];
+it("does not manufacture probability from missing stats data", () => {
+  const data = prepared(); delete data.schedule[1].home.rosterForCurrentScoringPeriod.entries[1].playerPoolEntry.player.stats;
   const result = parseScoreboard(data, 2026, 1, { week: 6, optimizeAll: true });
   expect(result.matchups[0][0].projected).toBeNull();
   expect(result.matchups[0][0].projectedLineup?.warning).toMatch(/weekly projection/);
   expect(headToHead(result).at(-1)?.probability).toBeNull();
+});
+it("keeps live matchup odds available when Tyreek Hill has no weekly forecast", () => {
+  const data = prepared();
+  const hill = data.schedule[1].home.rosterForCurrentScoringPeriod.entries[1].playerPoolEntry.player;
+  hill.fullName = "Tyreek Hill";
+  hill.stats = [];
+  const result = parseScoreboard(data, 2026, 1, { week: 6, optimizeAll: true });
+  expect(result.matchups[0][0].projected).toBe(10);
+  expect(result.matchups[0][0].projectedLineup?.warning).toBeUndefined();
+  expect(headToHead(result).every(matchup => matchup.probability !== null)).toBe(true);
 });
 it("preserves locked starters and excludes locked bench players for non-target teams", () => {
   const data = prepared(); data.schedule[1].home.rosterForCurrentScoringPeriod.entries.forEach((p: any) => p.playerPoolEntry.lineupLocked = true);
