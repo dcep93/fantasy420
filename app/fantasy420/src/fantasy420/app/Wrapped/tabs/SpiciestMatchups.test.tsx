@@ -2,7 +2,8 @@ import { act, render, screen } from "@testing-library/react";
 import type { WrappedType } from "../../FetchWrapped";
 import { selectedWrapped } from "..";
 import SpiciestMatchups from "./SpiciestMatchups";
-import { computeSpiciestMatchups, SeasonData, summarizeLeadChanges, TimelinePoint } from "./spiciestMatchupsData";
+import { computeSpiciestMatchups, SeasonData, TimelinePoint } from "./spiciestMatchupsData";
+import { summarizeSpiciness, TIMELINE_EVENT_EPSILON } from "./matchupSpiciness";
 import { buildMatchupChunks, chunkMatchupPoints, GameWindow, MATCHUP_CHUNK_LABELS } from "./matchupTimelineChunks";
 
 vi.mock("..", () => ({ selectedWrapped: vi.fn(), selectedYear: "2026" }));
@@ -21,7 +22,7 @@ function fixture(): { wrapped: WrappedType; data: SeasonData } {
       b: { id: "b", name: "Bravo Catcher", nflTeamId: "b", position: "WR", scores: { 1: 15 }, projection: 10, total: 15, average: 15 },
     },
     ffTeams: Object.fromEntries(["a", "b"].map(id => [id, { id, name: id === "a" ? "Alpha" : "Bravo", draft: [],
-      rosters: { 1: { weekNum: "1", starting: [id], rostered: [id], projections: {} } } }])),
+      rosters: { 1: { weekNum: "1", starting: [id], rostered: [id], projections: { [id]: 10 } } } }])),
     ffMatchups: { 1: [["a", "b"]] },
   };
   const data: SeasonData = { year: 2026, games: [{ week: 1, timestamp: Date.UTC(2026, 8, 13, 17),
@@ -36,40 +37,113 @@ function fixture(): { wrapped: WrappedType; data: SeasonData } {
 }
 
 function points(entries: [number, number, number][]): TimelinePoint[] {
-  return entries.map(([minute, home, away]) => ({ minute, scores: [home, away] }));
+  return entries.map(([minute, home, away]) => ({ minute, scores: [home, away], projectedScores: [home, away] }));
 }
 
 afterEach(() => { vi.unstubAllGlobals(); });
 
-test("only counts changes between team leaders, including a change through a tie", () => {
-  expect(summarizeLeadChanges(points([
-    [0, 0, 0], [10, 10, 0], [20, 10, 10], [30, 10, 20],
-    [40, 20, 20], [50, 20, 21], [60, 30, 21], [180, 30, 21],
-  ]))).toEqual({ leadChanges: 2, lateLeadChanges: 0, lastLeadChangeMinute: 60, score: 2 });
+const lateSlot = { start: 100, end: 200 };
+
+function leads(entries: [number, number][]): TimelinePoint[] {
+  return points(entries.map(([minute, lead]) => [minute, lead, 0]));
+}
+
+test("big swings outrank early wiggles and do not require a lead change", () => {
+  const wiggles = leads(Array.from({ length: 50 }, (_, minute) => [minute, minute % 2 ? 0.5 : -0.5]));
+  expect(summarizeSpiciness(wiggles, lateSlot).score).toBe(0);
+  expect(summarizeSpiciness(leads([[0, -40], [50, -10]]), lateSlot)).toMatchObject({
+    biggestSwings: [30], swingScore: 30, finalSlotBonus: 0, score: 30,
+  });
 });
 
-test("weights changes in the last 45 minutes, including the boundary", () => {
-  expect(summarizeLeadChanges(points([
-    [0, 0, 0], [10, 10, 0], [134, 10, 20], [135, 30, 20], [170, 30, 40], [180, 30, 40],
-  ]))).toEqual({ leadChanges: 3, lateLeadChanges: 2, lastLeadChangeMinute: 170, score: 4 });
+test("filters small reversals while keeping sustained swings and the terminal swing", () => {
+  expect(summarizeSpiciness(leads([[0, 0], [10, 12], [20, 10], [30, 20], [40, 16], [50, 25], [60, 18]]), lateSlot))
+    .toMatchObject({ biggestSwings: [25, 7], swingScore: 32, score: 32 });
+  expect(summarizeSpiciness(leads([[0, 0], [10, 3], [20, -3]]), lateSlot).biggestSwings).toEqual([6]);
 });
 
-test("empty, tied, and one-sided timelines have no changes; floating-point ties do not flip", () => {
-  for (const timeline of [[], points([[0, 0, 0], [180, 20, 20]]),
-    points([[0, 0, 0], [20, 10, 0], [180, 10, 0]]),
-    points([[0, 0, 0], [20, 0.3, 0.1], [180, 0.3, 0.1 + 0.2]])]) {
-    expect(summarizeLeadChanges(timeline)).toEqual({
-      leadChanges: 0, lateLeadChanges: 0, lastLeadChangeMinute: null, score: 0,
-    });
+test("counts only the three largest swings and includes the five-point threshold", () => {
+  expect(summarizeSpiciness(leads([[0, 0], [10, 10], [20, -10], [30, 20], [40, -20], [50, 0]]), lateSlot))
+    .toMatchObject({ biggestSwings: [40, 30, 20], swingScore: 90 });
+  expect(summarizeSpiciness(leads([[0, 0], [1, 5]]), lateSlot).score).toBe(5);
+  expect(summarizeSpiciness(leads([[0, 0], [1, 4.99]]), lateSlot).score).toBe(0);
+});
+
+test("rewards tiny flips only in the final slot and caps the bonus", () => {
+  const wiggles = leads(Array.from({ length: 21 }, (_, i) => [100 + i, i % 2 ? 0.5 : -0.5]));
+  expect(summarizeSpiciness(wiggles, lateSlot)).toMatchObject({
+    biggestSwings: [], finalSlotLeadChanges: 20, finalSlotBonus: 10, score: 10,
+  });
+  expect(summarizeSpiciness(wiggles, { start: 0, end: 99 }).score).toBe(0);
+  expect(summarizeSpiciness(leads([[0, -40], [50, -10]]), lateSlot).score)
+    .toBeGreaterThan(summarizeSpiciness(wiggles, lateSlot).score);
+});
+
+test("ties preserve the leader, first acquisition is not a flip, and floating-point ties remain tied", () => {
+  expect(summarizeSpiciness(leads([[0, -1], [100, 0], [110, 1], [120, 0], [130, -1]]), lateSlot))
+    .toMatchObject({ finalSlotLeadChanges: 2, finalSlotBonus: 4, lastFinalSlotLeadChangeMinute: 120 });
+  for (const timeline of [[], leads([[100, 0], [110, 1]]), leads([[100, 1], [110, 0], [120, 1]]),
+    points([[100, 0.3, 0.1], [120, 0.3, 0.1 + 0.2]])]) {
+    expect(summarizeSpiciness(timeline, lateSlot)).toMatchObject({ score: 0, finalSlotLeadChanges: 0 });
   }
 });
 
-test("reconstructs a late lead change and ends at the exact starter totals", () => {
+test("uses interpolated crossing times and exact event boundaries for final-slot bonuses", () => {
+  const slot = { start: 50, end: 90 };
+  expect(summarizeSpiciness(leads([[0, 1], [100, -9]]), slot).finalSlotLeadChanges).toBe(0);
+  expect(summarizeSpiciness(leads([[0, 9], [100, -1]]), slot))
+    .toMatchObject({ finalSlotLeadChanges: 1, lastFinalSlotLeadChangeMinute: 90 });
+  expect(summarizeSpiciness(leads([[0, 1], [100, -1]]), slot))
+    .toMatchObject({ finalSlotLeadChanges: 1, lastFinalSlotLeadChangeMinute: 50 });
+  expect(summarizeSpiciness(leads([[0, 1], [50 - TIMELINE_EVENT_EPSILON, 1], [50, -1]]), slot))
+    .toMatchObject({ finalSlotLeadChanges: 1, lastFinalSlotLeadChangeMinute: 50 });
+});
+
+test("reconstructs projected swings and finishes at the exact starter totals", () => {
   const { wrapped, data } = fixture();
   const [matchup] = computeSpiciestMatchups(wrapped, data);
-  expect(matchup).toMatchObject({ homeName: "Alpha", awayName: "Bravo", leadChanges: 1, lateLeadChanges: 1, score: 1.5, finalScores: [12, 15] });
-  expect(matchup.points.at(-1)?.scores).toEqual([12, 15]);
-  expect(matchup.lastLeadChangeTimestamp).toBe(data.games[0].timestamp + 177 * 60_000);
+  expect(matchup).toMatchObject({ homeName: "Alpha", awayName: "Bravo", biggestSwings: [15, 12],
+    swingScore: 27, finalSlotLeadChanges: 1, finalSlotBonus: 2, score: 29, finalScores: [12, 15] });
+  expect(matchup.points[0]).toMatchObject({ scores: [0, 0], projectedScores: [10, 10] });
+  expect(matchup.points.at(-1)).toMatchObject({ scores: [12, 15], projectedScores: [12, 15] });
+  expect(matchup.lastFinalSlotLeadChangeTimestamp).toBe(data.games[0].timestamp + 177 * 60_000);
+});
+
+test("uses week-specific projections and game progress independently of points earned", () => {
+  const { wrapped, data } = fixture();
+  wrapped.ffTeams.a.rosters[1].projections.a = 20;
+  wrapped.ffTeams.b.rosters[1].projections.b = 18;
+  data.games[0].drives[0].plays = [
+    { clock: "Q3 15:00", text: "A.Runner rushes." },
+    { clock: "Q4 10:00", text: "A.Runner rushes." },
+    { clock: "Q4 0:00", text: "B.Catcher catches." },
+  ];
+  const [matchup] = computeSpiciestMatchups(wrapped, data);
+  expect(matchup.points[0].projectedScores).toEqual([20, 18]);
+  expect(matchup.points.find(point => point.minute === 90)).toMatchObject({
+    scores: [6, 0], projectedScores: [16, 9],
+  });
+  expect(matchup.points.at(-1)?.projectedScores).toEqual([12, 15]);
+});
+
+test("keeps unstarted players fully projected after an earlier game finishes", () => {
+  const { wrapped, data } = fixture();
+  const sunday = data.games[0];
+  const mondayStart = sunday.timestamp + 27 * 60 * 60_000;
+  data.games = [
+    { ...sunday, teams: [{ name: "BUF" }] },
+    { ...sunday, timestamp: mondayStart, teams: [{ name: "NYJ" }] },
+  ];
+  wrapped.ffTeams.a.rosters[1].projections.a = 20;
+  wrapped.ffTeams.b.rosters[1].projections.b = 30;
+  const [matchup] = computeSpiciestMatchups(wrapped, data);
+  expect(matchup.points.find(point => point.minute === 180)).toMatchObject({
+    scores: [12, 0], projectedScores: [12, 30],
+  });
+  expect(matchup.points.find(point => point.timestamp === mondayStart)).toMatchObject({
+    scores: [12, 0], projectedScores: [12, 30],
+  });
+  expect(matchup.points.at(-1)?.projectedScores).toEqual([12, 15]);
 });
 
 test("negative totals remain gradual and finish exactly even in overtime", () => {
@@ -78,10 +152,32 @@ test("negative totals remain gradual and finish exactly even in overtime", () =>
   data.games[0].drives[0].plays.push({ clock: "Q5 1:00", text: "B.Catcher fumbles." });
   const [matchup] = computeSpiciestMatchups(wrapped, data);
   expect(matchup.points.at(-1)?.scores).toEqual([12, -4]);
+  expect(matchup.points.at(-1)?.projectedScores).toEqual([12, -4]);
   expect(matchup.finalScores).toEqual([12, -4]);
   expect(matchup.points.find(point => point.minute === 60)?.scores[1]).toBeCloseTo(-4 / 3);
   expect(matchup.points.at(-1)?.minute).toBeGreaterThan(180);
   expect(matchup.points.every(point => point.scores.every(Number.isFinite))).toBe(true);
+  expect(matchup.points.every(point => point.projectedScores.every(Number.isFinite))).toBe(true);
+});
+
+test("excludes unavailable weekly projections without borrowing a generic projection, but accepts zero", () => {
+  const { wrapped, data } = fixture();
+  delete wrapped.ffTeams.a.rosters[1].projections.a;
+  expect(computeSpiciestMatchups(wrapped, data)).toEqual([]);
+  wrapped.ffTeams.a.rosters[1].projections.a = NaN;
+  expect(computeSpiciestMatchups(wrapped, data)).toEqual([]);
+  wrapped.ffTeams.a.rosters[1].projections.a = 0;
+  expect(computeSpiciestMatchups(wrapped, data)[0].points[0].projectedScores).toEqual([0, 10]);
+});
+
+test("Sunday flips earn no bonus when Monday is the week's final NFL slot", () => {
+  const { wrapped, data } = fixture();
+  data.games.push({ week: 1, timestamp: data.games[0].timestamp + 27 * 60 * 60_000,
+    teams: [{ name: "KC" }, { name: "DAL" }], drives: [] });
+  expect(computeSpiciestMatchups(wrapped, data)[0]).toMatchObject({
+    biggestSwings: [15, 12], finalSlotLeadChanges: 0, finalSlotBonus: 0,
+    lastFinalSlotLeadChangeTimestamp: null, score: 27,
+  });
 });
 
 test("ignores future and preseason matchups, and handles missing schedule or rosters", () => {
@@ -104,13 +200,28 @@ test("missing play data still ends at recorded totals", () => {
   expect(computeSpiciestMatchups(wrapped, data)[0].points.at(-1)?.scores).toEqual([12, 15]);
 });
 
+test("missing plays use gradual scoring rather than an artificial projection crash at game end", () => {
+  const { wrapped, data } = fixture();
+  data.games[0].drives = [];
+  wrapped.ffTeams.a.rosters[1].projections.a = 12;
+  wrapped.ffTeams.b.rosters[1].projections.b = 15;
+  data.games.push({ week: 1, timestamp: data.games[0].timestamp + 90 * 60_000,
+    teams: [{ name: "KC" }, { name: "DAL" }], drives: [] });
+  const [matchup] = computeSpiciestMatchups(wrapped, data);
+  expect(matchup.points.find(point => point.minute === 90)).toMatchObject({
+    scores: [6, 7.5], projectedScores: [12, 15],
+  });
+  expect(matchup.score).toBe(0);
+  expect(matchup.points.at(-1)).toMatchObject({ scores: [12, 15], projectedScores: [12, 15] });
+});
+
 test("shows a real empty state after loading instead of an endless loading message", async () => {
   const { wrapped } = fixture();
   vi.mocked(selectedWrapped).mockReturnValue(wrapped);
   vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(JSON.stringify({ year: 2026, games: [] }))));
   render(<SpiciestMatchups />);
   expect(screen.getByRole("status")).toHaveTextContent("Loading");
-  expect(await screen.findByText("No completed matchups with timeline data are available for this season.")).toBeVisible();
+  expect(await screen.findByText("No completed matchups with timeline data and weekly projections are available for this season.")).toBeVisible();
   expect(screen.queryByRole("status")).not.toBeInTheDocument();
 });
 
@@ -120,7 +231,9 @@ test("renders named chart, actual finals and transparent ranking formula", async
   vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(JSON.stringify(data))));
   render(<SpiciestMatchups />);
   expect(await screen.findByText("Alpha versus Bravo chart")).toBeVisible();
-  expect(screen.getByText("1 lead change + 1 late × 0.5 = 1.5 spice")).toBeVisible();
+  expect(screen.getByText("27.00 swing pts + 2 final-slot bonus = 29.00 spice")).toBeVisible();
+  expect(screen.getByText(/Biggest swings: 15.00 \+ 12.00/)).toBeVisible();
+  expect(screen.getByText(/estimated projected finish differential/i)).toBeVisible();
   expect(screen.getByText(/Alpha 12.00 · Bravo 15.00/)).toBeVisible();
 });
 
@@ -141,7 +254,7 @@ test("ignores a stale response after the season data changes", async () => {
   const { rerender } = render(<SpiciestMatchups />);
   vi.mocked(selectedWrapped).mockReturnValue({ ...wrapped, latestScoringPeriod: 0 });
   rerender(<SpiciestMatchups />);
-  await screen.findByText("No completed matchups with timeline data are available for this season.");
+  await screen.findByText("No completed matchups with timeline data and weekly projections are available for this season.");
   await act(async () => { resolveOld(new Response(JSON.stringify(data))); });
   expect(screen.queryByText("Alpha versus Bravo chart")).not.toBeInTheDocument();
 });
@@ -205,6 +318,7 @@ test("compresses idle gaps, preserves every original score point, and carries sc
   ];
   const original = entries.map(([timestamp, home, away]) => ({
     timestamp, minute: (timestamp - thursday.start) / 60_000, scores: [home, away] as [number, number],
+    projectedScores: [home, away] as [number, number],
   }));
   const data = chunkMatchupPoints(original, buildMatchupChunks([monday, sunday, saturday, thursday]));
   for (const point of original) expect(data).toContainEqual(expect.objectContaining(point));
@@ -216,7 +330,8 @@ test("compresses idle gaps, preserves every original score point, and carries sc
     .every(point => point.lead === -2)).toBe(true);
   expect(data.at(-1)).toMatchObject({ position: 4, scores: [20, 25], lead: -5 });
   expect(data.every((point, index) => !index || point.position >= data[index - 1].position)).toBe(true);
-  expect(summarizeLeadChanges(data)).toEqual(summarizeLeadChanges(original));
+  const slot = { start: (monday.start - thursday.start) / 60_000, end: (monday.end - thursday.start) / 60_000 };
+  expect(summarizeSpiciness(data, slot)).toEqual(summarizeSpiciness(original, slot));
 });
 
 test("Sunday final slot comes from the full schedule even when no fantasy starter plays in it", () => {
@@ -228,5 +343,6 @@ test("Sunday final slot comes from the full schedule even when no fantasy starte
   expect(matchup.chunks[2].windows).toEqual([final]);
   const chartPoints = chunkMatchupPoints(matchup.points, matchup.chunks);
   expect(chartPoints.filter(point => point.position >= 2).every(point =>
-    point.scores[0] === 12 && point.scores[1] === 15)).toBe(true);
+    point.scores[0] === 12 && point.scores[1] === 15 &&
+    point.projectedScores[0] === 12 && point.projectedScores[1] === 15)).toBe(true);
 });

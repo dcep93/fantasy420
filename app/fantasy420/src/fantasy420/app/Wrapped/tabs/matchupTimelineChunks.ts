@@ -57,7 +57,7 @@ export function chunkMatchupPoints(points: LeadPoint[], chunks: MatchupChunk[]):
       return index + 0.02 + (duration ? elapsed / duration : 0) * 0.96;
     };
     const withPosition = (point: LeadPoint, position: number): ChunkedLeadPoint => ({
-      ...point, position, lead: point.scores[0] - point.scores[1],
+      ...point, position, lead: point.projectedScores[0] - point.projectedScores[1],
     });
     const boundaryPoint = (timestamp: number): LeadPoint => ({
       ...carried, timestamp, minute: carried.minute + (timestamp - carried.timestamp) / 60_000,

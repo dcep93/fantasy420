@@ -2,6 +2,7 @@ import type { WrappedType } from "../../FetchWrapped";
 
 import { lookupTeamAbbreviation } from "./nflTeamAbbreviations";
 import { buildMatchupChunks, MatchupChunk } from "./matchupTimelineChunks";
+import { summarizeSpiciness, TIMELINE_EVENT_EPSILON } from "./matchupSpiciness";
 export { lookupTeamAbbreviation } from "./nflTeamAbbreviations";
 
 const GAME_MINUTES = 180;
@@ -13,7 +14,7 @@ export type SeasonGame = {
   drives: { plays: { clock: string; text: string }[] }[];
 };
 export type SeasonData = { year: number; games: SeasonGame[] };
-export type TimelinePoint = { minute: number; scores: [number, number] };
+export type TimelinePoint = { minute: number; scores: [number, number]; projectedScores: [number, number] };
 export type LeadPoint = TimelinePoint & { timestamp: number };
 type WeekSchedule = {
   baseline: number;
@@ -25,15 +26,24 @@ export type MatchupSpiciness = {
   homeName: string;
   awayName: string;
   finalScores: [number, number];
-  leadChanges: number;
-  lateLeadChanges: number;
-  lastLeadChangeTimestamp: number | null;
+  biggestSwings: number[];
+  swingScore: number;
+  finalSlotLeadChanges: number;
+  finalSlotBonus: number;
+  lastFinalSlotLeadChangeTimestamp: number | null;
   score: number;
   points: LeadPoint[];
   chunks: MatchupChunk[];
 };
 
-type PlayerWindow = { moments: { minute: number; scored: number }[] };
+type PlayerWindow = {
+  moments: { minute: number; scored: number }[];
+  kickoff: number;
+  end: number;
+  projection: number;
+  finalPoints: number;
+  interpolateScore: boolean;
+};
 
 export function buildWeekSchedule(data: SeasonData): Map<number, WeekSchedule> {
   const schedule = new Map<number, WeekSchedule>();
@@ -53,32 +63,6 @@ export function buildWeekSchedule(data: SeasonData): Map<number, WeekSchedule> {
   return schedule;
 }
 
-export function summarizeLeadChanges(timeline: TimelinePoint[]) {
-  const lateStart = (timeline[timeline.length - 1]?.minute ?? GAME_MINUTES) - 45;
-  let leader: number | null = null;
-  let leadChanges = 0;
-  let lateLeadChanges = 0;
-  let lastLeadChangeMinute: number | null = null;
-  for (const entry of timeline) {
-    // Round to scoring precision so floating-point accumulation cannot break a tie.
-    const difference = Math.round((entry.scores[0] - entry.scores[1]) * 100);
-    if (difference === 0) continue;
-    const nextLeader = difference > 0 ? 0 : 1;
-    if (leader !== null && nextLeader !== leader) {
-      leadChanges++;
-      if (entry.minute >= lateStart) lateLeadChanges++;
-      lastLeadChangeMinute = entry.minute;
-    }
-    leader = nextLeader;
-  }
-  return {
-    leadChanges,
-    lateLeadChanges,
-    lastLeadChangeMinute,
-    score: leadChanges + lateLeadChanges * 0.5,
-  };
-}
-
 export function computeSpiciestMatchups(wrapped: WrappedType, data: SeasonData): MatchupSpiciness[] {
   const schedule = buildWeekSchedule(data);
   const results: MatchupSpiciness[] = [];
@@ -87,24 +71,44 @@ export function computeSpiciestMatchups(wrapped: WrappedType, data: SeasonData):
     if (week <= 0 || week > (wrapped.latestScoringPeriod ?? Infinity)) continue;
     const weekSchedule = schedule.get(week);
     if (!weekSchedule) continue;
-    const chunks = buildMatchupChunks(data.games.filter(game => game.week === week && Number.isFinite(game.timestamp))
-      .map(game => ({ start: game.timestamp, end: game.timestamp + estimatedGameMinutes(game) * 60_000 })));
+    const windows = data.games.filter(game => game.week === week && Number.isFinite(game.timestamp))
+      .map(game => ({ start: game.timestamp, end: game.timestamp + estimatedGameMinutes(game) * 60_000 }));
+    const chunks = buildMatchupChunks(windows);
+    const lastKickoff = Math.max(...windows.map(window => window.start));
+    const finalSlot = {
+      start: (lastKickoff - weekSchedule.baseline) / 60_000,
+      end: (Math.max(...windows.filter(window => window.start === lastKickoff).map(window => window.end)) -
+        weekSchedule.baseline) / 60_000,
+    };
     for (const [homeId, awayId] of matchups) {
       const home = wrapped.ffTeams[homeId];
       const away = wrapped.ffTeams[awayId];
       const homeRoster = home?.rosters[week];
       const awayRoster = away?.rosters[week];
       if (!homeRoster || !awayRoster) continue;
-      const minutes = new Set<number>([0]);
-      const homePlayers = buildPlayerWindows(wrapped, week, homeRoster.starting, weekSchedule, minutes);
-      const awayPlayers = buildPlayerWindows(wrapped, week, awayRoster.starting, weekSchedule, minutes);
+      if ([homeRoster, awayRoster].some(roster => roster.starting.some(id =>
+        !wrapped.nflPlayers[id] || !Number.isFinite(roster.projections?.[id])))) continue;
+      // Include each slot boundary even when neither lineup plays in that slot.
+      // Its preceding point preserves continuous projection decay across chunks.
+      const minutes = new Set<number>(windows.flatMap(window => [window.start, window.end])
+        .flatMap(timestamp => {
+          const minute = (timestamp - weekSchedule.baseline) / 60_000;
+          return [minute - TIMELINE_EVENT_EPSILON, minute];
+        }));
+      const homePlayers = buildPlayerWindows(wrapped, week, homeRoster.starting, homeRoster.projections, weekSchedule, minutes);
+      const awayPlayers = buildPlayerWindows(wrapped, week, awayRoster.starting, awayRoster.projections, weekSchedule, minutes);
       if (!homePlayers.length || !awayPlayers.length) continue;
-      const points: LeadPoint[] = [...minutes].sort((a, b) => a - b).map(minute => ({
-        minute,
-        timestamp: weekSchedule.baseline + minute * 60_000,
-        scores: [sumAtMinute(homePlayers, minute), sumAtMinute(awayPlayers, minute)],
-      }));
-      const summary = summarizeLeadChanges(points);
+      const points: LeadPoint[] = [...minutes].sort((a, b) => a - b).map(minute => {
+        const home = sumAtMinute(homePlayers, minute);
+        const away = sumAtMinute(awayPlayers, minute);
+        return {
+          minute,
+          timestamp: weekSchedule.baseline + minute * 60_000,
+          scores: [home.score, away.score],
+          projectedScores: [home.projectedScore, away.projectedScore],
+        };
+      });
+      const summary = summarizeSpiciness(points, finalSlot);
       const starterTotal = (ids: string[]) => ids.reduce((sum, id) =>
         sum + (wrapped.nflPlayers[id]?.scores[week] ?? 0), 0);
       results.push({
@@ -113,23 +117,26 @@ export function computeSpiciestMatchups(wrapped: WrappedType, data: SeasonData):
         homeName: home.name,
         awayName: away.name,
         finalScores: [starterTotal(homeRoster.starting), starterTotal(awayRoster.starting)],
-        leadChanges: summary.leadChanges,
-        lateLeadChanges: summary.lateLeadChanges,
+        biggestSwings: summary.biggestSwings,
+        swingScore: summary.swingScore,
+        finalSlotLeadChanges: summary.finalSlotLeadChanges,
+        finalSlotBonus: summary.finalSlotBonus,
         score: summary.score,
-        lastLeadChangeTimestamp: summary.lastLeadChangeMinute === null ? null :
-          weekSchedule.baseline + summary.lastLeadChangeMinute * 60_000,
+        lastFinalSlotLeadChangeTimestamp: summary.lastFinalSlotLeadChangeMinute === null ? null :
+          weekSchedule.baseline + summary.lastFinalSlotLeadChangeMinute * 60_000,
         points,
         chunks,
       });
     }
   }
   return results.sort((a, b) => b.score - a.score ||
-    (b.lastLeadChangeTimestamp ?? -Infinity) - (a.lastLeadChangeTimestamp ?? -Infinity) ||
+    (b.lastFinalSlotLeadChangeTimestamp ?? -Infinity) - (a.lastFinalSlotLeadChangeTimestamp ?? -Infinity) ||
     b.week - a.week || a.id.localeCompare(b.id));
 }
 
 function buildPlayerWindows(
-  wrapped: WrappedType, week: number, ids: string[], schedule: WeekSchedule, minutes: Set<number>
+  wrapped: WrappedType, week: number, ids: string[], projections: Record<string, number>,
+  schedule: WeekSchedule, minutes: Set<number>
 ): PlayerWindow[] {
   return ids.flatMap(id => {
     const player = wrapped.nflPlayers[id];
@@ -153,20 +160,26 @@ function buildPlayerWindows(
     });
     // Always finish at the recorded total, including negative scores and overtime.
     moments.push({ minute: end, scored: finalPoints });
-    moments.forEach(moment => minutes.add(moment.minute));
-    return [{ moments }];
+    moments.forEach(moment => {
+      minutes.add(moment.minute);
+      if (moment.minute > kickoff) minutes.add(moment.minute - TIMELINE_EVENT_EPSILON);
+    });
+    return [{ moments, kickoff, end, projection: projections[id], finalPoints,
+      interpolateScore: !scoringPlays.length }];
   });
 }
 
-function sumAtMinute(players: PlayerWindow[], minute: number): number {
+function sumAtMinute(players: PlayerWindow[], minute: number) {
   return players.reduce((sum, player) => {
+    const remaining = Math.max(0, Math.min(1, (player.end - minute) / (player.end - player.kickoff)));
     let score = 0;
     for (const moment of player.moments) {
       if (moment.minute > minute) break;
       score = moment.scored;
     }
-    return sum + score;
-  }, 0);
+    if (player.interpolateScore) score = player.finalPoints * (1 - remaining);
+    return { score: sum.score + score, projectedScore: sum.projectedScore + score + player.projection * remaining };
+  }, { score: 0, projectedScore: 0 });
 }
 
 function clockToGameMinute(clock: string): number | null {

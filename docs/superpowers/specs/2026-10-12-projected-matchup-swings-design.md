@@ -61,3 +61,14 @@ tooltips. Commit and push task-owned changes on main, preserving untracked dist.
 Self-review: rejects counting every scoring movement, preserves all four approved
 chunks, distinguishes the week's final slot from Sunday night, and explicitly
 handles missing projections and approximate historical data.
+
+## Verification completed
+
+On 2026-10-13, all 26 focused ranking, reconstruction, chunking, page and chart
+tooltip tests pass. Used Vitest's fork pool after the installed Node 25 runtime
+crashed during worker-thread teardown; the fork-pool run exits successfully.
+TypeScript checking and the production build pass. Browser verification on the
+2025 season confirms changed rankings, the precise swing breakdown, full weekly
+projections before kickoff, separate earned/projected tooltip values, and the
+four chunks. Narrow-layout label bounds do not overlap or overflow the viewport.
+The existing untracked dist directory was preserved.

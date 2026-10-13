@@ -24,11 +24,11 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
   const data = chunkMatchupPoints(points, chunks);
   const extent = Math.max(10, Math.ceil(Math.max(...data.map(point => Math.abs(point.lead)), 0) / 10) * 10);
   return (
-    <section aria-label={`Estimated points lead: ${homeName} versus ${awayName}`}>
+    <section aria-label={`Estimated projected finish: ${homeName} versus ${awayName}`}>
       <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem 1.5rem", marginBottom: 12, fontSize: 14 }}>
-        <span style={{ color: NIGHT_CHART_COLORS[2] }}>Above 0: <b>{homeName}</b> leads</span>
-        <span style={{ color: NIGHT_CHART_COLORS[6] }}>Below 0: <b>{awayName}</b> leads</span>
-        <span style={{ color: NIGHT_COLORS.mutedText }}>0 = tied</span>
+        <span style={{ color: NIGHT_CHART_COLORS[2] }}>Above 0: <b>{homeName}</b> projected to win</span>
+        <span style={{ color: NIGHT_CHART_COLORS[6] }}>Below 0: <b>{awayName}</b> projected to win</span>
+        <span style={{ color: NIGHT_COLORS.mutedText }}>0 = projected tie</span>
       </div>
       <div style={{ width: "100%", height: CHART_HEIGHT, background: NIGHT_COLORS.chartCanvas, borderRadius: 10 }}>
         <ResponsiveContainer width="100%" height="100%">
@@ -67,22 +67,24 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
                   style={{ background: NIGHT_COLORS.tooltip, border: `1px solid ${NIGHT_COLORS.border}`,
                   borderRadius: 8, padding: 12, maxWidth: 260, color: NIGHT_COLORS.text }}>
                   <b>{formatMatchupTime(point.timestamp)}</b>
-                  <div style={{ marginTop: 6 }}>{homeName}: {point.scores[0].toFixed(2)}</div>
-                  <div>{awayName}: {point.scores[1].toFixed(2)}</div>
-                  <div style={{ marginTop: 6, fontWeight: 700 }}>{lead === 0 ? "Tied" :
-                    `${lead > 0 ? homeName : awayName} leads by ${Math.abs(lead).toFixed(2)} pts`}</div>
-                  <small style={{ color: NIGHT_COLORS.mutedText }}>Estimated scores</small>
+                  <div style={{ marginTop: 6 }}><b>{homeName}</b></div>
+                  <div>{point.scores[0].toFixed(2)} earned · {point.projectedScores[0].toFixed(2)} projected finish</div>
+                  <div style={{ marginTop: 6 }}><b>{awayName}</b></div>
+                  <div>{point.scores[1].toFixed(2)} earned · {point.projectedScores[1].toFixed(2)} projected finish</div>
+                  <div style={{ marginTop: 6, fontWeight: 700 }}>{lead === 0 ? "Projected tie" :
+                    `${lead > 0 ? homeName : awayName} projected to win by ${Math.abs(lead).toFixed(2)} pts`}</div>
+                  <small style={{ color: NIGHT_COLORS.mutedText }}>Estimated scores and projected finishes</small>
                 </div>
               );
             }} />
-            <Line dataKey="lead" name="Estimated points lead" type="stepAfter" stroke={`url(#${gradientId})`}
+            <Line dataKey="lead" name="Estimated projected finish differential" type="linear" stroke={`url(#${gradientId})`}
               strokeWidth={2.5} dot={false} activeDot={{ r: 5 }} isAnimationActive={false} />
           </LineChart>
         </ResponsiveContainer>
       </div>
       <p style={{ color: NIGHT_COLORS.mutedText, fontSize: 12, lineHeight: 1.5, margin: "8px 0 0" }}>
         Four equal-width chunks; idle gaps are compressed. Slots use Eastern kickoff dates and the week’s
-        final Sunday kickoff. Hover or tap for estimated scores and local times.
+        final Sunday kickoff. Hover or tap for estimated points earned, projected finishes, and local times.
       </p>
     </section>
   );

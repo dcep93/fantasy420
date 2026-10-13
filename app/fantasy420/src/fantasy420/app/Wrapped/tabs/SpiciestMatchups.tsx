@@ -3,6 +3,7 @@ import { selectedWrapped, selectedYear } from "..";
 import { NIGHT_COLORS } from "../../theme";
 import MatchupLeadChart, { formatMatchupTime } from "./MatchupLeadChart";
 import { computeSpiciestMatchups, MatchupSpiciness, SeasonData } from "./spiciestMatchupsData";
+import { FINAL_SLOT_FLIP_POINTS, MAX_FINAL_SLOT_BONUS, MIN_SWING_POINTS, TOP_SWING_COUNT } from "./matchupSpiciness";
 
 const DATA_CACHE = "data_v6";
 
@@ -36,32 +37,40 @@ export default function SpiciestMatchups() {
     <div style={{ padding: "0.5rem 1rem 1.5rem", maxWidth: 1200, boxSizing: "border-box" }}>
       <h2>Spiciest matchups · {selectedYear}</h2>
       <p style={{ maxWidth: "78ch", lineHeight: 1.6 }}>
-        Which fantasy matchups traded the lead the most? These are the top 10 from completed weeks.
-        Each lead change earns 1 spice point, plus 0.5 if it happens in the matchup’s final 45 estimated minutes.
-        Taking the first lead doesn’t count; switching to the other team does, even after a tie.
+        Which fantasy matchups had the biggest changes in their expected outcome? These are the top 10 from completed weeks.
+        Spice adds the {TOP_SWING_COUNT} biggest swings of at least {MIN_SWING_POINTS} points in projected final-score differential,
+        plus {FINAL_SLOT_FLIP_POINTS} per projected lead change in the week’s final NFL game slot (up to {MAX_FINAL_SLOT_BONUS} bonus points).
+        Big swings count even without a lead change; tiny early fluctuations don’t.
       </p>
       <div style={{ background: NIGHT_COLORS.surfaceAlt, borderLeft: `3px solid ${NIGHT_COLORS.link}`,
         borderRadius: 6, padding: "0.8rem 1rem", marginBottom: 20, lineHeight: 1.5 }}>
         <b>How to read the chart</b>
-        <div>The line shows estimated points ahead or behind. Above zero favors the first team; below zero favors the second.</div>
+        <div>The line shows estimated projected finish differential in points. Above zero favors the first team; below zero favors the second.</div>
         <div style={{ color: NIGHT_COLORS.mutedText, marginTop: 6 }}>
-          This is a reconstruction from final player totals and NFL play/game timing, not a record of live scores or win odds.
+          Projected finish = estimated points earned + weekly projection × fraction of the player’s game remaining.
+          This is a reconstruction from final player totals, saved weekly projections, and NFL timing, not recorded live ESPN projections or win odds.
           The graph is split into pre Sunday, Sunday pre final slot, Sunday final slot, and post Sunday.
-          Slots use Eastern kickoff times; hover or tap the line for both teams’ estimated scores and local times.
+          Slots use Eastern kickoff times; hover or tap for estimated points earned, projected finishes, and local times.
         </div>
         <details style={{ marginTop: 8 }}>
           <summary style={{ cursor: "pointer" }}>How the estimate works</summary>
           <p style={{ maxWidth: "78ch", marginBottom: 0 }}>
             Each player’s final points are spread evenly over plays mentioning their name, or all plays when there are no matches.
-            Game clocks are mapped onto approximate three-hour windows; missing play data places points at the estimated game end.
+            Game clocks are mapped onto approximate three-hour windows; missing play data spreads points evenly across the game.
             Missing kickoff data uses the week’s first kickoff. This can change when leads appear to switch, so use spice as a rough comparison.
-            Final scores below are the recorded starter totals. A late change is within 45 estimated minutes of the last starter’s game ending.
+            Each starter begins with their saved projection for that week and ends at their recorded final score.
+            Projections decrease with estimated game time remaining, including overtime, independently of points earned.
+            Swings run between peaks and troughs; reversals under {MIN_SWING_POINTS} points don’t split a swing.
+            The final-slot bonus starts at the week’s last scheduled NFL kickoff, often Monday night, and ends at its estimated completion.
+            Taking the first lead doesn’t count; switching to the other team does, even after a tie.
+            Final scores below are recorded starter totals. Matchups missing weekly projections are excluded;
+            older snapshots may encode unavailable projections as zero, and projections aren’t timestamped throughout the week.
           </p>
         </details>
       </div>
       {loading ? <p role="status">Loading matchup timelines…</p> : result.error ?
         <p role="alert">Couldn’t load matchup timelines: {result.error}</p> : !result.matchups.length ?
-        <p>No completed matchups with timeline data are available for this season.</p> :
+        <p>No completed matchups with timeline data and weekly projections are available for this season.</p> :
         result.matchups.map((matchup, index) => (
           <article key={matchup.id} style={{ background: NIGHT_COLORS.surface,
             border: `1px solid ${NIGHT_COLORS.border}`, borderRadius: 14,
@@ -80,11 +89,15 @@ export default function SpiciestMatchups() {
               padding: "12px 0", borderTop: `1px solid ${NIGHT_COLORS.border}` }}>
               <div>
                 <div style={{ color: NIGHT_COLORS.mutedText, fontSize: 13 }}>Why it ranks here</div>
-                <b>{matchup.leadChanges} lead {matchup.leadChanges === 1 ? "change" : "changes"} + {matchup.lateLeadChanges} late × 0.5 = {matchup.score.toFixed(1)} spice</b>
+                <b>{matchup.swingScore.toFixed(2)} swing pts + {matchup.finalSlotBonus} final-slot bonus = {matchup.score.toFixed(2)} spice</b>
+                <div style={{ color: NIGHT_COLORS.mutedText, fontSize: 13, marginTop: 6 }}>
+                  Biggest swings: {matchup.biggestSwings.length ? matchup.biggestSwings.map(value => value.toFixed(2)).join(" + ") : `none ≥ ${MIN_SWING_POINTS} pts`}.
+                  {" "}{matchup.finalSlotLeadChanges} final-slot {matchup.finalSlotLeadChanges === 1 ? "flip" : "flips"} × {FINAL_SLOT_FLIP_POINTS}, bonus capped at {MAX_FINAL_SLOT_BONUS}.
+                </div>
               </div>
               <div>
-                <div style={{ color: NIGHT_COLORS.mutedText, fontSize: 13 }}>Last estimated lead change</div>
-                <b>{matchup.lastLeadChangeTimestamp === null ? "No lead changes" : formatMatchupTime(matchup.lastLeadChangeTimestamp)}</b>
+                <div style={{ color: NIGHT_COLORS.mutedText, fontSize: 13 }}>Last final-slot lead change</div>
+                <b>{matchup.lastFinalSlotLeadChangeTimestamp === null ? "None in the final slot" : formatMatchupTime(matchup.lastFinalSlotLeadChangeTimestamp)}</b>
               </div>
             </div>
             <MatchupLeadChart points={matchup.points} chunks={matchup.chunks} homeName={matchup.homeName} awayName={matchup.awayName} />
