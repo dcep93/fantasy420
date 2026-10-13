@@ -1,10 +1,10 @@
 import { fireEvent, render, screen, within } from "@testing-library/react";
 import type { ReactNode } from "react";
-import MatchupLeadChart from "./MatchupLeadChart";
+import MatchupLeadChart, { winProbabilityAxisPosition } from "./MatchupLeadChart";
 import { buildMatchupChunks, ChunkedLeadPoint } from "./matchupTimelineChunks";
 
-const { chartSpy, lineSpy, axisSpy, areaSpy } = vi.hoisted(() => ({
-  chartSpy: vi.fn(), lineSpy: vi.fn(), axisSpy: vi.fn(), areaSpy: vi.fn(),
+const { chartSpy, lineSpy, axisSpy, areaSpy, probabilityAxisSpy } = vi.hoisted(() => ({
+  chartSpy: vi.fn(), lineSpy: vi.fn(), axisSpy: vi.fn(), areaSpy: vi.fn(), probabilityAxisSpy: vi.fn(),
 }));
 
 vi.mock("recharts", () => ({
@@ -15,7 +15,7 @@ vi.mock("recharts", () => ({
   },
   CartesianGrid: () => null,
   XAxis: (props: unknown) => { axisSpy(props); return null; },
-  YAxis: () => null,
+  YAxis: (props: unknown) => { probabilityAxisSpy(props); return null; },
   ReferenceLine: () => null,
   ReferenceArea: (props: unknown) => { areaSpy(props); return null; },
   Line: (props: unknown) => { lineSpy(props); return null; },
@@ -38,7 +38,11 @@ test("plots Multisport win probability and labels earned scores and projected fi
   expect(screen.getByText("35.6% chance to win")).toBeVisible();
   expect(chartSpy.mock.lastCall![0].at(-1).winProbability).toBeGreaterThan(64);
   expect(chartSpy.mock.lastCall![0].at(-1).winProbability).toBeLessThan(65);
-  expect(lineSpy).toHaveBeenCalledWith(expect.objectContaining({ type: "linear", dataKey: "winProbability" }));
+  expect(chartSpy.mock.lastCall![0].at(-1).probabilityPosition).toBeGreaterThan(76);
+  expect(lineSpy).toHaveBeenCalledWith(expect.objectContaining({ type: "linear", dataKey: "probabilityPosition" }));
+  const axis = probabilityAxisSpy.mock.lastCall![0];
+  expect(axis.ticks.map(axis.tickFormatter)).toEqual(["0%", "25%", "40%", "50%", "60%", "75%", "100%"]);
+  expect(axis.ticks[2]).toBeLessThan(30); // A real 40% is drawn farther from the center.
 });
 
 
@@ -51,7 +55,24 @@ test.each([
     chunks={buildMatchupChunks([{start:0,end:180*60_000}])}
     points={[{minute:180,timestamp:180*60_000,scores:scores as [number,number],projectedScores:scores as [number,number]}]}/>);
   expect(chartSpy.mock.lastCall![0].at(-1).winProbability).toBe(expected);
+  expect(chartSpy.mock.lastCall![0].at(-1).probabilityPosition).toBe(expected);
   if(expected===50)expect(screen.getByText("Final tie · shown at 50%")).toBeVisible();
+});
+
+test.each([[51, 57.0710678], [75, 85.3553391], [1, 0.5025253]])(
+  "draws %s percent at the requested square-root position %s", (probability, position) => {
+    expect(winProbabilityAxisPosition(probability)).toBeCloseTo(position, 6);
+  }
+);
+
+test("the visual scale preserves ordering, symmetry, midpoint and endpoints", () => {
+  const probabilities = [0, 1, 25, 49, 49.99, 50, 50.01, 51, 75, 99, 100];
+  const positions = probabilities.map(winProbabilityAxisPosition);
+  expect(positions).toEqual([...positions].sort((a, b) => a - b));
+  for (const probability of probabilities) {
+    expect(winProbabilityAxisPosition(probability) + winProbabilityAxisPosition(100 - probability)).toBeCloseTo(100);
+  }
+  expect([0, 50, 100].map(winProbabilityAxisPosition)).toEqual([0, 50, 100]);
 });
 
 test("the same projected margin grows more decisive as remaining uncertainty shrinks", () => {

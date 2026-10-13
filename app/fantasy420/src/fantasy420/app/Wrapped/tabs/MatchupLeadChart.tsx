@@ -11,6 +11,16 @@ const TIME_AXIS_HEIGHT = 48;
 const SCORE_AXIS_WIDTH = 50;
 type Range = [number, number];
 
+/** Signed square-root display scale; input and output are on a 0–100 scale. */
+export function winProbabilityAxisPosition(probability: number): number {
+  const distance = (probability - 50) / 50;
+  return 50 + Math.sign(distance) * 50 * Math.sqrt(Math.abs(distance));
+}
+
+const probabilityTicks = [0, 25, 40, 50, 60, 75, 100].map(probability => ({
+  probability, position: winProbabilityAxisPosition(probability),
+}));
+
 function timestampAtPosition(data: { position: number; timestamp: number }[], position: number) {
   const next = data.findIndex(point => point.position > position);
   if (next < 0) return data.at(-1)?.timestamp ?? 0;
@@ -39,12 +49,13 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
   const drag = useRef<{ pointerId: number; start: number; clientX: number } | null>(null);
   const plot = useRef<HTMLDivElement>(null);
   const domain: Range = zoom ?? [0, 4];
-  const data = useMemo(() => chunkMatchupPoints(points, chunks).map(point => ({ ...point,
-    winProbability: 100 * headToHeadProbability(
+  const data = useMemo(() => chunkMatchupPoints(points, chunks).map(point => {
+    const winProbability = 100 * headToHeadProbability(
       { score: point.scores[0], projected: point.projectedScores[0] },
       { score: point.scores[1], projected: point.projectedScores[1] }
-    ),
-  })), [points, chunks]);
+    );
+    return { ...point, winProbability, probabilityPosition: winProbabilityAxisPosition(winProbability) };
+  }), [points, chunks]);
 
   function cancelSelection() {
     if (drag.current && plot.current?.hasPointerCapture?.(drag.current.pointerId)) {
@@ -137,8 +148,8 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
                   {lines.map((line, index) => <tspan key={index} x={x} dy={index ? 12 : 0}>{line}</tspan>)}
                 </text>;
               }} />
-            <YAxis domain={[0, 100]} ticks={[0, 25, 50, 75, 100]} width={SCORE_AXIS_WIDTH}
-              tickFormatter={value => `${value}%`} />
+            <YAxis domain={[0, 100]} ticks={probabilityTicks.map(tick => tick.position)} width={SCORE_AXIS_WIDTH}
+              tickFormatter={value => `${probabilityTicks.find(tick => tick.position === value)?.probability ?? ""}%`} />
             <ReferenceLine y={50} stroke={NIGHT_COLORS.text} strokeWidth={1.5} />
             {[1, 2, 3].filter(position => position > domain[0] && position < domain[1]).map(position => <ReferenceLine key={position} x={position}
               stroke={NIGHT_COLORS.mutedText} strokeDasharray="4 4" />)}
@@ -173,7 +184,7 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
                 </div>
               );
             }} />
-            <Line dataKey="winProbability" name={`${homeName} win probability`} type="linear" stroke={`url(#${gradientId})`}
+            <Line dataKey="probabilityPosition" name={`${homeName} win probability`} type="linear" stroke={`url(#${gradientId})`}
               strokeWidth={2.5} dot={false} activeDot={{ r: 5 }} isAnimationActive={false} />
             {selection && <ReferenceArea x1={Math.min(...selection)} x2={Math.max(...selection)} y1={0} y2={100}
               fill={NIGHT_CHART_COLORS[2]} fillOpacity={0.2} stroke={NIGHT_CHART_COLORS[2]} />}
@@ -181,6 +192,7 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
         </ResponsiveContainer>
       </div>
       <p style={{ color: NIGHT_COLORS.mutedText, fontSize: 12, lineHeight: 1.5, margin: "8px 0 0" }}>
+        Square-root probability scale: movement near 50% is enlarged; labels and tooltips show actual probabilities.{" "}
         Four equal-width chunks; idle gaps are compressed. Slots use Eastern kickoff dates and the week’s
         final Sunday kickoff. The line is the first team’s estimated win probability. Drag horizontally to zoom;
         hover or tap for probabilities, points, and the latest contributing play. Play times and contributions are
