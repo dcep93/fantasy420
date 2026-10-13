@@ -1,9 +1,10 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { getWrapped, NFLPlayerType, WrappedType } from "../FetchWrapped";
 import allWrapped from "./allWrapped";
 import { ALL_YEARS, managerChanges, normalizeYear, scopeLabel, seasonOnlyViews } from "./scope";
 import AllYears from "./tabs/AllYears";
 import { useWrappedTab } from "./hashRoute";
+import WrappedNavigation from "./WrappedNavigation";
 import ErrorBoundary from "./ErrorBoundary";
 import AllTimeRecords from "./tabs/AllTimeRecords";
 import Benchwarmers from "./tabs/Benchwarmers";
@@ -73,35 +74,6 @@ export default function Wrapped() {
   const hashKey = useWrappedTab();
   const toRenderKey = toRender[hashKey] ? hashKey : Object.keys(toRender)[0]!;
 
-  const tabHeadings = useMemo(
-    () => (
-      <div
-        style={{
-          display: "flex",
-          color: "var(--night-text)",
-          backgroundColor: "var(--night-surface-alt)",
-          borderBottom: "1px solid var(--night-border)",
-          overflow: "scroll",
-        }}
-        key="keys"
-      >
-        {Object.keys(toRender).map((key, i) => (
-          <div
-            key={i}
-            style={{ ...bubbleStyle, whiteSpace: "nowrap" }}
-            onClick={() => {
-              window.location.hash = key;
-            }}
-          >
-            {i + 1}
-            {")"} {wrappedModuleLabels[key] ?? key}
-          </div>
-        ))}
-      </div>
-    ),
-    []
-  );
-
   function B() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [_, updateFetched] = useState(false);
@@ -164,7 +136,7 @@ export default function Wrapped() {
         fontFamily: "'Courier New', Courier, monospace",
       }}
     >
-      {tabHeadings}
+      <WrappedNavigation activeTab={toRenderKey} labels={wrappedModuleLabels} />
       <B />
     </div>
   );
