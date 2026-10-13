@@ -11,7 +11,7 @@ import {
 } from "recharts";
 import { Helpers, mapDict, selectedWrapped, selectedYear } from "..";
 import { NIGHT_CHART_COLORS, NIGHT_COLORS } from "../../theme";
-import { getManagerWins } from "./managerWins";
+import { getManagerWins, separateTiedWins } from "./managerWins";
 
 export const colors = [...NIGHT_CHART_COLORS];
 
@@ -81,7 +81,7 @@ function SubManagerPlot() {
   const dataD: {
     [key: string]: {
       x: number;
-      ys: { average: number; data: { [teamId: string]: number } };
+      ys: { average: number; data: { [teamId: string]: number }; pointsFor?: Record<string, number> };
     }[];
   } = {
     ...(!selectedWrapped().fantasyCalc?.history.length
@@ -153,6 +153,7 @@ function SubManagerPlot() {
                 <p>
                   Completed weeks with recorded matchups only. Ties and byes
                   do not count as wins.
+                  {key === "wins" && " Teams tied on wins are separated by points for; higher is better within each win band."}
                 </p>
               )}
               <div
@@ -165,9 +166,9 @@ function SubManagerPlot() {
                     margin={{ top: 5, right: 18, bottom: 5, left: 5 }}
                     data={data.map((o) => ({
                       x: o.x,
-                      ...mapDict(o.ys.data, (v) =>
-                        key === "wins" ? v : v - o.ys.average
-                      ),
+                      ...(key === "wins"
+                        ? separateTiedWins(o.ys.data, o.ys.pointsFor!)
+                        : mapDict(o.ys.data, (v) => v - o.ys.average)),
                     }))}
                   >
                     {key === "fantasyCalc" ? (
@@ -189,14 +190,17 @@ function SubManagerPlot() {
                     )}
                     <YAxis
                       domain={(domain) => {
+                        const chartDomain: [number, number] = key === "wins"
+                          ? [Math.floor(domain[0]), Math.ceil(domain[1])]
+                          : domain;
                         if (domainData.year !== selectedYear) {
                           domainData = {
                             year: selectedYear,
-                            min: domain[0],
-                            range: domain[1] - domain[0],
+                            min: chartDomain[0],
+                            range: chartDomain[1] - chartDomain[0],
                           };
                         }
-                        return domain;
+                        return chartDomain;
                       }}
                       hide={!isWins}
                       allowDecimals={key !== "wins"}
@@ -220,13 +224,18 @@ function SubManagerPlot() {
                           !payload?.length
                         )
                           return null;
+                        const weekData = data.find((d) => d.x === label)!.ys;
+                        const values = weekData.data;
                         const mappedPayload = payload!
                           .map(({ name, value, dataKey }) => ({
                             name: name!,
                             dataKey: dataKey!,
                             value: value as number,
                           }))
-                          .sort((a, b) => b.value - a.value);
+                          .sort((a, b) => key === "wins"
+                            ? values[String(b.dataKey)] - values[String(a.dataKey)] ||
+                              weekData.pointsFor![String(b.dataKey)] - weekData.pointsFor![String(a.dataKey)]
+                            : b.value - a.value);
                         const cursorValue =
                           domainData.min +
                           domainData.range *
@@ -252,7 +261,6 @@ function SubManagerPlot() {
                             }
                           });
                         }
-                        const values = data.find((d) => d.x === label)!.ys.data;
                         return (
                           <div
                             style={{
@@ -289,6 +297,9 @@ function SubManagerPlot() {
                                   {isWins ? (
                                     <>
                                       {values[p.dataKey]} {values[p.dataKey] === 1 ? "win" : "wins"}
+                                      {key === "wins" && <> ({weekData.pointsFor![String(p.dataKey)].toLocaleString("en-US", {
+                                        minimumFractionDigits: 2, maximumFractionDigits: 2,
+                                      })} PF)</>}
                                       {key === "winsAboveAverage" && (
                                         <> ({p.value >= 0 ? "+" : ""}{p.value.toFixed(2)} vs average)</>
                                       )}

@@ -103,7 +103,7 @@ test("shows cumulative wins and league-relative wins for the selected season", (
   expect(JSON.parse(within(relative).getByTestId("series").textContent!)).toEqual([
     { x: 0, a: 0, b: 0 }, { x: 1, a: 0.5, b: -0.5 },
   ]);
-  expect(within(totals).getByText("1 win Alpha")).toBeInTheDocument();
+  expect(within(totals).getByText("1 win (20.00 PF) Alpha")).toBeInTheDocument();
   expect(within(relative).getByText("1 win (+0.50 vs average) Alpha")).toBeInTheDocument();
   expect(within(relative).getByText("0 wins (-0.50 vs average) Bravo")).toBeInTheDocument();
   expect(screen.getByRole("region", { name: "pointsFor 2" })).toHaveTextContent("20.00: (1) Alpha");
@@ -119,4 +119,28 @@ test("recomputes wins when the selected season changes", () => {
   expect(JSON.parse(within(totals).getByTestId("series").textContent!)).toEqual([
     { x: 0, a: 0, b: 0 },
   ]);
+});
+
+test("orders tied teams by points for in both the line positions and tooltip, with actual wins shown", () => {
+  const wrapped = selectedWrapped();
+  wrapped.ffTeams.c = { ...wrapped.ffTeams.a, id: "c", name: "Charlie", rosters: {
+    "1": { weekNum: "1", starting: ["c"], rostered: ["c"], projections: {} },
+  } };
+  wrapped.ffTeams.d = { ...wrapped.ffTeams.c, id: "d", name: "Delta", rosters: {
+    "1": { weekNum: "1", starting: ["d"], rostered: ["d"], projections: {} },
+  } };
+  wrapped.nflPlayers.c = { ...wrapped.nflPlayers.a, id: "c", scores: { "1": 30 } };
+  wrapped.nflPlayers.d = { ...wrapped.nflPlayers.b, id: "d", scores: { "1": 25 } };
+  wrapped.ffMatchups["1"].push(["c", "d"]);
+  render(<ManagerPlot />);
+  const totals = screen.getByRole("region", { name: "Total wins by week" });
+  const data = JSON.parse(within(totals).getByTestId("series").textContent!);
+  expect(data[1].c).toBeGreaterThan(data[1].a);
+  expect(data[1].a).toBeGreaterThan(data[1].d);
+  expect(data[1].d).toBeGreaterThan(data[1].b);
+  const top = within(totals).getByText("1 win (30.00 PF) Charlie");
+  expect([...top.parentElement!.children].map(row => row.textContent)).toEqual([
+    "1 win (30.00 PF) Charlie", "1 win (20.00 PF) Alpha", "0 wins (25.00 PF) Delta", "0 wins (10.00 PF) Bravo",
+  ]);
+  expect(within(totals).queryByText(/1\.35 wins/)).not.toBeInTheDocument();
 });
