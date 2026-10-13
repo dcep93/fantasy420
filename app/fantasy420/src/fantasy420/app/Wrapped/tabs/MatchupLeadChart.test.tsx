@@ -3,8 +3,9 @@ import type { ReactNode } from "react";
 import MatchupLeadChart, { winProbabilityAxisPosition } from "./MatchupLeadChart";
 import { buildMatchupChunks, ChunkedLeadPoint } from "./matchupTimelineChunks";
 
-const { chartSpy, lineSpy, axisSpy, areaSpy, probabilityAxisSpy } = vi.hoisted(() => ({
+const { chartSpy, lineSpy, axisSpy, areaSpy, probabilityAxisSpy, tooltipState } = vi.hoisted(() => ({
   chartSpy: vi.fn(), lineSpy: vi.fn(), axisSpy: vi.fn(), areaSpy: vi.fn(), probabilityAxisSpy: vi.fn(),
+  tooltipState: { active: true },
 }));
 
 vi.mock("recharts", () => ({
@@ -20,9 +21,11 @@ vi.mock("recharts", () => ({
   ReferenceArea: (props: unknown) => { areaSpy(props); return null; },
   Line: (props: unknown) => { lineSpy(props); return null; },
   Tooltip: ({ content }: { content: (props: unknown) => ReactNode }) => <foreignObject>
-    {content({ active: true, payload: [{ payload: chartSpy.mock.lastCall![0].at(-1) }] })}
+    {content({ active: tooltipState.active, payload: [{ payload: chartSpy.mock.lastCall![0].at(-1) }] })}
   </foreignObject>,
 }));
+
+beforeEach(() => { tooltipState.active = true; });
 
 test("plots Multisport win probability and labels earned scores and projected finishes", () => {
   render(<MatchupLeadChart homeName="Alpha" awayName="Bravo"
@@ -174,4 +177,21 @@ test("shows original play text, matchup, game clock and separate approximate con
   expect(screen.getByText("B.Catcher catches for 12 yards.")).toBeVisible();
   expect(screen.getByText(/^Approx\./)).toBeVisible();
   expect(screen.getByText("Latest reconstructed contribution")).toBeVisible();
+});
+
+test("keeps inspected details below the plot after pointer exit and clears stale data", () => {
+  const view = render(<MatchupLeadChart {...zoomProps} />);
+  const plot = screen.getByLabelText("Drag to zoom; Escape cancels selection");
+  const panel = screen.getByRole("status", { name: "Matchup details" });
+  expect(panel).toHaveTextContent("35.00 earned · 35.00 projected finish");
+  expect(plot).not.toContainElement(panel);
+  expect(plot.compareDocumentPosition(panel) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+  expect(within(plot).queryByText(/earned/)).not.toBeInTheDocument();
+
+  tooltipState.active = false;
+  view.rerender(<MatchupLeadChart {...zoomProps} />);
+  expect(panel).toHaveTextContent("35.00 earned · 35.00 projected finish");
+  view.rerender(<MatchupLeadChart {...zoomProps} points={[{ ...zoomProps.points[0] }]} />);
+  expect(panel).toHaveTextContent("Hover or tap a point on the graph to see its details here.");
+  expect(panel).not.toHaveTextContent("35.00 earned");
 });

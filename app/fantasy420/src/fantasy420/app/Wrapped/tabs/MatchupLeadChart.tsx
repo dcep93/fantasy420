@@ -10,6 +10,7 @@ const CHART_MARGIN = { top: 22, right: 28, bottom: 22, left: 4 };
 const TIME_AXIS_HEIGHT = 48;
 const SCORE_AXIS_WIDTH = 50;
 type Range = [number, number];
+type InspectedPoint = LeadPoint & { winProbability: number };
 
 /** Signed square-root display scale; input and output are on a 0–100 scale. */
 export function winProbabilityAxisPosition(probability: number): number {
@@ -46,6 +47,7 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
   const gradientId = useId();
   const [zoom, setZoom] = useState<Range | null>(null);
   const [selection, setSelection] = useState<Range | null>(null);
+  const [inspectedPoint, setInspectedPoint] = useState<InspectedPoint | null>(null);
   const drag = useRef<{ pointerId: number; start: number; clientX: number } | null>(null);
   const plot = useRef<HTMLDivElement>(null);
   const domain: Range = zoom ?? [0, 4];
@@ -153,37 +155,10 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
             <ReferenceLine y={50} stroke={NIGHT_COLORS.text} strokeWidth={1.5} />
             {[1, 2, 3].filter(position => position > domain[0] && position < domain[1]).map(position => <ReferenceLine key={position} x={position}
               stroke={NIGHT_COLORS.mutedText} strokeDasharray="4 4" />)}
-            <Tooltip content={({ active, payload }) => {
-              const point = payload?.[0]?.payload as (LeadPoint & { lead: number; winProbability: number }) | undefined;
-              if (!active || !point || selection) return null;
-              const homeProbability = point.winProbability;
-              const finalTie = point.scores[0] === point.scores[1] &&
-                point.projectedScores.every((score, index) => score === point.scores[index]);
-              return (
-                <div role="status" aria-live="polite" aria-atomic="true"
-                  style={{ background: NIGHT_COLORS.tooltip, border: `1px solid ${NIGHT_COLORS.border}`,
-                  borderRadius: 8, padding: 12, maxWidth: 340, color: NIGHT_COLORS.text, overflowWrap: "anywhere" }}>
-                  <b>{formatMatchupTime(point.timestamp)}</b>
-                  <div style={{ marginTop: 6 }}><b>{homeName}</b></div>
-                  {!finalTie && <div>{homeProbability.toFixed(1)}% chance to win</div>}
-                  <div>{point.scores[0].toFixed(2)} earned · {point.projectedScores[0].toFixed(2)} projected finish</div>
-                  <div style={{ marginTop: 6 }}><b>{awayName}</b></div>
-                  {!finalTie && <div>{(100 - homeProbability).toFixed(1)}% chance to win</div>}
-                  <div>{point.scores[1].toFixed(2)} earned · {point.projectedScores[1].toFixed(2)} projected finish</div>
-                  {finalTie && <div style={{ marginTop: 6 }}>Final tie · shown at 50%</div>}
-                  <div style={{ marginTop: 10, paddingTop: 8, borderTop: `1px solid ${NIGHT_COLORS.border}` }}>
-                    <b>Latest reconstructed contribution{(point.lastContributingPlays?.length ?? 0) > 1 ? "s" : ""}</b>
-                    {point.lastContributingPlays?.length ? point.lastContributingPlays.map(play =>
-                      <div key={play.id} style={{ marginTop: 6 }}>
-                        <div><b>{play.matchup} · {play.clock}</b></div>
-                        <small style={{ color: NIGHT_COLORS.mutedText }}>Approx. {formatMatchupTime(play.timestamp)}</small>
-                        <div>{play.text}</div>
-                      </div>) : <div>No contributing play available at this time.</div>}
-                  </div>
-                  <small style={{ color: NIGHT_COLORS.mutedText }}>Estimated probability · Multisport model with reconstructed scores</small>
-                </div>
-              );
-            }} />
+            <Tooltip content={({ active, payload }) => <CaptureInspection
+              active={Boolean(active) && !selection}
+              point={payload?.[0]?.payload as InspectedPoint | undefined}
+              onInspect={setInspectedPoint} />} />
             <Line dataKey="probabilityPosition" name={`${homeName} win probability`} type="linear" stroke={`url(#${gradientId})`}
               strokeWidth={2.5} dot={false} activeDot={{ r: 5 }} isAnimationActive={false} />
             {selection && <ReferenceArea x1={Math.min(...selection)} x2={Math.max(...selection)} y1={0} y2={100}
@@ -191,13 +166,66 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
           </LineChart>
         </ResponsiveContainer>
       </div>
+      <MatchupDetails point={data.some(point => point === inspectedPoint) ? inspectedPoint : null}
+        homeName={homeName} awayName={awayName} />
       <p style={{ color: NIGHT_COLORS.mutedText, fontSize: 12, lineHeight: 1.5, margin: "8px 0 0" }}>
-        Square-root probability scale: movement near 50% is enlarged; labels and tooltips show actual probabilities.{" "}
+        Square-root probability scale: movement near 50% is enlarged; labels and details show actual probabilities.{" "}
         Four equal-width chunks; idle gaps are compressed. Slots use Eastern kickoff dates and the week’s
         final Sunday kickoff. The line is the first team’s estimated win probability. Drag horizontally to zoom;
-        hover or tap for probabilities, points, and the latest contributing play. Play times and contributions are
+        hover or tap to update the details below with probabilities, points, and the latest contributing play. Play times and contributions are
         reconstructed; projection decay can move the line without a new play.
       </p>
     </section>
+  );
+}
+
+
+/** Keep Recharts' hover/touch/keyboard tracking, but render no floating content. */
+function CaptureInspection({ active, point, onInspect }: {
+  active: boolean;
+  point?: InspectedPoint;
+  onInspect: (point: InspectedPoint) => void;
+}) {
+  useEffect(() => { if (active && point) onInspect(point); }, [active, point, onInspect]);
+  return null;
+}
+
+function MatchupDetails({ point, homeName, awayName }: {
+  point: InspectedPoint | null;
+  homeName: string;
+  awayName: string;
+}) {
+  const finalTie = point && point.scores[0] === point.scores[1] &&
+    point.projectedScores.every((score, index) => score === point.scores[index]);
+  return (
+    <div role="status" aria-label="Matchup details" aria-live="polite" aria-atomic="true"
+      style={{ marginTop: 12, padding: 16, minHeight: 190, boxSizing: "border-box",
+        background: NIGHT_COLORS.tooltip, border: `1px solid ${NIGHT_COLORS.border}`,
+        borderRadius: 8, color: NIGHT_COLORS.text, overflowWrap: "anywhere" }}>
+      {!point ? <span style={{ color: NIGHT_COLORS.mutedText }}>Hover or tap a point on the graph to see its details here.</span> : <>
+        <b>{formatMatchupTime(point.timestamp)}</b>
+        {finalTie && <div style={{ marginTop: 6 }}>Final tie · shown at 50%</div>}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 220px), 1fr))",
+          gap: 16, marginTop: 10 }}>
+          {[homeName, awayName].map((name, index) => <div key={index}>
+            <b style={{ color: NIGHT_CHART_COLORS[index === 0 ? 2 : 6] }}>{name}</b>
+            {!finalTie && <div>{(index === 0 ? point.winProbability : 100 - point.winProbability).toFixed(1)}% chance to win</div>}
+            <div>{point.scores[index].toFixed(2)} earned · {point.projectedScores[index].toFixed(2)} projected finish</div>
+          </div>)}
+          <div>
+            <b>Latest reconstructed contribution{(point.lastContributingPlays?.length ?? 0) > 1 ? "s" : ""}</b>
+            {point.lastContributingPlays?.length ? point.lastContributingPlays.map(play =>
+              <div key={play.id} style={{ marginTop: 6 }}>
+                <div><b>{play.matchup} · {play.clock}</b></div>
+                <small style={{ color: NIGHT_COLORS.mutedText }}>Approx. {formatMatchupTime(play.timestamp)}</small>
+                <div>{play.text}</div>
+              </div>) : <div>No contributing play available at this time.</div>}
+          </div>
+        </div>
+        <small style={{ display: "block", marginTop: 12, color: NIGHT_COLORS.mutedText }}>
+          Estimated probability · Multisport model with reconstructed scores
+        </small>
+      </>}
+    </div>
   );
 }
