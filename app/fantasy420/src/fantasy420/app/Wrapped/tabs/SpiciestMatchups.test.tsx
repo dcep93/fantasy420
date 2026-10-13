@@ -415,3 +415,48 @@ test("Wednesday Week 1 opener does not push Sunday scoring into the Monday secti
   expect(new Set(chart.filter(p=>p.position>1&&p.position<2).map(p=>p.lead)).size).toBeGreaterThan(2);
   expect(chart.every((point,index)=>!index||point.position>=chart[index-1].position)).toBe(true);
 });
+
+test("carries only the latest past contribution through projection decay and chunk boundaries", () => {
+  const { wrapped, data } = fixture();
+  const [matchup] = computeSpiciestMatchups(wrapped, data);
+  const firstPlay = { clock: "Q1 10:00", text: "A.Runner rushes.", matchup: "BUF vs NYJ",
+    timestamp: data.games[0].timestamp + 15 * 60_000 };
+  expect(matchup.points[0].lastContributingPlays).toEqual([]);
+  expect(matchup.points.find(point => point.minute === 15)?.lastContributingPlays).toEqual([expect.objectContaining(firstPlay)]);
+  expect(matchup.points.find(point => point.minute === 60 - TIMELINE_EVENT_EPSILON)?.lastContributingPlays)
+    .toEqual([expect.objectContaining(firstPlay)]);
+  expect(matchup.points.find(point => point.minute === 60)?.lastContributingPlays)
+    .toEqual([expect.objectContaining({ clock: "Q2 10:00", text: "B.Catcher catches." })]);
+  expect(chunkMatchupPoints(matchup.points, matchup.chunks).at(-1)?.lastContributingPlays)
+    .toEqual([expect.objectContaining({ clock: "Q4 1:00" })]);
+});
+
+test("does not invent contributions for zero points or score interpolation without plays", () => {
+  const { wrapped, data } = fixture();
+  wrapped.nflPlayers.b.scores[1] = 0;
+  const [matchup] = computeSpiciestMatchups(wrapped, data);
+  expect(matchup.points.at(-1)?.lastContributingPlays).toEqual([expect.objectContaining({ text: "A.Runner rushes." })]);
+  data.games[0].drives = [];
+  expect(computeSpiciestMatchups(wrapped, data)[0].points.every(point => !point.lastContributingPlays?.length)).toBe(true);
+});
+
+test("deduplicates a play contributing to both starters and retains co-timed games", () => {
+  const { wrapped, data } = fixture();
+  data.games[0].drives[0].plays = [{ clock: "Q1 10:00", text: "A.Runner passes to B.Catcher." }];
+  expect(computeSpiciestMatchups(wrapped, data)[0].points.at(-1)?.lastContributingPlays).toHaveLength(1);
+  const game = data.games[0];
+  data.games = [
+    { ...game, teams: [{ name: "BUF" }], drives: [{ plays: [{ clock: "Q1 10:00", text: "A.Runner rushes." }] }] },
+    { ...game, teams: [{ name: "NYJ" }], drives: [{ plays: [{ clock: "Q1 10:00", text: "B.Catcher catches." }] }] },
+  ];
+  const plays = computeSpiciestMatchups(wrapped, data)[0].points.at(-1)?.lastContributingPlays;
+  expect(plays?.map(play => play.text)).toEqual(["A.Runner rushes.", "B.Catcher catches."]);
+});
+
+test("keeps overtime game clocks and negative contributions", () => {
+  const { wrapped, data } = fixture();
+  wrapped.nflPlayers.b.scores[1] = -2;
+  data.games[0].drives[0].plays.push({ clock: "Q5 1:00", text: "B.Catcher loses a fumble." });
+  expect(computeSpiciestMatchups(wrapped, data)[0].points.at(-1)?.lastContributingPlays)
+    .toEqual([expect.objectContaining({ clock: "Q5 1:00", text: "B.Catcher loses a fumble." })]);
+});

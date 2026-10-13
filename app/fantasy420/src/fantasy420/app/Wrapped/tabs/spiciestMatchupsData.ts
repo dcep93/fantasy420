@@ -15,7 +15,14 @@ export type SeasonGame = {
 };
 export type SeasonData = { year: number; games: SeasonGame[] };
 export type TimelinePoint = { minute: number; scores: [number, number]; projectedScores: [number, number] };
-export type LeadPoint = TimelinePoint & { timestamp: number };
+export type ContributingPlay = {
+  id: string;
+  timestamp: number;
+  matchup: string;
+  clock: string;
+  text: string;
+};
+export type LeadPoint = TimelinePoint & { timestamp: number; lastContributingPlays?: ContributingPlay[] };
 type WeekSchedule = {
   baseline: number;
   gamesByTeam: Map<string, SeasonGame>;
@@ -38,7 +45,7 @@ export type MatchupSpiciness = {
 };
 
 type PlayerWindow = {
-  moments: { minute: number; scored: number }[];
+  moments: { minute: number; scored: number; play?: ContributingPlay }[];
   kickoff: number;
   end: number;
   projection: number;
@@ -99,7 +106,13 @@ export function computeSpiciestMatchups(wrapped: WrappedType, data: SeasonData):
       const homePlayers = buildPlayerWindows(wrapped, week, homeRoster.starting, homeRoster.projections, weekSchedule, minutes);
       const awayPlayers = buildPlayerWindows(wrapped, week, awayRoster.starting, awayRoster.projections, weekSchedule, minutes);
       if (!homePlayers.length || !awayPlayers.length) continue;
+      const events = contributingEvents([...homePlayers, ...awayPlayers]);
+      let eventIndex = 0;
+      let lastContributingPlays: ContributingPlay[] = [];
       const points: LeadPoint[] = [...minutes].sort((a, b) => a - b).map(minute => {
+        while (eventIndex < events.length && events[eventIndex].minute <= minute) {
+          lastContributingPlays = events[eventIndex++].plays;
+        }
         const home = sumAtMinute(homePlayers, minute);
         const away = sumAtMinute(awayPlayers, minute);
         return {
@@ -107,6 +120,7 @@ export function computeSpiciestMatchups(wrapped: WrappedType, data: SeasonData):
           timestamp: weekSchedule.baseline + minute * 60_000,
           scores: [home.score, away.score],
           projectedScores: [home.projectedScore, away.projectedScore],
+          lastContributingPlays,
         };
       });
       const summary = summarizeSpiciness(points, finalSlot);
@@ -148,17 +162,25 @@ function buildPlayerWindows(
     const game = abbr ? schedule.gamesByTeam.get(abbr) : undefined;
     const kickoff = game ? (game.timestamp - schedule.baseline) / 60_000 : 0;
     const plays = (game?.drives ?? []).flatMap(drive => drive.plays)
-      .map(play => ({ ...play, minute: clockToGameMinute(play.clock) }))
+      .map((play, sourceIndex) => ({ ...play, sourceIndex, minute: clockToGameMinute(play.clock) }))
       .filter((play): play is typeof play & { minute: number } => play.minute !== null)
       .sort((a, b) => a.minute - b.minute);
     const involved = plays.filter(play => matchesPlayer(player.name, play.text));
     const scoringPlays = involved.length ? involved : plays;
     const end = kickoff + estimatedGameMinutes(game);
-    const moments = [{ minute: kickoff, scored: 0 }];
+    const moments: PlayerWindow["moments"] = [{ minute: kickoff, scored: 0 }];
     // Retrospective approximation: spread the final total evenly across matching
     // plays (all plays if there are no matches). This is not live fantasy scoring.
     scoringPlays.forEach((play, index) => {
-      moments.push({ minute: kickoff + play.minute, scored: finalPoints * (index + 1) / scoringPlays.length });
+      moments.push({ minute: kickoff + play.minute, scored: finalPoints * (index + 1) / scoringPlays.length,
+        play: {
+          id: `${game!.timestamp}-${game!.teams.map(team => team.name).join("-")}-${play.sourceIndex}`,
+          timestamp: game!.timestamp + play.minute * 60_000,
+          matchup: game!.teams.map(team => team.name).join(" vs "),
+          clock: play.clock,
+          text: play.text,
+        },
+      });
     });
     // Always finish at the recorded total, including negative scores and overtime.
     moments.push({ minute: end, scored: finalPoints });
@@ -169,6 +191,23 @@ function buildPlayerWindows(
     return [{ moments, kickoff, end, projection: projections[id], finalPoints,
       interpolateScore: !scoringPlays.length }];
   });
+}
+
+function contributingEvents(players: PlayerWindow[]) {
+  const byMinute = new Map<number, Map<string, ContributingPlay>>();
+  for (const player of players) {
+    let previousScore = 0;
+    for (const moment of player.moments) {
+      if (moment.play && moment.scored !== previousScore) {
+        const plays = byMinute.get(moment.minute) ?? new Map<string, ContributingPlay>();
+        plays.set(moment.play.id, moment.play);
+        byMinute.set(moment.minute, plays);
+      }
+      previousScore = moment.scored;
+    }
+  }
+  return [...byMinute].sort(([a], [b]) => a - b)
+    .map(([minute, plays]) => ({ minute, plays: [...plays.values()] }));
 }
 
 function sumAtMinute(players: PlayerWindow[], minute: number) {
