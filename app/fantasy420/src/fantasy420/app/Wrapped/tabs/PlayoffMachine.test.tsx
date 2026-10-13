@@ -2,6 +2,7 @@ import { act, cleanup, fireEvent, render, screen, waitFor, within } from "@testi
 import { selectedWrapped } from "..";
 import type { WrappedType } from "../../FetchWrapped";
 import PlayoffMachine from "./PlayoffMachine";
+import { latestCompletedWeek } from "../../FetchWrapped/completedWeek";
 import { parseWrappedHash, useWrappedTab } from "../hashRoute";
 
 vi.mock("..", () => ({
@@ -168,4 +169,24 @@ test("query changes preserve local state and the scroll anchor inside the Wrappe
     window.dispatchEvent(new HashChangeEvent("hashchange"));
   });
   expect(screen.getByText("Another tab")).toBeInTheDocument();
+});
+
+test("a completed week with NFL byes uses actual results instead of saved predictions", () => {
+  const wrapped = selectedWrapped();
+  const official = { statsOfficial: true };
+  wrapped.latestScoringPeriod = latestCompletedWeek([
+    { id: 1, proGamesByScoringPeriod: { "1": [official], "2": [official], "3": [{ statsOfficial: false }] } },
+    { id: 2, proGamesByScoringPeriod: { "1": [official], "3": [{ statsOfficial: false }] } },
+  ]);
+  for (const id of ["a", "b"]) {
+    wrapped.ffTeams[id].rosters["2"] = { ...wrapped.ffTeams[id].rosters["1"], weekNum: "2" };
+    wrapped.nflPlayers[id].scores["2"] = id === "b" ? 30 : 10;
+  }
+  wrapped.ffMatchups["3"] = [["a", "b"]];
+  openPicks({ "2": { "0": "a" } });
+  render(<PlayoffMachine />);
+  expect(screen.queryByRole("heading", { name: "Week 2" })).not.toBeInTheDocument();
+  expect(screen.getByRole("heading", { name: "Week 3" })).toBeInTheDocument();
+  expect(screen.getByText("Bravo", { selector: ".playoff-team-heading strong" })
+    .closest(".playoff-team")).toHaveTextContent("1 wins");
 });

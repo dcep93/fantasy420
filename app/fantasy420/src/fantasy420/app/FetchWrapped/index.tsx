@@ -3,6 +3,7 @@ import { printF } from "..";
 import { fetchExtension } from "../Draft/Extension";
 import { clog, currentYear, groupByF, selectedWrapped } from "../Wrapped";
 import { defenseStatsForGame } from "./defenseStats";
+import { latestCompletedWeek } from "./completedWeek";
 import helper, { default as first2knowF, HelperType } from "./helper";
 
 export type NFLPlayerType = {
@@ -134,19 +135,7 @@ export function getWrapped(providedYear: string): Promise<WrappedType> {
       // latestScoringPeriod
       Promise.resolve(h.nflTeamsSource)
         .then(({ main }) => main.settings.proTeams)
-        .then((proTeams) =>
-          proTeams
-            .filter((team) => team.id !== 0)
-            .map(
-              (team) =>
-                Object.entries(team.proGamesByScoringPeriod)
-                  .map(([weekNum, entry]) => ({ weekNum, entry }))
-                  .reverse()
-                  .find(({ entry }) => entry[0].statsOfficial)?.weekNum ?? "0"
-            )
-            .map((weekNum) => parseInt(weekNum))
-        )
-        .then((weekNums) => Math.min(...weekNums)),
+        .then(latestCompletedWeek),
       // nflPlayers
       Promise.resolve(h.nflPlayers),
       // ffTeams
