@@ -4,9 +4,11 @@ import type { WrappedType } from "../../FetchWrapped";
 import PlayoffMachine from "./PlayoffMachine";
 import { latestCompletedWeek } from "../../FetchWrapped/completedWeek";
 import { parseWrappedHash, useWrappedTab } from "../hashRoute";
+import historical2022 from "../dataJson/2022.json";
 
 vi.mock("..", () => ({
   selectedWrapped: vi.fn(),
+  currentYear: "2026",
   bubbleStyle: {},
   Helpers: { toFixed: (value: number) => String(value) },
 }));
@@ -33,6 +35,58 @@ beforeEach(() => {
 });
 
 afterEach(() => { cleanup(); vi.restoreAllMocks(); });
+
+test("2022 archived standings count regular-season wins and exclude postseason points", () => {
+  vi.mocked(selectedWrapped).mockReturnValue(historical2022);
+  render(<PlayoffMachine />);
+  const expected: Record<string, [number, number]> = {
+    "Team Morgan": [9, 1664.4],
+    "🇺🇲🇺🇲🇺🇲 MCMCGAGA": [9, 1960.3],
+    "IfYouAintFirst YoureLast": [8, 1901.38],
+    "Forswearious Toney": [8, 1713.6],
+    "SHOW ME YO TDs": [8, 1820.74],
+    "Bass Pro Shops": [7, 1853.8],
+    "Jahan The Man": [7, 1621.48],
+    "Monday Night Fucking": [4, 1613.74],
+    "Team Silver Finger": [3, 1473.56],
+    "STL Cookies": [2, 1421.7],
+  };
+  for (const [name, [wins, points]] of Object.entries(expected)) {
+    const card = screen.getByText(name, { selector: ".playoff-team-heading strong" }).closest(".playoff-team")!;
+    const stats = card.querySelectorAll(".playoff-stats strong");
+    expect(Number(stats[0].textContent)).toBe(wins);
+    expect(Number(stats[1].textContent)).toBeCloseTo(points, 2);
+  }
+  expect(screen.queryAllByRole("radio")).toHaveLength(0);
+  expect(screen.getByText("All weeks have finalized scoring.")).toBeInTheDocument();
+  expect(screen.queryByText(/have not played each other/)).not.toBeInTheDocument();
+});
+
+test("an explicit zero cutoff is honored even for an archived year", () => {
+  const wrapped = selectedWrapped();
+  wrapped.year = "2022";
+  wrapped.latestScoringPeriod = 0;
+  render(<PlayoffMachine />);
+  expect(screen.getByRole("heading", { name: "Week 1" })).toBeInTheDocument();
+  expect(screen.getByRole("heading", { name: "Week 2" })).toBeInTheDocument();
+  expect(screen.getAllByText("0", { selector: ".playoff-stats span:nth-child(2) strong" })).toHaveLength(2);
+});
+
+test("a missing current-season cutoff does not certify existing scores as final", () => {
+  delete selectedWrapped().latestScoringPeriod;
+  render(<PlayoffMachine />);
+  expect(screen.getByRole("heading", { name: "Week 1" })).toBeInTheDocument();
+  expect(screen.getByRole("heading", { name: "Week 2" })).toBeInTheDocument();
+});
+
+test("in-progress points cannot change the tiebreaker for finalized results", () => {
+  const wrapped = selectedWrapped();
+  wrapped.ffTeams.a.rosters["2"] = { ...wrapped.ffTeams.a.rosters["1"], weekNum: "2" };
+  wrapped.nflPlayers.a.scores["2"] = 100;
+  render(<PlayoffMachine />);
+  expect(screen.getByText("Alpha", { selector: ".playoff-team-heading strong" }).closest(".playoff-team"))
+    .toHaveTextContent("Points For: 20");
+});
 
 test.each([120, -80, 0])("preserves the clicked matchup's screen position for a %s px layout shift", (shift) => {
   render(<PlayoffMachine />);

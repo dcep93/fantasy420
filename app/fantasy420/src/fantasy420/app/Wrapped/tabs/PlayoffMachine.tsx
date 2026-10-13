@@ -1,6 +1,6 @@
 import { useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from "react";
 
-import { bubbleStyle, Helpers, selectedWrapped } from "..";
+import { bubbleStyle, currentYear, Helpers, selectedWrapped } from "..";
 import "./PlayoffMachine.css";
 import { getWeeklyStrength, sortMatchupsByStrengthGap } from "./playoffStrength";
 import { getPlayoffSelections, serializePlayoffPicks } from "./playoffSelections";
@@ -25,7 +25,13 @@ export default function PlayoffMachine() {
     ])),
     [wrapped.ffTeams]
   );
-  const latestCompleteWeek = wrapped.latestScoringPeriod!;
+  // Legacy archives predate the completion marker. Their scheduled season is
+  // finished; an unknown cutoff in the current season must not finalize games.
+  const latestCompleteWeek = wrapped.latestScoringPeriod ?? (
+    Number(wrapped.year) < Number(currentYear)
+      ? Math.max(0, ...Object.keys(wrapped.ffMatchups).map(Number))
+      : 0
+  );
   const upcomingWeeks = useMemo(
     () =>
       Object.keys(wrapped.ffMatchups)
@@ -66,7 +72,8 @@ export default function PlayoffMachine() {
         Object.values(wrapped.ffTeams).map((team) => [
           team.id,
           Object.entries(team.rosters)
-            .filter(([weekNum]) => weekNum !== "0")
+            .filter(([weekNum]) => Number(weekNum) > 0 && Number(weekNum) <= latestCompleteWeek &&
+              wrapped.ffMatchups[weekNum]?.some(matchup => matchup.includes(team.id)))
             .map(([weekNum, roster]) =>
               roster.starting
                 .map(
@@ -78,7 +85,7 @@ export default function PlayoffMachine() {
             .reduce((a, b) => a + b, 0),
         ])
       ),
-    [wrapped.ffTeams, wrapped.nflPlayers]
+    [wrapped.ffTeams, wrapped.nflPlayers, wrapped.ffMatchups, latestCompleteWeek]
   );
 
   const seasonResults = useMemo(() => {
@@ -139,7 +146,7 @@ export default function PlayoffMachine() {
     });
 
     return { wins, headToHead };
-  }, [wrapped.ffMatchups, latestCompleteWeek, upcomingWeeks, selections]);
+  }, [wrapped.ffMatchups, wrapped.ffTeams, wrapped.nflPlayers, latestCompleteWeek, upcomingWeeks, selections]);
 
   const standings = useMemo(() => {
     const pointsWithAdjustments = Object.fromEntries(
