@@ -38,6 +38,17 @@ it("requests Week 6 with fresh authenticated data, optimizes everyone, and ranks
   expect(ranked[0].teams.map(t => t.id)).toEqual([4, 3]);
   expect(Math.abs(ranked[0].probability! - .5)).toBeLessThan(Math.abs(ranked[1].probability! - .5));
 });
+it("enriches optimized selections from the already-fetched NFL schedule", async () => {
+  const nfl: any = schedule(), data = league();
+  Object.assign(nfl.settings.proTeams[0], { abbrev: "CHI" });
+  Object.assign(nfl.settings.proTeams[1], { abbrev: "ATL" });
+  Object.assign(nfl.settings.proTeams[0].proGamesByScoringPeriod[6][0], { awayProTeamId: 1, homeProTeamId: 2 });
+  data.schedule[1].home.rosterForCurrentScoringPeriod.entries[1].playerPoolEntry.player.proTeamId = 1;
+  const fetcher = vi.fn().mockResolvedValueOnce(nfl).mockResolvedValueOnce(data);
+  const result = await fetchLiveScoreboard(2026, fetcher);
+  expect(result.matchups[0][0].projectedLineup!.players[0].game).toMatchObject({ team: "CHI", opponent: "@ATL", status: "Scheduled" });
+  expect(fetcher).toHaveBeenCalledTimes(2);
+});
 it("does not manufacture probability from missing stats data", () => {
   const data = prepared(); delete data.schedule[1].home.rosterForCurrentScoringPeriod.entries[1].playerPoolEntry.player.stats;
   const result = parseScoreboard(data, 2026, 1, { week: 6, optimizeAll: true });

@@ -6,21 +6,39 @@ import "./LiveScoreboard.css";
 
 const points = (value: number | null) => value === null ? "—" : value.toFixed(2);
 const odds = (value: number | null) => value === null ? "Unavailable" : `${(value * 100).toFixed(1)}%`;
+const kickoffTime = (value: number) => new Date(value).toLocaleString("en-US", {
+  weekday: "short", hour: "numeric", minute: "2-digit", timeZone: "America/New_York",
+});
+const injuryLabel = (value?: string) => !value || ["ACTIVE", "NORMAL", "HEALTHY"].includes(value) ? ""
+  : ({ QUESTIONABLE: "Q", DOUBTFUL: "D", OUT: "OUT", INJURY_RESERVE: "IR", SUSPENSION: "SUSP" }[value] ?? value.replaceAll("_", " "));
 
 function Lineup({ team }: { team: Team }) {
   const lineup = team.projectedLineup;
   if (!lineup || lineup.warning) return <p className="live-scoreboard-warning">Optimization unavailable: {lineup?.warning ?? "Missing roster data."} Win probability is withheld.</p>;
   return <details>
     <summary>Optimized lineup · {lineup.players.length} starters</summary>
-    <table>
-      <thead><tr><th>Slot</th><th>Player</th><th>Earned</th><th>Projection</th></tr></thead>
+    <div className="live-scoreboard-table" tabIndex={0} role="region" aria-label={`${team.name} lineup details`}><table>
+      <thead><tr><th>Slot</th><th>Player</th><th>Opp</th><th>Status / time (ET)</th><th>Earned</th><th>Projection</th></tr></thead>
       <tbody>{lineup.players.map(player => <tr key={player.id}>
-        <td>{player.slot}</td><td>{player.name}{player.locked && <small> · Locked</small>}</td>
-        <td>{points(player.actual)}</td><td>{points(player.projection)}</td>
+        <td>{player.slot}</td><td>{player.name}
+          {injuryLabel(player.injuryStatus) && <span className="live-scoreboard-injury"> {injuryLabel(player.injuryStatus)}</span>}
+          <small className="live-scoreboard-player-meta">{player.game?.team}{player.locked && " · Locked"}</small>
+        </td>
+        <td className="live-scoreboard-opponent">{player.game?.opponent ?? "—"}</td>
+        <td className="live-scoreboard-game">
+          {player.game?.status === "Scheduled" ? player.game.kickoff === null ? "Time TBD" :
+            <time dateTime={new Date(player.game.kickoff).toISOString()}>{kickoffTime(player.game.kickoff)}</time>
+            : player.game?.status ?? "Unknown"}
+          {player.game?.status === "Started" && player.game.kickoff !== null && <small className="live-scoreboard-player-meta">{kickoffTime(player.game.kickoff)}</small>}
+        </td>
+        <td>{points(player.actual)}</td><td>{points(player.projection)}
+          {player.projectionMissing ? <small className="live-scoreboard-projection-note">Missing forecast → 0</small> :
+            player.projection === 0 && <small className="live-scoreboard-projection-note">ESPN zero</small>}
+        </td>
       </tr>)}</tbody>
-    </table>
+    </table></div>
     {lineup.emptySlots.length > 0 && <p>{lineup.emptySlots.length} starting slots could not be filled from the eligible roster.</p>}
-    <small>Player projections are pregame; absent weekly forecasts count as 0. Team projected finishes include live results.</small>
+    <small>Times are Eastern. “Started” means kickoff has passed; no live game clock is provided. Player projections are pregame; absent weekly forecasts count as 0. Team projected finishes include live results.</small>
   </details>;
 }
 

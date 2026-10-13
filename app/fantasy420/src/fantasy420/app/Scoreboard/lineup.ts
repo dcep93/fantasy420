@@ -6,6 +6,10 @@ export type ProjectedPlayer = {
   projection: number | null;
   locked: boolean;
   actual: number | null;
+  proTeamId?: number;
+  injuryStatus?: string;
+  projectionMissing?: boolean;
+  game?: { team: string; opponent: string; status: "Scheduled" | "Started" | "Final" | "Bye" | "Unknown"; kickoff: number | null };
 };
 
 export type ProjectedLineup = {
@@ -63,7 +67,8 @@ function better(a: State, b: State): boolean {
 
 function selected(player: Candidate, slot: number): ProjectedPlayer {
   return { id: player.id, name: player.name, slotId: slot, slot: SLOT_NAMES[slot] ?? `Slot ${slot}`,
-    projection: player.projection, locked: player.locked, actual: player.actual };
+    projection: player.projection, locked: player.locked, actual: player.actual,
+    proTeamId: player.proTeamId, injuryStatus: player.injuryStatus, projectionMissing: player.projectionMissing };
 }
 
 /** Compute a local projection only; ESPN lineups and actual scores are untouched. */
@@ -123,6 +128,10 @@ export function optimizeProjectedLineup(data: any, side: any, year: number, scop
       return fallback(`Current slot is ineligible for ${player.fullName}.`);
     }
     const candidate: Candidate = { id, name: player.fullName, projection, locked: pool.lineupLocked,
+      proTeamId: Number.isInteger(player.proTeamId) ? player.proTeamId : undefined,
+      injuryStatus: typeof player.injuryStatus === "string" ? player.injuryStatus : undefined,
+      projectionMissing: Array.isArray(player.stats) && !player.stats.some((stat: any) =>
+        stat?.seasonId === year && stat.scoringPeriodId === data.scoringPeriodId && stat.statSourceId === 1 && stat.statSplitTypeId === 1),
       actual: finite(pool.appliedStatTotal) ? pool.appliedStatTotal : null, currentSlot,
       eligible: Array.isArray(eligible) ? eligible : [] };
     if (candidate.locked) locked.push(candidate);

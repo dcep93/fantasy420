@@ -13,14 +13,18 @@
 .live-scoreboard-points { display: flex; flex-wrap: wrap; gap: 10px 24px; margin: 16px 0; }
 .live-scoreboard details { margin: 18px 0 8px; font-size: .9rem; }
 .live-scoreboard summary { cursor: pointer; }
-.live-scoreboard table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+.live-scoreboard-table { overflow-x: auto; }
+.live-scoreboard table { width: 100%; min-width: 580px; border-collapse: collapse; margin: 12px 0; }
 .live-scoreboard th, .live-scoreboard td { padding: 8px 4px; text-align: left; border-bottom: 1px solid #35404d; }
-.live-scoreboard th:nth-child(n+3), .live-scoreboard td:nth-child(n+3) { text-align: right; }
+.live-scoreboard th:nth-child(n+5), .live-scoreboard td:nth-child(n+5) { text-align: right; }
+.live-scoreboard-player-meta, .live-scoreboard-projection-note { display: block; margin-top: 4px; }
+.live-scoreboard-injury, .live-scoreboard small.live-scoreboard-projection-note { color: #ffc778; }
+.live-scoreboard-opponent, .live-scoreboard-game { white-space: nowrap; }
 .live-scoreboard small { color: var(--night-muted, #a4aebb); }
 .live-scoreboard-warning { color: #ffc778; line-height: 1.5; }
 .live-scoreboard-bar { height: 7px; margin-top: 20px; border-radius: 5px; overflow: hidden; background: #ffa744; }
 .live-scoreboard-bar span { display: block; height: 100%; background: #4eb0fb; }
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
   .live-scoreboard { padding: 0 12px 20px; }
   .live-scoreboard-matchup { padding: 16px; }
   .live-scoreboard-teams { grid-template-columns: minmax(0, 1fr); gap: 18px; }

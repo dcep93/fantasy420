@@ -1,6 +1,7 @@
 import { fetchExtension } from "../Draft/Extension";
 import { latestCompletedWeek } from "../FetchWrapped/completedWeek";
 import { parseScoreboard } from "./data";
+import { playerGameContext } from "./playerContext";
 
 export function currentScoringWeek(schedule: any): number {
   const teams = schedule?.settings?.proTeams;
@@ -31,6 +32,11 @@ export async function fetchLiveScoreboard(year: number, fetcher = fetchExtension
   let data = await read(url.toString());
   data = withPregameTotals(data, schedule, week, Date.now());
   const snapshot = parseScoreboard(data, year, Date.now(), { optimizeAll: true, week });
+  for (const team of snapshot.matchups.flat()) {
+    for (const player of team.projectedLineup?.players ?? []) {
+      player.game = playerGameContext(player.proTeamId, schedule, week, snapshot.fetchedAt);
+    }
+  }
   if (!snapshot.matchups.length) throw new Error(`ESPN has no matchups available for Week ${week} yet.`);
   return snapshot;
 }

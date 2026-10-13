@@ -38,3 +38,25 @@ it("shows an actionable error when no live data is available", async () => {
   expect(screen.queryByRole("article")).toBeNull();
   await waitFor(() => expect(screen.getByRole("button", { name: "Refresh" })).toBeEnabled());
 });
+
+it("shows opponent, Eastern kickoff, injury and distinct projection-source labels", async () => {
+  const next = structuredClone(snapshot);
+  Object.assign(next.matchups[1][0].projectedLineup!.players[0], { projection: 0, projectionMissing: false,
+    injuryStatus: "QUESTIONABLE", game: { team: "CHI", opponent: "@ATL", status: "Scheduled", kickoff: Date.UTC(2026, 9, 18, 17) } });
+  Object.assign(next.matchups[1][1].projectedLineup!.players[0], { projection: 0, projectionMissing: true,
+    game: { team: "MIN", opponent: "BYE", status: "Bye", kickoff: null } });
+  render(<LiveScoreboard load={vi.fn().mockResolvedValue(next)} />);
+  await screen.findByText("Week 6 · Live scoreboard");
+  fireEvent.click(screen.getAllByText(/Optimized lineup/)[0]);
+  const table = within(screen.getByRole("region", { name: "Team 3 lineup details" }));
+  expect(table.getByRole("columnheader", { name: "Opp" })).toBeVisible();
+  expect(table.getByRole("columnheader", { name: "Status / time (ET)" })).toBeVisible();
+  expect(table.getByText("@ATL")).toBeVisible();
+  expect(table.getByText("Sun 1:00 PM")).toBeVisible();
+  expect(table.getByText("Q")).toBeVisible();
+  expect(table.getByText("ESPN zero")).toBeVisible();
+  fireEvent.click(screen.getAllByText(/Optimized lineup/)[1]);
+  const other = within(screen.getByRole("region", { name: "Team 4 lineup details" }));
+  expect(other.getByText("Missing forecast → 0")).toBeVisible();
+  expect(other.getByText("Bye")).toBeVisible();
+});

@@ -15,6 +15,13 @@ const optimize = ({ data, side }: ReturnType<typeof fixture>) => optimizeProject
 const assignments = (f: ReturnType<typeof fixture>) => optimize(f).players.map(p => [p.slotId, p.id]);
 
 describe("projected lineup optimization", () => {
+  it("preserves injury/team context and distinguishes an explicit zero from an absent forecast", () => {
+    const p = player(1, 0, [0], 0);
+    Object.assign(p.playerPoolEntry.player, { proTeamId: 3, injuryStatus: "QUESTIONABLE" });
+    expect(optimize(fixture([p])).players[0]).toMatchObject({ proTeamId: 3, injuryStatus: "QUESTIONABLE", projection: 0, projectionMissing: false });
+    p.playerPoolEntry.player.stats = [];
+    expect(optimize(fixture([p])).players[0]).toMatchObject({ projection: 0, projectionMissing: true });
+  });
   it("scopes changes to the exact two league/team pairs", () => {
     for (const [league, team, targeted] of [[203836968, 6, true], [367176096, 1, true], [203836968, 1, false], [367176096, 6, false], [123, 6, false]] as const) {
       const f = fixture(); f.data.id = String(league); f.side.teamId = team;
@@ -99,7 +106,7 @@ describe("projected lineup optimization", () => {
     locked.playerPoolEntry.appliedStatTotal = 18;
     const f = fixture([locked, player(2, 9, [2, 23], 2), player(3, 99, [2, 23], 20, true), player(4, 100, [2, 23], 21)], { 2: 1, 23: 1, 20: 5, 21: 1 });
     expect(assignments(f)).toEqual([[2, 2], [23, 1]]);
-    expect(optimize(f).players[1]).toEqual({ id: 1, name: "Player 1", slotId: 23, slot: "FLEX", projection: 10, locked: true, actual: 18 });
+    expect(optimize(f).players[1]).toEqual({ id: 1, name: "Player 1", slotId: 23, slot: "FLEX", projection: 10, locked: true, actual: 18, projectionMissing: false });
     expect(optimize(f).projected).toBe(100);
   });
 
