@@ -15,7 +15,7 @@ vi.mock("./MatchupLeadChart", () => ({
 
 function fixture(): { wrapped: WrappedType; data: SeasonData } {
   const wrapped: WrappedType = {
-    year: "2026", latestScoringPeriod: 1, weeklyProjectionDataVersion: 1,
+    year: "2026", latestScoringPeriod: 1, weeklyProjectionDataVersion: 2,
     nflTeams: { a: { id: "a", name: "Bills", byeWeek: 0, nflGamesByScoringPeriod: {} },
       b: { id: "b", name: "Jets", byeWeek: 0, nflGamesByScoringPeriod: {} } },
     nflPlayers: {
@@ -171,11 +171,13 @@ test("excludes unavailable weekly projections without borrowing a generic projec
   expect(computeSpiciestMatchups(wrapped, data)[0].points[0].projectedScores).toEqual([0, 10]);
 });
 
-test("rejects legacy zero placeholders while retaining nonzero historical projections", () => {
+test("rejects legacy and version 1 zeros while retaining nonzero historical projections", () => {
   const { wrapped, data } = fixture();
   delete wrapped.weeklyProjectionDataVersion;
   expect(computeSpiciestMatchups(wrapped, data)).toHaveLength(1);
   wrapped.ffTeams.a.rosters[1].projections.a = 0;
+  expect(analyzeSpiciestMatchups(wrapped, data)).toEqual({ matchups: [], omittedForProjections: 1 });
+  wrapped.weeklyProjectionDataVersion = 1;
   expect(analyzeSpiciestMatchups(wrapped, data)).toEqual({ matchups: [], omittedForProjections: 1 });
 });
 

@@ -74,8 +74,8 @@ export default function SpiciestMatchups() {
             The final-slot bonus starts at the week’s last scheduled NFL kickoff, often Monday night, and ends at its estimated completion.
             Taking the first lead doesn’t count; switching to the other team does, even after a tie.
             Final scores below are recorded starter totals. Matchups with missing or unverified starter projections are excluded.
-            Zeros in older snapshots are unverified because missing projections were also saved as zero.
-            Explicit zero projections from newer fetches are accepted. Projections aren’t timestamped throughout the week.
+            Unverified zeros are excluded, including ESPN records with empty projected scoring contributions.
+            New fetches check the scoring inputs before accepting a zero total. Projections aren’t timestamped throughout the week.
           </p>
         </details>
       </div>

@@ -70,8 +70,8 @@ export type FantasyCalcHistoryType = {
 export type WrappedType = {
   year: string;
   latestScoringPeriod?: number;
-  /** Version 1 omits missing weekly projections instead of saving them as zero. */
-  weeklyProjectionDataVersion?: 1;
+  /** Version 2 also rejects ESPN zero totals without supporting scoring inputs. */
+  weeklyProjectionDataVersion?: 1 | 2;
   nflPlayers: {
     [id: string]: NFLPlayerType;
   };
@@ -446,7 +446,7 @@ export function getWrapped(providedYear: string): Promise<WrappedType> {
         ({
           year,
           latestScoringPeriod,
-          weeklyProjectionDataVersion: 1,
+          weeklyProjectionDataVersion: 2,
           nflPlayers,
           ffTeams,
           ffMatchups,
