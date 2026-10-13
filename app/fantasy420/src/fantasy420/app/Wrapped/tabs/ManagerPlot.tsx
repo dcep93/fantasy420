@@ -12,6 +12,7 @@ import {
 import { Helpers, mapDict, selectedWrapped, selectedYear } from "..";
 import { NIGHT_CHART_COLORS, NIGHT_COLORS } from "../../theme";
 import { getManagerWins, separateTiedWins } from "./managerWins";
+import { useCoarsePointer } from "./PlayerPlot/useCoarsePointer";
 
 export const colors = [...NIGHT_CHART_COLORS];
 
@@ -20,6 +21,8 @@ export default function ManagerPlot() {
 }
 
 function SubManagerPlot() {
+  const isCoarsePointer = useCoarsePointer();
+  const [activeTouchChart, setActiveTouchChart] = useState<string>();
   const winData = getManagerWins(selectedWrapped());
   const dataA = mapDict(selectedWrapped().ffTeams, (t) => ({
     t,
@@ -160,6 +163,14 @@ function SubManagerPlot() {
                 className="manager-plot-chart"
                 onMouseMoveCapture={resumeHover}
                 onTouchMoveCapture={resumeHover}
+                onClick={(event) => {
+                  if (!isCoarsePointer) return;
+                  // A tap opens the chart tooltip; don't also dismiss it in the
+                  // desktop click handler on the surrounding plot.
+                  event.stopPropagation();
+                  setActiveTouchChart(key);
+                  changeInteractionMode("hover");
+                }}
               >
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart
@@ -214,11 +225,14 @@ function SubManagerPlot() {
                       />
                     )}
                     <Tooltip
-                      active={interactionMode === "hover" ? undefined : false}
+                      trigger={isCoarsePointer ? "click" : "hover"}
+                      active={interactionMode === "hover" &&
+                        (!isCoarsePointer || activeTouchChart === key) ? undefined : false}
                       cursor={interactionMode === "hover" ? undefined : false}
                       content={({ label, payload, coordinate, viewBox }) => {
                         if (
                           interactionMode !== "hover" ||
+                          (isCoarsePointer && activeTouchChart !== key) ||
                           domainData.year !== selectedYear ||
                           label === undefined ||
                           !payload?.length

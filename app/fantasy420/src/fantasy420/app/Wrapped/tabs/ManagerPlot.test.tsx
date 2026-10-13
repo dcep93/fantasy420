@@ -2,6 +2,9 @@ import { act, fireEvent, render, screen, within } from "@testing-library/react";
 import type { WrappedType } from "../../FetchWrapped";
 import { selectedWrapped } from "..";
 import ManagerPlot from "./ManagerPlot";
+import { useCoarsePointer } from "./PlayerPlot/useCoarsePointer";
+
+vi.mock("./PlayerPlot/useCoarsePointer", () => ({ useCoarsePointer: vi.fn(() => false) }));
 
 vi.mock("..", () => ({
   selectedWrapped: vi.fn(),
@@ -16,20 +19,28 @@ vi.mock("..", () => ({
 vi.mock("recharts", async () => {
   const React = await import("react");
   const Data = React.createContext<Record<string, number>[]>([]);
+  const Active = React.createContext(false);
   return {
     ResponsiveContainer: ({ children }: any) => children,
-    LineChart: ({ data, children }: any) => (
-      <Data.Provider value={data}>
-        <pre data-testid="series">{JSON.stringify(data)}</pre>{children}
-      </Data.Provider>
-    ),
+    LineChart: ({ data, children }: any) => {
+      const [active, setActive] = React.useState(false);
+      const clickTrigger = React.Children.toArray(children).some((child: any) => child.props?.trigger === "click");
+      return <div data-testid="manager-chart"
+        onClick={() => { if (clickTrigger) setActive(true); }}
+        onMouseLeave={() => { if (!clickTrigger) setActive(false); }}>
+        <Active.Provider value={active}><Data.Provider value={data}>
+          <pre data-testid="series">{JSON.stringify(data)}</pre>{children}
+        </Data.Provider></Active.Provider>
+      </div>;
+    },
     Line: ({ strokeWidth }: any) => <span data-testid="manager-line" data-width={strokeWidth} />,
     XAxis: () => null,
     YAxis: ({ domain }: any) => { domain([-1, 1]); return null; },
     ReferenceLine: () => null,
-    Tooltip: ({ content }: any) => {
+    Tooltip: ({ content, trigger, active }: any) => {
+      const chartActive = React.useContext(Active);
       const point = React.useContext(Data).find((point) => point.x === 1);
-      if (!point) return null;
+      if (!point || active === false || (trigger === "click" && !chartActive)) return null;
       return content({ label: 1, coordinate: { y: 50 }, viewBox: { y: 0, height: 100 },
         payload: Object.entries(point).filter(([key]) => key !== "x")
           .map(([key, value]) => ({ name: key, dataKey: key, value })) });
@@ -38,6 +49,7 @@ vi.mock("recharts", async () => {
 });
 
 beforeEach(() => {
+  vi.mocked(useCoarsePointer).mockReturnValue(false);
   vi.useFakeTimers();
   const team = (id: string, name: string) => ({
     id, name, draft: [], rosters: {
@@ -58,6 +70,35 @@ beforeEach(() => {
 });
 
 afterEach(() => { vi.clearAllTimers(); vi.useRealTimers(); });
+
+test("mobile taps keep the table open through compatibility mouse events and can switch charts or reopen after dismissal", () => {
+  vi.mocked(useCoarsePointer).mockReturnValue(true);
+  const { container } = render(<ManagerPlot />);
+  const points = screen.getByRole("region", { name: "pointsFor 2" });
+  const against = screen.getByRole("region", { name: "pointsAgainst 2" });
+  const chart = within(points).getByTestId("manager-chart");
+  const popup = () => within(points).queryByText("20.00: (1) Alpha");
+  const tap = (target: HTMLElement) => {
+    fireEvent.touchStart(target);
+    fireEvent.touchEnd(target);
+    fireEvent.mouseMove(target);
+    fireEvent.click(target);
+    fireEvent.mouseLeave(target);
+    act(() => { vi.runOnlyPendingTimers(); });
+  };
+  expect(popup()).not.toBeInTheDocument();
+  tap(chart);
+  expect(popup()).toBeInTheDocument();
+  tap(chart);
+  expect(popup()).toBeInTheDocument();
+  tap(within(against).getByTestId("manager-chart"));
+  expect(popup()).not.toBeInTheDocument();
+  expect(within(against).getByText("10.00: (1) Alpha")).toBeInTheDocument();
+  fireEvent.click(container.firstElementChild!);
+  expect(within(against).queryByText("10.00: (1) Alpha")).not.toBeInTheDocument();
+  tap(chart);
+  expect(popup()).toBeInTheDocument();
+});
 
 test.each(["mouseMove", "touchMove"] as const)("first click hides the popup, second clears focus, and %s resumes hover", (movement) => {
   vi.mocked(selectedWrapped).mockReturnValue({ ...selectedWrapped(), latestScoringPeriod: 0 });
