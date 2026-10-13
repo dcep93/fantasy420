@@ -22,6 +22,7 @@ type WeekSchedule = {
 };
 export type MatchupSpiciness = {
   id: string;
+  year: string;
   week: number;
   homeName: string;
   awayName: string;
@@ -112,7 +113,8 @@ export function computeSpiciestMatchups(wrapped: WrappedType, data: SeasonData):
       const starterTotal = (ids: string[]) => ids.reduce((sum, id) =>
         sum + (wrapped.nflPlayers[id]?.scores[week] ?? 0), 0);
       results.push({
-        id: `${week}-${homeId}-${awayId}`,
+        id: `${wrapped.year}-${week}-${homeId}-${awayId}`,
+        year: wrapped.year,
         week,
         homeName: home.name,
         awayName: away.name,
@@ -196,7 +198,9 @@ function estimatedGameMinutes(game?: SeasonGame): number {
 }
 
 function matchesPlayer(name: string, text: string): boolean {
-  const lastName = name.split(" ").slice(-1)[0];
+  const parts = name.trim().split(/\s+/);
+  while (/^(?:jr\.?|sr\.?|ii|iii|iv|v)$/i.test(parts.at(-1) ?? "")) parts.pop();
+  const lastName = parts.at(-1);
   if (!lastName) return false;
   const escaped = lastName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   return new RegExp(`\\b${escaped}\\b`, "i").test(text);

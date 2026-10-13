@@ -6,7 +6,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { bubbleStyle, groupByF } from "..";
+import { bubbleStyle, groupByF, selectedYear } from "..";
 import { usePlayerStats } from "./PlayerStats/usePlayerStats";
 import LoadStatus from "./PlayerStats/LoadStatus";
 import { NIGHT_CHART_COLORS } from "../../theme";
@@ -19,18 +19,22 @@ const POSITION_COLORS: Record<string, string> = {
 
 export default function PositionTrends() {
   const stats = usePlayerStats();
-  const playerStatsData = stats.data;
+  const playerStatsData = stats.data.map(player => ({ ...player,
+    years: player.years.filter(year => selectedYear === "all" || String(year.year) === selectedYear),
+  }));
+  const coverage = [...new Set(playerStatsData.flatMap(player => player.years.map(year => year.year)))].sort((a,b)=>a-b);
   return (
     <div>
       <LoadStatus {...stats} />
+      <p>{selectedYear === "all" ? `All years · NFL position history ${coverage[0] ?? ""}–${coverage.at(-1) ?? ""}. Pooled weekly averages use all nonzero recorded player scores.` : `Position history · ${selectedYear}`}</p>
       {Object.entries(
         groupByF(
           playerStatsData.flatMap((p) => p.years.map((y) => ({ p, y }))),
-          (o) => o.y.year.toString()
+          (o) => selectedYear === "all" ? "all" : o.y.year.toString()
         )
       )
         .map(([year, yearPlayers]) => ({
-          year: parseInt(year),
+          year,
           weeks: Object.entries(
             groupByF(
               yearPlayers.flatMap((o) =>
@@ -56,11 +60,11 @@ export default function PositionTrends() {
             }))
             .sort((a, b) => a.x - b.x),
         }))
-        .sort((a, b) => b.year - a.year)
+        .sort((a, b) => b.year.localeCompare(a.year))
         .map((o) => (
           <div key={o.year}>
             <div style={bubbleStyle}>
-              <h1>{o.year}</h1>
+              <h2>{o.year === "all" ? "All years combined by week number" : o.year}</h2>
               <div style={{ display: "flex" }}>
                 {[true, false].map((key, i) => (
                   <div key={i} style={{ width: "700px", height: "500px" }}>

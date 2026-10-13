@@ -1,18 +1,101 @@
 import { bubbleStyle, Helpers, Position, selectedWrapped } from "..";
 
 export default function DeterminedByDiscreteScoring() {
+  return (
+    <div>
+      {Object.entries(selectedWrapped().ffMatchups)
+        .filter(
+          ([periodId]) =>
+            Number(periodId) <=
+            (selectedWrapped().latestScoringPeriod ?? Number.POSITIVE_INFINITY)
+        )
+        .flatMap(([periodId, matchup]) =>
+          matchup.map((match) => ({
+            periodId,
+            teams: Helpers.sortByKey(
+              match
+                .map((teamId) =>
+                  teamId === null ? null : selectedWrapped().ffTeams[teamId]
+                )
+                .map((team) => team!)
+                .filter((team) => team.rosters[periodId])
+                .map((team) => ({
+                  ...team,
+                  score: Helpers.toFixed(
+                    team.rosters[periodId].starting
+                      .map(
+                        (playerId) =>
+                          selectedWrapped().nflPlayers[playerId].scores[
+                            periodId
+                          ]!
+                      )
+                      .reduce((a, b) => a + b, 0)
+                  ),
+                }))
+                .map((team) => {
+                  const ds = getScoringAdjustments(selectedWrapped(), team.id, periodId);
+                  return {
+                    ...team,
+                    msgs: ds.map((d) => d!.msg),
+                    superscore:
+                      team.score +
+                      ds.map((d) => d!.superscore).reduce((a, b) => a + b, 0),
+                  };
+                }),
+              (team) => -team.score
+            ),
+          }))
+        )
+        .map(({ teams, ...match }) =>
+          teams.length === 0
+            ? null
+            : {
+                ...match,
+                winner: teams[0],
+                loser: teams[1],
+              }
+        )
+        .filter((match) => match !== null)
+        .map((match) => match!)
+        .filter((match) => match.loser.superscore > match.winner.superscore)
+        .map((match, i) => (
+          <div key={i}>
+            <div style={bubbleStyle}>
+              <div>week {match.periodId}:</div>
+              <div>
+                <b>{match.loser.name}</b> {match.loser.score} (ss{" "}
+                {match.loser.superscore.toFixed(2)})
+              </div>
+              <div>would have beaten</div>
+              <div>
+                <b>{match.winner.name}</b> {match.winner.score} (ss{" "}
+                {match.winner.superscore.toFixed(2)})
+              </div>
+              <div>if K and DST used continuous scoring:</div>
+              <div style={bubbleStyle}>
+                <div>{match.loser.msgs.join(" ")}</div>
+                <div>{match.winner.msgs.join(" ")}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+    </div>
+  );
+}
+
+export function getScoringAdjustments(wrapped: import("../../FetchWrapped").WrappedType, teamId: string, periodId: string) {
   function calculateDSTDifference(
     teamId: string,
     periodId: string
   ): { superscore: number; msg: string } | null {
-    const started = selectedWrapped()
+    const started = wrapped
       .ffTeams[teamId].rosters[periodId].starting.map(
-        (playerId) => selectedWrapped().nflPlayers[playerId]
+        (playerId) => wrapped.nflPlayers[playerId]
       )
       .find((p) => p.position === Position[Position.DST]);
     if (!started) return { superscore: 0, msg: "NO DST STARTED" };
     const offense =
-      selectedWrapped().nflTeams[started.nflTeamId].nflGamesByScoringPeriod[
+      wrapped.nflTeams[started.nflTeamId].nflGamesByScoringPeriod[
         periodId
       ];
     if (!offense) return null;
@@ -74,14 +157,14 @@ export default function DeterminedByDiscreteScoring() {
     teamId: string,
     periodId: string
   ): { superscore: number; msg: string } | null {
-    const started = selectedWrapped()
+    const started = wrapped
       .ffTeams[teamId].rosters[periodId].starting.map(
-        (playerId) => selectedWrapped().nflPlayers[playerId]
+        (playerId) => wrapped.nflPlayers[playerId]
       )
       .find((p) => p.position === Position[Position.K]);
     if (!started) return { superscore: 0, msg: "NO K STARTED" };
     const offense =
-      selectedWrapped().nflTeams[started.nflTeamId].nflGamesByScoringPeriod[
+      wrapped.nflTeams[started.nflTeamId].nflGamesByScoringPeriod[
         periodId
       ];
     if (!offense) return null;
@@ -104,87 +187,5 @@ export default function DeterminedByDiscreteScoring() {
       .reduce((a, b) => a + b, 0);
     return { superscore, msg: `${started.name} ${superscore.toFixed(2)}` };
   }
-  return (
-    <div>
-      {Object.entries(selectedWrapped().ffMatchups)
-        .filter(
-          ([periodId]) =>
-            Number(periodId) <=
-            (selectedWrapped().latestScoringPeriod ?? Number.POSITIVE_INFINITY)
-        )
-        .flatMap(([periodId, matchup]) =>
-          matchup.map((match) => ({
-            periodId,
-            teams: Helpers.sortByKey(
-              match
-                .map((teamId) =>
-                  teamId === null ? null : selectedWrapped().ffTeams[teamId]
-                )
-                .map((team) => team!)
-                .filter((team) => team.rosters[periodId])
-                .map((team) => ({
-                  ...team,
-                  score: Helpers.toFixed(
-                    team.rosters[periodId].starting
-                      .map(
-                        (playerId) =>
-                          selectedWrapped().nflPlayers[playerId].scores[
-                            periodId
-                          ]!
-                      )
-                      .reduce((a, b) => a + b, 0)
-                  ),
-                }))
-                .map((team) => {
-                  const ds = [
-                    calculateDSTDifference(team.id, periodId),
-                    calculateKDifference(team.id, periodId),
-                  ].filter((o) => o !== null);
-                  return {
-                    ...team,
-                    msgs: ds.map((d) => d!.msg),
-                    superscore:
-                      team.score +
-                      ds.map((d) => d!.superscore).reduce((a, b) => a + b, 0),
-                  };
-                }),
-              (team) => -team.score
-            ),
-          }))
-        )
-        .map(({ teams, ...match }) =>
-          teams.length === 0
-            ? null
-            : {
-                ...match,
-                winner: teams[0],
-                loser: teams[1],
-              }
-        )
-        .filter((match) => match !== null)
-        .map((match) => match!)
-        .filter((match) => match.loser.superscore > match.winner.superscore)
-        .map((match, i) => (
-          <div key={i}>
-            <div style={bubbleStyle}>
-              <div>week {match.periodId}:</div>
-              <div>
-                <b>{match.loser.name}</b> {match.loser.score} (ss{" "}
-                {match.loser.superscore.toFixed(2)})
-              </div>
-              <div>would have beaten</div>
-              <div>
-                <b>{match.winner.name}</b> {match.winner.score} (ss{" "}
-                {match.winner.superscore.toFixed(2)})
-              </div>
-              <div>if K and DST used continuous scoring:</div>
-              <div style={bubbleStyle}>
-                <div>{match.loser.msgs.join(" ")}</div>
-                <div>{match.winner.msgs.join(" ")}</div>
-              </div>
-            </div>
-          </div>
-        ))}
-    </div>
-  );
+  return [calculateDSTDifference(teamId, periodId), calculateKDifference(teamId, periodId)].filter((v): v is { superscore: number; msg: string } => v !== null);
 }

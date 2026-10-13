@@ -1,5 +1,13 @@
 export const MIN_SWING_POINTS = 5;
 export const TOP_SWING_COUNT = 3;
+export const COMPETITIVE_MARGIN = 10;
+
+export function competitiveSwing(from: number, to: number): number {
+  // Moving away from a tie is domination, not a comeback.
+  if (!from || (Math.sign(from) === Math.sign(to) && Math.abs(to) >= Math.abs(from))) return 0;
+  if (Math.sign(from) !== Math.sign(to)) return Math.abs(from) + Math.min(COMPETITIVE_MARGIN, Math.abs(to));
+  return Math.abs(to - from) * Math.max(0, 1 - Math.abs(to) / COMPETITIVE_MARGIN);
+}
 export const FINAL_SLOT_FLIP_POINTS = 2;
 export const MAX_FINAL_SLOT_BONUS = 10;
 // A 1 ms interval displays a scoring jump without turning projection decay into steps.
@@ -25,14 +33,14 @@ export function summarizeSpiciness(timeline: ProjectedPoint[], finalSlot: { star
     } else if ((lead - extreme) * direction >= 0) {
       extreme = lead;
     } else if ((extreme - lead) * direction >= threshold) {
-      swings.push(Math.abs(extreme - pivot));
+      swings.push(Math.round(competitiveSwing(pivot / 100, extreme / 100) * 100));
       pivot = extreme;
       extreme = lead;
       direction *= -1;
     }
   }
-  if (direction) swings.push(Math.abs(extreme - pivot));
-  const biggestSwings = swings.sort((a, b) => b - a).slice(0, TOP_SWING_COUNT).map(swing => swing / 100);
+  if (direction) swings.push(Math.round(competitiveSwing(pivot / 100, extreme / 100) * 100));
+  const biggestSwings = swings.filter(swing => swing > 0).sort((a, b) => b - a).slice(0, TOP_SWING_COUNT).map(swing => swing / 100);
   const swingScore = Math.round(biggestSwings.reduce((sum, swing) => sum + swing, 0) * 100) / 100;
 
   let leader = 0;

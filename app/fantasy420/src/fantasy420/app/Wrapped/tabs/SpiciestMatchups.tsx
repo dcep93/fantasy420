@@ -1,46 +1,48 @@
 import { useEffect, useState } from "react";
 import { selectedWrapped, selectedYear } from "..";
+import allWrapped from "../allWrapped";
+import { ALL_YEARS, scopeLabel } from "../scope";
+import type { WrappedType } from "../../FetchWrapped";
 import { NIGHT_COLORS } from "../../theme";
 import MatchupLeadChart, { formatMatchupTime } from "./MatchupLeadChart";
 import { computeSpiciestMatchups, MatchupSpiciness, SeasonData } from "./spiciestMatchupsData";
-import { FINAL_SLOT_FLIP_POINTS, MAX_FINAL_SLOT_BONUS, MIN_SWING_POINTS, TOP_SWING_COUNT } from "./matchupSpiciness";
+import { COMPETITIVE_MARGIN, FINAL_SLOT_FLIP_POINTS, MAX_FINAL_SLOT_BONUS, MIN_SWING_POINTS, TOP_SWING_COUNT } from "./matchupSpiciness";
 
 const DATA_CACHE = "data_v6";
 
 export default function SpiciestMatchups() {
   const [result, setResult] = useState<{
-    source: ReturnType<typeof selectedWrapped>;
+    source: ReturnType<typeof selectedWrapped> | null;
+    scope: string;
+    excluded: string[];
     matchups: MatchupSpiciness[];
     error?: string;
   } | null>(null);
-  const year = Number(selectedYear);
-  const wrapped = selectedWrapped();
+  const year = selectedYear;
+  const wrapped = year === ALL_YEARS ? null : selectedWrapped();
   useEffect(() => {
     let cancelled = false;
     setResult(null);
-    if (!Number.isFinite(year)) {
-      setResult({ source: wrapped, matchups: [], error: "Select a numeric year to view matchups." });
-      return;
-    }
-    fetchSeasonData(year)
-      .then(data => {
-        if (!cancelled) setResult({ source: wrapped, matchups: computeSpiciestMatchups(wrapped, data).slice(0, 10) });
+    const seasons = year === ALL_YEARS ? allWrapped : wrapped ? { [year]: wrapped } : {};
+    loadMatchupSeasons(seasons)
+      .then(({ matchups, excluded }) => {
+        if (!cancelled) setResult({ source: wrapped, scope: year, matchups, excluded });
       })
       .catch(error => {
-        if (!cancelled) setResult({ source: wrapped, matchups: [], error: error.message || String(error) });
+        if (!cancelled) setResult({ source: wrapped, scope: year, matchups: [], excluded: [], error: error.message || String(error) });
       });
     return () => { cancelled = true; };
   }, [year, wrapped]);
 
-  const loading = !result || result.source !== wrapped;
+  const loading = !result || result.source !== wrapped || result.scope !== year;
   return (
     <div style={{ padding: "0.5rem 1rem 1.5rem", maxWidth: 1200, boxSizing: "border-box" }}>
-      <h2>Spiciest matchups · {selectedYear}</h2>
+      <h2>Spiciest matchups · {scopeLabel(year, Object.keys(allWrapped))}</h2>
       <p style={{ maxWidth: "78ch", lineHeight: 1.6 }}>
         Which fantasy matchups had the biggest changes in their expected outcome? These are the top 10 from completed weeks.
-        Spice adds the {TOP_SWING_COUNT} biggest swings of at least {MIN_SWING_POINTS} points in projected final-score differential,
+        Spice adds the {TOP_SWING_COUNT} strongest competitive swings in projected final-score differential,
         plus {FINAL_SLOT_FLIP_POINTS} per projected lead change in the week’s final NFL game slot (up to {MAX_FINAL_SLOT_BONUS} bonus points).
-        Big swings count even without a lead change; tiny early fluctuations don’t.
+        Comebacks must approach within {COMPETITIVE_MARGIN} points of a tie or reverse the lead. Pulling further ahead earns no swing credit; tiny early fluctuations don’t count.
       </p>
       <div style={{ background: NIGHT_COLORS.surfaceAlt, borderLeft: `3px solid ${NIGHT_COLORS.link}`,
         borderRadius: 6, padding: "0.8rem 1rem", marginBottom: 20, lineHeight: 1.5 }}>
@@ -61,6 +63,9 @@ export default function SpiciestMatchups() {
             Each starter begins with their saved projection for that week and ends at their recorded final score.
             Projections decrease with estimated game time remaining, including overtime, independently of points earned.
             Swings run between peaks and troughs; reversals under {MIN_SWING_POINTS} points don’t split a swing.
+            A comeback ending within {COMPETITIVE_MARGIN} points of a tie earns its size × (1 − remaining margin / {COMPETITIVE_MARGIN}).
+            Crossing zero earns the recovered deficit plus up to {COMPETITIVE_MARGIN} points of the new lead.
+            A swing extending an existing lead, or never bringing it within {COMPETITIVE_MARGIN}, earns zero.
             The final-slot bonus starts at the week’s last scheduled NFL kickoff, often Monday night, and ends at its estimated completion.
             Taking the first lead doesn’t count; switching to the other team does, even after a tie.
             Final scores below are recorded starter totals. Matchups missing weekly projections are excluded;
@@ -68,16 +73,17 @@ export default function SpiciestMatchups() {
           </p>
         </details>
       </div>
+      {!loading && result.excluded.length > 0 && <p role="alert">Unavailable years: {result.excluded.join(", ")}. Rankings use only successfully loaded seasons.</p>}
       {loading ? <p role="status">Loading matchup timelines…</p> : result.error ?
         <p role="alert">Couldn’t load matchup timelines: {result.error}</p> : !result.matchups.length ?
-        <p>No completed matchups with timeline data and weekly projections are available for this season.</p> :
+        <p>No competitive completed matchups with timeline data and weekly projections are available for this selection.</p> :
         result.matchups.map((matchup, index) => (
           <article key={matchup.id} style={{ background: NIGHT_COLORS.surface,
             border: `1px solid ${NIGHT_COLORS.border}`, borderRadius: 14,
             padding: "clamp(12px, 3vw, 24px)", marginBottom: 20 }}>
             <header style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: 12 }}>
               <div>
-                <div style={{ color: NIGHT_COLORS.mutedText, fontSize: 14 }}>#{index + 1} · Week {matchup.week}</div>
+                <div style={{ color: NIGHT_COLORS.mutedText, fontSize: 14 }}>#{index + 1} · {matchup.year} · Week {matchup.week}</div>
                 <h3 style={{ margin: "6px 0 10px" }}>{matchup.homeName} vs {matchup.awayName}</h3>
               </div>
               <div style={{ fontWeight: 700, color: NIGHT_COLORS.loss }}>{matchup.score.toFixed(1)} spice</div>
@@ -89,9 +95,9 @@ export default function SpiciestMatchups() {
               padding: "12px 0", borderTop: `1px solid ${NIGHT_COLORS.border}` }}>
               <div>
                 <div style={{ color: NIGHT_COLORS.mutedText, fontSize: 13 }}>Why it ranks here</div>
-                <b>{matchup.swingScore.toFixed(2)} swing pts + {matchup.finalSlotBonus} final-slot bonus = {matchup.score.toFixed(2)} spice</b>
+                <b>{matchup.swingScore.toFixed(2)} competitive swing pts + {matchup.finalSlotBonus} final-slot bonus = {matchup.score.toFixed(2)} spice</b>
                 <div style={{ color: NIGHT_COLORS.mutedText, fontSize: 13, marginTop: 6 }}>
-                  Biggest swings: {matchup.biggestSwings.length ? matchup.biggestSwings.map(value => value.toFixed(2)).join(" + ") : `none ≥ ${MIN_SWING_POINTS} pts`}.
+                  Competitive swing credits: {matchup.biggestSwings.length ? matchup.biggestSwings.map(value => value.toFixed(2)).join(" + ") : "none"}.
                   {" "}{matchup.finalSlotLeadChanges} final-slot {matchup.finalSlotLeadChanges === 1 ? "flip" : "flips"} × {FINAL_SLOT_FLIP_POINTS}, bonus capped at {MAX_FINAL_SLOT_BONUS}.
                 </div>
               </div>
@@ -105,6 +111,25 @@ export default function SpiciestMatchups() {
         ))}
     </div>
   );
+}
+
+export async function loadMatchupSeasons(
+  seasons: Record<string, WrappedType>,
+  fetchSeason: (year: number) => Promise<SeasonData> = fetchSeasonData
+): Promise<{ matchups: MatchupSpiciness[]; excluded: string[] }> {
+  const entries = Object.entries(seasons);
+  const results = await Promise.allSettled(entries.map(async ([year, wrapped]) =>
+    computeSpiciestMatchups(wrapped, await fetchSeason(Number(year)))));
+  const excluded = entries.filter((_, index) => results[index].status === "rejected").map(([year]) => year);
+  if (!entries.length || excluded.length === entries.length) {
+    const reasons = results.flatMap(result => result.status === "rejected" ? [String(result.reason?.message ?? result.reason)] : []);
+    throw new Error(`No timeline data could be loaded for ${excluded.join(", ") || "this selection"}. ${reasons.join("; ")}`);
+  }
+  const matchups = results.flatMap(result => result.status === "fulfilled" ? result.value : [])
+    .filter(matchup => matchup.score > 0)
+    .sort((a,b) => b.score-a.score || (b.lastFinalSlotLeadChangeTimestamp ?? -Infinity)-(a.lastFinalSlotLeadChangeTimestamp ?? -Infinity) || b.year.localeCompare(a.year) || b.week-a.week || a.id.localeCompare(b.id))
+    .slice(0,10);
+  return { matchups, excluded };
 }
 
 export async function fetchSeasonData(year: number): Promise<SeasonData> {

@@ -3,7 +3,7 @@ import { afterEach, expect, test, vi } from "vitest";
 import PlayerStats from ".";
 import { parseWrappedHash } from "../../hashRoute";
 
-vi.mock("../..", () => ({ currentYear: "2026" }));
+vi.mock("../..", () => ({ currentYear: "2026", selectedYear: "all" }));
 vi.mock("./Chart", () => ({ default: () => <div>Chart</div> }));
 vi.mock("./usePlayerStats", () => ({ usePlayerStats: () => ({ loading: false, failedYears: [], retry: () => {}, data: [
   { name: "Tom Brady", position: "QB", total: 30, years: [{ year: 2022, scores: [30], total: 30 }] },

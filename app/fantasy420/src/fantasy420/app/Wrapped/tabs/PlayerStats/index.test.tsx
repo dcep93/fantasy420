@@ -1,9 +1,9 @@
 import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, expect, test, vi } from "vitest";
 
-const { chartUpdates } = vi.hoisted(() => ({ chartUpdates: vi.fn() }));
+const { chartUpdates, selectedScope } = vi.hoisted(() => ({ chartUpdates: vi.fn(), selectedScope: { year: "all" } }));
 
-vi.mock("../..", () => ({ currentYear: "2026" }));
+vi.mock("../..", () => ({ currentYear: "2026", get selectedYear() { return selectedScope.year; } }));
 vi.mock("../../allWrapped", () => ({ default: {
   "2026": {
     nflPlayers: { warren: { id: "warren", name: "Tyler Warren", position: "TE", scores: { "1": 999 } } },
@@ -15,7 +15,7 @@ vi.mock("./Chart", () => ({ default: ({ scores }: { scores: unknown }) => {
   return <div data-testid="scores">{JSON.stringify(scores)}</div>;
 } }));
 
-afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
+afterEach(() => { cleanup(); vi.unstubAllGlobals(); selectedScope.year = "all"; });
 
 test("shows fetched 2026 and historical scores, refreshed totals/ranks, and retries missing seasons", async () => {
   vi.resetModules();
@@ -30,7 +30,7 @@ test("shows fetched 2026 and historical scores, refreshed totals/ranks, and retr
   });
   vi.stubGlobal("fetch", fetchMock);
   const PlayerStats = (await import("./index")).default;
-  const { container } = render(<PlayerStats />);
+  const { container, rerender } = render(<PlayerStats />);
   await waitFor(() => expect(screen.queryByRole("status")).not.toBeInTheDocument());
   expect(fetchMock.mock.calls[0][0]).toContain("2026.json");
   expect(screen.getByRole("alert")).toHaveTextContent("2025");
@@ -46,6 +46,12 @@ test("shows fetched 2026 and historical scores, refreshed totals/ranks, and retr
   expect(container.textContent).toContain('"year": 2025');
   expect(container.textContent).toContain('"total": 12.3');
   expect(screen.getAllByTestId("scores")[0]).toHaveTextContent('"score":10.3');
+  selectedScope.year = "2025";
+  rerender(<PlayerStats />);
+  expect(container.textContent).toContain('"total": 2');
+  expect(container.textContent).toContain('"year": 2025');
+  expect(container.textContent).not.toContain('"year": 2026');
+  expect(screen.getAllByTestId("scores")).toHaveLength(1);
 });
 
 test("renders cached data once, then all remote data, without requesting history again", async () => {

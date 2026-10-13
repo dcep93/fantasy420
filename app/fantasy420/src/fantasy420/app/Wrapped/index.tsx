@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { getWrapped, NFLPlayerType, WrappedType } from "../FetchWrapped";
 import allWrapped from "./allWrapped";
+import { ALL_YEARS, managerChanges, normalizeYear, scopeLabel, seasonOnlyViews } from "./scope";
+import AllYears from "./tabs/AllYears";
 import { useWrappedTab } from "./hashRoute";
 import ErrorBoundary from "./ErrorBoundary";
 import AllTimeRecords from "./tabs/AllTimeRecords";
@@ -20,7 +22,6 @@ import HeadToHead from "./tabs/HeadToHead";
 import Injuries from "./tabs/Injuries";
 import ManagerPlot from "./tabs/ManagerPlot";
 import ManagerTrend from "./tabs/ManagerTrend";
-import MondayNight from "./tabs/MondayNight";
 import Negatives from "./tabs/Negatives";
 import NFLTeams from "./tabs/NFLTeams";
 import OwnedTeams from "./tabs/OwnedTeams";
@@ -31,15 +32,12 @@ import PlayerStats from "./tabs/PlayerStats";
 import PlayoffMachine from "./tabs/PlayoffMachine";
 import PointsAgainst from "./tabs/PointsAgainst";
 import PositionTrends from "./tabs/PositionTrends";
-import Punts from "./tabs/Punts";
 import ReachesAndSteals from "./tabs/ReachesAndSteals";
 import SecondLost from "./tabs/SecondLost";
 import Simps from "./tabs/Simps";
 import SpiciestMatchups from "./tabs/SpiciestMatchups";
 import SqueezesAndStomps from "./tabs/SqueezesAndStomps";
 import Stacks from "./tabs/Stacks";
-import StandingsPrediction from "./tabs/StandingsPrediction";
-import StdDev from "./tabs/StdDev";
 import StrengthOfSeason from "./tabs/StrengthOfSeason";
 import Trades from "./tabs/Trades";
 import UniquesRostered from "./tabs/UniquesRostered";
@@ -50,20 +48,28 @@ import WhatIf from "./tabs/WhatIf";
 export const currentYear = "2026";
 
 export var selectedYear =
-  new URLSearchParams(window.location.search).get("year") || currentYear;
+  normalizeYear(new URLSearchParams(window.location.search).get("year"), allWrapped, currentYear);
 export function selectedWrapped(): WrappedType {
   return allWrapped[selectedYear];
 }
 
-export const newManagers: { [teamId: string]: string[] } = {
-  "4": ["2022"],
-  "2": ["2024", "2025"],
-};
+export const newManagers = managerChanges;
 
 export default function Wrapped() {
   document.title = "Fantasy Wrapped";
   const [yearKey, updateYear] = useState(selectedYear);
   selectedYear = yearKey;
+  useEffect(() => {
+    const onPop = () => updateYear(normalizeYear(new URLSearchParams(window.location.search).get("year"), allWrapped, currentYear));
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, []);
+  function chooseYear(year: string) {
+    const url = new URL(window.location.href);
+    url.searchParams.set("year", year);
+    window.history.replaceState(null, "", url);
+    updateYear(year);
+  }
   const hashKey = useWrappedTab();
   const toRenderKey = toRender[hashKey] ? hashKey : Object.keys(toRender)[0]!;
 
@@ -117,12 +123,14 @@ export default function Wrapped() {
         }}
       >
         <div>
-          year:{" "}
+          <label htmlFor="wrapped-year">Year: </label>
           <select
-            onChange={(e) => updateYear(e.target.value)}
-            defaultValue={yearKey}
+            id="wrapped-year"
+            onChange={(e) => chooseYear(e.target.value)}
+            value={yearKey}
           >
-            {Object.keys(allWrapped).map((y) => (
+            <option value={ALL_YEARS}>All years</option>
+            {Object.keys(allWrapped).sort().reverse().map((y) => (
               <option key={y} value={y}>
                 {y}
               </option>
@@ -130,11 +138,16 @@ export default function Wrapped() {
           </select>
         </div>
         <h1 style={bubbleStyle}>
-          {wrappedModuleLabels[toRenderKey] ?? toRenderKey}
+          {wrappedModuleLabels[toRenderKey] ?? toRenderKey} · {scopeLabel(yearKey, ["PlayerStats", "PositionTrends", "AllTimeRecords"].includes(toRenderKey) ? [] : Object.keys(allWrapped))}
         </h1>
         <div>
           <ErrorBoundary>
-            <Tab />
+            {yearKey === ALL_YEARS && seasonOnlyViews[toRenderKey] ? <div style={bubbleStyle}>
+              <p>{seasonOnlyViews[toRenderKey]} Select a year to view {toRenderKey}.</p>
+              <button onClick={() => chooseYear(currentYear)}>View {currentYear}</button>
+            </div> : yearKey === ALL_YEARS && !["PlayerStats", "PositionTrends", "SpiciestMatchups", "json"].includes(toRenderKey)
+              ? <AllYears tab={toRenderKey} seasons={allWrapped} /> : ["AllTimeRecords", "HeadToHead", "Simps"].includes(toRenderKey)
+              ? <AllYears tab={toRenderKey} seasons={{ [yearKey]: allWrapped[yearKey] }} /> : <Tab />}
           </ErrorBoundary>
         </div>
       </div>
@@ -208,7 +221,7 @@ export const bubbleStyle = {
 };
 
 function json() {
-  return <pre>{JSON.stringify(selectedWrapped(), null, 2)}</pre>;
+  return <pre>{JSON.stringify(selectedYear === ALL_YEARS ? allWrapped : selectedWrapped(), null, 2)}</pre>;
 }
 
 export class Helpers {
@@ -257,7 +270,8 @@ export class Helpers {
   static getIdealHelper(
     rostered: string[],
     started: string[],
-    getScore: (player: NFLPlayerType) => number
+    getScore: (player: NFLPlayerType) => number,
+    wrapped: WrappedType = selectedWrapped()
   ): string[] {
     const ideal = [] as string[];
     const startables = { ...Helpers._startables };
@@ -281,7 +295,8 @@ export class Helpers {
       .map((positionChoices) => {
         const idealPlayer = rostered
           .filter((playerId) => !ideal.includes(playerId))
-          .map((playerId) => selectedWrapped().nflPlayers[playerId])
+          .map((playerId) => wrapped.nflPlayers[playerId])
+          .filter(Boolean)
           .filter((player) =>
             positionChoices.includes(
               Position[player.position as any] as unknown as Position
@@ -304,7 +319,6 @@ export const wrappedModules: { [key: string]: () => JSX.Element } = {
   ManagerPlot,
   PlayerPlot,
   PlayerStats,
-  MondayNight,
   WeekTopsAndBottoms,
   SqueezesAndStomps,
   GooseEggs,
@@ -337,10 +351,7 @@ export const wrappedModules: { [key: string]: () => JSX.Element } = {
   ConsistentlyAverage,
   Trades,
   Simps,
-  Punts,
-  StdDev,
   PositionTrends,
-  StandingsPrediction,
   SpiciestMatchups,
   NFLTeams,
   json,
