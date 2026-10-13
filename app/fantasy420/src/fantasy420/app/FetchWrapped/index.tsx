@@ -71,7 +71,7 @@ export type WrappedType = {
   year: string;
   latestScoringPeriod?: number;
   /** Version 2 also rejects ESPN zero totals without supporting scoring inputs. */
-  weeklyProjectionDataVersion?: 1 | 2;
+  weeklyProjectionDataVersion?: number;
   nflPlayers: {
     [id: string]: NFLPlayerType;
   };
