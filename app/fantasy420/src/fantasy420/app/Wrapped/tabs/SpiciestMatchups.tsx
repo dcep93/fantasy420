@@ -5,7 +5,7 @@ import { ALL_YEARS, scopeLabel } from "../scope";
 import type { WrappedType } from "../../FetchWrapped";
 import { NIGHT_COLORS } from "../../theme";
 import MatchupLeadChart, { formatMatchupTime } from "./MatchupLeadChart";
-import { computeSpiciestMatchups, MatchupSpiciness, SeasonData } from "./spiciestMatchupsData";
+import { analyzeSpiciestMatchups, MatchupSpiciness, SeasonData } from "./spiciestMatchupsData";
 import { COMPETITIVE_MARGIN, FINAL_SLOT_FLIP_POINTS, MAX_FINAL_SLOT_BONUS, MIN_SWING_POINTS, TOP_SWING_COUNT } from "./matchupSpiciness";
 
 const DATA_CACHE = "data_v6";
@@ -15,6 +15,7 @@ export default function SpiciestMatchups() {
     source: ReturnType<typeof selectedWrapped> | null;
     scope: string;
     excluded: string[];
+    projectionOmissions: Record<string, number>;
     matchups: MatchupSpiciness[];
     error?: string;
   } | null>(null);
@@ -25,16 +26,17 @@ export default function SpiciestMatchups() {
     setResult(null);
     const seasons = year === ALL_YEARS ? allWrapped : wrapped ? { [year]: wrapped } : {};
     loadMatchupSeasons(seasons)
-      .then(({ matchups, excluded }) => {
-        if (!cancelled) setResult({ source: wrapped, scope: year, matchups, excluded });
+      .then(({ matchups, excluded, projectionOmissions }) => {
+        if (!cancelled) setResult({ source: wrapped, scope: year, matchups, excluded, projectionOmissions });
       })
       .catch(error => {
-        if (!cancelled) setResult({ source: wrapped, scope: year, matchups: [], excluded: [], error: error.message || String(error) });
+        if (!cancelled) setResult({ source: wrapped, scope: year, matchups: [], excluded: [], projectionOmissions: {}, error: error.message || String(error) });
       });
     return () => { cancelled = true; };
   }, [year, wrapped]);
 
   const loading = !result || result.source !== wrapped || result.scope !== year;
+  const omittedCount = Object.values(result?.projectionOmissions ?? {}).reduce((sum, count) => sum + count, 0);
   return (
     <div style={{ padding: "0.5rem 1rem 1.5rem", maxWidth: 1200, boxSizing: "border-box" }}>
       <h2>Spiciest matchups · {scopeLabel(year, Object.keys(allWrapped))}</h2>
@@ -71,12 +73,18 @@ export default function SpiciestMatchups() {
             A swing extending an existing lead, or never bringing it within {COMPETITIVE_MARGIN}, earns zero.
             The final-slot bonus starts at the week’s last scheduled NFL kickoff, often Monday night, and ends at its estimated completion.
             Taking the first lead doesn’t count; switching to the other team does, even after a tie.
-            Final scores below are recorded starter totals. Matchups missing weekly projections are excluded;
-            older snapshots may encode unavailable projections as zero, and projections aren’t timestamped throughout the week.
+            Final scores below are recorded starter totals. Matchups with missing or unverified starter projections are excluded.
+            Zeros in older snapshots are unverified because missing projections were also saved as zero.
+            Explicit zero projections from newer fetches are accepted. Projections aren’t timestamped throughout the week.
           </p>
         </details>
       </div>
       {!loading && result.excluded.length > 0 && <p role="alert">Unavailable years: {result.excluded.join(", ")}. Rankings use only successfully loaded seasons.</p>}
+      {!loading && omittedCount > 0 && <p role="note">
+        {omittedCount} {omittedCount === 1 ? "matchup omitted" : "matchups omitted"} because starter projections are missing or unverified
+        {" "}({Object.entries(result.projectionOmissions).map(([year, count]) => `${year}: ${count}`).join("; ")}).
+        {" "}These matchups have no probability graph or spice ranking.
+      </p>}
       {loading ? <p role="status">Loading matchup timelines…</p> : result.error ?
         <p role="alert">Couldn’t load matchup timelines: {result.error}</p> : !result.matchups.length ?
         <p>No competitive completed matchups with timeline data and weekly projections are available for this selection.</p> :
@@ -119,20 +127,23 @@ export default function SpiciestMatchups() {
 export async function loadMatchupSeasons(
   seasons: Record<string, WrappedType>,
   fetchSeason: (year: number) => Promise<SeasonData> = fetchSeasonData
-): Promise<{ matchups: MatchupSpiciness[]; excluded: string[] }> {
+): Promise<{ matchups: MatchupSpiciness[]; excluded: string[]; projectionOmissions: Record<string, number> }> {
   const entries = Object.entries(seasons);
   const results = await Promise.allSettled(entries.map(async ([year, wrapped]) =>
-    computeSpiciestMatchups(wrapped, await fetchSeason(Number(year)))));
+    analyzeSpiciestMatchups(wrapped, await fetchSeason(Number(year)))));
   const excluded = entries.filter((_, index) => results[index].status === "rejected").map(([year]) => year);
   if (!entries.length || excluded.length === entries.length) {
     const reasons = results.flatMap(result => result.status === "rejected" ? [String(result.reason?.message ?? result.reason)] : []);
     throw new Error(`No timeline data could be loaded for ${excluded.join(", ") || "this selection"}. ${reasons.join("; ")}`);
   }
-  const matchups = results.flatMap(result => result.status === "fulfilled" ? result.value : [])
+  const projectionOmissions = Object.fromEntries(results.flatMap((result, index) =>
+    result.status === "fulfilled" && result.value.omittedForProjections > 0 ?
+      [[entries[index][0], result.value.omittedForProjections]] : []));
+  const matchups = results.flatMap(result => result.status === "fulfilled" ? result.value.matchups : [])
     .filter(matchup => matchup.score > 0)
     .sort((a,b) => b.score-a.score || (b.lastFinalSlotLeadChangeTimestamp ?? -Infinity)-(a.lastFinalSlotLeadChangeTimestamp ?? -Infinity) || b.year.localeCompare(a.year) || b.week-a.week || a.id.localeCompare(b.id))
     .slice(0,10);
-  return { matchups, excluded };
+  return { matchups, excluded, projectionOmissions };
 }
 
 export async function fetchSeasonData(year: number): Promise<SeasonData> {

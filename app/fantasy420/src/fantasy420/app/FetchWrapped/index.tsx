@@ -70,6 +70,8 @@ export type FantasyCalcHistoryType = {
 export type WrappedType = {
   year: string;
   latestScoringPeriod?: number;
+  /** Version 1 omits missing weekly projections instead of saving them as zero. */
+  weeklyProjectionDataVersion?: 1;
   nflPlayers: {
     [id: string]: NFLPlayerType;
   };
@@ -444,6 +446,7 @@ export function getWrapped(providedYear: string): Promise<WrappedType> {
         ({
           year,
           latestScoringPeriod,
+          weeklyProjectionDataVersion: 1,
           nflPlayers,
           ffTeams,
           ffMatchups,

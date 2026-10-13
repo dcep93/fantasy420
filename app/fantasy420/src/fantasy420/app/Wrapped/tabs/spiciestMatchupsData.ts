@@ -1,4 +1,5 @@
 import type { WrappedType } from "../../FetchWrapped";
+import { isReliableWeeklyProjection } from "../../FetchWrapped/weeklyProjections";
 
 import { lookupTeamAbbreviation } from "./nflTeamAbbreviations";
 import { buildMatchupChunks, MatchupChunk } from "./matchupTimelineChunks";
@@ -72,8 +73,13 @@ export function buildWeekSchedule(data: SeasonData): Map<number, WeekSchedule> {
 }
 
 export function computeSpiciestMatchups(wrapped: WrappedType, data: SeasonData): MatchupSpiciness[] {
+  return analyzeSpiciestMatchups(wrapped, data).matchups;
+}
+
+export function analyzeSpiciestMatchups(wrapped: WrappedType, data: SeasonData) {
   const schedule = buildWeekSchedule(data);
   const results: MatchupSpiciness[] = [];
+  let omittedForProjections = 0;
   for (const [weekString, matchups] of Object.entries(wrapped.ffMatchups)) {
     const week = Number(weekString);
     if (week <= 0 || week > (wrapped.latestScoringPeriod ?? Infinity)) continue;
@@ -95,7 +101,10 @@ export function computeSpiciestMatchups(wrapped: WrappedType, data: SeasonData):
       const awayRoster = away?.rosters[week];
       if (!homeRoster || !awayRoster) continue;
       if ([homeRoster, awayRoster].some(roster => roster.starting.some(id =>
-        !wrapped.nflPlayers[id] || !Number.isFinite(roster.projections?.[id])))) continue;
+        !wrapped.nflPlayers[id] || !isReliableWeeklyProjection(roster.projections?.[id], wrapped.weeklyProjectionDataVersion)))) {
+        omittedForProjections += 1;
+        continue;
+      }
       // Include each slot boundary even when neither lineup plays in that slot.
       // Its preceding point preserves continuous projection decay across chunks.
       const minutes = new Set<number>(windows.flatMap(window => [window.start, window.end])
@@ -145,9 +154,9 @@ export function computeSpiciestMatchups(wrapped: WrappedType, data: SeasonData):
       });
     }
   }
-  return results.sort((a, b) => b.score - a.score ||
+  return { omittedForProjections, matchups: results.sort((a, b) => b.score - a.score ||
     (b.lastFinalSlotLeadChangeTimestamp ?? -Infinity) - (a.lastFinalSlotLeadChangeTimestamp ?? -Infinity) ||
-    b.week - a.week || a.id.localeCompare(b.id));
+    b.week - a.week || a.id.localeCompare(b.id)) };
 }
 
 function buildPlayerWindows(

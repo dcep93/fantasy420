@@ -2,7 +2,8 @@ import { act, render, screen } from "@testing-library/react";
 import type { WrappedType } from "../../FetchWrapped";
 import { selectedWrapped } from "..";
 import SpiciestMatchups, { loadMatchupSeasons } from "./SpiciestMatchups";
-import { computeSpiciestMatchups, SeasonData, TimelinePoint } from "./spiciestMatchupsData";
+import { analyzeSpiciestMatchups, computeSpiciestMatchups, SeasonData, TimelinePoint } from "./spiciestMatchupsData";
+import historical2023 from "../dataJson/2023.json";
 import { summarizeSpiciness, TIMELINE_EVENT_EPSILON } from "./matchupSpiciness";
 import { buildMatchupChunks, chunkMatchupPoints, GameWindow, MATCHUP_CHUNK_LABELS } from "./matchupTimelineChunks";
 
@@ -14,7 +15,7 @@ vi.mock("./MatchupLeadChart", () => ({
 
 function fixture(): { wrapped: WrappedType; data: SeasonData } {
   const wrapped: WrappedType = {
-    year: "2026", latestScoringPeriod: 1,
+    year: "2026", latestScoringPeriod: 1, weeklyProjectionDataVersion: 1,
     nflTeams: { a: { id: "a", name: "Bills", byeWeek: 0, nflGamesByScoringPeriod: {} },
       b: { id: "b", name: "Jets", byeWeek: 0, nflGamesByScoringPeriod: {} } },
     nflPlayers: {
@@ -160,7 +161,7 @@ test("negative totals remain gradual and finish exactly even in overtime", () =>
   expect(matchup.points.every(point => point.projectedScores.every(Number.isFinite))).toBe(true);
 });
 
-test("excludes unavailable weekly projections without borrowing a generic projection, but accepts zero", () => {
+test("excludes unavailable weekly projections without borrowing a generic projection, but accepts a verified zero", () => {
   const { wrapped, data } = fixture();
   delete wrapped.ffTeams.a.rosters[1].projections.a;
   expect(computeSpiciestMatchups(wrapped, data)).toEqual([]);
@@ -168,6 +169,44 @@ test("excludes unavailable weekly projections without borrowing a generic projec
   expect(computeSpiciestMatchups(wrapped, data)).toEqual([]);
   wrapped.ffTeams.a.rosters[1].projections.a = 0;
   expect(computeSpiciestMatchups(wrapped, data)[0].points[0].projectedScores).toEqual([0, 10]);
+});
+
+test("rejects legacy zero placeholders while retaining nonzero historical projections", () => {
+  const { wrapped, data } = fixture();
+  delete wrapped.weeklyProjectionDataVersion;
+  expect(computeSpiciestMatchups(wrapped, data)).toHaveLength(1);
+  wrapped.ffTeams.a.rosters[1].projections.a = 0;
+  expect(analyzeSpiciestMatchups(wrapped, data)).toEqual({ matchups: [], omittedForProjections: 1 });
+});
+
+test("the reported 2023 Week 1 matchup cannot produce a false 100-to-0 probability graph", () => {
+  const wrapped: WrappedType = { ...historical2023, ffMatchups: { "1": [["5", "9"]] } };
+  expect(wrapped.ffTeams["5"].name).toBe("Monday Night Fucking");
+  expect(wrapped.ffTeams["9"].name).toBe("Rains of justice");
+  expect(analyzeSpiciestMatchups(wrapped, fixture().data)).toEqual({ matchups: [], omittedForProjections: 1 });
+});
+
+test("shows why a matchup was omitted instead of presenting a misleading graph", async () => {
+  const { wrapped, data } = fixture();
+  delete wrapped.weeklyProjectionDataVersion;
+  wrapped.ffTeams.a.rosters[1].projections.a = 0;
+  vi.mocked(selectedWrapped).mockReturnValue(wrapped);
+  vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(JSON.stringify(data))));
+  render(<SpiciestMatchups />);
+  expect(await screen.findByRole("note")).toHaveTextContent("1 matchup omitted because starter projections are missing or unverified (2026: 1)");
+  expect(screen.queryByText("Alpha versus Bravo chart")).not.toBeInTheDocument();
+});
+
+test("all-years results report projection gaps without excluding healthy seasons", async () => {
+  const { wrapped, data } = fixture();
+  const legacy = structuredClone(wrapped);
+  legacy.year = "2023";
+  delete legacy.weeklyProjectionDataVersion;
+  legacy.ffTeams.a.rosters[1].projections.a = 0;
+  const result = await loadMatchupSeasons({ "2023": legacy, "2026": wrapped }, async () => data);
+  expect(result.projectionOmissions).toEqual({ "2023": 1 });
+  expect(result.excluded).toEqual([]);
+  expect(result.matchups.map(matchup => matchup.year)).toEqual(["2026"]);
 });
 
 test("Sunday flips earn no bonus when Monday is the week's final NFL slot", () => {

@@ -1,4 +1,5 @@
 import { FFTeamType, MatchupsType, NFLPlayerType, Ownership } from ".";
+import { readWeeklyProjections } from "./weeklyProjections";
 
 export default function helper(params: {
   leagueId: number;
@@ -239,21 +240,7 @@ export default function helper(params: {
                         week.teams.map((team) => ({
                           id: team.id.toString(),
                           name: team.name,
-                          projections: fromEntries(
-                            team.roster.entries.map((value) => ({
-                              key: value.playerId.toString(),
-                              value: parseFloat(
-                                (
-                                  value.playerPoolEntry.player.stats.find(
-                                    (stat) =>
-                                      stat.seasonId === parseInt(currentYear) &&
-                                      stat.statSourceId === 1 &&
-                                      stat.scoringPeriodId === weekNum
-                                  )?.appliedTotal || 0
-                                ).toFixed(2)
-                              ),
-                            }))
-                          ),
+                          projections: readWeeklyProjections(team.roster.entries, Number(currentYear), weekNum),
                           schedule: {
                             weekNum,
                             ...week.schedule
@@ -301,6 +288,14 @@ export default function helper(params: {
                           ({ schedule }) =>
                             schedule.rosterForCurrentScoringPeriod
                         )
+                        .map(({ schedule, projections }) => ({
+                          schedule,
+                          projections: {
+                            ...projections,
+                            ...readWeeklyProjections(schedule.rosterForCurrentScoringPeriod.entries,
+                              Number(currentYear), schedule.weekNum),
+                          },
+                        }))
                         .map(({ schedule, projections }) =>
                           (({ rostered }) => ({
                             weekNum: schedule.weekNum.toString(),
@@ -316,10 +311,10 @@ export default function helper(params: {
                                 .map((e) => e.playerId.toString()),
                             rostered,
                             projections: fromEntries(
-                              rostered.map((r) => ({
+                              rostered.flatMap((r) => projections[r] === undefined ? [] : [{
                                 key: r,
                                 value: projections[r],
-                              }))
+                              }])
                             ),
                           }))({
                             rostered:
