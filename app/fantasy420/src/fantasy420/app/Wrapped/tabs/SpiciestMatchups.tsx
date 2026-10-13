@@ -11,11 +11,13 @@ import { COMPETITIVE_MARGIN, MAX_REVERSAL_BONUS, MAX_SUSPENSE_BONUS, MIN_SPICE_S
 const DATA_CACHE = "data_v6";
 
 export default function SpiciestMatchups() {
+  const [week, setWeek] = useState("all");
   const [result, setResult] = useState<{
     source: ReturnType<typeof selectedWrapped> | null;
     scope: string;
     excluded: string[];
     projectionOmissions: Record<string, number>;
+    allMatchups: MatchupSpiciness[];
     matchups: MatchupSpiciness[];
     eligibleCount: number;
     qualifyingCount: number;
@@ -26,22 +28,34 @@ export default function SpiciestMatchups() {
   useEffect(() => {
     let cancelled = false;
     setResult(null);
+    setWeek("all");
     const seasons = year === ALL_YEARS ? allWrapped : wrapped ? { [year]: wrapped } : {};
     loadMatchupSeasons(seasons)
       .then(loaded => {
         if (!cancelled) setResult({ source: wrapped, scope: year, ...loaded });
       })
       .catch(error => {
-        if (!cancelled) setResult({ source: wrapped, scope: year, matchups: [], eligibleCount: 0, qualifyingCount: 0, excluded: [], projectionOmissions: {}, error: error.message || String(error) });
+        if (!cancelled) setResult({ source: wrapped, scope: year, allMatchups: [], matchups: [], eligibleCount: 0, qualifyingCount: 0, excluded: [], projectionOmissions: {}, error: error.message || String(error) });
       });
     return () => { cancelled = true; };
   }, [year, wrapped]);
 
+  const seasons = year === ALL_YEARS ? allWrapped : wrapped ? { [year]: wrapped } : {};
+  const weeks = [...new Set(Object.values(seasons).flatMap(season => Object.keys(season.ffMatchups).map(Number)))]
+    .filter(value => Number.isInteger(value) && value > 0).sort((a, b) => a - b);
+  const selection = selectSpiciestMatchups(result?.allMatchups ?? [], week === "all" ? null : Number(week));
   const loading = !result || result.source !== wrapped || result.scope !== year;
   const omittedCount = Object.values(result?.projectionOmissions ?? {}).reduce((sum, count) => sum + count, 0);
   return (
     <div style={{ padding: "0.5rem 1rem 1.5rem", maxWidth: 1200, boxSizing: "border-box" }}>
       <h2>Spiciest matchups · {scopeLabel(year, Object.keys(allWrapped))}</h2>
+      <label style={{ display: "inline-flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
+        Week
+        <select value={week} onChange={event => setWeek(event.target.value)}>
+          <option value="all">All weeks</option>
+          {weeks.map(value => <option key={value} value={value}>Week {value}</option>)}
+        </select>
+      </label>
       <p style={{ maxWidth: "78ch", lineHeight: 1.6 }}>
         Which fantasy matchups had the biggest changes in their chances to win? Showing up to 10 completed matchups with at least {MIN_SPICE_SCORE} spice.
         Spice adds the {TOP_SWING_COUNT} strongest competitive probability swings, decisive favorite reversals,
@@ -86,19 +100,19 @@ export default function SpiciestMatchups() {
       </div>
       {!loading && result.excluded.length > 0 && <p role="alert">Unavailable years: {result.excluded.join(", ")}. Rankings use only successfully loaded seasons.</p>}
       {!loading && omittedCount > 0 && <p role="note">
-        {omittedCount} {omittedCount === 1 ? "matchup omitted" : "matchups omitted"} because starter projections are missing or unverified
+        Across all weeks: {omittedCount} {omittedCount === 1 ? "matchup omitted" : "matchups omitted"} because starter projections are missing or unverified
         {" "}({Object.entries(result.projectionOmissions).map(([year, count]) => `${year}: ${count}`).join("; ")}).
         {" "}These matchups have no probability graph or spice ranking.
       </p>}
-      {!loading && !result.error && result.matchups.length > 0 && <p role="status">
-        Showing {result.matchups.length} of {result.qualifyingCount} qualifying {result.qualifyingCount === 1 ? "matchup" : "matchups"}
-        {" "}with at least {MIN_SPICE_SCORE} spice (maximum 10 shown).
+      {!loading && !result.error && selection.matchups.length > 0 && <p role="status">
+        Showing {selection.matchups.length} of {selection.qualifyingCount} qualifying {selection.qualifyingCount === 1 ? "matchup" : "matchups"}
+        {week !== "all" && ` in Week ${week}`} with at least {MIN_SPICE_SCORE} spice (maximum 10 shown).
       </p>}
       {loading ? <p role="status">Loading matchup timelines…</p> : result.error ?
-        <p role="alert">Couldn’t load matchup timelines: {result.error}</p> : !result.matchups.length ?
-        <p>{result.eligibleCount > 0 ? `No completed matchups reached the ${MIN_SPICE_SCORE}-spice minimum for this selection.` :
+        <p role="alert">Couldn’t load matchup timelines: {result.error}</p> : !selection.matchups.length ?
+        <p>{selection.eligibleCount > 0 ? `No completed matchups reached the ${MIN_SPICE_SCORE}-spice minimum for this selection.` :
           "No completed matchups with timeline data and verified weekly projections are available for this selection."}</p> :
-        result.matchups.map((matchup, index) => (
+        selection.matchups.map((matchup, index) => (
           <article key={matchup.id} style={{ background: NIGHT_COLORS.surface,
             border: `1px solid ${NIGHT_COLORS.border}`, borderRadius: 14,
             padding: "clamp(12px, 3vw, 24px)", marginBottom: 20 }}>
@@ -137,7 +151,7 @@ export default function SpiciestMatchups() {
 export async function loadMatchupSeasons(
   seasons: Record<string, WrappedType>,
   fetchSeason: (year: number) => Promise<SeasonData> = fetchSeasonData
-): Promise<{ matchups: MatchupSpiciness[]; excluded: string[]; projectionOmissions: Record<string, number>; eligibleCount: number; qualifyingCount: number }> {
+): Promise<{ allMatchups: MatchupSpiciness[]; matchups: MatchupSpiciness[]; excluded: string[]; projectionOmissions: Record<string, number>; eligibleCount: number; qualifyingCount: number }> {
   const entries = Object.entries(seasons);
   const results = await Promise.allSettled(entries.map(async ([year, wrapped]) =>
     analyzeSpiciestMatchups(wrapped, await fetchSeason(Number(year)))));
@@ -150,8 +164,13 @@ export async function loadMatchupSeasons(
     result.status === "fulfilled" && result.value.omittedForProjections > 0 ?
       [[entries[index][0], result.value.omittedForProjections]] : []));
   const eligible = results.flatMap(result => result.status === "fulfilled" ? result.value.matchups : []);
+  return { allMatchups: eligible, excluded, projectionOmissions, ...selectSpiciestMatchups(eligible) };
+}
+
+export function selectSpiciestMatchups(matchups: MatchupSpiciness[], week: number | null = null) {
+  const eligible = week === null ? matchups : matchups.filter(matchup => matchup.week === week);
   const qualifying = eligible.filter(matchup => matchup.score >= MIN_SPICE_SCORE).sort(compareMatchupSpiciness);
-  return { matchups: qualifying.slice(0, 10), excluded, projectionOmissions,
+  return { matchups: qualifying.slice(0, 10),
     eligibleCount: eligible.length, qualifyingCount: qualifying.length };
 }
 

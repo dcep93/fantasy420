@@ -1,14 +1,15 @@
-import { act, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import type { WrappedType } from "../../FetchWrapped";
 import { selectedWrapped } from "..";
-import SpiciestMatchups, { loadMatchupSeasons } from "./SpiciestMatchups";
+import SpiciestMatchups, { loadMatchupSeasons, selectSpiciestMatchups } from "./SpiciestMatchups";
 import { analyzeSpiciestMatchups, computeSpiciestMatchups, SeasonData } from "./spiciestMatchupsData";
 import * as matchupData from "./spiciestMatchupsData";
 import historical2023 from "../dataJson/2023.json";
 import { summarizeSpiciness, TIMELINE_EVENT_EPSILON } from "./matchupSpiciness";
 import { buildMatchupChunks, chunkMatchupPoints, GameWindow, MATCHUP_CHUNK_LABELS } from "./matchupTimelineChunks";
 
-vi.mock("..", () => ({ selectedWrapped: vi.fn(), selectedYear: "2026" }));
+const scope = vi.hoisted(() => ({ year: "2026" }));
+vi.mock("..", () => ({ selectedWrapped: vi.fn(), get selectedYear() { return scope.year; } }));
 vi.mock("./MatchupLeadChart", () => ({
   default: ({ homeName, awayName }: { homeName: string; awayName: string }) => <div>{homeName} versus {awayName} chart</div>,
   formatMatchupTime: (timestamp: number) => new Date(timestamp).toISOString(),
@@ -38,7 +39,59 @@ function fixture(): { wrapped: WrappedType; data: SeasonData } {
   return { wrapped, data };
 }
 
-afterEach(() => { vi.unstubAllGlobals(); });
+afterEach(() => { vi.unstubAllGlobals(); scope.year = "2026"; });
+
+test("week selection ranks across years before the top-ten cap and keeps the spice minimum", () => {
+  const { wrapped, data } = fixture();
+  const original = computeSpiciestMatchups(wrapped, data)[0];
+  const candidates = [
+    ...Array.from({ length: 10 }, (_, index) => ({ ...original, id: `top-${index}`, week: 1, score: 100 + index })),
+    { ...original, id: "week2-new", year: "2026", week: 2, score: 30 },
+    { ...original, id: "week2-old", year: "2025", week: 2, score: 40 },
+    { ...original, id: "quiet", week: 3, score: 24 },
+  ];
+  expect(selectSpiciestMatchups(candidates).matchups).toHaveLength(10);
+  expect(selectSpiciestMatchups(candidates, 2).matchups.map(matchup => matchup.id)).toEqual(["week2-old", "week2-new"]);
+  expect(selectSpiciestMatchups(candidates, 3)).toMatchObject({ matchups: [], eligibleCount: 1, qualifyingCount: 0 });
+  expect(selectSpiciestMatchups(candidates, 4)).toMatchObject({ matchups: [], eligibleCount: 0, qualifyingCount: 0 });
+});
+
+test("filters and clears weeks without refetching and resets on year changes", async () => {
+  const { wrapped, data } = fixture();
+  wrapped.ffMatchups[2] = wrapped.ffMatchups[1];
+  wrapped.ffMatchups[3] = wrapped.ffMatchups[1];
+  const original = computeSpiciestMatchups(wrapped, data)[0];
+  const analysis = vi.spyOn(matchupData, "analyzeSpiciestMatchups").mockReturnValue({ omittedForProjections: 0, matchups: [
+    ...Array.from({ length: 10 }, (_, index) => ({ ...original, id: `top-${index}`, score: 100 + index })),
+    { ...original, id: "week2", week: 2, homeName: "Week two", score: 30 },
+  ] });
+  const fetchMock = vi.fn().mockImplementation(async () => new Response(JSON.stringify(data)));
+  vi.stubGlobal("fetch", fetchMock);
+  vi.mocked(selectedWrapped).mockReturnValue(wrapped);
+  try {
+    const { rerender } = render(<SpiciestMatchups />);
+    await screen.findByText(/Showing 10 of 11 qualifying/);
+    const filter = screen.getByRole("combobox", { name: "Week" });
+    expect(filter).toHaveValue("all");
+    fireEvent.change(filter, { target: { value: "2" } });
+    expect(screen.getByText("Week two versus Bravo chart")).toBeVisible();
+    expect(screen.getByRole("status")).toHaveTextContent("Showing 1 of 1 qualifying matchup in Week 2");
+    expect(screen.getAllByRole("article")).toHaveLength(1);
+    fireEvent.change(filter, { target: { value: "3" } });
+    expect(screen.getByText(/No completed matchups with timeline data/)).toBeVisible();
+    fireEvent.change(filter, { target: { value: "all" } });
+    expect(screen.getAllByRole("article")).toHaveLength(10);
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    fireEvent.change(filter, { target: { value: "2" } });
+    scope.year = "2025";
+    vi.mocked(selectedWrapped).mockReturnValue({ ...wrapped, year: "2025" });
+    rerender(<SpiciestMatchups />);
+    await screen.findByText(/Showing 10 of 11 qualifying/);
+    expect(filter).toHaveValue("all");
+  } finally {
+    analysis.mockRestore();
+  }
+});
 
 test("reconstructs projected swings and finishes at the exact starter totals", () => {
   const { wrapped, data } = fixture();
