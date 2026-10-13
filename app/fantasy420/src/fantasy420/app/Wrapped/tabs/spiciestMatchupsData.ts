@@ -37,9 +37,11 @@ export type MatchupSpiciness = {
   finalScores: [number, number];
   biggestSwings: number[];
   swingScore: number;
-  finalSlotLeadChanges: number;
-  finalSlotBonus: number;
-  lastFinalSlotLeadChangeTimestamp: number | null;
+  meaningfulLeadChanges: number;
+  lateLeadChanges: number;
+  reversalBonus: number;
+  suspenseBonus: number;
+  lastReversalTimestamp: number | null;
   score: number;
   points: LeadPoint[];
   chunks: MatchupChunk[];
@@ -88,12 +90,6 @@ export function analyzeSpiciestMatchups(wrapped: WrappedType, data: SeasonData) 
     const windows = data.games.filter(game => game.week === week && Number.isFinite(game.timestamp))
       .map(game => ({ start: game.timestamp, end: game.timestamp + estimatedGameMinutes(game) * 60_000 }));
     const chunks = buildMatchupChunks(windows);
-    const lastKickoff = Math.max(...windows.map(window => window.start));
-    const finalSlot = {
-      start: (lastKickoff - weekSchedule.baseline) / 60_000,
-      end: (Math.max(...windows.filter(window => window.start === lastKickoff).map(window => window.end)) -
-        weekSchedule.baseline) / 60_000,
-    };
     for (const [homeId, awayId] of matchups) {
       const home = wrapped.ffTeams[homeId];
       const away = wrapped.ffTeams[awayId];
@@ -132,7 +128,7 @@ export function analyzeSpiciestMatchups(wrapped: WrappedType, data: SeasonData) 
           lastContributingPlays,
         };
       });
-      const summary = summarizeSpiciness(points, finalSlot);
+      const summary = summarizeSpiciness(points);
       const starterTotal = (ids: string[]) => ids.reduce((sum, id) =>
         sum + (wrapped.nflPlayers[id]?.scores[week] ?? 0), 0);
       results.push({
@@ -144,19 +140,25 @@ export function analyzeSpiciestMatchups(wrapped: WrappedType, data: SeasonData) 
         finalScores: [starterTotal(homeRoster.starting), starterTotal(awayRoster.starting)],
         biggestSwings: summary.biggestSwings,
         swingScore: summary.swingScore,
-        finalSlotLeadChanges: summary.finalSlotLeadChanges,
-        finalSlotBonus: summary.finalSlotBonus,
+        meaningfulLeadChanges: summary.meaningfulLeadChanges,
+        lateLeadChanges: summary.lateLeadChanges,
+        reversalBonus: summary.reversalBonus,
+        suspenseBonus: summary.suspenseBonus,
         score: summary.score,
-        lastFinalSlotLeadChangeTimestamp: summary.lastFinalSlotLeadChangeMinute === null ? null :
-          weekSchedule.baseline + summary.lastFinalSlotLeadChangeMinute * 60_000,
+        lastReversalTimestamp: summary.lastReversalMinute === null ? null :
+          weekSchedule.baseline + summary.lastReversalMinute * 60_000,
         points,
         chunks,
       });
     }
   }
-  return { omittedForProjections, matchups: results.sort((a, b) => b.score - a.score ||
-    (b.lastFinalSlotLeadChangeTimestamp ?? -Infinity) - (a.lastFinalSlotLeadChangeTimestamp ?? -Infinity) ||
-    b.week - a.week || a.id.localeCompare(b.id)) };
+  return { omittedForProjections, matchups: results.sort(compareMatchupSpiciness) };
+}
+
+export function compareMatchupSpiciness(a: MatchupSpiciness, b: MatchupSpiciness): number {
+  return b.score - a.score ||
+    (b.lastReversalTimestamp ?? -Infinity) - (a.lastReversalTimestamp ?? -Infinity) ||
+    b.year.localeCompare(a.year) || b.week - a.week || a.id.localeCompare(b.id);
 }
 
 function buildPlayerWindows(

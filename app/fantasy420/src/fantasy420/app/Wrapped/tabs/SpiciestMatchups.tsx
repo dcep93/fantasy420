@@ -5,8 +5,8 @@ import { ALL_YEARS, scopeLabel } from "../scope";
 import type { WrappedType } from "../../FetchWrapped";
 import { NIGHT_COLORS } from "../../theme";
 import MatchupLeadChart, { formatMatchupTime } from "./MatchupLeadChart";
-import { analyzeSpiciestMatchups, MatchupSpiciness, SeasonData } from "./spiciestMatchupsData";
-import { COMPETITIVE_MARGIN, FINAL_SLOT_FLIP_POINTS, MAX_FINAL_SLOT_BONUS, MIN_SWING_POINTS, TOP_SWING_COUNT } from "./matchupSpiciness";
+import { analyzeSpiciestMatchups, compareMatchupSpiciness, MatchupSpiciness, SeasonData } from "./spiciestMatchupsData";
+import { COMPETITIVE_MARGIN, MAX_REVERSAL_BONUS, MAX_SUSPENSE_BONUS, MIN_SPICE_SCORE, MIN_SWING_POINTS, REVERSAL_POINTS, TOP_SWING_COUNT } from "./matchupSpiciness";
 
 const DATA_CACHE = "data_v6";
 
@@ -17,6 +17,8 @@ export default function SpiciestMatchups() {
     excluded: string[];
     projectionOmissions: Record<string, number>;
     matchups: MatchupSpiciness[];
+    eligibleCount: number;
+    qualifyingCount: number;
     error?: string;
   } | null>(null);
   const year = selectedYear;
@@ -26,11 +28,11 @@ export default function SpiciestMatchups() {
     setResult(null);
     const seasons = year === ALL_YEARS ? allWrapped : wrapped ? { [year]: wrapped } : {};
     loadMatchupSeasons(seasons)
-      .then(({ matchups, excluded, projectionOmissions }) => {
-        if (!cancelled) setResult({ source: wrapped, scope: year, matchups, excluded, projectionOmissions });
+      .then(loaded => {
+        if (!cancelled) setResult({ source: wrapped, scope: year, ...loaded });
       })
       .catch(error => {
-        if (!cancelled) setResult({ source: wrapped, scope: year, matchups: [], excluded: [], projectionOmissions: {}, error: error.message || String(error) });
+        if (!cancelled) setResult({ source: wrapped, scope: year, matchups: [], eligibleCount: 0, qualifyingCount: 0, excluded: [], projectionOmissions: {}, error: error.message || String(error) });
       });
     return () => { cancelled = true; };
   }, [year, wrapped]);
@@ -41,10 +43,11 @@ export default function SpiciestMatchups() {
     <div style={{ padding: "0.5rem 1rem 1.5rem", maxWidth: 1200, boxSizing: "border-box" }}>
       <h2>Spiciest matchups · {scopeLabel(year, Object.keys(allWrapped))}</h2>
       <p style={{ maxWidth: "78ch", lineHeight: 1.6 }}>
-        Which fantasy matchups had the biggest changes in their expected outcome? These are the top 10 from completed weeks.
-        Spice adds the {TOP_SWING_COUNT} strongest competitive swings in projected final-score differential,
-        plus {FINAL_SLOT_FLIP_POINTS} per projected lead change in the week’s final NFL game slot (up to {MAX_FINAL_SLOT_BONUS} bonus points).
-        Comebacks must approach within {COMPETITIVE_MARGIN} points of a tie or reverse the lead. Pulling further ahead earns no swing credit; tiny early fluctuations don’t count.
+        Which fantasy matchups had the biggest changes in their chances to win? Showing up to 10 completed matchups with at least {MIN_SPICE_SCORE} spice.
+        Spice adds the {TOP_SWING_COUNT} strongest competitive probability swings, decisive favorite reversals,
+        and suspense during the final 25% of projected scoring remaining.
+        Decisive reversals require the favorite to change from one team with at least a 60% chance to the other with at least 60%.
+        Each earns {REVERSAL_POINTS} spice, doubled late and capped at {MAX_REVERSAL_BONUS}; late suspense adds up to {MAX_SUSPENSE_BONUS}.
       </p>
       <div style={{ background: NIGHT_COLORS.surfaceAlt, borderLeft: `3px solid ${NIGHT_COLORS.link}`,
         borderRadius: 6, padding: "0.8rem 1rem", marginBottom: 20, lineHeight: 1.5 }}>
@@ -66,13 +69,15 @@ export default function SpiciestMatchups() {
             Projections decrease with estimated game time remaining, including overtime, independently of points earned.
             The probability model treats the projected final-score difference as a normal distribution whose uncertainty shrinks with projected points remaining.
             When no projected points remain, it resolves to 100% or 0% (a final tie is displayed at 50%).
-            Spice is still based on competitive point-margin swings and final-slot favorite changes, not early probability wiggles.
-            Swings run between peaks and troughs; reversals under {MIN_SWING_POINTS} points don’t split a swing.
-            A comeback ending within {COMPETITIVE_MARGIN} points of a tie earns its size × (1 − remaining margin / {COMPETITIVE_MARGIN}).
-            Crossing zero earns the recovered deficit plus up to {COMPETITIVE_MARGIN} points of the new lead.
-            A swing extending an existing lead, or never bringing it within {COMPETITIVE_MARGIN}, earns zero.
-            The final-slot bonus starts at the week’s last scheduled NFL kickoff, often Monday night, and ends at its estimated completion.
-            Taking the first lead doesn’t count; switching to the other team does, even after a tie.
+            Spice uses the actual probabilities shown in the chart, before its square-root display scaling.
+            Swings run between probability peaks and troughs; reversals under {MIN_SWING_POINTS} percentage points don’t split a swing.
+            A comeback stopping within {COMPETITIVE_MARGIN} percentage points of 50% earns its size × (1 − distance from 50% / {COMPETITIVE_MARGIN}).
+            Crossing 50% earns the recovered probability deficit plus up to {COMPETITIVE_MARGIN} percentage points of the new lead.
+            Extending a lead earns no swing credit. Ties and probabilities between 40% and 60% preserve the established favorite;
+            acquiring the first favorite earns no reversal bonus.
+            Late means at most 25% of the initial projected scoring remains for these two lineups, regardless of NFL kickoff slot.
+            Late suspense averages closeness to 50% over that remaining scoring: 50% earns full credit, falling to zero at 25% or 75%.
+            Idle time earns nothing. With no initial projected scoring remaining, there is no late multiplier or suspense credit.
             Final scores below are recorded starter totals. Matchups with missing or unverified starter projections are excluded.
             Unverified zeros are excluded, including ESPN records with empty projected scoring contributions.
             New fetches check the scoring inputs before accepting a zero total. Projections aren’t timestamped throughout the week.
@@ -85,9 +90,14 @@ export default function SpiciestMatchups() {
         {" "}({Object.entries(result.projectionOmissions).map(([year, count]) => `${year}: ${count}`).join("; ")}).
         {" "}These matchups have no probability graph or spice ranking.
       </p>}
+      {!loading && !result.error && result.matchups.length > 0 && <p role="status">
+        Showing {result.matchups.length} of {result.qualifyingCount} qualifying {result.qualifyingCount === 1 ? "matchup" : "matchups"}
+        {" "}with at least {MIN_SPICE_SCORE} spice (maximum 10 shown).
+      </p>}
       {loading ? <p role="status">Loading matchup timelines…</p> : result.error ?
         <p role="alert">Couldn’t load matchup timelines: {result.error}</p> : !result.matchups.length ?
-        <p>No competitive completed matchups with timeline data and weekly projections are available for this selection.</p> :
+        <p>{result.eligibleCount > 0 ? `No completed matchups reached the ${MIN_SPICE_SCORE}-spice minimum for this selection.` :
+          "No completed matchups with timeline data and verified weekly projections are available for this selection."}</p> :
         result.matchups.map((matchup, index) => (
           <article key={matchup.id} style={{ background: NIGHT_COLORS.surface,
             border: `1px solid ${NIGHT_COLORS.border}`, borderRadius: 14,
@@ -106,15 +116,15 @@ export default function SpiciestMatchups() {
               padding: "12px 0", borderTop: `1px solid ${NIGHT_COLORS.border}` }}>
               <div>
                 <div style={{ color: NIGHT_COLORS.mutedText, fontSize: 13 }}>Why it ranks here</div>
-                <b>{matchup.swingScore.toFixed(2)} competitive swing pts + {matchup.finalSlotBonus} final-slot bonus = {matchup.score.toFixed(2)} spice</b>
+                <b>{matchup.swingScore.toFixed(2)} probability swing percentage points + {matchup.reversalBonus.toFixed(2)} reversal bonus + {matchup.suspenseBonus.toFixed(2)} late suspense = {matchup.score.toFixed(2)} spice</b>
                 <div style={{ color: NIGHT_COLORS.mutedText, fontSize: 13, marginTop: 6 }}>
                   Competitive swing credits: {matchup.biggestSwings.length ? matchup.biggestSwings.map(value => value.toFixed(2)).join(" + ") : "none"}.
-                  {" "}{matchup.finalSlotLeadChanges} final-slot {matchup.finalSlotLeadChanges === 1 ? "flip" : "flips"} × {FINAL_SLOT_FLIP_POINTS}, bonus capped at {MAX_FINAL_SLOT_BONUS}.
+                  { " "}{matchup.meaningfulLeadChanges} decisive favorite {matchup.meaningfulLeadChanges === 1 ? "reversal" : "reversals"}, including {matchup.lateLeadChanges} late; reversal bonus capped at {MAX_REVERSAL_BONUS}.
                 </div>
               </div>
               <div>
-                <div style={{ color: NIGHT_COLORS.mutedText, fontSize: 13 }}>Last final-slot lead change</div>
-                <b>{matchup.lastFinalSlotLeadChangeTimestamp === null ? "None in the final slot" : formatMatchupTime(matchup.lastFinalSlotLeadChangeTimestamp)}</b>
+                <div style={{ color: NIGHT_COLORS.mutedText, fontSize: 13 }}>Last decisive favorite reversal</div>
+                <b>{matchup.lastReversalTimestamp === null ? "None" : formatMatchupTime(matchup.lastReversalTimestamp)}</b>
               </div>
             </div>
             <MatchupLeadChart points={matchup.points} chunks={matchup.chunks} homeName={matchup.homeName} awayName={matchup.awayName} />
@@ -127,7 +137,7 @@ export default function SpiciestMatchups() {
 export async function loadMatchupSeasons(
   seasons: Record<string, WrappedType>,
   fetchSeason: (year: number) => Promise<SeasonData> = fetchSeasonData
-): Promise<{ matchups: MatchupSpiciness[]; excluded: string[]; projectionOmissions: Record<string, number> }> {
+): Promise<{ matchups: MatchupSpiciness[]; excluded: string[]; projectionOmissions: Record<string, number>; eligibleCount: number; qualifyingCount: number }> {
   const entries = Object.entries(seasons);
   const results = await Promise.allSettled(entries.map(async ([year, wrapped]) =>
     analyzeSpiciestMatchups(wrapped, await fetchSeason(Number(year)))));
@@ -139,11 +149,10 @@ export async function loadMatchupSeasons(
   const projectionOmissions = Object.fromEntries(results.flatMap((result, index) =>
     result.status === "fulfilled" && result.value.omittedForProjections > 0 ?
       [[entries[index][0], result.value.omittedForProjections]] : []));
-  const matchups = results.flatMap(result => result.status === "fulfilled" ? result.value.matchups : [])
-    .filter(matchup => matchup.score > 0)
-    .sort((a,b) => b.score-a.score || (b.lastFinalSlotLeadChangeTimestamp ?? -Infinity)-(a.lastFinalSlotLeadChangeTimestamp ?? -Infinity) || b.year.localeCompare(a.year) || b.week-a.week || a.id.localeCompare(b.id))
-    .slice(0,10);
-  return { matchups, excluded, projectionOmissions };
+  const eligible = results.flatMap(result => result.status === "fulfilled" ? result.value.matchups : []);
+  const qualifying = eligible.filter(matchup => matchup.score >= MIN_SPICE_SCORE).sort(compareMatchupSpiciness);
+  return { matchups: qualifying.slice(0, 10), excluded, projectionOmissions,
+    eligibleCount: eligible.length, qualifyingCount: qualifying.length };
 }
 
 export async function fetchSeasonData(year: number): Promise<SeasonData> {

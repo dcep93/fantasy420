@@ -23,6 +23,7 @@ export default defineConfig({
       "src/fantasy420/app/Wrapped/tabs/managerWins.test.ts",
       "src/fantasy420/app/Wrapped/tabs/ManagerPlot.test.tsx",
       "src/fantasy420/app/Wrapped/tabs/SpiciestMatchups.test.tsx",
+      "src/fantasy420/app/Wrapped/tabs/matchupSpiciness.test.ts",
       "src/fantasy420/app/Wrapped/tabs/MatchupLeadChart.test.tsx",
       "src/fantasy420/app/Wrapped/tabs/bestByPosition.test.ts",
       "src/fantasy420/app/Wrapped/tabs/playoffStrength.test.ts",

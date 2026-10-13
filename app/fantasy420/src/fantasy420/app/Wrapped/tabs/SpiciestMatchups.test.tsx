@@ -2,7 +2,8 @@ import { act, render, screen } from "@testing-library/react";
 import type { WrappedType } from "../../FetchWrapped";
 import { selectedWrapped } from "..";
 import SpiciestMatchups, { loadMatchupSeasons } from "./SpiciestMatchups";
-import { analyzeSpiciestMatchups, computeSpiciestMatchups, SeasonData, TimelinePoint } from "./spiciestMatchupsData";
+import { analyzeSpiciestMatchups, computeSpiciestMatchups, SeasonData } from "./spiciestMatchupsData";
+import * as matchupData from "./spiciestMatchupsData";
 import historical2023 from "../dataJson/2023.json";
 import { summarizeSpiciness, TIMELINE_EVENT_EPSILON } from "./matchupSpiciness";
 import { buildMatchupChunks, chunkMatchupPoints, GameWindow, MATCHUP_CHUNK_LABELS } from "./matchupTimelineChunks";
@@ -37,77 +38,15 @@ function fixture(): { wrapped: WrappedType; data: SeasonData } {
   return { wrapped, data };
 }
 
-function points(entries: [number, number, number][]): TimelinePoint[] {
-  return entries.map(([minute, home, away]) => ({ minute, scores: [home, away], projectedScores: [home, away] }));
-}
-
 afterEach(() => { vi.unstubAllGlobals(); });
-
-const lateSlot = { start: 100, end: 200 };
-
-function leads(entries: [number, number][]): TimelinePoint[] {
-  return points(entries.map(([minute, lead]) => [minute, lead, 0]));
-}
-
-test("big swings outrank early wiggles and do not require a lead change", () => {
-  const wiggles = leads(Array.from({ length: 50 }, (_, minute) => [minute, minute % 2 ? 0.5 : -0.5]));
-  expect(summarizeSpiciness(wiggles, lateSlot).score).toBe(0);
-  expect(summarizeSpiciness(leads([[0, -40], [50, -2]]), lateSlot)).toMatchObject({
-    biggestSwings: [30.4], swingScore: 30.4, finalSlotBonus: 0, score: 30.4,
-  });
-});
-
-test("does not reward building a comfortable lead or harmless pullbacks", () => {
-  expect(summarizeSpiciness(leads([[0, 0], [10, 12], [20, 10], [30, 20], [40, 16], [50, 25], [60, 18]]), lateSlot))
-    .toMatchObject({ biggestSwings: [], swingScore: 0, score: 0 });
-  expect(summarizeSpiciness(leads([[0, 0], [10, 3], [20, -3]]), lateSlot).biggestSwings).toEqual([6]);
-});
-
-test("counts only the three largest swings and includes the five-point threshold", () => {
-  expect(summarizeSpiciness(leads([[0, 0], [10, 10], [20, -10], [30, 20], [40, -20], [50, 0]]), lateSlot))
-    .toMatchObject({ biggestSwings: [30, 20, 20], swingScore: 70 });
-  expect(summarizeSpiciness(leads([[0, -5], [1, 0]]), lateSlot).score).toBe(5);
-  expect(summarizeSpiciness(leads([[0, -4.99], [1, 0]]), lateSlot).score).toBe(0);
-});
-
-test("rewards tiny flips only in the final slot and caps the bonus", () => {
-  const wiggles = leads(Array.from({ length: 21 }, (_, i) => [100 + i, i % 2 ? 0.5 : -0.5]));
-  expect(summarizeSpiciness(wiggles, lateSlot)).toMatchObject({
-    biggestSwings: [], finalSlotLeadChanges: 20, finalSlotBonus: 10, score: 10,
-  });
-  expect(summarizeSpiciness(wiggles, { start: 0, end: 99 }).score).toBe(0);
-  expect(summarizeSpiciness(leads([[0, -40], [50, -2]]), lateSlot).score)
-    .toBeGreaterThan(summarizeSpiciness(wiggles, lateSlot).score);
-});
-
-test("ties preserve the leader, first acquisition is not a flip, and floating-point ties remain tied", () => {
-  expect(summarizeSpiciness(leads([[0, -1], [100, 0], [110, 1], [120, 0], [130, -1]]), lateSlot))
-    .toMatchObject({ finalSlotLeadChanges: 2, finalSlotBonus: 4, lastFinalSlotLeadChangeMinute: 120 });
-  for (const timeline of [[], leads([[100, 0], [110, 1]]), leads([[100, 1], [110, 0], [120, 1]]),
-    points([[100, 0.3, 0.1], [120, 0.3, 0.1 + 0.2]])]) {
-    expect(summarizeSpiciness(timeline, lateSlot)).toMatchObject({ score: 0, finalSlotLeadChanges: 0 });
-  }
-});
-
-test("uses interpolated crossing times and exact event boundaries for final-slot bonuses", () => {
-  const slot = { start: 50, end: 90 };
-  expect(summarizeSpiciness(leads([[0, 1], [100, -9]]), slot).finalSlotLeadChanges).toBe(0);
-  expect(summarizeSpiciness(leads([[0, 9], [100, -1]]), slot))
-    .toMatchObject({ finalSlotLeadChanges: 1, lastFinalSlotLeadChangeMinute: 90 });
-  expect(summarizeSpiciness(leads([[0, 1], [100, -1]]), slot))
-    .toMatchObject({ finalSlotLeadChanges: 1, lastFinalSlotLeadChangeMinute: 50 });
-  expect(summarizeSpiciness(leads([[0, 1], [50 - TIMELINE_EVENT_EPSILON, 1], [50, -1]]), slot))
-    .toMatchObject({ finalSlotLeadChanges: 1, lastFinalSlotLeadChangeMinute: 50 });
-});
 
 test("reconstructs projected swings and finishes at the exact starter totals", () => {
   const { wrapped, data } = fixture();
   const [matchup] = computeSpiciestMatchups(wrapped, data);
-  expect(matchup).toMatchObject({ homeName: "Alpha", awayName: "Bravo", biggestSwings: [15],
-    swingScore: 15, finalSlotLeadChanges: 1, finalSlotBonus: 2, score: 17, finalScores: [12, 15] });
+  expect(matchup).toMatchObject({ homeName: "Alpha", awayName: "Bravo", meaningfulLeadChanges: 1, lateLeadChanges: 1, reversalBonus: 10, finalScores: [12, 15] });
   expect(matchup.points[0]).toMatchObject({ scores: [0, 0], projectedScores: [10, 10] });
   expect(matchup.points.at(-1)).toMatchObject({ scores: [12, 15], projectedScores: [12, 15] });
-  expect(matchup.lastFinalSlotLeadChangeTimestamp).toBe(data.games[0].timestamp + 177 * 60_000);
+  expect(matchup.lastReversalTimestamp).toBe(data.games[0].timestamp + 177 * 60_000);
 });
 
 test("uses week-specific projections and game progress independently of points earned", () => {
@@ -211,14 +150,15 @@ test("all-years results report projection gaps without excluding healthy seasons
   expect(result.matchups.map(matchup => matchup.year)).toEqual(["2026"]);
 });
 
-test("Sunday flips earn no bonus when Monday is the week's final NFL slot", () => {
+test("unrelated final NFL slots do not affect probability-based spice", () => {
   const { wrapped, data } = fixture();
+  const original = computeSpiciestMatchups(wrapped, data)[0];
   data.games.push({ week: 1, timestamp: data.games[0].timestamp + 27 * 60 * 60_000,
     teams: [{ name: "KC" }, { name: "DAL" }], drives: [] });
-  expect(computeSpiciestMatchups(wrapped, data)[0]).toMatchObject({
-    biggestSwings: [15], finalSlotLeadChanges: 0, finalSlotBonus: 0,
-    lastFinalSlotLeadChangeTimestamp: null, score: 15,
-  });
+  const extended = computeSpiciestMatchups(wrapped, data)[0];
+  expect(extended.score).toBe(original.score);
+  expect(extended.meaningfulLeadChanges).toBe(original.meaningfulLeadChanges);
+  expect(extended.lastReversalTimestamp).toBe(original.lastReversalTimestamp);
 });
 
 test("ignores future and preseason matchups, and handles missing schedule or rosters", () => {
@@ -252,7 +192,9 @@ test("missing plays use gradual scoring rather than an artificial projection cra
   expect(matchup.points.find(point => point.minute === 90)).toMatchObject({
     scores: [6, 7.5], projectedScores: [12, 15],
   });
-  expect(matchup.score).toBe(0);
+  expect(matchup.swingScore).toBe(0);
+  expect(matchup.reversalBonus).toBe(0);
+  expect(matchup.score).toBeLessThan(25);
   expect(matchup.points.at(-1)).toMatchObject({ scores: [12, 15], projectedScores: [12, 15] });
 });
 
@@ -262,7 +204,7 @@ test("shows a real empty state after loading instead of an endless loading messa
   vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(JSON.stringify({ year: 2026, games: [] }))));
   render(<SpiciestMatchups />);
   expect(screen.getByRole("status")).toHaveTextContent("Loading");
-  expect(await screen.findByText("No competitive completed matchups with timeline data and weekly projections are available for this selection.")).toBeVisible();
+  expect(await screen.findByText("No completed matchups with timeline data and verified weekly projections are available for this selection.")).toBeVisible();
   expect(screen.queryByRole("status")).not.toBeInTheDocument();
 });
 
@@ -272,10 +214,62 @@ test("renders named chart, actual finals and transparent ranking formula", async
   vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(JSON.stringify(data))));
   render(<SpiciestMatchups />);
   expect(await screen.findByText("Alpha versus Bravo chart")).toBeVisible();
-  expect(screen.getByText("15.00 competitive swing pts + 2 final-slot bonus = 17.00 spice")).toBeVisible();
-  expect(screen.getByText(/Competitive swing credits: 15.00/)).toBeVisible();
+  const matchup = computeSpiciestMatchups(wrapped, data)[0];
+  expect(screen.getByText(`${matchup.swingScore.toFixed(2)} probability swing percentage points + 10.00 reversal bonus + ${matchup.suspenseBonus.toFixed(2)} late suspense = ${matchup.score.toFixed(2)} spice`)).toBeVisible();
+  expect(screen.getByText(/1 decisive favorite reversal, including 1 late/)).toBeVisible();
+  expect(screen.getByText(/Showing 1 of 1 qualifying matchup/)).toBeVisible();
+  expect(screen.getByText(/at least 25 spice/, { selector: 'p[role="status"]' })).toBeVisible();
   expect(screen.getByText(/first team’s estimated chance to win/i)).toBeVisible();
   expect(screen.getByText(/Alpha 12.00 · Bravo 15.00/)).toBeVisible();
+});
+
+test("shows a distinct no-qualifying state when completed, eligible matchups fall below 25", async () => {
+  const { wrapped, data } = fixture();
+  data.games[0].drives = [];
+  const analysis = analyzeSpiciestMatchups(wrapped, data);
+  expect(analysis.matchups).toHaveLength(1);
+  expect(analysis.matchups[0].score).toBeLessThan(25);
+  const loaded = await loadMatchupSeasons({ 2026: wrapped }, async () => data);
+  expect(loaded).toMatchObject({ eligibleCount: 1, qualifyingCount: 0, matchups: [] });
+  vi.mocked(selectedWrapped).mockReturnValue(wrapped);
+  vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(JSON.stringify(data))));
+  render(<SpiciestMatchups />);
+  expect(await screen.findByText("No completed matchups reached the 25-spice minimum for this selection.")).toBeVisible();
+  expect(screen.queryByText("Alpha versus Bravo chart")).not.toBeInTheDocument();
+});
+
+test("the loader includes exactly 25 spice, excludes lower scores and caps display at ten", async () => {
+  const { wrapped, data } = fixture();
+  const original = computeSpiciestMatchups(wrapped, data)[0];
+  const matchups = [24.99, 25, 25.01].map((score, index) => ({ ...original, id: `boundary-${index}`, score }));
+  const analysis = vi.spyOn(matchupData, "analyzeSpiciestMatchups").mockReturnValue({ omittedForProjections: 0, matchups });
+  try {
+    const loaded = await loadMatchupSeasons({ 2026: wrapped }, async () => data);
+    expect(loaded.matchups.map(matchup => matchup.score)).toEqual([25.01, 25]);
+    expect(loaded).toMatchObject({ eligibleCount: 3, qualifyingCount: 2 });
+    analysis.mockReturnValue({ omittedForProjections: 0,
+      matchups: Array.from({ length: 12 }, (_, index) => ({ ...original, id: `matchup-${index}`, score: 25 + index })) });
+    const capped = await loadMatchupSeasons({ 2026: wrapped }, async () => data);
+    expect(capped).toMatchObject({ eligibleCount: 12, qualifyingCount: 12 });
+    expect(capped.matchups.map(matchup => matchup.score)).toEqual([36, 35, 34, 33, 32, 31, 30, 29, 28, 27]);
+  } finally {
+    analysis.mockRestore();
+  }
+});
+
+test("ties sort by last decisive reversal, then year, week and stable matchup ID", () => {
+  const { wrapped, data } = fixture();
+  const original = computeSpiciestMatchups(wrapped, data)[0];
+  const candidates = [
+    { id: "id-b", year: "2025", week: 1, lastReversalTimestamp: null },
+    { id: "id-a", year: "2025", week: 1, lastReversalTimestamp: null },
+    { id: "week", year: "2025", week: 2, lastReversalTimestamp: null },
+    { id: "year", year: "2026", week: 1, lastReversalTimestamp: null },
+    { id: "reversal", year: "2024", week: 1, lastReversalTimestamp: 100 },
+    { id: "later", year: "2024", week: 1, lastReversalTimestamp: 200 },
+  ].map(candidate => ({ ...original, ...candidate }));
+  expect(candidates.sort(matchupData.compareMatchupSpiciness).map(matchup => matchup.id))
+    .toEqual(["later", "reversal", "year", "week", "id-a", "id-b"]);
 });
 
 test("reports fetch failures", async () => {
@@ -295,7 +289,7 @@ test("ignores a stale response after the season data changes", async () => {
   const { rerender } = render(<SpiciestMatchups />);
   vi.mocked(selectedWrapped).mockReturnValue({ ...wrapped, latestScoringPeriod: 0 });
   rerender(<SpiciestMatchups />);
-  await screen.findByText("No competitive completed matchups with timeline data and weekly projections are available for this selection.");
+  await screen.findByText("No completed matchups with timeline data and verified weekly projections are available for this selection.");
   await act(async () => { resolveOld(new Response(JSON.stringify(data))); });
   expect(screen.queryByText("Alpha versus Bravo chart")).not.toBeInTheDocument();
 });
@@ -371,8 +365,7 @@ test("compresses idle gaps, preserves every original score point, and carries sc
     .every(point => point.lead === -2)).toBe(true);
   expect(data.at(-1)).toMatchObject({ position: 4, scores: [20, 25], lead: -5 });
   expect(data.every((point, index) => !index || point.position >= data[index - 1].position)).toBe(true);
-  const slot = { start: (monday.start - thursday.start) / 60_000, end: (monday.end - thursday.start) / 60_000 };
-  expect(summarizeSpiciness(data, slot)).toEqual(summarizeSpiciness(original, slot));
+  expect(summarizeSpiciness(data)).toEqual(summarizeSpiciness(original));
 });
 
 test("Sunday final slot comes from the full schedule even when no fantasy starter plays in it", () => {
@@ -388,14 +381,6 @@ test("Sunday final slot comes from the full schedule even when no fantasy starte
     point.projectedScores[0] === 12 && point.projectedScores[1] === 15)).toBe(true);
 });
 
-
-test("blowout movement earns nothing while genuine reversals and late flips do", () => {
-  const comfortable = leads([[0,10],[10,60],[20,30],[30,65]]);
-  expect(summarizeSpiciness(comfortable,lateSlot).score).toBe(0);
-  expect(summarizeSpiciness(leads([[0,40],[10,20]]),lateSlot).score).toBe(0);
-  expect(summarizeSpiciness(leads([[0,30],[10,-2]]),lateSlot).score).toBe(32);
-  expect(summarizeSpiciness(leads([[0,-30],[10,2]]),lateSlot).score).toBe(32);
-});
 
 test.each(["III", "Jr.", "Sr.", "II", "IV"])("matches the actual surname before suffix %s", suffix => {
   const {wrapped,data}=fixture();
