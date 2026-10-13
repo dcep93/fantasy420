@@ -72,7 +72,7 @@ export default function Wrapped() {
     updateYear(year);
   }
   const hashKey = useWrappedTab();
-  const toRenderKey = toRender[hashKey] ? hashKey : Object.keys(toRender)[0]!;
+  const toRenderKey = toRender[hashKey] ? hashKey : "ManagerPlot";
 
   function B() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
