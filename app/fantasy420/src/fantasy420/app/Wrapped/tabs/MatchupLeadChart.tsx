@@ -22,6 +22,45 @@ const probabilityTicks = [0, 25, 40, 50, 60, 75, 100].map(probability => ({
   probability, position: winProbabilityAxisPosition(probability),
 }));
 
+export function visibleProbabilityAxis(data: { position: number; probabilityPosition: number }[], zoom: Range | null) {
+  let domain: Range = [0, 100];
+  let ticks = probabilityTicks;
+  if (zoom) {
+    let low = Infinity, high = -Infinity;
+    const include = (value: number) => { low = Math.min(low, value); high = Math.max(high, value); };
+    for (let index = 0; index < data.length; index++) {
+      const point = data[index], next = data[index + 1];
+      if (point.position >= zoom[0] && point.position <= zoom[1]) include(point.probabilityPosition);
+      // The visible line can cross a window even when no sampled point is inside.
+      if (next && next.position > point.position) {
+        for (const edge of zoom) {
+          if (edge > point.position && edge < next.position) include(point.probabilityPosition +
+            (next.probabilityPosition - point.probabilityPosition) * (edge - point.position) / (next.position - point.position));
+        }
+      }
+    }
+    if (Number.isFinite(low) && Number.isFinite(high)) {
+      const probabilityAt = (position: number) => {
+        const distance = (position - 50) / 50;
+        return 50 + Math.sign(distance) * 50 * distance * distance;
+      };
+      const minimum = probabilityAt(low), maximum = probabilityAt(high);
+      const padding = Math.max(0.5, (maximum - minimum) * 0.1);
+      const targetStep = (maximum - minimum + 2 * padding) / 5;
+      const magnitude = 10 ** Math.floor(Math.log10(targetStep));
+      const step = [1, 2, 5, 10].find(value => value * magnitude >= targetStep)! * magnitude;
+      const start = Math.max(0, Math.floor((minimum - padding) / step) * step);
+      const end = Math.min(100, Math.ceil((maximum + padding) / step) * step);
+      ticks = Array.from({ length: Math.round((end - start) / step) + 1 }, (_, index) => {
+        const probability = Number((start + index * step).toFixed(6));
+        return { probability, position: winProbabilityAxisPosition(probability) };
+      });
+      domain = [winProbabilityAxisPosition(start), winProbabilityAxisPosition(end)];
+    }
+  }
+  return { domain, ticks, favoriteOffset: Math.max(0, Math.min(1, (domain[1] - 50) / (domain[1] - domain[0]))) * 100 };
+}
+
 function timestampAtPosition(data: { position: number; timestamp: number }[], position: number) {
   const next = data.findIndex(point => point.position > position);
   if (next < 0) return data.at(-1)?.timestamp ?? 0;
@@ -58,6 +97,7 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
     );
     return { ...point, winProbability, probabilityPosition: winProbabilityAxisPosition(winProbability) };
   }), [points, chunks]);
+  const probabilityAxis = useMemo(() => visibleProbabilityAxis(data, zoom), [data, zoom]);
 
   function cancelSelection() {
     if (drag.current && plot.current?.hasPointerCapture?.(drag.current.pointerId)) {
@@ -130,8 +170,8 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
               <linearGradient id={gradientId} x1="0" x2="0"
                 gradientUnits="userSpaceOnUse" y1={CHART_MARGIN.top}
                 y2={CHART_HEIGHT - CHART_MARGIN.bottom - TIME_AXIS_HEIGHT}>
-                <stop offset="50%" stopColor={NIGHT_CHART_COLORS[2]} />
-                <stop offset="50%" stopColor={NIGHT_CHART_COLORS[6]} />
+                <stop offset={`${probabilityAxis.favoriteOffset}%`} stopColor={NIGHT_CHART_COLORS[2]} />
+                <stop offset={`${probabilityAxis.favoriteOffset}%`} stopColor={NIGHT_CHART_COLORS[6]} />
               </linearGradient>
             </defs>
             <CartesianGrid stroke={NIGHT_COLORS.chartGrid} strokeDasharray="3 3" />
@@ -150,9 +190,10 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
                   {lines.map((line, index) => <tspan key={index} x={x} dy={index ? 12 : 0}>{line}</tspan>)}
                 </text>;
               }} />
-            <YAxis domain={[0, 100]} ticks={probabilityTicks.map(tick => tick.position)} width={SCORE_AXIS_WIDTH}
-              tickFormatter={value => `${probabilityTicks.find(tick => tick.position === value)?.probability ?? ""}%`} />
-            <ReferenceLine y={50} stroke={NIGHT_COLORS.text} strokeWidth={1.5} />
+            <YAxis domain={probabilityAxis.domain} allowDataOverflow ticks={probabilityAxis.ticks.map(tick => tick.position)} width={SCORE_AXIS_WIDTH}
+              tickFormatter={value => `${probabilityAxis.ticks.find(tick => tick.position === value)?.probability ?? ""}%`} />
+            {probabilityAxis.domain[0] <= 50 && probabilityAxis.domain[1] >= 50 &&
+              <ReferenceLine y={50} stroke={NIGHT_COLORS.text} strokeWidth={1.5} />}
             {[1, 2, 3].filter(position => position > domain[0] && position < domain[1]).map(position => <ReferenceLine key={position} x={position}
               stroke={NIGHT_COLORS.mutedText} strokeDasharray="4 4" />)}
             <Tooltip content={({ active, payload }) => <CaptureInspection
@@ -161,7 +202,8 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
               onInspect={setInspectedPoint} />} />
             <Line dataKey="probabilityPosition" name={`${homeName} win probability`} type="linear" stroke={`url(#${gradientId})`}
               strokeWidth={2.5} dot={false} activeDot={{ r: 5 }} isAnimationActive={false} />
-            {selection && <ReferenceArea x1={Math.min(...selection)} x2={Math.max(...selection)} y1={0} y2={100}
+            {selection && <ReferenceArea x1={Math.min(...selection)} x2={Math.max(...selection)}
+              y1={probabilityAxis.domain[0]} y2={probabilityAxis.domain[1]}
               fill={NIGHT_CHART_COLORS[2]} fillOpacity={0.2} stroke={NIGHT_CHART_COLORS[2]} />}
           </LineChart>
         </ResponsiveContainer>
@@ -172,7 +214,7 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
         Square-root probability scale: movement near 50% is enlarged; labels and details show actual probabilities.{" "}
         Four equal-width chunks; idle gaps are compressed. Slots use Eastern kickoff dates and the week’s
         final Sunday kickoff. The line is the first team’s estimated win probability. Drag horizontally to zoom;
-        hover or tap to update the details below with probabilities, points, and the latest contributing play. Play times and contributions are
+        the vertical axis fits the visible probabilities. Reset zoom restores 0–100%. Hover or tap to update the details below with probabilities, points, and the latest contributing play. Play times and contributions are
         reconstructed; projection decay can move the line without a new play.
       </p>
     </section>

@@ -1,6 +1,6 @@
 import { fireEvent, render, screen, within } from "@testing-library/react";
 import type { ReactNode } from "react";
-import MatchupLeadChart, { winProbabilityAxisPosition } from "./MatchupLeadChart";
+import MatchupLeadChart, { visibleProbabilityAxis, winProbabilityAxisPosition } from "./MatchupLeadChart";
 import { buildMatchupChunks, ChunkedLeadPoint } from "./matchupTimelineChunks";
 
 const { chartSpy, lineSpy, axisSpy, areaSpy, probabilityAxisSpy, tooltipState } = vi.hoisted(() => ({
@@ -78,6 +78,37 @@ test("the visual scale preserves ordering, symmetry, midpoint and endpoints", ()
   expect([0, 50, 100].map(winProbabilityAxisPosition)).toEqual([0, 50, 100]);
 });
 
+const axisPoint = (position: number, probability: number) => ({ position, probabilityPosition: winProbabilityAxisPosition(probability) });
+
+test("zoom fits visible extrema with padding and ignores offscreen probabilities", () => {
+  const axis = visibleProbabilityAxis([axisPoint(0, 0), axisPoint(1, 47), axisPoint(2, 54), axisPoint(3, 51), axisPoint(4, 100)], [1, 3]);
+  expect(axis.domain[0]).toBeLessThan(winProbabilityAxisPosition(47));
+  expect(axis.domain[1]).toBeGreaterThan(winProbabilityAxisPosition(54));
+  expect(axis.ticks[0].probability).toBeGreaterThan(40);
+  expect(axis.ticks.at(-1)!.probability).toBeLessThan(60);
+  expect((winProbabilityAxisPosition(54) - winProbabilityAxisPosition(47)) / (axis.domain[1] - axis.domain[0])).toBeGreaterThan(0.75);
+  expect(axis.favoriteOffset).not.toBe(50);
+  expect(axis.favoriteOffset).toBeCloseTo((axis.domain[1] - 50) / (axis.domain[1] - axis.domain[0]) * 100);
+});
+
+test("fits interpolated segment edges when no sampled point is inside the zoom", () => {
+  const axis = visibleProbabilityAxis([axisPoint(0, 0), axisPoint(4, 100)], [1.9, 2.1]);
+  expect(axis.domain[0]).toBeLessThan(47.5);
+  expect(axis.domain[1]).toBeGreaterThan(52.5);
+  expect(axis.ticks[0].probability).toBeGreaterThanOrEqual(49);
+  expect(axis.ticks.at(-1)!.probability).toBeLessThanOrEqual(51);
+});
+
+test.each([0, 50, 100])("flat %s percent zoom remains padded, bounded, and correctly colored", probability => {
+  const axis = visibleProbabilityAxis([axisPoint(0, probability), axisPoint(4, probability)], [1, 3]);
+  expect(axis.domain[1]).toBeGreaterThan(axis.domain[0]);
+  expect(axis.domain[0]).toBeGreaterThanOrEqual(0);
+  expect(axis.domain[1]).toBeLessThanOrEqual(100);
+  expect(axis.domain[0]).toBeLessThanOrEqual(winProbabilityAxisPosition(probability));
+  expect(axis.domain[1]).toBeGreaterThanOrEqual(winProbabilityAxisPosition(probability));
+  expect(axis.favoriteOffset).toBeCloseTo(probability);
+});
+
 test("the same projected margin grows more decisive as remaining uncertainty shrinks", () => {
   render(<MatchupLeadChart homeName="Alpha" awayName="Bravo"
     chunks={buildMatchupChunks([{start:0,end:180*60_000}])}
@@ -137,10 +168,13 @@ test.each([[154, 354], [354, 154]])("zooms a drag from %s to %s and resets the f
   move(element, "pointerUp", end);
   expect(axisSpy.mock.lastCall![0]).toMatchObject({ domain: [1, 3], allowDataOverflow: true, ticks: [1, 2, 3] });
   expect(screen.getByRole("button", { name: "Reset zoom" })).toBeEnabled();
+  expect(probabilityAxisSpy.mock.lastCall![0].domain[1]).toBeLessThan(100);
+  expect(probabilityAxisSpy.mock.lastCall![0].allowDataOverflow).toBe(true);
   dragRange(element, 154, 354);
   expect(axisSpy.mock.lastCall![0].domain).toEqual([1.5, 2.5]);
   fireEvent.click(screen.getByRole("button", { name: "Reset zoom" }));
   expect(axisSpy.mock.lastCall![0].domain).toEqual([0, 4]);
+  expect(probabilityAxisSpy.mock.lastCall![0].domain).toEqual([0, 100]);
   expect(screen.getByRole("button", { name: "Reset zoom" })).toBeDisabled();
 });
 
