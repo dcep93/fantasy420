@@ -13,6 +13,12 @@ it("renders closest matchups first, reveals lineups, refreshes and retains data 
   expect(within(screen.getAllByRole("article")[0]).getByText("Team 3")).toBeVisible();
   fireEvent.click(screen.getAllByText(/Optimized lineup/)[0]);
   expect(screen.getByText("Player 3")).toBeVisible();
+  expect(screen.getByText("Player 4")).toBeVisible();
+  expect(screen.getByText("Player 1")).not.toBeVisible();
+  expect(screen.getAllByText(/Optimized lineups/)).toHaveLength(2);
+  fireEvent.click(screen.getAllByText(/Optimized lineups/)[0]);
+  expect(screen.getByText("Player 3")).not.toBeVisible();
+  expect(screen.getByText("Player 4")).not.toBeVisible();
   fireEvent.click(screen.getByRole("button", { name: "Refresh" }));
   expect(await screen.findByRole("alert")).toHaveTextContent("results may be stale");
   expect(screen.getByText("Team 3")).toBeVisible();
@@ -55,7 +61,6 @@ it("shows opponent, Eastern kickoff, injury and distinct projection-source label
   expect(table.getByText("Sun 1:00 PM")).toBeVisible();
   expect(table.getByText("Q")).toBeVisible();
   expect(table.getByText("ESPN zero")).toBeVisible();
-  fireEvent.click(screen.getAllByText(/Optimized lineup/)[1]);
   const other = within(screen.getByRole("region", { name: "Team 4 lineup details" }));
   expect(other.getByText("Missing forecast → 0")).toBeVisible();
   expect(other.getByText("Bye")).toBeVisible();

@@ -15,8 +15,7 @@ const injuryLabel = (value?: string) => !value || ["ACTIVE", "NORMAL", "HEALTHY"
 function Lineup({ team }: { team: Team }) {
   const lineup = team.projectedLineup;
   if (!lineup || lineup.warning) return <p className="live-scoreboard-warning">Optimization unavailable: {lineup?.warning ?? "Missing roster data."} Win probability is withheld.</p>;
-  return <details>
-    <summary>Optimized lineup · {lineup.players.length} starters</summary>
+  return <>
     <div className="live-scoreboard-table" tabIndex={0} role="region" aria-label={`${team.name} lineup details`}><table>
       <thead><tr><th>Slot</th><th>Player</th><th>Opp</th><th>Status / time (ET)</th><th>Earned</th><th>Projection</th></tr></thead>
       <tbody>{lineup.players.map(player => <tr key={player.id}>
@@ -38,8 +37,7 @@ function Lineup({ team }: { team: Team }) {
       </tr>)}</tbody>
     </table></div>
     {lineup.emptySlots.length > 0 && <p>{lineup.emptySlots.length} starting slots could not be filled from the eligible roster.</p>}
-    <small>Times are Eastern. “Started” means kickoff has passed; no live game clock is provided. Player projections are pregame; absent weekly forecasts count as 0. Team projected finishes include live results.</small>
-  </details>;
+  </>;
 }
 
 export default function LiveScoreboard({ load = fetchLiveScoreboard }: { load?: typeof fetchLiveScoreboard } = {}) {
@@ -88,8 +86,15 @@ export default function LiveScoreboard({ load = fetchLiveScoreboard }: { load?: 
           <h3>{team.name}</h3>
           <div className="live-scoreboard-odds">{odds(probability === null ? null : index === 0 ? probability : 1 - probability)} <small>to win</small></div>
           <div className="live-scoreboard-points"><span><b>{points(team.score)}</b> earned</span><span><b>{points(team.projected)}</b> optimized finish</span></div>
-          <Lineup team={team} />
         </div>)}</div>
+        <details>
+          <summary>Optimized lineups · both teams</summary>
+          <div className="live-scoreboard-teams">{teams.map(team => <div className="live-scoreboard-team" key={team.id}>
+            <h4>{team.name}{team.projectedLineup && !team.projectedLineup.warning && ` · ${team.projectedLineup.players.length} starters`}</h4>
+            <Lineup team={team} />
+          </div>)}</div>
+          <small>Times are Eastern. “Started” means kickoff has passed; no live game clock is provided. Player projections are pregame; absent weekly forecasts count as 0. Team projected finishes include live results.</small>
+        </details>
         {probability !== null && <div className="live-scoreboard-bar" aria-hidden="true"><span style={{ width: `${probability * 100}%` }} /></div>}
       </article>)}
     </>}
