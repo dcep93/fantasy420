@@ -46,7 +46,8 @@ export default function SpiciestMatchups() {
         <div>The line shows estimated points ahead or behind. Above zero favors the first team; below zero favors the second.</div>
         <div style={{ color: NIGHT_COLORS.mutedText, marginTop: 6 }}>
           This is a reconstruction from final player totals and NFL play/game timing, not a record of live scores or win odds.
-          Hover or tap the line for both teams’ estimated scores. Times use your local timezone.
+          The graph is split into pre Sunday, Sunday pre final slot, Sunday final slot, and post Sunday.
+          Slots use Eastern kickoff times; hover or tap the line for both teams’ estimated scores and local times.
         </div>
         <details style={{ marginTop: 8 }}>
           <summary style={{ cursor: "pointer" }}>How the estimate works</summary>
@@ -86,7 +87,7 @@ export default function SpiciestMatchups() {
                 <b>{matchup.lastLeadChangeTimestamp === null ? "No lead changes" : formatMatchupTime(matchup.lastLeadChangeTimestamp)}</b>
               </div>
             </div>
-            <MatchupLeadChart points={matchup.points} homeName={matchup.homeName} awayName={matchup.awayName} />
+            <MatchupLeadChart points={matchup.points} chunks={matchup.chunks} homeName={matchup.homeName} awayName={matchup.awayName} />
           </article>
         ))}
     </div>

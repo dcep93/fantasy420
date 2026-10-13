@@ -3,6 +3,7 @@ import type { WrappedType } from "../../FetchWrapped";
 import { selectedWrapped } from "..";
 import SpiciestMatchups from "./SpiciestMatchups";
 import { computeSpiciestMatchups, SeasonData, summarizeLeadChanges, TimelinePoint } from "./spiciestMatchupsData";
+import { buildMatchupChunks, chunkMatchupPoints, GameWindow, MATCHUP_CHUNK_LABELS } from "./matchupTimelineChunks";
 
 vi.mock("..", () => ({ selectedWrapped: vi.fn(), selectedYear: "2026" }));
 vi.mock("./MatchupLeadChart", () => ({
@@ -143,4 +144,89 @@ test("ignores a stale response after the season data changes", async () => {
   await screen.findByText("No completed matchups with timeline data are available for this season.");
   await act(async () => { resolveOld(new Response(JSON.stringify(data))); });
   expect(screen.queryByText("Alpha versus Bravo chart")).not.toBeInTheDocument();
+});
+
+function gameWindow(iso: string, minutes = 180): GameWindow {
+  const start = Date.parse(iso);
+  return { start, end: start + minutes * 60_000 };
+}
+
+test("groups by Eastern kickoff day, including Saturday/Sunday games on the following UTC day", () => {
+  const games = [
+    gameWindow("2026-09-11T00:20:00Z"), // Thursday night
+    gameWindow("2026-09-13T00:20:00Z"), // Saturday night
+    gameWindow("2026-09-13T13:30:00Z"), // Sunday international game
+    gameWindow("2026-09-13T17:00:00Z"),
+    gameWindow("2026-09-13T20:25:00Z"),
+    gameWindow("2026-09-14T00:20:00Z", 240), // Sunday night ending Monday ET
+    gameWindow("2026-09-14T23:15:00Z"),
+  ];
+  const chunks = buildMatchupChunks(games);
+  expect(chunks.map(chunk => chunk.label)).toEqual(MATCHUP_CHUNK_LABELS);
+  expect(chunks.map(chunk => chunk.windows.length)).toEqual([2, 3, 1, 1]);
+  expect(chunks[2].windows).toEqual([games[5]]);
+  expect(chunks[3].windows).toEqual([games[6]]);
+});
+
+test("uses Eastern standard time and the actual last Sunday slot, including simultaneous kickoffs", () => {
+  const saturday = gameWindow("2026-12-27T04:30:00Z");
+  const early = gameWindow("2026-12-27T18:00:00Z");
+  const late = gameWindow("2026-12-27T21:25:00Z");
+  const chunks = buildMatchupChunks([late, early, saturday, late]);
+  expect(chunks.map(chunk => chunk.windows)).toEqual([[saturday], [early], [late], []]);
+});
+
+test("merges overlapping games and clips an earlier slot at the next slot's kickoff", () => {
+  const first = gameWindow("2026-09-13T17:00:00Z", 300);
+  const second = gameWindow("2026-09-13T18:00:00Z", 300);
+  const final = gameWindow("2026-09-13T21:00:00Z");
+  expect(buildMatchupChunks([first, second, final])[1].windows).toEqual([
+    { start: first.start, end: final.start },
+  ]);
+});
+
+test("retains all four chunks when Sunday or the entire schedule is empty", () => {
+  const monday = gameWindow("2026-09-14T23:15:00Z");
+  expect(buildMatchupChunks([monday]).map(chunk => chunk.windows)).toEqual([[], [], [], [monday]]);
+  expect(buildMatchupChunks([]).map(chunk => chunk.windows)).toEqual([[], [], [], []]);
+  expect(chunkMatchupPoints([], buildMatchupChunks([]))).toEqual([]);
+});
+
+test("compresses idle gaps, preserves every original score point, and carries scores across chunks", () => {
+  const thursday = gameWindow("2026-09-11T00:20:00Z");
+  const saturday = gameWindow("2026-09-12T17:00:00Z");
+  const sunday = gameWindow("2026-09-14T00:20:00Z");
+  const monday = gameWindow("2026-09-14T23:15:00Z");
+  const entries = [
+    [thursday.start, 0, 0], [thursday.end, 10, 0],
+    [saturday.start, 10, 0], [saturday.end, 10, 12],
+    [sunday.start, 10, 12], [sunday.end, 20, 12],
+    [monday.start, 20, 12], [monday.end, 20, 25],
+  ];
+  const original = entries.map(([timestamp, home, away]) => ({
+    timestamp, minute: (timestamp - thursday.start) / 60_000, scores: [home, away] as [number, number],
+  }));
+  const data = chunkMatchupPoints(original, buildMatchupChunks([monday, sunday, saturday, thursday]));
+  for (const point of original) expect(data).toContainEqual(expect.objectContaining(point));
+  const firstEnd = data.find(point => point.timestamp === thursday.end)!;
+  const secondStart = data.find(point => point.timestamp === saturday.start)!;
+  expect(firstEnd.position).toBeCloseTo(0.5);
+  expect(secondStart.position).toBeCloseTo(firstEnd.position);
+  expect(data.filter(point => point.position >= 1 && point.position <= 2)
+    .every(point => point.lead === -2)).toBe(true);
+  expect(data.at(-1)).toMatchObject({ position: 4, scores: [20, 25], lead: -5 });
+  expect(data.every((point, index) => !index || point.position >= data[index - 1].position)).toBe(true);
+  expect(summarizeLeadChanges(data)).toEqual(summarizeLeadChanges(original));
+});
+
+test("Sunday final slot comes from the full schedule even when no fantasy starter plays in it", () => {
+  const { wrapped, data } = fixture();
+  const final = gameWindow("2026-09-14T00:20:00Z");
+  data.games.push({ week: 1, timestamp: final.start, teams: [{ name: "KC" }, { name: "DAL" }], drives: [] });
+  const [matchup] = computeSpiciestMatchups(wrapped, data);
+  expect(matchup.chunks[1].windows[0].start).toBe(data.games[0].timestamp);
+  expect(matchup.chunks[2].windows).toEqual([final]);
+  const chartPoints = chunkMatchupPoints(matchup.points, matchup.chunks);
+  expect(chartPoints.filter(point => point.position >= 2).every(point =>
+    point.scores[0] === 12 && point.scores[1] === 15)).toBe(true);
 });

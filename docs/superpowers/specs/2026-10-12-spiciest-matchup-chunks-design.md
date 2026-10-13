@@ -36,3 +36,11 @@ building to a separate temporary output. Commit task-owned files and push main.
 Self-review: boundaries come from the full schedule rather than fantasy starters;
 cross-midnight games stay in their kickoff slot; empty sections and missing Sunday
 games have explicit behavior. Scope excludes scoring or ranking changes.
+
+## Verification completed
+
+All 17 focused SpiciestMatchups tests pass, including six new chunking regressions.
+TypeScript checking and the production build pass. Browser inspection with the
+2025 season confirms the four sections, cumulative line, and score/time tooltip.
+Narrow-layout inspection confirms the labels fit without horizontal overflow.
+The existing untracked dist directory was preserved.

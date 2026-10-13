@@ -1,6 +1,7 @@
 import type { WrappedType } from "../../FetchWrapped";
 
 import { lookupTeamAbbreviation } from "./nflTeamAbbreviations";
+import { buildMatchupChunks, MatchupChunk } from "./matchupTimelineChunks";
 export { lookupTeamAbbreviation } from "./nflTeamAbbreviations";
 
 const GAME_MINUTES = 180;
@@ -29,6 +30,7 @@ export type MatchupSpiciness = {
   lastLeadChangeTimestamp: number | null;
   score: number;
   points: LeadPoint[];
+  chunks: MatchupChunk[];
 };
 
 type PlayerWindow = { moments: { minute: number; scored: number }[] };
@@ -85,6 +87,8 @@ export function computeSpiciestMatchups(wrapped: WrappedType, data: SeasonData):
     if (week <= 0 || week > (wrapped.latestScoringPeriod ?? Infinity)) continue;
     const weekSchedule = schedule.get(week);
     if (!weekSchedule) continue;
+    const chunks = buildMatchupChunks(data.games.filter(game => game.week === week && Number.isFinite(game.timestamp))
+      .map(game => ({ start: game.timestamp, end: game.timestamp + estimatedGameMinutes(game) * 60_000 })));
     for (const [homeId, awayId] of matchups) {
       const home = wrapped.ffTeams[homeId];
       const away = wrapped.ffTeams[awayId];
@@ -115,6 +119,7 @@ export function computeSpiciestMatchups(wrapped: WrappedType, data: SeasonData):
         lastLeadChangeTimestamp: summary.lastLeadChangeMinute === null ? null :
           weekSchedule.baseline + summary.lastLeadChangeMinute * 60_000,
         points,
+        chunks,
       });
     }
   }
@@ -139,7 +144,7 @@ function buildPlayerWindows(
       .sort((a, b) => a.minute - b.minute);
     const involved = plays.filter(play => matchesPlayer(player.name, play.text));
     const scoringPlays = involved.length ? involved : plays;
-    const end = kickoff + Math.max(GAME_MINUTES, ...plays.map(play => play.minute));
+    const end = kickoff + estimatedGameMinutes(game);
     const moments = [{ minute: kickoff, scored: 0 }];
     // Retrospective approximation: spread the final total evenly across matching
     // plays (all plays if there are no matches). This is not live fantasy scoring.
@@ -170,6 +175,11 @@ function clockToGameMinute(clock: string): number | null {
   const quarter = Number(match[1]);
   const remainingSeconds = Number(match[2]) * 60 + Number(match[3]);
   return (quarter - 1) * 45 + (900 - remainingSeconds) / 20;
+}
+
+function estimatedGameMinutes(game?: SeasonGame): number {
+  return Math.max(GAME_MINUTES, ...(game?.drives ?? []).flatMap(drive => drive.plays)
+    .map(play => clockToGameMinute(play.clock) ?? 0));
 }
 
 function matchesPlayer(name: string, text: string): boolean {
