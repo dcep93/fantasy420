@@ -84,6 +84,7 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
   awayName: string;
 }) {
   const gradientId = useId();
+  const [chartWidth, setChartWidth] = useState(500);
   const [zoom, setZoom] = useState<Range | null>(null);
   const [selection, setSelection] = useState<Range | null>(null);
   const [inspectedPoint, setInspectedPoint] = useState<InspectedPoint | null>(null);
@@ -140,7 +141,7 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
     }
     cancelSelection();
   }
-  const ticks = zoom ? [0, 0.5, 1].map(fraction => domain[0] + fraction * (domain[1] - domain[0])) :
+  const ticks = zoom ? (chartWidth < 500 ? [0, 1] : [0, 0.5, 1]).map(fraction => domain[0] + fraction * (domain[1] - domain[0])) :
     [0.5, 1.5, 2.5, 3.5];
   return (
     <section aria-label={`Estimated win probability: ${homeName} versus ${awayName}`}>
@@ -164,7 +165,7 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
         onKeyDown={event => { if (event.key === "Escape") cancelSelection(); }}
         style={{ width: "100%", height: CHART_HEIGHT, background: NIGHT_COLORS.chartCanvas, borderRadius: 10,
           touchAction: "pan-y", userSelect: "none", cursor: "crosshair" }}>
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="100%" height="100%" onResize={width => setChartWidth(width)}>
           <LineChart data={data} margin={CHART_MARGIN} accessibilityLayer>
             <defs>
               <linearGradient id={gradientId} x1="0" x2="0"

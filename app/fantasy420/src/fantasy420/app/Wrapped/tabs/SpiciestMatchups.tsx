@@ -76,7 +76,8 @@ export default function SpiciestMatchups() {
         <details style={{ marginTop: 8 }}>
           <summary style={{ cursor: "pointer" }}>How the estimate works</summary>
           <p style={{ maxWidth: "78ch", marginBottom: 0 }}>
-            Each player’s final points are spread evenly over plays mentioning their name, or all plays when there are no matches.
+            Weekly box scores identify each player’s game, with their saved team as a fallback when participation data is unavailable.
+            Final points are spread over plays matching their identity; unresolved individual totals are interpolated through the game. D/ST totals are spread over all game plays.
             Game clocks are mapped onto approximate three-hour windows; missing play data spreads points evenly across the game.
             Missing kickoff data uses the week’s first kickoff. This can change when leads appear to switch, so use spice as a rough comparison.
             Each starter begins with their saved projection for that week and ends at their recorded final score.

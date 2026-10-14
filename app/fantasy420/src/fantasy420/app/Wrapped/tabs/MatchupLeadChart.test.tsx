@@ -1,15 +1,15 @@
-import { fireEvent, render, screen, within } from "@testing-library/react";
+import { act, fireEvent, render, screen, within } from "@testing-library/react";
 import type { ReactNode } from "react";
 import MatchupLeadChart, { visibleProbabilityAxis, winProbabilityAxisPosition } from "./MatchupLeadChart";
 import { buildMatchupChunks, ChunkedLeadPoint } from "./matchupTimelineChunks";
 
-const { chartSpy, lineSpy, axisSpy, areaSpy, probabilityAxisSpy, tooltipState } = vi.hoisted(() => ({
+const { chartSpy, lineSpy, axisSpy, areaSpy, probabilityAxisSpy, tooltipState, resize } = vi.hoisted(() => ({
   chartSpy: vi.fn(), lineSpy: vi.fn(), axisSpy: vi.fn(), areaSpy: vi.fn(), probabilityAxisSpy: vi.fn(),
-  tooltipState: { active: true },
+  tooltipState: { active: true }, resize: { current: (_width: number) => {} },
 }));
 
 vi.mock("recharts", () => ({
-  ResponsiveContainer: ({ children }: { children: ReactNode }) => <>{children}</>,
+  ResponsiveContainer: ({ children, onResize }: { children: ReactNode; onResize: (width: number) => void }) => { resize.current = onResize; return <>{children}</>; },
   LineChart: ({ children, data }: { children: ReactNode; data: ChunkedLeadPoint[] }) => {
     chartSpy(data);
     return <svg>{children}</svg>;
@@ -228,4 +228,18 @@ test("keeps inspected details below the plot after pointer exit and clears stale
   view.rerender(<MatchupLeadChart {...zoomProps} points={[{ ...zoomProps.points[0] }]} />);
   expect(panel).toHaveTextContent("Hover or tap a point on the graph to see its details here.");
   expect(panel).not.toHaveTextContent("35.00 earned");
+});
+
+
+test("zoom timestamps adapt to the measured container width and preserve reset", () => {
+  render(<MatchupLeadChart {...zoomProps} />);
+  const element = preparePlot(screen.getByLabelText("Drag to zoom; Escape cancels selection"));
+  dragRange(element, 154, 354);
+  act(() => resize.current(260));
+  expect(axisSpy.mock.lastCall![0].ticks).toEqual([1, 3]);
+  act(() => resize.current(800));
+  expect(axisSpy.mock.lastCall![0].ticks).toEqual([1, 2, 3]);
+  act(() => resize.current(260));
+  fireEvent.click(screen.getByRole("button", { name: "Reset zoom" }));
+  expect(axisSpy.mock.lastCall![0].ticks).toEqual([0.5, 1.5, 2.5, 3.5]);
 });

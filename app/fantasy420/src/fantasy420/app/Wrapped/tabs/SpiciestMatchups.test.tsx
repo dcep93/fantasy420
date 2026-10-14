@@ -539,3 +539,27 @@ test("keeps overtime game clocks and negative contributions", () => {
   expect(computeSpiciestMatchups(wrapped, data)[0].points.at(-1)?.lastContributingPlays)
     .toEqual([expect.objectContaining({ clock: "Q5 1:00", text: "B.Catcher loses a fumble." })]);
 });
+
+test("historical box scores move a player's scoring window to their actual weekly game", () => {
+  const { wrapped, data } = fixture();
+  const sunday = data.games[0];
+  data.games = [
+    { ...sunday, teams: [{ name: "BUF", boxScore: [{ players: [{ name: "Bravo Catcher" }] }] }] },
+    { ...sunday, timestamp: sunday.timestamp + 27 * 60 * 60_000,
+      teams: [{ name: "NYJ", boxScore: [{ players: [{ name: "Alpha Runner" }] }] }] },
+  ];
+  const [matchup] = computeSpiciestMatchups(wrapped, data);
+  expect(matchup.points.find(point => point.minute === 180)?.scores).toEqual([0, 15]);
+  expect(matchup.points.at(-1)?.scores).toEqual([12, 15]);
+});
+
+test("unresolved individual totals interpolate without crediting another player's plays", () => {
+  const { wrapped, data } = fixture();
+  wrapped.nflPlayers.a.name = "Tez Johnson";
+  wrapped.nflPlayers.b.name = "Inactive Player";
+  data.games[0].drives[0].plays = [{ clock: "Q2 10:00", text: "J.Johnson catches." }];
+  const [matchup] = computeSpiciestMatchups(wrapped, data);
+  expect(matchup.points.every(point => !point.lastContributingPlays?.length)).toBe(true);
+  expect(matchup.points.at(-1)?.scores).toEqual([12, 15]);
+  expect(matchup.points.find(point => point.minute > 0 && point.minute < 180)?.scores[0]).toBeGreaterThan(0);
+});

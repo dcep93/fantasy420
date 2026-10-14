@@ -4,6 +4,7 @@ import { isReliableWeeklyProjection } from "../../FetchWrapped/weeklyProjections
 import { lookupTeamAbbreviation } from "./nflTeamAbbreviations";
 import { buildMatchupChunks, MatchupChunk } from "./matchupTimelineChunks";
 import { summarizeSpiciness, TIMELINE_EVENT_EPSILON } from "./matchupSpiciness";
+import { findPlayerGame, playerPlayMatcher } from "./matchupPlayerIdentity";
 export { lookupTeamAbbreviation } from "./nflTeamAbbreviations";
 
 const GAME_MINUTES = 180;
@@ -11,7 +12,7 @@ const GAME_MINUTES = 180;
 export type SeasonGame = {
   timestamp: number;
   week: number;
-  teams: { name: string }[];
+  teams: { name: string; boxScore?: { players: { name: string }[] }[] }[];
   drives: { plays: { clock: string; text: string }[] }[];
 };
 export type SeasonData = { year: number; games: SeasonGame[] };
@@ -27,6 +28,7 @@ export type LeadPoint = TimelinePoint & { timestamp: number; lastContributingPla
 type WeekSchedule = {
   baseline: number;
   gamesByTeam: Map<string, SeasonGame>;
+  games: SeasonGame[];
 };
 export type MatchupSpiciness = {
   id: string;
@@ -62,9 +64,10 @@ export function buildWeekSchedule(data: SeasonData): Map<number, WeekSchedule> {
     if (!Number.isFinite(game.timestamp)) continue;
     let week = schedule.get(game.week);
     if (!week) {
-      week = { baseline: game.timestamp, gamesByTeam: new Map() };
+      week = { baseline: game.timestamp, gamesByTeam: new Map(), games: [] };
       schedule.set(game.week, week);
     }
+    week.games.push(game);
     week.baseline = Math.min(week.baseline, game.timestamp);
     for (const team of game.teams) {
       const abbr = lookupTeamAbbreviation(team.name);
@@ -170,18 +173,20 @@ function buildPlayerWindows(
     if (!player) return [];
     const finalPoints = player.scores[week] ?? 0;
     const abbr = lookupTeamAbbreviation(wrapped.nflTeams[player.nflTeamId]?.name);
-    const game = abbr ? schedule.gamesByTeam.get(abbr) : undefined;
+    const savedTeamGame = abbr ? schedule.gamesByTeam.get(abbr) : undefined;
+    const game = player.position === "D/ST" ? savedTeamGame : findPlayerGame(player.name, schedule.games, savedTeamGame);
     const kickoff = game ? (game.timestamp - schedule.baseline) / 60_000 : 0;
     const plays = (game?.drives ?? []).flatMap(drive => drive.plays)
       .map((play, sourceIndex) => ({ ...play, sourceIndex, minute: clockToGameMinute(play.clock) }))
       .filter((play): play is typeof play & { minute: number } => play.minute !== null)
       .sort((a, b) => a.minute - b.minute);
-    const involved = plays.filter(play => matchesPlayer(player.name, play.text));
-    const scoringPlays = involved.length ? involved : plays;
+    const matchesPlayer = playerPlayMatcher(player.name, game);
+    const scoringPlays = player.position === "D/ST" ? plays : plays.filter(play => matchesPlayer(play.text));
     const end = kickoff + estimatedGameMinutes(game);
     const moments: PlayerWindow["moments"] = [{ minute: kickoff, scored: 0 }];
     // Retrospective approximation: spread the final total evenly across matching
-    // plays (all plays if there are no matches). This is not live fantasy scoring.
+    // plays (all plays for D/ST). Unresolved individual totals are interpolated.
+    // This is not live fantasy scoring.
     scoringPlays.forEach((play, index) => {
       moments.push({ minute: kickoff + play.minute, scored: finalPoints * (index + 1) / scoringPlays.length,
         play: {
@@ -245,13 +250,4 @@ function clockToGameMinute(clock: string): number | null {
 function estimatedGameMinutes(game?: SeasonGame): number {
   return Math.max(GAME_MINUTES, ...(game?.drives ?? []).flatMap(drive => drive.plays)
     .map(play => clockToGameMinute(play.clock) ?? 0));
-}
-
-function matchesPlayer(name: string, text: string): boolean {
-  const parts = name.trim().split(/\s+/);
-  while (/^(?:jr\.?|sr\.?|ii|iii|iv|v)$/i.test(parts.at(-1) ?? "")) parts.pop();
-  const lastName = parts.at(-1);
-  if (!lastName) return false;
-  const escaped = lastName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  return new RegExp(`\\b${escaped}\\b`, "i").test(text);
 }
