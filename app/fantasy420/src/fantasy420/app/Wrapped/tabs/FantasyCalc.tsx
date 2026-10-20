@@ -1,5 +1,6 @@
 import { bubbleStyle, selectedWrapped, selectedYear } from "..";
 import allWrapped from "../allWrapped";
+import FantasyCalcManagerChart from "./FantasyCalcManagerChart";
 
 export default function FantasyCalc() {
   const playerIdToDraftIndex = Object.fromEntries(
@@ -24,6 +25,23 @@ export default function FantasyCalc() {
       ]
     )
   );
+  const teams = Object.values(selectedWrapped().ffTeams)
+    .map(({ rosters, ...t }) => ({
+      ...t,
+      ps: rosters["0"].rostered
+        .map((playerId) => ({
+          id: playerId,
+          name: selectedWrapped().nflPlayers[playerId]?.name || playerId,
+          value: fantasyCalcPlayers[playerId] || 0,
+          draftPick: playerIdToDraftIndex[playerId],
+        }))
+        .sort((a, b) => b.value - a.value),
+    }))
+    .map((t) => ({
+      ...t,
+      value: t.ps.reduce((sum, p) => sum + p.value, 0),
+    }))
+    .sort((a, b) => b.value - a.value);
   return (
     <div>
       <div>https://fantasycalc.com/redraft-rankings</div>
@@ -55,25 +73,7 @@ export default function FantasyCalc() {
         </div>
       </div>
       <div style={{ display: "flex", flexWrap: "wrap", whiteSpace: "nowrap" }}>
-        {Object.values(selectedWrapped().ffTeams)
-          .map(({ rosters, ...t }) => ({
-            ...t,
-            ps: rosters["0"].rostered
-              .map((playerId) => selectedWrapped().nflPlayers[playerId])
-              .map((p) => ({
-                ...p,
-                name: p?.name || "missing",
-                value: fantasyCalcPlayers[p?.id] || 0,
-                draftPick: playerIdToDraftIndex[p?.id],
-              }))
-              .sort((a, b) => b.value - a.value),
-          }))
-          .map((t) => ({
-            ...t,
-            value: t.ps.map((p) => p.value).reduce((a, b) => a + b, 0),
-          }))
-          .sort((a, b) => b.value - a.value)
-          .map((t) => (
+        {teams.map((t) => (
             <div key={t.id} style={bubbleStyle}>
               <h2>{t.name}</h2>
               <h3
@@ -122,6 +122,10 @@ export default function FantasyCalc() {
             </div>
           ))}
       </div>
+      <FantasyCalcManagerChart
+        teams={teams}
+        available={Object.keys(fantasyCalcPlayers).length > 0}
+      />
     </div>
   );
 }
