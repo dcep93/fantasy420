@@ -44,6 +44,10 @@ export default function FantasyCalc() {
     .sort((a, b) => b.value - a.value);
   return (
     <div>
+      <FantasyCalcManagerChart
+        teams={teams}
+        available={Object.keys(fantasyCalcPlayers).length > 0}
+      />
       <div>https://fantasycalc.com/redraft-rankings</div>
       <div>
         {new Date(selectedWrapped().fantasyCalc?.timestamp || -1).toString()}
@@ -122,10 +126,6 @@ export default function FantasyCalc() {
             </div>
           ))}
       </div>
-      <FantasyCalcManagerChart
-        teams={teams}
-        available={Object.keys(fantasyCalcPlayers).length > 0}
-      />
     </div>
   );
 }

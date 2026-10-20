@@ -102,7 +102,12 @@ export default function FantasyCalcManagerChart({
                       }}
                       onFocus={() => setSelection({ teamId: manager.id, playerIndex: index, pinned: false })}
                       onClick={() => reveal(manager.id, index, true)}
-                    />
+                    >
+                      <span className="fc-manager-player-name" aria-hidden="true">
+                        <span>{item.name.trim().split(/\s+/)[0]}</span>
+                        <span>{item.name.trim().split(/\s+/).slice(1).join(" ")}</span>
+                      </span>
+                    </button>
                   ))}
                 </div>
                 {manager.value === 0 && (

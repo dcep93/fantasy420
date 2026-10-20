@@ -3,7 +3,7 @@ import FantasyCalcManagerChart from "./FantasyCalcManagerChart";
 
 const teams = [
   { id: "a", name: "Alpha", value: 100, ps: [
-    { id: "1", name: "First", value: 75, draftPick: 0 },
+    { id: "1", name: "First Last", value: 75, draftPick: 0 },
     { id: "2", name: "Second", value: 25 },
     { id: "3", name: "Zero", value: 0 },
   ] },
@@ -12,42 +12,43 @@ const teams = [
   ] },
 ];
 
-test("shows manager totals and proportional segments without visible player details", () => {
+test("shows player names in proportional segments while keeping score and draft details hidden", () => {
   render(<FantasyCalcManagerChart teams={teams} available />);
   expect(screen.getByRole("group", { name: "Alpha: 100.00" })).toHaveStyle({ width: "100%" });
   expect(screen.getByRole("group", { name: "Beta: 50.00" })).toHaveStyle({ width: "50%" });
-  expect(screen.getByRole("button", { name: "Alpha, First" })).toHaveStyle({ width: "75%" });
-  expect(screen.queryByText("First")).not.toBeInTheDocument();
+  expect(screen.getByRole("button", { name: "Alpha, First Last" })).toHaveStyle({ width: "75%" });
+  expect(within(screen.getByRole("button", { name: "Alpha, First Last" })).getByText("First")).toBeVisible();
+  expect(within(screen.getByRole("button", { name: "Alpha, First Last" })).getByText("Last")).toBeVisible();
   expect(screen.queryByRole("region", { name: "Player details" })).not.toBeInTheDocument();
 });
 
 test("keyboard focus reveals one-based draft picks and Escape dismisses details", () => {
   render(<FantasyCalcManagerChart teams={teams} available />);
-  fireEvent.focus(screen.getByRole("button", { name: "Alpha, First" }));
+  fireEvent.focus(screen.getByRole("button", { name: "Alpha, First Last" }));
   expect(screen.getByText("75.00 · Draft pick #1")).toBeVisible();
   fireEvent.keyDown(document, { key: "Escape" });
-  expect(screen.queryByText("First")).not.toBeInTheDocument();
+  expect(screen.queryByRole("region", { name: "Player details" })).not.toBeInTheDocument();
 });
 
 test("hover reveals details and mouse leave clears unpinned details", () => {
   render(<FantasyCalcManagerChart teams={teams} available />);
-  const segment = screen.getByRole("button", { name: "Alpha, First" });
+  const segment = screen.getByRole("button", { name: "Alpha, First Last" });
   const enter = new MouseEvent("pointerover", { bubbles: true });
   Object.defineProperty(enter, "pointerType", { value: "mouse" });
   fireEvent(segment, enter);
-  expect(screen.getByText("First")).toBeVisible();
+  expect(within(screen.getByRole("region", { name: "Player details" })).getByText("First Last")).toBeVisible();
   const leave = new MouseEvent("pointerout", { bubbles: true });
   Object.defineProperty(leave, "pointerType", { value: "mouse" });
   fireEvent(segment, leave);
-  expect(screen.queryByText("First")).not.toBeInTheDocument();
+  expect(screen.queryByRole("region", { name: "Player details" })).not.toBeInTheDocument();
 });
 
 test("tap pins details, next reaches undrafted and zero-value players, and outside tap dismisses", () => {
   render(<FantasyCalcManagerChart teams={teams} available />);
-  const segment = screen.getByRole("button", { name: "Alpha, First" });
+  const segment = screen.getByRole("button", { name: "Alpha, First Last" });
   fireEvent.click(segment);
   fireEvent.pointerLeave(segment);
-  expect(screen.getByText("First")).toBeVisible();
+  expect(within(screen.getByRole("region", { name: "Player details" })).getByText("First Last")).toBeVisible();
   fireEvent.click(screen.getByRole("button", { name: "Next player" }));
   expect(screen.getByText("25.00 · Undrafted")).toBeVisible();
   fireEvent.click(screen.getByRole("button", { name: "Next player" }));
@@ -59,11 +60,11 @@ test("tap pins details, next reaches undrafted and zero-value players, and outsi
 
 test("keyboard focus can change the selected player after a pinned tap", () => {
   render(<FantasyCalcManagerChart teams={teams} available />);
-  fireEvent.click(screen.getByRole("button", { name: "Alpha, First" }));
+  fireEvent.click(screen.getByRole("button", { name: "Alpha, First Last" }));
   fireEvent.focus(screen.getByRole("button", { name: "Beta, Fourth" }));
   expect(screen.getByText("50.00 · Draft pick #15")).toBeVisible();
   fireEvent.click(screen.getByRole("button", { name: "Close player details" }));
-  expect(screen.queryByText("Fourth")).not.toBeInTheDocument();
+  expect(screen.queryByRole("region", { name: "Player details" })).not.toBeInTheDocument();
 });
 
 test("zero total rosters remain inspectable and missing data has an empty state", () => {

@@ -31,3 +31,13 @@ and push according to workspace defaults.
 
 Self-review: requirements are covered; “score” means the existing FantasyCalc
 market value, not weekly fantasy points. The chart is additive at page bottom.
+
+## Follow-up: labels and placement
+
+The user requested the chart at the top of FantasyCalc, directly below the page
+heading. Each player segment now shows the first name on line one and the
+remaining name (including compound surnames and suffixes) on line two. Each
+line truncates with an ellipsis to fit. Absolute positioning keeps labels from
+changing segment widths or heights. Score and draft pick remain in the
+hover/focus/tap details. This supersedes the original bottom placement and
+hidden-name requirements.
