@@ -7,7 +7,6 @@ export const REVERSAL_POINTS = 5;
 export const MAX_REVERSAL_BONUS = 30;
 export const LATE_REMAINING_FRACTION = 0.25;
 export const MAX_SUSPENSE_BONUS = 20;
-export const MIN_SPICE_SCORE = 25;
 // A 1 ms interval displays a scoring jump without turning projection decay into steps.
 export const TIMELINE_EVENT_EPSILON = 1 / 60_000;
 

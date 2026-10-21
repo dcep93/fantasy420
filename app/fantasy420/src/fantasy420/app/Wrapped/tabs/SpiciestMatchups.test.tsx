@@ -41,7 +41,7 @@ function fixture(): { wrapped: WrappedType; data: SeasonData } {
 
 afterEach(() => { vi.unstubAllGlobals(); scope.year = "2026"; });
 
-test("week selection ranks across years before the top-ten cap and keeps the spice minimum", () => {
+test("week selection ranks across years before the top-ten cap without a spice minimum", () => {
   const { wrapped, data } = fixture();
   const original = computeSpiciestMatchups(wrapped, data)[0];
   const candidates = [
@@ -52,8 +52,8 @@ test("week selection ranks across years before the top-ten cap and keeps the spi
   ];
   expect(selectSpiciestMatchups(candidates).matchups).toHaveLength(10);
   expect(selectSpiciestMatchups(candidates, 2).matchups.map(matchup => matchup.id)).toEqual(["week2-old", "week2-new"]);
-  expect(selectSpiciestMatchups(candidates, 3)).toMatchObject({ matchups: [], eligibleCount: 1, qualifyingCount: 0 });
-  expect(selectSpiciestMatchups(candidates, 4)).toMatchObject({ matchups: [], eligibleCount: 0, qualifyingCount: 0 });
+  expect(selectSpiciestMatchups(candidates, 3)).toMatchObject({ matchups: [{ id: "quiet" }], eligibleCount: 1 });
+  expect(selectSpiciestMatchups(candidates, 4)).toMatchObject({ matchups: [], eligibleCount: 0 });
 });
 
 test("filters and clears weeks without refetching and resets on year changes", async () => {
@@ -70,12 +70,12 @@ test("filters and clears weeks without refetching and resets on year changes", a
   vi.mocked(selectedWrapped).mockReturnValue(wrapped);
   try {
     const { rerender } = render(<SpiciestMatchups />);
-    await screen.findByText(/Showing 10 of 11 qualifying/);
+    await screen.findByText(/Showing 10 of 11 eligible/);
     const filter = screen.getByRole("combobox", { name: "Week" });
     expect(filter).toHaveValue("all");
     fireEvent.change(filter, { target: { value: "2" } });
     expect(screen.getByText("Week two versus Bravo chart")).toBeVisible();
-    expect(screen.getByRole("status")).toHaveTextContent("Showing 1 of 1 qualifying matchup in Week 2");
+    expect(screen.getByRole("status")).toHaveTextContent("Showing 1 of 1 eligible matchup in Week 2");
     expect(screen.getAllByRole("article")).toHaveLength(1);
     fireEvent.change(filter, { target: { value: "3" } });
     expect(screen.getByText(/No completed matchups with timeline data/)).toBeVisible();
@@ -86,7 +86,7 @@ test("filters and clears weeks without refetching and resets on year changes", a
     scope.year = "2025";
     vi.mocked(selectedWrapped).mockReturnValue({ ...wrapped, year: "2025" });
     rerender(<SpiciestMatchups />);
-    await screen.findByText(/Showing 10 of 11 qualifying/);
+    await screen.findByText(/Showing 10 of 11 eligible/);
     expect(filter).toHaveValue("all");
   } finally {
     analysis.mockRestore();
@@ -270,40 +270,40 @@ test("renders named chart, actual finals and transparent ranking formula", async
   const matchup = computeSpiciestMatchups(wrapped, data)[0];
   expect(screen.getByText(`${matchup.swingScore.toFixed(2)} probability swing percentage points + 10.00 reversal bonus + ${matchup.suspenseBonus.toFixed(2)} late suspense = ${matchup.score.toFixed(2)} spice`)).toBeVisible();
   expect(screen.getByText(/1 decisive favorite reversal, including 1 late/)).toBeVisible();
-  expect(screen.getByText(/Showing 1 of 1 qualifying matchup/)).toBeVisible();
-  expect(screen.getByText(/at least 25 spice/, { selector: 'p[role="status"]' })).toBeVisible();
+  expect(screen.getByText(/Showing 1 of 1 eligible matchup/)).toBeVisible();
+  expect(screen.getByRole("status")).toHaveTextContent("maximum 10 shown");
   expect(screen.getByText(/first team’s estimated chance to win/i)).toBeVisible();
   expect(screen.getByText(/Alpha 12.00 · Bravo 15.00/)).toBeVisible();
 });
 
-test("shows a distinct no-qualifying state when completed, eligible matchups fall below 25", async () => {
+test("renders completed, eligible matchups even when spice falls below 25", async () => {
   const { wrapped, data } = fixture();
   data.games[0].drives = [];
   const analysis = analyzeSpiciestMatchups(wrapped, data);
   expect(analysis.matchups).toHaveLength(1);
   expect(analysis.matchups[0].score).toBeLessThan(25);
   const loaded = await loadMatchupSeasons({ 2026: wrapped }, async () => data);
-  expect(loaded).toMatchObject({ eligibleCount: 1, qualifyingCount: 0, matchups: [] });
+  expect(loaded).toMatchObject({ eligibleCount: 1, matchups: analysis.matchups });
   vi.mocked(selectedWrapped).mockReturnValue(wrapped);
   vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(JSON.stringify(data))));
   render(<SpiciestMatchups />);
-  expect(await screen.findByText("No completed matchups reached the 25-spice minimum for this selection.")).toBeVisible();
-  expect(screen.queryByText("Alpha versus Bravo chart")).not.toBeInTheDocument();
+  expect(await screen.findByText("Alpha versus Bravo chart")).toBeVisible();
+  expect(screen.getByRole("status")).toHaveTextContent("Showing 1 of 1 eligible matchup");
 });
 
-test("the loader includes exactly 25 spice, excludes lower scores and caps display at ten", async () => {
+test("the loader includes low and zero spice scores and caps display at ten", async () => {
   const { wrapped, data } = fixture();
   const original = computeSpiciestMatchups(wrapped, data)[0];
-  const matchups = [24.99, 25, 25.01].map((score, index) => ({ ...original, id: `boundary-${index}`, score }));
+  const matchups = [0, 24.99, 25, 25.01].map((score, index) => ({ ...original, id: `boundary-${index}`, score }));
   const analysis = vi.spyOn(matchupData, "analyzeSpiciestMatchups").mockReturnValue({ omittedForProjections: 0, matchups });
   try {
     const loaded = await loadMatchupSeasons({ 2026: wrapped }, async () => data);
-    expect(loaded.matchups.map(matchup => matchup.score)).toEqual([25.01, 25]);
-    expect(loaded).toMatchObject({ eligibleCount: 3, qualifyingCount: 2 });
+    expect(loaded.matchups.map(matchup => matchup.score)).toEqual([25.01, 25, 24.99, 0]);
+    expect(loaded).toMatchObject({ eligibleCount: 4 });
     analysis.mockReturnValue({ omittedForProjections: 0,
       matchups: Array.from({ length: 12 }, (_, index) => ({ ...original, id: `matchup-${index}`, score: 25 + index })) });
     const capped = await loadMatchupSeasons({ 2026: wrapped }, async () => data);
-    expect(capped).toMatchObject({ eligibleCount: 12, qualifyingCount: 12 });
+    expect(capped).toMatchObject({ eligibleCount: 12 });
     expect(capped.matchups.map(matchup => matchup.score)).toEqual([36, 35, 34, 33, 32, 31, 30, 29, 28, 27]);
   } finally {
     analysis.mockRestore();
@@ -461,7 +461,7 @@ test("all-years ranking pools seasons, keeps distinct IDs and names failed years
   expect(result.matchups.map(m=>m.year)).toEqual(["2026","2025"]);
   expect(new Set(result.matchups.map(m=>m.id)).size).toBe(2);
   const quiet={...data,games:data.games.map(g=>({...g,drives:[]}))};
-  expect((await loadMatchupSeasons({2026:wrapped},async()=>quiet)).matchups).toEqual([]);
+  expect((await loadMatchupSeasons({2026:wrapped},async()=>quiet)).matchups).toMatchObject([{ year: "2026", score: 0 }]);
 });
 
 test("a Wednesday opener precedes Sunday, while the following Wednesday is post Sunday", () => {
