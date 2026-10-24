@@ -27,12 +27,11 @@ export default function WinDistributionChart({ season }: { season: ProbabilitySe
       ...Array.from({ length: Math.floor(maxWins) + 1 }, (_, wins) => wins),
       ...distributions.flatMap(points => points.map(point => point.wins)),
     ])].sort((a, b) => a - b);
-    const lookup = distributions.map(points => new Map(points.map(point => [point.wins, point.probability])));
-    const data: { wins: number; [key: string]: number | null }[] = ticks.map(wins => ({ wins, ...Object.fromEntries(season.teams.map((team, i) => [
+    const data: { wins: number; [key: string]: number }[] = ticks.map(wins => ({ wins, ...Object.fromEntries(season.teams.map((team, i) => [
       `team_${team.id}`,
-      // Half-win offsets from completed ties are separate discrete supports.
-      // Skip the other support rather than drawing artificial zero spikes.
-      lookup[i].get(wins) ?? (Number.isInteger(wins - season.wins[i]) ? 0 : null),
+      // P(final wins <= wins), including thresholds between half-win totals.
+      wins >= distributions[i][distributions[i].length - 1].wins ? 1 : Math.min(1,
+        distributions[i].reduce((total, point) => total + (point.wins <= wins ? point.probability : 0), 0)),
     ])) }));
     return { data, ticks, maxWins };
   }, [season]);
@@ -49,7 +48,7 @@ export default function WinDistributionChart({ season }: { season: ProbabilitySe
   return <section className="win-distribution" aria-label="Win total probabilities">
     <h2>How many wins?</h2>
     <p className="playoff-strength-guide" id="win-distribution-guide">
-      Exact probabilities for each final win total, including your matchup overrides.
+      Cumulative probability of finishing with the number of wins shown or fewer, including your matchup overrides.
       Hover to highlight a manager; select a name to isolate their line. Select it again or use Show all to compare everyone.
       Points-for adjustments affect finishing positions, not win totals.
       {showDetailsBelow && " Tap a win total on the graph to see its probabilities below."}
@@ -75,17 +74,17 @@ export default function WinDistributionChart({ season }: { season: ProbabilitySe
           <CartesianGrid stroke={NIGHT_COLORS.chartGrid} strokeDasharray="3 5" vertical={false} />
           <XAxis dataKey="wins" type="number" domain={[0, maxWins]} ticks={ticks}
             minTickGap={20} tick={{ fill: NIGHT_COLORS.mutedText }}
-            label={{ value: "Final wins", position: "bottom", offset: 12, fill: NIGHT_COLORS.mutedText }} />
-          <YAxis width={64} domain={[0, (max: number) => Math.min(1, Math.max(0.1, Math.ceil(max * 10) / 10))]}
+            label={{ value: "Final wins (or fewer)", position: "bottom", offset: 12, fill: NIGHT_COLORS.mutedText }} />
+          <YAxis width={64} domain={[0, 1]}
             tickFormatter={value => `${Math.round(value * 100)}%`} tick={{ fill: NIGHT_COLORS.mutedText }} />
           <Tooltip trigger={showDetailsBelow ? "click" : "hover"}
             active={showDetailsBelow ? false : undefined}
-            labelFormatter={label => `${label} final wins`}
+            labelFormatter={label => `${label} wins or fewer`}
             formatter={(value, name) => [percent(Number(value)), name]}
             itemSorter={item => -Number(item.value)}
             contentStyle={{ background: NIGHT_COLORS.tooltip, borderColor: NIGHT_COLORS.border, color: NIGHT_COLORS.text }} />
           {season.teams.map((team, i) => (!selectedTeamId || selectedTeamId === team.id) && <Line
-            key={team.id} name={team.name} dataKey={`team_${team.id}`} type="linear" connectNulls
+            key={team.id} name={team.name} dataKey={`team_${team.id}`} type="stepAfter"
             stroke={NIGHT_CHART_COLORS[i]} strokeWidth={highlighted === team.id ? 4 : 2}
             strokeOpacity={highlighted && highlighted !== team.id ? 0.2 : 1}
             dot={{ r: highlighted === team.id ? 4 : 2 }} activeDot={{ r: 6 }} isAnimationActive={false}
@@ -96,7 +95,7 @@ export default function WinDistributionChart({ season }: { season: ProbabilitySe
     </div>
     {showDetailsBelow && inspected && <div className="win-distribution-details" role="region" aria-label="Selected win total probabilities">
       <div className="win-distribution-details-heading">
-        <strong>{inspected.wins} final wins</strong>
+        <strong>{inspected.wins} wins or fewer</strong>
         <button aria-label="Dismiss win total details" onClick={() => setInspectedWins(undefined)}>Close</button>
       </div>
       <dl>{details.map(({ team, i, value }) => <div key={team.id}>

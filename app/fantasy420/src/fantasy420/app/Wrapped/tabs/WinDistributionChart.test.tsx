@@ -6,8 +6,8 @@ vi.mock("recharts", () => ({
   ResponsiveContainer: ({ children }: any) => children,
   LineChart: ({ data, children, onClick }: any) => <div data-testid="distribution-chart" onClick={() => onClick?.({ activeLabel: 4 })}>
     <pre data-testid="distribution-data">{JSON.stringify(data)}</pre>{children}</div>,
-  Line: ({ name, stroke, strokeOpacity, onMouseEnter, onMouseLeave, onClick }: any) =>
-    <span data-testid="distribution-line" data-name={name} data-color={stroke} data-opacity={strokeOpacity}
+  Line: ({ name, type, stroke, strokeOpacity, onMouseEnter, onMouseLeave, onClick }: any) =>
+    <span data-testid="distribution-line" data-name={name} data-type={type} data-color={stroke} data-opacity={strokeOpacity}
       onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={onClick} />,
   CartesianGrid: () => null, XAxis: () => null, YAxis: () => null,
   Tooltip: ({ active }: any) => active === false ? null : <div data-testid="overlay-tooltip" />,
@@ -61,7 +61,8 @@ test("hover and keyboard focus highlight a manager without removing the comparis
 test("overrides update the exact curve immediately and retain manager selection", () => {
   const season = fixture();
   const view = render(<WinDistributionChart season={season} />);
-  expect(data().find((row: any) => row.wins === 4).team_a).toBeCloseTo(0.8);
+  expect(data().find((row: any) => row.wins === 3).team_a).toBeCloseTo(0.2);
+  expect(data().find((row: any) => row.wins === 4).team_a).toBe(1);
   fireEvent.click(screen.getByRole("button", { name: "Isolate Alpha" }));
   view.rerender(<WinDistributionChart season={{ ...season, games: [{ ...season.games[0], probability: 0 }] }} />);
   expect(data().find((row: any) => row.wins === 3).team_a).toBe(1);
@@ -70,12 +71,21 @@ test("overrides update the exact curve immediately and retain manager selection"
   expect(lines()[0]).toHaveAttribute("data-name", "Alpha");
 });
 
-test("completed half-wins keep their own support without artificial zero spikes", () => {
+test("CDF carries probabilities between half-win thresholds and reaches 100% for every manager", () => {
   const season = fixture(); season.wins[1] = 4.5;
   render(<WinDistributionChart season={season} />);
-  expect(data().find((row: any) => row.wins === 4.5).team_a).toBeNull();
-  expect(data().find((row: any) => row.wins === 4).team_b).toBeNull();
-  expect(data().find((row: any) => row.wins === 5.5).team_b).toBeCloseTo(0.2);
+  expect(data().find((row: any) => row.wins === 4.5).team_a).toBe(1);
+  expect(data().find((row: any) => row.wins === 4).team_b).toBe(0);
+  expect(data().find((row: any) => row.wins === 4.5).team_b).toBeCloseTo(0.8);
+  expect(data().find((row: any) => row.wins === 5).team_b).toBeCloseTo(0.8);
+  expect(data().find((row: any) => row.wins === 5.5).team_b).toBe(1);
+  for (const key of ["team_a", "team_b"]) {
+    const values = data().map((row: any) => row[key]);
+    expect(values[0]).toBe(0);
+    expect(values[values.length - 1]).toBe(1);
+    values.forEach((value: number, i: number) => expect(value).toBeGreaterThanOrEqual(values[Math.max(0, i - 1)]));
+  }
+  lines().forEach(line => expect(line).toHaveAttribute("data-type", "stepAfter"));
   expect(screen.getByText(/Completed ties count as half a win/)).toBeInTheDocument();
 });
 
@@ -90,10 +100,11 @@ test("mobile taps show current probabilities below the graph, with no overlay or
   const chart = screen.getByTestId("distribution-chart");
   expect(chart.contains(panel)).toBe(false);
   expect(chart.compareDocumentPosition(panel) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-  expect(panel).toHaveTextContent("4 final wins");
-  expect(within(panel).getAllByText("80.0%")).toHaveLength(2);
-  fireEvent.click(screen.getByRole("button", { name: "Isolate Alpha" }));
-  expect(within(panel).queryByText("Bravo")).not.toBeInTheDocument();
+  expect(panel).toHaveTextContent("4 wins or fewer");
+  expect(within(panel).getByText("100.0%")).toBeInTheDocument();
+  expect(within(panel).getByText("80.0%")).toBeInTheDocument();
+  fireEvent.click(screen.getByRole("button", { name: "Isolate Bravo" }));
+  expect(within(panel).queryByText("Alpha")).not.toBeInTheDocument();
   view.rerender(<WinDistributionChart season={{ ...season, games: [{ ...season.games[0], probability: 0 }] }} />);
   expect(within(panel).getByText("0.0%")).toBeInTheDocument();
   fireEvent.click(screen.getByRole("button", { name: "Dismiss win total details" }));
