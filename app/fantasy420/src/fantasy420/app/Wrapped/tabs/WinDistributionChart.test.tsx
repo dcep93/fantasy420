@@ -18,7 +18,7 @@ function fixture(): ProbabilitySeason {
     wins: [3, 4], points: [200, 100], headWins: [0, 0, 0, 0], headGames: [0, 1, 1, 0],
     games: [{ key: "1:0", week: 1, matchupIndex: 0, a: 0, b: 1, strengthA: 100, strengthB: 100, probability: 0.8 }] };
 }
-beforeEach(() => vi.stubGlobal("matchMedia", vi.fn(() => ({ matches: false, addEventListener: vi.fn(), removeEventListener: vi.fn() }))));
+beforeEach(() => { vi.stubGlobal("matchMedia", vi.fn(() => ({ matches: false, addEventListener: vi.fn(), removeEventListener: vi.fn() }))); });
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 const lines = () => screen.getAllByTestId("distribution-line");
 const data = () => JSON.parse(screen.getByTestId("distribution-data").textContent!);
