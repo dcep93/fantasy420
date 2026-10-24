@@ -8,6 +8,15 @@
 }
 .win-distribution-swatch { width: 1em; height: 0.2em; background: var(--manager-color); flex-shrink: 0; }
 .win-distribution-chart { width: 100%; min-width: 0; height: 26em; }
+.win-distribution-details {
+  margin-top: 0.75em; padding: 0.75em; border: 1px solid var(--night-border);
+  border-radius: 0.5em; background: var(--night-surface-alt); font-size: 0.85em;
+}
+.win-distribution-details-heading { display: flex; align-items: center; justify-content: space-between; gap: 0.75em; }
+.win-distribution-details dl { margin: 0.75em 0 0; }
+.win-distribution-details dl > div { display: flex; justify-content: space-between; gap: 1em; padding: 0.3em 0; }
+.win-distribution-details dt { min-width: 0; overflow-wrap: anywhere; }
+.win-distribution-details dd { margin: 0; font-variant-numeric: tabular-nums; }
 @media (max-width: 600px) {
   .win-distribution-chart { height: 22em; }
   .win-distribution-managers button { min-height: 2.75em; }

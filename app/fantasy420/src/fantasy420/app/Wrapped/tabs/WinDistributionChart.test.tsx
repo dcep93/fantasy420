@@ -1,14 +1,16 @@
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import WinDistributionChart from "./WinDistributionChart";
 import type { ProbabilitySeason } from "./probabilityEngine";
 
 vi.mock("recharts", () => ({
   ResponsiveContainer: ({ children }: any) => children,
-  LineChart: ({ data, children }: any) => <div><pre data-testid="distribution-data">{JSON.stringify(data)}</pre>{children}</div>,
+  LineChart: ({ data, children, onClick }: any) => <div data-testid="distribution-chart" onClick={() => onClick?.({ activeLabel: 4 })}>
+    <pre data-testid="distribution-data">{JSON.stringify(data)}</pre>{children}</div>,
   Line: ({ name, stroke, strokeOpacity, onMouseEnter, onMouseLeave, onClick }: any) =>
     <span data-testid="distribution-line" data-name={name} data-color={stroke} data-opacity={strokeOpacity}
       onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={onClick} />,
-  CartesianGrid: () => null, XAxis: () => null, YAxis: () => null, Tooltip: () => null,
+  CartesianGrid: () => null, XAxis: () => null, YAxis: () => null,
+  Tooltip: ({ active }: any) => active === false ? null : <div data-testid="overlay-tooltip" />,
 }));
 
 function fixture(): ProbabilitySeason {
@@ -16,7 +18,8 @@ function fixture(): ProbabilitySeason {
     wins: [3, 4], points: [200, 100], headWins: [0, 0, 0, 0], headGames: [0, 1, 1, 0],
     games: [{ key: "1:0", week: 1, matchupIndex: 0, a: 0, b: 1, strengthA: 100, strengthB: 100, probability: 0.8 }] };
 }
-afterEach(cleanup);
+beforeEach(() => vi.stubGlobal("matchMedia", vi.fn(() => ({ matches: false, addEventListener: vi.fn(), removeEventListener: vi.fn() }))));
+afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 const lines = () => screen.getAllByTestId("distribution-line");
 const data = () => JSON.parse(screen.getByTestId("distribution-data").textContent!);
 
@@ -74,4 +77,34 @@ test("completed half-wins keep their own support without artificial zero spikes"
   expect(data().find((row: any) => row.wins === 4).team_b).toBeNull();
   expect(data().find((row: any) => row.wins === 5.5).team_b).toBeCloseTo(0.2);
   expect(screen.getByText(/Completed ties count as half a win/)).toBeInTheDocument();
+});
+
+test("mobile taps show current probabilities below the graph, with no overlay or accidental isolation", () => {
+  vi.stubGlobal("matchMedia", vi.fn(() => ({ matches: true, addEventListener: vi.fn(), removeEventListener: vi.fn() })));
+  const season = fixture();
+  const view = render(<WinDistributionChart season={season} />);
+  expect(screen.queryByTestId("overlay-tooltip")).not.toBeInTheDocument();
+  fireEvent.click(lines()[0]);
+  expect(lines()).toHaveLength(2);
+  const panel = screen.getByRole("region", { name: "Selected win total probabilities" });
+  const chart = screen.getByTestId("distribution-chart");
+  expect(chart.contains(panel)).toBe(false);
+  expect(chart.compareDocumentPosition(panel) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+  expect(panel).toHaveTextContent("4 final wins");
+  expect(within(panel).getAllByText("80.0%")).toHaveLength(2);
+  fireEvent.click(screen.getByRole("button", { name: "Isolate Alpha" }));
+  expect(within(panel).queryByText("Bravo")).not.toBeInTheDocument();
+  view.rerender(<WinDistributionChart season={{ ...season, games: [{ ...season.games[0], probability: 0 }] }} />);
+  expect(within(panel).getByText("0.0%")).toBeInTheDocument();
+  fireEvent.click(screen.getByRole("button", { name: "Dismiss win total details" }));
+  expect(panel).not.toBeInTheDocument();
+  fireEvent.click(chart);
+  expect(screen.getByRole("region", { name: "Selected win total probabilities" })).toBeInTheDocument();
+});
+
+test("desktop keeps the hover tooltip without opening the below-chart panel", () => {
+  render(<WinDistributionChart season={fixture()} />);
+  expect(screen.getByTestId("overlay-tooltip")).toBeInTheDocument();
+  fireEvent.click(screen.getByTestId("distribution-chart"));
+  expect(screen.queryByRole("region", { name: "Selected win total probabilities" })).not.toBeInTheDocument();
 });
