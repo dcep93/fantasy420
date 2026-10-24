@@ -5,6 +5,7 @@ import { NIGHT_CHART_COLORS } from "../../theme";
 import { prepareProbabilitySeason, probabilityModel, type ProbabilityResult, type ProbabilitySeason } from "./probabilityEngine";
 import "./PlayoffMachine.css";
 import "./ProbabilityMachine.css";
+import WinDistributionChart from "./WinDistributionChart";
 
 const percent = (value: number) => `${(value * 100).toFixed(1)}%`;
 
@@ -167,6 +168,7 @@ function Machine({ wrapped }: { wrapped: WrappedType }) {
         })}
       </div>
     </section>
+    <WinDistributionChart season={scenario} />
     <details className="probability-method" style={card}>
       <summary>How the probabilities work</summary>
       <p>Fitted once to {probabilityModel.games} completed league matchups from {probabilityModel.years.join(", ")},

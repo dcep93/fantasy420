@@ -1,0 +1,14 @@
+.win-distribution { margin: 1.5em 0; }
+.win-distribution-managers { display: flex; flex-wrap: wrap; gap: 0.5em; margin: 1em 0; }
+.win-distribution-managers button { display: inline-flex; align-items: center; gap: 0.5em; font-size: 0.85em; }
+.win-distribution-managers button[aria-pressed="true"] {
+  border-color: var(--manager-color, var(--night-focus));
+  background: var(--night-surface-alt);
+  box-shadow: inset 0 0 0 1px var(--manager-color, var(--night-focus));
+}
+.win-distribution-swatch { width: 1em; height: 0.2em; background: var(--manager-color); flex-shrink: 0; }
+.win-distribution-chart { width: 100%; min-width: 0; height: 26em; }
+@media (max-width: 600px) {
+  .win-distribution-chart { height: 22em; }
+  .win-distribution-managers button { min-height: 2.75em; }
+}

@@ -52,6 +52,8 @@ test("first in Beta, matches strengths and shows manager probability cards after
   const matchups = screen.getByRole("region", { name: "Remaining weekly matchups" });
   const results = screen.getByRole("region", { name: "Season finish probabilities" });
   expect(matchups.compareDocumentPosition(results) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+  const distribution = screen.getByRole("region", { name: "Win total probabilities" });
+  expect(results.compareDocumentPosition(distribution) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
 });
 
 test("editing either probability complements its opponent and supports forced winners and reset", () => {
