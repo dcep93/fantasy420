@@ -47,6 +47,13 @@ function Machine({ wrapped }: { wrapped: WrappedType }) {
   const active = calculation?.scenario === scenario ? calculation : undefined;
   const result = active?.result;
   const pending = !active;
+  // Keep the last standings order while edits recalculate, rather than jumping
+  // back to roster order. Keep original indices for colors, PF and probabilities.
+  const orderingRanks = calculation?.scenario.teams === base.teams ? calculation.result?.ranks : undefined;
+  const orderedTeams = base.teams.map((team, i) => ({
+    team, i,
+    expectedFinish: orderingRanks?.[i].reduce((sum, probability, rank) => sum + probability * (rank + 1), 0) ?? Infinity,
+  })).sort((a, b) => a.expectedFinish - b.expectedFinish || a.i - b.i);
 
   useEffect(() => {
     let worker: Worker | undefined;
@@ -127,7 +134,8 @@ function Machine({ wrapped }: { wrapped: WrappedType }) {
 
     <section className="probability-results" aria-busy={pending} aria-label="Season finish probabilities">
       <h2>Where everyone finishes</h2>
-      <p className="playoff-strength-guide">Completed points for plus your adjustments, with PlayoffMachine’s
+      <p className="playoff-strength-guide">Sorted by average finishing position across outcomes.
+        Completed points for plus your adjustments, with PlayoffMachine’s
         head-to-head tiebreakers. Remaining games add wins, without projecting more points for.</p>
       <div className="probability-status" role="status">
         {pending && "Calculating probabilities…"}
@@ -137,7 +145,7 @@ function Machine({ wrapped }: { wrapped: WrappedType }) {
           : `${result.scenarios.toLocaleString()} simulated seasons · ${(result.elapsedMs / 1000).toFixed(2)}s · up to ±${(result.maxError95 * 100).toFixed(2)} percentage points of sampling error (95%, per estimate)`)}
       </div>
       <div className="playoff-standings-grid">
-        {base.teams.map((team, i) => {
+        {orderedTeams.map(({ team, i }) => {
           const ranks = result?.ranks[i];
           const categories = ranks ? [ranks.slice(0, 4), ranks.slice(4, 6), ranks.slice(6)]
             .map(values => values.reduce((sum, p) => sum + p, 0)) : undefined;
