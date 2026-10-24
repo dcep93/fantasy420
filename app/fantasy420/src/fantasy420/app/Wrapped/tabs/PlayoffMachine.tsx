@@ -3,6 +3,7 @@ import { useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type Re
 import { bubbleStyle, currentYear, Helpers, selectedWrapped } from "..";
 import "./PlayoffMachine.css";
 import { getWeeklyStrength, sortMatchupsByStrengthGap } from "./playoffStrength";
+import { createRankingRules, rankPlayoffTeams } from "./playoffStandings";
 import { getPlayoffSelections, serializePlayoffPicks } from "./playoffSelections";
 import { parseWrappedHash, useWrappedHash } from "../hashRoute";
 import { NIGHT_CHART_COLORS } from "../../theme";
@@ -155,6 +156,14 @@ export default function PlayoffMachine() {
         pf + (manualPoints[teamId] || 0),
       ])
     );
+    const teams = Object.values(wrapped.ffTeams);
+    const rules = createRankingRules(teams.map(team => team.name), teams.flatMap(team =>
+      teams.map(opp => seasonResults.headToHead[team.id]?.[opp.id]?.games ?? 0)));
+    const order = rankPlayoffTeams(
+      teams.map(team => seasonResults.wins[team.id] ?? 0),
+      teams.flatMap(team => teams.map(opp => seasonResults.headToHead[team.id]?.[opp.id]?.wins ?? 0)),
+      teams.map(team => pointsWithAdjustments[team.id] ?? 0), rules, []);
+    const rank = Object.fromEntries(order.map((index, position) => [teams[index].id, position]));
 
     const groupedByWins = Object.values(wrapped.ffTeams).reduce((acc, team) => {
       const wins = seasonResults.wins[team.id] || 0;
@@ -217,21 +226,7 @@ export default function PlayoffMachine() {
         }
       }
 
-      return group.sort((a, b) => {
-        if (useHeadToHead) {
-          const aRecord = getHeadToHeadRecord(
-            a.team.id,
-            group.map((g) => g.team.id)
-          );
-          const bRecord = getHeadToHeadRecord(
-            b.team.id,
-            group.map((g) => g.team.id)
-          );
-          if (aRecord !== bRecord) return bRecord - aRecord;
-        }
-        if (a.pointsFor !== b.pointsFor) return b.pointsFor - a.pointsFor;
-        return a.team.name.localeCompare(b.team.name);
-      });
+      return group.sort((a, b) => rank[a.team.id] - rank[b.team.id]);
     });
 
     return { entries, tiebreakExplanations };
@@ -243,24 +238,6 @@ export default function PlayoffMachine() {
     return roster.starting
       .map((playerId) => wrapped.nflPlayers[playerId]?.scores[weekNum] || 0)
       .reduce((a, b) => a + b, 0);
-  }
-
-  function getHeadToHeadRecord(teamId: string, groupIds: string[]) {
-    const totals = groupIds
-      .filter((oppId) => oppId !== teamId)
-      .map(
-        (oppId) =>
-          seasonResults.headToHead[teamId]?.[oppId] || { games: 0, wins: 0 }
-      )
-      .reduce(
-        (acc, curr) => ({
-          games: acc.games + curr.games,
-          wins: acc.wins + curr.wins,
-        }),
-        { games: 0, wins: 0 }
-      );
-    if (totals.games === 0) return -Infinity;
-    return totals.wins / totals.games;
   }
 
   function adjustPoints(teamId: string, delta: number) {

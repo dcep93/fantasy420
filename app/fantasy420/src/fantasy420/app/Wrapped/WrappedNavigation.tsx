@@ -9,7 +9,7 @@ export const wrappedCategories = [
   { name: "Nerd", tabs: ["PlayerPlot", "AllTimeRecords", "DraftValue", "PointsAgainst"] },
   { name: "SuperNerd", tabs: ["Negatives", "BoomBust", "ExtremeStuds", "ConsistentlyAverage"] },
   { name: "Zodiac", tabs: ["Stacks", "OwnedTeams", "Simps"] },
-  { name: "Beta", tabs: ["Scoreboard", "ManagerTrend", "NFLTeams", "json"] },
+  { name: "Beta", tabs: ["ProbabilityMachine", "Scoreboard", "ManagerTrend", "NFLTeams", "json"] },
 ] as const;
 
 export default function WrappedNavigation({ activeTab, labels }: {

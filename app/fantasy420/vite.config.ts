@@ -30,6 +30,8 @@ export default defineConfig({
       "src/fantasy420/app/Wrapped/tabs/bestByPosition.test.ts",
       "src/fantasy420/app/Wrapped/tabs/playoffStrength.test.ts",
       "src/fantasy420/app/Wrapped/tabs/PlayoffMachine.test.tsx",
+      "src/fantasy420/app/Wrapped/tabs/probabilityEngine.test.ts",
+      "src/fantasy420/app/Wrapped/tabs/ProbabilityMachine.test.tsx",
       "src/fantasy420/app/Wrapped/tabs/ChartPointHitTarget.test.tsx",
       "src/fantasy420/app/Wrapped/tabs/DraftBoard.test.tsx",
       "src/fantasy420/app/Wrapped/tabs/Trades.test.tsx",

@@ -15,6 +15,8 @@ export const seasonOnlyViews: Record<string, string> = {
   ExtremeStuds: "This hypothetical lineup uses a season’s current roster.",
   PlayoffMachine:
     "Playoff brackets and remaining schedules belong to one season.",
+  ProbabilityMachine:
+    "Finish probabilities and remaining matchups belong to one season.",
   NFLTeams: "This roster and draft comparison uses one season’s snapshot.",
 };
 export function scopeLabel(year: string, years: string[]) {

@@ -1,0 +1,2022 @@
+{
+  "model": "symmetric-logistic-strength-gap",
+  "slope": 0.02654492308975598,
+  "sourceHead": "a677418f5ac3f1de6b5908d36770d1a8be4b9f1f",
+  "years": [
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "games": 200,
+  "maxSnapshotAgeDays": 21,
+  "training": {
+    "games": 200,
+    "brier": 0.22857511518845502,
+    "logLoss": 0.648744831039837
+  },
+  "forwardValidation": [
+    {
+      "year": 2024,
+      "trainingGames": 40,
+      "slope": 0.019779038255964415,
+      "games": 65,
+      "brier": 0.23085468499974493,
+      "logLoss": 0.6534125797701376,
+      "baseline": {
+        "games": 65,
+        "brier": 0.25,
+        "logLoss": 0.6931471805599452
+      }
+    },
+    {
+      "year": 2025,
+      "trainingGames": 105,
+      "slope": 0.020926719863010028,
+      "games": 65,
+      "brier": 0.21960647337654188,
+      "logLoss": 0.6294758930897004,
+      "baseline": {
+        "games": 65,
+        "brier": 0.25,
+        "logLoss": 0.6931471805599452
+      }
+    },
+    {
+      "year": 2026,
+      "trainingGames": 170,
+      "slope": 0.02628999677093173,
+      "games": 30,
+      "brier": 0.24007389203961801,
+      "logLoss": 0.6734224271817193,
+      "baseline": {
+        "games": 30,
+        "brier": 0.25,
+        "logLoss": 0.693147180559945
+      }
+    }
+  ],
+  "assumptions": [
+    "Independent remaining matchup winners; future ties have probability zero.",
+    "Pre-week committed player values, rosters and byes; never final-season values for training features.",
+    "Weeks without a complete pre-week snapshot no more than 21 days old are excluded.",
+    "Historical tied games count as half a win when fitting."
+  ],
+  "skippedWeeks": [
+    "2021:1",
+    "2021:2",
+    "2021:3",
+    "2021:4",
+    "2021:5",
+    "2021:6",
+    "2021:7",
+    "2021:8",
+    "2021:9",
+    "2021:10",
+    "2021:11",
+    "2021:12",
+    "2021:13",
+    "2022:1",
+    "2022:2",
+    "2022:3",
+    "2022:4",
+    "2022:5",
+    "2022:6",
+    "2022:7",
+    "2022:8",
+    "2022:9",
+    "2022:10",
+    "2022:11",
+    "2022:12",
+    "2022:13",
+    "2023:1",
+    "2023:2",
+    "2023:3",
+    "2023:4",
+    "2023:5"
+  ],
+  "sources": [
+    {
+      "year": 2023,
+      "week": 6,
+      "commit": "cc9e6774a2cc5590abeafee6f9316b06fbe8b004",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/wrapped.json",
+      "cutoffUtc": "2023-10-12T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1697041711742
+    },
+    {
+      "year": 2023,
+      "week": 7,
+      "commit": "0b25d886b52cb4a0b604e5d0847156e37e5c8a19",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/wrapped.json",
+      "cutoffUtc": "2023-10-19T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1697644464505
+    },
+    {
+      "year": 2023,
+      "week": 8,
+      "commit": "d7b91fa960f0e86d194cd6fb7b1f90db1dd4b361",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/wrapped.json",
+      "cutoffUtc": "2023-10-26T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1698121651445
+    },
+    {
+      "year": 2023,
+      "week": 9,
+      "commit": "2773ef035530698e1df078f8066a0bd6c8634333",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/wrapped.json",
+      "cutoffUtc": "2023-11-02T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1698858927639
+    },
+    {
+      "year": 2023,
+      "week": 10,
+      "commit": "94ea8bdc0c46bc518625cf961f2ed1f0a0489ff0",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/wrapped.json",
+      "cutoffUtc": "2023-11-09T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1699330649847
+    },
+    {
+      "year": 2023,
+      "week": 11,
+      "commit": "a1496a2fe8ff58a451d1b32af8c787d78787a4f3",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/wrapped.json",
+      "cutoffUtc": "2023-11-16T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1700006767979
+    },
+    {
+      "year": 2023,
+      "week": 12,
+      "commit": "35583de85c979bc69da85cc4b169e0d663b52406",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/wrapped.json",
+      "cutoffUtc": "2023-11-23T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1700595010037
+    },
+    {
+      "year": 2023,
+      "week": 13,
+      "commit": "5d44db40bfdc8ae11df64dfc6890d126f8d8afbf",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/wrapped.json",
+      "cutoffUtc": "2023-11-30T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1701218480477
+    },
+    {
+      "year": 2024,
+      "week": 1,
+      "commit": "24290e7ac1ef6c784c525bf2cbeff6ee4eafd8fb",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/2024.json",
+      "cutoffUtc": "2024-09-05T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1725296022324
+    },
+    {
+      "year": 2024,
+      "week": 2,
+      "commit": "149f00baebb97a9a34b7b59a34ed39715eaa533d",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/2024.json",
+      "cutoffUtc": "2024-09-12T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1726069335419
+    },
+    {
+      "year": 2024,
+      "week": 3,
+      "commit": "e1f1456899b54015cef6d1c111270735e2f9356e",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/2024.json",
+      "cutoffUtc": "2024-09-19T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1726692021539
+    },
+    {
+      "year": 2024,
+      "week": 4,
+      "commit": "c9216384312e758338a5ffca1bab60a323953218",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/2024.json",
+      "cutoffUtc": "2024-09-26T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1727297288586
+    },
+    {
+      "year": 2024,
+      "week": 5,
+      "commit": "6ca0d52efd99c9d146b1af30db47f05f65c09e15",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/2024.json",
+      "cutoffUtc": "2024-10-03T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1727891310602
+    },
+    {
+      "year": 2024,
+      "week": 6,
+      "commit": "33120efa1e10421eced2190f69fe48de7d3d154f",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/2024.json",
+      "cutoffUtc": "2024-10-10T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1728489443691
+    },
+    {
+      "year": 2024,
+      "week": 7,
+      "commit": "42a79d5073b1b91ffaf1dfcfb99000ad1e593706",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/2024.json",
+      "cutoffUtc": "2024-10-17T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1729097650681
+    },
+    {
+      "year": 2024,
+      "week": 8,
+      "commit": "491badef76a53ae32103e4ca5d20d78c8c5576a0",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/2024.json",
+      "cutoffUtc": "2024-10-24T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1729726118543
+    },
+    {
+      "year": 2024,
+      "week": 9,
+      "commit": "9b13eab14793a7ae5cb63163d3687ad3263fad8d",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/2024.json",
+      "cutoffUtc": "2024-10-31T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1730306128848
+    },
+    {
+      "year": 2024,
+      "week": 10,
+      "commit": "4b6d481498d50ab37503cd22a4fe26d890b1b5d5",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/2024.json",
+      "cutoffUtc": "2024-11-07T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1730863715154
+    },
+    {
+      "year": 2024,
+      "week": 11,
+      "commit": "17e6aedae9382b7de166e3c65427f898a1411738",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/2024.json",
+      "cutoffUtc": "2024-11-14T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1731531181615
+    },
+    {
+      "year": 2024,
+      "week": 12,
+      "commit": "d679bab47bc03e67ffafcc714ca95ae8fa3fb904",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/2024.json",
+      "cutoffUtc": "2024-11-21T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1732124359946
+    },
+    {
+      "year": 2024,
+      "week": 13,
+      "commit": "586d40d1dd2955f95974983a615decec1700c213",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/2024.json",
+      "cutoffUtc": "2024-11-28T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1732594725041
+    },
+    {
+      "year": 2025,
+      "week": 1,
+      "commit": "bd0f56ae39443b127d8f38aa36815fb5c1e0594a",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/dataJson/2025.json",
+      "cutoffUtc": "2025-09-04T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1756910303480
+    },
+    {
+      "year": 2025,
+      "week": 2,
+      "commit": "4fe1a908c544b6c0cc7bd0c39fa3aaf85142587b",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/dataJson/2025.json",
+      "cutoffUtc": "2025-09-11T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1757477536866
+    },
+    {
+      "year": 2025,
+      "week": 3,
+      "commit": "0f113460d104f2e4a71099a8dc562d2a74ea3907",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/dataJson/2025.json",
+      "cutoffUtc": "2025-09-18T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1758118562270
+    },
+    {
+      "year": 2025,
+      "week": 4,
+      "commit": "0b507f6a49eec37880f9caa7476887a0e7097f00",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/dataJson/2025.json",
+      "cutoffUtc": "2025-09-25T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1758727414259
+    },
+    {
+      "year": 2025,
+      "week": 5,
+      "commit": "08717c4d35c9dca0b869d477c67e558ec79e5e24",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/dataJson/2025.json",
+      "cutoffUtc": "2025-10-02T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1759207954191
+    },
+    {
+      "year": 2025,
+      "week": 6,
+      "commit": "1bb7db39b961f25b53b336ef2fe70a2ba9b85f92",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/dataJson/2025.json",
+      "cutoffUtc": "2025-10-09T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1759807306576
+    },
+    {
+      "year": 2025,
+      "week": 7,
+      "commit": "41c3dc06a056a056b01dbea6df2c85bff9aeecb4",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/dataJson/2025.json",
+      "cutoffUtc": "2025-10-16T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1760556064284
+    },
+    {
+      "year": 2025,
+      "week": 8,
+      "commit": "842fe9313b83780a2da67a9c754029c1e030e2df",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/dataJson/2025.json",
+      "cutoffUtc": "2025-10-23T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1761024560363
+    },
+    {
+      "year": 2025,
+      "week": 9,
+      "commit": "59b4ecb59584f31ae56303f5a716409a8773682f",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/dataJson/2025.json",
+      "cutoffUtc": "2025-10-30T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1761620830516
+    },
+    {
+      "year": 2025,
+      "week": 10,
+      "commit": "cc0ae3e2319d83d4bad75639f385055f2c0453d6",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/dataJson/2025.json",
+      "cutoffUtc": "2025-11-06T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1762022111505
+    },
+    {
+      "year": 2025,
+      "week": 11,
+      "commit": "4dc03db5daa5677766ac085ff3dbd1de529f547b",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/dataJson/2025.json",
+      "cutoffUtc": "2025-11-13T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1762909299076
+    },
+    {
+      "year": 2025,
+      "week": 12,
+      "commit": "d9329f9c48f2a731948317dda7ea5340f540a2da",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/dataJson/2025.json",
+      "cutoffUtc": "2025-11-20T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1763449473680
+    },
+    {
+      "year": 2025,
+      "week": 13,
+      "commit": "5665bed10b42b7563f75e27107607137a7c2ef95",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/dataJson/2025.json",
+      "cutoffUtc": "2025-11-27T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1764196496850
+    },
+    {
+      "year": 2026,
+      "week": 1,
+      "commit": "4f764d5215d32c544124e08ed70a2e7889ac694d",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/dataJson/2026.json",
+      "cutoffUtc": "2026-09-10T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1788880121053
+    },
+    {
+      "year": 2026,
+      "week": 2,
+      "commit": "8d4acc189eba7f25770684deb72ad6234b422ad8",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/dataJson/2026.json",
+      "cutoffUtc": "2026-09-17T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1789572214869
+    },
+    {
+      "year": 2026,
+      "week": 3,
+      "commit": "be46421268dc0818172e4bc4bcd353bd6cff5b0e",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/dataJson/2026.json",
+      "cutoffUtc": "2026-09-24T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1790199561743
+    },
+    {
+      "year": 2026,
+      "week": 4,
+      "commit": "fd5e1804dabcc96bb1c038cbb433051a7dc41850",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/dataJson/2026.json",
+      "cutoffUtc": "2026-10-01T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1790789420081
+    },
+    {
+      "year": 2026,
+      "week": 5,
+      "commit": "1127f341965f761bbe86f6301673b16f40d7b058",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/dataJson/2026.json",
+      "cutoffUtc": "2026-10-08T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1791394491038
+    },
+    {
+      "year": 2026,
+      "week": 6,
+      "commit": "844cfd7650abeddcbe0f82da3a67ac17a27458df",
+      "path": "app/fantasy420/src/fantasy420/app/Wrapped/dataJson/2026.json",
+      "cutoffUtc": "2026-10-15T00:00:00+00:00",
+      "fantasyCalcTimestamp": 1791995805509
+    }
+  ],
+  "samples": [
+    {
+      "year": 2023,
+      "week": 6,
+      "a": "7",
+      "b": "9",
+      "gap": 4,
+      "result": 0
+    },
+    {
+      "year": 2023,
+      "week": 6,
+      "a": "10",
+      "b": "8",
+      "gap": -15,
+      "result": 0
+    },
+    {
+      "year": 2023,
+      "week": 6,
+      "a": "2",
+      "b": "1",
+      "gap": -33,
+      "result": 0
+    },
+    {
+      "year": 2023,
+      "week": 6,
+      "a": "4",
+      "b": "5",
+      "gap": -25,
+      "result": 0
+    },
+    {
+      "year": 2023,
+      "week": 6,
+      "a": "6",
+      "b": "3",
+      "gap": 25,
+      "result": 0
+    },
+    {
+      "year": 2023,
+      "week": 7,
+      "a": "8",
+      "b": "7",
+      "gap": 4,
+      "result": 0
+    },
+    {
+      "year": 2023,
+      "week": 7,
+      "a": "1",
+      "b": "10",
+      "gap": 2,
+      "result": 1
+    },
+    {
+      "year": 2023,
+      "week": 7,
+      "a": "5",
+      "b": "2",
+      "gap": 47,
+      "result": 0
+    },
+    {
+      "year": 2023,
+      "week": 7,
+      "a": "3",
+      "b": "4",
+      "gap": 13,
+      "result": 1
+    },
+    {
+      "year": 2023,
+      "week": 7,
+      "a": "9",
+      "b": "6",
+      "gap": -15,
+      "result": 1
+    },
+    {
+      "year": 2023,
+      "week": 8,
+      "a": "7",
+      "b": "1",
+      "gap": -9,
+      "result": 0
+    },
+    {
+      "year": 2023,
+      "week": 8,
+      "a": "10",
+      "b": "5",
+      "gap": -15,
+      "result": 0
+    },
+    {
+      "year": 2023,
+      "week": 8,
+      "a": "2",
+      "b": "3",
+      "gap": -23,
+      "result": 0
+    },
+    {
+      "year": 2023,
+      "week": 8,
+      "a": "4",
+      "b": "9",
+      "gap": -10,
+      "result": 0
+    },
+    {
+      "year": 2023,
+      "week": 8,
+      "a": "6",
+      "b": "8",
+      "gap": 14,
+      "result": 0
+    },
+    {
+      "year": 2023,
+      "week": 9,
+      "a": "5",
+      "b": "7",
+      "gap": 17,
+      "result": 1
+    },
+    {
+      "year": 2023,
+      "week": 9,
+      "a": "3",
+      "b": "1",
+      "gap": -55,
+      "result": 0
+    },
+    {
+      "year": 2023,
+      "week": 9,
+      "a": "10",
+      "b": "6",
+      "gap": 2,
+      "result": 1
+    },
+    {
+      "year": 2023,
+      "week": 9,
+      "a": "9",
+      "b": "8",
+      "gap": 17,
+      "result": 1
+    },
+    {
+      "year": 2023,
+      "week": 9,
+      "a": "2",
+      "b": "4",
+      "gap": -31,
+      "result": 1
+    },
+    {
+      "year": 2023,
+      "week": 10,
+      "a": "3",
+      "b": "10",
+      "gap": -18,
+      "result": 1
+    },
+    {
+      "year": 2023,
+      "week": 10,
+      "a": "9",
+      "b": "5",
+      "gap": 23,
+      "result": 1
+    },
+    {
+      "year": 2023,
+      "week": 10,
+      "a": "7",
+      "b": "2",
+      "gap": 11,
+      "result": 1
+    },
+    {
+      "year": 2023,
+      "week": 10,
+      "a": "8",
+      "b": "1",
+      "gap": 9,
+      "result": 0
+    },
+    {
+      "year": 2023,
+      "week": 10,
+      "a": "6",
+      "b": "4",
+      "gap": 63,
+      "result": 1
+    },
+    {
+      "year": 2023,
+      "week": 11,
+      "a": "9",
+      "b": "2",
+      "gap": 31,
+      "result": 1
+    },
+    {
+      "year": 2023,
+      "week": 11,
+      "a": "3",
+      "b": "8",
+      "gap": -7,
+      "result": 1
+    },
+    {
+      "year": 2023,
+      "week": 11,
+      "a": "4",
+      "b": "10",
+      "gap": 8,
+      "result": 0
+    },
+    {
+      "year": 2023,
+      "week": 11,
+      "a": "5",
+      "b": "1",
+      "gap": 27,
+      "result": 1
+    },
+    {
+      "year": 2023,
+      "week": 11,
+      "a": "6",
+      "b": "7",
+      "gap": 56,
+      "result": 0
+    },
+    {
+      "year": 2023,
+      "week": 12,
+      "a": "8",
+      "b": "4",
+      "gap": 5,
+      "result": 1
+    },
+    {
+      "year": 2023,
+      "week": 12,
+      "a": "1",
+      "b": "9",
+      "gap": -2,
+      "result": 0
+    },
+    {
+      "year": 2023,
+      "week": 12,
+      "a": "2",
+      "b": "6",
+      "gap": -50,
+      "result": 0
+    },
+    {
+      "year": 2023,
+      "week": 12,
+      "a": "5",
+      "b": "3",
+      "gap": 29,
+      "result": 0
+    },
+    {
+      "year": 2023,
+      "week": 12,
+      "a": "10",
+      "b": "7",
+      "gap": 0,
+      "result": 1
+    },
+    {
+      "year": 2023,
+      "week": 13,
+      "a": "1",
+      "b": "6",
+      "gap": -24,
+      "result": 1
+    },
+    {
+      "year": 2023,
+      "week": 13,
+      "a": "8",
+      "b": "5",
+      "gap": -17,
+      "result": 0
+    },
+    {
+      "year": 2023,
+      "week": 13,
+      "a": "7",
+      "b": "4",
+      "gap": 42,
+      "result": 1
+    },
+    {
+      "year": 2023,
+      "week": 13,
+      "a": "9",
+      "b": "3",
+      "gap": -32,
+      "result": 0
+    },
+    {
+      "year": 2023,
+      "week": 13,
+      "a": "10",
+      "b": "2",
+      "gap": 13,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 1,
+      "a": "3",
+      "b": "7",
+      "gap": -4,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 1,
+      "a": "5",
+      "b": "9",
+      "gap": 7,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 1,
+      "a": "6",
+      "b": "10",
+      "gap": -5,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 1,
+      "a": "1",
+      "b": "8",
+      "gap": -11,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 1,
+      "a": "4",
+      "b": "2",
+      "gap": 18,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 2,
+      "a": "9",
+      "b": "10",
+      "gap": -6,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 2,
+      "a": "8",
+      "b": "3",
+      "gap": -11,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 2,
+      "a": "2",
+      "b": "7",
+      "gap": -20,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 2,
+      "a": "1",
+      "b": "5",
+      "gap": -7,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 2,
+      "a": "4",
+      "b": "6",
+      "gap": 6,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 3,
+      "a": "8",
+      "b": "2",
+      "gap": 9,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 3,
+      "a": "9",
+      "b": "1",
+      "gap": -4,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 3,
+      "a": "10",
+      "b": "4",
+      "gap": 11,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 3,
+      "a": "3",
+      "b": "5",
+      "gap": 11,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 3,
+      "a": "7",
+      "b": "6",
+      "gap": 11,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 4,
+      "a": "1",
+      "b": "4",
+      "gap": 18,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 4,
+      "a": "5",
+      "b": "8",
+      "gap": -3,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 4,
+      "a": "6",
+      "b": "2",
+      "gap": 22,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 4,
+      "a": "3",
+      "b": "9",
+      "gap": -1,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 4,
+      "a": "7",
+      "b": "10",
+      "gap": 10,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 5,
+      "a": "5",
+      "b": "6",
+      "gap": 1,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 5,
+      "a": "1",
+      "b": "3",
+      "gap": 7,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 5,
+      "a": "4",
+      "b": "7",
+      "gap": -48,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 5,
+      "a": "8",
+      "b": "9",
+      "gap": -9,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 5,
+      "a": "2",
+      "b": "10",
+      "gap": -72,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 6,
+      "a": "7",
+      "b": "9",
+      "gap": -3,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 6,
+      "a": "10",
+      "b": "8",
+      "gap": -22,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 6,
+      "a": "2",
+      "b": "1",
+      "gap": -58,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 6,
+      "a": "4",
+      "b": "5",
+      "gap": 2,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 6,
+      "a": "6",
+      "b": "3",
+      "gap": -22,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 7,
+      "a": "8",
+      "b": "7",
+      "gap": -43,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 7,
+      "a": "1",
+      "b": "10",
+      "gap": 39,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 7,
+      "a": "5",
+      "b": "2",
+      "gap": 9,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 7,
+      "a": "3",
+      "b": "4",
+      "gap": 1,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 7,
+      "a": "9",
+      "b": "6",
+      "gap": 48,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 8,
+      "a": "7",
+      "b": "1",
+      "gap": -7,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 8,
+      "a": "10",
+      "b": "5",
+      "gap": 6,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 8,
+      "a": "2",
+      "b": "3",
+      "gap": -23,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 8,
+      "a": "4",
+      "b": "9",
+      "gap": -1,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 8,
+      "a": "6",
+      "b": "8",
+      "gap": -44,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 9,
+      "a": "5",
+      "b": "7",
+      "gap": -36,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 9,
+      "a": "3",
+      "b": "1",
+      "gap": -36,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 9,
+      "a": "10",
+      "b": "6",
+      "gap": 51,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 9,
+      "a": "9",
+      "b": "8",
+      "gap": 16,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 9,
+      "a": "2",
+      "b": "4",
+      "gap": -21,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 10,
+      "a": "3",
+      "b": "10",
+      "gap": -20,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 10,
+      "a": "9",
+      "b": "5",
+      "gap": 24,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 10,
+      "a": "7",
+      "b": "2",
+      "gap": 48,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 10,
+      "a": "8",
+      "b": "1",
+      "gap": -39,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 10,
+      "a": "6",
+      "b": "4",
+      "gap": -45,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 11,
+      "a": "9",
+      "b": "2",
+      "gap": 24,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 11,
+      "a": "3",
+      "b": "8",
+      "gap": 0,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 11,
+      "a": "4",
+      "b": "10",
+      "gap": 5,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 11,
+      "a": "5",
+      "b": "1",
+      "gap": -27,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 11,
+      "a": "6",
+      "b": "7",
+      "gap": -75,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 12,
+      "a": "8",
+      "b": "4",
+      "gap": -14,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 12,
+      "a": "1",
+      "b": "9",
+      "gap": 6,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 12,
+      "a": "2",
+      "b": "6",
+      "gap": 32,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 12,
+      "a": "5",
+      "b": "3",
+      "gap": -19,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 12,
+      "a": "10",
+      "b": "7",
+      "gap": -41,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 13,
+      "a": "1",
+      "b": "6",
+      "gap": 74,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 13,
+      "a": "8",
+      "b": "5",
+      "gap": 7,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 13,
+      "a": "7",
+      "b": "4",
+      "gap": 5,
+      "result": 1
+    },
+    {
+      "year": 2024,
+      "week": 13,
+      "a": "9",
+      "b": "3",
+      "gap": 12,
+      "result": 0
+    },
+    {
+      "year": 2024,
+      "week": 13,
+      "a": "10",
+      "b": "2",
+      "gap": 15,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 1,
+      "a": "2",
+      "b": "8",
+      "gap": -5,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 1,
+      "a": "6",
+      "b": "7",
+      "gap": -1,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 1,
+      "a": "3",
+      "b": "9",
+      "gap": -1,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 1,
+      "a": "10",
+      "b": "4",
+      "gap": -13,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 1,
+      "a": "1",
+      "b": "5",
+      "gap": -3,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 2,
+      "a": "8",
+      "b": "7",
+      "gap": 3,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 2,
+      "a": "9",
+      "b": "2",
+      "gap": -3,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 2,
+      "a": "4",
+      "b": "6",
+      "gap": 14,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 2,
+      "a": "5",
+      "b": "3",
+      "gap": -5,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 2,
+      "a": "1",
+      "b": "10",
+      "gap": -8,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 3,
+      "a": "9",
+      "b": "8",
+      "gap": 9,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 3,
+      "a": "7",
+      "b": "4",
+      "gap": 20,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 3,
+      "a": "2",
+      "b": "5",
+      "gap": 6,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 3,
+      "a": "6",
+      "b": "1",
+      "gap": -4,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 3,
+      "a": "3",
+      "b": "10",
+      "gap": 2,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 4,
+      "a": "8",
+      "b": "4",
+      "gap": 24,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 4,
+      "a": "5",
+      "b": "9",
+      "gap": -17,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 4,
+      "a": "1",
+      "b": "7",
+      "gap": -19,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 4,
+      "a": "10",
+      "b": "2",
+      "gap": -10,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 4,
+      "a": "3",
+      "b": "6",
+      "gap": 10,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 5,
+      "a": "5",
+      "b": "8",
+      "gap": 17,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 5,
+      "a": "4",
+      "b": "1",
+      "gap": -23,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 5,
+      "a": "9",
+      "b": "10",
+      "gap": 36,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 5,
+      "a": "7",
+      "b": "3",
+      "gap": 29,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 5,
+      "a": "2",
+      "b": "6",
+      "gap": 16,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 6,
+      "a": "8",
+      "b": "1",
+      "gap": 6,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 6,
+      "a": "10",
+      "b": "5",
+      "gap": 14,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 6,
+      "a": "3",
+      "b": "4",
+      "gap": 16,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 6,
+      "a": "6",
+      "b": "9",
+      "gap": -23,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 6,
+      "a": "2",
+      "b": "7",
+      "gap": 4,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 7,
+      "a": "10",
+      "b": "8",
+      "gap": 12,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 7,
+      "a": "1",
+      "b": "3",
+      "gap": 41,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 7,
+      "a": "5",
+      "b": "6",
+      "gap": 36,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 7,
+      "a": "4",
+      "b": "2",
+      "gap": -31,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 7,
+      "a": "9",
+      "b": "7",
+      "gap": -1,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 8,
+      "a": "8",
+      "b": "3",
+      "gap": -14,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 8,
+      "a": "6",
+      "b": "10",
+      "gap": -50,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 8,
+      "a": "2",
+      "b": "1",
+      "gap": 33,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 8,
+      "a": "7",
+      "b": "5",
+      "gap": 51,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 8,
+      "a": "9",
+      "b": "4",
+      "gap": 46,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 9,
+      "a": "6",
+      "b": "8",
+      "gap": -19,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 9,
+      "a": "3",
+      "b": "2",
+      "gap": 2,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 9,
+      "a": "10",
+      "b": "7",
+      "gap": -21,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 9,
+      "a": "1",
+      "b": "9",
+      "gap": -13,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 9,
+      "a": "5",
+      "b": "4",
+      "gap": -25,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 10,
+      "a": "8",
+      "b": "2",
+      "gap": -15,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 10,
+      "a": "7",
+      "b": "6",
+      "gap": 56,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 10,
+      "a": "9",
+      "b": "3",
+      "gap": 18,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 10,
+      "a": "4",
+      "b": "10",
+      "gap": -27,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 10,
+      "a": "5",
+      "b": "1",
+      "gap": 17,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 11,
+      "a": "7",
+      "b": "8",
+      "gap": 31,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 11,
+      "a": "2",
+      "b": "9",
+      "gap": -4,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 11,
+      "a": "6",
+      "b": "4",
+      "gap": -31,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 11,
+      "a": "3",
+      "b": "5",
+      "gap": -1,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 11,
+      "a": "10",
+      "b": "1",
+      "gap": 6,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 12,
+      "a": "8",
+      "b": "9",
+      "gap": 1,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 12,
+      "a": "4",
+      "b": "7",
+      "gap": -39,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 12,
+      "a": "5",
+      "b": "2",
+      "gap": 1,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 12,
+      "a": "1",
+      "b": "6",
+      "gap": 40,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 12,
+      "a": "10",
+      "b": "3",
+      "gap": 6,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 13,
+      "a": "4",
+      "b": "8",
+      "gap": 3,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 13,
+      "a": "9",
+      "b": "5",
+      "gap": 16,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 13,
+      "a": "7",
+      "b": "1",
+      "gap": 44,
+      "result": 1
+    },
+    {
+      "year": 2025,
+      "week": 13,
+      "a": "2",
+      "b": "10",
+      "gap": 2,
+      "result": 0
+    },
+    {
+      "year": 2025,
+      "week": 13,
+      "a": "6",
+      "b": "3",
+      "gap": -30,
+      "result": 1
+    },
+    {
+      "year": 2026,
+      "week": 1,
+      "a": "3",
+      "b": "4",
+      "gap": -9,
+      "result": 0
+    },
+    {
+      "year": 2026,
+      "week": 1,
+      "a": "7",
+      "b": "2",
+      "gap": 17,
+      "result": 1
+    },
+    {
+      "year": 2026,
+      "week": 1,
+      "a": "10",
+      "b": "6",
+      "gap": 8,
+      "result": 0
+    },
+    {
+      "year": 2026,
+      "week": 1,
+      "a": "8",
+      "b": "1",
+      "gap": -1,
+      "result": 1
+    },
+    {
+      "year": 2026,
+      "week": 1,
+      "a": "9",
+      "b": "5",
+      "gap": -6,
+      "result": 1
+    },
+    {
+      "year": 2026,
+      "week": 2,
+      "a": "4",
+      "b": "2",
+      "gap": 21,
+      "result": 0
+    },
+    {
+      "year": 2026,
+      "week": 2,
+      "a": "6",
+      "b": "3",
+      "gap": 7,
+      "result": 1
+    },
+    {
+      "year": 2026,
+      "week": 2,
+      "a": "1",
+      "b": "7",
+      "gap": 0,
+      "result": 0
+    },
+    {
+      "year": 2026,
+      "week": 2,
+      "a": "5",
+      "b": "10",
+      "gap": 8,
+      "result": 0
+    },
+    {
+      "year": 2026,
+      "week": 2,
+      "a": "9",
+      "b": "8",
+      "gap": -1,
+      "result": 0
+    },
+    {
+      "year": 2026,
+      "week": 3,
+      "a": "6",
+      "b": "4",
+      "gap": -1,
+      "result": 1
+    },
+    {
+      "year": 2026,
+      "week": 3,
+      "a": "2",
+      "b": "1",
+      "gap": -7,
+      "result": 0
+    },
+    {
+      "year": 2026,
+      "week": 3,
+      "a": "3",
+      "b": "5",
+      "gap": -7,
+      "result": 1
+    },
+    {
+      "year": 2026,
+      "week": 3,
+      "a": "7",
+      "b": "9",
+      "gap": 8,
+      "result": 1
+    },
+    {
+      "year": 2026,
+      "week": 3,
+      "a": "10",
+      "b": "8",
+      "gap": 0,
+      "result": 0
+    },
+    {
+      "year": 2026,
+      "week": 4,
+      "a": "4",
+      "b": "1",
+      "gap": 1,
+      "result": 0
+    },
+    {
+      "year": 2026,
+      "week": 4,
+      "a": "5",
+      "b": "6",
+      "gap": -13,
+      "result": 0
+    },
+    {
+      "year": 2026,
+      "week": 4,
+      "a": "9",
+      "b": "2",
+      "gap": 15,
+      "result": 0
+    },
+    {
+      "year": 2026,
+      "week": 4,
+      "a": "8",
+      "b": "3",
+      "gap": -6,
+      "result": 0
+    },
+    {
+      "year": 2026,
+      "week": 4,
+      "a": "10",
+      "b": "7",
+      "gap": 5,
+      "result": 0
+    },
+    {
+      "year": 2026,
+      "week": 5,
+      "a": "5",
+      "b": "4",
+      "gap": -16,
+      "result": 0
+    },
+    {
+      "year": 2026,
+      "week": 5,
+      "a": "1",
+      "b": "9",
+      "gap": -7,
+      "result": 1
+    },
+    {
+      "year": 2026,
+      "week": 5,
+      "a": "6",
+      "b": "8",
+      "gap": 17,
+      "result": 1
+    },
+    {
+      "year": 2026,
+      "week": 5,
+      "a": "2",
+      "b": "10",
+      "gap": -25,
+      "result": 0
+    },
+    {
+      "year": 2026,
+      "week": 5,
+      "a": "3",
+      "b": "7",
+      "gap": -27,
+      "result": 0
+    },
+    {
+      "year": 2026,
+      "week": 6,
+      "a": "4",
+      "b": "9",
+      "gap": -6,
+      "result": 0
+    },
+    {
+      "year": 2026,
+      "week": 6,
+      "a": "8",
+      "b": "5",
+      "gap": 19,
+      "result": 1
+    },
+    {
+      "year": 2026,
+      "week": 6,
+      "a": "10",
+      "b": "1",
+      "gap": 5,
+      "result": 0
+    },
+    {
+      "year": 2026,
+      "week": 6,
+      "a": "7",
+      "b": "6",
+      "gap": 32,
+      "result": 0
+    },
+    {
+      "year": 2026,
+      "week": 6,
+      "a": "3",
+      "b": "2",
+      "gap": 19,
+      "result": 1
+    }
+  ]
+}

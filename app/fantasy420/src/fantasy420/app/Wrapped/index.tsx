@@ -31,6 +31,7 @@ import PerformanceTotals from "./tabs/PerformanceTotals";
 import PlayerPlot from "./tabs/PlayerPlot";
 import PlayerStats from "./tabs/PlayerStats";
 import PlayoffMachine from "./tabs/PlayoffMachine";
+import ProbabilityMachine from "./tabs/ProbabilityMachine";
 import PointsAgainst from "./tabs/PointsAgainst";
 import PositionTrends from "./tabs/PositionTrends";
 import ReachesAndSteals from "./tabs/ReachesAndSteals";
@@ -322,6 +323,7 @@ export const wrappedModules: { [key: string]: () => JSX.Element } = {
   AllTimeRecords,
   HeadToHead,
   PlayoffMachine,
+  ProbabilityMachine,
   SecondLost,
   WhatIf,
   ConsistentlyAverage,

@@ -1,0 +1,35 @@
+.probability-machine button {
+  border: 1px solid var(--night-border);
+  border-radius: 0.5em;
+  padding: 0.35em 0.65em;
+  cursor: pointer;
+}
+.probability-machine button:disabled { opacity: 0.4; cursor: default; }
+.probability-heading { display: flex; justify-content: space-between; align-items: center; gap: 1em; }
+.probability-column-labels, .probability-manager {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 3.6rem 5.2rem;
+  gap: 0.4em;
+  align-items: center;
+}
+.probability-column-labels { font-size: 0.7em; color: var(--night-text-muted); margin-bottom: 0.5em; }
+.probability-manager { padding: 0.35em 0; overflow-wrap: anywhere; }
+.probability-manager + .probability-manager { border-top: 1px solid var(--night-border); }
+.probability-manager .probability-lock { grid-column: 3; justify-self: end; font-size: 0.75em; }
+.probability-input { display: flex; align-items: center; gap: 0.2em; font-variant-numeric: tabular-nums; }
+.probability-input input {
+  box-sizing: border-box; width: 100%; min-width: 0; padding: 0.4em 0.15em;
+  text-align: right; border: 1px solid var(--night-border); border-radius: 0.35em;
+  appearance: textfield; -moz-appearance: textfield;
+}
+.probability-input input::-webkit-inner-spin-button { -webkit-appearance: none; }
+.probability-machine :is(button, input):focus-visible { outline: 2px solid var(--night-focus); outline-offset: 2px; }
+.probability-matchup-footer { display: flex; justify-content: space-between; align-items: center; gap: 0.5em; font-size: 0.75em; color: var(--night-text-muted); }
+.probability-results { margin: 1.5em 0; }
+.probability-status { min-height: 2.5em; margin: 0.75em 0; font-size: 0.85em; color: var(--night-text-muted); }
+.probability-bands { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.4em; margin: 1em 0 0; }
+.probability-bands div { padding: 0.5em 0.25em; text-align: center; border-radius: 0.5em; background: var(--night-surface-alt); }
+.probability-bands dt { font-size: 0.8em; color: var(--night-text-muted); }
+.probability-bands dd { margin: 0.3em 0 0; font-size: 1.25em; font-weight: 700; font-variant-numeric: tabular-nums; }
+.probability-method { font-size: 0.85em; color: var(--night-text-muted); }
+.probability-method summary { cursor: pointer; color: var(--night-text); }
