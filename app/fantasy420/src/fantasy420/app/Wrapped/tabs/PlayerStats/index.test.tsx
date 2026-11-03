@@ -48,10 +48,11 @@ test("shows fetched 2026 and historical scores, refreshed totals/ranks, and retr
   expect(screen.getAllByTestId("scores")[0]).toHaveTextContent('"score":10.3');
   selectedScope.year = "2025";
   rerender(<PlayerStats />);
-  expect(container.textContent).toContain('"total": 2');
+  expect(container.textContent).toContain('"total": 12.3');
   expect(container.textContent).toContain('"year": 2025');
-  expect(container.textContent).not.toContain('"year": 2026');
-  expect(screen.getAllByTestId("scores")).toHaveLength(1);
+  expect(container.textContent).toContain('"year": 2026');
+  expect(screen.getAllByTestId("scores")).toHaveLength(2);
+  expect(container.textContent).toContain("Totals combine all available seasons.");
 });
 
 test("renders cached data once, then all remote data, without requesting history again", async () => {

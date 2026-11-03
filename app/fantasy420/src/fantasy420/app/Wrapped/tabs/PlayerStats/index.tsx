@@ -1,7 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
 import allWrapped from "../../allWrapped";
-import { selectedYear } from "../..";
-import { ALL_YEARS } from "../../scope";
 import Chart from "./Chart";
 import type { PlayerStatsRecord } from "./refreshSnapshot";
 import { usePlayerStats } from "./usePlayerStats";
@@ -21,9 +19,9 @@ export default function PlayerStats() {
   useEffect(() => updateNameFilter(linkedName), [linkedName]);
   const stats = usePlayerStats();
   const playerStatsData = useMemo(() => stats.data.map(player => {
-    const years = player.years.filter(year => selectedYear === ALL_YEARS || String(year.year) === selectedYear);
+    const years = player.years;
     return { ...player, years, total: years.reduce((sum, year) => sum + year.total, 0) };
-  }).filter(player => player.years.length), [stats.data, selectedYear]);
+  }).filter(player => player.years.length), [stats.data]);
   const coverage = [...new Set(playerStatsData.flatMap(player => player.years.map(year => year.year)))].sort((a,b)=>a-b);
   const matches = playerStatsData
     .filter(player => normalizePlayerName(player.name).includes(normalizePlayerName(nameFilter)))
@@ -35,7 +33,7 @@ export default function PlayerStats() {
   return (
     <div>
       <LoadStatus {...stats} />
-      <p>{selectedYear === ALL_YEARS ? `All years · NFL player history ${coverage[0] ?? ""}–${coverage.at(-1) ?? ""}. Totals combine all available seasons.` : `NFL player history · ${selectedYear}`}</p>
+      <p>{`All years · NFL player history ${coverage[0] ?? ""}–${coverage.at(-1) ?? ""}. Totals combine all available seasons.`}</p>
       <div>
         nameFilter:{" "}
         <input

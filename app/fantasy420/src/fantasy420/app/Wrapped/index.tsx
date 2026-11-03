@@ -60,8 +60,8 @@ export const newManagers = managerChanges;
 
 export default function Wrapped() {
   document.title = "Fantasy Wrapped";
-  const [yearKey, updateYear] = useState(selectedYear);
-  selectedYear = yearKey;
+  const [requestedYear, updateYear] = useState(() =>
+    normalizeYear(new URLSearchParams(window.location.search).get("year"), allWrapped, currentYear));
   useEffect(() => {
     const onPop = () => updateYear(normalizeYear(new URLSearchParams(window.location.search).get("year"), allWrapped, currentYear));
     window.addEventListener("popstate", onPop);
@@ -75,6 +75,9 @@ export default function Wrapped() {
   }
   const hashKey = useWrappedTab();
   const toRenderKey = toRender[hashKey] ? hashKey : "ManagerPlot";
+  const allYearsOnly = ["HeadToHead", "Simps", "PlayerStats"].includes(toRenderKey);
+  const yearKey = allYearsOnly ? ALL_YEARS : requestedYear;
+  selectedYear = yearKey;
 
   function B() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -96,7 +99,7 @@ export default function Wrapped() {
           overflow: "scroll",
         }}
       >
-        <div>
+        {!allYearsOnly && <div>
           <label htmlFor="wrapped-year">Year: </label>
           <select
             id="wrapped-year"
@@ -110,7 +113,7 @@ export default function Wrapped() {
               </option>
             ))}
           </select>
-        </div>
+        </div>}
         <h1 style={bubbleStyle}>
           {wrappedModuleLabels[toRenderKey] ?? toRenderKey} · {scopeLabel(yearKey, ["PlayerStats", "PositionTrends", "AllTimeRecords"].includes(toRenderKey) ? [] : Object.keys(allWrapped))}
         </h1>
