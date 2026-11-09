@@ -2,6 +2,7 @@ import { act, cleanup, fireEvent, render, screen, waitFor, within } from "@testi
 import { selectedWrapped } from "..";
 import type { WrappedType } from "../../FetchWrapped";
 import PlayoffMachine from "./PlayoffMachine";
+import { calculateProbabilities, prepareProbabilitySeason } from "./probabilityEngine";
 import { latestCompletedWeek } from "../../FetchWrapped/completedWeek";
 import { parseWrappedHash, useWrappedTab } from "../hashRoute";
 import historical2022 from "../dataJson/2022.json";
@@ -35,6 +36,140 @@ beforeEach(() => {
 });
 
 afterEach(() => { cleanup(); vi.restoreAllMocks(); });
+
+function completedSeason(
+  names: Record<string, string>,
+  games: [string, string, number, number][]
+) {
+  const wrapped = selectedWrapped();
+  wrapped.latestScoringPeriod = games.length;
+  wrapped.ffMatchups = {};
+  wrapped.ffTeams = Object.fromEntries(Object.entries(names).map(([id, name]) => [
+    id, { id, name, draft: [], rosters: {} },
+  ]));
+  wrapped.nflPlayers = Object.fromEntries(Object.keys(names).map((id) => [id, {
+    id, name: id, nflTeamId: "1", position: "WR", projection: 0, average: 0, total: 0,
+    scores: {},
+  }]));
+  games.forEach(([a, b, scoreA, scoreB], index) => {
+    const week = String(index + 1);
+    wrapped.ffMatchups[week] = [[a, b]];
+    for (const [id, score] of [[a, scoreA], [b, scoreB]] as const) {
+      wrapped.ffTeams[id].rosters[week] = {
+        weekNum: week, starting: [id], rostered: [id], projections: {},
+      };
+      wrapped.nflPlayers[id].scores[week] = score;
+    }
+  });
+}
+
+function standingNames() {
+  return screen.getAllByText(/./, { selector: ".playoff-team-heading strong" })
+    .map((name) => name.textContent);
+}
+
+function tiebreakNotes() {
+  return Array.from(document.querySelectorAll(".playoff-tiebreaks li"));
+}
+
+test("restarts head-to-head after an uneven three-team points decision and recalculates adjusted points", () => {
+  completedSeason({ d: "Monday Night Ducking", m: "Malik Makai Bells", b: "Buckyball", x: "Other" }, [
+    ["d", "b", 200, 10],
+    ["b", "m", 20, 10],
+    ["m", "x", 100, 0],
+  ]);
+  render(<PlayoffMachine />);
+
+  expect(standingNames()).toEqual(["Monday Night Ducking", "Buckyball", "Malik Makai Bells", "Other"]);
+  const season = prepareProbabilitySeason(selectedWrapped(), "2026");
+  const result = calculateProbabilities(season);
+  const probabilityOrder = Array.from({ length: season.teams.length }, (_, rank) =>
+    season.teams[result.ranks.findIndex(probabilities => probabilities[rank] === 1)].name);
+  expect(probabilityOrder).toEqual(standingNames());
+  const notes = tiebreakNotes();
+  expect(notes).toHaveLength(2);
+  expect(notes[0]).toHaveTextContent("Monday Night Ducking and Malik Makai Bells and Buckyball");
+  expect(notes[0]).toHaveTextContent("have not played an equal number of times");
+  expect(notes[0]).toHaveTextContent("Monday Night Ducking takes the next seed on points for");
+  expect(notes[1]).toHaveTextContent("Malik Makai Bells and Buckyball");
+  expect(notes[1]).not.toHaveTextContent("Monday Night Ducking");
+  expect(notes[1]).toHaveTextContent("Buckyball takes the next seed on head-to-head record");
+  for (const name of document.querySelectorAll<HTMLElement>(".playoff-tiebreaks .playoff-team-name")) {
+    expect(name.style.getPropertyValue("--playoff-team-color")).not.toBe("");
+  }
+
+  const malikCard = screen.getByText("Malik Makai Bells", { selector: ".playoff-team-heading strong" })
+    .closest(".playoff-team")!;
+  fireEvent.click(within(malikCard as HTMLElement).getByRole("button", { name: "+1000 PF" }));
+  expect(standingNames()).toEqual(["Malik Makai Bells", "Monday Night Ducking", "Buckyball", "Other"]);
+  expect(tiebreakNotes()[0]).toHaveTextContent("Malik Makai Bells takes the next seed on points for");
+  expect(tiebreakNotes()[1]).toHaveTextContent("Monday Night Ducking takes the next seed on head-to-head record");
+  fireEvent.click(within(malikCard as HTMLElement).getByRole("button", { name: "-1000 PF" }));
+  expect(standingNames()).toEqual(["Monday Night Ducking", "Buckyball", "Malik Makai Bells", "Other"]);
+});
+
+test("recalculates a balanced group's head-to-head records after selecting its first winner", () => {
+  completedSeason({ a: "Alpha", c: "Charlie", b: "Bravo", x: "Other" }, [
+    ["a", "b", 10, 1], ["a", "b", 10, 1], ["a", "b", 10, 1],
+    ["a", "c", 10, 1], ["a", "c", 10, 1], ["a", "c", 1, 100],
+    ["b", "c", 10, 1], ["b", "c", 10, 1], ["b", "c", 1, 100],
+    ["b", "x", 10, 0], ["b", "x", 10, 0], ["b", "x", 10, 0],
+    ["c", "x", 100, 0], ["c", "x", 100, 0], ["c", "x", 100, 0],
+  ]);
+  render(<PlayoffMachine />);
+
+  // Each tied team has five season wins. Alpha's 5/6 group record wins
+  // despite the lowest PF; Bravo and Charlie are initially tied at 2/6.
+  // After Alpha is removed, Bravo's 2/3 beats Charlie's 1/3 despite lower PF.
+  expect(standingNames()).toEqual(["Alpha", "Bravo", "Charlie", "Other"]);
+  const notes = tiebreakNotes();
+  expect(notes).toHaveLength(2);
+  expect(notes[0]).toHaveTextContent("Alpha and Charlie and Bravo each have 5 wins");
+  expect(notes[0]).toHaveTextContent("have played each other an equal number of times");
+  expect(notes[0]).toHaveTextContent("Alpha takes the next seed on head-to-head record");
+  expect(notes[1]).toHaveTextContent("Charlie and Bravo each have 5 wins");
+  expect(notes[1]).not.toHaveTextContent("Alpha");
+  expect(notes[1]).toHaveTextContent("Bravo takes the next seed on head-to-head record");
+});
+
+test.each(["split", "absent"])("uses points for when the remaining pair's head-to-head is %s", (meeting) => {
+  completedSeason({ d: "Ducking", b: "Buckyball", m: "Malik", x: "Other" }, meeting === "split" ? [
+    ["d", "b", 200, 10], ["b", "m", 20, 10], ["m", "b", 100, 10],
+    ["d", "x", 200, 0], ["b", "x", 20, 0], ["m", "x", 100, 0],
+  ] : [
+    ["d", "b", 200, 10], ["d", "m", 200, 10],
+    ["b", "x", 20, 0], ["b", "x", 20, 0],
+    ["m", "x", 100, 0], ["m", "x", 100, 0],
+  ]);
+  render(<PlayoffMachine />);
+
+  expect(standingNames()).toEqual(["Ducking", "Malik", "Buckyball", "Other"]);
+  const notes = tiebreakNotes();
+  expect(notes).toHaveLength(2);
+  expect(notes[0]).toHaveTextContent("Ducking takes the next seed on points for");
+  expect(notes[1]).toHaveTextContent("Buckyball and Malik each have 2 wins");
+  expect(notes[1]).not.toHaveTextContent("Ducking");
+  expect(notes[1]).toHaveTextContent("Malik takes the next seed on points for");
+  expect(notes[1]).toHaveTextContent(meeting === "split"
+    ? "because the best head-to-head records are tied"
+    : "have not played each other");
+});
+
+test.each(["split", "absent"])("uses team name when points are equal and head-to-head is %s", (meeting) => {
+  completedSeason({ b: "Bravo", a: "Alpha" }, meeting === "split" ? [
+    ["a", "b", 10, 0], ["a", "b", 0, 10],
+  ] : []);
+  render(<PlayoffMachine />);
+
+  expect(standingNames()).toEqual(["Alpha", "Bravo"]);
+  const notes = tiebreakNotes();
+  expect(notes).toHaveLength(1);
+  expect(notes[0]).toHaveTextContent("Bravo and Alpha");
+  expect(notes[0]).toHaveTextContent("Alpha takes the next seed on team name");
+  expect(notes[0]).toHaveTextContent(meeting === "split"
+    ? "because the best head-to-head records and points for are tied"
+    : "because points for are tied");
+});
 
 test("2022 archived standings count regular-season wins and exclude postseason points", () => {
   vi.mocked(selectedWrapped).mockReturnValue(historical2022);

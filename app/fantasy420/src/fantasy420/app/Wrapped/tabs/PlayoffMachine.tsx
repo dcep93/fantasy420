@@ -183,24 +183,40 @@ export default function PlayoffMachine() {
     const tiebreakExplanations: ReactNode[] = [];
 
     const entries = sortedWins.flatMap((winsKey) => {
-      const group = groupedByWins[winsKey]!;
-      const pairCounts = new Set<number>();
-      group.forEach(({ team }) => {
-        group.forEach(({ team: opp }) => {
-          if (team.id === opp.id) return;
-          pairCounts.add(
-            seasonResults.headToHead[team.id]?.[opp.id]?.games || 0
-          );
-        });
-      });
-      const useHeadToHead =
-        pairCounts.size === 1 && Array.from(pairCounts.values())[0]! > 0;
-
+      let remaining = groupedByWins[winsKey]!;
+      const ranked: typeof remaining = [];
       const tiebreakWinsLabel = Number.isInteger(winsKey)
         ? winsKey.toString()
         : Helpers.toFixed(winsKey, 2);
-      if (group.length > 1) {
-        const groupNames = group.map(({ team }, index) => (
+
+      while (remaining.length > 1) {
+        const groupIds = remaining.map(({ team }) => team.id);
+        const pairCounts = new Set<number>();
+        remaining.forEach(({ team }) => {
+          remaining.forEach(({ team: opp }) => {
+            if (team.id === opp.id) return;
+            pairCounts.add(
+              seasonResults.headToHead[team.id]?.[opp.id]?.games || 0
+            );
+          });
+        });
+        const useHeadToHead =
+          pairCounts.size === 1 && Array.from(pairCounts.values())[0]! > 0;
+
+        // Shared standings choose the seed; inspect this round only to explain it.
+        const winner = remaining.reduce((best, entry) =>
+          rank[entry.team.id] < rank[best.team.id] ? entry : best);
+        const winnerRecord = useHeadToHead ? getHeadToHeadRecord(winner.team.id, groupIds) : 0;
+        const tiedOnHead = remaining.filter(({ team }) => team.id !== winner.team.id &&
+          (!useHeadToHead || getHeadToHeadRecord(team.id, groupIds) === winnerRecord));
+        const headToHeadDecides = useHeadToHead && tiedOnHead.length === 0;
+        const pointsDecide = !tiedOnHead.some(entry => entry.pointsFor === winner.pointsFor);
+        const decidingCriterion = headToHeadDecides
+          ? "head-to-head record"
+          : pointsDecide
+            ? `points for${useHeadToHead ? " because the best head-to-head records are tied" : ""}`
+            : `team name because ${useHeadToHead ? "the best head-to-head records and points for are tied" : "points for are tied"}`;
+        const groupNames = remaining.map(({ team }, index) => (
           <span key={team.id}>
             {index > 0 && " and "}
             <span className="playoff-team-name" style={teamStyles[team.id]}>
@@ -211,22 +227,21 @@ export default function PlayoffMachine() {
         const hasAnyMatchups = Array.from(pairCounts).some(
           (count) => count > 0
         );
-        if (useHeadToHead) {
-          tiebreakExplanations.push(
-            <>{groupNames} all have {tiebreakWinsLabel} wins and have played each other an equal number of times, so head-to-head record is used before points for.</>
-          );
-        } else {
-          tiebreakExplanations.push(
-            <>{groupNames} each have {tiebreakWinsLabel} wins, but {
-              hasAnyMatchups
-                ? "have not played an equal number of times"
-                : "have not played each other"
-            }, so points for is used.</>
-          );
-        }
+        tiebreakExplanations.push(
+          <>
+            {groupNames} each have {tiebreakWinsLabel} wins, {useHeadToHead
+              ? "and have played each other an equal number of times, so head-to-head record is used before points for."
+              : `but ${hasAnyMatchups ? "have not played an equal number of times" : "have not played each other"}, so points for is used.`}
+            {" "}<span className="playoff-team-name" style={teamStyles[winner.team.id]}>
+              {winner.team.name}
+            </span> takes the next seed on {decidingCriterion}.
+          </>
+        );
+        ranked.push(winner);
+        remaining = remaining.filter(({ team }) => team.id !== winner.team.id);
       }
 
-      return group.sort((a, b) => rank[a.team.id] - rank[b.team.id]);
+      return [...ranked, ...remaining];
     });
 
     return { entries, tiebreakExplanations };
@@ -238,6 +253,18 @@ export default function PlayoffMachine() {
     return roster.starting
       .map((playerId) => wrapped.nflPlayers[playerId]?.scores[weekNum] || 0)
       .reduce((a, b) => a + b, 0);
+  }
+
+  function getHeadToHeadRecord(teamId: string, groupIds: string[]) {
+    let games = 0;
+    let wins = 0;
+    for (const opponentId of groupIds) {
+      if (opponentId === teamId) continue;
+      const record = seasonResults.headToHead[teamId]?.[opponentId];
+      games += record?.games ?? 0;
+      wins += record?.wins ?? 0;
+    }
+    return games > 0 ? wins / games : -Infinity;
   }
 
   function adjustPoints(teamId: string, delta: number) {

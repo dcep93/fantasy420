@@ -47,14 +47,18 @@ test("simulation agrees with exact weighted enumeration and repeats with a fixed
 
 test("current schedule has identical weekly strengths and excludes incomplete PF", () => {
   const season = prepareProbabilitySeason(current, "2026");
-  expect(season.games).toHaveLength(35);
+  const remainingMatchups = Object.entries(current.ffMatchups)
+    .filter(([week]) => Number(week) > current.latestScoringPeriod)
+    .flatMap(([, matchups]) => matchups);
+  expect(season.games).toHaveLength(remainingMatchups.length);
   for (const game of season.games) {
     const strengths = getWeeklyStrength(current, game.week);
     expect(game.strengthA).toBe(strengths[season.teams[game.a].id]);
     expect(game.strengthB).toBe(strengths[season.teams[game.b].id]);
   }
   const changed = structuredClone(current);
-  for (const player of Object.values(changed.nflPlayers)) player.scores["7" as keyof typeof player.scores] = 99999;
+  const incompleteWeek = String(current.latestScoringPeriod + 1);
+  for (const player of Object.values(changed.nflPlayers)) player.scores[incompleteWeek as keyof typeof player.scores] = 99999;
   expect(prepareProbabilitySeason(changed, "2026").points).toEqual(season.points);
 });
 
@@ -102,7 +106,7 @@ test("probability curve is symmetric, monotonic and neutral for missing strength
   }
 });
 
-test("ranking matches the original PlayoffMachine comparator for varied multi-team ties", () => {
+test("ranking matches a cascading reference for varied multi-team ties", () => {
   const season = prepareProbabilitySeason(current, "2026");
   const n = season.teams.length;
   const rules = createRankingRules(season.teams.map(t => t.name), season.headGames);
@@ -112,12 +116,18 @@ test("ranking matches the original PlayoffMachine comparator for varied multi-te
     const groups: Record<string, number[]> = {};
     wins.forEach((v, i) => (groups[v] ??= []).push(i));
     const expected = Object.keys(groups).map(Number).sort((a, b) => b - a).flatMap(w => {
-      const group = groups[w];
-      const counts = new Set(group.flatMap(a => group.filter(b => a !== b).map(b => season.headGames[a * n + b])));
-      const useH2H = counts.size === 1 && [...counts][0] > 0;
-      const h2h = (a: number) => group.filter(b => b !== a).reduce((sum, b) => sum + head[a * n + b], 0);
-      return group.sort((a, b) => (useH2H ? h2h(b) - h2h(a) : 0) || season.points[b] - season.points[a] ||
-        season.teams[a].name.localeCompare(season.teams[b].name));
+      let group = groups[w];
+      const ranked: number[] = [];
+      while (group.length) {
+        const counts = new Set(group.flatMap(a => group.filter(b => a !== b).map(b => season.headGames[a * n + b])));
+        const useH2H = counts.size === 1 && [...counts][0] > 0;
+        const h2h = (a: number) => group.filter(b => b !== a).reduce((sum, b) => sum + head[a * n + b], 0);
+        const winner = [...group].sort((a, b) => (useH2H ? h2h(b) - h2h(a) : 0) || season.points[b] - season.points[a] ||
+          season.teams[a].name.localeCompare(season.teams[b].name))[0];
+        ranked.push(winner);
+        group = group.filter(team => team !== winner);
+      }
+      return ranked;
     });
     // A team's self-record is always zero.
     for (let i = 0; i < n; i++) head[i * n + i] = 0;
@@ -131,11 +141,39 @@ test("three-team H2H is used only for equally played groups, with name as final 
   const head = [0, 1, 1, 0, 0, 1, 0, 0, 0];
   expect(rankPlayoffTeams([5, 5, 5], head, [0, 1000, 2000], createRankingRules(names, equal), [])).toEqual([0, 1, 2]);
   const unequal = [...equal]; unequal[1] = 2; unequal[3] = 2;
-  expect(rankPlayoffTeams([5, 5, 5], head, [0, 1000, 2000], createRankingRules(names, unequal), [])).toEqual([2, 1, 0]);
+  expect(rankPlayoffTeams([5, 5, 5], head, [0, 1000, 2000], createRankingRules(names, unequal), [])).toEqual([2, 0, 1]);
   expect(rankPlayoffTeams([5, 5, 5], Array(9).fill(0), [0, 0, 0], createRankingRules(names, equal), [])).toEqual([1, 2, 0]);
 });
 
-test("current 35-game calculation stays near a second and conserves every finishing place", () => {
+test.each([
+  {
+    label: "uneven meetings become eligible after the PF winner leaves",
+    games: [0, 0, 1, 0, 0, 1, 1, 1, 0],
+    head: [0, 0, 1, 0, 0, 0, 0, 1, 0], points: [200, 110, 30], expected: [0, 2, 1],
+  },
+  {
+    label: "balanced meetings recalculate records after the H2H winner leaves",
+    games: [0, 3, 3, 3, 0, 3, 3, 3, 0],
+    head: [0, 3, 2, 0, 0, 2, 1, 1, 0], points: [51, 54, 504], expected: [0, 1, 2],
+  },
+])("shared ranking cascades when $label", ({ games, head, points, expected }) => {
+  const names = ["Alpha", "Bravo", "Charlie"];
+  const rules = createRankingRules(names, games);
+  const wins = [5, 5, 5];
+  const order: number[] = [];
+  expect(rankPlayoffTeams(wins, head, points, rules, order)).toEqual(expected);
+  // Reuse the same scratch state after a different scenario.
+  rankPlayoffTeams([1, 2, 3], head, points, rules, order);
+  expect(rankPlayoffTeams(wins, head, points, rules, order)).toEqual(expected);
+  const result = calculateProbabilities({
+    teams: names.map(name => ({ id: name, name })), wins, points,
+    headWins: head, headGames: games, games: [],
+  });
+  expect(result.scenarios).toBe(1);
+  expected.forEach((team, rank) => expect(result.ranks[team][rank]).toBe(1));
+});
+
+test("current remaining-season calculation stays near a second and conserves every finishing place", () => {
   const result = calculateProbabilities(prepareProbabilitySeason(current, "2026"));
   expect(result.method).toBe("simulation");
   expect(result.elapsedMs).toBeLessThan(1500);

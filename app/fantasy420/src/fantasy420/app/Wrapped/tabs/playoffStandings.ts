@@ -36,27 +36,28 @@ export function rankPlayoffTeams(
     while (end < n && wins[order[end]] === wins[order[start]]) {
       mask |= 1 << order[end++];
     }
-    const h2h = useHeadToHead[mask];
-    for (let j = start; j < end; j++) {
-      const team = order[j];
-      tieWins[team] = 0;
-      if (h2h) {
-        // Every team has the same H2H denominator within an eligible tied group.
-        for (let k = start; k < end; k++) tieWins[team] += headWins[team * n + order[k]];
+    for (let seed = start; seed < end - 1; seed++) {
+      const h2h = useHeadToHead[mask];
+      for (let j = seed; j < end; j++) {
+        const team = order[j];
+        tieWins[team] = 0;
+        if (h2h) {
+          // Eligible remaining teams have equal H2H denominators.
+          for (let k = seed; k < end; k++) tieWins[team] += headWins[team * n + order[k]];
+        }
       }
-    }
-    // Stable insertion sort inside the original tied group; no recursive re-ties.
-    for (let j = start + 1; j < end; j++) {
-      const team = order[j];
-      let k = j;
-      while (k > start) {
-        const previous = order[k - 1];
+      let best = seed;
+      for (let j = seed + 1; j < end; j++) {
+        const team = order[j], previous = order[best];
         const diff = (h2h ? tieWins[team] - tieWins[previous] : 0) ||
           points[team] - points[previous] || nameRank[previous] - nameRank[team];
-        if (diff <= 0) break;
-        order[k--] = previous;
+        if (diff > 0) best = j;
       }
-      order[k] = team;
+      // Remove only this winner, preserving the remaining teams' order.
+      const winner = order[best];
+      for (let j = best; j > seed; j--) order[j] = order[j - 1];
+      order[seed] = winner;
+      mask &= ~(1 << winner);
     }
     start = end;
   }
