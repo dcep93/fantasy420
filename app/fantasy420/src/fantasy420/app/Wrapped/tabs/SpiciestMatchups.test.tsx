@@ -9,9 +9,12 @@ import { summarizeSpiciness, TIMELINE_EVENT_EPSILON } from "./matchupSpiciness";
 import { buildMatchupChunks, chunkMatchupPoints, GameWindow, MATCHUP_CHUNK_LABELS } from "./matchupTimelineChunks";
 
 const scope = vi.hoisted(() => ({ year: "2026" }));
+const chartPropsSpy = vi.hoisted(() => vi.fn());
 vi.mock("..", () => ({ selectedWrapped: vi.fn(), get selectedYear() { return scope.year; } }));
 vi.mock("./MatchupLeadChart", () => ({
-  default: ({ homeName, awayName }: { homeName: string; awayName: string }) => <div>{homeName} versus {awayName} chart</div>,
+  default: (props: { homeName: string; awayName: string; projectedScores?: boolean }) => {
+    chartPropsSpy(props); return <div>{props.homeName} versus {props.awayName} chart</div>;
+  },
   formatMatchupTime: (timestamp: number) => new Date(timestamp).toISOString(),
 }));
 
@@ -562,4 +565,34 @@ test("unresolved individual totals interpolate without crediting another player'
   expect(matchup.points.every(point => !point.lastContributingPlays?.length)).toBe(true);
   expect(matchup.points.at(-1)?.scores).toEqual([12, 15]);
   expect(matchup.points.find(point => point.minute > 0 && point.minute < 180)?.scores[0]).toBeGreaterThan(0);
+});
+
+
+test("projected scores is off by default and toggles all charts without recomputing rankings or fetching", async () => {
+  const { wrapped, data } = fixture();
+  vi.mocked(selectedWrapped).mockReturnValue(wrapped);
+  const fetchMock = vi.fn().mockResolvedValue(new Response(JSON.stringify(data)));
+  vi.stubGlobal("fetch", fetchMock);
+  const original = computeSpiciestMatchups(wrapped, data)[0];
+  const analysis = vi.spyOn(matchupData, "analyzeSpiciestMatchups").mockReturnValue({ omittedForProjections: 0,
+    matchups: [original, { ...original, id: "second", homeName: "Charlie", score: original.score - 1 }] });
+  try {
+    render(<SpiciestMatchups />);
+    await screen.findByText("Alpha versus Bravo chart");
+    const toggle = screen.getByRole("checkbox", { name: "Projected scores" });
+    expect(toggle).not.toBeChecked();
+    expect(chartPropsSpy.mock.lastCall![0].projectedScores).toBe(false);
+    const cards = screen.getAllByRole("article").map(card => card.textContent);
+    const calls = analysis.mock.calls.length;
+    chartPropsSpy.mockClear();
+    fireEvent.click(toggle);
+    expect(toggle).toBeChecked();
+    expect(chartPropsSpy.mock.calls.map(([props]) => [props.homeName, props.projectedScores])).toEqual([["Alpha", true], ["Charlie", true]]);
+    expect(screen.getByText(/two teams’ projected final scores/i)).toBeVisible();
+    expect(screen.getAllByRole("article").map(card => card.textContent)).toEqual(cards);
+    expect(analysis).toHaveBeenCalledTimes(calls);
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    fireEvent.click(toggle);
+    expect(chartPropsSpy.mock.lastCall![0].projectedScores).toBe(false);
+  } finally { analysis.mockRestore(); }
 });

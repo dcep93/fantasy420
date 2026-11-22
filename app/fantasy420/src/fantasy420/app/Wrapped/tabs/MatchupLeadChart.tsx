@@ -1,8 +1,9 @@
-import { useEffect, useId, useMemo, useRef, useState, type PointerEvent } from "react";
+import { useCallback, useEffect, useId, useMemo, useRef, useState, type KeyboardEvent, type PointerEvent } from "react";
 import { headToHeadProbability } from "../../Scoreboard/probability";
 import { CartesianGrid, Line, LineChart, ReferenceArea, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { NIGHT_CHART_COLORS, NIGHT_COLORS } from "../../theme";
 import type { LeadPoint } from "./spiciestMatchupsData";
+import { adjacentPlay, contributingPlayEvents } from "./matchupChartNavigation";
 import { chunkMatchupPoints, MatchupChunk } from "./matchupTimelineChunks";
 
 const CHART_HEIGHT = 300;
@@ -11,6 +12,7 @@ const TIME_AXIS_HEIGHT = 48;
 const SCORE_AXIS_WIDTH = 50;
 type Range = [number, number];
 type InspectedPoint = LeadPoint & { winProbability: number };
+type ChartPoint = InspectedPoint & { position: number; original: LeadPoint };
 
 /** Signed square-root display scale; input and output are on a 0–100 scale. */
 export function winProbabilityAxisPosition(probability: number): number {
@@ -77,29 +79,107 @@ export function formatMatchupTime(timestamp: number): string {
   });
 }
 
-export default function MatchupLeadChart({ points, chunks, homeName, awayName }: {
+/** Linear points axis fitted to both series, including segments crossing zoom edges. */
+export function visibleScoreAxis(data: { position: number; projectedScores: number[] }[], zoom: Range | null) {
+  let low = Infinity, high = -Infinity;
+  const include = (value: number) => { low = Math.min(low, value); high = Math.max(high, value); };
+  data.forEach((point, index) => {
+    if (!zoom || (point.position >= zoom[0] && point.position <= zoom[1])) point.projectedScores.forEach(include);
+    const next = data[index + 1];
+    if (zoom && next && next.position > point.position) {
+      for (const edge of zoom) if (edge > point.position && edge < next.position) {
+        point.projectedScores.forEach((score, team) => include(score + (next.projectedScores[team] - score) *
+          (edge - point.position) / (next.position - point.position)));
+      }
+    }
+  });
+  if (!Number.isFinite(low) || !Number.isFinite(high)) { low = 0; high = 1; }
+  const padding = Math.max(1, (high - low) * 0.1);
+  const targetStep = (high - low + 2 * padding) / 5;
+  const magnitude = 10 ** Math.floor(Math.log10(targetStep));
+  const step = [1, 2, 5, 10].find(value => value * magnitude >= targetStep)! * magnitude;
+  const start = Math.ceil((low - padding) / step) * step;
+  const end = Math.floor((high + padding) / step) * step;
+  return { domain: [low - padding, high + padding] as Range,
+    ticks: Array.from({ length: Math.round((end - start) / step) + 1 }, (_, index) => Number((start + index * step).toFixed(6))) };
+}
+
+export default function MatchupLeadChart({ points, chunks, homeName, awayName, projectedScores = false }: {
   points: LeadPoint[];
   chunks: MatchupChunk[];
   homeName: string;
   awayName: string;
+  projectedScores?: boolean;
 }) {
   const gradientId = useId();
   const [chartWidth, setChartWidth] = useState(500);
   const [zoom, setZoom] = useState<Range | null>(null);
   const [selection, setSelection] = useState<Range | null>(null);
-  const [inspectedPoint, setInspectedPoint] = useState<InspectedPoint | null>(null);
+  const [inspection, setInspection] = useState<{ source: LeadPoint[]; point: LeadPoint } | null>(null);
   const drag = useRef<{ pointerId: number; start: number; clientX: number } | null>(null);
   const plot = useRef<HTMLDivElement>(null);
-  const domain: Range = zoom ?? [0, 4];
-  const data = useMemo(() => chunkMatchupPoints(points, chunks).map(point => {
-    const winProbability = 100 * headToHeadProbability(
-      { score: point.scores[0], projected: point.projectedScores[0] },
-      { score: point.scores[1], projected: point.projectedScores[1] }
-    );
-    return { ...point, winProbability, probabilityPosition: winProbabilityAxisPosition(winProbability) };
-  }), [points, chunks]);
-  const probabilityAxis = useMemo(() => visibleProbabilityAxis(data, zoom), [data, zoom]);
-
+  // Navigation and mode switches keep their selection until a new pointer interaction.
+  const allowInspection = useRef(true);
+  const mode = useRef(projectedScores);
+  if (mode.current !== projectedScores) { mode.current = projectedScores; allowInspection.current = false; }
+  const data = useMemo(() => {
+    const originals = points.map(point => ({ ...point, original: point }));
+    const positioned = projectedScores ? [...originals].sort((a, b) => a.timestamp - b.timestamp).map(point => ({ ...point, position: point.timestamp })) :
+      // Chunking spreads each source point, preserving our original-point reference even on boundaries.
+      chunkMatchupPoints(originals, chunks) as unknown as (LeadPoint & { position: number; original: LeadPoint })[];
+    return positioned.map(point => {
+      const winProbability = 100 * headToHeadProbability(
+        { score: point.scores[0], projected: point.projectedScores[0] },
+        { score: point.scores[1], projected: point.projectedScores[1] }
+      );
+      return { ...point, winProbability, probabilityPosition: winProbabilityAxisPosition(winProbability) };
+    });
+  }, [points, chunks, projectedScores]);
+  const fullDomain: Range = projectedScores ? [data[0]?.timestamp ?? 0, data.at(-1)?.timestamp ?? 1] : [0, 4];
+  if (fullDomain[0] === fullDomain[1]) { fullDomain[0] -= 30_000; fullDomain[1] += 30_000; }
+  const domain = zoom ?? fullDomain;
+  const probabilityAxis = useMemo(() => visibleProbabilityAxis(data, projectedScores ? null : zoom), [data, zoom, projectedScores]);
+  const scoreAxis = useMemo(() => visibleScoreAxis(data, zoom), [data, zoom]);
+  const yDomain = projectedScores ? scoreAxis.domain : probabilityAxis.domain;
+  const inspected = inspection?.source === points ? inspection.point : null;
+  // Prefer the actual sample over a synthetic boundary carrying the same values.
+  const chartPointFor = (original: LeadPoint | null) => data.find(point => point.original === original &&
+    (projectedScores || !Number.isInteger(point.position))) ?? data.find(point => point.original === original);
+  const inspectedPoint = chartPointFor(inspected);
+  const events = useMemo(() => contributingPlayEvents(points), [points]);
+  const previous = adjacentPlay(events, inspected, -1);
+  const next = adjacentPlay(events, inspected, 1);
+  const inspect = useCallback((point: ChartPoint) => {
+    if (allowInspection.current) setInspection(current =>
+      current?.source === points && current.point === point.original ? current : { source: points, point: point.original });
+  }, [points]);
+  // Recharts mounts function content as a component, so keep its identity stable across inspection updates.
+  const renderTooltip = useCallback(({ active, payload }: { active?: boolean; payload?: { payload?: ChartPoint }[] }) =>
+    <CaptureInspection active={Boolean(active) && !selection} point={payload?.[0]?.payload} onInspect={inspect} />,
+  [selection, inspect]);
+  function navigate(point: LeadPoint | null) {
+    if (!point) return;
+    allowInspection.current = false;
+    // A boundary disables the clicked button; keep arrow navigation focused on the plot.
+    plot.current?.focus({ preventScroll: true });
+    cancelSelection();
+    setInspection({ source: points, point });
+    const position = chartPointFor(point)?.position;
+    if (zoom && position !== undefined && (position < zoom[0] || position > zoom[1])) setZoom(null);
+  }
+  function handleNavigationKey(event: KeyboardEvent<HTMLElement>) {
+    if (event.target instanceof HTMLElement && event.target.closest("input, select, textarea, [contenteditable]:not([contenteditable='false'])")) return;
+    if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+      if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) {
+        // Recharts does not check modifiers; shield its handler while preserving native shortcuts.
+        event.stopPropagation();
+        return;
+      }
+      event.preventDefault();
+      event.stopPropagation();
+      navigate(event.key === "ArrowLeft" ? previous : next);
+    } else if (event.key === "Escape") cancelSelection();
+  }
   function cancelSelection() {
     if (drag.current && plot.current?.hasPointerCapture?.(drag.current.pointerId)) {
       plot.current.releasePointerCapture(drag.current.pointerId);
@@ -107,7 +187,7 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
     drag.current = null;
     setSelection(null);
   }
-  useEffect(() => { cancelSelection(); setZoom(null); }, [points, chunks]);
+  useEffect(() => { cancelSelection(); setZoom(null); }, [points, chunks, projectedScores]);
 
   function pointerPosition(event: PointerEvent<HTMLDivElement>) {
     const rect = event.currentTarget.getBoundingClientRect();
@@ -117,6 +197,8 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
     return domain[0] + fraction * (domain[1] - domain[0]);
   }
   function beginSelection(event: PointerEvent<HTMLDivElement>) {
+    plot.current?.focus({ preventScroll: true });
+    allowInspection.current = true;
     if (event.button !== 0 || drag.current) return;
     const rect = event.currentTarget.getBoundingClientRect();
     const x = event.clientX - rect.left;
@@ -127,6 +209,7 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
     event.currentTarget.setPointerCapture(event.pointerId);
   }
   function moveSelection(event: PointerEvent<HTMLDivElement>) {
+    allowInspection.current = true;
     if (drag.current?.pointerId !== event.pointerId) return;
     if (Math.abs(event.clientX - drag.current.clientX) >= 8) {
       setSelection([drag.current.start, pointerPosition(event)]);
@@ -141,16 +224,23 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
     }
     cancelSelection();
   }
-  const ticks = zoom ? (chartWidth < 500 ? [0, 1] : [0, 0.5, 1]).map(fraction => domain[0] + fraction * (domain[1] - domain[0])) :
+  const ticks = zoom || projectedScores ? (chartWidth < 500 ? [0, 1] : [0, 0.5, 1]).map(fraction => domain[0] + fraction * (domain[1] - domain[0])) :
     [0.5, 1.5, 2.5, 3.5];
   return (
-    <section aria-label={`Estimated win probability: ${homeName} versus ${awayName}`}>
+    <section aria-label={`${projectedScores ? "Projected scores" : "Estimated win probability"}: ${homeName} versus ${awayName}`}>
       <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem 1.5rem", marginBottom: 12, fontSize: 14 }}>
-        <span style={{ color: NIGHT_CHART_COLORS[2] }}>Above 50%: <b>{homeName}</b> favored</span>
+        {projectedScores ? <>
+          <span style={{ color: NIGHT_CHART_COLORS[2] }}>━ <b>{homeName}</b></span>
+          <span style={{ color: NIGHT_CHART_COLORS[6] }}>━ <b>{awayName}</b></span>
+          <span style={{ color: NIGHT_COLORS.mutedText }}>Projected final points</span>
+        </> : <><span style={{ color: NIGHT_CHART_COLORS[2] }}>Above 50%: <b>{homeName}</b> favored</span>
         <span style={{ color: NIGHT_CHART_COLORS[6] }}>Below 50%: <b>{awayName}</b> favored</span>
-        <span style={{ color: NIGHT_COLORS.mutedText }}>50% = neither team favored</span>
+        <span style={{ color: NIGHT_COLORS.mutedText }}>50% = neither team favored</span></>}
       </div>
-      <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 12, marginBottom: 8 }}>
+      <div onKeyDownCapture={handleNavigationKey}
+        style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 12, marginBottom: 8 }}>
+        <button type="button" aria-label="Previous play" disabled={!previous} onClick={() => navigate(previous)}>← Previous play</button>
+        <button type="button" aria-label="Next play" disabled={!next} onClick={() => navigate(next)}>Next play →</button>
         <button type="button" disabled={!zoom} onClick={() => { cancelSelection(); setZoom(null); }}>
           Reset zoom
         </button>
@@ -162,7 +252,7 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
       <div ref={plot} tabIndex={0} aria-label="Drag to zoom; Escape cancels selection"
         onPointerDown={beginSelection} onPointerMove={moveSelection} onPointerUp={finishSelection}
         onPointerCancel={cancelSelection} onLostPointerCapture={cancelSelection}
-        onKeyDown={event => { if (event.key === "Escape") cancelSelection(); }}
+        onKeyDownCapture={handleNavigationKey} onClick={() => plot.current?.focus({ preventScroll: true })}
         style={{ width: "100%", height: CHART_HEIGHT, background: NIGHT_COLORS.chartCanvas, borderRadius: 10,
           touchAction: "pan-y", userSelect: "none", cursor: "crosshair" }}>
         <ResponsiveContainer width="100%" height="100%" onResize={width => setChartWidth(width)}>
@@ -179,7 +269,7 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
             <XAxis dataKey="position" type="number" domain={domain} allowDataOverflow
               ticks={ticks} height={TIME_AXIS_HEIGHT} interval={0}
               tick={({ x, y, payload }: any) => {
-                if (zoom) return <text x={x} y={y + 16} fill={NIGHT_COLORS.mutedText} fontSize={11}
+                if (zoom || projectedScores) return <text x={x} y={y + 16} fill={NIGHT_COLORS.mutedText} fontSize={11}
                   textAnchor={payload.value === domain[0] ? "start" : payload.value === domain[1] ? "end" : "middle"}>
                   {formatMatchupTime(timestampAtPosition(data, payload.value))}
                 </text>;
@@ -191,43 +281,48 @@ export default function MatchupLeadChart({ points, chunks, homeName, awayName }:
                   {lines.map((line, index) => <tspan key={index} x={x} dy={index ? 12 : 0}>{line}</tspan>)}
                 </text>;
               }} />
-            <YAxis domain={probabilityAxis.domain} allowDataOverflow ticks={probabilityAxis.ticks.map(tick => tick.position)} width={SCORE_AXIS_WIDTH}
-              tickFormatter={value => `${probabilityAxis.ticks.find(tick => tick.position === value)?.probability ?? ""}%`} />
-            {probabilityAxis.domain[0] <= 50 && probabilityAxis.domain[1] >= 50 &&
+            {projectedScores ? <YAxis domain={scoreAxis.domain} scale="linear" allowDataOverflow ticks={scoreAxis.ticks}
+              width={SCORE_AXIS_WIDTH} tickFormatter={value => String(value)} /> : <YAxis domain={probabilityAxis.domain} allowDataOverflow ticks={probabilityAxis.ticks.map(tick => tick.position)} width={SCORE_AXIS_WIDTH}
+              tickFormatter={value => `${probabilityAxis.ticks.find(tick => tick.position === value)?.probability ?? ""}%`} />}
+            {!projectedScores && probabilityAxis.domain[0] <= 50 && probabilityAxis.domain[1] >= 50 &&
               <ReferenceLine y={50} stroke={NIGHT_COLORS.text} strokeWidth={1.5} />}
-            {[1, 2, 3].filter(position => position > domain[0] && position < domain[1]).map(position => <ReferenceLine key={position} x={position}
+            {!projectedScores && [1, 2, 3].filter(position => position > domain[0] && position < domain[1]).map(position => <ReferenceLine key={position} x={position}
               stroke={NIGHT_COLORS.mutedText} strokeDasharray="4 4" />)}
-            <Tooltip content={({ active, payload }) => <CaptureInspection
-              active={Boolean(active) && !selection}
-              point={payload?.[0]?.payload as InspectedPoint | undefined}
-              onInspect={setInspectedPoint} />} />
-            <Line dataKey="probabilityPosition" name={`${homeName} win probability`} type="linear" stroke={`url(#${gradientId})`}
-              strokeWidth={2.5} dot={false} activeDot={{ r: 5 }} isAnimationActive={false} />
+            {inspectedPoint && <ReferenceLine x={inspectedPoint.position} stroke={NIGHT_COLORS.text} strokeWidth={2} />}
+            <Tooltip cursor={false} content={renderTooltip} />
+            {projectedScores ? [homeName, awayName].map((name, index) =>
+              <Line key={index} dataKey={`projectedScores.${index}`} name={name} type="linear"
+                stroke={NIGHT_CHART_COLORS[index === 0 ? 2 : 6]} strokeWidth={2.5}
+                dot={false} activeDot={{ r: 5 }} isAnimationActive={false} />) : <Line dataKey="probabilityPosition" name={`${homeName} win probability`} type="linear" stroke={`url(#${gradientId})`}
+              strokeWidth={2.5} dot={false} activeDot={{ r: 5 }} isAnimationActive={false} />}
             {selection && <ReferenceArea x1={Math.min(...selection)} x2={Math.max(...selection)}
-              y1={probabilityAxis.domain[0]} y2={probabilityAxis.domain[1]}
+              y1={yDomain[0]} y2={yDomain[1]}
               fill={NIGHT_CHART_COLORS[2]} fillOpacity={0.2} stroke={NIGHT_CHART_COLORS[2]} />}
           </LineChart>
         </ResponsiveContainer>
       </div>
-      <MatchupDetails point={data.some(point => point === inspectedPoint) ? inspectedPoint : null}
+      <MatchupDetails point={inspectedPoint ?? null}
         homeName={homeName} awayName={awayName} />
       <p style={{ color: NIGHT_COLORS.mutedText, fontSize: 12, lineHeight: 1.5, margin: "8px 0 0" }}>
-        Square-root probability scale: movement near 50% is enlarged; labels and details show actual probabilities.{" "}
+        {projectedScores ? <>One continuous timeline with real elapsed time, including idle gaps. Each line shows a team’s
+          projected final score on a linear points scale. Drag horizontally to zoom; the vertical axis fits both visible score lines.
+          Reset zoom restores the full week.</> : <>Square-root probability scale: movement near 50% is enlarged; labels and details show actual probabilities.{" "}
         Four equal-width chunks; idle gaps are compressed. Slots use Eastern kickoff dates and the week’s
         final Sunday kickoff. The line is the first team’s estimated win probability. Drag horizontally to zoom;
-        the vertical axis fits the visible probabilities. Reset zoom restores 0–100%. Hover or tap to update the details below with probabilities, points, and the latest contributing play. Play times and contributions are
-        reconstructed; projection decay can move the line without a new play.
+        the vertical axis fits the visible probabilities. Reset zoom restores 0–100%.</>} Hover or tap to update the details below with probabilities, points, and the latest contributing play. Play times and contributions are
+        reconstructed; projection decay can move the line without a new play. Use Previous play / Next play or the left/right
+        arrow keys while the chart or its controls are focused to inspect distinct contributing plays.
       </p>
     </section>
   );
 }
 
 
-/** Keep Recharts' hover/touch/keyboard tracking, but render no floating content. */
+/** Keep Recharts' hover/touch tracking, but render no floating content. */
 function CaptureInspection({ active, point, onInspect }: {
   active: boolean;
-  point?: InspectedPoint;
-  onInspect: (point: InspectedPoint) => void;
+  point?: ChartPoint;
+  onInspect: (point: ChartPoint) => void;
 }) {
   useEffect(() => { if (active && point) onInspect(point); }, [active, point, onInspect]);
   return null;

@@ -1,31 +1,34 @@
 import { act, fireEvent, render, screen, within } from "@testing-library/react";
-import type { ReactNode } from "react";
-import MatchupLeadChart, { visibleProbabilityAxis, winProbabilityAxisPosition } from "./MatchupLeadChart";
+import { createElement, type ComponentType, type ReactNode } from "react";
+import MatchupLeadChart, { visibleProbabilityAxis, visibleScoreAxis, winProbabilityAxisPosition } from "./MatchupLeadChart";
+import { contributingPlayEvents } from "./matchupChartNavigation";
+import type { LeadPoint } from "./spiciestMatchupsData";
 import { buildMatchupChunks, ChunkedLeadPoint } from "./matchupTimelineChunks";
 
-const { chartSpy, lineSpy, axisSpy, areaSpy, probabilityAxisSpy, tooltipState, resize } = vi.hoisted(() => ({
+const { chartSpy, lineSpy, axisSpy, areaSpy, probabilityAxisSpy, tooltipState, resize, referenceSpy, chartKeySpy } = vi.hoisted(() => ({
   chartSpy: vi.fn(), lineSpy: vi.fn(), axisSpy: vi.fn(), areaSpy: vi.fn(), probabilityAxisSpy: vi.fn(),
-  tooltipState: { active: true }, resize: { current: (_width: number) => {} },
+  referenceSpy: vi.fn(), chartKeySpy: vi.fn(),
+  tooltipState: { active: true, index: -1 }, resize: { current: (_width: number) => {} },
 }));
 
 vi.mock("recharts", () => ({
   ResponsiveContainer: ({ children, onResize }: { children: ReactNode; onResize: (width: number) => void }) => { resize.current = onResize; return <>{children}</>; },
   LineChart: ({ children, data }: { children: ReactNode; data: ChunkedLeadPoint[] }) => {
     chartSpy(data);
-    return <svg>{children}</svg>;
+    return <svg onKeyDown={chartKeySpy}>{children}</svg>;
   },
   CartesianGrid: () => null,
   XAxis: (props: unknown) => { axisSpy(props); return null; },
   YAxis: (props: unknown) => { probabilityAxisSpy(props); return null; },
-  ReferenceLine: () => null,
+  ReferenceLine: (props: unknown) => { referenceSpy(props); return null; },
   ReferenceArea: (props: unknown) => { areaSpy(props); return null; },
   Line: (props: unknown) => { lineSpy(props); return null; },
-  Tooltip: ({ content }: { content: (props: unknown) => ReactNode }) => <foreignObject>
-    {content({ active: tooltipState.active, payload: [{ payload: chartSpy.mock.lastCall![0].at(-1) }] })}
+  Tooltip: ({ content }: { content: ComponentType<any> }) => <foreignObject>
+    {createElement(content, { active: tooltipState.active, payload: [{ payload: chartSpy.mock.lastCall![0].at(tooltipState.index) }] })}
   </foreignObject>,
 }));
 
-beforeEach(() => { tooltipState.active = true; });
+beforeEach(() => { tooltipState.active = true; tooltipState.index = -1; });
 
 test("plots Multisport win probability and labels earned scores and projected finishes", () => {
   render(<MatchupLeadChart homeName="Alpha" awayName="Bravo"
@@ -199,8 +202,8 @@ test("clamps release outside the plot and does not zoom another matchup", () => 
   const element = preparePlot(graphs[0]);
   dragRange(element, 154, 600);
   expect(axisSpy.mock.lastCall![0].domain).toEqual([1, 4]);
-  expect(within(screen.getByRole("region", { name: /Alpha versus Bravo/ })).getByRole("button")).toBeEnabled();
-  expect(within(screen.getByRole("region", { name: /Charlie versus Bravo/ })).getByRole("button")).toBeDisabled();
+  expect(within(screen.getByRole("region", { name: /Alpha versus Bravo/ })).getByRole("button", { name: "Reset zoom" })).toBeEnabled();
+  expect(within(screen.getByRole("region", { name: /Charlie versus Bravo/ })).getByRole("button", { name: "Reset zoom" })).toBeDisabled();
 });
 
 test("shows original play text, matchup, game clock and separate approximate contribution time", () => {
@@ -242,4 +245,200 @@ test("zoom timestamps adapt to the measured container width and preserve reset",
   act(() => resize.current(260));
   fireEvent.click(screen.getByRole("button", { name: "Reset zoom" }));
   expect(axisSpy.mock.lastCall![0].ticks).toEqual([0.5, 1.5, 2.5, 3.5]);
+});
+
+
+const play = (id: string, timestamp: number) => ({ id, timestamp, matchup: "BUF vs NYJ", clock: "Q1 10:00", text: `Play ${id}` });
+const navigationPoints: LeadPoint[] = [
+  { minute: 0, timestamp: 0, scores: [0, 0], projectedScores: [100, 95] },
+  { minute: 10, timestamp: 600_000, scores: [5, 0], projectedScores: [101, 94], lastContributingPlays: [play("one", 600_000)] },
+  { minute: 20, timestamp: 1_200_000, scores: [5, 0], projectedScores: [99, 92], lastContributingPlays: [play("one", 600_000)] },
+  { minute: 30, timestamp: 1_800_000, scores: [10, 5], projectedScores: [103, 97], lastContributingPlays: [play("two", 1_800_000), play("three", 1_800_000)] },
+  { minute: 40, timestamp: 2_400_000, scores: [10, 5], projectedScores: [98, 90], lastContributingPlays: [play("two", 1_800_000), play("three", 1_800_000)] },
+  { minute: 50, timestamp: 3_000_000, scores: [10, 10], projectedScores: [95, 95], lastContributingPlays: [play("four", 3_000_000)] },
+];
+const navigationProps = { ...zoomProps, points: navigationPoints };
+const previousButton = () => screen.getByRole("button", { name: "Previous play" });
+const nextButton = () => screen.getByRole("button", { name: "Next play" });
+const details = () => screen.getByRole("status", { name: "Matchup details" });
+
+test("projected scores use two linear team series and real chronological positions without chunk dividers", () => {
+  tooltipState.active = false;
+  lineSpy.mockClear(); referenceSpy.mockClear();
+  render(<MatchupLeadChart {...navigationProps} projectedScores />);
+  expect(screen.getByRole("region", { name: "Projected scores: Alpha versus Bravo" })).toBeVisible();
+  expect(chartSpy.mock.lastCall![0].map((point: { position: number }) => point.position)).toEqual(navigationPoints.map(point => point.timestamp));
+  expect(lineSpy.mock.calls.map(([props]) => [props.dataKey, props.name, props.type])).toEqual([
+    ["projectedScores.0", "Alpha", "linear"], ["projectedScores.1", "Bravo", "linear"],
+  ]);
+  expect(lineSpy.mock.calls[0][0].stroke).not.toEqual(lineSpy.mock.calls[1][0].stroke);
+  expect(axisSpy.mock.lastCall![0].domain).toEqual([0, 3_000_000]);
+  const yAxis = probabilityAxisSpy.mock.lastCall![0];
+  expect(yAxis.scale).toBe("linear");
+  expect(yAxis.tickFormatter(95)).toBe("95");
+  expect(referenceSpy).not.toHaveBeenCalled();
+  expect(screen.getByText(/One continuous timeline/)).toBeVisible();
+});
+
+test("score zoom includes interpolated edge values from both teams and ignores offscreen extrema", () => {
+  const axis = visibleScoreAxis([
+    { position: 0, projectedScores: [0, 200] },
+    { position: 100, projectedScores: [100, 100] },
+  ], [40, 60]);
+  expect(axis.domain[0]).toBeLessThan(40);
+  expect(axis.domain[1]).toBeGreaterThan(160);
+  expect(axis.domain[0]).toBeGreaterThan(0);
+  expect(axis.domain[1]).toBeLessThan(200);
+  expect(axis.ticks.every((tick: number) => tick >= axis.domain[0] && tick <= axis.domain[1])).toBe(true);
+  const flat = visibleScoreAxis([{ position: 0, projectedScores: [0, 0] }], null);
+  expect(flat.domain[1]).toBeGreaterThan(flat.domain[0]);
+  expect(visibleScoreAxis([], null).domain.every(Number.isFinite)).toBe(true);
+});
+
+test("score drag zooms timestamps, fits points, and narrows time ticks on small plots", () => {
+  tooltipState.active = false;
+  render(<MatchupLeadChart {...navigationProps} projectedScores />);
+  const plot = preparePlot(screen.getByLabelText("Drag to zoom; Escape cancels selection"));
+  dragRange(plot, 154, 354);
+  expect(axisSpy.mock.lastCall![0].domain).toEqual([750_000, 2_250_000]);
+  expect(probabilityAxisSpy.mock.lastCall![0].domain[0]).toBeGreaterThan(80);
+  act(() => resize.current(260));
+  expect(axisSpy.mock.lastCall![0].ticks).toEqual([750_000, 2_250_000]);
+  fireEvent.click(screen.getByRole("button", { name: "Reset zoom" }));
+  expect(axisSpy.mock.lastCall![0].domain).toEqual([0, 3_000_000]);
+});
+
+test("navigation uses original distinct contributions, skipping carried metadata and grouping simultaneous plays", () => {
+  expect(contributingPlayEvents(navigationPoints)).toEqual([navigationPoints[1], navigationPoints[3], navigationPoints[5]]);
+  tooltipState.active = false;
+  render(<MatchupLeadChart {...navigationProps} />);
+  expect(previousButton()).toBeEnabled(); expect(nextButton()).toBeEnabled();
+  fireEvent.click(nextButton());
+  expect(details()).toHaveTextContent("Play one");
+  expect(previousButton()).toBeDisabled();
+  fireEvent.click(nextButton());
+  expect(details()).toHaveTextContent("Play two"); expect(details()).toHaveTextContent("Play three");
+  expect(details()).not.toHaveTextContent("Play one");
+  expect(referenceSpy.mock.lastCall![0]).toMatchObject({ x: expect.any(Number), strokeWidth: 2 });
+  fireEvent.click(nextButton());
+  expect(details()).toHaveTextContent("Play four"); expect(nextButton()).toBeDisabled();
+  expect(screen.getByLabelText("Drag to zoom; Escape cancels selection")).toHaveFocus();
+  fireEvent.click(previousButton());
+  expect(details()).toHaveTextContent("Play two");
+});
+
+test("previous starts at the last event and arrows match buttons without leaking to Recharts", () => {
+  tooltipState.active = false;
+  render(<MatchupLeadChart {...navigationProps} />);
+  const plot = screen.getByLabelText("Drag to zoom; Escape cancels selection");
+  const svg = plot.querySelector("svg")!;
+  chartKeySpy.mockClear();
+  fireEvent.keyDown(svg, { key: "ArrowLeft" });
+  expect(details()).toHaveTextContent("Play four");
+  fireEvent.keyDown(previousButton(), { key: "ArrowLeft" });
+  expect(details()).toHaveTextContent("Play two");
+  fireEvent.keyDown(svg, { key: "ArrowRight" });
+  expect(details()).toHaveTextContent("Play four");
+  expect(chartKeySpy).not.toHaveBeenCalled();
+  fireEvent.keyDown(document.body, { key: "ArrowLeft" });
+  expect(details()).toHaveTextContent("Play four");
+  const input = document.createElement("input"); plot.append(input);
+  fireEvent.keyDown(input, { key: "ArrowLeft" });
+  expect(details()).toHaveTextContent("Play four");
+  input.remove();
+  fireEvent.click(plot);
+  expect(plot).toHaveFocus();
+});
+
+test("empty contribution sets disable both controls", () => {
+  tooltipState.active = false;
+  render(<MatchupLeadChart {...zoomProps} />);
+  expect(previousButton()).toBeDisabled(); expect(nextButton()).toBeDisabled();
+});
+
+test("hover establishes the starting timestamp between events and selection survives a mode change", () => {
+  tooltipState.index = 2;
+  const view = render(<MatchupLeadChart {...navigationProps} projectedScores />);
+  expect(details()).toHaveTextContent("99.00 projected finish");
+  tooltipState.active = false;
+  view.rerender(<MatchupLeadChart {...navigationProps} projectedScores />);
+  fireEvent.click(previousButton());
+  expect(details()).toHaveTextContent("101.00 projected finish");
+  const plot = preparePlot(screen.getByLabelText("Drag to zoom; Escape cancels selection"));
+  dragRange(plot, 154, 354);
+  view.rerender(<MatchupLeadChart {...navigationProps} />);
+  expect(screen.getByRole("button", { name: "Reset zoom" })).toBeDisabled();
+  expect(axisSpy.mock.lastCall![0].domain).toEqual([0, 4]);
+  expect(details()).toHaveTextContent("Play one");
+  fireEvent.click(nextButton());
+  expect(details()).toHaveTextContent("Play two");
+});
+
+test("navigation outside a zoom restores the full timeline and each matchup keeps its own selection", () => {
+  tooltipState.active = false;
+  render(<><MatchupLeadChart {...navigationProps} projectedScores /><MatchupLeadChart {...navigationProps} projectedScores homeName="Charlie" /></>);
+  const first = screen.getByRole("region", { name: /Alpha versus Bravo/ });
+  const second = screen.getByRole("region", { name: /Charlie versus Bravo/ });
+  dragRange(preparePlot(within(first).getByLabelText("Drag to zoom; Escape cancels selection")), 154, 354);
+  fireEvent.click(within(first).getByRole("button", { name: "Next play" }));
+  expect(within(first).getByRole("button", { name: "Reset zoom" })).toBeDisabled();
+  expect(within(first).getByRole("status", { name: "Matchup details" })).toHaveTextContent("Play one");
+  expect(within(second).getByRole("status", { name: "Matchup details" })).not.toHaveTextContent("Play one");
+});
+
+
+test("a stale active tooltip cannot overwrite navigation or selection when changing modes", () => {
+  const view = render(<MatchupLeadChart {...navigationProps} />);
+  expect(details()).toHaveTextContent("Play four");
+  fireEvent.click(previousButton());
+  expect(details()).toHaveTextContent("Play two");
+  view.rerender(<MatchupLeadChart {...navigationProps} projectedScores />);
+  expect(details()).toHaveTextContent("Play two");
+  expect(referenceSpy.mock.lastCall![0].x).toBe(1_800_000);
+  view.rerender(<MatchupLeadChart {...navigationProps} />);
+  expect(details()).toHaveTextContent("Play two");
+  fireEvent.click(nextButton());
+  expect(details()).toHaveTextContent("Play four");
+});
+
+test("next starts after a hovered projection-only point and pointer tracking resumes after navigation", () => {
+  tooltipState.index = 2;
+  const view = render(<MatchupLeadChart {...navigationProps} projectedScores />);
+  fireEvent.click(nextButton());
+  expect(details()).toHaveTextContent("Play two");
+  const plot = screen.getByLabelText("Drag to zoom; Escape cancels selection");
+  fireEvent.pointerMove(plot, { clientX: 150 });
+  tooltipState.index = 1;
+  view.rerender(<MatchupLeadChart {...navigationProps} projectedScores />);
+  expect(details()).toHaveTextContent("Play one");
+  expect(referenceSpy.mock.lastCall![0].x).toBe(600_000);
+});
+
+
+test("active hover settles without a render loop when Recharts mounts tooltip content", () => {
+  chartSpy.mockClear();
+  chartSpy.mockImplementation(() => {
+    // Fail promptly instead of allowing a runaway effect to hang the test process.
+    if (chartSpy.mock.calls.length > 10) throw new Error("Hover repeatedly rendered without a new point");
+  });
+  try {
+    render(<MatchupLeadChart {...navigationProps} projectedScores />);
+    expect(details()).toHaveTextContent("Play four");
+    expect(chartSpy.mock.calls.length).toBeLessThan(10);
+  } finally { chartSpy.mockReset(); }
+});
+
+test.each(["altKey", "ctrlKey", "metaKey", "shiftKey"])("%s arrows retain the play and leave modified shortcuts unhandled", modifier => {
+  tooltipState.active = false;
+  render(<MatchupLeadChart {...navigationProps} />);
+  fireEvent.click(nextButton());
+  const plot = screen.getByLabelText("Drag to zoom; Escape cancels selection");
+  const event = new KeyboardEvent("keydown", { key: "ArrowRight", [modifier]: true, bubbles: true, cancelable: true });
+  chartKeySpy.mockClear();
+  act(() => { plot.querySelector("svg")!.dispatchEvent(event); });
+  expect(chartKeySpy).not.toHaveBeenCalled();
+  expect(details()).toHaveTextContent("Play one");
+  expect(event.defaultPrevented).toBe(false);
+  fireEvent.keyDown(plot, { key: "ArrowRight" });
+  expect(details()).toHaveTextContent("Play two");
 });

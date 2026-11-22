@@ -11,6 +11,7 @@ import { COMPETITIVE_MARGIN, MAX_REVERSAL_BONUS, MAX_SUSPENSE_BONUS, MIN_SWING_P
 const DATA_CACHE = "data_v6";
 
 export default function SpiciestMatchups() {
+  const [projectedScores, setProjectedScores] = useState(false);
   const [week, setWeek] = useState("all");
   const [result, setResult] = useState<{
     source: ReturnType<typeof selectedWrapped> | null;
@@ -48,6 +49,7 @@ export default function SpiciestMatchups() {
   return (
     <div style={{ padding: "0.5rem 1rem 1.5rem", maxWidth: 1200, boxSizing: "border-box" }}>
       <h2>Spiciest matchups · {scopeLabel(year, Object.keys(allWrapped))}</h2>
+      <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "8px 24px" }}>
       <label style={{ display: "inline-flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
         Week
         <select value={week} onChange={event => setWeek(event.target.value)}>
@@ -55,6 +57,11 @@ export default function SpiciestMatchups() {
           {weeks.map(value => <option key={value} value={value}>Week {value}</option>)}
         </select>
       </label>
+      <label style={{ display: "inline-flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
+        <input type="checkbox" checked={projectedScores} onChange={event => setProjectedScores(event.target.checked)} />
+        Projected scores
+      </label>
+      </div>
       <p style={{ maxWidth: "78ch", lineHeight: 1.6 }}>
         Which fantasy matchups had the biggest changes in their chances to win? Showing up to 10 completed matchups, ranked by spice.
         Spice adds the {TOP_SWING_COUNT} strongest competitive probability swings, decisive favorite reversals,
@@ -65,12 +72,12 @@ export default function SpiciestMatchups() {
       <div style={{ background: NIGHT_COLORS.surfaceAlt, borderLeft: `3px solid ${NIGHT_COLORS.link}`,
         borderRadius: 6, padding: "0.8rem 1rem", marginBottom: 20, lineHeight: 1.5 }}>
         <b>How to read the chart</b>
-        <div>The line shows the first team’s estimated chance to win, from 0% to 100%. Above 50% favors the first team; below 50% favors the second.</div>
+        <div>{projectedScores ? "The two teams’ projected final scores share one continuous chronological timeline and a linear points axis. Colors identify each team; idle time remains visible." :
+          "The line shows the first team’s estimated chance to win, from 0% to 100%. Above 50% favors the first team; below 50% favors the second."}</div>
         <div style={{ color: NIGHT_COLORS.mutedText, marginTop: 6 }}>
           Projected finish = estimated points earned + weekly projection × fraction of the player’s game remaining.
           Win probability uses the same model as Multisport: projected final-score difference with uncertainty based on both teams’ projected points remaining. These are reconstructed estimates, not recorded live odds.
-          The graph is split into pre Sunday, Sunday pre final slot, Sunday final slot, and post Sunday.
-          Slots use Eastern kickoff times; hover or tap for both teams’ probabilities, estimated points earned, projected finishes, and local times.
+          {!projectedScores && " The graph is split into pre Sunday, Sunday pre final slot, Sunday final slot, and post Sunday. Slots use Eastern kickoff times;"} Hover or tap for both teams’ probabilities, estimated points earned, projected finishes, and local times.
         </div>
         <details style={{ marginTop: 8 }}>
           <summary style={{ cursor: "pointer" }}>How the estimate works</summary>
@@ -83,7 +90,7 @@ export default function SpiciestMatchups() {
             Projections decrease with estimated game time remaining, including overtime, independently of points earned.
             The probability model treats the projected final-score difference as a normal distribution whose uncertainty shrinks with projected points remaining.
             When no projected points remain, it resolves to 100% or 0% (a final tie is displayed at 50%).
-            Spice uses the actual probabilities shown in the chart, before its square-root display scaling.
+            Spice always uses the actual win probabilities, before display scaling; changing the chart view does not change rankings.
             Swings run between probability peaks and troughs; reversals under {MIN_SWING_POINTS} percentage points don’t split a swing.
             A comeback stopping within {COMPETITIVE_MARGIN} percentage points of 50% earns its size × (1 − distance from 50% / {COMPETITIVE_MARGIN}).
             Crossing 50% earns the recovered probability deficit plus up to {COMPETITIVE_MARGIN} percentage points of the new lead.
@@ -140,7 +147,7 @@ export default function SpiciestMatchups() {
                 <b>{matchup.lastReversalTimestamp === null ? "None" : formatMatchupTime(matchup.lastReversalTimestamp)}</b>
               </div>
             </div>
-            <MatchupLeadChart points={matchup.points} chunks={matchup.chunks} homeName={matchup.homeName} awayName={matchup.awayName} />
+            <MatchupLeadChart projectedScores={projectedScores} points={matchup.points} chunks={matchup.chunks} homeName={matchup.homeName} awayName={matchup.awayName} />
           </article>
         ))}
     </div>
