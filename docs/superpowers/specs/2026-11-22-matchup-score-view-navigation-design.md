@@ -1,0 +1,13 @@
+# Spiciest matchup score view and play navigation
+
+Approved with `yesi` on 2026-11-22.
+
+Add one page-level “Projected scores” checkbox, initially off. Off preserves the existing chunked probability chart; on renders each matchup as one continuous chronological timeline, with a linear points axis and separate colored projected-final-score lines for both teams. Use the existing projectedScores values without changing reconstruction, probabilities, eligibility, ordering, or spice. Labels and chart guidance describe the active mode. Keep hover/tap details and drag-to-zoom in both modes; switching modes resets zoom while retaining the selected underlying timeline point where possible.
+
+Each matchup gets Previous play and Next play arrow buttons. Left/right keys operate only in the focused matchup chart or its navigation controls, never globally or in form fields. Move between distinct contributing-play events in chronological order, skipping projection-only samples and repeated carried metadata. Simultaneous contributions remain grouped. With no selection, Next starts at the first event and Previous at the last. Disable controls at the corresponding boundary or when there are no contributing plays. Hover/tap establishes the navigation starting point. A visible chart cursor and the existing details panel track the selection. Navigation outside a zoomed window resets the zoom so the selected play remains visible.
+
+Reuse MatchupLeadChart for both modes and keep presentation/navigation helpers separate from ranking and reconstruction. Avoid changing upstream data. Keyboard handling must suppress Recharts' competing sample-by-sample arrow behavior. Preserve independent state across matchup cards, accessible names, and mobile wrapping.
+
+Verification: targeted rendering/navigation tests cover toggle defaults and ranking invariance, two projected score series, linear chronological axis, zoom/reset, contribution deduplication and grouping, keyboard/button equivalence, boundaries, no events, hover starting points, and matchup isolation. Run existing chart/data/spice tests and TypeScript/production build to a temporary output directory, preserving the pre-existing untracked dist directory. Inspect the resulting UI in a browser.
+
+Self-review: no new data source or scoring math; defaults and boundary behavior are explicit; the toggle changes only presentation; no unresolved design choices.
