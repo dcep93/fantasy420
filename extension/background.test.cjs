@@ -180,3 +180,19 @@ test("headerless requests share a cache entry and still honor maxAgeMs", async (
   assert.equal(await request({}, 0), "response 2");
   assert.equal(fetchMock.mock.callCount(), 2);
 });
+
+for (const action of ["get", "save"]) {
+  test(`reports asynchronous storage ${action} failures`, async (t) => {
+    const method = action === "get" ? "get" : "set";
+    t.mock.method(chrome.storage.local, method, (_arg, callback) => {
+      queueMicrotask(() => {
+        chrome.runtime.lastError = { message: "Storage unavailable" };
+        try { callback(); } finally { delete chrome.runtime.lastError; }
+      });
+    });
+    const storage = action === "get"
+      ? { action, keys: ["vegas"] }
+      : { action, save: { vegas: {} } };
+    assert.deepEqual(await sendExternalMessage({ storage }), { error: "Storage unavailable" });
+  });
+}

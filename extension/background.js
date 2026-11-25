@@ -17,11 +17,15 @@ chrome.runtime.onMessageExternal.addListener(function (
   if (request.storage) {
     if (request.storage.action === "get") {
       chrome.storage.local.get(request.storage.keys, (result) => {
-        sendResponse(result);
+        const error = chrome.runtime.lastError;
+        sendResponse(error ? { error: error.message } : result);
       });
     }
     if (request.storage.action === "save") {
-      chrome.storage.local.set(request.storage.save, () => sendResponse(true));
+      chrome.storage.local.set(request.storage.save, () => {
+        const error = chrome.runtime.lastError;
+        sendResponse(error ? { error: error.message } : true);
+      });
     }
     return true;
   }

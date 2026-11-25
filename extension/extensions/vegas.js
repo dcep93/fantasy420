@@ -27,6 +27,7 @@
         : reject("chrome.runtime not defined")
     )
       .then(inject)
+      .catch((error) => console.error("Fantasy420 odds update failed", error))
       .then(() => setTimeout(main, INTERVAL_MS));
   }
 
@@ -42,21 +43,23 @@
         )
       )
       .then((events) =>
-        events.flatMap(({ eventId }) =>
+        events.flatMap(({ eventId, startDate, name: eventName }) =>
           [1000, 1001, 1002, 1003, 1342].map((categoryId) =>
             fetchC(
               `https://sportsbook-nash.draftkings.com/api/sportscontent/dkusny/v1/events/${eventId}/categories/${categoryId}`,
               15 * 60 * 1000 // 15 minutes
-            )
+            ).then((response) => response && ({ ...response, startDate, eventName }))
           )
         )
       )
       .then((promises) => Promise.all(promises))
       .then((events) =>
-        events.filter(Boolean).flatMap(({ selections, markets }) =>
+        events.filter(Boolean).flatMap(({ selections, markets, startDate, eventName }) =>
           (selections || [])
             .filter(({ participants }) => participants)
             .map((s) => ({
+              startDate,
+              eventName,
               outcomeType: s.outcomeType,
               odds: s.trueOdds,
               participant: s.participants.find((p) => p.type === "Player")
@@ -72,8 +75,6 @@
                 }))
                 .find(({ m }) => m.id === s.marketId),
               // participant: participants[0],
-              // startDate: event.startDate,
-              // eventName: event.name,
               // name,
               // label,
               // participant,
@@ -122,6 +123,22 @@
             title: `${o.text}\n${getTitle(o.scores)}`,
             ...o,
           }))
+      )
+      .then(async (players) => {
+        await persist(players.map(({ name, scores, raw }) => ({
+          name,
+          startDate: raw[0].startDate,
+          eventId: raw[0].eventId,
+          eventName: raw[0].eventName,
+          touchdownOddsDecimal: raw.find((r) =>
+            r.eventId === raw[0].eventId &&
+            r.marketTypeName === "Anytime Touchdown Scorer"
+          )?.odds,
+          scores,
+        }))).catch((error) => console.error("Fantasy420 odds history save failed", error));
+        return players;
+      })
+      .then((players) => players
           .filter(({ aE, title }) => clicked || aE.title !== title)
           .map(({ name, scores, title, raw, aE, posE, text }) => {
             if (
@@ -138,8 +155,7 @@
             aE.title = title;
             return { startDate: raw[0].startDate, name, scores };
           })
-      )
-      .then(persist);
+      );
   }
 
   function getName(a) {
@@ -250,67 +266,45 @@
     const cached = cache[url];
     const now = Date.now();
     if (now - cached?.timestamp < maxAgeMs) return Promise.resolve(cached.json);
-    return new Promise((resolve) =>
-      chrome.runtime.sendMessage(
-        extension_id,
-        { fetch: { url, maxAgeMs, json: true } },
-        (response) => resolve(response)
-      )
-    ).then((json) => {
+    return sendMessage({ fetch: { url, maxAgeMs, json: true } }).then((json) => {
       cache[url] = { timestamp: now, json };
       return json;
     });
   }
 
-  function persist(toPersist) {
-    if (!chrome.runtime) return;
-    const toSave = JSON.stringify(toPersist);
-    if (toSave === saved) return;
-    saved = toSave;
-
-    const extension_id = "dikaanhdjgmmeajanfokkalonmnpfidm";
-
-    const now = new Date();
-
-    return new Promise((resolve) =>
-      chrome.runtime.sendMessage(
-        extension_id,
-        { storage: { action: "get", keys: ["vegas"] } },
-        function (response) {
+  function sendMessage(request) {
+    return new Promise((resolve, reject) => {
+      chrome.runtime.sendMessage(extension_id, request, (response) => {
+        const error = chrome.runtime.lastError?.message || response?.error;
+        if (error || response === undefined) {
+          reject(new Error(error || "Empty extension response"));
+        } else {
           resolve(response);
         }
-      )
-    )
-      .then((response) => response.vegas || {})
-      .then((vegas) => {
-        toPersist
-          .filter(({ name, startDate }) => {
-            if (now < new Date(startDate)) return true;
-            console.log(name, vegas[name]);
-            return false;
-          })
-          .forEach(({ name, startDate, scores }) => {
-            if (!vegas[name]) vegas[name] = {};
-            vegas[name][startDate] = {
-              date: new Date().toLocaleString(),
-              ...scores,
-            };
-            console.log(name, vegas[name]);
-          });
-        return vegas;
-      })
-      .then(
-        (vegas) =>
-          new Promise((resolve) =>
-            chrome.runtime.sendMessage(
-              extension_id,
-              { storage: { action: "save", save: { vegas } } },
-              function (response) {
-                resolve(response);
-              }
-            )
-          )
-      );
+      });
+    });
+  }
+
+  async function persist(toPersist) {
+    if (!chrome.runtime) return;
+    const now = new Date();
+    toPersist = toPersist.filter(({ startDate }) => now < new Date(startDate));
+    if (!toPersist.length) return;
+    const toSave = JSON.stringify(toPersist);
+    if (toSave === saved) return;
+    const response = await sendMessage({ storage: { action: "get", keys: ["vegas"] } });
+    const vegas = response.vegas || {};
+    for (const { name, startDate, scores, ...metadata } of toPersist) {
+      if (!vegas[name]) vegas[name] = {};
+      vegas[name][startDate] = {
+        date: now.toLocaleString(),
+        ...scores,
+        ...metadata,
+      };
+    }
+    const result = await sendMessage({ storage: { action: "save", save: { vegas } } });
+    if (result !== true) throw new Error("Odds history write was not acknowledged");
+    saved = toSave;
   }
 
   main();
