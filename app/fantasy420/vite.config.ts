@@ -31,6 +31,8 @@ export default defineConfig({
       "src/fantasy420/app/Wrapped/tabs/playoffStrength.test.ts",
       "src/fantasy420/app/Wrapped/tabs/PlayoffMachine.test.tsx",
       "src/fantasy420/app/Wrapped/tabs/probabilityEngine.test.ts",
+      "src/fantasy420/app/Wrapped/tabs/waiverImpact.test.ts",
+      "src/fantasy420/app/Wrapped/tabs/WaiverImpact.test.tsx",
       "src/fantasy420/app/Wrapped/tabs/ProbabilityMachine.test.tsx",
       "src/fantasy420/app/Wrapped/tabs/winDistribution.test.ts",
       "src/fantasy420/app/Wrapped/tabs/WinDistributionChart.test.tsx",

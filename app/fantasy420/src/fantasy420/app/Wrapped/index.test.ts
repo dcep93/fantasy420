@@ -52,3 +52,12 @@ test("places ReachesAndSteals immediately after DraftBoard", () => {
   expect(moduleNames).not.toContain("DraftDayReachesAndSteals");
   expect(wrappedModuleLabels.ReachesAndSteals).toBe("ReachesAndSteals");
 });
+
+test("registers Waiver Impact with a friendly label and season-only explanation", () => {
+  expect(wrappedModules.WaiverImpact).toBeTypeOf("function");
+  expect(wrappedModuleLabels.WaiverImpact).toBe("Waiver Impact");
+  window.history.replaceState(null, "", "/?year=all#WaiverImpact");
+  render(createElement(Wrapped));
+  expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Waiver Impact");
+  expect(screen.getByText(/Waiver estimates follow ownership/)).toBeInTheDocument();
+});

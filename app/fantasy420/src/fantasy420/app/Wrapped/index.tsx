@@ -32,6 +32,7 @@ import PlayerPlot from "./tabs/PlayerPlot";
 import PlayerStats from "./tabs/PlayerStats";
 import PlayoffMachine from "./tabs/PlayoffMachine";
 import ProbabilityMachine from "./tabs/ProbabilityMachine";
+import WaiverImpact from "./tabs/WaiverImpact";
 import PointsAgainst from "./tabs/PointsAgainst";
 import PositionTrends from "./tabs/PositionTrends";
 import ReachesAndSteals from "./tabs/ReachesAndSteals";
@@ -327,6 +328,7 @@ export const wrappedModules: { [key: string]: () => JSX.Element } = {
   HeadToHead,
   PlayoffMachine,
   ProbabilityMachine,
+  WaiverImpact,
   SecondLost,
   WhatIf,
   ConsistentlyAverage,
@@ -340,6 +342,7 @@ export const wrappedModules: { [key: string]: () => JSX.Element } = {
 };
 
 export const wrappedModuleLabels: Record<string, string> = {
+  WaiverImpact: "Waiver Impact",
   ReachesAndSteals: "ReachesAndSteals",
 };
 

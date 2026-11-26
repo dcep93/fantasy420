@@ -8,7 +8,7 @@ Add a season-only **Waiver Impact** module under Beta. Rank managers by estimate
 
 Metrics: points/week, total waiver points, share of lineup points, best week, top contributing pickup, inferred pickups (acquisition events including bench additions and re-adds), unique pickups started, and waiver-player starts (one per player per week). Add points/start as an efficiency statistic. Sort by points/week, total points, share, best week, pickups, unique starters, starts, or points/start. Ties use manager name then ID for deterministic order. The selected manager remains selected when sorting.
 
-Chart modes: weekly points, waiver-player starts, and new pickups. Counts are visible alongside points in the weekly breakdown. League averages use managers with a recorded roster that week. Excluding K/DST filters all metrics and the lineup-point denominator consistently. Default includes every position. Completed weeks only; no current roster `0` or partial/future weeks.
+Chart modes: weekly points, waiver-player starts, and new pickups. Counts are visible alongside points in the weekly breakdown. League averages use managers with a recorded roster that week. Excluding K/DST filters all metrics and the lineup-point denominator consistently. Default includes every position. Completed weeks only; no current roster `0` or partial/future weeks. Stop at the greatest recorded completed league week, even if the NFL completion marker extends beyond the league schedule; preserve interior missing weeks as unavailable.
 
 ## Attribution contract
 
@@ -22,7 +22,7 @@ Each manager's average uses their recorded completed weeks, including genuine ze
 
 ## Structure and validation
 
-Pure inference/aggregation lives in `tabs/waiverImpact.ts`; React rendering and controls in `tabs/WaiverImpact.tsx`; scoped styles in `tabs/WaiverImpact.css`. Register the module, friendly label, Beta navigation, and season-only explanation. Unit tests cover attribution, carryover, bench additions, re-adds, ambiguous moves, missing rosters/scores, zero and negative scoring, counts, filtering, ranking, and incomplete-week exclusion. Component tests cover navigation registration, sorting, manager/week selection, chart modes, and position filtering. Run targeted tests, TypeScript/production build to a temporary output directory, then inspect desktop/mobile rendering. Preserve the existing untracked `dist/` directory.
+Pure inference/aggregation lives in `tabs/waiverImpactData.ts`; React rendering and controls in `tabs/WaiverImpact.tsx`; scoped styles in `tabs/WaiverImpact.css`. Register the module, friendly label, Beta navigation, and season-only explanation. Unit tests cover attribution, carryover, bench additions, re-adds, ambiguous moves, missing rosters/scores, zero and negative scoring, counts, filtering, ranking, and incomplete-week exclusion. Component tests cover navigation registration, sorting, manager/week selection, chart modes, and position filtering. Run targeted tests, TypeScript/production build to a temporary output directory, then inspect desktop/mobile rendering. Preserve the existing untracked `dist/` directory.
 
 ## Scope
 

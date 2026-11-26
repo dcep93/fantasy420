@@ -1,0 +1,62 @@
+.waiver-impact { max-width: 1400px; min-width: 0; margin: 0 auto; padding: 0 1em 2em; color: var(--night-text); box-sizing: border-box; }
+.waiver-impact *, .waiver-impact *::before, .waiver-impact *::after { box-sizing: border-box; }
+.waiver-intro { max-width: 80ch; line-height: 1.6; color: var(--night-text-muted, #aab7c9); }
+.waiver-controls { display: flex; flex-wrap: wrap; align-items: end; gap: 1em 2em; margin: 1.3em 0; }
+.waiver-impact label { display: flex; flex-direction: column; gap: .5em; font-size: .9em; }
+.waiver-impact select { max-width: 100%; min-height: 2.8em; padding: .5em .75em; color: var(--night-text); background: var(--night-surface); border: 1px solid var(--night-border); border-radius: .4em; font: inherit; }
+.waiver-impact .waiver-check { flex-direction: row; align-items: center; min-height: 2.8em; gap: .6em; }
+.waiver-check input { width: 1.2em; height: 1.2em; accent-color: #64d6c4; }
+.waiver-table-scroll { overflow-x: auto; max-width: 100%; min-width: 0; border: 1px solid var(--night-border); border-radius: .6em; background: var(--night-surface); }
+.waiver-impact table { width: 100%; border-collapse: collapse; font-size: .86em; font-variant-numeric: tabular-nums; }
+.waiver-impact caption { text-align: left; padding: 1em; font-weight: bold; }
+.waiver-impact th, .waiver-impact td { padding: .8em .9em; text-align: right; border-bottom: 1px solid var(--night-border); }
+.waiver-impact th:first-child, .waiver-impact td:first-child { text-align: left; }
+.waiver-impact thead th { color: var(--night-text-muted, #aab7c9); font-size: .9em; }
+.waiver-impact tbody tr:last-child > * { border-bottom: 0; }
+.waiver-leaderboard { min-width: 810px; }
+.waiver-leaderboard tbody th { white-space: nowrap; }
+.waiver-leaderboard button { color: inherit; background: transparent; font: inherit; text-align: left; border: 1px solid transparent; border-radius: .3em; padding: .5em; cursor: pointer; }
+.waiver-leaderboard button:hover, .waiver-leaderboard button[aria-pressed="true"] { color: #64d6c4; border-color: #64d6c4; }
+.waiver-selected { background: var(--night-surface-alt); }
+.waiver-rank { color: var(--night-text-muted, #aab7c9); display: inline-block; width: 2em; }
+.waiver-panel { margin: 1.5em 0; padding: 1.25em; border: 1px solid var(--night-border); border-radius: .8em; background: var(--night-surface); min-width: 0; }
+.waiver-panel h2 { font-size: 1.2em; margin: 0 0 .5em; overflow-wrap: anywhere; }
+.waiver-muted { font-size: .85em; color: var(--night-text-muted, #aab7c9); line-height: 1.5; }
+.waiver-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .75em; margin: 1.25em 0; }
+.waiver-stats > div { padding: .9em; border: 1px solid var(--night-border); border-radius: .5em; background: var(--night-surface-alt); min-width: 0; }
+.waiver-stats dt { font-size: .75em; color: var(--night-text-muted, #aab7c9); margin-bottom: .6em; }
+.waiver-stats dd { margin: 0; font-size: 1.45em; font-weight: bold; font-variant-numeric: tabular-nums; }
+.waiver-stats small { display: block; font-size: .6em; font-weight: normal; margin-top: .45em; }
+.waiver-stats .waiver-top-pickup { font-size: 1em; overflow-wrap: anywhere; }
+.waiver-top-pickup small { font-size: .8em; }
+.waiver-chart-control { max-width: 15em; }
+.waiver-chart { width: 100%; min-width: 0; height: 300px; margin: .6em 0 1.5em; font-size: .8em; }
+.waiver-week { border-top: 1px solid var(--night-border); padding-top: 1.25em; }
+.waiver-week > label { max-width: 15em; }
+.waiver-week-summary { line-height: 1.6; }
+.waiver-week-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 1em; align-items: start; }
+.waiver-week-grid thead th, .waiver-week-grid td { white-space: nowrap; }
+.waiver-week-grid tbody th { white-space: normal; overflow-wrap: normal; }
+.waiver-pickups { padding: 0 1em; }
+.waiver-pickups h3 { font-size: .9em; margin: 1em 0; }
+.waiver-pickups p { font-size: .85em; }
+.waiver-pickups ul { list-style: none; margin: 0; padding: 0; }
+.waiver-pickups li { display: flex; align-items: baseline; flex-wrap: wrap; gap: .6em; padding: .6em 0; border-bottom: 1px solid var(--night-border); font-size: .85em; overflow-wrap: anywhere; }
+.waiver-pickups li strong { flex: 1 1 10em; }
+.waiver-pickups li small { color: var(--night-text-muted, #aab7c9); }
+.waiver-warning { border: 1px solid #a67c43; background: #352b1d; color: #f0d6ad; padding: .9em; border-radius: .5em; margin: 1em 0; line-height: 1.6; font-size: .85em; }
+.waiver-methodology { max-width: 100ch; line-height: 1.65; font-size: .85em; }
+.waiver-methodology summary { cursor: pointer; padding: .5em 0; font-weight: bold; }
+.waiver-impact :focus-visible { outline: 2px solid var(--night-focus, #64d6c4); outline-offset: 3px; }
+@media (max-width: 650px) {
+  .waiver-impact { padding: 0 .6em 1.5em; }
+  .waiver-panel { padding: .8em; }
+  .waiver-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5em; }
+  .waiver-stats > div { padding: .75em; }
+  .waiver-week-grid { grid-template-columns: minmax(0, 1fr); }
+  .waiver-week-grid th, .waiver-week-grid td { padding: .8em .6em; }
+  .waiver-pickups { padding: 0 .25em; }
+  .waiver-chart { height: 270px; }
+  .waiver-controls { align-items: start; gap: .8em; }
+  .waiver-leaderboard button { min-height: 2.75em; }
+}
